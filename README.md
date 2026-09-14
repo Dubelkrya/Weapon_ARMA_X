@@ -1,25 +1,32 @@
 # Weapon_ARMA_X
 
-AI-friendly weapon intelligence catalog and local scanner for the ARMST Arma Reforger weapons addon.
+Workbench-native intelligence addon for Arma Reforger weapon resources.
 
-The local addon is the source of truth. Repository data is derived analysis/export and must not silently invent missing engine values.
+## Architecture
 
-## Weapon Intelligence V1
+`Weapon_ARMA_X` is an independent Workbench addon whose only project dependency is the base game (`58D0FB3206B6F859`). It is not built on top of ARMST and does not require the ARMST weapon mod to scan vanilla data.
 
-The first scanner lives in:
+The addon reads mounted Arma Reforger resources and writes local derived evidence under this addon:
 
-```text
-tools/weapon_intelligence/
-```
+- `Generated/VanillaWeaponIntelligence/` — `.et/.conf` resource inventory and prefab component metadata;
+- `Generated/BaseGameScripts/` — Workbench-visible `.c` file index;
+- `Imported/VanillaSources/` — optional local materialized copies of selected `.et/.conf` resources.
 
-It recursively reads `.et`, `.conf`, `.meta` and `.c` files, builds resource/reference and inheritance indexes, and exports normalized weapon/magazine/ammunition JSON without modifying the addon.
+`Generated/` and `Imported/` are intentionally gitignored so vanilla source content is not committed to the public repository.
 
-Run from this repository root:
+## Workbench plugins
 
-```powershell
-python tools/weapon_intelligence/scan.py `
-  --root "C:\Users\Muroy\Documents\My Games\ArmaReforgerWorkbench\addons\ARMST-PLATFORM---Weapons" `
-  --out .
-```
+Resource Manager:
 
-See `docs/WEAPON_INTELLIGENCE_V1.md` for the data model, safety boundary and current limitations.
+- `Weapon ARMA X -> WAX: Scan Vanilla Weapon Resources`
+- `Weapon ARMA X -> WAX: Materialize Selected Vanilla Sources`
+
+Script Editor:
+
+- `Weapon ARMA X -> WAX: Scan Base Game Scripts`
+
+## Installation
+
+Place/clone this repository as a Workbench addon and open `addon.gproj` with Arma Reforger Tools. The project depends directly on the base game.
+
+See `docs/WEAPON_INTELLIGENCE_V1.md` for the current scope and validation boundary.
