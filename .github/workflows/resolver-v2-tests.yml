@@ -7,6 +7,7 @@ on:
   pull_request:
     paths:
       - 'agent/scripts/resolver_v2*.py'
+      - 'agent/scripts/scan_build_v2.py'
       - 'agent/tests/test_resolver_v2*.py'
       - '.github/workflows/resolver-v2-tests.yml'
   workflow_dispatch:
