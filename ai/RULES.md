@@ -10,18 +10,20 @@ This directory is the **machine-facing entry point** for weapon balance/catalog 
 Do **not** bulk-load `catalog/`, `indexes/`, `reports/`, or `schema/` for normal analysis. Those are legacy/debug outputs while resolver v2 is being validated.
 
 ## Source policy
-- ARMST is the frozen source snapshot for this catalog.
-- ARMST duplicated resources intentionally preserve the version used by the mod even if current vanilla changes later.
-- Resolver/catalog work must use only files physically present inside ARMST.
-- Never backfill a missing ARMST parent, magazine, AmmoConfig, projectile, or config from current vanilla or `Imported/VanillaSources`.
-- If an ARMST reference cannot be resolved inside ARMST, keep it external/missing and report the gap.
-- Short serialized paths may be normalized only to a unique target inside the same ARMST root.
-- The Workbench vanilla materializer is not a catalog source; it is a separate utility.
+- ARMST is the only editable game-resource source for this project.
+- Our weapons and duplicated sources live in ARMST, but some of those duplicates still inherit from vanilla resources.
+- Materialized vanilla is therefore a **read-only inheritance/reference source** for resolver v2.
+- Export catalog entities from ARMST only; vanilla participates only in resolving inherited/effective values and dependencies.
+- Never edit, patch, rewrite, or recommend changes directly to vanilla or `Imported/VanillaSources`.
+- All balance fixes and source corrections must be made in ARMST.
+- Preserve provenance across ARMST -> vanilla chains so inherited values are distinguishable from ARMST-local values.
+- If a reference cannot be resolved in either ARMST or materialized vanilla, keep it external/missing and report the gap.
+- Short serialized paths may be normalized only when the target is unambiguous.
 
 ## Data semantics
 - Compact rows are **resolved/effective summaries** unless a field is absent.
 - Missing key = pending/unknown. Never infer `0` or `null`.
-- Scalar inheritance: child local -> nearest parent -> higher parents.
+- Scalar inheritance: child local -> nearest parent -> higher parents, including read-only vanilla ancestors when actually referenced.
 - Collections/components: resolve by instance GUID/override semantics. Never blindly merge/copy parent lists.
 - Resource identity = resource path + live Resource GUID. `.meta Name` is metadata only.
 - Entity ID is not globally unique.
@@ -37,8 +39,8 @@ Do **not** bulk-load `catalog/`, `indexes/`, `reports/`, or `schema/` for normal
 
 ## Common flags
 - `PENDING_DETAIL`: only indexed / detail not resolved
-- `PARENT_MISSING`: parent-chain gap inside ARMST
-- `AMMO_PENDING`: ammo chain incomplete inside ARMST
+- `PARENT_MISSING`: parent-chain gap after checking ARMST + read-only vanilla
+- `AMMO_PENDING`: ammo chain incomplete after checking ARMST + read-only vanilla
 - `MAPPING_PENDING`: exact AmmoMapping incomplete
 - `CAPACITY_PENDING`: MaxAmmo not proven
 - `RECOIL_GAP`: recoil collection/config incomplete
@@ -50,4 +52,4 @@ Do **not** bulk-load `catalog/`, `indexes/`, `reports/`, or `schema/` for normal
 - `COLLECTION_VERIFY`: nested collection override requires raw verification
 
 ## Editing rule
-Use compact files for retrieval/comparison. Before modifying game resources, confirm the field in resolver provenance/raw ARMST source. Never edit from a compact row alone.
+Use compact files for retrieval/comparison. Before modifying game resources, confirm the field in resolver provenance/raw source. Read vanilla as evidence when inheritance requires it, but **edit ARMST only**. Never edit from a compact row alone.
