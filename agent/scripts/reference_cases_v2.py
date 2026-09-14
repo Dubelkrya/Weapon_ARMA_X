@@ -17,6 +17,9 @@ import os
 from typing import Dict, Iterable, List, Optional, Sequence
 
 
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+
+
 DEFAULT_CASES = (
     "armst_ak74",
     "armst_ak105",
