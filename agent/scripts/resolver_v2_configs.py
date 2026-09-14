@@ -29,16 +29,79 @@ def _norm_relpath(path: Optional[str]) -> str:
     return str(path or "").replace("\\", "/").lstrip("./").casefold()
 
 
-def _magazine_component_score(node: RNode) -> int:
-    """Prefer the functional MagazineComponent when a prefab contains several."""
-    weights = {
-        "AmmoConfig": 8,
-        "AmmoMapping": 4,
-        "MaxAmmo": 2,
-        "MagazineWell": 1,
-    }
+def _field_score(node: RNode, weights: dict) -> int:
     names = {child.name for child in node.children}
     return sum(weight for name, weight in weights.items() if name in names)
+
+
+def _magazine_component_score(node: RNode) -> int:
+    """Prefer the functional MagazineComponent when a prefab contains several."""
+    return _field_score(
+        node,
+        {
+            "AmmoConfig": 8,
+            "AmmoMapping": 4,
+            "MaxAmmo": 2,
+            "MagazineWell": 1,
+        },
+    )
+
+
+def _muzzle_component_score(node: RNode) -> int:
+    """Rank primary/functional muzzle instances above sparse child-only instances."""
+    return _field_score(
+        node,
+        {
+            "MagazineTemplate": 32,
+            "MagazineWell": 16,
+            "FireModes": 8,
+            "BulletInitSpeedCoef": 4,
+            "DispersionDiameter": 2,
+            "DispersionRange": 2,
+            "RecoilWeaponAimModifier": 1,
+        },
+    )
+
+
+def _weapon_component_score(node: RNode) -> int:
+    components = find_child_r(node, "components")
+    if components is None:
+        return 0
+    muzzles = [child for child in components.children if child.name == "MuzzleComponent"]
+    if not muzzles:
+        return 0
+    return 100 + max(_muzzle_component_score(muzzle) for muzzle in muzzles)
+
+
+def _prefer_functional_components(node: RNode) -> RNode:
+    """Stably reorder duplicate semantic component instances in resolved trees.
+
+    Enfusion child prefabs can serialize a sparse component with a new instance
+    GUID while the functional inherited component remains present separately.
+    Semantic extractors historically used the first matching class, which could
+    hide inherited MagazineTemplate/AmmoConfig data. Reorder only duplicate
+    instances of the same semantic class; all other sibling ordering is kept.
+    """
+    for child in node.children:
+        _prefer_functional_components(child)
+
+    scorers = {
+        "WeaponComponent": _weapon_component_score,
+        "MuzzleComponent": _muzzle_component_score,
+        "MagazineComponent": _magazine_component_score,
+    }
+    for name, scorer in scorers.items():
+        positions = [index for index, child in enumerate(node.children) if child.name == name]
+        if len(positions) < 2:
+            continue
+        ordered = sorted(
+            (node.children[index] for index in positions),
+            key=scorer,
+            reverse=True,
+        )
+        for index, child in zip(positions, ordered):
+            node.children[index] = child
+    return node
 
 
 class HydratedResourceStore(ResourceStore):
@@ -139,7 +202,8 @@ class HydratedResourceStore(ResourceStore):
     def resolve_entity(self, relpath: str):
         result = super().resolve_entity(relpath)
         if result.resolved is not None:
-            result.resolved = self._hydrate_config_refs(result.resolved)
+            hydrated = self._hydrate_config_refs(result.resolved)
+            result.resolved = _prefer_functional_components(hydrated)
         return result
 
     def resolve_magazine_ammo(self, magazine_relpath: str) -> dict:
