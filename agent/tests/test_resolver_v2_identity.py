@@ -145,7 +145,7 @@ class ResolverV2IdentityTests(unittest.TestCase):
             self.assertEqual(result["ammo_config"]["target_origin"], "materialized_base")
             self.assertEqual(result["counts"][0]["count"], 2)
 
-    def test_ambiguous_top_origin_collision_is_not_silently_path_first(self):
+    def test_same_origin_exact_collision_resolves_contextually(self):
         with tempfile.TemporaryDirectory() as armst, tempfile.TemporaryDirectory() as vanilla:
             rel = "Prefabs/Weapons/Magazines/Same.et"
             write(armst, rel, "GenericEntity {\n}\n")
@@ -158,7 +158,29 @@ class ResolverV2IdentityTests(unittest.TestCase):
                 ]
             )
             store.scan()
-            resolved = store.resolve_ref("ABCD", rel, origin_hint="armst")
+
+            armst_ref = store.resolve_ref("ABCD", rel, origin_hint="armst")
+            vanilla_ref = store.resolve_ref("ABCD", rel, origin_hint="materialized_base")
+
+            self.assertEqual(armst_ref["status"], "local")
+            self.assertEqual(armst_ref["origin"], "armst")
+            self.assertEqual(vanilla_ref["status"], "local")
+            self.assertEqual(vanilla_ref["origin"], "materialized_base")
+
+    def test_ambiguous_lookup_without_origin_is_not_silently_path_first(self):
+        with tempfile.TemporaryDirectory() as armst, tempfile.TemporaryDirectory() as vanilla:
+            rel = "Prefabs/Weapons/Magazines/Same.et"
+            write(armst, rel, "GenericEntity {\n}\n")
+            write(vanilla, rel, "GenericEntity {\n}\n")
+
+            store = HydratedResourceStore(
+                [
+                    ResourceRoot("armst", armst, 100),
+                    ResourceRoot("materialized_base", vanilla, 50),
+                ]
+            )
+            store.scan()
+            resolved = store.resolve_ref("ABCD", rel)
 
             self.assertEqual(resolved["status"], "ambiguous")
             self.assertEqual(len(resolved["candidates"]), 2)
