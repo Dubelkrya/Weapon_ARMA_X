@@ -164,6 +164,59 @@ class ResolverV2ConfigTests(unittest.TestCase):
             self.assertEqual(len(loops), 1)
             self.assertEqual(loops[0]["stack"], ["A.conf", "B.conf", "A.conf"])
 
+    def test_magazine_resolver_selects_component_with_functional_ammo_fields(self):
+        with tempfile.TemporaryDirectory() as root:
+            write(
+                root,
+                "Ammo.conf",
+                '''
+                MagazineConfig {
+                 AmmoResourceArray {
+                  "{A001}Ammo.et"
+                 }
+                }
+                ''',
+            )
+            write(
+                root,
+                "Ammo.et",
+                '''
+                Projectile {
+                }
+                ''',
+            )
+            write(
+                root,
+                "Magazine.et",
+                '''
+                GenericEntity {
+                 components {
+                  MagazineComponent "{1111}" {
+                   MaxAmmo 1
+                  }
+                  MagazineComponent "{2222}" {
+                   MaxAmmo 2
+                   AmmoConfig "{C001}Ammo.conf"
+                   AmmoMapping {
+                    0 0
+                   }
+                  }
+                 }
+                }
+                ''',
+            )
+
+            store = HydratedResourceStore([ResourceRoot("test", root, 10)])
+            store.scan()
+            result = store.resolve_magazine_ammo("Magazine.et")
+
+            self.assertEqual(result["status"], "resolved")
+            self.assertEqual(result["magazine_component"]["id"], "{2222}")
+            self.assertEqual(result["magazine_component"]["candidate_count"], 2)
+            self.assertEqual(result["max_ammo"]["value"], 2)
+            self.assertEqual(result["mapping"], [0, 0])
+            self.assertEqual(result["counts"][0]["count"], 2)
+
 
 if __name__ == "__main__":
     unittest.main()
