@@ -1,0 +1,44 @@
+{
+  "id": "ammo_545x39_ball_7n6",
+  "role": "leaf",
+  "source": {
+    "resource": "Prefabs/Weapons/Ammo/Ammo_545x39_Ball_7N6.et",
+    "resource_guid": "1D9DDE1632F33A9E",
+    "meta_name": null,
+    "class": "Projectile",
+    "defined_in": "Prefabs/Weapons/Ammo/Ammo_545x39_Ball_7N6.et"
+  },
+  "identity": {
+    "name": "Ammo_545x39_Ball_7N6",
+    "resource": "Prefabs/Weapons/Ammo/Ammo_545x39_Ball_7N6.et"
+  },
+  "classification": {
+    "kind": "ammunition",
+    "confidence": "class"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Weapons/Ammo/Ammo_545x39_Ball_7N6.et",
+        "status": "local",
+        "class": "Projectile"
+      }
+    ],
+    "external_parents": [
+      {
+        "guid": "67FED88E5085F63F",
+        "path": "Prefabs/Weapons/Core/Ammo_Bullet_Base.et",
+        "raw": "{67FED88E5085F63F}Prefabs/Weapons/Core/Ammo_Bullet_Base.et"
+      }
+    ],
+    "used_as_base_by": [],
+    "chain_depth_local": 1
+  },
+  "references": [],
+  "warnings": [],
+  "data": {
+    "effects": null,
+    "_defined_in": null
+  },
+  "derived": {}
+}

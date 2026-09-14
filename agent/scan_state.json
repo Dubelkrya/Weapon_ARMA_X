@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "mod_root": "C:\\Users\\Muroy\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons",
+  "repo_root": "C:\\Users\\Muroy\\Documents\\Default Project\\Weapon_ARMA_X",
+  "scan_date": "2026-09-14",
+  "tool": "agent/scripts/scan_build.py",
+  "stats": {
+    "entities": 124,
+    "weapons": 55,
+    "magazines": 32,
+    "ammunition": 14,
+    "optics": 3,
+    "attachments": 7,
+    "grenades": 4,
+    "tripods": 3,
+    "core": 4,
+    "particles": 2,
+    "misc": 0
+  },
+  "warnings": 0,
+  "steps": {
+    "inventory": "done",
+    "parse": "done",
+    "inherit_chains": "done",
+    "resolution": "done",
+    "extraction": "done",
+    "derived": "done",
+    "reference_graph": "done",
+    "catalogs": "done",
+    "indexes": "done",
+    "reports": "done"
+  }
+}

@@ -1,0 +1,302 @@
+{
+  "id": "oc_groza",
+  "role": "leaf",
+  "source": {
+    "resource": "Prefabs/Weapons/Rifles/VAL/Oc_Groza.et",
+    "resource_guid": "F0B67D37B1EA76A5",
+    "meta_name": null,
+    "class": "GenericEntity",
+    "defined_in": "Prefabs/Weapons/Rifles/VAL/Oc_Groza.et"
+  },
+  "identity": {
+    "name": "Oc_Groza",
+    "resource": "Prefabs/Weapons/Rifles/VAL/Oc_Groza.et"
+  },
+  "classification": {
+    "kind": "weapon",
+    "confidence": "components"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Weapons/Rifles/VAL/Oc_Groza.et",
+        "status": "local",
+        "class": "GenericEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Rifles/VAL/Rifle_VAL.et",
+        "status": "local",
+        "class": "GenericEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Rifles/VAL/Rifle_val_base.et",
+        "status": "local",
+        "class": "GenericEntity"
+      }
+    ],
+    "external_parents": [
+      {
+        "guid": "1FA22B1F5E7BC80B",
+        "path": "Prefabs/Weapons/Rifles/AK74/Rifle_AK74_short_base.et",
+        "raw": "{1FA22B1F5E7BC80B}Prefabs/Weapons/Rifles/AK74/Rifle_AK74_short_base.et"
+      }
+    ],
+    "used_as_base_by": [],
+    "chain_depth_local": 3
+  },
+  "references": [
+    {
+      "guid": "277CC12370C4BCF0",
+      "path": "Assets/SNG/Groza/GROZA.xob",
+      "resolved": "local",
+      "target": "Assets/Weapons_RUS/Groza/GROZA.xob",
+      "defined_in": "Prefabs/Weapons/Rifles/VAL/Oc_Groza.et"
+    },
+    {
+      "guid": "564FCD270D84AF8A",
+      "path": "Assets/SNG/Groza/anim/Anims_Player/P_Groza_IK.anm",
+      "resolved": "local",
+      "target": "Assets/Weapons_RUS/Groza/anim/Anims_Player/P_Groza_IK.anm",
+      "defined_in": "Prefabs/Weapons/Rifles/VAL/Oc_Groza.et"
+    },
+    {
+      "guid": "A1D927E49DD984F0",
+      "path": "Prefabs/Weapons/Magazines/7x62/Magazine_762x39_Groza_20rnd_Ball.et",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "Prefabs/Weapons/Rifles/VAL/Oc_Groza.et"
+    },
+    {
+      "guid": "83DC2DCAF6EDC75F",
+      "path": "Particles/Weapon/Casing_762x54.ptc",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "Prefabs/Weapons/Rifles/VAL/Rifle_val_base.et"
+    },
+    {
+      "guid": "0D9400A03DDEA9AC",
+      "path": "Particles/Weapon/Attachments/Suppressor_Carbine.ptc",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "Prefabs/Weapons/Rifles/VAL/Rifle_val_base.et"
+    },
+    {
+      "guid": "6C22F58BBF5D6AED",
+      "path": "Prefabs/Weapons/Magazines/9x39/Magazine_9x39_30rnd_val_SP5.et",
+      "resolved": "local",
+      "target": "Prefabs/Weapons/Magazines/9x39/Magazine_9x39_30rnd_val_SP5.et",
+      "defined_in": "Prefabs/Weapons/Rifles/VAL/Rifle_val_base.et"
+    },
+    {
+      "guid": "DB3B289A5EDE0051",
+      "path": "Assets/SNG/Groza/anim/Groza_Oc.agr",
+      "resolved": "local",
+      "target": "Assets/Weapons_RUS/Groza/anim/Groza_Oc.agr",
+      "defined_in": "Prefabs/Weapons/Rifles/VAL/Oc_Groza.et"
+    },
+    {
+      "guid": "22C1B974F01F1684",
+      "path": "Assets/SNG/Groza/anim/Groza_Oc_weapon.asi",
+      "resolved": "local",
+      "target": "Assets/Weapons_RUS/Groza/anim/Groza_Oc_weapon.asi",
+      "defined_in": "Prefabs/Weapons/Rifles/VAL/Oc_Groza.et"
+    },
+    {
+      "guid": "D99F2845681E7268",
+      "path": "Assets/SNG/Groza/anim/Groza_Oc_player.asi",
+      "resolved": "local",
+      "target": "Assets/Weapons_RUS/Groza/anim/Groza_Oc_player.asi",
+      "defined_in": "Prefabs/Weapons/Rifles/VAL/Oc_Groza.et"
+    }
+  ],
+  "warnings": [],
+  "data": {
+    "identity": {
+      "name": {
+        "value": "AS Val",
+        "defined_in": "Prefabs/Weapons/Rifles/VAL/Oc_Groza.et",
+        "inherited": false
+      }
+    },
+    "fire_modes": [
+      {
+        "mode_id": "{B80A64F4A8EF8333}",
+        "ui_name": null,
+        "rounds_per_minute": {
+          "value": 700,
+          "defined_in": "Prefabs/Weapons/Rifles/VAL/Rifle_val_base.et",
+          "inherited": true
+        },
+        "max_burst": null,
+        "defined_in": "Prefabs/Weapons/Rifles/VAL/Rifle_val_base.et",
+        "rounds_per_second": {
+          "value": 11.667,
+          "derived": true
+        }
+      },
+      {
+        "mode_id": "{619AB45C30091E43}",
+        "ui_name": null,
+        "rounds_per_minute": {
+          "value": 700,
+          "defined_in": "Prefabs/Weapons/Rifles/VAL/Rifle_val_base.et",
+          "inherited": true
+        },
+        "max_burst": null,
+        "defined_in": "Prefabs/Weapons/Rifles/VAL/Rifle_val_base.et",
+        "rounds_per_second": {
+          "value": 11.667,
+          "derived": true
+        }
+      }
+    ],
+    "physical": {
+      "Weight": null,
+      "SizeSetupStrategy": null,
+      "ItemDimensions": null,
+      "ItemVolume": null,
+      "DimensionScaler": null,
+      "_defined_in": "Prefabs/Weapons/Rifles/VAL/Rifle_val_base.et",
+      "MeleeDamage": {
+        "value": 2,
+        "defined_in": "Prefabs/Weapons/Rifles/VAL/Rifle_val_base.et",
+        "inherited": true
+      },
+      "Model": {
+        "guid": "277CC12370C4BCF0",
+        "path": "Assets/SNG/Groza/GROZA.xob",
+        "defined_in": "Prefabs/Weapons/Rifles/VAL/Oc_Groza.et"
+      }
+    },
+    "magazine": {
+      "magazine_well": {
+        "name": "MagazineWell",
+        "class": "MagazineWell9x39",
+        "defined_in": "Prefabs/Weapons/Rifles/VAL/Rifle_val_base.et"
+      },
+      "magazine_template": {
+        "guid": "A1D927E49DD984F0",
+        "path": "Prefabs/Weapons/Magazines/7x62/Magazine_762x39_Groza_20rnd_Ball.et",
+        "defined_in": "Prefabs/Weapons/Rifles/VAL/Oc_Groza.et"
+      }
+    },
+    "ballistics": {
+      "bullet_init_speed_coef": {
+        "value": 0.835,
+        "defined_in": "Prefabs/Weapons/Rifles/VAL/Rifle_val_base.et",
+        "inherited": true
+      },
+      "dispersion_diameter": {
+        "value": 0.4,
+        "defined_in": "Prefabs/Weapons/Rifles/VAL/Rifle_val_base.et",
+        "inherited": true
+      },
+      "dispersion_range": {
+        "value": 200,
+        "defined_in": "Prefabs/Weapons/Rifles/VAL/Rifle_val_base.et",
+        "inherited": true
+      }
+    },
+    "aim": {
+      "recoil": {
+        "LinearData": {
+          "values": {
+            "curve_magnitudes": null,
+            "curve_mins": null,
+            "curve_maxs": null,
+            "curve_time_scale": null,
+            "base_recoil_scale": null
+          },
+          "defined_in": "Prefabs/Weapons/Rifles/VAL/Rifle_val_base.et"
+        },
+        "AngularData": {
+          "values": {
+            "curve_magnitudes": null,
+            "curve_mins": null,
+            "curve_maxs": null,
+            "curve_time_scale": null,
+            "base_recoil_scale": null
+          },
+          "defined_in": "Prefabs/Weapons/Rifles/VAL/Rifle_val_base.et"
+        },
+        "TurnOffsetData": {
+          "values": {
+            "curve_magnitudes": null,
+            "curve_mins": null,
+            "curve_maxs": null,
+            "curve_time_scale": null,
+            "base_recoil_scale": null
+          },
+          "defined_in": "Prefabs/Weapons/Rifles/VAL/Rifle_val_base.et"
+        }
+      },
+      "sway": null
+    },
+    "sights": {
+      "switch_skip": null,
+      "ranges": [
+        null,
+        null
+      ],
+      "defined_in": "Prefabs/Weapons/Rifles/VAL/Rifle_val_base.et"
+    },
+    "attachment_slots": [
+      {
+        "slot": null,
+        "pivot": null,
+        "enabled": {
+          "value": 0,
+          "defined_in": "Prefabs/Weapons/Rifles/VAL/Rifle_val_base.et",
+          "inherited": true
+        },
+        "attachment_types": [],
+        "defined_in": "Prefabs/Weapons/Rifles/VAL/Rifle_val_base.et"
+      },
+      {
+        "slot": null,
+        "pivot": {
+          "value": "slot_optics",
+          "defined_in": "Prefabs/Weapons/Rifles/VAL/Rifle_val_base.et",
+          "inherited": true
+        },
+        "enabled": null,
+        "attachment_types": [
+          "{60AAE435165C80B8}"
+        ],
+        "defined_in": "Prefabs/Weapons/Rifles/VAL/Rifle_val_base.et"
+      }
+    ],
+    "muzzle_attachment": {
+      "slot": null,
+      "enabled": {
+        "value": 0,
+        "defined_in": "Prefabs/Weapons/Rifles/VAL/Rifle_val_base.et",
+        "inherited": true
+      },
+      "defined_in": "Prefabs/Weapons/Rifles/VAL/Rifle_val_base.et"
+    },
+    "animation": {
+      "anim_graph": {
+        "guid": "DB3B289A5EDE0051",
+        "path": "Assets/SNG/Groza/anim/Groza_Oc.agr",
+        "defined_in": "Prefabs/Weapons/Rifles/VAL/Oc_Groza.et"
+      },
+      "anim_instance": {
+        "guid": "22C1B974F01F1684",
+        "path": "Assets/SNG/Groza/anim/Groza_Oc_weapon.asi",
+        "defined_in": "Prefabs/Weapons/Rifles/VAL/Oc_Groza.et"
+      }
+    }
+  },
+  "derived": {
+    "max_rounds_per_second": 11.667,
+    "dispersion_m_per_m": {
+      "value": 2.0,
+      "formula": "DispersionDiameter / DispersionRange * 1000"
+    },
+    "approx_moa": {
+      "value": 6.875,
+      "formula": "DispersionDiameter / DispersionRange * 3437.75"
+    }
+  }
+}

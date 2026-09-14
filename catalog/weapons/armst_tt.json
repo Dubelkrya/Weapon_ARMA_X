@@ -1,0 +1,114 @@
+{
+  "id": "armst_tt",
+  "role": "leaf",
+  "source": {
+    "resource": "Prefabs/Weapons/Handguns/armst_TT.et",
+    "resource_guid": "0D469F42B65E350E",
+    "meta_name": null,
+    "class": "GenericEntity",
+    "defined_in": "Prefabs/Weapons/Handguns/armst_TT.et"
+  },
+  "identity": {
+    "name": "armst_TT",
+    "resource": "Prefabs/Weapons/Handguns/armst_TT.et"
+  },
+  "classification": {
+    "kind": "weapon",
+    "confidence": "components"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Weapons/Handguns/armst_TT.et",
+        "status": "local",
+        "class": "GenericEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Handguns/armst_PM.et",
+        "status": "local",
+        "class": "GenericEntity"
+      }
+    ],
+    "external_parents": [
+      {
+        "guid": "B7132459C07777CA",
+        "path": "Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et",
+        "raw": "{B7132459C07777CA}Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et"
+      }
+    ],
+    "used_as_base_by": [],
+    "chain_depth_local": 2
+  },
+  "references": [
+    {
+      "guid": "3142577B6CD35911",
+      "path": "Assets/TT/TT_weapon.xob",
+      "resolved": "local",
+      "target": "Assets/Weapons_RUS/TT/TT_weapon.xob",
+      "defined_in": "Prefabs/Weapons/Handguns/armst_TT.et"
+    },
+    {
+      "guid": "AA99F5E678010DB3",
+      "path": "Prefabs/Weapons/Magazines/Magazine_763x25_TT_8rnd_Ball.et",
+      "resolved": "local",
+      "target": "Prefabs/Weapons/Magazines/Magazine_763x25_TT_8rnd_Ball.et",
+      "defined_in": "Prefabs/Weapons/Handguns/armst_TT.et"
+    }
+  ],
+  "warnings": [],
+  "data": {
+    "identity": {
+      "name": {
+        "value": "TT",
+        "defined_in": "Prefabs/Weapons/Handguns/armst_TT.et",
+        "inherited": false
+      }
+    },
+    "fire_modes": [],
+    "physical": {
+      "MeleeDamage": {
+        "value": 2,
+        "defined_in": "Prefabs/Weapons/Handguns/armst_TT.et",
+        "inherited": false
+      },
+      "Model": {
+        "guid": "3142577B6CD35911",
+        "path": "Assets/TT/TT_weapon.xob",
+        "defined_in": "Prefabs/Weapons/Handguns/armst_TT.et"
+      }
+    },
+    "magazine": {
+      "magazine_well": {
+        "name": "MagazineWell",
+        "class": "MagazineWell763x25",
+        "defined_in": "Prefabs/Weapons/Handguns/armst_TT.et"
+      },
+      "magazine_template": {
+        "guid": "AA99F5E678010DB3",
+        "path": "Prefabs/Weapons/Magazines/Magazine_763x25_TT_8rnd_Ball.et",
+        "defined_in": "Prefabs/Weapons/Handguns/armst_TT.et"
+      }
+    },
+    "ballistics": {
+      "bullet_init_speed_coef": null,
+      "dispersion_diameter": null,
+      "dispersion_range": null
+    },
+    "aim": {
+      "recoil": null,
+      "sway": null
+    },
+    "sights": {
+      "switch_skip": null,
+      "ranges": [],
+      "defined_in": "Prefabs/Weapons/Handguns/armst_TT.et"
+    },
+    "attachment_slots": [],
+    "muzzle_attachment": null,
+    "animation": {
+      "anim_graph": null,
+      "anim_instance": null
+    }
+  },
+  "derived": {}
+}

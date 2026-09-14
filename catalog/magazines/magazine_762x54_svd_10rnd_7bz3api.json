@@ -1,0 +1,56 @@
+{
+  "id": "magazine_762x54_svd_10rnd_7bz3api",
+  "role": "leaf",
+  "source": {
+    "resource": "Prefabs/Weapons/Magazines/Magazine_762x54_SVD_10rnd_7BZ3API.et",
+    "resource_guid": "19600CCA33279D20",
+    "meta_name": null,
+    "class": "GenericEntity",
+    "defined_in": "Prefabs/Weapons/Magazines/Magazine_762x54_SVD_10rnd_7BZ3API.et"
+  },
+  "identity": {
+    "name": "Magazine_762x54_SVD_10rnd_7BZ3API",
+    "resource": "Prefabs/Weapons/Magazines/Magazine_762x54_SVD_10rnd_7BZ3API.et"
+  },
+  "classification": {
+    "kind": "magazine",
+    "confidence": "folder"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Weapons/Magazines/Magazine_762x54_SVD_10rnd_7BZ3API.et",
+        "status": "local",
+        "class": "GenericEntity"
+      }
+    ],
+    "external_parents": [
+      {
+        "guid": "761A03A9C5BA8D68",
+        "path": "Prefabs/Weapons/Magazines/Magazine_762x54_SVD_10rnd_Base.et",
+        "raw": "{761A03A9C5BA8D68}Prefabs/Weapons/Magazines/Magazine_762x54_SVD_10rnd_Base.et"
+      }
+    ],
+    "used_as_base_by": [],
+    "chain_depth_local": 1
+  },
+  "references": [],
+  "warnings": [],
+  "data": {
+    "grid": {
+      "width": null,
+      "height": {
+        "value": 1,
+        "defined_in": "Prefabs/Weapons/Magazines/Magazine_762x54_SVD_10rnd_7BZ3API.et",
+        "inherited": false
+      }
+    },
+    "_inv_defined_in": "Prefabs/Weapons/Magazines/Magazine_762x54_SVD_10rnd_7BZ3API.et",
+    "editor_name": {
+      "value": "#AR-Magazine_SVDAPI_Name",
+      "defined_in": "Prefabs/Weapons/Magazines/Magazine_762x54_SVD_10rnd_7BZ3API.et",
+      "inherited": false
+    }
+  },
+  "derived": {}
+}

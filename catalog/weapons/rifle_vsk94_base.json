@@ -1,0 +1,294 @@
+{
+  "id": "rifle_vsk94_base",
+  "role": "base",
+  "source": {
+    "resource": "Prefabs/Weapons/Rifles/VSK94/Rifle_VSK94_base.et",
+    "resource_guid": "6005623D3AA5F5C2",
+    "meta_name": null,
+    "class": "GenericEntity",
+    "defined_in": "Prefabs/Weapons/Rifles/VSK94/Rifle_VSK94_base.et"
+  },
+  "identity": {
+    "name": "Rifle_VSK94_base",
+    "resource": "Prefabs/Weapons/Rifles/VSK94/Rifle_VSK94_base.et"
+  },
+  "classification": {
+    "kind": "weapon",
+    "confidence": "components"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Weapons/Rifles/VSK94/Rifle_VSK94_base.et",
+        "status": "local",
+        "class": "GenericEntity"
+      }
+    ],
+    "external_parents": [
+      {
+        "guid": "1FA22B1F5E7BC80B",
+        "path": "Prefabs/Weapons/Rifles/AK74/Rifle_AK74_short_base.et",
+        "raw": "{1FA22B1F5E7BC80B}Prefabs/Weapons/Rifles/AK74/Rifle_AK74_short_base.et"
+      }
+    ],
+    "used_as_base_by": [
+      "Prefabs/Weapons/Rifles/VSK94/Rifle_VSK94.et"
+    ],
+    "chain_depth_local": 1
+  },
+  "references": [
+    {
+      "guid": "49285E7FE26AB9BA",
+      "path": "Assets/Vsk94/VSK94_weapon.xob",
+      "resolved": "local",
+      "target": "Assets/Weapons_RUS/Vsk94/VSK94_weapon.xob",
+      "defined_in": "Prefabs/Weapons/Rifles/VSK94/Rifle_VSK94_base.et"
+    },
+    {
+      "guid": "E21D6E48B6B98D1E",
+      "path": "Assets/9a91/Anim/p_rfl_9a91_01_ik.anm",
+      "resolved": "local",
+      "target": "Assets/Weapons_RUS/9a91/Anim/p_rfl_9a91_01_ik.anm",
+      "defined_in": "Prefabs/Weapons/Rifles/VSK94/Rifle_VSK94_base.et"
+    },
+    {
+      "guid": "D92368B78263A9E0",
+      "path": "Prefabs/Weapons/Attachments/Mounts/Dovetail_AK/Dovetail_AK.et",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "Prefabs/Weapons/Rifles/VSK94/Rifle_VSK94_base.et"
+    },
+    {
+      "guid": "E10F09941AF1E123",
+      "path": "Prefabs/Weapons/Attachments/Muzzle/Suppressor_9a91.et",
+      "resolved": "local",
+      "target": "Prefabs/Weapons/Attachments/Muzzle/Suppressor_9a91.et",
+      "defined_in": "Prefabs/Weapons/Rifles/VSK94/Rifle_VSK94_base.et"
+    },
+    {
+      "guid": "83DC2DCAF6EDC75F",
+      "path": "Particles/Weapon/Casing_762x54.ptc",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "Prefabs/Weapons/Rifles/VSK94/Rifle_VSK94_base.et"
+    },
+    {
+      "guid": "0D9400A03DDEA9AC",
+      "path": "Particles/Weapon/Attachments/Suppressor_Carbine.ptc",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "Prefabs/Weapons/Rifles/VSK94/Rifle_VSK94_base.et"
+    },
+    {
+      "guid": "B7EC6D4222AE12BE",
+      "path": "Prefabs/Weapons/Magazines/9x39/Magazine_9x39_20rnd_9a91_SP5.et",
+      "resolved": "local",
+      "target": "Prefabs/Weapons/Magazines/9x39/Magazine_9x39_20rnd_9a91_SP5.et",
+      "defined_in": "Prefabs/Weapons/Rifles/VSK94/Rifle_VSK94_base.et"
+    },
+    {
+      "guid": "C9460F3B3120FF31",
+      "path": "Assets/9a91/Anim/9A91.agr",
+      "resolved": "local",
+      "target": "Assets/Weapons_RUS/9a91/Anim/9A91.agr",
+      "defined_in": "Prefabs/Weapons/Rifles/VSK94/Rifle_VSK94_base.et"
+    },
+    {
+      "guid": "FC7E0448CB9F50B8",
+      "path": "Assets/9a91/Anim/9A91_weapon.asi",
+      "resolved": "local",
+      "target": "Assets/Weapons_RUS/9a91/Anim/9A91_weapon.asi",
+      "defined_in": "Prefabs/Weapons/Rifles/VSK94/Rifle_VSK94_base.et"
+    },
+    {
+      "guid": "07209579539E3454",
+      "path": "Assets/9a91/Anim/9A91_player.asi",
+      "resolved": "local",
+      "target": "Assets/Weapons_RUS/9a91/Anim/9A91_player.asi",
+      "defined_in": "Prefabs/Weapons/Rifles/VSK94/Rifle_VSK94_base.et"
+    }
+  ],
+  "warnings": [],
+  "data": {
+    "identity": {
+      "name": null
+    },
+    "fire_modes": [
+      {
+        "mode_id": "{B80A64F4A8EF8333}",
+        "ui_name": null,
+        "rounds_per_minute": {
+          "value": 700,
+          "defined_in": "Prefabs/Weapons/Rifles/VSK94/Rifle_VSK94_base.et",
+          "inherited": false
+        },
+        "max_burst": null,
+        "defined_in": "Prefabs/Weapons/Rifles/VSK94/Rifle_VSK94_base.et",
+        "rounds_per_second": {
+          "value": 11.667,
+          "derived": true
+        }
+      },
+      {
+        "mode_id": "{619AB45C30091E43}",
+        "ui_name": null,
+        "rounds_per_minute": {
+          "value": 700,
+          "defined_in": "Prefabs/Weapons/Rifles/VSK94/Rifle_VSK94_base.et",
+          "inherited": false
+        },
+        "max_burst": null,
+        "defined_in": "Prefabs/Weapons/Rifles/VSK94/Rifle_VSK94_base.et",
+        "rounds_per_second": {
+          "value": 11.667,
+          "derived": true
+        }
+      }
+    ],
+    "physical": {
+      "Weight": null,
+      "SizeSetupStrategy": null,
+      "ItemDimensions": null,
+      "ItemVolume": null,
+      "DimensionScaler": null,
+      "_defined_in": "Prefabs/Weapons/Rifles/VSK94/Rifle_VSK94_base.et",
+      "MeleeDamage": {
+        "value": 2,
+        "defined_in": "Prefabs/Weapons/Rifles/VSK94/Rifle_VSK94_base.et",
+        "inherited": false
+      },
+      "Model": {
+        "guid": "49285E7FE26AB9BA",
+        "path": "Assets/Vsk94/VSK94_weapon.xob",
+        "defined_in": "Prefabs/Weapons/Rifles/VSK94/Rifle_VSK94_base.et"
+      }
+    },
+    "magazine": {
+      "magazine_well": {
+        "name": "MagazineWell",
+        "class": "MagazineWell9x39_9a91",
+        "defined_in": "Prefabs/Weapons/Rifles/VSK94/Rifle_VSK94_base.et"
+      },
+      "magazine_template": {
+        "guid": "B7EC6D4222AE12BE",
+        "path": "Prefabs/Weapons/Magazines/9x39/Magazine_9x39_20rnd_9a91_SP5.et",
+        "defined_in": "Prefabs/Weapons/Rifles/VSK94/Rifle_VSK94_base.et"
+      }
+    },
+    "ballistics": {
+      "bullet_init_speed_coef": {
+        "value": 0.835,
+        "defined_in": "Prefabs/Weapons/Rifles/VSK94/Rifle_VSK94_base.et",
+        "inherited": false
+      },
+      "dispersion_diameter": {
+        "value": 0.4,
+        "defined_in": "Prefabs/Weapons/Rifles/VSK94/Rifle_VSK94_base.et",
+        "inherited": false
+      },
+      "dispersion_range": {
+        "value": 200,
+        "defined_in": "Prefabs/Weapons/Rifles/VSK94/Rifle_VSK94_base.et",
+        "inherited": false
+      }
+    },
+    "aim": {
+      "recoil": {
+        "LinearData": {
+          "values": {
+            "curve_magnitudes": null,
+            "curve_mins": null,
+            "curve_maxs": null,
+            "curve_time_scale": null,
+            "base_recoil_scale": null
+          },
+          "defined_in": "Prefabs/Weapons/Rifles/VSK94/Rifle_VSK94_base.et"
+        },
+        "AngularData": {
+          "values": {
+            "curve_magnitudes": null,
+            "curve_mins": null,
+            "curve_maxs": null,
+            "curve_time_scale": null,
+            "base_recoil_scale": null
+          },
+          "defined_in": "Prefabs/Weapons/Rifles/VSK94/Rifle_VSK94_base.et"
+        },
+        "TurnOffsetData": {
+          "values": {
+            "curve_magnitudes": null,
+            "curve_mins": null,
+            "curve_maxs": null,
+            "curve_time_scale": null,
+            "base_recoil_scale": null
+          },
+          "defined_in": "Prefabs/Weapons/Rifles/VSK94/Rifle_VSK94_base.et"
+        }
+      },
+      "sway": null
+    },
+    "sights": {
+      "switch_skip": null,
+      "ranges": [],
+      "defined_in": "Prefabs/Weapons/Rifles/VSK94/Rifle_VSK94_base.et"
+    },
+    "attachment_slots": [
+      {
+        "slot": null,
+        "pivot": null,
+        "enabled": {
+          "value": 0,
+          "defined_in": "Prefabs/Weapons/Rifles/VSK94/Rifle_VSK94_base.et",
+          "inherited": false
+        },
+        "attachment_types": [],
+        "defined_in": "Prefabs/Weapons/Rifles/VSK94/Rifle_VSK94_base.et"
+      },
+      {
+        "slot": null,
+        "pivot": {
+          "value": "slot_optics",
+          "defined_in": "Prefabs/Weapons/Rifles/VSK94/Rifle_VSK94_base.et",
+          "inherited": false
+        },
+        "enabled": null,
+        "attachment_types": [
+          "{60AAE435165C80B8}"
+        ],
+        "defined_in": "Prefabs/Weapons/Rifles/VSK94/Rifle_VSK94_base.et"
+      }
+    ],
+    "muzzle_attachment": {
+      "slot": null,
+      "enabled": {
+        "value": 1,
+        "defined_in": "Prefabs/Weapons/Rifles/VSK94/Rifle_VSK94_base.et",
+        "inherited": false
+      },
+      "defined_in": "Prefabs/Weapons/Rifles/VSK94/Rifle_VSK94_base.et"
+    },
+    "animation": {
+      "anim_graph": {
+        "guid": "C9460F3B3120FF31",
+        "path": "Assets/9a91/Anim/9A91.agr",
+        "defined_in": "Prefabs/Weapons/Rifles/VSK94/Rifle_VSK94_base.et"
+      },
+      "anim_instance": {
+        "guid": "FC7E0448CB9F50B8",
+        "path": "Assets/9a91/Anim/9A91_weapon.asi",
+        "defined_in": "Prefabs/Weapons/Rifles/VSK94/Rifle_VSK94_base.et"
+      }
+    }
+  },
+  "derived": {
+    "max_rounds_per_second": 11.667,
+    "dispersion_m_per_m": {
+      "value": 2.0,
+      "formula": "DispersionDiameter / DispersionRange * 1000"
+    },
+    "approx_moa": {
+      "value": 6.875,
+      "formula": "DispersionDiameter / DispersionRange * 3437.75"
+    }
+  }
+}

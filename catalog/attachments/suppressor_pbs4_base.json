@@ -1,0 +1,42 @@
+{
+  "id": "suppressor_pbs4_base",
+  "role": "base",
+  "source": {
+    "resource": "Prefabs/Weapons/Attachments/Muzzle/Suppressor_PBS4/Suppressor_PBS4_base.et",
+    "resource_guid": "5677861A692ED3EB",
+    "meta_name": null,
+    "class": "GameEntity",
+    "defined_in": "Prefabs/Weapons/Attachments/Muzzle/Suppressor_PBS4/Suppressor_PBS4_base.et"
+  },
+  "identity": {
+    "name": "Suppressor_PBS4_base",
+    "resource": "Prefabs/Weapons/Attachments/Muzzle/Suppressor_PBS4/Suppressor_PBS4_base.et"
+  },
+  "classification": {
+    "kind": "attachment",
+    "confidence": "folder",
+    "attachment_kind": "muzzle"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Weapons/Attachments/Muzzle/Suppressor_PBS4/Suppressor_PBS4_base.et",
+        "status": "local",
+        "class": "GameEntity"
+      }
+    ],
+    "external_parents": [
+      {
+        "guid": "491CEF88656BE6C2",
+        "path": "Prefabs/Weapons/Core/Suppressor_base.et",
+        "raw": "{491CEF88656BE6C2}Prefabs/Weapons/Core/Suppressor_base.et"
+      }
+    ],
+    "used_as_base_by": [
+      "Prefabs/Weapons/Attachments/Muzzle/Suppressor_9a91.et"
+    ],
+    "chain_depth_local": 1
+  },
+  "references": [],
+  "warnings": []
+}

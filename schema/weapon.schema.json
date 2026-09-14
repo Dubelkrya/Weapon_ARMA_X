@@ -1,0 +1,388 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "role": {
+      "enum": [
+        "leaf",
+        "base"
+      ]
+    },
+    "source": {
+      "type": "object",
+      "properties": {
+        "resource": {
+          "type": "string"
+        },
+        "resource_guid": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "meta_name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "class": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "defined_in": {
+          "type": "string"
+        }
+      }
+    },
+    "identity": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "resource": {
+          "type": "string"
+        }
+      }
+    },
+    "classification": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "type": "string"
+        },
+        "confidence": {
+          "enum": [
+            "components",
+            "folder",
+            "class",
+            "unknown"
+          ]
+        },
+        "attachment_kind": {
+          "type": "string"
+        }
+      }
+    },
+    "inheritance": {
+      "type": "object",
+      "properties": {
+        "chain": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "resource": {
+                "type": "string"
+              },
+              "status": {
+                "enum": [
+                  "local",
+                  "file",
+                  "loop"
+                ]
+              },
+              "class": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "external_parents": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "guid": {
+                "type": "string"
+              },
+              "path": {
+                "type": "string"
+              },
+              "raw": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "used_as_base_by": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "chain_depth_local": {
+          "type": "integer"
+        }
+      }
+    },
+    "references": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "guid": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          },
+          "resolved": {
+            "enum": [
+              "local",
+              "external"
+            ]
+          },
+          "target": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "defined_in": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "guid",
+          "path",
+          "resolved"
+        ]
+      }
+    },
+    "warnings": {
+      "type": "array"
+    },
+    "derived": {
+      "type": "object"
+    },
+    "data": {
+      "type": "object",
+      "properties": {
+        "identity": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "object",
+              "properties": {
+                "value": {
+                  "type": [
+                    "number",
+                    "string",
+                    "boolean",
+                    "null"
+                  ],
+                  "description": "Resolved scalar value."
+                },
+                "defined_in": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "description": "Resource that defined this value."
+                },
+                "inherited": {
+                  "type": "boolean",
+                  "description": "True when the value comes from a parent in the chain, not the entity file itself."
+                }
+              },
+              "required": [
+                "value"
+              ]
+            },
+            "description": {
+              "type": "string"
+            }
+          }
+        },
+        "fire_modes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "guid": {
+                "type": "string"
+              },
+              "path": {
+                "type": "string"
+              },
+              "defined_in": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "physical": {
+          "type": "object"
+        },
+        "magazine": {
+          "type": "object",
+          "properties": {
+            "magazine_well": {
+              "type": [
+                "object",
+                "null"
+              ],
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "class": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "defined_in": {
+                  "type": "string"
+                }
+              }
+            },
+            "magazine_template": {
+              "type": [
+                "object",
+                "null"
+              ],
+              "properties": {
+                "guid": {
+                  "type": "string"
+                },
+                "path": {
+                  "type": "string"
+                },
+                "defined_in": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "ballistics": {
+          "type": "object",
+          "properties": {
+            "bullet_init_speed_coef": {
+              "type": "object",
+              "properties": {
+                "value": {
+                  "type": [
+                    "number",
+                    "string",
+                    "boolean",
+                    "null"
+                  ],
+                  "description": "Resolved scalar value."
+                },
+                "defined_in": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "description": "Resource that defined this value."
+                },
+                "inherited": {
+                  "type": "boolean",
+                  "description": "True when the value comes from a parent in the chain, not the entity file itself."
+                }
+              },
+              "required": [
+                "value"
+              ]
+            },
+            "dispersion_diameter": {
+              "type": "object",
+              "properties": {
+                "value": {
+                  "type": [
+                    "number",
+                    "string",
+                    "boolean",
+                    "null"
+                  ],
+                  "description": "Resolved scalar value."
+                },
+                "defined_in": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "description": "Resource that defined this value."
+                },
+                "inherited": {
+                  "type": "boolean",
+                  "description": "True when the value comes from a parent in the chain, not the entity file itself."
+                }
+              },
+              "required": [
+                "value"
+              ]
+            },
+            "dispersion_range": {
+              "type": "object",
+              "properties": {
+                "value": {
+                  "type": [
+                    "number",
+                    "string",
+                    "boolean",
+                    "null"
+                  ],
+                  "description": "Resolved scalar value."
+                },
+                "defined_in": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "description": "Resource that defined this value."
+                },
+                "inherited": {
+                  "type": "boolean",
+                  "description": "True when the value comes from a parent in the chain, not the entity file itself."
+                }
+              },
+              "required": [
+                "value"
+              ]
+            }
+          }
+        },
+        "aim": {
+          "type": "object"
+        },
+        "sights": {
+          "type": "object"
+        },
+        "attachment_slots": {
+          "type": "array"
+        },
+        "muzzle_attachment": {
+          "type": "object"
+        },
+        "animation": {
+          "type": "object"
+        }
+      }
+    }
+  },
+  "required": [
+    "id",
+    "source",
+    "identity",
+    "classification",
+    "inheritance",
+    "references"
+  ],
+  "title": "Resolved weapon prefab (catalog/weapons/*.json)",
+  "description": "ARMST weapon with resolved balance parameters. Every field carries provenance (defined_in / inherited). External (base game) data is never guessed."
+}
