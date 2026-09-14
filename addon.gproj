@@ -1,0 +1,20 @@
+GameProject {
+ ID "Weapon_ARMA_X"
+ GUID "A1D9F3C72B4E8F10"
+ TITLE "Weapon ARMA X Intelligence"
+ Dependencies {
+  "58D0FB3206B6F859"
+ }
+ Configurations {
+  GameProjectConfig PC {
+  }
+  GameProjectConfig HEADLESS {
+  }
+  GameProjectConfig XBOX_ONE {
+  }
+  GameProjectConfig XBOX_SERIES {
+  }
+  GameProjectConfig PS4 {
+  }
+ }
+}
