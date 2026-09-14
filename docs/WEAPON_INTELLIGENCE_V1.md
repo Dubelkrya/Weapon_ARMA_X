@@ -2,158 +2,143 @@
 
 ## Goal
 
-Build an AI-readable, read-only catalog of the local ARMST Arma Reforger weapons addon without modifying game source files.
+Build a Workbench-native addon that reads mounted **base-game Arma Reforger** weapon resources and script visibility, then exports local AI-readable metadata for later comparison against ARMST or other mods.
 
-The local addon is authoritative. Git output is derived metadata and must preserve uncertainty instead of inventing values.
+The scanner is not built on an ARMST source directory. `Weapon_ARMA_X` itself is the addon and depends directly on the base game.
+
+## Project dependency
+
+`addon.gproj` contains only the Arma Reforger dependency:
+
+```text
+58D0FB3206B6F859
+```
+
+This is the same base-game dependency pattern used by the existing Reforger Workbench Toolkit project.
 
 ## Proven design sources
 
-V1 intentionally reuses two already-proven ideas from `Dubelkrya/ReforgerWorkbenchToolkit` as read-only architectural references:
+The implementation reuses already-tested RWTK ideas as architectural references:
 
-1. `RWTK_CodeIntelligenceScanner` — bounded scanning/indexing of mounted `.c` files into derived metadata instead of source mirrors.
-2. `RWTK_ParticleSourceExtractorPlugin` — evidence that Workbench resources may require a separate materialization path when packed native content is not available as a normal physical source file.
+1. `RWTK_ResourceCollector` / `RWTK_PrefabValidator` — discover registered `.et` resources through `SCR_WorkbenchHelper.SearchWorkbenchResources`, load them with `Resource.Load`, convert prefab resources to `IEntitySource`, and inspect component classes.
+2. `RWTK_CodeIntelligenceScanner` — discover Workbench-visible `.c` files through `FileIO.FindFiles("scripts/", ".c")` and read them without requiring a Python daemon or unpacking game archives.
+3. `RWTK_ParticleSourceExtractorPlugin` — physical-copy-first materialization with `BaseContainer` serialization fallback, while treating Workbench-native `Duplicate to addon` as the bridge when packed resources cannot be exposed directly.
 
-This repository does not modify the active RWTK engineering task or branch.
+## Plugins
 
-## Local source
+### WAX: Scan Vanilla Weapon Resources
 
-Expected local addon root:
+Workbench module: `ResourceManager`.
 
-```text
-C:\Users\Muroy\Documents\My Games\ArmaReforgerWorkbench\addons\ARMST-PLATFORM---Weapons
-```
-
-The path itself is not written into generated catalog data. Only the source-root folder name and paths relative to it are exported.
-
-## Run
-
-From the `Weapon_ARMA_X` repository root:
-
-```powershell
-python tools/weapon_intelligence/scan.py `
-  --root "C:\Users\Muroy\Documents\My Games\ArmaReforgerWorkbench\addons\ARMST-PLATFORM---Weapons" `
-  --out .
-```
-
-No third-party Python packages are required.
-
-## Inputs
-
-V1 scans recursively:
-
-- `.et`
-- `.conf`
-- `.meta`
-- `.c`
-
-`.et/.conf/.meta` are parsed as Enfusion text resources. `.c` is indexed separately using bounded lexical extraction inspired by RWTK Code Intelligence.
-
-## Outputs
+Current scan roots:
 
 ```text
-catalog/
-  weapons/
-  magazines/
-  ammunition/
-  ammo_configs/
-  attachments/
-indexes/
-  resources.json
-  references.json
-  inheritance.json
-  scripts.json
-reports/
-  scan_summary.md
-  unresolved_references.md
-  inheritance_issues.md
-  parse_warnings.json   # only when warnings exist
-agent/
-  scan_state.json
+$ArmaReforger:Prefabs/Weapons
+$ArmaReforger:Configs/Weapons
 ```
 
-## V1 resource model
-
-The parser is deliberately syntax-preserving rather than hardcoded to one prefab shape. It tokenizes quoted/unquoted tokens, nested `{}` blocks, `+{` collection blocks, properties, instance GUIDs, resource references, and root inheritance declarations.
-
-Unknown blocks and fields remain in the parse tree even when the extractor does not yet assign semantic meaning to them.
-
-### Weapons
-
-Current normalized fields include:
-
-- display name;
-- parent prefab reference;
-- physical weight/volume/dimensions;
-- melee damage;
-- `MuzzleComponent` fire modes and instance GUIDs;
-- `RoundsPerMinute`;
-- `MaxBurst` when explicitly present;
-- `BulletInitSpeedCoef`;
-- `DispersionDiameter` / `DispersionRange`;
-- `MagazineWell`;
-- `MagazineTemplate`;
-- recoil `Curve Magnitudes` for Linear/Angular/TurnOffset;
-- attachment slots/types;
-- raw presence of `SightsComponent` and `ZeroingWeaponAimModifier`.
-
-### Magazines
-
-Current normalized fields include `MaxAmmo`, `MagazineWell`, `AmmoConfig`, weight, `WeightPerAmmo`, volume and parent reference.
-
-### Ammunition/projectiles
-
-Current normalized fields include `ShellMoveComponent.InitSpeed`, `Mass`, `AirDrag`, velocity variation and parent reference.
-
-### Enforce Script `.c`
-
-The scanner exports derived script metadata only:
-
-- files and hashes;
-- class/interface symbols;
-- direct base class names;
-- simple method owner/name/arity records.
-
-It does not intentionally mirror full `.c` source bodies into the catalog.
-
-## Reference graph
-
-Every `{GUID}Path/Resource.ext` occurrence is exported to `indexes/references.json` with source file, line, GUID, target path and local-resolution result.
-
-This supports chains such as:
+Current outputs:
 
 ```text
-Weapon
--> MagazineTemplate
--> MagazineComponent.AmmoConfig
--> AmmoResourceArray
--> projectile prefab
--> ShellMoveComponent
+$Weapon_ARMA_X:Generated/VanillaWeaponIntelligence/resources.tsv
+$Weapon_ARMA_X:Generated/VanillaWeaponIntelligence/components.tsv
+$Weapon_ARMA_X:Generated/VanillaWeaponIntelligence/manifest.tsv
+$Weapon_ARMA_X:Generated/VanillaWeaponIntelligence/README.md
 ```
 
-## Inheritance boundary
+The first pass records:
 
-V1 resolves local parent paths and records inheritance chains, cycle/depth problems and external/missing parents.
+- registered `ResourceName` identity;
+- virtual resource path;
+- loaded root class;
+- top-level `IEntitySource` component count and component class names for `.et`;
+- `BaseContainer` class availability for `.conf`;
+- explicit load/serialization failures instead of guessed values.
 
-V1 does **not** claim a complete effective Enfusion merge. In particular, component-array and instance-GUID override/merge semantics are not yet applied to produce a final engine-equivalent prefab.
+It does **not** yet claim property-level extraction such as RPM, dispersion, magazine capacity, or full inherited effective values. Those must be added only after Workbench evidence confirms the correct property-access/materialization path.
 
-Therefore a field absent from a child prefab remains unknown at the child level until a separately validated inheritance/override resolver is implemented.
+### WAX: Materialize Selected Vanilla Sources
 
-This is intentional. The scanner must not infer `MaxBurst`, zeroing, damage, recoil or other values merely because they are likely to come from a parent.
+Workbench module: `ResourceManager`.
 
-## Safety
+Purpose: recover selected vanilla `.et/.conf` resources into the local WAX addon for inspection.
 
-V1 is read-only with respect to the mod. It has no source edit operation.
+Order:
 
-A future editor must be a separate stage with explicit provenance, preview/diff, target-file selection and post-edit rescan verification.
+```text
+selected ResourceName
+-> Workbench.GetAbsolutePath physical source, when available
+-> byte-for-byte physical copy
+-> otherwise Resource.Load / GetResource / ToBaseContainer
+-> BaseContainerTools.SaveContainer, when supported
+-> RegisterResourceFile
+```
 
-## Acceptance for first local run
+If a packed resource cannot be represented through either path, the plugin reports the exact failed stage. Workbench `Duplicate to addon` remains the known safe staging bridge rather than direct `.pak` unpacking.
 
-A useful first run should report:
+Local destination:
 
-- non-zero resource file count;
-- non-zero weapons count;
-- counts for magazines/ammunition where present;
-- `.c` discovery/index counts;
-- unresolved external references instead of guessed values;
-- valid JSON outputs;
-- VSS-like prefabs retaining explicit RPM, dispersion, magazine and recoil data while leaving inherited `MaxBurst` unknown when absent from the child.
+```text
+$Weapon_ARMA_X:Imported/VanillaSources
+```
+
+### WAX: Scan Base Game Scripts
+
+Workbench module: `ScriptEditor`.
+
+Uses:
+
+```text
+FileIO.FindFiles("scripts/", ".c")
+FileIO.OpenFile(...)
+FileHandle.ReadLine(...)
+```
+
+V1 emits file/line metadata only. It deliberately does not commit/copy vanilla `.c` source bodies into Git.
+
+Output:
+
+```text
+$Weapon_ARMA_X:Generated/BaseGameScripts/
+```
+
+## Data policy
+
+`Generated/` and `Imported/` are gitignored.
+
+Repository code is public; locally generated vanilla source/materialization evidence remains local unless a later task explicitly defines a safe derived-data publication format.
+
+The future intended pipeline is:
+
+```text
+Arma Reforger base game
+        ↓
+Weapon_ARMA_X Workbench addon
+        ↓
+vanilla weapon/resource knowledge
+        ↓
+ARMST scan / comparison layer
+        ↓
+balance analysis and targeted mod changes
+```
+
+The base game is the reference corpus. ARMST is a later comparison target, not the parser host.
+
+## Current validation boundary
+
+Repository review can verify that the addon structure and API choices are derived from previously used RWTK patterns. It cannot prove this new WAX code compiles or that the exact `$ArmaReforger:` roots return the expected corpus.
+
+Before merging V1, run in Arma Reforger Tools and record:
+
+1. `addon.gproj` loads with only the base-game dependency;
+2. WorkbenchGame compilation succeeds;
+3. Resource Manager shows both WAX resource plugins;
+4. Script Editor shows the WAX script scanner;
+5. vanilla weapon prefab discovery count is non-zero;
+6. vanilla weapon config discovery count is non-zero or the actual correct config root is identified;
+7. `.et` resources successfully convert to `IEntitySource` for representative weapons/magazines/ammo prefabs;
+8. `.conf` `BaseContainer` behavior is recorded from real evidence;
+9. base-game `.c` discovery/read count is non-zero;
+10. materialization is tested on one representative `.et` and one representative `.conf` without modifying source resources.
+
+Until these checks are run, Workbench runtime status is **PENDING**.
