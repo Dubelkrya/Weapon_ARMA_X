@@ -59,7 +59,7 @@ class ResolverV2PipelineTests(unittest.TestCase):
                      DispersionRange 200
                      MagazineWell MagazineWellTest "{2002}" {
                      }
-                     MagazineTemplate "{M001}Prefabs/Weapons/Magazines/Mag_Test.et"
+                     MagazineTemplate "{D001}Prefabs/Weapons/Magazines/Mag_Test.et"
                     }
                    }
                   }
