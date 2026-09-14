@@ -135,7 +135,7 @@ class WAX_BaseGameScriptScanner
 	description: "Index Workbench-visible Arma Reforger .c scripts without copying source bodies.",
 	wbModules: { "ScriptEditor" },
 	category: "Weapon ARMA X")]
-class WAX_BaseGameScriptScannerPlugin : ScriptEditorPlugin
+class WAX_BaseGameScriptScannerPlugin : WorkbenchPlugin
 {
 	override void Run()
 	{
