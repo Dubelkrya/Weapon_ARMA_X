@@ -1,0 +1,27 @@
+{
+  "schema": "ARMST_AI_COMPACT_V1",
+  "generated": "2026-09-14",
+  "source_google_sheet": "1mMUJx7pr711XqYbdfwlxtQoWjOC26bDwVu6yHIKby18",
+  "counts": {
+    "weapons": 65,
+    "magazines": 32,
+    "ammunition": 14
+  },
+  "canonical_for_agent": [
+    "ai/RULES.md",
+    "ai/manifest.json",
+    "ai/weapons_*.jsonl",
+    "ai/magazines.jsonl",
+    "ai/ammunition.jsonl"
+  ],
+  "legacy_note": "catalog/, indexes/, reports/, schema/ are legacy/debug until resolver v2 promotion; do not bulk-load them for normal balance work.",
+  "weapon_shards": {
+    "weapons_shotguns.jsonl": 10,
+    "weapons_handguns.jsonl": 9,
+    "weapons_support.jsonl": 7,
+    "weapons_9x39.jsonl": 12,
+    "weapons_ak74.jsonl": 14,
+    "weapons_misc.jsonl": 6,
+    "weapons_m16_family.jsonl": 7
+  }
+}
