@@ -11,6 +11,7 @@
 // Raw files are written under Imported/VanillaSources, remain gitignored, and
 // are NOT registered back into Resource Manager. Registration is unnecessary
 // for the local Python agent and can cause Workbench churn/reload prompts.
+// All status is written to Log Console/manifest; this plugin shows no popups.
 
 [WorkbenchPluginAttribute(
 	name: "WAX: Export Vanilla Weapon Source Snapshot",
@@ -23,9 +24,6 @@ class WAX_BaseGameFullSnapshotExporterPlugin : WAX_BaseGameSourceMaterializerPlu
 
 	protected bool IsWeaponScriptPath(string relativePath)
 	{
-		// Keep this deliberately conservative. The local architecture indexer can
-		// tell us later if a referenced class lives outside these names, at which
-		// point we can add a targeted dependency root instead of exporting the game.
 		return relativePath.IndexOf("Weapon") >= 0
 			|| relativePath.IndexOf("weapon") >= 0
 			|| relativePath.IndexOf("Magazine") >= 0
@@ -91,8 +89,6 @@ class WAX_BaseGameFullSnapshotExporterPlugin : WAX_BaseGameSourceMaterializerPlu
 				AddSnapshotResource(resourceName);
 		}
 
-		// Script sources are searched only under Scripts/Game, then filtered by
-		// weapon-domain path names. Nothing else from the game tree is exported.
 		array<ResourceName> scriptResources = SCR_WorkbenchHelper.SearchWorkbenchResources(
 			{ "c" },
 			null,
@@ -168,8 +164,6 @@ class WAX_BaseGameFullSnapshotExporterPlugin : WAX_BaseGameSourceMaterializerPlu
 			if (method == "container")
 				container++;
 
-			// Deliberately do NOT call RegisterResourceFile here. The snapshot is
-			// local-agent input, not addon content that Workbench needs to import.
 			if (manifest)
 				manifest.WriteLine(string.Format("%1\t%2\t%3\t%4\tok", SafeField(sourcePath), SafeField(relativePath), SafeField(method), SafeField(containerClass)));
 			copied++;
@@ -179,7 +173,7 @@ class WAX_BaseGameFullSnapshotExporterPlugin : WAX_BaseGameSourceMaterializerPlu
 			manifest.Close();
 
 		PrintFormat(
-			"[WAX][SNAPSHOT] summary mode=%1 inputs=%2 copied=%3 physical=%4 container=%5 failed=%6 root=%7",
+			"[WAX][SNAPSHOT] DONE mode=%1 inputs=%2 copied=%3 physical=%4 container=%5 failed=%6 root=%7",
 			mode,
 			m_SourcePaths.Count(),
 			copied,
@@ -187,18 +181,6 @@ class WAX_BaseGameFullSnapshotExporterPlugin : WAX_BaseGameSourceMaterializerPlu
 			container,
 			failed,
 			DESTINATION_ROOT);
-
-		LogLevel dialogLevel = LogLevel.NORMAL;
-		if (failed > 0)
-			dialogLevel = LogLevel.WARNING;
-
-		SCR_WorkbenchHelper.PrintFormatDialog(
-			"Weapon source snapshot finished. Inputs: %1, copied: %2, failed: %3. Only weapon prefabs/configs and weapon-related scripts were considered.",
-			m_SourcePaths.Count().ToString(),
-			copied.ToString(),
-			failed.ToString(),
-			"Weapon ARMA X",
-			dialogLevel);
 	}
 
 	override void Run()
@@ -215,17 +197,11 @@ class WAX_BaseGameFullSnapshotExporterPlugin : WAX_BaseGameSourceMaterializerPlu
 
 		if (m_SourcePaths.IsEmpty())
 		{
-			SCR_WorkbenchHelper.PrintDialog(
-				"No mounted vanilla weapon prefab/config/script resources were discovered.",
-				"Weapon ARMA X",
-				LogLevel.WARNING);
+			Print("[WAX][SNAPSHOT] No mounted vanilla weapon prefab/config/script resources were discovered.", LogLevel.WARNING);
 			return;
 		}
 
-		PrintFormat(
-			"[WAX][SNAPSHOT] discovered=%1 scope=weapon_only",
-			m_SourcePaths.Count());
-
+		PrintFormat("[WAX][SNAPSHOT] discovered=%1 scope=weapon_only", m_SourcePaths.Count());
 		MaterializeSnapshotWithoutRegistration("weapon_source_snapshot");
 	}
 }
