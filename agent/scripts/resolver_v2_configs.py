@@ -1,20 +1,32 @@
-"""Nested `.conf` hydration for resolver_v2.
+"""Nested `.conf` hydration plus origin-aware resource identity for resolver_v2.
 
 Serialized weapon instances frequently reference reusable configuration blocks,
 for example FireMode_Auto.conf or recoil configs. Entity inheritance alone is
 therefore not enough: the referenced config must be merged first, then local
 instance fields must override it.
+
+This store also preserves duplicate virtual paths across roots. That matters
+when ARMST overrides a vanilla resource at the same path: a vanilla child must
+still be able to inherit from the vanilla parent instead of silently switching
+to the higher-priority ARMST record.
 """
 
 from __future__ import annotations
 
 from collections import Counter
-from typing import Optional, Tuple
+import os
+from typing import Dict, List, Optional, Tuple
 
+from et_parser import parse_file
 from resolver_v2 import (
     RNode,
+    ResolutionResult,
+    ResourceRecord,
     ResourceStore,
+    TEXT_EXTENSIONS,
     _clone,
+    _norm_key,
+    _norm_path,
     _ref_from_token,
     array_values_r,
     find_child_r,
@@ -105,18 +117,244 @@ def _prefer_functional_components(node: RNode) -> RNode:
 
 
 class HydratedResourceStore(ResourceStore):
-    """ResourceStore that resolves nested `.conf` templates in entity trees."""
+    """ResourceStore with config hydration and origin-aware duplicate-path handling."""
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self._reported_config_loops = set()
+        self._records_by_origin_key: Dict[Tuple[str, str], ResourceRecord] = {}
+        self._records_by_path_key: Dict[str, List[ResourceRecord]] = {}
+        self._highest_priority = max((root.priority for root in self.roots), default=0)
 
     def scan(self) -> None:
+        # Keep the legacy/high-priority index for compatibility and GUID/meta
+        # bookkeeping, then build a second identity index that does NOT discard
+        # lower-priority records sharing the same virtual path.
         super().scan()
         self._reported_config_loops.clear()
+        self._records_by_origin_key.clear()
+        self._records_by_path_key.clear()
 
-    def _config_template_node(self, conf_relpath: str) -> Optional[RNode]:
-        record = self.get(conf_relpath)
+        for root in self.roots:
+            if not os.path.isdir(root.path):
+                continue
+            for dirpath, _dirs, filenames in os.walk(root.path):
+                for filename in filenames:
+                    ext = os.path.splitext(filename)[1].lower()
+                    if ext not in TEXT_EXTENSIONS:
+                        continue
+                    abspath = os.path.join(dirpath, filename)
+                    relpath = _norm_path(os.path.relpath(abspath, root.path))
+                    try:
+                        parsed = parse_file(abspath, root.path)
+                    except Exception:
+                        # super().scan() already reports parse errors for the
+                        # active/high-priority view. Do not duplicate warnings.
+                        continue
+                    record = ResourceRecord(
+                        relpath, abspath, root.label, root.priority, parsed
+                    )
+                    key = _norm_key(relpath)
+                    self._records_by_origin_key[(root.label, key)] = record
+                    self._records_by_path_key.setdefault(key, []).append(record)
+
+        for records in self._records_by_path_key.values():
+            records.sort(key=lambda item: item.priority, reverse=True)
+
+    def _candidate_records(self, relpath: Optional[str]) -> Tuple[List[ResourceRecord], str]:
+        """Return exact candidates, otherwise a unique/safe suffix candidate set.
+
+        ARMST contains serialized links like `Rifles/AK74/armst_AK74.et` while
+        the checkout path is `Prefabs/Weapons/Rifles/AK74/armst_AK74.et`.
+        Suffix matching is used only as a fallback and ambiguity is preserved.
+        """
+        key = _norm_key(str(relpath or ""))
+        if not key:
+            return [], "none"
+
+        exact = list(self._records_by_path_key.get(key, []))
+        if exact:
+            return exact, "path"
+
+        suffix = "/" + key
+        matches: List[ResourceRecord] = []
+        for candidate_key, records in self._records_by_path_key.items():
+            if candidate_key.endswith(suffix):
+                matches.extend(records)
+        matches.sort(key=lambda item: item.priority, reverse=True)
+        return matches, "suffix" if matches else "none"
+
+    def _record_for(
+        self, relpath: str, origin: Optional[str] = None
+    ) -> Optional[ResourceRecord]:
+        candidates, _mode = self._candidate_records(relpath)
+        if origin is not None:
+            same_origin = [record for record in candidates if record.origin == origin]
+            if len(same_origin) == 1:
+                return same_origin[0]
+        return candidates[0] if candidates else None
+
+    @staticmethod
+    def _resolved_ref(
+        record: ResourceRecord,
+        guid: Optional[str],
+        resolved_by: str,
+        candidates: List[ResourceRecord],
+    ) -> dict:
+        return {
+            "status": "local",
+            "resource": record.relpath,
+            "origin": record.origin,
+            "guid": guid.upper() if guid else None,
+            "resolved_by": resolved_by,
+            "candidate_count": len(candidates),
+        }
+
+    def resolve_ref(
+        self,
+        guid: Optional[str],
+        path: Optional[str],
+        origin_hint: Optional[str] = None,
+    ) -> dict:
+        candidates, mode = self._candidate_records(path)
+
+        if len(candidates) == 1:
+            return self._resolved_ref(candidates[0], guid, mode, candidates)
+
+        if candidates and origin_hint:
+            same_origin = [record for record in candidates if record.origin == origin_hint]
+            if len(same_origin) == 1:
+                # A lower-priority/base resource cannot depend on a higher-priority
+                # mod resource. For short-path suffix matches, same-origin is also
+                # the intended ARMST local namespace.
+                if mode == "suffix" or same_origin[0].priority < self._highest_priority:
+                    return self._resolved_ref(
+                        same_origin[0],
+                        guid,
+                        f"{mode}+origin",
+                        candidates,
+                    )
+
+        # Live GUID references can provide an alternate canonical path. Re-run
+        # the same candidate logic there, but never collapse an unresolved
+        # duplicate to the higher-priority path just because it was scanned first.
+        if guid:
+            live_path = self.live_guid_to_path.get(guid.upper())
+            if live_path and _norm_key(live_path) != _norm_key(str(path or "")):
+                live_candidates, live_mode = self._candidate_records(live_path)
+                if len(live_candidates) == 1:
+                    return self._resolved_ref(
+                        live_candidates[0], guid, f"live_guid:{live_mode}", live_candidates
+                    )
+                if live_candidates and origin_hint:
+                    same_origin = [
+                        record for record in live_candidates if record.origin == origin_hint
+                    ]
+                    if len(same_origin) == 1 and (
+                        live_mode == "suffix"
+                        or same_origin[0].priority < self._highest_priority
+                    ):
+                        return self._resolved_ref(
+                            same_origin[0],
+                            guid,
+                            f"live_guid:{live_mode}+origin",
+                            live_candidates,
+                        )
+
+        if candidates:
+            return {
+                "status": "ambiguous",
+                "guid": guid.upper() if guid else None,
+                "path": path,
+                "candidates": [
+                    {
+                        "resource": record.relpath,
+                        "origin": record.origin,
+                        "priority": record.priority,
+                    }
+                    for record in candidates
+                ],
+            }
+
+        return {
+            "status": "external",
+            "guid": guid.upper() if guid else None,
+            "path": path,
+        }
+
+    def build_chain(
+        self, relpath: str, max_depth: int = 64
+    ) -> Tuple[List[dict], Optional[dict]]:
+        chain: List[dict] = []
+        seen = set()
+        current = self._record_for(relpath)
+        if current is None:
+            return chain, {"status": "missing_resource", "path": relpath}
+
+        while current is not None and max_depth > 0:
+            max_depth -= 1
+            key = _norm_key(current.relpath)
+            seen_key = (current.origin, key)
+            if seen_key in seen:
+                loop = {
+                    "status": "loop",
+                    "resource": current.relpath,
+                    "origin": current.origin,
+                }
+                chain.append(loop)
+                return chain, loop
+            seen.add(seen_key)
+
+            path_candidates, _mode = self._candidate_records(current.relpath)
+            live_guid = (
+                self.live_guid_by_path.get(key) if len(path_candidates) == 1 else None
+            )
+            chain.append(
+                {
+                    "status": "local",
+                    "resource": current.relpath,
+                    "origin": current.origin,
+                    "class": current.resource.et_class,
+                    "live_guid": live_guid,
+                    "meta_name_guid": self.meta_name_guid_by_path.get(key),
+                }
+            )
+
+            parent = current.parent
+            if not parent:
+                return chain, None
+
+            resolved = self.resolve_ref(
+                parent.get("guid"),
+                parent.get("path"),
+                origin_hint=current.origin,
+            )
+            if resolved.get("status") != "local":
+                return chain, {
+                    "status": (
+                        "ambiguous_parent"
+                        if resolved.get("status") == "ambiguous"
+                        else "external_parent"
+                    ),
+                    "guid": parent.get("guid"),
+                    "path": parent.get("path"),
+                    "defined_in": current.relpath,
+                    "origin": current.origin,
+                    "candidates": resolved.get("candidates") or [],
+                }
+
+            current = self._record_for(
+                resolved["resource"], resolved.get("origin")
+            )
+
+        if max_depth <= 0:
+            return chain, {"status": "depth_limit", "path": relpath}
+        return chain, None
+
+    def _config_template_node(
+        self, conf_relpath: str, origin: Optional[str] = None
+    ) -> Optional[RNode]:
+        record = self._record_for(conf_relpath, origin)
         if record is None or record.kind != "conf":
             return None
         root = rnode_from_parsed(
@@ -127,9 +365,11 @@ class HydratedResourceStore(ResourceStore):
                 return child
         return None
 
-    def _resolved_conf_root(self, relpath: str) -> Optional[RNode]:
+    def _resolved_conf_root(
+        self, relpath: str, origin: Optional[str] = None
+    ) -> Optional[RNode]:
         """Return a config root with nested config inheritance already hydrated."""
-        record = self.get(relpath)
+        record = self._record_for(relpath, origin)
         if record is None or record.kind != "conf":
             return None
         root = rnode_from_parsed(record.resource.root, record.relpath, record.origin)
@@ -144,8 +384,6 @@ class HydratedResourceStore(ResourceStore):
         except ValueError:
             cycle = list(stack) + [target]
 
-        # The same directed cycle can be reached from many entities. Canonicalize
-        # by rotation so A->B->A and B->A->B produce one diagnostic.
         cycle_keys = [_norm_relpath(item) for item in cycle]
         if cycle_keys:
             rotations = [
@@ -173,32 +411,29 @@ class HydratedResourceStore(ResourceStore):
         stack = stack or ()
         current = _clone(node)
 
-        # Hydrate only the local subtree before merging a referenced template.
-        # Re-walking merged template children caused the same config chain to be
-        # expanded repeatedly and multiplied loop diagnostics.
         current.children = [
             self._hydrate_config_refs(child, stack) for child in current.children
         ]
 
         if current.ref and str(current.ref.get("path", "")).lower().endswith(".conf"):
             resolved = self.resolve_ref(
-                current.ref.get("guid"), current.ref.get("path")
+                current.ref.get("guid"),
+                current.ref.get("path"),
+                origin_hint=current.origin,
             )
             target = resolved.get("resource")
             if resolved.get("status") == "local" and target:
                 target_key = _norm_relpath(target)
                 stack_keys = tuple(_norm_relpath(item) for item in stack)
                 if target_key in stack_keys:
-                    # BaseContainerTools.SaveContainer can serialize the root
-                    # object of a materialized config with a reference back to
-                    # that same config. That is an ownership/self reference,
-                    # not an inheritance cycle, and there is nothing to hydrate.
                     if target_key == _norm_relpath(current.defined_in):
                         return current
                     self._report_config_loop(target, stack)
                     return current
 
-                template = self._config_template_node(target)
+                template = self._config_template_node(
+                    target, resolved.get("origin")
+                )
                 if template is not None:
                     template = self._hydrate_config_refs(
                         template, stack + (target,)
@@ -207,22 +442,95 @@ class HydratedResourceStore(ResourceStore):
 
         return current
 
-    def resolve_entity(self, relpath: str):
-        result = super().resolve_entity(relpath)
-        if result.resolved is not None:
-            hydrated = self._hydrate_config_refs(result.resolved)
-            result.resolved = _prefer_functional_components(hydrated)
-        return result
+    def resolve_entity(self, relpath: str) -> ResolutionResult:
+        record = self._record_for(relpath)
+        if record is None or record.kind != "et":
+            return ResolutionResult(relpath, "missing", [], None, None, None)
+
+        chain, missing = self.build_chain(relpath)
+        local_records = [
+            self._record_for(row["resource"], row.get("origin"))
+            for row in chain
+            if row.get("status") == "local"
+        ]
+        local_records = [item for item in local_records if item is not None]
+        if not local_records:
+            return ResolutionResult(relpath, "missing", chain, missing, None, None)
+
+        raw = rnode_from_parsed(record.resource.root, record.relpath, record.origin)
+        trees = [
+            rnode_from_parsed(item.resource.root, item.relpath, item.origin)
+            for item in local_records
+        ]
+        resolved = trees[-1]
+        for child_tree in reversed(trees[:-1]):
+            resolved = merge_pair(resolved, child_tree)
+
+        status = "resolved" if missing is None else "partial"
+        hydrated = self._hydrate_config_refs(resolved)
+        hydrated = _prefer_functional_components(hydrated)
+        return ResolutionResult(
+            record.relpath, status, chain, missing, raw, hydrated
+        )
+
+    def ammo_resource_array(
+        self, conf_relpath: str, origin_hint: Optional[str] = None
+    ) -> dict:
+        root = self._resolved_conf_root(conf_relpath, origin_hint)
+        if root is None:
+            return {
+                "status": "missing_config",
+                "resource": conf_relpath,
+                "projectiles": [],
+            }
+        arrays = find_recursive_r(root, "AmmoResourceArray")
+        if not arrays:
+            return {
+                "status": "missing_array",
+                "resource": conf_relpath,
+                "projectiles": [],
+            }
+
+        projectiles = []
+        array_origin = arrays[0].origin or origin_hint
+        for elem in arrays[0].children:
+            ref = elem.ref
+            if ref is None and elem.value:
+                ref = _ref_from_token(elem.value[0])
+            if not ref:
+                continue
+            resolved = self.resolve_ref(
+                ref["guid"], ref["path"], origin_hint=array_origin
+            )
+            projectiles.append(
+                {
+                    "index": len(projectiles),
+                    "guid": ref["guid"],
+                    "path": ref["path"],
+                    "resolved": resolved["status"],
+                    "target": resolved.get("resource"),
+                    "origin": resolved.get("origin"),
+                }
+            )
+        return {
+            "status": "resolved",
+            "resource": conf_relpath,
+            "origin": origin_hint,
+            "projectiles": projectiles,
+        }
 
     def resolve_magazine_ammo(self, magazine_relpath: str) -> dict:
-        """Resolve the functional magazine instance instead of blindly taking the first."""
+        """Resolve the functional magazine instance and its exact ammo mapping."""
         entity = self.resolve_entity(magazine_relpath)
         if entity.resolved is None:
             return {"status": "missing_magazine", "resource": magazine_relpath}
 
         mag_nodes = find_recursive_r(entity.resolved, "MagazineComponent")
         if not mag_nodes:
-            return {"status": "missing_magazine_component", "resource": magazine_relpath}
+            return {
+                "status": "missing_magazine_component",
+                "resource": magazine_relpath,
+            }
         mag = max(mag_nodes, key=_magazine_component_score)
 
         max_ammo_node = find_child_r(mag, "MaxAmmo")
@@ -240,6 +548,7 @@ class HydratedResourceStore(ResourceStore):
             "magazine_component": {
                 "id": mag.id,
                 "defined_in": mag.defined_in,
+                "origin": mag.origin,
                 "candidate_count": len(mag_nodes),
                 "score": _magazine_component_score(mag),
             },
@@ -259,19 +568,31 @@ class HydratedResourceStore(ResourceStore):
             result["status"] = "missing_ammo_config"
             return result
 
-        cfg_resolved = self.resolve_ref(config_ref["guid"], config_ref["path"])
+        cfg_resolved = self.resolve_ref(
+            config_ref["guid"],
+            config_ref["path"],
+            origin_hint=config_node.origin if config_node else mag.origin,
+        )
         result["ammo_config"] = {
             "guid": config_ref["guid"],
             "path": config_ref["path"],
             "defined_in": config_node.defined_in if config_node else None,
+            "origin": config_node.origin if config_node else None,
             "resolved": cfg_resolved["status"],
             "target": cfg_resolved.get("resource"),
+            "target_origin": cfg_resolved.get("origin"),
         }
         if cfg_resolved["status"] != "local":
-            result["status"] = "external_ammo_config"
+            result["status"] = (
+                "ambiguous_ammo_config"
+                if cfg_resolved["status"] == "ambiguous"
+                else "external_ammo_config"
+            )
             return result
 
-        ammo_array = self.ammo_resource_array(cfg_resolved["resource"])
+        ammo_array = self.ammo_resource_array(
+            cfg_resolved["resource"], cfg_resolved.get("origin")
+        )
         projectiles = ammo_array.get("projectiles") or []
         result["projectiles"] = projectiles
         if ammo_array.get("status") != "resolved":
@@ -295,7 +616,11 @@ class HydratedResourceStore(ResourceStore):
         for position, raw_index in enumerate(mapping):
             if not isinstance(raw_index, int):
                 result["warnings"].append(
-                    {"category": "AMMO_MAPPING_NON_INTEGER", "position": position, "value": raw_index}
+                    {
+                        "category": "AMMO_MAPPING_NON_INTEGER",
+                        "position": position,
+                        "value": raw_index,
+                    }
                 )
                 continue
             if raw_index < 0 or raw_index >= len(projectiles):
@@ -315,6 +640,7 @@ class HydratedResourceStore(ResourceStore):
                     "position": position,
                     "ammo_index": raw_index,
                     "projectile": projectile["target"] or projectile["path"],
+                    "origin": projectile.get("origin"),
                     "status": projectile["resolved"],
                 }
             )
@@ -323,9 +649,13 @@ class HydratedResourceStore(ResourceStore):
             {
                 "ammo_index": index,
                 "count": count,
-                "projectile": projectiles[index]["target"] or projectiles[index]["path"],
+                "projectile": projectiles[index]["target"]
+                or projectiles[index]["path"],
+                "origin": projectiles[index].get("origin"),
             }
             for index, count in sorted(counts.items())
         ]
-        result["status"] = "resolved" if not result["warnings"] else "resolved_with_warnings"
+        result["status"] = (
+            "resolved" if not result["warnings"] else "resolved_with_warnings"
+        )
         return result
