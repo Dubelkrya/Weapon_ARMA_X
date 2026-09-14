@@ -640,7 +640,6 @@ class HydratedResourceStore(ResourceStore):
                     "position": position,
                     "ammo_index": raw_index,
                     "projectile": projectile["target"] or projectile["path"],
-                    "origin": projectile.get("origin"),
                     "status": projectile["resolved"],
                 }
             )
@@ -651,7 +650,6 @@ class HydratedResourceStore(ResourceStore):
                 "count": count,
                 "projectile": projectiles[index]["target"]
                 or projectiles[index]["path"],
-                "origin": projectiles[index].get("origin"),
             }
             for index, count in sorted(counts.items())
         ]
