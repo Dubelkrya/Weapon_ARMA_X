@@ -4,5 +4,6 @@ agent/scripts/_inspect.py
 agent/v2_output/
 Generated/
 Imported/VanillaSources/
+resourceDatabase.rdb
 __pycache__/
 *.pyc
