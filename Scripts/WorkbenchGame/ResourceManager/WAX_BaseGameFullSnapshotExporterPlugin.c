@@ -21,6 +21,7 @@
 class WAX_BaseGameFullSnapshotExporterPlugin : WAX_BaseGameSourceMaterializerPlugin
 {
 	protected static const string SCRIPT_GAME_ROOT = "$ArmaReforger:Scripts/Game";
+	protected int m_ScriptSourceCount;
 
 	protected bool IsWeaponScriptPath(string relativePath)
 	{
@@ -47,7 +48,7 @@ class WAX_BaseGameFullSnapshotExporterPlugin : WAX_BaseGameSourceMaterializerPlu
 		return false;
 	}
 
-	protected bool AddSnapshotResource(ResourceName resourceName, bool requireWeaponScriptName = false)
+	protected bool AddSnapshotResource(ResourceName resourceName)
 	{
 		if (resourceName == ResourceName.Empty)
 			return false;
@@ -56,15 +57,39 @@ class WAX_BaseGameFullSnapshotExporterPlugin : WAX_BaseGameSourceMaterializerPlu
 		if (relativePath == "")
 			return false;
 
-		if (requireWeaponScriptName && !IsWeaponScriptPath(relativePath))
-			return false;
-
 		string sourcePath = BASE_GAME_ROOT + relativePath;
 		if (m_SourcePaths.Find(sourcePath) >= 0)
 			return false;
 
 		m_SourcePaths.Insert(sourcePath);
 		m_SourceResources.Insert(resourceName);
+		return true;
+	}
+
+	protected bool AddSnapshotScriptFile(string sourcePath)
+	{
+		if (sourcePath == "")
+			return false;
+
+		string normalizedPath = sourcePath;
+		normalizedPath.Replace("\\", "/");
+		if (normalizedPath.IndexOf(BASE_GAME_ROOT) != 0)
+			return false;
+
+		string relativePath = normalizedPath;
+		relativePath.Replace(BASE_GAME_ROOT, "");
+		if (!relativePath.EndsWith(".c") && !relativePath.EndsWith(".C"))
+			return false;
+		if (!IsWeaponScriptPath(relativePath))
+			return false;
+		if (m_SourcePaths.Find(normalizedPath) >= 0)
+			return false;
+
+		// Script files are not registered resources. Keep an empty ResourceName;
+		// Materialize() will first try the physical Workbench path and copy it.
+		m_SourcePaths.Insert(normalizedPath);
+		m_SourceResources.Insert(ResourceName.Empty);
+		m_ScriptSourceCount++;
 		return true;
 	}
 
@@ -92,15 +117,18 @@ class WAX_BaseGameFullSnapshotExporterPlugin : WAX_BaseGameSourceMaterializerPlu
 				AddSnapshotResource(resourceName);
 		}
 
-		array<ResourceName> scriptResources = SCR_WorkbenchHelper.SearchWorkbenchResources(
+		// Scripts are not ResourceDB resources. SearchWorkbenchFiles is the
+		// supported API and returns Workbench file paths such as
+		// $ArmaReforger:Scripts/Game/.../SomeWeaponScript.c.
+		array<string> scriptFiles = SCR_WorkbenchHelper.SearchWorkbenchFiles(
 			{ "c" },
 			null,
 			SCRIPT_GAME_ROOT,
 			true);
-		if (scriptResources)
+		if (scriptFiles)
 		{
-			foreach (ResourceName resourceName : scriptResources)
-				AddSnapshotResource(resourceName, true);
+			foreach (string scriptPath : scriptFiles)
+				AddSnapshotScriptFile(scriptPath);
 		}
 	}
 
@@ -176,9 +204,10 @@ class WAX_BaseGameFullSnapshotExporterPlugin : WAX_BaseGameSourceMaterializerPlu
 			manifest.Close();
 
 		PrintFormat(
-			"[WAX][SNAPSHOT] DONE mode=%1 inputs=%2 copied=%3 physical=%4 container=%5 failed=%6 root=%7",
+			"[WAX][SNAPSHOT] DONE mode=%1 inputs=%2 scripts=%3 copied=%4 physical=%5 container=%6 failed=%7 root=%8",
 			mode,
 			m_SourcePaths.Count(),
+			m_ScriptSourceCount,
 			copied,
 			physical,
 			container,
@@ -196,6 +225,7 @@ class WAX_BaseGameFullSnapshotExporterPlugin : WAX_BaseGameSourceMaterializerPlu
 		}
 
 		ResetSources();
+		m_ScriptSourceCount = 0;
 		CollectWeaponDataset();
 
 		if (m_SourcePaths.IsEmpty())
@@ -204,7 +234,10 @@ class WAX_BaseGameFullSnapshotExporterPlugin : WAX_BaseGameSourceMaterializerPlu
 			return;
 		}
 
-		PrintFormat("[WAX][SNAPSHOT] discovered=%1 scope=weapon_only", m_SourcePaths.Count());
+		PrintFormat(
+			"[WAX][SNAPSHOT] discovered=%1 scripts=%2 scope=weapon_only",
+			m_SourcePaths.Count(),
+			m_ScriptSourceCount);
 		MaterializeSnapshotWithoutRegistration("weapon_source_snapshot");
 	}
 }
