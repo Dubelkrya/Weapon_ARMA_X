@@ -1,0 +1,5 @@
+# Workbench-generated/local evidence. Do not commit vanilla source mirrors.
+Generated/
+Imported/
+resourceDatabase.rdb
+*.log
