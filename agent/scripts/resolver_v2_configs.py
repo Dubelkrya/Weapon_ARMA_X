@@ -224,16 +224,12 @@ class HydratedResourceStore(ResourceStore):
         if candidates and origin_hint:
             same_origin = [record for record in candidates if record.origin == origin_hint]
             if len(same_origin) == 1:
-                # A lower-priority/base resource cannot depend on a higher-priority
-                # mod resource. For short-path suffix matches, same-origin is also
-                # the intended ARMST local namespace.
-                if mode == "suffix" or same_origin[0].priority < self._highest_priority:
-                    return self._resolved_ref(
-                        same_origin[0],
-                        guid,
-                        f"{mode}+origin",
-                        candidates,
-                    )
+                return self._resolved_ref(
+                    same_origin[0],
+                    guid,
+                    f"{mode}+origin",
+                    candidates,
+                )
 
         # Live GUID references can provide an alternate canonical path. Re-run
         # the same candidate logic there, but never collapse an unresolved
@@ -250,10 +246,7 @@ class HydratedResourceStore(ResourceStore):
                     same_origin = [
                         record for record in live_candidates if record.origin == origin_hint
                     ]
-                    if len(same_origin) == 1 and (
-                        live_mode == "suffix"
-                        or same_origin[0].priority < self._highest_priority
-                    ):
+                    if len(same_origin) == 1:
                         return self._resolved_ref(
                             same_origin[0],
                             guid,
