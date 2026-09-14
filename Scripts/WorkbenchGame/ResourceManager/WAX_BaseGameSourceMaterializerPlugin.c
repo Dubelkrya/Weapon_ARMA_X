@@ -9,7 +9,7 @@
 class WAX_BaseGameSourceMaterializerPlugin : ResourceManagerPlugin
 {
 	protected static const string DESTINATION_ROOT = "$Weapon_ARMA_X:Imported/VanillaSources";
-	protected static const string SELF_ROOT = "$Weapon_ARMA_X:";
+	protected static const string BASE_GAME_ROOT = "$ArmaReforger:";
 
 	protected ref array<string> m_SourcePaths;
 	protected ref array<ResourceName> m_SourceResources;
@@ -30,7 +30,7 @@ class WAX_BaseGameSourceMaterializerPlugin : ResourceManagerPlugin
 		if (m_SourcePaths.IsEmpty())
 		{
 			SCR_WorkbenchHelper.PrintDialog(
-				"Select one or more base-game .et/.conf resources in Resource Manager first.",
+				"Select one or more $ArmaReforger: .et/.conf resources in Resource Manager first.",
 				"Weapon ARMA X",
 				LogLevel.WARNING);
 			return;
@@ -195,16 +195,17 @@ class WAX_BaseGameSourceMaterializerPlugin : ResourceManagerPlugin
 		if (resourceName == ResourceName.Empty)
 			return;
 
+		// Resource Manager callback filePath is expected in $Addon:Path/To/File.ext format.
+		// V1 deliberately rejects every mount except the vanilla ArmaReforger mount.
 		string sourcePath = filePath;
-		if (sourcePath == "")
-			sourcePath = resourceName.GetPath();
-		if (sourcePath == "")
+		if (sourcePath == "" || sourcePath.IndexOf(BASE_GAME_ROOT) != 0)
+		{
+			if (sourcePath != "")
+				PrintFormat("[WAX][MATERIALIZE] SKIP_NON_BASE_GAME source=%1", sourcePath);
 			return;
+		}
 
 		if (!sourcePath.EndsWith(".et") && !sourcePath.EndsWith(".ET") && !sourcePath.EndsWith(".conf") && !sourcePath.EndsWith(".CONF"))
-			return;
-
-		if (sourcePath.IndexOf(SELF_ROOT) == 0)
 			return;
 
 		if (m_SourcePaths.Find(sourcePath) >= 0)
