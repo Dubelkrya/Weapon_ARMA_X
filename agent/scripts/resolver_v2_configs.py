@@ -8,19 +8,37 @@ instance fields must override it.
 
 from __future__ import annotations
 
+from collections import Counter
 from typing import Optional, Tuple
 
 from resolver_v2 import (
     RNode,
     ResourceStore,
     _clone,
+    _ref_from_token,
+    array_values_r,
+    find_child_r,
+    find_recursive_r,
     merge_pair,
     rnode_from_parsed,
+    scalar_r,
 )
 
 
 def _norm_relpath(path: Optional[str]) -> str:
     return str(path or "").replace("\\", "/").lstrip("./").casefold()
+
+
+def _magazine_component_score(node: RNode) -> int:
+    """Prefer the functional MagazineComponent when a prefab contains several."""
+    weights = {
+        "AmmoConfig": 8,
+        "AmmoMapping": 4,
+        "MaxAmmo": 2,
+        "MagazineWell": 1,
+    }
+    names = {child.name for child in node.children}
+    return sum(weight for name, weight in weights.items() if name in names)
 
 
 class HydratedResourceStore(ResourceStore):
@@ -122,4 +140,120 @@ class HydratedResourceStore(ResourceStore):
         result = super().resolve_entity(relpath)
         if result.resolved is not None:
             result.resolved = self._hydrate_config_refs(result.resolved)
+        return result
+
+    def resolve_magazine_ammo(self, magazine_relpath: str) -> dict:
+        """Resolve the functional magazine instance instead of blindly taking the first."""
+        entity = self.resolve_entity(magazine_relpath)
+        if entity.resolved is None:
+            return {"status": "missing_magazine", "resource": magazine_relpath}
+
+        mag_nodes = find_recursive_r(entity.resolved, "MagazineComponent")
+        if not mag_nodes:
+            return {"status": "missing_magazine_component", "resource": magazine_relpath}
+        mag = max(mag_nodes, key=_magazine_component_score)
+
+        max_ammo_node = find_child_r(mag, "MaxAmmo")
+        max_ammo = scalar_r(max_ammo_node)
+        config_node = find_child_r(mag, "AmmoConfig")
+        config_ref = config_node.ref if config_node else None
+        if config_ref is None and config_node and config_node.value:
+            config_ref = _ref_from_token(config_node.value[0])
+        mapping_node = find_child_r(mag, "AmmoMapping")
+        mapping = array_values_r(mapping_node)
+
+        result = {
+            "resource": magazine_relpath,
+            "inheritance_status": entity.status,
+            "magazine_component": {
+                "id": mag.id,
+                "defined_in": mag.defined_in,
+                "candidate_count": len(mag_nodes),
+                "score": _magazine_component_score(mag),
+            },
+            "max_ammo": {
+                "value": max_ammo,
+                "defined_in": max_ammo_node.defined_in if max_ammo_node else None,
+            },
+            "ammo_config": None,
+            "mapping": mapping,
+            "mapping_defined_in": mapping_node.defined_in if mapping_node else None,
+            "rounds": [],
+            "counts": [],
+            "warnings": [],
+        }
+
+        if not config_ref:
+            result["status"] = "missing_ammo_config"
+            return result
+
+        cfg_resolved = self.resolve_ref(config_ref["guid"], config_ref["path"])
+        result["ammo_config"] = {
+            "guid": config_ref["guid"],
+            "path": config_ref["path"],
+            "defined_in": config_node.defined_in if config_node else None,
+            "resolved": cfg_resolved["status"],
+            "target": cfg_resolved.get("resource"),
+        }
+        if cfg_resolved["status"] != "local":
+            result["status"] = "external_ammo_config"
+            return result
+
+        ammo_array = self.ammo_resource_array(cfg_resolved["resource"])
+        projectiles = ammo_array.get("projectiles") or []
+        result["projectiles"] = projectiles
+        if ammo_array.get("status") != "resolved":
+            result["status"] = ammo_array.get("status") or "missing_ammo_array"
+            return result
+
+        if not mapping:
+            result["status"] = "missing_ammo_mapping"
+            return result
+
+        if isinstance(max_ammo, (int, float)) and int(max_ammo) != len(mapping):
+            result["warnings"].append(
+                {
+                    "category": "AMMO_MAPPING_LENGTH",
+                    "max_ammo": int(max_ammo),
+                    "mapping_length": len(mapping),
+                }
+            )
+
+        counts: Counter = Counter()
+        for position, raw_index in enumerate(mapping):
+            if not isinstance(raw_index, int):
+                result["warnings"].append(
+                    {"category": "AMMO_MAPPING_NON_INTEGER", "position": position, "value": raw_index}
+                )
+                continue
+            if raw_index < 0 or raw_index >= len(projectiles):
+                result["warnings"].append(
+                    {
+                        "category": "AMMO_MAPPING_OUT_OF_RANGE",
+                        "position": position,
+                        "index": raw_index,
+                        "ammo_resource_count": len(projectiles),
+                    }
+                )
+                continue
+            projectile = projectiles[raw_index]
+            counts[raw_index] += 1
+            result["rounds"].append(
+                {
+                    "position": position,
+                    "ammo_index": raw_index,
+                    "projectile": projectile["target"] or projectile["path"],
+                    "status": projectile["resolved"],
+                }
+            )
+
+        result["counts"] = [
+            {
+                "ammo_index": index,
+                "count": count,
+                "projectile": projectiles[index]["target"] or projectiles[index]["path"],
+            }
+            for index, count in sorted(counts.items())
+        ]
+        result["status"] = "resolved" if not result["warnings"] else "resolved_with_warnings"
         return result
