@@ -1,8 +1,8 @@
-# Source snapshot handoff
+# Weapon source snapshot handoff
 
 ## Goal
 
-Workbench exports raw mounted vanilla source material into this addon. A local agent then reads that raw snapshot together with ARMST, builds a compact architecture/index layer, and commits only the compact derived layer to GitHub.
+Workbench exports only the vanilla source material relevant to weapon architecture into this addon. A local agent then reads that raw snapshot together with ARMST, builds a compact architecture/index layer, and commits only the compact derived layer to GitHub.
 
 ## Source/edit policy
 
@@ -17,22 +17,25 @@ Workbench exports raw mounted vanilla source material into this addon. A local a
 
 Use:
 
-`WAX: Export Full Vanilla Source Snapshot`
+`WAX: Export Vanilla Weapon Source Snapshot`
 
-The exporter attempts to collect mounted text/architecture resources from `$ArmaReforger:`:
+The exporter is deliberately weapon-scoped. It does **not** export the whole game.
 
-- `.et`
-- `.conf`
-- `.c`
-- `.layout`
+Current scope:
 
-Existing weapon-only materializer commands remain available for smaller resolver runs.
+- `$ArmaReforger:Prefabs/Weapons` → `.et`, `.conf`
+- `$ArmaReforger:Configs/Weapons` → `.conf`
+- `$ArmaReforger:Scripts/Game` → only `.c` files whose path is weapon-domain related (`Weapon`, `Magazine`, `Ammo`, `Projectile`, `Muzzle`, `Recoil`, `FireMode`, `Attachment`, `Optic`)
 
 The raw export preserves vanilla-relative paths under:
 
 `Imported/VanillaSources/`
 
 and writes `_wax_materialization.tsv` with copy/materialization status.
+
+The snapshot exporter intentionally does **not** call `RegisterResourceFile` for every copied file. These files are local-agent input, not addon resources that Workbench needs to register/import.
+
+If architecture analysis later proves that a specific referenced class/config lives outside the current scope, add a targeted source root or dependency rule. Do not broaden the exporter back to the whole `$ArmaReforger:` tree.
 
 ## Local-agent job
 
@@ -68,5 +71,6 @@ The purpose of the GitHub layer is to let remote analysis answer questions such 
 - Which components are mandatory vs inherited?
 - Which instance GUIDs identify override targets?
 - Which `.conf` files define fire modes/recoil/etc.?
+- Which script classes implement the components/config behavior involved?
 - How does the chain reach magazine, AmmoConfig, AmmoMapping and projectile physics?
 - What is the smallest valid ARMST prefab that changes only the intended fields?
