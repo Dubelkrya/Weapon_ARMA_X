@@ -217,6 +217,58 @@ class ResolverV2ConfigTests(unittest.TestCase):
             self.assertEqual(result["mapping"], [0, 0])
             self.assertEqual(result["counts"][0]["count"], 2)
 
+    def test_sparse_child_weapon_component_does_not_hide_inherited_muzzle(self):
+        with tempfile.TemporaryDirectory() as root:
+            write(
+                root,
+                "Base.et",
+                '''
+                GenericEntity {
+                 components {
+                  WeaponComponent "{1000}" {
+                   components {
+                    MuzzleComponent "{1001}" {
+                     MagazineWell MagazineWellTest "{1002}" {
+                     }
+                     MagazineTemplate "{D001}Magazine.et"
+                     FireModes {
+                     }
+                    }
+                   }
+                  }
+                 }
+                }
+                ''',
+            )
+            write(
+                root,
+                "Child.et",
+                '''
+                GenericEntity : "{B001}Base.et" {
+                 components {
+                  WeaponComponent "{9000}" {
+                   UIInfo {
+                    Name "Child UI only"
+                   }
+                  }
+                 }
+                }
+                ''',
+            )
+
+            store = HydratedResourceStore([ResourceRoot("test", root, 10)])
+            store.scan()
+            result = store.resolve_entity("Child.et")
+
+            weapon = find_recursive_r(result.resolved, "WeaponComponent")[0]
+            components = next(c for c in weapon.children if c.name == "components")
+            muzzle = next(c for c in components.children if c.name == "MuzzleComponent")
+            template = next(c for c in muzzle.children if c.name == "MagazineTemplate")
+
+            self.assertEqual(weapon.id, "{1000}")
+            self.assertEqual(template.ref["path"], "Magazine.et")
+            self.assertEqual(template.defined_in, "Base.et")
+
 
 if __name__ == "__main__":
     unittest.main()
