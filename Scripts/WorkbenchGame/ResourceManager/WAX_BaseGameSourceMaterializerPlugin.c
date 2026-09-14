@@ -2,7 +2,7 @@
 
 [WorkbenchPluginAttribute(
 	name: "WAX: Materialize Selected Vanilla Sources",
-	description: "Materialize selected base-game .et/.conf resources into this addon for local inspection. Uses physical copy first, then BaseContainer serialization when supported.",
+	description: "Materialize selected base-game .et/.conf resources into Imported/VanillaSources while preserving their vanilla-relative paths.",
 	wbModules: { "ResourceManager" },
 	resourceTypes: { "et", "conf" },
 	category: "Weapon ARMA X")]
@@ -10,6 +10,9 @@ class WAX_BaseGameSourceMaterializerPlugin : ResourceManagerPlugin
 {
 	protected static const string DESTINATION_ROOT = "$Weapon_ARMA_X:Imported/VanillaSources";
 	protected static const string BASE_GAME_ROOT = "$ArmaReforger:";
+	protected static const string PREFAB_ROOT = "$ArmaReforger:Prefabs/Weapons";
+	protected static const string CONFIG_ROOT = "$ArmaReforger:Configs/Weapons";
+	protected static const string MANIFEST_NAME = "_wax_materialization.tsv";
 
 	protected ref array<string> m_SourcePaths;
 	protected ref array<ResourceName> m_SourceResources;
@@ -23,8 +26,7 @@ class WAX_BaseGameSourceMaterializerPlugin : ResourceManagerPlugin
 			return;
 		}
 
-		m_SourcePaths = {};
-		m_SourceResources = {};
+		ResetSources();
 		resourceManager.GetResourceBrowserSelection(OnSelectionItem, true);
 
 		if (m_SourcePaths.IsEmpty())
@@ -36,6 +38,38 @@ class WAX_BaseGameSourceMaterializerPlugin : ResourceManagerPlugin
 			return;
 		}
 
+		MaterializeCollected(resourceManager, "selection");
+	}
+
+	protected void ResetSources()
+	{
+		m_SourcePaths = {};
+		m_SourceResources = {};
+	}
+
+	protected bool AddBaseGameResource(ResourceName resourceName)
+	{
+		if (resourceName == ResourceName.Empty)
+			return false;
+
+		string relativePath = resourceName.GetPath();
+		if (relativePath == "")
+			return false;
+
+		if (!relativePath.EndsWith(".et") && !relativePath.EndsWith(".ET") && !relativePath.EndsWith(".conf") && !relativePath.EndsWith(".CONF"))
+			return false;
+
+		string sourcePath = BASE_GAME_ROOT + relativePath;
+		if (m_SourcePaths.Find(sourcePath) >= 0)
+			return false;
+
+		m_SourcePaths.Insert(sourcePath);
+		m_SourceResources.Insert(resourceName);
+		return true;
+	}
+
+	protected void MaterializeCollected(ResourceManager resourceManager, string mode)
+	{
 		string destinationRootAbsolute;
 		if (!Workbench.GetAbsolutePath(DESTINATION_ROOT, destinationRootAbsolute, false))
 		{
@@ -49,6 +83,11 @@ class WAX_BaseGameSourceMaterializerPlugin : ResourceManagerPlugin
 			return;
 		}
 
+		string manifestAbsolute = FilePath.Concat(destinationRootAbsolute, MANIFEST_NAME);
+		FileHandle manifest = FileIO.OpenFile(manifestAbsolute, FileMode.WRITE);
+		if (manifest)
+			manifest.WriteLine("source\tdestination_relative\tmethod\tcontainer_class\tstatus");
+
 		int copied = 0;
 		int physical = 0;
 		int container = 0;
@@ -58,9 +97,27 @@ class WAX_BaseGameSourceMaterializerPlugin : ResourceManagerPlugin
 		{
 			string sourcePath = m_SourcePaths[i];
 			ResourceName sourceResource = m_SourceResources[i];
-			string sourceFileName = FilePath.StripPath(sourcePath);
-			string outputFileName = (i + 1).ToString(4) + "_" + sourceFileName;
-			string destinationAbsolute = FilePath.Concat(destinationRootAbsolute, outputFileName);
+			string relativePath;
+			if (!ToBaseGameRelativePath(sourcePath, relativePath))
+			{
+				PrintFormat("[WAX][MATERIALIZE] INVALID_SOURCE source=%1", sourcePath, level: LogLevel.WARNING);
+				failed++;
+				continue;
+			}
+
+			// Keep the vanilla-relative path exactly. Python resolver v2 points at
+			// Imported/VanillaSources as a resource root, so references like
+			// Prefabs/Weapons/... continue to resolve without path rewriting.
+			string destinationAbsolute = FilePath.Concat(destinationRootAbsolute, relativePath);
+			string destinationDirectory = FilePath.StripFileName(destinationAbsolute);
+			if (!FileIO.MakeDirectory(destinationDirectory))
+			{
+				PrintFormat("[WAX][MATERIALIZE] MKDIR_FAIL destination=%1", destinationDirectory, level: LogLevel.WARNING);
+				if (manifest)
+					manifest.WriteLine(string.Format("%1\t%2\t\t\tmkdir_failed", SafeField(sourcePath), SafeField(relativePath)));
+				failed++;
+				continue;
+			}
 
 			string method;
 			string containerClass;
@@ -72,6 +129,8 @@ class WAX_BaseGameSourceMaterializerPlugin : ResourceManagerPlugin
 					method,
 					containerClass,
 					level: LogLevel.WARNING);
+				if (manifest)
+					manifest.WriteLine(string.Format("%1\t%2\t%3\t%4\tfailed", SafeField(sourcePath), SafeField(relativePath), SafeField(method), SafeField(containerClass)));
 				failed++;
 				continue;
 			}
@@ -82,6 +141,8 @@ class WAX_BaseGameSourceMaterializerPlugin : ResourceManagerPlugin
 			if (!resourceManager.RegisterResourceFile(destinationAbsolute, false))
 			{
 				PrintFormat("[WAX][MATERIALIZE] REGISTER_FAIL file=%1", destinationAbsolute, level: LogLevel.WARNING);
+				if (manifest)
+					manifest.WriteLine(string.Format("%1\t%2\t%3\t%4\tregister_failed", SafeField(sourcePath), SafeField(relativePath), SafeField(method), SafeField(containerClass)));
 				failed++;
 				continue;
 			}
@@ -92,28 +153,46 @@ class WAX_BaseGameSourceMaterializerPlugin : ResourceManagerPlugin
 				method,
 				containerClass,
 				destinationAbsolute);
+			if (manifest)
+				manifest.WriteLine(string.Format("%1\t%2\t%3\t%4\tok", SafeField(sourcePath), SafeField(relativePath), SafeField(method), SafeField(containerClass)));
 			copied++;
 		}
 
+		if (manifest)
+			manifest.Close();
+
 		PrintFormat(
-			"[WAX][MATERIALIZE] summary selected=%1 copied=%2 physical=%3 container=%4 failed=%5",
+			"[WAX][MATERIALIZE] summary mode=%1 selected=%2 copied=%3 physical=%4 container=%5 failed=%6 root=%7",
+			mode,
 			m_SourcePaths.Count(),
 			copied,
 			physical,
 			container,
-			failed);
+			failed,
+			DESTINATION_ROOT);
 
 		LogLevel dialogLevel = LogLevel.NORMAL;
 		if (failed > 0)
 			dialogLevel = LogLevel.WARNING;
 
 		SCR_WorkbenchHelper.PrintFormatDialog(
-			"Materialization finished. Selected: %1, copied: %2, failed: %3. Packed resources that cannot serialize should be staged with Workbench 'Duplicate to addon'.",
+			"Vanilla materialization finished. Inputs: %1, copied: %2, failed: %3. Files are under Imported/VanillaSources with original Prefabs/Configs paths preserved.",
 			m_SourcePaths.Count().ToString(),
 			copied.ToString(),
 			failed.ToString(),
 			"Weapon ARMA X",
 			dialogLevel);
+	}
+
+	protected bool ToBaseGameRelativePath(string sourcePath, out string relativePath)
+	{
+		relativePath = sourcePath;
+		if (sourcePath.IndexOf(BASE_GAME_ROOT) != 0)
+			return false;
+
+		relativePath.Replace(BASE_GAME_ROOT, "");
+		relativePath.Replace("\\", "/");
+		return relativePath != "";
 	}
 
 	protected bool Materialize(
@@ -126,6 +205,7 @@ class WAX_BaseGameSourceMaterializerPlugin : ResourceManagerPlugin
 		method = "physical_unavailable";
 		containerClass = "";
 
+		// Prefer the exact text source when Workbench exposes it physically.
 		string sourceAbsolute;
 		if (Workbench.GetAbsolutePath(sourcePath, sourceAbsolute, true))
 		{
@@ -138,6 +218,10 @@ class WAX_BaseGameSourceMaterializerPlugin : ResourceManagerPlugin
 			return true;
 		}
 
+		// Packed base-game resources may have no physical source path. In that
+		// case serialize the mounted resource through Workbench. This gives the
+		// resolver local text to inspect without requiring a separately unpacked
+		// vanilla data tree.
 		method = "container_load_failed";
 		Resource sourceResource = Resource.Load(sourceResourceName);
 		if (!sourceResource || !sourceResource.IsValid())
@@ -190,13 +274,20 @@ class WAX_BaseGameSourceMaterializerPlugin : ResourceManagerPlugin
 		return writtenBytes == readBytes;
 	}
 
+	protected string SafeField(string value)
+	{
+		string safe = value;
+		safe.Replace("\t", " ");
+		safe.Replace("\r", " ");
+		safe.Replace("\n", " ");
+		return safe;
+	}
+
 	protected void OnSelectionItem(ResourceName resourceName, string filePath = "")
 	{
 		if (resourceName == ResourceName.Empty)
 			return;
 
-		// Resource Manager callback filePath is expected in $Addon:Path/To/File.ext format.
-		// V1 deliberately rejects every mount except the vanilla ArmaReforger mount.
 		string sourcePath = filePath;
 		if (sourcePath == "" || sourcePath.IndexOf(BASE_GAME_ROOT) != 0)
 		{
@@ -213,6 +304,58 @@ class WAX_BaseGameSourceMaterializerPlugin : ResourceManagerPlugin
 
 		m_SourcePaths.Insert(sourcePath);
 		m_SourceResources.Insert(resourceName);
+	}
+}
+
+[WorkbenchPluginAttribute(
+	name: "WAX: Materialize Vanilla Weapon Dataset",
+	description: "Materialize mounted base-game weapon .et/.conf resources from Prefabs/Weapons and Configs/Weapons into Imported/VanillaSources, preserving relative paths for resolver v2.",
+	wbModules: { "ResourceManager" },
+	category: "Weapon ARMA X")]
+class WAX_BaseGameWeaponDatasetMaterializerPlugin : WAX_BaseGameSourceMaterializerPlugin
+{
+	override void Run()
+	{
+		ResourceManager resourceManager = Workbench.GetModule(ResourceManager);
+		if (!resourceManager)
+		{
+			Print("[WAX][MATERIALIZE] Resource Manager unavailable", LogLevel.ERROR);
+			return;
+		}
+
+		ResetSources();
+
+		array<ResourceName> prefabResources = SCR_WorkbenchHelper.SearchWorkbenchResources({ "et" }, null, PREFAB_ROOT, true);
+		if (prefabResources)
+		{
+			foreach (ResourceName prefab : prefabResources)
+				AddBaseGameResource(prefab);
+		}
+
+		array<ResourceName> configResources = SCR_WorkbenchHelper.SearchWorkbenchResources({ "conf" }, null, PREFAB_ROOT, true);
+		if (configResources)
+		{
+			foreach (ResourceName prefabConfig : configResources)
+				AddBaseGameResource(prefabConfig);
+		}
+
+		array<ResourceName> weaponConfigs = SCR_WorkbenchHelper.SearchWorkbenchResources({ "conf" }, null, CONFIG_ROOT, true);
+		if (weaponConfigs)
+		{
+			foreach (ResourceName weaponConfig : weaponConfigs)
+				AddBaseGameResource(weaponConfig);
+		}
+
+		if (m_SourcePaths.IsEmpty())
+		{
+			SCR_WorkbenchHelper.PrintDialog(
+				"No mounted vanilla weapon resources were found under Prefabs/Weapons or Configs/Weapons.",
+				"Weapon ARMA X",
+				LogLevel.WARNING);
+			return;
+		}
+
+		MaterializeCollected(resourceManager, "weapon_dataset");
 	}
 }
 
