@@ -2,5 +2,7 @@
 agent/scripts/working_tables/
 agent/scripts/_inspect.py
 agent/v2_output/
+Generated/
+Imported/VanillaSources/
 __pycache__/
 *.pyc
