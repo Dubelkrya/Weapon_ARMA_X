@@ -31,10 +31,7 @@ class WAX_BaseGameSourceMaterializerPlugin : ResourceManagerPlugin
 
 		if (m_SourcePaths.IsEmpty())
 		{
-			SCR_WorkbenchHelper.PrintDialog(
-				"Select one or more $ArmaReforger: .et/.conf resources in Resource Manager first.",
-				"Weapon ARMA X",
-				LogLevel.WARNING);
+			Print("[WAX][MATERIALIZE] Select one or more $ArmaReforger: .et/.conf resources first.", LogLevel.WARNING);
 			return;
 		}
 
@@ -120,20 +117,17 @@ class WAX_BaseGameSourceMaterializerPlugin : ResourceManagerPlugin
 			string containerClass;
 			if (!Materialize(sourcePath, sourceResource, destinationAbsolute, method, containerClass))
 			{
-				PrintFormat(
-					"[WAX][MATERIALIZE] FAIL source=%1 method=%2 class=%3",
-					sourcePath,
-					method,
-					containerClass,
-					level: LogLevel.WARNING);
+				PrintFormat("[WAX][MATERIALIZE] FAIL source=%1 method=%2 class=%3", sourcePath, method, containerClass, level: LogLevel.WARNING);
 				if (manifest)
 					manifest.WriteLine(string.Format("%1\t%2\t%3\t%4\tfailed", SafeField(sourcePath), SafeField(relativePath), SafeField(method), SafeField(containerClass)));
 				failed++;
 				continue;
 			}
 
-			if (method == "physical") physical++;
-			if (method == "container") container++;
+			if (method == "physical")
+				physical++;
+			if (method == "container")
+				container++;
 
 			if (!resourceManager.RegisterResourceFile(destinationAbsolute, false))
 			{
@@ -144,12 +138,6 @@ class WAX_BaseGameSourceMaterializerPlugin : ResourceManagerPlugin
 				continue;
 			}
 
-			PrintFormat(
-				"[WAX][MATERIALIZE] COPIED source=%1 method=%2 class=%3 destination=%4",
-				sourcePath,
-				method,
-				containerClass,
-				destinationAbsolute);
 			if (manifest)
 				manifest.WriteLine(string.Format("%1\t%2\t%3\t%4\tok", SafeField(sourcePath), SafeField(relativePath), SafeField(method), SafeField(containerClass)));
 			copied++;
@@ -159,7 +147,7 @@ class WAX_BaseGameSourceMaterializerPlugin : ResourceManagerPlugin
 			manifest.Close();
 
 		PrintFormat(
-			"[WAX][MATERIALIZE] summary mode=%1 selected=%2 copied=%3 physical=%4 container=%5 failed=%6 root=%7",
+			"[WAX][MATERIALIZE] DONE mode=%1 inputs=%2 copied=%3 physical=%4 container=%5 failed=%6 root=%7",
 			mode,
 			m_SourcePaths.Count(),
 			copied,
@@ -167,18 +155,6 @@ class WAX_BaseGameSourceMaterializerPlugin : ResourceManagerPlugin
 			container,
 			failed,
 			DESTINATION_ROOT);
-
-		LogLevel dialogLevel = LogLevel.NORMAL;
-		if (failed > 0)
-			dialogLevel = LogLevel.WARNING;
-
-		SCR_WorkbenchHelper.PrintFormatDialog(
-			"Vanilla materialization finished. Inputs: %1, copied: %2, failed: %3. Files are under Imported/VanillaSources with original Prefabs/Configs paths preserved.",
-			m_SourcePaths.Count().ToString(),
-			copied.ToString(),
-			failed.ToString(),
-			"Weapon ARMA X",
-			dialogLevel);
 	}
 
 	protected bool ToBaseGameRelativePath(string sourcePath, out string relativePath)
@@ -340,10 +316,7 @@ class WAX_BaseGameWeaponDatasetMaterializerPlugin : WAX_BaseGameSourceMaterializ
 
 		if (m_SourcePaths.IsEmpty())
 		{
-			SCR_WorkbenchHelper.PrintDialog(
-				"No mounted vanilla weapon resources were found under Prefabs/Weapons or Configs/Weapons.",
-				"Weapon ARMA X",
-				LogLevel.WARNING);
+			Print("[WAX][MATERIALIZE] No mounted vanilla weapon resources found.", LogLevel.WARNING);
 			return;
 		}
 
