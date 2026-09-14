@@ -2,8 +2,7 @@
 
 class WAX_BaseGameScriptScanner
 {
-	static const string SOURCE_ROOT = "scripts/";
-	static const string SOURCE_EXTENSION = ".c";
+	static const string SOURCE_ROOT = "$ArmaReforger:Scripts";
 	static const string OUTPUT_ROOT = "$Weapon_ARMA_X:Generated/BaseGameScripts";
 
 	protected int m_Discovered;
@@ -18,10 +17,15 @@ class WAX_BaseGameScriptScanner
 		m_Unreadable = 0;
 		m_TotalLines = 0;
 
-		array<string> scriptFiles = {};
-		bool discoveryOk = FileIO.FindFiles(scriptFiles.Insert, SOURCE_ROOT, SOURCE_EXTENSION);
+		array<string> scriptFiles = SCR_WorkbenchHelper.SearchWorkbenchFiles({ "c" }, null, SOURCE_ROOT, true);
+		if (!scriptFiles)
+		{
+			Print("[WAX][SCRIPT_INTEL] discovery_failed", LogLevel.ERROR);
+			return false;
+		}
+
 		m_Discovered = scriptFiles.Count();
-		if (!discoveryOk || m_Discovered == 0)
+		if (m_Discovered == 0)
 		{
 			Print("[WAX][SCRIPT_INTEL] no_scripts_discovered", LogLevel.ERROR);
 			return false;
@@ -42,7 +46,8 @@ class WAX_BaseGameScriptScanner
 		WriteReadme();
 
 		PrintFormat(
-			"[WAX][SCRIPT_INTEL] discovered=%1 read=%2 unreadable=%3 lines=%4 output=%5/",
+			"[WAX][SCRIPT_INTEL] root=%1 discovered=%2 read=%3 unreadable=%4 lines=%5 output=%6/",
+			SOURCE_ROOT,
 			m_Discovered,
 			m_Read,
 			m_Unreadable,
@@ -81,11 +86,12 @@ class WAX_BaseGameScriptScanner
 		file.WriteLine("key\tvalue");
 		file.WriteLine("format\tWAX_BASE_GAME_SCRIPTS_V1");
 		file.WriteLine(string.Format("source_root\t%1", SOURCE_ROOT));
-		file.WriteLine(string.Format("source_extension\t%1", SOURCE_EXTENSION));
+		file.WriteLine("source_extension\tc");
 		file.WriteLine(string.Format("discovered\t%1", m_Discovered));
 		file.WriteLine(string.Format("read\t%1", m_Read));
 		file.WriteLine(string.Format("unreadable\t%1", m_Unreadable));
 		file.WriteLine(string.Format("total_lines\t%1", m_TotalLines));
+		file.WriteLine("source_scope\tArmaReforger base-game mount only");
 		file.WriteLine("source_mirror\tno");
 		file.Close();
 	}
@@ -98,7 +104,7 @@ class WAX_BaseGameScriptScanner
 
 		file.WriteLine("# Weapon ARMA X — Base Game Script Visibility");
 		file.WriteLine("");
-		file.WriteLine("This scanner proves Workbench-visible `.c` access using the same `FileIO.FindFiles(\"scripts/\", \".c\")` architecture previously validated by RWTK Code Intelligence.");
+		file.WriteLine("This scanner uses `SCR_WorkbenchHelper.SearchWorkbenchFiles` scoped to `$ArmaReforger:Scripts`, so mounted mod scripts are excluded from the V1 base-game inventory.");
 		file.WriteLine("");
 		file.WriteLine("V1 writes only derived file/line metadata; it does not copy vanilla source bodies into this repository.");
 		file.Close();
@@ -132,7 +138,7 @@ class WAX_BaseGameScriptScanner
 
 [WorkbenchPluginAttribute(
 	name: "WAX: Scan Base Game Scripts",
-	description: "Index Workbench-visible Arma Reforger .c scripts without copying source bodies.",
+	description: "Index Arma Reforger base-game .c scripts without copying source bodies.",
 	wbModules: { "ScriptEditor" },
 	category: "Weapon ARMA X")]
 class WAX_BaseGameScriptScannerPlugin : WorkbenchPlugin
