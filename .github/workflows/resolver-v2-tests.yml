@@ -8,6 +8,7 @@ on:
     paths:
       - 'agent/scripts/resolver_v2*.py'
       - 'agent/scripts/scan_build_v2.py'
+      - 'agent/scripts/reference_cases_v2.py'
       - 'agent/tests/test_resolver_v2*.py'
       - '.github/workflows/resolver-v2-tests.yml'
   workflow_dispatch:
@@ -22,5 +23,14 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+      - name: Compile resolver v2 scripts
+        run: >-
+          python -m py_compile
+          agent/scripts/resolver_v2.py
+          agent/scripts/resolver_v2_configs.py
+          agent/scripts/resolver_v2_extract.py
+          agent/scripts/scan_build_v2.py
+          agent/scripts/scan_v2_probe.py
+          agent/scripts/reference_cases_v2.py
       - name: Run resolver tests
         run: python -m unittest discover -s agent/tests -p 'test_resolver_v2*.py' -v
