@@ -9,6 +9,15 @@ This directory is the **machine-facing entry point** for weapon balance/catalog 
 
 Do **not** bulk-load `catalog/`, `indexes/`, `reports/`, or `schema/` for normal analysis. Those are legacy/debug outputs while resolver v2 is being validated.
 
+## Source policy
+- ARMST is the frozen source snapshot for this catalog.
+- ARMST duplicated resources intentionally preserve the version used by the mod even if current vanilla changes later.
+- Resolver/catalog work must use only files physically present inside ARMST.
+- Never backfill a missing ARMST parent, magazine, AmmoConfig, projectile, or config from current vanilla or `Imported/VanillaSources`.
+- If an ARMST reference cannot be resolved inside ARMST, keep it external/missing and report the gap.
+- Short serialized paths may be normalized only to a unique target inside the same ARMST root.
+- The Workbench vanilla materializer is not a catalog source; it is a separate utility.
+
 ## Data semantics
 - Compact rows are **resolved/effective summaries** unless a field is absent.
 - Missing key = pending/unknown. Never infer `0` or `null`.
@@ -28,8 +37,8 @@ Do **not** bulk-load `catalog/`, `indexes/`, `reports/`, or `schema/` for normal
 
 ## Common flags
 - `PENDING_DETAIL`: only indexed / detail not resolved
-- `PARENT_MISSING`: parent-chain gap
-- `AMMO_PENDING`: ammo chain incomplete
+- `PARENT_MISSING`: parent-chain gap inside ARMST
+- `AMMO_PENDING`: ammo chain incomplete inside ARMST
 - `MAPPING_PENDING`: exact AmmoMapping incomplete
 - `CAPACITY_PENDING`: MaxAmmo not proven
 - `RECOIL_GAP`: recoil collection/config incomplete
@@ -41,4 +50,4 @@ Do **not** bulk-load `catalog/`, `indexes/`, `reports/`, or `schema/` for normal
 - `COLLECTION_VERIFY`: nested collection override requires raw verification
 
 ## Editing rule
-Use compact files for retrieval/comparison. Before modifying game resources, confirm the field in resolver provenance/raw source. Never edit from a compact row alone.
+Use compact files for retrieval/comparison. Before modifying game resources, confirm the field in resolver provenance/raw ARMST source. Never edit from a compact row alone.
