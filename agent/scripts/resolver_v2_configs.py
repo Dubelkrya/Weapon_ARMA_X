@@ -127,6 +127,14 @@ class HydratedResourceStore(ResourceStore):
                 return child
         return None
 
+    def _resolved_conf_root(self, relpath: str) -> Optional[RNode]:
+        """Return a config root with nested config inheritance already hydrated."""
+        record = self.get(relpath)
+        if record is None or record.kind != "conf":
+            return None
+        root = rnode_from_parsed(record.resource.root, record.relpath, record.origin)
+        return self._hydrate_config_refs(root, (record.relpath,))
+
     def _report_config_loop(self, target: str, stack: Tuple[str, ...]) -> None:
         target_key = _norm_relpath(target)
         stack_keys = [_norm_relpath(item) for item in stack]
