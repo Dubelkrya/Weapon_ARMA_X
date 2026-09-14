@@ -4,20 +4,20 @@ This is the integration bridge between resolver_v2 and the existing catalog.
 It deliberately writes to a separate output directory until v1/v2 comparison is
 clean enough to replace scan_build.py.
 
-No vanilla source trees are exported.  Only semantic resolved values,
-provenance, ammo composition, derived metrics, and anomaly summaries are
-written.
+ARMST is the frozen source snapshot for catalog resolution. The production
+launcher invokes this pipeline with ARMST only; current vanilla/materialized
+sources are intentionally excluded so later vanilla changes cannot affect the
+catalog. The optional multi-root plumbing remains available only for isolated
+resolver tests/debugging and is not part of the supported ARMST catalog path.
 
 Example (Windows):
 
   python agent/scripts/scan_build_v2.py ^
     --armst-root "C:\\...\\ARMST-PLATFORM---Weapons" ^
-    --vanilla-root "base=C:\\...\\MaterializedVanilla" ^
     --repo-root .
 
 Environment fallbacks:
   MOD_ROOT           ARMST root
-  VANILLA_ROOTS      os.pathsep-separated vanilla/materialized roots
   REPO_ROOT          repository root
 """
 
@@ -59,24 +59,22 @@ def _value(obj):
     return obj
 
 
-def _root_spec(raw: str, index: int) -> Tuple[str, str]:
-    if "=" in raw:
-        label, path = raw.split("=", 1)
-        return label.strip() or f"vanilla{index}", path
-    return f"vanilla{index}", raw
-
-
 def roots_from_args(armst_root: str, vanilla_roots: Sequence[str]) -> List[ResourceRoot]:
+    # Production ARMST catalog runs pass an empty vanilla_roots sequence.
     roots = [ResourceRoot("armst", armst_root, 100)]
     priority = 50
     for idx, raw in enumerate(vanilla_roots, 1):
-        label, path = _root_spec(raw, idx)
+        if "=" in raw:
+            label, path = raw.split("=", 1)
+            label = label.strip() or f"debug{idx}"
+        else:
+            label, path = f"debug{idx}", raw
         roots.append(ResourceRoot(label, path, priority))
         priority -= 1
     return roots
 
 
-def build_store(armst_root: str, vanilla_roots: Sequence[str]) -> HydratedResourceStore:
+def build_store(armst_root: str, vanilla_roots: Sequence[str] = ()) -> HydratedResourceStore:
     store = HydratedResourceStore(roots_from_args(armst_root, vanilla_roots))
     store.scan()
     return store
@@ -240,8 +238,6 @@ def build_documents(store: HydratedResourceStore, origin: str = "armst") -> Dict
             continue
         docs[record.relpath] = _entry(store, record.relpath)
 
-    # Role is computed only among exported ARMST entities.  Vanilla resources
-    # participate in resolution but are not mirrored into the public catalog.
     used_as_base = Counter()
     for doc in docs.values():
         for node in (doc.get("resolution") or {}).get("chain", [])[1:]:
@@ -451,6 +447,7 @@ def write_outputs(repo_root: str, output_root: str, docs: Dict[str, dict], store
     statuses = Counter((doc.get("resolution") or {}).get("status") for doc in docs.values())
     summary = {
         "schema_version": 2,
+        "source_policy": "armst_only",
         "entities": len(docs),
         "counts_by_kind": dict(counts),
         "resolution_status": dict(statuses),
@@ -470,6 +467,7 @@ def write_outputs(repo_root: str, output_root: str, docs: Dict[str, dict], store
 
     with open(os.path.join(report_root, "scan_summary_v2.md"), "w", encoding="utf-8") as handle:
         handle.write("# Resolver v2 scan summary\n\n")
+        handle.write("- Source policy: `ARMST only`\n")
         handle.write(f"- Entities: {summary['entities']}\n")
         handle.write(f"- Resolution: `{summary['resolution_status']}`\n")
         handle.write(f"- Resolver warnings: {summary['resolver_warnings']}\n")
@@ -492,31 +490,19 @@ def write_outputs(repo_root: str, output_root: str, docs: Dict[str, dict], store
     return summary
 
 
-def _env_vanilla_roots() -> List[str]:
-    raw = os.environ.get("VANILLA_ROOTS", "")
-    return [item for item in raw.split(os.pathsep) if item]
-
-
 def main(argv: Optional[Sequence[str]] = None) -> int:
-    parser = argparse.ArgumentParser(description="Build ARMST catalog with resolver v2")
+    parser = argparse.ArgumentParser(description="Build ARMST-only catalog with resolver v2")
     parser.add_argument("--armst-root", default=os.environ.get("MOD_ROOT", DEFAULT_MOD_ROOT))
-    parser.add_argument(
-        "--vanilla-root",
-        action="append",
-        default=None,
-        help="Materialized/base resource root, optionally label=path. Repeatable.",
-    )
     parser.add_argument("--repo-root", default=os.environ.get("REPO_ROOT", DEFAULT_REPO_ROOT))
     parser.add_argument("--output-root", default=None)
     args = parser.parse_args(argv)
 
     repo_root = os.path.abspath(args.repo_root)
-    vanilla_roots = args.vanilla_root if args.vanilla_root is not None else _env_vanilla_roots()
     output_root = os.path.abspath(
         args.output_root or os.path.join(repo_root, "agent", "v2_output")
     )
 
-    store = build_store(os.path.abspath(args.armst_root), vanilla_roots)
+    store = build_store(os.path.abspath(args.armst_root), ())
     docs = build_documents(store)
     summary = write_outputs(repo_root, output_root, docs, store)
 
