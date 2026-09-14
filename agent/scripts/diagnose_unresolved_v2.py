@@ -1,9 +1,9 @@
 """Focused diagnostics for unresolved resolver-v2 outputs.
 
-Reads generated catalog JSON and checks unresolved inheritance/ammo references
-against both ARMST and materialized vanilla roots.  This deliberately does not
-change resolution semantics; it provides evidence before GUID/path collision
-handling is hardened.
+ARMST is the frozen source snapshot for this catalog. Diagnostics therefore
+check unresolved inheritance/ammo references only against files physically
+present inside the ARMST addon. Current vanilla/materialized resources are not
+used as fallback evidence.
 """
 
 from __future__ import annotations
@@ -106,36 +106,26 @@ def build_report(catalog_root: str, roots: Dict[str, str]) -> dict:
             }
         )
 
-    collision_gaps = [
-        row for row in ammo_gaps if len(row.get("magazine_target_candidates") or []) > 1
-    ]
     return {
+        "source_policy": "armst_only",
         "partial_count": len(partial),
         "partial": partial,
         "weapon_ammo_status": dict(status_counts),
         "ammo_gap_count": len(ammo_gaps),
         "ammo_gaps": ammo_gaps,
-        "ammo_gaps_with_path_collision": len(collision_gaps),
     }
 
 
 def main(argv: Optional[Sequence[str]] = None) -> int:
-    parser = argparse.ArgumentParser(description="Diagnose resolver-v2 unresolved references")
+    parser = argparse.ArgumentParser(description="Diagnose ARMST-only resolver-v2 unresolved references")
     parser.add_argument("--repo-root", default=os.environ.get("REPO_ROOT", DEFAULT_REPO_ROOT))
     parser.add_argument("--armst-root", default=os.environ.get("ARMST_ROOT", DEFAULT_ARMST_ROOT))
-    parser.add_argument("--vanilla-root", default=os.environ.get("VANILLA_ROOT"))
     parser.add_argument("--output-root", default=None)
     args = parser.parse_args(argv)
 
     repo_root = os.path.abspath(args.repo_root)
     output_root = os.path.abspath(args.output_root or os.path.join(repo_root, "agent", "v2_output"))
-    vanilla_root = os.path.abspath(
-        args.vanilla_root or os.path.join(repo_root, "Imported", "VanillaSources")
-    )
-    roots = {
-        "armst": os.path.abspath(args.armst_root),
-        "materialized_base": vanilla_root,
-    }
+    roots = {"armst": os.path.abspath(args.armst_root)}
     report = build_report(os.path.join(output_root, "catalog"), roots)
     report["roots"] = roots
 
