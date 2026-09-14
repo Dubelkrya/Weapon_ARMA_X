@@ -34,7 +34,7 @@ if not exist "%VANILLA_ROOT%" (
 pushd "%REPO_ROOT%" || exit /b 4
 
 echo [resolver-v2] Source policy: ARMST editable + vanilla read-only inheritance
- echo [resolver-v2] ARMST:                %ARMST_ROOT%
+echo [resolver-v2] ARMST:                %ARMST_ROOT%
 echo [resolver-v2] Vanilla read-only:     %VANILLA_ROOT%
 echo [resolver-v2] Output:               %OUTPUT_ROOT%
 echo.
