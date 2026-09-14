@@ -24,24 +24,27 @@ class WAX_BaseGameFullSnapshotExporterPlugin : WAX_BaseGameSourceMaterializerPlu
 
 	protected bool IsWeaponScriptPath(string relativePath)
 	{
-		return relativePath.IndexOf("Weapon") >= 0
-			|| relativePath.IndexOf("weapon") >= 0
-			|| relativePath.IndexOf("Magazine") >= 0
-			|| relativePath.IndexOf("magazine") >= 0
-			|| relativePath.IndexOf("Ammo") >= 0
-			|| relativePath.IndexOf("ammo") >= 0
-			|| relativePath.IndexOf("Projectile") >= 0
-			|| relativePath.IndexOf("projectile") >= 0
-			|| relativePath.IndexOf("Muzzle") >= 0
-			|| relativePath.IndexOf("muzzle") >= 0
-			|| relativePath.IndexOf("Recoil") >= 0
-			|| relativePath.IndexOf("recoil") >= 0
-			|| relativePath.IndexOf("FireMode") >= 0
-			|| relativePath.IndexOf("firemode") >= 0
-			|| relativePath.IndexOf("Attachment") >= 0
-			|| relativePath.IndexOf("attachment") >= 0
-			|| relativePath.IndexOf("Optic") >= 0
-			|| relativePath.IndexOf("optic") >= 0;
+		// Keep these as simple statements. Enfusion Workbench can reject one
+		// large boolean expression here with "Formula too complex".
+		if (relativePath.IndexOf("Weapon") >= 0) return true;
+		if (relativePath.IndexOf("weapon") >= 0) return true;
+		if (relativePath.IndexOf("Magazine") >= 0) return true;
+		if (relativePath.IndexOf("magazine") >= 0) return true;
+		if (relativePath.IndexOf("Ammo") >= 0) return true;
+		if (relativePath.IndexOf("ammo") >= 0) return true;
+		if (relativePath.IndexOf("Projectile") >= 0) return true;
+		if (relativePath.IndexOf("projectile") >= 0) return true;
+		if (relativePath.IndexOf("Muzzle") >= 0) return true;
+		if (relativePath.IndexOf("muzzle") >= 0) return true;
+		if (relativePath.IndexOf("Recoil") >= 0) return true;
+		if (relativePath.IndexOf("recoil") >= 0) return true;
+		if (relativePath.IndexOf("FireMode") >= 0) return true;
+		if (relativePath.IndexOf("firemode") >= 0) return true;
+		if (relativePath.IndexOf("Attachment") >= 0) return true;
+		if (relativePath.IndexOf("attachment") >= 0) return true;
+		if (relativePath.IndexOf("Optic") >= 0) return true;
+		if (relativePath.IndexOf("optic") >= 0) return true;
+		return false;
 	}
 
 	protected bool AddSnapshotResource(ResourceName resourceName, bool requireWeaponScriptName = false)
