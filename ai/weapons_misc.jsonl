@@ -1,0 +1,6 @@
+{"id":"rifle_akm","origin":"armst","name":"АКМ","category":"Винтовка","resource":"Prefabs/Weapons/Rifles/AKM/Rifle_AKM.et","status":"PENDING_DETAIL","fire_modes":[],"flags":["PENDING_DETAIL"]}
+{"id":"rifle_akms","origin":"armst","name":"АКМС","category":"Винтовка","resource":"Prefabs/Weapons/Rifles/AKM/Rifle_AKMS.et","status":"PENDING_DETAIL","fire_modes":[],"flags":["PENDING_DETAIL"]}
+{"id":"rifle_akm_base","origin":"armst","name":"АКМ (база)","category":"Винтовка","resource":"Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et","status":"PENDING_DETAIL","fire_modes":[],"flags":["PENDING_DETAIL"]}
+{"id":"rifle_akm_full","origin":"armst","name":"АКМ","category":"Винтовка","resource":"Prefabs/Weapons/Rifles/AKM/Rifle_AKM_full.et","status":"PENDING_DETAIL","fire_modes":[],"flags":["PENDING_DETAIL"]}
+{"id":"rifle_soc94","origin":"armst","name":"СОК-94 «Вепрь»","category":"Винтовка","resource":"Prefabs/Weapons/Rifles/AKM/Rifle_SOC94.et","status":"PENDING_DETAIL","fire_modes":[],"flags":["PENDING_DETAIL"]}
+{"id":"rifle_vpo136","origin":"armst","name":"ВПО-136","category":"Винтовка","resource":"Prefabs/Weapons/Rifles/AKM/Rifle_VPO136.et","status":"PENDING_DETAIL","fire_modes":[],"flags":["PENDING_DETAIL"]}
