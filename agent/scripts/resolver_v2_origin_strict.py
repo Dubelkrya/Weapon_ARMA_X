@@ -1,22 +1,22 @@
 """Production origin/dependency guard for resolver-v2 strict identity.
 
 An explicit origin is a hard identity constraint once a concrete resource has
-already been selected.  In addition, dependency traversal must respect root
+already been selected. In addition, dependency traversal must respect root
 precedence: a lower/read-only root may not resolve a serialized dependency to a
 higher-priority editable overlay merely because that is the only copy currently
 available on disk.
 
 For the project root model this means vanilla can never silently depend upward
-on ARMST, while ARMST may still reference vanilla.  The rule is expressed in
-terms of root priority so the strict store remains usable with additional
-read-only dependency roots.
+on ARMST, while ARMST may still reference vanilla. Live GUID evidence is learned
+only from serialized `.et/.conf` references; `.meta Name` is metadata and must
+never become resource-identity proof.
 """
 
 from __future__ import annotations
 
 from typing import List, Optional
 
-from resolver_v2 import ResourceRecord
+from resolver_v2 import ResourceRecord, _norm_key, iter_nodes
 from resolver_v2_strict import StrictHydratedResourceStore, _identity
 
 
@@ -40,6 +40,20 @@ class OriginPinnedStrictHydratedResourceStore(StrictHydratedResourceStore):
             return None
         return candidates[0] if candidates else None
 
+    @staticmethod
+    def _iter_record_refs(record: ResourceRecord):
+        """Yield live serialized refs only; never treat `.meta Name` as identity."""
+        if record.kind not in ("et", "conf"):
+            return
+        if record.kind == "et" and record.parent:
+            yield record.parent
+        root = record.resource.root
+        if root is None:
+            return
+        for node in iter_nodes(root):
+            if node.ref:
+                yield node.ref
+
     def _eligible_dependency_records(
         self,
         records: List[ResourceRecord],
@@ -55,12 +69,11 @@ class OriginPinnedStrictHydratedResourceStore(StrictHydratedResourceStore):
         return [record for record in records if record.priority <= source_priority]
 
     def _index_strict_guid_evidence(self) -> None:
-        """Index GUID ownership only from dependency-eligible path candidates.
+        """Index GUID ownership only from dependency-eligible live references.
 
-        The parent implementation could incorrectly prove a vanilla GUID as
-        belonging to an ARMST-only path when the vanilla copy had not yet been
-        materialized.  Filtering before proving ownership prevents incomplete
-        local datasets from turning upward overlay candidates into evidence.
+        Incomplete materialization must not prove a vanilla GUID as belonging to
+        an ARMST-only path. Generated `.meta` sidecars are also excluded from
+        evidence entirely.
         """
         for source in self._all_records():
             for ref in self._iter_record_refs(source):
@@ -68,7 +81,7 @@ class OriginPinnedStrictHydratedResourceStore(StrictHydratedResourceStore):
                 path = str(ref.get("path") or "")
                 if not guid or not path:
                     continue
-                self._guid_observed_paths.setdefault(guid, set()).add(path.casefold())
+                self._guid_observed_paths.setdefault(guid, set()).add(_norm_key(path))
                 candidates, _mode = self._candidate_records(path)
                 eligible = self._eligible_dependency_records(candidates, source.origin)
                 if len(eligible) == 1:
@@ -122,10 +135,9 @@ class OriginPinnedStrictHydratedResourceStore(StrictHydratedResourceStore):
                 guid, path, [], "guid_maps_multiple_records", guid_records
             )
 
+        candidate_ids = {_identity(item) for item in candidates}
         blocked = [
-            record
-            for record in all_candidates
-            if _identity(record) not in {_identity(item) for item in candidates}
+            record for record in all_candidates if _identity(record) not in candidate_ids
         ]
         result = {
             "status": "external",
