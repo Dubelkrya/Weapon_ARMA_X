@@ -116,6 +116,27 @@ class ResolverV2OriginPinningTests(unittest.TestCase):
             self.assertEqual(entity.status, "resolved")
             self.assertEqual(entity.chain[1]["origin"], "materialized_base")
 
+    def test_meta_name_is_metadata_only_not_live_guid_evidence(self):
+        with tempfile.TemporaryDirectory() as armst, tempfile.TemporaryDirectory() as vanilla:
+            rel = "Prefabs/Weapons/Test/MetaOnly.et"
+            write(armst, rel, 'GenericEntity {\n ID "META_TEST"\n}\n')
+            write(
+                armst,
+                rel + ".meta",
+                f'''\
+                MetaFileClass {{
+                 Name "{{DEAD}}{rel}"
+                }}
+                ''',
+            )
+
+            store = build_store(armst, [f"materialized_base={vanilla}"])
+
+            self.assertEqual(store._guid_records("DEAD"), [])
+            self.assertNotIn("DEAD", store.live_guid_to_path)
+            # Metadata remains available only as metadata for diagnostics.
+            self.assertEqual(store.meta_name_guid_by_path[rel.casefold()], "DEAD")
+
 
 if __name__ == "__main__":
     unittest.main()
