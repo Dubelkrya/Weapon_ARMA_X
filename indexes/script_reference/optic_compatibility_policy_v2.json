@@ -1,0 +1,56 @@
+{
+  "version": 2,
+  "name": "ARMST Optics Gameplay Compatibility",
+  "principle": {
+    "real_world_reference": "Preserve real weapon/mount/module compatibility as research data.",
+    "gameplay_rule": "Any optic assigned AttachmentOpticsARMST_DovetailRU may be mounted on any weapon optic slot assigned AttachmentOpticsARMST_DovetailRU.",
+    "engine_rule": "module AttachmentType must inherit or equal the weapon slot AttachmentType."
+  },
+  "attachment_types": {
+    "AttachmentOpticsARMST_DovetailRU": {
+      "base_class": "AttachmentOptics",
+      "role": "gameplay compatibility family",
+      "scope": "Russian/Soviet side-rail optics intentionally grouped by ARMST gameplay policy"
+    }
+  },
+  "gameplay_families": {
+    "DovetailRU": {
+      "script_type": "AttachmentOpticsARMST_DovetailRU",
+      "examples_weapons_current_snapshot": ["AKM", "VSS", "VAL", "9A91", "VSK94", "SVD", "SOC94"],
+      "examples_optics_current_snapshot": ["PSO1", "PSO1_ak"],
+      "rule": "PSO-family and other approved Russian side-rail optics are intentionally cross-compatible across DovetailRU weapons."
+    },
+    "RIS1913": {
+      "script_type": "Bohemia AttachmentOpticsRIS1913 hierarchy",
+      "rule": "Keep engine-standard Picatinny/RIS hierarchy; do not merge it into DovetailRU."
+    },
+    "G36": {
+      "script_type": "AttachmentOpticsG36",
+      "rule": "Keep proprietary G36 compatibility separate."
+    }
+  },
+  "data_model": {
+    "required_fields": ["RealCompatibility", "GameplayCompatibility", "MountInterface", "Evidence", "GameplaySimplification"],
+    "example": {
+      "Module": "PSO-1",
+      "RealCompatibility": "specific real-world side-rail / mount variants",
+      "GameplayCompatibility": "DovetailRU",
+      "GameplaySimplification": "allowed on every ARMST weapon marked DovetailRU"
+    }
+  },
+  "validation": [
+    "DovetailRU optics must use AttachmentOpticsARMST_DovetailRU.",
+    "DovetailRU weapon optic slots must use AttachmentOpticsARMST_DovetailRU.",
+    "DovetailRU must not be used for RIS1913/Picatinny-only weapons.",
+    "G36 proprietary slot remains separate.",
+    "RealCompatibility may be narrower than GameplayCompatibility and must not be overwritten.",
+    "Pivot/snap placement is validated independently from AttachmentType."
+  ],
+  "migration": [
+    "Add AttachmentOpticsARMST.c.",
+    "Migrate all intended Russian side-rail weapon slots to AttachmentOpticsARMST_DovetailRU.",
+    "Migrate PSO-family final optic prefabs to AttachmentOpticsARMST_DovetailRU.",
+    "Keep RIS1913 and G36 types unchanged.",
+    "Run compatibility matrix and Workbench/runtime validation."
+  ]
+}
