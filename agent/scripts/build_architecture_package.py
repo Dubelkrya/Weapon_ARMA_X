@@ -1,7 +1,7 @@
 """One-command local build of the compact weapon architecture package.
 
-This is the local-agent entrypoint.  It intentionally replaces repeated
-Workbench experimentation with an offline pipeline:
+This is the offline entrypoint. It intentionally replaces repeated Workbench
+experimentation with a deterministic pipeline:
 
 1. read ARMST + existing read-only materialized vanilla .et/.conf;
 2. build strict resource/inheritance/reference architecture;
@@ -19,7 +19,7 @@ import argparse
 from collections import deque
 import json
 import os
-from typing import Dict, Iterable, List, Optional, Sequence, Set
+from typing import Iterable, List, Optional, Sequence, Set
 
 from architecture_index import build_architecture_package
 from scan_build_v2 import DEFAULT_MOD_ROOT, DEFAULT_REPO_ROOT
@@ -104,6 +104,38 @@ def link_script_classes(blueprints: List[dict], script_index: dict) -> dict:
     }
 
 
+def architecture_decision(architecture_summary: dict) -> dict:
+    """Separate missing-resource work from identity/parser correctness blockers.
+
+    A non-empty Workbench request list is actionable by an exact exporter.
+    Ambiguous identity is deliberately *not* a Workbench request: copying the
+    same collided path again cannot prove which resource a serialized GUID owns.
+    Resolver warnings likewise require parser/resolver review before declaring
+    the architecture package ready.
+    """
+    exact = int(architecture_summary.get("exact_export_request_count") or 0)
+    ambiguous = int(architecture_summary.get("ambiguous_identity_edge_count") or 0)
+    warnings = int(architecture_summary.get("resolver_warning_count") or 0)
+
+    if exact:
+        code = "EXACT_WORKBENCH_EXPORT_REQUIRED"
+    elif ambiguous:
+        code = "IDENTITY_EVIDENCE_REQUIRED"
+    elif warnings:
+        code = "RESOLVER_REVIEW_REQUIRED"
+    else:
+        code = "WORKBENCH_NOT_NEEDED"
+
+    return {
+        "code": code,
+        "architecture_ready": not (exact or ambiguous or warnings),
+        "workbench_needed": bool(exact),
+        "exact_request_count": exact,
+        "ambiguous_identity_edge_count": ambiguous,
+        "resolver_warning_count": warnings,
+    }
+
+
 def write_json(path: str, payload) -> None:
     os.makedirs(os.path.dirname(path), exist_ok=True)
     with open(path, "w", encoding="utf-8") as handle:
@@ -123,6 +155,7 @@ def build_package(
         script_index = build_script_index(script_source_root)
         script_links = link_script_classes(architecture["blueprints"], script_index)
 
+    decision = architecture_decision(architecture["summary"])
     manifest = {
         "schema_version": 1,
         "source_policy": "armst_editable_vanilla_readonly",
@@ -133,8 +166,11 @@ def build_package(
             for key, value in (script_links or {}).items()
             if key.endswith("_count")
         },
-        "workbench_needed": bool(architecture["export_requests"]),
-        "workbench_exact_request_count": len(architecture["export_requests"]),
+        "decision": decision,
+        # Backward-compatible top-level fields for existing readers.
+        "workbench_needed": decision["workbench_needed"],
+        "workbench_exact_request_count": decision["exact_request_count"],
+        "architecture_ready": decision["architecture_ready"],
     }
     return {
         "manifest": manifest,
