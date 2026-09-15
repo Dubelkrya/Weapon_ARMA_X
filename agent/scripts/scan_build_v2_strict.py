@@ -19,6 +19,7 @@ import os
 from typing import Sequence
 
 import scan_build_v2 as pipeline
+from resolver_v2_origin_strict import OriginPinnedStrictHydratedResourceStore
 from resolver_v2_strict import StrictHydratedResourceStore
 
 
@@ -116,11 +117,13 @@ def _vanilla_root_path(raw: str, index: int) -> str:
     return os.path.abspath(raw)
 
 
-def build_store(armst_root: str, vanilla_roots: Sequence[str]) -> StrictHydratedResourceStore:
+def build_store(
+    armst_root: str, vanilla_roots: Sequence[str]
+) -> OriginPinnedStrictHydratedResourceStore:
     for index, raw in enumerate(vanilla_roots, 1):
         validate_materialized_root(_vanilla_root_path(raw, index))
 
-    store = StrictHydratedResourceStore(
+    store = OriginPinnedStrictHydratedResourceStore(
         pipeline.roots_from_args(armst_root, vanilla_roots)
     )
     store.scan()
