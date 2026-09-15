@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "engine_compatibility_rule": "module_attachment_type.Type().IsInherited(slot_attachment_type.Type())",
+  "sources": {
+    "compatibility_check": "https://github.com/BohemiaInteractive/Arma-Reforger-Script-Diff/blob/3d77cc212d5cda9922daf5f45635c7300d2d4cce/scripts/Game/Inventory/SCR_InventoryStorageManagerComponent.c",
+    "slot_api": "https://github.com/BohemiaInteractive/Arma-Reforger-Script-Diff/blob/3d77cc212d5cda9922daf5f45635c7300d2d4cce/scripts/Game/generated/Weapon/AttachmentSlotComponent.c",
+    "optics_hierarchy": "https://github.com/BohemiaInteractive/Arma-Reforger-Script-Diff/blob/3d77cc212d5cda9922daf5f45635c7300d2d4cce/scripts/Game/Weapon/Attachments/Attachments_optics.c"
+  },
+  "invariants": [
+    "Weapon-side proprietary/dovetail slots use a leaf compatibility type, never a broad organizational parent.",
+    "Organizational parents are never serialized directly into final weapon slots or final optic modules.",
+    "A final optic prefab has one mount-family AttachmentType; multi-mount optics use thin child wrapper prefabs per family.",
+    "RIS1913 uses the Bohemia length hierarchy; use the narrowest suitable rail class.",
+    "Adapters bridge mount families explicitly instead of widening the native weapon slot.",
+    "Every final optic must have at least one compatible slot and every optic slot must have at least one approved optic.",
+    "Compatibility is checked statically by transitive type inheritance and an explicit allowlist.",
+    "Sight mechanics remain separate from attachment compatibility."
+  ],
+  "banned_on_final_weapon_slots": [
+    "AttachmentOptics",
+    "AttachmentOpticsDovetail",
+    "AttachmentOpticsDovetailAKSVD"
+  ],
+  "banned_on_final_dovetail_modules": [
+    "AttachmentOpticsDovetail",
+    "AttachmentOpticsDovetailAKSVD"
+  ],
+  "proposed_script_hierarchy": {
+    "AttachmentOpticsARMST_Dovetail": "AttachmentOptics",
+    "AttachmentOpticsARMST_AK": "AttachmentOpticsARMST_Dovetail",
+    "AttachmentOpticsARMST_SVD": "AttachmentOpticsARMST_Dovetail",
+    "AttachmentOpticsARMST_VSSVAL": "AttachmentOpticsARMST_Dovetail",
+    "AttachmentOpticsARMST_9A91VSK": "AttachmentOpticsARMST_Dovetail"
+  },
+  "current_findings": {
+    "optic_pso1": {
+      "attachment_type": "AttachmentOpticsDovetailAK",
+      "compatible_local_weapons": ["AKM", "VSS", "VAL", "9A91", "VSK94", "SVD"],
+      "status": "too_broad"
+    },
+    "optic_pso1_ak": {
+      "attachment_type": "AttachmentOpticsDovetailAKSVD",
+      "compatible_local_weapons": [],
+      "status": "orphan_in_supplied_snapshot"
+    },
+    "weapon_slot_issues": [
+      "armst_SVD uses AttachmentOpticsDovetailAK rather than an SVD-specific type.",
+      "VSS, VAL, 9A91, VSK94, AKM and SVD share AttachmentOpticsDovetailAK, allowing AK-typed optics across distinct families.",
+      "Groza uses AttachmentOpticsRIS1913; verify that the physical rail should accept the full RIS hierarchy or choose a narrower rail-length class.",
+      "G36 already uses the strict custom AttachmentOpticsG36 pattern."
+    ]
+  },
+  "migration_order": [
+    "Add new ARMST optic compatibility marker classes without deleting existing types.",
+    "Create thin optic wrapper prefabs per mount family from shared optic-body bases.",
+    "Migrate AK, SVD, VSS/VAL and 9A91/VSK94 slots one family at a time.",
+    "Generate the compatibility matrix and fail CI for orphan optics, broad proprietary slots and unapproved cross-family pairs.",
+    "Retire obsolete broad mappings only after Workbench validation."
+  ]
+}
