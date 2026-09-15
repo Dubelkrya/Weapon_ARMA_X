@@ -138,6 +138,53 @@ If `TurnOffsetData` does not need to change, omit it completely from the child p
 
 The exact values above are weapon/balance data, not a universal template. The universal rule is the override shape and preservation of inherited IDs.
 
+## Attachment compatibility: migrate both sides
+
+Workbench testing confirmed that attachment compatibility is a two-sided contract. Changing only the weapon slot type is not sufficient.
+
+The weapon side requests a compatibility type through `AttachmentSlotComponent -> AttachmentType`. The module/optic side declares its compatibility through `WeaponAttachmentAttributes -> AttachmentType`. The module type must equal or inherit the type required by the weapon slot.
+
+Therefore, when introducing a new project compatibility family:
+
+1. Add the marker class in script first and allow Workbench to recompile scripts.
+2. On the weapon, override only the inherited optic/attachment slot and replace only its `AttachmentType`. Preserve the inherited `AttachmentSlotComponent` ID and inherited `AttachmentType` object ID.
+3. Do not rewrite physical placement data merely to change compatibility. Keep inherited pivots, `Pivot ID`, `Child Pivot ID`, offsets, angles, helper prefabs and snap geometry unless there is a separate geometry reason to change them.
+4. On the optic/module, use the same compatibility family in `WeaponAttachmentAttributes -> AttachmentType`.
+5. Prefer a thin child prefab for the compatible optic/module instead of modifying the original source prefab. The child should inherit the model, optics, zeroing, animations and geometry and override only the compatibility type when that is the only difference.
+6. Test the pair in Workbench by actually mounting the child module on the weapon. A visible slot alone does not prove compatibility.
+
+Weapon-side shape:
+
+```text
+AttachmentSlotComponent "{INHERITED_SLOT_ID}" {
+ AttachmentType AttachmentOpticsARMST_DovetailRU "{INHERITED_ATTACHMENT_TYPE_ID}" {
+ }
+}
+```
+
+Module-side thin-child shape:
+
+```text
+GameEntity : "{PARENT_GUID}path/to/original_optic.et" {
+ components {
+  InventoryItemComponent "{INHERITED_INVENTORY_ITEM_ID}" {
+   Attributes SCR_ItemAttributeCollection "{INHERITED_ATTRIBUTE_COLLECTION_ID}" {
+    CustomAttributes {
+     WeaponAttachmentAttributes "{INHERITED_WEAPON_ATTACHMENT_ATTRIBUTES_ID}" {
+      AttachmentType AttachmentOpticsARMST_DovetailRU "{INHERITED_ATTACHMENT_TYPE_ID}" {
+      }
+     }
+    }
+   }
+  }
+ }
+}
+```
+
+This pattern was validated in Workbench: a weapon slot using `AttachmentOpticsARMST_DovetailRU` accepted a thin child optic using the same compatibility family while all placement geometry remained inherited.
+
+Compatibility and geometry are separate systems. A correct `AttachmentType` does not fix a wrong pivot, and changing pivots is not required when the existing physical mount geometry is already correct.
+
 ## Workbench validation checklist
 
 After every authoring step:
@@ -147,8 +194,9 @@ After every authoring step:
 3. Expand the edited component and verify that the changed value appears in the intended inherited object, not in a duplicated element.
 4. For fire modes, verify the visible order/types (`Safe`, `Single`, `Auto`, `Burst`, etc.) and inspect RPM / burst fields individually.
 5. For recoil, inspect `LinearData`, `AngularData`, and `TurnOffsetData` separately; do not judge only by one visible magnitude row.
-6. Confirm that untouched inherited values still display their parent values.
-7. Only after the prefab opens and the UI hierarchy looks correct should runtime shooting tests begin.
+6. For attachments, verify both sides: the weapon slot requests the intended type and the module's `WeaponAttachmentAttributes` declares the same/inheriting type; then perform an actual mount test.
+7. Confirm that untouched inherited values still display their parent values.
+8. Only after the prefab opens and the UI hierarchy looks correct should runtime shooting tests begin.
 
 If a value does not appear where expected, treat that as an authoring-path/instance-ID problem before trying to compensate with different numbers.
 
@@ -183,6 +231,12 @@ Fix: inspect and tune `LinearData`, `AngularData`, and `TurnOffsetData` independ
 Symptom: child prefabs become large, hard to review, and fragile against parent changes.
 
 Fix: remove every local field that is already correct in the parent.
+
+### 6. Migrating only the weapon side of an attachment family
+
+Symptom: the slot exists in Workbench, but no intended module can be attached.
+
+Fix: migrate the module side too. Its `WeaponAttachmentAttributes -> AttachmentType` must equal or inherit the type requested by the weapon slot. Prefer a thin child module prefab instead of editing the original asset.
 
 ## Canonical handgun chain
 
