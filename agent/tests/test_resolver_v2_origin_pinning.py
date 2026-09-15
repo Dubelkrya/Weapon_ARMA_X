@@ -64,6 +64,58 @@ class ResolverV2OriginPinningTests(unittest.TestCase):
             result = store.resolve_entity(rel, "armst")
             self.assertEqual(result.status, "missing")
 
+    def test_vanilla_reference_does_not_prove_guid_to_armst_only_candidate(self):
+        with tempfile.TemporaryDirectory() as armst, tempfile.TemporaryDirectory() as vanilla:
+            target = "Prefabs/Weapons/Test/SharedTarget.et"
+            source = "Prefabs/Weapons/Test/VanillaSource.et"
+            write(armst, target, 'GenericEntity {\n ID "ARMST_COPY"\n}\n')
+            write(
+                vanilla,
+                source,
+                f'''\
+                GenericEntity : "{{BEEF}}{target}" {{
+                }}
+                ''',
+            )
+
+            store = build_store(armst, [f"materialized_base={vanilla}"])
+
+            # Incomplete materialization is not evidence that vanilla's BEEF
+            # GUID belongs to the ARMST overlay copy.
+            self.assertEqual(store._guid_records("BEEF"), [])
+            ref = store.resolve_ref("BEEF", target, origin_hint="materialized_base")
+            self.assertEqual(ref["status"], "external")
+            self.assertEqual(ref["reason"], "upward_dependency_blocked")
+            self.assertEqual(ref["candidates"][0]["origin"], "armst")
+
+            entity = store.resolve_entity(source, "materialized_base")
+            self.assertEqual(entity.status, "partial")
+            self.assertEqual(entity.missing_parent["status"], "external_parent")
+            self.assertEqual(entity.missing_parent["reason"], "upward_dependency_blocked")
+
+    def test_armst_reference_can_resolve_downward_to_unique_vanilla_candidate(self):
+        with tempfile.TemporaryDirectory() as armst, tempfile.TemporaryDirectory() as vanilla:
+            target = "Prefabs/Weapons/Test/VanillaBase.et"
+            source = "Prefabs/Weapons/Test/ArmstChild.et"
+            write(vanilla, target, 'GenericEntity {\n ID "VANILLA_BASE"\n}\n')
+            write(
+                armst,
+                source,
+                f'''\
+                GenericEntity : "{{CAFE}}{target}" {{
+                }}
+                ''',
+            )
+
+            store = build_store(armst, [f"materialized_base={vanilla}"])
+            ref = store.resolve_ref("CAFE", target, origin_hint="armst")
+            self.assertEqual(ref["status"], "local")
+            self.assertEqual(ref["origin"], "materialized_base")
+
+            entity = store.resolve_entity(source, "armst")
+            self.assertEqual(entity.status, "resolved")
+            self.assertEqual(entity.chain[1]["origin"], "materialized_base")
+
 
 if __name__ == "__main__":
     unittest.main()
