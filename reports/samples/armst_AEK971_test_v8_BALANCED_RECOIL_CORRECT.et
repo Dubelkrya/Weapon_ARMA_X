@@ -1,0 +1,53 @@
+GenericEntity : "{923D948AB0D57A50}Prefabs/Weapons/Rifles/AK74/Rifle_AK74_long_base.et" {
+ ID "CFBAA4B725411E45"
+ components {
+  SCR_EditableEntityComponent "{65B265034B23979A}" {
+   Enabled 0
+   m_UIInfo SCR_EditableEntityUIInfo "{65B265034C4E74AA}" {
+    Name "AEK-971 [BALANCED RECOIL V8]"
+    m_aAuthoredLabels {
+    }
+    m_aAutoLabels {
+    }
+   }
+   m_bAutoRegister NEVER
+  }
+  WeaponComponent "{CFBAA4B706BA66E8}" {
+   components {
+    MuzzleComponent "{CA6BE4D6B867541F}" {
+     components {
+      AttachmentSlotComponent "{4E2B66CBA589F625}" {
+       Enabled 0
+      }
+     }
+     FireModes {
+      BaseFireMode "{B80A64F4A8EF8333}" {
+       RoundsPerMinute 900
+      }
+      BaseFireMode "{619AB45BF76565F3}" : "{B5D823125A678D73}Prefabs/Weapons/Core/Configs/FireModes/FireMode_Burst.conf" {
+       BurstType Interruptable
+       RoundsPerMinute 900
+      }
+     }
+     WeaponAimModifiers {
+      RecoilWeaponAimModifier "{55349E9229B55D9A}" {
+       LinearData RecoilData "{58789524E765774D}" {
+        "Curve Magnitudes" 0.94 0.8 1
+       }
+       AngularData RecoilData "{58789524E7CAB55F}" {
+        "Curve Magnitudes" 0.94 0.8 1
+       }
+      }
+     }
+     MagazinePosition InventoryStorageSlot "{B80A64F4C834E9CB}" {
+     }
+    }
+    WeaponAnimationComponent "{60B4EA76EB15F6E0}" {
+     AnimInjection AnimationAttachmentInfo "{55349E9229B55D8A}" {
+     }
+    }
+   }
+  }
+ }
+ coords 7533.834 2.718 6692.322
+}
