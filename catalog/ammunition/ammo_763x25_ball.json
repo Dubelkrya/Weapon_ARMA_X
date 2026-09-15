@@ -8,124 +8,50 @@
     "class": "Projectile",
     "defined_in": "Prefabs/Weapons/Ammo/Ammo_763x25_Ball.et"
   },
-  "identity": {
-    "name": "Ammo_763x25_Ball",
-    "resource": "Prefabs/Weapons/Ammo/Ammo_763x25_Ball.et"
-  },
-  "classification": {
-    "kind": "ammunition",
-    "confidence": "class"
-  },
+  "identity": {"name":"Ammo_763x25_Ball","resource":"Prefabs/Weapons/Ammo/Ammo_763x25_Ball.et"},
+  "classification": {"kind":"ammunition","confidence":"class"},
   "inheritance": {
     "chain": [
-      {
-        "resource": "Prefabs/Weapons/Ammo/Ammo_763x25_Ball.et",
-        "status": "local",
-        "class": "Projectile"
-      }
+      {"resource":"Prefabs/Weapons/Ammo/Ammo_763x25_Ball.et","status":"local","class":"Projectile"},
+      {"resource":"Prefabs/Weapons/Core/Ammo_Bullet_Base.et","status":"file","class":"Projectile"}
     ],
-    "external_parents": [
-      {
-        "guid": "67FED88E5085F63F",
-        "path": "Prefabs/Weapons/Core/Ammo_Bullet_Base.et",
-        "raw": "{67FED88E5085F63F}Prefabs/Weapons/Core/Ammo_Bullet_Base.et"
-      }
-    ],
-    "used_as_base_by": [],
-    "chain_depth_local": 1
+    "external_parents": [], "used_as_base_by": [], "chain_depth_local": 1
   },
   "references": [
-    {
-      "guid": "AEFA33057ADA0D0B",
-      "path": "Configs/Weapons/AIBallisticTables/AIBT_9x19_Ball_M882.conf",
-      "resolved": "external",
-      "target": null,
-      "defined_in": "Prefabs/Weapons/Ammo/Ammo_763x25_Ball.et"
-    },
-    {
-      "guid": "534A3A52CF7042A1",
-      "path": "Sounds/Weapons/_SharedData/BulletSonicCracks/Pistol/Weapons_BulletSonicCracks_Pistol.acp",
-      "resolved": "external",
-      "target": null,
-      "defined_in": "Prefabs/Weapons/Ammo/Ammo_763x25_Ball.et"
-    },
-    {
-      "guid": "C3F69D82DBEF24E2",
-      "path": "Sounds/Weapons/_SharedData/BulletFlybys/Pistol/Weapons_BulletFlybys_Pistol.acp",
-      "resolved": "external",
-      "target": null,
-      "defined_in": "Prefabs/Weapons/Ammo/Ammo_763x25_Ball.et"
-    },
-    {
-      "guid": "049EAC7C19E1B570",
-      "path": "Assets/Weapons/Ammo/Bullets/9x19/Bullet_9x19.xob",
-      "resolved": "external",
-      "target": null,
-      "defined_in": "Prefabs/Weapons/Ammo/Ammo_763x25_Ball.et"
-    },
-    {
-      "guid": "FA0DBC222917FBD6",
-      "path": "Assets/Weapons/Ammo/Bullets/9x19/Cartridge_9x19.xob",
-      "resolved": "external",
-      "target": null,
-      "defined_in": "Prefabs/Weapons/Ammo/Ammo_763x25_Ball.et"
-    }
+    {"guid":"9379B9A38F29D508","path":"Configs/Weapons/Ammo/Ammo_763x25.conf","resolved":"local","target":"Configs/Weapons/Ammo/Ammo_763x25.conf","defined_in":"Configs(1).zip mapping"},
+    {"guid":"AEFA33057ADA0D0B","path":"Configs/Weapons/AIBallisticTables/AIBT_9x19_Ball_M882.conf","resolved":"external","target":null,"defined_in":"Prefabs/Weapons/Ammo/Ammo_763x25_Ball.et"},
+    {"guid":"534A3A52CF7042A1","path":"Sounds/Weapons/_SharedData/BulletSonicCracks/Pistol/Weapons_BulletSonicCracks_Pistol.acp","resolved":"external","target":null,"defined_in":"Prefabs/Weapons/Ammo/Ammo_763x25_Ball.et"},
+    {"guid":"C3F69D82DBEF24E2","path":"Sounds/Weapons/_SharedData/BulletFlybys/Pistol/Weapons_BulletFlybys_Pistol.acp","resolved":"external","target":null,"defined_in":"Prefabs/Weapons/Ammo/Ammo_763x25_Ball.et"},
+    {"guid":"049EAC7C19E1B570","path":"Assets/Weapons/Ammo/Bullets/9x19/Bullet_9x19.xob","resolved":"external","target":null,"defined_in":"Prefabs/Weapons/Ammo/Ammo_763x25_Ball.et"},
+    {"guid":"FA0DBC222917FBD6","path":"Assets/Weapons/Ammo/Bullets/9x19/Cartridge_9x19.xob","resolved":"external","target":null,"defined_in":"Prefabs/Weapons/Ammo/Ammo_763x25_Ball.et"}
   ],
-  "warnings": [],
+  "warnings": [
+    "The supplied projectile references AIBT_9x19_Ball_M882 and 9x19 bullet/cartridge assets. These are source facts and are not auto-corrected.",
+    "Source Mass 0.00804 and Diameter 9.1 are preserved even if they differ from expected real-world 7.62x25 Tokarev dimensions."
+  ],
   "data": {
     "shell": {
-      "InitSpeed": {
-        "value": 430,
-        "defined_in": "Prefabs/Weapons/Ammo/Ammo_763x25_Ball.et",
-        "inherited": false
-      },
-      "InitSpeedVariation": {
-        "value": 15,
-        "defined_in": "Prefabs/Weapons/Ammo/Ammo_763x25_Ball.et",
-        "inherited": false
-      },
-      "DispersionMultiplier": null,
-      "Mass": {
-        "value": 0.00804,
-        "defined_in": "Prefabs/Weapons/Ammo/Ammo_763x25_Ball.et",
-        "inherited": false
-      },
-      "TumblingDamageMultiplier": {
-        "value": 0.1,
-        "defined_in": "Prefabs/Weapons/Ammo/Ammo_763x25_Ball.et",
-        "inherited": false
-      },
-      "PenetrationDepth": {
-        "value": 20,
-        "defined_in": "Prefabs/Weapons/Ammo/Ammo_763x25_Ball.et",
-        "inherited": false
-      },
-      "PenetrationSpeed": {
-        "value": 355,
-        "defined_in": "Prefabs/Weapons/Ammo/Ammo_763x25_Ball.et",
-        "inherited": false
-      },
-      "PenetrationDensity": {
-        "value": 0.65,
-        "defined_in": "Prefabs/Weapons/Ammo/Ammo_763x25_Ball.et",
-        "inherited": false
-      },
-      "AirDrag": {
-        "value": 1.25e-05,
-        "defined_in": "Prefabs/Weapons/Ammo/Ammo_763x25_Ball.et",
-        "inherited": false
-      },
-      "ballistic_table": {
-        "guid": "AEFA33057ADA0D0B",
-        "path": "Configs/Weapons/AIBallisticTables/AIBT_9x19_Ball_M882.conf",
-        "defined_in": "Prefabs/Weapons/Ammo/Ammo_763x25_Ball.et"
-      },
-      "_defined_in": "Prefabs/Weapons/Ammo/Ammo_763x25_Ball.et"
+      "InitSpeed":{"value":430,"defined_in":"Prefabs/Weapons/Ammo/Ammo_763x25_Ball.et","inherited":false},
+      "InitSpeedVariation":{"value":15,"defined_in":"Prefabs/Weapons/Ammo/Ammo_763x25_Ball.et","inherited":false},
+      "DispersionMultiplier":null,
+      "Mass":{"value":0.00804,"defined_in":"Prefabs/Weapons/Ammo/Ammo_763x25_Ball.et","inherited":false},
+      "AirDrag":{"value":1.25e-05,"defined_in":"Prefabs/Weapons/Ammo/Ammo_763x25_Ball.et","inherited":false},
+      "Diameter":{"value":9.1,"defined_in":"Prefabs/Weapons/Ammo/Ammo_763x25_Ball.et","inherited":false},
+      "Length":{"value":15.5,"defined_in":"Prefabs/Weapons/Ammo/Ammo_763x25_Ball.et","inherited":false},
+      "MushroomingDamageMultiplier":{"value":0.05,"defined_in":"Prefabs/Weapons/Ammo/Ammo_763x25_Ball.et","inherited":false},
+      "TumblingDamageMultiplier":{"value":0.1,"defined_in":"Prefabs/Weapons/Ammo/Ammo_763x25_Ball.et","inherited":false},
+      "PenetrationDepth":{"value":20,"defined_in":"Prefabs/Weapons/Ammo/Ammo_763x25_Ball.et","inherited":false},
+      "PenetrationSpeed":{"value":355,"defined_in":"Prefabs/Weapons/Ammo/Ammo_763x25_Ball.et","inherited":false},
+      "PenetrationDensity":{"value":0.65,"defined_in":"Prefabs/Weapons/Ammo/Ammo_763x25_Ball.et","inherited":false},
+      "ballistic_table":{"guid":"AEFA33057ADA0D0B","path":"Configs/Weapons/AIBallisticTables/AIBT_9x19_Ball_M882.conf","defined_in":"Prefabs/Weapons/Ammo/Ammo_763x25_Ball.et"},
+      "_defined_in":"Prefabs/Weapons/Ammo/Ammo_763x25_Ball.et"
     },
+    "damage": {
+      "primary_kinetic":{"DamageValue":50,"defined_in":"Prefabs/Weapons/Core/Ammo_Bullet_Base.et","inherited":true}
+    },
+    "ammo_config_membership":{"config_guid":"9379B9A38F29D508","config_path":"Configs/Weapons/Ammo/Ammo_763x25.conf","resource_index":0,"status":"allowed/default TT projectile"},
     "effects": null,
-    "_defined_in": "Prefabs/Weapons/Ammo/Ammo_763x25_Ball.et"
+    "_defined_in":"Prefabs/Weapons/Ammo/Ammo_763x25_Ball.et"
   },
-  "derived": {
-    "init_speed": 430
-  }
+  "derived": {"init_speed":430,"primary_kinetic_damage":50,"authoring_reference":"indexes/script_reference/manifest.json"}
 }
