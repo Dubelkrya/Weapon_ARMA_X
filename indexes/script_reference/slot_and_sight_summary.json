@@ -1,0 +1,29 @@
+{
+  "attachment_slots_by_type": {
+    "(inherited/unspecified)": {"count":45,"note":"AttachmentSlotComponent is serialized but AttachmentType is omitted locally or inherited from parent; do not invent a type without resolving the parent chain."},
+    "AttachmentOpticsDovetailAK": {"count":6,"examples":["Prefabs/Weapons/Rifles/9a91/Rifle_9a91_base.et","Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et","Prefabs/Weapons/Rifles/VAL/Rifle_val_base.et","Prefabs/Weapons/Rifles/VSK94/Rifle_VSK94_base.et","Prefabs/Weapons/Rifles/VSS/Rifle_vss_base.et","Prefabs/Weapons/Rifles/armst_SVD.et"],"common_pivot":"slot_optics"},
+    "AttachmentMuzzle9_39_armst": {"count":2,"examples":["Prefabs/Weapons/Rifles/9a91/Rifle_9a91_base.et","Prefabs/Weapons/Rifles/VSK94/Rifle_VSK94_base.et"],"common_pivot":"barrel_muzzle","default_prefab":"Prefabs/Weapons/Attachments/Muzzle/Suppressor_9a91.et"},
+    "AttachmentUnderBarrelGP25": {"count":1,"examples":["Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"],"common_pivot":"barrel_chamber"},
+    "AttachmentMuzzle762_39": {"count":1,"examples":["Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"],"common_pivot":"barrel_muzzle"},
+    "AttachmentOpticsDovetailSVD": {"count":1,"examples":["Prefabs/Weapons/Rifles/AKM/Rifle_SOC94.et"]},
+    "AttachmentUnderbarrelRIS1913": {"count":1,"examples":["Prefabs/Weapons/Rifles/Groza/Groza_base.et"],"common_pivot":"slot_underbarrel"},
+    "AttachmentOpticsRIS1913": {"count":1,"examples":["Prefabs/Weapons/Rifles/Groza/Groza_base.et"],"common_pivot":"slot_optics"},
+    "AttachmentRIS1913": {"count":2,"examples":["Prefabs/Weapons/Rifles/Groza/Groza_base.et"],"slot_names":["RIS_Left","RIS_Right"],"pivots":["slot_ris_left","slot_ris_right"]},
+    "AttachmentOpticsG36": {"count":1,"examples":["Prefabs/Weapons/Rifles/Rifle_hk_g36.et"],"common_pivot":"slot_optics","default_prefab":"Prefabs/Weapons/Attachments/Optics/Optic_HKg36.et"},
+    "AttachmentMuzzle556_45": {"count":1,"examples":["Prefabs/Weapons/Rifles/Rifle_hk_g36.et"],"common_pivot":"slot_barrel_muzzle"}
+  },
+  "sights_component_summary": {
+    "component_id":"BB23A637957CFFF8",
+    "local_blocks_found":20,
+    "observed_ads_times":[0.2,0.4],
+    "common_front_pivot":"slot_ironsight_front",
+    "common_rear_pivot":"slot_ironsight_rear",
+    "rule":"SightsComponent, SightsRanges, pivots and ADS timing are prefab serialization. They are not defined by the ARMST compatibility marker scripts in Scripts.zip. Resolve child-local block before parent values."
+  },
+  "authoring_rules": [
+    "A weapon-side AttachmentSlotComponent defines what can be attached; a module-side AttachmentType defines what interface the module belongs to.",
+    "If AttachmentType is omitted locally, resolve the parent prefab before choosing a compatibility class.",
+    "Prefer built-in RIS1913/dovetail/muzzle interfaces before creating a new ARMST marker type.",
+    "Do not use SightsComponent values as evidence for attachment compatibility, and do not use AttachmentType marker classes as sight-mechanics scripts."
+  ]
+}
