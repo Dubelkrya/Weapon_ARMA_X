@@ -1,0 +1,112 @@
+{
+  "generated_at": "2026-09-15",
+  "source": "Weapons.zip + uploaded ARMST TT/PM/Handgun_Base files",
+  "scope": {"all_prefab_and_configs": 702, "weapon_like_entries": 162, "et_files": 607, "conf_files": 95},
+  "authoring_rules": [
+    "Resolve values along inheritance chain and retain defined_in provenance.",
+    "When overriding an inherited object, reuse the inherited instance ID; do not create a parallel object unless the source does.",
+    "Do not duplicate values already correct in the parent (e.g. Handgun_Base Single 500 RPM).",
+    "Keep gameplay projectile damage/penetration in ammo/projectile data, not weapon prefab.",
+    "Unknown or externally unresolved values remain null; never infer from filenames alone."
+  ],
+  "canonical_component_ids": {
+    "SCR_WeaponAttachmentsStorageComponent": "51F080D5CE45A1A2",
+    "SCR_ItemAttributeCollection": "51F080D5C64F12C5",
+    "ItemDisplayName": "5222CB0701437228",
+    "WeaponComponent": "CFBAA4B706BA66E8",
+    "MuzzleComponent_handgun": "50F64C45E7271D47",
+    "SightsComponent": "BB23A637957CFFF8",
+    "SCR_RecoilCameraShakeParams": "58DEF2AB0413E346",
+    "SwayWeaponAimModifier": "521AE9A27BDC1E6F",
+    "MagazinePosition": "B80A64F4C834E9CB"
+  },
+  "handgun_reference": {
+    "chain": [
+      "Prefabs/Weapons/Core/Handgun_Base.et",
+      "Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et",
+      "Prefabs/Weapons/Handguns/armst_PM.et",
+      "Prefabs/Weapons/Handguns/armst_TT.et"
+    ],
+    "base_defaults": {
+      "single_rpm": 500,
+      "ads_time": 0.2,
+      "camera_recoil": {"id": "58DEF2AB0413E346", "rotation_min": "0.005 0.005 3", "rotation_max": "0.012 0.012 4"}
+    },
+    "pm": {
+      "weight": 0.7,
+      "item_volume": 200,
+      "dispersion_diameter": 0.4,
+      "dispersion_range": 100,
+      "recoil_aim": {"id": "58FCF59C4FED2924", "config_guid": "7EE41322045592D4", "config_path": "Prefabs/Weapons/Core/Recoil/Handgun_9_recoil.conf"},
+      "magazine_well": {"class": "MagazineWellMakarovPM", "id": "26EA67622A1DA48B"},
+      "magazine_template": "Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Ball.et",
+      "magazine_capacity": 8,
+      "ammo_config": "Configs/Weapons/Ammo/Ammo_9x18Mak.conf"
+    },
+    "m9": {
+      "weight": 0.91,
+      "item_volume": 250,
+      "dispersion_diameter": 0.4,
+      "dispersion_range": 140,
+      "recoil_aim": {"id": "58FCF59C4258A0B9", "config_guid": "7EE41322045592D4", "config_path": "Prefabs/Weapons/Core/Recoil/Handgun_9_recoil.conf"},
+      "magazine_well": {"class": "MagazineWellM9Beretta", "id": "5534C5023A57FB9E"},
+      "magazine_template": "Prefabs/Weapons/Magazines/Magazine_9x19_M9_15rnd_Ball.et",
+      "magazine_capacity": 15,
+      "ammo_config": "Configs/Weapons/Ammo/Ammo_9x19.conf"
+    },
+    "shared_recoil_config": {
+      "path": "Prefabs/Weapons/Core/Recoil/Handgun_9_recoil.conf",
+      "guid": "7EE41322045592D4",
+      "linear": {"id": "58FCF59C4660D33B", "curve_mins": "0.1 -0.02 -0.03", "curve_maxs": "0.1 -0.015 -0.03"},
+      "angular": {"id": "58FCF59C4660D2CC", "curve_mins": "0.1 4.25 -6", "curve_maxs": "0.1 4.5 6"},
+      "turn_offset": {"id": "58FCF59C4660D2CF", "curve_mins": "-3 45 0", "curve_maxs": "3 46.5 0", "base_recoil_scale": 1}
+    },
+    "tt_current_resolved": {
+      "weight": {"value": 0.7, "defined_in": "Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et", "inherited": true},
+      "item_volume": {"value": 200, "defined_in": "Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et", "inherited": true},
+      "single_rpm": {"value": 500, "defined_in": "Prefabs/Weapons/Core/Handgun_Base.et", "inherited": true},
+      "ads_time": {"value": 0.2, "defined_in": "Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et", "inherited": true},
+      "dispersion": {"value": "0.4 @ 100m", "defined_in": "Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et", "inherited": true},
+      "recoil_aim_id": {"value": "58FCF59C4FED2924", "defined_in": "Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et", "inherited": true},
+      "camera_recoil_id": {"value": "58DEF2AB0413E346", "defined_in": "Prefabs/Weapons/Core/Handgun_Base.et", "inherited": true},
+      "magazine_well": {"value": "MagazineWell763x25", "defined_in": "Prefabs/Weapons/Handguns/armst_TT.et", "inherited": false},
+      "magazine_template": {"value": "Prefabs/Weapons/Magazines/Magazine_763x25_TT_8rnd_Ball.et", "defined_in": "Prefabs/Weapons/Handguns/armst_TT.et", "inherited": false},
+      "magazine_capacity": null
+    },
+    "tt_balanced_override_sample": {
+      "status": "design sample, not scanned source",
+      "weight": 0.85,
+      "bullet_init_speed_coef": 1.0,
+      "dispersion_diameter": 0.35,
+      "dispersion_range": 100,
+      "camera_recoil": {"rotation_min": "0.006 0.006 3.6", "rotation_max": "0.014 0.014 4.8"},
+      "recoil_aim": {
+        "instance_id": "58FCF59C4FED2924",
+        "angular_data_id": "58FCF59C4660D2CC",
+        "angular_curve_mins": "0.1 4.8 -6.5",
+        "angular_curve_maxs": "0.1 5.1 6.5",
+        "turn_offset_data_id": "58FCF59C4660D2CF",
+        "turn_curve_mins": "-3.2 48 0",
+        "turn_curve_maxs": "3.2 50 0"
+      }
+    }
+  },
+  "representative_family_baselines": [
+    {"path":"Prefabs/Weapons/Rifles/AK74/Rifle_AK74_base.et","parent":"Prefabs/Weapons/Core/Rifle_Base.et","weight":3.07,"rpms":[650,650],"dispersion":[0.4,320],"recoil_id":"55349E9229B55D9A","camera_recoil_id":"58DEF2AB0413E346"},
+    {"path":"Prefabs/Weapons/Rifles/AKS74U/Rifle_AKS74U_base.et","parent":"Prefabs/Weapons/Rifles/AK74/Rifle_AK74_short_base.et","weight":2.48,"speed_coef":0.835,"dispersion":[0.4,200],"recoil_id":"55349E9229B55D9A"},
+    {"path":"Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et","parent":"Prefabs/Weapons/Core/Rifle_Base.et","weight":3.5,"rpms":[800,800],"dispersion":[0.4,400],"recoil_id":"5584D01594F61795","camera_recoil_id":"58DEF2AB0413E346"},
+    {"path":"Prefabs/Weapons/Rifles/VZ58/Rifle_VZ58_base.et","parent":"Prefabs/Weapons/Core/Rifle_Base.et","weight":2.91,"rpms":[800,800],"speed_coef":0.986,"dispersion":[0.4,220],"recoil_id":"55349E9229B55D9A","camera_recoil_id":"58DEF2AB0413E346"},
+    {"path":"Prefabs/Weapons/Rifles/SVD/Rifle_SVD_base.et","parent":"Prefabs/Weapons/Core/LongRangeRifle_Base.et","dispersion":[0.4,680],"recoil_id":"58C899E21F4089D8","recoil_config":"Prefabs/Weapons/Core/Recoil/Rifle_LongRange_762_recoil.conf","camera_recoil_id":"58DEF2AB0413E346"},
+    {"path":"Prefabs/Weapons/Rifles/M14/Rifle_M21_base.et","parent":"Prefabs/Weapons/Core/LongRangeRifle_Base.et","weight":3.75,"dispersion":[0.4,700],"recoil_id":"58C899E212CAEAAC","recoil_config":"Prefabs/Weapons/Core/Recoil/Rifle_LongRange_762_recoil.conf","camera_recoil_id":"58DEF2AB0413E346"},
+    {"path":"Prefabs/Weapons/MachineGuns/RPK74/MG_RPK74_base.et","parent":"Prefabs/Weapons/Core/MachineGun_Base.et","weight":4.85,"rpms":[600,600],"speed_coef":1.06,"dispersion":[0.4,335],"recoil_id":"691496C5E135E71C","recoil_config":"Prefabs/Weapons/Core/Configs/AimModifiers/RecoilAimModifier_RPK74.conf"},
+    {"path":"Prefabs/Weapons/MachineGuns/PKM/MG_PKM_base.et","parent":"Prefabs/Weapons/Core/MachineGun_Base.et","weight":7.5,"rpms":[650],"dispersion":[0.4,250],"recoil_id":"691496C40BB58CDD","recoil_config":"Prefabs/Weapons/Core/Configs/AimModifiers/RecoilAimModifier_PKM.conf"},
+    {"path":"Prefabs/Weapons/MachineGuns/M249/MG_M249_base.et","parent":"Prefabs/Weapons/Core/MachineGun_Base.et","weight":6.9,"rpms":[800],"speed_coef":0.983,"dispersion":[0.4,265],"recoil_id":"691496C59BD30FBD","recoil_config":"Prefabs/Weapons/Core/Configs/AimModifiers/RecoilAimModifier_M249.conf"},
+    {"path":"Prefabs/Weapons/MachineGuns/M60/MG_M60_base.et","parent":"Prefabs/Weapons/Core/MachineGun_Base.et","weight":10.4,"rpms":[550],"dispersion":[0.4,320],"recoil_id":"691496C4BB27A175","recoil_config":"Prefabs/Weapons/Core/Configs/AimModifiers/RecoilAimModifier_M60.conf"},
+    {"path":"Prefabs/Weapons/MachineGuns/UK59/MG_UK59_base.et","parent":"Prefabs/Weapons/Core/MachineGun_Base.et","weight":8.67,"rpms":[800],"dispersion":[0.4,250],"recoil_id":"691496C58AD1A983","recoil_config":"Prefabs/Weapons/Core/Configs/AimModifiers/RecoilAimModifier_UK59.conf"},
+    {"path":"Prefabs/Weapons/HeavyWeapons/NSV/HMG_NSV_base.et","parent":"Prefabs/Weapons/Core/MachineGun_Base.et","weight":52.5,"dispersion":[0.4,270],"recoil_id":"691496C4F22A8EBE","recoil_config":"Prefabs/Weapons/Core/Configs/AimModifiers/RecoilAimModifier_NSV.conf"},
+    {"path":"Prefabs/Weapons/Launchers/RPG7/Launcher_RPG7_base.et","parent":"Prefabs/Weapons/Core/Launcher_Base.et","weight":6.0,"dispersion":[null,40],"recoil_id":"5534C502CAF4F55D"},
+    {"path":"Prefabs/Weapons/Launchers/RPG22/Launcher_RPG22_base.et","parent":"Prefabs/Weapons/Core/Launcher_Base.et","weight":1.22,"dispersion":[null,38],"recoil_id":"5534C502CFACC63D"},
+    {"path":"Prefabs/Weapons/Launchers/M72/Launcher_M72A3_base.et","parent":"Prefabs/Weapons/Core/Launcher_Base.et","weight":1.36,"dispersion":[null,35],"recoil_id":"5534C502C356F328"}
+  ],
+  "full_reference_location": "ARMST — каталог оружия_UPDATED.xlsx / Prefab индекс"
+}
