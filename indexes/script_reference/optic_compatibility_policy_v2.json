@@ -16,8 +16,12 @@
   "gameplay_families": {
     "DovetailRU": {
       "script_type": "AttachmentOpticsARMST_DovetailRU",
-      "examples_weapons_current_snapshot": ["AKM", "VSS", "VAL", "9A91", "VSK94", "SVD", "SOC94"],
-      "examples_optics_current_snapshot": ["PSO1", "PSO1_ak"],
+      "examples_weapons_source_snapshot": ["AKM", "VSS", "VAL", "9A91", "VSK94", "SVD", "SOC94"],
+      "examples_optics_source_snapshot": ["PSO1", "PSO1_ak"],
+      "workbench_validated_project_examples": {
+        "weapons": ["AEK-971 prototype on Rifle_AK74N_base"],
+        "optics": ["armst_Optic_PSO1_DovetailRU thin child"]
+      },
       "rule": "PSO-family and other approved Russian side-rail optics are intentionally cross-compatible across DovetailRU weapons."
     },
     "RIS1913": {
@@ -44,12 +48,15 @@
     "DovetailRU must not be used for RIS1913/Picatinny-only weapons.",
     "G36 proprietary slot remains separate.",
     "RealCompatibility may be narrower than GameplayCompatibility and must not be overwritten.",
-    "Pivot/snap placement is validated independently from AttachmentType."
+    "Pivot/snap placement is validated independently from AttachmentType.",
+    "Changing only the weapon slot is insufficient; the optic/module side must also declare an equal or inheriting AttachmentType.",
+    "Prefer thin child optics/modules for gameplay compatibility changes when model, zeroing, reticle, animation and geometry should remain inherited."
   ],
   "migration": [
     "Add AttachmentOpticsARMST.c.",
     "Migrate all intended Russian side-rail weapon slots to AttachmentOpticsARMST_DovetailRU.",
-    "Migrate PSO-family final optic prefabs to AttachmentOpticsARMST_DovetailRU.",
+    "Create or migrate approved PSO-family ARMST optic children to AttachmentOpticsARMST_DovetailRU.",
+    "Keep physical pivot/snap geometry inherited unless geometry itself requires correction.",
     "Keep RIS1913 and G36 types unchanged.",
     "Run compatibility matrix and Workbench/runtime validation."
   ]
