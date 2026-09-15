@@ -10,6 +10,13 @@ For the project root model this means vanilla can never silently depend upward
 on ARMST, while ARMST may still reference vanilla. Live GUID evidence is learned
 only from serialized `.et/.conf` references; `.meta Name` is metadata and must
 never become resource-identity proof.
+
+ARMST is a complete editable tree while the materialized vanilla tree is only a
+partial dependency snapshot. Therefore an ARMST reference to an ARMST same-path
+candidate is not, by itself, proof that the serialized GUID belongs to that
+ARMST resource: the referenced vanilla resource may simply not be materialized
+yet. Such references may resolve by their currently unique path, but they are
+not promoted into reusable GUID ownership evidence.
 """
 
 from __future__ import annotations
@@ -68,12 +75,30 @@ class OriginPinnedStrictHydratedResourceStore(StrictHydratedResourceStore):
             return [record for record in records if record.origin == origin_hint]
         return [record for record in records if record.priority <= source_priority]
 
+    def _reference_can_prove_guid_owner(
+        self,
+        source: ResourceRecord,
+        target: ResourceRecord,
+    ) -> bool:
+        """Return whether path context is strong enough to reuse as GUID proof.
+
+        Read-only/base sources can prove an eligible same/lower-root target
+        because they cannot depend upward into ARMST. ARMST can prove a lower
+        read-only target when no ARMST candidate exists, because the editable
+        ARMST tree itself is complete. ARMST -> ARMST path matching is *not*
+        reusable GUID evidence while vanilla is only partially materialized.
+        """
+        if source.priority < self._highest_priority:
+            return target.priority <= source.priority
+        return target.priority < source.priority
+
     def _index_strict_guid_evidence(self) -> None:
         """Index GUID ownership only from dependency-eligible live references.
 
         Incomplete materialization must not prove a vanilla GUID as belonging to
-        an ARMST-only path. Generated `.meta` sidecars are also excluded from
-        evidence entirely.
+        an ARMST-only path. Generated `.meta` sidecars are excluded from evidence
+        entirely. ARMST -> ARMST unique-path matches remain path resolutions, not
+        global GUID ownership facts.
         """
         for source in self._all_records():
             for ref in self._iter_record_refs(source):
@@ -84,7 +109,10 @@ class OriginPinnedStrictHydratedResourceStore(StrictHydratedResourceStore):
                 self._guid_observed_paths.setdefault(guid, set()).add(_norm_key(path))
                 candidates, _mode = self._candidate_records(path)
                 eligible = self._eligible_dependency_records(candidates, source.origin)
-                if len(eligible) == 1:
+                if (
+                    len(eligible) == 1
+                    and self._reference_can_prove_guid_owner(source, eligible[0])
+                ):
                     self._add_guid_target(guid, eligible[0])
 
     def resolve_ref(
