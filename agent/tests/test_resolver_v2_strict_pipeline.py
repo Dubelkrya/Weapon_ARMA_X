@@ -54,6 +54,37 @@ class ResolverV2StrictPipelineTests(unittest.TestCase):
             self.assertEqual(result["status"], "ok")
             self.assertEqual(result["ok_materialized_resources"], 1)
 
+    def test_manifest_validation_uses_latest_retry_status(self):
+        with tempfile.TemporaryDirectory() as vanilla:
+            rel = "Prefabs/Weapons/Test/A.et"
+            write(vanilla, rel, "GenericEntity {\n}\n")
+            write_manifest(
+                vanilla,
+                [
+                    ("$ArmaReforger:" + rel, rel, "container", "GenericEntity", "failed"),
+                    ("$ArmaReforger:" + rel, rel, "container", "GenericEntity", "ok"),
+                ],
+            )
+            result = validate_materialized_root(vanilla)
+            self.assertEqual(result["status"], "ok")
+            self.assertEqual(result["manifest_resource_count"], 1)
+            self.assertEqual(result["ok_materialized_resources"], 1)
+            self.assertEqual(result["failed_materialized_resources"], 0)
+
+    def test_manifest_validation_rejects_latest_failure_even_after_old_success(self):
+        with tempfile.TemporaryDirectory() as vanilla:
+            rel = "Prefabs/Weapons/Test/A.et"
+            write(vanilla, rel, "GenericEntity {\n}\n")
+            write_manifest(
+                vanilla,
+                [
+                    ("$ArmaReforger:" + rel, rel, "container", "GenericEntity", "ok"),
+                    ("$ArmaReforger:" + rel, rel, "container", "GenericEntity", "failed"),
+                ],
+            )
+            with self.assertRaisesRegex(RuntimeError, "failed_but_present=1"):
+                validate_materialized_root(vanilla)
+
     def test_manifest_validation_ignores_generated_meta_sidecars(self):
         with tempfile.TemporaryDirectory() as vanilla:
             rel = "Prefabs/Weapons/Test/A.et"
