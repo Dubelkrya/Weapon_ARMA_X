@@ -120,6 +120,57 @@ class ResolverV2ArchitectureTests(unittest.TestCase):
                 "path_collision_without_proven_guid_owner",
             )
 
+    def test_vanilla_missing_copy_is_exact_export_even_if_armst_overlay_exists(self):
+        with tempfile.TemporaryDirectory() as armst, tempfile.TemporaryDirectory() as vanilla:
+            child = "Prefabs/Weapons/Rifles/Test/ArmstChild.et"
+            vanilla_base = "Prefabs/Weapons/Rifles/Test/VanillaBase.et"
+            shared_config = "Configs/Weapons/Test/Shared.conf"
+
+            # The editable overlay has a same-path config, but the vanilla base
+            # resource is the one serializing the reference. Missing vanilla
+            # materialization must therefore become an exact export request,
+            # never an upward jump into ARMST.
+            write(armst, shared_config, "SomeConfig {\n Value 99\n}\n")
+            write(
+                vanilla,
+                vanilla_base,
+                f'''\
+                GenericEntity {{
+                 SomeConfigRef "{{FACE}}{shared_config}"
+                }}
+                ''',
+            )
+            write(
+                armst,
+                child,
+                f'''\
+                GenericEntity : "{{B001}}{vanilla_base}" {{
+                }}
+                ''',
+            )
+
+            package = build_architecture_package(
+                armst,
+                [f"materialized_base={vanilla}"],
+            )
+
+            requests = package["export_requests"]
+            self.assertEqual(len(requests), 1)
+            self.assertEqual(requests[0]["guid"], "FACE")
+            self.assertEqual(requests[0]["path"], shared_config)
+
+            missing = package["graph"]["closure"]["missing_edges"]
+            matching = [edge for edge in missing if edge["ref"]["path"] == shared_config]
+            self.assertEqual(len(matching), 1)
+            self.assertEqual(
+                matching[0]["resolution"]["reason"],
+                "upward_dependency_blocked",
+            )
+            self.assertEqual(
+                matching[0]["resolution"]["candidates"][0]["origin"],
+                "armst",
+            )
+
 
 if __name__ == "__main__":
     unittest.main()
