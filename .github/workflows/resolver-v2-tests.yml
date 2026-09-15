@@ -10,6 +10,7 @@ on:
       - 'agent/scripts/resolver_v2*.py'
       - 'agent/scripts/scan_build_v2*.py'
       - 'agent/scripts/architecture_index.py'
+      - 'agent/scripts/build_architecture_package.py'
       - 'agent/scripts/script_class_index.py'
       - 'agent/scripts/sync_vanilla_scripts.py'
       - 'agent/scripts/reference_cases_v2.py'
@@ -38,6 +39,7 @@ jobs:
           agent/scripts/scan_build_v2.py
           agent/scripts/scan_build_v2_strict.py
           agent/scripts/architecture_index.py
+          agent/scripts/build_architecture_package.py
           agent/scripts/script_class_index.py
           agent/scripts/sync_vanilla_scripts.py
           agent/scripts/scan_v2_probe.py
