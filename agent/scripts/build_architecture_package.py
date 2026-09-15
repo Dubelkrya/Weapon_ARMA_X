@@ -7,7 +7,12 @@ experimentation with a deterministic pipeline:
 2. start only from ARMST weapon-prefab roots, then follow their real dependencies;
 3. fetch the pinned official Bohemia script snapshot (unless disabled);
 4. index Enforce classes and link serialized component/config classes to code;
-5. emit exact missing .et/.conf requests for a later targeted Workbench export.
+5. emit Workbench requests only when the missing target is proven to belong to
+   the materialized base-game dependency chain.
+
+A missing reference authored by ARMST is *not* automatically a vanilla export
+request: it may be a broken/short ARMST reference. Those gaps remain explicit
+source-identity review items instead of causing another broad Workbench scan.
 
 No raw vanilla resources or official script checkout are committed by this
 script; their default locations are gitignored.
@@ -22,7 +27,7 @@ import json
 import os
 from typing import Iterable, List, Optional, Sequence, Set, Tuple
 
-from architecture_index import build_architecture_package, exact_export_requests
+from architecture_index import build_architecture_package
 from scan_build_v2 import DEFAULT_MOD_ROOT, DEFAULT_REPO_ROOT
 from script_class_index import build_script_index
 from sync_vanilla_scripts import DEFAULT_DESTINATION, ensure_checkout
@@ -30,6 +35,7 @@ from sync_vanilla_scripts import DEFAULT_DESTINATION, ensure_checkout
 
 FOLLOW_EXTENSIONS = {".et", ".conf"}
 WEAPON_SEED_PREFIX = "prefabs/weapons/"
+BASE_GAME_ORIGIN = "materialized_base"
 
 
 def _norm_resource(path: object) -> str:
@@ -42,6 +48,51 @@ def _identity(origin: object, resource: object) -> Tuple[str, str]:
 
 def _is_weapon_seed(resource: object) -> bool:
     return _norm_resource(resource).casefold().startswith(WEAPON_SEED_PREFIX)
+
+
+def _safe_base_export_requests(missing_edges: List[dict]) -> Tuple[List[dict], List[dict]]:
+    """Split proven base-game gaps from missing refs whose target origin is unknown.
+
+    A missing edge authored by ``materialized_base`` is safe to request from
+    `$ArmaReforger:` because base-game data cannot depend upward on ARMST. A
+    missing edge authored by ARMST is not enough evidence of target origin and
+    must remain a review gap.
+    """
+    grouped = {}
+    unproven = []
+    for edge in missing_edges:
+        source = edge.get("source") or {}
+        ref = edge.get("ref") or {}
+        path = _norm_resource(ref.get("path"))
+        ext = os.path.splitext(path)[1].lower()
+        if ext not in FOLLOW_EXTENSIONS:
+            continue
+        if source.get("origin") != BASE_GAME_ORIGIN:
+            unproven.append(edge)
+            continue
+
+        key = (str(ref.get("guid") or "").upper(), path.casefold())
+        row = grouped.setdefault(
+            key,
+            {
+                "guid": ref.get("guid"),
+                "path": path,
+                "requested_extension": ext,
+                "requested_origin": BASE_GAME_ORIGIN,
+                "requested_source_root": "$ArmaReforger:",
+                "referred_by": [],
+            },
+        )
+        row["referred_by"].append(
+            {
+                "origin": source.get("origin"),
+                "resource": source.get("resource"),
+                "node_path": source.get("node_path"),
+            }
+        )
+
+    requests = sorted(grouped.values(), key=lambda row: row["path"].casefold())
+    return requests, unproven
 
 
 def scope_weapon_architecture(architecture: dict) -> dict:
@@ -99,6 +150,7 @@ def scope_weapon_architecture(architecture: dict) -> dict:
             else:
                 missing.append(edge)
 
+    export_requests, unproven_origin = _safe_base_export_requests(missing)
     graph["closure"] = {
         "seed_scope": "armst:Prefabs/Weapons/**/*.et",
         "seed_count": len(set(seeds)),
@@ -108,6 +160,7 @@ def scope_weapon_architecture(architecture: dict) -> dict:
         ],
         "followed_serialized_edge_count": len(followed),
         "missing_edges": missing,
+        "unproven_target_origin_edges": unproven_origin,
         "ambiguous_identity_edges": ambiguous,
     }
     scoped["graph"] = graph
@@ -117,7 +170,7 @@ def scope_weapon_architecture(architecture: dict) -> dict:
         for row in scoped.get("blueprints") or []
         if row.get("origin") == "armst" and _is_weapon_seed(row.get("resource"))
     ]
-    scoped["export_requests"] = exact_export_requests(graph)
+    scoped["export_requests"] = export_requests
 
     summary = dict(scoped.get("summary") or {})
     summary.update(
@@ -126,8 +179,9 @@ def scope_weapon_architecture(architecture: dict) -> dict:
             "seed_count": len(set(seeds)),
             "reachable_resource_count": len(seen),
             "missing_serialized_edge_count": len(missing),
+            "unproven_target_origin_edge_count": len(unproven_origin),
             "ambiguous_identity_edge_count": len(ambiguous),
-            "exact_export_request_count": len(scoped["export_requests"]),
+            "exact_export_request_count": len(export_requests),
             "armst_blueprint_count": len(scoped["blueprints"]),
         }
     )
@@ -219,28 +273,36 @@ def link_script_classes(blueprints: List[dict], script_index: dict) -> dict:
     }
 
 
-def architecture_decision(architecture_summary: dict) -> dict:
-    """Separate missing-resource work from identity/parser correctness blockers."""
+def architecture_decision(architecture_summary: dict, script_summary: Optional[dict] = None) -> dict:
+    """Separate actionable exports from identity/parser/source blockers."""
     exact = int(architecture_summary.get("exact_export_request_count") or 0)
+    unproven = int(architecture_summary.get("unproven_target_origin_edge_count") or 0)
     ambiguous = int(architecture_summary.get("ambiguous_identity_edge_count") or 0)
     warnings = int(architecture_summary.get("resolver_warning_count") or 0)
+    script_failures = int((script_summary or {}).get("parse_failure_count") or 0)
 
     if exact:
         code = "EXACT_WORKBENCH_EXPORT_REQUIRED"
+    elif unproven:
+        code = "SOURCE_IDENTITY_REVIEW_REQUIRED"
     elif ambiguous:
         code = "IDENTITY_EVIDENCE_REQUIRED"
     elif warnings:
         code = "RESOLVER_REVIEW_REQUIRED"
+    elif script_failures:
+        code = "SCRIPT_INDEX_REVIEW_REQUIRED"
     else:
         code = "WORKBENCH_NOT_NEEDED"
 
     return {
         "code": code,
-        "architecture_ready": not (exact or ambiguous or warnings),
+        "architecture_ready": not (exact or unproven or ambiguous or warnings or script_failures),
         "workbench_needed": bool(exact),
         "exact_request_count": exact,
+        "unproven_target_origin_edge_count": unproven,
         "ambiguous_identity_edge_count": ambiguous,
         "resolver_warning_count": warnings,
+        "script_parse_failure_count": script_failures,
     }
 
 
@@ -265,12 +327,13 @@ def build_package(
         script_index = build_script_index(script_source_root)
         script_links = link_script_classes(architecture["blueprints"], script_index)
 
-    decision = architecture_decision(architecture["summary"])
+    script_summary = (script_index or {}).get("summary")
+    decision = architecture_decision(architecture["summary"], script_summary)
     manifest = {
         "schema_version": 1,
         "source_policy": "armst_editable_vanilla_readonly",
         "architecture_summary": architecture["summary"],
-        "script_summary": (script_index or {}).get("summary"),
+        "script_summary": script_summary,
         "script_link_summary": {
             key: value
             for key, value in (script_links or {}).items()
