@@ -1,43 +1,49 @@
 {
   "id": "armst_m9",
   "role": "leaf",
-  "source": {
-    "resource": "Prefabs/Weapons/Handguns/armst_M9.et",
-    "resource_guid": "1353C6EAD1DCFE43",
-    "meta_name": null,
-    "class": "GenericEntity",
-    "defined_in": "Prefabs/Weapons/Handguns/armst_M9.et"
-  },
-  "identity": {
-    "name": "armst_M9",
-    "resource": "Prefabs/Weapons/Handguns/armst_M9.et"
-  },
-  "classification": {
-    "kind": "weapon",
-    "confidence": "folder"
-  },
+  "source": {"resource": "Prefabs/Weapons/Handguns/armst_M9.et", "resource_guid": "1353C6EAD1DCFE43", "meta_name": null, "class": "GenericEntity", "defined_in": "Prefabs/Weapons/Handguns/armst_M9.et"},
+  "identity": {"name": "armst_M9", "resource": "Prefabs/Weapons/Handguns/armst_M9.et"},
+  "classification": {"kind": "weapon", "confidence": "components"},
   "inheritance": {
     "chain": [
-      {
-        "resource": "Prefabs/Weapons/Handguns/armst_M9.et",
-        "status": "local",
-        "class": "GenericEntity"
-      }
+      {"resource": "Prefabs/Weapons/Handguns/armst_M9.et", "status": "local", "class": "GenericEntity"},
+      {"resource": "Prefabs/Weapons/Handguns/M9/Handgun_M9_base.et", "status": "file", "class": "GenericEntity"},
+      {"resource": "Prefabs/Weapons/Core/Handgun_Base.et", "status": "file", "class": "GenericEntity"},
+      {"resource": "Prefabs/Weapons/Core/Weapon_Base.et", "status": "file", "class": "GenericEntity"}
     ],
-    "external_parents": [
-      {
-        "guid": "809488C4984AC087",
-        "path": "Prefabs/Weapons/Handguns/M9/Handgun_M9_base.et",
-        "raw": "{809488C4984AC087}Prefabs/Weapons/Handguns/M9/Handgun_M9_base.et"
-      }
-    ],
-    "used_as_base_by": [],
-    "chain_depth_local": 1
+    "external_parents": [], "used_as_base_by": [], "chain_depth_local": 1
   },
-  "references": [],
-  "warnings": [],
+  "references": [
+    {"guid": "D5D52E848DBCAA53", "path": "Prefabs/Weapons/Core/Configs/FireModes/FireMode_Single.conf", "resolved": "external", "target": null, "defined_in": "Prefabs/Weapons/Core/Handgun_Base.et"},
+    {"guid": "9C05543A503DB80E", "path": "Prefabs/Weapons/Magazines/Magazine_9x19_M9_15rnd_Ball.et", "resolved": "external", "target": null, "defined_in": "Prefabs/Weapons/Handguns/M9/Handgun_M9_base.et"},
+    {"guid": "7EE41322045592D4", "path": "Prefabs/Weapons/Core/Recoil/Handgun_9_recoil.conf", "resolved": "external", "target": null, "defined_in": "Prefabs/Weapons/Handguns/M9/Handgun_M9_base.et"}
+  ],
+  "warnings": ["Ammo config path is resolved from the magazine base, but projectile damage/penetration/velocity are outside Weapons.zip."],
   "data": {
-    "error": "no WeaponComponent found"
+    "identity": {"name": {"value": "#AR-Weapon_BerettaM9_Name", "defined_in": "Prefabs/Weapons/Handguns/M9/Handgun_M9_base.et", "inherited": true}},
+    "fire_modes": [{"guid": "D5D52E848DBCAA53", "path": "Prefabs/Weapons/Core/Configs/FireModes/FireMode_Single.conf", "defined_in": "Prefabs/Weapons/Core/Handgun_Base.et"}],
+    "physical": {
+      "Weight": {"value": 0.91, "defined_in": "Prefabs/Weapons/Handguns/M9/Handgun_M9_base.et", "inherited": true},
+      "ItemVolume": {"value": 250, "defined_in": "Prefabs/Weapons/Handguns/M9/Handgun_M9_base.et", "inherited": true}
+    },
+    "magazine": {
+      "magazine_well": {"name": "MagazineWell", "class": "MagazineWellM9Beretta", "defined_in": "Prefabs/Weapons/Handguns/M9/Handgun_M9_base.et"},
+      "magazine_template": {"guid": "9C05543A503DB80E", "path": "Prefabs/Weapons/Magazines/Magazine_9x19_M9_15rnd_Ball.et", "defined_in": "Prefabs/Weapons/Handguns/M9/Handgun_M9_base.et"},
+      "capacity": 15,
+      "ammo_config": "Configs/Weapons/Ammo/Ammo_9x19.conf"
+    },
+    "ballistics": {
+      "bullet_init_speed_coef": {"value": null, "defined_in": null, "inherited": true},
+      "dispersion_diameter": {"value": 0.4, "defined_in": "Prefabs/Weapons/Handguns/M9/Handgun_M9_base.et", "inherited": true},
+      "dispersion_range": {"value": 140, "defined_in": "Prefabs/Weapons/Handguns/M9/Handgun_M9_base.et", "inherited": true}
+    },
+    "aim": {
+      "camera_recoil": {"instance_id": "58DEF2AB0413E346", "rotation_min": "0.005 0.005 3", "rotation_max": "0.012 0.012 4", "defined_in": "Prefabs/Weapons/Core/Handgun_Base.et", "inherited": true},
+      "recoil": {"instance_id": "58FCF59C4258A0B9", "config_guid": "7EE41322045592D4", "config_path": "Prefabs/Weapons/Core/Recoil/Handgun_9_recoil.conf", "defined_in": "Prefabs/Weapons/Handguns/M9/Handgun_M9_base.et", "inherited": true},
+      "sway": {"instance_id": "521AE9A27BDC1E6F", "defined_in": "Prefabs/Weapons/Core/Handgun_Base.et", "inherited": true}
+    },
+    "sights": {"ads_time": {"value": 0.2, "defined_in": "Prefabs/Weapons/Core/Handgun_Base.et", "inherited": true}},
+    "attachment_slots": [], "muzzle_attachment": null, "animation": {"anim_graph": null, "anim_instance": null}
   },
-  "derived": {}
+  "derived": {"single_rpm": 500, "moa": 9.822106904050786, "authoring_reference": "indexes/prefab_authoring_reference.json"}
 }
