@@ -27,6 +27,8 @@ Therefore `agent/scan_state.json`, `reports/scan_summary.*`, base catalogs and s
 
 Do not hand-edit generated scanner output to pretend it is current. Regenerate it from the live addon instead.
 
+Safe local refresh task: `agent/RESCAN_ARMST_WORK.md`.
+
 ## Current authoring policy
 
 ### Prefabs
@@ -38,6 +40,8 @@ Do not hand-edit generated scanner output to pretend it is current. Regenerate i
 - genuinely new object: new instance ID + correct resource parent/config;
 - one logical change per validation step;
 - structural validation is not Workbench/runtime validation.
+
+Local-agent prefab editing contract: `agent/SAFE_PREFAB_EDITOR.md`.
 
 ### Optics
 
@@ -53,6 +57,8 @@ Compatibility is two-sided:
 - optic/module: `WeaponAttachmentAttributes -> AttachmentType`.
 
 Physical pivot/snap geometry is independent from compatibility type.
+
+Compatibility data shape is documented in `schema/compatibility.schema.json`.
 
 ### Config / ammunition
 
@@ -92,10 +98,10 @@ Historical `reports/AEK971_TEST_CHECKPOINT_V8.md` remains as debugging history o
 
 - Scanner outputs are stale relative to `Armst_Work`.
 - `indexes/script_reference/manifest.json` is a supplied-snapshot inventory and may still list old built-in dovetail types for source assets; active authoring policy is v2 `DovetailRU`.
-- Google Sheets may contain manually materialized values that block `ARRAYFORMULA` expansion. Formula health must be checked after manual edits.
-- The two native Sheets and their `.xlsx` exports are not authoritative mirrors of each other unless explicitly regenerated.
+- The native technical/balance Sheets have had the known TT `ARRAYFORMULA` spill blockers removed; manual values must not be written into those formula spill ranges again.
+- Raw `.xlsx` copies on Drive are archived snapshots; the native Google Sheets are the active tabular working views.
 - Experimental branches `agent/resolver-v2` and `agent/weapon-intelligence-v1` are divergent research branches; do not merge wholesale into `main` without selective review.
 
 ## Required next refresh
 
-When local automation is available, run a fresh scanner against `Armst_Work`, then reconcile generated catalogs/indexes with this status file. Until then, new Workbench-confirmed facts should be added to the authoring guides/samples rather than falsifying generated snapshot metadata.
+Run `agent/RESCAN_ARMST_WORK.md` locally against `Armst_Work`, then reconcile generated catalogs/indexes with this status file. Until then, new Workbench-confirmed facts should be added to the authoring guides/samples rather than falsifying generated snapshot metadata.
