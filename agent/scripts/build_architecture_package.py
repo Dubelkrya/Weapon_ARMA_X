@@ -4,7 +4,7 @@ This is the offline entrypoint. It intentionally replaces repeated Workbench
 experimentation with a deterministic pipeline:
 
 1. read ARMST + existing read-only materialized vanilla .et/.conf;
-2. build strict resource/inheritance/reference architecture;
+2. start only from ARMST weapon-prefab roots, then follow their real dependencies;
 3. fetch the pinned official Bohemia script snapshot (unless disabled);
 4. index Enforce classes and link serialized component/config classes to code;
 5. emit exact missing .et/.conf requests for a later targeted Workbench export.
@@ -16,15 +16,123 @@ script; their default locations are gitignored.
 from __future__ import annotations
 
 import argparse
-from collections import deque
+from collections import defaultdict, deque
+import copy
 import json
 import os
-from typing import Iterable, List, Optional, Sequence, Set
+from typing import Iterable, List, Optional, Sequence, Set, Tuple
 
-from architecture_index import build_architecture_package
+from architecture_index import build_architecture_package, exact_export_requests
 from scan_build_v2 import DEFAULT_MOD_ROOT, DEFAULT_REPO_ROOT
 from script_class_index import build_script_index
 from sync_vanilla_scripts import DEFAULT_DESTINATION, ensure_checkout
+
+
+FOLLOW_EXTENSIONS = {".et", ".conf"}
+WEAPON_SEED_PREFIX = "prefabs/weapons/"
+
+
+def _norm_resource(path: object) -> str:
+    return str(path or "").replace("\\", "/").lstrip("./")
+
+
+def _identity(origin: object, resource: object) -> Tuple[str, str]:
+    return str(origin or ""), _norm_resource(resource).casefold()
+
+
+def _is_weapon_seed(resource: object) -> bool:
+    return _norm_resource(resource).casefold().startswith(WEAPON_SEED_PREFIX)
+
+
+def scope_weapon_architecture(architecture: dict) -> dict:
+    """Restrict roots to ARMST weapon prefabs while preserving dependency closure.
+
+    The underlying index contains every parsed record because those records can
+    become dependencies. They must not all become *roots*: an unrelated ARMST
+    `.et` must never manufacture a Workbench export request. We seed only
+    `Prefabs/Weapons/**.et`, then follow resolved `.et/.conf` references to any
+    path they actually require, including resources outside the weapon folder.
+    """
+    scoped = copy.deepcopy(architecture)
+    graph = scoped.get("graph") or {}
+    resource_index = graph.get("resource_index") or []
+    edges = graph.get("reference_edges") or []
+
+    by_source = defaultdict(list)
+    for edge in edges:
+        source = edge.get("source") or {}
+        by_source[_identity(source.get("origin"), source.get("resource"))].append(edge)
+
+    seeds = [
+        _identity(row.get("origin"), row.get("resource"))
+        for row in resource_index
+        if row.get("origin") == "armst"
+        and row.get("kind") == "et"
+        and _is_weapon_seed(row.get("resource"))
+    ]
+
+    queue = deque(seeds)
+    seen = set()
+    missing = []
+    ambiguous = []
+    followed = []
+
+    while queue:
+        source_id = queue.popleft()
+        if source_id in seen:
+            continue
+        seen.add(source_id)
+        for edge in by_source.get(source_id, []):
+            ref = edge.get("ref") or {}
+            ref_path = _norm_resource(ref.get("path"))
+            if os.path.splitext(ref_path)[1].lower() not in FOLLOW_EXTENSIONS:
+                continue
+            followed.append(edge)
+            resolution = edge.get("resolution") or {}
+            status = resolution.get("status")
+            target_resource = resolution.get("resource")
+            target_origin = resolution.get("origin")
+            if status == "local" and target_resource and target_origin:
+                queue.append(_identity(target_origin, target_resource))
+            elif status == "ambiguous":
+                ambiguous.append(edge)
+            else:
+                missing.append(edge)
+
+    graph["closure"] = {
+        "seed_scope": "armst:Prefabs/Weapons/**/*.et",
+        "seed_count": len(set(seeds)),
+        "reachable_resource_identities": [
+            {"origin": origin, "resource_key": resource_key}
+            for origin, resource_key in sorted(seen)
+        ],
+        "followed_serialized_edge_count": len(followed),
+        "missing_edges": missing,
+        "ambiguous_identity_edges": ambiguous,
+    }
+    scoped["graph"] = graph
+
+    scoped["blueprints"] = [
+        row
+        for row in scoped.get("blueprints") or []
+        if row.get("origin") == "armst" and _is_weapon_seed(row.get("resource"))
+    ]
+    scoped["export_requests"] = exact_export_requests(graph)
+
+    summary = dict(scoped.get("summary") or {})
+    summary.update(
+        {
+            "seed_scope": "armst:Prefabs/Weapons/**/*.et",
+            "seed_count": len(set(seeds)),
+            "reachable_resource_count": len(seen),
+            "missing_serialized_edge_count": len(missing),
+            "ambiguous_identity_edge_count": len(ambiguous),
+            "exact_export_request_count": len(scoped["export_requests"]),
+            "armst_blueprint_count": len(scoped["blueprints"]),
+        }
+    )
+    scoped["summary"] = summary
+    return scoped
 
 
 def _walk_tree_dict(node):
@@ -112,14 +220,7 @@ def link_script_classes(blueprints: List[dict], script_index: dict) -> dict:
 
 
 def architecture_decision(architecture_summary: dict) -> dict:
-    """Separate missing-resource work from identity/parser correctness blockers.
-
-    A non-empty Workbench request list is actionable by an exact exporter.
-    Ambiguous identity is deliberately *not* a Workbench request: copying the
-    same collided path again cannot prove which resource a serialized GUID owns.
-    Resolver warnings likewise require parser/resolver review before declaring
-    the architecture package ready.
-    """
+    """Separate missing-resource work from identity/parser correctness blockers."""
     exact = int(architecture_summary.get("exact_export_request_count") or 0)
     ambiguous = int(architecture_summary.get("ambiguous_identity_edge_count") or 0)
     warnings = int(architecture_summary.get("resolver_warning_count") or 0)
@@ -155,7 +256,9 @@ def build_package(
     vanilla_roots: Sequence[str],
     script_source_root: Optional[str],
 ) -> dict:
-    architecture = build_architecture_package(armst_root, vanilla_roots)
+    architecture = scope_weapon_architecture(
+        build_architecture_package(armst_root, vanilla_roots)
+    )
     script_index = None
     script_links = None
     if script_source_root:
@@ -174,7 +277,6 @@ def build_package(
             if key.endswith("_count")
         },
         "decision": decision,
-        # Backward-compatible top-level fields for existing readers.
         "workbench_needed": decision["workbench_needed"],
         "workbench_exact_request_count": decision["exact_request_count"],
         "architecture_ready": decision["architecture_ready"],
