@@ -6,11 +6,12 @@ and origin-preserving weapon->magazine->ammo->projectile traversal, then reuses
 the existing output/report code.
 
 When a materialization manifest exists, the strict pipeline refuses to scan
-stale/unlisted materialized ``.et/.conf`` resources left from an older Workbench
-run. ``.meta`` sidecars are deliberately excluded from this manifest check:
-Workbench registration can generate them even though the materializer manifest
-tracks only requested resources, and `.meta Name` is metadata rather than live
-Resource GUID authority.
+stale/unlisted materialized ``.et/.conf`` resources. The manifest is treated as
+an append-capable event log: the latest row for each destination is authoritative
+so a later exact export can extend or retry the existing 815-resource snapshot
+without invalidating earlier successful rows. ``.meta`` sidecars are deliberately
+excluded from this check because Workbench registration can generate them and
+`.meta Name` is metadata rather than live Resource GUID authority.
 """
 
 from __future__ import annotations
@@ -32,11 +33,12 @@ def _norm_rel(path: str) -> str:
 
 
 def validate_materialized_root(root: str) -> dict:
-    """Validate requested materialized resources against the latest manifest.
+    """Validate materialized resources against their latest manifest state.
 
     Roots without a manifest are accepted for tests/manual fixtures. If a
     manifest is present it becomes authoritative for materialized `.et/.conf`
-    files. Generated/untracked `.meta` sidecars do not invalidate the dataset.
+    files. Repeated rows are allowed; the last row for a destination wins.
+    Generated/untracked `.meta` sidecars do not invalidate the dataset.
     """
     root = os.path.abspath(root)
     manifest_path = os.path.join(root, MATERIALIZATION_MANIFEST)
@@ -57,8 +59,8 @@ def validate_materialized_root(root: str) -> dict:
         )
     columns = {name: index for index, name in enumerate(header)}
 
-    ok_paths = set()
-    failed_paths = set()
+    latest_status = {}
+    latest_display = {}
     for raw in lines[1:]:
         parts = raw.split("\t")
         if len(parts) < len(header):
@@ -70,10 +72,12 @@ def validate_materialized_root(root: str) -> dict:
         ext = os.path.splitext(rel)[1].lower()
         if ext not in MANIFEST_RESOURCE_EXTENSIONS:
             continue
-        if status == "ok":
-            ok_paths.add(rel.casefold())
-        else:
-            failed_paths.add(rel.casefold())
+        key = rel.casefold()
+        latest_status[key] = status
+        latest_display[key] = rel
+
+    ok_paths = {key for key, status in latest_status.items() if status == "ok"}
+    failed_paths = {key for key, status in latest_status.items() if status != "ok"}
 
     actual_paths = set()
     actual_display = {}
@@ -86,15 +90,18 @@ def validate_materialized_root(root: str) -> dict:
             actual_paths.add(key)
             actual_display[key] = rel
 
-    unlisted = sorted(actual_paths - ok_paths)
+    unlisted = sorted(actual_paths - set(latest_status))
     missing = sorted(ok_paths - actual_paths)
     failed_present = sorted(actual_paths & failed_paths)
     if unlisted or missing or failed_present:
         def sample(items):
-            return [actual_display.get(item, item) for item in items[:8]]
+            return [
+                actual_display.get(item, latest_display.get(item, item))
+                for item in items[:8]
+            ]
 
         raise RuntimeError(
-            "materialized vanilla root does not match latest manifest: "
+            "materialized vanilla root does not match latest manifest state: "
             f"unlisted={len(unlisted)} missing_ok={len(missing)} "
             f"failed_but_present={len(failed_present)}; "
             f"unlisted_sample={sample(unlisted)} "
@@ -106,7 +113,9 @@ def validate_materialized_root(root: str) -> dict:
         "status": "ok",
         "root": root,
         "manifest": manifest_path,
+        "manifest_resource_count": len(latest_status),
         "ok_materialized_resources": len(ok_paths),
+        "failed_materialized_resources": len(failed_paths),
     }
 
 
