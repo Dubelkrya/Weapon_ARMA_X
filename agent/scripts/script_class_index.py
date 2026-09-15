@@ -2,9 +2,9 @@
 
 The intended vanilla source is the pinned official
 ``BohemiaInteractive/Arma-Reforger-Script-Diff`` checkout created by
-``sync_vanilla_scripts.py``.  Workbench is not involved.
+``sync_vanilla_scripts.py``. Workbench is not involved.
 
-This is a structural indexer, not a full Enforce compiler.  It records class
+This is a structural indexer, not a full Enforce compiler. It records class
 names, base classes, source locations, and top-level field/method names while
 preserving multiple declarations (including ``modded class`` declarations).
 """
@@ -18,7 +18,7 @@ import os
 import re
 from typing import Dict, List, Optional, Sequence, Tuple
 
-from sync_vanilla_scripts import DEFAULT_DESTINATION, PINNED_COMMIT, PINNED_GAME_VERSION
+from sync_vanilla_scripts import DEFAULT_DESTINATION
 
 
 CLASS_RE = re.compile(
@@ -26,6 +26,7 @@ CLASS_RE = re.compile(
     r"class\s+(?P<name>[A-Za-z_][A-Za-z0-9_]*)"
     r"\s*(?::\s*(?P<base>[A-Za-z_][A-Za-z0-9_]*))?\s*\{"
 )
+ATTRIBUTE_PREFIX_RE = re.compile(r"^(?:\s*\[[^\]]*\]\s*)+")
 CONTROL_NAMES = {"if", "for", "foreach", "while", "switch", "return", "sizeof"}
 IDENT_RE = re.compile(r"[A-Za-z_][A-Za-z0-9_]*")
 
@@ -156,7 +157,18 @@ def _top_level_statements(body: str) -> List[Tuple[int, str]]:
     return rows
 
 
+def _without_attributes(statement: str) -> str:
+    """Drop leading Enforce attribute blocks before class-member parsing."""
+    previous = None
+    current = statement.strip()
+    while current != previous:
+        previous = current
+        current = ATTRIBUTE_PREFIX_RE.sub("", current).strip()
+    return current
+
+
 def _method_name(statement: str) -> Optional[str]:
+    statement = _without_attributes(statement)
     if "(" not in statement:
         return None
     prefix = statement.split("(", 1)[0].strip()
@@ -170,10 +182,11 @@ def _method_name(statement: str) -> Optional[str]:
 
 
 def _field_name(statement: str) -> Optional[str]:
+    statement = _without_attributes(statement)
     if "(" in statement or not statement.rstrip().endswith(";"):
         return None
     declaration = statement.rstrip().rstrip(";").strip()
-    if not declaration or declaration.startswith("["):
+    if not declaration:
         return None
     left = declaration.split("=", 1)[0].strip()
     names = IDENT_RE.findall(left)
