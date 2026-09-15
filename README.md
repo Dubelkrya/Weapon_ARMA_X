@@ -2,23 +2,26 @@
 
 AI-friendly weapon intelligence catalog and local scanner for the ARMST Arma Reforger weapons addon.
 
-The local addon is the source of truth for current implementation. Real-world research is stored separately and is used to judge what the addon should represent. Gameplay simplifications must be explicit rather than silently replacing real compatibility facts.
+The primary local addon is the source of truth for current implementation. Real-world research is stored separately and is used to judge what the addon should represent. Gameplay simplifications must be explicit rather than silently replacing real compatibility facts.
 
 ## Knowledge status
 
 Read `reports/KNOWLEDGE_STATUS.md` first. It defines what is live, what is a generated snapshot, which gameplay policies are active, and which reports are historical.
 
-Current working addon root reported by the project workflow:
+Authoritative working addon root:
 
-`C:\Users\Muroy\Documents\My Games\ArmaReforgerWorkbench\addons\Armst_Work`
+`C:\Users\Muroy\Documents\My Games\ArmaReforgerWorkbench\addons\ARMST-PLATFORM---Weapons`
 
-Important: the committed scanner state was generated from the older `ARMST-PLATFORM---Weapons` addon root. Scanner-derived catalogs/reports are therefore historical snapshots until they are regenerated against `Armst_Work`; do not silently treat their timestamps/roots as current.
+All normal local-agent editing, prefab/config/script lookup and canonical source scans should target this addon. `Armst_Work` is a temporary/sandbox addon only unless the user explicitly assigns a one-off task there.
+
+Primary-root policy: `agent/PRIMARY_MOD_POLICY.md`.
 
 ## Authoring sources
 
 For new weapon prefabs and modules, use these repository artifacts before inventing or copying values manually:
 
 - `reports/KNOWLEDGE_STATUS.md` — canonical source-of-truth/freshness map and current Workbench-validated control points.
+- `agent/PRIMARY_MOD_POLICY.md` — authoritative local addon path and root-selection rules.
 - `agent/SAFE_PREFAB_EDITOR.md` — local-agent contract for exact-target search, backup, one minimal patch, static validation and rollback.
 - `indexes/prefab_authoring/manifest.json` — entrypoint to the full weapon/prefab authoring index generated from `Weapons.zip`.
 - `indexes/prefab_authoring/shard_01.json` … `shard_04.json` — parent paths/GUIDs, instance IDs and discovered handling fields.
@@ -33,6 +36,7 @@ For new weapon prefabs and modules, use these repository artifacts before invent
 - `reports/CONFIG_AUTHORING_GUIDE.md` — AmmoConfig / AmmoMapping / projectile resolution rules.
 - `reports/SCRIPT_MODULE_AUTHORING_GUIDE.md` — general compatibility script, RIS, optic, muzzle, module and sight authoring rules using the active DovetailRU policy.
 - `reports/OPTICS_COMPATIBILITY_SYSTEM_V2.md` — active optics design using `DovetailRU` as an explicit gameplay simplification.
+- `reports/AMMO_AP_BP_POLICY.md` — active gameplay design for anti-personnel/high-damage vs armor-piercing/high-penetration ammunition roles.
 - `reports/samples/AttachmentOpticsARMST.c` — ready-to-copy Enfusion marker script for `AttachmentOpticsARMST_DovetailRU`.
 - `reports/samples/armst_AEK971_test_v12_NAME_DESCRIPTION.et` — current Workbench-validated AEK-971 prototype control sample.
 - `reports/samples/armst_Optic_PSO1_DovetailRU.et` — Workbench-validated thin PSO-1 child for DovetailRU compatibility.
