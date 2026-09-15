@@ -36,6 +36,7 @@ jobs:
           agent/scripts/resolver_v2.py
           agent/scripts/resolver_v2_configs.py
           agent/scripts/resolver_v2_strict.py
+          agent/scripts/resolver_v2_origin_strict.py
           agent/scripts/resolver_v2_extract.py
           agent/scripts/scan_build_v2.py
           agent/scripts/scan_build_v2_strict.py
