@@ -19,6 +19,7 @@ Important: the committed scanner state was generated from the older `ARMST-PLATF
 For new weapon prefabs and modules, use these repository artifacts before inventing or copying values manually:
 
 - `reports/KNOWLEDGE_STATUS.md` — canonical source-of-truth/freshness map and current Workbench-validated control points.
+- `agent/SAFE_PREFAB_EDITOR.md` — local-agent contract for exact-target search, backup, one minimal patch, static validation and rollback.
 - `indexes/prefab_authoring/manifest.json` — entrypoint to the full weapon/prefab authoring index generated from `Weapons.zip`.
 - `indexes/prefab_authoring/shard_01.json` … `shard_04.json` — parent paths/GUIDs, instance IDs and discovered handling fields.
 - `indexes/prefab_authoring_reference.json` — verified canonical component IDs, family baselines, handgun recoil structure and resolved TT source/target separation.
@@ -27,6 +28,7 @@ For new weapon prefabs and modules, use these repository artifacts before invent
 - `indexes/script_reference/slot_and_sight_summary.json` — resolved weapon-side attachment slot types, representative pivots/default modules and the SightsComponent authoring boundary.
 - `indexes/script_reference/optic_compatibility_policy_v2.json` — **active optics gameplay policy** separating researched real compatibility from gameplay compatibility.
 - `indexes/script_reference/optic_compatibility_policy_v1.json` — archived strict mount-family proposal kept for analysis/history.
+- `schema/compatibility.schema.json` — validation shape for `RealCompatibility`, `GameplayCompatibility`, `MountInterface`, `Evidence` and `GameplaySimplification`.
 - `reports/PREFAB_AUTHORING_GUIDE.md` — Workbench-validated minimal inherited-override rules.
 - `reports/CONFIG_AUTHORING_GUIDE.md` — AmmoConfig / AmmoMapping / projectile resolution rules.
 - `reports/SCRIPT_MODULE_AUTHORING_GUIDE.md` — general compatibility script, RIS, optic, muzzle, module and sight authoring rules using the active DovetailRU policy.
