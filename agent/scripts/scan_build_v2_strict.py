@@ -5,10 +5,12 @@ PR #2 is still draft. This entrypoint installs the conservative identity store
 and origin-preserving weapon->magazine->ammo->projectile traversal, then reuses
 the existing output/report code.
 
-When a materialization manifest exists, the strict pipeline also refuses to
-scan stale/unlisted ``.et/.conf/.meta`` files left from an older Workbench run.
-A failed export must never become successful resolver evidence merely because a
-previous copy still exists on disk.
+When a materialization manifest exists, the strict pipeline refuses to scan
+stale/unlisted materialized ``.et/.conf`` resources left from an older Workbench
+run. ``.meta`` sidecars are deliberately excluded from this manifest check:
+Workbench registration can generate them even though the materializer manifest
+tracks only requested resources, and `.meta Name` is metadata rather than live
+Resource GUID authority.
 """
 
 from __future__ import annotations
@@ -21,7 +23,7 @@ from resolver_v2_strict import StrictHydratedResourceStore
 
 
 MATERIALIZATION_MANIFEST = "_wax_materialization.tsv"
-RESOLVER_EXTENSIONS = {".et", ".conf", ".meta"}
+MANIFEST_RESOURCE_EXTENSIONS = {".et", ".conf"}
 
 
 def _norm_rel(path: str) -> str:
@@ -29,10 +31,11 @@ def _norm_rel(path: str) -> str:
 
 
 def validate_materialized_root(root: str) -> dict:
-    """Validate a Workbench materialized root against its latest manifest.
+    """Validate requested materialized resources against the latest manifest.
 
     Roots without a manifest are accepted for tests/manual fixtures. If a
-    manifest is present it becomes authoritative for resolver-readable files.
+    manifest is present it becomes authoritative for materialized `.et/.conf`
+    files. Generated/untracked `.meta` sidecars do not invalidate the dataset.
     """
     root = os.path.abspath(root)
     manifest_path = os.path.join(root, MATERIALIZATION_MANIFEST)
@@ -64,7 +67,7 @@ def validate_materialized_root(root: str) -> dict:
         if not rel:
             continue
         ext = os.path.splitext(rel)[1].lower()
-        if ext not in RESOLVER_EXTENSIONS:
+        if ext not in MANIFEST_RESOURCE_EXTENSIONS:
             continue
         if status == "ok":
             ok_paths.add(rel.casefold())
@@ -75,7 +78,7 @@ def validate_materialized_root(root: str) -> dict:
     actual_display = {}
     for dirpath, _dirs, filenames in os.walk(root):
         for filename in filenames:
-            if os.path.splitext(filename)[1].lower() not in RESOLVER_EXTENSIONS:
+            if os.path.splitext(filename)[1].lower() not in MANIFEST_RESOURCE_EXTENSIONS:
                 continue
             rel = _norm_rel(os.path.relpath(os.path.join(dirpath, filename), root))
             key = rel.casefold()
@@ -102,7 +105,7 @@ def validate_materialized_root(root: str) -> dict:
         "status": "ok",
         "root": root,
         "manifest": manifest_path,
-        "ok_resolver_files": len(ok_paths),
+        "ok_materialized_resources": len(ok_paths),
     }
 
 
