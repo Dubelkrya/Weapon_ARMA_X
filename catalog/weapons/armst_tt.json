@@ -17,12 +17,14 @@
   "references": [
     {"guid":"3142577B6CD35911","path":"Assets/TT/TT_weapon.xob","resolved":"local","target":"Assets/Weapons_RUS/TT/TT_weapon.xob","defined_in":"Prefabs/Weapons/Handguns/armst_TT.et"},
     {"guid":"AA99F5E678010DB3","path":"Prefabs/Weapons/Magazines/Magazine_763x25_TT_8rnd_Ball.et","resolved":"local","target":"Prefabs/Weapons/Magazines/Magazine_763x25_TT_8rnd_Ball.et","defined_in":"Prefabs/Weapons/Handguns/armst_TT.et"},
+    {"guid":"9379B9A38F29D508","path":"Configs/Weapons/Ammo/Ammo_763x25.conf","resolved":"local","target":"Configs/Weapons/Ammo/Ammo_763x25.conf","defined_in":"Prefabs/Weapons/Magazines/Magazine_763x25_TT_8rnd_Ball.et"},
+    {"guid":"5AE7AF31B9D7EB6C","path":"Prefabs/Weapons/Ammo/Ammo_763x25_Ball.et","resolved":"local","target":"Prefabs/Weapons/Ammo/Ammo_763x25_Ball.et","defined_in":"Configs/Weapons/Ammo/Ammo_763x25.conf"},
     {"guid":"D5D52E848DBCAA53","path":"Prefabs/Weapons/Core/Configs/FireModes/FireMode_Single.conf","resolved":"external","target":null,"defined_in":"Prefabs/Weapons/Core/Handgun_Base.et"},
     {"guid":"7EE41322045592D4","path":"Prefabs/Weapons/Core/Recoil/Handgun_9_recoil.conf","resolved":"external","target":null,"defined_in":"Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et"}
   ],
   "warnings": [
-    "TT magazine/ammo resources are ARMST-local and are not present in the supplied vanilla Weapons.zip snapshot.",
-    "Configs.zip contains no 7.63x25 / 7.62x25 MagazineConfig. Do not substitute 9x18, 9x19 or another vanilla config; Ammo_763x25.conf and its projectile chain remain unresolved until the ARMST raw sources are supplied."
+    "Ammo_763x25_Ball source uses Mass 0.00804, Diameter 9.1 and AIBT_9x19_Ball_M882. Preserve these as supplied source facts; do not silently replace them with real-world Tokarev values.",
+    "A separate Prefabs/Weapons/Ammo/Ammo_763x25.et projectile exists but is not listed by the current Ammo_763x25.conf, so it is not the TT default projectile."
   ],
   "data": {
     "identity": {"name":{"value":"TT","defined_in":"Prefabs/Weapons/Handguns/armst_TT.et","inherited":false}},
@@ -36,13 +38,21 @@
     "magazine": {
       "magazine_well":{"name":"MagazineWell","class":"MagazineWell763x25","defined_in":"Prefabs/Weapons/Handguns/armst_TT.et"},
       "magazine_template":{"guid":"AA99F5E678010DB3","path":"Prefabs/Weapons/Magazines/Magazine_763x25_TT_8rnd_Ball.et","defined_in":"Prefabs/Weapons/Handguns/armst_TT.et"},
-      "ammo_config":{"path":"Configs/Weapons/Ammo/Ammo_763x25.conf","status":"armst-local-unresolved","defined_in":"ARMST catalog / local magazine chain"}
+      "capacity":{"value":8,"defined_in":"inherited PM 8rnd magazine structure","inherited":true},
+      "ammo_config":{"guid":"9379B9A38F29D508","path":"Configs/Weapons/Ammo/Ammo_763x25.conf","status":"resolved","defined_in":"Prefabs/Weapons/Magazines/Magazine_763x25_TT_8rnd_Ball.et"},
+      "loaded_projectile":{"guid":"5AE7AF31B9D7EB6C","path":"Prefabs/Weapons/Ammo/Ammo_763x25_Ball.et","count":8,"defined_in":"Ammo_763x25.conf + inherited 8-round mapping"}
     },
     "ballistics": {
       "bullet_init_speed_coef":{"value":null,"defined_in":null,"inherited":true},
       "dispersion_diameter":{"value":0.4,"defined_in":"Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et","inherited":true},
       "dispersion_range":{"value":100,"defined_in":"Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et","inherited":true},
-      "projectile":{"value":null,"status":"unresolved-armst-local"}
+      "projectile":{
+        "guid":"5AE7AF31B9D7EB6C","path":"Prefabs/Weapons/Ammo/Ammo_763x25_Ball.et","status":"resolved",
+        "init_speed":430,"init_speed_variation":15,"mass":0.00804,"air_drag":0.0000125,"diameter":9.1,"length":15.5,
+        "penetration_depth":20,"penetration_density":0.65,"penetration_speed":355,
+        "primary_kinetic_damage":50,
+        "ballistic_table":"Configs/Weapons/AIBallisticTables/AIBT_9x19_Ball_M882.conf"
+      }
     },
     "aim": {
       "camera_recoil":{"instance_id":"58DEF2AB0413E346","rotation_min":"0.005 0.005 3","rotation_max":"0.012 0.012 4","defined_in":"Prefabs/Weapons/Core/Handgun_Base.et","inherited":true},
@@ -50,7 +60,8 @@
       "sway":{"instance_id":"521AE9A27BDC1E6F","defined_in":"Prefabs/Weapons/Core/Handgun_Base.et","inherited":true}
     },
     "sights":{"ads_time":{"value":0.2,"defined_in":"Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et","inherited":true},"switch_skip":null,"ranges":[],"defined_in":"Prefabs/Weapons/Handguns/armst_TT.et"},
-    "attachment_slots": [], "muzzle_attachment": null, "animation":{"anim_graph":null,"anim_instance":null}
+    "attachment_slots": [], "muzzle_attachment": null, "animation":{"anim_graph":null,"anim_instance":null},
+    "script_compatibility":{"magazine_well_type":"MagazineWell763x25","script_reference":"indexes/script_reference/manifest.json"}
   },
-  "derived": {"single_rpm":500,"moa":13.750913745246025,"authoring_reference":"indexes/prefab_authoring_reference.json","config_authoring_reference":"indexes/config_reference/manifest.json"}
+  "derived": {"single_rpm":500,"moa":13.750913745246025,"authoring_reference":"indexes/prefab_authoring_reference.json","config_authoring_reference":"indexes/config_reference/manifest.json","script_authoring_reference":"indexes/script_reference/manifest.json"}
 }
