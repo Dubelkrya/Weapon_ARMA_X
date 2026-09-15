@@ -74,7 +74,7 @@ class ResolverV2ArchitecturePackageTests(unittest.TestCase):
             {"WeaponComponent", "BaseWeapon", "KnownConfig"},
         )
 
-    def test_weapon_scope_excludes_unrelated_armst_roots_but_follows_weapon_missing_edge(self):
+    def test_weapon_scope_excludes_unrelated_roots_and_keeps_armst_gap_for_review(self):
         weapon = "Prefabs/Weapons/Rifles/Test/Weapon.et"
         unrelated = "Prefabs/Vehicles/Test/Vehicle.et"
         weapon_missing = "Configs/Weapons/Test/Needed.conf"
@@ -117,14 +117,17 @@ class ResolverV2ArchitecturePackageTests(unittest.TestCase):
         self.assertEqual(scoped["summary"]["seed_count"], 1)
         self.assertEqual(scoped["summary"]["armst_blueprint_count"], 1)
         self.assertEqual(scoped["blueprints"][0]["resource"], weapon)
-        self.assertEqual(len(scoped["export_requests"]), 1)
-        self.assertEqual(scoped["export_requests"][0]["path"], weapon_missing)
-        self.assertNotEqual(scoped["export_requests"][0]["path"], unrelated_missing)
+        self.assertEqual(scoped["export_requests"], [])
+        review = scoped["graph"]["closure"]["unproven_target_origin_edges"]
+        self.assertEqual(len(review), 1)
+        self.assertEqual(review[0]["ref"]["path"], weapon_missing)
+        self.assertNotEqual(review[0]["ref"]["path"], unrelated_missing)
 
     def test_decision_prioritizes_exact_missing_resources(self):
         decision = architecture_decision(
             {
                 "exact_export_request_count": 2,
+                "unproven_target_origin_edge_count": 1,
                 "ambiguous_identity_edge_count": 3,
                 "resolver_warning_count": 4,
             }
@@ -133,10 +136,24 @@ class ResolverV2ArchitecturePackageTests(unittest.TestCase):
         self.assertTrue(decision["workbench_needed"])
         self.assertFalse(decision["architecture_ready"])
 
+    def test_unproven_armst_target_is_source_review_not_workbench(self):
+        decision = architecture_decision(
+            {
+                "exact_export_request_count": 0,
+                "unproven_target_origin_edge_count": 2,
+                "ambiguous_identity_edge_count": 0,
+                "resolver_warning_count": 0,
+            }
+        )
+        self.assertEqual(decision["code"], "SOURCE_IDENTITY_REVIEW_REQUIRED")
+        self.assertFalse(decision["workbench_needed"])
+        self.assertFalse(decision["architecture_ready"])
+
     def test_identity_gap_is_not_mislabeled_as_workbench_work(self):
         decision = architecture_decision(
             {
                 "exact_export_request_count": 0,
+                "unproven_target_origin_edge_count": 0,
                 "ambiguous_identity_edge_count": 3,
                 "resolver_warning_count": 0,
             }
@@ -149,6 +166,7 @@ class ResolverV2ArchitecturePackageTests(unittest.TestCase):
         decision = architecture_decision(
             {
                 "exact_export_request_count": 0,
+                "unproven_target_origin_edge_count": 0,
                 "ambiguous_identity_edge_count": 0,
                 "resolver_warning_count": 0,
             }
