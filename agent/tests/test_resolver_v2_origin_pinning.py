@@ -111,10 +111,35 @@ class ResolverV2OriginPinningTests(unittest.TestCase):
             ref = store.resolve_ref("CAFE", target, origin_hint="armst")
             self.assertEqual(ref["status"], "local")
             self.assertEqual(ref["origin"], "materialized_base")
+            self.assertEqual(store._guid_records("CAFE")[0].origin, "materialized_base")
 
             entity = store.resolve_entity(source, "armst")
             self.assertEqual(entity.status, "resolved")
             self.assertEqual(entity.chain[1]["origin"], "materialized_base")
+
+    def test_armst_to_armst_unique_path_resolves_but_does_not_prove_guid_owner(self):
+        with tempfile.TemporaryDirectory() as armst, tempfile.TemporaryDirectory() as vanilla:
+            target = "Prefabs/Weapons/Test/ArmstBase.et"
+            source = "Prefabs/Weapons/Test/ArmstChild.et"
+            write(armst, target, 'GenericEntity {\n ID "ARMST_BASE"\n}\n')
+            write(
+                armst,
+                source,
+                f'''\
+                GenericEntity : "{{A111}}{target}" {{
+                }}
+                ''',
+            )
+
+            store = build_store(armst, [f"materialized_base={vanilla}"])
+
+            ref = store.resolve_ref("A111", target, origin_hint="armst")
+            self.assertEqual(ref["status"], "local")
+            self.assertEqual(ref["origin"], "armst")
+            self.assertEqual(ref["resolved_by"], "path")
+            # Vanilla is only partially materialized, so this path-only match is
+            # not reusable proof that A111 can never identify a vanilla copy.
+            self.assertEqual(store._guid_records("A111"), [])
 
     def test_meta_name_is_metadata_only_not_live_guid_evidence(self):
         with tempfile.TemporaryDirectory() as armst, tempfile.TemporaryDirectory() as vanilla:
