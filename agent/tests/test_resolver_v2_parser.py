@@ -8,7 +8,7 @@ SCRIPT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "scri
 if SCRIPT_DIR not in sys.path:
     sys.path.insert(0, SCRIPT_DIR)
 
-from et_parser import find_child, parse_text  # noqa: E402
+from et_parser import find_child, parse_file, parse_text  # noqa: E402
 from resolver_v2 import ResourceRoot, find_recursive_r, scalar_r  # noqa: E402
 from resolver_v2_configs import HydratedResourceStore  # noqa: E402
 
@@ -70,6 +70,52 @@ class ResolverV2ParserTests(unittest.TestCase):
         self.assertEqual(config.ref["guid"], "ABCD")
         self.assertEqual(config.ref["path"], "BaseAmmo.conf")
         self.assertEqual(scalar_r(find_recursive_r(config, "MaxAmmo")[0]), 30)
+
+    def test_parse_file_extracts_conf_owner_resourcename_not_instance_id(self):
+        with tempfile.TemporaryDirectory() as root:
+            rel = "Configs/Weapons/Ammo/Ammo_545x39.conf"
+            path = write(
+                root,
+                rel,
+                f'''\
+                MagazineConfig "{{3D41E1B0D6EEC0AF}}{rel}" {{
+                 AmmoResourceArray {{
+                  "{{1D9DDE1632F33A9E}}Prefabs/Weapons/Ammo/Ammo_545x39_Ball_7N6.et"
+                 }}
+                }}
+                ''',
+            )
+
+            resource = parse_file(path, root)
+            config = resource.root.children[0]
+            self.assertEqual(resource.resource_ref["guid"], "3D41E1B0D6EEC0AF")
+            self.assertEqual(resource.resource_ref["path"], rel)
+            self.assertIsNone(config.id)
+            self.assertIsNone(config.ref)
+            ammo = find_child(config, "AmmoResourceArray")
+            self.assertEqual(ammo.children[0].ref["guid"], "1D9DDE1632F33A9E")
+
+    def test_parse_file_keeps_conf_parent_ref_separate_from_owner(self):
+        with tempfile.TemporaryDirectory() as root:
+            rel = "Configs/Weapons/AIBallisticTables/Child.conf"
+            parent = "Configs/Weapons/AIBallisticTables/Base.conf"
+            path = write(
+                root,
+                rel,
+                f'''\
+                BallisticTableArray "{{AAAA}}{rel}" : "{{BBBB}}{parent}" {{
+                 Value 1
+                }}
+                ''',
+            )
+
+            resource = parse_file(path, root)
+            config = resource.root.children[0]
+            self.assertEqual(resource.resource_ref["guid"], "AAAA")
+            self.assertEqual(resource.resource_ref["path"], rel)
+            self.assertIsNone(config.id)
+            self.assertEqual(config.ref["guid"], "BBBB")
+            self.assertEqual(config.ref["path"], parent)
 
     def test_hydrated_fire_mode_keeps_instance_id_and_local_override(self):
         with tempfile.TemporaryDirectory() as root:
