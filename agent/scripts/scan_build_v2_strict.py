@@ -1,20 +1,122 @@
 """Strict production entrypoint for the resolver-v2 catalog pipeline.
 
 The original ``scan_build_v2`` remains intact as a comparison baseline while
-PR #2 is still draft.  This entrypoint installs the conservative identity store
+PR #2 is still draft. This entrypoint installs the conservative identity store
 and origin-preserving weapon->magazine->ammo->projectile traversal, then reuses
 the existing output/report code.
+
+When a materialization manifest exists, the strict pipeline also refuses to
+scan stale/unlisted ``.et/.conf/.meta`` files left from an older Workbench run.
+A failed export must never become successful resolver evidence merely because a
+previous copy still exists on disk.
 """
 
 from __future__ import annotations
 
+import os
 from typing import Sequence
 
 import scan_build_v2 as pipeline
 from resolver_v2_strict import StrictHydratedResourceStore
 
 
+MATERIALIZATION_MANIFEST = "_wax_materialization.tsv"
+RESOLVER_EXTENSIONS = {".et", ".conf", ".meta"}
+
+
+def _norm_rel(path: str) -> str:
+    return str(path or "").replace("\\", "/").lstrip("./")
+
+
+def validate_materialized_root(root: str) -> dict:
+    """Validate a Workbench materialized root against its latest manifest.
+
+    Roots without a manifest are accepted for tests/manual fixtures. If a
+    manifest is present it becomes authoritative for resolver-readable files.
+    """
+    root = os.path.abspath(root)
+    manifest_path = os.path.join(root, MATERIALIZATION_MANIFEST)
+    if not os.path.isfile(manifest_path):
+        return {"status": "manifest_absent", "root": root}
+
+    with open(manifest_path, "r", encoding="utf-8-sig", errors="replace") as handle:
+        lines = [line.rstrip("\r\n") for line in handle if line.strip()]
+    if not lines:
+        raise RuntimeError(f"materialization manifest is empty: {manifest_path}")
+
+    header = lines[0].split("\t")
+    required = {"destination_relative", "status"}
+    if not required.issubset(header):
+        raise RuntimeError(
+            f"materialization manifest missing columns {sorted(required - set(header))}: "
+            f"{manifest_path}"
+        )
+    columns = {name: index for index, name in enumerate(header)}
+
+    ok_paths = set()
+    failed_paths = set()
+    for raw in lines[1:]:
+        parts = raw.split("\t")
+        if len(parts) < len(header):
+            parts.extend([""] * (len(header) - len(parts)))
+        rel = _norm_rel(parts[columns["destination_relative"]])
+        status = parts[columns["status"]].strip().lower()
+        if not rel:
+            continue
+        ext = os.path.splitext(rel)[1].lower()
+        if ext not in RESOLVER_EXTENSIONS:
+            continue
+        if status == "ok":
+            ok_paths.add(rel.casefold())
+        else:
+            failed_paths.add(rel.casefold())
+
+    actual_paths = set()
+    actual_display = {}
+    for dirpath, _dirs, filenames in os.walk(root):
+        for filename in filenames:
+            if os.path.splitext(filename)[1].lower() not in RESOLVER_EXTENSIONS:
+                continue
+            rel = _norm_rel(os.path.relpath(os.path.join(dirpath, filename), root))
+            key = rel.casefold()
+            actual_paths.add(key)
+            actual_display[key] = rel
+
+    unlisted = sorted(actual_paths - ok_paths)
+    missing = sorted(ok_paths - actual_paths)
+    failed_present = sorted(actual_paths & failed_paths)
+    if unlisted or missing or failed_present:
+        def sample(items):
+            return [actual_display.get(item, item) for item in items[:8]]
+
+        raise RuntimeError(
+            "materialized vanilla root does not match latest manifest: "
+            f"unlisted={len(unlisted)} missing_ok={len(missing)} "
+            f"failed_but_present={len(failed_present)}; "
+            f"unlisted_sample={sample(unlisted)} "
+            f"missing_sample={sample(missing)} "
+            f"failed_sample={sample(failed_present)}"
+        )
+
+    return {
+        "status": "ok",
+        "root": root,
+        "manifest": manifest_path,
+        "ok_resolver_files": len(ok_paths),
+    }
+
+
+def _vanilla_root_path(raw: str, index: int) -> str:
+    if "=" in raw:
+        _label, path = raw.split("=", 1)
+        return os.path.abspath(path)
+    return os.path.abspath(raw)
+
+
 def build_store(armst_root: str, vanilla_roots: Sequence[str]) -> StrictHydratedResourceStore:
+    for index, raw in enumerate(vanilla_roots, 1):
+        validate_materialized_root(_vanilla_root_path(raw, index))
+
     store = StrictHydratedResourceStore(
         pipeline.roots_from_args(armst_root, vanilla_roots)
     )
