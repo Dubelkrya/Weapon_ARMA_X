@@ -1,0 +1,40 @@
+{
+  "id": "weaponoptic_base",
+  "role": "leaf",
+  "source": {
+    "resource": "Prefabs/Weapons/Attachments/Optics/WeaponOptic_Base.et",
+    "resource_guid": "966B4E5523D2F166",
+    "meta_name": null,
+    "class": "GameEntity",
+    "defined_in": "Prefabs/Weapons/Attachments/Optics/WeaponOptic_Base.et"
+  },
+  "identity": {
+    "name": "WeaponOptic_Base",
+    "resource": "Prefabs/Weapons/Attachments/Optics/WeaponOptic_Base.et"
+  },
+  "classification": {
+    "kind": "attachment",
+    "confidence": "folder",
+    "attachment_kind": "optic"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Weapons/Attachments/Optics/WeaponOptic_Base.et",
+        "status": "local",
+        "class": "GameEntity"
+      }
+    ],
+    "external_parents": [
+      {
+        "guid": "3E15C1C882DBB587",
+        "path": "Prefabs/Weapons/Core/WeaponSight_Base.et",
+        "raw": "{3E15C1C882DBB587}Prefabs/Weapons/Core/WeaponSight_Base.et"
+      }
+    ],
+    "used_as_base_by": [],
+    "chain_depth_local": 1
+  },
+  "references": [],
+  "warnings": []
+}

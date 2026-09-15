@@ -1,0 +1,1255 @@
+# Unresolved references (base game data)
+
+These targets are not present in this addon. They live in the base game data, which is closed to this analysis; no values were guessed for them.
+
+
+## Assets/Toz/1.et
+```json
+[
+  {
+    "path": "Sounds/Weapons/_SharedData/PickUp/Weapons_PickUp_Rifle_WoodMetal.acp",
+    "guid": "A84D9F22F2C0D9CE",
+    "defined_in": "Assets/Toz/1.et"
+  },
+  {
+    "path": "anims/workspaces/player/player_main_rifle.asi",
+    "guid": "0350283642830782",
+    "defined_in": "Assets/Toz/1.et"
+  },
+  {
+    "path": "Particles/Weapon/Smoke_NSV.ptc",
+    "guid": "78F707EBECCD6F29",
+    "defined_in": "Assets/Toz/1.et"
+  },
+  {
+    "path": "Particles/Weapon/Muzzle_M21.ptc",
+    "guid": "8EAE237E5528D237",
+    "defined_in": "Assets/Toz/1.et"
+  },
+  {
+    "path": "Assets/Toz/Workbanch/Toz.agr",
+    "guid": "1A04C77D8EB947A7",
+    "defined_in": "Assets/Toz/1.et"
+  },
+  {
+    "path": "Assets/Toz/Workbanch/Toz_weapon.asi",
+    "guid": "22FBD42699C34554",
+    "defined_in": "Assets/Toz/1.et"
+  },
+  {
+    "path": "Assets/Toz/Workbanch/Toz_player.asi",
+    "guid": "D9A5451701C221B8",
+    "defined_in": "Assets/Toz/1.et"
+  }
+]
+```
+
+## Prefabs/Weapons/Ammo/12g/Ammo_12ga_shell_test.et
+```json
+[
+  {
+    "path": "Assets/Props/Civilian/Birdhouse_01/Birdhouse_01.xob",
+    "guid": "6862F47CEC7E0E26",
+    "defined_in": "Prefabs/Weapons/Ammo/12g/Ammo_12ga_shell_test.et"
+  }
+]
+```
+
+## Prefabs/Weapons/Ammo/12g/Ammo_Buckshot_pellet.et
+```json
+[
+  {
+    "path": "Configs/Weapons/AIBallisticTables/AIBT_9x19_Ball_M882.conf",
+    "guid": "AEFA33057ADA0D0B",
+    "defined_in": "Prefabs/Weapons/Ammo/12g/Ammo_Buckshot_pellet.et"
+  },
+  {
+    "path": "Sounds/Weapons/_SharedData/BulletSonicCracks/Pistol/Weapons_BulletSonicCracks_Pistol.acp",
+    "guid": "534A3A52CF7042A1",
+    "defined_in": "Prefabs/Weapons/Ammo/12g/Ammo_Buckshot_pellet.et"
+  },
+  {
+    "path": "Sounds/Weapons/_SharedData/BulletFlybys/Pistol/Weapons_BulletFlybys_Pistol.acp",
+    "guid": "C3F69D82DBEF24E2",
+    "defined_in": "Prefabs/Weapons/Ammo/12g/Ammo_Buckshot_pellet.et"
+  },
+  {
+    "path": "Assets/Weapons/Ammo/Bullets/9x19/Bullet_9x19.xob",
+    "guid": "049EAC7C19E1B570",
+    "defined_in": "Prefabs/Weapons/Ammo/12g/Ammo_Buckshot_pellet.et"
+  },
+  {
+    "path": "Assets/Weapons/Ammo/Bullets/9x18/Bullet_9x18.xob",
+    "guid": "3D2DFC533F142E11",
+    "defined_in": "Prefabs/Weapons/Ammo/12g/Ammo_Buckshot_pellet.et"
+  }
+]
+```
+
+## Prefabs/Weapons/Ammo/Ammo_763x25.et
+```json
+[
+  {
+    "path": "Configs/Weapons/AIBallisticTables/AIBT_762x54r_Ball_7N1.conf",
+    "guid": "0471293E3DE1E1DF",
+    "defined_in": "Prefabs/Weapons/Ammo/Ammo_763x25.et"
+  }
+]
+```
+
+## Prefabs/Weapons/Ammo/Ammo_763x25_Ball.et
+```json
+[
+  {
+    "path": "Configs/Weapons/AIBallisticTables/AIBT_9x19_Ball_M882.conf",
+    "guid": "AEFA33057ADA0D0B",
+    "defined_in": "Prefabs/Weapons/Ammo/Ammo_763x25_Ball.et"
+  },
+  {
+    "path": "Sounds/Weapons/_SharedData/BulletSonicCracks/Pistol/Weapons_BulletSonicCracks_Pistol.acp",
+    "guid": "534A3A52CF7042A1",
+    "defined_in": "Prefabs/Weapons/Ammo/Ammo_763x25_Ball.et"
+  },
+  {
+    "path": "Sounds/Weapons/_SharedData/BulletFlybys/Pistol/Weapons_BulletFlybys_Pistol.acp",
+    "guid": "C3F69D82DBEF24E2",
+    "defined_in": "Prefabs/Weapons/Ammo/Ammo_763x25_Ball.et"
+  },
+  {
+    "path": "Assets/Weapons/Ammo/Bullets/9x19/Bullet_9x19.xob",
+    "guid": "049EAC7C19E1B570",
+    "defined_in": "Prefabs/Weapons/Ammo/Ammo_763x25_Ball.et"
+  },
+  {
+    "path": "Assets/Weapons/Ammo/Bullets/9x19/Cartridge_9x19.xob",
+    "guid": "FA0DBC222917FBD6",
+    "defined_in": "Prefabs/Weapons/Ammo/Ammo_763x25_Ball.et"
+  }
+]
+```
+
+## Prefabs/Weapons/Ammo/Ammo_9x39_SP5_Ball.et
+```json
+[
+  {
+    "path": "Configs/Weapons/AIBallisticTables/AIBT_762x54r_Ball_7N1.conf",
+    "guid": "0471293E3DE1E1DF",
+    "defined_in": "Prefabs/Weapons/Ammo/Ammo_9x39_SP5_Ball.et"
+  }
+]
+```
+
+## Prefabs/Weapons/Ammo/Ammo_9x39_SP6_Ball.et
+```json
+[
+  {
+    "path": "Configs/Weapons/AIBallisticTables/AIBT_762x54r_Ball_7N1.conf",
+    "guid": "0471293E3DE1E1DF",
+    "defined_in": "Prefabs/Weapons/Ammo/Ammo_9x39_SP6_Ball.et"
+  }
+]
+```
+
+## Prefabs/Weapons/Attachments/Muzzle/Suppressor_9a91.et
+```json
+[
+  {
+    "path": "Particles/Weapon/Attachments/Suppressor_Carbine.ptc",
+    "guid": "0D9400A03DDEA9AC",
+    "defined_in": "Prefabs/Weapons/Attachments/Muzzle/Suppressor_9a91.et"
+  }
+]
+```
+
+## Prefabs/Weapons/Handguns/Handgun_Knife_base.et
+```json
+[
+  {
+    "path": "Sounds/Weapons/Handguns/PM/Weapons_Handguns_PM_Shot.acp",
+    "guid": "4B8E12C5E23CA29B",
+    "defined_in": "Prefabs/Weapons/Handguns/Handgun_Knife_base.et"
+  },
+  {
+    "path": "Assets/Weapons/Attachments/Bayonets/Bayonet_6Kh4/Bayonet_6Kh4.xob",
+    "guid": "F2E1926C50C222E1",
+    "defined_in": "Prefabs/Weapons/Handguns/Handgun_Knife_base.et"
+  },
+  {
+    "path": "anims/workspaces/player/player_main_pistol.asi",
+    "guid": "41AABAE44257A657",
+    "defined_in": "Prefabs/Weapons/Handguns/Handgun_Knife_base.et"
+  },
+  {
+    "path": "Particles/Weapon/Casing_9x18.ptc",
+    "guid": "BFCAD887920029A2",
+    "defined_in": "Prefabs/Weapons/Handguns/Handgun_Knife_base.et"
+  },
+  {
+    "path": "Particles/Weapon/Smoke_PM.ptc",
+    "guid": "A42825D4030412A3",
+    "defined_in": "Prefabs/Weapons/Handguns/Handgun_Knife_base.et"
+  },
+  {
+    "path": "Particles/Weapon/Muzzle_PM.ptc",
+    "guid": "929E2053B2409DB4",
+    "defined_in": "Prefabs/Weapons/Handguns/Handgun_Knife_base.et"
+  },
+  {
+    "path": "Prefabs/Weapons/Core/Recoil/Handgun_9_recoil.conf",
+    "guid": "7EE41322045592D4",
+    "defined_in": "Prefabs/Weapons/Handguns/Handgun_Knife_base.et"
+  },
+  {
+    "path": "Assets/Weapons/Handguns/workspaces/PM.agr",
+    "guid": "0A046C9C356F9198",
+    "defined_in": "Prefabs/Weapons/Handguns/Handgun_Knife_base.et"
+  },
+  {
+    "path": "Assets/Weapons/Handguns/workspaces/PM_weapon.asi",
+    "guid": "9D1FA29C8172197B",
+    "defined_in": "Prefabs/Weapons/Handguns/Handgun_Knife_base.et"
+  },
+  {
+    "path": "Assets/Weapons/Handguns/workspaces/PM_player.asi",
+    "guid": "664133AD19737D97",
+    "defined_in": "Prefabs/Weapons/Handguns/Handgun_Knife_base.et"
+  },
+  {
+    "path": "",
+    "guid": "662E8AF6A4C21F74",
+    "defined_in": "Prefabs/Weapons/Handguns/Handgun_Knife_base.et"
+  }
+]
+```
+
+## Prefabs/Weapons/Handguns/armst_APB.et
+```json
+[
+  {
+    "path": "Particles/Weapon/Attachments/Suppressor_PBS4.ptc",
+    "guid": "091997F8F8C15516",
+    "defined_in": "Prefabs/Weapons/Handguns/armst_APB.et"
+  }
+]
+```
+
+## Prefabs/Weapons/Handguns/armst_PP91.et
+```json
+[
+  {
+    "path": "anims/workspaces/player/player_main_rifle.asi",
+    "guid": "0350283642830782",
+    "defined_in": "Prefabs/Weapons/Handguns/armst_PP91.et"
+  },
+  {
+    "path": "anims/workspaces/player/player_inventory_rifle.asi",
+    "guid": "5E862EB6989F8833",
+    "defined_in": "Prefabs/Weapons/Handguns/armst_PP91.et"
+  },
+  {
+    "path": "Particles/Weapon/Muzzle_PM.ptc",
+    "guid": "929E2053B2409DB4",
+    "defined_in": "Prefabs/Weapons/Handguns/armst_PP91.et"
+  },
+  {
+    "path": "Particles/Weapon/Muzzle_PKMT.ptc",
+    "guid": "A0CCFED3034A6B8D",
+    "defined_in": "Prefabs/Weapons/Handguns/armst_PP91.et"
+  }
+]
+```
+
+## Prefabs/Weapons/Handguns/armst_SR_2.et
+```json
+[
+  {
+    "path": "anims/workspaces/player/player_main_rifle.asi",
+    "guid": "0350283642830782",
+    "defined_in": "Prefabs/Weapons/Handguns/armst_SR_2.et"
+  },
+  {
+    "path": "anims/workspaces/player/player_inventory_rifle.asi",
+    "guid": "5E862EB6989F8833",
+    "defined_in": "Prefabs/Weapons/Handguns/armst_SR_2.et"
+  },
+  {
+    "path": "Particles/Weapon/Muzzle_PM.ptc",
+    "guid": "929E2053B2409DB4",
+    "defined_in": "Prefabs/Weapons/Handguns/armst_SR_2.et"
+  },
+  {
+    "path": "Particles/Weapon/Muzzle_PKMT.ptc",
+    "guid": "A0CCFED3034A6B8D",
+    "defined_in": "Prefabs/Weapons/Handguns/armst_SR_2.et"
+  },
+  {
+    "path": "",
+    "guid": "58FCF59C4660D33B",
+    "defined_in": "Prefabs/Weapons/Handguns/armst_SR_2.et"
+  }
+]
+```
+
+## Prefabs/Weapons/Magazines/12ga/12ga_Shell_test.et
+```json
+[
+  {
+    "path": "Assets/Spas12/Spas_Shell.xob",
+    "guid": "58CA1ADFAF8CC13F",
+    "defined_in": "Prefabs/Weapons/Magazines/12ga/12ga_Shell_test.et"
+  },
+  {
+    "path": "Assets/Spas12/Spas.xob",
+    "guid": "2E63897F666D7EE7",
+    "defined_in": "Prefabs/Weapons/Magazines/12ga/12ga_Shell_test.et"
+  },
+  {
+    "path": "Assets/Spas12/Data/Mat_3.emat",
+    "guid": "FD401927CE082DAF",
+    "defined_in": "Prefabs/Weapons/Magazines/12ga/12ga_Shell_test.et"
+  }
+]
+```
+
+## Prefabs/Weapons/Magazines/9x39/Magazine_9x39_20rnd_9a91_SP5.et
+```json
+[
+  {
+    "path": "Configs/WeaponInfo/MagazineIndicators/ak74_30.conf",
+    "guid": "1AA788302FE3C53A",
+    "defined_in": "Prefabs/Weapons/Magazines/9x39/Magazine_9x39_20rnd_9a91_SP5.et"
+  }
+]
+```
+
+## Prefabs/Weapons/Magazines/9x39/Magazine_9x39_20rnd_9a91_SP6.et
+```json
+[
+  {
+    "path": "Configs/WeaponInfo/MagazineIndicators/ak74_30.conf",
+    "guid": "1AA788302FE3C53A",
+    "defined_in": "Prefabs/Weapons/Magazines/9x39/Magazine_9x39_20rnd_9a91_SP6.et"
+  }
+]
+```
+
+## Prefabs/Weapons/Magazines/9x39/Magazine_9x39_20rnd_vss_SP5.et
+```json
+[
+  {
+    "path": "Configs/WeaponInfo/MagazineIndicators/ak74_30.conf",
+    "guid": "1AA788302FE3C53A",
+    "defined_in": "Prefabs/Weapons/Magazines/9x39/Magazine_9x39_20rnd_vss_SP5.et"
+  }
+]
+```
+
+## Prefabs/Weapons/Magazines/9x39/Magazine_9x39_20rnd_vss_SP6.et
+```json
+[
+  {
+    "path": "Configs/WeaponInfo/MagazineIndicators/ak74_30.conf",
+    "guid": "1AA788302FE3C53A",
+    "defined_in": "Prefabs/Weapons/Magazines/9x39/Magazine_9x39_20rnd_vss_SP6.et"
+  }
+]
+```
+
+## Prefabs/Weapons/Magazines/9x39/Magazine_9x39_30rnd_val_SP5.et
+```json
+[
+  {
+    "path": "Configs/WeaponInfo/MagazineIndicators/ak74_30.conf",
+    "guid": "1AA788302FE3C53A",
+    "defined_in": "Prefabs/Weapons/Magazines/9x39/Magazine_9x39_30rnd_val_SP5.et"
+  }
+]
+```
+
+## Prefabs/Weapons/Magazines/9x39/Magazine_9x39_30rnd_val_SP6.et
+```json
+[
+  {
+    "path": "Configs/WeaponInfo/MagazineIndicators/ak74_30.conf",
+    "guid": "1AA788302FE3C53A",
+    "defined_in": "Prefabs/Weapons/Magazines/9x39/Magazine_9x39_30rnd_val_SP6.et"
+  }
+]
+```
+
+## Prefabs/Weapons/Rifles/9a91/Rifle_9a91.et
+```json
+[
+  {
+    "path": "Particles/Weapon/Casing_762x54.ptc",
+    "guid": "83DC2DCAF6EDC75F",
+    "defined_in": "Prefabs/Weapons/Rifles/9a91/Rifle_9a91_base.et"
+  },
+  {
+    "path": "Particles/Weapon/Muzzle_AKS74U.ptc",
+    "guid": "950626D73DDA6C7E",
+    "defined_in": "Prefabs/Weapons/Rifles/9a91/Rifle_9a91_base.et"
+  },
+  {
+    "path": "Prefabs/Weapons/Attachments/Mounts/Dovetail_AK/Dovetail_AK.et",
+    "guid": "D92368B78263A9E0",
+    "defined_in": "Prefabs/Weapons/Rifles/9a91/Rifle_9a91_base.et"
+  }
+]
+```
+
+## Prefabs/Weapons/Rifles/9a91/Rifle_9a91_base.et
+```json
+[
+  {
+    "path": "Prefabs/Weapons/Attachments/Mounts/Dovetail_AK/Dovetail_AK.et",
+    "guid": "D92368B78263A9E0",
+    "defined_in": "Prefabs/Weapons/Rifles/9a91/Rifle_9a91_base.et"
+  },
+  {
+    "path": "Particles/Weapon/Casing_762x54.ptc",
+    "guid": "83DC2DCAF6EDC75F",
+    "defined_in": "Prefabs/Weapons/Rifles/9a91/Rifle_9a91_base.et"
+  },
+  {
+    "path": "Particles/Weapon/Muzzle_AKS74U.ptc",
+    "guid": "950626D73DDA6C7E",
+    "defined_in": "Prefabs/Weapons/Rifles/9a91/Rifle_9a91_base.et"
+  }
+]
+```
+
+## Prefabs/Weapons/Rifles/9a91/Rifle_9a91_suppressor.et
+```json
+[
+  {
+    "path": "Particles/Weapon/Casing_762x54.ptc",
+    "guid": "83DC2DCAF6EDC75F",
+    "defined_in": "Prefabs/Weapons/Rifles/9a91/Rifle_9a91_base.et"
+  },
+  {
+    "path": "Particles/Weapon/Muzzle_AKS74U.ptc",
+    "guid": "950626D73DDA6C7E",
+    "defined_in": "Prefabs/Weapons/Rifles/9a91/Rifle_9a91_base.et"
+  },
+  {
+    "path": "Prefabs/Weapons/Attachments/Mounts/Dovetail_AK/Dovetail_AK.et",
+    "guid": "D92368B78263A9E0",
+    "defined_in": "Prefabs/Weapons/Rifles/9a91/Rifle_9a91_base.et"
+  }
+]
+```
+
+## Prefabs/Weapons/Rifles/AKM/Rifle_AKM.et
+```json
+[
+  {
+    "path": "Particles/Weapon/Casing_762x39_PS.ptc",
+    "guid": "A89D3276591C9F57",
+    "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+  },
+  {
+    "path": "Particles/Weapon/Smoke_VZ58.ptc",
+    "guid": "51553DBFB3D561B2",
+    "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+  },
+  {
+    "path": "Particles/Weapon/Muzzle_VZ58.ptc",
+    "guid": "0E66192FC96CDFB7",
+    "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+  },
+  {
+    "path": "Prefabs/Weapons/Core/Configs/FireModes/FireMode_Auto.conf",
+    "guid": "A512F292D96BCB9F",
+    "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM.et"
+  },
+  {
+    "path": "Prefabs/Weapons/Core/Configs/FireModes/FireMode_Safe.conf",
+    "guid": "687B3DA431730CFA",
+    "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+  },
+  {
+    "path": "Prefabs/Weapons/Core/Configs/TriggerEffects/Safety/TriggerEffect_SafetyLoose.conf",
+    "guid": "6B6BD5767BCD00A9",
+    "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+  },
+  {
+    "path": "Prefabs/Weapons/Core/Configs/FireModes/FireMode_Single.conf",
+    "guid": "D5D52E848DBCAA53",
+    "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+  },
+  {
+    "path": "Prefabs/Weapons/Magazines/Vz58/Magazine_762x39_Vz58_30rnd_Last_5Tracer.et",
+    "guid": "A827B610B7CD4158",
+    "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+  },
+  {
+    "path": "Assets/Weapons/Rifles/workspaces/ak74.agr",
+    "guid": "ADDF1CC42A489D84",
+    "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM.et"
+  },
+  {
+    "path": "Assets/Weapons/Rifles/workspaces/ak74_weapon.asi",
+    "guid": "022310A34B9AF611",
+    "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM.et"
+  },
+  {
+    "path": "Assets/Weapons/Rifles/workspaces/ak74_player.asi",
+    "guid": "F97D8192D39B92FD",
+    "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM.et"
+  },
+  {
+    "path": "Sounds/Weapons/Rifles/VZ-58/Weapons_Rifles_VZ-58_Shot.acp",
+    "guid": "62BB0D533080AE8D",
+    "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+  },
+  {
+    "path": "anims/workspaces/player/player_main_rifle.asi",
+    "guid": "0350283642830782",
+    "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+  },
+  {
+    "path": "Assets/Weapons/Rifles/VZ58/anims/anm/p_VZ58_ik.anm",
+    "guid": "F85D69227FAA3190",
+    "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+  },
+  {
+    "path": "Prefabs/Weapons/Attachments/Mounts/Dovetail_AK/Dovetail_AK.et",
+    "guid": "D92368B78263A9E0",
+    "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+  }
+]
+```
+
+## Prefabs/Weapons/Rifles/AKM/Rifle_AKMS.et
+```json
+[
+  {
+    "path": "anims/workspaces/player/player_main_rifle.asi",
+    "guid": "0350283642830782",
+    "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+  },
+  {
+    "path": "Assets/Weapons/Rifles/VZ58/anims/anm/p_VZ58_ik.anm",
+    "guid": "F85D69227FAA3190",
+    "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+  },
+  {
+    "path": "Prefabs/Weapons/Attachments/Stocks/Stock_VZ58/Stock_VZ58_folding.et",
+    "guid": "AD045AFAFFC1AB6E",
+    "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKMS.et"
+  },
+  {
+    "path": "Prefabs/Weapons/Core/Configs/FireModes/FireMode_Auto.conf",
+    "guid": "A512F292D96BCB9F",
+    "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKMS.et"
+  },
+  {
+    "path": "Particles/Weapon/Casing_762x39_PS.ptc",
+    "guid": "A89D3276591C9F57",
+    "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+  },
+  {
+    "path": "Particles/Weapon/Smoke_VZ58.ptc",
+    "guid": "51553DBFB3D561B2",
+    "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+  },
+  {
+    "path": "Particles/Weapon/Muzzle_VZ58.ptc",
+    "guid": "0E66192FC96CDFB7",
+    "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+  },
+  {
+    "path": "Prefabs/Weapons/Core/Configs/FireModes/FireMode_Safe.conf",
+    "guid": "687B3DA431730CFA",
+    "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+  },
+  {
+    "path": "Prefabs/Weapons/Core/Configs/TriggerEffects/Safety/TriggerEffect_SafetyLoose.conf",
+    "guid": "6B6BD5767BCD00A9",
+    "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+  },
+  {
+    "path": "Prefabs/Weapons/Core/Configs/FireModes/FireMode_Single.conf",
+    "guid": "D5D52E848DBCAA53",
+    "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+  },
+  {
+    "path": "Prefabs/Weapons/Magazines/Vz58/Magazine_762x39_Vz58_30rnd_Last_5Tracer.et",
+    "guid": "A827B610B7CD4158",
+    "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+  },
+  {
+    "path": "Sounds/Weapons/Rifles/VZ-58/Weapons_Rifles_VZ-58_Shot.acp",
+    "guid": "62BB0D533080AE8D",
+    "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+  },
+  {
+    "path": "Prefabs/Weapons/Attachments/Mounts/Dovetail_AK/Dovetail_AK.et",
+    "guid": "D92368B78263A9E0",
+    "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+  }
+]
+```
+
+## Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et
+```json
+[
+  {
+    "path": "Sounds/Weapons/Rifles/VZ-58/Weapons_Rifles_VZ-58_Shot.acp",
+    "guid": "62BB0D533080AE8D",
+    "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+  },
+  {
+    "path": "anims/workspaces/player/player_main_rifle.asi",
+    "guid": "0350283642830782",
+    "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+  },
+  {
+    "path": "Assets/Weapons/Rifles/VZ58/anims/anm/p_VZ58_ik.anm",
+    "guid": "F85D69227FAA3190",
+    "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+  },
+  {
+    "path": "Prefabs/Weapons/Attachments/Mounts/Dovetail_AK/Dovetail_AK.et",
+    "guid": "D92368B78263A9E0",
+    "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+  },
+  {
+    "path": "Particles/Weapon/Casing_762x39_PS.ptc",
+    "guid": "A89D3276591C9F57",
+    "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+  },
+  {
+    "path": "Particles/Weapon/Smoke_VZ58.ptc",
+    "guid": "51553DBFB3D561B2",
+    "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+  },
+  {
+    "path": "Particles/Weapon/Muzzle_VZ58.ptc",
+    "guid": "0E66192FC96CDFB7",
+    "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+  },
+  {
+    "path": "Prefabs/Weapons/Core/Configs/FireModes/FireMode_Safe.conf",
+    "guid": "687B3DA431730CFA",
+    "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+  },
+  {
+    "path": "Prefabs/Weapons/Core/Configs/TriggerEffects/Safety/TriggerEffect_SafetyLoose.conf",
+    "guid": "6B6BD5767BCD00A9",
+    "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+  },
+  {
+    "path": "Prefabs/Weapons/Core/Configs/FireModes/FireMode_Single.conf",
+    "guid": "D5D52E848DBCAA53",
+    "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+  },
+  {
+    "path": "Prefabs/Weapons/Magazines/Vz58/Magazine_762x39_Vz58_30rnd_Last_5Tracer.et",
+    "guid": "A827B610B7CD4158",
+    "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+  }
+]
+```
+
+## Prefabs/Weapons/Rifles/AKM/Rifle_AKM_full.et
+```json
+[
+  {
+    "path": "Particles/Weapon/Casing_762x39_PS.ptc",
+    "guid": "A89D3276591C9F57",
+    "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+  },
+  {
+    "path": "Particles/Weapon/Smoke_VZ58.ptc",
+    "guid": "51553DBFB3D561B2",
+    "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+  },
+  {
+    "path": "Particles/Weapon/Muzzle_VZ58.ptc",
+    "guid": "0E66192FC96CDFB7",
+    "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+  },
+  {
+    "path": "Prefabs/Weapons/Core/Configs/FireModes/FireMode_Auto.conf",
+    "guid": "A512F292D96BCB9F",
+    "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM.et"
+  },
+  {
+    "path": "Prefabs/Weapons/Core/Configs/FireModes/FireMode_Safe.conf",
+    "guid": "687B3DA431730CFA",
+    "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+  },
+  {
+    "path": "Prefabs/Weapons/Core/Configs/TriggerEffects/Safety/TriggerEffect_SafetyLoose.conf",
+    "guid": "6B6BD5767BCD00A9",
+    "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+  },
+  {
+    "path": "Prefabs/Weapons/Core/Configs/FireModes/FireMode_Single.conf",
+    "guid": "D5D52E848DBCAA53",
+    "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+  },
+  {
+    "path": "Prefabs/Weapons/Magazines/Vz58/Magazine_762x39_Vz58_30rnd_Last_5Tracer.et",
+    "guid": "A827B610B7CD4158",
+    "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+  },
+  {
+    "path": "Assets/Weapons/Rifles/workspaces/ak74.agr",
+    "guid": "ADDF1CC42A489D84",
+    "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM.et"
+  },
+  {
+    "path": "Assets/Weapons/Rifles/workspaces/ak74_weapon.asi",
+    "guid": "022310A34B9AF611",
+    "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM.et"
+  },
+  {
+    "path": "Assets/Weapons/Rifles/workspaces/ak74_player.asi",
+    "guid": "F97D8192D39B92FD",
+    "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM.et"
+  },
+  {
+    "path": "Sounds/Weapons/Rifles/VZ-58/Weapons_Rifles_VZ-58_Shot.acp",
+    "guid": "62BB0D533080AE8D",
+    "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+  },
+  {
+    "path": "anims/workspaces/player/player_main_rifle.asi",
+    "guid": "0350283642830782",
+    "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+  },
+  {
+    "path": "Assets/Weapons/Rifles/VZ58/anims/anm/p_VZ58_ik.anm",
+    "guid": "F85D69227FAA3190",
+    "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+  },
+  {
+    "path": "Prefabs/Weapons/Attachments/Mounts/Dovetail_AK/Dovetail_AK.et",
+    "guid": "D92368B78263A9E0",
+    "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+  }
+]
+```
+
+## Prefabs/Weapons/Rifles/AKM/Rifle_SOC94.et
+```json
+[
+  {
+    "path": "anims/workspaces/player/player_main_rifle.asi",
+    "guid": "0350283642830782",
+    "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+  },
+  {
+    "path": "Assets/Weapons/Rifles/VZ58/anims/anm/p_VZ58_ik.anm",
+    "guid": "F85D69227FAA3190",
+    "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+  },
+  {
+    "path": "Prefabs/Weapons/Attachments/Mounts/Dovetail_AK/Dovetail_AK.et",
+    "guid": "D92368B78263A9E0",
+    "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+  },
+  {
+    "path": "Particles/Weapon/Casing_762x39_PS.ptc",
+    "guid": "A89D3276591C9F57",
+    "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+  },
+  {
+    "path": "Particles/Weapon/Smoke_VZ58.ptc",
+    "guid": "51553DBFB3D561B2",
+    "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+  },
+  {
+    "path": "Particles/Weapon/Muzzle_VZ58.ptc",
+    "guid": "0E66192FC96CDFB7",
+    "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+  },
+  {
+    "path": "Prefabs/Weapons/Core/Configs/FireModes/FireMode_Safe.conf",
+    "guid": "687B3DA431730CFA",
+    "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+  },
+  {
+    "path": "Prefabs/Weapons/Core/Configs/TriggerEffects/Safety/TriggerEffect_SafetyLoose.conf",
+    "guid": "6B6BD5767BCD00A9",
+    "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+  },
+  {
+    "path": "Prefabs/Weapons/Core/Configs/FireModes/FireMode_Single.conf",
+    "guid": "D5D52E848DBCAA53",
+    "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+  },
+  {
+    "path": "Prefabs/Weapons/Magazines/Vz58/Magazine_762x39_Vz58_30rnd_Last_5Tracer.et",
+    "guid": "A827B610B7CD4158",
+    "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+  },
+  {
+    "path": "Sounds/Weapons/Rifles/VZ-58/Weapons_Rifles_VZ-58_Shot.acp",
+    "guid": "62BB0D533080AE8D",
+    "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+  }
+]
+```
+
+## Prefabs/Weapons/Rifles/AKM/Rifle_VPO136.et
+```json
+[
+  {
+    "path": "anims/workspaces/player/player_main_rifle.asi",
+    "guid": "0350283642830782",
+    "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+  },
+  {
+    "path": "Assets/Weapons/Rifles/VZ58/anims/anm/p_VZ58_ik.anm",
+    "guid": "F85D69227FAA3190",
+    "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+  },
+  {
+    "path": "Prefabs/Weapons/Attachments/Mounts/Dovetail_AK/Dovetail_AK.et",
+    "guid": "D92368B78263A9E0",
+    "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+  },
+  {
+    "path": "Particles/Weapon/Casing_762x39_PS.ptc",
+    "guid": "A89D3276591C9F57",
+    "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+  },
+  {
+    "path": "Particles/Weapon/Smoke_VZ58.ptc",
+    "guid": "51553DBFB3D561B2",
+    "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+  },
+  {
+    "path": "Particles/Weapon/Muzzle_VZ58.ptc",
+    "guid": "0E66192FC96CDFB7",
+    "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+  },
+  {
+    "path": "Prefabs/Weapons/Core/Configs/FireModes/FireMode_Safe.conf",
+    "guid": "687B3DA431730CFA",
+    "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+  },
+  {
+    "path": "Prefabs/Weapons/Core/Configs/TriggerEffects/Safety/TriggerEffect_SafetyLoose.conf",
+    "guid": "6B6BD5767BCD00A9",
+    "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+  },
+  {
+    "path": "Prefabs/Weapons/Core/Configs/FireModes/FireMode_Single.conf",
+    "guid": "D5D52E848DBCAA53",
+    "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+  },
+  {
+    "path": "Prefabs/Weapons/Magazines/Vz58/Magazine_762x39_Vz58_30rnd_Last_5Tracer.et",
+    "guid": "A827B610B7CD4158",
+    "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+  },
+  {
+    "path": "Sounds/Weapons/Rifles/VZ-58/Weapons_Rifles_VZ-58_Shot.acp",
+    "guid": "62BB0D533080AE8D",
+    "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+  }
+]
+```
+
+## Prefabs/Weapons/Rifles/Groza/Groza_base.et
+```json
+[
+  {
+    "path": "anims/workspaces/player/player_main_rifle.asi",
+    "guid": "0350283642830782",
+    "defined_in": "Prefabs/Weapons/Rifles/Groza/Groza_base.et"
+  },
+  {
+    "path": "Particles/Weapon/Casing_762x51.ptc",
+    "guid": "6A0F068A792EA37C",
+    "defined_in": "Prefabs/Weapons/Rifles/Groza/Groza_base.et"
+  },
+  {
+    "path": "Particles/Weapon/Muzzle_AK74.ptc",
+    "guid": "6FC79968CA7F6FD2",
+    "defined_in": "Prefabs/Weapons/Rifles/Groza/Groza_base.et"
+  }
+]
+```
+
+## Prefabs/Weapons/Rifles/Groza/armst_groza1.et
+```json
+[
+  {
+    "path": "anims/workspaces/player/player_main_rifle.asi",
+    "guid": "0350283642830782",
+    "defined_in": "Prefabs/Weapons/Rifles/Groza/Groza_base.et"
+  },
+  {
+    "path": "Particles/Weapon/Casing_762x51.ptc",
+    "guid": "6A0F068A792EA37C",
+    "defined_in": "Prefabs/Weapons/Rifles/Groza/Groza_base.et"
+  },
+  {
+    "path": "Particles/Weapon/Muzzle_AK74.ptc",
+    "guid": "6FC79968CA7F6FD2",
+    "defined_in": "Prefabs/Weapons/Rifles/Groza/Groza_base.et"
+  }
+]
+```
+
+## Prefabs/Weapons/Rifles/Rifle_HKG33.et
+```json
+[
+  {
+    "path": "Prefabs/Weapons/Magazines/Magazine_762x51_HK3.et",
+    "guid": "6D18CC33708EE713",
+    "defined_in": "Prefabs/Weapons/Rifles/Rifle_HKG33.et"
+  }
+]
+```
+
+## Prefabs/Weapons/Rifles/Rifle_L85.et
+```json
+[
+  {
+    "path": "Prefabs/Weapons/Attachments/Optics/Optic_4x20/SUSAT.et",
+    "guid": "1CED2426CDBD50A4",
+    "defined_in": "Prefabs/Weapons/Rifles/Rifle_L85.et"
+  }
+]
+```
+
+## Prefabs/Weapons/Rifles/Rifle_Sig550.et
+```json
+[
+  {
+    "path": "Prefabs/Weapons/Magazines/Magazine_556x45_SIG_550.et",
+    "guid": "E3DC6C2FBBE4F825",
+    "defined_in": "Prefabs/Weapons/Rifles/Rifle_Sig550.et"
+  },
+  {
+    "path": "Assets/Weapons/Rifles/workspaces/VZ58.agr",
+    "guid": "E7E67E4426E24066",
+    "defined_in": "Prefabs/Weapons/Rifles/Rifle_Sig550.et"
+  },
+  {
+    "path": "Assets/Weapons/Rifles/workspaces/VZ58_weapon.asi",
+    "guid": "FFB391312D0E84C5",
+    "defined_in": "Prefabs/Weapons/Rifles/Rifle_Sig550.et"
+  },
+  {
+    "path": "Assets/Weapons/Rifles/workspaces/VZ58_player.asi",
+    "guid": "04ED0000B50FE029",
+    "defined_in": "Prefabs/Weapons/Rifles/Rifle_Sig550.et"
+  }
+]
+```
+
+## Prefabs/Weapons/Rifles/Rifle_hk_g36.et
+```json
+[
+  {
+    "path": "Sounds/Weapons/Rifles/M16A2/Weapons_Rifles_M16A2_Shot.acp",
+    "guid": "DB92C647E05B2512",
+    "defined_in": "Prefabs/Weapons/Rifles/Rifle_hk_g36.et"
+  },
+  {
+    "path": "anims/workspaces/player/player_main_rifle.asi",
+    "guid": "0350283642830782",
+    "defined_in": "Prefabs/Weapons/Rifles/Rifle_hk_g36.et"
+  },
+  {
+    "path": "Assets/Weapons/Rifles/AK74/anims/anm/p_ak74_ik.anm",
+    "guid": "B7869ABD0EEE379D",
+    "defined_in": "Prefabs/Weapons/Rifles/Rifle_hk_g36.et"
+  },
+  {
+    "path": "Prefabs/Weapons/Attachments/Optics/Optic_HKg36.et",
+    "guid": "FF74CFF924512A7F",
+    "defined_in": "Prefabs/Weapons/Rifles/Rifle_hk_g36.et"
+  },
+  {
+    "path": "Particles/Weapon/Casing_556x45.ptc",
+    "guid": "4BF43F7D0D462D39",
+    "defined_in": "Prefabs/Weapons/Rifles/Rifle_hk_g36.et"
+  },
+  {
+    "path": "Particles/Weapon/Muzzle_M16A2_Open.ptc",
+    "guid": "DDF8E6F5BCEABCCC",
+    "defined_in": "Prefabs/Weapons/Rifles/Rifle_hk_g36.et"
+  },
+  {
+    "path": "Prefabs/Weapons/Core/Configs/FireModes/FireMode_Single.conf",
+    "guid": "D5D52E848DBCAA53",
+    "defined_in": "Prefabs/Weapons/Rifles/Rifle_hk_g36.et"
+  },
+  {
+    "path": "Prefabs/Weapons/Core/Configs/FireModes/FireMode_Burst.conf",
+    "guid": "B5D823125A678D73",
+    "defined_in": "Prefabs/Weapons/Rifles/Rifle_hk_g36.et"
+  },
+  {
+    "path": "Configs/WeaponInfo/MagazineIndicators/ak74_30.conf",
+    "guid": "1AA788302FE3C53A",
+    "defined_in": "Prefabs/Weapons/Rifles/Rifle_hk_g36.et"
+  },
+  {
+    "path": "Prefabs/Weapons/Magazines/Magazine_556x45_HKG36.et",
+    "guid": "969F6FFF810D2145",
+    "defined_in": "Prefabs/Weapons/Rifles/Rifle_hk_g36.et"
+  },
+  {
+    "path": "Configs/UI/NearbyInteractionContext/NearbyContextWeapons.conf",
+    "guid": "970293F8561231D4",
+    "defined_in": "Prefabs/Weapons/Rifles/Rifle_hk_g36.et"
+  }
+]
+```
+
+## Prefabs/Weapons/Rifles/SLR.et
+```json
+[
+  {
+    "path": "Assets/Weapons/Rifles/AK74/anims/anm/p_ak74_ik.anm",
+    "guid": "B7869ABD0EEE379D",
+    "defined_in": "Prefabs/Weapons/Rifles/SLR.et"
+  },
+  {
+    "path": "Prefabs/Weapons/Magazines/Magazine_762x51_L1A1_20.et",
+    "guid": "AA9A48AAEE6E4F1B",
+    "defined_in": "Prefabs/Weapons/Rifles/SLR.et"
+  }
+]
+```
+
+## Prefabs/Weapons/Rifles/Shotgun/armst_Remington_870.et
+```json
+[
+  {
+    "path": "Sounds/Weapons/_SharedData/PickUp/Weapons_PickUp_Rifle_WoodMetal.acp",
+    "guid": "A84D9F22F2C0D9CE",
+    "defined_in": "Prefabs/Weapons/Rifles/Shotgun/armst_Remington_870.et"
+  }
+]
+```
+
+## Prefabs/Weapons/Rifles/Shotgun/armst_izh_27.et
+```json
+[
+  {
+    "path": "Sounds/Weapons/_SharedData/PickUp/Weapons_PickUp_Rifle_WoodMetal.acp",
+    "guid": "A84D9F22F2C0D9CE",
+    "defined_in": "Prefabs/Weapons/Rifles/Shotgun/armst_izh_27.et"
+  }
+]
+```
+
+## Prefabs/Weapons/Rifles/Shotgun/armst_mp_133.et
+```json
+[
+  {
+    "path": "Sounds/Weapons/_SharedData/PickUp/Weapons_PickUp_Rifle_WoodMetal.acp",
+    "guid": "A84D9F22F2C0D9CE",
+    "defined_in": "Prefabs/Weapons/Rifles/Shotgun/armst_mp_133.et"
+  },
+  {
+    "path": "Assets/Mp_133/Anim/DIff/P_MP_133_ik.anm",
+    "guid": "DC4865C0B9866178",
+    "defined_in": "Prefabs/Weapons/Rifles/Shotgun/armst_mp_133.et"
+  }
+]
+```
+
+## Prefabs/Weapons/Rifles/Shotgun/armst_mp_153.et
+```json
+[
+  {
+    "path": "Sounds/Weapons/_SharedData/PickUp/Weapons_PickUp_Rifle_WoodMetal.acp",
+    "guid": "A84D9F22F2C0D9CE",
+    "defined_in": "Prefabs/Weapons/Rifles/Shotgun/armst_mp_153.et"
+  }
+]
+```
+
+## Prefabs/Weapons/Rifles/Shotgun/armst_spas_12.et
+```json
+[
+  {
+    "path": "Sounds/Weapons/_SharedData/PickUp/Weapons_PickUp_Rifle_WoodMetal.acp",
+    "guid": "A84D9F22F2C0D9CE",
+    "defined_in": "Prefabs/Weapons/Rifles/Shotgun/armst_spas_12.et"
+  }
+]
+```
+
+## Prefabs/Weapons/Rifles/Shotgun/armst_toz_66.et
+```json
+[
+  {
+    "path": "Sounds/Weapons/_SharedData/PickUp/Weapons_PickUp_Rifle_WoodMetal.acp",
+    "guid": "A84D9F22F2C0D9CE",
+    "defined_in": "Prefabs/Weapons/Rifles/Shotgun/armst_toz_66.et"
+  }
+]
+```
+
+## Prefabs/Weapons/Rifles/Shotgun/armst_toz_66_pantera.et
+```json
+[
+  {
+    "path": "Sounds/Weapons/_SharedData/PickUp/Weapons_PickUp_Rifle_WoodMetal.acp",
+    "guid": "A84D9F22F2C0D9CE",
+    "defined_in": "Prefabs/Weapons/Rifles/Shotgun/armst_toz_66.et"
+  }
+]
+```
+
+## Prefabs/Weapons/Rifles/Shotgun/armst_toz_66_saw.et
+```json
+[
+  {
+    "path": "Sounds/Weapons/_SharedData/PickUp/Weapons_PickUp_Rifle_WoodMetal.acp",
+    "guid": "A84D9F22F2C0D9CE",
+    "defined_in": "Prefabs/Weapons/Rifles/Shotgun/armst_toz_66.et"
+  }
+]
+```
+
+## Prefabs/Weapons/Rifles/Shotgun/shotgun_base.et
+```json
+[
+  {
+    "path": "Sounds/Weapons/_SharedData/PickUp/Weapons_PickUp_Rifle_WoodMetal.acp",
+    "guid": "A84D9F22F2C0D9CE",
+    "defined_in": "Prefabs/Weapons/Rifles/Shotgun/shotgun_base.et"
+  }
+]
+```
+
+## Prefabs/Weapons/Rifles/VAL/Oc_Groza.et
+```json
+[
+  {
+    "path": "Prefabs/Weapons/Magazines/7x62/Magazine_762x39_Groza_20rnd_Ball.et",
+    "guid": "A1D927E49DD984F0",
+    "defined_in": "Prefabs/Weapons/Rifles/VAL/Oc_Groza.et"
+  },
+  {
+    "path": "Particles/Weapon/Casing_762x54.ptc",
+    "guid": "83DC2DCAF6EDC75F",
+    "defined_in": "Prefabs/Weapons/Rifles/VAL/Rifle_val_base.et"
+  },
+  {
+    "path": "Particles/Weapon/Attachments/Suppressor_Carbine.ptc",
+    "guid": "0D9400A03DDEA9AC",
+    "defined_in": "Prefabs/Weapons/Rifles/VAL/Rifle_val_base.et"
+  }
+]
+```
+
+## Prefabs/Weapons/Rifles/VAL/Rifle_VAL.et
+```json
+[
+  {
+    "path": "Particles/Weapon/Casing_762x54.ptc",
+    "guid": "83DC2DCAF6EDC75F",
+    "defined_in": "Prefabs/Weapons/Rifles/VAL/Rifle_val_base.et"
+  },
+  {
+    "path": "Particles/Weapon/Attachments/Suppressor_Carbine.ptc",
+    "guid": "0D9400A03DDEA9AC",
+    "defined_in": "Prefabs/Weapons/Rifles/VAL/Rifle_val_base.et"
+  }
+]
+```
+
+## Prefabs/Weapons/Rifles/VAL/Rifle_val_base.et
+```json
+[
+  {
+    "path": "Particles/Weapon/Casing_762x54.ptc",
+    "guid": "83DC2DCAF6EDC75F",
+    "defined_in": "Prefabs/Weapons/Rifles/VAL/Rifle_val_base.et"
+  },
+  {
+    "path": "Particles/Weapon/Attachments/Suppressor_Carbine.ptc",
+    "guid": "0D9400A03DDEA9AC",
+    "defined_in": "Prefabs/Weapons/Rifles/VAL/Rifle_val_base.et"
+  }
+]
+```
+
+## Prefabs/Weapons/Rifles/VSK94/Rifle_VSK94.et
+```json
+[
+  {
+    "path": "Particles/Weapon/Casing_762x54.ptc",
+    "guid": "83DC2DCAF6EDC75F",
+    "defined_in": "Prefabs/Weapons/Rifles/VSK94/Rifle_VSK94_base.et"
+  },
+  {
+    "path": "Particles/Weapon/Attachments/Suppressor_Carbine.ptc",
+    "guid": "0D9400A03DDEA9AC",
+    "defined_in": "Prefabs/Weapons/Rifles/VSK94/Rifle_VSK94_base.et"
+  },
+  {
+    "path": "Prefabs/Weapons/Attachments/Mounts/Dovetail_AK/Dovetail_AK.et",
+    "guid": "D92368B78263A9E0",
+    "defined_in": "Prefabs/Weapons/Rifles/VSK94/Rifle_VSK94_base.et"
+  }
+]
+```
+
+## Prefabs/Weapons/Rifles/VSK94/Rifle_VSK94_base.et
+```json
+[
+  {
+    "path": "Prefabs/Weapons/Attachments/Mounts/Dovetail_AK/Dovetail_AK.et",
+    "guid": "D92368B78263A9E0",
+    "defined_in": "Prefabs/Weapons/Rifles/VSK94/Rifle_VSK94_base.et"
+  },
+  {
+    "path": "Particles/Weapon/Casing_762x54.ptc",
+    "guid": "83DC2DCAF6EDC75F",
+    "defined_in": "Prefabs/Weapons/Rifles/VSK94/Rifle_VSK94_base.et"
+  },
+  {
+    "path": "Particles/Weapon/Attachments/Suppressor_Carbine.ptc",
+    "guid": "0D9400A03DDEA9AC",
+    "defined_in": "Prefabs/Weapons/Rifles/VSK94/Rifle_VSK94_base.et"
+  }
+]
+```
+
+## Prefabs/Weapons/Rifles/VSS/Rifle_VSS.et
+```json
+[
+  {
+    "path": "Particles/Weapon/Casing_762x54.ptc",
+    "guid": "83DC2DCAF6EDC75F",
+    "defined_in": "Prefabs/Weapons/Rifles/VSS/Rifle_vss_base.et"
+  },
+  {
+    "path": "Particles/Weapon/Attachments/Suppressor_Carbine.ptc",
+    "guid": "0D9400A03DDEA9AC",
+    "defined_in": "Prefabs/Weapons/Rifles/VSS/Rifle_vss_base.et"
+  }
+]
+```
+
+## Prefabs/Weapons/Rifles/VSS/Rifle_vss_base.et
+```json
+[
+  {
+    "path": "Particles/Weapon/Casing_762x54.ptc",
+    "guid": "83DC2DCAF6EDC75F",
+    "defined_in": "Prefabs/Weapons/Rifles/VSS/Rifle_vss_base.et"
+  },
+  {
+    "path": "Particles/Weapon/Attachments/Suppressor_Carbine.ptc",
+    "guid": "0D9400A03DDEA9AC",
+    "defined_in": "Prefabs/Weapons/Rifles/VSS/Rifle_vss_base.et"
+  }
+]
+```

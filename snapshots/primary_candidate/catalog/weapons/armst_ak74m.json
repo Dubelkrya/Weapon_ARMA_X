@@ -1,0 +1,136 @@
+{
+  "id": "armst_ak74m",
+  "role": "base",
+  "source": {
+    "resource": "Prefabs/Weapons/Rifles/AK74/armst_AK74M.et",
+    "resource_guid": "5B8E766C0E3C13EE",
+    "meta_name": null,
+    "class": "GenericEntity",
+    "defined_in": "Prefabs/Weapons/Rifles/AK74/armst_AK74M.et"
+  },
+  "identity": {
+    "name": "armst_AK74M",
+    "resource": "Prefabs/Weapons/Rifles/AK74/armst_AK74M.et"
+  },
+  "classification": {
+    "kind": "weapon",
+    "confidence": "components"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Weapons/Rifles/AK74/armst_AK74M.et",
+        "status": "local",
+        "class": "GenericEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Rifles/AK74/armst_AK74N.et",
+        "status": "local",
+        "class": "GenericEntity"
+      }
+    ],
+    "external_parents": [
+      {
+        "guid": "EAE9A298979C4721",
+        "path": "Prefabs/Weapons/Rifles/AK74/Rifle_AK74N_base.et",
+        "raw": "{EAE9A298979C4721}Prefabs/Weapons/Rifles/AK74/Rifle_AK74N_base.et"
+      }
+    ],
+    "used_as_base_by": [
+      "Prefabs/Weapons/Rifles/AK74/armst_AK74M_full.et"
+    ],
+    "chain_depth_local": 2
+  },
+  "references": [
+    {
+      "guid": "6537A24B4FD3FC5A",
+      "path": "Assets/Weapons/Rifles/AK74/Data/AK74_Grip.emat",
+      "resolved": "local",
+      "target": "Assets/Weapons/Rifles/AK74/Data/AK74_Grip.emat",
+      "defined_in": "Prefabs/Weapons/Rifles/AK74/armst_AK74M.et"
+    },
+    {
+      "guid": "8A8C1198C43D83DD",
+      "path": "Assets/Weapons/Rifles/AK74/Data/AK74_Handguard.emat",
+      "resolved": "local",
+      "target": "Assets/Weapons/Rifles/AK74/Data/AK74_Handguard.emat",
+      "defined_in": "Prefabs/Weapons/Rifles/AK74/armst_AK74M.et"
+    },
+    {
+      "guid": "1ED637D47602957A",
+      "path": "Assets/Weapons/Rifles/AK74/Data/AK74_Stock.emat",
+      "resolved": "local",
+      "target": "Assets/Weapons/Rifles/AK74/Data/AK74_Stock.emat",
+      "defined_in": "Prefabs/Weapons/Rifles/AK74/armst_AK74M.et"
+    },
+    {
+      "guid": "FCE52BA4B5789E65",
+      "path": "Prefabs/Weapons/Attachments/Handguards/Handguard_AK74M.et",
+      "resolved": "local",
+      "target": "Prefabs/Weapons/Attachments/Stocks/Handguard_AK74M.et",
+      "defined_in": "Prefabs/Weapons/Rifles/AK74/armst_AK74M.et"
+    },
+    {
+      "guid": "7851F29BDAAAD7DB",
+      "path": "Prefabs/Weapons/Attachments/Handguards/Handguard_AK74M2.et",
+      "resolved": "local",
+      "target": "Prefabs/Weapons/Attachments/Handguards/Handguard_AK74M2.et",
+      "defined_in": "Prefabs/Weapons/Rifles/AK74/armst_AK74M.et"
+    }
+  ],
+  "warnings": [],
+  "data": {
+    "identity": {
+      "name": {
+        "value": "AK-74M",
+        "defined_in": "Prefabs/Weapons/Rifles/AK74/armst_AK74M.et",
+        "inherited": false
+      }
+    },
+    "fire_modes": [],
+    "physical": {
+      "MeleeDamage": {
+        "value": 2,
+        "defined_in": "Prefabs/Weapons/Rifles/AK74/armst_AK74M.et",
+        "inherited": false
+      },
+      "Model": null
+    },
+    "magazine": {
+      "magazine_well": null,
+      "magazine_template": null
+    },
+    "ballistics": {
+      "bullet_init_speed_coef": null,
+      "dispersion_diameter": null,
+      "dispersion_range": null
+    },
+    "aim": {
+      "recoil": null,
+      "sway": null
+    },
+    "sights": null,
+    "attachment_slots": [
+      {
+        "slot": null,
+        "pivot": null,
+        "enabled": null,
+        "attachment_types": [],
+        "defined_in": "Prefabs/Weapons/Rifles/AK74/armst_AK74M.et"
+      },
+      {
+        "slot": null,
+        "pivot": null,
+        "enabled": null,
+        "attachment_types": [],
+        "defined_in": "Prefabs/Weapons/Rifles/AK74/armst_AK74N.et"
+      }
+    ],
+    "muzzle_attachment": null,
+    "animation": {
+      "anim_graph": null,
+      "anim_instance": null
+    }
+  },
+  "derived": {}
+}

@@ -1,0 +1,100 @@
+[
+  {
+    "id": "ammo_12ga",
+    "resource": "Prefabs/Weapons/Ammo/12g/Ammo_12ga.et",
+    "class": "Projectile",
+    "name": "Ammo_12ga",
+    "role": "leaf"
+  },
+  {
+    "id": "ammo_12ga_shell",
+    "resource": "Prefabs/Weapons/Ammo/12g/Ammo_12ga_shell.et",
+    "class": "Projectile",
+    "name": "Ammo_12ga_shell",
+    "role": "leaf"
+  },
+  {
+    "id": "ammo_12ga_shell_test",
+    "resource": "Prefabs/Weapons/Ammo/12g/Ammo_12ga_shell_test.et",
+    "class": "Projectile",
+    "name": "Ammo_12ga_shell_test",
+    "role": "leaf"
+  },
+  {
+    "id": "ammo_buckshot_pellet",
+    "resource": "Prefabs/Weapons/Ammo/12g/Ammo_Buckshot_pellet.et",
+    "class": "Projectile",
+    "name": "Ammo_Buckshot_pellet",
+    "role": "leaf"
+  },
+  {
+    "id": "ammo_545x39_ball_7n6",
+    "resource": "Prefabs/Weapons/Ammo/Ammo_545x39_Ball_7N6.et",
+    "class": "Projectile",
+    "name": "Ammo_545x39_Ball_7N6",
+    "role": "leaf"
+  },
+  {
+    "id": "ammo_556x45_ball_m193",
+    "resource": "Prefabs/Weapons/Ammo/Ammo_556x45_Ball_M193.et",
+    "class": "Projectile",
+    "name": "Ammo_556x45_Ball_M193",
+    "role": "leaf"
+  },
+  {
+    "id": "ammo_762x39_ball_57n231",
+    "resource": "Prefabs/Weapons/Ammo/Ammo_762x39_Ball_57N231.et",
+    "class": "Projectile",
+    "name": "Ammo_762x39_Ball_57N231",
+    "role": "leaf"
+  },
+  {
+    "id": "ammo_763x25",
+    "resource": "Prefabs/Weapons/Ammo/Ammo_763x25.et",
+    "class": "Projectile",
+    "name": "Ammo_763x25",
+    "role": "leaf"
+  },
+  {
+    "id": "ammo_763x25_ball",
+    "resource": "Prefabs/Weapons/Ammo/Ammo_763x25_Ball.et",
+    "class": "Projectile",
+    "name": "Ammo_763x25_Ball",
+    "role": "leaf"
+  },
+  {
+    "id": "ammo_9x18_ball_57n181",
+    "resource": "Prefabs/Weapons/Ammo/Ammo_9x18_Ball_57N181.et",
+    "class": "Projectile",
+    "name": "Ammo_9x18_Ball_57N181",
+    "role": "leaf"
+  },
+  {
+    "id": "ammo_9x19_ball_m882",
+    "resource": "Prefabs/Weapons/Ammo/Ammo_9x19_Ball_M882.et",
+    "class": "Projectile",
+    "name": "Ammo_9x19_Ball_M882",
+    "role": "leaf"
+  },
+  {
+    "id": "ammo_9x39_sp5_ball",
+    "resource": "Prefabs/Weapons/Ammo/Ammo_9x39_SP5_Ball.et",
+    "class": "Projectile",
+    "name": "Ammo_9x39_SP5_Ball",
+    "role": "leaf"
+  },
+  {
+    "id": "ammo_9x39_sp6_ball",
+    "resource": "Prefabs/Weapons/Ammo/Ammo_9x39_SP6_Ball.et",
+    "class": "Projectile",
+    "name": "Ammo_9x39_SP6_Ball",
+    "role": "leaf"
+  },
+  {
+    "id": "ammo_grenade_he_vog25",
+    "resource": "Prefabs/Weapons/Ammo/Ammo_Grenade_HE_VOG25.et",
+    "class": "Projectile",
+    "name": "Ammo_Grenade_HE_VOG25",
+    "role": "leaf"
+  }
+]

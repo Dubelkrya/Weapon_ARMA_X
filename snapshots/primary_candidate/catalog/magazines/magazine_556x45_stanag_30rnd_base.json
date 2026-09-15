@@ -1,0 +1,54 @@
+{
+  "id": "magazine_556x45_stanag_30rnd_base",
+  "role": "base",
+  "source": {
+    "resource": "Prefabs/Weapons/Magazines/5x56/Magazine_556x45_STANAG_30rnd_Base.et",
+    "resource_guid": "11B9CC1FB4AEE740",
+    "meta_name": null,
+    "class": "GenericEntity",
+    "defined_in": "Prefabs/Weapons/Magazines/5x56/Magazine_556x45_STANAG_30rnd_Base.et"
+  },
+  "identity": {
+    "name": "Magazine_556x45_STANAG_30rnd_Base",
+    "resource": "Prefabs/Weapons/Magazines/5x56/Magazine_556x45_STANAG_30rnd_Base.et"
+  },
+  "classification": {
+    "kind": "magazine",
+    "confidence": "folder"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Weapons/Magazines/5x56/Magazine_556x45_STANAG_30rnd_Base.et",
+        "status": "local",
+        "class": "GenericEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Core/Magazine_Base.et",
+        "status": "local",
+        "class": "GenericEntity"
+      }
+    ],
+    "external_parents": [],
+    "used_as_base_by": [
+      "Prefabs/Weapons/Magazines/5x56/Magazine_556x45_STANAG_30rnd_M196_Tracer.et",
+      "Prefabs/Weapons/Magazines/5x56/Magazine_556x45_STANAG_30rnd_M855_Ball.et",
+      "Prefabs/Weapons/Magazines/5x56/Magazine_556x45_STANAG_30rnd_M856_Tracer.et"
+    ],
+    "chain_depth_local": 2
+  },
+  "references": [],
+  "warnings": [],
+  "data": {
+    "grid": {
+      "width": null,
+      "height": {
+        "value": 2,
+        "defined_in": "Prefabs/Weapons/Magazines/5x56/Magazine_556x45_STANAG_30rnd_Base.et",
+        "inherited": false
+      }
+    },
+    "_inv_defined_in": "Prefabs/Weapons/Core/Magazine_Base.et"
+  },
+  "derived": {}
+}
