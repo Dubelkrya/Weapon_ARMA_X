@@ -1,0 +1,32 @@
+{
+  "generated_from": ["Weapons.zip", "Configs.zip"],
+  "examples": {
+    "Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Ball.et": {
+      "capacity": 8,
+      "ammo_config": {"guid":"4A7B5486D9167E2A","path":"Configs/Weapons/Ammo/Ammo_9x18Mak.conf"},
+      "allowed": ["Prefabs/Weapons/Ammo/Ammo_9x18_Ball_57N181.et"],
+      "mapping_counts": {"0":8},
+      "loaded_counts": {"Prefabs/Weapons/Ammo/Ammo_9x18_Ball_57N181.et":8}
+    },
+    "Prefabs/Weapons/Magazines/Magazine_9x19_M9_15rnd_Ball.et": {
+      "capacity": 15,
+      "ammo_config": {"guid":"BC69F995CEEF2196","path":"Configs/Weapons/Ammo/Ammo_9x19.conf"},
+      "allowed": ["Prefabs/Weapons/Ammo/Ammo_9x19_Ball_M882.et","Prefabs/Weapons/Ammo/Ammo_9x19_HP_JHP.et"],
+      "mapping_counts": {"0":15},
+      "loaded_counts": {"Prefabs/Weapons/Ammo/Ammo_9x19_Ball_M882.et":15}
+    },
+    "Prefabs/Weapons/Magazines/Magazine_545x39_RPK_45rnd_4Ball_1Tracer.et": {
+      "capacity": 45,
+      "ammo_config": {"guid":"3D41E1B0D6EEC0AF","path":"Configs/Weapons/Ammo/Ammo_545x39.conf"},
+      "mapping_counts": {"0":32,"1":13},
+      "loaded_counts": {"Prefabs/Weapons/Ammo/Ammo_545x39_Ball_7N6.et":32,"Prefabs/Weapons/Ammo/Ammo_545x39_Tracer_7T3.et":13}
+    },
+    "Prefabs/Weapons/Magazines/Box_762x54_PK_100rnd_4Ball_1Tracer.et": {
+      "capacity": 100,
+      "ammo_config": {"guid":"B0020DFAF0D1E3C8","path":"Configs/Weapons/Ammo/Ammo_762x54.conf"},
+      "mapping_counts": {"0":76,"1":24},
+      "loaded_counts": {"Prefabs/Weapons/Ammo/Ammo_762x54r_Ball_57N323S.et":76,"Prefabs/Weapons/Ammo/Ammo_762x54r_Tracer_7T2.et":24}
+    }
+  },
+  "rule": "Use the serialized AmmoMapping counts. Do not infer loaded ratios from filenames."
+}
