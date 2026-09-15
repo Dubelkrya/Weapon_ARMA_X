@@ -1,20 +1,24 @@
 # AEK-971 — test checkpoint V8
 
+> **SUPERSEDED CONTROL POINT.** This file is preserved as debugging/history evidence only. Do not resume current AEK work from V8. The current Workbench-validated sample is `reports/samples/armst_AEK971_test_v12_NAME_DESCRIPTION.et`; current status is summarized in `reports/KNOWLEDGE_STATUS.md`.
+
 Date: 2026-09-15
-Status: Workbench-tested checkpoint; exact balance deferred.
+Status: historical Workbench-tested checkpoint; exact balance deferred.
 
 ## Scope
 
-This checkpoint records the working AEK-971 prototype state so later iterations do not repeat already-solved prefab/override mistakes.
+This checkpoint records the earlier V8 AEK-971 prototype state so later iterations do not repeat already-solved prefab/override mistakes.
 
-The prototype is intentionally based on the working AK-74 chain and is not yet a final production AEK-971 prefab.
+The prototype was intentionally based on the working AK-74 chain and was not a final production AEK-971 prefab.
 
-## Working base
+## Historical working base
 
 Parent:
 `{923D948AB0D57A50}Prefabs/Weapons/Rifles/AK74/Rifle_AK74_long_base.et`
 
-The AK-74 clone opened correctly in Workbench. This confirmed that the parent chain and base prefab structure are valid.
+The AK-74 clone opened correctly in Workbench. This confirmed that this earlier parent chain and base prefab structure were valid at V8.
+
+The current prototype later moved to `Rifle_AK74N_base.et` for the inherited side-optics infrastructure.
 
 ## Fire modes — confirmed working
 
@@ -107,25 +111,36 @@ Changed Angular + TurnOffset while leaving Linear at AK-74 behavior. This mainly
 
 V7 is superseded by V8.
 
-## Current working prefab
+## Historical working prefab
 
 Local reference filename:
 `armst_AEK971_test_v8_BALANCED_RECOIL_CORRECT.et`
 
-## Deferred work
+The repository keeps this file only as a historical authoring sample. The current control sample is V12.
 
-Do not tune these yet unless explicitly resuming balance work:
+## Work completed after V8
+
+Later Workbench-validated steps include:
+
+- weight 3.5;
+- parent migration to `Rifle_AK74N_base.et`;
+- weapon-side `AttachmentOpticsARMST_DovetailRU` override using the inherited optic slot/type IDs;
+- thin PSO-1 child using the same DovetailRU compatibility family;
+- successful mount test;
+- final test name/description stored in the inventory and weapon UI objects.
+
+## Still deferred
+
+Do not tune these unless explicitly resuming balance work:
 - final Linear recoil values;
 - final Angular recoil values;
 - TurnOffset / return behavior;
 - camera recoil/shake;
 - dispersion;
 - muzzle velocity coefficient;
-- optics/DovetailRU;
 - final AEK mesh/animation differences;
-- production naming/GUID/resource placement.
+- production naming/GUID/resource placement beyond the current prototype.
 
 ## Resume rule
 
-When resuming AEK-971 work, start from V8, not from earlier versions.
-First preserve the confirmed fire-mode structure. Change only one subsystem per test iteration.
+Do **not** resume from V8. Start from `reports/samples/armst_AEK971_test_v12_NAME_DESCRIPTION.et` and preserve the confirmed one-change-at-a-time workflow.
