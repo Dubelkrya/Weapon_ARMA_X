@@ -1,8 +1,8 @@
-# Local task — refresh knowledge snapshot from Armst_Work
+# Local task — scan Armst_Work as an overlay snapshot
 
 ## Purpose
 
-Regenerate scanner-derived catalogs/indexes/reports from the **current working addon**, replacing the stale scanner snapshot that was built from `ARMST-PLATFORM---Weapons`.
+Capture the **current working addon** `Armst_Work` without replacing the historical/base ARMST scanner snapshot or deleting canonical authoring knowledge.
 
 Current addon root:
 
@@ -12,66 +12,68 @@ Repository working copy:
 
 `C:\Users\Muroy\Documents\Default Project\Weapon_ARMA_X`
 
+Overlay output root:
+
+`C:\Users\Muroy\Documents\Default Project\Weapon_ARMA_X\snapshots\armst_work`
+
+## Why this is an overlay, not a replacement
+
+A controlled scan on 2026-09-15 proved that `Armst_Work` contains only a subset of the resources represented by the older ARMST source snapshot: 25 entities versus 124 in the older scan, with many dependencies resolving outside the working addon.
+
+The existing scanner deletes/recreates `catalog/`, `indexes/`, `reports/` and `schema/` under `REPO_ROOT`. Pointing `REPO_ROOT` at the repository root therefore destroys unrelated canonical/manual knowledge. That run was correctly rejected and not committed.
+
+From now on:
+
+- top-level `catalog/`, `indexes/`, `reports/`, `schema/` remain the base/canonical knowledge layer;
+- `snapshots/armst_work/` is the scanner-generated working-overlay layer;
+- overlay entities may reference external/base resources that are not present inside `Armst_Work`;
+- an overlay scan must never be interpreted as a complete replacement inventory.
+
 ## Safety boundary
 
-This task is a **read-only scan of the addon**. Do not modify any file under `Armst_Work`.
+The addon is READ ONLY.
 
-Generated repository outputs may be rewritten only by the scanner pipeline. Do not hand-edit generated JSON/catalog counts to make them look current.
+Never modify any file under `Armst_Work` during a scan.
 
-Before running:
+Do not point scanner `REPO_ROOT` at the repository root for this task.
 
-1. Ensure repository working tree is clean or record every pre-existing local change.
-2. Create a Git branch from current `main`, suggested name: `agent/armst-work-rescan`.
-3. Record current `main` SHA.
-4. Confirm the addon root exists exactly at the path above.
-5. Confirm the scanner command/options from the checked-in scanner script rather than guessing CLI flags.
+Do not switch to experimental resolver branches merely to perform the scan.
 
-## Scan
+## Scanner invocation
 
-Use the repository scanner pipeline with the addon root set to `Armst_Work`.
+The checked-in scanner interface is:
 
-The existing committed snapshot used `agent/scripts/scan_build.py`. If its interface has changed locally, use the checked-in script/interface that actually owns the generated `catalog/`, `indexes/`, `reports/` and `agent/scan_state.json` outputs.
+```powershell
+$env:MOD_ROOT  = 'C:\Users\Muroy\Documents\My Games\ArmaReforgerWorkbench\addons\Armst_Work'
+$env:REPO_ROOT = 'C:\Users\Muroy\Documents\Default Project\Weapon_ARMA_X\snapshots\armst_work'
+python agent/scripts/scan_build.py
+```
 
-Do not switch to an experimental resolver branch merely to perform this refresh. Experimental branches are reviewed separately.
+The scanner's debug `agent/scripts/working_tables` directory is not canonical output and may be removed after the run if it was generated.
 
-## Required checks before accepting output
+## Required checks
 
-Verify at minimum:
+Before accepting an overlay snapshot, verify:
 
-- `agent/scan_state.json` records `Armst_Work` as `mod_root`;
-- scan date is current;
-- parser/inheritance/reference stages report completion;
-- generated JSON parses successfully;
-- no source file under `Armst_Work` was modified;
-- no unexplained large deletion of canonical authoring guides/samples/schema occurred;
-- `reports/KNOWLEDGE_STATUS.md`, `reports/PREFAB_AUTHORING_GUIDE.md`, active optics v2 policy and current Workbench samples are preserved;
-- generated source inventory is not allowed to overwrite active gameplay policy documents;
-- old built-in dovetail types found in source prefabs remain source facts, while active policy remains `AttachmentOpticsARMST_DovetailRU`;
-- TT supplemental `Configs(1).zip` resolution is not regressed to the stale unresolved claim without source evidence.
+- source hashes for consumed `.et/.conf/.meta/.c` files are unchanged before/after;
+- `snapshots/armst_work/agent/scan_state.json` records `Armst_Work` as `mod_root`;
+- JSON output parses;
+- only `snapshots/armst_work/` is staged for the snapshot commit;
+- no top-level canonical file under `catalog/`, `indexes/`, `reports/`, `schema/` was changed by the scan;
+- Workbench-validated guides/samples and active gameplay policies remain untouched;
+- unresolved external parents/references are reported as overlay dependencies rather than silently guessed;
+- no Workbench/runtime claim is inferred from scanner success.
 
-## Diff review
+## Acceptance interpretation
 
-Separate the diff into:
+A lower entity count than the base snapshot is expected and is not itself a failure. `Armst_Work` is an overlay.
 
-1. generated snapshot changes caused by `Armst_Work`;
-2. unexpected changes;
-3. manual/canonical files that should not have been touched.
+A mass deletion of top-level base/canonical knowledge is always a failure.
 
-If category 2 or 3 contains unexplained changes, stop and do not merge.
+## Review
 
-## Report
+Run the scan on a dedicated branch, currently `agent/armst-work-rescan`.
 
-Return:
+Commit only the isolated overlay directory after review. Do not merge automatically to `main`.
 
-- branch name;
-- base/main SHA;
-- exact scanner command used;
-- resolved addon root;
-- counts before/after;
-- warnings/errors;
-- list of generated files changed;
-- confirmation `Armst_Work` was read-only;
-- any conflicts between new source inventory and canonical active policies;
-- recommendation: safe to review/merge or STOP.
-
-Do not claim Workbench/runtime validation from this scan. This task refreshes source/index knowledge only.
+For the exact current retry procedure, use `agent/RUN_NOW_ARMST_WORK_RESCAN.md` on the rescan branch.
