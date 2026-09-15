@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ARMST compatibility policy record",
+  "description": "Separates researched real-world compatibility from intentional gameplay compatibility. Attachment compatibility and physical geometry are independent.",
+  "type": "object",
+  "properties": {
+    "Module": {
+      "type": "string"
+    },
+    "RealCompatibility": {
+      "type": ["string", "array", "object", "null"],
+      "description": "Source-backed real-world weapon/mount/module compatibility. Must not be widened merely to match gameplay policy."
+    },
+    "GameplayCompatibility": {
+      "type": ["string", "array", "null"],
+      "description": "Project gameplay family or families intentionally permitted. Example: DovetailRU."
+    },
+    "MountInterface": {
+      "type": ["string", "array", "object", "null"],
+      "description": "Mechanical/serialized interface description. Keep separate from pivot/snap placement."
+    },
+    "Evidence": {
+      "type": ["string", "array", "object", "null"],
+      "description": "Provenance for the real-world or source-project compatibility claim."
+    },
+    "GameplaySimplification": {
+      "type": ["string", "null"],
+      "description": "Explicit statement of intentional gameplay widening/simplification, if any."
+    },
+    "AttachmentType": {
+      "type": ["string", "null"],
+      "description": "Serialized/project compatibility type such as AttachmentOpticsARMST_DovetailRU."
+    },
+    "GeometryValidation": {
+      "type": ["string", "object", "null"],
+      "description": "Independent pivot/snap/offset validation status. A compatible AttachmentType does not prove correct physical placement."
+    },
+    "WorkbenchValidation": {
+      "type": ["string", "object", "null"],
+      "description": "Observed editor/runtime validation. Never infer this from static structure alone."
+    }
+  },
+  "required": [
+    "RealCompatibility",
+    "GameplayCompatibility",
+    "MountInterface",
+    "Evidence",
+    "GameplaySimplification"
+  ],
+  "additionalProperties": true
+}
