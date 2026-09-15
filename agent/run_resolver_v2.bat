@@ -24,22 +24,22 @@ if not exist "%VANILLA_ROOT%" (
   echo [resolver-v2] Read-only materialized vanilla root not found:
   echo   %VANILLA_ROOT%
   echo.
-  echo Open Weapon_ARMA_X in Arma Reforger Workbench and run:
-  echo   WAX: Materialize Vanilla Weapon Dataset
+  echo Existing vanilla weapon materialization is required as resolver evidence.
+  echo Do not run a broader Workbench export just for resolver-v2 metrics.
   echo.
-  echo This vanilla copy is resolver evidence only. Do NOT edit it.
   exit /b 3
 )
 
 pushd "%REPO_ROOT%" || exit /b 4
 
 echo [resolver-v2] Source policy: ARMST editable + vanilla read-only inheritance
+echo [resolver-v2] Identity policy: strict GUID/origin propagation; ambiguous collisions stay ambiguous
 echo [resolver-v2] ARMST:                %ARMST_ROOT%
 echo [resolver-v2] Vanilla read-only:     %VANILLA_ROOT%
 echo [resolver-v2] Output:               %OUTPUT_ROOT%
 echo.
 
-%PYTHON% agent\scripts\scan_build_v2.py ^
+%PYTHON% agent\scripts\scan_build_v2_strict.py ^
   --armst-root "%ARMST_ROOT%" ^
   --vanilla-root "materialized_base=%VANILLA_ROOT%" ^
   --repo-root "%REPO_ROOT%" ^
@@ -66,7 +66,7 @@ echo   %OUTPUT_ROOT%\reports\reference_cases_v2.json
 echo   %OUTPUT_ROOT%\reports\diagnostics_v2.json
 echo.
 echo Policy: read both ARMST and vanilla, but edit ARMST only.
-echo Send the reports back for review before merging PR #2.
+echo Ambiguous path collisions are evidence gaps, not resolver successes.
 popd
 exit /b 0
 
