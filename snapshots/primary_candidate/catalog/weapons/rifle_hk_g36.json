@@ -1,0 +1,382 @@
+{
+  "id": "rifle_hk_g36",
+  "role": "leaf",
+  "source": {
+    "resource": "Prefabs/Weapons/Rifles/Rifle_hk_g36.et",
+    "resource_guid": "A802C718201D72DF",
+    "meta_name": null,
+    "class": "GenericEntity",
+    "defined_in": "Prefabs/Weapons/Rifles/Rifle_hk_g36.et"
+  },
+  "identity": {
+    "name": "Rifle_hk_g36",
+    "resource": "Prefabs/Weapons/Rifles/Rifle_hk_g36.et"
+  },
+  "classification": {
+    "kind": "weapon",
+    "confidence": "components"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Weapons/Rifles/Rifle_hk_g36.et",
+        "status": "local",
+        "class": "GenericEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Core/Rifle_Base.et",
+        "status": "local",
+        "class": "GenericEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Core/Weapon_Base.et",
+        "status": "local",
+        "class": "GenericEntity"
+      }
+    ],
+    "external_parents": [],
+    "used_as_base_by": [],
+    "chain_depth_local": 3
+  },
+  "references": [
+    {
+      "guid": "DB92C647E05B2512",
+      "path": "Sounds/Weapons/Rifles/M16A2/Weapons_Rifles_M16A2_Shot.acp",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "Prefabs/Weapons/Rifles/Rifle_hk_g36.et"
+    },
+    {
+      "guid": "9319B3B8F246C59B",
+      "path": "Assets/Weapons_NATO/HKG36/HKG36.xob",
+      "resolved": "local",
+      "target": "Assets/Weapons_NATO/HKG36/HKG36.xob",
+      "defined_in": "Prefabs/Weapons/Rifles/Rifle_hk_g36.et"
+    },
+    {
+      "guid": "0350283642830782",
+      "path": "anims/workspaces/player/player_main_rifle.asi",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "Prefabs/Weapons/Rifles/Rifle_hk_g36.et"
+    },
+    {
+      "guid": "B7869ABD0EEE379D",
+      "path": "Assets/Weapons/Rifles/AK74/anims/anm/p_ak74_ik.anm",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "Prefabs/Weapons/Rifles/Rifle_hk_g36.et"
+    },
+    {
+      "guid": "FF74CFF924512A7F",
+      "path": "Prefabs/Weapons/Attachments/Optics/Optic_HKg36.et",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "Prefabs/Weapons/Rifles/Rifle_hk_g36.et"
+    },
+    {
+      "guid": "4BF43F7D0D462D39",
+      "path": "Particles/Weapon/Casing_556x45.ptc",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "Prefabs/Weapons/Rifles/Rifle_hk_g36.et"
+    },
+    {
+      "guid": "DDF8E6F5BCEABCCC",
+      "path": "Particles/Weapon/Muzzle_M16A2_Open.ptc",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "Prefabs/Weapons/Rifles/Rifle_hk_g36.et"
+    },
+    {
+      "guid": "D5D52E848DBCAA53",
+      "path": "Prefabs/Weapons/Core/Configs/FireModes/FireMode_Single.conf",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "Prefabs/Weapons/Rifles/Rifle_hk_g36.et"
+    },
+    {
+      "guid": "B5D823125A678D73",
+      "path": "Prefabs/Weapons/Core/Configs/FireModes/FireMode_Burst.conf",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "Prefabs/Weapons/Rifles/Rifle_hk_g36.et"
+    },
+    {
+      "guid": "1AA788302FE3C53A",
+      "path": "Configs/WeaponInfo/MagazineIndicators/ak74_30.conf",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "Prefabs/Weapons/Rifles/Rifle_hk_g36.et"
+    },
+    {
+      "guid": "969F6FFF810D2145",
+      "path": "Prefabs/Weapons/Magazines/Magazine_556x45_HKG36.et",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "Prefabs/Weapons/Rifles/Rifle_hk_g36.et"
+    },
+    {
+      "guid": "D20C08C61B86483F",
+      "path": "Assets/Weapons_NATO/HKG36/Anim/HKg36.agr",
+      "resolved": "local",
+      "target": "Assets/Weapons_NATO/HKG36/Anim/HKg36.agr",
+      "defined_in": "Prefabs/Weapons/Rifles/Rifle_hk_g36.et"
+    },
+    {
+      "guid": "C25C4C620483ED2D",
+      "path": "Assets/Weapons_NATO/HKG36/Anim/HKg36_weapon.asi",
+      "resolved": "local",
+      "target": "Assets/Weapons_NATO/HKG36/Anim/HKg36_weapon.asi",
+      "defined_in": "Prefabs/Weapons/Rifles/Rifle_hk_g36.et"
+    },
+    {
+      "guid": "3902DD539C8289C1",
+      "path": "Assets/Weapons_NATO/HKG36/Anim/HKg36_player.asi",
+      "resolved": "local",
+      "target": "Assets/Weapons_NATO/HKG36/Anim/HKg36_player.asi",
+      "defined_in": "Prefabs/Weapons/Rifles/Rifle_hk_g36.et"
+    },
+    {
+      "guid": "970293F8561231D4",
+      "path": "Configs/UI/NearbyInteractionContext/NearbyContextWeapons.conf",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "Prefabs/Weapons/Rifles/Rifle_hk_g36.et"
+    }
+  ],
+  "warnings": [],
+  "data": {
+    "identity": {
+      "name": null
+    },
+    "fire_modes": [
+      {
+        "mode_id": ":",
+        "ui_name": null,
+        "rounds_per_minute": {
+          "value": 800,
+          "defined_in": "Prefabs/Weapons/Rifles/Rifle_hk_g36.et",
+          "inherited": false
+        },
+        "max_burst": null,
+        "defined_in": "Prefabs/Weapons/Rifles/Rifle_hk_g36.et",
+        "rounds_per_second": {
+          "value": 13.333,
+          "derived": true
+        }
+      },
+      {
+        "mode_id": ":",
+        "ui_name": null,
+        "rounds_per_minute": {
+          "value": 800,
+          "defined_in": "Prefabs/Weapons/Rifles/Rifle_hk_g36.et",
+          "inherited": false
+        },
+        "max_burst": null,
+        "defined_in": "Prefabs/Weapons/Rifles/Rifle_hk_g36.et",
+        "rounds_per_second": {
+          "value": 13.333,
+          "derived": true
+        }
+      }
+    ],
+    "physical": {
+      "Weight": null,
+      "SizeSetupStrategy": null,
+      "ItemDimensions": null,
+      "ItemVolume": null,
+      "DimensionScaler": null,
+      "_defined_in": "Prefabs/Weapons/Rifles/Rifle_hk_g36.et",
+      "Mass": null,
+      "MeleeDamage": {
+        "value": 20,
+        "defined_in": "Prefabs/Weapons/Rifles/Rifle_hk_g36.et",
+        "inherited": false
+      },
+      "Model": {
+        "guid": "9319B3B8F246C59B",
+        "path": "Assets/Weapons_NATO/HKG36/HKG36.xob",
+        "defined_in": "Prefabs/Weapons/Rifles/Rifle_hk_g36.et"
+      }
+    },
+    "magazine": {
+      "magazine_well": {
+        "name": "MagazineWell",
+        "class": "MagazineWellStanag556",
+        "defined_in": "Prefabs/Weapons/Rifles/Rifle_hk_g36.et"
+      },
+      "magazine_template": {
+        "guid": "969F6FFF810D2145",
+        "path": "Prefabs/Weapons/Magazines/Magazine_556x45_HKG36.et",
+        "defined_in": "Prefabs/Weapons/Rifles/Rifle_hk_g36.et"
+      }
+    },
+    "ballistics": {
+      "bullet_init_speed_coef": null,
+      "dispersion_diameter": {
+        "value": 0.4,
+        "defined_in": "Prefabs/Weapons/Rifles/Rifle_hk_g36.et",
+        "inherited": false
+      },
+      "dispersion_range": {
+        "value": 400,
+        "defined_in": "Prefabs/Weapons/Rifles/Rifle_hk_g36.et",
+        "inherited": false
+      }
+    },
+    "aim": {
+      "recoil": {
+        "LinearData": {
+          "values": {
+            "curve_magnitudes": null,
+            "curve_mins": null,
+            "curve_maxs": null,
+            "curve_time_scale": null,
+            "base_recoil_scale": null
+          },
+          "defined_in": "Prefabs/Weapons/Rifles/Rifle_hk_g36.et"
+        },
+        "AngularData": {
+          "values": {
+            "curve_magnitudes": null,
+            "curve_mins": null,
+            "curve_maxs": null,
+            "curve_time_scale": null,
+            "base_recoil_scale": null
+          },
+          "defined_in": "Prefabs/Weapons/Rifles/Rifle_hk_g36.et"
+        },
+        "TurnOffsetData": {
+          "values": {
+            "curve_magnitudes": null,
+            "curve_mins": null,
+            "curve_maxs": null,
+            "curve_time_scale": null,
+            "base_recoil_scale": null
+          },
+          "defined_in": "Prefabs/Weapons/Rifles/Rifle_hk_g36.et"
+        }
+      },
+      "sway": {
+        "defined_in": "Prefabs/Weapons/Rifles/Rifle_hk_g36.et",
+        "values": {
+          "lower_translation": null,
+          "lower_rotation": null
+        }
+      }
+    },
+    "sights": {
+      "switch_skip": null,
+      "ranges": [
+        [
+          0.213,
+          200
+        ],
+        [
+          0.314,
+          300
+        ],
+        [
+          0.44,
+          400
+        ],
+        [
+          0.59,
+          500
+        ],
+        [
+          0.76,
+          600
+        ],
+        [
+          0.927,
+          700
+        ],
+        [
+          0.995,
+          800
+        ]
+      ],
+      "defined_in": "Prefabs/Weapons/Rifles/Rifle_hk_g36.et"
+    },
+    "attachment_slots": [
+      {
+        "slot": null,
+        "pivot": {
+          "value": "slot_barrel_muzzle",
+          "defined_in": "Prefabs/Weapons/Rifles/Rifle_hk_g36.et",
+          "inherited": false
+        },
+        "enabled": {
+          "value": 0,
+          "defined_in": "Prefabs/Weapons/Rifles/Rifle_hk_g36.et",
+          "inherited": false
+        },
+        "attachment_types": [
+          "{6A0470709BAE0571}"
+        ],
+        "defined_in": "Prefabs/Weapons/Rifles/Rifle_hk_g36.et"
+      },
+      {
+        "slot": null,
+        "pivot": {
+          "value": "slot_hand_guard",
+          "defined_in": "Prefabs/Weapons/Rifles/Rifle_hk_g36.et",
+          "inherited": false
+        },
+        "enabled": {
+          "value": 0,
+          "defined_in": "Prefabs/Weapons/Rifles/Rifle_hk_g36.et",
+          "inherited": false
+        },
+        "attachment_types": [
+          "{6A0470709BAE0575}"
+        ],
+        "defined_in": "Prefabs/Weapons/Rifles/Rifle_hk_g36.et"
+      },
+      {
+        "slot": null,
+        "pivot": {
+          "value": "slot_optics",
+          "defined_in": "Prefabs/Weapons/Rifles/Rifle_hk_g36.et",
+          "inherited": false
+        },
+        "enabled": null,
+        "attachment_types": [
+          "{6A0470709BAE058B}"
+        ],
+        "defined_in": "Prefabs/Weapons/Rifles/Rifle_hk_g36.et"
+      }
+    ],
+    "muzzle_attachment": {
+      "slot": null,
+      "enabled": null,
+      "defined_in": "Prefabs/Weapons/Rifles/Rifle_hk_g36.et"
+    },
+    "animation": {
+      "anim_graph": {
+        "guid": "D20C08C61B86483F",
+        "path": "Assets/Weapons_NATO/HKG36/Anim/HKg36.agr",
+        "defined_in": "Prefabs/Weapons/Rifles/Rifle_hk_g36.et"
+      },
+      "anim_instance": {
+        "guid": "C25C4C620483ED2D",
+        "path": "Assets/Weapons_NATO/HKG36/Anim/HKg36_weapon.asi",
+        "defined_in": "Prefabs/Weapons/Rifles/Rifle_hk_g36.et"
+      }
+    }
+  },
+  "derived": {
+    "max_rounds_per_second": 13.333,
+    "dispersion_m_per_m": {
+      "value": 1.0,
+      "formula": "DispersionDiameter / DispersionRange * 1000"
+    },
+    "approx_moa": {
+      "value": 3.438,
+      "formula": "DispersionDiameter / DispersionRange * 3437.75"
+    }
+  }
+}

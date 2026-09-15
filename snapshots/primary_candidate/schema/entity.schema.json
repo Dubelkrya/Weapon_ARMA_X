@@ -1,0 +1,179 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "role": {
+      "enum": [
+        "leaf",
+        "base"
+      ]
+    },
+    "source": {
+      "type": "object",
+      "properties": {
+        "resource": {
+          "type": "string"
+        },
+        "resource_guid": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "meta_name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "class": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "defined_in": {
+          "type": "string"
+        }
+      }
+    },
+    "identity": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "resource": {
+          "type": "string"
+        }
+      }
+    },
+    "classification": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "type": "string"
+        },
+        "confidence": {
+          "enum": [
+            "components",
+            "folder",
+            "class",
+            "unknown"
+          ]
+        },
+        "attachment_kind": {
+          "type": "string"
+        }
+      }
+    },
+    "inheritance": {
+      "type": "object",
+      "properties": {
+        "chain": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "resource": {
+                "type": "string"
+              },
+              "status": {
+                "enum": [
+                  "local",
+                  "file",
+                  "loop"
+                ]
+              },
+              "class": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "external_parents": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "guid": {
+                "type": "string"
+              },
+              "path": {
+                "type": "string"
+              },
+              "raw": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "used_as_base_by": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "chain_depth_local": {
+          "type": "integer"
+        }
+      }
+    },
+    "references": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "guid": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          },
+          "resolved": {
+            "enum": [
+              "local",
+              "external"
+            ]
+          },
+          "target": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "defined_in": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "guid",
+          "path",
+          "resolved"
+        ]
+      }
+    },
+    "warnings": {
+      "type": "array"
+    },
+    "derived": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "id",
+    "source",
+    "identity",
+    "classification",
+    "inheritance",
+    "references"
+  ]
+}

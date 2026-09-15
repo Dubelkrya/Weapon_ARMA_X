@@ -1,0 +1,23 @@
+[
+  {
+    "id": "optic_pso1",
+    "resource": "Prefabs/Weapons/Attachments/Optics/Optic_PSO1.et",
+    "class": "GameEntity",
+    "name": "Optic_PSO1",
+    "role": "base"
+  },
+  {
+    "id": "optic_pso1_ak",
+    "resource": "Prefabs/Weapons/Attachments/Optics/Optic_PSO1_ak.et",
+    "class": "GameEntity",
+    "name": "Optic_PSO1_ak",
+    "role": "leaf"
+  },
+  {
+    "id": "weaponoptic_base",
+    "resource": "Prefabs/Weapons/Attachments/Optics/WeaponOptic_Base.et",
+    "class": "GameEntity",
+    "name": "WeaponOptic_Base",
+    "role": "leaf"
+  }
+]

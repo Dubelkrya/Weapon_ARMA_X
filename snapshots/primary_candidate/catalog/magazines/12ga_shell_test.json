@@ -1,0 +1,113 @@
+{
+  "id": "12ga_shell_test",
+  "role": "leaf",
+  "source": {
+    "resource": "Prefabs/Weapons/Magazines/12ga/12ga_Shell_test.et",
+    "resource_guid": "5220A773A621C2BB",
+    "meta_name": null,
+    "class": "GenericEntity",
+    "defined_in": "Prefabs/Weapons/Magazines/12ga/12ga_Shell_test.et"
+  },
+  "identity": {
+    "name": "12ga_Shell_test",
+    "resource": "Prefabs/Weapons/Magazines/12ga/12ga_Shell_test.et"
+  },
+  "classification": {
+    "kind": "magazine",
+    "confidence": "components"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Weapons/Magazines/12ga/12ga_Shell_test.et",
+        "status": "local",
+        "class": "GenericEntity"
+      }
+    ],
+    "external_parents": [
+      {
+        "guid": "6D18CC33708EE712",
+        "path": "Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et",
+        "raw": "{6D18CC33708EE712}Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et"
+      }
+    ],
+    "used_as_base_by": [],
+    "chain_depth_local": 1
+  },
+  "references": [
+    {
+      "guid": "58CA1ADFAF8CC13F",
+      "path": "Assets/Spas12/Spas_Shell.xob",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "Prefabs/Weapons/Magazines/12ga/12ga_Shell_test.et"
+    },
+    {
+      "guid": "3521D7BE87A3F391",
+      "path": "Configs/Weapons/Ammo/Ammo_12g.conf",
+      "resolved": "local",
+      "target": "Configs/Weapons/Ammo/Ammo_12g.conf",
+      "defined_in": "Prefabs/Weapons/Magazines/12ga/12ga_Shell_test.et"
+    },
+    {
+      "guid": "2E63897F666D7EE7",
+      "path": "Assets/Spas12/Spas.xob",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "Prefabs/Weapons/Magazines/12ga/12ga_Shell_test.et"
+    },
+    {
+      "guid": "FD401927CE082DAF",
+      "path": "Assets/Spas12/Data/Mat_3.emat",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "Prefabs/Weapons/Magazines/12ga/12ga_Shell_test.et"
+    }
+  ],
+  "warnings": [],
+  "data": {
+    "magazine_well": {
+      "name": "MagazineWell",
+      "class": "MagazineWell12g",
+      "defined_in": "Prefabs/Weapons/Magazines/12ga/12ga_Shell_test.et"
+    },
+    "ammo_config": {
+      "guid": "3521D7BE87A3F391",
+      "path": "Configs/Weapons/Ammo/Ammo_12g.conf",
+      "defined_in": "Prefabs/Weapons/Magazines/12ga/12ga_Shell_test.et"
+    },
+    "max_ammo": {
+      "value": 5,
+      "defined_in": "Prefabs/Weapons/Magazines/12ga/12ga_Shell_test.et",
+      "inherited": false
+    },
+    "ammo_mapping": [],
+    "caliber_id": null,
+    "name": {
+      "value": "12g 5rnd Shell",
+      "defined_in": "Prefabs/Weapons/Magazines/12ga/12ga_Shell_test.et",
+      "inherited": false
+    },
+    "_defined_in": "Prefabs/Weapons/Magazines/12ga/12ga_Shell_test.et",
+    "display_name": null,
+    "weight": null,
+    "grid": {
+      "width": null,
+      "height": null
+    },
+    "_inv_defined_in": "Prefabs/Weapons/Magazines/12ga/12ga_Shell_test.et",
+    "editor_name": {
+      "value": "12 Gauge 00 Buckshot",
+      "defined_in": "Prefabs/Weapons/Magazines/12ga/12ga_Shell_test.et",
+      "inherited": false
+    },
+    "model": {
+      "guid": "2E63897F666D7EE7",
+      "path": "Assets/Spas12/Spas.xob",
+      "defined_in": "Prefabs/Weapons/Magazines/12ga/12ga_Shell_test.et"
+    }
+  },
+  "derived": {
+    "capacity": 5
+  }
+}

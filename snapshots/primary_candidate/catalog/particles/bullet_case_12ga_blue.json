@@ -1,0 +1,47 @@
+{
+  "id": "bullet_case_12ga_blue",
+  "role": "leaf",
+  "source": {
+    "resource": "Prefabs/Particles/Bullet_Case/Bullet_Case_12ga_blue.et",
+    "resource_guid": "8705B7674FB2F927",
+    "meta_name": null,
+    "class": "GenericEntity",
+    "defined_in": "Prefabs/Particles/Bullet_Case/Bullet_Case_12ga_blue.et"
+  },
+  "identity": {
+    "name": "Bullet_Case_12ga_blue",
+    "resource": "Prefabs/Particles/Bullet_Case/Bullet_Case_12ga_blue.et"
+  },
+  "classification": {
+    "kind": "particle",
+    "confidence": "folder"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Particles/Bullet_Case/Bullet_Case_12ga_blue.et",
+        "status": "local",
+        "class": "GenericEntity"
+      }
+    ],
+    "external_parents": [
+      {
+        "guid": "BE79A6E700CF746A",
+        "path": "Prefabs/Particles/Bullet_Case/Bullet_Case_Base.et",
+        "raw": "{BE79A6E700CF746A}Prefabs/Particles/Bullet_Case/Bullet_Case_Base.et"
+      }
+    ],
+    "used_as_base_by": [],
+    "chain_depth_local": 1
+  },
+  "references": [
+    {
+      "guid": "435EE7D1222E7412",
+      "path": "Assets/Mag_12g/MagazineWell12ga_blue.xob",
+      "resolved": "local",
+      "target": "Assets/Mag_12g/MagazineWell12ga_blue.xob",
+      "defined_in": "Prefabs/Particles/Bullet_Case/Bullet_Case_12ga_blue.et"
+    }
+  ],
+  "warnings": []
+}

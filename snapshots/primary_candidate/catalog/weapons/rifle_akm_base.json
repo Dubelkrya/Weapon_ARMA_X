@@ -1,0 +1,384 @@
+{
+  "id": "rifle_akm_base",
+  "role": "base",
+  "source": {
+    "resource": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et",
+    "resource_guid": "140E94F473B60FE3",
+    "meta_name": null,
+    "class": "GenericEntity",
+    "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+  },
+  "identity": {
+    "name": "Rifle_AKM_base",
+    "resource": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+  },
+  "classification": {
+    "kind": "weapon",
+    "confidence": "components"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et",
+        "status": "local",
+        "class": "GenericEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Core/Rifle_Base.et",
+        "status": "local",
+        "class": "GenericEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Core/Weapon_Base.et",
+        "status": "local",
+        "class": "GenericEntity"
+      }
+    ],
+    "external_parents": [],
+    "used_as_base_by": [
+      "Prefabs/Weapons/Rifles/AKM/Rifle_AKM.et",
+      "Prefabs/Weapons/Rifles/AKM/Rifle_AKMS.et",
+      "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_full.et",
+      "Prefabs/Weapons/Rifles/AKM/Rifle_SOC94.et",
+      "Prefabs/Weapons/Rifles/AKM/Rifle_VPO136.et"
+    ],
+    "chain_depth_local": 3
+  },
+  "references": [
+    {
+      "guid": "62BB0D533080AE8D",
+      "path": "Sounds/Weapons/Rifles/VZ-58/Weapons_Rifles_VZ-58_Shot.acp",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+    },
+    {
+      "guid": "408B838D498EC6E8",
+      "path": "Assets/Weapons_RUS/akm/akm_weapons_nonstock.xob",
+      "resolved": "local",
+      "target": "Assets/Weapons_RUS/akm/akm_weapons_nonstock.xob",
+      "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+    },
+    {
+      "guid": "0350283642830782",
+      "path": "anims/workspaces/player/player_main_rifle.asi",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+    },
+    {
+      "guid": "F85D69227FAA3190",
+      "path": "Assets/Weapons/Rifles/VZ58/anims/anm/p_VZ58_ik.anm",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+    },
+    {
+      "guid": "D92368B78263A9E0",
+      "path": "Prefabs/Weapons/Attachments/Mounts/Dovetail_AK/Dovetail_AK.et",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+    },
+    {
+      "guid": "A89D3276591C9F57",
+      "path": "Particles/Weapon/Casing_762x39_PS.ptc",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+    },
+    {
+      "guid": "51553DBFB3D561B2",
+      "path": "Particles/Weapon/Smoke_VZ58.ptc",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+    },
+    {
+      "guid": "0E66192FC96CDFB7",
+      "path": "Particles/Weapon/Muzzle_VZ58.ptc",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+    },
+    {
+      "guid": "687B3DA431730CFA",
+      "path": "Prefabs/Weapons/Core/Configs/FireModes/FireMode_Safe.conf",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+    },
+    {
+      "guid": "6B6BD5767BCD00A9",
+      "path": "Prefabs/Weapons/Core/Configs/TriggerEffects/Safety/TriggerEffect_SafetyLoose.conf",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+    },
+    {
+      "guid": "D5D52E848DBCAA53",
+      "path": "Prefabs/Weapons/Core/Configs/FireModes/FireMode_Single.conf",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+    },
+    {
+      "guid": "A827B610B7CD4158",
+      "path": "Prefabs/Weapons/Magazines/Vz58/Magazine_762x39_Vz58_30rnd_Last_5Tracer.et",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+    },
+    {
+      "guid": "544807FF23254F58",
+      "path": "Prefabs/Weapons/Rifles/AKM/ak74.agr",
+      "resolved": "local",
+      "target": "Assets/Weapons_RUS/akm/anim/ak74.agr",
+      "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+    },
+    {
+      "guid": "EC1306C1588B338F",
+      "path": "Prefabs/Weapons/Rifles/AKM/Akm_weapon.asi",
+      "resolved": "local",
+      "target": "Assets/Weapons_RUS/akm/anim/Akm_weapon.asi",
+      "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+    },
+    {
+      "guid": "BE88F2DE9E96AD12",
+      "path": "Prefabs/Weapons/Rifles/AKM/ak74_player.asi",
+      "resolved": "local",
+      "target": "Assets/Weapons_RUS/akm/anim/ak74_player.asi",
+      "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+    }
+  ],
+  "warnings": [],
+  "data": {
+    "identity": {
+      "name": null
+    },
+    "fire_modes": [
+      {
+        "mode_id": ":",
+        "ui_name": null,
+        "rounds_per_minute": null,
+        "max_burst": null,
+        "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+      },
+      {
+        "mode_id": ":",
+        "ui_name": null,
+        "rounds_per_minute": {
+          "value": 800,
+          "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et",
+          "inherited": false
+        },
+        "max_burst": null,
+        "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et",
+        "rounds_per_second": {
+          "value": 13.333,
+          "derived": true
+        }
+      }
+    ],
+    "physical": {
+      "Weight": null,
+      "SizeSetupStrategy": null,
+      "ItemDimensions": null,
+      "ItemVolume": null,
+      "DimensionScaler": null,
+      "_defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et",
+      "Mass": null,
+      "MeleeDamage": {
+        "value": 2,
+        "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et",
+        "inherited": false
+      },
+      "Model": {
+        "guid": "408B838D498EC6E8",
+        "path": "Assets/Weapons_RUS/akm/akm_weapons_nonstock.xob",
+        "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+      }
+    },
+    "magazine": {
+      "magazine_well": {
+        "name": "MagazineWell",
+        "class": "MagazineWellVZ58_762",
+        "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+      },
+      "magazine_template": {
+        "guid": "A827B610B7CD4158",
+        "path": "Prefabs/Weapons/Magazines/Vz58/Magazine_762x39_Vz58_30rnd_Last_5Tracer.et",
+        "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+      }
+    },
+    "ballistics": {
+      "bullet_init_speed_coef": {
+        "value": 0.986,
+        "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et",
+        "inherited": false
+      },
+      "dispersion_diameter": {
+        "value": 0.4,
+        "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et",
+        "inherited": false
+      },
+      "dispersion_range": {
+        "value": 220,
+        "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et",
+        "inherited": false
+      }
+    },
+    "aim": {
+      "recoil": {
+        "LinearData": {
+          "values": {
+            "curve_magnitudes": null,
+            "curve_mins": null,
+            "curve_maxs": null,
+            "curve_time_scale": null,
+            "base_recoil_scale": null
+          },
+          "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+        },
+        "AngularData": {
+          "values": {
+            "curve_magnitudes": null,
+            "curve_mins": null,
+            "curve_maxs": null,
+            "curve_time_scale": null,
+            "base_recoil_scale": null
+          },
+          "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+        },
+        "TurnOffsetData": {
+          "values": {
+            "curve_magnitudes": null,
+            "curve_mins": null,
+            "curve_maxs": null,
+            "curve_time_scale": null,
+            "base_recoil_scale": null
+          },
+          "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+        }
+      },
+      "sway": {
+        "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et",
+        "values": {
+          "lower_translation": null,
+          "lower_rotation": null
+        }
+      }
+    },
+    "sights": {
+      "switch_skip": null,
+      "ranges": [
+        [
+          0.434,
+          330
+        ],
+        [
+          0.277,
+          100
+        ],
+        [
+          0.343,
+          200
+        ],
+        [
+          0.409,
+          300
+        ],
+        [
+          0.495,
+          400
+        ],
+        [
+          0.57,
+          500
+        ],
+        [
+          0.66,
+          600
+        ],
+        [
+          0.755,
+          700
+        ],
+        [
+          0.877,
+          800
+        ]
+      ],
+      "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+    },
+    "attachment_slots": [
+      {
+        "slot": null,
+        "pivot": {
+          "value": "slot_barrel_muzzle",
+          "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et",
+          "inherited": false
+        },
+        "enabled": null,
+        "attachment_types": [
+          "{65AE4CB5E23C0F7D}"
+        ],
+        "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+      },
+      {
+        "slot": null,
+        "pivot": {
+          "value": "slot_optics",
+          "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et",
+          "inherited": false
+        },
+        "enabled": null,
+        "attachment_types": [
+          "{65AE4CB5E23C0F61}"
+        ],
+        "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+      },
+      {
+        "slot": null,
+        "pivot": {
+          "value": "barrel_chamber",
+          "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et",
+          "inherited": false
+        },
+        "enabled": null,
+        "attachment_types": [
+          "{673A7B217FA4A5C8}"
+        ],
+        "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+      }
+    ],
+    "muzzle_attachment": {
+      "slot": null,
+      "enabled": null,
+      "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+    },
+    "animation": {
+      "anim_graph": {
+        "guid": "544807FF23254F58",
+        "path": "Prefabs/Weapons/Rifles/AKM/ak74.agr",
+        "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+      },
+      "anim_instance": {
+        "guid": "EC1306C1588B338F",
+        "path": "Prefabs/Weapons/Rifles/AKM/Akm_weapon.asi",
+        "defined_in": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et"
+      }
+    }
+  },
+  "derived": {
+    "max_rounds_per_second": 13.333,
+    "dispersion_m_per_m": {
+      "value": 1.8182,
+      "formula": "DispersionDiameter / DispersionRange * 1000"
+    },
+    "approx_moa": {
+      "value": 6.25,
+      "formula": "DispersionDiameter / DispersionRange * 3437.75"
+    }
+  }
+}

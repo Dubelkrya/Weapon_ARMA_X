@@ -1,0 +1,39 @@
+{
+  "id": "grenade_base",
+  "role": "leaf",
+  "source": {
+    "resource": "Prefabs/Weapons/Core/Grenade_Base.et",
+    "resource_guid": "D7EB24176E5CEAA6",
+    "meta_name": null,
+    "class": "GenericEntity",
+    "defined_in": "Prefabs/Weapons/Core/Grenade_Base.et"
+  },
+  "identity": {
+    "name": "Grenade_Base",
+    "resource": "Prefabs/Weapons/Core/Grenade_Base.et"
+  },
+  "classification": {
+    "kind": "core",
+    "confidence": "folder"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Weapons/Core/Grenade_Base.et",
+        "status": "local",
+        "class": "GenericEntity"
+      }
+    ],
+    "external_parents": [
+      {
+        "guid": "A9EF01A7A6FE60CD",
+        "path": "Prefabs/Weapons/Core/Throw_Base.et",
+        "raw": "{A9EF01A7A6FE60CD}Prefabs/Weapons/Core/Throw_Base.et"
+      }
+    ],
+    "used_as_base_by": [],
+    "chain_depth_local": 1
+  },
+  "references": [],
+  "warnings": []
+}

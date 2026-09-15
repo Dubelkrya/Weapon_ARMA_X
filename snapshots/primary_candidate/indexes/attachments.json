@@ -1,0 +1,72 @@
+[
+  {
+    "id": "handguard_ak74m2",
+    "resource": "Prefabs/Weapons/Attachments/Handguards/Handguard_AK74M2.et",
+    "class": "GenericEntity",
+    "name": "Handguard_AK74M2",
+    "role": "leaf"
+  },
+  {
+    "id": "suppressor_9a91",
+    "resource": "Prefabs/Weapons/Attachments/Muzzle/Suppressor_9a91.et",
+    "class": "GameEntity",
+    "name": "Suppressor_9a91",
+    "role": "leaf"
+  },
+  {
+    "id": "suppressor_pbs4_base",
+    "resource": "Prefabs/Weapons/Attachments/Muzzle/Suppressor_PBS4/Suppressor_PBS4_base.et",
+    "class": "GameEntity",
+    "name": "Suppressor_PBS4_base",
+    "role": "base"
+  },
+  {
+    "id": "optic_pso1",
+    "resource": "Prefabs/Weapons/Attachments/Optics/Optic_PSO1.et",
+    "class": "GameEntity",
+    "name": "Optic_PSO1",
+    "role": "base"
+  },
+  {
+    "id": "optic_pso1_ak",
+    "resource": "Prefabs/Weapons/Attachments/Optics/Optic_PSO1_ak.et",
+    "class": "GameEntity",
+    "name": "Optic_PSO1_ak",
+    "role": "leaf"
+  },
+  {
+    "id": "weaponoptic_base",
+    "resource": "Prefabs/Weapons/Attachments/Optics/WeaponOptic_Base.et",
+    "class": "GameEntity",
+    "name": "WeaponOptic_Base",
+    "role": "leaf"
+  },
+  {
+    "id": "handguard_ak74m",
+    "resource": "Prefabs/Weapons/Attachments/Stocks/Handguard_AK74M.et",
+    "class": "GenericEntity",
+    "name": "Handguard_AK74M",
+    "role": "leaf"
+  },
+  {
+    "id": "handguard_aks",
+    "resource": "Prefabs/Weapons/Attachments/Stocks/Handguard_AKS.et",
+    "class": "GenericEntity",
+    "name": "Handguard_AKS",
+    "role": "leaf"
+  },
+  {
+    "id": "stock_akm",
+    "resource": "Prefabs/Weapons/Attachments/Stocks/Stock_akm.et",
+    "class": "GenericEntity",
+    "name": "Stock_akm",
+    "role": "leaf"
+  },
+  {
+    "id": "ugl_gp25",
+    "resource": "Prefabs/Weapons/Attachments/Underbarrel/UGL_GP25.et",
+    "class": "GameEntity",
+    "name": "UGL_GP25",
+    "role": "leaf"
+  }
+]

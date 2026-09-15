@@ -1,0 +1,73 @@
+{
+  "id": "armst_vz58v",
+  "role": "leaf",
+  "source": {
+    "resource": "Prefabs/Weapons/Rifles/armst_VZ58V.et",
+    "resource_guid": "443CEFF17E040B11",
+    "meta_name": null,
+    "class": "GenericEntity",
+    "defined_in": "Prefabs/Weapons/Rifles/armst_VZ58V.et"
+  },
+  "identity": {
+    "name": "armst_VZ58V",
+    "resource": "Prefabs/Weapons/Rifles/armst_VZ58V.et"
+  },
+  "classification": {
+    "kind": "weapon",
+    "confidence": "components"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Weapons/Rifles/armst_VZ58V.et",
+        "status": "local",
+        "class": "GenericEntity"
+      }
+    ],
+    "external_parents": [
+      {
+        "guid": "C19BFAF8A6334FD5",
+        "path": "Prefabs/Weapons/Rifles/VZ58/Rifle_VZ58_base.et",
+        "raw": "{C19BFAF8A6334FD5}Prefabs/Weapons/Rifles/VZ58/Rifle_VZ58_base.et"
+      }
+    ],
+    "used_as_base_by": [],
+    "chain_depth_local": 1
+  },
+  "references": [],
+  "warnings": [],
+  "data": {
+    "identity": {
+      "name": null
+    },
+    "fire_modes": [],
+    "physical": {
+      "MeleeDamage": {
+        "value": 2,
+        "defined_in": "Prefabs/Weapons/Rifles/armst_VZ58V.et",
+        "inherited": false
+      }
+    },
+    "magazine": {
+      "magazine_well": null,
+      "magazine_template": null
+    },
+    "ballistics": {
+      "bullet_init_speed_coef": null,
+      "dispersion_diameter": null,
+      "dispersion_range": null
+    },
+    "aim": {
+      "recoil": null,
+      "sway": null
+    },
+    "sights": null,
+    "attachment_slots": [],
+    "muzzle_attachment": null,
+    "animation": {
+      "anim_graph": null,
+      "anim_instance": null
+    }
+  },
+  "derived": {}
+}

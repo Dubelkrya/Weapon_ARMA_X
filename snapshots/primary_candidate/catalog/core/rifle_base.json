@@ -1,0 +1,48 @@
+{
+  "id": "rifle_base",
+  "role": "base",
+  "source": {
+    "resource": "Prefabs/Weapons/Core/Rifle_Base.et",
+    "resource_guid": "911D6C8DC7BA2D63",
+    "meta_name": null,
+    "class": "GenericEntity",
+    "defined_in": "Prefabs/Weapons/Core/Rifle_Base.et"
+  },
+  "identity": {
+    "name": "Rifle_Base",
+    "resource": "Prefabs/Weapons/Core/Rifle_Base.et"
+  },
+  "classification": {
+    "kind": "core",
+    "confidence": "folder"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Weapons/Core/Rifle_Base.et",
+        "status": "local",
+        "class": "GenericEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Core/Weapon_Base.et",
+        "status": "local",
+        "class": "GenericEntity"
+      }
+    ],
+    "external_parents": [],
+    "used_as_base_by": [
+      "Prefabs/Weapons/Rifles/AKM/Rifle_AKM.et",
+      "Prefabs/Weapons/Rifles/AKM/Rifle_AKMS.et",
+      "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et",
+      "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_full.et",
+      "Prefabs/Weapons/Rifles/AKM/Rifle_SOC94.et",
+      "Prefabs/Weapons/Rifles/AKM/Rifle_VPO136.et",
+      "Prefabs/Weapons/Rifles/Groza/Groza_base.et",
+      "Prefabs/Weapons/Rifles/Groza/armst_groza1.et",
+      "Prefabs/Weapons/Rifles/Rifle_hk_g36.et"
+    ],
+    "chain_depth_local": 2
+  },
+  "references": [],
+  "warnings": []
+}

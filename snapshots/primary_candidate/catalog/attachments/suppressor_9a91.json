@@ -1,0 +1,60 @@
+{
+  "id": "suppressor_9a91",
+  "role": "leaf",
+  "source": {
+    "resource": "Prefabs/Weapons/Attachments/Muzzle/Suppressor_9a91.et",
+    "resource_guid": "E10F09941AF1E123",
+    "meta_name": null,
+    "class": "GameEntity",
+    "defined_in": "Prefabs/Weapons/Attachments/Muzzle/Suppressor_9a91.et"
+  },
+  "identity": {
+    "name": "Suppressor_9a91",
+    "resource": "Prefabs/Weapons/Attachments/Muzzle/Suppressor_9a91.et"
+  },
+  "classification": {
+    "kind": "attachment",
+    "confidence": "folder",
+    "attachment_kind": "muzzle"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Weapons/Attachments/Muzzle/Suppressor_9a91.et",
+        "status": "local",
+        "class": "GameEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Attachments/Muzzle/Suppressor_PBS4/Suppressor_PBS4_base.et",
+        "status": "local",
+        "class": "GameEntity"
+      }
+    ],
+    "external_parents": [
+      {
+        "guid": "491CEF88656BE6C2",
+        "path": "Prefabs/Weapons/Core/Suppressor_base.et",
+        "raw": "{491CEF88656BE6C2}Prefabs/Weapons/Core/Suppressor_base.et"
+      }
+    ],
+    "used_as_base_by": [],
+    "chain_depth_local": 2
+  },
+  "references": [
+    {
+      "guid": "FDA30A8E857B6324",
+      "path": "Assets/Weapons_RUS/9a91/9a91_supprender.xob",
+      "resolved": "local",
+      "target": "Assets/Weapons_RUS/9a91/9a91_supprender.xob",
+      "defined_in": "Prefabs/Weapons/Attachments/Muzzle/Suppressor_9a91.et"
+    },
+    {
+      "guid": "0D9400A03DDEA9AC",
+      "path": "Particles/Weapon/Attachments/Suppressor_Carbine.ptc",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "Prefabs/Weapons/Attachments/Muzzle/Suppressor_9a91.et"
+    }
+  ],
+  "warnings": []
+}
