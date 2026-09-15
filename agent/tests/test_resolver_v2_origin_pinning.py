@@ -80,8 +80,6 @@ class ResolverV2OriginPinningTests(unittest.TestCase):
 
             store = build_store(armst, [f"materialized_base={vanilla}"])
 
-            # Incomplete materialization is not evidence that vanilla's BEEF
-            # GUID belongs to the ARMST overlay copy.
             self.assertEqual(store._guid_records("BEEF"), [])
             ref = store.resolve_ref("BEEF", target, origin_hint="materialized_base")
             self.assertEqual(ref["status"], "external")
@@ -137,8 +135,6 @@ class ResolverV2OriginPinningTests(unittest.TestCase):
             self.assertEqual(ref["status"], "local")
             self.assertEqual(ref["origin"], "armst")
             self.assertEqual(ref["resolved_by"], "path")
-            # Vanilla is only partially materialized, so this path-only match is
-            # not reusable proof that A111 can never identify a vanilla copy.
             self.assertEqual(store._guid_records("A111"), [])
 
     def test_meta_name_is_metadata_only_not_live_guid_evidence(self):
@@ -159,8 +155,58 @@ class ResolverV2OriginPinningTests(unittest.TestCase):
 
             self.assertEqual(store._guid_records("DEAD"), [])
             self.assertNotIn("DEAD", store.live_guid_to_path)
-            # Metadata remains available only as metadata for diagnostics.
             self.assertEqual(store.meta_name_guid_by_path[rel.casefold()], "DEAD")
+
+    def test_conf_self_resourcename_proves_owner_across_same_path_collision(self):
+        with tempfile.TemporaryDirectory() as armst, tempfile.TemporaryDirectory() as vanilla:
+            rel = "Configs/Weapons/Ammo/TestAmmo.conf"
+            write(
+                armst,
+                rel,
+                f'''\
+                MagazineConfig "{{AAAA}}{rel}" {{
+                 Marker "ARMST"
+                }}
+                ''',
+            )
+            write(
+                vanilla,
+                rel,
+                f'''\
+                MagazineConfig "{{BBBB}}{rel}" {{
+                 Marker "VANILLA"
+                }}
+                ''',
+            )
+            write(
+                vanilla,
+                rel + ".meta",
+                f'''\
+                MetaFileClass {{
+                 Name "{{DEAD}}Imported/VanillaSources/{rel}"
+                }}
+                ''',
+            )
+
+            store = build_store(armst, [f"materialized_base={vanilla}"])
+
+            armst_owner = store._guid_records("AAAA")
+            vanilla_owner = store._guid_records("BBBB")
+            self.assertEqual(len(armst_owner), 1)
+            self.assertEqual(armst_owner[0].origin, "armst")
+            self.assertEqual(len(vanilla_owner), 1)
+            self.assertEqual(vanilla_owner[0].origin, "materialized_base")
+            self.assertEqual(store._guid_records("DEAD"), [])
+
+            downward = store.resolve_ref("BBBB", rel, origin_hint="armst")
+            self.assertEqual(downward["status"], "local")
+            self.assertEqual(downward["origin"], "materialized_base")
+            self.assertEqual(downward["resolved_by"], "guid+path")
+
+            upward = store.resolve_ref("AAAA", rel, origin_hint="materialized_base")
+            self.assertEqual(upward["status"], "external")
+            self.assertEqual(upward["reason"], "guid_target_not_dependency_eligible")
+            self.assertEqual(upward["guid_candidates"][0]["origin"], "armst")
 
 
 if __name__ == "__main__":
