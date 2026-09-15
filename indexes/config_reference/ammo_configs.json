@@ -1,0 +1,17 @@
+{
+  "generated_from": ["Configs.zip"],
+  "count": 11,
+  "data": {
+    "Configs/Weapons/Ammo/Ammo_127x108.conf": {"resources":[{"guid":"7FBC7E465D4DA14B","path":"Prefabs/Weapons/Ammo/Ammo_127x108_API_BS.et"},{"guid":"27E671E1F169ED18","path":"Prefabs/Weapons/Ammo/Ammo_127x108_APIT_BZT44.et"},{"guid":"158CA8519769A66F","path":"Prefabs/Weapons/Ammo/Ammo_127x108_API_B32.et"}]},
+    "Configs/Weapons/Ammo/Ammo_127x99.conf": {"resources":[{"guid":"A4E070505C87AD42","path":"Prefabs/Weapons/Ammo/Ammo_127x99_Ball_M33.et"},{"guid":"678188455B777E61","path":"Prefabs/Weapons/Ammo/Ammo_127x99_Tracer_M10.et"},{"guid":"6DEC9F287271AB24","path":"Prefabs/Weapons/Ammo/Ammo_127x99_AP_M2.et"},{"guid":"39E8316BCCE5133A","path":"Prefabs/Weapons/Ammo/Ammo_127x99_APIT_M20.et"}]},
+    "Configs/Weapons/Ammo/Ammo_145x114.conf": {"resources":[{"guid":"AF3D459E8AE71B58","path":"Prefabs/Weapons/Ammo/Ammo_145x114_API_57BZ561S.et"},{"guid":"DDC9BE44E2BD135B","path":"Prefabs/Weapons/Ammo/Ammo_145x114_APIT_57BZT561S.et"},{"guid":"FBBF91CB9F696344","path":"Prefabs/Weapons/Ammo/Ammo_145x114_IAI_7Z1.et"}]},
+    "Configs/Weapons/Ammo/Ammo_25x137.conf": {"resources":[{"guid":"A47C098284929418","path":"Prefabs/Weapons/Ammo/Ammo_25x137/Ammo_25x137_HEIT_M792.et"},{"guid":"A8835B5EA92F1CE1","path":"Prefabs/Weapons/Ammo/Ammo_25x137/Ammo_25x137_APDST_M791.et"}]},
+    "Configs/Weapons/Ammo/Ammo_545x39.conf": {"resources":[{"guid":"1D9DDE1632F33A9E","path":"Prefabs/Weapons/Ammo/Ammo_545x39_Ball_7N6.et"},{"guid":"2BC4C9C3D171A53B","path":"Prefabs/Weapons/Ammo/Ammo_545x39_Tracer_7T3.et"},{"guid":"DFA2A30FEAA24E7C","path":"Prefabs/Weapons/Ammo/Ammo_545x39_Ball_7U1.et"}]},
+    "Configs/Weapons/Ammo/Ammo_556x45.conf": {"resources":[{"guid":"AC26AB660097633D","path":"Prefabs/Weapons/Ammo/Ammo_556x45_Ball_M855.et"},{"guid":"A0CEFA7FA41091F7","path":"Prefabs/Weapons/Ammo/Ammo_556x45_Tracer_M856.et"},{"guid":"9CE4CC890A2A574F","path":"Prefabs/Weapons/Ammo/Ammo_556x45_Ball_M193.et"},{"guid":"9F01DD8C46AD2618","path":"Prefabs/Weapons/Ammo/Ammo_556x45_Tracer_M196.et"}]},
+    "Configs/Weapons/Ammo/Ammo_762x39.conf": {"resources":[{"guid":"2FBCA0A7CEDDE7B0","path":"Prefabs/Weapons/Ammo/Ammo_762x39_Ball_57N231.et"},{"guid":"B9AB11A51D795EC5","path":"Prefabs/Weapons/Ammo/Ammo_762x39_Tracer_57T231P.et"}]},
+    "Configs/Weapons/Ammo/Ammo_762x51.conf": {"resources":[{"guid":"C14C5DE6F97F06F0","path":"Prefabs/Weapons/Ammo/Ammo_762x51_Ball_M80.et"},{"guid":"9CCBDD2ACB73FFA9","path":"Prefabs/Weapons/Ammo/Ammo_762x51_Tracer_M62.et"},{"guid":"9F39DD07E2860466","path":"Prefabs/Weapons/Ammo/Ammo_762x51_AP_M61.et"},{"guid":"B7DC0C3C3D1784C2","path":"Prefabs/Weapons/Ammo/Ammo_762x51_Ball_M118.et"}]},
+    "Configs/Weapons/Ammo/Ammo_762x54.conf": {"resources":[{"guid":"AC29AE3D5ECD6390","path":"Prefabs/Weapons/Ammo/Ammo_762x54r_Ball_57N323S.et"},{"guid":"279B4FEECCA799BD","path":"Prefabs/Weapons/Ammo/Ammo_762x54r_Tracer_7T2.et"},{"guid":"A871758F07494882","path":"Prefabs/Weapons/Ammo/Ammo_762x54r_Ball_7N1.et"},{"guid":"3157B65339DC38A1","path":"Prefabs/Weapons/Ammo/Ammo_762x54r_API_7BZ3.et"}]},
+    "Configs/Weapons/Ammo/Ammo_9x18Mak.conf": {"resources":[{"guid":"4DE72DF927310A8B","path":"Prefabs/Weapons/Ammo/Ammo_9x18_Ball_57N181.et"}]},
+    "Configs/Weapons/Ammo/Ammo_9x19.conf": {"resources":[{"guid":"9D290AA75ADA4618","path":"Prefabs/Weapons/Ammo/Ammo_9x19_Ball_M882.et"},{"guid":"9DA944F4D6A611BA","path":"Prefabs/Weapons/Ammo/Ammo_9x19_HP_JHP.et"}]}
+  }
+}
