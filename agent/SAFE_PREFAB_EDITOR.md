@@ -1,8 +1,10 @@
 # ARMST Safe Prefab Editor — local agent contract
 
-Working root:
+Primary working root:
 
-`C:\Users\Muroy\Documents\My Games\ArmaReforgerWorkbench\addons\Armst_Work`
+`C:\Users\Muroy\Documents\My Games\ArmaReforgerWorkbench\addons\ARMST-PLATFORM---Weapons`
+
+This is the authoritative weapon addon and the default target for local-agent prefab/config/script work. `Armst_Work` is not authoritative and must only be used when the user explicitly assigns a one-off sandbox/test task there.
 
 The local agent is allowed to search prefab/config/script files, inspect inheritance and exact instance IDs, and make targeted edits. It must not invent gameplay values, instance IDs, resource GUIDs or structure.
 
@@ -194,7 +196,7 @@ Canonical sample: `reports/samples/armst_Optic_PSO1_DovetailRU.et`.
 
 Before every edit of an existing file:
 
-1. Find the exact target file.
+1. Find the exact target file under the authoritative primary root unless the task explicitly names another root.
 2. Record full path, size, SHA256, parent resource, target instance ID and a small before-snippet.
 3. Create a side-by-side backup named `<filename>.before_agent_edit.bak`; if it already exists, create a timestamped backup instead of overwriting it.
 4. Make exactly one logical change.
