@@ -1,0 +1,97 @@
+GenericEntity : "{C0F7DD85A86B2900}Handguns/armst_PM.et" {
+ ID "CFBAA4B725411E45"
+ components {
+  MeshObject "{CFBAA4B701F95D69}" {
+   Object "{3142577B6CD35911}Assets/TT/TT_weapon.xob"
+  }
+  SCR_EditableEntityComponent "{65F28786D4603482}" {
+   m_UIInfo SCR_EditableEntityUIInfo "{65F28786DC4DA036}" {
+    Name "TT"
+   }
+  }
+  SCR_MeleeWeaponProperties "{6742271DE0B9AD55}" {
+   m_fDamage 2
+  }
+  SCR_WeaponAttachmentsStorageComponent "{51F080D5CE45A1A2}" {
+   Attributes SCR_ItemAttributeCollection "{51F080D5C64F12C5}" {
+    ItemDisplayName WeaponUIInfo "{5222CB0701437228}" {
+     Name "TT"
+     Description ""
+    }
+    ItemPhysAttributes ItemPhysicalAttributes PhysicalAttributes {
+     Weight 0.85
+    }
+    CustomAttributes {
+     SCR_RecoilCameraShakeParams "{58DEF2AB0413E346}" {
+      m_vRotationImpulseMin 0.006 0.006 3.6
+      m_vRotationImpulseMax 0.014 0.014 4.8
+     }
+    }
+   }
+  }
+  WeaponComponent "{CFBAA4B706BA66E8}" {
+   components {
+    SightsComponent "{BB23A637957CFFF8}" {
+     SightsPosition PointInfo "{BB23A63796688E69}" {
+      Offset 0 0 0
+     }
+     SightsPointFront PointInfo "{5EEACA2840F1AFA8}" {
+      PivotID "slot_ironsight_front"
+      Offset 0 0 0
+     }
+     SightsPointRear PointInfo "{5EEACA285E995EB9}" {
+      PivotID "slot_ironsight_rear"
+      Offset 0 0 0
+     }
+    }
+    MuzzleComponent "{50F64C45E7271D47}" {
+     components {
+      CaseEjectingEffectComponent "{5122AAD190FCA21D}" {
+       EffectPosition EntitySlotInfo "{513A9384CEFB83CB}" {
+        Offset 0 0 0.0166
+        Angles 0 0 38.7063
+       }
+      }
+      CaseEjectingEffectComponent "{52C8933882699871}" {
+       EffectPosition EntitySlotInfo "{52C8933887AD233F}" {
+        Offset -0.0011 -0.0047 0
+       }
+      }
+      SCR_MuzzleEffectComponent "{C9B3271BB22CDB68}" {
+       EffectPosition EntitySlotInfo "{C9B3271BB85B5D32}" {
+        Offset -0.0008 -0.0052 0
+       }
+      }
+     }
+     MagazineWell MagazineWell763x25 "{26EA67622A1DA48B}" {
+     }
+     MagazinePosition InventoryStorageSlot "{B80A64F4C834E9CB}" {
+      Offset 0 -0.0078 0.001
+      Angles 0 0 0
+     }
+     MagazineTemplate "{AA99F5E678010DB3}Prefabs/Weapons/Magazines/Magazine_763x25_TT_8rnd_Ball.et"
+     BulletInitSpeedCoef 1
+     DispersionDiameter 0.35
+     DispersionRange 100
+     WeaponAimModifiers {
+      RecoilWeaponAimModifier "{58FCF59C4FED2924}" {
+       AngularData RecoilData "{58FCF59C4660D2CC}" {
+        "Curve Mins" 0.1 4.8 -6.5
+        "Curve Maxs" 0.1 5.1 6.5
+       }
+       TurnOffsetData RecoilData "{58FCF59C4660D2CF}" {
+        "Curve Mins" -3.2 48 0
+        "Curve Maxs" 3.2 50 0
+       }
+      }
+     }
+    }
+   }
+   UIInfo WeaponUIInfo "{CC3BA6A2C42F09F4}" {
+    Name "TT"
+    Description ""
+   }
+  }
+ }
+ coords 7537.492 2.588 6688.931
+}
