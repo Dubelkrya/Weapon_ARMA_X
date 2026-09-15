@@ -8,37 +8,38 @@
     "class": "Projectile",
     "defined_in": "Prefabs/Weapons/Ammo/Ammo_9x18_Ball_57N181.et"
   },
-  "identity": {
-    "name": "Ammo_9x18_Ball_57N181",
-    "resource": "Prefabs/Weapons/Ammo/Ammo_9x18_Ball_57N181.et"
-  },
-  "classification": {
-    "kind": "ammunition",
-    "confidence": "class"
-  },
+  "identity": {"name":"Ammo_9x18_Ball_57N181","resource":"Prefabs/Weapons/Ammo/Ammo_9x18_Ball_57N181.et"},
+  "classification": {"kind":"ammunition","confidence":"class"},
   "inheritance": {
     "chain": [
-      {
-        "resource": "Prefabs/Weapons/Ammo/Ammo_9x18_Ball_57N181.et",
-        "status": "local",
-        "class": "Projectile"
-      }
+      {"resource":"Prefabs/Weapons/Ammo/Ammo_9x18_Ball_57N181.et","status":"local","class":"Projectile"},
+      {"resource":"Prefabs/Weapons/Core/Ammo_Bullet_Base.et","status":"file","class":"Projectile"}
     ],
-    "external_parents": [
-      {
-        "guid": "67FED88E5085F63F",
-        "path": "Prefabs/Weapons/Core/Ammo_Bullet_Base.et",
-        "raw": "{67FED88E5085F63F}Prefabs/Weapons/Core/Ammo_Bullet_Base.et"
-      }
-    ],
+    "external_parents": [],
     "used_as_base_by": [],
     "chain_depth_local": 1
   },
-  "references": [],
-  "warnings": [],
+  "references": [
+    {"guid":"4A7B5486D9167E2A","path":"Configs/Weapons/Ammo/Ammo_9x18Mak.conf","resolved":"file","target":"Configs/Weapons/Ammo/Ammo_9x18Mak.conf","defined_in":"Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Base.et"},
+    {"guid":"042AB57ADFE17DA6","path":"Configs/Weapons/AIBallisticTables/AIBT_Bullet_Base.conf","resolved":"file","target":"Configs/Weapons/AIBallisticTables/AIBT_Bullet_Base.conf","defined_in":"Prefabs/Weapons/Core/Ammo_Bullet_Base.et"}
+  ],
+  "warnings": [
+    "Configs.zip also contains AIBT_9x18_Ball_57N181.conf, but this projectile resolves to AIBT_Bullet_Base.conf in the supplied prefab snapshot; the specific table is not auto-substituted."
+  ],
   "data": {
-    "effects": null,
-    "_defined_in": null
+    "shell": {
+      "InitSpeed": {"value":750,"defined_in":"Prefabs/Weapons/Core/Ammo_Bullet_Base.et","inherited":true},
+      "Mass": {"value":0.01,"defined_in":"Prefabs/Weapons/Core/Ammo_Bullet_Base.et","inherited":true},
+      "Diameter": {"value":8,"defined_in":"Prefabs/Weapons/Core/Ammo_Bullet_Base.et","inherited":true},
+      "ballistic_table": {"guid":"042AB57ADFE17DA6","path":"Configs/Weapons/AIBallisticTables/AIBT_Bullet_Base.conf","defined_in":"Prefabs/Weapons/Core/Ammo_Bullet_Base.et","inherited":true}
+    },
+    "effects": [
+      {"id":"5168BBF3DBD79134","kind":"primary_kinetic","DamageValue":50,"effect_classes":["SCR_BaseBulletDamageEffect"],"defined_in":"Prefabs/Weapons/Core/Ammo_Bullet_Base.et","inherited":true}
+    ]
   },
-  "derived": {}
+  "derived": {
+    "allowed_by_configs": ["Configs/Weapons/Ammo/Ammo_9x18Mak.conf"],
+    "standard_pm_magazine": {"resource":"Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Ball.et","loaded_count":8,"mapping_index":0},
+    "authoring_reference":"indexes/config_reference/manifest.json"
+  }
 }
