@@ -13,6 +13,7 @@ For new weapon prefabs and modules, use these repository artifacts before invent
 - `indexes/prefab_authoring_reference.json` — verified canonical component IDs, family baselines, handgun recoil structure and resolved TT source/target separation.
 - `indexes/config_reference/manifest.json` — AmmoConfig / AIBallistic / magazine→config→projectile rules from the supplied config snapshot.
 - `indexes/script_reference/manifest.json` — script compatibility types, RIS/optic/muzzle/magazine-well authoring model, attachment module inventory and known anomalies.
+- `indexes/script_reference/slot_and_sight_summary.json` — resolved weapon-side attachment slot types, representative pivots/default modules and the SightsComponent authoring boundary.
 - `reports/PREFAB_AUTHORING_GUIDE.md` — minimal inherited-override rules.
 - `reports/CONFIG_AUTHORING_GUIDE.md` — AmmoConfig / AmmoMapping / projectile resolution rules.
 - `reports/SCRIPT_MODULE_AUTHORING_GUIDE.md` — compatibility script, RIS, optic, muzzle, module and sight authoring rules, grounded in the supplied ARMST sources and Bohemia public samples.
