@@ -22,7 +22,13 @@ Each Node has:
   value    -- parsed scalar tokens for value-only lines
   children -- child Nodes for `{ ... }` blocks
   append   -- True when the line used the `+` (append) modifier before `{`
-  ref      -- parsed resource reference from `: "{GUID}path"` or a value token
+  ref      -- parsed dependency/template resource reference
+
+Config resources may also declare their own ResourceName in the root block,
+for example `MagazineConfig "{GUID}Configs/Weapons/Ammo/Ammo_545x39.conf" {`.
+That token is resource identity, not an instance id or dependency. `parse_file`
+normalizes it into `Resource.resource_ref` when its path exactly matches the
+parsed file's virtual path.
 """
 
 import os
@@ -209,8 +215,6 @@ def parse_text(resource_text, source_name="<text>", is_et=False):
                 continue
 
         if stripped == "}":
-            # A brace closes exactly one open block. Do not also apply the
-            # indentation pop below or the parser loses the parent scope.
             if len(stack) > 1:
                 stack.pop()
             continue
@@ -256,6 +260,9 @@ def _make_block_node(tokens, line, append):
       `BaseFireMode "{ID}" : "{GUID}FireMode.conf" {`
       `MagazineConfig : "{GUID}Base.conf" {`
       `Field SomeType "{ID}" : "{GUID}Template.conf" {`
+
+    A config root's own ResourceName cannot be distinguished from an instance id
+    using syntax alone. `parse_file` resolves that ambiguity with the file path.
     """
     if not tokens:
         return Node(None, None, None, [], [], append, line)
@@ -279,9 +286,6 @@ def _make_block_node(tokens, line, append):
         else:
             typ = _strip_quotes(token)
     elif len(declaration) >= 2:
-        # Normal Enfusion shape is `Field Type "{INSTANCE}"`. A quoted/bare
-        # GUID in the first slot instead means `Class "{INSTANCE}"` with no
-        # explicit serialized type.
         if _looks_like_instance_id(declaration[0]):
             nid = _strip_quotes(declaration[0])
         else:
@@ -290,10 +294,6 @@ def _make_block_node(tokens, line, append):
 
     node = Node(name, typ, nid, [], [], append, line)
 
-    # Resource inheritance/template refs belong to the right side of `:`.
-    # For compatibility with unusual serialized declarations lacking a colon,
-    # scan the remaining tokens too, but require a non-empty path so an
-    # instance GUID can never be mistaken for a ResourceName.
     ref_tokens = inherited if inherited else rest
     for token in ref_tokens:
         gr = _guid_ref(token)
@@ -337,15 +337,61 @@ def _parse_et_header(line, lineno):
     return {"class": cls, "parent": parent, "line": lineno}
 
 
+def _norm_resource_path(path):
+    return str(path or "").replace("\\", "/").lstrip("./").casefold()
+
+
+def _normalize_conf_owner(root, relpath):
+    """Extract the root config's self ResourceName and remove parser artifacts."""
+    if root is None:
+        return None
+    root_node = None
+    for child in root.children:
+        if child.name == "__elem__":
+            continue
+        root_node = child
+        break
+    if root_node is None or not root_node.id:
+        return None
+
+    gr = _guid_ref(str(root_node.id))
+    if not gr or not gr[1]:
+        return None
+    guid, owner_path = gr
+    if _norm_resource_path(owner_path) != _norm_resource_path(relpath):
+        return None
+
+    owner = {
+        "guid": guid.upper(),
+        "path": owner_path.replace("\\", "/"),
+        "raw": str(root_node.id),
+    }
+
+    # This token belongs to the resource, not to a serialized instance.
+    root_node.id = None
+
+    # Without `:`, the generic block parser also attached the same token as a
+    # template ref. Strip only the exact self ref; inherited config refs on the
+    # right side of `:` stay intact.
+    if root_node.ref:
+        ref_guid = str(root_node.ref.get("guid") or "").upper()
+        ref_path = _norm_resource_path(root_node.ref.get("path"))
+        if ref_guid == owner["guid"] and ref_path == _norm_resource_path(owner["path"]):
+            root_node.ref = None
+
+    return owner
+
+
 class Resource:
     """A parsed resource with its identity and header."""
 
-    def __init__(self, abspath, relpath, kind, header, root):
+    def __init__(self, abspath, relpath, kind, header, root, resource_ref=None):
         self.abspath = abspath
         self.relpath = relpath.replace("\\", "/")
         self.kind = kind  # et | conf | meta | c
         self.header = header
         self.root = root
+        self.resource_ref = resource_ref
         self.stem = os.path.splitext(os.path.basename(relpath))[0]
 
     @property
@@ -367,7 +413,8 @@ def parse_file(path, addon_root=None):
         return Resource(path, rel, "et", header, root)
     if ext == ".conf":
         header, root = parse_text(text, source_name=rel, is_et=False)
-        return Resource(path, rel, "conf", header, root)
+        resource_ref = _normalize_conf_owner(root, rel)
+        return Resource(path, rel, "conf", header, root, resource_ref=resource_ref)
     if ext == ".meta":
         header, root = parse_text(text, source_name=rel, is_et=False)
         return Resource(path, rel, "meta", header, root)
