@@ -12,7 +12,7 @@ Use these inputs first:
 
 1. ARMST addon source tree (editable).
 2. Existing `Imported/VanillaSources/` materialized vanilla `.et/.conf` dataset (read-only).
-3. `Imported/VanillaSources/_wax_materialization.tsv` as authoritative evidence for which materialized files belong to the latest dataset run.
+3. `Imported/VanillaSources/_wax_materialization.tsv` as authoritative evidence for which requested `.et/.conf` files belong to the latest dataset run. Generated `.meta` sidecars are not manifest authority.
 4. Official Bohemia script sources from `BohemiaInteractive/Arma-Reforger-Script-Diff` pinned to game build `1.8.0.13`, commit `3d77cc212d5cda9922daf5f45635c7300d2d4cce`.
 
 Raw vanilla and official script checkouts are gitignored and must never be edited as project fixes.
@@ -42,7 +42,8 @@ python agent\scripts\build_architecture_package.py
 The command performs the offline work:
 
 - validates the materialized vanilla manifest when present;
-- rejects stale/unlisted `.et/.conf/.meta` files instead of silently scanning them;
+- rejects stale/unlisted requested `.et/.conf` files instead of silently scanning them;
+- ignores generated `.meta` sidecars for manifest membership checks;
 - uses strict GUID/origin-aware resolver identity;
 - preserves origin across weapon → magazine → AmmoConfig → projectile traversal;
 - builds inheritance and resource-reference edges;
@@ -68,6 +69,16 @@ Important files:
 - `script_class_links.json` — only classes relevant to serialized ARMST architecture plus base closure;
 - `workbench_export_requests.json` — exact serialized resources absent from both current inputs;
 - `resolver_warnings.json` — parser/resolver warnings requiring review.
+
+## Publish compact derived data
+
+After the local package has been reviewed, run:
+
+```bat
+python agent\scripts\publish_architecture_digest.py
+```
+
+This writes only compact derived artifacts to `architecture/generated/`, including a blueprint index and one shard per ARMST prefab. Raw vanilla materialization and the full official script checkout remain outside Git. The publisher refuses to replace an unmarked manual directory.
 
 ## Identity rules
 
@@ -111,7 +122,7 @@ Never commit:
 - `agent/v2_output/`;
 - `agent/architecture_output/` raw generated workspace.
 
-After local validation, upload only compact derived artifacts needed for remote architectural analysis. Preserve exact origin/path/GUID evidence, instance GUIDs, inheritance chains, reference edges, unresolved gaps, and script source commit metadata.
+After local validation, commit only the compact derived `architecture/generated/` package needed for remote architectural analysis. Preserve exact origin/path/GUID evidence, instance GUIDs, inheritance chains, reference edges, unresolved gaps, and script source commit metadata.
 
 The derived GitHub layer must be sufficient to answer:
 
