@@ -1,3 +1,0 @@
-# Anomalies
-
-No anomalies recorded.

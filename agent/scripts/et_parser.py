@@ -6,35 +6,56 @@ Parser for Arma Reforger workbench text resources:
   * `.et`  - entity / prefab templates    (class : "{GUID}path" { ... })
   * `.conf`- configuration resources      (FooConfig { ... })
   * `.meta`- meta files for resources     (Name "{GUID}path" ...)
-  * `.c`   - script class definitions     (class X : Y { })
+  * `.c`   - accepted as an opaque source record; script syntax is indexed
+             separately and is not parsed into Node trees here.
 
-The parser is intentionally generic: it converts a resource file into an
-ordered tree of Nodes. It makes no assumptions about specific component
-classes; interpretation (which nodes are weapon balance params, links, etc.)
-happens in scan_build.py.
+The parser is intentionally generic: it converts serialized resource files into
+an ordered tree of Nodes. It makes no assumptions about specific component
+classes; interpretation happens in the resolver/extractor layer.
 
 Node model
 ----------
 Each Node has:
   name     -- first token of the line (field name or serialized class name)
-  type     -- optional second token (class name for `Field Class id {}` lines)
-  id       -- optional third token: a GUID, an instance name, or a slot name
+  type     -- optional serialized class/type (`Field Class "{id}" {`)
+  id       -- optional serialized instance id/GUID
   value    -- parsed scalar tokens for value-only lines
   children -- child Nodes for `{ ... }` blocks
   append   -- True when the line used the `+` (append) modifier before `{`
-  ref      -- parsed resource reference "{GUID}path..." if the value tokens
-              contain one (first token only)
+  ref      -- parsed dependency/template resource reference
+
+Config resources may also declare their own ResourceName in the root block,
+for example `MagazineConfig "{GUID}Configs/Weapons/Ammo/Ammo_545x39.conf" {`.
+That token is resource identity, not an instance id or dependency. `parse_file`
+normalizes it into `Resource.resource_ref` when its path exactly matches the
+parsed file's virtual path.
 """
 
-import re
 import os
+import re
 
 GUID_REF_RE = re.compile(r"^\{([0-9A-Fa-f]{1,32})\}(.*)$")
 INT_RE = re.compile(r"^[+-]?\d+$")
 HEX_RE = re.compile(r"^0[xX][0-9A-Fa-f]+$")
 FLOAT_RE = re.compile(r"^[+-]?(\d+\.?\d*|\.\d+)([eE][+-]?\d+)?$")
-RESOURCE_EXT = (".et", ".conf", ".meta", ".ptc", ".xob", ".emat", ".asi", ".agr",
-                ".acp", ".anm", ".edds", ".wav", ".txt", ".gproj", ".ent", ".layer")
+RESOURCE_EXT = (
+    ".et",
+    ".conf",
+    ".meta",
+    ".ptc",
+    ".xob",
+    ".emat",
+    ".asi",
+    ".agr",
+    ".acp",
+    ".anm",
+    ".edds",
+    ".wav",
+    ".txt",
+    ".gproj",
+    ".ent",
+    ".layer",
+)
 
 
 class ParseError(Exception):
@@ -44,8 +65,16 @@ class ParseError(Exception):
 class Node:
     __slots__ = ("name", "type", "id", "value", "children", "append", "line", "ref")
 
-    def __init__(self, name, typ=None, nid=None, value=None, children=None,
-                 append=False, line=0):
+    def __init__(
+        self,
+        name,
+        typ=None,
+        nid=None,
+        value=None,
+        children=None,
+        append=False,
+        line=0,
+    ):
         self.name = name
         self.type = typ
         self.id = nid
@@ -78,7 +107,12 @@ class Node:
 
 
 def _split_tokens(line):
-    """Split a line on whitespace, keeping double-quoted strings intact."""
+    """Split on whitespace/colon while keeping double-quoted strings intact.
+
+    The colon is syntax in serialized inheritance/config-template declarations,
+    e.g. `BaseFireMode "{INSTANCE}" : "{RESOURCE}FireMode.conf"`. Treating it
+    as an ordinary token used to shift the instance id into `type`/`id` slots.
+    """
     tokens = []
     i, n = 0, len(line)
     while i < n:
@@ -86,15 +120,19 @@ def _split_tokens(line):
         if c.isspace():
             i += 1
             continue
+        if c == ":":
+            tokens.append(":")
+            i += 1
+            continue
         if c == '"':
             j = line.find('"', i + 1)
             if j == -1:
-                j = n
-            tokens.append(line[i:j + 1])
+                j = n - 1
+            tokens.append(line[i : j + 1])
             i = j + 1
             continue
         j = i
-        while j < n and not line[j].isspace():
+        while j < n and not line[j].isspace() and line[j] != ":":
             j += 1
         tokens.append(line[i:j])
         i = j
@@ -122,7 +160,7 @@ def _parse_scalar(tok):
 
 
 def _value_token(tok):
-    """A token(s) that represents a plain value rather than a field name."""
+    """Return whether a token represents a plain value rather than a field name."""
     if tok.startswith('"'):
         return True
     body = tok
@@ -153,11 +191,7 @@ def _attach_refs(node):
 
 
 def parse_text(resource_text, source_name="<text>", is_et=False):
-    """
-    Parse resource text into a Node tree.
-    Returns (header, root).
-    header: dict with class / parent info (for .et) or class (for .conf/.meta)
-    """
+    """Parse resource text into a Node tree and return (header, root)."""
     lines = resource_text.splitlines()
     root = Node("__root__")
     stack = [(root, -1)]
@@ -174,17 +208,13 @@ def parse_text(resource_text, source_name="<text>", is_et=False):
             seen_first = True
             if is_et:
                 header = _parse_et_header(stripped, idx + 1)
-                # header line itself: determine whether it opened a block
-                hdr_open = stripped.rstrip().endswith("{")
-                if not hdr_open:
-                    raise ParseError(f"{source_name}:{idx+1}: "
-                                     "entity header must open a block")
+                if not stripped.rstrip().endswith("{"):
+                    raise ParseError(
+                        f"{source_name}:{idx + 1}: entity header must open a block"
+                    )
                 continue
 
         if stripped == "}":
-            # a closing brace closes exactly the innermost open block; the
-            # dedent loop below must NOT also run for brace lines, otherwise
-            # the frame is popped twice and its parent scope is lost.
             if len(stack) > 1:
                 stack.pop()
             continue
@@ -193,7 +223,6 @@ def parse_text(resource_text, source_name="<text>", is_et=False):
             stack.pop()
         parent = stack[-1][0]
 
-        # normalized body without closing/trailing tokens
         open_block = stripped.rstrip().endswith("{")
         body = stripped[:-1].rstrip() if open_block else stripped
 
@@ -217,31 +246,63 @@ def parse_text(resource_text, source_name="<text>", is_et=False):
     return header, root
 
 
+def _looks_like_instance_id(token):
+    raw = _strip_quotes(token)
+    return token.startswith('"') or raw.startswith("{")
+
+
 def _make_block_node(tokens, line, append):
-    name = None
+    """Parse a serialized block declaration without conflating `:` with id.
+
+    Supported shapes include:
+      `WeaponComponent "{ID}" {`
+      `Attributes SCR_ItemAttributeCollection "{ID}" {`
+      `BaseFireMode "{ID}" : "{GUID}FireMode.conf" {`
+      `MagazineConfig : "{GUID}Base.conf" {`
+      `Field SomeType "{ID}" : "{GUID}Template.conf" {`
+
+    A config root's own ResourceName cannot be distinguished from an instance id
+    using syntax alone. `parse_file` resolves that ambiguity with the file path.
+    """
+    if not tokens:
+        return Node(None, None, None, [], [], append, line)
+
+    name = _strip_quotes(tokens[0])
+    rest = list(tokens[1:])
+    if ":" in rest:
+        colon = rest.index(":")
+        declaration = rest[:colon]
+        inherited = rest[colon + 1 :]
+    else:
+        declaration = rest
+        inherited = []
+
     typ = None
     nid = None
-    rest = []
-    if tokens:
-        first = tokens[0]
-        name = _strip_quotes(first)
-        rest = tokens[1:]
-        if len(rest) == 1:
-            t = rest[0]
-            if t.startswith('"') or t.startswith('{'):
-                nid = _strip_quotes(t)
-            else:
-                typ = t
-        elif len(rest) >= 2:
-            typ = rest[0]
-            nid = _strip_quotes(rest[1])
+    if len(declaration) == 1:
+        token = declaration[0]
+        if _looks_like_instance_id(token):
+            nid = _strip_quotes(token)
+        else:
+            typ = _strip_quotes(token)
+    elif len(declaration) >= 2:
+        if _looks_like_instance_id(declaration[0]):
+            nid = _strip_quotes(declaration[0])
+        else:
+            typ = _strip_quotes(declaration[0])
+            nid = _strip_quotes(declaration[1])
+
     node = Node(name, typ, nid, [], [], append, line)
-    # some declarations carry a resource reference after the instance id,
-    # e.g. "m_MagIndicator X "{id}" : "{GUID}path.conf"" -- grab it.
-    for t in rest:
-        gr = _guid_ref(t)
+
+    ref_tokens = inherited if inherited else rest
+    for token in ref_tokens:
+        gr = _guid_ref(token)
         if gr and gr[1]:
-            node.ref = {"guid": gr[0].upper(), "path": gr[1], "raw": str(t)}
+            node.ref = {
+                "guid": gr[0].upper(),
+                "path": gr[1],
+                "raw": _strip_quotes(str(token)),
+            }
             break
     return node
 
@@ -251,7 +312,6 @@ def _make_value_node(tokens, line, append):
         return Node("__empty__", None, None, [], [], append, line)
     first = tokens[0]
     if first.startswith('"') or _value_token(first):
-        # array element line or reference-only line
         values = [_parse_scalar(t) for t in tokens]
         return Node("__elem__", None, None, values, [], append, line)
     name = _strip_quotes(first)
@@ -260,7 +320,10 @@ def _make_value_node(tokens, line, append):
 
 
 def _parse_et_header(line, lineno):
-    m = re.match(r"^\s*([A-Za-z_][A-Za-z0-9_]*)\s*(?::\s*\"\{([0-9A-Fa-f]{1,32})\}([^\"]+)\"\s*)?(\{)?\s*$", line)
+    m = re.match(
+        r'^\s*([A-Za-z_][A-Za-z0-9_]*)\s*(?::\s*"\{([0-9A-Fa-f]{1,32})\}([^\"]+)"\s*)?(\{)?\s*$',
+        line,
+    )
     if not m:
         raise ParseError(f"line {lineno}: unrecognized entity header: {line!r}")
     cls = m.group(1)
@@ -274,15 +337,61 @@ def _parse_et_header(line, lineno):
     return {"class": cls, "parent": parent, "line": lineno}
 
 
+def _norm_resource_path(path):
+    return str(path or "").replace("\\", "/").lstrip("./").casefold()
+
+
+def _normalize_conf_owner(root, relpath):
+    """Extract the root config's self ResourceName and remove parser artifacts."""
+    if root is None:
+        return None
+    root_node = None
+    for child in root.children:
+        if child.name == "__elem__":
+            continue
+        root_node = child
+        break
+    if root_node is None or not root_node.id:
+        return None
+
+    gr = _guid_ref(str(root_node.id))
+    if not gr or not gr[1]:
+        return None
+    guid, owner_path = gr
+    if _norm_resource_path(owner_path) != _norm_resource_path(relpath):
+        return None
+
+    owner = {
+        "guid": guid.upper(),
+        "path": owner_path.replace("\\", "/"),
+        "raw": str(root_node.id),
+    }
+
+    # This token belongs to the resource, not to a serialized instance.
+    root_node.id = None
+
+    # Without `:`, the generic block parser also attached the same token as a
+    # template ref. Strip only the exact self ref; inherited config refs on the
+    # right side of `:` stay intact.
+    if root_node.ref:
+        ref_guid = str(root_node.ref.get("guid") or "").upper()
+        ref_path = _norm_resource_path(root_node.ref.get("path"))
+        if ref_guid == owner["guid"] and ref_path == _norm_resource_path(owner["path"]):
+            root_node.ref = None
+
+    return owner
+
+
 class Resource:
     """A parsed resource with its identity and header."""
 
-    def __init__(self, abspath, relpath, kind, header, root):
+    def __init__(self, abspath, relpath, kind, header, root, resource_ref=None):
         self.abspath = abspath
         self.relpath = relpath.replace("\\", "/")
         self.kind = kind  # et | conf | meta | c
         self.header = header
         self.root = root
+        self.resource_ref = resource_ref
         self.stem = os.path.splitext(os.path.basename(relpath))[0]
 
     @property
@@ -302,10 +411,11 @@ def parse_file(path, addon_root=None):
     if ext == ".et":
         header, root = parse_text(text, source_name=rel, is_et=True)
         return Resource(path, rel, "et", header, root)
-    if ext in (".conf",):
+    if ext == ".conf":
         header, root = parse_text(text, source_name=rel, is_et=False)
-        return Resource(path, rel, "conf", header, root)
-    if ext in (".meta",):
+        resource_ref = _normalize_conf_owner(root, rel)
+        return Resource(path, rel, "conf", header, root, resource_ref=resource_ref)
+    if ext == ".meta":
         header, root = parse_text(text, source_name=rel, is_et=False)
         return Resource(path, rel, "meta", header, root)
     if ext == ".c":
@@ -314,7 +424,6 @@ def parse_file(path, addon_root=None):
 
 
 # ---------------------------------------------------------------- query utils
-
 def find_children(node, name):
     return [c for c in node.children if c.name == name]
 
@@ -342,18 +451,15 @@ def walk(node):
 
 
 def index_nodes(resource):
-    """Return dict: (component_guid) -> {guid, type, name, node} is not trivial
-    to compute generically; instead we provide helpers that operate on a
-    components[] list."""
+    """Reserved generic index hook; semantic indexing lives outside the parser."""
     return {}
 
 
 def components_list(root):
-    """Return the list of top-level component instances under 'components'."""
+    """Return top-level component instances under `components`."""
     if not root:
         return []
     comp_block = find_child(root, "components")
     if comp_block is None:
-        # some files have components at root via class header; fallback:
         return [c for c in root.children if c.name == "components"]
     return [c for c in comp_block.children if c.name != "__elem__"]

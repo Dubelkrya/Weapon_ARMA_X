@@ -1,5 +1,11 @@
 # Temporary / generated files not part of the deliverable catalog
 agent/scripts/working_tables/
 agent/scripts/_inspect.py
+agent/v2_output/
+agent/architecture_output/
+Generated/
+Imported/VanillaSources/
+Imported/OfficialScriptDiff/
+resourceDatabase.rdb
 __pycache__/
 *.pyc
