@@ -9,7 +9,11 @@ if SCRIPT_DIR not in sys.path:
     sys.path.insert(0, SCRIPT_DIR)
 
 import scan_build_v2 as pipeline  # noqa: E402
-from scan_build_v2_strict import build_store, install_strict_pipeline  # noqa: E402
+from scan_build_v2_strict import (  # noqa: E402
+    build_store,
+    install_strict_pipeline,
+    validate_materialized_root,
+)
 
 
 def write(root, rel, content):
@@ -20,7 +24,57 @@ def write(root, rel, content):
     return path
 
 
+def write_manifest(root, rows):
+    path = os.path.join(root, "_wax_materialization.tsv")
+    with open(path, "w", encoding="utf-8") as handle:
+        handle.write("source\tdestination_relative\tmethod\tcontainer_class\tstatus\n")
+        for row in rows:
+            handle.write("\t".join(row) + "\n")
+    return path
+
+
 class ResolverV2StrictPipelineTests(unittest.TestCase):
+    def test_manifest_validation_accepts_exact_materialized_dataset(self):
+        with tempfile.TemporaryDirectory() as vanilla:
+            rel = "Prefabs/Weapons/Test/A.et"
+            write(vanilla, rel, "GenericEntity {\n}\n")
+            write_manifest(
+                vanilla,
+                [
+                    (
+                        "$ArmaReforger:" + rel,
+                        rel,
+                        "container",
+                        "GenericEntity",
+                        "ok",
+                    )
+                ],
+            )
+            result = validate_materialized_root(vanilla)
+            self.assertEqual(result["status"], "ok")
+            self.assertEqual(result["ok_resolver_files"], 1)
+
+    def test_manifest_validation_rejects_stale_unlisted_resource(self):
+        with tempfile.TemporaryDirectory() as vanilla:
+            rel = "Prefabs/Weapons/Test/A.et"
+            stale = "Prefabs/Weapons/Test/Stale.et"
+            write(vanilla, rel, "GenericEntity {\n}\n")
+            write(vanilla, stale, "GenericEntity {\n}\n")
+            write_manifest(
+                vanilla,
+                [
+                    (
+                        "$ArmaReforger:" + rel,
+                        rel,
+                        "container",
+                        "GenericEntity",
+                        "ok",
+                    )
+                ],
+            )
+            with self.assertRaisesRegex(RuntimeError, "unlisted=1"):
+                validate_materialized_root(vanilla)
+
     def test_weapon_ammo_pipeline_keeps_vanilla_origin_after_path_collision(self):
         with tempfile.TemporaryDirectory() as armst, tempfile.TemporaryDirectory() as vanilla:
             mag = "Prefabs/Weapons/Magazines/Test/Mag.et"
