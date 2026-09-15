@@ -1,105 +1,70 @@
-# RUN NOW — Armst_Work source rescan
+# RUN NOW — Armst_Work overlay rescan
 
-This is an execution contract for the local agent. Do not research weapon values, do not redesign authoring policy, and do not edit the addon. Execute the checked-in scanner against the current addon and return the diff for review.
+This runbook replaces the failed destructive run. The previous STOP proved that `scan_build.py` treats `REPO_ROOT` as an output root and deletes/recreates `catalog/`, `indexes/`, `reports/` and `schema/` under it. Therefore **do not point `REPO_ROOT` at the repository root when scanning `Armst_Work`**.
 
-## Fixed inputs
+## Architecture decision
 
-Repository:
+`Armst_Work` is a working overlay addon, not a complete replacement for the historical/base ARMST source snapshot. It contains only a subset of entities and depends on resources outside this addon. Its scan must therefore be stored as a separate overlay snapshot.
 
-`C:\Users\Muroy\Documents\Default Project\Weapon_ARMA_X`
+Base/canonical repository data remains untouched.
+
+Overlay output root:
+
+`C:\Users\Muroy\Documents\Default Project\Weapon_ARMA_X\snapshots\armst_work`
 
 Addon — READ ONLY:
 
 `C:\Users\Muroy\Documents\My Games\ArmaReforgerWorkbench\addons\Armst_Work`
 
-Git branch prepared for this run:
+Branch:
 
 `agent/armst-work-rescan`
 
-Base `main` SHA at task creation:
-
-`091fdc5a0d2beb4f6b567f036e96e00aacd14e13`
-
-Scanner entrypoint and interface are already known from current `main`:
+Scanner:
 
 `python agent/scripts/scan_build.py`
 
-Environment variables:
+## Authorized cleanup of the failed run
 
-- `MOD_ROOT` = addon root
-- `REPO_ROOT` = repository root
+The previous run started from a clean tree and its report proves that the dirty state was created by the scanner. Cleanup of that failed run is therefore explicitly authorized before retry.
 
-Do not invent other CLI flags.
-
-## Agent rules
-
-1. Never write into `Armst_Work`.
-2. Do not edit `.et`, `.conf`, `.meta`, `.c`, `.xob`, textures, models or any other addon resource.
-3. Do not switch to `agent/resolver-v2` or `agent/weapon-intelligence-v1`.
-4. Do not hand-edit generated catalog/index/report counts after the scan.
-5. Preserve canonical/manual files unless the task explicitly says otherwise.
-6. Scanner output is source/index validation only. It is NOT Workbench/runtime validation.
-7. If the repository is dirty before starting, STOP and report the exact dirty paths. Do not stash, discard or overwrite them automatically.
-8. If the addon source manifest changes during the run, STOP and report it.
-
-## Protected canonical files
-
-The scan must not silently delete or replace these manual/current artifacts:
-
-- `reports/KNOWLEDGE_STATUS.md`
-- `reports/PREFAB_AUTHORING_GUIDE.md`
-- `reports/CONFIG_AUTHORING_GUIDE.md`
-- `reports/SCRIPT_MODULE_AUTHORING_GUIDE.md`
-- `reports/OPTICS_COMPATIBILITY_SYSTEM_V2.md`
-- `indexes/script_reference/optic_compatibility_policy_v2.json`
-- `schema/compatibility.schema.json`
-- `reports/samples/AttachmentOpticsARMST.c`
-- `reports/samples/armst_AEK971_test_v12_NAME_DESCRIPTION.et`
-- `reports/samples/armst_Optic_PSO1_DovetailRU.et`
-- `agent/SAFE_PREFAB_EDITOR.md`
-- `agent/RESCAN_ARMST_WORK.md`
-- this file
-
-Generated source inventory may contain old engine dovetail types because they exist in source. That does not replace the active gameplay policy `AttachmentOpticsARMST_DovetailRU`.
-
-## Exact execution sequence
-
-Use PowerShell.
+Use PowerShell:
 
 ```powershell
 $Repo = 'C:\Users\Muroy\Documents\Default Project\Weapon_ARMA_X'
 $Mod  = 'C:\Users\Muroy\Documents\My Games\ArmaReforgerWorkbench\addons\Armst_Work'
+$Out  = Join-Path $Repo 'snapshots\armst_work'
 
 Set-Location $Repo
 
+# Restore tracked files deleted/rewritten by the failed scan.
+git restore --source=HEAD --staged --worktree .
+
+# Preview scanner-created untracked files only in the known generated areas.
+git clean -fdn -- catalog indexes reports schema agent/scripts/working_tables
+
+# The preview must contain only artifacts from the failed scan. If anything else appears: STOP.
+git clean -fd -- catalog indexes reports schema agent/scripts/working_tables
+
+if (git status --porcelain) {
+    Write-Host 'STOP: repository is not clean after authorized cleanup'
+    git status --short
+    exit 20
+}
+
 git fetch origin
-
-$dirty = git status --porcelain
-if ($dirty) {
-    Write-Host 'STOP: repository is dirty before scan'
-    $dirty
-    exit 10
-}
-
-# Use the prepared branch. If it does not yet exist locally, track the remote branch.
-$localBranch = git branch --list 'agent/armst-work-rescan'
-if ($localBranch) {
-    git switch agent/armst-work-rescan
-} else {
-    git switch --track origin/agent/armst-work-rescan
-}
-
+git pull --ff-only origin agent/armst-work-rescan
 if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+```
 
-$base = git rev-parse HEAD
-Write-Host "SCAN BASE: $base"
+## Source hash guard
 
+```powershell
 if (-not (Test-Path $Mod)) {
     Write-Host "STOP: addon root not found: $Mod"
-    exit 11
+    exit 21
 }
 
-# Hash only source text resources that the scanner consumes. This proves the scan did not rewrite them.
 $before = Join-Path $env:TEMP 'armst_work_source_before.sha256.txt'
 $after  = Join-Path $env:TEMP 'armst_work_source_after.sha256.txt'
 
@@ -110,16 +75,41 @@ Get-ChildItem $Mod -Recurse -File |
         $h = Get-FileHash $_.FullName -Algorithm SHA256
         "{0}  {1}" -f $h.Hash, $_.FullName
     } | Set-Content -Encoding UTF8 $before
+```
+
+## Isolated scan
+
+The critical difference from the failed run is `REPO_ROOT = $Out`, not the repository root.
+
+```powershell
+# Recreate only the isolated overlay snapshot.
+if (Test-Path $Out) {
+    Remove-Item $Out -Recurse -Force
+}
+New-Item -ItemType Directory -Path $Out | Out-Null
 
 $env:MOD_ROOT  = $Mod
-$env:REPO_ROOT = $Repo
+$env:REPO_ROOT = $Out
+
 python agent/scripts/scan_build.py
 $scanExit = $LASTEXITCODE
 if ($scanExit -ne 0) {
     Write-Host "STOP: scanner exited with code $scanExit"
     exit $scanExit
 }
+```
 
+`scan_build.py` currently writes its debug `working_tables` beside the scanner script rather than under `REPO_ROOT`. That directory is not canonical output. Remove only that generated debug directory after the scan:
+
+```powershell
+if (Test-Path (Join-Path $Repo 'agent\scripts\working_tables')) {
+    Remove-Item (Join-Path $Repo 'agent\scripts\working_tables') -Recurse -Force
+}
+```
+
+## Verify addon stayed read-only
+
+```powershell
 Get-ChildItem $Mod -Recurse -File |
     Where-Object { $_.Extension.ToLowerInvariant() -in '.et','.conf','.meta','.c' } |
     Sort-Object FullName |
@@ -132,78 +122,70 @@ $sourceDiff = Compare-Object (Get-Content $before) (Get-Content $after)
 if ($sourceDiff) {
     Write-Host 'STOP: addon source changed during scan'
     $sourceDiff
-    exit 12
+    exit 22
 }
 
 Write-Host 'Addon source hash check: PASS'
-
-Write-Host '--- git status ---'
-git status --short
-
-Write-Host '--- diff stat ---'
-git diff --stat
-
-Write-Host '--- changed files ---'
-git diff --name-status
-
-Write-Host '--- scan state ---'
-Get-Content agent/scan_state.json
 ```
 
 ## Acceptance checks
 
-Before committing anything, verify all of the following:
+All of these must pass:
 
-- `agent/scan_state.json` points to `...\addons\Armst_Work`;
-- scan completed without parser/runtime exception;
-- JSON output files parse;
-- addon source hash comparison says PASS;
-- no protected canonical file was unexpectedly deleted or rewritten;
-- no unexplained mass deletion occurred;
-- `reports/KNOWLEDGE_STATUS.md` still states the active authority model;
-- DovetailRU v2 policy remains active;
-- the AEK V12 and PSO DovetailRU samples remain present;
-- TT is not silently regressed to an unresolved state merely because an older source snapshot lacked `Configs(1).zip`.
+1. Repository top-level canonical `catalog/`, `indexes/`, `reports/`, `schema/` are unchanged.
+2. Protected authoring guides, DovetailRU policy, AEK V12 sample and PSO sample remain present.
+3. `snapshots/armst_work/agent/scan_state.json` records the `Armst_Work` path.
+4. Overlay JSON files parse successfully.
+5. Source hash check is PASS.
+6. The low entity count is accepted as an **overlay fact**, not compared as a replacement for the historical/base 124-entity snapshot.
+7. External/unresolved parent/resources are reported as overlay dependencies, not treated as regression by themselves.
+8. No file under `Armst_Work` is modified.
+9. After removal of `agent/scripts/working_tables`, the only repository changes are under `snapshots/armst_work/`.
 
-If any check fails, do not commit generated output. Return `STOP` and the evidence.
+Verify:
+
+```powershell
+Write-Host '--- repository status ---'
+git status --short
+
+Write-Host '--- changed files ---'
+git diff --name-status
+
+Write-Host '--- overlay scan state ---'
+Get-Content (Join-Path $Out 'agent\scan_state.json')
+```
+
+If any changed path lies outside `snapshots/armst_work/`, STOP.
 
 ## Commit rule
 
 Only if all acceptance checks pass:
 
 ```powershell
-git add catalog indexes reports schema agent/scan_state.json
-```
+git add snapshots/armst_work
 
-Then review the staged names before commit:
-
-```powershell
 git diff --cached --name-status
-```
 
-Do not stage unrelated local files. If the staged set is clean and explainable:
-
-```powershell
-git commit -m "Refresh scanner snapshot from Armst_Work"
+git commit -m "Add Armst_Work overlay scanner snapshot"
 git push -u origin agent/armst-work-rescan
 ```
 
-Do not merge to `main`.
+Do not merge to `main` automatically.
 
 ## Required return report
 
-Return exactly these facts to the user/reviewer:
+Return:
 
 - branch;
-- base SHA used;
-- exact scanner command;
-- resolved `MOD_ROOT`;
+- commit before scan;
+- exact scanner command and environment values;
+- resolved `MOD_ROOT` and overlay `REPO_ROOT`;
 - scanner exit code;
-- source hash check PASS/FAIL;
-- old/new entity counts when available;
+- source hash PASS/FAIL;
+- overlay entity/category counts;
 - warning/error counts;
-- changed-file list;
-- protected-file status;
-- conflicts between generated source inventory and active policy, if any;
+- list of changed repository paths;
+- confirmation that no top-level canonical knowledge file changed;
+- unresolved/external dependencies found in the overlay;
 - resulting commit SHA if committed;
 - final recommendation: `SAFE TO REVIEW` or `STOP`.
