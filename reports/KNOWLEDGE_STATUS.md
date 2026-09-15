@@ -4,30 +4,30 @@ Canonical status snapshot for authoring knowledge. This file exists to distingui
 
 ## Authority order
 
-1. **Current local addon / Workbench validation** — authoritative for what actually opens, mounts and behaves correctly in the current project.
+1. **Current primary local addon / Workbench validation** — authoritative for what actually opens, mounts and behaves correctly in the current project.
 2. **Workbench-validated authoring rules** in `reports/PREFAB_AUTHORING_GUIDE.md` — authoritative for safe prefab editing patterns already confirmed in the editor.
 3. **Active gameplay policies** such as `indexes/script_reference/optic_compatibility_policy_v2.json`, `reports/OPTICS_COMPATIBILITY_SYSTEM_V2.md` and `reports/AMMO_AP_BP_POLICY.md`.
-4. **Generated indexes/catalogs** — snapshots of supplied archives or prior addon roots. They provide provenance and instance IDs but are not automatically live.
+4. **Generated indexes/catalogs** — source snapshots with provenance; refresh them from the primary addon when that addon changes.
 5. **Google Sheets / exported XLSX views** — convenient working views. They must not override newer source-backed Git or Workbench evidence.
 6. **Archived / superseded reports** — historical evidence only.
 
 Unknown values remain unknown. Do not fill gaps from filenames or memory.
 
-## Current local project boundary
+## Primary project boundary
 
-Current working addon root reported by the project workflow:
-
-`C:\Users\Muroy\Documents\My Games\ArmaReforgerWorkbench\addons\Armst_Work`
-
-The generated scanner state currently committed in `agent/scan_state.json` was produced from the older root:
+Authoritative weapon addon root:
 
 `C:\Users\Muroy\Documents\My Games\ArmaReforgerWorkbench\addons\ARMST-PLATFORM---Weapons`
 
-Therefore `agent/scan_state.json`, `reports/scan_summary.*`, base catalogs and scanner-derived reports must be treated as **historical snapshots** until a new scan is run against `Armst_Work`.
+Normal local-agent editing, prefab/config/script lookup and canonical source scans must target this addon unless the user explicitly names another root for a temporary test.
 
-Do not hand-edit generated scanner output to pretend it is current. Regenerate it from the live addon instead.
+`C:\Users\Muroy\Documents\My Games\ArmaReforgerWorkbench\addons\Armst_Work`
 
-Safe local refresh task: `agent/RESCAN_ARMST_WORK.md`.
+is a sandbox/test addon only. It must not replace the main weapon catalog, indexes, policies or source-of-truth snapshot.
+
+The checked-in scanner default root already points to `ARMST-PLATFORM---Weapons`; the committed scanner data therefore represents a snapshot of the correct primary addon at the time it was generated. Refresh the snapshot after meaningful changes in the primary addon rather than substituting a partial sandbox scan.
+
+Primary-root policy: `agent/PRIMARY_MOD_POLICY.md`.
 
 ## Current authoring policy
 
@@ -66,7 +66,7 @@ Compatibility data shape is documented in `schema/compatibility.schema.json`.
 
 The ARMST TT chain is resolved by the later `Configs(1).zip` snapshot: `Ammo_763x25.conf` → `Ammo_763x25_Ball.et`.
 
-Active gameplay design for ammunition roles is documented in `reports/AMMO_AP_BP_POLICY.md`. The project now distinguishes a high-damage/low-penetration anti-personnel role (`АП`) from a lower-damage/high-penetration role (`БП`). This is a gameplay classification layer and must remain separate from real-world cartridge designations. Tracer, incendiary, subsonic and precision remain secondary tags rather than replacing the primary role.
+Active gameplay design for ammunition roles is documented in `reports/AMMO_AP_BP_POLICY.md`. The project distinguishes a high-damage/low-penetration anti-personnel role (`АП`) from a lower-damage/high-penetration role (`БП`). This is a gameplay classification layer and must remain separate from real-world cartridge designations. Tracer, incendiary, subsonic and precision remain secondary tags rather than replacing the primary role.
 
 The first Workbench validation targets are 9×39 and 5.56×45 because current source snapshots already contain suitable two-resource families. The policy must be tested one caliber family at a time before wider rollout.
 
@@ -100,13 +100,14 @@ Historical `reports/AEK971_TEST_CHECKPOINT_V8.md` remains as debugging history o
 
 ## Data freshness / known debt
 
-- Scanner outputs are stale relative to `Armst_Work`.
+- Generated catalogs/indexes are snapshots of the primary addon and should be refreshed after material edits to `ARMST-PLATFORM---Weapons`.
 - `indexes/script_reference/manifest.json` is a supplied-snapshot inventory and may still list old built-in dovetail types for source assets; active authoring policy is v2 `DovetailRU`.
 - The native technical/balance Sheets have had the known TT `ARRAYFORMULA` spill blockers removed; manual values must not be written into those formula spill ranges again.
 - Raw `.xlsx` copies on Drive are archived snapshots; the native Google Sheets are the active tabular working views.
 - Experimental branches `agent/resolver-v2` and `agent/weapon-intelligence-v1` are divergent research branches; do not merge wholesale into `main` without selective review.
 - AP/BP ammunition roles are design targets until each caliber family is locally authored and Workbench-tested; do not mark untested families as implemented.
+- The failed `Armst_Work` rescan is not canonical and must not be merged as a replacement for the main snapshot.
 
 ## Required next refresh
 
-Run `agent/RESCAN_ARMST_WORK.md` locally against `Armst_Work`, then reconcile generated catalogs/indexes with this status file. Until then, new Workbench-confirmed facts should be added to the authoring guides/samples rather than falsifying generated snapshot metadata.
+When the primary addon changes enough to warrant a refresh, run the scanner against `ARMST-PLATFORM---Weapons` and review the generated diff before merge. Do not substitute `Armst_Work` or another partial addon as the canonical source root.
