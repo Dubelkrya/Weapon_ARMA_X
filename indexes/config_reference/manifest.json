@@ -1,0 +1,21 @@
+{
+  "generated_from": ["Weapons.zip", "Configs.zip", "ARMST catalog"],
+  "generated_at": "2026-09-15",
+  "ammo_configs": 11,
+  "ai_ballistic_tables": 80,
+  "resolved_projectile_records": 135,
+  "resolved_magazine_records": 86,
+  "files": [
+    "ammo_configs.json",
+    "aiballistic_inventory.json",
+    "key_magazine_mappings.json"
+  ],
+  "rules": [
+    "child local > nearest parent > shared base",
+    "AmmoResourceArray is allowed ammo, not loaded ammo",
+    "loaded ammo comes from magazine AmmoMapping indexes",
+    "primary kinetic damage is separate from additive tracer/incendiary effects",
+    "use the projectile's referenced BallisticTableConfig; do not auto-substitute similarly named AIBT files",
+    "Configs.zip has no 7.63x25/7.62x25 config; TT ammo remains ARMST-local"
+  ]
+}
