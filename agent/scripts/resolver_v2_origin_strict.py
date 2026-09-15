@@ -8,8 +8,18 @@ available on disk.
 
 For the project root model this means vanilla can never silently depend upward
 on ARMST, while ARMST may still reference vanilla. Live GUID evidence is learned
-only from serialized `.et/.conf` references; `.meta Name` is metadata and must
-never become resource-identity proof.
+only from serialized `.et/.conf` data; `.meta Name` is metadata and must never
+become resource-identity proof.
+
+Materialized `.conf` files preserve an important stronger identity signal in
+their root declaration, for example::
+
+    MagazineConfig "{GUID}Configs/Weapons/Ammo/Ammo_545x39.conf" {
+
+That left-hand ResourceName identifies the config resource itself. It is not an
+instance GUID and it is not a dependency edge. When its path exactly matches the
+record path, the GUID is authoritative local ownership evidence. This matters
+especially when ARMST and vanilla contain the same virtual config path.
 
 ARMST is a complete editable tree while the materialized vanilla tree is only a
 partial dependency snapshot. Therefore an ARMST reference to an ARMST same-path
@@ -23,7 +33,7 @@ from __future__ import annotations
 
 from typing import List, Optional
 
-from resolver_v2 import ResourceRecord, _norm_key, iter_nodes
+from resolver_v2 import ResourceRecord, _norm_key, _ref_from_token, iter_nodes
 from resolver_v2_strict import StrictHydratedResourceStore, _identity
 
 
@@ -42,36 +52,62 @@ class OriginPinnedStrictHydratedResourceStore(StrictHydratedResourceStore):
             same_origin = [record for record in candidates if record.origin == origin]
             if len(same_origin) == 1:
                 return same_origin[0]
-            # Once origin is explicit, absence/ambiguity in that origin is a
-            # miss. Never fall back to another root by priority.
             return None
         return candidates[0] if candidates else None
 
     @staticmethod
-    def _iter_record_refs(record: ResourceRecord):
-        """Yield live serialized refs only; never treat `.meta Name` as identity."""
+    def _declared_conf_owner_ref(record: ResourceRecord) -> Optional[dict]:
+        """Return a config root's serialized self ResourceName when exact."""
+        if record.kind != "conf" or record.resource.root is None:
+            return None
+        root_node = None
+        for child in record.resource.root.children:
+            if child.name == "__elem__":
+                continue
+            root_node = child
+            break
+        if root_node is None or not root_node.id:
+            return None
+        ref = _ref_from_token(str(root_node.id))
+        if not ref or not ref.get("guid") or not ref.get("path"):
+            return None
+        if _norm_key(ref["path"]) != _norm_key(record.relpath):
+            return None
+        return ref
+
+    @classmethod
+    def _iter_record_refs(cls, record: ResourceRecord):
+        """Yield dependency refs, excluding config owner identity and `.meta`."""
         if record.kind not in ("et", "conf"):
             return
         if record.kind == "et" and record.parent:
             yield record.parent
+
+        owner_ref = cls._declared_conf_owner_ref(record)
+        owner_guid = str((owner_ref or {}).get("guid") or "").upper()
+        owner_path = _norm_key(str((owner_ref or {}).get("path") or ""))
+
         root = record.resource.root
         if root is None:
             return
         for node in iter_nodes(root):
-            if node.ref:
-                yield node.ref
+            if not node.ref:
+                continue
+            ref_guid = str(node.ref.get("guid") or "").upper()
+            ref_path = _norm_key(str(node.ref.get("path") or ""))
+            if owner_ref and ref_guid == owner_guid and ref_path == owner_path:
+                continue
+            yield node.ref
 
     def _eligible_dependency_records(
         self,
         records: List[ResourceRecord],
         origin_hint: Optional[str],
     ) -> List[ResourceRecord]:
-        """Filter candidates to roots a source origin is allowed to depend on."""
         if origin_hint is None:
             return list(records)
         source_priority = self._priority_by_origin.get(origin_hint)
         if source_priority is None:
-            # Unknown origins are never allowed to jump to a different root.
             return [record for record in records if record.origin == origin_hint]
         return [record for record in records if record.priority <= source_priority]
 
@@ -80,26 +116,21 @@ class OriginPinnedStrictHydratedResourceStore(StrictHydratedResourceStore):
         source: ResourceRecord,
         target: ResourceRecord,
     ) -> bool:
-        """Return whether path context is strong enough to reuse as GUID proof.
-
-        Read-only/base sources can prove an eligible same/lower-root target
-        because they cannot depend upward into ARMST. ARMST can prove a lower
-        read-only target when no ARMST candidate exists, because the editable
-        ARMST tree itself is complete. ARMST -> ARMST path matching is *not*
-        reusable GUID evidence while vanilla is only partially materialized.
-        """
         if source.priority < self._highest_priority:
             return target.priority <= source.priority
         return target.priority < source.priority
 
     def _index_strict_guid_evidence(self) -> None:
-        """Index GUID ownership only from dependency-eligible live references.
+        """Index config owner declarations, then safe dependency evidence."""
+        for record in self._all_records():
+            owner = self._declared_conf_owner_ref(record)
+            if not owner:
+                continue
+            guid = str(owner.get("guid") or "").upper()
+            path = str(owner.get("path") or "")
+            self._guid_observed_paths.setdefault(guid, set()).add(_norm_key(path))
+            self._add_guid_target(guid, record)
 
-        Incomplete materialization must not prove a vanilla GUID as belonging to
-        an ARMST-only path. Generated `.meta` sidecars are excluded from evidence
-        entirely. ARMST -> ARMST unique-path matches remain path resolutions, not
-        global GUID ownership facts.
-        """
         for source in self._all_records():
             for ref in self._iter_record_refs(source):
                 guid = str(ref.get("guid") or "").upper()
@@ -135,8 +166,16 @@ class OriginPinnedStrictHydratedResourceStore(StrictHydratedResourceStore):
                 guid, path, candidates, "guid_matches_multiple_records", guid_matches
             )
 
-        # Proven GUID ownership may resolve an alternate/short path, but only
-        # inside dependency-eligible roots.
+        if all_guid_records and not guid_records:
+            return {
+                "status": "external",
+                "reason": "guid_target_not_dependency_eligible",
+                "guid": str(guid).upper() if guid else None,
+                "path": path,
+                "candidates": self._candidate_payload(candidates),
+                "guid_candidates": self._candidate_payload(all_guid_records),
+            }
+
         if not candidates and len(guid_records) == 1:
             return self._resolved_ref(guid_records[0], guid, "guid_evidence", guid_records)
 
