@@ -6,7 +6,11 @@ SCRIPT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "scri
 if SCRIPT_DIR not in sys.path:
     sys.path.insert(0, SCRIPT_DIR)
 
-from build_architecture_package import link_script_classes, serialized_class_names  # noqa: E402
+from build_architecture_package import (  # noqa: E402
+    architecture_decision,
+    link_script_classes,
+    serialized_class_names,
+)
 
 
 class ResolverV2ArchitecturePackageTests(unittest.TestCase):
@@ -66,6 +70,42 @@ class ResolverV2ArchitecturePackageTests(unittest.TestCase):
             {row["name"] for row in linked["declarations"]},
             {"WeaponComponent", "BaseWeapon", "KnownConfig"},
         )
+
+    def test_decision_prioritizes_exact_missing_resources(self):
+        decision = architecture_decision(
+            {
+                "exact_export_request_count": 2,
+                "ambiguous_identity_edge_count": 3,
+                "resolver_warning_count": 4,
+            }
+        )
+        self.assertEqual(decision["code"], "EXACT_WORKBENCH_EXPORT_REQUIRED")
+        self.assertTrue(decision["workbench_needed"])
+        self.assertFalse(decision["architecture_ready"])
+
+    def test_identity_gap_is_not_mislabeled_as_workbench_work(self):
+        decision = architecture_decision(
+            {
+                "exact_export_request_count": 0,
+                "ambiguous_identity_edge_count": 3,
+                "resolver_warning_count": 0,
+            }
+        )
+        self.assertEqual(decision["code"], "IDENTITY_EVIDENCE_REQUIRED")
+        self.assertFalse(decision["workbench_needed"])
+        self.assertFalse(decision["architecture_ready"])
+
+    def test_clean_architecture_needs_no_workbench(self):
+        decision = architecture_decision(
+            {
+                "exact_export_request_count": 0,
+                "ambiguous_identity_edge_count": 0,
+                "resolver_warning_count": 0,
+            }
+        )
+        self.assertEqual(decision["code"], "WORKBENCH_NOT_NEEDED")
+        self.assertFalse(decision["workbench_needed"])
+        self.assertTrue(decision["architecture_ready"])
 
 
 if __name__ == "__main__":
