@@ -35,32 +35,39 @@ def _walk_tree_dict(node):
         yield from _walk_tree_dict(child)
 
 
+def _add_serialized_class_seed(out: Set[str], node: dict) -> None:
+    """Add the serialized class represented by one prefab/config node.
+
+    `Field SomeType "{INSTANCE}"` serializes a field named ``Field`` whose
+    class is ``SomeType``. The field name must not be reported as a missing
+    Enforce class merely because it also has an instance id. For untyped
+    component/config instances, the serialized node name itself is the class.
+    """
+    name = node.get("name")
+    typ = node.get("type")
+    instance_id = node.get("id")
+
+    if isinstance(typ, str) and typ:
+        out.add(typ)
+        return
+
+    if not isinstance(name, str) or not name:
+        return
+    if instance_id is not None or name.endswith("Component") or name.startswith("SCR_"):
+        out.add(name)
+
+
 def serialized_class_names(blueprints: Iterable[dict]) -> Set[str]:
-    """Collect class-like names/types actually serialized by ARMST architecture."""
+    """Collect actual serialized class names/types used by ARMST architecture."""
     out: Set[str] = set()
     for blueprint in blueprints:
         local_tree = blueprint.get("local_tree")
         for node in _walk_tree_dict(local_tree):
-            name = node.get("name")
-            typ = node.get("type")
-            instance_id = node.get("id")
-            if isinstance(typ, str) and typ:
-                out.add(typ)
-            if (
-                isinstance(name, str)
-                and name
-                and (instance_id is not None or name.endswith("Component") or name.startswith("SCR_"))
-            ):
-                out.add(name)
+            _add_serialized_class_seed(out, node)
         for subtree in blueprint.get("effective_component_subtrees") or []:
             tree = subtree.get("tree")
             for node in _walk_tree_dict(tree):
-                name = node.get("name")
-                typ = node.get("type")
-                if isinstance(typ, str) and typ:
-                    out.add(typ)
-                if isinstance(name, str) and name.endswith("Component"):
-                    out.add(name)
+                _add_serialized_class_seed(out, node)
     return out
 
 
