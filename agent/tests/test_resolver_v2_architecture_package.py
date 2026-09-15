@@ -62,10 +62,12 @@ class ResolverV2ArchitecturePackageTests(unittest.TestCase):
         self.assertIn("WeaponComponent", seeds)
         self.assertIn("KnownConfig", seeds)
         self.assertIn("UnknownComponent", seeds)
+        self.assertNotIn("ConfigField", seeds)
 
         linked = link_script_classes(blueprints, script_index)
         self.assertIn("BaseWeapon", linked["resolved_class_names"])
         self.assertIn("UnknownComponent", linked["missing_class_names"])
+        self.assertNotIn("ConfigField", linked["missing_class_names"])
         self.assertEqual(
             {row["name"] for row in linked["declarations"]},
             {"WeaponComponent", "BaseWeapon", "KnownConfig"},
