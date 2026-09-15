@@ -1,8 +1,17 @@
 #ifdef WORKBENCH
 
+// Exact/manual vanilla source materializer for offline resolver evidence.
+//
+// This utility intentionally does not scan the weapon tree or the whole game.
+// It materializes only explicitly selected $ArmaReforger .et/.conf resources,
+// preserves vanilla-relative paths, appends result rows to the authoritative
+// manifest, and does not register generated copies back into Resource Manager.
+// Registration is unnecessary for the Python resolver and can create sidecars
+// or Workbench churn.
+
 [WorkbenchPluginAttribute(
 	name: "WAX: Materialize Selected Vanilla Sources",
-	description: "Materialize selected base-game .et/.conf resources into Imported/VanillaSources while preserving their vanilla-relative paths.",
+	description: "Materialize only explicitly selected base-game .et/.conf resources into Imported/VanillaSources for offline resolver evidence.",
 	wbModules: { "ResourceManager" },
 	resourceTypes: { "et", "conf" },
 	category: "Weapon ARMA X")]
@@ -10,8 +19,6 @@ class WAX_BaseGameSourceMaterializerPlugin : ResourceManagerPlugin
 {
 	protected static const string DESTINATION_ROOT = "$Weapon_ARMA_X:Imported/VanillaSources";
 	protected static const string BASE_GAME_ROOT = "$ArmaReforger:";
-	protected static const string PREFAB_ROOT = "$ArmaReforger:Prefabs/Weapons";
-	protected static const string CONFIG_ROOT = "$ArmaReforger:Configs/Weapons";
 	protected static const string MANIFEST_NAME = "_wax_materialization.tsv";
 
 	protected ref array<string> m_SourcePaths;
@@ -35,7 +42,7 @@ class WAX_BaseGameSourceMaterializerPlugin : ResourceManagerPlugin
 			return;
 		}
 
-		MaterializeCollected(resourceManager, "selection");
+		MaterializeCollected("selection");
 	}
 
 	protected void ResetSources()
@@ -65,7 +72,23 @@ class WAX_BaseGameSourceMaterializerPlugin : ResourceManagerPlugin
 		return true;
 	}
 
-	protected void MaterializeCollected(ResourceManager resourceManager, string mode)
+	protected FileHandle OpenManifest(string manifestAbsolute)
+	{
+		FileHandle manifest;
+		if (FileIO.FileExists(manifestAbsolute))
+		{
+			manifest = FileIO.OpenFile(manifestAbsolute, FileMode.APPEND);
+		}
+		else
+		{
+			manifest = FileIO.OpenFile(manifestAbsolute, FileMode.WRITE);
+			if (manifest)
+				manifest.WriteLine("source\tdestination_relative\tmethod\tcontainer_class\tstatus");
+		}
+		return manifest;
+	}
+
+	protected void MaterializeCollected(string mode)
 	{
 		string destinationRootAbsolute;
 		if (!Workbench.GetAbsolutePath(DESTINATION_ROOT, destinationRootAbsolute, false))
@@ -81,9 +104,12 @@ class WAX_BaseGameSourceMaterializerPlugin : ResourceManagerPlugin
 		}
 
 		string manifestAbsolute = FilePath.Concat(destinationRootAbsolute, MANIFEST_NAME);
-		FileHandle manifest = FileIO.OpenFile(manifestAbsolute, FileMode.WRITE);
-		if (manifest)
-			manifest.WriteLine("source\tdestination_relative\tmethod\tcontainer_class\tstatus");
+		FileHandle manifest = OpenManifest(manifestAbsolute);
+		if (!manifest)
+		{
+			PrintFormat("[WAX][MATERIALIZE] cannot_open_manifest=%1", manifestAbsolute, level: LogLevel.ERROR);
+			return;
+		}
 
 		int copied = 0;
 		int physical = 0;
@@ -107,8 +133,7 @@ class WAX_BaseGameSourceMaterializerPlugin : ResourceManagerPlugin
 			if (!FileIO.MakeDirectory(destinationDirectory))
 			{
 				PrintFormat("[WAX][MATERIALIZE] MKDIR_FAIL destination=%1", destinationDirectory, level: LogLevel.WARNING);
-				if (manifest)
-					manifest.WriteLine(string.Format("%1\t%2\t\t\tmkdir_failed", SafeField(sourcePath), SafeField(relativePath)));
+				manifest.WriteLine(string.Format("%1\t%2\t\t\tmkdir_failed", SafeField(sourcePath), SafeField(relativePath)));
 				failed++;
 				continue;
 			}
@@ -118,8 +143,7 @@ class WAX_BaseGameSourceMaterializerPlugin : ResourceManagerPlugin
 			if (!Materialize(sourcePath, sourceResource, destinationAbsolute, method, containerClass))
 			{
 				PrintFormat("[WAX][MATERIALIZE] FAIL source=%1 method=%2 class=%3", sourcePath, method, containerClass, level: LogLevel.WARNING);
-				if (manifest)
-					manifest.WriteLine(string.Format("%1\t%2\t%3\t%4\tfailed", SafeField(sourcePath), SafeField(relativePath), SafeField(method), SafeField(containerClass)));
+				manifest.WriteLine(string.Format("%1\t%2\t%3\t%4\tfailed", SafeField(sourcePath), SafeField(relativePath), SafeField(method), SafeField(containerClass)));
 				failed++;
 				continue;
 			}
@@ -129,22 +153,11 @@ class WAX_BaseGameSourceMaterializerPlugin : ResourceManagerPlugin
 			if (method == "container")
 				container++;
 
-			if (!resourceManager.RegisterResourceFile(destinationAbsolute, false))
-			{
-				PrintFormat("[WAX][MATERIALIZE] REGISTER_FAIL file=%1", destinationAbsolute, level: LogLevel.WARNING);
-				if (manifest)
-					manifest.WriteLine(string.Format("%1\t%2\t%3\t%4\tregister_failed", SafeField(sourcePath), SafeField(relativePath), SafeField(method), SafeField(containerClass)));
-				failed++;
-				continue;
-			}
-
-			if (manifest)
-				manifest.WriteLine(string.Format("%1\t%2\t%3\t%4\tok", SafeField(sourcePath), SafeField(relativePath), SafeField(method), SafeField(containerClass)));
+			manifest.WriteLine(string.Format("%1\t%2\t%3\t%4\tok", SafeField(sourcePath), SafeField(relativePath), SafeField(method), SafeField(containerClass)));
 			copied++;
 		}
 
-		if (manifest)
-			manifest.Close();
+		manifest.Close();
 
 		PrintFormat(
 			"[WAX][MATERIALIZE] DONE mode=%1 inputs=%2 copied=%3 physical=%4 container=%5 failed=%6 root=%7",
@@ -272,55 +285,6 @@ class WAX_BaseGameSourceMaterializerPlugin : ResourceManagerPlugin
 
 		m_SourcePaths.Insert(sourcePath);
 		m_SourceResources.Insert(resourceName);
-	}
-}
-
-[WorkbenchPluginAttribute(
-	name: "WAX: Materialize Vanilla Weapon Dataset",
-	description: "Materialize mounted base-game weapon .et/.conf resources from Prefabs/Weapons and Configs/Weapons into Imported/VanillaSources, preserving relative paths for resolver v2.",
-	wbModules: { "ResourceManager" },
-	category: "Weapon ARMA X")]
-class WAX_BaseGameWeaponDatasetMaterializerPlugin : WAX_BaseGameSourceMaterializerPlugin
-{
-	override void Run()
-	{
-		ResourceManager resourceManager = Workbench.GetModule(ResourceManager);
-		if (!resourceManager)
-		{
-			Print("[WAX][MATERIALIZE] Resource Manager unavailable", LogLevel.ERROR);
-			return;
-		}
-
-		ResetSources();
-
-		array<ResourceName> prefabResources = SCR_WorkbenchHelper.SearchWorkbenchResources({ "et" }, null, PREFAB_ROOT, true);
-		if (prefabResources)
-		{
-			foreach (ResourceName prefab : prefabResources)
-				AddBaseGameResource(prefab);
-		}
-
-		array<ResourceName> configResources = SCR_WorkbenchHelper.SearchWorkbenchResources({ "conf" }, null, PREFAB_ROOT, true);
-		if (configResources)
-		{
-			foreach (ResourceName prefabConfig : configResources)
-				AddBaseGameResource(prefabConfig);
-		}
-
-		array<ResourceName> weaponConfigs = SCR_WorkbenchHelper.SearchWorkbenchResources({ "conf" }, null, CONFIG_ROOT, true);
-		if (weaponConfigs)
-		{
-			foreach (ResourceName weaponConfig : weaponConfigs)
-				AddBaseGameResource(weaponConfig);
-		}
-
-		if (m_SourcePaths.IsEmpty())
-		{
-			Print("[WAX][MATERIALIZE] No mounted vanilla weapon resources found.", LogLevel.WARNING);
-			return;
-		}
-
-		MaterializeCollected(resourceManager, "weapon_dataset");
 	}
 }
 
