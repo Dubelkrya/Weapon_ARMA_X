@@ -1,6 +1,12 @@
 {
-  "generated_from": ["Weapons.zip", "Configs.zip", "ARMST catalog"],
+  "generated_from": [
+    "Weapons.zip",
+    "Configs.zip",
+    "ARMST catalog"
+  ],
   "generated_at": "2026-09-15",
+  "status": "base snapshot with later supplemental TT resolution",
+  "counts_scope": "Counts below describe the original generated Configs.zip reference snapshot and were not recomputed after the supplemental Configs(1).zip TT update.",
   "ammo_configs": 11,
   "ai_ballistic_tables": 80,
   "resolved_projectile_records": 135,
@@ -10,12 +16,32 @@
     "aiballistic_inventory.json",
     "key_magazine_mappings.json"
   ],
+  "supplemental_sources": [
+    "Configs(1).zip"
+  ],
+  "supplemental_updates": {
+    "tt_763x25": {
+      "status": "resolved",
+      "ammo_config": {
+        "guid": "9379B9A38F29D508",
+        "path": "Configs/Weapons/Ammo/Ammo_763x25.conf"
+      },
+      "allowed_projectiles": [
+        {
+          "guid": "5AE7AF31B9D7EB6C",
+          "path": "Prefabs/Weapons/Ammo/Ammo_763x25_Ball.et"
+        }
+      ],
+      "note": "The older Configs.zip snapshot lacked this config. Configs(1).zip later supplied the raw ARMST chain, so TT is no longer unresolved."
+    }
+  },
   "rules": [
     "child local > nearest parent > shared base",
     "AmmoResourceArray is allowed ammo, not loaded ammo",
     "loaded ammo comes from magazine AmmoMapping indexes",
     "primary kinetic damage is separate from additive tracer/incendiary effects",
     "use the projectile's referenced BallisticTableConfig; do not auto-substitute similarly named AIBT files",
-    "Configs.zip has no 7.63x25/7.62x25 config; TT ammo remains ARMST-local"
+    "a resource missing from an older snapshot may be resolved by a later supplied snapshot; preserve provenance instead of keeping a stale unresolved claim",
+    "TT ammo is resolved by Configs(1).zip: Ammo_763x25.conf -> Ammo_763x25_Ball.et"
   ]
 }
