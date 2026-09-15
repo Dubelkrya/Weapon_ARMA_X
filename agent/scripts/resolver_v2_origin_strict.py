@@ -60,6 +60,15 @@ class OriginPinnedStrictHydratedResourceStore(StrictHydratedResourceStore):
         """Return a config root's serialized self ResourceName when exact."""
         if record.kind != "conf" or record.resource.root is None:
             return None
+
+        normalized = getattr(record.resource, "resource_ref", None)
+        if normalized:
+            if _norm_key(normalized.get("path", "")) == _norm_key(record.relpath):
+                return normalized
+            return None
+
+        # Compatibility fallback for older parsed fixtures/resources where the
+        # generic parser still represented the config owner token as root id.
         root_node = None
         for child in record.resource.root.children:
             if child.name == "__elem__":
