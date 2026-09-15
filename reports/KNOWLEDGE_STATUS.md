@@ -6,7 +6,7 @@ Canonical status snapshot for authoring knowledge. This file exists to distingui
 
 1. **Current local addon / Workbench validation** — authoritative for what actually opens, mounts and behaves correctly in the current project.
 2. **Workbench-validated authoring rules** in `reports/PREFAB_AUTHORING_GUIDE.md` — authoritative for safe prefab editing patterns already confirmed in the editor.
-3. **Active gameplay policies** such as `indexes/script_reference/optic_compatibility_policy_v2.json` and `reports/OPTICS_COMPATIBILITY_SYSTEM_V2.md`.
+3. **Active gameplay policies** such as `indexes/script_reference/optic_compatibility_policy_v2.json`, `reports/OPTICS_COMPATIBILITY_SYSTEM_V2.md` and `reports/AMMO_AP_BP_POLICY.md`.
 4. **Generated indexes/catalogs** — snapshots of supplied archives or prior addon roots. They provide provenance and instance IDs but are not automatically live.
 5. **Google Sheets / exported XLSX views** — convenient working views. They must not override newer source-backed Git or Workbench evidence.
 6. **Archived / superseded reports** — historical evidence only.
@@ -66,6 +66,10 @@ Compatibility data shape is documented in `schema/compatibility.schema.json`.
 
 The ARMST TT chain is resolved by the later `Configs(1).zip` snapshot: `Ammo_763x25.conf` → `Ammo_763x25_Ball.et`.
 
+Active gameplay design for ammunition roles is documented in `reports/AMMO_AP_BP_POLICY.md`. The project now distinguishes a high-damage/low-penetration anti-personnel role (`АП`) from a lower-damage/high-penetration role (`БП`). This is a gameplay classification layer and must remain separate from real-world cartridge designations. Tracer, incendiary, subsonic and precision remain secondary tags rather than replacing the primary role.
+
+The first Workbench validation targets are 9×39 and 5.56×45 because current source snapshots already contain suitable two-resource families. The policy must be tested one caliber family at a time before wider rollout.
+
 ## Current Workbench-validated AEK-971 control point
 
 The current validated prototype is newer than the historical V8 checkpoint.
@@ -101,6 +105,7 @@ Historical `reports/AEK971_TEST_CHECKPOINT_V8.md` remains as debugging history o
 - The native technical/balance Sheets have had the known TT `ARRAYFORMULA` spill blockers removed; manual values must not be written into those formula spill ranges again.
 - Raw `.xlsx` copies on Drive are archived snapshots; the native Google Sheets are the active tabular working views.
 - Experimental branches `agent/resolver-v2` and `agent/weapon-intelligence-v1` are divergent research branches; do not merge wholesale into `main` without selective review.
+- AP/BP ammunition roles are design targets until each caliber family is locally authored and Workbench-tested; do not mark untested families as implemented.
 
 ## Required next refresh
 
