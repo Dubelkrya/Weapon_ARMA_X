@@ -5,6 +5,7 @@
     "Configs(1).zip",
     "prior Weapons.zip/Configs.zip resolved catalog"
   ],
+  "snapshot_role": "supplied-source inventory; active gameplay authoring policy is defined separately by optic_compatibility_policy_v2.json",
   "counts": {
     "local_script_types": 9,
     "attachment_modules": 10,
@@ -12,13 +13,30 @@
     "local_sights_blocks": 20,
     "engine_reference_types": 21
   },
+  "counts_scope": "Counts describe the supplied script/prefab snapshot before the later project-level DovetailRU marker was added; do not reinterpret them as a live Armst_Work scan.",
   "authoring_model": {
     "compatibility_script": "Declare a registry Class object, a Source symbol, and an empty concrete type inheriting an existing attachment/magazine-well base. This creates a compatibility type, not weapon behavior.",
     "weapon_slot": "Serialize AttachmentSlotComponent and, when needed, AttachmentType <Type> in the weapon prefab.",
     "module_prefab": "Serialize WeaponAttachmentAttributes/SCR_WeaponAttachmentSuppressorAttributes -> AttachmentType <Type> in the attachment prefab.",
     "sights": "Use SightsComponent/SightsRanges/pivots in the weapon prefab; supplied ARMST scripts do not implement sight mechanics.",
-    "reuse_rule": "Prefer an existing engine type (RIS1913, DovetailAK, caliber muzzle, standard MagazineWell) before creating a new ARMST marker class."
+    "reuse_rule": "Prefer an existing active compatibility type. RIS1913 uses the engine hierarchy; approved ARMST Russian/Soviet side rail uses AttachmentOpticsARMST_DovetailRU; G36 remains proprietary; standard muzzle and MagazineWell types are reused when they already express the intended interface."
   },
+  "active_policy": {
+    "optics": "indexes/script_reference/optic_compatibility_policy_v2.json",
+    "dovetail_gameplay_family": "AttachmentOpticsARMST_DovetailRU",
+    "note": "Built-in DovetailAK/DovetailAKSVD/DovetailSVD records below are source-snapshot facts and migration inputs, not the active gameplay authoring target for approved DovetailRU members."
+  },
+  "supplemental_project_types": [
+    {
+      "script_file": "Scripts/Gamecode/AttachmentOpticsARMST.c",
+      "type_name": "AttachmentOpticsARMST_DovetailRU",
+      "registry_class": "AttachmentOpticsARMST_DovetailRUClass",
+      "source_symbol": "AttachmentOpticsARMST_DovetailRUSource",
+      "base_class": "AttachmentOptics",
+      "role": "active ARMST gameplay compatibility family",
+      "source": "reports/samples/AttachmentOpticsARMST.c"
+    }
+  ],
   "official_sources": {
     "bohemia_sample_new_weapon_scripts": "https://github.com/BohemiaInteractive/Arma-Reforger-Samples/tree/main/SampleMod_NewWeapon/Scripts/Game/Weapon",
     "optics_types": "https://github.com/BohemiaInteractive/Arma-Reforger-Script-Diff/blob/3d77cc212d5cda9922daf5f45635c7300d2d4cce/scripts/Game/Weapon/Attachments/Attachments_optics.c",
@@ -53,8 +71,8 @@
     {"resource":"Prefabs/Weapons/Attachments/Handguards/Handguard_AK74M2.et","guid":"7851F29BDAAAD7DB","category":"Handguards","attachment_types":[]},
     {"resource":"Prefabs/Weapons/Attachments/Muzzle/Suppressor_9a91.et","guid":"E10F09941AF1E123","category":"Muzzle","attachment_types":["AttachmentMuzzle9_39_armst"]},
     {"resource":"Prefabs/Weapons/Attachments/Muzzle/Suppressor_PBS4/Suppressor_PBS4_base.et","guid":"5677861A692ED3EB","category":"Muzzle","attachment_types":[]},
-    {"resource":"Prefabs/Weapons/Attachments/Optics/Optic_PSO1.et","guid":"C850A33226B8F9C1","category":"Optics","attachment_types":["AttachmentOpticsDovetailAK"]},
-    {"resource":"Prefabs/Weapons/Attachments/Optics/Optic_PSO1_ak.et","guid":"F325FE2E3DDCDDAD","category":"Optics","attachment_types":["AttachmentOpticsDovetailAKSVD"]},
+    {"resource":"Prefabs/Weapons/Attachments/Optics/Optic_PSO1.et","guid":"C850A33226B8F9C1","category":"Optics","attachment_types":["AttachmentOpticsDovetailAK"],"policy_note":"source snapshot; prefer thin ARMST child for DovetailRU gameplay migration"},
+    {"resource":"Prefabs/Weapons/Attachments/Optics/Optic_PSO1_ak.et","guid":"F325FE2E3DDCDDAD","category":"Optics","attachment_types":["AttachmentOpticsDovetailAKSVD"],"policy_note":"source snapshot; prefer thin ARMST child for DovetailRU gameplay migration"},
     {"resource":"Prefabs/Weapons/Attachments/Optics/WeaponOptic_Base.et","guid":"966B4E5523D2F166","category":"Optics","attachment_types":[]},
     {"resource":"Prefabs/Weapons/Attachments/Stocks/Handguard_AK74M.et","guid":"FCE52BA4B5789E65","category":"Stocks","attachment_types":[]},
     {"resource":"Prefabs/Weapons/Attachments/Stocks/Handguard_AKS.et","guid":"31E8EF2214161A25","category":"Stocks","attachment_types":[]},
@@ -65,8 +83,9 @@
     "MagazineWell763x25 uses registry class name MagazineWell763x25_Class (underscore), while Bohemia/sample convention is <Type>Class. Preserve existing source unless Workbench validation justifies renaming.",
     "MagazineWellSR2 is declared but unused in supplied Prefabs.zip; armst_SR_2 and its magazine serialize MagazineWellPP91 instead.",
     "No per-weapon behavioral .c class exists in supplied Scripts.zip. Supplied weapon behavior is predominantly prefab/component/config driven; custom .c files here define compatibility marker types.",
-    "PSO-1 uses built-in dovetail attachment types; Groza RIS uses built-in RIS1913 types. No new local script is needed when an existing engine attachment type already expresses compatibility.",
-    "SightsComponent / SightsRanges / sight pivots are prefab serialization, not custom attachment-type script declarations."
+    "Built-in PSO dovetail types are source-snapshot facts, not the active DovetailRU gameplay authoring target for approved ARMST members.",
+    "SightsComponent / SightsRanges / sight pivots are prefab serialization, not custom attachment-type script declarations.",
+    "This manifest is not a live scan of C:/Users/Muroy/Documents/My Games/ArmaReforgerWorkbench/addons/Armst_Work."
   ],
   "tt_ammo_update": {
     "ammo_config":{"guid":"9379B9A38F29D508","path":"Configs/Weapons/Ammo/Ammo_763x25.conf","allowed":[{"guid":"5AE7AF31B9D7EB6C","path":"Prefabs/Weapons/Ammo/Ammo_763x25_Ball.et"}]},
