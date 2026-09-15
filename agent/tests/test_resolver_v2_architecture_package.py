@@ -9,6 +9,7 @@ if SCRIPT_DIR not in sys.path:
 from build_architecture_package import (  # noqa: E402
     architecture_decision,
     link_script_classes,
+    scope_weapon_architecture,
     serialized_class_names,
 )
 
@@ -72,6 +73,53 @@ class ResolverV2ArchitecturePackageTests(unittest.TestCase):
             {row["name"] for row in linked["declarations"]},
             {"WeaponComponent", "BaseWeapon", "KnownConfig"},
         )
+
+    def test_weapon_scope_excludes_unrelated_armst_roots_but_follows_weapon_missing_edge(self):
+        weapon = "Prefabs/Weapons/Rifles/Test/Weapon.et"
+        unrelated = "Prefabs/Vehicles/Test/Vehicle.et"
+        weapon_missing = "Configs/Weapons/Test/Needed.conf"
+        unrelated_missing = "Configs/Vehicles/Test/Unrelated.conf"
+
+        def edge(source, guid, path):
+            return {
+                "source": {"origin": "armst", "resource": source, "node_path": "$ref"},
+                "kind": "resource_ref",
+                "ref": {"guid": guid, "path": path},
+                "resolution": {"status": "external", "resource": None, "origin": None},
+            }
+
+        architecture = {
+            "summary": {
+                "resource_count": 2,
+                "reference_edge_count": 2,
+                "resolver_warning_count": 0,
+            },
+            "graph": {
+                "resource_index": [
+                    {"origin": "armst", "resource": weapon, "kind": "et"},
+                    {"origin": "armst", "resource": unrelated, "kind": "et"},
+                ],
+                "reference_edges": [
+                    edge(weapon, "AAAA", weapon_missing),
+                    edge(unrelated, "BBBB", unrelated_missing),
+                ],
+                "closure": {},
+            },
+            "blueprints": [
+                {"origin": "armst", "resource": weapon},
+                {"origin": "armst", "resource": unrelated},
+            ],
+            "export_requests": [],
+            "resolver_warnings": [],
+        }
+
+        scoped = scope_weapon_architecture(architecture)
+        self.assertEqual(scoped["summary"]["seed_count"], 1)
+        self.assertEqual(scoped["summary"]["armst_blueprint_count"], 1)
+        self.assertEqual(scoped["blueprints"][0]["resource"], weapon)
+        self.assertEqual(len(scoped["export_requests"]), 1)
+        self.assertEqual(scoped["export_requests"][0]["path"], weapon_missing)
+        self.assertNotEqual(scoped["export_requests"][0]["path"], unrelated_missing)
 
     def test_decision_prioritizes_exact_missing_resources(self):
         decision = architecture_decision(
