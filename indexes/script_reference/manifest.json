@@ -1,0 +1,76 @@
+{
+  "generated_from": [
+    "Scripts.zip",
+    "Prefabs.zip",
+    "Configs(1).zip",
+    "prior Weapons.zip/Configs.zip resolved catalog"
+  ],
+  "counts": {
+    "local_script_types": 9,
+    "attachment_modules": 10,
+    "weapon_attachment_slots": 65,
+    "local_sights_blocks": 20,
+    "engine_reference_types": 21
+  },
+  "authoring_model": {
+    "compatibility_script": "Declare a registry Class object, a Source symbol, and an empty concrete type inheriting an existing attachment/magazine-well base. This creates a compatibility type, not weapon behavior.",
+    "weapon_slot": "Serialize AttachmentSlotComponent and, when needed, AttachmentType <Type> in the weapon prefab.",
+    "module_prefab": "Serialize WeaponAttachmentAttributes/SCR_WeaponAttachmentSuppressorAttributes -> AttachmentType <Type> in the attachment prefab.",
+    "sights": "Use SightsComponent/SightsRanges/pivots in the weapon prefab; supplied ARMST scripts do not implement sight mechanics.",
+    "reuse_rule": "Prefer an existing engine type (RIS1913, DovetailAK, caliber muzzle, standard MagazineWell) before creating a new ARMST marker class."
+  },
+  "official_sources": {
+    "bohemia_sample_new_weapon_scripts": "https://github.com/BohemiaInteractive/Arma-Reforger-Samples/tree/main/SampleMod_NewWeapon/Scripts/Game/Weapon",
+    "optics_types": "https://github.com/BohemiaInteractive/Arma-Reforger-Script-Diff/blob/3d77cc212d5cda9922daf5f45635c7300d2d4cce/scripts/Game/Weapon/Attachments/Attachments_optics.c",
+    "muzzle_types": "https://github.com/BohemiaInteractive/Arma-Reforger-Script-Diff/blob/3d77cc212d5cda9922daf5f45635c7300d2d4cce/scripts/Game/Weapon/Attachments/Attachments_muzzle.c",
+    "magazine_wells": "https://github.com/BohemiaInteractive/Arma-Reforger-Script-Diff/blob/3d77cc212d5cda9922daf5f45635c7300d2d4cce/scripts/Game/Weapon/MagazineWell.c"
+  },
+  "local_script_types": [
+    {"script_file":"Scripts/Gamecode/AttachmentMuzzle.c","type_name":"AttachmentMuzzle9_39_armst","registry_class":"AttachmentMuzzle9_39_armstClass","source_symbol":"AttachmentMuzzle9_39_armstSource","base_class":"AttachmentMuzzle","usage_count":3},
+    {"script_file":"Scripts/Gamecode/Attachment_optic.c","type_name":"AttachmentOpticsG36","registry_class":"AttachmentOpticsG36Class","source_symbol":"AttachmentOpticsG36Source","base_class":"AttachmentOptics","usage_count":1},
+    {"script_file":"Scripts/Gamecode/Magazine12g.c","type_name":"MagazineWell12g","registry_class":"MagazineWell12gClass","source_symbol":"MagazineWell12gSource","base_class":"BaseMagazineWell","usage_count":4},
+    {"script_file":"Scripts/Gamecode/Magazine763x25.c","type_name":"MagazineWell763x25","registry_class":"MagazineWell763x25_Class","source_symbol":"MagazineWell763x25Source","base_class":"BaseMagazineWell","usage_count":3},
+    {"script_file":"Scripts/Gamecode/Magazine9x39.c","type_name":"MagazineWell9x39_9a91","registry_class":"MagazineWell9x39_9a91Class","source_symbol":"MagazineWell9x39_9a91Source","base_class":"BaseMagazineWell","usage_count":4},
+    {"script_file":"Scripts/Gamecode/Magazine9x39.c","type_name":"MagazineWell9x39","registry_class":"MagazineWell9x39Class","source_symbol":"MagazineWell9x39Source","base_class":"BaseMagazineWell","usage_count":6},
+    {"script_file":"Scripts/Gamecode/MagazineAPB.c","type_name":"MagazineWellAPB","registry_class":"MagazineWellAPBClass","source_symbol":"MagazineWellAPBSource","base_class":"BaseMagazineWell","usage_count":2},
+    {"script_file":"Scripts/Gamecode/MagazinePP91.c","type_name":"MagazineWellPP91","registry_class":"MagazineWellPP91Class","source_symbol":"MagazineWellPP91Source","base_class":"BaseMagazineWell","usage_count":4},
+    {"script_file":"Scripts/Gamecode/MagazinePP91.c","type_name":"MagazineWellSR2","registry_class":"MagazineWellSR2Class","source_symbol":"MagazineWellSR2Source","base_class":"BaseMagazineWell","usage_count":0}
+  ],
+  "engine_reference_types": [
+    {"type_name":"AttachmentOpticsDovetailAKSVD","base_class":"AttachmentOpticsDovetail","family":"optic interface","usage_count":1},
+    {"type_name":"AttachmentOpticsDovetailAK","base_class":"AttachmentOpticsDovetailAKSVD","family":"optic interface","usage_count":7},
+    {"type_name":"AttachmentOpticsDovetailSVD","base_class":"AttachmentOpticsDovetailAKSVD","family":"optic interface","usage_count":1},
+    {"type_name":"AttachmentOpticsRIS1913","base_class":"AttachmentOptics","family":"RIS 1913 optic rail >=250 mm","usage_count":1},
+    {"type_name":"AttachmentOpticsRIS1913Medium","base_class":"AttachmentOpticsRIS1913","family":"RIS 1913 optic rail <=250 mm","usage_count":0},
+    {"type_name":"AttachmentOpticsRIS1913Short","base_class":"AttachmentOpticsRIS1913Medium","family":"RIS 1913 optic rail <=120 mm","usage_count":0},
+    {"type_name":"AttachmentOpticsRIS1913VeryShort","base_class":"AttachmentOpticsRIS1913Short","family":"RIS 1913 optic rail <=80 mm","usage_count":0},
+    {"type_name":"AttachmentMuzzle556_45","base_class":"AttachmentMuzzle","family":"muzzle 5.56x45","usage_count":1},
+    {"type_name":"AttachmentMuzzle762_39","base_class":"AttachmentMuzzle","family":"muzzle 7.62x39","usage_count":1},
+    {"type_name":"MagazineWellMakarovPM","base_class":"BaseMagazineWell","family":"magazine well 9x18 PM","usage_count":1},
+    {"type_name":"MagazineWellVZ58_762","base_class":"BaseMagazineWell","family":"magazine well vz.58 7.62x39","usage_count":2}
+  ],
+  "module_resources": [
+    {"resource":"Prefabs/Weapons/Attachments/Handguards/Handguard_AK74M2.et","guid":"7851F29BDAAAD7DB","category":"Handguards","attachment_types":[]},
+    {"resource":"Prefabs/Weapons/Attachments/Muzzle/Suppressor_9a91.et","guid":"E10F09941AF1E123","category":"Muzzle","attachment_types":["AttachmentMuzzle9_39_armst"]},
+    {"resource":"Prefabs/Weapons/Attachments/Muzzle/Suppressor_PBS4/Suppressor_PBS4_base.et","guid":"5677861A692ED3EB","category":"Muzzle","attachment_types":[]},
+    {"resource":"Prefabs/Weapons/Attachments/Optics/Optic_PSO1.et","guid":"C850A33226B8F9C1","category":"Optics","attachment_types":["AttachmentOpticsDovetailAK"]},
+    {"resource":"Prefabs/Weapons/Attachments/Optics/Optic_PSO1_ak.et","guid":"F325FE2E3DDCDDAD","category":"Optics","attachment_types":["AttachmentOpticsDovetailAKSVD"]},
+    {"resource":"Prefabs/Weapons/Attachments/Optics/WeaponOptic_Base.et","guid":"966B4E5523D2F166","category":"Optics","attachment_types":[]},
+    {"resource":"Prefabs/Weapons/Attachments/Stocks/Handguard_AK74M.et","guid":"FCE52BA4B5789E65","category":"Stocks","attachment_types":[]},
+    {"resource":"Prefabs/Weapons/Attachments/Stocks/Handguard_AKS.et","guid":"31E8EF2214161A25","category":"Stocks","attachment_types":[]},
+    {"resource":"Prefabs/Weapons/Attachments/Stocks/Stock_akm.et","guid":"B0E764B069F6A153","category":"Stocks","attachment_types":[]},
+    {"resource":"Prefabs/Weapons/Attachments/Underbarrel/UGL_GP25.et","guid":"1ABABE3551512B0A","category":"Underbarrel","attachment_types":[]}
+  ],
+  "warnings": [
+    "MagazineWell763x25 uses registry class name MagazineWell763x25_Class (underscore), while Bohemia/sample convention is <Type>Class. Preserve existing source unless Workbench validation justifies renaming.",
+    "MagazineWellSR2 is declared but unused in supplied Prefabs.zip; armst_SR_2 and its magazine serialize MagazineWellPP91 instead.",
+    "No per-weapon behavioral .c class exists in supplied Scripts.zip. Supplied weapon behavior is predominantly prefab/component/config driven; custom .c files here define compatibility marker types.",
+    "PSO-1 uses built-in dovetail attachment types; Groza RIS uses built-in RIS1913 types. No new local script is needed when an existing engine attachment type already expresses compatibility.",
+    "SightsComponent / SightsRanges / sight pivots are prefab serialization, not custom attachment-type script declarations."
+  ],
+  "tt_ammo_update": {
+    "ammo_config":{"guid":"9379B9A38F29D508","path":"Configs/Weapons/Ammo/Ammo_763x25.conf","allowed":[{"guid":"5AE7AF31B9D7EB6C","path":"Prefabs/Weapons/Ammo/Ammo_763x25_Ball.et"}]},
+    "default_projectile":{"guid":"5AE7AF31B9D7EB6C","path":"Prefabs/Weapons/Ammo/Ammo_763x25_Ball.et","parent":"Prefabs/Weapons/Core/Ammo_Bullet_Base.et","InitSpeed":430,"InitSpeedVariation":15,"Mass":0.00804,"AirDrag":0.0000125,"Diameter":9.1,"Length":15.5,"PenetrationDepth":20,"PenetrationDensity":0.65,"PenetrationSpeed":355,"MushroomingDamageMultiplier":0.05,"TumblingDamageMultiplier":0.1,"primary_damage_inherited":50,"ballistic_table":"Configs/Weapons/AIBallisticTables/AIBT_9x19_Ball_M882.conf"},
+    "legacy_projectile_not_in_config":{"guid":"8221593DFA48E4B3","path":"Prefabs/Weapons/Ammo/Ammo_763x25.et","InitSpeed":340,"Mass":0.018,"PenetrationDepth":3.7,"PenetrationSpeed":615}
+  }
+}
