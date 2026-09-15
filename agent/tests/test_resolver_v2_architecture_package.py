@@ -7,6 +7,7 @@ if SCRIPT_DIR not in sys.path:
     sys.path.insert(0, SCRIPT_DIR)
 
 from build_architecture_package import (  # noqa: E402
+    _safe_base_export_requests,
     architecture_decision,
     link_script_classes,
     scope_weapon_architecture,
@@ -123,11 +124,51 @@ class ResolverV2ArchitecturePackageTests(unittest.TestCase):
         self.assertEqual(review[0]["ref"]["path"], weapon_missing)
         self.assertNotEqual(review[0]["ref"]["path"], unrelated_missing)
 
+    def test_guid_target_not_dependency_eligible_is_review_not_export(self):
+        edge = {
+            "source": {
+                "origin": "materialized_base",
+                "resource": "Configs/Weapons/Test/Vanilla.conf",
+                "node_path": "$ref",
+            },
+            "kind": "resource_ref",
+            "ref": {
+                "guid": "AAAA",
+                "path": "Configs/Weapons/Test/Collision.conf",
+            },
+            "resolution": {
+                "status": "external",
+                "reason": "guid_target_not_dependency_eligible",
+                "resource": None,
+                "origin": None,
+                "candidates": [
+                    {
+                        "origin": "materialized_base",
+                        "resource": "Configs/Weapons/Test/Collision.conf",
+                        "priority": 50,
+                    }
+                ],
+                "guid_candidates": [
+                    {
+                        "origin": "armst",
+                        "resource": "Configs/Weapons/Test/Collision.conf",
+                        "priority": 100,
+                    }
+                ],
+            },
+        }
+
+        requests, unproven, conflicts = _safe_base_export_requests([edge])
+        self.assertEqual(requests, [])
+        self.assertEqual(unproven, [])
+        self.assertEqual(conflicts, [edge])
+
     def test_decision_prioritizes_exact_missing_resources(self):
         decision = architecture_decision(
             {
                 "exact_export_request_count": 2,
                 "unproven_target_origin_edge_count": 1,
+                "non_exportable_identity_edge_count": 1,
                 "ambiguous_identity_edge_count": 3,
                 "resolver_warning_count": 4,
             }
@@ -141,6 +182,21 @@ class ResolverV2ArchitecturePackageTests(unittest.TestCase):
             {
                 "exact_export_request_count": 0,
                 "unproven_target_origin_edge_count": 2,
+                "non_exportable_identity_edge_count": 0,
+                "ambiguous_identity_edge_count": 0,
+                "resolver_warning_count": 0,
+            }
+        )
+        self.assertEqual(decision["code"], "SOURCE_IDENTITY_REVIEW_REQUIRED")
+        self.assertFalse(decision["workbench_needed"])
+        self.assertFalse(decision["architecture_ready"])
+
+    def test_nonexportable_identity_conflict_is_source_review_not_workbench(self):
+        decision = architecture_decision(
+            {
+                "exact_export_request_count": 0,
+                "unproven_target_origin_edge_count": 0,
+                "non_exportable_identity_edge_count": 1,
                 "ambiguous_identity_edge_count": 0,
                 "resolver_warning_count": 0,
             }
@@ -154,6 +210,7 @@ class ResolverV2ArchitecturePackageTests(unittest.TestCase):
             {
                 "exact_export_request_count": 0,
                 "unproven_target_origin_edge_count": 0,
+                "non_exportable_identity_edge_count": 0,
                 "ambiguous_identity_edge_count": 3,
                 "resolver_warning_count": 0,
             }
@@ -167,6 +224,7 @@ class ResolverV2ArchitecturePackageTests(unittest.TestCase):
             {
                 "exact_export_request_count": 0,
                 "unproven_target_origin_edge_count": 0,
+                "non_exportable_identity_edge_count": 0,
                 "ambiguous_identity_edge_count": 0,
                 "resolver_warning_count": 0,
             }
