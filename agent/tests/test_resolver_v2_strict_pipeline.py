@@ -52,7 +52,28 @@ class ResolverV2StrictPipelineTests(unittest.TestCase):
             )
             result = validate_materialized_root(vanilla)
             self.assertEqual(result["status"], "ok")
-            self.assertEqual(result["ok_resolver_files"], 1)
+            self.assertEqual(result["ok_materialized_resources"], 1)
+
+    def test_manifest_validation_ignores_generated_meta_sidecars(self):
+        with tempfile.TemporaryDirectory() as vanilla:
+            rel = "Prefabs/Weapons/Test/A.et"
+            write(vanilla, rel, "GenericEntity {\n}\n")
+            write(vanilla, rel + ".meta", 'MetaFileClass {\n Name "{DEAD}' + rel + '"\n}\n')
+            write_manifest(
+                vanilla,
+                [
+                    (
+                        "$ArmaReforger:" + rel,
+                        rel,
+                        "container",
+                        "GenericEntity",
+                        "ok",
+                    )
+                ],
+            )
+            result = validate_materialized_root(vanilla)
+            self.assertEqual(result["status"], "ok")
+            self.assertEqual(result["ok_materialized_resources"], 1)
 
     def test_manifest_validation_rejects_stale_unlisted_resource(self):
         with tempfile.TemporaryDirectory() as vanilla:
