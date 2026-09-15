@@ -14,6 +14,11 @@ A missing reference authored by ARMST is *not* automatically a vanilla export
 request: it may be a broken/short ARMST reference. Those gaps remain explicit
 source-identity review items instead of causing another broad Workbench scan.
 
+Likewise, a base-game reference whose GUID is already proven to belong to an
+ineligible higher-priority ARMST resource is an identity/source conflict, not a
+missing vanilla file. Re-exporting that path cannot repair the contradiction and
+must never be proposed as Workbench work.
+
 No raw vanilla resources or official script checkout are committed by this
 script; their default locations are gitignored.
 """
@@ -36,6 +41,9 @@ from sync_vanilla_scripts import DEFAULT_DESTINATION, ensure_checkout
 FOLLOW_EXTENSIONS = {".et", ".conf"}
 WEAPON_SEED_PREFIX = "prefabs/weapons/"
 BASE_GAME_ORIGIN = "materialized_base"
+NON_EXPORTABLE_IDENTITY_REASONS = {
+    "guid_target_not_dependency_eligible",
+}
 
 
 def _norm_resource(path: object) -> str:
@@ -50,25 +58,36 @@ def _is_weapon_seed(resource: object) -> bool:
     return _norm_resource(resource).casefold().startswith(WEAPON_SEED_PREFIX)
 
 
-def _safe_base_export_requests(missing_edges: List[dict]) -> Tuple[List[dict], List[dict]]:
-    """Split proven base-game gaps from missing refs whose target origin is unknown.
+def _safe_base_export_requests(
+    missing_edges: List[dict],
+) -> Tuple[List[dict], List[dict], List[dict]]:
+    """Split actionable base gaps from source/identity review gaps.
 
-    A missing edge authored by ``materialized_base`` is safe to request from
-    `$ArmaReforger:` because base-game data cannot depend upward on ARMST. A
-    missing edge authored by ARMST is not enough evidence of target origin and
-    must remain a review gap.
+    A missing edge authored by ``materialized_base`` is normally safe to request
+    from `$ArmaReforger:` because base-game data cannot depend upward on ARMST.
+    Two cases are deliberately excluded:
+
+    * missing edges authored by ARMST, where target origin is not proven;
+    * base-game edges whose GUID owner is already proven to be an ineligible
+      higher-priority resource. That is a source/identity contradiction and
+      another export of the same path cannot fix it.
     """
     grouped = {}
     unproven = []
+    identity_conflicts = []
     for edge in missing_edges:
         source = edge.get("source") or {}
         ref = edge.get("ref") or {}
+        resolution = edge.get("resolution") or {}
         path = _norm_resource(ref.get("path"))
         ext = os.path.splitext(path)[1].lower()
         if ext not in FOLLOW_EXTENSIONS:
             continue
         if source.get("origin") != BASE_GAME_ORIGIN:
             unproven.append(edge)
+            continue
+        if resolution.get("reason") in NON_EXPORTABLE_IDENTITY_REASONS:
+            identity_conflicts.append(edge)
             continue
 
         key = (str(ref.get("guid") or "").upper(), path.casefold())
@@ -92,7 +111,7 @@ def _safe_base_export_requests(missing_edges: List[dict]) -> Tuple[List[dict], L
         )
 
     requests = sorted(grouped.values(), key=lambda row: row["path"].casefold())
-    return requests, unproven
+    return requests, unproven, identity_conflicts
 
 
 def scope_weapon_architecture(architecture: dict) -> dict:
@@ -150,7 +169,9 @@ def scope_weapon_architecture(architecture: dict) -> dict:
             else:
                 missing.append(edge)
 
-    export_requests, unproven_origin = _safe_base_export_requests(missing)
+    export_requests, unproven_origin, identity_conflicts = _safe_base_export_requests(
+        missing
+    )
     graph["closure"] = {
         "seed_scope": "armst:Prefabs/Weapons/**/*.et",
         "seed_count": len(set(seeds)),
@@ -161,6 +182,7 @@ def scope_weapon_architecture(architecture: dict) -> dict:
         "followed_serialized_edge_count": len(followed),
         "missing_edges": missing,
         "unproven_target_origin_edges": unproven_origin,
+        "non_exportable_identity_edges": identity_conflicts,
         "ambiguous_identity_edges": ambiguous,
     }
     scoped["graph"] = graph
@@ -180,6 +202,7 @@ def scope_weapon_architecture(architecture: dict) -> dict:
             "reachable_resource_count": len(seen),
             "missing_serialized_edge_count": len(missing),
             "unproven_target_origin_edge_count": len(unproven_origin),
+            "non_exportable_identity_edge_count": len(identity_conflicts),
             "ambiguous_identity_edge_count": len(ambiguous),
             "exact_export_request_count": len(export_requests),
             "armst_blueprint_count": len(scoped["blueprints"]),
@@ -277,13 +300,16 @@ def architecture_decision(architecture_summary: dict, script_summary: Optional[d
     """Separate actionable exports from identity/parser/source blockers."""
     exact = int(architecture_summary.get("exact_export_request_count") or 0)
     unproven = int(architecture_summary.get("unproven_target_origin_edge_count") or 0)
+    identity_conflicts = int(
+        architecture_summary.get("non_exportable_identity_edge_count") or 0
+    )
     ambiguous = int(architecture_summary.get("ambiguous_identity_edge_count") or 0)
     warnings = int(architecture_summary.get("resolver_warning_count") or 0)
     script_failures = int((script_summary or {}).get("parse_failure_count") or 0)
 
     if exact:
         code = "EXACT_WORKBENCH_EXPORT_REQUIRED"
-    elif unproven:
+    elif unproven or identity_conflicts:
         code = "SOURCE_IDENTITY_REVIEW_REQUIRED"
     elif ambiguous:
         code = "IDENTITY_EVIDENCE_REQUIRED"
@@ -296,10 +322,13 @@ def architecture_decision(architecture_summary: dict, script_summary: Optional[d
 
     return {
         "code": code,
-        "architecture_ready": not (exact or unproven or ambiguous or warnings or script_failures),
+        "architecture_ready": not (
+            exact or unproven or identity_conflicts or ambiguous or warnings or script_failures
+        ),
         "workbench_needed": bool(exact),
         "exact_request_count": exact,
         "unproven_target_origin_edge_count": unproven,
+        "non_exportable_identity_edge_count": identity_conflicts,
         "ambiguous_identity_edge_count": ambiguous,
         "resolver_warning_count": warnings,
         "script_parse_failure_count": script_failures,
