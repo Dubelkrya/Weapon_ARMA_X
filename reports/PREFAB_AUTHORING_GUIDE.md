@@ -11,10 +11,178 @@ Generated from `Weapons.zip` on 2026-09-15. The local addon is the source of tru
 ## Mandatory authoring rules
 
 1. Follow the inheritance chain before adding anything. A child prefab should contain **only differences** from its parent.
-2. Override an inherited object with the **same instance ID**. Do not create a second `ItemPhysicalAttributes`, recoil modifier, sights object, etc.
+2. Override an inherited object with the **same instance ID**. Do not create a second `ItemPhysicalAttributes`, recoil modifier, sights object, fire mode, etc.
 3. Do not repeat values already correct in the parent. Example: all handguns inherit `Single 500 RPM` from `Handgun_Base.et`; TT does not need its own fire-mode block unless the rate actually changes.
 4. Separate weapon handling from projectile lethality. Weight, dispersion, sights, fire modes and weapon recoil belong to the weapon prefab; damage/penetration/ballistics belong to ammo/projectile resources.
 5. If the archive does not prove a value, keep it unknown. Filename numbers are not evidence.
+6. Preserve inherited instance IDs and object nesting. A syntactically valid block inserted at the wrong hierarchy level can still produce wrong Workbench data or crash the editor.
+7. Structural validation and Workbench/runtime validation are separate stages. Balanced braces and valid text are necessary but do not prove that Enfusion resolves the prefab correctly.
+
+## Safe workflow for creating a new weapon prefab
+
+Use this workflow whenever a weapon is built from an existing working family/base.
+
+1. **Start from a known-good prefab.** Make the first test child as close to a literal clone as possible. Change only identity/name if needed.
+2. Open that minimal clone in Workbench before adding gameplay changes. If it does not open, stop: the problem is structural/resource-related, not weapon balance.
+3. Add **one functional change at a time** and reopen the prefab after each step. Recommended order:
+   - identity/name;
+   - fire rate on an existing fire mode;
+   - additional fire mode, if required;
+   - recoil/handling;
+   - dispersion / weapon-side velocity coefficient;
+   - magazine/attachment compatibility;
+   - sights/optics geometry;
+   - visual/animation-specific differences.
+4. If Workbench starts crashing or data appears in the wrong UI field, return to the last known-good revision and inspect only the last added block.
+5. Do not combine several unverified overrides in the first version. A large one-shot prefab makes it difficult to identify which component/path is invalid.
+6. After every successful step, treat that prefab as the new control point for the next change.
+
+The purpose of this staged process is not merely debugging convenience. It protects inherited object identity and reveals when a correct-looking text block was serialized at the wrong level.
+
+## Fire modes: inherited override vs new mode
+
+This distinction is mandatory.
+
+### Overriding an existing inherited fire mode
+
+If `Auto`, `Single`, `Safe`, or another mode already exists in the parent, override the inherited `BaseFireMode` **by the existing instance ID only**.
+
+Correct pattern:
+
+```text
+FireModes {
+ BaseFireMode "{INHERITED_AUTO_INSTANCE_ID}" {
+  RoundsPerMinute 900
+ }
+}
+```
+
+Do **not** reconnect the original `.conf` resource to an already inherited object:
+
+```text
+// WRONG for an inherited mode
+BaseFireMode "{INHERITED_AUTO_INSTANCE_ID}" : "{GUID}.../FireMode_Auto.conf" {
+ RoundsPerMinute 900
+}
+```
+
+Re-attaching a config to an inherited fire-mode object can cause Workbench to serialize/display it as a separate or malformed element instead of a clean override.
+
+### Adding a genuinely new fire mode
+
+A new mode that does not exist in the parent is different. It needs:
+
+- a new unique instance ID;
+- the appropriate fire-mode config resource;
+- only the local differences from that config.
+
+Example shape:
+
+```text
+FireModes {
+ BaseFireMode "{NEW_INSTANCE_ID}" : "{GUID}Prefabs/Weapons/Core/Configs/FireModes/FireMode_Burst.conf" {
+  BurstType Interruptable
+  RoundsPerMinute 900
+ }
+}
+```
+
+For a burst mode, prefer the engine/config default for `MaxBurst` when it already represents the desired burst length. Override `MaxBurst` only when the weapon actually differs from the referenced config.
+
+### Safe is not a firing mode for design counting
+
+Workbench may show `Safe`, `Single`, `Auto`, `Burst`, etc. in the same `FireModes` collection. For gameplay/design documentation, distinguish the safety state from modes that actually fire rounds.
+
+### Cyclic RPM and single fire
+
+A real-world cyclic rate primarily describes the weapon's automatic operating cycle. Do not automatically force the same `RoundsPerMinute` override onto `Single` just because `Auto` changes. If the inherited single-shot mode already behaves correctly, leave it inherited unless there is a demonstrated reason to change it.
+
+## Recoil authoring: treat sub-blocks separately
+
+Do not treat recoil as one scalar. The Workbench recoil modifier exposes multiple `RecoilData` sub-blocks, including at least:
+
+- `LinearData`
+- `AngularData`
+- `TurnOffsetData`
+
+Each block has its own curves, magnitudes, min/max ranges and scales.
+
+### General rule
+
+Change only the part of recoil that corresponds to the intended gameplay effect, and validate it in Workbench immediately.
+
+For example, if the design goal is lower shot impulse / muzzle rise while preserving the parent weapon's return behaviour, first test overrides to `LinearData` and/or `AngularData` while leaving `TurnOffsetData` inherited.
+
+Project Workbench testing showed that changing `TurnOffsetData` can noticeably change the weapon's return/settling behaviour. Therefore:
+
+- do not reduce `TurnOffsetData` merely because the weapon should have less recoil;
+- do not assume that scaling all `Curve Magnitudes` produces only a smaller kick;
+- keep return behaviour separate from initial kick/rotation unless the design explicitly requires a different return characteristic.
+
+### Minimal recoil override pattern
+
+```text
+WeaponAimModifiers {
+ RecoilWeaponAimModifier "{INHERITED_RECOIL_MODIFIER_ID}" {
+  LinearData RecoilData "{INHERITED_LINEAR_DATA_ID}" {
+   "Curve Magnitudes" ...
+  }
+  AngularData RecoilData "{INHERITED_ANGULAR_DATA_ID}" {
+   "Curve Magnitudes" ...
+  }
+ }
+}
+```
+
+If `TurnOffsetData` does not need to change, omit it completely from the child prefab.
+
+The exact values above are weapon/balance data, not a universal template. The universal rule is the override shape and preservation of inherited IDs.
+
+## Workbench validation checklist
+
+After every authoring step:
+
+1. Open the prefab directly in Workbench.
+2. Confirm the expected component count/collection count.
+3. Expand the edited component and verify that the changed value appears in the intended inherited object, not in a duplicated element.
+4. For fire modes, verify the visible order/types (`Safe`, `Single`, `Auto`, `Burst`, etc.) and inspect RPM / burst fields individually.
+5. For recoil, inspect `LinearData`, `AngularData`, and `TurnOffsetData` separately; do not judge only by one visible magnitude row.
+6. Confirm that untouched inherited values still display their parent values.
+7. Only after the prefab opens and the UI hierarchy looks correct should runtime shooting tests begin.
+
+If a value does not appear where expected, treat that as an authoring-path/instance-ID problem before trying to compensate with different numbers.
+
+## Common failure patterns learned from Workbench testing
+
+### 1. Re-attaching `.conf` to inherited objects
+
+Symptom: extra/malformed entries appear in a collection, fields show zeros/defaults, or the edited value lands on the wrong entry.
+
+Fix: use the inherited instance ID only. Use `: "...conf"` only for a genuinely new object.
+
+### 2. Editing several systems at once
+
+Symptom: prefab crashes Workbench and the offending block is unclear.
+
+Fix: revert to a known-good clone and add one system at a time.
+
+### 3. Correct ID at the wrong nesting level
+
+Symptom: file parses but Workbench ignores the value or shows it in an unexpected place.
+
+Fix: reproduce the exact parent hierarchy down to the target object, then override only the target fields.
+
+### 4. Treating recoil as a single number
+
+Symptom: the weapon feels similar in kick but returns differently, or vice versa.
+
+Fix: inspect and tune `LinearData`, `AngularData`, and `TurnOffsetData` independently.
+
+### 5. Overriding inherited values unnecessarily
+
+Symptom: child prefabs become large, hard to review, and fragile against parent changes.
+
+Fix: remove every local field that is already correct in the parent.
 
 ## Canonical handgun chain
 
