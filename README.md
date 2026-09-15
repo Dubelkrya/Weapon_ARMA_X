@@ -14,9 +14,11 @@ For new weapon prefabs and modules, use these repository artifacts before invent
 - `indexes/config_reference/manifest.json` — AmmoConfig / AIBallistic / magazine→config→projectile rules from the supplied config snapshot.
 - `indexes/script_reference/manifest.json` — script compatibility types, RIS/optic/muzzle/magazine-well authoring model, attachment module inventory and known anomalies.
 - `indexes/script_reference/slot_and_sight_summary.json` — resolved weapon-side attachment slot types, representative pivots/default modules and the SightsComponent authoring boundary.
+- `indexes/script_reference/optic_compatibility_policy_v1.json` — strict optic mount-family policy, compatibility direction, banned broad types, proposed ARMST leaf hierarchy and migration order.
 - `reports/PREFAB_AUTHORING_GUIDE.md` — minimal inherited-override rules.
 - `reports/CONFIG_AUTHORING_GUIDE.md` — AmmoConfig / AmmoMapping / projectile resolution rules.
-- `reports/SCRIPT_MODULE_AUTHORING_GUIDE.md` — compatibility script, RIS, optic, muzzle, module and sight authoring rules, grounded in the supplied ARMST sources and Bohemia public samples.
+- `reports/SCRIPT_MODULE_AUTHORING_GUIDE.md` — general compatibility script, RIS, optic, muzzle, module and sight authoring rules.
+- `reports/OPTICS_COMPATIBILITY_SYSTEM.md` — strict optics compatibility design, current PSO/SVD/VSS/VAL/9A91/VSK94 findings, adapters and CI validation rules.
 - `reports/samples/armst_TT_authoring_sample_v4.et` — TT example using inherited PM recoil IDs rather than duplicate recoil objects.
 - `catalog/weapons/*.json`, `catalog/ammunition/*.json`, `catalog/attachments/*.json` — per-entity facts with provenance.
 
@@ -24,7 +26,9 @@ Resolution priority: **child local block/value > nearest parent > common family 
 
 Ammo resolution priority: **magazine AmmoConfig defines the allowed ordered resource list; magazine AmmoMapping defines what is actually loaded**. Mixed magazine counts must come from serialized mapping, not from filenames. Primary kinetic damage stays separate from additive tracer/incendiary effects.
 
-Script/module rule: ARMST's supplied weapon `.c` files are primarily empty compatibility marker types (`MagazineWell*`, `AttachmentMuzzle*`, `AttachmentOptics*`), not per-weapon behavior implementations. Reuse existing engine RIS1913/dovetail/muzzle/magazine-well types when they already express compatibility. `SightsComponent`, ADS, zeroing and sight pivots remain prefab data.
+Script/module rule: ARMST's supplied weapon `.c` files are primarily empty compatibility marker types (`MagazineWell*`, `AttachmentMuzzle*`, `AttachmentOptics*`), not per-weapon behavior implementations. `SightsComponent`, ADS, zeroing and sight pivots remain prefab data.
+
+Optic compatibility rule: the engine checks whether the **module type inherits the type required by the weapon slot** (`moduleType.IsInherited(slotType)`). Proprietary/dovetail weapon slots therefore use strict leaf mount-family types. A shared optical body that supports several mounts gets thin mount-specific child prefabs rather than one broad universal `AttachmentType`. Standard RIS1913 keeps the Bohemia rail-length hierarchy.
 
 Authoring rule: keep the parent prefab as the base and override only real differences using inherited instance IDs. Unknown engine values stay unknown.
 
