@@ -76,6 +76,27 @@ Do not use an expensive reasoning model merely to perform grep, GUID enumeration
 
 Do not use a cheap evidence model as the sole decision-maker for ambiguous identity-sensitive or destructive architecture changes.
 
+### Evidence-first escalation rule
+
+Do **not** start with `GPT 5.6 Luna` merely because a task mentions GUIDs, inheritance, ResourceDB, provenance, or identity ambiguity.
+
+If the current stage is still primarily mechanical evidence collection — for example exact GUID/path lookup, loaded-package enumeration, reference search, owner counting, parent-chain extraction, ResourceDB text lookup, or deterministic preflight/postcheck — start with `DeepSeek V4 Flash` (or the cheapest currently available equivalent that is sufficiently reliable).
+
+Escalate to `GPT 5.6 Luna` only after evidence collection when one or more of the following is actually present:
+
+- multiple plausible identity owners remain;
+- filesystem, `.meta`, ResourceDB, package, or inheritance evidence conflicts;
+- the same evidence supports more than one reasonable architecture interpretation;
+- the cause of a runtime identity mismatch cannot be classified mechanically;
+- a mutation decision depends on distinguishing cause from correlation;
+- a destructive or identity-sensitive action would otherwise require guessing.
+
+A read-only provenance audit should therefore normally be split into stages:
+
+`Flash evidence pass -> architect review -> Luna only if ambiguity remains`
+
+Do not recommend Luna "just in case" for a search/provenance task that can first be reduced to exact facts cheaply.
+
 ---
 
 ## 4. Model task classes
