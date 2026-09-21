@@ -600,3 +600,108 @@ ROUTE_E_VERDICT: ROUTE_E_PARTIAL
 STAGING_COMPONENT_ID: NON_AUTHORITATIVE
 PRODUCTION_MIGRATION: NOT_AUTHORIZED
 ```
+
+
+---
+
+## Route E runtime result and Route E2 staging (2026-09-22)
+
+### Route E runtime result
+
+The standalone Route E storage variant is rejected by runtime for product use.
+
+Observed on SINGLE_TEST:
+
+- adapter could not be picked up normally;
+- adapter had no normal inventory presence;
+- normal item interaction was broken;
+- production collimator could still attach to the configured child slot.
+
+Therefore the first runtime blocker was item identity, not basic child-slot attachment.
+
+Verdict:
+
+```
+ROUTE_E_REJECTED_BY_RUNTIME
+FIRST_FAILURE: ROUTE_E_BLOCKED_AT_ITEM_IDENTITY
+GATES_3_4: NOT_RUN
+```
+
+The leading explanation is that the standalone `ARMST_DovetailRISStorageComponent` introduced a second top-level `InventoryItemComponent`-derived role next to canonical `InventoryItemComponent {557E85EEE1B60313}`. This is **STRONGLY_SUPPORTED**, not yet internally proven.
+
+### Route E2 diagnostic hypothesis
+
+Route E2 tests whether moving the custom equipment storage out of the entity's top-level component list and making it a child of the canonical item component restores adapter identity while retaining the slot.
+
+Reported staged structure:
+
+```
+InventoryItemComponent {557E85EEE1B60313}
+  Attributes ...
+  components {
+    ARMST_DovetailRISStorageComponent {908D32FA413D9AFB}
+      InitialStorageSlots {
+        SCR_EquipmentStorageSlot RIS {
+          PivotID "snap_ris"
+          ChildPivotID "snap_weapon"
+        }
+      }
+  }
+
+AttachmentSlotComponent {BB6000C24BAA468F} {
+  Enabled 0
+}
+```
+
+Reported SINGLE_TEST SHA256 after E2 staging:
+
+`9B71F2BD...1826`
+
+The script itself was not changed.
+
+Production adapter, production collimator, XOBs and pivots were reported unchanged.
+
+### Important evidence limit
+
+Route E2 is a diagnostic experiment, not a stock-proven prefab architecture.
+
+Current source/prefab research confirms:
+
+- generic components can have child components;
+- stock equipment storage is commonly nested under a storage component such as `SCR_UniversalInventoryStorageComponent`;
+- stock weapon/item identity commonly lives on the storage-derived identity component itself.
+
+However, no confirmed official/public example has yet been found where `SCR_EquipmentStorageComponent` is nested specifically inside a plain `InventoryItemComponent`.
+
+Therefore the exact E2 shape remains a Workbench/runtime hypothesis.
+
+### Route E2 next gate
+
+The first test is adapter identity, before child-storage persistence:
+
+1. SINGLE_TEST exists normally in world;
+2. normal interaction is available;
+3. adapter can be picked up;
+4. adapter appears in inventory and moves normally;
+5. effective type remains `AttachmentOpticsDovetailAK`;
+6. physical profile remains `0.5 / 10x10x10 / volume 100`;
+7. adapter does not become an unintended cargo/container item.
+
+Only if identity passes should the production collimator be tested for:
+
+- insertion into the adapter-owned slot;
+- physical `snap_ris -> snap_weapon` placement;
+- separate child entity identity;
+- independent removal;
+- later persistence through ground/inventory/AK/detach/drop/pickup/remount.
+
+Current status:
+
+```
+ROUTE_E2_STATIC_STAGE: BUILT
+ROUTE_E2_WORKBENCH_SERIALIZATION: NOT_RUN
+ROUTE_E2_ADAPTER_IDENTITY: NOT_RUN
+ROUTE_E2_CHILD_STORAGE: NOT_RUN
+ROUTE_E2_PERSISTENCE: NOT_RUN
+ROUTE_E2_VERDICT: ROUTE_E2_PARTIAL
+```
