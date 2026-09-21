@@ -60,6 +60,24 @@ Physical pivot/snap geometry is independent from compatibility type.
 
 Compatibility data shape is documented in `schema/compatibility.schema.json`.
 
+### Nested Dovetail → RIS research checkpoint
+
+Current live-addon research on a **separate-item** AK dovetail adapter → RIS collimator hierarchy is recorded in:
+
+`reports/NESTED_DOVETAIL_RIS_STORAGE_AUDIT_2026-09-21.md`
+
+Important status:
+
+- separate adapter and collimator item identity is a hard requirement for this feature;
+- the fixed composite path is therefore not the production target;
+- no stock vanilla attachment-host prefab pattern has been found;
+- this does **not** prove nested physical attachment is impossible in Enfusion;
+- Arma Reforger 1.8.0.13 proves `InventoryStorageSlot : EntitySlotInfo`, physical attach semantics, and protected `SetupSlotHooks` / `ReleaseSlotHooks` on `BaseInventoryStorageComponent`;
+- the main unresolved question is custom slot ownership/construction for a one-slot adapter storage;
+- the current live experimental adapter path uses `AttachmentOpticsDovetailAK`; older repo `DovetailRU` policy snapshots must not override newer live Workbench evidence for this specific research branch.
+
+Do not create additional Dovetail/Collimator POCs until the slot-ownership/API gate in that report is resolved.
+
 ### Config / ammunition
 
 `AmmoResourceArray` is the allowed ammunition set. `AmmoMapping` defines what is actually loaded. Projectile kinetic damage remains separate from tracer/incendiary effects. Use the projectile's actually referenced ballistic table.
