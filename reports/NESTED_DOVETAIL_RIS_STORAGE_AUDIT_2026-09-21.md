@@ -388,3 +388,50 @@ Framing (important, do not overstate): this is **not** "the engine forbids neste
 - If NO → separate-item nested attach requires a deeper custom bridge, and the stock fallbacks remain: composite (one assembly) or weapon-side dependency.
 
 Live addon unchanged by this forensics pass.
+
+---
+
+## Route E staging status (2026-09-22)
+
+Route E: adapter-owned `EquipmentStorageComponent` (equipment storage slot) instead of a script-declared `InventoryStorageSlot`.
+
+### External evidence used (shape only)
+
+- `SCR_UniversalInventoryStorageComponent { components { SCR_EquipmentStorageComponent { InitialStorageSlots { SCR_EquipmentStorageSlot <Name> { PivotID ... ChildPivotID ... } } } } }`
+  - proven serialization identifiers: `InitialStorageSlots`, `SCR_EquipmentStorageSlot`, `PivotID`, `Offset`, `Enabled`, `Prefab`, `AllowedItemTypes`, `ChildPivotID`.
+- Engine source (Script-Diff, 1.8.0.13):
+  - `EquipmentStorageSlot : InventoryStorageSlot : EntitySlotInfo`
+  - `SCR_EquipmentStorageComponent : EquipmentStorageComponent : BaseEquipmentStorageComponent : UniversalInventoryStorageComponent : BaseUniversalInventoryStorageComponent : ScriptedBaseInventoryStorageComponent : BaseInventoryStorageComponent : InventoryItemComponent`
+  - `event bool CanStoreItem(IEntity item, int slotID)`; stock override form `override bool CanStoreItem(...)` + `super.CanStoreItem(...)` (see `SCR_FilteredInventoryStorageComponent`).
+  - stock compatibility pattern `SCR_CompatibleAttachmentPredicate`: `InventoryItemComponent -> GetAttributes() -> FindAttribute(WeaponAttachmentAttributes) -> GetAttachmentType() -> .Type() -> IsInherited(attachmentType)`.
+- Official sample `Arma-Reforger-Samples/SampleMod_NewWeapon` confirms: `AttachmentOpticsRIS1913`, `AttachmentOpticsRIS1913Short`, RIS-family attachment prefab, `AttachmentSlotComponent.Enabled`, `AttachmentSlot InventoryStorageSlot`, `PivotID` / `ChildPivotID`.
+
+### Evidence limits (do not overstate)
+
+- `AttachmentOpticsDovetailAK` is NOT proven vanilla by SampleMod_NewWeapon. It is only known as the live production adapter's effective type.
+- SampleMod proves the RIS1913 optics family; it does not prove `DovetailAK` origin.
+
+### Staging artifacts (non-authoritative)
+
+- NEW `Scripts/Gamecode/ARMST_DovetailRISStorageComponent.c`:
+  - `ARMST_DovetailRISStorageComponent : SCR_EquipmentStorageComponent`
+  - `override bool CanStoreItem(IEntity item, int slotID)` filtering `IsInherited(AttachmentOpticsRIS1913)` via the stock `SCR_CompatibleAttachmentPredicate` pattern.
+- `Prefabs/Weapons/Attachments/Optics/Diagnostic/armst_Optic_AKDovetail_Nested_SINGLE_TEST.et`:
+  - removed experimental `SCR_WeaponAttachmentsStorageComponent {C396B32EED5A25B4}`;
+  - neutralized inherited `AttachmentSlotComponent {BB6000C24BAA468F}` via `Enabled 0`;
+  - added `ARMST_DovetailRISStorageComponent {908D32FA413D9AFB}` with
+    `InitialStorageSlots { SCR_EquipmentStorageSlot RIS { PivotID "snap_ris" ChildPivotID "snap_weapon" } }`.
+- `908D32FA413D9AFB = STAGING_ID_ONLY` (collision-checked locally, NOT Workbench-generated; not an authoritative component ID).
+- Production adapter `armst_Optic_AKDovetailMount.et` and collimator `armst_Optic_Collimator.et`: UNCHANGED.
+
+### Pending Workbench gates (first failure wins; do not expand)
+
+- Gate 0 script/compiler -> `ROUTE_E_BLOCKED_AT_SCRIPT_COMPILE`
+- Gate 1 prefab serialization -> `ROUTE_E_BLOCKED_AT_STORAGE_STRUCTURE`
+- Gate 2 adapter item identity -> `ROUTE_E_BLOCKED_AT_ITEM_IDENTITY`
+- Gate 3 child storage (production collimator) -> `ROUTE_E_BLOCKED_AT_CHILD_STORAGE`
+- Gate 4 persistence -> only then `ROUTE_E_PROVEN`
+
+If Workbench accepts the shape: delete the hand-serialized block, re-add `ARMST_DovetailRISStorageComponent` via the Workbench UI (Workbench-generated ID), configure one `SCR_EquipmentStorageSlot` (`snap_ris` / `snap_weapon`), save, diff, and confirm the production parent is unchanged. Do NOT auto-switch to the nested-under-`SCR_UniversalInventoryStorageComponent` variant; that would be a separate architectural iteration.
+
+Current verdict: `ROUTE_E_PARTIAL` (staging built + static validation); runtime gates not yet executed.
