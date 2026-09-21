@@ -355,3 +355,36 @@ PRODUCTION_FILES_CHANGED_BY_THIS_AUDIT: NONE
 ```
 
 The next useful work is source/API archaeology around custom slot ownership, not another broad prefab experiment.
+
+---
+
+## Forensics update (same day — InventoryStorageSlot access/construction)
+
+A follow-up read-only pass tightened the gate and produced a concrete route classification.
+
+**Classified routes:**
+
+- **ROUTE A** — custom storage directly owns a serialized `InventoryStorageSlot` → **UNRESOLVED** (no source/prefab example of that serialization).
+- **ROUTE B** — create `InventoryStorageSlot` in script → **UNRESOLVED** (no proven constructor / `CreateInstance` path).
+- **ROUTE C** — register the existing `AttachmentSlotComponent`'s internal slot → **UNRESOLVED** (no public getter of the internal `InventoryStorageSlot`; `EntitySlotInfo.GetSlotInfo(child)` is circular for registration).
+- **ROUTE D** — `MultiSlotConfiguration` creating a pivot-bearing slot → **UNRESOLVED** (`SlotTemplate` absent from the game DB; no pivot-field slot-config evidence).
+
+**Decision: D — NO_PUBLIC_ROUTE_PROVEN.**
+
+Framing (important, do not overstate): this is **not** "the engine forbids nested attach". It is narrower — no public/proven way has yet been found to obtain or construct a pivot-bearing `InventoryStorageSlot` for a script-defined storage. Every other piece is proven present (`InventoryStorageSlot : EntitySlotInfo` with physical attach, `SetupSlotHooks`/`ReleaseSlotHooks`, `GetSlotsCountScr`/`GetSlotScr`).
+
+**Concrete unblock files (all confirmed present in the installed game resource DB):**
+
+- `scripts/Game/generated/InventorySystem/InventoryStorageSlot.c`
+- `scripts/Game/generated/InventorySystem/MultiSlotConfiguration.c`
+- `scripts/Game/generated/InventorySystem/BaseInventoryStorageComponent.c`
+- `scripts/Game/Inventory/ScriptedBaseInventoryStorageComponent.c`
+- `scripts/Game/Inventory/SCR_UniversalInventoryStorageComponent.c`
+- `scripts/GameCode/Components/InventorySystem/UniversalInventoryStorageComponent.c`
+- `scripts/GameCode/Weapon/BaseAttachmentSlotComponent.c`
+
+**Cheapest next test before writing any custom code:** confirm whether a `ScriptAndConfig`-derived component can declare a serialized `ref InventoryStorageSlot` / `ref EntitySlotInfo` member with `PivotID`/`ChildPivotID` in Workbench.
+- If YES → Route A/B opens (one-file custom storage + one slot).
+- If NO → separate-item nested attach requires a deeper custom bridge, and the stock fallbacks remain: composite (one assembly) or weapon-side dependency.
+
+Live addon unchanged by this forensics pass.
