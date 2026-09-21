@@ -355,3 +355,248 @@ PRODUCTION_FILES_CHANGED_BY_THIS_AUDIT: NONE
 ```
 
 The next useful work is source/API archaeology around custom slot ownership, not another broad prefab experiment.
+
+
+---
+
+## Route E staging status (2026-09-22)
+
+This section supersedes the earlier Route E implementation status for the current diagnostic staging pass only. It does **not** promote any Workbench/runtime result to proven status.
+
+### Evidence level
+
+Current Route E evidence is split deliberately:
+
+- **VERIFIED ENGINE SOURCE:** Arma Reforger 1.8.0.13 Script-Diff APIs/classes used by the storage/filter design.
+- **OFFICIAL SAMPLE SHAPE EVIDENCE:** `BohemiaInteractive/Arma-Reforger-Samples` confirms normal RIS attachment types, `AttachmentSlotComponent.Enabled`, `InventoryStorageSlot`, and `PivotID` / `ChildPivotID` serialization patterns.
+- **EXTERNAL PREFAB SHAPE EVIDENCE:** public prefabs demonstrate `SCR_EquipmentStorageComponent -> InitialStorageSlots -> SCR_EquipmentStorageSlot`, including `PivotID` and `ChildPivotID`.
+- **STATIC LIVE-ADDON STAGING:** one diagnostic Route E POC has been assembled and statically checked.
+- **WORKBENCH/RUNTIME:** not yet run; no Gate 0-4 PASS may be inferred from the static stage.
+
+The official `SampleMod_NewWeapon` does **not** prove that `AttachmentOpticsDovetailAK` is a vanilla type. For this project it is known only as the current effective type of the live production adapter.
+
+### Frozen diagnostic staging baseline
+
+Target:
+
+`Prefabs/Weapons/Attachments/Optics/Diagnostic/armst_Optic_AKDovetail_Nested_SINGLE_TEST.et`
+
+Reported static staging SHA256:
+
+`1151A6516AFAC9F4445436A020F22147B8FEC254633865696B50F977BD4494DF`
+
+Reported pre-staging SHA256:
+
+`84038BC4C5E6DB0ECCF1D4A75D41317BF43459A1A4E11ADAAB27FBC9E189C5DF`
+
+New script:
+
+`Scripts/Gamecode/ARMST_DovetailRISStorageComponent.c`
+
+Reported backup root:
+
+`...\ARMST_Backups\ARMST-PLATFORM---Weapons\routeE_equipment_storage_poc\`
+
+Production adapter and production collimator were reported unchanged during this staging pass.
+
+### Static SINGLE_TEST structure
+
+Before the Route E staging edit:
+
+```
+InventoryItemComponent {557E85EEE1B60313}
+SCR_WeaponAttachmentsStorageComponent {C396B32EED5A25B4}
+```
+
+Staged structure:
+
+```
+InventoryItemComponent {557E85EEE1B60313}
+AttachmentSlotComponent {BB6000C24BAA468F} {
+  Enabled 0
+}
+ARMST_DovetailRISStorageComponent {908D32FA413D9AFB} {
+  InitialStorageSlots {
+    SCR_EquipmentStorageSlot RIS {
+      PivotID "snap_ris"
+      ChildPivotID "snap_weapon"
+    }
+  }
+}
+```
+
+The canonical `InventoryItemComponent {557E85EEE1B60313}` is intentionally left in place.
+
+### STAGING_ID_ONLY
+
+`908D32FA413D9AFB` is **STAGING_ID_ONLY**.
+
+It was reported as a locally collision-checked hand-generated component ID because Workbench was unavailable during static assembly. It is not authoritative and must not be treated as a Workbench-generated component ID.
+
+If Gate 1 accepts the component/slot structure, the intended Workbench procedure is:
+
+1. remove the hand-serialized staging component block;
+2. add `ARMST_DovetailRISStorageComponent` through Workbench UI;
+3. let Workbench create the real component ID;
+4. configure exactly one `SCR_EquipmentStorageSlot`;
+5. set `PivotID = snap_ris`;
+6. set `ChildPivotID = snap_weapon`;
+7. save and diff;
+8. verify that the production parent remains unchanged.
+
+Do not generate a replacement component ID manually.
+
+### Static script pre-check
+
+The staged custom storage is intended to derive from:
+
+`SCR_EquipmentStorageComponent`
+
+and override:
+
+`bool CanStoreItem(IEntity item, int slotID)`
+
+The filter follows the stock compatibility path:
+
+```
+InventoryItemComponent
+-> ItemAttributeCollection
+-> WeaponAttachmentAttributes
+-> GetAttachmentType()
+-> Type()
+-> IsInherited(...)
+```
+
+with the intended required family:
+
+`AttachmentOpticsRIS1913`
+
+Static source comparison supports the method/API shape, but compiler acceptance remains Gate 0.
+
+### Remaining architecture risks
+
+Two risks remain intentionally unresolved until Workbench/runtime:
+
+1. **standalone equipment-storage structure:** public examples normally show `SCR_EquipmentStorageComponent` nested under a `SCR_UniversalInventoryStorageComponent` component tree. The current standalone diagnostic form is a POC hypothesis and must not be promoted to valid architecture before Gate 1.
+2. **IIC-derived coexistence:** `BaseInventoryStorageComponent : InventoryItemComponent`, while the adapter already has canonical `InventoryItemComponent {557E85EEE1B60313}`. The test must prove that adding the storage does not break or ambiguate the adapter's item identity.
+
+Do not disable or replace the canonical IIC merely to force the POC to load.
+
+### Workbench gate queue
+
+#### Gate 0 — script/compiler
+
+PASS requires:
+
+- both custom classes compile;
+- `CanStoreItem(IEntity, int)` override is accepted;
+- `AttachmentOpticsRIS1913` resolves as a script-visible typename/class for `IsInherited(...)`;
+- no duplicate/unresolved/invalid-override errors.
+
+First failure verdict:
+
+`ROUTE_E_BLOCKED_AT_SCRIPT_COMPILE`
+
+#### Gate 1 — prefab serialization
+
+PASS requires:
+
+- SINGLE_TEST parses and opens without config error;
+- inherited `AttachmentSlotComponent {BB6000C24BAA468F}` has effective `Enabled = 0`;
+- canonical `InventoryItemComponent {557E85EEE1B60313}` remains enabled/unchanged;
+- `ARMST_DovetailRISStorageComponent` is recognized;
+- `InitialStorageSlots` is exposed/accepted;
+- `SCR_EquipmentStorageSlot` can be created;
+- slot accepts `PivotID` and `ChildPivotID`.
+
+If the standalone storage structure fails, stop. Do not automatically switch to a nested-under-`SCR_UniversalInventoryStorageComponent` design.
+
+First failure verdict:
+
+`ROUTE_E_BLOCKED_AT_STORAGE_STRUCTURE`
+
+#### Gate 2 — adapter identity
+
+Before inserting any collimator, SINGLE_TEST must remain a normal separate adapter item:
+
+- physical profile remains `0.5 / 10x10x10 / volume 100`;
+- effective adapter type remains `AttachmentOpticsDovetailAK`;
+- pickup/movement works normally;
+- no duplicate inventory identity is observed;
+- adapter does not become an unintended cargo/container item.
+
+First failure verdict:
+
+`ROUTE_E_BLOCKED_AT_ITEM_IDENTITY`
+
+#### Gate 3 — child storage
+
+Use the existing production collimator only.
+
+PASS requires:
+
+- `CanStoreItem()` accepts the RIS1913-family collimator;
+- the child is actually attached to the adapter-owned slot;
+- geometry resolves as `snap_ris -> snap_weapon`;
+- collimator remains a separate entity;
+- collimator can be removed independently;
+- one existing clearly non-RIS1913 item is rejected, without creating another test resource.
+
+Composite/fixed-child behavior or inability to remove the collimator independently is a FAIL.
+
+First failure verdict:
+
+`ROUTE_E_BLOCKED_AT_CHILD_STORAGE`
+
+#### Gate 4 — nested-relation persistence
+
+Only after full Gate 3 PASS, carry the same child entity through:
+
+```
+adapter ground
+-> inventory
+-> AK
+-> detach from AK
+-> inventory
+-> drop
+-> pickup
+-> AK again
+```
+
+PASS requires:
+
+- the same collimator entity remains in adapter storage;
+- detaching the adapter from the AK does not eject the collimator;
+- drop/pickup does not lose the child relation;
+- collimator remains independently removable after the cycle.
+
+Only then may the verdict become:
+
+`ROUTE_E_PROVEN`
+
+### Frozen POC rules
+
+At the first Gate failure: **STOP** and record the exact first compiler/Workbench/runtime message.
+
+Do not add:
+
+- a second storage;
+- `WeaponComponent`;
+- ActionsManager workarounds;
+- sibling/dependency architecture;
+- fake weapon-side RIS slots;
+- custom slot constructors;
+- XOB edits;
+- pivot edits;
+- production adapter/collimator edits.
+
+Current staging verdict:
+
+```
+ROUTE_E_STATIC_STAGE: BUILT
+ROUTE_E_STATIC_VALIDATION: PARTIAL
+ROUTE_E_WORKBENCH_GATES_0_4: NOT_RUN
+ROUTE_E_VERDICT: ROUTE_E_PARTIAL
+STAGING_COMPONENT_ID: NON_AUTHORITATIVE
+PRODUCTION_MIGRATION: NOT_AUTHORIZED
+```
