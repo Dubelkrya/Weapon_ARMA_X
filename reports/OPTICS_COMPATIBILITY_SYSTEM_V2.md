@@ -1,5 +1,8 @@
 # ARMST Optics Compatibility System v2
 
+> [!IMPORTANT]
+> **Status: CURRENT GAMEPLAY POLICY.** Applies to the documented DovetailRU policy; newer live experimental research can supersede it for a specific research branch when `KNOWLEDGE_STATUS.md` says so.
+
 ## Final gameplay rule
 
 ARMST keeps two separate layers:
