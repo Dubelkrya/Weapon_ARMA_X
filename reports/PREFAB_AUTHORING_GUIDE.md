@@ -1,5 +1,8 @@
 # ARMST prefab authoring reference
 
+> [!IMPORTANT]
+> **Status: CURRENT AUTHORING GUIDE / WORKBENCH-BACKED.** Live addon and newer Workbench evidence still outrank this document when they conflict.
+
 Generated from `Weapons.zip` on 2026-09-15. The local addon is the source of truth.
 
 ## What is indexed
