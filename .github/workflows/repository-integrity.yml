@@ -36,3 +36,12 @@ jobs:
             git --no-pager diff -- WEAPON_INDEX.md
             exit 1
           fi
+
+      - name: Verify weapon family pages are current
+        run: |
+          if ! python agent/scripts/build_weapon_family_pages.py --check; then
+            python agent/scripts/build_weapon_family_pages.py
+            echo "Generated family-page diff:"
+            git --no-pager diff -- reports/families/
+            exit 1
+          fi
