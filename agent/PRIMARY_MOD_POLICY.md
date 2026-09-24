@@ -35,6 +35,26 @@ The checked-in scanner's default `MOD_ROOT` already points to `ARMST-PLATFORM---
 
 Do not run `scan_build.py` with an incomplete/sandbox addon while `REPO_ROOT` points at the repository root, because the scanner recreates generated `catalog/`, `indexes/`, `reports/` and `schema/` directories.
 
+### Read-only scan guard
+
+A scan described as read-only must prove that the consumed gameplay source stayed unchanged:
+
+1. hash all consumed `.et`, `.conf`, `.meta` and `.c` files before the scan;
+2. run the scanner;
+3. hash the same source set again;
+4. compare the before/after hashes;
+5. stop and reject the scan if any source file changed.
+
+Scanner success alone is not proof that the live addon was untouched.
+
+### Noncanonical / sandbox scans
+
+Any scan of `Armst_Work`, a test copy, historical backup or other noncanonical root must write to an isolated output root such as `snapshots/<name>/`. It must never replace the top-level canonical generated areas.
+
+The scanner and analysis tooling must adapt to the addon's physical layout. Do not move, rename or reorganize live weapon resources merely to make scanning or indexing easier.
+
+Canonical rescan changes belong on a dedicated review branch and must be accepted from an explainable generated diff, not from entity-count changes alone.
+
 ## Priority
 
 Current local primary addon / Workbench evidence > canonical authoring policy > generated snapshot > spreadsheets > archived reports.
