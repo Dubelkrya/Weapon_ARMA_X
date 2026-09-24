@@ -438,6 +438,17 @@ def vec(node):
     return list(node.value)
 
 
+def array_values(node):
+    """Return scalar values serialized directly or as __elem__ array children."""
+    if node is None:
+        return []
+    values = list(node.value)
+    for child in node.children:
+        if child.name == "__elem__":
+            values.extend(child.value)
+    return values
+
+
 def first_node(nodes):
     return nodes[0] if nodes else None
 
@@ -747,8 +758,8 @@ def magazine_extract(resolved, context):
             out["ammo_config_missing"] = ("able to search parent / external; "
                                           "no local AmmoConfig found")
         out["max_ammo"] = pval(find_child(mag, "MaxAmmo"))
-        out["ammo_mapping"] = list(find_child(mag, "AmmoMapping").value) \
-            if find_child(mag, "AmmoMapping") else None
+        mapping_node = find_child(mag, "AmmoMapping")
+        out["ammo_mapping"] = array_values(mapping_node) if mapping_node else None
         if ui is not None:
             cal = find_child(ui, "m_sAmmoCaliber")
             name = find_child(ui, "Name")
@@ -924,6 +935,7 @@ def main():
     # export catalogs
     stats = export_catalogs(entities, resources, all_files, guid_index, by_actual)
     export_indexes(entities, stats)
+    export_generated_ammo_config_index(resources, all_files, guid_index)
     graph = build_reference_graph(entities, resources, all_files, guid_index)
     with open(os.path.join(INDEX_DIR, "reference_graph.json"), "w",
               encoding="utf-8") as f:
@@ -1269,6 +1281,13 @@ def derive_magazine(entry):
     maxa = data.get("max_ammo")
     if maxa and isinstance(maxa.get("value"), (int, float)):
         out["capacity"] = maxa["value"]
+    else:
+        mapping = data.get("ammo_mapping")
+        if isinstance(mapping, list) and mapping:
+            # Serialized AmmoMapping has one index per loaded magazine slot.
+            # Its length is direct source evidence and is safer than filename inference.
+            out["capacity"] = len(mapping)
+            out["capacity_source"] = "AmmoMapping length"
     return out
 
 
@@ -1349,6 +1368,61 @@ def export_indexes(entities, stats):
     }
     with open(os.path.join(INDEX_DIR, "references.json"), "w", encoding="utf-8") as f:
         json.dump(graph, f, indent=2, ensure_ascii=False)
+
+
+def export_generated_ammo_config_index(resources, all_files, guid_index):
+    """Export live-addon AmmoConfig coverage separately from supplied snapshots."""
+    out_dir = os.path.join(INDEX_DIR, "generated_config_reference")
+    os.makedirs(out_dir, exist_ok=True)
+    data = OrderedDict()
+
+    for rel, resource in sorted(resources.items()):
+        if resource.kind != "conf":
+            continue
+        norm = rel.replace("\\", "/")
+        if "Configs/Weapons/Ammo/" not in norm:
+            continue
+
+        arrays = find_recursive(resource.root, "AmmoResourceArray")
+        projectiles = []
+        if arrays:
+            for child in arrays[0].children:
+                ref = child.ref
+                if ref is None and child.value:
+                    for token in child.value:
+                        match = GUID_REF_RE.match(str(token))
+                        if match and match.group(2):
+                            ref = {
+                                "guid": match.group(1).upper(),
+                                "path": match.group(2),
+                            }
+                            break
+                if not ref:
+                    continue
+                resolved = resolve_ref(ref["guid"], ref["path"],
+                                       all_files, guid_index)
+                projectiles.append({
+                    "guid": ref["guid"],
+                    "path": ref["path"],
+                    "resolved": resolved["status"],
+                    "target": resolved.get("rel"),
+                })
+
+        owner = getattr(resource, "resource_ref", None)
+        data[norm] = {
+            "resource_guid": owner.get("guid") if owner else None,
+            "resources": projectiles,
+            "coverage": "local_array" if arrays else "config_present_array_unresolved",
+        }
+
+    payload = {
+        "generated_from": "current primary addon scan",
+        "count": len(data),
+        "data": data,
+    }
+    with open(os.path.join(out_dir, "ammo_configs.json"), "w",
+              encoding="utf-8") as f:
+        json.dump(payload, f, indent=2, ensure_ascii=False)
 
 
 def export_schemas():

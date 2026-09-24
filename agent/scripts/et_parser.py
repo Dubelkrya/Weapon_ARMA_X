@@ -78,7 +78,12 @@ class Node:
 
 
 def _split_tokens(line):
-    """Split a line on whitespace, keeping double-quoted strings intact."""
+    """Split on whitespace/colon while keeping double-quoted strings intact.
+
+    The colon is syntax in serialized inheritance/config-template declarations,
+    e.g. `BaseFireMode "{INSTANCE}" : "{RESOURCE}FireMode.conf"`. Treat it
+    separately so it cannot shift the instance id into the type/id slots.
+    """
     tokens = []
     i, n = 0, len(line)
     while i < n:
@@ -86,15 +91,19 @@ def _split_tokens(line):
         if c.isspace():
             i += 1
             continue
+        if c == ":":
+            tokens.append(":")
+            i += 1
+            continue
         if c == '"':
             j = line.find('"', i + 1)
             if j == -1:
-                j = n
+                j = n - 1
             tokens.append(line[i:j + 1])
             i = j + 1
             continue
         j = i
-        while j < n and not line[j].isspace():
+        while j < n and not line[j].isspace() and line[j] != ":":
             j += 1
         tokens.append(line[i:j])
         i = j
@@ -217,34 +226,53 @@ def parse_text(resource_text, source_name="<text>", is_et=False):
     return header, root
 
 
+def _looks_like_instance_id(token):
+    raw = _strip_quotes(token)
+    return token.startswith('"') or raw.startswith("{")
+
+
 def _make_block_node(tokens, line, append):
-    name = None
+    """Parse a block declaration without conflating inheritance ':' with ids."""
+    if not tokens:
+        return Node(None, None, None, [], [], append, line)
+
+    name = _strip_quotes(tokens[0])
+    rest = list(tokens[1:])
+    if ":" in rest:
+        colon = rest.index(":")
+        declaration = rest[:colon]
+        inherited = rest[colon + 1:]
+    else:
+        declaration = rest
+        inherited = []
+
     typ = None
     nid = None
-    rest = []
-    if tokens:
-        first = tokens[0]
-        name = _strip_quotes(first)
-        rest = tokens[1:]
-        if len(rest) == 1:
-            t = rest[0]
-            if t.startswith('"') or t.startswith('{'):
-                nid = _strip_quotes(t)
-            else:
-                typ = t
-        elif len(rest) >= 2:
-            typ = rest[0]
-            nid = _strip_quotes(rest[1])
+    if len(declaration) == 1:
+        token = declaration[0]
+        if _looks_like_instance_id(token):
+            nid = _strip_quotes(token)
+        else:
+            typ = _strip_quotes(token)
+    elif len(declaration) >= 2:
+        if _looks_like_instance_id(declaration[0]):
+            nid = _strip_quotes(declaration[0])
+        else:
+            typ = _strip_quotes(declaration[0])
+            nid = _strip_quotes(declaration[1])
+
     node = Node(name, typ, nid, [], [], append, line)
-    # some declarations carry a resource reference after the instance id,
-    # e.g. "m_MagIndicator X "{id}" : "{GUID}path.conf"" -- grab it.
-    for t in rest:
-        gr = _guid_ref(t)
+    ref_tokens = inherited if inherited else rest
+    for token in ref_tokens:
+        gr = _guid_ref(token)
         if gr and gr[1]:
-            node.ref = {"guid": gr[0].upper(), "path": gr[1], "raw": str(t)}
+            node.ref = {
+                "guid": gr[0].upper(),
+                "path": gr[1],
+                "raw": _strip_quotes(str(token)),
+            }
             break
     return node
-
 
 def _make_value_node(tokens, line, append):
     if not tokens:
@@ -274,15 +302,50 @@ def _parse_et_header(line, lineno):
     return {"class": cls, "parent": parent, "line": lineno}
 
 
+def _norm_resource_path(path):
+    return str(path or "").replace("\\", "/").lstrip("./").casefold()
+
+
+def _normalize_conf_owner(root, relpath):
+    """Extract a config root's own ResourceName without treating it as an instance."""
+    if root is None:
+        return None
+    root_node = next((child for child in root.children
+                      if child.name != "__elem__"), None)
+    if root_node is None or not root_node.id:
+        return None
+
+    gr = _guid_ref(str(root_node.id))
+    if not gr or not gr[1]:
+        return None
+    guid, owner_path = gr
+    if _norm_resource_path(owner_path) != _norm_resource_path(relpath):
+        return None
+
+    owner = {
+        "guid": guid.upper(),
+        "path": owner_path.replace("\\", "/"),
+        "raw": str(root_node.id),
+    }
+    root_node.id = None
+    if root_node.ref:
+        ref_guid = str(root_node.ref.get("guid") or "").upper()
+        ref_path = _norm_resource_path(root_node.ref.get("path"))
+        if ref_guid == owner["guid"] and ref_path == _norm_resource_path(owner["path"]):
+            root_node.ref = None
+    return owner
+
+
 class Resource:
     """A parsed resource with its identity and header."""
 
-    def __init__(self, abspath, relpath, kind, header, root):
+    def __init__(self, abspath, relpath, kind, header, root, resource_ref=None):
         self.abspath = abspath
         self.relpath = relpath.replace("\\", "/")
         self.kind = kind  # et | conf | meta | c
         self.header = header
         self.root = root
+        self.resource_ref = resource_ref
         self.stem = os.path.splitext(os.path.basename(relpath))[0]
 
     @property
@@ -304,7 +367,8 @@ def parse_file(path, addon_root=None):
         return Resource(path, rel, "et", header, root)
     if ext in (".conf",):
         header, root = parse_text(text, source_name=rel, is_et=False)
-        return Resource(path, rel, "conf", header, root)
+        resource_ref = _normalize_conf_owner(root, rel)
+        return Resource(path, rel, "conf", header, root, resource_ref=resource_ref)
     if ext in (".meta",):
         header, root = parse_text(text, source_name=rel, is_et=False)
         return Resource(path, rel, "meta", header, root)

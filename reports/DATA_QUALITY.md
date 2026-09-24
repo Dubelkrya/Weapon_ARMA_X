@@ -15,14 +15,15 @@ Current CI runs the checker in **non-blocking mode**. Findings are printed into 
 
 ## Current automated scan summary
 
-**Status as of the canonical rescan on 2026-09-24:** the snapshot on this branch reports **0 errors, 59 warnings and 30 informational findings**.
+**Status for the 2026-09-24 canonical snapshot under the hardened checker:** **0 errors, 55 warnings and 32 informational findings**. The catalog itself has not yet been regenerated with the new AmmoMapping / live-AmmoConfig extraction; those improvements require the next canonical rescan.
 
 | Finding class | Count | Meaning in the current snapshot |
 |---|---:|---|
 | `AMMO_CONFIG_NOT_INDEXED` | 35 | Referenced configs are absent from the current `config_reference/ammo_configs.json` coverage (incl. `Configs/Weapons/Ammo/armst_Ammo_9x39.conf`) |
 | `MAG_CAPACITY_UNRESOLVED` | 18 | A capacity token exists in the resource name, but the catalog does not resolve capacity; the name is not used as the gameplay value (incl. VAL 30rnd) |
 | `PROJECTILE_DAMAGE_UNRESOLVED` | 2 | ProjectileDamage exists but damage is unresolved in the catalog |
-| `WEAPON_MAGAZINE_NOT_CATALOGED` | 4 | A weapon links to a magazine not covered by the current magazine catalog snapshot |
+| `WEAPON_MAGAZINE_NOT_CATALOGED` | 0 | Relocated local magazine refs are resolved by GUID/target rather than path-only comparison |
+| `WEAPON_MAGAZINE_EXTERNAL` | 2 | AKM/AKMS explicitly reference an external Vz58 magazine dependency; retained as INFO instead of being misreported as missing local catalog |
 | `AMMO_MAPPING_EMPTY` | 20 | Capacity is resolved but serialized mapping is empty, so loaded projectile composition is not proven (INFO) |
 | `CROSS_CALIBER_BALLISTIC_TABLE` | 4 | Cross-caliber table reuse is visible and requires review, not automatic correction (INFO) |
 | `CROSS_CALIBER_PARENT` | 6 | Cross-caliber projectile inheritance is visible and may be intentional (INFO) |
@@ -36,11 +37,11 @@ The checker currently looks for:
 
 - magazine resource caliber vs explicit `caliber_id` contradictions;
 - filename capacity tokens such as `20rnd` / `30rnd` vs resolved `max_ammo`;
-- magazine `AmmoConfig` references missing from `indexes/config_reference/ammo_configs.json`;
+- magazine `AmmoConfig` references missing from both supplied `indexes/config_reference/ammo_configs.json` and scanner-generated live config coverage when available;
 - resolved magazine capacity with an empty serialized `ammo_mapping`;
 - projectile `ProjectileDamage` components whose `DamageValue` is unresolved;
 - cross-caliber projectile parent / ballistic-table references;
-- weapon magazine references that are absent from `catalog/magazines`.
+- weapon magazine identity using resource path, GUID and scanner-resolved local target; explicit external dependencies are reported separately from missing-local-catalog findings.
 
 A filename may trigger a consistency check, but it is **never used as the missing gameplay value**.
 
@@ -69,24 +70,24 @@ Canonical read-only rescan on **2026-09-24** (branch `agent/primary-addon-canoni
 
 ### Out of scope / not "fixed" during rescan
 
-- `AmmoMapping` arrays remain empty in the 9×39 magazine entries — serialized `AmmoMapping` with zeroed entries is not proven load composition. Not corrected manually.
-- VAL 30rnd `max_ammo` / `derived.capacity` is **not resolved** (live file has no `MaxAmmo`, only a 30-slot `AmmoMapping`). The check reports `MAG_CAPACITY_UNRESOLVED` and does **not** substitute `30` from the filename.
-- `Configs/Weapons/Ammo/armst_Ammo_9x39.conf` is referenced (and exists in the live addon) but absent from `indexes/config_reference/ammo_configs.json` → `AMMO_CONFIG_NOT_INDEXED` (coverage gap, blocker for projectile-proofing, not data corruption).
+- The checked-in 9×39 `ammo_mapping` arrays are empty because the old extractor read the block's direct value instead of serialized `__elem__` children. The scanner hardening fixes this parser/extractor gap; generated catalogs remain unchanged until the next canonical rescan.
+- VAL 30rnd `max_ammo` / `derived.capacity` remains unresolved in the checked-in snapshot. The live resource has no `MaxAmmo` but does serialize a 30-slot `AmmoMapping`; after rescan the hardening derives capacity from mapping length (direct source evidence), never from the filename.
+- `Configs/Weapons/Ammo/armst_Ammo_9x39.conf` is referenced and exists in the live addon but is absent from the old supplied `indexes/config_reference/ammo_configs.json`. The hardening adds separate scanner-generated live AmmoConfig coverage; this warning remains until the next canonical rescan creates that index.
 - 9×39 projectiles still reference `AIBT_762x54r_Ball_7N1.conf` (`CROSS_CALIBER_BALLISTIC_TABLE`, INFO) and inherit from `Ammo_762x54r_Ball_57N323S.et` (`CROSS_CALIBER_PARENT`, INFO) — recorded separately, not auto-fixed.
 
 ## Remaining open 9×39 items (after rescan)
 
-### AmmoMapping coverage gap
+### AmmoMapping extraction awaiting rescan
 
-The 9×39 magazine records have empty serialized `ammo_mapping` arrays. Therefore the checked-in snapshot does not prove which projectile is actually loaded in an SP5/SP6-named magazine.
+The checked-in 9×39 records still show empty `ammo_mapping` arrays because they were generated before the array-child extractor fix. The next canonical rescan must prove the mapping from serialized source; filenames remain non-authoritative.
 
-This is intentionally not resolved from the filename. See [the 9×39 balance report](balance/CALIBER_9X39_BALANCE.md).
+See [the 9×39 balance report](balance/CALIBER_9X39_BALANCE.md).
 
-### VAL capacity unresolved
+### VAL capacity awaiting rescan
 
-The checked-in VAL magazine resources contain `30rnd` in their resource names, but the current catalog does not resolve `max_ammo` or a derived capacity.
+The checked-in VAL records still have unresolved capacity. The hardening allows capacity to be derived from a non-empty serialized `AmmoMapping` length when `MaxAmmo` is absent.
 
-The checker reports this as **WARNING**, not as “capacity = 30”. The live primary addon must supply the authoritative value (`MaxAmmo` or a provable serialized mapping).
+This is direct serialized evidence; the checker still must not substitute `30` from the filename.. The live primary addon must supply the authoritative value (`MaxAmmo` or a provable serialized mapping).
 
 ### AmmoConfig reference coverage
 
