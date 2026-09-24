@@ -18,6 +18,8 @@ This directory contains weapon-specific authoring guides, active gameplay polici
 
 Use [`WEAPON_INDEX.md`](../WEAPON_INDEX.md) for the human-readable generated weapon catalog. It is a navigation view over `catalog/weapons/*.json`, not a replacement for live-addon or Workbench evidence.
 
+Use [`families/README.md`](families/README.md) for generated side-by-side comparisons of the AK/RPK family, explicit 9×39 weapons and shotguns.
+
 ## Current authoring references
 
 | File | Purpose |
