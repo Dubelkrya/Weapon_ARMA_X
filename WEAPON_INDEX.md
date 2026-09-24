@@ -47,6 +47,10 @@ These controls are kept separate from the generated catalog so validation eviden
 - [9×39 family](reports/families/CALIBER_9X39.md)
 - [Shotguns](reports/families/SHOTGUNS.md)
 
+## Balance analysis
+
+- [9×39 weapon / magazine / projectile balance](reports/balance/CALIBER_9X39_BALANCE.md)
+
 ## Catalog by weapon type and caliber
 
 ### Rifles (36)
