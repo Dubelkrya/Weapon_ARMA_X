@@ -114,7 +114,7 @@ These controls are kept separate from the generated catalog so validation eviden
 |---|---|---|---|---|---|---|---:|
 | [`armst_izh_27`](catalog/weapons/armst_izh_27.json) | leaf | `armst_izh_27` | `armst_izh_27.et` | `12ga_Buckshot.et` | unresolved | Catalog snapshot | 0 |
 | [`armst_mp_133`](catalog/weapons/armst_mp_133.json) | leaf | `armst_mp_133` | `armst_mp_133.et` | `12ga_Buckshot.et` | unresolved | Catalog snapshot | 0 |
-| [`armst_mp_153`](catalog/weapons/armst_mp_153.json) | leaf | `armst_mp_153` | `12ga_Buckshot.et` | unresolved | Catalog snapshot | 0 |
+| [`armst_mp_153`](catalog/weapons/armst_mp_153.json) | leaf | `armst_mp_153` | `armst_mp_153.et` | `12ga_Buckshot.et` | unresolved | Catalog snapshot | 0 |
 | [`armst_remington_870`](catalog/weapons/armst_remington_870.json) | leaf | `armst_Remington_870` | `armst_Remington_870.et` | `12ga_Buckshot.et` | unresolved | Catalog snapshot | 0 |
 | [`armst_spas_12`](catalog/weapons/armst_spas_12.json) | leaf | `armst_spas_12` | `armst_spas_12.et` | `12ga_Buckshot.et` | unresolved, Auto | Catalog snapshot | 0 |
 | [`armst_toz_66`](catalog/weapons/armst_toz_66.json) | base | `armst_toz_66` | `armst_toz_66.et` | `12ga_Buckshot.et` | unresolved | Catalog snapshot | 0 |
