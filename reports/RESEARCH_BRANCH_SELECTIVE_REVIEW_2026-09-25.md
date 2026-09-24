@@ -80,6 +80,16 @@ Some current weapon prefabs still serialize historical magazine paths while pres
 
 This is a checker correction only. No weapon prefab is rewritten.
 
+The audit also separated the remaining AKM/AKMS case from relocation:
+
+- both current `main` and the older `resolver-v2` snapshot resolve GUID
+  `A827B610B7CD4158` / Vz58 magazine as **external**, with no local target;
+- therefore AKM/AKMS are retained as explicit external dependency evidence;
+- the checker reports them as `WEAPON_MAGAZINE_EXTERNAL` informational findings,
+  not as missing local-catalog warnings;
+- no source prefab is auto-corrected without current live/Workbench evidence that
+  the external template is unintended.
+
 ## Required validation sequence
 
 1. Run Python regression tests in CI.
