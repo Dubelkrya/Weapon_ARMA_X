@@ -1,5 +1,8 @@
 # ARMST ammunition AP/BP gameplay policy
 
+> [!IMPORTANT]
+> **Status: CURRENT GAMEPLAY DESIGN.** This defines the intended role model; individual caliber families remain unimplemented until authored and Workbench-tested.
+
 Status: active gameplay design v1. This document defines the intended two-role ammunition split; it is not proof that every local prefab has already been converted.
 
 ## Naming
