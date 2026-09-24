@@ -1,0 +1,44 @@
+{
+  "id": "armst_ammo_762x51_bp",
+  "role": "leaf",
+  "source": {
+    "resource": "Prefabs/Weapons/Ammo/Western/762x51/armst_Ammo_762x51_BP.et",
+    "resource_guid": "647D4F418F9F4655",
+    "meta_name": null,
+    "class": "Projectile",
+    "defined_in": "Prefabs/Weapons/Ammo/Western/762x51/armst_Ammo_762x51_BP.et"
+  },
+  "identity": {
+    "name": "armst_Ammo_762x51_BP",
+    "resource": "Prefabs/Weapons/Ammo/Western/762x51/armst_Ammo_762x51_BP.et"
+  },
+  "classification": {
+    "kind": "ammunition",
+    "confidence": "class"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Weapons/Ammo/Western/762x51/armst_Ammo_762x51_BP.et",
+        "status": "local",
+        "class": "Projectile"
+      }
+    ],
+    "external_parents": [
+      {
+        "guid": "9F39DD07E2860466",
+        "path": "Prefabs/Weapons/Ammo/Ammo_762x51_AP_M61.et",
+        "raw": "{9F39DD07E2860466}Prefabs/Weapons/Ammo/Ammo_762x51_AP_M61.et"
+      }
+    ],
+    "used_as_base_by": [],
+    "chain_depth_local": 1
+  },
+  "references": [],
+  "warnings": [],
+  "data": {
+    "effects": null,
+    "_defined_in": null
+  },
+  "derived": {}
+}

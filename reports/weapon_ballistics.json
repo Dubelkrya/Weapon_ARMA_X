@@ -3,37 +3,37 @@
     {
       "weapon": "Assets/Toz/1.et",
       "bullet_init_speed_coef": 0.95,
-      "ammo": "Prefabs/Weapons/Ammo/12g/Ammo_12ga.et",
+      "ammo": "Prefabs/Weapons/Ammo/12g/armst_Ammo_12ga.et",
       "ammo_init_speed": 350,
       "effective_muzzle_velocity": 332.5,
       "derived": true
     },
     {
-      "weapon": "Prefabs/Weapons/Rifles/9a91/Rifle_9a91.et",
+      "weapon": "Prefabs/Weapons/Russian/Rifle/9a91/armst_Rifle_9a91.et",
       "bullet_init_speed_coef": 0.835,
-      "ammo": "Prefabs/Weapons/Ammo/Ammo_9x39_SP5_Ball.et",
+      "ammo": "Prefabs/Weapons/Ammo/Russian/9x39/armst_Ammo_9x39_SP5_Ball.et",
       "ammo_init_speed": 290,
       "effective_muzzle_velocity": 242.15,
       "derived": true
     },
     {
-      "weapon": "Prefabs/Weapons/Rifles/9a91/Rifle_9a91_base.et",
+      "weapon": "Prefabs/Weapons/Russian/Rifle/9a91/armst_Rifle_9a91_base.et",
       "bullet_init_speed_coef": 0.835,
-      "ammo": "Prefabs/Weapons/Ammo/Ammo_9x39_SP5_Ball.et",
+      "ammo": "Prefabs/Weapons/Ammo/Russian/9x39/armst_Ammo_9x39_SP5_Ball.et",
       "ammo_init_speed": 290,
       "effective_muzzle_velocity": 242.15,
       "derived": true
     },
     {
-      "weapon": "Prefabs/Weapons/Rifles/9a91/Rifle_9a91_suppressor.et",
-      "bullet_init_speed_coef": 0.835,
-      "ammo": "Prefabs/Weapons/Ammo/Ammo_9x39_SP5_Ball.et",
-      "ammo_init_speed": 290,
-      "effective_muzzle_velocity": 242.15,
+      "weapon": "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM.et",
+      "bullet_init_speed_coef": 0.986,
+      "ammo": "Prefabs/Weapons/Ammo/Eastern/762x39/armst_Ammo_762x39_PP.et",
+      "ammo_init_speed": 718,
+      "effective_muzzle_velocity": 707.95,
       "derived": true
     },
     {
-      "weapon": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM.et",
+      "weapon": "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKMS.et",
       "bullet_init_speed_coef": 0.986,
       "ammo": null,
       "ammo_init_speed": null,
@@ -41,7 +41,7 @@
       "derived": false
     },
     {
-      "weapon": "Prefabs/Weapons/Rifles/AKM/Rifle_AKMS.et",
+      "weapon": "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_base.et",
       "bullet_init_speed_coef": 0.986,
       "ammo": null,
       "ammo_init_speed": null,
@@ -49,89 +49,73 @@
       "derived": false
     },
     {
-      "weapon": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et",
+      "weapon": "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_full.et",
       "bullet_init_speed_coef": 0.986,
-      "ammo": null,
-      "ammo_init_speed": null,
-      "effective_muzzle_velocity": null,
-      "derived": false
+      "ammo": "Prefabs/Weapons/Ammo/Eastern/762x39/armst_Ammo_762x39_PP.et",
+      "ammo_init_speed": 718,
+      "effective_muzzle_velocity": 707.95,
+      "derived": true
     },
     {
-      "weapon": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_full.et",
+      "weapon": "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_SOC94.et",
       "bullet_init_speed_coef": 0.986,
-      "ammo": null,
-      "ammo_init_speed": null,
-      "effective_muzzle_velocity": null,
-      "derived": false
+      "ammo": "Prefabs/Weapons/Ammo/Eastern/762x39/armst_Ammo_762x39_PP.et",
+      "ammo_init_speed": 718,
+      "effective_muzzle_velocity": 707.95,
+      "derived": true
     },
     {
-      "weapon": "Prefabs/Weapons/Rifles/AKM/Rifle_SOC94.et",
+      "weapon": "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_VPO136.et",
       "bullet_init_speed_coef": 0.986,
-      "ammo": null,
-      "ammo_init_speed": null,
-      "effective_muzzle_velocity": null,
-      "derived": false
+      "ammo": "Prefabs/Weapons/Ammo/Eastern/762x39/armst_Ammo_762x39_PP.et",
+      "ammo_init_speed": 718,
+      "effective_muzzle_velocity": 707.95,
+      "derived": true
     },
     {
-      "weapon": "Prefabs/Weapons/Rifles/AKM/Rifle_VPO136.et",
-      "bullet_init_speed_coef": 0.986,
-      "ammo": null,
-      "ammo_init_speed": null,
-      "effective_muzzle_velocity": null,
-      "derived": false
-    },
-    {
-      "weapon": "Prefabs/Weapons/Rifles/VAL/Oc_Groza.et",
+      "weapon": "Prefabs/Weapons/Russian/Rifle/VAL/armst_Rifle_val.et",
       "bullet_init_speed_coef": 0.835,
-      "ammo": null,
-      "ammo_init_speed": null,
-      "effective_muzzle_velocity": null,
-      "derived": false
-    },
-    {
-      "weapon": "Prefabs/Weapons/Rifles/VAL/Rifle_VAL.et",
-      "bullet_init_speed_coef": 0.835,
-      "ammo": "Prefabs/Weapons/Ammo/Ammo_9x39_SP5_Ball.et",
+      "ammo": "Prefabs/Weapons/Ammo/Russian/9x39/armst_Ammo_9x39_SP5_Ball.et",
       "ammo_init_speed": 290,
       "effective_muzzle_velocity": 242.15,
       "derived": true
     },
     {
-      "weapon": "Prefabs/Weapons/Rifles/VAL/Rifle_val_base.et",
+      "weapon": "Prefabs/Weapons/Russian/Rifle/VAL/armst_Rifle_val_base.et",
       "bullet_init_speed_coef": 0.835,
-      "ammo": "Prefabs/Weapons/Ammo/Ammo_9x39_SP5_Ball.et",
+      "ammo": "Prefabs/Weapons/Ammo/Russian/9x39/armst_Ammo_9x39_SP5_Ball.et",
       "ammo_init_speed": 290,
       "effective_muzzle_velocity": 242.15,
       "derived": true
     },
     {
-      "weapon": "Prefabs/Weapons/Rifles/VSK94/Rifle_VSK94.et",
+      "weapon": "Prefabs/Weapons/Russian/Rifle/VSK94/armst_Rifle_VSK94.et",
       "bullet_init_speed_coef": 0.835,
-      "ammo": "Prefabs/Weapons/Ammo/Ammo_9x39_SP5_Ball.et",
+      "ammo": "Prefabs/Weapons/Ammo/Russian/9x39/armst_Ammo_9x39_SP5_Ball.et",
       "ammo_init_speed": 290,
       "effective_muzzle_velocity": 242.15,
       "derived": true
     },
     {
-      "weapon": "Prefabs/Weapons/Rifles/VSK94/Rifle_VSK94_base.et",
+      "weapon": "Prefabs/Weapons/Russian/Rifle/VSK94/armst_Rifle_VSK94_base.et",
       "bullet_init_speed_coef": 0.835,
-      "ammo": "Prefabs/Weapons/Ammo/Ammo_9x39_SP5_Ball.et",
+      "ammo": "Prefabs/Weapons/Ammo/Russian/9x39/armst_Ammo_9x39_SP5_Ball.et",
       "ammo_init_speed": 290,
       "effective_muzzle_velocity": 242.15,
       "derived": true
     },
     {
-      "weapon": "Prefabs/Weapons/Rifles/VSS/Rifle_VSS.et",
+      "weapon": "Prefabs/Weapons/Russian/Rifle/VSS/armst_Rifle_vss.et",
       "bullet_init_speed_coef": 0.835,
-      "ammo": "Prefabs/Weapons/Ammo/Ammo_9x39_SP5_Ball.et",
+      "ammo": "Prefabs/Weapons/Ammo/Russian/9x39/armst_Ammo_9x39_SP5_Ball.et",
       "ammo_init_speed": 290,
       "effective_muzzle_velocity": 242.15,
       "derived": true
     },
     {
-      "weapon": "Prefabs/Weapons/Rifles/VSS/Rifle_vss_base.et",
+      "weapon": "Prefabs/Weapons/Russian/Rifle/VSS/armst_Rifle_vss_base.et",
       "bullet_init_speed_coef": 0.835,
-      "ammo": "Prefabs/Weapons/Ammo/Ammo_9x39_SP5_Ball.et",
+      "ammo": "Prefabs/Weapons/Ammo/Russian/9x39/armst_Ammo_9x39_SP5_Ball.et",
       "ammo_init_speed": 290,
       "effective_muzzle_velocity": 242.15,
       "derived": true

@@ -1,0 +1,157 @@
+{
+  "id": "armst_rifle_hkg33",
+  "role": "leaf",
+  "source": {
+    "resource": "Prefabs/Weapons/Western/Rifle/HKG33/armst_Rifle_HKG33.et",
+    "resource_guid": "30F83E13522DFC87",
+    "meta_name": null,
+    "class": "GenericEntity",
+    "defined_in": "Prefabs/Weapons/Western/Rifle/HKG33/armst_Rifle_HKG33.et"
+  },
+  "identity": {
+    "name": "armst_Rifle_HKG33",
+    "resource": "Prefabs/Weapons/Western/Rifle/HKG33/armst_Rifle_HKG33.et"
+  },
+  "classification": {
+    "kind": "weapon",
+    "confidence": "components"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Weapons/Western/Rifle/HKG33/armst_Rifle_HKG33.et",
+        "status": "local",
+        "class": "GenericEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Western/Rifle/HKG33/armst_Rifle_HKG33_base.et",
+        "status": "local",
+        "class": "GenericEntity"
+      }
+    ],
+    "external_parents": [
+      {
+        "guid": "C63227C0E70EA62E",
+        "path": "Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et",
+        "raw": "{C63227C0E70EA62E}Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et"
+      }
+    ],
+    "used_as_base_by": [],
+    "chain_depth_local": 2
+  },
+  "references": [
+    {
+      "guid": "572D73728DF974EC",
+      "path": "Assets/Weapons_NATO/HKG3/Hk3.xob",
+      "resolved": "local",
+      "target": "Assets/Weapons_NATO/HKG3/Hk3.xob",
+      "defined_in": "Prefabs/Weapons/Western/Rifle/HKG33/armst_Rifle_HKG33_base.et"
+    },
+    {
+      "guid": "32130352F880E925",
+      "path": "Assets/Weapons_NATO/HKG3/Anim/Diff/p_rfl_HKG3_ik.anm",
+      "resolved": "local",
+      "target": "Assets/Weapons_NATO/HKG3/Anim/Diff/p_rfl_HKG3_ik.anm",
+      "defined_in": "Prefabs/Weapons/Western/Rifle/HKG33/armst_Rifle_HKG33_base.et"
+    },
+    {
+      "guid": "6D18CC33708EE713",
+      "path": "Prefabs/Weapons/Magazines/Western/762x51/HK3/armst_Magazine_762x51_HK3_20_M80_Ball.et",
+      "resolved": "local",
+      "target": "Prefabs/Weapons/Magazines/Western/762x51/HK3/armst_Magazine_762x51_HK3_20_M80_Ball.et",
+      "defined_in": "Prefabs/Weapons/Western/Rifle/HKG33/armst_Rifle_HKG33_base.et"
+    },
+    {
+      "guid": "B01F8B98949C62AE",
+      "path": "Assets/Weapons_NATO/HKG3/Anim/HKG3.agr",
+      "resolved": "local",
+      "target": "Assets/Weapons_NATO/HKG3/Anim/HKG3.agr",
+      "defined_in": "Prefabs/Weapons/Western/Rifle/HKG33/armst_Rifle_HKG33_base.et"
+    },
+    {
+      "guid": "3F06AB9540D64568",
+      "path": "Assets/Weapons_NATO/HKG3/Anim/HKG3_weapon.asi",
+      "resolved": "local",
+      "target": "Assets/Weapons_NATO/HKG3/Anim/HKG3_weapon.asi",
+      "defined_in": "Prefabs/Weapons/Western/Rifle/HKG33/armst_Rifle_HKG33_base.et"
+    },
+    {
+      "guid": "C4583AA4D8D72184",
+      "path": "Assets/Weapons_NATO/HKG3/Anim/HKG3_player.asi",
+      "resolved": "local",
+      "target": "Assets/Weapons_NATO/HKG3/Anim/HKG3_player.asi",
+      "defined_in": "Prefabs/Weapons/Western/Rifle/HKG33/armst_Rifle_HKG33_base.et"
+    }
+  ],
+  "warnings": [],
+  "data": {
+    "identity": {
+      "name": null
+    },
+    "fire_modes": [],
+    "physical": {
+      "MeleeDamage": {
+        "value": 2,
+        "defined_in": "Prefabs/Weapons/Western/Rifle/HKG33/armst_Rifle_HKG33_base.et",
+        "inherited": true
+      },
+      "Model": {
+        "guid": "572D73728DF974EC",
+        "path": "Assets/Weapons_NATO/HKG3/Hk3.xob",
+        "defined_in": "Prefabs/Weapons/Western/Rifle/HKG33/armst_Rifle_HKG33_base.et"
+      }
+    },
+    "magazine": {
+      "magazine_well": null,
+      "magazine_template": null
+    },
+    "ballistics": {
+      "bullet_init_speed_coef": null,
+      "dispersion_diameter": null,
+      "dispersion_range": null
+    },
+    "aim": {
+      "recoil": null,
+      "sway": null
+    },
+    "sights": {
+      "switch_skip": null,
+      "ranges": [],
+      "defined_in": "Prefabs/Weapons/Western/Rifle/HKG33/armst_Rifle_HKG33_base.et"
+    },
+    "attachment_slots": [
+      {
+        "slot": null,
+        "pivot": null,
+        "enabled": {
+          "value": 0,
+          "defined_in": "Prefabs/Weapons/Western/Rifle/HKG33/armst_Rifle_HKG33_base.et",
+          "inherited": true
+        },
+        "attachment_types": [],
+        "defined_in": "Prefabs/Weapons/Western/Rifle/HKG33/armst_Rifle_HKG33_base.et"
+      },
+      {
+        "slot": null,
+        "pivot": null,
+        "enabled": {
+          "value": 0,
+          "defined_in": "Prefabs/Weapons/Western/Rifle/HKG33/armst_Rifle_HKG33_base.et",
+          "inherited": true
+        },
+        "attachment_types": [],
+        "defined_in": "Prefabs/Weapons/Western/Rifle/HKG33/armst_Rifle_HKG33_base.et"
+      }
+    ],
+    "muzzle_attachment": {
+      "slot": null,
+      "enabled": null,
+      "defined_in": "Prefabs/Weapons/Western/Rifle/HKG33/armst_Rifle_HKG33_base.et"
+    },
+    "animation": {
+      "anim_graph": null,
+      "anim_instance": null
+    }
+  },
+  "derived": {}
+}

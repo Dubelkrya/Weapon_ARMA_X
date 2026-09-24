@@ -1,0 +1,49 @@
+{
+  "id": "armst_magazine_9x18_pm_8rnd_ball_pp",
+  "role": "leaf",
+  "source": {
+    "resource": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball_PP.et",
+    "resource_guid": "75B5C65F2DA68A01",
+    "meta_name": null,
+    "class": "GenericEntity",
+    "defined_in": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball_PP.et"
+  },
+  "identity": {
+    "name": "armst_Magazine_9x18_PM_8rnd_Ball_PP",
+    "resource": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball_PP.et"
+  },
+  "classification": {
+    "kind": "magazine",
+    "confidence": "components"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball_PP.et",
+        "status": "local",
+        "class": "GenericEntity"
+      }
+    ],
+    "external_parents": [
+      {
+        "guid": "9B5AA2C731485ACA",
+        "path": "Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Base.et",
+        "raw": "{9B5AA2C731485ACA}Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Base.et"
+      }
+    ],
+    "used_as_base_by": [],
+    "chain_depth_local": 1
+  },
+  "references": [
+    {
+      "guid": "F2D8D099211C2451",
+      "path": "Configs/Weapons/Ammo/armst_Ammo_9x18_ARMST.conf",
+      "resolved": "local",
+      "target": "Configs/Weapons/Ammo/armst_Ammo_9x18_ARMST.conf",
+      "defined_in": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball_PP.et"
+    }
+  ],
+  "warnings": [],
+  "data": {},
+  "derived": {}
+}

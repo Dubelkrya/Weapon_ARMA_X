@@ -9,15 +9,16 @@ This report keeps three evidence layers separate: weapon handling, magazine capa
 
 | Weapon entry | Role | Magazine | Capacity | Mag well | RPM | Velocity coef | Dispersion | Warnings |
 |---|---|---|---:|---|---:|---:|---|---:|
-| [`rifle_9a91`](../../catalog/weapons/rifle_9a91.json) | leaf | `Magazine_9x39_20rnd_9a91_SP5.et` | 20 | `MagazineWell9x39_9a91` | 700 | 0.835 | D=0.4, R=200, 6.875 MOA | 0 |
-| [`rifle_9a91_base`](../../catalog/weapons/rifle_9a91_base.json) | base | `Magazine_9x39_20rnd_9a91_SP5.et` | 20 | `MagazineWell9x39_9a91` | 700 | 0.835 | D=0.4, R=200, 6.875 MOA | 0 |
-| [`rifle_9a91_suppressor`](../../catalog/weapons/rifle_9a91_suppressor.json) | leaf | `Magazine_9x39_20rnd_9a91_SP5.et` | 20 | `MagazineWell9x39_9a91` | 700 | 0.835 | D=0.4, R=200, 6.875 MOA | 0 |
-| [`rifle_val`](../../catalog/weapons/rifle_val.json) | base | `Magazine_9x39_30rnd_val_SP5.et` | — | `MagazineWell9x39` | 700 | 0.835 | D=0.4, R=200, 6.875 MOA | 0 |
-| [`rifle_val_base`](../../catalog/weapons/rifle_val_base.json) | base | `Magazine_9x39_30rnd_val_SP5.et` | — | `MagazineWell9x39` | 700 | 0.835 | D=0.4, R=200, 6.875 MOA | 0 |
-| [`rifle_vsk94`](../../catalog/weapons/rifle_vsk94.json) | leaf | `Magazine_9x39_20rnd_9a91_SP5.et` | 20 | `MagazineWell9x39_9a91` | 700 | 0.835 | D=0.4, R=200, 6.875 MOA | 0 |
-| [`rifle_vsk94_base`](../../catalog/weapons/rifle_vsk94_base.json) | base | `Magazine_9x39_20rnd_9a91_SP5.et` | 20 | `MagazineWell9x39_9a91` | 700 | 0.835 | D=0.4, R=200, 6.875 MOA | 0 |
-| [`rifle_vss`](../../catalog/weapons/rifle_vss.json) | leaf | `Magazine_9x39_20rnd_vss_SP5.et` | 20 | `MagazineWell9x39` | 700 | 0.835 | D=0.4, R=200, 6.875 MOA | 0 |
-| [`rifle_vss_base`](../../catalog/weapons/rifle_vss_base.json) | base | `Magazine_9x39_20rnd_vss_SP5.et` | 20 | `MagazineWell9x39` | 700 | 0.835 | D=0.4, R=200, 6.875 MOA | 0 |
+| [`armst_rifle_9a91`](../../catalog/weapons/armst_rifle_9a91.json) | leaf | `armst_Magazine_9x39_20rnd_9a91_SP5.et` | 20 | `MagazineWell9x39_9a91` | 700 | 0.835 | D=0.4, R=200, 6.875 MOA | 0 |
+| [`armst_rifle_9a91_base`](../../catalog/weapons/armst_rifle_9a91_base.json) | base | `armst_Magazine_9x39_20rnd_9a91_SP5.et` | 20 | `MagazineWell9x39_9a91` | 700 | 0.835 | D=0.4, R=200, 6.875 MOA | 0 |
+| [`armst_rifle_groza`](../../catalog/weapons/armst_rifle_groza.json) | leaf | `armst_Magazine_9x39_Groza_20rnd_SP5.et` | 20 | `MagazineWell9x39` | 750 | — | D=0.058, R=100, 1.994 MOA | 0 |
+| [`armst_rifle_groza_base`](../../catalog/weapons/armst_rifle_groza_base.json) | base | `armst_Magazine_9x39_Groza_20rnd_SP5.et` | 20 | `MagazineWell9x39` | 750 | — | D=0.058, R=100, 1.994 MOA | 0 |
+| [`armst_rifle_val`](../../catalog/weapons/armst_rifle_val.json) | leaf | `armst_Magazine_9x39_30rnd_val_SP5.et` | — | `MagazineWell9x39` | 700 | 0.835 | D=0.4, R=200, 6.875 MOA | 0 |
+| [`armst_rifle_val_base`](../../catalog/weapons/armst_rifle_val_base.json) | base | `armst_Magazine_9x39_30rnd_val_SP5.et` | — | `MagazineWell9x39` | 700 | 0.835 | D=0.4, R=200, 6.875 MOA | 0 |
+| [`armst_rifle_vsk94`](../../catalog/weapons/armst_rifle_vsk94.json) | leaf | `Magazine_9x39_20rnd_9a91_SP5.et` | — | `MagazineWell9x39_9a91` | 700 | 0.835 | D=0.4, R=200, 6.875 MOA | 0 |
+| [`armst_rifle_vsk94_base`](../../catalog/weapons/armst_rifle_vsk94_base.json) | base | `Magazine_9x39_20rnd_9a91_SP5.et` | — | `MagazineWell9x39_9a91` | 700 | 0.835 | D=0.4, R=200, 6.875 MOA | 0 |
+| [`armst_rifle_vss`](../../catalog/weapons/armst_rifle_vss.json) | leaf | `armst_Magazine_9x39_20rnd_vss_SP5.et` | 20 | `MagazineWell9x39` | 700 | 0.835 | D=0.4, R=200, 6.875 MOA | 0 |
+| [`armst_rifle_vss_base`](../../catalog/weapons/armst_rifle_vss_base.json) | base | `armst_Magazine_9x39_20rnd_vss_SP5.et` | 20 | `MagazineWell9x39` | 700 | 0.835 | D=0.4, R=200, 6.875 MOA | 0 |
 
 ### Handling snapshot
 
@@ -27,12 +28,14 @@ All current 9×39 weapon entries resolve to 700 RPM, velocity coefficient 0.835 
 
 | Magazine | Capacity | Mag well | AmmoConfig | AmmoMapping entries | Caliber ID | Warnings |
 |---|---:|---|---|---:|---|---:|
-| [`Magazine_9x39_20rnd_9a91_SP5.et`](../../catalog/magazines/magazine_9x39_20rnd_9a91_sp5.json) | 20 | `MagazineWell9x39_9a91` | `Ammo_9x39.conf` | 0 | `#AR-AmmunitionID_545x39mm` | 0 |
-| [`Magazine_9x39_20rnd_9a91_SP6.et`](../../catalog/magazines/magazine_9x39_20rnd_9a91_sp6.json) | 20 | `MagazineWell9x39_9a91` | `Ammo_9x39.conf` | 0 | `#AR-AmmunitionID_545x39mm` | 0 |
-| [`Magazine_9x39_20rnd_vss_SP5.et`](../../catalog/magazines/magazine_9x39_20rnd_vss_sp5.json) | 20 | `MagazineWell9x39` | `Ammo_9x39.conf` | 0 | `#AR-AmmunitionID_545x39mm` | 0 |
-| [`Magazine_9x39_20rnd_vss_SP6.et`](../../catalog/magazines/magazine_9x39_20rnd_vss_sp6.json) | 20 | `MagazineWell9x39` | `Ammo_9x39.conf` | 0 | `#AR-AmmunitionID_545x39mm` | 0 |
-| [`Magazine_9x39_30rnd_val_SP5.et`](../../catalog/magazines/magazine_9x39_30rnd_val_sp5.json) | — | `MagazineWell9x39` | `Ammo_9x39.conf` | 0 | `#AR-AmmunitionID_545x39mm` | 0 |
-| [`Magazine_9x39_30rnd_val_SP6.et`](../../catalog/magazines/magazine_9x39_30rnd_val_sp6.json) | — | `MagazineWell9x39` | `Ammo_9x39.conf` | 0 | `#AR-AmmunitionID_545x39mm` | 0 |
+| [`armst_Magazine_9x39_20rnd_9a91_SP5.et`](../../catalog/magazines/armst_magazine_9x39_20rnd_9a91_sp5.json) | 20 | `MagazineWell9x39_9a91` | `armst_Ammo_9x39.conf` | 0 | `#AR-ARMST_AmmunitionID_9x39mm` | 0 |
+| [`armst_Magazine_9x39_20rnd_9a91_SP6.et`](../../catalog/magazines/armst_magazine_9x39_20rnd_9a91_sp6.json) | 20 | `MagazineWell9x39_9a91` | `armst_Ammo_9x39.conf` | 0 | `#AR-ARMST_AmmunitionID_9x39mm` | 0 |
+| [`armst_Magazine_9x39_20rnd_vss_SP5.et`](../../catalog/magazines/armst_magazine_9x39_20rnd_vss_sp5.json) | 20 | `MagazineWell9x39` | `armst_Ammo_9x39.conf` | 0 | `#AR-ARMST_AmmunitionID_9x39mm` | 0 |
+| [`armst_Magazine_9x39_20rnd_vss_SP6.et`](../../catalog/magazines/armst_magazine_9x39_20rnd_vss_sp6.json) | 20 | `MagazineWell9x39` | `armst_Ammo_9x39.conf` | 0 | `#AR-ARMST_AmmunitionID_9x39mm` | 0 |
+| [`armst_Magazine_9x39_30rnd_val_SP5.et`](../../catalog/magazines/armst_magazine_9x39_30rnd_val_sp5.json) | — | `MagazineWell9x39` | `armst_Ammo_9x39.conf` | 0 | `#AR-ARMST_AmmunitionID_9x39mm` | 0 |
+| [`armst_Magazine_9x39_30rnd_val_SP6.et`](../../catalog/magazines/armst_magazine_9x39_30rnd_val_sp6.json) | — | `MagazineWell9x39` | `armst_Ammo_9x39.conf` | 0 | `#AR-ARMST_AmmunitionID_9x39mm` | 0 |
+| [`armst_Magazine_9x39_Groza_20rnd_SP5.et`](../../catalog/magazines/armst_magazine_9x39_groza_20rnd_sp5.json) | 20 | `MagazineWell9x39` | `armst_Ammo_9x39.conf` | 0 | `#AR-ARMST_AmmunitionID_9x39mm` | 0 |
+| [`armst_Magazine_9x39_Groza_20rnd_SP6.et`](../../catalog/magazines/armst_magazine_9x39_groza_20rnd_sp6.json) | 20 | `MagazineWell9x39` | `armst_Ammo_9x39.conf` | 0 | `#AR-ARMST_AmmunitionID_9x39mm` | 0 |
 
 > [!WARNING]
 > Current 9×39 magazine records have empty serialized `ammo_mapping` arrays, so this snapshot does **not** prove which projectile is actually loaded in each magazine. The generator therefore does not infer SP5/SP6 from filenames.
@@ -47,8 +50,8 @@ All current 9×39 weapon entries resolve to 700 RPM, velocity coefficient 0.835 
 
 | Projectile | Init speed | Mass | Damage | Penetration depth | Penetration speed | Air drag | Dispersion mult | Ballistic table | Warnings |
 |---|---:|---:|---:|---:|---:|---:|---:|---|---:|
-| [`Ammo_9x39_SP5_Ball.et`](../../catalog/ammunition/ammo_9x39_sp5_ball.json) | 290 | 0.01959 | — | 3.7 | 615 | 9.4e-06 | 0.55 | `AIBT_762x54r_Ball_7N1.conf` | 0 |
-| [`Ammo_9x39_SP6_Ball.et`](../../catalog/ammunition/ammo_9x39_sp6_ball.json) | 305 | 0.02559 | 150 | 3.7 | 615 | 9.4e-06 | 0.55 | `AIBT_762x54r_Ball_7N1.conf` | 0 |
+| [`armst_Ammo_9x39_SP5_Ball.et`](../../catalog/ammunition/armst_ammo_9x39_sp5_ball.json) | 290 | 0.01959 | — | 3.7 | 615 | 9.4e-06 | 0.55 | `AIBT_762x54r_Ball_7N1.conf` | 0 |
+| [`armst_Ammo_9x39_SP6_Ball.et`](../../catalog/ammunition/armst_ammo_9x39_sp6_ball.json) | 305 | 0.02559 | 150 | 5.55 | 615 | 9.4e-06 | 0.55 | `AIBT_762x54r_Ball_7N1.conf` | 0 |
 
 ### What the current projectile snapshot actually proves
 

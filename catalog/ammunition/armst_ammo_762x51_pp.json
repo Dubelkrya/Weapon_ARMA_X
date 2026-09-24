@@ -1,0 +1,44 @@
+{
+  "id": "armst_ammo_762x51_pp",
+  "role": "leaf",
+  "source": {
+    "resource": "Prefabs/Weapons/Ammo/Western/762x51/armst_Ammo_762x51_PP.et",
+    "resource_guid": "8FAC2EB7CA474E5E",
+    "meta_name": null,
+    "class": "Projectile",
+    "defined_in": "Prefabs/Weapons/Ammo/Western/762x51/armst_Ammo_762x51_PP.et"
+  },
+  "identity": {
+    "name": "armst_Ammo_762x51_PP",
+    "resource": "Prefabs/Weapons/Ammo/Western/762x51/armst_Ammo_762x51_PP.et"
+  },
+  "classification": {
+    "kind": "ammunition",
+    "confidence": "class"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Weapons/Ammo/Western/762x51/armst_Ammo_762x51_PP.et",
+        "status": "local",
+        "class": "Projectile"
+      }
+    ],
+    "external_parents": [
+      {
+        "guid": "C14C5DE6F97F06F0",
+        "path": "Prefabs/Weapons/Ammo/Ammo_762x51_Ball_M80.et",
+        "raw": "{C14C5DE6F97F06F0}Prefabs/Weapons/Ammo/Ammo_762x51_Ball_M80.et"
+      }
+    ],
+    "used_as_base_by": [],
+    "chain_depth_local": 1
+  },
+  "references": [],
+  "warnings": [],
+  "data": {
+    "effects": null,
+    "_defined_in": null
+  },
+  "derived": {}
+}

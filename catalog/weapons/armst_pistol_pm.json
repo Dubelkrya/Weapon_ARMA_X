@@ -1,0 +1,79 @@
+{
+  "id": "armst_pistol_pm",
+  "role": "leaf",
+  "source": {
+    "resource": "Prefabs/Weapons/Russian/Handguns/Pm/armst_pistol_PM.et",
+    "resource_guid": "C0F7DD85A86B2900",
+    "meta_name": null,
+    "class": "GenericEntity",
+    "defined_in": "Prefabs/Weapons/Russian/Handguns/Pm/armst_pistol_PM.et"
+  },
+  "identity": {
+    "name": "armst_pistol_PM",
+    "resource": "Prefabs/Weapons/Russian/Handguns/Pm/armst_pistol_PM.et"
+  },
+  "classification": {
+    "kind": "weapon",
+    "confidence": "components"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Weapons/Russian/Handguns/Pm/armst_pistol_PM.et",
+        "status": "local",
+        "class": "GenericEntity"
+      }
+    ],
+    "external_parents": [
+      {
+        "guid": "B7132459C07777CA",
+        "path": "Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et",
+        "raw": "{B7132459C07777CA}Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et"
+      }
+    ],
+    "used_as_base_by": [],
+    "chain_depth_local": 1
+  },
+  "references": [
+    {
+      "guid": "75B5C65F2DA68A01",
+      "path": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball_PP.et",
+      "resolved": "local",
+      "target": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball_PP.et",
+      "defined_in": "Prefabs/Weapons/Russian/Handguns/Pm/armst_pistol_PM.et"
+    }
+  ],
+  "warnings": [],
+  "data": {
+    "identity": {
+      "name": null
+    },
+    "fire_modes": [],
+    "physical": {},
+    "magazine": {
+      "magazine_well": null,
+      "magazine_template": {
+        "guid": "75B5C65F2DA68A01",
+        "path": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball_PP.et",
+        "defined_in": "Prefabs/Weapons/Russian/Handguns/Pm/armst_pistol_PM.et"
+      }
+    },
+    "ballistics": {
+      "bullet_init_speed_coef": null,
+      "dispersion_diameter": null,
+      "dispersion_range": null
+    },
+    "aim": {
+      "recoil": null,
+      "sway": null
+    },
+    "sights": null,
+    "attachment_slots": [],
+    "muzzle_attachment": null,
+    "animation": {
+      "anim_graph": null,
+      "anim_instance": null
+    }
+  },
+  "derived": {}
+}

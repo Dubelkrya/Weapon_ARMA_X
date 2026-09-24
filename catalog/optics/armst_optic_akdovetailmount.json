@@ -1,0 +1,48 @@
+{
+  "id": "armst_optic_akdovetailmount",
+  "role": "leaf",
+  "source": {
+    "resource": "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et",
+    "resource_guid": "D71FD2BD68AC4B31",
+    "meta_name": null,
+    "class": "GenericEntity",
+    "defined_in": "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et"
+  },
+  "identity": {
+    "name": "armst_Optic_AKDovetailMount",
+    "resource": "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et"
+  },
+  "classification": {
+    "kind": "attachment",
+    "confidence": "folder",
+    "attachment_kind": "optic"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et",
+        "status": "local",
+        "class": "GenericEntity"
+      }
+    ],
+    "external_parents": [
+      {
+        "guid": "0A9CD090EE3440E7",
+        "path": "Prefabs/Weapons/Core/WeaponPart_Base.et",
+        "raw": "{0A9CD090EE3440E7}Prefabs/Weapons/Core/WeaponPart_Base.et"
+      }
+    ],
+    "used_as_base_by": [],
+    "chain_depth_local": 1
+  },
+  "references": [
+    {
+      "guid": "18C9F66F09FF1531",
+      "path": "Assets/addons/Dovetail/AKDovetailMount.xob",
+      "resolved": "local",
+      "target": "Assets/addons/Dovetail/AKDovetailMount.xob",
+      "defined_in": "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et"
+    }
+  ],
+  "warnings": []
+}

@@ -1,0 +1,74 @@
+{
+  "id": "armst_hkg36_carryhandle_optic",
+  "role": "leaf",
+  "source": {
+    "resource": "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Optic.et",
+    "resource_guid": "BBA202FF623A9807",
+    "meta_name": null,
+    "class": "GameEntity",
+    "defined_in": "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Optic.et"
+  },
+  "identity": {
+    "name": "armst_HKG36_CarryHandle_Optic",
+    "resource": "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Optic.et"
+  },
+  "classification": {
+    "kind": "attachment",
+    "confidence": "folder",
+    "attachment_kind": "optic"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Optic.et",
+        "status": "local",
+        "class": "GameEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Attachments/Optics/WeaponOptic_Base.et",
+        "status": "local",
+        "class": "GameEntity"
+      }
+    ],
+    "external_parents": [
+      {
+        "guid": "3E15C1C882DBB587",
+        "path": "Prefabs/Weapons/Core/WeaponSight_Base.et",
+        "raw": "{3E15C1C882DBB587}Prefabs/Weapons/Core/WeaponSight_Base.et"
+      }
+    ],
+    "used_as_base_by": [],
+    "chain_depth_local": 2
+  },
+  "references": [
+    {
+      "guid": "9CF0737D5CB7F17D",
+      "path": "Assets/Weapons_NATO/HKG36/HKG36_Plank.xob",
+      "resolved": "local",
+      "target": "Assets/Weapons_NATO/HKG36/HKG36_Plank.xob",
+      "defined_in": "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Optic.et"
+    },
+    {
+      "guid": "80860D19EDECE837",
+      "path": "UI/Textures/Sights/4x20/4x202048_UI.edds",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Optic.et"
+    },
+    {
+      "guid": "EF091399D840192D",
+      "path": "UI/layouts/Sights/PictureInPictureSightsLayout.layout",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Optic.et"
+    },
+    {
+      "guid": "09B57B6EA6B5EE41",
+      "path": "Assets/Weapons/Attachments/Optics/4x20/Data/Optic_4x20_HDR.emat",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Optic.et"
+    }
+  ],
+  "warnings": []
+}

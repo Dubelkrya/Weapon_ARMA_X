@@ -1,0 +1,43 @@
+{
+  "id": "armst_vz58p_base",
+  "role": "leaf",
+  "source": {
+    "resource": "Prefabs/Weapons/Western/Rifle/armst_VZ58P_base.et",
+    "resource_guid": "9C948630078D154D",
+    "meta_name": null,
+    "class": "GenericEntity",
+    "defined_in": "Prefabs/Weapons/Western/Rifle/armst_VZ58P_base.et"
+  },
+  "identity": {
+    "name": "armst_VZ58P_base",
+    "resource": "Prefabs/Weapons/Western/Rifle/armst_VZ58P_base.et"
+  },
+  "classification": {
+    "kind": "weapon",
+    "confidence": "components"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Weapons/Western/Rifle/armst_VZ58P_base.et",
+        "status": "local",
+        "class": "GenericEntity"
+      }
+    ],
+    "external_parents": [
+      {
+        "guid": "C19BFAF8A6334FD5",
+        "path": "Prefabs/Weapons/Rifles/VZ58/Rifle_VZ58_base.et",
+        "raw": "{C19BFAF8A6334FD5}Prefabs/Weapons/Rifles/VZ58/Rifle_VZ58_base.et"
+      }
+    ],
+    "used_as_base_by": [],
+    "chain_depth_local": 1
+  },
+  "references": [],
+  "warnings": [],
+  "data": {
+    "error": "no WeaponComponent found"
+  },
+  "derived": {}
+}

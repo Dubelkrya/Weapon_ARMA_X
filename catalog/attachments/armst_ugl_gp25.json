@@ -1,0 +1,40 @@
+{
+  "id": "armst_ugl_gp25",
+  "role": "leaf",
+  "source": {
+    "resource": "Prefabs/Weapons/Attachments/Underbarrel/armst_UGL_GP25.et",
+    "resource_guid": "1ABABE3551512B0A",
+    "meta_name": null,
+    "class": "GameEntity",
+    "defined_in": "Prefabs/Weapons/Attachments/Underbarrel/armst_UGL_GP25.et"
+  },
+  "identity": {
+    "name": "armst_UGL_GP25",
+    "resource": "Prefabs/Weapons/Attachments/Underbarrel/armst_UGL_GP25.et"
+  },
+  "classification": {
+    "kind": "attachment",
+    "confidence": "folder",
+    "attachment_kind": "underbarrel"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Weapons/Attachments/Underbarrel/armst_UGL_GP25.et",
+        "status": "local",
+        "class": "GameEntity"
+      }
+    ],
+    "external_parents": [
+      {
+        "guid": "8A820ADCE8D05357",
+        "path": "Prefabs/Weapons/Core/UGL_Base.et",
+        "raw": "{8A820ADCE8D05357}Prefabs/Weapons/Core/UGL_Base.et"
+      }
+    ],
+    "used_as_base_by": [],
+    "chain_depth_local": 1
+  },
+  "references": [],
+  "warnings": []
+}

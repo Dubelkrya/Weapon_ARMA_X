@@ -1,0 +1,174 @@
+{
+  "id": "armst_rifle_sig550",
+  "role": "leaf",
+  "source": {
+    "resource": "Prefabs/Weapons/Western/Rifle/Sig550/armst_Rifle_Sig550.et",
+    "resource_guid": "2DD989AD9BAFA84C",
+    "meta_name": null,
+    "class": "GenericEntity",
+    "defined_in": "Prefabs/Weapons/Western/Rifle/Sig550/armst_Rifle_Sig550.et"
+  },
+  "identity": {
+    "name": "armst_Rifle_Sig550",
+    "resource": "Prefabs/Weapons/Western/Rifle/Sig550/armst_Rifle_Sig550.et"
+  },
+  "classification": {
+    "kind": "weapon",
+    "confidence": "components"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Weapons/Western/Rifle/Sig550/armst_Rifle_Sig550.et",
+        "status": "local",
+        "class": "GenericEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Western/Rifle/Sig550/armst_Rifle_Sig550_base.et",
+        "status": "local",
+        "class": "GenericEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Western/Rifle/M16/armst_Rifle_M16A2.et",
+        "status": "local",
+        "class": "GenericEntity"
+      }
+    ],
+    "external_parents": [
+      {
+        "guid": "C63227C0E70EA62E",
+        "path": "Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et",
+        "raw": "{C63227C0E70EA62E}Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et"
+      }
+    ],
+    "used_as_base_by": [],
+    "chain_depth_local": 3
+  },
+  "references": [
+    {
+      "guid": "C49097527FAF33B1",
+      "path": "Assets/Weapons_NATO/Sig SG 550/SG550.xob",
+      "resolved": "local",
+      "target": "Assets/Weapons_NATO/Sig SG 550/SG550.xob",
+      "defined_in": "Prefabs/Weapons/Western/Rifle/Sig550/armst_Rifle_Sig550_base.et"
+    },
+    {
+      "guid": "B7869ABD0EEE379D",
+      "path": "Assets/Weapons/Rifles/AK74/anims/anm/p_ak74_ik.anm",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "Prefabs/Weapons/Western/Rifle/Sig550/armst_Rifle_Sig550_base.et"
+    },
+    {
+      "guid": "E3DC6C2FBBE4F825",
+      "path": "Prefabs/Weapons/Magazines/Western/5x56/SIG550/armst_Magazine_556x45_SIG_550.et",
+      "resolved": "local",
+      "target": "Prefabs/Weapons/Magazines/Western/5x56/SIG550/armst_Magazine_556x45_SIG_550.et",
+      "defined_in": "Prefabs/Weapons/Western/Rifle/Sig550/armst_Rifle_Sig550_base.et"
+    },
+    {
+      "guid": "E7E67E4426E24066",
+      "path": "Assets/Weapons/Rifles/workspaces/VZ58.agr",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "Prefabs/Weapons/Western/Rifle/Sig550/armst_Rifle_Sig550_base.et"
+    },
+    {
+      "guid": "FFB391312D0E84C5",
+      "path": "Assets/Weapons/Rifles/workspaces/VZ58_weapon.asi",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "Prefabs/Weapons/Western/Rifle/Sig550/armst_Rifle_Sig550_base.et"
+    },
+    {
+      "guid": "04ED0000B50FE029",
+      "path": "Assets/Weapons/Rifles/workspaces/VZ58_player.asi",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "Prefabs/Weapons/Western/Rifle/Sig550/armst_Rifle_Sig550_base.et"
+    }
+  ],
+  "warnings": [],
+  "data": {
+    "identity": {
+      "name": null
+    },
+    "fire_modes": [],
+    "physical": {
+      "MeleeDamage": {
+        "value": 2,
+        "defined_in": "Prefabs/Weapons/Western/Rifle/Sig550/armst_Rifle_Sig550_base.et",
+        "inherited": true
+      },
+      "Model": {
+        "guid": "C49097527FAF33B1",
+        "path": "Assets/Weapons_NATO/Sig SG 550/SG550.xob",
+        "defined_in": "Prefabs/Weapons/Western/Rifle/Sig550/armst_Rifle_Sig550_base.et"
+      }
+    },
+    "magazine": {
+      "magazine_well": null,
+      "magazine_template": {
+        "guid": "E3DC6C2FBBE4F825",
+        "path": "Prefabs/Weapons/Magazines/Western/5x56/SIG550/armst_Magazine_556x45_SIG_550.et",
+        "defined_in": "Prefabs/Weapons/Western/Rifle/Sig550/armst_Rifle_Sig550_base.et"
+      }
+    },
+    "ballistics": {
+      "bullet_init_speed_coef": null,
+      "dispersion_diameter": null,
+      "dispersion_range": null
+    },
+    "aim": {
+      "recoil": null,
+      "sway": null
+    },
+    "sights": {
+      "switch_skip": null,
+      "ranges": [],
+      "defined_in": "Prefabs/Weapons/Western/Rifle/Sig550/armst_Rifle_Sig550_base.et"
+    },
+    "attachment_slots": [
+      {
+        "slot": null,
+        "pivot": null,
+        "enabled": {
+          "value": 0,
+          "defined_in": "Prefabs/Weapons/Western/Rifle/Sig550/armst_Rifle_Sig550_base.et",
+          "inherited": true
+        },
+        "attachment_types": [],
+        "defined_in": "Prefabs/Weapons/Western/Rifle/Sig550/armst_Rifle_Sig550_base.et"
+      },
+      {
+        "slot": null,
+        "pivot": null,
+        "enabled": {
+          "value": 0,
+          "defined_in": "Prefabs/Weapons/Western/Rifle/Sig550/armst_Rifle_Sig550_base.et",
+          "inherited": true
+        },
+        "attachment_types": [],
+        "defined_in": "Prefabs/Weapons/Western/Rifle/Sig550/armst_Rifle_Sig550_base.et"
+      }
+    ],
+    "muzzle_attachment": {
+      "slot": null,
+      "enabled": null,
+      "defined_in": "Prefabs/Weapons/Western/Rifle/Sig550/armst_Rifle_Sig550_base.et"
+    },
+    "animation": {
+      "anim_graph": {
+        "guid": "E7E67E4426E24066",
+        "path": "Assets/Weapons/Rifles/workspaces/VZ58.agr",
+        "defined_in": "Prefabs/Weapons/Western/Rifle/Sig550/armst_Rifle_Sig550_base.et"
+      },
+      "anim_instance": {
+        "guid": "FFB391312D0E84C5",
+        "path": "Assets/Weapons/Rifles/workspaces/VZ58_weapon.asi",
+        "defined_in": "Prefabs/Weapons/Western/Rifle/Sig550/armst_Rifle_Sig550_base.et"
+      }
+    }
+  },
+  "derived": {}
+}

@@ -1,0 +1,78 @@
+{
+  "id": "armst_magazine_762x51_hk3_20_m80_ball",
+  "role": "leaf",
+  "source": {
+    "resource": "Prefabs/Weapons/Magazines/Western/762x51/HK3/armst_Magazine_762x51_HK3_20_M80_Ball.et",
+    "resource_guid": "6D18CC33708EE713",
+    "meta_name": null,
+    "class": "GenericEntity",
+    "defined_in": "Prefabs/Weapons/Magazines/Western/762x51/HK3/armst_Magazine_762x51_HK3_20_M80_Ball.et"
+  },
+  "identity": {
+    "name": "armst_Magazine_762x51_HK3_20_M80_Ball",
+    "resource": "Prefabs/Weapons/Magazines/Western/762x51/HK3/armst_Magazine_762x51_HK3_20_M80_Ball.et"
+  },
+  "classification": {
+    "kind": "magazine",
+    "confidence": "components"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Weapons/Magazines/Western/762x51/HK3/armst_Magazine_762x51_HK3_20_M80_Ball.et",
+        "status": "local",
+        "class": "GenericEntity"
+      }
+    ],
+    "external_parents": [
+      {
+        "guid": "6D18CC33708EE712",
+        "path": "Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et",
+        "raw": "{6D18CC33708EE712}Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et"
+      }
+    ],
+    "used_as_base_by": [],
+    "chain_depth_local": 1
+  },
+  "references": [
+    {
+      "guid": "94FC75B17BBA4DB7",
+      "path": "Configs/Weapons/Ammo/ARMST/armst_Ammo_762x51_ARMST.conf",
+      "resolved": "local",
+      "target": "Configs/Weapons/Ammo/ARMST/armst_Ammo_762x51_ARMST.conf",
+      "defined_in": "Prefabs/Weapons/Magazines/Western/762x51/HK3/armst_Magazine_762x51_HK3_20_M80_Ball.et"
+    },
+    {
+      "guid": "B8EF1FFD1BD65AFB",
+      "path": "Assets/Weapons_NATO/HKG3/Hk3_Mag.xob",
+      "resolved": "local",
+      "target": "Assets/Weapons_NATO/HKG3/Hk3_Mag.xob",
+      "defined_in": "Prefabs/Weapons/Magazines/Western/762x51/HK3/armst_Magazine_762x51_HK3_20_M80_Ball.et"
+    }
+  ],
+  "warnings": [],
+  "data": {
+    "magazine_well": null,
+    "ammo_config": {
+      "guid": "94FC75B17BBA4DB7",
+      "path": "Configs/Weapons/Ammo/ARMST/armst_Ammo_762x51_ARMST.conf",
+      "defined_in": "Prefabs/Weapons/Magazines/Western/762x51/HK3/armst_Magazine_762x51_HK3_20_M80_Ball.et"
+    },
+    "max_ammo": null,
+    "ammo_mapping": [],
+    "caliber_id": null,
+    "name": {
+      "value": "HK3 magazine 20rnd",
+      "defined_in": "Prefabs/Weapons/Magazines/Western/762x51/HK3/armst_Magazine_762x51_HK3_20_M80_Ball.et",
+      "inherited": false
+    },
+    "_defined_in": "Prefabs/Weapons/Magazines/Western/762x51/HK3/armst_Magazine_762x51_HK3_20_M80_Ball.et",
+    "display_name": null,
+    "grid": {
+      "width": null,
+      "height": null
+    },
+    "_inv_defined_in": "Prefabs/Weapons/Magazines/Western/762x51/HK3/armst_Magazine_762x51_HK3_20_M80_Ball.et"
+  },
+  "derived": {}
+}

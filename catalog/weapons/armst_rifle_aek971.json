@@ -1,0 +1,175 @@
+{
+  "id": "armst_rifle_aek971",
+  "role": "leaf",
+  "source": {
+    "resource": "Prefabs/Weapons/Russian/Rifle/Aek971/armst_Rifle_AEK971.et",
+    "resource_guid": "0C10EE5C9C1C39E5",
+    "meta_name": null,
+    "class": "GenericEntity",
+    "defined_in": "Prefabs/Weapons/Russian/Rifle/Aek971/armst_Rifle_AEK971.et"
+  },
+  "identity": {
+    "name": "armst_Rifle_AEK971",
+    "resource": "Prefabs/Weapons/Russian/Rifle/Aek971/armst_Rifle_AEK971.et"
+  },
+  "classification": {
+    "kind": "weapon",
+    "confidence": "components"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Weapons/Russian/Rifle/Aek971/armst_Rifle_AEK971.et",
+        "status": "local",
+        "class": "GenericEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Russian/Rifle/Aek971/armst_Rifle_AEK971_base.et",
+        "status": "local",
+        "class": "GenericEntity"
+      }
+    ],
+    "external_parents": [
+      {
+        "guid": "EAE9A298979C4721",
+        "path": "Prefabs/Weapons/Rifles/AK74/Rifle_AK74N_base.et",
+        "raw": "{EAE9A298979C4721}Prefabs/Weapons/Rifles/AK74/Rifle_AK74N_base.et"
+      }
+    ],
+    "used_as_base_by": [],
+    "chain_depth_local": 2
+  },
+  "references": [
+    {
+      "guid": "EFB2B25EFD3BD62E",
+      "path": "Assets/Weapons_RUS/Aek_971/aek971.xob",
+      "resolved": "local",
+      "target": "Assets/Weapons_RUS/Aek_971/aek971.xob",
+      "defined_in": "Prefabs/Weapons/Russian/Rifle/Aek971/armst_Rifle_AEK971_base.et"
+    },
+    {
+      "guid": "B5D823125A678D73",
+      "path": "Prefabs/Weapons/Core/Configs/FireModes/FireMode_Burst.conf",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "Prefabs/Weapons/Russian/Rifle/Aek971/armst_Rifle_AEK971_base.et"
+    }
+  ],
+  "warnings": [],
+  "data": {
+    "identity": {
+      "name": null
+    },
+    "fire_modes": [
+      {
+        "mode_id": "{B80A64F4A8EF8333}",
+        "ui_name": null,
+        "rounds_per_minute": {
+          "value": 900,
+          "defined_in": "Prefabs/Weapons/Russian/Rifle/Aek971/armst_Rifle_AEK971_base.et",
+          "inherited": true
+        },
+        "max_burst": null,
+        "defined_in": "Prefabs/Weapons/Russian/Rifle/Aek971/armst_Rifle_AEK971_base.et",
+        "rounds_per_second": {
+          "value": 15.0,
+          "derived": true
+        }
+      },
+      {
+        "mode_id": ":",
+        "ui_name": null,
+        "rounds_per_minute": {
+          "value": 900,
+          "defined_in": "Prefabs/Weapons/Russian/Rifle/Aek971/armst_Rifle_AEK971_base.et",
+          "inherited": true
+        },
+        "max_burst": null,
+        "defined_in": "Prefabs/Weapons/Russian/Rifle/Aek971/armst_Rifle_AEK971_base.et",
+        "rounds_per_second": {
+          "value": 15.0,
+          "derived": true
+        }
+      }
+    ],
+    "physical": {
+      "Weight": null,
+      "SizeSetupStrategy": null,
+      "ItemDimensions": null,
+      "ItemVolume": null,
+      "DimensionScaler": null,
+      "_defined_in": "Prefabs/Weapons/Russian/Rifle/Aek971/armst_Rifle_AEK971_base.et",
+      "Model": {
+        "guid": "EFB2B25EFD3BD62E",
+        "path": "Assets/Weapons_RUS/Aek_971/aek971.xob",
+        "defined_in": "Prefabs/Weapons/Russian/Rifle/Aek971/armst_Rifle_AEK971_base.et"
+      }
+    },
+    "magazine": {
+      "magazine_well": null,
+      "magazine_template": null
+    },
+    "ballistics": {
+      "bullet_init_speed_coef": null,
+      "dispersion_diameter": null,
+      "dispersion_range": null
+    },
+    "aim": {
+      "recoil": {
+        "LinearData": {
+          "values": {
+            "curve_magnitudes": null,
+            "curve_mins": null,
+            "curve_maxs": null,
+            "curve_time_scale": null,
+            "base_recoil_scale": null
+          },
+          "defined_in": "Prefabs/Weapons/Russian/Rifle/Aek971/armst_Rifle_AEK971_base.et"
+        },
+        "AngularData": {
+          "values": {
+            "curve_magnitudes": null,
+            "curve_mins": null,
+            "curve_maxs": null,
+            "curve_time_scale": null,
+            "base_recoil_scale": null
+          },
+          "defined_in": "Prefabs/Weapons/Russian/Rifle/Aek971/armst_Rifle_AEK971_base.et"
+        },
+        "TurnOffsetData": null
+      },
+      "sway": null
+    },
+    "sights": {
+      "switch_skip": null,
+      "ranges": [],
+      "defined_in": "Prefabs/Weapons/Russian/Rifle/Aek971/armst_Rifle_AEK971_base.et"
+    },
+    "attachment_slots": [
+      {
+        "slot": null,
+        "pivot": null,
+        "enabled": null,
+        "attachment_types": [
+          "{5A16F04B258689D6}"
+        ],
+        "defined_in": "Prefabs/Weapons/Russian/Rifle/Aek971/armst_Rifle_AEK971_base.et"
+      },
+      {
+        "slot": null,
+        "pivot": null,
+        "enabled": null,
+        "attachment_types": [],
+        "defined_in": "Prefabs/Weapons/Russian/Rifle/Aek971/armst_Rifle_AEK971_base.et"
+      }
+    ],
+    "muzzle_attachment": null,
+    "animation": {
+      "anim_graph": null,
+      "anim_instance": null
+    }
+  },
+  "derived": {
+    "max_rounds_per_second": 15.0
+  }
+}

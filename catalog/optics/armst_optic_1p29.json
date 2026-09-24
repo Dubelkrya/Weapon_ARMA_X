@@ -1,0 +1,51 @@
+{
+  "id": "armst_optic_1p29",
+  "role": "base",
+  "source": {
+    "resource": "Prefabs/Weapons/Attachments/Optics/Optic_1P29/armst_Optic_1P29.et",
+    "resource_guid": "952D9BD7B6F8F591",
+    "meta_name": null,
+    "class": "GameEntity",
+    "defined_in": "Prefabs/Weapons/Attachments/Optics/Optic_1P29/armst_Optic_1P29.et"
+  },
+  "identity": {
+    "name": "armst_Optic_1P29",
+    "resource": "Prefabs/Weapons/Attachments/Optics/Optic_1P29/armst_Optic_1P29.et"
+  },
+  "classification": {
+    "kind": "attachment",
+    "confidence": "folder",
+    "attachment_kind": "optic"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Weapons/Attachments/Optics/Optic_1P29/armst_Optic_1P29.et",
+        "status": "local",
+        "class": "GameEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Attachments/Optics/Optic_1P29/armst_Optic_1P29.et",
+        "status": "local",
+        "class": "GameEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Attachments/Optics/Optic_1P29/armst_Optic_1P29.et",
+        "status": "loop",
+        "class": null
+      }
+    ],
+    "external_parents": [],
+    "used_as_base_by": [
+      "Prefabs/Weapons/Attachments/Optics/Optic_1P29/armst_Optic_1P29.et"
+    ],
+    "chain_depth_local": 2
+  },
+  "references": [],
+  "warnings": [
+    {
+      "category": "INHERIT-LOOP",
+      "message": "cycle detected at Prefabs/Weapons/Attachments/Optics/Optic_1P29/armst_Optic_1P29.et"
+    }
+  ]
+}

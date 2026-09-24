@@ -1,0 +1,73 @@
+{
+  "id": "armst_rifle_aks74u",
+  "role": "leaf",
+  "source": {
+    "resource": "Prefabs/Weapons/Russian/Rifle/AK74/armst_Rifle_AKS74U.et",
+    "resource_guid": "BFEA719491610A45",
+    "meta_name": null,
+    "class": "GenericEntity",
+    "defined_in": "Prefabs/Weapons/Russian/Rifle/AK74/armst_Rifle_AKS74U.et"
+  },
+  "identity": {
+    "name": "armst_Rifle_AKS74U",
+    "resource": "Prefabs/Weapons/Russian/Rifle/AK74/armst_Rifle_AKS74U.et"
+  },
+  "classification": {
+    "kind": "weapon",
+    "confidence": "components"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Weapons/Russian/Rifle/AK74/armst_Rifle_AKS74U.et",
+        "status": "local",
+        "class": "GenericEntity"
+      }
+    ],
+    "external_parents": [
+      {
+        "guid": "8BA0D0DE316D1B44",
+        "path": "Prefabs/Weapons/Rifles/AKS74U/Rifle_AKS74U_base.et",
+        "raw": "{8BA0D0DE316D1B44}Prefabs/Weapons/Rifles/AKS74U/Rifle_AKS74U_base.et"
+      }
+    ],
+    "used_as_base_by": [],
+    "chain_depth_local": 1
+  },
+  "references": [],
+  "warnings": [],
+  "data": {
+    "identity": {
+      "name": null
+    },
+    "fire_modes": [],
+    "physical": {
+      "MeleeDamage": {
+        "value": 2,
+        "defined_in": "Prefabs/Weapons/Russian/Rifle/AK74/armst_Rifle_AKS74U.et",
+        "inherited": false
+      }
+    },
+    "magazine": {
+      "magazine_well": null,
+      "magazine_template": null
+    },
+    "ballistics": {
+      "bullet_init_speed_coef": null,
+      "dispersion_diameter": null,
+      "dispersion_range": null
+    },
+    "aim": {
+      "recoil": null,
+      "sway": null
+    },
+    "sights": null,
+    "attachment_slots": [],
+    "muzzle_attachment": null,
+    "animation": {
+      "anim_graph": null,
+      "anim_instance": null
+    }
+  },
+  "derived": {}
+}

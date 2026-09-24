@@ -31,15 +31,16 @@
     ],
     "external_parents": [],
     "used_as_base_by": [
-      "Prefabs/Weapons/Rifles/AKM/Rifle_AKM.et",
-      "Prefabs/Weapons/Rifles/AKM/Rifle_AKMS.et",
-      "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et",
-      "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_full.et",
-      "Prefabs/Weapons/Rifles/AKM/Rifle_SOC94.et",
-      "Prefabs/Weapons/Rifles/AKM/Rifle_VPO136.et",
-      "Prefabs/Weapons/Rifles/Groza/Groza_base.et",
-      "Prefabs/Weapons/Rifles/Groza/armst_groza1.et",
-      "Prefabs/Weapons/Rifles/Rifle_hk_g36.et"
+      "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM.et",
+      "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKMS.et",
+      "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_base.et",
+      "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_full.et",
+      "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_SOC94.et",
+      "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_VPO136.et",
+      "Prefabs/Weapons/Russian/Rifle/Groza/armst_Rifle_Groza.et",
+      "Prefabs/Weapons/Russian/Rifle/Groza/armst_Rifle_Groza_base.et",
+      "Prefabs/Weapons/Western/Rifle/HKG36/armst_Rifle_HKG36.et",
+      "Prefabs/Weapons/Western/Rifle/HKG36/armst_Rifle_HKG36_base.et"
     ],
     "chain_depth_local": 2
   },

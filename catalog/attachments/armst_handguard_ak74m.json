@@ -1,0 +1,48 @@
+{
+  "id": "armst_handguard_ak74m",
+  "role": "leaf",
+  "source": {
+    "resource": "Prefabs/Weapons/Attachments/Stocks/armst_Handguard_AK74M.et",
+    "resource_guid": "FCE52BA4B5789E65",
+    "meta_name": null,
+    "class": "GenericEntity",
+    "defined_in": "Prefabs/Weapons/Attachments/Stocks/armst_Handguard_AK74M.et"
+  },
+  "identity": {
+    "name": "armst_Handguard_AK74M",
+    "resource": "Prefabs/Weapons/Attachments/Stocks/armst_Handguard_AK74M.et"
+  },
+  "classification": {
+    "kind": "attachment",
+    "confidence": "folder",
+    "attachment_kind": "stock"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Weapons/Attachments/Stocks/armst_Handguard_AK74M.et",
+        "status": "local",
+        "class": "GenericEntity"
+      }
+    ],
+    "external_parents": [
+      {
+        "guid": "5E36B9F5B54CDA2E",
+        "path": "Prefabs/Weapons/Attachments/Handguards/Handguard_M16_carbine/Handguard_M16_carbine_base.et",
+        "raw": "{5E36B9F5B54CDA2E}Prefabs/Weapons/Attachments/Handguards/Handguard_M16_carbine/Handguard_M16_carbine_base.et"
+      }
+    ],
+    "used_as_base_by": [],
+    "chain_depth_local": 1
+  },
+  "references": [
+    {
+      "guid": "FFB27257CF22782F",
+      "path": "Assets/Weapons_RUS/AK74m/ak74m_acs2.xob",
+      "resolved": "local",
+      "target": "Assets/Weapons_RUS/AK74m/ak74m_acs2.xob",
+      "defined_in": "Prefabs/Weapons/Attachments/Stocks/armst_Handguard_AK74M.et"
+    }
+  ],
+  "warnings": []
+}

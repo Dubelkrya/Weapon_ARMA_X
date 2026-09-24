@@ -18,99 +18,123 @@
     ]
   },
   {
-    "entity": "Prefabs/Weapons/Ammo/12g/Ammo_12ga.et",
+    "entity": "Prefabs/Weapons/Ammo/12g/armst_Ammo_12ga.et",
     "issues": [
       "external tail: Prefabs/Weapons/Ammo/Ammo_762x54r_Ball_57N323S.et"
     ]
   },
   {
-    "entity": "Prefabs/Weapons/Ammo/12g/Ammo_12ga_shell.et",
+    "entity": "Prefabs/Weapons/Ammo/12g/armst_Ammo_12ga_shell.et",
     "issues": [
       "external tail: Prefabs/Weapons/Ammo/Ammo_762x54r_Ball_57N323S.et"
     ]
   },
   {
-    "entity": "Prefabs/Weapons/Ammo/12g/Ammo_12ga_shell_test.et",
+    "entity": "Prefabs/Weapons/Ammo/12g/armst_Ammo_12ga_shell_test.et",
     "issues": [
       "external tail: Prefabs/Weapons/Ammo/Ammo_762x54r_Ball_57N323S.et"
     ]
   },
   {
-    "entity": "Prefabs/Weapons/Ammo/12g/Ammo_Buckshot_pellet.et",
+    "entity": "Prefabs/Weapons/Ammo/12g/armst_Ammo_Buckshot_pellet.et",
     "issues": [
       "external tail: Prefabs/Weapons/Core/Ammo_Bullet_Base.et"
     ]
   },
   {
-    "entity": "Prefabs/Weapons/Ammo/Ammo_545x39_Ball_7N6.et",
+    "entity": "Prefabs/Weapons/Ammo/Eastern/762x39/armst_Ammo_762x39_BP.et",
     "issues": [
       "external tail: Prefabs/Weapons/Core/Ammo_Bullet_Base.et"
     ]
   },
   {
-    "entity": "Prefabs/Weapons/Ammo/Ammo_556x45_Ball_M193.et",
+    "entity": "Prefabs/Weapons/Ammo/Eastern/762x39/armst_Ammo_762x39_PP.et",
     "issues": [
       "external tail: Prefabs/Weapons/Core/Ammo_Bullet_Base.et"
     ]
   },
   {
-    "entity": "Prefabs/Weapons/Ammo/Ammo_762x39_Ball_57N231.et",
-    "issues": [
-      "external tail: Prefabs/Weapons/Core/Ammo_Bullet_Base.et"
-    ]
-  },
-  {
-    "entity": "Prefabs/Weapons/Ammo/Ammo_763x25.et",
+    "entity": "Prefabs/Weapons/Ammo/Russian/763x25/armst_Ammo_763x25.et",
     "issues": [
       "external tail: Prefabs/Weapons/Ammo/Ammo_762x54r_Ball_57N323S.et"
     ]
   },
   {
-    "entity": "Prefabs/Weapons/Ammo/Ammo_763x25_Ball.et",
+    "entity": "Prefabs/Weapons/Ammo/Russian/763x25/armst_Ammo_763x25_Ball.et",
     "issues": [
       "external tail: Prefabs/Weapons/Core/Ammo_Bullet_Base.et"
     ]
   },
   {
-    "entity": "Prefabs/Weapons/Ammo/Ammo_9x18_Ball_57N181.et",
-    "issues": [
-      "external tail: Prefabs/Weapons/Core/Ammo_Bullet_Base.et"
-    ]
-  },
-  {
-    "entity": "Prefabs/Weapons/Ammo/Ammo_9x19_Ball_M882.et",
-    "issues": [
-      "external tail: Prefabs/Weapons/Core/Ammo_Bullet_Base.et"
-    ]
-  },
-  {
-    "entity": "Prefabs/Weapons/Ammo/Ammo_9x39_SP5_Ball.et",
+    "entity": "Prefabs/Weapons/Ammo/Russian/9x39/armst_Ammo_9x39_SP5_Ball.et",
     "issues": [
       "external tail: Prefabs/Weapons/Ammo/Ammo_762x54r_Ball_57N323S.et"
     ]
   },
   {
-    "entity": "Prefabs/Weapons/Ammo/Ammo_9x39_SP6_Ball.et",
+    "entity": "Prefabs/Weapons/Ammo/Russian/9x39/armst_Ammo_9x39_SP6_Ball.et",
     "issues": [
       "external tail: Prefabs/Weapons/Ammo/Ammo_762x54r_Ball_57N323S.et"
     ]
   },
   {
-    "entity": "Prefabs/Weapons/Ammo/Ammo_Grenade_HE_VOG25.et",
+    "entity": "Prefabs/Weapons/Ammo/Russian/grenade/armst_Ammo_Grenade_HE_VOG25.et",
     "issues": [
       "external tail: Prefabs/Weapons/Core/Ammo_GrenadeLauncher_Base.et"
     ]
   },
   {
-    "entity": "Prefabs/Weapons/Attachments/Handguards/Handguard_AK74M2.et",
+    "entity": "Prefabs/Weapons/Ammo/Western/5x56/armst_Ammo_556x45_BP.et",
     "issues": [
-      "external tail: Prefabs/Weapons/Attachments/Handguards/Handguard_M16_carbine/Handguard_M16_carbine_base.et"
+      "external tail: Prefabs/Weapons/Ammo/Ammo_556x45_Ball_M855.et"
     ]
   },
   {
-    "entity": "Prefabs/Weapons/Attachments/Muzzle/Suppressor_9a91.et",
+    "entity": "Prefabs/Weapons/Ammo/Western/5x56/armst_Ammo_556x45_PP.et",
     "issues": [
-      "external tail: Prefabs/Weapons/Core/Suppressor_base.et"
+      "external tail: Prefabs/Weapons/Ammo/Ammo_556x45_Ball_M855.et"
+    ]
+  },
+  {
+    "entity": "Prefabs/Weapons/Ammo/Western/762x51/armst_Ammo_762x51_BP.et",
+    "issues": [
+      "external tail: Prefabs/Weapons/Ammo/Ammo_762x51_AP_M61.et"
+    ]
+  },
+  {
+    "entity": "Prefabs/Weapons/Ammo/Western/762x51/armst_Ammo_762x51_PP.et",
+    "issues": [
+      "external tail: Prefabs/Weapons/Ammo/Ammo_762x51_Ball_M80.et"
+    ]
+  },
+  {
+    "entity": "Prefabs/Weapons/Ammo/Western/9x19/armst_Ammo_9x19_BP.et",
+    "issues": [
+      "external tail: Prefabs/Weapons/Ammo/Ammo_9x19_AP_7N21.et"
+    ]
+  },
+  {
+    "entity": "Prefabs/Weapons/Ammo/Western/9x19/armst_Ammo_9x19_PP.et",
+    "issues": [
+      "external tail: Prefabs/Weapons/Ammo/Ammo_9x19_HP_JHP.et"
+    ]
+  },
+  {
+    "entity": "Prefabs/Weapons/Ammo/armst_Ammo_9x18_BP.et",
+    "issues": [
+      "external tail: Prefabs/Weapons/Ammo/Ammo_9x18_AP_7N25.et"
+    ]
+  },
+  {
+    "entity": "Prefabs/Weapons/Ammo/armst_Ammo_9x18_PP.et",
+    "issues": [
+      "external tail: Prefabs/Weapons/Ammo/Ammo_9x18_Ball_57N181S.et"
+    ]
+  },
+  {
+    "entity": "Prefabs/Weapons/Attachments/Handguards/armst_Handguard_AK74M2.et",
+    "issues": [
+      "external tail: Prefabs/Weapons/Attachments/Handguards/Handguard_M16_carbine/Handguard_M16_carbine_base.et"
     ]
   },
   {
@@ -120,15 +144,45 @@
     ]
   },
   {
-    "entity": "Prefabs/Weapons/Attachments/Optics/Optic_PSO1.et",
+    "entity": "Prefabs/Weapons/Attachments/Muzzle/armst_Suppressor_9a91.et",
     "issues": [
-      "external tail: Prefabs/Weapons/Attachments/Optics/Optic_PSO1/Optic_PSO1_base.et"
+      "external tail: Prefabs/Weapons/Core/Suppressor_base.et"
     ]
   },
   {
-    "entity": "Prefabs/Weapons/Attachments/Optics/Optic_PSO1_ak.et",
+    "entity": "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et",
     "issues": [
-      "external tail: Prefabs/Weapons/Attachments/Optics/Optic_PSO1/Optic_PSO1_base.et"
+      "external tail: Prefabs/Weapons/Core/WeaponPart_Base.et"
+    ]
+  },
+  {
+    "entity": "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Optic.et",
+    "issues": [
+      "external tail: Prefabs/Weapons/Core/WeaponSight_Base.et"
+    ]
+  },
+  {
+    "entity": "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Picatinny.et",
+    "issues": [
+      "external tail: Prefabs/Weapons/Core/WeaponPart_Base.et"
+    ]
+  },
+  {
+    "entity": "Prefabs/Weapons/Attachments/Optics/L85/armst_L85_CarryHandle.et",
+    "issues": [
+      "external tail: Prefabs/Weapons/Core/WeaponPart_Base.et"
+    ]
+  },
+  {
+    "entity": "Prefabs/Weapons/Attachments/Optics/Optic_1P29/armst_Optic_1P29.et",
+    "issues": [
+      "inheritance loop detected"
+    ]
+  },
+  {
+    "entity": "Prefabs/Weapons/Attachments/Optics/Optic_4x20/Optic_4x20.et",
+    "issues": [
+      "external tail: Prefabs/Weapons/Attachments/Optics/Optic_4x20/Optic_4x20_base.et"
     ]
   },
   {
@@ -138,25 +192,37 @@
     ]
   },
   {
-    "entity": "Prefabs/Weapons/Attachments/Stocks/Handguard_AK74M.et",
+    "entity": "Prefabs/Weapons/Attachments/Optics/armst_Optic_Collimator.et",
+    "issues": [
+      "external tail: Prefabs/Weapons/Attachments/Optics/WeaponCollimator_Base.et"
+    ]
+  },
+  {
+    "entity": "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et",
+    "issues": [
+      "external tail: Prefabs/Weapons/Attachments/Optics/Optic_PSO1/Optic_PSO1_base.et"
+    ]
+  },
+  {
+    "entity": "Prefabs/Weapons/Attachments/Stocks/armst_Handguard_AK74M.et",
     "issues": [
       "external tail: Prefabs/Weapons/Attachments/Handguards/Handguard_M16_carbine/Handguard_M16_carbine_base.et"
     ]
   },
   {
-    "entity": "Prefabs/Weapons/Attachments/Stocks/Handguard_AKS.et",
+    "entity": "Prefabs/Weapons/Attachments/Stocks/armst_Handguard_AKS.et",
     "issues": [
       "external tail: Prefabs/Weapons/Attachments/Handguards/Handguard_M16_carbine/Handguard_M16_carbine_base.et"
     ]
   },
   {
-    "entity": "Prefabs/Weapons/Attachments/Stocks/Stock_akm.et",
+    "entity": "Prefabs/Weapons/Attachments/Stocks/armst_Stock_akm.et",
     "issues": [
       "external tail: Prefabs/Weapons/Attachments/Stocks/Stock_VZ58/Stock_VZ58_base.et"
     ]
   },
   {
-    "entity": "Prefabs/Weapons/Attachments/Underbarrel/UGL_GP25.et",
+    "entity": "Prefabs/Weapons/Attachments/Underbarrel/armst_UGL_GP25.et",
     "issues": [
       "external tail: Prefabs/Weapons/Core/UGL_Base.et"
     ]
@@ -168,87 +234,33 @@
     ]
   },
   {
-    "entity": "Prefabs/Weapons/Grenades/Grenade_M67.et",
+    "entity": "Prefabs/Weapons/Grenades/armst_Grenade_M67.et",
     "issues": [
       "external tail: Prefabs/Weapons/Core/FragGrenade_Base.et"
     ]
   },
   {
-    "entity": "Prefabs/Weapons/Grenades/Grenade_RGD5.et",
+    "entity": "Prefabs/Weapons/Grenades/armst_Grenade_RGD5.et",
     "issues": [
       "external tail: Prefabs/Weapons/Core/FragGrenade_Base.et"
     ]
   },
   {
-    "entity": "Prefabs/Weapons/Grenades/Smoke_ANM8HC.et",
+    "entity": "Prefabs/Weapons/Grenades/armst_Smoke_ANM8HC.et",
     "issues": [
       "external tail: Prefabs/Weapons/Core/SmokeGrenade_Base.et"
     ]
   },
   {
-    "entity": "Prefabs/Weapons/Grenades/Smoke_RDG2.et",
+    "entity": "Prefabs/Weapons/Grenades/armst_Smoke_RDG2.et",
     "issues": [
       "external tail: Prefabs/Weapons/Core/SmokeGrenade_Base.et"
     ]
   },
   {
-    "entity": "Prefabs/Weapons/Handguns/Handgun_Knife_base.et",
+    "entity": "Prefabs/Weapons/Handguns/armst_Handgun_Knife_base.et",
     "issues": [
       "external tail: Prefabs/Weapons/Core/Handgun_Base.et"
-    ]
-  },
-  {
-    "entity": "Prefabs/Weapons/Handguns/armst_APB.et",
-    "issues": [
-      "external tail: Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et"
-    ]
-  },
-  {
-    "entity": "Prefabs/Weapons/Handguns/armst_M9.et",
-    "issues": [
-      "external tail: Prefabs/Weapons/Handguns/M9/Handgun_M9_base.et"
-    ]
-  },
-  {
-    "entity": "Prefabs/Weapons/Handguns/armst_PM.et",
-    "issues": [
-      "external tail: Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et"
-    ]
-  },
-  {
-    "entity": "Prefabs/Weapons/Handguns/armst_PP91.et",
-    "issues": [
-      "external tail: Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et"
-    ]
-  },
-  {
-    "entity": "Prefabs/Weapons/Handguns/armst_SR_2.et",
-    "issues": [
-      "external tail: Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et"
-    ]
-  },
-  {
-    "entity": "Prefabs/Weapons/Handguns/armst_TT.et",
-    "issues": [
-      "external tail: Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et"
-    ]
-  },
-  {
-    "entity": "Prefabs/Weapons/MachineGuns/armst_PKM.et",
-    "issues": [
-      "external tail: Prefabs/Weapons/MachineGuns/PKM/MG_PKM_base.et"
-    ]
-  },
-  {
-    "entity": "Prefabs/Weapons/MachineGuns/armst_RPK74.et",
-    "issues": [
-      "external tail: Prefabs/Weapons/MachineGuns/RPK74/MG_RPK74_base.et"
-    ]
-  },
-  {
-    "entity": "Prefabs/Weapons/Magazines/12ga/12ga_Buckshot.et",
-    "issues": [
-      "external tail: Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et"
     ]
   },
   {
@@ -258,339 +270,519 @@
     ]
   },
   {
-    "entity": "Prefabs/Weapons/Magazines/12ga/12ga_Shell.et",
+    "entity": "Prefabs/Weapons/Magazines/12ga/armst_12ga_Buckshot.et",
     "issues": [
       "external tail: Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et"
     ]
   },
   {
-    "entity": "Prefabs/Weapons/Magazines/12ga/12ga_Shell_test.et",
+    "entity": "Prefabs/Weapons/Magazines/12ga/armst_12ga_Shell.et",
     "issues": [
       "external tail: Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et"
     ]
   },
   {
-    "entity": "Prefabs/Weapons/Magazines/5x45/Magazine_545x39_RPK_45rnd_Ball.et",
+    "entity": "Prefabs/Weapons/Magazines/12ga/armst_12ga_Shell_test.et",
+    "issues": [
+      "external tail: Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et"
+    ]
+  },
+  {
+    "entity": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_RPK_45rnd_Ball.et",
     "issues": [
       "external tail: Prefabs/Weapons/Magazines/Magazine_545x39_RPK_45rnd_Base.et"
     ]
   },
   {
-    "entity": "Prefabs/Weapons/Magazines/5x45/Magazine_545x39_RPK_45rnd_Tracer.et",
+    "entity": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_RPK_45rnd_Tracer.et",
     "issues": [
       "external tail: Prefabs/Weapons/Magazines/Magazine_545x39_RPK_45rnd_Base.et"
     ]
   },
   {
-    "entity": "Prefabs/Weapons/Magazines/5x56/Magazine_556x45_STANAG_30rnd_M193_Ball.et",
+    "entity": "Prefabs/Weapons/Magazines/Russian/762x54/SVD/armst_Magazine_762x54_SVD_10rnd_7BZ3API.et",
+    "issues": [
+      "external tail: Prefabs/Weapons/Magazines/Magazine_762x54_SVD_10rnd_Base.et"
+    ]
+  },
+  {
+    "entity": "Prefabs/Weapons/Magazines/Russian/763x25/TT/armst_Magazine_763x25_TT_8rnd_Ball.et",
+    "issues": [
+      "external tail: Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Base.et"
+    ]
+  },
+  {
+    "entity": "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_10rnd_Ball.et",
+    "issues": [
+      "external tail: Prefabs/Weapons/Magazines/Vz58/Magazine_762x39_Vz58_30rnd_Base.et"
+    ]
+  },
+  {
+    "entity": "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_10rnd_Ball_BP.et",
+    "issues": [
+      "external tail: Prefabs/Weapons/Magazines/Vz58/Magazine_762x39_Vz58_30rnd_Base.et"
+    ]
+  },
+  {
+    "entity": "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_30rnd_Ball.et",
+    "issues": [
+      "external tail: Prefabs/Weapons/Magazines/Vz58/Magazine_762x39_Vz58_30rnd_Base.et"
+    ]
+  },
+  {
+    "entity": "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_30rnd_Ball_BP.et",
+    "issues": [
+      "external tail: Prefabs/Weapons/Magazines/Vz58/Magazine_762x39_Vz58_30rnd_Base.et"
+    ]
+  },
+  {
+    "entity": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_APB_20rnd_Ball.et",
+    "issues": [
+      "external tail: Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Base.et"
+    ]
+  },
+  {
+    "entity": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_APB_20rnd_Ball_BP.et",
+    "issues": [
+      "external tail: Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Base.et"
+    ]
+  },
+  {
+    "entity": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball.et",
+    "issues": [
+      "external tail: Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Base.et"
+    ]
+  },
+  {
+    "entity": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball_BP.et",
+    "issues": [
+      "external tail: Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Base.et"
+    ]
+  },
+  {
+    "entity": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball_PP.et",
+    "issues": [
+      "external tail: Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Base.et"
+    ]
+  },
+  {
+    "entity": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PP91_30rnd_Ball.et",
+    "issues": [
+      "external tail: Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Base.et"
+    ]
+  },
+  {
+    "entity": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PP91_30rnd_Ball_BP.et",
+    "issues": [
+      "external tail: Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Base.et"
+    ]
+  },
+  {
+    "entity": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_SR2_30rnd_Ball.et",
+    "issues": [
+      "external tail: Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Base.et"
+    ]
+  },
+  {
+    "entity": "Prefabs/Weapons/Magazines/Western/5x56/HKG36/armst_Magazine_556x45_HKG36.et",
     "issues": [
       "external tail: Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M193_Ball.et"
     ]
   },
   {
-    "entity": "Prefabs/Weapons/Magazines/7x62/Magazine_762x39_AKM_10rnd_Ball.et",
+    "entity": "Prefabs/Weapons/Magazines/Western/5x56/HKG36/armst_Magazine_556x45_HKG36_BP.et",
     "issues": [
-      "external tail: Prefabs/Weapons/Magazines/Vz58/Magazine_762x39_Vz58_30rnd_Base.et"
+      "external tail: Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M193_Ball.et"
     ]
   },
   {
-    "entity": "Prefabs/Weapons/Magazines/7x62/Magazine_762x39_AKM_30rnd_Ball.et",
+    "entity": "Prefabs/Weapons/Magazines/Western/5x56/SIG550/armst_Magazine_556x45_SIG_550.et",
     "issues": [
-      "external tail: Prefabs/Weapons/Magazines/Vz58/Magazine_762x39_Vz58_30rnd_Base.et"
+      "external tail: Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M193_Ball.et"
     ]
   },
   {
-    "entity": "Prefabs/Weapons/Magazines/7x62/Magazine_762x39_AKM_30rnd_Tracer.et",
+    "entity": "Prefabs/Weapons/Magazines/Western/5x56/SIG550/armst_Magazine_556x45_SIG_550_BP.et",
     "issues": [
-      "external tail: Prefabs/Weapons/Magazines/Vz58/Magazine_762x39_Vz58_30rnd_Base.et"
+      "external tail: Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M193_Ball.et"
     ]
   },
   {
-    "entity": "Prefabs/Weapons/Magazines/Box_762x54_PK_250rnd_Ball.et",
+    "entity": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M193_Ball.et",
     "issues": [
-      "external tail: Prefabs/Weapons/Magazines/Box_762x54_PK_250rnd_Base.et"
+      "external tail: Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M193_Ball.et"
     ]
   },
   {
-    "entity": "Prefabs/Weapons/Magazines/Magazine_762x54_SVD_10rnd_7BZ3API.et",
+    "entity": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M193_Ball_BP.et",
     "issues": [
-      "external tail: Prefabs/Weapons/Magazines/Magazine_762x54_SVD_10rnd_Base.et"
+      "external tail: Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M193_Ball.et"
     ]
   },
   {
-    "entity": "Prefabs/Weapons/Magazines/Magazine_762x54_SVD_10rnd_Sniper.et",
+    "entity": "Prefabs/Weapons/Magazines/Western/762x51/HK3/armst_Magazine_762x51_HK3_20_M80_Ball.et",
     "issues": [
-      "external tail: Prefabs/Weapons/Magazines/Magazine_762x54_SVD_10rnd_Base.et"
+      "external tail: Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et"
     ]
   },
   {
-    "entity": "Prefabs/Weapons/Magazines/Magazine_763x25_TT_8rnd_Ball.et",
+    "entity": "Prefabs/Weapons/Magazines/Western/762x51/HK3/armst_Magazine_762x51_HK3_20_M80_Ball_BP.et",
     "issues": [
-      "external tail: Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Base.et"
+      "external tail: Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et"
     ]
   },
   {
-    "entity": "Prefabs/Weapons/Magazines/Magazine_9x18_APB_20rnd_Ball.et",
+    "entity": "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_20_M80_Ball.et",
     "issues": [
-      "external tail: Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Base.et"
+      "external tail: Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et"
     ]
   },
   {
-    "entity": "Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Ball.et",
+    "entity": "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_20_M80_Ball_BP.et",
     "issues": [
-      "external tail: Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Base.et"
+      "external tail: Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et"
     ]
   },
   {
-    "entity": "Prefabs/Weapons/Magazines/Magazine_9x18_PP91_30rnd_Ball.et",
+    "entity": "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_30_M80_Ball.et",
     "issues": [
-      "external tail: Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Base.et"
+      "external tail: Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et"
     ]
   },
   {
-    "entity": "Prefabs/Weapons/Magazines/Magazine_9x18_SR2_30rnd_Ball.et",
+    "entity": "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_30_M80_Ball_BP.et",
     "issues": [
-      "external tail: Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Base.et"
+      "external tail: Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et"
     ]
   },
   {
-    "entity": "Prefabs/Weapons/Magazines/Magazine_9x19_M9_15rnd_Ball.et",
+    "entity": "Prefabs/Weapons/Magazines/Western/9x19/M9/armst_Magazine_9x19_M9_15rnd_Ball.et",
     "issues": [
       "external tail: Prefabs/Weapons/Magazines/Magazine_9x19_M9_15rnd_Base.et"
     ]
   },
   {
-    "entity": "Prefabs/Weapons/Rifles/9a91/Rifle_9a91.et",
+    "entity": "Prefabs/Weapons/Magazines/Western/9x19/M9/armst_Magazine_9x19_M9_15rnd_Ball_BP.et",
+    "issues": [
+      "external tail: Prefabs/Weapons/Magazines/Magazine_9x19_M9_15rnd_Base.et"
+    ]
+  },
+  {
+    "entity": "Prefabs/Weapons/Russian/Handguns/APB/armst_pistol_APB.et",
+    "issues": [
+      "external tail: Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et"
+    ]
+  },
+  {
+    "entity": "Prefabs/Weapons/Russian/Handguns/APB/armst_pistol_APB_base.et",
+    "issues": [
+      "external tail: Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et"
+    ]
+  },
+  {
+    "entity": "Prefabs/Weapons/Russian/Handguns/PP91/armst_pistol_PP91.et",
+    "issues": [
+      "external tail: Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et"
+    ]
+  },
+  {
+    "entity": "Prefabs/Weapons/Russian/Handguns/PP91/armst_pistol_PP91_base.et",
+    "issues": [
+      "external tail: Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et"
+    ]
+  },
+  {
+    "entity": "Prefabs/Weapons/Russian/Handguns/Pm/armst_pistol_PM.et",
+    "issues": [
+      "external tail: Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et"
+    ]
+  },
+  {
+    "entity": "Prefabs/Weapons/Russian/Handguns/Sr_2/armst_pistol_SR_2.et",
+    "issues": [
+      "external tail: Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et"
+    ]
+  },
+  {
+    "entity": "Prefabs/Weapons/Russian/Handguns/Sr_2/armst_pistol_SR_2_base.et",
+    "issues": [
+      "external tail: Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et"
+    ]
+  },
+  {
+    "entity": "Prefabs/Weapons/Russian/Handguns/TT/armst_pistol_TT.et",
+    "issues": [
+      "external tail: Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et"
+    ]
+  },
+  {
+    "entity": "Prefabs/Weapons/Russian/Handguns/TT/armst_pistol_TT_base.et",
+    "issues": [
+      "external tail: Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et"
+    ]
+  },
+  {
+    "entity": "Prefabs/Weapons/Russian/MachineGuns/armst_mgun_PKM.et",
+    "issues": [
+      "external tail: Prefabs/Weapons/MachineGuns/PKM/MG_PKM_base.et"
+    ]
+  },
+  {
+    "entity": "Prefabs/Weapons/Russian/MachineGuns/armst_mgun_RPK74.et",
+    "issues": [
+      "external tail: Prefabs/Weapons/MachineGuns/RPK74/MG_RPK74_base.et"
+    ]
+  },
+  {
+    "entity": "Prefabs/Weapons/Russian/Rifle/9a91/armst_Rifle_9a91.et",
     "issues": [
       "external tail: Prefabs/Weapons/Rifles/AK74/Rifle_AK74_short_base.et"
     ]
   },
   {
-    "entity": "Prefabs/Weapons/Rifles/9a91/Rifle_9a91_base.et",
+    "entity": "Prefabs/Weapons/Russian/Rifle/9a91/armst_Rifle_9a91_base.et",
     "issues": [
       "external tail: Prefabs/Weapons/Rifles/AK74/Rifle_AK74_short_base.et"
     ]
   },
   {
-    "entity": "Prefabs/Weapons/Rifles/9a91/Rifle_9a91_suppressor.et",
+    "entity": "Prefabs/Weapons/Russian/Rifle/AK74/armst_Rifle_AK105.et",
     "issues": [
-      "external tail: Prefabs/Weapons/Rifles/AK74/Rifle_AK74_short_base.et"
+      "external tail: Prefabs/Weapons/Rifles/AK74/Rifle_AK74N_base.et"
     ]
   },
   {
-    "entity": "Prefabs/Weapons/Rifles/AK74/armst_AK105.et",
+    "entity": "Prefabs/Weapons/Russian/Rifle/AK74/armst_Rifle_AK74.et",
     "issues": [
       "external tail: Prefabs/Weapons/Rifles/AK74/Rifle_AK74_long_base.et"
     ]
   },
   {
-    "entity": "Prefabs/Weapons/Rifles/AK74/armst_AK74.et",
-    "issues": [
-      "external tail: Prefabs/Weapons/Rifles/AK74/Rifle_AK74_long_base.et"
-    ]
-  },
-  {
-    "entity": "Prefabs/Weapons/Rifles/AK74/armst_AK74M.et",
+    "entity": "Prefabs/Weapons/Russian/Rifle/AK74/armst_Rifle_AK74M.et",
     "issues": [
       "external tail: Prefabs/Weapons/Rifles/AK74/Rifle_AK74N_base.et"
     ]
   },
   {
-    "entity": "Prefabs/Weapons/Rifles/AK74/armst_AK74M_full.et",
+    "entity": "Prefabs/Weapons/Russian/Rifle/AK74/armst_Rifle_AK74M_full.et",
     "issues": [
       "external tail: Prefabs/Weapons/Rifles/AK74/Rifle_AK74N_base.et"
     ]
   },
   {
-    "entity": "Prefabs/Weapons/Rifles/AK74/armst_AK74N.et",
+    "entity": "Prefabs/Weapons/Russian/Rifle/AK74/armst_Rifle_AK74N.et",
     "issues": [
       "external tail: Prefabs/Weapons/Rifles/AK74/Rifle_AK74N_base.et"
     ]
   },
   {
-    "entity": "Prefabs/Weapons/Rifles/AK74/armst_AKS.et",
+    "entity": "Prefabs/Weapons/Russian/Rifle/AK74/armst_Rifle_AKS.et",
     "issues": [
       "external tail: Prefabs/Weapons/Rifles/AK74/Rifle_AK74N_base.et"
     ]
   },
   {
-    "entity": "Prefabs/Weapons/Rifles/AK74/armst_AKS74U.et",
+    "entity": "Prefabs/Weapons/Russian/Rifle/AK74/armst_Rifle_AKS74U.et",
     "issues": [
       "external tail: Prefabs/Weapons/Rifles/AKS74U/Rifle_AKS74U_base.et"
     ]
   },
   {
-    "entity": "Prefabs/Weapons/Rifles/AK74/armst_AKS74UN.et",
+    "entity": "Prefabs/Weapons/Russian/Rifle/Aek971/armst_Rifle_AEK971.et",
     "issues": [
-      "external tail: Prefabs/Weapons/Rifles/AKS74U/Rifle_AKS74UN_base.et"
+      "external tail: Prefabs/Weapons/Rifles/AK74/Rifle_AK74N_base.et"
     ]
   },
   {
-    "entity": "Prefabs/Weapons/Rifles/Rifle_HKG33.et",
+    "entity": "Prefabs/Weapons/Russian/Rifle/Aek971/armst_Rifle_AEK971_base.et",
     "issues": [
-      "external tail: Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et"
+      "external tail: Prefabs/Weapons/Rifles/AK74/Rifle_AK74N_base.et"
     ]
   },
   {
-    "entity": "Prefabs/Weapons/Rifles/Rifle_L85.et",
-    "issues": [
-      "external tail: Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et"
-    ]
-  },
-  {
-    "entity": "Prefabs/Weapons/Rifles/Rifle_M16A2.et",
-    "issues": [
-      "external tail: Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et"
-    ]
-  },
-  {
-    "entity": "Prefabs/Weapons/Rifles/Rifle_M16A2_carbine.et",
-    "issues": [
-      "external tail: Prefabs/Weapons/Rifles/M16/Rifle_M16A2_carbine_base.et"
-    ]
-  },
-  {
-    "entity": "Prefabs/Weapons/Rifles/Rifle_Sig550.et",
-    "issues": [
-      "external tail: Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et"
-    ]
-  },
-  {
-    "entity": "Prefabs/Weapons/Rifles/SLR.et",
-    "issues": [
-      "external tail: Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et"
-    ]
-  },
-  {
-    "entity": "Prefabs/Weapons/Rifles/Shotgun/armst_Remington_870.et",
-    "issues": [
-      "external tail: Prefabs/Weapons/Rifles/M14/Rifle_M21.et"
-    ]
-  },
-  {
-    "entity": "Prefabs/Weapons/Rifles/Shotgun/armst_izh_27.et",
-    "issues": [
-      "external tail: Prefabs/Weapons/Rifles/M14/Rifle_M21.et"
-    ]
-  },
-  {
-    "entity": "Prefabs/Weapons/Rifles/Shotgun/armst_mp_133.et",
-    "issues": [
-      "external tail: Prefabs/Weapons/Rifles/M14/Rifle_M21.et"
-    ]
-  },
-  {
-    "entity": "Prefabs/Weapons/Rifles/Shotgun/armst_mp_153.et",
-    "issues": [
-      "external tail: Prefabs/Weapons/Rifles/M14/Rifle_M21.et"
-    ]
-  },
-  {
-    "entity": "Prefabs/Weapons/Rifles/Shotgun/armst_spas_12.et",
-    "issues": [
-      "external tail: Prefabs/Weapons/Rifles/M14/Rifle_M21.et"
-    ]
-  },
-  {
-    "entity": "Prefabs/Weapons/Rifles/Shotgun/armst_toz_66.et",
-    "issues": [
-      "external tail: Prefabs/Weapons/Rifles/M14/Rifle_M21.et"
-    ]
-  },
-  {
-    "entity": "Prefabs/Weapons/Rifles/Shotgun/armst_toz_66_pantera.et",
-    "issues": [
-      "external tail: Prefabs/Weapons/Rifles/M14/Rifle_M21.et"
-    ]
-  },
-  {
-    "entity": "Prefabs/Weapons/Rifles/Shotgun/armst_toz_66_saw.et",
-    "issues": [
-      "external tail: Prefabs/Weapons/Rifles/M14/Rifle_M21.et"
-    ]
-  },
-  {
-    "entity": "Prefabs/Weapons/Rifles/Shotgun/shotgun_base.et",
-    "issues": [
-      "external tail: Prefabs/Weapons/Rifles/M14/Rifle_M21.et"
-    ]
-  },
-  {
-    "entity": "Prefabs/Weapons/Rifles/VAL/Oc_Groza.et",
-    "issues": [
-      "external tail: Prefabs/Weapons/Rifles/AK74/Rifle_AK74_short_base.et"
-    ]
-  },
-  {
-    "entity": "Prefabs/Weapons/Rifles/VAL/Rifle_VAL.et",
-    "issues": [
-      "external tail: Prefabs/Weapons/Rifles/AK74/Rifle_AK74_short_base.et"
-    ]
-  },
-  {
-    "entity": "Prefabs/Weapons/Rifles/VAL/Rifle_val_base.et",
-    "issues": [
-      "external tail: Prefabs/Weapons/Rifles/AK74/Rifle_AK74_short_base.et"
-    ]
-  },
-  {
-    "entity": "Prefabs/Weapons/Rifles/VSK94/Rifle_VSK94.et",
-    "issues": [
-      "external tail: Prefabs/Weapons/Rifles/AK74/Rifle_AK74_short_base.et"
-    ]
-  },
-  {
-    "entity": "Prefabs/Weapons/Rifles/VSK94/Rifle_VSK94_base.et",
-    "issues": [
-      "external tail: Prefabs/Weapons/Rifles/AK74/Rifle_AK74_short_base.et"
-    ]
-  },
-  {
-    "entity": "Prefabs/Weapons/Rifles/VSS/Rifle_VSS.et",
-    "issues": [
-      "external tail: Prefabs/Weapons/Rifles/AK74/Rifle_AK74_short_base.et"
-    ]
-  },
-  {
-    "entity": "Prefabs/Weapons/Rifles/VSS/Rifle_vss_base.et",
-    "issues": [
-      "external tail: Prefabs/Weapons/Rifles/AK74/Rifle_AK74_short_base.et"
-    ]
-  },
-  {
-    "entity": "Prefabs/Weapons/Rifles/armst_SVD.et",
+    "entity": "Prefabs/Weapons/Russian/Rifle/SVD/armst_Rifle_SVD.et",
     "issues": [
       "external tail: Prefabs/Weapons/Rifles/SVD/Rifle_SVD_base.et"
     ]
   },
   {
-    "entity": "Prefabs/Weapons/Rifles/armst_VZ58P.et",
+    "entity": "Prefabs/Weapons/Russian/Rifle/VAL/armst_Rifle_val.et",
     "issues": [
-      "external tail: Prefabs/Weapons/Rifles/VZ58/Rifle_VZ58_base.et"
+      "external tail: Prefabs/Weapons/Rifles/AK74/Rifle_AK74_short_base.et"
     ]
   },
   {
-    "entity": "Prefabs/Weapons/Rifles/armst_VZ58V.et",
+    "entity": "Prefabs/Weapons/Russian/Rifle/VAL/armst_Rifle_val_base.et",
     "issues": [
-      "external tail: Prefabs/Weapons/Rifles/VZ58/Rifle_VZ58_base.et"
+      "external tail: Prefabs/Weapons/Rifles/AK74/Rifle_AK74_short_base.et"
     ]
   },
   {
-    "entity": "Prefabs/Weapons/Tripods/6T7/Tripod_6T7_NSV.et",
+    "entity": "Prefabs/Weapons/Russian/Rifle/VSK94/armst_Rifle_VSK94.et",
     "issues": [
-      "external tail: Prefabs/Weapons/Tripods/6T7/Tripod_6T7.et"
+      "external tail: Prefabs/Weapons/Rifles/AK74/Rifle_AK74_short_base.et"
     ]
   },
   {
-    "entity": "Prefabs/Weapons/Tripods/Tripod_6T5.et",
+    "entity": "Prefabs/Weapons/Russian/Rifle/VSK94/armst_Rifle_VSK94_base.et",
+    "issues": [
+      "external tail: Prefabs/Weapons/Rifles/AK74/Rifle_AK74_short_base.et"
+    ]
+  },
+  {
+    "entity": "Prefabs/Weapons/Russian/Rifle/VSS/armst_Rifle_vss.et",
+    "issues": [
+      "external tail: Prefabs/Weapons/Rifles/AK74/Rifle_AK74_short_base.et"
+    ]
+  },
+  {
+    "entity": "Prefabs/Weapons/Russian/Rifle/VSS/armst_Rifle_vss_base.et",
+    "issues": [
+      "external tail: Prefabs/Weapons/Rifles/AK74/Rifle_AK74_short_base.et"
+    ]
+  },
+  {
+    "entity": "Prefabs/Weapons/Russian/Shotgun/armst_Shotgun_izh_27.et",
+    "issues": [
+      "external tail: Prefabs/Weapons/Rifles/M14/Rifle_M21.et"
+    ]
+  },
+  {
+    "entity": "Prefabs/Weapons/Russian/Shotgun/armst_Shotgun_mp_133.et",
+    "issues": [
+      "external tail: Prefabs/Weapons/Rifles/M14/Rifle_M21.et"
+    ]
+  },
+  {
+    "entity": "Prefabs/Weapons/Russian/Shotgun/armst_Shotgun_mp_153.et",
+    "issues": [
+      "external tail: Prefabs/Weapons/Rifles/M14/Rifle_M21.et"
+    ]
+  },
+  {
+    "entity": "Prefabs/Weapons/Russian/Shotgun/armst_Shotgun_toz_66.et",
+    "issues": [
+      "external tail: Prefabs/Weapons/Rifles/M14/Rifle_M21.et"
+    ]
+  },
+  {
+    "entity": "Prefabs/Weapons/Russian/Shotgun/armst_Shotgun_toz_66_pantera.et",
+    "issues": [
+      "external tail: Prefabs/Weapons/Rifles/M14/Rifle_M21.et"
+    ]
+  },
+  {
+    "entity": "Prefabs/Weapons/Russian/Shotgun/armst_Shotgun_toz_66_saw.et",
+    "issues": [
+      "external tail: Prefabs/Weapons/Rifles/M14/Rifle_M21.et"
+    ]
+  },
+  {
+    "entity": "Prefabs/Weapons/Tripods/armst_Tripod_6T5.et",
     "issues": [
       "external tail: Prefabs/Weapons/Core/Tripod_Base.et"
     ]
   },
   {
-    "entity": "Prefabs/Weapons/Tripods/Tripod_6T5_PKM.et",
+    "entity": "Prefabs/Weapons/Tripods/armst_Tripod_6T5_PKM.et",
     "issues": [
       "external tail: Prefabs/Weapons/Core/Tripod_Base.et"
+    ]
+  },
+  {
+    "entity": "Prefabs/Weapons/Western/Handguns/armst_pistol_M9.et",
+    "issues": [
+      "external tail: Prefabs/Weapons/Handguns/M9/Handgun_M9_base.et"
+    ]
+  },
+  {
+    "entity": "Prefabs/Weapons/Western/Rifle/HKG33/armst_Rifle_HKG33.et",
+    "issues": [
+      "external tail: Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et"
+    ]
+  },
+  {
+    "entity": "Prefabs/Weapons/Western/Rifle/HKG33/armst_Rifle_HKG33_base.et",
+    "issues": [
+      "external tail: Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et"
+    ]
+  },
+  {
+    "entity": "Prefabs/Weapons/Western/Rifle/L85/armst_Rifle_L85.et",
+    "issues": [
+      "external tail: Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et"
+    ]
+  },
+  {
+    "entity": "Prefabs/Weapons/Western/Rifle/L85/armst_Rifle_L85_base.et",
+    "issues": [
+      "external tail: Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et"
+    ]
+  },
+  {
+    "entity": "Prefabs/Weapons/Western/Rifle/M16/armst_Rifle_M16A2.et",
+    "issues": [
+      "external tail: Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et"
+    ]
+  },
+  {
+    "entity": "Prefabs/Weapons/Western/Rifle/M4/armst_Rifle_M4_carbine.et",
+    "issues": [
+      "external tail: Prefabs/Weapons/Rifles/M16/Rifle_M16A2_carbine_base.et"
+    ]
+  },
+  {
+    "entity": "Prefabs/Weapons/Western/Rifle/SLR/armst_SLR.et",
+    "issues": [
+      "external tail: Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et"
+    ]
+  },
+  {
+    "entity": "Prefabs/Weapons/Western/Rifle/SLR/armst_SLR_base.et",
+    "issues": [
+      "external tail: Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et"
+    ]
+  },
+  {
+    "entity": "Prefabs/Weapons/Western/Rifle/Sig550/armst_Rifle_Sig550.et",
+    "issues": [
+      "external tail: Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et"
+    ]
+  },
+  {
+    "entity": "Prefabs/Weapons/Western/Rifle/Sig550/armst_Rifle_Sig550_base.et",
+    "issues": [
+      "external tail: Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et"
+    ]
+  },
+  {
+    "entity": "Prefabs/Weapons/Western/Rifle/armst_VZ58P_base.et",
+    "issues": [
+      "external tail: Prefabs/Weapons/Rifles/VZ58/Rifle_VZ58_base.et"
+    ]
+  },
+  {
+    "entity": "Prefabs/Weapons/Western/Rifle/armst_VZ58V_base.et",
+    "issues": [
+      "external tail: Prefabs/Weapons/Rifles/VZ58/Rifle_VZ58_base.et"
+    ]
+  },
+  {
+    "entity": "Prefabs/Weapons/Western/Shotgun/armst_Shotgun_Remington_870.et",
+    "issues": [
+      "external tail: Prefabs/Weapons/Rifles/M14/Rifle_M21.et"
+    ]
+  },
+  {
+    "entity": "Prefabs/Weapons/Western/Shotgun/armst_Shotgun_spas_12.et",
+    "issues": [
+      "external tail: Prefabs/Weapons/Rifles/M14/Rifle_M21.et"
+    ]
+  },
+  {
+    "entity": "Prefabs/Weapons/Western/Shotgun/core/armst_shotgun_base.et",
+    "issues": [
+      "external tail: Prefabs/Weapons/Rifles/M14/Rifle_M21.et"
     ]
   }
 ]

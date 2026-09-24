@@ -1,0 +1,44 @@
+{
+  "id": "armst_ammo_556x45_pp",
+  "role": "leaf",
+  "source": {
+    "resource": "Prefabs/Weapons/Ammo/Western/5x56/armst_Ammo_556x45_PP.et",
+    "resource_guid": "62FA6A6363394955",
+    "meta_name": null,
+    "class": "Projectile",
+    "defined_in": "Prefabs/Weapons/Ammo/Western/5x56/armst_Ammo_556x45_PP.et"
+  },
+  "identity": {
+    "name": "armst_Ammo_556x45_PP",
+    "resource": "Prefabs/Weapons/Ammo/Western/5x56/armst_Ammo_556x45_PP.et"
+  },
+  "classification": {
+    "kind": "ammunition",
+    "confidence": "class"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Weapons/Ammo/Western/5x56/armst_Ammo_556x45_PP.et",
+        "status": "local",
+        "class": "Projectile"
+      }
+    ],
+    "external_parents": [
+      {
+        "guid": "AC26AB660097633D",
+        "path": "Prefabs/Weapons/Ammo/Ammo_556x45_Ball_M855.et",
+        "raw": "{AC26AB660097633D}Prefabs/Weapons/Ammo/Ammo_556x45_Ball_M855.et"
+      }
+    ],
+    "used_as_base_by": [],
+    "chain_depth_local": 1
+  },
+  "references": [],
+  "warnings": [],
+  "data": {
+    "effects": null,
+    "_defined_in": null
+  },
+  "derived": {}
+}

@@ -1,0 +1,48 @@
+{
+  "id": "armst_optic_collimator",
+  "role": "leaf",
+  "source": {
+    "resource": "Prefabs/Weapons/Attachments/Optics/armst_Optic_Collimator.et",
+    "resource_guid": "28DE12055E70E762",
+    "meta_name": null,
+    "class": "GameEntity",
+    "defined_in": "Prefabs/Weapons/Attachments/Optics/armst_Optic_Collimator.et"
+  },
+  "identity": {
+    "name": "armst_Optic_Collimator",
+    "resource": "Prefabs/Weapons/Attachments/Optics/armst_Optic_Collimator.et"
+  },
+  "classification": {
+    "kind": "attachment",
+    "confidence": "folder",
+    "attachment_kind": "optic"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Weapons/Attachments/Optics/armst_Optic_Collimator.et",
+        "status": "local",
+        "class": "GameEntity"
+      }
+    ],
+    "external_parents": [
+      {
+        "guid": "78689FF321194268",
+        "path": "Prefabs/Weapons/Attachments/Optics/WeaponCollimator_Base.et",
+        "raw": "{78689FF321194268}Prefabs/Weapons/Attachments/Optics/WeaponCollimator_Base.et"
+      }
+    ],
+    "used_as_base_by": [],
+    "chain_depth_local": 1
+  },
+  "references": [
+    {
+      "guid": "AE4FFD4A3655A0C4",
+      "path": "Assets/addons/Dovetail/coll.xob",
+      "resolved": "local",
+      "target": "Assets/addons/Dovetail/coll.xob",
+      "defined_in": "Prefabs/Weapons/Attachments/Optics/armst_Optic_Collimator.et"
+    }
+  ],
+  "warnings": []
+}

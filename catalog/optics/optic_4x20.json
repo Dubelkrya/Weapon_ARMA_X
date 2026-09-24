@@ -1,0 +1,40 @@
+{
+  "id": "optic_4x20",
+  "role": "leaf",
+  "source": {
+    "resource": "Prefabs/Weapons/Attachments/Optics/Optic_4x20/Optic_4x20.et",
+    "resource_guid": "DB6D823CC95A48F2",
+    "meta_name": null,
+    "class": "GameEntity",
+    "defined_in": "Prefabs/Weapons/Attachments/Optics/Optic_4x20/Optic_4x20.et"
+  },
+  "identity": {
+    "name": "Optic_4x20",
+    "resource": "Prefabs/Weapons/Attachments/Optics/Optic_4x20/Optic_4x20.et"
+  },
+  "classification": {
+    "kind": "attachment",
+    "confidence": "folder",
+    "attachment_kind": "optic"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Weapons/Attachments/Optics/Optic_4x20/Optic_4x20.et",
+        "status": "local",
+        "class": "GameEntity"
+      }
+    ],
+    "external_parents": [
+      {
+        "guid": "F358F46ADA42A197",
+        "path": "Prefabs/Weapons/Attachments/Optics/Optic_4x20/Optic_4x20_base.et",
+        "raw": "{F358F46ADA42A197}Prefabs/Weapons/Attachments/Optics/Optic_4x20/Optic_4x20_base.et"
+      }
+    ],
+    "used_as_base_by": [],
+    "chain_depth_local": 1
+  },
+  "references": [],
+  "warnings": []
+}

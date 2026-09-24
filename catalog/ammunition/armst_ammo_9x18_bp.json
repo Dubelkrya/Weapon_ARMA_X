@@ -1,0 +1,44 @@
+{
+  "id": "armst_ammo_9x18_bp",
+  "role": "leaf",
+  "source": {
+    "resource": "Prefabs/Weapons/Ammo/armst_Ammo_9x18_BP.et",
+    "resource_guid": "64F210837ACBAF9E",
+    "meta_name": null,
+    "class": "Projectile",
+    "defined_in": "Prefabs/Weapons/Ammo/armst_Ammo_9x18_BP.et"
+  },
+  "identity": {
+    "name": "armst_Ammo_9x18_BP",
+    "resource": "Prefabs/Weapons/Ammo/armst_Ammo_9x18_BP.et"
+  },
+  "classification": {
+    "kind": "ammunition",
+    "confidence": "class"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Weapons/Ammo/armst_Ammo_9x18_BP.et",
+        "status": "local",
+        "class": "Projectile"
+      }
+    ],
+    "external_parents": [
+      {
+        "guid": "B3010C5DF1ED82ED",
+        "path": "Prefabs/Weapons/Ammo/Ammo_9x18_AP_7N25.et",
+        "raw": "{B3010C5DF1ED82ED}Prefabs/Weapons/Ammo/Ammo_9x18_AP_7N25.et"
+      }
+    ],
+    "used_as_base_by": [],
+    "chain_depth_local": 1
+  },
+  "references": [],
+  "warnings": [],
+  "data": {
+    "effects": null,
+    "_defined_in": null
+  },
+  "derived": {}
+}

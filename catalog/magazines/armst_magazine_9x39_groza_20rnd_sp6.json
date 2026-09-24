@@ -1,0 +1,101 @@
+{
+  "id": "armst_magazine_9x39_groza_20rnd_sp6",
+  "role": "leaf",
+  "source": {
+    "resource": "Prefabs/Weapons/Magazines/Russian/9x39/Groza/armst_Magazine_9x39_Groza_20rnd_SP6.et",
+    "resource_guid": "168348351F5C3F54",
+    "meta_name": null,
+    "class": "GenericEntity",
+    "defined_in": "Prefabs/Weapons/Magazines/Russian/9x39/Groza/armst_Magazine_9x39_Groza_20rnd_SP6.et"
+  },
+  "identity": {
+    "name": "armst_Magazine_9x39_Groza_20rnd_SP6",
+    "resource": "Prefabs/Weapons/Magazines/Russian/9x39/Groza/armst_Magazine_9x39_Groza_20rnd_SP6.et"
+  },
+  "classification": {
+    "kind": "magazine",
+    "confidence": "components"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Weapons/Magazines/Russian/9x39/Groza/armst_Magazine_9x39_Groza_20rnd_SP6.et",
+        "status": "local",
+        "class": "GenericEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Core/Magazine_Base.et",
+        "status": "local",
+        "class": "GenericEntity"
+      }
+    ],
+    "external_parents": [],
+    "used_as_base_by": [],
+    "chain_depth_local": 2
+  },
+  "references": [
+    {
+      "guid": "710039458DA9911D",
+      "path": "Configs/Weapons/Ammo/armst_Ammo_9x39.conf",
+      "resolved": "local",
+      "target": "Configs/Weapons/Ammo/armst_Ammo_9x39.conf",
+      "defined_in": "Prefabs/Weapons/Magazines/Russian/9x39/Groza/armst_Magazine_9x39_Groza_20rnd_SP6.et"
+    },
+    {
+      "guid": "9889FE707F31F4A2",
+      "path": "Assets/Weapons_RUS/Groza/Groza_mag.xob",
+      "resolved": "local",
+      "target": "Assets/Weapons_RUS/Groza/Groza_mag.xob",
+      "defined_in": "Prefabs/Weapons/Magazines/Russian/9x39/Groza/armst_Magazine_9x39_Groza_20rnd_SP6.et"
+    }
+  ],
+  "warnings": [],
+  "data": {
+    "magazine_well": {
+      "name": "MagazineWell",
+      "class": "MagazineWell9x39",
+      "defined_in": "Prefabs/Weapons/Magazines/Russian/9x39/Groza/armst_Magazine_9x39_Groza_20rnd_SP6.et"
+    },
+    "ammo_config": {
+      "guid": "710039458DA9911D",
+      "path": "Configs/Weapons/Ammo/armst_Ammo_9x39.conf",
+      "defined_in": "Prefabs/Weapons/Magazines/Russian/9x39/Groza/armst_Magazine_9x39_Groza_20rnd_SP6.et"
+    },
+    "max_ammo": {
+      "value": 20,
+      "defined_in": "Prefabs/Weapons/Magazines/Russian/9x39/Groza/armst_Magazine_9x39_Groza_20rnd_SP6.et",
+      "inherited": false
+    },
+    "ammo_mapping": [],
+    "caliber_id": {
+      "value": "#AR-ARMST_AmmunitionID_9x39mm",
+      "defined_in": "Prefabs/Weapons/Magazines/Russian/9x39/Groza/armst_Magazine_9x39_Groza_20rnd_SP6.et",
+      "inherited": false
+    },
+    "name": null,
+    "_defined_in": "Prefabs/Weapons/Magazines/Russian/9x39/Groza/armst_Magazine_9x39_Groza_20rnd_SP6.et",
+    "display_name": null,
+    "grid": {
+      "width": null,
+      "height": {
+        "value": 2,
+        "defined_in": "Prefabs/Weapons/Core/Magazine_Base.et",
+        "inherited": true
+      }
+    },
+    "_inv_defined_in": "Prefabs/Weapons/Core/Magazine_Base.et",
+    "editor_name": {
+      "value": "Магазин ОЦ-14 «Гроза» SP-6",
+      "defined_in": "Prefabs/Weapons/Magazines/Russian/9x39/Groza/armst_Magazine_9x39_Groza_20rnd_SP6.et",
+      "inherited": false
+    },
+    "model": {
+      "guid": "9889FE707F31F4A2",
+      "path": "Assets/Weapons_RUS/Groza/Groza_mag.xob",
+      "defined_in": "Prefabs/Weapons/Magazines/Russian/9x39/Groza/armst_Magazine_9x39_Groza_20rnd_SP6.et"
+    }
+  },
+  "derived": {
+    "capacity": 20
+  }
+}

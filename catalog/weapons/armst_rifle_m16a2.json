@@ -1,0 +1,106 @@
+{
+  "id": "armst_rifle_m16a2",
+  "role": "base",
+  "source": {
+    "resource": "Prefabs/Weapons/Western/Rifle/M16/armst_Rifle_M16A2.et",
+    "resource_guid": "3E413771E1834D2F",
+    "meta_name": null,
+    "class": "GenericEntity",
+    "defined_in": "Prefabs/Weapons/Western/Rifle/M16/armst_Rifle_M16A2.et"
+  },
+  "identity": {
+    "name": "armst_Rifle_M16A2",
+    "resource": "Prefabs/Weapons/Western/Rifle/M16/armst_Rifle_M16A2.et"
+  },
+  "classification": {
+    "kind": "weapon",
+    "confidence": "components"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Weapons/Western/Rifle/M16/armst_Rifle_M16A2.et",
+        "status": "local",
+        "class": "GenericEntity"
+      }
+    ],
+    "external_parents": [
+      {
+        "guid": "C63227C0E70EA62E",
+        "path": "Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et",
+        "raw": "{C63227C0E70EA62E}Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et"
+      }
+    ],
+    "used_as_base_by": [
+      "Prefabs/Weapons/Western/Rifle/Sig550/armst_Rifle_Sig550.et",
+      "Prefabs/Weapons/Western/Rifle/Sig550/armst_Rifle_Sig550_base.et"
+    ],
+    "chain_depth_local": 1
+  },
+  "references": [
+    {
+      "guid": "C10E1E127E210526",
+      "path": "Assets/Weapons/Rifles/workspaces/m16.agr",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "Prefabs/Weapons/Western/Rifle/M16/armst_Rifle_M16A2.et"
+    },
+    {
+      "guid": "278604E4583F2647",
+      "path": "Assets/Weapons/Rifles/workspaces/m16_weapon.asi",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "Prefabs/Weapons/Western/Rifle/M16/armst_Rifle_M16A2.et"
+    },
+    {
+      "guid": "DCD895D5C03E42AB",
+      "path": "Assets/Weapons/Rifles/workspaces/m16_player.asi",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "Prefabs/Weapons/Western/Rifle/M16/armst_Rifle_M16A2.et"
+    }
+  ],
+  "warnings": [],
+  "data": {
+    "identity": {
+      "name": null
+    },
+    "fire_modes": [],
+    "physical": {
+      "MeleeDamage": {
+        "value": 2,
+        "defined_in": "Prefabs/Weapons/Western/Rifle/M16/armst_Rifle_M16A2.et",
+        "inherited": false
+      }
+    },
+    "magazine": {
+      "magazine_well": null,
+      "magazine_template": null
+    },
+    "ballistics": {
+      "bullet_init_speed_coef": null,
+      "dispersion_diameter": null,
+      "dispersion_range": null
+    },
+    "aim": {
+      "recoil": null,
+      "sway": null
+    },
+    "sights": null,
+    "attachment_slots": [],
+    "muzzle_attachment": null,
+    "animation": {
+      "anim_graph": {
+        "guid": "C10E1E127E210526",
+        "path": "Assets/Weapons/Rifles/workspaces/m16.agr",
+        "defined_in": "Prefabs/Weapons/Western/Rifle/M16/armst_Rifle_M16A2.et"
+      },
+      "anim_instance": {
+        "guid": "278604E4583F2647",
+        "path": "Assets/Weapons/Rifles/workspaces/m16_weapon.asi",
+        "defined_in": "Prefabs/Weapons/Western/Rifle/M16/armst_Rifle_M16A2.et"
+      }
+    }
+  },
+  "derived": {}
+}

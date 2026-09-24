@@ -1,0 +1,83 @@
+{
+  "id": "armst_rifle_svd",
+  "role": "leaf",
+  "source": {
+    "resource": "Prefabs/Weapons/Russian/Rifle/SVD/armst_Rifle_SVD.et",
+    "resource_guid": "3EB02CDAD5F23C82",
+    "meta_name": null,
+    "class": "GenericEntity",
+    "defined_in": "Prefabs/Weapons/Russian/Rifle/SVD/armst_Rifle_SVD.et"
+  },
+  "identity": {
+    "name": "armst_Rifle_SVD",
+    "resource": "Prefabs/Weapons/Russian/Rifle/SVD/armst_Rifle_SVD.et"
+  },
+  "classification": {
+    "kind": "weapon",
+    "confidence": "components"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Weapons/Russian/Rifle/SVD/armst_Rifle_SVD.et",
+        "status": "local",
+        "class": "GenericEntity"
+      }
+    ],
+    "external_parents": [
+      {
+        "guid": "A3E183EB5A2F3A38",
+        "path": "Prefabs/Weapons/Rifles/SVD/Rifle_SVD_base.et",
+        "raw": "{A3E183EB5A2F3A38}Prefabs/Weapons/Rifles/SVD/Rifle_SVD_base.et"
+      }
+    ],
+    "used_as_base_by": [],
+    "chain_depth_local": 1
+  },
+  "references": [],
+  "warnings": [],
+  "data": {
+    "identity": {
+      "name": null
+    },
+    "fire_modes": [],
+    "physical": {
+      "MeleeDamage": {
+        "value": 2,
+        "defined_in": "Prefabs/Weapons/Russian/Rifle/SVD/armst_Rifle_SVD.et",
+        "inherited": false
+      }
+    },
+    "magazine": {
+      "magazine_well": null,
+      "magazine_template": null
+    },
+    "ballistics": {
+      "bullet_init_speed_coef": null,
+      "dispersion_diameter": null,
+      "dispersion_range": null
+    },
+    "aim": {
+      "recoil": null,
+      "sway": null
+    },
+    "sights": null,
+    "attachment_slots": [
+      {
+        "slot": null,
+        "pivot": null,
+        "enabled": null,
+        "attachment_types": [
+          "{58E2BCF926D50DE5}"
+        ],
+        "defined_in": "Prefabs/Weapons/Russian/Rifle/SVD/armst_Rifle_SVD.et"
+      }
+    ],
+    "muzzle_attachment": null,
+    "animation": {
+      "anim_graph": null,
+      "anim_instance": null
+    }
+  },
+  "derived": {}
+}

@@ -7,381 +7,437 @@
     "role": "leaf"
   },
   {
-    "id": "handgun_knife_base",
-    "resource": "Prefabs/Weapons/Handguns/Handgun_Knife_base.et",
+    "id": "armst_handgun_knife_base",
+    "resource": "Prefabs/Weapons/Handguns/armst_Handgun_Knife_base.et",
     "class": "GenericEntity",
-    "name": "Handgun_Knife_base",
+    "name": "armst_Handgun_Knife_base",
     "role": "leaf"
   },
   {
-    "id": "armst_apb",
-    "resource": "Prefabs/Weapons/Handguns/armst_APB.et",
+    "id": "armst_pistol_apb",
+    "resource": "Prefabs/Weapons/Russian/Handguns/APB/armst_pistol_APB.et",
     "class": "GenericEntity",
-    "name": "armst_APB",
+    "name": "armst_pistol_APB",
     "role": "leaf"
   },
   {
-    "id": "armst_m9",
-    "resource": "Prefabs/Weapons/Handguns/armst_M9.et",
+    "id": "armst_pistol_apb_base",
+    "resource": "Prefabs/Weapons/Russian/Handguns/APB/armst_pistol_APB_base.et",
     "class": "GenericEntity",
-    "name": "armst_M9",
-    "role": "leaf"
-  },
-  {
-    "id": "armst_pm",
-    "resource": "Prefabs/Weapons/Handguns/armst_PM.et",
-    "class": "GenericEntity",
-    "name": "armst_PM",
+    "name": "armst_pistol_APB_base",
     "role": "base"
   },
   {
-    "id": "armst_pp91",
-    "resource": "Prefabs/Weapons/Handguns/armst_PP91.et",
+    "id": "armst_pistol_pp91",
+    "resource": "Prefabs/Weapons/Russian/Handguns/PP91/armst_pistol_PP91.et",
     "class": "GenericEntity",
-    "name": "armst_PP91",
+    "name": "armst_pistol_PP91",
+    "role": "leaf"
+  },
+  {
+    "id": "armst_pistol_pp91_base",
+    "resource": "Prefabs/Weapons/Russian/Handguns/PP91/armst_pistol_PP91_base.et",
+    "class": "GenericEntity",
+    "name": "armst_pistol_PP91_base",
     "role": "base"
   },
   {
-    "id": "armst_sr_2",
-    "resource": "Prefabs/Weapons/Handguns/armst_SR_2.et",
+    "id": "armst_pistol_pm",
+    "resource": "Prefabs/Weapons/Russian/Handguns/Pm/armst_pistol_PM.et",
     "class": "GenericEntity",
-    "name": "armst_SR_2",
+    "name": "armst_pistol_PM",
     "role": "leaf"
   },
   {
-    "id": "armst_tt",
-    "resource": "Prefabs/Weapons/Handguns/armst_TT.et",
+    "id": "armst_pistol_sr_2",
+    "resource": "Prefabs/Weapons/Russian/Handguns/Sr_2/armst_pistol_SR_2.et",
     "class": "GenericEntity",
-    "name": "armst_TT",
+    "name": "armst_pistol_SR_2",
     "role": "leaf"
   },
   {
-    "id": "armst_pkm",
-    "resource": "Prefabs/Weapons/MachineGuns/armst_PKM.et",
+    "id": "armst_pistol_sr_2_base",
+    "resource": "Prefabs/Weapons/Russian/Handguns/Sr_2/armst_pistol_SR_2_base.et",
     "class": "GenericEntity",
-    "name": "armst_PKM",
-    "role": "leaf"
-  },
-  {
-    "id": "armst_rpk74",
-    "resource": "Prefabs/Weapons/MachineGuns/armst_RPK74.et",
-    "class": "GenericEntity",
-    "name": "armst_RPK74",
-    "role": "leaf"
-  },
-  {
-    "id": "rifle_9a91",
-    "resource": "Prefabs/Weapons/Rifles/9a91/Rifle_9a91.et",
-    "class": "GenericEntity",
-    "name": "Rifle_9a91",
-    "role": "leaf"
-  },
-  {
-    "id": "rifle_9a91_base",
-    "resource": "Prefabs/Weapons/Rifles/9a91/Rifle_9a91_base.et",
-    "class": "GenericEntity",
-    "name": "Rifle_9a91_base",
+    "name": "armst_pistol_SR_2_base",
     "role": "base"
   },
   {
-    "id": "rifle_9a91_suppressor",
-    "resource": "Prefabs/Weapons/Rifles/9a91/Rifle_9a91_suppressor.et",
+    "id": "armst_pistol_tt",
+    "resource": "Prefabs/Weapons/Russian/Handguns/TT/armst_pistol_TT.et",
     "class": "GenericEntity",
-    "name": "Rifle_9a91_suppressor",
+    "name": "armst_pistol_TT",
     "role": "leaf"
   },
   {
-    "id": "armst_ak105",
-    "resource": "Prefabs/Weapons/Rifles/AK74/armst_AK105.et",
+    "id": "armst_pistol_tt_base",
+    "resource": "Prefabs/Weapons/Russian/Handguns/TT/armst_pistol_TT_base.et",
     "class": "GenericEntity",
-    "name": "armst_AK105",
-    "role": "leaf"
-  },
-  {
-    "id": "armst_ak74",
-    "resource": "Prefabs/Weapons/Rifles/AK74/armst_AK74.et",
-    "class": "GenericEntity",
-    "name": "armst_AK74",
+    "name": "armst_pistol_TT_base",
     "role": "base"
   },
   {
-    "id": "armst_ak74m",
-    "resource": "Prefabs/Weapons/Rifles/AK74/armst_AK74M.et",
+    "id": "armst_mgun_pkm",
+    "resource": "Prefabs/Weapons/Russian/MachineGuns/armst_mgun_PKM.et",
     "class": "GenericEntity",
-    "name": "armst_AK74M",
+    "name": "armst_mgun_PKM",
+    "role": "leaf"
+  },
+  {
+    "id": "armst_mgun_rpk74",
+    "resource": "Prefabs/Weapons/Russian/MachineGuns/armst_mgun_RPK74.et",
+    "class": "GenericEntity",
+    "name": "armst_mgun_RPK74",
+    "role": "leaf"
+  },
+  {
+    "id": "armst_rifle_9a91",
+    "resource": "Prefabs/Weapons/Russian/Rifle/9a91/armst_Rifle_9a91.et",
+    "class": "GenericEntity",
+    "name": "armst_Rifle_9a91",
+    "role": "leaf"
+  },
+  {
+    "id": "armst_rifle_9a91_base",
+    "resource": "Prefabs/Weapons/Russian/Rifle/9a91/armst_Rifle_9a91_base.et",
+    "class": "GenericEntity",
+    "name": "armst_Rifle_9a91_base",
     "role": "base"
   },
   {
-    "id": "armst_ak74m_full",
-    "resource": "Prefabs/Weapons/Rifles/AK74/armst_AK74M_full.et",
+    "id": "armst_rifle_ak105",
+    "resource": "Prefabs/Weapons/Russian/Rifle/AK74/armst_Rifle_AK105.et",
     "class": "GenericEntity",
-    "name": "armst_AK74M_full",
+    "name": "armst_Rifle_AK105",
     "role": "leaf"
   },
   {
-    "id": "armst_ak74n",
-    "resource": "Prefabs/Weapons/Rifles/AK74/armst_AK74N.et",
+    "id": "armst_rifle_ak74",
+    "resource": "Prefabs/Weapons/Russian/Rifle/AK74/armst_Rifle_AK74.et",
     "class": "GenericEntity",
-    "name": "armst_AK74N",
+    "name": "armst_Rifle_AK74",
+    "role": "leaf"
+  },
+  {
+    "id": "armst_rifle_ak74m",
+    "resource": "Prefabs/Weapons/Russian/Rifle/AK74/armst_Rifle_AK74M.et",
+    "class": "GenericEntity",
+    "name": "armst_Rifle_AK74M",
     "role": "base"
   },
   {
-    "id": "armst_aks",
-    "resource": "Prefabs/Weapons/Rifles/AK74/armst_AKS.et",
+    "id": "armst_rifle_ak74m_full",
+    "resource": "Prefabs/Weapons/Russian/Rifle/AK74/armst_Rifle_AK74M_full.et",
     "class": "GenericEntity",
-    "name": "armst_AKS",
+    "name": "armst_Rifle_AK74M_full",
     "role": "leaf"
   },
   {
-    "id": "armst_aks74u",
-    "resource": "Prefabs/Weapons/Rifles/AK74/armst_AKS74U.et",
+    "id": "armst_rifle_ak74n",
+    "resource": "Prefabs/Weapons/Russian/Rifle/AK74/armst_Rifle_AK74N.et",
     "class": "GenericEntity",
-    "name": "armst_AKS74U",
-    "role": "leaf"
-  },
-  {
-    "id": "armst_aks74un",
-    "resource": "Prefabs/Weapons/Rifles/AK74/armst_AKS74UN.et",
-    "class": "GenericEntity",
-    "name": "armst_AKS74UN",
-    "role": "leaf"
-  },
-  {
-    "id": "rifle_akm",
-    "resource": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM.et",
-    "class": "GenericEntity",
-    "name": "Rifle_AKM",
+    "name": "armst_Rifle_AK74N",
     "role": "base"
   },
   {
-    "id": "rifle_akms",
-    "resource": "Prefabs/Weapons/Rifles/AKM/Rifle_AKMS.et",
+    "id": "armst_rifle_aks",
+    "resource": "Prefabs/Weapons/Russian/Rifle/AK74/armst_Rifle_AKS.et",
     "class": "GenericEntity",
-    "name": "Rifle_AKMS",
+    "name": "armst_Rifle_AKS",
     "role": "leaf"
   },
   {
-    "id": "rifle_akm_base",
-    "resource": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_base.et",
+    "id": "armst_rifle_aks74u",
+    "resource": "Prefabs/Weapons/Russian/Rifle/AK74/armst_Rifle_AKS74U.et",
     "class": "GenericEntity",
-    "name": "Rifle_AKM_base",
+    "name": "armst_Rifle_AKS74U",
+    "role": "leaf"
+  },
+  {
+    "id": "armst_rifle_akm",
+    "resource": "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM.et",
+    "class": "GenericEntity",
+    "name": "armst_Rifle_AKM",
     "role": "base"
   },
   {
-    "id": "rifle_akm_full",
-    "resource": "Prefabs/Weapons/Rifles/AKM/Rifle_AKM_full.et",
+    "id": "armst_rifle_akms",
+    "resource": "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKMS.et",
     "class": "GenericEntity",
-    "name": "Rifle_AKM_full",
+    "name": "armst_Rifle_AKMS",
     "role": "leaf"
   },
   {
-    "id": "rifle_soc94",
-    "resource": "Prefabs/Weapons/Rifles/AKM/Rifle_SOC94.et",
+    "id": "armst_rifle_akm_base",
+    "resource": "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_base.et",
     "class": "GenericEntity",
-    "name": "Rifle_SOC94",
-    "role": "leaf"
-  },
-  {
-    "id": "rifle_vpo136",
-    "resource": "Prefabs/Weapons/Rifles/AKM/Rifle_VPO136.et",
-    "class": "GenericEntity",
-    "name": "Rifle_VPO136",
-    "role": "leaf"
-  },
-  {
-    "id": "groza_base",
-    "resource": "Prefabs/Weapons/Rifles/Groza/Groza_base.et",
-    "class": "GenericEntity",
-    "name": "Groza_base",
+    "name": "armst_Rifle_AKM_base",
     "role": "base"
   },
   {
-    "id": "armst_groza1",
-    "resource": "Prefabs/Weapons/Rifles/Groza/armst_groza1.et",
+    "id": "armst_rifle_akm_full",
+    "resource": "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_full.et",
     "class": "GenericEntity",
-    "name": "armst_groza1",
+    "name": "armst_Rifle_AKM_full",
     "role": "leaf"
   },
   {
-    "id": "rifle_hkg33",
-    "resource": "Prefabs/Weapons/Rifles/Rifle_HKG33.et",
+    "id": "armst_rifle_soc94",
+    "resource": "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_SOC94.et",
     "class": "GenericEntity",
-    "name": "Rifle_HKG33",
+    "name": "armst_Rifle_SOC94",
     "role": "leaf"
   },
   {
-    "id": "rifle_l85",
-    "resource": "Prefabs/Weapons/Rifles/Rifle_L85.et",
+    "id": "armst_rifle_vpo136",
+    "resource": "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_VPO136.et",
     "class": "GenericEntity",
-    "name": "Rifle_L85",
+    "name": "armst_Rifle_VPO136",
     "role": "leaf"
   },
   {
-    "id": "rifle_m16a2",
-    "resource": "Prefabs/Weapons/Rifles/Rifle_M16A2.et",
+    "id": "armst_rifle_aek971",
+    "resource": "Prefabs/Weapons/Russian/Rifle/Aek971/armst_Rifle_AEK971.et",
     "class": "GenericEntity",
-    "name": "Rifle_M16A2",
+    "name": "armst_Rifle_AEK971",
+    "role": "leaf"
+  },
+  {
+    "id": "armst_rifle_aek971_base",
+    "resource": "Prefabs/Weapons/Russian/Rifle/Aek971/armst_Rifle_AEK971_base.et",
+    "class": "GenericEntity",
+    "name": "armst_Rifle_AEK971_base",
     "role": "base"
   },
   {
-    "id": "rifle_m16a2_carbine",
-    "resource": "Prefabs/Weapons/Rifles/Rifle_M16A2_carbine.et",
+    "id": "armst_rifle_groza",
+    "resource": "Prefabs/Weapons/Russian/Rifle/Groza/armst_Rifle_Groza.et",
     "class": "GenericEntity",
-    "name": "Rifle_M16A2_carbine",
+    "name": "armst_Rifle_Groza",
     "role": "leaf"
   },
   {
-    "id": "rifle_sig550",
-    "resource": "Prefabs/Weapons/Rifles/Rifle_Sig550.et",
+    "id": "armst_rifle_groza_base",
+    "resource": "Prefabs/Weapons/Russian/Rifle/Groza/armst_Rifle_Groza_base.et",
     "class": "GenericEntity",
-    "name": "Rifle_Sig550",
-    "role": "leaf"
-  },
-  {
-    "id": "rifle_hk_g36",
-    "resource": "Prefabs/Weapons/Rifles/Rifle_hk_g36.et",
-    "class": "GenericEntity",
-    "name": "Rifle_hk_g36",
-    "role": "leaf"
-  },
-  {
-    "id": "slr",
-    "resource": "Prefabs/Weapons/Rifles/SLR.et",
-    "class": "GenericEntity",
-    "name": "SLR",
-    "role": "leaf"
-  },
-  {
-    "id": "armst_remington_870",
-    "resource": "Prefabs/Weapons/Rifles/Shotgun/armst_Remington_870.et",
-    "class": "GenericEntity",
-    "name": "armst_Remington_870",
-    "role": "leaf"
-  },
-  {
-    "id": "armst_izh_27",
-    "resource": "Prefabs/Weapons/Rifles/Shotgun/armst_izh_27.et",
-    "class": "GenericEntity",
-    "name": "armst_izh_27",
-    "role": "leaf"
-  },
-  {
-    "id": "armst_mp_133",
-    "resource": "Prefabs/Weapons/Rifles/Shotgun/armst_mp_133.et",
-    "class": "GenericEntity",
-    "name": "armst_mp_133",
-    "role": "leaf"
-  },
-  {
-    "id": "armst_mp_153",
-    "resource": "Prefabs/Weapons/Rifles/Shotgun/armst_mp_153.et",
-    "class": "GenericEntity",
-    "name": "armst_mp_153",
-    "role": "leaf"
-  },
-  {
-    "id": "armst_spas_12",
-    "resource": "Prefabs/Weapons/Rifles/Shotgun/armst_spas_12.et",
-    "class": "GenericEntity",
-    "name": "armst_spas_12",
-    "role": "leaf"
-  },
-  {
-    "id": "armst_toz_66",
-    "resource": "Prefabs/Weapons/Rifles/Shotgun/armst_toz_66.et",
-    "class": "GenericEntity",
-    "name": "armst_toz_66",
+    "name": "armst_Rifle_Groza_base",
     "role": "base"
   },
   {
-    "id": "armst_toz_66_pantera",
-    "resource": "Prefabs/Weapons/Rifles/Shotgun/armst_toz_66_pantera.et",
+    "id": "armst_rifle_svd",
+    "resource": "Prefabs/Weapons/Russian/Rifle/SVD/armst_Rifle_SVD.et",
     "class": "GenericEntity",
-    "name": "armst_toz_66_pantera",
+    "name": "armst_Rifle_SVD",
     "role": "leaf"
   },
   {
-    "id": "armst_toz_66_saw",
-    "resource": "Prefabs/Weapons/Rifles/Shotgun/armst_toz_66_saw.et",
+    "id": "armst_rifle_val",
+    "resource": "Prefabs/Weapons/Russian/Rifle/VAL/armst_Rifle_val.et",
     "class": "GenericEntity",
-    "name": "armst_toz_66_saw",
+    "name": "armst_Rifle_val",
     "role": "leaf"
   },
   {
-    "id": "shotgun_base",
-    "resource": "Prefabs/Weapons/Rifles/Shotgun/shotgun_base.et",
+    "id": "armst_rifle_val_base",
+    "resource": "Prefabs/Weapons/Russian/Rifle/VAL/armst_Rifle_val_base.et",
     "class": "GenericEntity",
-    "name": "shotgun_base",
+    "name": "armst_Rifle_val_base",
     "role": "base"
   },
   {
-    "id": "oc_groza",
-    "resource": "Prefabs/Weapons/Rifles/VAL/Oc_Groza.et",
+    "id": "armst_rifle_vsk94",
+    "resource": "Prefabs/Weapons/Russian/Rifle/VSK94/armst_Rifle_VSK94.et",
     "class": "GenericEntity",
-    "name": "Oc_Groza",
+    "name": "armst_Rifle_VSK94",
     "role": "leaf"
   },
   {
-    "id": "rifle_val",
-    "resource": "Prefabs/Weapons/Rifles/VAL/Rifle_VAL.et",
+    "id": "armst_rifle_vsk94_base",
+    "resource": "Prefabs/Weapons/Russian/Rifle/VSK94/armst_Rifle_VSK94_base.et",
     "class": "GenericEntity",
-    "name": "Rifle_VAL",
+    "name": "armst_Rifle_VSK94_base",
     "role": "base"
   },
   {
-    "id": "rifle_val_base",
-    "resource": "Prefabs/Weapons/Rifles/VAL/Rifle_val_base.et",
+    "id": "armst_rifle_vss",
+    "resource": "Prefabs/Weapons/Russian/Rifle/VSS/armst_Rifle_vss.et",
     "class": "GenericEntity",
-    "name": "Rifle_val_base",
+    "name": "armst_Rifle_vss",
+    "role": "leaf"
+  },
+  {
+    "id": "armst_rifle_vss_base",
+    "resource": "Prefabs/Weapons/Russian/Rifle/VSS/armst_Rifle_vss_base.et",
+    "class": "GenericEntity",
+    "name": "armst_Rifle_vss_base",
     "role": "base"
   },
   {
-    "id": "rifle_vsk94",
-    "resource": "Prefabs/Weapons/Rifles/VSK94/Rifle_VSK94.et",
+    "id": "armst_shotgun_izh_27",
+    "resource": "Prefabs/Weapons/Russian/Shotgun/armst_Shotgun_izh_27.et",
     "class": "GenericEntity",
-    "name": "Rifle_VSK94",
+    "name": "armst_Shotgun_izh_27",
     "role": "leaf"
   },
   {
-    "id": "rifle_vsk94_base",
-    "resource": "Prefabs/Weapons/Rifles/VSK94/Rifle_VSK94_base.et",
+    "id": "armst_shotgun_mp_133",
+    "resource": "Prefabs/Weapons/Russian/Shotgun/armst_Shotgun_mp_133.et",
     "class": "GenericEntity",
-    "name": "Rifle_VSK94_base",
+    "name": "armst_Shotgun_mp_133",
+    "role": "leaf"
+  },
+  {
+    "id": "armst_shotgun_mp_153",
+    "resource": "Prefabs/Weapons/Russian/Shotgun/armst_Shotgun_mp_153.et",
+    "class": "GenericEntity",
+    "name": "armst_Shotgun_mp_153",
+    "role": "leaf"
+  },
+  {
+    "id": "armst_shotgun_toz_66",
+    "resource": "Prefabs/Weapons/Russian/Shotgun/armst_Shotgun_toz_66.et",
+    "class": "GenericEntity",
+    "name": "armst_Shotgun_toz_66",
     "role": "base"
   },
   {
-    "id": "rifle_vss",
-    "resource": "Prefabs/Weapons/Rifles/VSS/Rifle_VSS.et",
+    "id": "armst_shotgun_toz_66_pantera",
+    "resource": "Prefabs/Weapons/Russian/Shotgun/armst_Shotgun_toz_66_pantera.et",
     "class": "GenericEntity",
-    "name": "Rifle_VSS",
+    "name": "armst_Shotgun_toz_66_pantera",
     "role": "leaf"
   },
   {
-    "id": "rifle_vss_base",
-    "resource": "Prefabs/Weapons/Rifles/VSS/Rifle_vss_base.et",
+    "id": "armst_shotgun_toz_66_saw",
+    "resource": "Prefabs/Weapons/Russian/Shotgun/armst_Shotgun_toz_66_saw.et",
     "class": "GenericEntity",
-    "name": "Rifle_vss_base",
+    "name": "armst_Shotgun_toz_66_saw",
+    "role": "leaf"
+  },
+  {
+    "id": "armst_pistol_m9",
+    "resource": "Prefabs/Weapons/Western/Handguns/armst_pistol_M9.et",
+    "class": "GenericEntity",
+    "name": "armst_pistol_M9",
+    "role": "leaf"
+  },
+  {
+    "id": "armst_rifle_hkg33",
+    "resource": "Prefabs/Weapons/Western/Rifle/HKG33/armst_Rifle_HKG33.et",
+    "class": "GenericEntity",
+    "name": "armst_Rifle_HKG33",
+    "role": "leaf"
+  },
+  {
+    "id": "armst_rifle_hkg33_base",
+    "resource": "Prefabs/Weapons/Western/Rifle/HKG33/armst_Rifle_HKG33_base.et",
+    "class": "GenericEntity",
+    "name": "armst_Rifle_HKG33_base",
     "role": "base"
   },
   {
-    "id": "armst_svd",
-    "resource": "Prefabs/Weapons/Rifles/armst_SVD.et",
+    "id": "armst_rifle_hkg36",
+    "resource": "Prefabs/Weapons/Western/Rifle/HKG36/armst_Rifle_HKG36.et",
     "class": "GenericEntity",
-    "name": "armst_SVD",
+    "name": "armst_Rifle_HKG36",
     "role": "leaf"
   },
   {
-    "id": "armst_vz58p",
-    "resource": "Prefabs/Weapons/Rifles/armst_VZ58P.et",
+    "id": "armst_rifle_hkg36_base",
+    "resource": "Prefabs/Weapons/Western/Rifle/HKG36/armst_Rifle_HKG36_base.et",
     "class": "GenericEntity",
-    "name": "armst_VZ58P",
+    "name": "armst_Rifle_HKG36_base",
+    "role": "base"
+  },
+  {
+    "id": "armst_rifle_l85",
+    "resource": "Prefabs/Weapons/Western/Rifle/L85/armst_Rifle_L85.et",
+    "class": "GenericEntity",
+    "name": "armst_Rifle_L85",
     "role": "leaf"
   },
   {
-    "id": "armst_vz58v",
-    "resource": "Prefabs/Weapons/Rifles/armst_VZ58V.et",
+    "id": "armst_rifle_l85_base",
+    "resource": "Prefabs/Weapons/Western/Rifle/L85/armst_Rifle_L85_base.et",
     "class": "GenericEntity",
-    "name": "armst_VZ58V",
+    "name": "armst_Rifle_L85_base",
+    "role": "base"
+  },
+  {
+    "id": "armst_rifle_m16a2",
+    "resource": "Prefabs/Weapons/Western/Rifle/M16/armst_Rifle_M16A2.et",
+    "class": "GenericEntity",
+    "name": "armst_Rifle_M16A2",
+    "role": "base"
+  },
+  {
+    "id": "armst_rifle_m4_carbine",
+    "resource": "Prefabs/Weapons/Western/Rifle/M4/armst_Rifle_M4_carbine.et",
+    "class": "GenericEntity",
+    "name": "armst_Rifle_M4_carbine",
     "role": "leaf"
+  },
+  {
+    "id": "armst_slr",
+    "resource": "Prefabs/Weapons/Western/Rifle/SLR/armst_SLR.et",
+    "class": "GenericEntity",
+    "name": "armst_SLR",
+    "role": "leaf"
+  },
+  {
+    "id": "armst_slr_base",
+    "resource": "Prefabs/Weapons/Western/Rifle/SLR/armst_SLR_base.et",
+    "class": "GenericEntity",
+    "name": "armst_SLR_base",
+    "role": "base"
+  },
+  {
+    "id": "armst_rifle_sig550",
+    "resource": "Prefabs/Weapons/Western/Rifle/Sig550/armst_Rifle_Sig550.et",
+    "class": "GenericEntity",
+    "name": "armst_Rifle_Sig550",
+    "role": "leaf"
+  },
+  {
+    "id": "armst_rifle_sig550_base",
+    "resource": "Prefabs/Weapons/Western/Rifle/Sig550/armst_Rifle_Sig550_base.et",
+    "class": "GenericEntity",
+    "name": "armst_Rifle_Sig550_base",
+    "role": "base"
+  },
+  {
+    "id": "armst_vz58p_base",
+    "resource": "Prefabs/Weapons/Western/Rifle/armst_VZ58P_base.et",
+    "class": "GenericEntity",
+    "name": "armst_VZ58P_base",
+    "role": "leaf"
+  },
+  {
+    "id": "armst_vz58v_base",
+    "resource": "Prefabs/Weapons/Western/Rifle/armst_VZ58V_base.et",
+    "class": "GenericEntity",
+    "name": "armst_VZ58V_base",
+    "role": "leaf"
+  },
+  {
+    "id": "armst_shotgun_remington_870",
+    "resource": "Prefabs/Weapons/Western/Shotgun/armst_Shotgun_Remington_870.et",
+    "class": "GenericEntity",
+    "name": "armst_Shotgun_Remington_870",
+    "role": "leaf"
+  },
+  {
+    "id": "armst_shotgun_spas_12",
+    "resource": "Prefabs/Weapons/Western/Shotgun/armst_Shotgun_spas_12.et",
+    "class": "GenericEntity",
+    "name": "armst_Shotgun_spas_12",
+    "role": "leaf"
+  },
+  {
+    "id": "armst_shotgun_base",
+    "resource": "Prefabs/Weapons/Western/Shotgun/core/armst_shotgun_base.et",
+    "class": "GenericEntity",
+    "name": "armst_shotgun_base",
+    "role": "base"
   }
 ]

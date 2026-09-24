@@ -1,0 +1,110 @@
+{
+  "id": "armst_12ga_shell",
+  "role": "leaf",
+  "source": {
+    "resource": "Prefabs/Weapons/Magazines/12ga/armst_12ga_Shell.et",
+    "resource_guid": "0346C78F29531C70",
+    "meta_name": null,
+    "class": "GenericEntity",
+    "defined_in": "Prefabs/Weapons/Magazines/12ga/armst_12ga_Shell.et"
+  },
+  "identity": {
+    "name": "armst_12ga_Shell",
+    "resource": "Prefabs/Weapons/Magazines/12ga/armst_12ga_Shell.et"
+  },
+  "classification": {
+    "kind": "magazine",
+    "confidence": "components"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Weapons/Magazines/12ga/armst_12ga_Shell.et",
+        "status": "local",
+        "class": "GenericEntity"
+      }
+    ],
+    "external_parents": [
+      {
+        "guid": "6D18CC33708EE712",
+        "path": "Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et",
+        "raw": "{6D18CC33708EE712}Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et"
+      }
+    ],
+    "used_as_base_by": [],
+    "chain_depth_local": 1
+  },
+  "references": [
+    {
+      "guid": "435EE7D1222E7412",
+      "path": "Assets/Mag_12g/MagazineWell12ga_blue.xob",
+      "resolved": "local",
+      "target": "Assets/Mag_12g/MagazineWell12ga_blue.xob",
+      "defined_in": "Prefabs/Weapons/Magazines/12ga/armst_12ga_Shell.et"
+    },
+    {
+      "guid": "3521D7BE87A3F391",
+      "path": "Configs/Weapons/Ammo/Ammo_12g.conf",
+      "resolved": "local",
+      "target": "Configs/Weapons/Ammo/Ammo_12g.conf",
+      "defined_in": "Prefabs/Weapons/Magazines/12ga/armst_12ga_Shell.et"
+    },
+    {
+      "guid": "1154DAFB4A6ED6BE",
+      "path": "Assets/Mag_12g/Data/12g_blue.emat",
+      "resolved": "local",
+      "target": "Assets/Mag_12g/Data/12g_blue.emat",
+      "defined_in": "Prefabs/Weapons/Magazines/12ga/armst_12ga_Shell.et"
+    }
+  ],
+  "warnings": [],
+  "data": {
+    "magazine_well": {
+      "name": "MagazineWell",
+      "class": "MagazineWell12g",
+      "defined_in": "Prefabs/Weapons/Magazines/12ga/armst_12ga_Shell.et"
+    },
+    "ammo_config": {
+      "guid": "3521D7BE87A3F391",
+      "path": "Configs/Weapons/Ammo/Ammo_12g.conf",
+      "defined_in": "Prefabs/Weapons/Magazines/12ga/armst_12ga_Shell.et"
+    },
+    "max_ammo": {
+      "value": 10,
+      "defined_in": "Prefabs/Weapons/Magazines/12ga/armst_12ga_Shell.et",
+      "inherited": false
+    },
+    "ammo_mapping": [],
+    "caliber_id": null,
+    "name": {
+      "value": "12g 10rnd Shell",
+      "defined_in": "Prefabs/Weapons/Magazines/12ga/armst_12ga_Shell.et",
+      "inherited": false
+    },
+    "_defined_in": "Prefabs/Weapons/Magazines/12ga/armst_12ga_Shell.et",
+    "display_name": null,
+    "weight": null,
+    "grid": {
+      "width": null,
+      "height": {
+        "value": 1,
+        "defined_in": "Prefabs/Weapons/Magazines/12ga/armst_12ga_Shell.et",
+        "inherited": false
+      }
+    },
+    "_inv_defined_in": "Prefabs/Weapons/Magazines/12ga/armst_12ga_Shell.et",
+    "editor_name": {
+      "value": "12 Gauge 00 Buckshot",
+      "defined_in": "Prefabs/Weapons/Magazines/12ga/armst_12ga_Shell.et",
+      "inherited": false
+    },
+    "model": {
+      "guid": "435EE7D1222E7412",
+      "path": "Assets/Mag_12g/MagazineWell12ga_blue.xob",
+      "defined_in": "Prefabs/Weapons/Magazines/12ga/armst_12ga_Shell.et"
+    }
+  },
+  "derived": {
+    "capacity": 10
+  }
+}
