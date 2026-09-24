@@ -7,6 +7,8 @@ Current matching catalog entries: **9**.
 
 In the current snapshot all 9 matching entries resolve to **700 RPM**, velocity coefficient **0.835**, dispersion **0.4 / 200** and approximately **6.875 MOA**.
 
+Detailed balance layer: [9×39 balance comparison](../balance/CALIBER_9X39_BALANCE.md).
+
 ## Current catalog comparison
 
 | Entry | Role | Parent | Magazine | RPM | Velocity coef | Dispersion | Slots | Warnings |
