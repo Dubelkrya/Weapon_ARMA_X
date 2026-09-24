@@ -8,6 +8,8 @@ It combines a local scanner, generated weapon catalogs/indexes, JSON schemas, Wo
 
 > [!IMPORTANT]
 > Start with [`reports/KNOWLEDGE_STATUS.md`](reports/KNOWLEDGE_STATUS.md). It defines what is current, generated, experimental, or historical.
+>
+> Browse the current generated weapon catalog through [`WEAPON_INDEX.md`](WEAPON_INDEX.md).
 
 ## Scope
 
@@ -80,6 +82,7 @@ For local-agent edits, follow [`agent/SAFE_PREFAB_EDITOR.md`](agent/SAFE_PREFAB_
 
 | Path | Purpose |
 |---|---|
+| [`WEAPON_INDEX.md`](WEAPON_INDEX.md) | Human-readable weapon catalog grouped by type, caliber and evidence status |
 | `agent/` | Local-agent policies, scanner state, parser and scanner tools |
 | `catalog/` | Generated per-entity weapon-system facts |
 | `indexes/` | Generated and curated lookup/index data for authoring |
