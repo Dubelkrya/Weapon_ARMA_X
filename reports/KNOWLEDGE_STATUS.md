@@ -20,11 +20,11 @@ Unknown values remain unknown. Do not fill gaps from filenames or memory.
 
 Authoritative weapon addon root:
 
-`C:\Users\Muroy\Documents\My Games\ArmaReforgerWorkbench\addons\ARMST-PLATFORM---Weapons`
+`C:\Users\yshky\Documents\My Games\ArmaReforgerWorkbench\addons\ARMST-PLATFORM---Weapons`
 
 Normal local-agent editing, prefab/config/script lookup and canonical source scans must target this addon unless the user explicitly names another root for a temporary test.
 
-`C:\Users\Muroy\Documents\My Games\ArmaReforgerWorkbench\addons\Armst_Work`
+`C:\Users\yshky\Documents\My Games\ArmaReforgerWorkbench\addons\Armst_Work`
 
 is a sandbox/test addon only. It must not replace the main weapon catalog, indexes, policies or source-of-truth snapshot.
 

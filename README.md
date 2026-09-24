@@ -36,7 +36,7 @@ It is **not** intended to become a general-purpose Arma Reforger project reposit
 
 Authoritative working addon root:
 
-`C:\Users\Muroy\Documents\My Games\ArmaReforgerWorkbench\addons\ARMST-PLATFORM---Weapons`
+`C:\Users\yshky\Documents\My Games\ArmaReforgerWorkbench\addons\ARMST-PLATFORM---Weapons`
 
 Normal weapon editing, prefab/config/script lookup, and canonical source scans should target this addon.
 

@@ -4,13 +4,13 @@
 
 All normal weapon/prefab/config/script authoring and source scans must use this addon as the project source of truth:
 
-`C:\Users\Muroy\Documents\My Games\ArmaReforgerWorkbench\addons\ARMST-PLATFORM---Weapons`
+`C:\Users\yshky\Documents\My Games\ArmaReforgerWorkbench\addons\ARMST-PLATFORM---Weapons`
 
 This path is the default target for local-agent work unless the user explicitly names another addon for a one-off test.
 
 ## Armst_Work status
 
-`C:\Users\Muroy\Documents\My Games\ArmaReforgerWorkbench\addons\Armst_Work`
+`C:\Users\yshky\Documents\My Games\ArmaReforgerWorkbench\addons\Armst_Work`
 
 is not the authoritative weapon addon. Treat it only as a temporary/sandbox/test addon when explicitly requested. Do not use it to replace the main catalog, indexes, policies or canonical source snapshot.
 
