@@ -45,3 +45,12 @@ jobs:
             git --no-pager diff -- reports/families/
             exit 1
           fi
+
+      - name: Verify balance pages are current
+        run: |
+          if ! python agent/scripts/build_balance_pages.py --check; then
+            python agent/scripts/build_balance_pages.py
+            echo "Generated balance-page diff:"
+            git --no-pager diff -- reports/balance/
+            exit 1
+          fi
