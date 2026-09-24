@@ -1,5 +1,8 @@
 # ARMST Optics Compatibility System v1
 
+> [!WARNING]
+> **Status: HISTORICAL / SUPERSEDED POLICY.** Use `OPTICS_COMPATIBILITY_SYSTEM_V2.md` and `KNOWLEDGE_STATUS.md` for current authoring decisions.
+
 ## Engine rule
 
 Arma Reforger attachment compatibility is directional. The inventory predicate reads the module's `WeaponAttachmentAttributes -> AttachmentType` and tests whether the module type inherits the type required by the weapon slot:
