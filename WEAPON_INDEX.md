@@ -41,6 +41,12 @@ These controls are kept separate from the generated catalog so validation eviden
 |---|---|---|---|---|
 | AEK-971 prototype | **Workbench validated** | Not present in current generated catalog | [`armst_AEK971_test_v12_NAME_DESCRIPTION.et`](reports/samples/armst_AEK971_test_v12_NAME_DESCRIPTION.et) | Current weapon control point in reports/KNOWLEDGE_STATUS.md |
 
+## Family comparison pages
+
+- [AK / RPK family](reports/families/AK_FAMILY.md)
+- [9×39 family](reports/families/CALIBER_9X39.md)
+- [Shotguns](reports/families/SHOTGUNS.md)
+
 ## Catalog by weapon type and caliber
 
 ### Rifles (36)
