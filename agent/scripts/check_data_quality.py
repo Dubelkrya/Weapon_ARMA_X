@@ -231,6 +231,21 @@ def weapon_magazine_is_cataloged(
     return False
 
 
+def weapon_magazine_is_external(doc: dict) -> bool:
+    template = (((doc.get("data") or {}).get("magazine") or {}).get("magazine_template") or {})
+    magazine_path = template.get("path")
+    magazine_guid = str(template.get("guid") or "").upper()
+    for ref in doc.get("references") or []:
+        ref_guid = str(ref.get("guid") or "").upper()
+        same_identity = (
+            (magazine_guid and ref_guid == magazine_guid)
+            or (magazine_path and ref.get("path") == magazine_path)
+        )
+        if same_identity and ref.get("resolved") == "external":
+            return True
+    return False
+
+
 def scan_weapon_links(findings: list[Finding]) -> None:
     magazine_resources = load_resource_map(MAGAZINES)
     magazine_guids = load_resource_guid_map(MAGAZINES)
@@ -241,12 +256,20 @@ def scan_weapon_links(findings: list[Finding]) -> None:
         if magazine and not weapon_magazine_is_cataloged(
             doc, magazine_resources, magazine_guids
         ):
-            findings.append(Finding(
-                "warning",
-                "WEAPON_MAGAZINE_NOT_CATALOGED",
-                path.relative_to(ROOT).as_posix(),
-                f"linked magazine is not present in catalog/magazines: {magazine}",
-            ))
+            if weapon_magazine_is_external(doc):
+                findings.append(Finding(
+                    "info",
+                    "WEAPON_MAGAZINE_EXTERNAL",
+                    path.relative_to(ROOT).as_posix(),
+                    f"linked magazine is an explicit external dependency: {magazine}",
+                ))
+            else:
+                findings.append(Finding(
+                    "warning",
+                    "WEAPON_MAGAZINE_NOT_CATALOGED",
+                    path.relative_to(ROOT).as_posix(),
+                    f"linked magazine is not present in catalog/magazines: {magazine}",
+                ))
 
 
 def collect() -> list[Finding]:
