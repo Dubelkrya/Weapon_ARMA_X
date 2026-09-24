@@ -5,6 +5,15 @@ This directory contains weapon-specific authoring guides, active gameplay polici
 > [!IMPORTANT]
 > [`KNOWLEDGE_STATUS.md`](KNOWLEDGE_STATUS.md) is the entry point for deciding what is current. When another report conflicts with it, use the authority order defined there.
 
+## Status legend
+
+- **CURRENT / AUTHORITATIVE** — active source-of-truth or authoring guidance.
+- **CURRENT POLICY** — active gameplay/design policy.
+- **WORKBENCH VALIDATED** — backed by a confirmed editor/runtime control point.
+- **GENERATED SNAPSHOT** — scanner-derived data that can become stale.
+- **EXPERIMENTAL** — research or proof-of-concept work; not production guidance.
+- **HISTORICAL / SUPERSEDED** — retained only for debugging or design history.
+
 ## Current authoring references
 
 | File | Purpose |
