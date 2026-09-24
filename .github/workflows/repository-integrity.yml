@@ -29,4 +29,10 @@ jobs:
         run: python agent/scripts/check_repository_integrity.py
 
       - name: Verify weapon index is current
-        run: python agent/scripts/build_weapon_index.py --check
+        run: |
+          if ! python agent/scripts/build_weapon_index.py --check; then
+            python agent/scripts/build_weapon_index.py
+            echo "Generated WEAPON_INDEX.md diff:"
+            git --no-pager diff -- WEAPON_INDEX.md
+            exit 1
+          fi
