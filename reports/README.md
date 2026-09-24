@@ -22,6 +22,8 @@ Use [`families/README.md`](families/README.md) for generated side-by-side compar
 
 Use [`balance/README.md`](balance/README.md) for evidence-preserving gameplay balance comparisons that keep weapon, magazine and projectile layers separate.
 
+Use [`DATA_QUALITY.md`](DATA_QUALITY.md) for catalog contradictions, unresolved relationships and the automated data-quality rules.
+
 ## Current authoring references
 
 | File | Purpose |
