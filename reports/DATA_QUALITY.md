@@ -13,6 +13,23 @@ The repository now has a read-only checker at `agent/scripts/check_data_quality.
 
 Current CI runs the checker in **non-blocking mode**. Findings are printed into the workflow summary, but known existing data-quality problems do not make `main` fail. A blocking threshold can be enabled later after the baseline is cleaned.
 
+## Current automated scan summary
+
+The current checked-in snapshot reports **6 errors, 41 warnings and 22 informational findings**.
+
+| Finding class | Count | Meaning in the current snapshot |
+|---|---:|---|
+| `MAG_CALIBER_ID_MISMATCH` | 6 | All six are the explicit 9×39 → 5.45×39 `caliber_id` contradiction documented below |
+| `AMMO_CONFIG_NOT_INDEXED` | 11 | Referenced configs are absent from the current `config_reference/ammo_configs.json` coverage |
+| `MAG_CAPACITY_UNRESOLVED` | 20 | A capacity token exists in the resource name, but the catalog does not resolve capacity; the name is not used as the gameplay value |
+| `PROJECTILE_DAMAGE_UNRESOLVED` | 2 | ProjectileDamage exists but damage is unresolved in the catalog |
+| `WEAPON_MAGAZINE_NOT_CATALOGED` | 8 | A weapon links to a magazine not covered by the current magazine catalog snapshot |
+| `AMMO_MAPPING_EMPTY` | 12 | Capacity is resolved but serialized mapping is empty, so loaded projectile composition is not proven |
+| `CROSS_CALIBER_BALLISTIC_TABLE` | 4 | Cross-caliber table reuse is visible and requires review, not automatic correction |
+| `CROSS_CALIBER_PARENT` | 6 | Cross-caliber projectile inheritance is visible and may be intentional |
+
+These counts are a snapshot. The GitHub Actions data-quality step is the live view after future catalog changes.
+
 ## Checks
 
 The checker currently looks for:
