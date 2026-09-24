@@ -20,6 +20,8 @@ Use [`WEAPON_INDEX.md`](../WEAPON_INDEX.md) for the human-readable generated wea
 
 Use [`families/README.md`](families/README.md) for generated side-by-side comparisons of the AK/RPK family, explicit 9×39 weapons and shotguns.
 
+Use [`balance/README.md`](balance/README.md) for evidence-preserving gameplay balance comparisons that keep weapon, magazine and projectile layers separate.
+
 ## Current authoring references
 
 | File | Purpose |
