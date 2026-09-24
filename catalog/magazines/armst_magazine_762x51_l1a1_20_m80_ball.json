@@ -1,0 +1,81 @@
+{
+  "id": "armst_magazine_762x51_l1a1_20_m80_ball",
+  "role": "base",
+  "source": {
+    "resource": "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_20_M80_Ball.et",
+    "resource_guid": "AA9A48AAEE6E4F1B",
+    "meta_name": null,
+    "class": "GenericEntity",
+    "defined_in": "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_20_M80_Ball.et"
+  },
+  "identity": {
+    "name": "armst_Magazine_762x51_L1A1_20_M80_Ball",
+    "resource": "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_20_M80_Ball.et"
+  },
+  "classification": {
+    "kind": "magazine",
+    "confidence": "components"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_20_M80_Ball.et",
+        "status": "local",
+        "class": "GenericEntity"
+      }
+    ],
+    "external_parents": [
+      {
+        "guid": "6D18CC33708EE712",
+        "path": "Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et",
+        "raw": "{6D18CC33708EE712}Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et"
+      }
+    ],
+    "used_as_base_by": [
+      "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_30_M80_Ball.et",
+      "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_30_M80_Ball_BP.et"
+    ],
+    "chain_depth_local": 1
+  },
+  "references": [
+    {
+      "guid": "94FC75B17BBA4DB7",
+      "path": "Configs/Weapons/Ammo/ARMST/armst_Ammo_762x51_ARMST.conf",
+      "resolved": "local",
+      "target": "Configs/Weapons/Ammo/ARMST/armst_Ammo_762x51_ARMST.conf",
+      "defined_in": "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_20_M80_Ball.et"
+    },
+    {
+      "guid": "853DDDD16E788013",
+      "path": "Assets/Weapons_NATO/L1A1/L1A1_Mag.xob",
+      "resolved": "local",
+      "target": "Assets/Weapons_NATO/L1A1/L1A1_Mag.xob",
+      "defined_in": "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_20_M80_Ball.et"
+    }
+  ],
+  "warnings": [],
+  "data": {
+    "magazine_well": null,
+    "ammo_config": {
+      "guid": "94FC75B17BBA4DB7",
+      "path": "Configs/Weapons/Ammo/ARMST/armst_Ammo_762x51_ARMST.conf",
+      "defined_in": "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_20_M80_Ball.et"
+    },
+    "max_ammo": null,
+    "ammo_mapping": [],
+    "caliber_id": null,
+    "name": {
+      "value": "L1A1 magazine 20rnd",
+      "defined_in": "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_20_M80_Ball.et",
+      "inherited": false
+    },
+    "_defined_in": "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_20_M80_Ball.et",
+    "display_name": null,
+    "grid": {
+      "width": null,
+      "height": null
+    },
+    "_inv_defined_in": "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_20_M80_Ball.et"
+  },
+  "derived": {}
+}

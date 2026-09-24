@@ -1,0 +1,76 @@
+{
+  "id": "armst_magazine_9x19_m9_15rnd_ball",
+  "role": "leaf",
+  "source": {
+    "resource": "Prefabs/Weapons/Magazines/Western/9x19/M9/armst_Magazine_9x19_M9_15rnd_Ball.et",
+    "resource_guid": "9C05543A503DB80E",
+    "meta_name": null,
+    "class": "GenericEntity",
+    "defined_in": "Prefabs/Weapons/Magazines/Western/9x19/M9/armst_Magazine_9x19_M9_15rnd_Ball.et"
+  },
+  "identity": {
+    "name": "armst_Magazine_9x19_M9_15rnd_Ball",
+    "resource": "Prefabs/Weapons/Magazines/Western/9x19/M9/armst_Magazine_9x19_M9_15rnd_Ball.et"
+  },
+  "classification": {
+    "kind": "magazine",
+    "confidence": "components"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Weapons/Magazines/Western/9x19/M9/armst_Magazine_9x19_M9_15rnd_Ball.et",
+        "status": "local",
+        "class": "GenericEntity"
+      }
+    ],
+    "external_parents": [
+      {
+        "guid": "DFFBF5F097FCF797",
+        "path": "Prefabs/Weapons/Magazines/Magazine_9x19_M9_15rnd_Base.et",
+        "raw": "{DFFBF5F097FCF797}Prefabs/Weapons/Magazines/Magazine_9x19_M9_15rnd_Base.et"
+      }
+    ],
+    "used_as_base_by": [],
+    "chain_depth_local": 1
+  },
+  "references": [
+    {
+      "guid": "48496091DE244325",
+      "path": "Configs/Weapons/Ammo/ARMST/armst_Ammo_9x19_ARMST.conf",
+      "resolved": "local",
+      "target": "Configs/Weapons/Ammo/ARMST/armst_Ammo_9x19_ARMST.conf",
+      "defined_in": "Prefabs/Weapons/Magazines/Western/9x19/M9/armst_Magazine_9x19_M9_15rnd_Ball.et"
+    }
+  ],
+  "warnings": [],
+  "data": {
+    "magazine_well": null,
+    "ammo_config": {
+      "guid": "48496091DE244325",
+      "path": "Configs/Weapons/Ammo/ARMST/armst_Ammo_9x19_ARMST.conf",
+      "defined_in": "Prefabs/Weapons/Magazines/Western/9x19/M9/armst_Magazine_9x19_M9_15rnd_Ball.et"
+    },
+    "max_ammo": null,
+    "ammo_mapping": [],
+    "caliber_id": null,
+    "name": null,
+    "_defined_in": "Prefabs/Weapons/Magazines/Western/9x19/M9/armst_Magazine_9x19_M9_15rnd_Ball.et",
+    "display_name": null,
+    "grid": {
+      "width": null,
+      "height": {
+        "value": 1,
+        "defined_in": "Prefabs/Weapons/Magazines/Western/9x19/M9/armst_Magazine_9x19_M9_15rnd_Ball.et",
+        "inherited": false
+      }
+    },
+    "_inv_defined_in": "Prefabs/Weapons/Magazines/Western/9x19/M9/armst_Magazine_9x19_M9_15rnd_Ball.et",
+    "editor_name": {
+      "value": "#AR-Magazine_BerettaM9_Name",
+      "defined_in": "Prefabs/Weapons/Magazines/Western/9x19/M9/armst_Magazine_9x19_M9_15rnd_Ball.et",
+      "inherited": false
+    }
+  },
+  "derived": {}
+}

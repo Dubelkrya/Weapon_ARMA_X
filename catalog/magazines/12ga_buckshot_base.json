@@ -32,7 +32,7 @@
       }
     ],
     "used_as_base_by": [
-      "Prefabs/Weapons/Magazines/12ga/12ga_Buckshot.et"
+      "Prefabs/Weapons/Magazines/12ga/armst_12ga_Buckshot.et"
     ],
     "chain_depth_local": 1
   },

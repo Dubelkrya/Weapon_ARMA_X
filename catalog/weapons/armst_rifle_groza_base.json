@@ -1,0 +1,282 @@
+{
+  "id": "armst_rifle_groza_base",
+  "role": "base",
+  "source": {
+    "resource": "Prefabs/Weapons/Russian/Rifle/Groza/armst_Rifle_Groza_base.et",
+    "resource_guid": "903C7920F00AB654",
+    "meta_name": null,
+    "class": "GenericEntity",
+    "defined_in": "Prefabs/Weapons/Russian/Rifle/Groza/armst_Rifle_Groza_base.et"
+  },
+  "identity": {
+    "name": "armst_Rifle_Groza_base",
+    "resource": "Prefabs/Weapons/Russian/Rifle/Groza/armst_Rifle_Groza_base.et"
+  },
+  "classification": {
+    "kind": "weapon",
+    "confidence": "components"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Weapons/Russian/Rifle/Groza/armst_Rifle_Groza_base.et",
+        "status": "local",
+        "class": "GenericEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Core/Rifle_Base.et",
+        "status": "local",
+        "class": "GenericEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Core/Weapon_Base.et",
+        "status": "local",
+        "class": "GenericEntity"
+      }
+    ],
+    "external_parents": [],
+    "used_as_base_by": [
+      "Prefabs/Weapons/Russian/Rifle/Groza/armst_Rifle_Groza.et"
+    ],
+    "chain_depth_local": 3
+  },
+  "references": [
+    {
+      "guid": "277CC12370C4BCF0",
+      "path": "Assets/Weapons_RUS/Groza/GROZA.xob",
+      "resolved": "local",
+      "target": "Assets/Weapons_RUS/Groza/GROZA.xob",
+      "defined_in": "Prefabs/Weapons/Russian/Rifle/Groza/armst_Rifle_Groza_base.et"
+    },
+    {
+      "guid": "0350283642830782",
+      "path": "anims/workspaces/player/player_main_rifle.asi",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "Prefabs/Weapons/Russian/Rifle/Groza/armst_Rifle_Groza_base.et"
+    },
+    {
+      "guid": "564FCD270D84AF8A",
+      "path": "Assets/Weapons_RUS/Groza/anim/Anims_Player/P_Groza_IK.anm",
+      "resolved": "local",
+      "target": "Assets/Weapons_RUS/Groza/anim/Anims_Player/P_Groza_IK.anm",
+      "defined_in": "Prefabs/Weapons/Russian/Rifle/Groza/armst_Rifle_Groza_base.et"
+    },
+    {
+      "guid": "A89D3276591C9F57",
+      "path": "Particles/Weapon/Casing_762x39_PS.ptc",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "Prefabs/Weapons/Russian/Rifle/Groza/armst_Rifle_Groza_base.et"
+    },
+    {
+      "guid": "6FC79968CA7F6FD2",
+      "path": "Particles/Weapon/Muzzle_AK74.ptc",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "Prefabs/Weapons/Russian/Rifle/Groza/armst_Rifle_Groza_base.et"
+    },
+    {
+      "guid": "77215B3A185D1EFD",
+      "path": "Prefabs/Weapons/Magazines/Russian/9x39/Groza/armst_Magazine_9x39_Groza_20rnd_SP5.et",
+      "resolved": "local",
+      "target": "Prefabs/Weapons/Magazines/Russian/9x39/Groza/armst_Magazine_9x39_Groza_20rnd_SP5.et",
+      "defined_in": "Prefabs/Weapons/Russian/Rifle/Groza/armst_Rifle_Groza_base.et"
+    },
+    {
+      "guid": "DB3B289A5EDE0051",
+      "path": "Assets/Weapons_RUS/Groza/anim/Groza_Oc.agr",
+      "resolved": "local",
+      "target": "Assets/Weapons_RUS/Groza/anim/Groza_Oc.agr",
+      "defined_in": "Prefabs/Weapons/Russian/Rifle/Groza/armst_Rifle_Groza_base.et"
+    },
+    {
+      "guid": "22C1B974F01F1684",
+      "path": "Assets/Weapons_RUS/Groza/anim/Groza_Oc_weapon.asi",
+      "resolved": "local",
+      "target": "Assets/Weapons_RUS/Groza/anim/Groza_Oc_weapon.asi",
+      "defined_in": "Prefabs/Weapons/Russian/Rifle/Groza/armst_Rifle_Groza_base.et"
+    },
+    {
+      "guid": "D99F2845681E7268",
+      "path": "Assets/Weapons_RUS/Groza/anim/Groza_Oc_player.asi",
+      "resolved": "local",
+      "target": "Assets/Weapons_RUS/Groza/anim/Groza_Oc_player.asi",
+      "defined_in": "Prefabs/Weapons/Russian/Rifle/Groza/armst_Rifle_Groza_base.et"
+    }
+  ],
+  "warnings": [],
+  "data": {
+    "identity": {
+      "name": null
+    },
+    "fire_modes": [
+      {
+        "mode_id": "{B80A64F4A8EF8333}",
+        "ui_name": "Single",
+        "rounds_per_minute": {
+          "value": 750,
+          "defined_in": "Prefabs/Weapons/Russian/Rifle/Groza/armst_Rifle_Groza_base.et",
+          "inherited": false
+        },
+        "max_burst": null,
+        "defined_in": "Prefabs/Weapons/Russian/Rifle/Groza/armst_Rifle_Groza_base.et",
+        "rounds_per_second": {
+          "value": 12.5,
+          "derived": true
+        }
+      },
+      {
+        "mode_id": "{584EB78C8F1C7A45}",
+        "ui_name": "Auto",
+        "rounds_per_minute": {
+          "value": 750,
+          "defined_in": "Prefabs/Weapons/Russian/Rifle/Groza/armst_Rifle_Groza_base.et",
+          "inherited": false
+        },
+        "max_burst": {
+          "value": -1,
+          "defined_in": "Prefabs/Weapons/Russian/Rifle/Groza/armst_Rifle_Groza_base.et",
+          "inherited": false
+        },
+        "defined_in": "Prefabs/Weapons/Russian/Rifle/Groza/armst_Rifle_Groza_base.et",
+        "rounds_per_second": {
+          "value": 12.5,
+          "derived": true
+        }
+      }
+    ],
+    "physical": {
+      "Weight": null,
+      "SizeSetupStrategy": null,
+      "ItemDimensions": null,
+      "ItemVolume": null,
+      "DimensionScaler": null,
+      "_defined_in": "Prefabs/Weapons/Russian/Rifle/Groza/armst_Rifle_Groza_base.et",
+      "Mass": {
+        "value": 4,
+        "defined_in": "Prefabs/Weapons/Russian/Rifle/Groza/armst_Rifle_Groza_base.et",
+        "inherited": false
+      },
+      "MeleeDamage": {
+        "value": 2,
+        "defined_in": "Prefabs/Weapons/Russian/Rifle/Groza/armst_Rifle_Groza_base.et",
+        "inherited": false
+      },
+      "Model": {
+        "guid": "277CC12370C4BCF0",
+        "path": "Assets/Weapons_RUS/Groza/GROZA.xob",
+        "defined_in": "Prefabs/Weapons/Russian/Rifle/Groza/armst_Rifle_Groza_base.et"
+      }
+    },
+    "magazine": {
+      "magazine_well": {
+        "name": "MagazineWell",
+        "class": "MagazineWell9x39",
+        "defined_in": "Prefabs/Weapons/Russian/Rifle/Groza/armst_Rifle_Groza_base.et"
+      },
+      "magazine_template": {
+        "guid": "77215B3A185D1EFD",
+        "path": "Prefabs/Weapons/Magazines/Russian/9x39/Groza/armst_Magazine_9x39_Groza_20rnd_SP5.et",
+        "defined_in": "Prefabs/Weapons/Russian/Rifle/Groza/armst_Rifle_Groza_base.et"
+      }
+    },
+    "ballistics": {
+      "bullet_init_speed_coef": null,
+      "dispersion_diameter": {
+        "value": 0.058,
+        "defined_in": "Prefabs/Weapons/Russian/Rifle/Groza/armst_Rifle_Groza_base.et",
+        "inherited": false
+      },
+      "dispersion_range": {
+        "value": 100,
+        "defined_in": "Prefabs/Weapons/Russian/Rifle/Groza/armst_Rifle_Groza_base.et",
+        "inherited": false
+      }
+    },
+    "aim": {
+      "recoil": {
+        "LinearData": {
+          "values": {
+            "curve_magnitudes": null,
+            "curve_mins": null,
+            "curve_maxs": null,
+            "curve_time_scale": null,
+            "base_recoil_scale": null
+          },
+          "defined_in": "Prefabs/Weapons/Russian/Rifle/Groza/armst_Rifle_Groza_base.et"
+        },
+        "AngularData": {
+          "values": {
+            "curve_magnitudes": null,
+            "curve_mins": null,
+            "curve_maxs": null,
+            "curve_time_scale": null,
+            "base_recoil_scale": null
+          },
+          "defined_in": "Prefabs/Weapons/Russian/Rifle/Groza/armst_Rifle_Groza_base.et"
+        },
+        "TurnOffsetData": {
+          "values": {
+            "curve_magnitudes": null,
+            "curve_mins": null,
+            "curve_maxs": null,
+            "curve_time_scale": null,
+            "base_recoil_scale": null
+          },
+          "defined_in": "Prefabs/Weapons/Russian/Rifle/Groza/armst_Rifle_Groza_base.et"
+        }
+      },
+      "sway": {
+        "defined_in": "Prefabs/Weapons/Russian/Rifle/Groza/armst_Rifle_Groza_base.et",
+        "values": {
+          "lower_translation": null,
+          "lower_rotation": null
+        }
+      }
+    },
+    "sights": {
+      "switch_skip": {
+        "value": 1,
+        "defined_in": "Prefabs/Weapons/Russian/Rifle/Groza/armst_Rifle_Groza_base.et",
+        "inherited": false
+      },
+      "ranges": [
+        [
+          0,
+          100
+        ]
+      ],
+      "defined_in": "Prefabs/Weapons/Russian/Rifle/Groza/armst_Rifle_Groza_base.et"
+    },
+    "attachment_slots": [],
+    "muzzle_attachment": {
+      "slot": null,
+      "enabled": null,
+      "defined_in": "Prefabs/Weapons/Russian/Rifle/Groza/armst_Rifle_Groza_base.et"
+    },
+    "animation": {
+      "anim_graph": {
+        "guid": "DB3B289A5EDE0051",
+        "path": "Assets/Weapons_RUS/Groza/anim/Groza_Oc.agr",
+        "defined_in": "Prefabs/Weapons/Russian/Rifle/Groza/armst_Rifle_Groza_base.et"
+      },
+      "anim_instance": {
+        "guid": "22C1B974F01F1684",
+        "path": "Assets/Weapons_RUS/Groza/anim/Groza_Oc_weapon.asi",
+        "defined_in": "Prefabs/Weapons/Russian/Rifle/Groza/armst_Rifle_Groza_base.et"
+      }
+    }
+  },
+  "derived": {
+    "max_rounds_per_second": 12.5,
+    "dispersion_m_per_m": {
+      "value": 0.58,
+      "formula": "DispersionDiameter / DispersionRange * 1000"
+    },
+    "approx_moa": {
+      "value": 1.994,
+      "formula": "DispersionDiameter / DispersionRange * 3437.75"
+    }
+  }
+}

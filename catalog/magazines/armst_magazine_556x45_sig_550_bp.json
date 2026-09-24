@@ -1,0 +1,93 @@
+{
+  "id": "armst_magazine_556x45_sig_550_bp",
+  "role": "leaf",
+  "source": {
+    "resource": "Prefabs/Weapons/Magazines/Western/5x56/SIG550/armst_Magazine_556x45_SIG_550_BP.et",
+    "resource_guid": "70D7F0AE523E4FFF",
+    "meta_name": null,
+    "class": "GenericEntity",
+    "defined_in": "Prefabs/Weapons/Magazines/Western/5x56/SIG550/armst_Magazine_556x45_SIG_550_BP.et"
+  },
+  "identity": {
+    "name": "armst_Magazine_556x45_SIG_550_BP",
+    "resource": "Prefabs/Weapons/Magazines/Western/5x56/SIG550/armst_Magazine_556x45_SIG_550_BP.et"
+  },
+  "classification": {
+    "kind": "magazine",
+    "confidence": "components"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Weapons/Magazines/Western/5x56/SIG550/armst_Magazine_556x45_SIG_550_BP.et",
+        "status": "local",
+        "class": "GenericEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M193_Ball.et",
+        "status": "local",
+        "class": "GenericEntity"
+      }
+    ],
+    "external_parents": [
+      {
+        "guid": "FB5EB0F6D447E858",
+        "path": "Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M193_Ball.et",
+        "raw": "{FB5EB0F6D447E858}Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M193_Ball.et"
+      }
+    ],
+    "used_as_base_by": [],
+    "chain_depth_local": 2
+  },
+  "references": [
+    {
+      "guid": "5513C2BA0B7B48F8",
+      "path": "Configs/Weapons/Ammo/ARMST/armst_Ammo_556x45_ARMST.conf",
+      "resolved": "local",
+      "target": "Configs/Weapons/Ammo/ARMST/armst_Ammo_556x45_ARMST.conf",
+      "defined_in": "Prefabs/Weapons/Magazines/Western/5x56/SIG550/armst_Magazine_556x45_SIG_550_BP.et"
+    },
+    {
+      "guid": "D63EE6B99D362287",
+      "path": "Assets/Weapons_NATO/Sig SG 550/mag_sig550.xob",
+      "resolved": "local",
+      "target": "Assets/Weapons_NATO/Sig SG 550/mag_sig550.xob",
+      "defined_in": "Prefabs/Weapons/Magazines/Western/5x56/SIG550/armst_Magazine_556x45_SIG_550_BP.et"
+    }
+  ],
+  "warnings": [],
+  "data": {
+    "magazine_well": null,
+    "ammo_config": {
+      "guid": "5513C2BA0B7B48F8",
+      "path": "Configs/Weapons/Ammo/ARMST/armst_Ammo_556x45_ARMST.conf",
+      "defined_in": "Prefabs/Weapons/Magazines/Western/5x56/SIG550/armst_Magazine_556x45_SIG_550_BP.et"
+    },
+    "max_ammo": null,
+    "ammo_mapping": [],
+    "caliber_id": null,
+    "name": {
+      "value": "SIG550 magazine 30rnd",
+      "defined_in": "Prefabs/Weapons/Magazines/Western/5x56/SIG550/armst_Magazine_556x45_SIG_550_BP.et",
+      "inherited": false
+    },
+    "_defined_in": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M193_Ball.et",
+    "display_name": null,
+    "grid": {
+      "width": null,
+      "height": null
+    },
+    "_inv_defined_in": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M193_Ball.et",
+    "editor_name": {
+      "value": "SIG550 magazine 30rnd",
+      "defined_in": "Prefabs/Weapons/Magazines/Western/5x56/SIG550/armst_Magazine_556x45_SIG_550_BP.et",
+      "inherited": false
+    },
+    "model": {
+      "guid": "D63EE6B99D362287",
+      "path": "Assets/Weapons_NATO/Sig SG 550/mag_sig550.xob",
+      "defined_in": "Prefabs/Weapons/Magazines/Western/5x56/SIG550/armst_Magazine_556x45_SIG_550_BP.et"
+    }
+  },
+  "derived": {}
+}

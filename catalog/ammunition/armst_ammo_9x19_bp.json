@@ -1,0 +1,91 @@
+{
+  "id": "armst_ammo_9x19_bp",
+  "role": "leaf",
+  "source": {
+    "resource": "Prefabs/Weapons/Ammo/Western/9x19/armst_Ammo_9x19_BP.et",
+    "resource_guid": "9F5580C950084760",
+    "meta_name": null,
+    "class": "Projectile",
+    "defined_in": "Prefabs/Weapons/Ammo/Western/9x19/armst_Ammo_9x19_BP.et"
+  },
+  "identity": {
+    "name": "armst_Ammo_9x19_BP",
+    "resource": "Prefabs/Weapons/Ammo/Western/9x19/armst_Ammo_9x19_BP.et"
+  },
+  "classification": {
+    "kind": "ammunition",
+    "confidence": "class"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Weapons/Ammo/Western/9x19/armst_Ammo_9x19_BP.et",
+        "status": "local",
+        "class": "Projectile"
+      }
+    ],
+    "external_parents": [
+      {
+        "guid": "7687761020B01947",
+        "path": "Prefabs/Weapons/Ammo/Ammo_9x19_AP_7N21.et",
+        "raw": "{7687761020B01947}Prefabs/Weapons/Ammo/Ammo_9x19_AP_7N21.et"
+      }
+    ],
+    "used_as_base_by": [],
+    "chain_depth_local": 1
+  },
+  "references": [
+    {
+      "guid": "235D1AF05D9A339F",
+      "path": "Configs/Weapons/AIBallisticTables/AIBT_9x19_AP_7N31.conf",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "Prefabs/Weapons/Ammo/Western/9x19/armst_Ammo_9x19_BP.et"
+    }
+  ],
+  "warnings": [],
+  "data": {
+    "shell": {
+      "InitSpeed": {
+        "value": 600,
+        "defined_in": "Prefabs/Weapons/Ammo/Western/9x19/armst_Ammo_9x19_BP.et",
+        "inherited": false
+      },
+      "InitSpeedVariation": null,
+      "DispersionMultiplier": null,
+      "Mass": {
+        "value": 0.0042,
+        "defined_in": "Prefabs/Weapons/Ammo/Western/9x19/armst_Ammo_9x19_BP.et",
+        "inherited": false
+      },
+      "TumblingDamageMultiplier": null,
+      "PenetrationDepth": {
+        "value": 3.9,
+        "defined_in": "Prefabs/Weapons/Ammo/Western/9x19/armst_Ammo_9x19_BP.et",
+        "inherited": false
+      },
+      "PenetrationSpeed": {
+        "value": 574,
+        "defined_in": "Prefabs/Weapons/Ammo/Western/9x19/armst_Ammo_9x19_BP.et",
+        "inherited": false
+      },
+      "PenetrationDensity": null,
+      "AirDrag": {
+        "value": 1.49e-05,
+        "defined_in": "Prefabs/Weapons/Ammo/Western/9x19/armst_Ammo_9x19_BP.et",
+        "inherited": false
+      },
+      "ballistic_table": {
+        "guid": "235D1AF05D9A339F",
+        "path": "Configs/Weapons/AIBallisticTables/AIBT_9x19_AP_7N31.conf",
+        "defined_in": "Prefabs/Weapons/Ammo/Western/9x19/armst_Ammo_9x19_BP.et"
+      },
+      "_defined_in": "Prefabs/Weapons/Ammo/Western/9x19/armst_Ammo_9x19_BP.et"
+    },
+    "effects": null,
+    "_defined_in": "Prefabs/Weapons/Ammo/Western/9x19/armst_Ammo_9x19_BP.et"
+  },
+  "derived": {
+    "init_speed": 600
+  }
+}

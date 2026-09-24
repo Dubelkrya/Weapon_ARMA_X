@@ -1,0 +1,88 @@
+{
+  "id": "armst_magazine_556x45_hkg36",
+  "role": "leaf",
+  "source": {
+    "resource": "Prefabs/Weapons/Magazines/Western/5x56/HKG36/armst_Magazine_556x45_HKG36.et",
+    "resource_guid": "969F6FFF810D2145",
+    "meta_name": null,
+    "class": "GenericEntity",
+    "defined_in": "Prefabs/Weapons/Magazines/Western/5x56/HKG36/armst_Magazine_556x45_HKG36.et"
+  },
+  "identity": {
+    "name": "armst_Magazine_556x45_HKG36",
+    "resource": "Prefabs/Weapons/Magazines/Western/5x56/HKG36/armst_Magazine_556x45_HKG36.et"
+  },
+  "classification": {
+    "kind": "magazine",
+    "confidence": "components"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Weapons/Magazines/Western/5x56/HKG36/armst_Magazine_556x45_HKG36.et",
+        "status": "local",
+        "class": "GenericEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M193_Ball.et",
+        "status": "local",
+        "class": "GenericEntity"
+      }
+    ],
+    "external_parents": [
+      {
+        "guid": "FB5EB0F6D447E858",
+        "path": "Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M193_Ball.et",
+        "raw": "{FB5EB0F6D447E858}Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M193_Ball.et"
+      }
+    ],
+    "used_as_base_by": [],
+    "chain_depth_local": 2
+  },
+  "references": [
+    {
+      "guid": "5513C2BA0B7B48F8",
+      "path": "Configs/Weapons/Ammo/ARMST/armst_Ammo_556x45_ARMST.conf",
+      "resolved": "local",
+      "target": "Configs/Weapons/Ammo/ARMST/armst_Ammo_556x45_ARMST.conf",
+      "defined_in": "Prefabs/Weapons/Magazines/Western/5x56/HKG36/armst_Magazine_556x45_HKG36.et"
+    },
+    {
+      "guid": "639F86E16101DB36",
+      "path": "Assets/Weapons_NATO/HKG36/HKG36_mag.xob",
+      "resolved": "local",
+      "target": "Assets/Weapons_NATO/HKG36/HKG36_mag.xob",
+      "defined_in": "Prefabs/Weapons/Magazines/Western/5x56/HKG36/armst_Magazine_556x45_HKG36.et"
+    }
+  ],
+  "warnings": [],
+  "data": {
+    "magazine_well": null,
+    "ammo_config": {
+      "guid": "5513C2BA0B7B48F8",
+      "path": "Configs/Weapons/Ammo/ARMST/armst_Ammo_556x45_ARMST.conf",
+      "defined_in": "Prefabs/Weapons/Magazines/Western/5x56/HKG36/armst_Magazine_556x45_HKG36.et"
+    },
+    "max_ammo": null,
+    "ammo_mapping": [],
+    "caliber_id": null,
+    "name": {
+      "value": "HKG36 magazine 30rnd",
+      "defined_in": "Prefabs/Weapons/Magazines/Western/5x56/HKG36/armst_Magazine_556x45_HKG36.et",
+      "inherited": false
+    },
+    "_defined_in": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M193_Ball.et",
+    "display_name": null,
+    "grid": {
+      "width": null,
+      "height": null
+    },
+    "_inv_defined_in": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M193_Ball.et",
+    "editor_name": {
+      "value": "#AR-Magazine_STANAG_Name",
+      "defined_in": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M193_Ball.et",
+      "inherited": true
+    }
+  },
+  "derived": {}
+}

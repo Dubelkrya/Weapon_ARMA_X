@@ -1,0 +1,109 @@
+{
+  "id": "armst_magazine_9x39_20rnd_9a91_sp6",
+  "role": "leaf",
+  "source": {
+    "resource": "Prefabs/Weapons/Magazines/Russian/9x39/9a91/armst_Magazine_9x39_20rnd_9a91_SP6.et",
+    "resource_guid": "3F47C33B88171646",
+    "meta_name": null,
+    "class": "GenericEntity",
+    "defined_in": "Prefabs/Weapons/Magazines/Russian/9x39/9a91/armst_Magazine_9x39_20rnd_9a91_SP6.et"
+  },
+  "identity": {
+    "name": "armst_Magazine_9x39_20rnd_9a91_SP6",
+    "resource": "Prefabs/Weapons/Magazines/Russian/9x39/9a91/armst_Magazine_9x39_20rnd_9a91_SP6.et"
+  },
+  "classification": {
+    "kind": "magazine",
+    "confidence": "components"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Weapons/Magazines/Russian/9x39/9a91/armst_Magazine_9x39_20rnd_9a91_SP6.et",
+        "status": "local",
+        "class": "GenericEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Core/Magazine_Base.et",
+        "status": "local",
+        "class": "GenericEntity"
+      }
+    ],
+    "external_parents": [],
+    "used_as_base_by": [],
+    "chain_depth_local": 2
+  },
+  "references": [
+    {
+      "guid": "1AA788302FE3C53A",
+      "path": "Configs/WeaponInfo/MagazineIndicators/ak74_30.conf",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "Prefabs/Weapons/Magazines/Russian/9x39/9a91/armst_Magazine_9x39_20rnd_9a91_SP6.et"
+    },
+    {
+      "guid": "710039458DA9911D",
+      "path": "Configs/Weapons/Ammo/armst_Ammo_9x39.conf",
+      "resolved": "local",
+      "target": "Configs/Weapons/Ammo/armst_Ammo_9x39.conf",
+      "defined_in": "Prefabs/Weapons/Magazines/Russian/9x39/9a91/armst_Magazine_9x39_20rnd_9a91_SP6.et"
+    },
+    {
+      "guid": "4A08EC70A7057371",
+      "path": "Assets/Weapons_RUS/9a91/9a91_Magazine.xob",
+      "resolved": "local",
+      "target": "Assets/Weapons_RUS/9a91/9a91_Magazine.xob",
+      "defined_in": "Prefabs/Weapons/Magazines/Russian/9x39/9a91/armst_Magazine_9x39_20rnd_9a91_SP6.et"
+    }
+  ],
+  "warnings": [],
+  "data": {
+    "magazine_well": {
+      "name": "MagazineWell",
+      "class": "MagazineWell9x39_9a91",
+      "defined_in": "Prefabs/Weapons/Magazines/Russian/9x39/9a91/armst_Magazine_9x39_20rnd_9a91_SP6.et"
+    },
+    "ammo_config": {
+      "guid": "710039458DA9911D",
+      "path": "Configs/Weapons/Ammo/armst_Ammo_9x39.conf",
+      "defined_in": "Prefabs/Weapons/Magazines/Russian/9x39/9a91/armst_Magazine_9x39_20rnd_9a91_SP6.et"
+    },
+    "max_ammo": {
+      "value": 20,
+      "defined_in": "Prefabs/Weapons/Magazines/Russian/9x39/9a91/armst_Magazine_9x39_20rnd_9a91_SP6.et",
+      "inherited": false
+    },
+    "ammo_mapping": [],
+    "caliber_id": {
+      "value": "#AR-ARMST_AmmunitionID_9x39mm",
+      "defined_in": "Prefabs/Weapons/Magazines/Russian/9x39/9a91/armst_Magazine_9x39_20rnd_9a91_SP6.et",
+      "inherited": false
+    },
+    "name": null,
+    "_defined_in": "Prefabs/Weapons/Magazines/Russian/9x39/9a91/armst_Magazine_9x39_20rnd_9a91_SP6.et",
+    "display_name": null,
+    "weight": null,
+    "grid": {
+      "width": null,
+      "height": {
+        "value": 2,
+        "defined_in": "Prefabs/Weapons/Magazines/Russian/9x39/9a91/armst_Magazine_9x39_20rnd_9a91_SP6.et",
+        "inherited": false
+      }
+    },
+    "_inv_defined_in": "Prefabs/Weapons/Core/Magazine_Base.et",
+    "editor_name": {
+      "value": "9A91 magazine",
+      "defined_in": "Prefabs/Weapons/Magazines/Russian/9x39/9a91/armst_Magazine_9x39_20rnd_9a91_SP6.et",
+      "inherited": false
+    },
+    "model": {
+      "guid": "4A08EC70A7057371",
+      "path": "Assets/Weapons_RUS/9a91/9a91_Magazine.xob",
+      "defined_in": "Prefabs/Weapons/Magazines/Russian/9x39/9a91/armst_Magazine_9x39_20rnd_9a91_SP6.et"
+    }
+  },
+  "derived": {
+    "capacity": 20
+  }
+}

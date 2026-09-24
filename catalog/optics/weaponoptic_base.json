@@ -1,6 +1,6 @@
 {
   "id": "weaponoptic_base",
-  "role": "leaf",
+  "role": "base",
   "source": {
     "resource": "Prefabs/Weapons/Attachments/Optics/WeaponOptic_Base.et",
     "resource_guid": "966B4E5523D2F166",
@@ -32,7 +32,9 @@
         "raw": "{3E15C1C882DBB587}Prefabs/Weapons/Core/WeaponSight_Base.et"
       }
     ],
-    "used_as_base_by": [],
+    "used_as_base_by": [
+      "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Optic.et"
+    ],
     "chain_depth_local": 1
   },
   "references": [],

@@ -1,0 +1,141 @@
+{
+  "id": "armst_ammo_buckshot_pellet",
+  "role": "leaf",
+  "source": {
+    "resource": "Prefabs/Weapons/Ammo/12g/armst_Ammo_Buckshot_pellet.et",
+    "resource_guid": "8A45841AC9BA3AE7",
+    "meta_name": null,
+    "class": "Projectile",
+    "defined_in": "Prefabs/Weapons/Ammo/12g/armst_Ammo_Buckshot_pellet.et"
+  },
+  "identity": {
+    "name": "armst_Ammo_Buckshot_pellet",
+    "resource": "Prefabs/Weapons/Ammo/12g/armst_Ammo_Buckshot_pellet.et"
+  },
+  "classification": {
+    "kind": "ammunition",
+    "confidence": "class"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Weapons/Ammo/12g/armst_Ammo_Buckshot_pellet.et",
+        "status": "local",
+        "class": "Projectile"
+      }
+    ],
+    "external_parents": [
+      {
+        "guid": "67FED88E5085F63F",
+        "path": "Prefabs/Weapons/Core/Ammo_Bullet_Base.et",
+        "raw": "{67FED88E5085F63F}Prefabs/Weapons/Core/Ammo_Bullet_Base.et"
+      }
+    ],
+    "used_as_base_by": [],
+    "chain_depth_local": 1
+  },
+  "references": [
+    {
+      "guid": "AEFA33057ADA0D0B",
+      "path": "Configs/Weapons/AIBallisticTables/AIBT_9x19_Ball_M882.conf",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "Prefabs/Weapons/Ammo/12g/armst_Ammo_Buckshot_pellet.et"
+    },
+    {
+      "guid": "534A3A52CF7042A1",
+      "path": "Sounds/Weapons/_SharedData/BulletSonicCracks/Pistol/Weapons_BulletSonicCracks_Pistol.acp",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "Prefabs/Weapons/Ammo/12g/armst_Ammo_Buckshot_pellet.et"
+    },
+    {
+      "guid": "C3F69D82DBEF24E2",
+      "path": "Sounds/Weapons/_SharedData/BulletFlybys/Pistol/Weapons_BulletFlybys_Pistol.acp",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "Prefabs/Weapons/Ammo/12g/armst_Ammo_Buckshot_pellet.et"
+    },
+    {
+      "guid": "049EAC7C19E1B570",
+      "path": "Assets/Weapons/Ammo/Bullets/9x19/Bullet_9x19.xob",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "Prefabs/Weapons/Ammo/12g/armst_Ammo_Buckshot_pellet.et"
+    },
+    {
+      "guid": "3D2DFC533F142E11",
+      "path": "Assets/Weapons/Ammo/Bullets/9x18/Bullet_9x18.xob",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "Prefabs/Weapons/Ammo/12g/armst_Ammo_Buckshot_pellet.et"
+    }
+  ],
+  "warnings": [],
+  "data": {
+    "shell": {
+      "InitSpeed": {
+        "value": 420,
+        "defined_in": "Prefabs/Weapons/Ammo/12g/armst_Ammo_Buckshot_pellet.et",
+        "inherited": false
+      },
+      "InitSpeedVariation": {
+        "value": 1,
+        "defined_in": "Prefabs/Weapons/Ammo/12g/armst_Ammo_Buckshot_pellet.et",
+        "inherited": false
+      },
+      "DispersionMultiplier": null,
+      "Mass": {
+        "value": 0.0075,
+        "defined_in": "Prefabs/Weapons/Ammo/12g/armst_Ammo_Buckshot_pellet.et",
+        "inherited": false
+      },
+      "TumblingDamageMultiplier": null,
+      "PenetrationDepth": {
+        "value": 40,
+        "defined_in": "Prefabs/Weapons/Ammo/12g/armst_Ammo_Buckshot_pellet.et",
+        "inherited": false
+      },
+      "PenetrationSpeed": {
+        "value": 250,
+        "defined_in": "Prefabs/Weapons/Ammo/12g/armst_Ammo_Buckshot_pellet.et",
+        "inherited": false
+      },
+      "PenetrationDensity": {
+        "value": 0.65,
+        "defined_in": "Prefabs/Weapons/Ammo/12g/armst_Ammo_Buckshot_pellet.et",
+        "inherited": false
+      },
+      "AirDrag": {
+        "value": 2.5e-05,
+        "defined_in": "Prefabs/Weapons/Ammo/12g/armst_Ammo_Buckshot_pellet.et",
+        "inherited": false
+      },
+      "ballistic_table": {
+        "guid": "AEFA33057ADA0D0B",
+        "path": "Configs/Weapons/AIBallisticTables/AIBT_9x19_Ball_M882.conf",
+        "defined_in": "Prefabs/Weapons/Ammo/12g/armst_Ammo_Buckshot_pellet.et"
+      },
+      "_defined_in": "Prefabs/Weapons/Ammo/12g/armst_Ammo_Buckshot_pellet.et"
+    },
+    "effects": [
+      {
+        "type": "ProjectileDamage",
+        "id": "{5168BBF3DBD79134}",
+        "defined_in": "Prefabs/Weapons/Ammo/12g/armst_Ammo_Buckshot_pellet.et",
+        "DamageValue": {
+          "value": 30,
+          "defined_in": "Prefabs/Weapons/Ammo/12g/armst_Ammo_Buckshot_pellet.et",
+          "inherited": false
+        },
+        "DamageType": null,
+        "MinimumDamage": null
+      }
+    ],
+    "_defined_in": "Prefabs/Weapons/Ammo/12g/armst_Ammo_Buckshot_pellet.et"
+  },
+  "derived": {
+    "init_speed": 420,
+    "projectile_damage": 30
+  }
+}

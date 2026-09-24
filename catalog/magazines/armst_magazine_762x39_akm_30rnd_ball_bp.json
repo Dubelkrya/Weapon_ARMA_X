@@ -1,0 +1,88 @@
+{
+  "id": "armst_magazine_762x39_akm_30rnd_ball_bp",
+  "role": "leaf",
+  "source": {
+    "resource": "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_30rnd_Ball_BP.et",
+    "resource_guid": "21BD2CA7421B4D5C",
+    "meta_name": null,
+    "class": "GenericEntity",
+    "defined_in": "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_30rnd_Ball_BP.et"
+  },
+  "identity": {
+    "name": "armst_Magazine_762x39_AKM_30rnd_Ball_BP",
+    "resource": "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_30rnd_Ball_BP.et"
+  },
+  "classification": {
+    "kind": "magazine",
+    "confidence": "components"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_30rnd_Ball_BP.et",
+        "status": "local",
+        "class": "GenericEntity"
+      }
+    ],
+    "external_parents": [
+      {
+        "guid": "892F30500E6E7E04",
+        "path": "Prefabs/Weapons/Magazines/Vz58/Magazine_762x39_Vz58_30rnd_Base.et",
+        "raw": "{892F30500E6E7E04}Prefabs/Weapons/Magazines/Vz58/Magazine_762x39_Vz58_30rnd_Base.et"
+      }
+    ],
+    "used_as_base_by": [],
+    "chain_depth_local": 1
+  },
+  "references": [
+    {
+      "guid": "EA0E25BAF3BD459F",
+      "path": "Configs/Weapons/Ammo/ARMST/armst_Ammo_762x39_ARMST.conf",
+      "resolved": "local",
+      "target": "Configs/Weapons/Ammo/ARMST/armst_Ammo_762x39_ARMST.conf",
+      "defined_in": "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_30rnd_Ball_BP.et"
+    },
+    {
+      "guid": "D8DAD0D45D295D86",
+      "path": "Assets/Weapons_RUS/akm/akm_magazine.xob",
+      "resolved": "local",
+      "target": "Assets/Weapons_RUS/akm/akm_magazine.xob",
+      "defined_in": "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_30rnd_Ball_BP.et"
+    }
+  ],
+  "warnings": [],
+  "data": {
+    "magazine_well": null,
+    "ammo_config": {
+      "guid": "EA0E25BAF3BD459F",
+      "path": "Configs/Weapons/Ammo/ARMST/armst_Ammo_762x39_ARMST.conf",
+      "defined_in": "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_30rnd_Ball_BP.et"
+    },
+    "max_ammo": null,
+    "ammo_mapping": [],
+    "caliber_id": null,
+    "name": null,
+    "_defined_in": "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_30rnd_Ball_BP.et",
+    "display_name": null,
+    "grid": {
+      "width": null,
+      "height": {
+        "value": 2,
+        "defined_in": "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_30rnd_Ball_BP.et",
+        "inherited": false
+      }
+    },
+    "_inv_defined_in": "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_30rnd_Ball_BP.et",
+    "editor_name": {
+      "value": "AKM magazine 30rnd",
+      "defined_in": "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_30rnd_Ball_BP.et",
+      "inherited": false
+    },
+    "model": {
+      "guid": "D8DAD0D45D295D86",
+      "path": "Assets/Weapons_RUS/akm/akm_magazine.xob",
+      "defined_in": "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_30rnd_Ball_BP.et"
+    }
+  },
+  "derived": {}
+}

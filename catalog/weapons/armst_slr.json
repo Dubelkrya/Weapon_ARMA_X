@@ -1,0 +1,153 @@
+{
+  "id": "armst_slr",
+  "role": "leaf",
+  "source": {
+    "resource": "Prefabs/Weapons/Western/Rifle/SLR/armst_SLR.et",
+    "resource_guid": "60023FFB458CF81B",
+    "meta_name": null,
+    "class": "GenericEntity",
+    "defined_in": "Prefabs/Weapons/Western/Rifle/SLR/armst_SLR.et"
+  },
+  "identity": {
+    "name": "armst_SLR",
+    "resource": "Prefabs/Weapons/Western/Rifle/SLR/armst_SLR.et"
+  },
+  "classification": {
+    "kind": "weapon",
+    "confidence": "components"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Weapons/Western/Rifle/SLR/armst_SLR.et",
+        "status": "local",
+        "class": "GenericEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Western/Rifle/SLR/armst_SLR_base.et",
+        "status": "local",
+        "class": "GenericEntity"
+      }
+    ],
+    "external_parents": [
+      {
+        "guid": "C63227C0E70EA62E",
+        "path": "Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et",
+        "raw": "{C63227C0E70EA62E}Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et"
+      }
+    ],
+    "used_as_base_by": [],
+    "chain_depth_local": 2
+  },
+  "references": [
+    {
+      "guid": "A0A37569F2DBA5D0",
+      "path": "Assets/Weapons_NATO/L1A1/L1A1.xob",
+      "resolved": "local",
+      "target": "Assets/Weapons_NATO/L1A1/L1A1.xob",
+      "defined_in": "Prefabs/Weapons/Western/Rifle/SLR/armst_SLR_base.et"
+    },
+    {
+      "guid": "B7869ABD0EEE379D",
+      "path": "Assets/Weapons/Rifles/AK74/anims/anm/p_ak74_ik.anm",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "Prefabs/Weapons/Western/Rifle/SLR/armst_SLR_base.et"
+    },
+    {
+      "guid": "AA9A48AAEE6E4F1B",
+      "path": "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_20_M80_Ball.et",
+      "resolved": "local",
+      "target": "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_20_M80_Ball.et",
+      "defined_in": "Prefabs/Weapons/Western/Rifle/SLR/armst_SLR_base.et"
+    },
+    {
+      "guid": "0E3ECFC4E84386BC",
+      "path": "Assets/Weapons_NATO/L1A1/Anim/L1A1.agr",
+      "resolved": "local",
+      "target": "Assets/Weapons_NATO/L1A1/Anim/L1A1.agr",
+      "defined_in": "Prefabs/Weapons/Western/Rifle/SLR/armst_SLR_base.et"
+    },
+    {
+      "guid": "3B86B943995121A3",
+      "path": "Assets/Weapons_NATO/L1A1/Anim/L1A1_weapon.asi",
+      "resolved": "local",
+      "target": "Assets/Weapons_NATO/L1A1/Anim/L1A1_weapon.asi",
+      "defined_in": "Prefabs/Weapons/Western/Rifle/SLR/armst_SLR_base.et"
+    },
+    {
+      "guid": "C0D828720150454F",
+      "path": "Assets/Weapons_NATO/L1A1/Anim/L1A1_player.asi",
+      "resolved": "local",
+      "target": "Assets/Weapons_NATO/L1A1/Anim/L1A1_player.asi",
+      "defined_in": "Prefabs/Weapons/Western/Rifle/SLR/armst_SLR_base.et"
+    }
+  ],
+  "warnings": [],
+  "data": {
+    "identity": {
+      "name": null
+    },
+    "fire_modes": [],
+    "physical": {
+      "MeleeDamage": {
+        "value": 2,
+        "defined_in": "Prefabs/Weapons/Western/Rifle/SLR/armst_SLR_base.et",
+        "inherited": true
+      },
+      "Model": {
+        "guid": "A0A37569F2DBA5D0",
+        "path": "Assets/Weapons_NATO/L1A1/L1A1.xob",
+        "defined_in": "Prefabs/Weapons/Western/Rifle/SLR/armst_SLR_base.et"
+      }
+    },
+    "magazine": {
+      "magazine_well": null,
+      "magazine_template": null
+    },
+    "ballistics": {
+      "bullet_init_speed_coef": null,
+      "dispersion_diameter": null,
+      "dispersion_range": null
+    },
+    "aim": {
+      "recoil": null,
+      "sway": null
+    },
+    "sights": {
+      "switch_skip": null,
+      "ranges": [],
+      "defined_in": "Prefabs/Weapons/Western/Rifle/SLR/armst_SLR_base.et"
+    },
+    "attachment_slots": [
+      {
+        "slot": null,
+        "pivot": null,
+        "enabled": {
+          "value": 0,
+          "defined_in": "Prefabs/Weapons/Western/Rifle/SLR/armst_SLR_base.et",
+          "inherited": true
+        },
+        "attachment_types": [],
+        "defined_in": "Prefabs/Weapons/Western/Rifle/SLR/armst_SLR_base.et"
+      },
+      {
+        "slot": null,
+        "pivot": null,
+        "enabled": {
+          "value": 0,
+          "defined_in": "Prefabs/Weapons/Western/Rifle/SLR/armst_SLR_base.et",
+          "inherited": true
+        },
+        "attachment_types": [],
+        "defined_in": "Prefabs/Weapons/Western/Rifle/SLR/armst_SLR_base.et"
+      }
+    ],
+    "muzzle_attachment": null,
+    "animation": {
+      "anim_graph": null,
+      "anim_instance": null
+    }
+  },
+  "derived": {}
+}

@@ -43,7 +43,7 @@ from et_parser import (parse_file, find_child, find_children, find_recursive,
 # environment / paths
 # ----------------------------------------------------------------------------
 
-DEFAULT_MOD_ROOT = (r"C:\Users\Muroy\Documents\My Games\ArmaReforgerWorkbench"
+DEFAULT_MOD_ROOT = (r"C:\Users\yshky\Documents\My Games\ArmaReforgerWorkbench"
                     r"\addons\ARMST-PLATFORM---Weapons")
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 DEFAULT_REPO_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, "..", ".."))
@@ -214,7 +214,12 @@ def chain_merge(rels, resources_by_rel):
 
 def index_all_files(root):
     files = {}
-    for dirpath, _dirnames, filenames in os.walk(root):
+    for dirpath, dirnames, filenames in os.walk(root):
+        # Skip non-game workspace folders inside the primary addon: agent audit
+        # artifacts / historical backups and the git metadata directory must
+        # not be treated as live source resources.
+        dirnames[:] = [d for d in dirnames
+                       if d not in ("agent", ".git", "__pycache__")]
         for fn in filenames:
             abspath = os.path.join(dirpath, fn)
             rel = os.path.relpath(abspath, root).replace("\\", "/")
@@ -1625,11 +1630,12 @@ def write_reports(entities, stats, graph=None):
 
 def write_scan_state(stats):
     os.makedirs(AGENT_DIR, exist_ok=True)
+    import datetime
     state = {
         "schema_version": "1.0",
         "mod_root": MOD_ROOT,
         "repo_root": REPO_ROOT,
-        "scan_date": "2026-09-14",
+        "scan_date": datetime.date.today().isoformat(),
         "tool": "agent/scripts/scan_build.py",
         "stats": stats,
         "warnings": len(W),

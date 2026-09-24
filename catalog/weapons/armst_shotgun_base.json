@@ -1,0 +1,147 @@
+{
+  "id": "armst_shotgun_base",
+  "role": "base",
+  "source": {
+    "resource": "Prefabs/Weapons/Western/Shotgun/core/armst_shotgun_base.et",
+    "resource_guid": "6C5E2009CDCD0BD3",
+    "meta_name": null,
+    "class": "GenericEntity",
+    "defined_in": "Prefabs/Weapons/Western/Shotgun/core/armst_shotgun_base.et"
+  },
+  "identity": {
+    "name": "armst_shotgun_base",
+    "resource": "Prefabs/Weapons/Western/Shotgun/core/armst_shotgun_base.et"
+  },
+  "classification": {
+    "kind": "weapon",
+    "confidence": "components"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Weapons/Western/Shotgun/core/armst_shotgun_base.et",
+        "status": "local",
+        "class": "GenericEntity"
+      }
+    ],
+    "external_parents": [
+      {
+        "guid": "B31929F65F0D0279",
+        "path": "Prefabs/Weapons/Rifles/M14/Rifle_M21.et",
+        "raw": "{B31929F65F0D0279}Prefabs/Weapons/Rifles/M14/Rifle_M21.et"
+      }
+    ],
+    "used_as_base_by": [
+      "Prefabs/Weapons/Russian/Shotgun/armst_Shotgun_izh_27.et",
+      "Prefabs/Weapons/Russian/Shotgun/armst_Shotgun_mp_133.et",
+      "Prefabs/Weapons/Russian/Shotgun/armst_Shotgun_mp_153.et",
+      "Prefabs/Weapons/Russian/Shotgun/armst_Shotgun_toz_66.et",
+      "Prefabs/Weapons/Russian/Shotgun/armst_Shotgun_toz_66_pantera.et",
+      "Prefabs/Weapons/Russian/Shotgun/armst_Shotgun_toz_66_saw.et",
+      "Prefabs/Weapons/Western/Shotgun/armst_Shotgun_Remington_870.et",
+      "Prefabs/Weapons/Western/Shotgun/armst_Shotgun_spas_12.et"
+    ],
+    "chain_depth_local": 1
+  },
+  "references": [
+    {
+      "guid": "A84D9F22F2C0D9CE",
+      "path": "Sounds/Weapons/_SharedData/PickUp/Weapons_PickUp_Rifle_WoodMetal.acp",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "Prefabs/Weapons/Western/Shotgun/core/armst_shotgun_base.et"
+    },
+    {
+      "guid": "B0375701D9C132CD",
+      "path": "Assets/Ish_27/Ish_27.xob",
+      "resolved": "local",
+      "target": "Assets/Ish_27/Ish_27.xob",
+      "defined_in": "Prefabs/Weapons/Western/Shotgun/core/armst_shotgun_base.et"
+    },
+    {
+      "guid": "3E62CF528279BC22",
+      "path": "Particles/Weapon/Casing_12ga.ptc",
+      "resolved": "local",
+      "target": "Particles/Weapon/Casing_12ga.ptc",
+      "defined_in": "Prefabs/Weapons/Western/Shotgun/core/armst_shotgun_base.et"
+    },
+    {
+      "guid": "7D4D61DB49505CB7",
+      "path": "Particles/Weapon/Shotgun_Muzzle_NSV.ptc",
+      "resolved": "local",
+      "target": "Particles/Weapon/Shotgun_Muzzle_NSV.ptc",
+      "defined_in": "Prefabs/Weapons/Western/Shotgun/core/armst_shotgun_base.et"
+    },
+    {
+      "guid": "B0DFDF7AAA9C5D39",
+      "path": "Prefabs/Weapons/Magazines/12ga/armst_12ga_Buckshot.et",
+      "resolved": "local",
+      "target": "Prefabs/Weapons/Magazines/12ga/armst_12ga_Buckshot.et",
+      "defined_in": "Prefabs/Weapons/Western/Shotgun/core/armst_shotgun_base.et"
+    }
+  ],
+  "warnings": [],
+  "data": {
+    "identity": {
+      "name": null
+    },
+    "fire_modes": [],
+    "physical": {
+      "MeleeDamage": {
+        "value": 2,
+        "defined_in": "Prefabs/Weapons/Western/Shotgun/core/armst_shotgun_base.et",
+        "inherited": false
+      },
+      "Model": {
+        "guid": "B0375701D9C132CD",
+        "path": "Assets/Ish_27/Ish_27.xob",
+        "defined_in": "Prefabs/Weapons/Western/Shotgun/core/armst_shotgun_base.et"
+      }
+    },
+    "magazine": {
+      "magazine_well": {
+        "name": "MagazineWell",
+        "class": "MagazineWell12g",
+        "defined_in": "Prefabs/Weapons/Western/Shotgun/core/armst_shotgun_base.et"
+      },
+      "magazine_template": {
+        "guid": "B0DFDF7AAA9C5D39",
+        "path": "Prefabs/Weapons/Magazines/12ga/armst_12ga_Buckshot.et",
+        "defined_in": "Prefabs/Weapons/Western/Shotgun/core/armst_shotgun_base.et"
+      }
+    },
+    "ballistics": {
+      "bullet_init_speed_coef": null,
+      "dispersion_diameter": null,
+      "dispersion_range": {
+        "value": 701,
+        "defined_in": "Prefabs/Weapons/Western/Shotgun/core/armst_shotgun_base.et",
+        "inherited": false
+      }
+    },
+    "aim": {
+      "recoil": null,
+      "sway": null
+    },
+    "sights": null,
+    "attachment_slots": [
+      {
+        "slot": null,
+        "pivot": null,
+        "enabled": {
+          "value": 0,
+          "defined_in": "Prefabs/Weapons/Western/Shotgun/core/armst_shotgun_base.et",
+          "inherited": false
+        },
+        "attachment_types": [],
+        "defined_in": "Prefabs/Weapons/Western/Shotgun/core/armst_shotgun_base.et"
+      }
+    ],
+    "muzzle_attachment": null,
+    "animation": {
+      "anim_graph": null,
+      "anim_instance": null
+    }
+  },
+  "derived": {}
+}

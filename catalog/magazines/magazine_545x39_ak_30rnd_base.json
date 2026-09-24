@@ -2,24 +2,24 @@
   "id": "magazine_545x39_ak_30rnd_base",
   "role": "base",
   "source": {
-    "resource": "Prefabs/Weapons/Magazines/5x45/Magazine_545x39_AK_30rnd_Base.et",
+    "resource": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/Magazine_545x39_AK_30rnd_Base.et",
     "resource_guid": "63C1E699345B24F9",
     "meta_name": null,
     "class": "GenericEntity",
-    "defined_in": "Prefabs/Weapons/Magazines/5x45/Magazine_545x39_AK_30rnd_Base.et"
+    "defined_in": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/Magazine_545x39_AK_30rnd_Base.et"
   },
   "identity": {
     "name": "Magazine_545x39_AK_30rnd_Base",
-    "resource": "Prefabs/Weapons/Magazines/5x45/Magazine_545x39_AK_30rnd_Base.et"
+    "resource": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/Magazine_545x39_AK_30rnd_Base.et"
   },
   "classification": {
     "kind": "magazine",
-    "confidence": "folder"
+    "confidence": "components"
   },
   "inheritance": {
     "chain": [
       {
-        "resource": "Prefabs/Weapons/Magazines/5x45/Magazine_545x39_AK_30rnd_Base.et",
+        "resource": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/Magazine_545x39_AK_30rnd_Base.et",
         "status": "local",
         "class": "GenericEntity"
       },
@@ -31,8 +31,8 @@
     ],
     "external_parents": [],
     "used_as_base_by": [
-      "Prefabs/Weapons/Magazines/5x45/Magazine_545x39_AK_30rnd_Ball.et",
-      "Prefabs/Weapons/Magazines/5x45/Magazine_545x39_AK_30rnd_Tracer.et"
+      "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_AK_30rnd_Ball.et",
+      "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_AK_30rnd_Tracer.et"
     ],
     "chain_depth_local": 2
   },
@@ -43,8 +43,8 @@
       "width": null,
       "height": {
         "value": 2,
-        "defined_in": "Prefabs/Weapons/Magazines/5x45/Magazine_545x39_AK_30rnd_Base.et",
-        "inherited": false
+        "defined_in": "Prefabs/Weapons/Core/Magazine_Base.et",
+        "inherited": true
       }
     },
     "_inv_defined_in": "Prefabs/Weapons/Core/Magazine_Base.et"

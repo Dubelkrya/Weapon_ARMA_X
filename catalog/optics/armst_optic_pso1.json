@@ -1,0 +1,40 @@
+{
+  "id": "armst_optic_pso1",
+  "role": "leaf",
+  "source": {
+    "resource": "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et",
+    "resource_guid": "C850A33226B8F9C1",
+    "meta_name": null,
+    "class": "GameEntity",
+    "defined_in": "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et"
+  },
+  "identity": {
+    "name": "armst_Optic_PSO1",
+    "resource": "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et"
+  },
+  "classification": {
+    "kind": "attachment",
+    "confidence": "folder",
+    "attachment_kind": "optic"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et",
+        "status": "local",
+        "class": "GameEntity"
+      }
+    ],
+    "external_parents": [
+      {
+        "guid": "AB71C533945104AE",
+        "path": "Prefabs/Weapons/Attachments/Optics/Optic_PSO1/Optic_PSO1_base.et",
+        "raw": "{AB71C533945104AE}Prefabs/Weapons/Attachments/Optics/Optic_PSO1/Optic_PSO1_base.et"
+      }
+    ],
+    "used_as_base_by": [],
+    "chain_depth_local": 1
+  },
+  "references": [],
+  "warnings": []
+}

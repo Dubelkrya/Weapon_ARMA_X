@@ -1,0 +1,81 @@
+{
+  "id": "armst_magazine_556x45_stanag_30rnd_m855_ball_bp",
+  "role": "leaf",
+  "source": {
+    "resource": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M855_Ball_BP.et",
+    "resource_guid": "DDF6F15392E84746",
+    "meta_name": null,
+    "class": "GenericEntity",
+    "defined_in": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M855_Ball_BP.et"
+  },
+  "identity": {
+    "name": "armst_Magazine_556x45_STANAG_30rnd_M855_Ball_BP",
+    "resource": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M855_Ball_BP.et"
+  },
+  "classification": {
+    "kind": "magazine",
+    "confidence": "components"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M855_Ball_BP.et",
+        "status": "local",
+        "class": "GenericEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/Magazine_556x45_STANAG_30rnd_Base.et",
+        "status": "local",
+        "class": "GenericEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Core/Magazine_Base.et",
+        "status": "local",
+        "class": "GenericEntity"
+      }
+    ],
+    "external_parents": [],
+    "used_as_base_by": [],
+    "chain_depth_local": 3
+  },
+  "references": [
+    {
+      "guid": "5513C2BA0B7B48F8",
+      "path": "Configs/Weapons/Ammo/ARMST/armst_Ammo_556x45_ARMST.conf",
+      "resolved": "local",
+      "target": "Configs/Weapons/Ammo/ARMST/armst_Ammo_556x45_ARMST.conf",
+      "defined_in": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/Magazine_556x45_STANAG_30rnd_Base.et"
+    }
+  ],
+  "warnings": [],
+  "data": {
+    "magazine_well": {
+      "name": "MagazineWell",
+      "class": "MagazineWellStanag556",
+      "defined_in": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/Magazine_556x45_STANAG_30rnd_Base.et"
+    },
+    "ammo_config_missing": "able to search parent / external; no local AmmoConfig found",
+    "max_ammo": {
+      "value": 30,
+      "defined_in": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/Magazine_556x45_STANAG_30rnd_Base.et",
+      "inherited": true
+    },
+    "ammo_mapping": null,
+    "caliber_id": null,
+    "name": null,
+    "_defined_in": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/Magazine_556x45_STANAG_30rnd_Base.et",
+    "display_name": null,
+    "grid": {
+      "width": null,
+      "height": {
+        "value": 2,
+        "defined_in": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/Magazine_556x45_STANAG_30rnd_Base.et",
+        "inherited": true
+      }
+    },
+    "_inv_defined_in": "Prefabs/Weapons/Core/Magazine_Base.et"
+  },
+  "derived": {
+    "capacity": 30
+  }
+}

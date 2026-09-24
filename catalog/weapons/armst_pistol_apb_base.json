@@ -1,0 +1,126 @@
+{
+  "id": "armst_pistol_apb_base",
+  "role": "base",
+  "source": {
+    "resource": "Prefabs/Weapons/Russian/Handguns/APB/armst_pistol_APB_base.et",
+    "resource_guid": "5D3DA7E84135B278",
+    "meta_name": null,
+    "class": "GenericEntity",
+    "defined_in": "Prefabs/Weapons/Russian/Handguns/APB/armst_pistol_APB_base.et"
+  },
+  "identity": {
+    "name": "armst_pistol_APB_base",
+    "resource": "Prefabs/Weapons/Russian/Handguns/APB/armst_pistol_APB_base.et"
+  },
+  "classification": {
+    "kind": "weapon",
+    "confidence": "components"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Weapons/Russian/Handguns/APB/armst_pistol_APB_base.et",
+        "status": "local",
+        "class": "GenericEntity"
+      }
+    ],
+    "external_parents": [
+      {
+        "guid": "B7132459C07777CA",
+        "path": "Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et",
+        "raw": "{B7132459C07777CA}Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et"
+      }
+    ],
+    "used_as_base_by": [
+      "Prefabs/Weapons/Russian/Handguns/APB/armst_pistol_APB.et"
+    ],
+    "chain_depth_local": 1
+  },
+  "references": [
+    {
+      "guid": "A72F391188860251",
+      "path": "Assets/Weapons_RUS/Apb/APB_weapon.xob",
+      "resolved": "local",
+      "target": "Assets/Weapons_RUS/Apb/APB_weapon.xob",
+      "defined_in": "Prefabs/Weapons/Russian/Handguns/APB/armst_pistol_APB_base.et"
+    },
+    {
+      "guid": "091997F8F8C15516",
+      "path": "Particles/Weapon/Attachments/Suppressor_PBS4.ptc",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "Prefabs/Weapons/Russian/Handguns/APB/armst_pistol_APB_base.et"
+    },
+    {
+      "guid": "389EB226473CD590",
+      "path": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_APB_20rnd_Ball.et",
+      "resolved": "local",
+      "target": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_APB_20rnd_Ball.et",
+      "defined_in": "Prefabs/Weapons/Russian/Handguns/APB/armst_pistol_APB_base.et"
+    }
+  ],
+  "warnings": [],
+  "data": {
+    "identity": {
+      "name": null
+    },
+    "fire_modes": [
+      {
+        "mode_id": "{65F2620630730947}",
+        "ui_name": "Auto",
+        "rounds_per_minute": null,
+        "max_burst": {
+          "value": -1,
+          "defined_in": "Prefabs/Weapons/Russian/Handguns/APB/armst_pistol_APB_base.et",
+          "inherited": false
+        },
+        "defined_in": "Prefabs/Weapons/Russian/Handguns/APB/armst_pistol_APB_base.et"
+      }
+    ],
+    "physical": {
+      "MeleeDamage": {
+        "value": 2,
+        "defined_in": "Prefabs/Weapons/Russian/Handguns/APB/armst_pistol_APB_base.et",
+        "inherited": false
+      },
+      "Model": {
+        "guid": "A72F391188860251",
+        "path": "Assets/Weapons_RUS/Apb/APB_weapon.xob",
+        "defined_in": "Prefabs/Weapons/Russian/Handguns/APB/armst_pistol_APB_base.et"
+      }
+    },
+    "magazine": {
+      "magazine_well": {
+        "name": "MagazineWell",
+        "class": "MagazineWellAPB",
+        "defined_in": "Prefabs/Weapons/Russian/Handguns/APB/armst_pistol_APB_base.et"
+      },
+      "magazine_template": {
+        "guid": "389EB226473CD590",
+        "path": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_APB_20rnd_Ball.et",
+        "defined_in": "Prefabs/Weapons/Russian/Handguns/APB/armst_pistol_APB_base.et"
+      }
+    },
+    "ballistics": {
+      "bullet_init_speed_coef": null,
+      "dispersion_diameter": null,
+      "dispersion_range": null
+    },
+    "aim": {
+      "recoil": null,
+      "sway": null
+    },
+    "sights": {
+      "switch_skip": null,
+      "ranges": [],
+      "defined_in": "Prefabs/Weapons/Russian/Handguns/APB/armst_pistol_APB_base.et"
+    },
+    "attachment_slots": [],
+    "muzzle_attachment": null,
+    "animation": {
+      "anim_graph": null,
+      "anim_instance": null
+    }
+  },
+  "derived": {}
+}

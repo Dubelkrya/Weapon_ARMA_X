@@ -1,0 +1,110 @@
+{
+  "id": "armst_pistol_tt",
+  "role": "leaf",
+  "source": {
+    "resource": "Prefabs/Weapons/Russian/Handguns/TT/armst_pistol_TT.et",
+    "resource_guid": "798E89E200F08C05",
+    "meta_name": null,
+    "class": "GenericEntity",
+    "defined_in": "Prefabs/Weapons/Russian/Handguns/TT/armst_pistol_TT.et"
+  },
+  "identity": {
+    "name": "armst_pistol_TT",
+    "resource": "Prefabs/Weapons/Russian/Handguns/TT/armst_pistol_TT.et"
+  },
+  "classification": {
+    "kind": "weapon",
+    "confidence": "components"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Weapons/Russian/Handguns/TT/armst_pistol_TT.et",
+        "status": "local",
+        "class": "GenericEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Russian/Handguns/TT/armst_pistol_TT_base.et",
+        "status": "local",
+        "class": "GenericEntity"
+      }
+    ],
+    "external_parents": [
+      {
+        "guid": "B7132459C07777CA",
+        "path": "Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et",
+        "raw": "{B7132459C07777CA}Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et"
+      }
+    ],
+    "used_as_base_by": [],
+    "chain_depth_local": 2
+  },
+  "references": [
+    {
+      "guid": "3142577B6CD35911",
+      "path": "Assets/Weapons_RUS/TT/TT_weapon.xob",
+      "resolved": "local",
+      "target": "Assets/Weapons_RUS/TT/TT_weapon.xob",
+      "defined_in": "Prefabs/Weapons/Russian/Handguns/TT/armst_pistol_TT_base.et"
+    },
+    {
+      "guid": "AA99F5E678010DB3",
+      "path": "Prefabs/Weapons/Magazines/Russian/763x25/TT/armst_Magazine_763x25_TT_8rnd_Ball.et",
+      "resolved": "local",
+      "target": "Prefabs/Weapons/Magazines/Russian/763x25/TT/armst_Magazine_763x25_TT_8rnd_Ball.et",
+      "defined_in": "Prefabs/Weapons/Russian/Handguns/TT/armst_pistol_TT_base.et"
+    }
+  ],
+  "warnings": [],
+  "data": {
+    "identity": {
+      "name": null
+    },
+    "fire_modes": [],
+    "physical": {
+      "MeleeDamage": {
+        "value": 2,
+        "defined_in": "Prefabs/Weapons/Russian/Handguns/TT/armst_pistol_TT_base.et",
+        "inherited": true
+      },
+      "Model": {
+        "guid": "3142577B6CD35911",
+        "path": "Assets/Weapons_RUS/TT/TT_weapon.xob",
+        "defined_in": "Prefabs/Weapons/Russian/Handguns/TT/armst_pistol_TT_base.et"
+      }
+    },
+    "magazine": {
+      "magazine_well": {
+        "name": "MagazineWell",
+        "class": "MagazineWell763x25",
+        "defined_in": "Prefabs/Weapons/Russian/Handguns/TT/armst_pistol_TT_base.et"
+      },
+      "magazine_template": {
+        "guid": "AA99F5E678010DB3",
+        "path": "Prefabs/Weapons/Magazines/Russian/763x25/TT/armst_Magazine_763x25_TT_8rnd_Ball.et",
+        "defined_in": "Prefabs/Weapons/Russian/Handguns/TT/armst_pistol_TT_base.et"
+      }
+    },
+    "ballistics": {
+      "bullet_init_speed_coef": null,
+      "dispersion_diameter": null,
+      "dispersion_range": null
+    },
+    "aim": {
+      "recoil": null,
+      "sway": null
+    },
+    "sights": {
+      "switch_skip": null,
+      "ranges": [],
+      "defined_in": "Prefabs/Weapons/Russian/Handguns/TT/armst_pistol_TT_base.et"
+    },
+    "attachment_slots": [],
+    "muzzle_attachment": null,
+    "animation": {
+      "anim_graph": null,
+      "anim_instance": null
+    }
+  },
+  "derived": {}
+}

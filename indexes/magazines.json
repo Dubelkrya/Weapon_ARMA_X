@@ -1,12 +1,5 @@
 [
   {
-    "id": "12ga_buckshot",
-    "resource": "Prefabs/Weapons/Magazines/12ga/12ga_Buckshot.et",
-    "class": "GenericEntity",
-    "name": "12ga_Buckshot",
-    "role": "leaf"
-  },
-  {
     "id": "12ga_buckshot_base",
     "resource": "Prefabs/Weapons/Magazines/12ga/12ga_Buckshot_base.et",
     "class": "GenericEntity",
@@ -14,213 +7,332 @@
     "role": "base"
   },
   {
-    "id": "12ga_shell",
-    "resource": "Prefabs/Weapons/Magazines/12ga/12ga_Shell.et",
+    "id": "armst_12ga_buckshot",
+    "resource": "Prefabs/Weapons/Magazines/12ga/armst_12ga_Buckshot.et",
     "class": "GenericEntity",
-    "name": "12ga_Shell",
+    "name": "armst_12ga_Buckshot",
     "role": "leaf"
   },
   {
-    "id": "12ga_shell_test",
-    "resource": "Prefabs/Weapons/Magazines/12ga/12ga_Shell_test.et",
+    "id": "armst_12ga_shell",
+    "resource": "Prefabs/Weapons/Magazines/12ga/armst_12ga_Shell.et",
     "class": "GenericEntity",
-    "name": "12ga_Shell_test",
+    "name": "armst_12ga_Shell",
     "role": "leaf"
   },
   {
-    "id": "magazine_545x39_ak_30rnd_ball",
-    "resource": "Prefabs/Weapons/Magazines/5x45/Magazine_545x39_AK_30rnd_Ball.et",
+    "id": "armst_12ga_shell_test",
+    "resource": "Prefabs/Weapons/Magazines/12ga/armst_12ga_Shell_test.et",
     "class": "GenericEntity",
-    "name": "Magazine_545x39_AK_30rnd_Ball",
+    "name": "armst_12ga_Shell_test",
     "role": "leaf"
   },
   {
     "id": "magazine_545x39_ak_30rnd_base",
-    "resource": "Prefabs/Weapons/Magazines/5x45/Magazine_545x39_AK_30rnd_Base.et",
+    "resource": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/Magazine_545x39_AK_30rnd_Base.et",
     "class": "GenericEntity",
     "name": "Magazine_545x39_AK_30rnd_Base",
     "role": "base"
   },
   {
-    "id": "magazine_545x39_ak_30rnd_tracer",
-    "resource": "Prefabs/Weapons/Magazines/5x45/Magazine_545x39_AK_30rnd_Tracer.et",
+    "id": "armst_magazine_545x39_ak_30rnd_ball",
+    "resource": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_AK_30rnd_Ball.et",
     "class": "GenericEntity",
-    "name": "Magazine_545x39_AK_30rnd_Tracer",
+    "name": "armst_Magazine_545x39_AK_30rnd_Ball",
     "role": "leaf"
   },
   {
-    "id": "magazine_545x39_rpk_45rnd_ball",
-    "resource": "Prefabs/Weapons/Magazines/5x45/Magazine_545x39_RPK_45rnd_Ball.et",
+    "id": "armst_magazine_545x39_ak_30rnd_tracer",
+    "resource": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_AK_30rnd_Tracer.et",
     "class": "GenericEntity",
-    "name": "Magazine_545x39_RPK_45rnd_Ball",
+    "name": "armst_Magazine_545x39_AK_30rnd_Tracer",
     "role": "leaf"
   },
   {
-    "id": "magazine_545x39_rpk_45rnd_tracer",
-    "resource": "Prefabs/Weapons/Magazines/5x45/Magazine_545x39_RPK_45rnd_Tracer.et",
+    "id": "armst_magazine_545x39_rpk_45rnd_ball",
+    "resource": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_RPK_45rnd_Ball.et",
     "class": "GenericEntity",
-    "name": "Magazine_545x39_RPK_45rnd_Tracer",
+    "name": "armst_Magazine_545x39_RPK_45rnd_Ball",
+    "role": "leaf"
+  },
+  {
+    "id": "armst_magazine_545x39_rpk_45rnd_tracer",
+    "resource": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_RPK_45rnd_Tracer.et",
+    "class": "GenericEntity",
+    "name": "armst_Magazine_545x39_RPK_45rnd_Tracer",
+    "role": "leaf"
+  },
+  {
+    "id": "armst_magazine_762x54_svd_10rnd_7bz3api",
+    "resource": "Prefabs/Weapons/Magazines/Russian/762x54/SVD/armst_Magazine_762x54_SVD_10rnd_7BZ3API.et",
+    "class": "GenericEntity",
+    "name": "armst_Magazine_762x54_SVD_10rnd_7BZ3API",
+    "role": "leaf"
+  },
+  {
+    "id": "armst_magazine_763x25_tt_8rnd_ball",
+    "resource": "Prefabs/Weapons/Magazines/Russian/763x25/TT/armst_Magazine_763x25_TT_8rnd_Ball.et",
+    "class": "GenericEntity",
+    "name": "armst_Magazine_763x25_TT_8rnd_Ball",
+    "role": "leaf"
+  },
+  {
+    "id": "armst_magazine_762x39_akm_10rnd_ball",
+    "resource": "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_10rnd_Ball.et",
+    "class": "GenericEntity",
+    "name": "armst_Magazine_762x39_AKM_10rnd_Ball",
+    "role": "leaf"
+  },
+  {
+    "id": "armst_magazine_762x39_akm_10rnd_ball_bp",
+    "resource": "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_10rnd_Ball_BP.et",
+    "class": "GenericEntity",
+    "name": "armst_Magazine_762x39_AKM_10rnd_Ball_BP",
+    "role": "leaf"
+  },
+  {
+    "id": "armst_magazine_762x39_akm_30rnd_ball",
+    "resource": "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_30rnd_Ball.et",
+    "class": "GenericEntity",
+    "name": "armst_Magazine_762x39_AKM_30rnd_Ball",
+    "role": "base"
+  },
+  {
+    "id": "armst_magazine_762x39_akm_30rnd_ball_bp",
+    "resource": "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_30rnd_Ball_BP.et",
+    "class": "GenericEntity",
+    "name": "armst_Magazine_762x39_AKM_30rnd_Ball_BP",
+    "role": "leaf"
+  },
+  {
+    "id": "armst_magazine_9x18_apb_20rnd_ball",
+    "resource": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_APB_20rnd_Ball.et",
+    "class": "GenericEntity",
+    "name": "armst_Magazine_9x18_APB_20rnd_Ball",
+    "role": "leaf"
+  },
+  {
+    "id": "armst_magazine_9x18_apb_20rnd_ball_bp",
+    "resource": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_APB_20rnd_Ball_BP.et",
+    "class": "GenericEntity",
+    "name": "armst_Magazine_9x18_APB_20rnd_Ball_BP",
+    "role": "leaf"
+  },
+  {
+    "id": "armst_magazine_9x18_pm_8rnd_ball",
+    "resource": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball.et",
+    "class": "GenericEntity",
+    "name": "armst_Magazine_9x18_PM_8rnd_Ball",
+    "role": "base"
+  },
+  {
+    "id": "armst_magazine_9x18_pm_8rnd_ball_bp",
+    "resource": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball_BP.et",
+    "class": "GenericEntity",
+    "name": "armst_Magazine_9x18_PM_8rnd_Ball_BP",
+    "role": "leaf"
+  },
+  {
+    "id": "armst_magazine_9x18_pm_8rnd_ball_pp",
+    "resource": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball_PP.et",
+    "class": "GenericEntity",
+    "name": "armst_Magazine_9x18_PM_8rnd_Ball_PP",
+    "role": "leaf"
+  },
+  {
+    "id": "armst_magazine_9x18_pp91_30rnd_ball",
+    "resource": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PP91_30rnd_Ball.et",
+    "class": "GenericEntity",
+    "name": "armst_Magazine_9x18_PP91_30rnd_Ball",
+    "role": "leaf"
+  },
+  {
+    "id": "armst_magazine_9x18_pp91_30rnd_ball_bp",
+    "resource": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PP91_30rnd_Ball_BP.et",
+    "class": "GenericEntity",
+    "name": "armst_Magazine_9x18_PP91_30rnd_Ball_BP",
+    "role": "leaf"
+  },
+  {
+    "id": "armst_magazine_9x18_sr2_30rnd_ball",
+    "resource": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_SR2_30rnd_Ball.et",
+    "class": "GenericEntity",
+    "name": "armst_Magazine_9x18_SR2_30rnd_Ball",
+    "role": "leaf"
+  },
+  {
+    "id": "armst_magazine_9x39_20rnd_9a91_sp5",
+    "resource": "Prefabs/Weapons/Magazines/Russian/9x39/9a91/armst_Magazine_9x39_20rnd_9a91_SP5.et",
+    "class": "GenericEntity",
+    "name": "armst_Magazine_9x39_20rnd_9a91_SP5",
+    "role": "leaf"
+  },
+  {
+    "id": "armst_magazine_9x39_20rnd_9a91_sp6",
+    "resource": "Prefabs/Weapons/Magazines/Russian/9x39/9a91/armst_Magazine_9x39_20rnd_9a91_SP6.et",
+    "class": "GenericEntity",
+    "name": "armst_Magazine_9x39_20rnd_9a91_SP6",
+    "role": "leaf"
+  },
+  {
+    "id": "armst_magazine_9x39_groza_20rnd_sp5",
+    "resource": "Prefabs/Weapons/Magazines/Russian/9x39/Groza/armst_Magazine_9x39_Groza_20rnd_SP5.et",
+    "class": "GenericEntity",
+    "name": "armst_Magazine_9x39_Groza_20rnd_SP5",
+    "role": "leaf"
+  },
+  {
+    "id": "armst_magazine_9x39_groza_20rnd_sp6",
+    "resource": "Prefabs/Weapons/Magazines/Russian/9x39/Groza/armst_Magazine_9x39_Groza_20rnd_SP6.et",
+    "class": "GenericEntity",
+    "name": "armst_Magazine_9x39_Groza_20rnd_SP6",
+    "role": "leaf"
+  },
+  {
+    "id": "armst_magazine_9x39_20rnd_vss_sp5",
+    "resource": "Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_20rnd_vss_SP5.et",
+    "class": "GenericEntity",
+    "name": "armst_Magazine_9x39_20rnd_vss_SP5",
+    "role": "leaf"
+  },
+  {
+    "id": "armst_magazine_9x39_20rnd_vss_sp6",
+    "resource": "Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_20rnd_vss_SP6.et",
+    "class": "GenericEntity",
+    "name": "armst_Magazine_9x39_20rnd_vss_SP6",
+    "role": "leaf"
+  },
+  {
+    "id": "armst_magazine_9x39_30rnd_val_sp5",
+    "resource": "Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_30rnd_val_SP5.et",
+    "class": "GenericEntity",
+    "name": "armst_Magazine_9x39_30rnd_val_SP5",
+    "role": "leaf"
+  },
+  {
+    "id": "armst_magazine_9x39_30rnd_val_sp6",
+    "resource": "Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_30rnd_val_SP6.et",
+    "class": "GenericEntity",
+    "name": "armst_Magazine_9x39_30rnd_val_SP6",
+    "role": "leaf"
+  },
+  {
+    "id": "armst_magazine_556x45_hkg36",
+    "resource": "Prefabs/Weapons/Magazines/Western/5x56/HKG36/armst_Magazine_556x45_HKG36.et",
+    "class": "GenericEntity",
+    "name": "armst_Magazine_556x45_HKG36",
+    "role": "leaf"
+  },
+  {
+    "id": "armst_magazine_556x45_hkg36_bp",
+    "resource": "Prefabs/Weapons/Magazines/Western/5x56/HKG36/armst_Magazine_556x45_HKG36_BP.et",
+    "class": "GenericEntity",
+    "name": "armst_Magazine_556x45_HKG36_BP",
+    "role": "leaf"
+  },
+  {
+    "id": "armst_magazine_556x45_sig_550",
+    "resource": "Prefabs/Weapons/Magazines/Western/5x56/SIG550/armst_Magazine_556x45_SIG_550.et",
+    "class": "GenericEntity",
+    "name": "armst_Magazine_556x45_SIG_550",
+    "role": "leaf"
+  },
+  {
+    "id": "armst_magazine_556x45_sig_550_bp",
+    "resource": "Prefabs/Weapons/Magazines/Western/5x56/SIG550/armst_Magazine_556x45_SIG_550_BP.et",
+    "class": "GenericEntity",
+    "name": "armst_Magazine_556x45_SIG_550_BP",
     "role": "leaf"
   },
   {
     "id": "magazine_556x45_stanag_30rnd_base",
-    "resource": "Prefabs/Weapons/Magazines/5x56/Magazine_556x45_STANAG_30rnd_Base.et",
+    "resource": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/Magazine_556x45_STANAG_30rnd_Base.et",
     "class": "GenericEntity",
     "name": "Magazine_556x45_STANAG_30rnd_Base",
     "role": "base"
   },
   {
-    "id": "magazine_556x45_stanag_30rnd_m193_ball",
-    "resource": "Prefabs/Weapons/Magazines/5x56/Magazine_556x45_STANAG_30rnd_M193_Ball.et",
+    "id": "armst_magazine_556x45_stanag_30rnd_m193_ball",
+    "resource": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M193_Ball.et",
     "class": "GenericEntity",
-    "name": "Magazine_556x45_STANAG_30rnd_M193_Ball",
-    "role": "leaf"
-  },
-  {
-    "id": "magazine_556x45_stanag_30rnd_m196_tracer",
-    "resource": "Prefabs/Weapons/Magazines/5x56/Magazine_556x45_STANAG_30rnd_M196_Tracer.et",
-    "class": "GenericEntity",
-    "name": "Magazine_556x45_STANAG_30rnd_M196_Tracer",
-    "role": "leaf"
-  },
-  {
-    "id": "magazine_556x45_stanag_30rnd_m855_ball",
-    "resource": "Prefabs/Weapons/Magazines/5x56/Magazine_556x45_STANAG_30rnd_M855_Ball.et",
-    "class": "GenericEntity",
-    "name": "Magazine_556x45_STANAG_30rnd_M855_Ball",
-    "role": "leaf"
-  },
-  {
-    "id": "magazine_556x45_stanag_30rnd_m856_tracer",
-    "resource": "Prefabs/Weapons/Magazines/5x56/Magazine_556x45_STANAG_30rnd_M856_Tracer.et",
-    "class": "GenericEntity",
-    "name": "Magazine_556x45_STANAG_30rnd_M856_Tracer",
-    "role": "leaf"
-  },
-  {
-    "id": "magazine_762x39_akm_10rnd_ball",
-    "resource": "Prefabs/Weapons/Magazines/7x62/Magazine_762x39_AKM_10rnd_Ball.et",
-    "class": "GenericEntity",
-    "name": "Magazine_762x39_AKM_10rnd_Ball",
-    "role": "leaf"
-  },
-  {
-    "id": "magazine_762x39_akm_30rnd_ball",
-    "resource": "Prefabs/Weapons/Magazines/7x62/Magazine_762x39_AKM_30rnd_Ball.et",
-    "class": "GenericEntity",
-    "name": "Magazine_762x39_AKM_30rnd_Ball",
+    "name": "armst_Magazine_556x45_STANAG_30rnd_M193_Ball",
     "role": "base"
   },
   {
-    "id": "magazine_762x39_akm_30rnd_tracer",
-    "resource": "Prefabs/Weapons/Magazines/7x62/Magazine_762x39_AKM_30rnd_Tracer.et",
+    "id": "armst_magazine_556x45_stanag_30rnd_m193_ball_bp",
+    "resource": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M193_Ball_BP.et",
     "class": "GenericEntity",
-    "name": "Magazine_762x39_AKM_30rnd_Tracer",
+    "name": "armst_Magazine_556x45_STANAG_30rnd_M193_Ball_BP",
     "role": "leaf"
   },
   {
-    "id": "magazine_9x39_20rnd_9a91_sp5",
-    "resource": "Prefabs/Weapons/Magazines/9x39/Magazine_9x39_20rnd_9a91_SP5.et",
+    "id": "armst_magazine_556x45_stanag_30rnd_m855_ball",
+    "resource": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M855_Ball.et",
     "class": "GenericEntity",
-    "name": "Magazine_9x39_20rnd_9a91_SP5",
+    "name": "armst_Magazine_556x45_STANAG_30rnd_M855_Ball",
     "role": "leaf"
   },
   {
-    "id": "magazine_9x39_20rnd_9a91_sp6",
-    "resource": "Prefabs/Weapons/Magazines/9x39/Magazine_9x39_20rnd_9a91_SP6.et",
+    "id": "armst_magazine_556x45_stanag_30rnd_m855_ball_bp",
+    "resource": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M855_Ball_BP.et",
     "class": "GenericEntity",
-    "name": "Magazine_9x39_20rnd_9a91_SP6",
+    "name": "armst_Magazine_556x45_STANAG_30rnd_M855_Ball_BP",
     "role": "leaf"
   },
   {
-    "id": "magazine_9x39_20rnd_vss_sp5",
-    "resource": "Prefabs/Weapons/Magazines/9x39/Magazine_9x39_20rnd_vss_SP5.et",
+    "id": "armst_magazine_762x51_hk3_20_m80_ball",
+    "resource": "Prefabs/Weapons/Magazines/Western/762x51/HK3/armst_Magazine_762x51_HK3_20_M80_Ball.et",
     "class": "GenericEntity",
-    "name": "Magazine_9x39_20rnd_vss_SP5",
+    "name": "armst_Magazine_762x51_HK3_20_M80_Ball",
     "role": "leaf"
   },
   {
-    "id": "magazine_9x39_20rnd_vss_sp6",
-    "resource": "Prefabs/Weapons/Magazines/9x39/Magazine_9x39_20rnd_vss_SP6.et",
+    "id": "armst_magazine_762x51_hk3_20_m80_ball_bp",
+    "resource": "Prefabs/Weapons/Magazines/Western/762x51/HK3/armst_Magazine_762x51_HK3_20_M80_Ball_BP.et",
     "class": "GenericEntity",
-    "name": "Magazine_9x39_20rnd_vss_SP6",
+    "name": "armst_Magazine_762x51_HK3_20_M80_Ball_BP",
     "role": "leaf"
   },
   {
-    "id": "magazine_9x39_30rnd_val_sp5",
-    "resource": "Prefabs/Weapons/Magazines/9x39/Magazine_9x39_30rnd_val_SP5.et",
+    "id": "armst_magazine_762x51_l1a1_20_m80_ball",
+    "resource": "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_20_M80_Ball.et",
     "class": "GenericEntity",
-    "name": "Magazine_9x39_30rnd_val_SP5",
-    "role": "leaf"
-  },
-  {
-    "id": "magazine_9x39_30rnd_val_sp6",
-    "resource": "Prefabs/Weapons/Magazines/9x39/Magazine_9x39_30rnd_val_SP6.et",
-    "class": "GenericEntity",
-    "name": "Magazine_9x39_30rnd_val_SP6",
-    "role": "leaf"
-  },
-  {
-    "id": "box_762x54_pk_250rnd_ball",
-    "resource": "Prefabs/Weapons/Magazines/Box_762x54_PK_250rnd_Ball.et",
-    "class": "GenericEntity",
-    "name": "Box_762x54_PK_250rnd_Ball",
-    "role": "leaf"
-  },
-  {
-    "id": "magazine_762x54_svd_10rnd_7bz3api",
-    "resource": "Prefabs/Weapons/Magazines/Magazine_762x54_SVD_10rnd_7BZ3API.et",
-    "class": "GenericEntity",
-    "name": "Magazine_762x54_SVD_10rnd_7BZ3API",
-    "role": "leaf"
-  },
-  {
-    "id": "magazine_762x54_svd_10rnd_sniper",
-    "resource": "Prefabs/Weapons/Magazines/Magazine_762x54_SVD_10rnd_Sniper.et",
-    "class": "GenericEntity",
-    "name": "Magazine_762x54_SVD_10rnd_Sniper",
-    "role": "leaf"
-  },
-  {
-    "id": "magazine_763x25_tt_8rnd_ball",
-    "resource": "Prefabs/Weapons/Magazines/Magazine_763x25_TT_8rnd_Ball.et",
-    "class": "GenericEntity",
-    "name": "Magazine_763x25_TT_8rnd_Ball",
-    "role": "leaf"
-  },
-  {
-    "id": "magazine_9x18_apb_20rnd_ball",
-    "resource": "Prefabs/Weapons/Magazines/Magazine_9x18_APB_20rnd_Ball.et",
-    "class": "GenericEntity",
-    "name": "Magazine_9x18_APB_20rnd_Ball",
-    "role": "leaf"
-  },
-  {
-    "id": "magazine_9x18_pm_8rnd_ball",
-    "resource": "Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Ball.et",
-    "class": "GenericEntity",
-    "name": "Magazine_9x18_PM_8rnd_Ball",
+    "name": "armst_Magazine_762x51_L1A1_20_M80_Ball",
     "role": "base"
   },
   {
-    "id": "magazine_9x18_pp91_30rnd_ball",
-    "resource": "Prefabs/Weapons/Magazines/Magazine_9x18_PP91_30rnd_Ball.et",
+    "id": "armst_magazine_762x51_l1a1_20_m80_ball_bp",
+    "resource": "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_20_M80_Ball_BP.et",
     "class": "GenericEntity",
-    "name": "Magazine_9x18_PP91_30rnd_Ball",
+    "name": "armst_Magazine_762x51_L1A1_20_M80_Ball_BP",
     "role": "leaf"
   },
   {
-    "id": "magazine_9x18_sr2_30rnd_ball",
-    "resource": "Prefabs/Weapons/Magazines/Magazine_9x18_SR2_30rnd_Ball.et",
+    "id": "armst_magazine_762x51_l1a1_30_m80_ball",
+    "resource": "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_30_M80_Ball.et",
     "class": "GenericEntity",
-    "name": "Magazine_9x18_SR2_30rnd_Ball",
+    "name": "armst_Magazine_762x51_L1A1_30_M80_Ball",
     "role": "leaf"
   },
   {
-    "id": "magazine_9x19_m9_15rnd_ball",
-    "resource": "Prefabs/Weapons/Magazines/Magazine_9x19_M9_15rnd_Ball.et",
+    "id": "armst_magazine_762x51_l1a1_30_m80_ball_bp",
+    "resource": "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_30_M80_Ball_BP.et",
     "class": "GenericEntity",
-    "name": "Magazine_9x19_M9_15rnd_Ball",
+    "name": "armst_Magazine_762x51_L1A1_30_M80_Ball_BP",
+    "role": "leaf"
+  },
+  {
+    "id": "armst_magazine_9x19_m9_15rnd_ball",
+    "resource": "Prefabs/Weapons/Magazines/Western/9x19/M9/armst_Magazine_9x19_M9_15rnd_Ball.et",
+    "class": "GenericEntity",
+    "name": "armst_Magazine_9x19_M9_15rnd_Ball",
+    "role": "leaf"
+  },
+  {
+    "id": "armst_magazine_9x19_m9_15rnd_ball_bp",
+    "resource": "Prefabs/Weapons/Magazines/Western/9x19/M9/armst_Magazine_9x19_M9_15rnd_Ball_BP.et",
+    "class": "GenericEntity",
+    "name": "armst_Magazine_9x19_M9_15rnd_Ball_BP",
     "role": "leaf"
   }
 ]

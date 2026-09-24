@@ -1,0 +1,250 @@
+{
+  "id": "armst_pistol_pp91",
+  "role": "leaf",
+  "source": {
+    "resource": "Prefabs/Weapons/Russian/Handguns/PP91/armst_pistol_PP91.et",
+    "resource_guid": "F008E4250877B1B8",
+    "meta_name": null,
+    "class": "GenericEntity",
+    "defined_in": "Prefabs/Weapons/Russian/Handguns/PP91/armst_pistol_PP91.et"
+  },
+  "identity": {
+    "name": "armst_pistol_PP91",
+    "resource": "Prefabs/Weapons/Russian/Handguns/PP91/armst_pistol_PP91.et"
+  },
+  "classification": {
+    "kind": "weapon",
+    "confidence": "components"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Weapons/Russian/Handguns/PP91/armst_pistol_PP91.et",
+        "status": "local",
+        "class": "GenericEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Russian/Handguns/PP91/armst_pistol_PP91_base.et",
+        "status": "local",
+        "class": "GenericEntity"
+      }
+    ],
+    "external_parents": [
+      {
+        "guid": "B7132459C07777CA",
+        "path": "Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et",
+        "raw": "{B7132459C07777CA}Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et"
+      }
+    ],
+    "used_as_base_by": [],
+    "chain_depth_local": 2
+  },
+  "references": [
+    {
+      "guid": "C783576039056FE8",
+      "path": "Assets/Weapons_RUS/Kedr/Kedr_weapons.xob",
+      "resolved": "local",
+      "target": "Assets/Weapons_RUS/Kedr/Kedr_weapons.xob",
+      "defined_in": "Prefabs/Weapons/Russian/Handguns/PP91/armst_pistol_PP91_base.et"
+    },
+    {
+      "guid": "0350283642830782",
+      "path": "anims/workspaces/player/player_main_rifle.asi",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "Prefabs/Weapons/Russian/Handguns/PP91/armst_pistol_PP91_base.et"
+    },
+    {
+      "guid": "424B6D42E06E08C3",
+      "path": "Assets/Weapons_RUS/Kedr/Anim/Diff/p_rfl_PP19_01_ik.anm",
+      "resolved": "local",
+      "target": "Assets/Weapons_RUS/Kedr/Anim/Diff/p_rfl_PP19_01_ik.anm",
+      "defined_in": "Prefabs/Weapons/Russian/Handguns/PP91/armst_pistol_PP91_base.et"
+    },
+    {
+      "guid": "5E862EB6989F8833",
+      "path": "anims/workspaces/player/player_inventory_rifle.asi",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "Prefabs/Weapons/Russian/Handguns/PP91/armst_pistol_PP91_base.et"
+    },
+    {
+      "guid": "929E2053B2409DB4",
+      "path": "Particles/Weapon/Muzzle_PM.ptc",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "Prefabs/Weapons/Russian/Handguns/PP91/armst_pistol_PP91_base.et"
+    },
+    {
+      "guid": "A0CCFED3034A6B8D",
+      "path": "Particles/Weapon/Muzzle_PKMT.ptc",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "Prefabs/Weapons/Russian/Handguns/PP91/armst_pistol_PP91_base.et"
+    },
+    {
+      "guid": "4488C415F3CA1890",
+      "path": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PP91_30rnd_Ball.et",
+      "resolved": "local",
+      "target": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PP91_30rnd_Ball.et",
+      "defined_in": "Prefabs/Weapons/Russian/Handguns/PP91/armst_pistol_PP91_base.et"
+    },
+    {
+      "guid": "E26E54BD5548148B",
+      "path": "Assets/Weapons_RUS/Kedr/Anim/PP19.agr",
+      "resolved": "local",
+      "target": "Assets/Weapons_RUS/Kedr/Anim/PP19.agr",
+      "defined_in": "Prefabs/Weapons/Russian/Handguns/PP91/armst_pistol_PP91_base.et"
+    },
+    {
+      "guid": "233B6CCFBFE736DB",
+      "path": "Assets/Weapons_RUS/Kedr/Anim/PP19_weapon.asi",
+      "resolved": "local",
+      "target": "Assets/Weapons_RUS/Kedr/Anim/PP19_weapon.asi",
+      "defined_in": "Prefabs/Weapons/Russian/Handguns/PP91/armst_pistol_PP91_base.et"
+    },
+    {
+      "guid": "D865FDFE27E65237",
+      "path": "Assets/Weapons_RUS/Kedr/Anim/PP19_player.asi",
+      "resolved": "local",
+      "target": "Assets/Weapons_RUS/Kedr/Anim/PP19_player.asi",
+      "defined_in": "Prefabs/Weapons/Russian/Handguns/PP91/armst_pistol_PP91_base.et"
+    }
+  ],
+  "warnings": [],
+  "data": {
+    "identity": {
+      "name": null
+    },
+    "fire_modes": [
+      {
+        "mode_id": "{B80A64F4A8EF8333}",
+        "ui_name": null,
+        "rounds_per_minute": {
+          "value": 700,
+          "defined_in": "Prefabs/Weapons/Russian/Handguns/PP91/armst_pistol_PP91_base.et",
+          "inherited": true
+        },
+        "max_burst": null,
+        "defined_in": "Prefabs/Weapons/Russian/Handguns/PP91/armst_pistol_PP91_base.et",
+        "rounds_per_second": {
+          "value": 11.667,
+          "derived": true
+        }
+      },
+      {
+        "mode_id": "{65F2621AD7495FAD}",
+        "ui_name": "Auto",
+        "rounds_per_minute": {
+          "value": 800,
+          "defined_in": "Prefabs/Weapons/Russian/Handguns/PP91/armst_pistol_PP91_base.et",
+          "inherited": true
+        },
+        "max_burst": {
+          "value": -1,
+          "defined_in": "Prefabs/Weapons/Russian/Handguns/PP91/armst_pistol_PP91_base.et",
+          "inherited": true
+        },
+        "defined_in": "Prefabs/Weapons/Russian/Handguns/PP91/armst_pistol_PP91_base.et",
+        "rounds_per_second": {
+          "value": 13.333,
+          "derived": true
+        }
+      }
+    ],
+    "physical": {
+      "Weight": null,
+      "SizeSetupStrategy": null,
+      "ItemDimensions": null,
+      "ItemVolume": null,
+      "DimensionScaler": null,
+      "_defined_in": "Prefabs/Weapons/Russian/Handguns/PP91/armst_pistol_PP91_base.et",
+      "MeleeDamage": {
+        "value": 2,
+        "defined_in": "Prefabs/Weapons/Russian/Handguns/PP91/armst_pistol_PP91_base.et",
+        "inherited": true
+      },
+      "Model": {
+        "guid": "C783576039056FE8",
+        "path": "Assets/Weapons_RUS/Kedr/Kedr_weapons.xob",
+        "defined_in": "Prefabs/Weapons/Russian/Handguns/PP91/armst_pistol_PP91_base.et"
+      }
+    },
+    "magazine": {
+      "magazine_well": {
+        "name": "MagazineWell",
+        "class": "MagazineWellPP91",
+        "defined_in": "Prefabs/Weapons/Russian/Handguns/PP91/armst_pistol_PP91_base.et"
+      },
+      "magazine_template": {
+        "guid": "4488C415F3CA1890",
+        "path": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PP91_30rnd_Ball.et",
+        "defined_in": "Prefabs/Weapons/Russian/Handguns/PP91/armst_pistol_PP91_base.et"
+      }
+    },
+    "ballistics": {
+      "bullet_init_speed_coef": null,
+      "dispersion_diameter": null,
+      "dispersion_range": null
+    },
+    "aim": {
+      "recoil": {
+        "LinearData": {
+          "values": {
+            "curve_magnitudes": null,
+            "curve_mins": null,
+            "curve_maxs": null,
+            "curve_time_scale": null,
+            "base_recoil_scale": null
+          },
+          "defined_in": "Prefabs/Weapons/Russian/Handguns/PP91/armst_pistol_PP91_base.et"
+        },
+        "AngularData": {
+          "values": {
+            "curve_magnitudes": null,
+            "curve_mins": null,
+            "curve_maxs": null,
+            "curve_time_scale": null,
+            "base_recoil_scale": null
+          },
+          "defined_in": "Prefabs/Weapons/Russian/Handguns/PP91/armst_pistol_PP91_base.et"
+        },
+        "TurnOffsetData": {
+          "values": {
+            "curve_magnitudes": null,
+            "curve_mins": null,
+            "curve_maxs": null,
+            "curve_time_scale": null,
+            "base_recoil_scale": null
+          },
+          "defined_in": "Prefabs/Weapons/Russian/Handguns/PP91/armst_pistol_PP91_base.et"
+        }
+      },
+      "sway": null
+    },
+    "sights": {
+      "switch_skip": null,
+      "ranges": [
+        null
+      ],
+      "defined_in": "Prefabs/Weapons/Russian/Handguns/PP91/armst_pistol_PP91_base.et"
+    },
+    "attachment_slots": [],
+    "muzzle_attachment": null,
+    "animation": {
+      "anim_graph": {
+        "guid": "E26E54BD5548148B",
+        "path": "Assets/Weapons_RUS/Kedr/Anim/PP19.agr",
+        "defined_in": "Prefabs/Weapons/Russian/Handguns/PP91/armst_pistol_PP91_base.et"
+      },
+      "anim_instance": {
+        "guid": "233B6CCFBFE736DB",
+        "path": "Assets/Weapons_RUS/Kedr/Anim/PP19_weapon.asi",
+        "defined_in": "Prefabs/Weapons/Russian/Handguns/PP91/armst_pistol_PP91_base.et"
+      }
+    }
+  },
+  "derived": {
+    "max_rounds_per_second": 13.333
+  }
+}

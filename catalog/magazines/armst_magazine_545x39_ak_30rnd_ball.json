@@ -1,0 +1,55 @@
+{
+  "id": "armst_magazine_545x39_ak_30rnd_ball",
+  "role": "leaf",
+  "source": {
+    "resource": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_AK_30rnd_Ball.et",
+    "resource_guid": "BBB50A815A2F916B",
+    "meta_name": null,
+    "class": "GenericEntity",
+    "defined_in": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_AK_30rnd_Ball.et"
+  },
+  "identity": {
+    "name": "armst_Magazine_545x39_AK_30rnd_Ball",
+    "resource": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_AK_30rnd_Ball.et"
+  },
+  "classification": {
+    "kind": "magazine",
+    "confidence": "components"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_AK_30rnd_Ball.et",
+        "status": "local",
+        "class": "GenericEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/Magazine_545x39_AK_30rnd_Base.et",
+        "status": "local",
+        "class": "GenericEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Core/Magazine_Base.et",
+        "status": "local",
+        "class": "GenericEntity"
+      }
+    ],
+    "external_parents": [],
+    "used_as_base_by": [],
+    "chain_depth_local": 3
+  },
+  "references": [],
+  "warnings": [],
+  "data": {
+    "grid": {
+      "width": null,
+      "height": {
+        "value": 2,
+        "defined_in": "Prefabs/Weapons/Core/Magazine_Base.et",
+        "inherited": true
+      }
+    },
+    "_inv_defined_in": "Prefabs/Weapons/Core/Magazine_Base.et"
+  },
+  "derived": {}
+}

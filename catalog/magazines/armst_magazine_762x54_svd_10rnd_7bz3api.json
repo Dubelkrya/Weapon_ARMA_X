@@ -1,0 +1,41 @@
+{
+  "id": "armst_magazine_762x54_svd_10rnd_7bz3api",
+  "role": "leaf",
+  "source": {
+    "resource": "Prefabs/Weapons/Magazines/Russian/762x54/SVD/armst_Magazine_762x54_SVD_10rnd_7BZ3API.et",
+    "resource_guid": "19600CCA33279D20",
+    "meta_name": null,
+    "class": "GenericEntity",
+    "defined_in": "Prefabs/Weapons/Magazines/Russian/762x54/SVD/armst_Magazine_762x54_SVD_10rnd_7BZ3API.et"
+  },
+  "identity": {
+    "name": "armst_Magazine_762x54_SVD_10rnd_7BZ3API",
+    "resource": "Prefabs/Weapons/Magazines/Russian/762x54/SVD/armst_Magazine_762x54_SVD_10rnd_7BZ3API.et"
+  },
+  "classification": {
+    "kind": "magazine",
+    "confidence": "components"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Weapons/Magazines/Russian/762x54/SVD/armst_Magazine_762x54_SVD_10rnd_7BZ3API.et",
+        "status": "local",
+        "class": "GenericEntity"
+      }
+    ],
+    "external_parents": [
+      {
+        "guid": "761A03A9C5BA8D68",
+        "path": "Prefabs/Weapons/Magazines/Magazine_762x54_SVD_10rnd_Base.et",
+        "raw": "{761A03A9C5BA8D68}Prefabs/Weapons/Magazines/Magazine_762x54_SVD_10rnd_Base.et"
+      }
+    ],
+    "used_as_base_by": [],
+    "chain_depth_local": 1
+  },
+  "references": [],
+  "warnings": [],
+  "data": {},
+  "derived": {}
+}

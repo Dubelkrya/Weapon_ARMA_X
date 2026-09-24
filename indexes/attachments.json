@@ -1,16 +1,9 @@
 [
   {
-    "id": "handguard_ak74m2",
-    "resource": "Prefabs/Weapons/Attachments/Handguards/Handguard_AK74M2.et",
+    "id": "armst_handguard_ak74m2",
+    "resource": "Prefabs/Weapons/Attachments/Handguards/armst_Handguard_AK74M2.et",
     "class": "GenericEntity",
-    "name": "Handguard_AK74M2",
-    "role": "leaf"
-  },
-  {
-    "id": "suppressor_9a91",
-    "resource": "Prefabs/Weapons/Attachments/Muzzle/Suppressor_9a91.et",
-    "class": "GameEntity",
-    "name": "Suppressor_9a91",
+    "name": "armst_Handguard_AK74M2",
     "role": "leaf"
   },
   {
@@ -21,17 +14,52 @@
     "role": "base"
   },
   {
-    "id": "optic_pso1",
-    "resource": "Prefabs/Weapons/Attachments/Optics/Optic_PSO1.et",
+    "id": "armst_suppressor_9a91",
+    "resource": "Prefabs/Weapons/Attachments/Muzzle/armst_Suppressor_9a91.et",
     "class": "GameEntity",
-    "name": "Optic_PSO1",
+    "name": "armst_Suppressor_9a91",
+    "role": "leaf"
+  },
+  {
+    "id": "armst_optic_akdovetailmount",
+    "resource": "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et",
+    "class": "GenericEntity",
+    "name": "armst_Optic_AKDovetailMount",
+    "role": "leaf"
+  },
+  {
+    "id": "armst_hkg36_carryhandle_optic",
+    "resource": "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Optic.et",
+    "class": "GameEntity",
+    "name": "armst_HKG36_CarryHandle_Optic",
+    "role": "leaf"
+  },
+  {
+    "id": "armst_hkg36_carryhandle_picatinny",
+    "resource": "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Picatinny.et",
+    "class": "GenericEntity",
+    "name": "armst_HKG36_CarryHandle_Picatinny",
+    "role": "leaf"
+  },
+  {
+    "id": "armst_l85_carryhandle",
+    "resource": "Prefabs/Weapons/Attachments/Optics/L85/armst_L85_CarryHandle.et",
+    "class": "GenericEntity",
+    "name": "armst_L85_CarryHandle",
+    "role": "leaf"
+  },
+  {
+    "id": "armst_optic_1p29",
+    "resource": "Prefabs/Weapons/Attachments/Optics/Optic_1P29/armst_Optic_1P29.et",
+    "class": "GameEntity",
+    "name": "armst_Optic_1P29",
     "role": "base"
   },
   {
-    "id": "optic_pso1_ak",
-    "resource": "Prefabs/Weapons/Attachments/Optics/Optic_PSO1_ak.et",
+    "id": "optic_4x20",
+    "resource": "Prefabs/Weapons/Attachments/Optics/Optic_4x20/Optic_4x20.et",
     "class": "GameEntity",
-    "name": "Optic_PSO1_ak",
+    "name": "Optic_4x20",
     "role": "leaf"
   },
   {
@@ -39,34 +67,48 @@
     "resource": "Prefabs/Weapons/Attachments/Optics/WeaponOptic_Base.et",
     "class": "GameEntity",
     "name": "WeaponOptic_Base",
-    "role": "leaf"
+    "role": "base"
   },
   {
-    "id": "handguard_ak74m",
-    "resource": "Prefabs/Weapons/Attachments/Stocks/Handguard_AK74M.et",
-    "class": "GenericEntity",
-    "name": "Handguard_AK74M",
-    "role": "leaf"
-  },
-  {
-    "id": "handguard_aks",
-    "resource": "Prefabs/Weapons/Attachments/Stocks/Handguard_AKS.et",
-    "class": "GenericEntity",
-    "name": "Handguard_AKS",
-    "role": "leaf"
-  },
-  {
-    "id": "stock_akm",
-    "resource": "Prefabs/Weapons/Attachments/Stocks/Stock_akm.et",
-    "class": "GenericEntity",
-    "name": "Stock_akm",
-    "role": "leaf"
-  },
-  {
-    "id": "ugl_gp25",
-    "resource": "Prefabs/Weapons/Attachments/Underbarrel/UGL_GP25.et",
+    "id": "armst_optic_collimator",
+    "resource": "Prefabs/Weapons/Attachments/Optics/armst_Optic_Collimator.et",
     "class": "GameEntity",
-    "name": "UGL_GP25",
+    "name": "armst_Optic_Collimator",
+    "role": "leaf"
+  },
+  {
+    "id": "armst_optic_pso1",
+    "resource": "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et",
+    "class": "GameEntity",
+    "name": "armst_Optic_PSO1",
+    "role": "leaf"
+  },
+  {
+    "id": "armst_handguard_ak74m",
+    "resource": "Prefabs/Weapons/Attachments/Stocks/armst_Handguard_AK74M.et",
+    "class": "GenericEntity",
+    "name": "armst_Handguard_AK74M",
+    "role": "leaf"
+  },
+  {
+    "id": "armst_handguard_aks",
+    "resource": "Prefabs/Weapons/Attachments/Stocks/armst_Handguard_AKS.et",
+    "class": "GenericEntity",
+    "name": "armst_Handguard_AKS",
+    "role": "leaf"
+  },
+  {
+    "id": "armst_stock_akm",
+    "resource": "Prefabs/Weapons/Attachments/Stocks/armst_Stock_akm.et",
+    "class": "GenericEntity",
+    "name": "armst_Stock_akm",
+    "role": "leaf"
+  },
+  {
+    "id": "armst_ugl_gp25",
+    "resource": "Prefabs/Weapons/Attachments/Underbarrel/armst_UGL_GP25.et",
+    "class": "GameEntity",
+    "name": "armst_UGL_GP25",
     "role": "leaf"
   }
 ]

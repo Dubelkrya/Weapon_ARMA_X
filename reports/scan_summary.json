@@ -1,19 +1,19 @@
 {
-  "mod_root": "C:\\Users\\Muroy\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons",
-  "repo_root": "C:\\Users\\Muroy\\Documents\\Default Project\\Weapon_ARMA_X",
-  "entities": 124,
-  "entities_with_local_chain": 124,
+  "mod_root": "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons",
+  "repo_root": "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\Weapon_ARMA_X\\Weapon_ARMA_X",
+  "entities": 158,
+  "entities_with_local_chain": 158,
   "counts_by_classification": {
-    "weapon": 55,
-    "magazine": 32,
-    "ammunition": 14,
-    "attachment": 10,
+    "weapon": 63,
+    "magazine": 48,
+    "ammunition": 19,
+    "attachment": 16,
     "core": 4,
     "grenade": 4,
-    "tripod": 3,
-    "particle": 2
+    "particle": 2,
+    "tripod": 2
   },
-  "warnings": 0,
-  "graph_edges": 261,
-  "weapons_with_effective_velocity": 10
+  "warnings": 1,
+  "graph_edges": 384,
+  "weapons_with_effective_velocity": 13
 }

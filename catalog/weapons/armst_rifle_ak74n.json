@@ -1,0 +1,87 @@
+{
+  "id": "armst_rifle_ak74n",
+  "role": "base",
+  "source": {
+    "resource": "Prefabs/Weapons/Russian/Rifle/AK74/armst_Rifle_AK74N.et",
+    "resource_guid": "96DFD2E7E63B3386",
+    "meta_name": null,
+    "class": "GenericEntity",
+    "defined_in": "Prefabs/Weapons/Russian/Rifle/AK74/armst_Rifle_AK74N.et"
+  },
+  "identity": {
+    "name": "armst_Rifle_AK74N",
+    "resource": "Prefabs/Weapons/Russian/Rifle/AK74/armst_Rifle_AK74N.et"
+  },
+  "classification": {
+    "kind": "weapon",
+    "confidence": "components"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Weapons/Russian/Rifle/AK74/armst_Rifle_AK74N.et",
+        "status": "local",
+        "class": "GenericEntity"
+      }
+    ],
+    "external_parents": [
+      {
+        "guid": "EAE9A298979C4721",
+        "path": "Prefabs/Weapons/Rifles/AK74/Rifle_AK74N_base.et",
+        "raw": "{EAE9A298979C4721}Prefabs/Weapons/Rifles/AK74/Rifle_AK74N_base.et"
+      }
+    ],
+    "used_as_base_by": [
+      "Prefabs/Weapons/Russian/Rifle/AK74/armst_Rifle_AK105.et",
+      "Prefabs/Weapons/Russian/Rifle/AK74/armst_Rifle_AK74M.et",
+      "Prefabs/Weapons/Russian/Rifle/AK74/armst_Rifle_AK74M_full.et",
+      "Prefabs/Weapons/Russian/Rifle/AK74/armst_Rifle_AKS.et"
+    ],
+    "chain_depth_local": 1
+  },
+  "references": [
+    {
+      "guid": "28DE12055E70E762",
+      "path": "Prefabs/Weapons/Attachments/Optics/armst_Optic_Collimator.et",
+      "resolved": "local",
+      "target": "Prefabs/Weapons/Attachments/Optics/armst_Optic_Collimator.et",
+      "defined_in": "Prefabs/Weapons/Russian/Rifle/AK74/armst_Rifle_AK74N.et"
+    },
+    {
+      "guid": "D71FD2BD68AC4B31",
+      "path": "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et",
+      "resolved": "local",
+      "target": "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et",
+      "defined_in": "Prefabs/Weapons/Russian/Rifle/AK74/armst_Rifle_AK74N.et"
+    }
+  ],
+  "warnings": [],
+  "data": {
+    "identity": {
+      "name": null
+    },
+    "fire_modes": [],
+    "physical": {},
+    "magazine": {
+      "magazine_well": null,
+      "magazine_template": null
+    },
+    "ballistics": {
+      "bullet_init_speed_coef": null,
+      "dispersion_diameter": null,
+      "dispersion_range": null
+    },
+    "aim": {
+      "recoil": null,
+      "sway": null
+    },
+    "sights": null,
+    "attachment_slots": [],
+    "muzzle_attachment": null,
+    "animation": {
+      "anim_graph": null,
+      "anim_instance": null
+    }
+  },
+  "derived": {}
+}

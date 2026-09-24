@@ -2,7 +2,7 @@
 
 Primary working root:
 
-`C:\Users\Muroy\Documents\My Games\ArmaReforgerWorkbench\addons\ARMST-PLATFORM---Weapons`
+`C:\Users\yshky\Documents\My Games\ArmaReforgerWorkbench\addons\ARMST-PLATFORM---Weapons`
 
 This is the authoritative weapon addon and the default target for local-agent prefab/config/script work. `Armst_Work` is not authoritative and must only be used when the user explicitly assigns a one-off sandbox/test task there.
 
