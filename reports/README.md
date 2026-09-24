@@ -14,6 +14,10 @@ This directory contains weapon-specific authoring guides, active gameplay polici
 - **EXPERIMENTAL** — research or proof-of-concept work; not production guidance.
 - **HISTORICAL / SUPERSEDED** — retained only for debugging or design history.
 
+## Weapon catalog navigation
+
+Use [`WEAPON_INDEX.md`](../WEAPON_INDEX.md) for the human-readable generated weapon catalog. It is a navigation view over `catalog/weapons/*.json`, not a replacement for live-addon or Workbench evidence.
+
 ## Current authoring references
 
 | File | Purpose |
