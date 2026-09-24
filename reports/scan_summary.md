@@ -1,6 +1,9 @@
 # Scan summary — historical snapshot
 
-> This report describes the scanner run against the older `ARMST-PLATFORM---Weapons` addon root. It is not a live scan of the current `Armst_Work` project. Use `reports/KNOWLEDGE_STATUS.md` for the active source-of-truth boundary.
+> [!WARNING]
+> **Status: HISTORICAL GENERATED SNAPSHOT.** Use `reports/KNOWLEDGE_STATUS.md` for current authority and source-root rules.
+
+> This report describes an earlier scanner run against `ARMST-PLATFORM---Weapons`. It is a historical snapshot, not a statement that the generated catalog is current.
 
 - Mod root: `C:\Users\Muroy\Documents\My Games\ArmaReforgerWorkbench\addons\ARMST-PLATFORM---Weapons`
 - Repository: `C:\Users\Muroy\Documents\Default Project\Weapon_ARMA_X`
@@ -23,6 +26,6 @@
 
 Regenerate scanner-derived catalogs, indexes and reports from:
 
-`C:\Users\Muroy\Documents\My Games\ArmaReforgerWorkbench\addons\Armst_Work`
+`C:\Users\Muroy\Documents\My Games\ArmaReforgerWorkbench\addons\ARMST-PLATFORM---Weapons`
 
-Do not hand-edit generated JSON counts to imitate a fresh scan.
+Do not hand-edit generated JSON counts to imitate a fresh scan, and do not substitute `Armst_Work` or another partial sandbox addon for the canonical source.
