@@ -20,6 +20,9 @@ MAGAZINES = ROOT / "catalog" / "magazines"
 AMMUNITION = ROOT / "catalog" / "ammunition"
 WEAPONS = ROOT / "catalog" / "weapons"
 AMMO_CONFIG_INDEX = ROOT / "indexes" / "config_reference" / "ammo_configs.json"
+GENERATED_AMMO_CONFIG_INDEX = (
+    ROOT / "indexes" / "generated_config_reference" / "ammo_configs.json"
+)
 
 CALIBER_MARKERS = (
     "145x114",
@@ -80,8 +83,26 @@ def load_resource_map(directory: Path) -> dict[str, Path]:
     return result
 
 
+def load_resource_guid_map(directory: Path) -> dict[str, Path]:
+    result = {}
+    for path in directory.glob("*.json"):
+        doc = load(path)
+        guid = (doc.get("source") or {}).get("resource_guid")
+        if guid:
+            result[str(guid).upper()] = path
+    return result
+
+
+def load_indexed_ammo_configs() -> dict:
+    result = {}
+    for index_path in (AMMO_CONFIG_INDEX, GENERATED_AMMO_CONFIG_INDEX):
+        if index_path.exists():
+            result.update(load(index_path).get("data") or {})
+    return result
+
+
 def scan_magazines(findings: list[Finding]) -> None:
-    indexed_configs = (load(AMMO_CONFIG_INDEX).get("data") or {}) if AMMO_CONFIG_INDEX.exists() else {}
+    indexed_configs = load_indexed_ammo_configs()
 
     for path in sorted(MAGAZINES.glob("*.json")):
         doc = load(path)
@@ -180,12 +201,46 @@ def scan_ammunition(findings: list[Finding]) -> None:
                 break
 
 
+def weapon_magazine_is_cataloged(
+    doc: dict,
+    magazine_resources: dict[str, Path],
+    magazine_guids: dict[str, Path],
+) -> bool:
+    template = (((doc.get("data") or {}).get("magazine") or {}).get("magazine_template") or {})
+    magazine_path = template.get("path")
+    magazine_guid = str(template.get("guid") or "").upper()
+
+    if not magazine_path:
+        return True
+    if magazine_path in magazine_resources:
+        return True
+    if magazine_guid and magazine_guid in magazine_guids:
+        return True
+
+    # A relocated resource may retain its GUID while serialized source still
+    # carries the historical path. The scanner records the resolved local
+    # target in references; treat that as cataloged instead of a false warning.
+    for ref in doc.get("references") or []:
+        ref_guid = str(ref.get("guid") or "").upper()
+        if magazine_guid and ref_guid != magazine_guid:
+            continue
+        if ref.get("resolved") != "local":
+            continue
+        if ref.get("target") in magazine_resources:
+            return True
+    return False
+
+
 def scan_weapon_links(findings: list[Finding]) -> None:
     magazine_resources = load_resource_map(MAGAZINES)
+    magazine_guids = load_resource_guid_map(MAGAZINES)
     for path in sorted(WEAPONS.glob("*.json")):
         doc = load(path)
-        magazine = (((doc.get("data") or {}).get("magazine") or {}).get("magazine_template") or {}).get("path")
-        if magazine and magazine not in magazine_resources:
+        template = (((doc.get("data") or {}).get("magazine") or {}).get("magazine_template") or {})
+        magazine = template.get("path")
+        if magazine and not weapon_magazine_is_cataloged(
+            doc, magazine_resources, magazine_guids
+        ):
             findings.append(Finding(
                 "warning",
                 "WEAPON_MAGAZINE_NOT_CATALOGED",
