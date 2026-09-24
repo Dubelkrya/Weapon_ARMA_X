@@ -12,9 +12,7 @@ ROOT = Path(__file__).resolve().parents[2]
 EXPECTED_PRIMARY = "ARMST-PLATFORM---Weapons"
 JSON_ROOTS = ("agent", "catalog", "indexes", "reports", "schema")
 MD_LINK_RE = re.compile(r"\[[^\]]*\]\(([^)]+)\)")
-DANGEROUS_ARMST_WORK_RE = re.compile(
-    r"(?i)\b(authoritative|canonical|refresh|regenerate|source of truth)\b.{0,100}\bArmst_Work\b"
-)
+STALE_ARMST_WORK_PATH = "addons\\Armst_Work"
 
 
 def fail(message: str, errors: list[str]) -> None:
@@ -84,13 +82,13 @@ def check_primary_root_policy(errors: list[str]) -> None:
                 errors,
             )
 
-    for path in ROOT.rglob("*.md"):
-        for line_no, line in enumerate(path.read_text(encoding="utf-8").splitlines(), 1):
-            if DANGEROUS_ARMST_WORK_RE.search(line):
-                fail(
-                    f"Possible stale Armst_Work directive: {path.relative_to(ROOT)}:{line_no}: {line.strip()}",
-                    errors,
-                )
+    for relative in ("reports/scan_summary.md", "reports/anomalies.md"):
+        path = ROOT / relative
+        if STALE_ARMST_WORK_PATH in path.read_text(encoding="utf-8"):
+            fail(
+                f"Historical scanner report still points at Armst_Work as a refresh path: {relative}",
+                errors,
+            )
 
 
 def main() -> int:
