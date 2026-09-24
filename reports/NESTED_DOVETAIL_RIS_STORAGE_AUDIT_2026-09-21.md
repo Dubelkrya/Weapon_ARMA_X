@@ -356,11 +356,85 @@ PRODUCTION_FILES_CHANGED_BY_THIS_AUDIT: NONE
 
 The next useful work is source/API archaeology around custom slot ownership, not another broad prefab experiment.
 
+---
+
+## Forensics update (same day — InventoryStorageSlot access/construction)
+
+A follow-up read-only pass tightened the gate and produced a concrete route classification.
+
+**Classified routes:**
+
+- **ROUTE A** — custom storage directly owns a serialized `InventoryStorageSlot` → **UNRESOLVED** (no source/prefab example of that serialization).
+- **ROUTE B** — create `InventoryStorageSlot` in script → **UNRESOLVED** (no proven constructor / `CreateInstance` path).
+- **ROUTE C** — register the existing `AttachmentSlotComponent`'s internal slot → **UNRESOLVED** (no public getter of the internal `InventoryStorageSlot`; `EntitySlotInfo.GetSlotInfo(child)` is circular for registration).
+- **ROUTE D** — `MultiSlotConfiguration` creating a pivot-bearing slot → **UNRESOLVED** (`SlotTemplate` absent from the game DB; no pivot-field slot-config evidence).
+
+**Decision: D — NO_PUBLIC_ROUTE_PROVEN.**
+
+Framing (important, do not overstate): this is **not** "the engine forbids nested attach". It is narrower — no public/proven way has yet been found to obtain or construct a pivot-bearing `InventoryStorageSlot` for a script-defined storage. Every other piece is proven present (`InventoryStorageSlot : EntitySlotInfo` with physical attach, `SetupSlotHooks`/`ReleaseSlotHooks`, `GetSlotsCountScr`/`GetSlotScr`).
+
+**Concrete unblock files (all confirmed present in the installed game resource DB):**
+
+- `scripts/Game/generated/InventorySystem/InventoryStorageSlot.c`
+- `scripts/Game/generated/InventorySystem/MultiSlotConfiguration.c`
+- `scripts/Game/generated/InventorySystem/BaseInventoryStorageComponent.c`
+- `scripts/Game/Inventory/ScriptedBaseInventoryStorageComponent.c`
+- `scripts/Game/Inventory/SCR_UniversalInventoryStorageComponent.c`
+- `scripts/GameCode/Components/InventorySystem/UniversalInventoryStorageComponent.c`
+- `scripts/GameCode/Weapon/BaseAttachmentSlotComponent.c`
+
+**Cheapest next test before writing any custom code:** confirm whether a `ScriptAndConfig`-derived component can declare a serialized `ref InventoryStorageSlot` / `ref EntitySlotInfo` member with `PivotID`/`ChildPivotID` in Workbench.
+- If YES → Route A/B opens (one-file custom storage + one slot).
+- If NO → separate-item nested attach requires a deeper custom bridge, and the stock fallbacks remain: composite (one assembly) or weapon-side dependency.
+
+Live addon unchanged by this forensics pass.
 
 ---
 
 ## Route E staging status (2026-09-22)
 
+Route E: adapter-owned `EquipmentStorageComponent` (equipment storage slot) instead of a script-declared `InventoryStorageSlot`.
+
+### External evidence used (shape only)
+
+- `SCR_UniversalInventoryStorageComponent { components { SCR_EquipmentStorageComponent { InitialStorageSlots { SCR_EquipmentStorageSlot <Name> { PivotID ... ChildPivotID ... } } } } }`
+  - proven serialization identifiers: `InitialStorageSlots`, `SCR_EquipmentStorageSlot`, `PivotID`, `Offset`, `Enabled`, `Prefab`, `AllowedItemTypes`, `ChildPivotID`.
+- Engine source (Script-Diff, 1.8.0.13):
+  - `EquipmentStorageSlot : InventoryStorageSlot : EntitySlotInfo`
+  - `SCR_EquipmentStorageComponent : EquipmentStorageComponent : BaseEquipmentStorageComponent : UniversalInventoryStorageComponent : BaseUniversalInventoryStorageComponent : ScriptedBaseInventoryStorageComponent : BaseInventoryStorageComponent : InventoryItemComponent`
+  - `event bool CanStoreItem(IEntity item, int slotID)`; stock override form `override bool CanStoreItem(...)` + `super.CanStoreItem(...)` (see `SCR_FilteredInventoryStorageComponent`).
+  - stock compatibility pattern `SCR_CompatibleAttachmentPredicate`: `InventoryItemComponent -> GetAttributes() -> FindAttribute(WeaponAttachmentAttributes) -> GetAttachmentType() -> .Type() -> IsInherited(attachmentType)`.
+- Official sample `Arma-Reforger-Samples/SampleMod_NewWeapon` confirms: `AttachmentOpticsRIS1913`, `AttachmentOpticsRIS1913Short`, RIS-family attachment prefab, `AttachmentSlotComponent.Enabled`, `AttachmentSlot InventoryStorageSlot`, `PivotID` / `ChildPivotID`.
+
+### Evidence limits (do not overstate)
+
+- `AttachmentOpticsDovetailAK` is NOT proven vanilla by SampleMod_NewWeapon. It is only known as the live production adapter's effective type.
+- SampleMod proves the RIS1913 optics family; it does not prove `DovetailAK` origin.
+
+### Staging artifacts (non-authoritative)
+
+- NEW `Scripts/Gamecode/ARMST_DovetailRISStorageComponent.c`:
+  - `ARMST_DovetailRISStorageComponent : SCR_EquipmentStorageComponent`
+  - `override bool CanStoreItem(IEntity item, int slotID)` filtering `IsInherited(AttachmentOpticsRIS1913)` via the stock `SCR_CompatibleAttachmentPredicate` pattern.
+- `Prefabs/Weapons/Attachments/Optics/Diagnostic/armst_Optic_AKDovetail_Nested_SINGLE_TEST.et`:
+  - removed experimental `SCR_WeaponAttachmentsStorageComponent {C396B32EED5A25B4}`;
+  - neutralized inherited `AttachmentSlotComponent {BB6000C24BAA468F}` via `Enabled 0`;
+  - added `ARMST_DovetailRISStorageComponent {908D32FA413D9AFB}` with
+    `InitialStorageSlots { SCR_EquipmentStorageSlot RIS { PivotID "snap_ris" ChildPivotID "snap_weapon" } }`.
+- `908D32FA413D9AFB = STAGING_ID_ONLY` (collision-checked locally, NOT Workbench-generated; not an authoritative component ID).
+- Production adapter `armst_Optic_AKDovetailMount.et` and collimator `armst_Optic_Collimator.et`: UNCHANGED.
+
+### Pending Workbench gates (first failure wins; do not expand)
+
+- Gate 0 script/compiler -> `ROUTE_E_BLOCKED_AT_SCRIPT_COMPILE`
+- Gate 1 prefab serialization -> `ROUTE_E_BLOCKED_AT_STORAGE_STRUCTURE`
+- Gate 2 adapter item identity -> `ROUTE_E_BLOCKED_AT_ITEM_IDENTITY`
+- Gate 3 child storage (production collimator) -> `ROUTE_E_BLOCKED_AT_CHILD_STORAGE`
+- Gate 4 persistence -> only then `ROUTE_E_PROVEN`
+
+If Workbench accepts the shape: delete the hand-serialized block, re-add `ARMST_DovetailRISStorageComponent` via the Workbench UI (Workbench-generated ID), configure one `SCR_EquipmentStorageSlot` (`snap_ris` / `snap_weapon`), save, diff, and confirm the production parent is unchanged. Do NOT auto-switch to the nested-under-`SCR_UniversalInventoryStorageComponent` variant; that would be a separate architectural iteration.
+
+Current verdict: `ROUTE_E_PARTIAL` (staging built + static validation); runtime gates not yet executed.
 This section supersedes the earlier Route E implementation status for the current diagnostic staging pass only. It does **not** promote any Workbench/runtime result to proven status.
 
 ### Evidence level
@@ -705,3 +779,4 @@ ROUTE_E2_CHILD_STORAGE: NOT_RUN
 ROUTE_E2_PERSISTENCE: NOT_RUN
 ROUTE_E2_VERDICT: ROUTE_E2_PARTIAL
 ```
+
