@@ -12,6 +12,8 @@ It combines a local scanner, generated weapon catalogs/indexes, JSON schemas, Wo
 > Browse the current generated weapon catalog through [`WEAPON_INDEX.md`](WEAPON_INDEX.md).
 >
 > Compare important weapon families in [`reports/families/`](reports/families/README.md).
+>
+> Inspect generated balance comparisons in [`reports/balance/`](reports/balance/README.md).
 
 ## Scope
 
@@ -89,6 +91,7 @@ For local-agent edits, follow [`agent/SAFE_PREFAB_EDITOR.md`](agent/SAFE_PREFAB_
 | `catalog/` | Generated per-entity weapon-system facts |
 | `indexes/` | Generated and curated lookup/index data for authoring |
 | [`reports/families/`](reports/families/README.md) | Generated AK/RPK, 9×39 and shotgun comparison pages |
+| [`reports/balance/`](reports/balance/README.md) | Generated weapon / magazine / projectile balance comparisons |
 | `reports/` | Authoring guides, active policies, research and generated reports |
 | `schema/` | JSON schemas for weapon, magazine, ammunition and compatibility data |
 
