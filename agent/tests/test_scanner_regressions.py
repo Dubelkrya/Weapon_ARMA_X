@@ -9,7 +9,10 @@ sys.path.insert(0, str(SCRIPTS))
 
 from et_parser import parse_file, parse_text  # noqa: E402
 from scan_build import array_values  # noqa: E402
-from check_data_quality import weapon_magazine_is_cataloged  # noqa: E402
+from check_data_quality import (  # noqa: E402
+    weapon_magazine_is_cataloged,
+    weapon_magazine_is_external,
+)
 
 
 class ParserRegressionTests(unittest.TestCase):
@@ -93,6 +96,28 @@ class DataQualityRegressionTests(unittest.TestCase):
         }
         guids = {"B7EC6D4222AE12BE": Path("new.json")}
         self.assertTrue(weapon_magazine_is_cataloged(doc, resources, guids))
+
+
+    def test_external_magazine_dependency_is_not_local_catalog_loss(self):
+        doc = {
+            "data": {
+                "magazine": {
+                    "magazine_template": {
+                        "guid": "A827B610B7CD4158",
+                        "path": "Prefabs/Weapons/Magazines/Vz58/Magazine.et",
+                    }
+                }
+            },
+            "references": [
+                {
+                    "guid": "A827B610B7CD4158",
+                    "path": "Prefabs/Weapons/Magazines/Vz58/Magazine.et",
+                    "resolved": "external",
+                    "target": None,
+                }
+            ],
+        }
+        self.assertTrue(weapon_magazine_is_external(doc))
 
 
 if __name__ == "__main__":
