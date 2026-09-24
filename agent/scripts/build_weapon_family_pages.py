@@ -196,6 +196,8 @@ def render_9x39(rows: list[dict]) -> str:
         "",
         summary,
         "",
+        "Detailed balance layer: [9×39 balance comparison](../balance/CALIBER_9X39_BALANCE.md).",
+        "",
         "## Current catalog comparison",
         "",
         *table(family),
