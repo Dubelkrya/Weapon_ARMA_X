@@ -54,3 +54,8 @@ jobs:
             git --no-pager diff -- reports/balance/
             exit 1
           fi
+
+      - name: Run catalog data-quality scan
+        run: |
+          python agent/scripts/check_data_quality.py --markdown | tee data-quality-summary.md
+          cat data-quality-summary.md >> "$GITHUB_STEP_SUMMARY"
