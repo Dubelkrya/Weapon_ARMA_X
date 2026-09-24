@@ -1,5 +1,8 @@
 # ARMST knowledge status
 
+> [!IMPORTANT]
+> **Status: CURRENT / AUTHORITATIVE MAP.** Use this file to resolve source-of-truth, freshness, active-policy and historical-material conflicts.
+
 Canonical status snapshot for authoring knowledge. This file exists to distinguish live project truth, generated snapshots, active policy and archived material.
 
 ## Authority order
