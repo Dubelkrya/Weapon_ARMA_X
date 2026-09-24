@@ -1,5 +1,8 @@
 # Nested Dovetail → RIS attachment/storage audit
 
+> [!CAUTION]
+> **Status: EXPERIMENTAL RESEARCH.** This is a research checkpoint, not a production migration or general authoring rule.
+
 Date: 2026-09-21
 
 Status: **research checkpoint / no production migration**
