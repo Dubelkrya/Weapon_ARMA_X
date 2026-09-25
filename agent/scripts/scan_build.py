@@ -65,6 +65,7 @@ BASE_GAME_SNAPSHOT_ROOT = os.path.abspath(os.environ.get(
 ))
 
 W = []  # warnings / anomalies collected during scan
+BASE_GAME_SNAPSHOT = None  # populated once per scan, read-only
 
 
 def warn(cat, msg):
@@ -285,6 +286,8 @@ def lookup_file(relpath, all_files):
 
 
 def _snapshot_resolution(snapshot, guid, path):
+    if snapshot is None:
+        snapshot = BASE_GAME_SNAPSHOT
     record = lookup_snapshot(snapshot, path)
     if not record:
         return None
@@ -342,6 +345,8 @@ def build_chain(resource, resources_by_rel, all_files, guid_index,
     chain = []
     external = []
     seen = set()
+    if snapshot is None:
+        snapshot = BASE_GAME_SNAPSHOT
     snapshot_resources = (snapshot or {}).get("resources", {})
     snapshot_metadata = (snapshot or {}).get("metadata", {})
     cur = resource.relpath
@@ -1002,8 +1007,24 @@ def build_ref_graph(entities, resources, all_files, guid_index):
 
 
 def main():
+    global BASE_GAME_SNAPSHOT
+
     print(f"MOD_ROOT   = {MOD_ROOT}")
     print(f"REPO_ROOT  = {REPO_ROOT}")
+    print(f"BASE_GAME_SNAPSHOT_ROOT = {BASE_GAME_SNAPSHOT_ROOT}")
+
+    # Snapshot indexing is read-only and happens before generated-output cleanup.
+    # It may point at the repository catalog where materialized .et/.conf files
+    # coexist with generated JSON.
+    BASE_GAME_SNAPSHOT = build_snapshot_index(BASE_GAME_SNAPSHOT_ROOT)
+    print(
+        "base-game snapshot: "
+        f"{BASE_GAME_SNAPSHOT.get('resource_count', 0)} resource(s), "
+        f"{BASE_GAME_SNAPSHOT.get('meta_count', 0)} meta file(s), "
+        f"{len(BASE_GAME_SNAPSHOT.get('issues', []))} issue(s)"
+    )
+    for issue in BASE_GAME_SNAPSHOT.get("issues", []):
+        warn("BASE-GAME-SNAPSHOT", json.dumps(issue, ensure_ascii=False))
 
     all_files = index_all_files(MOD_ROOT)
     print(f"files indexed: {len(all_files)}")
@@ -1017,12 +1038,33 @@ def main():
     guid_index, aliases, by_actual = build_guid_index(resources)
     print(f"guid index entries: {len(guid_index)}")
 
+    # Synthetic snapshot keys are merge-only support resources. They are never
+    # exported as ARMST entities and therefore do not affect entity counts.
+    merge_resources = dict(et_resources)
+    merge_resources.update({
+        key: resource
+        for key, resource in BASE_GAME_SNAPSHOT.get("resources", {}).items()
+        if resource.kind == "et"
+    })
+
     entities = OrderedDict()
     for rel in sorted(et_resources):
         res = et_resources[rel]
-        chain, external = build_chain(res, et_resources, all_files, guid_index)
+        chain, external = build_chain(
+            res, et_resources, all_files, guid_index, BASE_GAME_SNAPSHOT
+        )
+        merge_rels = [
+            c["rel"] for c in chain
+            if c.get("status") in ("local", "base_game_snapshot")
+        ]
         local_rels = [c["rel"] for c in chain if c.get("status") == "local"]
-        resolved = chain_merge(local_rels, et_resources) if local_rels else None
+        snapshot_rels = [
+            c["rel"] for c in chain
+            if c.get("status") == "base_game_snapshot"
+        ]
+        resolved = (
+            chain_merge(merge_rels, merge_resources) if merge_rels else None
+        )
         categories = classify(res, resolved)
         entities[rel] = {
             "rel": rel,
@@ -1033,6 +1075,7 @@ def main():
             "external_parents": external,
             "resolved": resolved,
             "has_local_components": bool(local_rels),
+            "has_base_game_snapshot": bool(snapshot_rels),
         }
 
     # role: base templates vs leaf items
