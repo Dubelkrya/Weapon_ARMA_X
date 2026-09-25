@@ -1,0 +1,8 @@
+GenericEntity : "{7A3B2C7FD60009E7}Prefabs/Weapons/Magazines/UK59/Box_762x54_UK59_50rnd_Base.et" {
+ ID "CA6BE4D6BB2D1077"
+ components {
+  MagazineAnimationComponent "{55D0B7D0C84A08C4}" {
+   AnimatedMesh "{25DE4255ED64DEA5}Assets/Weapons/Magazines/UK59/Magazine_50rnd_UK59.xob"
+  }
+ }
+}

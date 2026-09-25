@@ -1,0 +1,106 @@
+GameEntity : "{966B4E5523D2F166}Prefabs/Weapons/Attachments/Optics/WeaponOptic_Base.et" {
+ ID "4BA426CBAED42A14"
+ components {
+  InventoryItemComponent "{52627A1F45CD4EB6}" {
+   Attributes SCR_ItemAttributeCollection "{52627A1EBB0698FD}" {
+    ItemDisplayName UIInfo "{5D0CC83435B5584E}" {
+     Name "#AR-Item_PSO1_Name"
+     Description "#AR-Item_PSO1_Description"
+    }
+    ItemPhysAttributes ItemPhysicalAttributes "{5D0CC83435B55848}" {
+     Weight 0.58
+     ItemVolume 400
+     RestingUP Right
+    }
+    CustomAttributes {
+     WeaponAttachmentAttributes "{5284D858FFF9BE66}" {
+      AttachmentType AttachmentOpticsDovetailSVD "{5D0CCDD0615C597D}" {
+      }
+     }
+    }
+   }
+  }
+  MeshObject "{5D0CC83435B55858}" {
+   Object "{4EF7C9325481A367}Assets/Weapons/Attachments/Optics/PSO1/Optic_PSO1.xob"
+  }
+  SCR_2DPIPSightsComponent "{5D0CC83435B55855}" {
+   SightsPosition PointInfo "{5D0CC83435B55853}" {
+    Offset 0 0 -0.01
+   }
+   SightsRanges {
+    SightRangeInfo "{5D0CCDD0615C5973}" {
+     Range 0.08 100
+    }
+    SightRangeInfo "{5D0CCDD0615C594C}" {
+     Range 0.116 200
+    }
+    SightRangeInfo "{5D0CCDD0615C594D}" {
+     Range 0.168 300
+    }
+    SightRangeInfo "{5D0CCDD0615C594E}" {
+     Range 0.232 400
+    }
+    SightRangeInfo "{5D0CCDD0615C594F}" {
+     Range 0.308 500
+    }
+    SightRangeInfo "{5D0CCDD0615C5948}" {
+     Range 0.388 600
+    }
+    SightRangeInfo "{5D0CCDD0615C594A}" {
+     Range 0.492 700
+    }
+    SightRangeInfo "{5D0CCDD0615C5945}" {
+     Range 0.6 800
+    }
+    SightRangeInfo "{5D0CCDD0615C5946}" {
+     Range 0.74 900
+    }
+    SightRangeInfo "{5D0CCDD0615C5947}" {
+     Range 0.892 1000
+    }
+   }
+   SightsFOVInfo SCR_SightsZoomFOVInfo "{5D0CCDD0615C5942}" {
+    m_fBaseZoom 4
+    m_fZoomMax 4
+    m_fInterpolationSpeed 50
+   }
+   SightsPointFront PointInfo "{5D0CCDD0615C595C}" {
+    PivotID "sight_front"
+   }
+   SightsPointRear PointInfo "{5D0CCDD0615C595E}" {
+    PivotID "sight_rear"
+   }
+   ADSTime 0.5
+   m_sReticleTexture "{3A39997051EC7C5D}UI/Textures/Sights/PSO1/PSO1_white_solid_UI.edds"
+   m_sReticleGlowTexture "{1BE6C18D3145BB45}UI/Textures/Sights/PSO1/PSO1-white_blur_UI.edds"
+   m_bHasIllumination 1
+   m_cReticleTextureIllumination 0.804 0.02 0.02 1
+   m_eZeroingType EPZ_RETICLE_OFFSET
+   m_fReticleOffsetInterpSpeed 40
+   m_rScopeHDRMatrial "{958809B0DE47E9BF}Assets/Weapons/Attachments/Optics/PSO1/Data/Optic_PSO1_HDR.emat"
+   m_fReticleOffsetX 0.001
+   m_fObjectiveFov 6
+   m_fReticleAngularSize 1.2
+   m_fReticlePortion 0.29687
+   m_fReticleBaseZoom 4
+   m_fMagnification 4
+   m_fScopeRadius 0.015
+  }
+  ActionsManagerComponent "{5284E0EFF569AD07}" {
+   ActionContexts {
+    UserActionContext "{5284E0EFF4E818E9}" {
+     Position PointInfo "{5284E0EFC526E6F0}" {
+      Offset 0 0.0797 0
+     }
+    }
+   }
+   additionalActions {
+    SCR_AttachItemFromInventoryAction "{5D0CC83435B55B88}" {
+     ParentContextList {
+      "optic"
+     }
+    }
+   }
+  }
+ }
+}

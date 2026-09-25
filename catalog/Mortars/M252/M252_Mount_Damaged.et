@@ -1,0 +1,22 @@
+GenericEntity {
+ ID "6226BCD7142244CA"
+ components {
+  MeshObject "{6226BCD760D54237}" {
+   Object "{5C959FB575EB8AA5}Assets/Weapons/Mortars/M252/M252_Mount.xob"
+   Materials {
+    MaterialAssignClass "{6226BCD937F8532E}" {
+     SourceMaterial "Baseplate2"
+     AssignedMaterial "{6280A8D617A4E2E9}Assets/Weapons/Mortars/M252/Data/Baseplate_dmg.emat"
+    }
+    MaterialAssignClass "{6226BCD937F853DB}" {
+     SourceMaterial "Cannon2"
+     AssignedMaterial "{FA10C289F75AC9D7}Assets/Weapons/Mortars/M252/Data/Cannon_dmg.emat"
+    }
+    MaterialAssignClass "{6226BCD937F853CD}" {
+     SourceMaterial "Optic1"
+     AssignedMaterial "{6AC9C3C2D04896ED}Assets/Weapons/Mortars/M252/Data/Optic_dmg.emat"
+    }
+   }
+  }
+ }
+}

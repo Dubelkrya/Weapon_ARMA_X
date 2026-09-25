@@ -1,0 +1,7 @@
+GenericEntity : "{E4C9F0A4090CFE4D}Prefabs/Weapons/Explosives/Mine_M14/Mine_M14.et" {
+ ID "5968D2B6A82C6019"
+ components {
+  SCR_EffectsModuleChildComponent "{658A91946CF84A2E}" {
+  }
+ }
+}

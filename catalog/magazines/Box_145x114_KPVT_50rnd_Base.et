@@ -1,0 +1,64 @@
+GenericEntity : "{F9E1A46E3ABA116F}Prefabs/Weapons/Core/Magazine_Base.et" {
+ ID "573227434F7A9B86"
+ components {
+  AICombatPropertiesComponent "{59CE86D96C332DDF}" {
+   Priority 25
+   PriorityAgainstVehicles 35
+   UsedAgainst 0x17 0
+  }
+  InventoryMagazineComponent "{51EED12B803954CC}" {
+   Attributes SCR_ItemAttributeCollection "{51EED12B86960275}" {
+    ItemDisplayName UIInfo "{51FEE38527BFEA5B}" {
+     Name "#AR-Magazine_KPVT_Name"
+     Description "#AR-Magazine_KPVT_Description"
+    }
+    ItemPhysAttributes ItemPhysicalAttributes PhysicalAttributes {
+     Weight 2.5
+     SizeSetupStrategy Manual
+     ItemDimensions 15 15 15
+     ItemVolume 4000
+    }
+    CustomAttributes {
+     PreviewRenderAttributes "{52D6B5962DC79F60}" {
+      CameraOrbitAngles -25 25 0
+      CameraDistanceToItem 2
+      FOV 16
+     }
+    }
+   }
+   WeightPerAmmo 0.22
+  }
+  MagazineComponent "{CA6BE4D6B4DAFD69}" {
+   MagazineWell MagazineWellKPVT "{5F8B274FFE7C57F4}" {
+   }
+   UIInfo MagazineUIInfo "{57126733AA401586}" {
+    Name "#AR-Magazine_KPVT_Name"
+    Icon ""
+    m_sAmmoCaliber "#AR-AmmunitionID_145x114mm"
+   }
+   ItemModel "{7DE4C45A4E729359}Assets/Weapons/Magazines/KPVT/Magazine_50rnd_KPVT_item.xob"
+   MaxAmmo 50
+   AmmoConfig "{69F2D1D7709F0B0F}Configs/Weapons/Ammo/Ammo_145x114.conf"
+   AmmoMapping {
+    0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+   }
+  }
+  MeshObject "{CA6BE4D6A23F8EF0}" {
+   Object "{51DF86F440676DFB}Assets/Weapons/Magazines/KPVT/Magazine_50rnd_KPVT.xob"
+  }
+  SCR_SoundDataComponent "{5B18D200EBB5EA25}" {
+   m_aAudioSourceConfiguration {
+    SCR_AudioSourceConfiguration "{5B18D209080A5D15}" {
+     m_sSoundProject "{EE729B0CFB7CBF61}Sounds/Weapons/_SharedData/PickUp/Weapons_PickUp_HMG_Magazine.acp"
+    }
+    SCR_AudioSourceConfiguration "{5B18D2091B885AE6}" {
+     m_sSoundProject "{EE729B0CFB7CBF61}Sounds/Weapons/_SharedData/PickUp/Weapons_PickUp_HMG_Magazine.acp"
+    }
+    SCR_AudioSourceConfiguration "{5B18D20930D9E274}" {
+     m_sSoundProject "{2DBF1C67021E3DA9}Sounds/Weapons/_SharedData/Drop/Weapons_Drop_HMG_Magazine.acp"
+    }
+   }
+  }
+ }
+ coords 3.087 1.634 4.036
+}

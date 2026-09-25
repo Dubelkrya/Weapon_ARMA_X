@@ -1,0 +1,18 @@
+GenericEntity : "{E31A09A668EC0E8B}Prefabs/Weapons/Core/Handguard_base.et" {
+ ID "557E85EEE1B603F1"
+ components {
+  InventoryItemComponent "{557E85EEE1B60313}" {
+   Attributes SCR_ItemAttributeCollection "{557E85EEE1B60310}" {
+    CustomAttributes {
+     WeaponAttachmentAttributes "{557E85EEE1B60316}" {
+      AttachmentType AttachmentHandGuardM16 "{5C46D45C045CD98A}" {
+      }
+     }
+    }
+   }
+  }
+  MeshObject "{557E85EE39CED921}" {
+   Object "{C0983D124B096BFC}Assets/Weapons/Attachments/Handguards/Handguard_M16/M16A2_carbine_handguard.xob"
+  }
+ }
+}

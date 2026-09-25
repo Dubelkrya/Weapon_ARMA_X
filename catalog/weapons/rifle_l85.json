@@ -1,0 +1,176 @@
+{
+  "id": "rifle_l85",
+  "role": "leaf",
+  "source": {
+    "resource": "Prefabs/Weapons/Rifles/Rifle_L85.et",
+    "resource_guid": "45D3FCA77AF1709B",
+    "meta_name": null,
+    "class": "GenericEntity",
+    "defined_in": "Prefabs/Weapons/Rifles/Rifle_L85.et"
+  },
+  "identity": {
+    "name": "Rifle_L85",
+    "resource": "Prefabs/Weapons/Rifles/Rifle_L85.et"
+  },
+  "classification": {
+    "kind": "weapon",
+    "confidence": "components"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Weapons/Rifles/Rifle_L85.et",
+        "status": "local",
+        "class": "GenericEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Rifles/Rifle_M16A2.et",
+        "status": "local",
+        "class": "GenericEntity"
+      }
+    ],
+    "external_parents": [
+      {
+        "guid": "C63227C0E70EA62E",
+        "path": "Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et",
+        "raw": "{C63227C0E70EA62E}Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et"
+      }
+    ],
+    "used_as_base_by": [],
+    "chain_depth_local": 2
+  },
+  "references": [
+    {
+      "guid": "0F26972BB6E3CA5F",
+      "path": "Assets/NATO/L86/L86.xob",
+      "resolved": "local",
+      "target": "Assets/Weapons_NATO/L86/L86.xob",
+      "defined_in": "Prefabs/Weapons/Rifles/Rifle_L85.et"
+    },
+    {
+      "guid": "9B94312176361ECC",
+      "path": "Assets/NATO/L86/Anim/Diff/p_rfl_L86_ik.anm",
+      "resolved": "local",
+      "target": "Assets/Weapons_NATO/L86/Anim/Diff/p_rfl_L86_ik.anm",
+      "defined_in": "Prefabs/Weapons/Rifles/Rifle_L85.et"
+    },
+    {
+      "guid": "1CED2426CDBD50A4",
+      "path": "Prefabs/Weapons/Attachments/Optics/Optic_4x20/SUSAT.et",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "Prefabs/Weapons/Rifles/Rifle_L85.et"
+    },
+    {
+      "guid": "C43E8470702AEDE4",
+      "path": "Assets/NATO/L86/Anim/L86.agr",
+      "resolved": "local",
+      "target": "Assets/Weapons_NATO/L86/Anim/L86.agr",
+      "defined_in": "Prefabs/Weapons/Rifles/Rifle_L85.et"
+    },
+    {
+      "guid": "B702ED8F6D2CACB7",
+      "path": "Assets/NATO/L86/Anim/L86_weapon.asi",
+      "resolved": "local",
+      "target": "Assets/Weapons_NATO/L86/Anim/L86_weapon.asi",
+      "defined_in": "Prefabs/Weapons/Rifles/Rifle_L85.et"
+    },
+    {
+      "guid": "4C5C7CBEF52DC85B",
+      "path": "Assets/NATO/L86/Anim/L86_player.asi",
+      "resolved": "local",
+      "target": "Assets/Weapons_NATO/L86/Anim/L86_player.asi",
+      "defined_in": "Prefabs/Weapons/Rifles/Rifle_L85.et"
+    }
+  ],
+  "warnings": [],
+  "data": {
+    "identity": {
+      "name": null
+    },
+    "fire_modes": [],
+    "physical": {
+      "MeleeDamage": {
+        "value": 2,
+        "defined_in": "Prefabs/Weapons/Rifles/Rifle_L85.et",
+        "inherited": false
+      },
+      "Model": {
+        "guid": "0F26972BB6E3CA5F",
+        "path": "Assets/NATO/L86/L86.xob",
+        "defined_in": "Prefabs/Weapons/Rifles/Rifle_L85.et"
+      }
+    },
+    "magazine": {
+      "magazine_well": null,
+      "magazine_template": null
+    },
+    "ballistics": {
+      "bullet_init_speed_coef": null,
+      "dispersion_diameter": null,
+      "dispersion_range": null
+    },
+    "aim": {
+      "recoil": null,
+      "sway": null
+    },
+    "sights": {
+      "switch_skip": null,
+      "ranges": [],
+      "defined_in": "Prefabs/Weapons/Rifles/Rifle_L85.et"
+    },
+    "attachment_slots": [
+      {
+        "slot": null,
+        "pivot": {
+          "value": "slot_optics",
+          "defined_in": "Prefabs/Weapons/Rifles/Rifle_L85.et",
+          "inherited": false
+        },
+        "enabled": null,
+        "attachment_types": [],
+        "defined_in": "Prefabs/Weapons/Rifles/Rifle_L85.et"
+      },
+      {
+        "slot": null,
+        "pivot": null,
+        "enabled": {
+          "value": 0,
+          "defined_in": "Prefabs/Weapons/Rifles/Rifle_L85.et",
+          "inherited": false
+        },
+        "attachment_types": [],
+        "defined_in": "Prefabs/Weapons/Rifles/Rifle_L85.et"
+      },
+      {
+        "slot": null,
+        "pivot": null,
+        "enabled": {
+          "value": 0,
+          "defined_in": "Prefabs/Weapons/Rifles/Rifle_L85.et",
+          "inherited": false
+        },
+        "attachment_types": [],
+        "defined_in": "Prefabs/Weapons/Rifles/Rifle_L85.et"
+      }
+    ],
+    "muzzle_attachment": {
+      "slot": null,
+      "enabled": null,
+      "defined_in": "Prefabs/Weapons/Rifles/Rifle_L85.et"
+    },
+    "animation": {
+      "anim_graph": {
+        "guid": "C43E8470702AEDE4",
+        "path": "Assets/NATO/L86/Anim/L86.agr",
+        "defined_in": "Prefabs/Weapons/Rifles/Rifle_L85.et"
+      },
+      "anim_instance": {
+        "guid": "B702ED8F6D2CACB7",
+        "path": "Assets/NATO/L86/Anim/L86_weapon.asi",
+        "defined_in": "Prefabs/Weapons/Rifles/Rifle_L85.et"
+      }
+    }
+  },
+  "derived": {}
+}

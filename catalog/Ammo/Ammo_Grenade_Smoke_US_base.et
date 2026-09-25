@@ -1,0 +1,65 @@
+Projectile : "{D40A105437369C1D}Prefabs/Weapons/Core/Ammo_GrenadeLauncher_Base.et" {
+ ID "50C6F965BA00F9FA"
+ components {
+  AICombatPropertiesComponent "{59C92CB12877478B}" {
+   Priority 5
+   PriorityAgainstVehicles 40
+  }
+  CollisionTriggerComponent "{66BEC8FCB8DCCFD0}" {
+   PROJECTILE_EFFECTS {
+    ExplosionEffect "{693AB5DAF00EF49A}" {
+     EffectPrefab "{FB2C40F558435212}Prefabs/Weapons/Warheads/Warhead_Shell_Smoke_M713_Red.et"
+     SoundEvent "SOUND_EXPLOSION"
+    }
+   }
+   "Trigger Offset" 0 0 -0.05
+   SafetyDistance 15
+  }
+  InventoryItemComponent "{52627A12350994B6}" {
+   Attributes SCR_ItemAttributeCollection "{52627A1234AD20A4}" {
+    ItemDisplayName UIInfo "{687CC01A117AC0F3}" {
+     Name "#AR-Magazine_M713_Name"
+     Description "#AR-Magazine_M713_Description"
+    }
+    ItemPhysAttributes ItemPhysicalAttributes "{687CC01A117AC0F1}" {
+     Weight 0.23
+     SizeSetupStrategy Manual
+     ItemDimensions 5 5 5
+     ItemVolume 100
+    }
+    m_Size SLOT_1x1
+   }
+  }
+  MagazineComponent "{66BEC8FCB8DCCF3C}" {
+   MagazineWell MagazineWellUS_UGL "{687CC01A117AC0F5}" {
+   }
+   UIInfo MagazineUIInfo "{66BEC8FCB8DCCF31}" {
+    m_sAmmoCaliber "#AR-AmmunitionID_40x46mm"
+    m_sAmmoType "#AR-AmmoType_M406"
+    m_bShowAmmoTypeText 1
+    m_eAmmoTypeFlags SMOKE
+    m_MagIndicator SCR_MagazineIndicatorConfiguration "{5874FAA4FA86F538}" : "{BE317699690AD7C3}Configs/WeaponInfo/MagazineIndicators/ugl_m406.conf" {
+    }
+   }
+   MaxAmmo 1
+  }
+  MeshObject "{851AA4A2AE0A56BF}" {
+   Object "{8638981B50C7EB44}Assets/Weapons/Ammo/Grenades/Smoke_40mm_M713_Red/M713.xob"
+  }
+  ShellMoveComponent "{20FB66C5FA209A29}" {
+   InitSpeed 76
+   InitSpeedVariation 0.385
+   Mass 0.22
+   ProjectileEffects {
+    AIHitEffect "{687CC01A117AC0EF}" {
+    }
+   }
+   BallisticTableConfig "{196AC7CC8988B0CC}Configs/Weapons/AIBallisticTables/AIBT_Grenade_Smoke_M713.conf"
+   AirDrag 0.00031
+  }
+  Hierarchy "{687CC01A117AC0EC}" {
+  }
+ }
+ ProjectileModel "{FBB82AD83F0EF9F5}Assets/Weapons/Ammo/Grenades/Smoke_40mm_M713_Red/M713_projectile.xob"
+ CartridgeModel "{8638981B50C7EB44}Assets/Weapons/Ammo/Grenades/Smoke_40mm_M713_Red/M713.xob"
+}

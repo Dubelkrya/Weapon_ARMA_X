@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{BE6D0B158BE54EA0}Imported/VanillaSources/Prefabs/Weapons/Attachments/Mounts/Dovetail_AK/Dovetail_AK.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

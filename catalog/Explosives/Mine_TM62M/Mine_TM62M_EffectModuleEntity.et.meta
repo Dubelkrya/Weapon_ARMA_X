@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{3913F19BF74BECE8}Imported/VanillaSources/Prefabs/Weapons/Explosives/Mine_TM62M/Mine_TM62M_EffectModuleEntity.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

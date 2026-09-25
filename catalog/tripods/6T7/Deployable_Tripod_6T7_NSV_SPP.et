@@ -1,0 +1,69 @@
+Turret : "{3EA26CFD7A202636}Prefabs/Weapons/Tripods/6T7/Tripod_6T7_NSV_SPP.et" {
+ ID "52D30EFBEBC74642"
+ components {
+  SoundComponent "{58E0961DB6C453D6}" {
+   Filenames + {
+    "{1B4D2E3FE51ABC31}Sounds/Weapons/_SharedData/CSW/Weapons_CSW_Deploy.acp"
+   }
+  }
+  SCR_MultiPartDeployableItemComponent "{6554E1F5D97C79F4}" {
+   m_bRemoveAllItemsWhenDeleted 1
+   m_aVariants {
+    SCR_DeployableVariantContainer "{6554E1F5DC0F953E}" {
+     m_sReplacementPrefab "{184DFCEFE574E776}Prefabs/Items/Equipment/Tripods/6T7/Part_NSV_Tripod.et"
+     m_aAdditionalPrefabs {
+      SCR_AdditionalDeployablePart "{656479546F865E64}" {
+       m_sPrefab "{DE6458E8239A3A4A}Prefabs/Items/Equipment/Tripods/6T7/Part_NSV_Gun_Optic.et"
+      }
+     }
+     m_bUsePartRotationAndPosition 1
+    }
+   }
+   m_eSurfaceObservationBehaviour DISMANTLE
+  }
+  SCR_UniversalInventoryStorageComponent "{570EACF4F2F94F1B}" {
+   InitialStorageSlots {
+    InventoryStorageSlot Magazine_1 {
+     Prefab ""
+    }
+    InventoryStorageSlot Magazine_2 {
+     Prefab ""
+    }
+    InventoryStorageSlot Magazine_3 {
+     Prefab ""
+    }
+   }
+  }
+  WeaponSlotComponent "{51ACD09C6BFEEE6A}" {
+   WeaponTemplate "{DC722F3E51BDA181}Prefabs/Weapons/HeavyWeapons/NSV/Deployable_HMG_NSV_SPP.et"
+  }
+  ActionsManagerComponent "{51ACD09C7181BA0B}" {
+   ActionContexts {
+    UserActionContext "{6554E1F587636B1D}" {
+     ContextName "deployable"
+     Position PointInfo "{6554E1F59C218C27}" {
+      Offset 0 0.408 0
+      Angles 90 0 0
+     }
+     Height 1
+    }
+   }
+   additionalActions {
+    SCR_DeployMultiPartInventoryItemAction "{6554E1F5BF736F70}" : "{53ACE069C87D43A3}Prefabs/Weapons/Core/Configs/Actions/DismantleMultipartInventoryItemAction.conf" {
+     ParentContextList {
+      "deployable"
+     }
+     UIInfo SCR_ActionUIInfo "{61B48E9F567C096C}" {
+      Description "#AR-EditableEntity_Tripod_6T7_NSV"
+     }
+    }
+   }
+  }
+ }
+ {
+  GenericEntity : "{E51E2E1D77B54223}Prefabs/Compositions/Misc/CustomEntities/CompositionDecals/CompositionDecal_Dirt_Patch_01.et" {
+   ID "6554E1F2A56526F1"
+   coords 0 0 -0.156
+  }
+ }
+}

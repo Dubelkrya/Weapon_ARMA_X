@@ -1,0 +1,41 @@
+{
+  "id": "magazine_545x39_rpk_45rnd_ball",
+  "role": "leaf",
+  "source": {
+    "resource": "Prefabs/Weapons/Magazines/5x45/Magazine_545x39_RPK_45rnd_Ball.et",
+    "resource_guid": "BC74DAC891D48540",
+    "meta_name": null,
+    "class": "GenericEntity",
+    "defined_in": "Prefabs/Weapons/Magazines/5x45/Magazine_545x39_RPK_45rnd_Ball.et"
+  },
+  "identity": {
+    "name": "Magazine_545x39_RPK_45rnd_Ball",
+    "resource": "Prefabs/Weapons/Magazines/5x45/Magazine_545x39_RPK_45rnd_Ball.et"
+  },
+  "classification": {
+    "kind": "magazine",
+    "confidence": "folder"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Weapons/Magazines/5x45/Magazine_545x39_RPK_45rnd_Ball.et",
+        "status": "local",
+        "class": "GenericEntity"
+      }
+    ],
+    "external_parents": [
+      {
+        "guid": "9569026177545A20",
+        "path": "Prefabs/Weapons/Magazines/Magazine_545x39_RPK_45rnd_Base.et",
+        "raw": "{9569026177545A20}Prefabs/Weapons/Magazines/Magazine_545x39_RPK_45rnd_Base.et"
+      }
+    ],
+    "used_as_base_by": [],
+    "chain_depth_local": 1
+  },
+  "references": [],
+  "warnings": [],
+  "data": {},
+  "derived": {}
+}

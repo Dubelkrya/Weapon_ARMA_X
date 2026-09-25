@@ -1,0 +1,49 @@
+GenericEntity {
+ ID "557E85EEE1B603F1"
+ components {
+  InventoryItemComponent "{557E85EEE1B60313}" {
+   Enabled 0
+   Attributes SCR_ItemAttributeCollection "{557E85EEE1B60310}" {
+    CustomAttributes {
+     WeaponAttachmentAttributes "{557E85EEE1B60316}" {
+     }
+     PreviewRenderAttributes "{557E85EEE1B60314}" {
+      ItemRenderRotation 0 0 0
+     }
+    }
+   }
+  }
+  MeshObject "{557E85EE39CED921}" {
+   InheritVisibility 1
+  }
+  RigidBody "{557E85EE3F17E453}" {
+   ModelGeometry 1
+  }
+  ActionsManagerComponent "{557E85EEE1B603FA}" {
+   Enabled 0
+   ActionContexts {
+    UserActionContext "{557E85EEE1B603E0}" {
+     ContextName "user"
+     Position PointInfo "{557E85EEE1B603EB}" {
+     }
+    }
+   }
+   additionalActions {
+    SCR_EquipWeaponAttachment "{557E85EEE1B603E8}" {
+     ParentContextList {
+      "user"
+     }
+     UIInfo UIInfo "{557E85EEE1B603ED}" {
+      Name "#AR-UserAction_AttachToWeapon"
+     }
+    }
+   }
+  }
+  RplComponent "{557E85EEE1B6031A}" {
+   "Rpl State Override" Runtime
+  }
+  Hierarchy "{5C66882975908B14}" {
+  }
+ }
+ Flags 0x400003 0
+}

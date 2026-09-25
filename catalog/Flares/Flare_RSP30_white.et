@@ -1,0 +1,24 @@
+GenericEntity : "{90E5984891842ACE}Prefabs/Weapons/Flares/Flare_RSP30_Base.et" {
+ ID "1F80A73AAE197BBE"
+ components {
+  MeshObject "{CFBAA4B701F95D69}" {
+   Materials {
+    MaterialAssignClass "{549023DF4588C901}" {
+     SourceMaterial "decal_top"
+     AssignedMaterial "{766F0EA90E47D892}Assets/Weapons/Flares/RSP30/Data/RSP30_Decal_White.emat"
+    }
+    MaterialAssignClass "{549023DF4588C940}" {
+     SourceMaterial "RSP30"
+     AssignedMaterial "{E58F9F6F98EB1BCC}Assets/Weapons/Flares/RSP30/Data/RSP30.emat"
+    }
+   }
+  }
+  SCR_WeaponComponent "{CFBAA4B706BA66E8}" {
+   components {
+    SCR_MuzzleInMagComponent "{50F65D04F21F7633}" {
+     AmmoTemplate "{3892CBF73CC2A05F}Prefabs/Weapons/Ammo/Ammo_Flare_30mm_RSP30_White.et"
+    }
+   }
+  }
+ }
+}

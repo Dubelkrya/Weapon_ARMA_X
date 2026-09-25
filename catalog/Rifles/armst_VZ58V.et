@@ -1,0 +1,19 @@
+GenericEntity : "{C19BFAF8A6334FD5}Prefabs/Weapons/Rifles/VZ58/Rifle_VZ58_base.et" {
+ ID "CFBAA4B725411E45"
+ components {
+  SCR_MeleeWeaponProperties "{545EBBB5FB8FA0D3}" {
+   m_fDamage 2
+  }
+  WeaponComponent "{CFBAA4B706BA66E8}" {
+   components {
+    MuzzleComponent "{CA6BE4D6B867541F}" {
+     UIInfo MuzzleUIInfo "{2FBBA72C906C627E}" {
+      m_sFiremodeBurst "firemode-rifle-single"
+      m_sFiremodeAuto "firemode-rifle-single"
+     }
+    }
+   }
+  }
+ }
+ coords 5092.141 301.8 55.329
+}

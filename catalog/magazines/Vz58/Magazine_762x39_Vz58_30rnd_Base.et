@@ -1,0 +1,50 @@
+GenericEntity : "{F9E1A46E3ABA116F}Prefabs/Weapons/Core/Magazine_Base.et" {
+ ID "CA6BE4D6BB2D1077"
+ components {
+  InventoryMagazineComponent "{51EED12B803954CC}" {
+   Attributes SCR_ItemAttributeCollection "{51EED12B86960275}" {
+    ItemDisplayName UIInfo "{51FEE38527BFEA5B}" {
+     Name "#AR-Magazine_Vz58_Name"
+     Description "#AR-Magazine_Vz58_Description"
+    }
+    ItemPhysAttributes ItemPhysicalAttributes "{545EBBB52F7DEC3D}" {
+     Weight 0.19
+     SizeSetupStrategy Manual
+     ItemVolume 200
+    }
+    CustomAttributes {
+     PreviewRenderAttributes "{52D2D34338621F08}" {
+      CameraPreset Left
+      CameraOrbitAngles -25 25 0
+      CameraDistanceToItem 1.25
+      FOV 12
+     }
+    }
+   }
+   WeightPerAmmo 0.016
+  }
+  MagazineComponent "{CA6BE4D6B4DAFD69}" {
+   MagazineWell MagazineWellVZ58_762 "{545EBBB52F7DEC28}" {
+   }
+   UIInfo MagazineUIInfo "{545EBBB52F7DEC2D}" {
+    m_sAmmoCaliber "#AR-AmmunitionID_762x39mm"
+   }
+   AmmoConfig "{6810AE1CC6F1621D}Configs/Weapons/Ammo/Ammo_762x39.conf"
+   AmmoMapping {
+    0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+   }
+  }
+  MeshObject "{CA6BE4D6A23F8EF0}" {
+   Object "{6DA97AD816499726}Assets/Weapons/Magazines/VZ58/Magazine_30rnd_VZ58.xob"
+  }
+  ActionsManagerComponent "{F092E6B0537754FD}" {
+   ActionContexts {
+    UserActionContext "{5086F9AB010868CE}" {
+     Position PointInfo "{5086F9AC96DB9752}" {
+      Offset 0 -0.04 0.1
+     }
+    }
+   }
+  }
+ }
+}

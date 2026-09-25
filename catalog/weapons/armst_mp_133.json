@@ -1,0 +1,210 @@
+{
+  "id": "armst_mp_133",
+  "role": "leaf",
+  "source": {
+    "resource": "Prefabs/Weapons/Rifles/Shotgun/armst_mp_133.et",
+    "resource_guid": "63FF6FDCA4E7E735",
+    "meta_name": null,
+    "class": "GenericEntity",
+    "defined_in": "Prefabs/Weapons/Rifles/Shotgun/armst_mp_133.et"
+  },
+  "identity": {
+    "name": "armst_mp_133",
+    "resource": "Prefabs/Weapons/Rifles/Shotgun/armst_mp_133.et"
+  },
+  "classification": {
+    "kind": "weapon",
+    "confidence": "components"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Weapons/Rifles/Shotgun/armst_mp_133.et",
+        "status": "local",
+        "class": "GenericEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Rifles/Shotgun/shotgun_base.et",
+        "status": "local",
+        "class": "GenericEntity"
+      }
+    ],
+    "external_parents": [
+      {
+        "guid": "B31929F65F0D0279",
+        "path": "Prefabs/Weapons/Rifles/M14/Rifle_M21.et",
+        "raw": "{B31929F65F0D0279}Prefabs/Weapons/Rifles/M14/Rifle_M21.et"
+      }
+    ],
+    "used_as_base_by": [],
+    "chain_depth_local": 2
+  },
+  "references": [
+    {
+      "guid": "A84D9F22F2C0D9CE",
+      "path": "Sounds/Weapons/_SharedData/PickUp/Weapons_PickUp_Rifle_WoodMetal.acp",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "Prefabs/Weapons/Rifles/Shotgun/armst_mp_133.et"
+    },
+    {
+      "guid": "729301A18C759C8F",
+      "path": "Assets/Weapons_RUS/Mp_133/Mp_133.xob",
+      "resolved": "local",
+      "target": "Assets/Weapons_RUS/Mp_133/Mp_133.xob",
+      "defined_in": "Prefabs/Weapons/Rifles/Shotgun/armst_mp_133.et"
+    },
+    {
+      "guid": "3FF040C9176C11EA",
+      "path": "Assets/Mag_12g/Data/12g_0000.emat",
+      "resolved": "local",
+      "target": "Assets/Mag_12g/Data/12g_0000.emat",
+      "defined_in": "Prefabs/Weapons/Rifles/Shotgun/armst_mp_133.et"
+    },
+    {
+      "guid": "DC4865C0B9866178",
+      "path": "Assets/Mp_133/Anim/DIff/P_MP_133_ik.anm",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "Prefabs/Weapons/Rifles/Shotgun/armst_mp_133.et"
+    },
+    {
+      "guid": "3E62CF528279BC22",
+      "path": "Particles/Weapon/Casing_12ga.ptc",
+      "resolved": "local",
+      "target": "Particles/Weapon/Casing_12ga.ptc",
+      "defined_in": "Prefabs/Weapons/Rifles/Shotgun/shotgun_base.et"
+    },
+    {
+      "guid": "7D4D61DB49505CB7",
+      "path": "Particles/Weapon/Shotgun_Muzzle_NSV.ptc",
+      "resolved": "local",
+      "target": "Particles/Weapon/Shotgun_Muzzle_NSV.ptc",
+      "defined_in": "Prefabs/Weapons/Rifles/Shotgun/shotgun_base.et"
+    },
+    {
+      "guid": "B0DFDF7AAA9C5D39",
+      "path": "Prefabs/Weapons/Magazines/12ga/12ga_Buckshot.et",
+      "resolved": "local",
+      "target": "Prefabs/Weapons/Magazines/12ga/12ga_Buckshot.et",
+      "defined_in": "Prefabs/Weapons/Rifles/Shotgun/shotgun_base.et"
+    },
+    {
+      "guid": "315A612FD60832E7",
+      "path": "Assets/Weapons_RUS/Mp_133/Workspace/MP133.agr",
+      "resolved": "local",
+      "target": "Assets/Weapons_RUS/Mp_133/Workspace/MP133.agr",
+      "defined_in": "Prefabs/Weapons/Rifles/Shotgun/armst_mp_133.et"
+    },
+    {
+      "guid": "CE3F8A5CEF0667C1",
+      "path": "Assets/Weapons_RUS/Mp_133/Workspace/MP133_weapon.asi",
+      "resolved": "local",
+      "target": "Assets/Weapons_RUS/Mp_133/Workspace/MP133_weapon.asi",
+      "defined_in": "Prefabs/Weapons/Rifles/Shotgun/armst_mp_133.et"
+    },
+    {
+      "guid": "35611B6D7707032D",
+      "path": "Assets/Weapons_RUS/Mp_133/Workspace/MP133_player.asi",
+      "resolved": "local",
+      "target": "Assets/Weapons_RUS/Mp_133/Workspace/MP133_player.asi",
+      "defined_in": "Prefabs/Weapons/Rifles/Shotgun/armst_mp_133.et"
+    }
+  ],
+  "warnings": [],
+  "data": {
+    "identity": {
+      "name": null
+    },
+    "fire_modes": [
+      {
+        "mode_id": "{B80A64F4A8EF8333}",
+        "ui_name": null,
+        "rounds_per_minute": {
+          "value": 1400,
+          "defined_in": "Prefabs/Weapons/Rifles/Shotgun/armst_mp_133.et",
+          "inherited": false
+        },
+        "max_burst": null,
+        "defined_in": "Prefabs/Weapons/Rifles/Shotgun/armst_mp_133.et",
+        "rounds_per_second": {
+          "value": 23.333,
+          "derived": true
+        }
+      }
+    ],
+    "physical": {
+      "Weight": null,
+      "SizeSetupStrategy": null,
+      "ItemDimensions": null,
+      "ItemVolume": null,
+      "DimensionScaler": null,
+      "_defined_in": "Prefabs/Weapons/Rifles/Shotgun/armst_mp_133.et",
+      "MeleeDamage": {
+        "value": 2,
+        "defined_in": "Prefabs/Weapons/Rifles/Shotgun/shotgun_base.et",
+        "inherited": true
+      },
+      "Model": {
+        "guid": "729301A18C759C8F",
+        "path": "Assets/Weapons_RUS/Mp_133/Mp_133.xob",
+        "defined_in": "Prefabs/Weapons/Rifles/Shotgun/armst_mp_133.et"
+      }
+    },
+    "magazine": {
+      "magazine_well": {
+        "name": "MagazineWell",
+        "class": "MagazineWell12g",
+        "defined_in": "Prefabs/Weapons/Rifles/Shotgun/shotgun_base.et"
+      },
+      "magazine_template": {
+        "guid": "B0DFDF7AAA9C5D39",
+        "path": "Prefabs/Weapons/Magazines/12ga/12ga_Buckshot.et",
+        "defined_in": "Prefabs/Weapons/Rifles/Shotgun/shotgun_base.et"
+      }
+    },
+    "ballistics": {
+      "bullet_init_speed_coef": null,
+      "dispersion_diameter": null,
+      "dispersion_range": {
+        "value": 701,
+        "defined_in": "Prefabs/Weapons/Rifles/Shotgun/shotgun_base.et",
+        "inherited": true
+      }
+    },
+    "aim": {
+      "recoil": null,
+      "sway": null
+    },
+    "sights": null,
+    "attachment_slots": [
+      {
+        "slot": null,
+        "pivot": null,
+        "enabled": {
+          "value": 0,
+          "defined_in": "Prefabs/Weapons/Rifles/Shotgun/shotgun_base.et",
+          "inherited": true
+        },
+        "attachment_types": [],
+        "defined_in": "Prefabs/Weapons/Rifles/Shotgun/shotgun_base.et"
+      }
+    ],
+    "muzzle_attachment": null,
+    "animation": {
+      "anim_graph": {
+        "guid": "315A612FD60832E7",
+        "path": "Assets/Weapons_RUS/Mp_133/Workspace/MP133.agr",
+        "defined_in": "Prefabs/Weapons/Rifles/Shotgun/armst_mp_133.et"
+      },
+      "anim_instance": {
+        "guid": "CE3F8A5CEF0667C1",
+        "path": "Assets/Weapons_RUS/Mp_133/Workspace/MP133_weapon.asi",
+        "defined_in": "Prefabs/Weapons/Rifles/Shotgun/armst_mp_133.et"
+      }
+    }
+  },
+  "derived": {
+    "max_rounds_per_second": 23.333
+  }
+}

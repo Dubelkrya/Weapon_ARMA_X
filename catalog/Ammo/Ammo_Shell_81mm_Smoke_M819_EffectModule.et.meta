@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{D701B894B6B1A764}Imported/VanillaSources/Prefabs/Weapons/Ammo/Ammo_Shell_81mm_Smoke_M819_EffectModule.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

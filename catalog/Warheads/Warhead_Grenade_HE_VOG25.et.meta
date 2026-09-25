@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{54E103906C4E5082}Imported/VanillaSources/Prefabs/Weapons/Warheads/Warhead_Grenade_HE_VOG25.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

@@ -1,0 +1,50 @@
+GenericEntity {
+ ID "65A2C665A8D09239"
+ components {
+  InventoryItemComponent "{65A2C665A8D092A3}" {
+   Enabled 0
+   Attributes SCR_ItemAttributeCollection "{65A2C665A8D092B3}" {
+    CustomAttributes {
+     WeaponAttachmentAttributes "{65A2C665A8D092B6}" {
+     }
+     PreviewRenderAttributes "{65A2C665A8D092B8}" {
+      ItemRenderRotation 0 0 0
+     }
+    }
+   }
+  }
+  MeshObject "{65A2C665A8D09282}" {
+   Object "{C6581CF3DBCB8E4F}Assets/Weapons/Attachments/Camouflage/Camouflage_M21/Camouflage_M21.xob"
+   InheritVisibility 1
+  }
+  RigidBody "{65A2C665A8D09280}" {
+   ModelGeometry 1
+  }
+  ActionsManagerComponent "{65A2C665A8D09286}" {
+   Enabled 0
+   ActionContexts {
+    UserActionContext "{65A2C665A8D09285}" {
+     ContextName "user"
+     Position PointInfo "{65A2C665A8D0928B}" {
+     }
+    }
+   }
+   additionalActions {
+    SCR_EquipWeaponAttachment "{65A2C665A8D0928C}" {
+     ParentContextList {
+      "user"
+     }
+     UIInfo UIInfo "{65A2C665A8D09292}" {
+      Name "#AR-UserAction_AttachToWeapon"
+     }
+    }
+   }
+  }
+  RplComponent "{65A2C665A8D09290}" {
+   "Rpl State Override" Runtime
+  }
+  Hierarchy "{65A2C665A8D09296}" {
+  }
+ }
+ Flags 0x400003 0
+}

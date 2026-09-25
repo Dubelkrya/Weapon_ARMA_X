@@ -1,0 +1,12 @@
+GenericEntity : "{3343A055A83CB30D}Prefabs/Weapons/Grenades/M18/Smoke_M18_Red.et" {
+ ID "51F94178FC806356"
+ components {
+  TimerTriggerComponent "{5934C8C5C9FDF999}" {
+   PROJECTILE_EFFECTS {
+    SpawnParticleEffect "{5CAADB9AD0C61F3F}" {
+     ParticleEffect "{7A74FADC8670B5B3}Particles/Weapon/Smoke_grenade_M18_Red_Repeat.ptc"
+    }
+   }
+  }
+ }
+}

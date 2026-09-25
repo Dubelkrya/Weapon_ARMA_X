@@ -1,0 +1,24 @@
+GameEntity : "{08286DDBB1F33FF1}Prefabs/Weapons/Attachments/Optics/Optic_AP2k/Collim_AP2k.et" {
+ ID "4BA426CBAED42A14"
+ components {
+  InventoryItemComponent "{52627A1F45CD4EB6}" {
+   Attributes SCR_ItemAttributeCollection "{52627A1EBB0698FD}" {
+    ItemDisplayName UIInfo "{5D369D0F663A1227}" {
+     Name "#AR-Item_AP2k_Camo_Name"
+    }
+   }
+  }
+  MeshObject "{5D369D0F663A1234}" {
+   Materials {
+    MaterialAssignClass "{5E4E8C5681B676D5}" {
+     SourceMaterial "Optic_AP2k"
+     AssignedMaterial "{3B61526B79F7F629}Assets/Weapons/Attachments/Optics/AP2k/Data/Optic_AP2k_OliveGreen_Sand_Stripes.emat"
+    }
+    MaterialAssignClass "{5E4E8C5681B676B3}" {
+     SourceMaterial "WeaverMount_M16"
+     AssignedMaterial "{C6EF902A0D62F3DE}Assets/Weapons/Attachments/Mounts/WeaverMount_M16/Data/WeaverMount_M16_OliveGreen_Sand_Stripes.emat"
+    }
+   }
+  }
+ }
+}

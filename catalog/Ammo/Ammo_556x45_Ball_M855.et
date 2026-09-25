@@ -1,0 +1,20 @@
+Projectile : "{67FED88E5085F63F}Prefabs/Weapons/Core/Ammo_Bullet_Base.et" {
+ ID "DA5C6308000CDEF2"
+ components {
+  ShellMoveComponent "{851AA4A2AE0A5691}" {
+   InitSpeed 930
+   InitSpeedVariation 9.1
+   Mass 0.00402
+   BallisticTableConfig "{CF94312139009EAC}Configs/Weapons/AIBallisticTables/AIBT_556x45_Ball_M855.conf"
+   SubsonicFlybys "{F957FD54EA57C9F1}Sounds/Weapons/_SharedData/BulletFlybys/Rifle/Weapons_BulletFlybys_Rifle.acp"
+   AirDrag 0.000005
+   Diameter 5.7
+   MushroomingDamageMultiplier 0.1
+   TumblingDamageMultiplier 0.1
+   PenetrationDepth 4
+   PenetrationSpeed 675
+  }
+ }
+ ProjectileModel "{1CDC88A8FE865A00}Assets/Weapons/Ammo/Bullets/556x45/Bullet_556x45_M855.xob"
+ CartridgeModel "{4A70B53216D6C5B0}Assets/Weapons/Ammo/Bullets/556x45/Cartridge_556x45_M855.xob"
+}

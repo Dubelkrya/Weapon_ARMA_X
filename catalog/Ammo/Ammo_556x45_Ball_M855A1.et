@@ -1,0 +1,17 @@
+Projectile : "{AC26AB660097633D}Prefabs/Weapons/Ammo/Ammo_556x45_Ball_M855.et" {
+ ID "DA5C6308000CDEF2"
+ components {
+  ShellMoveComponent "{851AA4A2AE0A5691}" {
+   InitSpeed 960
+   InitSpeedVariation 5.7
+   DispersionMultiplier 0.89
+   Mass 0.004
+   BallisticTableConfig "{D54E631C9DB4BCA0}Configs/Weapons/AIBallisticTables/AIBT_556x45_Ball_M855A1.conf"
+   AirDrag 0.0000049
+   Length 26.2
+   MushroomingDamageMultiplier 0.1
+   TumblingDamageMultiplier 0.12
+   PenetrationSpeed 546
+  }
+ }
+}

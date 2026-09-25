@@ -1,0 +1,8 @@
+GameEntity : "{A3E996BF5DD24564}Prefabs/Weapons/Attachments/Bayonets/Bayonet_VZ58/Bayonet_VZ58_base.et" {
+ ID "50989DC991E68512"
+ components {
+  MeshObject "{60A894809670984D}" {
+   Object "{2BA6064A32F7D234}Assets/Weapons/Attachments/Bayonets/Bayonet_VZ58/Bayonet_VZ58_v3.xob"
+  }
+ }
+}

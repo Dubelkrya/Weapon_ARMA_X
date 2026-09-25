@@ -1,0 +1,79 @@
+Projectile : "{D40A105437369C1D}Prefabs/Weapons/Core/Ammo_GrenadeLauncher_Base.et" {
+ ID "50C6F965BA00F9FA"
+ components {
+  TimerTriggerComponent "{60F4A8CD75340D32}" {
+   PROJECTILE_EFFECTS {
+    SubmunitionEffect "{60F4A8CD75340CC5}" {
+     Prefab "{E21BEA0371574949}Prefabs/Weapons/Ammo/FlareEffect_40mm_M662_Red.et"
+     SoundEvent "SOUND_DEPLOY"
+    }
+   }
+   TIMER 1.5
+  }
+  AICombatPropertiesComponent "{59C92CB12877478B}" {
+   Priority 0
+   PriorityAgainstVehicles 0
+   UsedAgainst 0 0x7
+   IndirectlyUsedAgainst 0 0x1
+   Traits 0x1 0
+  }
+  BaseProjectileComponent "{60F4A8CD75340CC9}" {
+   Enabled 0
+  }
+  CollisionTriggerComponent "{60F4A8CD75340CD2}" {
+   Enabled 0
+   PROJECTILE_EFFECTS {
+    ExplosionEffect "{60F4A8CD75340CDF}" {
+     EffectPrefab "{729D7EE679AD97E7}Prefabs/Weapons/Warheads/Warhead_Grenade_HE_VOG25.et"
+     ParticleEffect "{728768DE31C8D1DE}Particles/Weapon/Explosion_VOG25.ptc"
+     SoundEvent "SOUND_EXPLOSION"
+    }
+   }
+   ArmingTime 0
+   SafetyDistance 10
+  }
+  InventoryItemComponent "{52627A12350994B6}" {
+   Attributes SCR_ItemAttributeCollection "{52627A1234AD20A4}" {
+    ItemDisplayName UIInfo "{60F4A8CD75340CEB}" {
+     Name "#AR-Magazine_M662_Name"
+     Description "#AR-Magazine_M662_Description"
+    }
+    ItemPhysAttributes ItemPhysicalAttributes "{60F4A8CD75340CF6}" {
+     Weight 0.25
+     SizeSetupStrategy Manual
+     ItemDimensions 5 5 5
+     ItemVolume 100
+    }
+    m_Size SLOT_1x1
+   }
+  }
+  MagazineComponent "{60F4A8CD75340CF1}" {
+   MagazineWell MagazineWellUS_UGL "{60F4A8CD75340CFE}" {
+   }
+   UIInfo MagazineUIInfo "{60F4A8CD75340CFB}" {
+    Name "#AR-AmmunitionID_40mm"
+    m_sAmmoCaliber "#AR-AmmunitionID_40mm"
+    m_sAmmoType "#AR-AmmoType_M662"
+    m_bShowAmmoTypeText 1
+    m_eAmmoTypeFlags ILLUMINATION
+    m_MagIndicator SCR_MagazineIndicatorConfiguration "{5874FAA7B6D57051}" : "{BE317699690AD7C3}Configs/WeaponInfo/MagazineIndicators/ugl_m406.conf" {
+    }
+   }
+   MaxAmmo 1
+  }
+  MeshObject "{851AA4A2AE0A56BF}" {
+   Object "{BFC7274EB285A1E1}Assets/Weapons/Ammo/Grenades/Flare_40mm_M662_Red/Flare_40mm_M662_Red.xob"
+  }
+  ShellMoveComponent "{20FB66C5FA209A29}" {
+   InitSpeed 77
+   InitSpeedVariation 0
+   Mass 0.25
+   TimeToLive 30
+  }
+  Hierarchy "{60F4A8CD75340C97}" {
+  }
+ }
+ ProjectileModel "{F8E74C3097BB98DC}Assets/Weapons/Ammo/Grenades/Flare_40mm_M662_Red/Flare_40mm_M662_Red_projectile.xob"
+ CartridgeModel "{BFC7274EB285A1E1}Assets/Weapons/Ammo/Grenades/Flare_40mm_M662_Red/Flare_40mm_M662_Red.xob"
+ CartridgeLayerPreset "ItemFireView"
+}

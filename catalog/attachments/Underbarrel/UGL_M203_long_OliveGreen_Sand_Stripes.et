@@ -1,0 +1,13 @@
+GameEntity : "{43FDAF3FA0FF2299}Prefabs/Weapons/Attachments/Underbarrel/UGL_M203_long.et" {
+ ID "50D6D3D8D7C645EE"
+ components {
+  MeshObject "{BB6A64F1D169741D}" {
+   Materials {
+    MaterialAssignClass "{5E4C832B7D5032AE}" {
+     SourceMaterial "M203"
+     AssignedMaterial "{13B8B7C024DD7A14}Assets/Weapons/Attachments/Underbarrel/M203/Data/M203_OliveGreen_Sand_Stripes.emat"
+    }
+   }
+  }
+ }
+}

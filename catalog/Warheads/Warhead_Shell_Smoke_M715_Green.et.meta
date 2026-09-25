@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{7710B9664A11CA4D}Imported/VanillaSources/Prefabs/Weapons/Warheads/Warhead_Shell_Smoke_M715_Green.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

@@ -1,0 +1,11 @@
+GameEntity : "{B623482E2704B69A}Prefabs/Weapons/Attachments/Optics/Optic_SPP/Optic_SPP.et" {
+ ID "4BA426CBAED42A14"
+ components {
+  InventoryItemComponent "{52627A1F45CD4EB6}" {
+   Enabled 0
+  }
+  ActionsManagerComponent "{5284E0EFF569AD07}" {
+   Enabled 0
+  }
+ }
+}

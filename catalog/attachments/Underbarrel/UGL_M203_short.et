@@ -1,0 +1,70 @@
+GameEntity : "{6CF51730E80CCF42}Prefabs/Weapons/Attachments/Underbarrel/UGL_M203_base.et" {
+ ID "50D6D3D8D7C645EE"
+ components {
+  InventoryItemComponent "{52627A1F45CD4EB6}" {
+   Attributes SCR_ItemAttributeCollection "{52627A1EBB0698FD}" {
+    CustomAttributes {
+     WeaponAttachmentAttributes "{5284D858FFF9BE66}" {
+      AttachmentType AttachmentUnderBarrelM203Carbine "{58E2B3165B4CE766}" {
+      }
+     }
+    }
+   }
+  }
+  MeshObject "{BB6A64F1D169741D}" {
+   Object "{A9B6BE9163F8531D}Assets/Weapons/Attachments/Underbarrel/M203/M203_carbine.xob"
+  }
+  MuzzleInMagComponent "{B3A264F493CC5A18}" {
+   components {
+    SightsComponent "{BB23A6378CED0346}" {
+     SightsRanges {
+      SightRangeInfo "{5DC887846E6A72E6}" {
+       WeaponPosition PointInfo "{5DC887846E6A72E3}" {
+        Offset 0 -0.0746 0
+        Angles 9.43 0 0
+       }
+      }
+      SightRangeInfo "{5DC887846E6A72E2}" {
+       WeaponPosition PointInfo "{5DC887846E6A72E1}" {
+        Offset 0 -0.1038 0
+        Angles 11.98 0 0
+       }
+      }
+      SightRangeInfo "{5DC887846E6A72E0}" {
+       WeaponPosition PointInfo "{5DC887846E6A72FF}" {
+        Offset 0 -0.147 0
+        Angles 15.17 0 0
+       }
+      }
+      SightRangeInfo "{5DC887846E6A72FD}" {
+       WeaponPosition PointInfo "{5DC887846E6A8A1F}" {
+        Offset 0 -0.186 0
+        Angles 18.2 0 0
+       }
+      }
+      SightRangeInfo "{5DC887846E6A8A19}" {
+       WeaponPosition PointInfo "{5DC887846E6A8A18}" {
+        Offset 0 -0.2447 0
+        Angles 21.55 0 0
+       }
+      }
+     }
+    }
+   }
+  }
+  SCR_WeaponAttachmentsStorageComponent "{5DC887846E6A8A75}" {
+   Attributes SCR_ItemAttributeCollection "{5DC887846E6A8A74}" {
+    CustomAttributes {
+     SCR_WeaponAttachmentObstructionAttributes "{61E0A630344D0BCA}" {
+      AttachmentType AttachmentUnderBarrelM203Carbine "{61B08C84FEE50C8F}" {
+      }
+      m_aObstructedAttachmentTypes {
+       AttachmentSuppressorMark3 "{61B485C98BC30C74}" {
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+}

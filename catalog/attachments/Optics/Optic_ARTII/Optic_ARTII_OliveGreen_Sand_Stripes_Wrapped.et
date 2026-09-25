@@ -1,0 +1,32 @@
+GameEntity : "{78E6C499CFFB8882}Prefabs/Weapons/Attachments/Optics/Optic_ARTII/Optic_ARTII_OliveGreen_Sand_Stripes.et" {
+ ID "52546DC0E81ECE17"
+ components {
+  AttachmentSlotComponent "{65B0B04633132FAE}" {
+   AttachmentSlot InventoryStorageSlot Camo {
+    Prefab "{E06C5B0E2595702B}Prefabs/Weapons/Attachments/Camouflage/Camouflage_M21/Camouflage_Wrap_ARTII.et"
+   }
+   AttachmentType AttachmentCamouflageOptics "{65B0B046294BC7DA}" {
+   }
+  }
+  InventoryItemComponent "{52627A1F45CD4EB6}" {
+   Attributes SCR_ItemAttributeCollection "{52627A1EBB0698FD}" {
+    ItemDisplayName UIInfo "{5D0CC83435B5584E}" {
+     Name "#AR-Item_ARTII_Camo_Wrap_Name"
+    }
+    CustomAttributes {
+     PreviewRenderAttributes "{52D69389645B4E4D}" {
+      ShowAllChildrens 1
+     }
+    }
+   }
+  }
+  MeshObject "{5D0CC83435B55858}" {
+   Materials {
+    MaterialAssignClass "{6608C5F35B0A3D2F}" {
+     SourceMaterial "Optic_ARTII"
+     AssignedMaterial "{BB888337D7CDDB48}Assets/Weapons/Attachments/Optics/ARTII/Data/Optic_ARTII__OliveGreen_Sand_Stripes.emat"
+    }
+   }
+  }
+ }
+}

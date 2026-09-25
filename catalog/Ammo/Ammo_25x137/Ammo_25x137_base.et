@@ -1,0 +1,27 @@
+TracerProjectile : "{67FED88E5085F63F}Prefabs/Weapons/Core/Ammo_Bullet_Base.et" {
+ ID "DA5C6308000CDEF2"
+ components {
+  ShellMoveComponent "{851AA4A2AE0A5691}" {
+   InitSpeed 1345
+   InitSpeedVariation 10
+   Mass 0.134
+   ProjectileEffects {
+    HitSoundEffect "{2FC22748C7ABD466}" {
+     Filename "{823D315BE831E9EE}Sounds/Weapons/_SharedData/BulletHits/Weapons_BulletHits_25x137.acp"
+    }
+   }
+   BallisticTableConfig "{438BE620D001C1D8}Configs/Weapons/AIBallisticTables/AIBT_25x137_HEIT_M792.conf"
+   SonicCracks "{8E5C5CBA7DEDDA1C}Sounds/Weapons/_SharedData/BulletSonicCracks/25mm/Weapons_BulletSonicCracks_25mm.acp"
+   SubsonicFlybys "{F94D23D28FCB2C39}Sounds/Weapons/_SharedData/BulletFlybys/25mm/Weapons_BulletFlybys_25mm.acp"
+   AirDrag 0.0000888
+   Diameter 25
+   Length 70.6
+   PenetrationDirDistribution 0.05
+  }
+ }
+ ProjectileVisibleTimeScale 2
+ ProjectileModel "{D807332FCA58B894}Assets/Weapons/Ammo/Tracers/Tracer_red.xob"
+ CartridgeModel "{3A1C0915F7269C10}Assets/Weapons/Ammo/Bullets/25x137/Cartridge_25x137_M791.xob"
+ "Tracer Burn Start After" 0.02
+ "Tracer Burn Time" 3.5
+}

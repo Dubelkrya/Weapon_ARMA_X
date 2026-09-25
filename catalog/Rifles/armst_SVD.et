@@ -1,0 +1,33 @@
+GenericEntity : "{A3E183EB5A2F3A38}Prefabs/Weapons/Rifles/SVD/Rifle_SVD_base.et" {
+ ID "525494E72B1E90FD"
+ components {
+  SCR_EditableEntityComponent "{65B265034B23979A}" {
+   Enabled 0
+   m_UIInfo SCR_EditableEntityUIInfo "{65B265034C4E74AA}" {
+    Name "#AR-Weapon_SVD_Name"
+    m_aAuthoredLabels +{
+    }
+    m_aAutoLabels +{
+    }
+   }
+   m_bAutoRegister NEVER
+  }
+  SCR_MeleeWeaponProperties "{54EED426F1352F30}" {
+   m_fDamage 2
+  }
+  SCR_WeaponAttachmentsStorageComponent "{51F080D5CE45A1A2}" {
+   Attributes SCR_ItemAttributeCollection "{51F080D5C64F12C5}" {
+    m_iCustomGridWidth 8
+   }
+  }
+  WeaponComponent "{CFBAA4B706BA66E8}" {
+   components {
+    AttachmentSlotComponent "{5472D211BFD78F81}" {
+     AttachmentType AttachmentOpticsDovetailAK "{58E2BCF926D50DE5}" {
+     }
+    }
+   }
+  }
+ }
+ coords 4163.354 306.523 721.62
+}

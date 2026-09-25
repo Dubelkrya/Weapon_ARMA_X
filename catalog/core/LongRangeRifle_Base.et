@@ -1,0 +1,76 @@
+GenericEntity : "{911D6C8DC7BA2D63}Prefabs/Weapons/Core/Rifle_Base.et" {
+ ID "5260C45AAAA407F4"
+ components {
+  SCR_WeaponAttachmentsStorageComponent "{51F080D5CE45A1A2}" {
+   Attributes SCR_ItemAttributeCollection "{51F080D5C64F12C5}" {
+    ItemPhysAttributes ItemPhysicalAttributes PhysicalAttributes {
+     Weight 3.5
+    }
+    ItemAnimationAttributes ItemAnimationAttributes "{5284960E1D29F45C}" {
+     AnimationInstance "{0350283642830782}anims/workspaces/player/player_main_rifle.asi"
+     AnimationIKPose "{B7869ABD0EEE379D}Assets/Weapons/Rifles/AK74/anims/anm/p_ak74_ik.anm"
+    }
+    CustomAttributes {
+     ItemMovementSwayAttributes "{58B9009CD03086A9}" {
+      BobSpring 0.15 0.15 0.85
+      BobDamper 0.98 0.98 1
+      BobLimits 0.06 0.1 0.02
+      BobSpeed 15
+     }
+    }
+   }
+  }
+  WeaponComponent "{CFBAA4B706BA66E8}" {
+   components {
+    SightsComponent "{BB23A637957CFFF8}" {
+     SightsPosition PointInfo "{BB23A63796688E69}" {
+      Offset 0 0 0
+     }
+    }
+    MuzzleComponent "{CA6BE4D6B867541F}" {
+     FireModes {
+      BaseFireMode "{506B20D1476BA99E}" : "{687B3DA431730CFA}Prefabs/Weapons/Core/Configs/FireModes/FireMode_Safe.conf" {
+       "Gamepad Trigger effect" GamepadTriggerEffect "{619AA72C28DF32C1}" : "{3568E9D86F77DEB7}Prefabs/Weapons/Core/Configs/TriggerEffects/Safety/TriggerEffect_SafetyLight.conf" {
+       }
+       "Empty Trigger effect" GamepadTriggerEffect "{61C354AD4F73FF39}" : "{3568E9D86F77DEB7}Prefabs/Weapons/Core/Configs/TriggerEffects/Safety/TriggerEffect_SafetyLight.conf" {
+       }
+      }
+      BaseFireMode "{B80A64F4A8EF8333}" : "{D5D52E848DBCAA53}Prefabs/Weapons/Core/Configs/FireModes/FireMode_Single.conf" {
+      }
+     }
+     WeaponAimModifiers {
+      SwayWeaponAimModifier "{521AE9A27BDC1E6F}" {
+       "Lower Translation" 0.1 -0.005 -0.013
+      }
+     }
+    }
+    WeaponAnimationComponent "{60B4EA76EB15F6E0}" {
+     AnimGraph "{ADDF1CC42A489D84}Assets/Weapons/Rifles/workspaces/ak74.agr"
+     AnimInstance "{022310A34B9AF611}Assets/Weapons/Rifles/workspaces/ak74_weapon.asi"
+     AnimInjection AnimationAttachmentInfo "{532F3A9CB912F2BA}" {
+      AnimGraph "{ADDF1CC42A489D84}Assets/Weapons/Rifles/workspaces/ak74.agr"
+      AnimInstance "{F97D8192D39B92FD}Assets/Weapons/Rifles/workspaces/ak74_player.asi"
+      BindingName "Weapon"
+     }
+     BindWithInjection 1
+    }
+   }
+   WeaponType SniperRifle
+  }
+  ActionsManagerComponent "{A29AE67FF4D82B0F}" {
+   ActionContexts {
+    UserActionContext "{5086F9ADF588DCA4}" {
+     Position PointInfo "{5086F9ADE97650DF}" {
+      Offset 0 0 0
+     }
+    }
+   }
+  }
+  WeaponGamepadEffectsManagerComponent "{61A2E5C3F4458F86}" {
+   "Default Chambered Trigger effect" GamepadTriggerEffect "{61D30BF7F0381163}" {
+   }
+   "Default ADS Trigger effect" GamepadTriggerEffect "{61B129618F212411}" : "{FD6D307018F1F3C9}Prefabs/Weapons/Core/Configs/TriggerEffects/ADS/TriggerEffect_ADSHeavy.conf" {
+   }
+  }
+ }
+}

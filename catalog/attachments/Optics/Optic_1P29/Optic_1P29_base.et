@@ -1,0 +1,92 @@
+GameEntity : "{966B4E5523D2F166}Prefabs/Weapons/Attachments/Optics/WeaponOptic_Base.et" {
+ ID "4BA426CBAED42A14"
+ components {
+  InventoryItemComponent "{52627A1F45CD4EB6}" {
+   Attributes SCR_ItemAttributeCollection "{52627A1EBB0698FD}" {
+    ItemDisplayName UIInfo "{5D0CC83435B5584E}" {
+     Name "#AR-Item_1P29_Name"
+     Description "#AR-Item_1P29_Description"
+    }
+    ItemPhysAttributes ItemPhysicalAttributes "{5D0CC83435B55848}" {
+     Weight 0.58
+     ItemVolume 400
+     RestingUP Right
+    }
+    CustomAttributes {
+     WeaponAttachmentAttributes "{5284D858FFF9BE66}" {
+      AttachmentType AttachmentOpticsDovetailAK "{5AA86E9C7B91C197}" {
+      }
+     }
+    }
+   }
+  }
+  MeshObject "{5D0CC83435B55858}" {
+   Object "{B7A579385AFC8581}Assets/Weapons/Attachments/Optics/1P29/Optic_1P29.xob"
+  }
+  SCR_2DPIPSightsComponent "{5D0CC83435B55855}" {
+   SightsPosition PointInfo "{5D0CC83435B55853}" {
+    Offset 0 0 0.0525
+   }
+   SightsRanges {
+    SightRangeInfo "{5D0AB029D43D9864}" {
+     Range 0.1 100
+    }
+    SightRangeInfo "{5D0AB029D5C3B889}" {
+     Range 0.12 200
+    }
+    SightRangeInfo "{5D0AB029D593377E}" {
+     Range 0.16 300
+    }
+    SightRangeInfo "{5D0AB029D070EC05}" {
+     Range 0.24 400
+    }
+    SightRangeInfo "{5D0AB029DFD444F6}" {
+     Range 0.3 500
+    }
+   }
+   SightsFOVInfo SCR_SightsZoomFOVInfo "{5AA86E9C7B91C248}" {
+    m_fBaseZoom 4
+    m_fZoomMax 4
+    m_fInterpolationSpeed 50
+   }
+   SightsPointFront PointInfo "{5AA86E9C7B91C24A}" {
+    PivotID "sight_front"
+   }
+   SightsPointRear PointInfo "{5AA86E9C7B91C24C}" {
+    PivotID "sight_rear"
+   }
+   CameraRecoilAmount -0.9
+   m_sReticleTexture "{4E6095CD6A337D2A}UI/Textures/Sights/1P29/1P29_black_solid_UI.edds"
+   m_sReticleGlowTexture "{4E6095CD6A337D2A}UI/Textures/Sights/1P29/1P29_black_solid_UI.edds"
+   m_ReticleColor 0 0.571 0.145 1
+   m_fMotionBlurScale 10
+   m_eZeroingType EPZ_CAMERA_TURN
+   m_fReticleOffsetInterpSpeed 40
+   m_vCameraOffset -0.02 0 0
+   m_rScopeHDRMatrial "{3BD4127D635A335E}Assets/Weapons/Attachments/Optics/1P29/Data/Optic_1P29_HDR.emat"
+   m_vMainCameraOffsetUnfocused 0 0 0.05
+   m_fObjectiveFov 8
+   m_fReticleAngularSize 8
+   m_fReticlePortion 0.9
+   m_fReticleBaseZoom 4
+   m_fMagnification 4
+   m_fScopeRadius 0.0168
+  }
+  ActionsManagerComponent "{5284E0EFF569AD07}" {
+   ActionContexts {
+    UserActionContext "{5284E0EFF4E818E9}" {
+     Position PointInfo "{5284E0EFC526E6F0}" {
+      Offset 0.0175 0.0715 -0.0297
+     }
+    }
+   }
+   additionalActions {
+    SCR_AttachItemFromInventoryAction "{5D0CC83435B55B88}" {
+     ParentContextList {
+      "optic"
+     }
+    }
+   }
+  }
+ }
+}

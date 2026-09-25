@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{183FDC911C2BB45D}Imported/VanillaSources/Prefabs/Weapons/HeavyWeapons/HMG_KPVT.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

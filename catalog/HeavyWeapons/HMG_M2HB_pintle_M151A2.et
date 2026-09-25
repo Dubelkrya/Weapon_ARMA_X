@@ -1,0 +1,24 @@
+GenericEntity : "{9CF19D872D4D1C00}Prefabs/Weapons/HeavyWeapons/HMG_M2HB_pintle.et" {
+ ID "476AE74DE20E1061"
+ components {
+  WeaponSoundComponent "{5A8685198A9AEEDD}" {
+   Filenames {
+    "{EE8892C4180091FD}Sounds/Weapons/HeavyWeapons/M2/Weapons_HeavyWeapons_M2_Shot.acp" "{6616B1A0537FC180}Sounds/Vehicles/Wheeled/M151A2/Vehicles_M151A2_Turret.acp" "{EC7E8631CBC17F15}Sounds/Weapons/HeavyWeapons/M2/Weapons_HeavyWeapons_M2_Handling.acp"
+   }
+  }
+  TurretComponent "{6D6D283BE816D8C3}" {
+   ikTargets {
+    AnimationIKTargetInfo "{52A8F6FBFC729D0C}" {
+     PositionInfo PointInfo "{52A8F6FBF92A2E39}" {
+      PivotID "v_hand_L_target"
+     }
+    }
+    AnimationIKTargetInfo "{52A8F6FBFD4FABD2}" {
+     PositionInfo PointInfo "{52A8F6FBF1B039F8}" {
+      PivotID "v_hand_R_target"
+     }
+    }
+   }
+  }
+ }
+}

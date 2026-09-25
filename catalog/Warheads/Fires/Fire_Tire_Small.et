@@ -1,0 +1,19 @@
+GenericEntity : "{E5965C8A004629D0}Prefabs/Weapons/Warheads/Fires/Warhead_Fire_Base.et" {
+ ID "9D9BE68EA2672F76"
+ components {
+  TimerTriggerComponent "{55129E81CBAA1390}" {
+   PROJECTILE_EFFECTS {
+    ExplosionDamageContainer "{5D8D1EB2400CDFFE}" {
+     ChargeWeight 500
+    }
+    SpawnDecalEffect "{5E24C6340FE0175F}" {
+     Scale 1.5
+     Material "{A62DBFD001F30A8E}Assets/Decals/Logistics/Data/Logistics_Fire_Decal_Tire.emat"
+    }
+   }
+  }
+  HitEffectComponent "{9D9BE68D6F65A10F}" {
+   ParticleEffect "{48E90427E75C84C7}Particles/Logistics/Fire/Tire/Fire_wheel_small.ptc"
+  }
+ }
+}

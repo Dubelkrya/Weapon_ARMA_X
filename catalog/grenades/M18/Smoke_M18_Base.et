@@ -1,0 +1,120 @@
+GenericEntity : "{0DCE9A9A4F31BE1C}Prefabs/Weapons/Core/SmokeGrenade_Base.et" {
+ ID "1F80A73AAE197BBE"
+ components {
+  SoundComponent "{57227A5D228316FB}" {
+   Filenames {
+    "{12A94705DF2BFD25}Sounds/Items/_SharedData/PickUp/Items_PickUp_Generic.acp" "{27C508007B4D4267}Sounds/Weapons/Grenades/_SharedData/Weapons_Grenade_Impacts_ANM8HC.acp" "{27E5FEBCE92BE40B}Sounds/Weapons/_SharedData/Melee/Weapons_Melee.acp" "{A8E6224011416CCE}Sounds/Weapons/Grenades/SmokeGrenades/Weapons_M18_Fuze.acp" "{E93E101E7ACA2172}Sounds/Weapons/_SharedData/Drop/Weapons_Drop_Grenade.acp" "{91AEEEEE5656F9FE}Sounds/Weapons/Grenades/_SharedData/Weapons_Grenade_Pin_Unpin.acp" "{AC072A5AAF5C6923}Sounds/Weapons/Grenades/M67/Weapons_M67_Fuze.acp" "{982B12014C97FEF7}Sounds/Weapons/Grenades/SmokeGrenades/Weapons_SmokeGrenade_SmokeLoop.acp"
+   }
+  }
+  TimerTriggerComponent "{5934C8C5C9FDF999}" {
+   PROJECTILE_EFFECTS {
+    SpawnParticleEffect "{5CAADB9AD0C61F3F}" {
+     ParticleEffect "{D1C900C94DD3D4B2}Particles/Weapon/Smoke_grenade_M18_Green.ptc"
+     SoundEvent "SOUND_M18_FUZE"
+    }
+   }
+  }
+  GrenadeMoveComponent "{1F80A73ADE35BFF1}" {
+   InitSpeed 30
+   Mass 0.397
+   BallisticTableConfig "{2B71D6DD2AD752A6}Configs/Weapons/AIBallisticTables/AIBT_Smoke_M18_Base.conf"
+  }
+  InventoryItemComponent "{51FAA3E3CF6F087A}" {
+   Attributes SCR_ItemAttributeCollection "{51FAA3E3C2D19BD4}" {
+    ItemPhysAttributes ItemPhysicalAttributes "{56CA90F8B6FB45EA}" {
+     Weight 0.54
+     SizeSetupStrategy Manual
+     ItemDimensions 10 10 10
+     ItemVolume 200
+     RestingUP Up
+     RestingAdditiveOffsetLS -0.045 0 0
+    }
+    ItemAnimationAttributes ItemAnimationAttributes "{5284A988FFFB3DAC}" {
+     AnimationIKPose "{504457451E7AFBD1}Assets/Weapons/Grenades/M18/anims/anm/p_m18_ik.anm"
+    }
+   }
+  }
+  MeshObject "{51EC93F29BA5F234}" {
+   Object "{3D23DDD4A1D1DC30}Assets/Weapons/Grenades/M18/Smoke_M18.xob"
+  }
+  RigidBody "{0F2AA6AEC948C9D6}" {
+   Mass 0.397
+  }
+  SCR_WeaponAttachmentsStorageComponent "{5260C447D58750FE}" {
+   Enabled 0
+   Attributes SCR_ItemAttributeCollection "{5260C447CBDC5D43}" {
+    ItemDisplayName WeaponUIInfo "{5270794ED1D0FAF9}" {
+    }
+    ItemPhysAttributes ItemPhysicalAttributes PhysicalAttributes {
+     Weight 0.54
+     SizeSetupStrategy Volume
+     ItemVolume 200
+    }
+    ItemAnimationAttributes ItemAnimationAttributes "{528499F8497B7C95}" {
+     IkSettings {
+      ItemIKSettings "{528499F84FBBD470}" {
+       MovementSpeedRange 0 4
+       IkSettingsStand 0x4 0
+      }
+      ItemIKSettings "{5526E345160AA15E}" {
+       Lowered 1
+       InAds 0
+       OutAds 0
+      }
+      ItemIKSettings "{552884E72A48AA46}" {
+       Jumping 1
+       InAds 0
+       OutAds 0
+      }
+     }
+     AnimationInstance "{4FCBEA45CAEBC9C0}anims/workspaces/player/player_main_1h.asi"
+     AnimationIKPose "{504457451E7AFBD1}Assets/Weapons/Grenades/M18/anims/anm/p_m18_ik.anm"
+    }
+    m_Size SLOT_1x1
+   }
+   StoragePurpose 0x20 0x1
+  }
+  WeaponComponent "{6D23670EA18BF513}" {
+   components {
+    BaseItemAnimationComponent "{5238E9ECF8791B3B}" {
+     AnimGraph "{04083B821AA7DD12}Assets/Weapons/Grenades/workspaces/Grenade_M18.agr"
+     AnimInstance "{E9626E5906AE8FFC}Assets/Weapons/Grenades/workspaces/Grenade_M18.asi"
+     AnimInjection AnimationAttachmentInfo "{523890C7AA92087A}" {
+      AnimGraph "{04083B821AA7DD12}Assets/Weapons/Grenades/workspaces/Grenade_M18.agr"
+      AnimInstance "{5C59B1EFB0D24F71}Assets/Weapons/Grenades/workspaces/Player_M18.asi"
+      BindingName "Grenade"
+     }
+     BindWithInjection 1
+     AutoVariablesBind 1
+     AnimVariablesToBind {
+      "MovementSpeed" "Stance"
+     }
+     MeshVisibilityConfigurations {
+      MeshesVisibilitySwitchConfig "{595276A3809D8500}" {
+       Event "HidePin"
+       Meshes {
+        "SafeClip"
+       }
+      }
+      MeshesVisibilitySwitchConfig "{595276A380A8C0C6}" {
+       Event "ShowPin"
+       Meshes {
+        "SafeClip"
+       }
+       HideMesh 0
+      }
+     }
+     ResetOnDeactivation 1
+    }
+   }
+   UIInfo GrenadeUIInfo "{172367262E10E042}" {
+    Name "M18"
+    Icon ""
+    m_MagIndicator SCR_MagazineIndicatorConfiguration "{5874EA17248AFACC}" : "{6F92209DFBB67365}Configs/WeaponInfo/MagazineIndicators/smoke_m18.conf" {
+    }
+   }
+  }
+  Hierarchy "{56CA9380E3FAEDF7}" {
+  }
+ }
+}

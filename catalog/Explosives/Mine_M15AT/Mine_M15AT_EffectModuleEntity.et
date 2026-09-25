@@ -1,0 +1,7 @@
+GenericEntity : "{49FFE8F373F55960}Prefabs/Weapons/Explosives/Mine_M15AT/Mine_M15AT.et" {
+ ID "5968D2B6A82C6019"
+ components {
+  SCR_EffectsModuleChildComponent "{616C8D38528DCFCD}" {
+  }
+ }
+}

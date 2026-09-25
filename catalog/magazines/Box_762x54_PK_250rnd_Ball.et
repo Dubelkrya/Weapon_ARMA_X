@@ -1,0 +1,24 @@
+GenericEntity : "{D99AF37E07F32ECB}Prefabs/Weapons/Magazines/Box_762x54_PK_250rnd_Base.et" {
+ ID "52F484E2F9B04B1B"
+ components {
+  InventoryMagazineComponent "{51EED12B803954CC}" {
+   Attributes SCR_ItemAttributeCollection "{51EED12B86960275}" {
+    m_iCustomGridWidth 2
+    m_iCustomGridHeight 2
+   }
+  }
+  SCR_EditableEntityComponent "{65B265057DB4A0C0}" {
+   Enabled 0
+   m_UIInfo SCR_EditableEntityUIInfo "{65B2650502B5A341}" {
+    Name "#AR-Magazine_PKMT_Name"
+    m_aAuthoredLabels +{
+    }
+    m_aAutoLabels +{
+    }
+   }
+   m_bAutoRegister NEVER
+   m_bVisible 0
+  }
+ }
+ coords 4163.069 306.523 721.582
+}

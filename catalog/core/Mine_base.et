@@ -1,0 +1,171 @@
+GenericEntity : "{CD00FFBAFD036BE2}Prefabs/Weapons/Core/Explosives_base.et" {
+ ID "5968D2B6A82C6019"
+ components {
+  Persistence "{6604DAE1078F6563}" {
+  }
+  SignalsManagerComponent "{59F2E19DA4ECABC1}" {
+  }
+  SoundComponent "{5A6B57364EA203C7}" {
+   DistanceManagement 0
+  }
+  BaseTriggerComponent "{59E4E69D8E9B4323}" {
+   PROJECTILE_EFFECTS {
+    AIExplosionEffect "{5EB4AB4A7E9C5DD5}" {
+    }
+   }
+  }
+  MeshObject "{5968D9C73C08706E}" {
+   PixelSizeScale 3
+  }
+  RigidBody "{5968D9C731425A95}" {
+   LinearSleepingThreashold 0.5
+   AngularSleepingThreashold 0.5
+   ResponseIndex "TinyDestructible"
+   ModelGeometry 1
+   Static 1
+  }
+  SCR_MineDamageManager "{5A187C4DB2CF86F2}" {
+   "Additional hit zones" {
+    SCR_MineHitZone Main {
+     HZDefault 1
+     MaxHealth 20
+     DamageThreshold 7
+     "Melee multiplier" 2
+     "Kinetic multiplier" 2
+     "Fragmentation multiplier" 0.006
+     "Explosive multiplier" 0.15
+    }
+   }
+  }
+  SCR_MineInventoryItemComponent "{59E4E694B93DC656}" {
+   Attributes SCR_ItemAttributeCollection "{5A10B8E3F1D55606}" {
+    ItemDisplayName WeaponUIInfo "{5A10B8E3F31D239B}" {
+    }
+    ItemPhysAttributes ItemPhysicalAttributes "{5A10B8E3E50A16D2}" {
+     Weight 1
+     SizeSetupStrategy Manual
+     RestingAdditiveRotationLS 0 0 0
+    }
+    ItemAnimationAttributes ItemAnimationAttributes "{5A10B8E3C98BD0A4}" {
+     IkSettings {
+      ItemIKSettings "{59E4E696CE54F34A}" {
+       InAds 0
+       OutAds 0
+       MovementSpeedRange 0 1
+       IkSettingsStand 0x6 0
+       IkSettingsCrouch 0x6 0
+       IkSettingsProne 0x6 0
+      }
+     }
+     AnimationInstance "{AF06D3F738A50403}anims/workspaces/player/player_main_heavy.asi"
+     AnimationIKPose "{5EF679CCFE1123FD}Assets/Weapons/Explosives/Mine_M15AT/anims/p_mine_ik.anm"
+    }
+    CustomAttributes {
+     PreviewRenderAttributes "{5A12A52945DC707E}" {
+      CameraPreset Left
+      CameraOrbitAngles -45 0 0
+      CameraDistanceToItem 0.32
+      CameraOffset 0 -0.05 0
+      ItemRenderRotation 0 0 0
+      AnimationInstance "{EFDC6FADA926C158}anims/workspaces/player/player_inventory_heavy.asi"
+     }
+     CharacterModifierAttributes "{5A4CB6450DEB8E32}" {
+      StanceLimits 0.05 1
+      SpeedLimit 1.6
+      ADSSpeedLimit 1
+      SpeedLimitItemPrimaryAction 1
+      SpeedLimitHighready 1
+      AllowGadgetUse 0
+      AllowJumping 0
+     }
+     HolsteredItemAttributes "{5A4CB6479A034F43}" {
+      HiddenHolstered 1
+     }
+    }
+    CommonItemType "MINE"
+   }
+  }
+  SCR_PlaceableItemComponent "{5A127CDA1D1B58E6}" {
+   m_fMaxAllowedTilt 35
+   m_eIgnoredPhysicsLayers 424148992
+   m_eMeasurementMethod FROM_ORIGIN
+   m_fMaxPlacementDistance 2
+   m_ePlacementType XYZ
+  }
+  SCR_PressureTriggerComponent "{59E6BE151DCC9953}" {
+  }
+  SCR_MineWeaponComponent "{59F2DC2C202D1AFB}" {
+   WeaponType RocketLauncher
+   AllowedRaise "Only lowered"
+   UIInfo GrenadeUIInfo "{5CDCD73FE938D67D}" {
+    m_MagIndicator SCR_MagazineIndicatorConfiguration "{5CDCD73FF80278AD}" : "{BAA581D6496CB2FE}Configs/WeaponInfo/MagazineIndicators/mine_m15at.conf" {
+    }
+    m_sAmmoType "#AR-AmmoType_M15"
+    m_bShowAmmoTypeText 1
+    m_eAmmoTypeFlags HE
+   }
+   BeActiveWhenDropped 1
+   BeActiveWhenInitWithoutParent 1
+  }
+  ActionsManagerComponent "{59E4E6938E65C2ED}" {
+   ActionContexts {
+    UserActionContext "{59E4E6938105F844}" {
+     ContextName "default"
+     Position PointInfo "{59E4E693875D0164}" {
+     }
+    }
+   }
+   additionalActions {
+    SCR_MinePickUpItemAction "{59E4E69368FB23DB}" {
+     ParentContextList {
+      "default"
+     }
+     UIInfo SCR_ActionUIInfo "{59E4E69360601200}" {
+      Name "#AR-Inventory_Pickup"
+      m_sIconName "pick-up"
+     }
+    }
+    SCR_MineEquipWeaponAction "{59E4E69349194C2B}" {
+     ParentContextList {
+      "default"
+     }
+     UIInfo SCR_ActionUIInfo "{59E4E6934E3F3C43}" {
+      Name "#AR-Inventory_Equip"
+      m_sIconName "pick-up"
+     }
+     "Sort Priority" 1
+    }
+    SCR_MineEquipHolsterAction "{5A78F5000397EFB7}" {
+     ParentContextList {
+      "default"
+     }
+     UIInfo SCR_ActionUIInfo "{5A78F50007E6463F}" {
+      Name "#AR-Inventory_EquipHolster"
+      m_sIconName "pick-up"
+     }
+    }
+    SCR_ActivateMineUserAction "{59F2823F52BEB01F}" {
+     ParentContextList {
+      "default"
+     }
+     UIInfo UIInfo "{59F2823F54F43D25}" {
+      Name "#AR-UserAction_Activate_Mine"
+     }
+     "Sort Priority" -1
+    }
+    SCR_MineAddFlagAction "{5A08900C4003096E}" {
+     ParentContextList {
+      "default"
+     }
+     UIInfo UIInfo "{5A08900C42B43B6C}" {
+      Name "#AR-UserAction_Add_Flag"
+     }
+    }
+   }
+  }
+  RplComponent "{59E4E694D3FCE264}" {
+   "Rpl State Override" Runtime
+   "Parent Node From Parent Entity" 0
+  }
+ }
+}

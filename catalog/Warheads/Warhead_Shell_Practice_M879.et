@@ -1,0 +1,10 @@
+GenericEntity : "{37F5A0EC34A67E9B}Prefabs/Weapons/Warheads/Warhead_Shell_Practice.et" {
+ ID "9D9BE68EA2672F76"
+ components {
+  SoundComponent "{D092A75ECEFAE456}" {
+   Filenames {
+    "{E4B20E50ABD10AE1}Sounds/Weapons/Ammo/MortarShells/Weapons_Ammo_MortarShell_8xmm_Practice.acp"
+   }
+  }
+ }
+}

@@ -1,0 +1,10 @@
+GenericEntity : "{9A47E13D04DF65FA}Prefabs/Weapons/Magazines/Magazine_M242/Box_25x137_M242_60rnd_APDST_base.et" {
+ ID "CA6BE4D6BB2D1077"
+ components {
+  MagazineComponent "{CA6BE4D6B4DAFD69}" {
+   AmmoConfig "{4B735215480BF99B}Configs/Weapons/Ammo/Ammo_25x137.conf"
+   AmmoMapping +{
+   }
+  }
+ }
+}

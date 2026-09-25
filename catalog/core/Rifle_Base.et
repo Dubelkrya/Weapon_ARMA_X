@@ -1,0 +1,18 @@
+GenericEntity : "{E1F14DB52DBFBC57}Prefabs/Weapons/Core/Weapon_Base.et" {
+ ID "CFBAA4B725411E45"
+ components {
+  EPF_PersistenceComponent "{5A28749C602565F8}" {
+   m_pSaveData EPF_ItemSaveDataClass "{5A28749F9ED6F91D}" {
+   }
+  }
+  SCR_WeaponAttachmentsStorageComponent "{51F080D5CE45A1A2}" {
+   Attributes SCR_ItemAttributeCollection "{51F080D5C64F12C5}" {
+    ItemDisplayName SCR_ItemHintUIInfo "{5222CB07CFF6712A}" {
+    }
+    m_bAutoDetectGridSize 0
+    m_iCustomGridWidth 6
+    m_iCustomGridHeight 2
+   }
+  }
+ }
+}

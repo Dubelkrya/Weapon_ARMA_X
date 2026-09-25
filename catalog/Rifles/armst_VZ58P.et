@@ -1,0 +1,9 @@
+GenericEntity : "{C19BFAF8A6334FD5}Prefabs/Weapons/Rifles/VZ58/Rifle_VZ58_base.et" {
+ ID "CFBAA4B725411E45"
+ components {
+  SCR_MeleeWeaponProperties "{545EBBB5FB8FA0D3}" {
+   m_fDamage 2
+  }
+ }
+ coords 0.352 -0.011 -0.056
+}

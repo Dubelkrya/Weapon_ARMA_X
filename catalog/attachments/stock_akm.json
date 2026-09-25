@@ -1,0 +1,48 @@
+{
+  "id": "stock_akm",
+  "role": "leaf",
+  "source": {
+    "resource": "Prefabs/Weapons/Attachments/Stocks/Stock_akm.et",
+    "resource_guid": "B0E764B069F6A153",
+    "meta_name": null,
+    "class": "GenericEntity",
+    "defined_in": "Prefabs/Weapons/Attachments/Stocks/Stock_akm.et"
+  },
+  "identity": {
+    "name": "Stock_akm",
+    "resource": "Prefabs/Weapons/Attachments/Stocks/Stock_akm.et"
+  },
+  "classification": {
+    "kind": "attachment",
+    "confidence": "folder",
+    "attachment_kind": "stock"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Weapons/Attachments/Stocks/Stock_akm.et",
+        "status": "local",
+        "class": "GenericEntity"
+      }
+    ],
+    "external_parents": [
+      {
+        "guid": "2DBBEA8AE9BD2C36",
+        "path": "Prefabs/Weapons/Attachments/Stocks/Stock_VZ58/Stock_VZ58_base.et",
+        "raw": "{2DBBEA8AE9BD2C36}Prefabs/Weapons/Attachments/Stocks/Stock_VZ58/Stock_VZ58_base.et"
+      }
+    ],
+    "used_as_base_by": [],
+    "chain_depth_local": 1
+  },
+  "references": [
+    {
+      "guid": "258515D10E89D62F",
+      "path": "Assets/akm/akm_stock.xob",
+      "resolved": "local",
+      "target": "Assets/Weapons_RUS/akm/akm_stock.xob",
+      "defined_in": "Prefabs/Weapons/Attachments/Stocks/Stock_akm.et"
+    }
+  ],
+  "warnings": []
+}

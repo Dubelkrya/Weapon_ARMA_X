@@ -1,0 +1,255 @@
+GenericEntity : "{9064206CBDE9CD95}Prefabs/Weapons/Core/Launcher_Base.et" {
+ ID "CFBAA4B725411E45"
+ components {
+  WeaponSoundComponent "{5A8685198A9AEEDD}" {
+   Filenames {
+    "{910AB3BC20ED9A93}Sounds/Weapons/Launchers/M72A3_LAW/Weapons_Launchers_M72A3_LAW_Shot.acp" "{2A43E72CC8506B92}Sounds/Weapons/Launchers/RPG75/Weapons_Launchers_RPG75_Handling.acp" "{98E0914D023CFBCC}Sounds/Weapons/_SharedData/Melee/Weapons_Melee_Launcher.acp" "{BE75864A922B37C0}Sounds/Weapons/_SharedData/PickUp/Weapons_PickUp_Launcher.acp" "{D8F675F3468362E2}Sounds/Weapons/_SharedData/Weapons_Sights_Actions.acp" "{06D3A8F7F0A920C2}Sounds/Weapons/_SharedData/Drop/Weapons_Drop_Launcher.acp"
+   }
+  }
+  MeshObject "{CFBAA4B701F95D69}" {
+   Object "{E1891CB05A1314A7}Assets/Weapons/Launchers/RPG75/RPG75_body.xob"
+  }
+  RigidBody "{5EE8CCEE68D6A18F}" {
+   SimState None
+   ModelGeometry 1
+  }
+  SCR_MeleeWeaponProperties "{5EE8CCEE68D6A185}" {
+   m_fDamage 45
+  }
+  SCR_WeaponAttachmentsStorageComponent "{51F080D5CE45A1A2}" {
+   Attributes SCR_ItemAttributeCollection "{51F080D5C64F12C5}" {
+    ItemDisplayName WeaponUIInfo "{5222CB047B845168}" {
+     Name "#AR-Weapon_RPG75_Name"
+     Description "#AR-Weapon_RPG75_Description"
+    }
+    ItemPhysAttributes ItemPhysicalAttributes "{5EE8CCEE68D6A1BB}" {
+     Weight 2.4
+     SizeSetupStrategy Manual
+     ItemDimensions 25 25 25
+     ItemVolume 2500
+    }
+    ItemAnimationAttributes ItemAnimationAttributes "{5284960DAA53DDFC}" {
+     IkSettings {
+      ItemIKSettings "{5284960DA9B88634}" {
+      }
+      ItemIKSettings "{5284960DA9EA45EA}" {
+       IkSettingsProne 0x7 0
+      }
+      ItemIKSettings "{5284960DA87282B4}" {
+       IkSettingsStand 0x7 0
+       IkSettingsCrouch 0x7 0
+       IkSettingsProne 0x7 0
+      }
+      ItemIKSettings "{5526E345D0462B03}" {
+       MovementSpeedRange 0 5
+       IkSettingsStand 0x6 0
+       IkSettingsCrouch 0x4 0
+       IkSettingsProne 0x4 0
+      }
+     }
+     AnimationInstance "{63C77D7FC7BB0F50}anims/workspaces/player/player_main_RPG75.asi"
+     AnimationIKPose "{E60CF477E68D99B8}Assets/Weapons/Launchers/RPG75/anims/anm/p_RPG75_ik.anm"
+    }
+    CustomAttributes {
+     PreviewRenderAttributes "{5EE8CCEE68D6A1AF}" {
+      CameraPreset Right
+      CameraDistanceToItem 1
+      FOV 20
+      AnimationInstance "{A99BA5D249B525FD}anims/workspaces/player/player_inventory_M72.asi"
+     }
+    }
+   }
+  }
+  SCR_WeaponBlastComponent "{624C97444AC1B357}" {
+   m_aBlastEffects {
+    SCR_WeaponBlastEffect "{64D6C9BC417704E4}" : "{F2479EB25365462C}Prefabs/Weapons/Core/Damage/WeaponBlast/WeaponBlastEffect_Damage.conf" {
+     m_fDamageValue 154.98
+    }
+    SCR_WeaponBlastEffect "{64D6C9BC586FED82}" : "{32657999002110ED}Prefabs/Weapons/Core/Damage/WeaponBlast/WeaponBlastEffect_Concussion.conf" {
+    }
+   }
+   m_fBlastLength 2.32
+   m_fBlastConeAngle 20
+   m_BlastOrigin PointInfo "{64D6C9BC63C8B189}" {
+    PivotID "w_slide"
+    Offset 0 0 -0.0518
+    Angles 0 180 0
+   }
+  }
+  WeaponComponent "{CFBAA4B706BA66E8}" {
+   components {
+    AttachmentSlotComponent "{B502E4DC8A9E835E}" {
+     AttachmentSlot InventoryStorageSlot optics {
+      PivotID "slot_optics"
+      ChildPivotID "snap_weapon"
+      Enabled 0
+     }
+    }
+    SCR_MuzzleInMagComponent "{50F65D04F21F7633}" {
+     components {
+      MuzzleEffectComponent "{50F65D04EE343E7E}" {
+       ParticleEffect "{0B4A2E9ADB3FC664}Particles/Weapon/RPG_75_muzzle_front.ptc"
+       EffectPosition EntitySlotInfo "{50F65D04CCCEB691}" {
+        Angles 0 180 0
+       }
+      }
+      SCR_MuzzleEffectComponent "{5EE8CCEE68D6A1A0}" {
+       ParticleEffect "{C085879348375C59}Particles/Weapon/RPG_75_muzzle_back.ptc"
+       EnabledOnDedicatedServer 1
+       EffectPosition EntitySlotInfo "{52C8A8C1586FF1B3}" {
+        PivotID "barrel_chamber"
+        Offset 0 0 0.3
+        Angles 0 180 0
+       }
+      }
+     }
+     ProjectileSpawnPositions {
+      PointInfo "{50F65D0454F95B2D}" {
+      }
+     }
+     DispersionRange 38
+     WeaponAimModifiers {
+      RecoilWeaponAimModifier "{5EE8CCEE68D6A1D0}" {
+       LinearData RecoilData "{5EE8CCEE68D6A1CE}" {
+        "Curve X" {
+         0 0.5 0.058 0.738 0.324 0.452 0.659 0.498 1 0.5
+        }
+        "Curve Y" {
+         0 0.5 0.06 0.748 0.317 0.452 0.631 0.495 1 0.5
+        }
+        "Curve Z" {
+         0 0.498 0.064 0.8 0.324 0.348 0.646 0.498 1 0.5
+        }
+        "Curve Time Scale" 1.45
+        "Curve Magnitudes" 1 1 1
+        "Curve Mins" -0.005 -0.01 -0.04
+        "Curve Maxs" 0.005 0.015 -0.02
+       }
+       AngularData RecoilData "{5EE8CCEE68D6A1CD}" {
+        "Curve X" {
+         0 0.5 0.121 0.597 0.651 0.502 1 0.5
+        }
+        "Curve Y" {
+         0 0.5 0.063 0.849 0.32 0.231 0.692 0.495 1 0.5
+        }
+        "Curve Z" {
+         0 0.5 0.058 0.363 0.319 0.578 0.654 0.498 1 0.5
+        }
+        "Curve Time Scale" 1.45
+        "Curve Magnitudes" 1 1 1
+        "Curve Mins" -0.01 -1.5 -8
+        "Curve Maxs" 0.01 -0.5 -2
+       }
+       TurnOffsetData RecoilData "{5EE8CCEE68D6A1CB}" {
+        "Curve X" {
+         0.73 0.765 0.899 0.441
+        }
+        "Curve Y" {
+         0.501 0.725 0.878 0.343
+        }
+        "Curve Z" {
+         0.397 0.708 0.859 0.262
+        }
+        "Curve Time Scale" 5.925
+        "Curve Magnitudes" 1 1 1
+        "Curve Mins" 1 7.5 270
+        "Curve Maxs" 1 7.5 275
+        "Base Recoil Scale" 7.577
+        "Move Recoil Scale" 0.494
+       }
+      }
+      ZeroingWeaponAimModifier "{5EE8CCEE68D6A1C9}" {
+      }
+     }
+     UIInfo MuzzleUIInfo "{50F65D05B8374621}" {
+      m_bShowFiremode 0
+      m_MagIndicator SCR_MagazineIndicatorConfiguration "{5660B15A4287B00B}" : "{650F378E6751CC17}Configs/WeaponInfo/MagazineIndicators/rocket_m72a3.conf" {
+      }
+     }
+     Disposable 1
+     ProjectilePosition InventoryStorageSlot "{51070C3B47428343}" {
+      InspectionWidgetOffset 0 0.035 -0.199
+     }
+     AmmoTemplate "{0CB1A646A51F6E0D}Prefabs/Weapons/Ammo/Ammo_Rocket_RPG75.et"
+     ProjectileVisible 1
+     m_bCanBeReloaded 0
+    }
+    SightsComponent "{BB23A637957CFFF8}" {
+     SightsPosition PointInfo "{BB23A63796688E69}" {
+     }
+     SightsRanges {
+      SightRangeInfo "{6294A313BDFE2140}" {
+       Range 0 100
+       WeaponPosition PointInfo "{6294A313BDFE2172}" {
+        Offset 0 -0.001 0
+        Angles 1.34 0 0
+       }
+      }
+      SightRangeInfo "{6294A313BDF1EF84}" {
+       Range 0 200
+       WeaponPosition PointInfo "{6294A313BDF1EFB7}" {
+        Offset 0 -0.0016 0
+        Angles 2.26 0 0
+       }
+      }
+      SightRangeInfo "{6294A313BDF4132C}" {
+       Range 0 250
+       WeaponPosition PointInfo "{6294A313BDF410D8}" {
+        Offset 0 -0.0022 0
+        Angles 3.07 0 0
+       }
+      }
+      SightRangeInfo "{6294A313BDF72EEC}" {
+       Range 0 300
+       WeaponPosition PointInfo "{6294A313BDF72E92}" {
+        Offset 0 -0.003 0
+        Angles 4.07 0 0
+       }
+      }
+     }
+     SightsPointFront PointInfo "{6294905B907A158A}" {
+      PivotID "snap_rearsight"
+     }
+     SightsPointRear PointInfo "{6294905B95202967}" {
+      PivotID "snap_frontsight"
+      Offset 0 -0.0185 0
+     }
+     m_bForceSimpleDOF 1
+    }
+    WeaponAnimationComponent "{60B4EA76EB15F6E0}" {
+     AnimGraph "{453EBD1F1B4468E3}Assets/Weapons/Launchers/workspaces/RPG75.agr"
+     AnimInstance "{9F482CA95A156713}Assets/Weapons/Launchers/workspaces/RPG75_weapon.asi"
+     AnimInjection AnimationAttachmentInfo "{5EE8CCEE68D735B4}" {
+      AnimGraph "{453EBD1F1B4468E3}Assets/Weapons/Launchers/workspaces/RPG75.agr"
+      AnimInstance "{6416BD98C21403FF}Assets/Weapons/Launchers/workspaces/RPG75_player.asi"
+      BindingName "Weapon"
+     }
+     BindWithInjection 1
+    }
+   }
+   obstructionTestAddedLength 0.15
+   SoundInt 1050400
+   UIInfo WeaponUIInfo "{CC3BA6A2C42F09F4}" {
+    Name "#AR-Weapon_RPG75_Name"
+    Description "#AR-Weapon_RPG75_Description"
+    Icon ""
+   }
+   WeaponOffset 0 0 0
+  }
+  ActionsManagerComponent "{A29AE67FF4D82B0F}" {
+   ActionContexts {
+    UserActionContext "{5086F9ADF588DCA4}" {
+     Position PointInfo "{5086F9ADE97650DF}" {
+      Offset 0 0.0566 0.0544
+     }
+    }
+    UserActionContext "{5A1E58F7AED270D4}" {
+     Position PointInfo "{5EE8CCEE68D73542}" {
+      PivotID "w_safety"
+     }
+     Radius 0.05
+    }
+   }
+  }
+ }
+}

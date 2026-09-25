@@ -1,0 +1,16 @@
+Turret : "{4AD877DEA242E512}Prefabs/Weapons/Core/Turret_Base.et" {
+ ID "51ACD0965653D003"
+ components {
+  MeshObject "{51ACD09C4E0B7D16}" {
+   Object ""
+  }
+  SCR_VehicleCameraDataComponent "{51AE850D79DDB1F5}" {
+   Enabled 0
+   m_fRollFactor 0.1
+   m_fPitchFactor 0.1
+  }
+  WeaponSlotComponent "{51ACD09C6BFEEE6A}" {
+   WeaponTemplate ""
+  }
+ }
+}

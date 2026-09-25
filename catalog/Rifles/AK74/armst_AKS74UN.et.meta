@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{B498EC2A3FE4B46C}Imported/VanillaSources/Prefabs/Weapons/Rifles/AK74/armst_AKS74UN.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

@@ -1,0 +1,71 @@
+Turret : "{29F0CC704A582154}Prefabs/Weapons/Tripods/6T7/Tripod_6T7_NSV.et" {
+ ID "52D30EFBEBC74642"
+ components {
+  SoundComponent "{58E0961DB6C453D6}" {
+   Filenames + {
+    "{1B4D2E3FE51ABC31}Sounds/Weapons/_SharedData/CSW/Weapons_CSW_Deploy.acp"
+   }
+  }
+  SCR_MultiPartDeployableItemComponent "{61E2C6A64C6CC962}" {
+   m_bRemoveAllItemsWhenDeleted 1
+   m_aVariants {
+    SCR_DeployableVariantContainer "{6554A5AB931F4290}" {
+     m_sReplacementPrefab "{184DFCEFE574E776}Prefabs/Items/Equipment/Tripods/6T7/Part_NSV_Tripod.et"
+     m_aAdditionalPrefabs {
+      SCR_AdditionalDeployablePart "{65647954670B13B9}" {
+       m_sPrefab "{184DFCEFE574E775}Prefabs/Items/Equipment/Tripods/6T7/Part_NSV_Gun.et"
+      }
+     }
+     m_bUsePartRotationAndPosition 1
+    }
+   }
+   m_eSurfaceObservationBehaviour DISMANTLE
+  }
+  SCR_SlotCompositionComponent "{6556A2FA6856E1EB}" {
+  }
+  SCR_UniversalInventoryStorageComponent "{570EACF4F2F94F1B}" {
+   InitialStorageSlots {
+    InventoryStorageSlot Magazine_1 {
+     Prefab ""
+    }
+    InventoryStorageSlot Magazine_2 {
+     Prefab ""
+    }
+    InventoryStorageSlot Magazine_3 {
+     Prefab ""
+    }
+   }
+  }
+  WeaponSlotComponent "{51ACD09C6BFEEE6A}" {
+   WeaponTemplate "{F78CBC1569C234C7}Prefabs/Weapons/HeavyWeapons/NSV/Deployable_HMG_NSV.et"
+  }
+  ActionsManagerComponent "{51ACD09C7181BA0B}" {
+   ActionContexts {
+    UserActionContext "{6552B95DDE49FF56}" {
+     ContextName "deployable"
+     Position PointInfo "{6552B95DD6AABD9B}" {
+      Offset 0 0.408 0
+      Angles 90 0 0
+     }
+     Height 1
+    }
+   }
+   additionalActions {
+    SCR_DeployMultiPartInventoryItemAction "{61E2C6A65944B5BD}" : "{53ACE069C87D43A3}Prefabs/Weapons/Core/Configs/Actions/DismantleMultipartInventoryItemAction.conf" {
+     ParentContextList {
+      "deployable"
+     }
+     UIInfo SCR_ActionUIInfo "{61B48E9F567C096C}" {
+      Description "#AR-EditableEntity_Tripod_6T7_NSV"
+     }
+    }
+   }
+  }
+ }
+ {
+  GenericEntity : "{E51E2E1D77B54223}Prefabs/Compositions/Misc/CustomEntities/CompositionDecals/CompositionDecal_Dirt_Patch_01.et" {
+   ID "655484C6D56E5B72"
+   coords 0 0 -0.156
+  }
+ }
+}

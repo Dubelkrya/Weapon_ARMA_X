@@ -1,0 +1,28 @@
+GenericEntity : "{80CBC9A8D95A8A7B}Prefabs/Weapons/MachineGuns/PKM/MG_PKMN.et" {
+ ID "CFBAA4B725411E45"
+ components {
+  SCR_DamageManagerComponent "{694AAD1607FEF760}" {
+   "Additional hit zones" {
+    SCR_DestructibleHitzone main : "{20D6C595AE450F55}Prefabs/Vehicles/Core/Configs/HitZones/VehiclePart_HZ.conf" {
+     IgnoreExplosions 1
+    }
+   }
+  }
+  WeaponComponent "{CFBAA4B706BA66E8}" {
+   components {
+    MuzzleComponent "{50F64C4591CD7AA6}" {
+     WeaponAimModifiers {
+      SCR_RecoilForceAimModifier "{694AAD17CC754726}" : "{FB34D3E63E513BBC}Prefabs/Weapons/Core/Configs/AimModifiers/RecoilForceAimModifier_MountedPKM.conf" {
+      }
+     }
+     ReloadDuration 7.5
+    }
+   }
+   SoundInt 1040350
+   WeaponSlotType "hmg"
+  }
+  RplComponent "{E052E71DCB007AF2}" {
+   "Parent Node From Parent Entity" 1
+  }
+ }
+}

@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{42E828009A5E2BC2}Imported/VanillaSources/Prefabs/Weapons/Rifles/M16/Rifle_M16A2_carbine_M203_Tutorial.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

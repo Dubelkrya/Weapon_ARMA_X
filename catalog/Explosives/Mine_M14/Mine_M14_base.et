@@ -1,0 +1,98 @@
+GenericEntity : "{9C80A507960AA473}Prefabs/Weapons/Core/Mine_base.et" {
+ ID "5968D2B6A82C6019"
+ components {
+  SoundComponent "{5A6B57364EA203C7}" {
+   Filenames {
+    "{7F55C292FBA55048}Sounds/Items/_SharedData/Drop/Items_Drop_Generic_Metallic.acp" "{0026043E3CD828D0}Sounds/Items/_SharedData/PickUp/Items_PickUp_Generic_Metallic.acp" "{44E0E9B029B79A90}Sounds/Weapons/Explosives/Mine_M14/Weapons_Explosives_M14_Handling.acp" "{1235913627387846}Sounds/Weapons/Explosives/_SharedData/Weapons_Explosives_APMine_Generic_Placement.acp"
+   }
+  }
+  BaseTriggerComponent "{59E4E69D8E9B4323}" {
+   PROJECTILE_EFFECTS {
+    ExplosionEffect "{648EC8EA232219D4}" {
+     EffectPrefab "{8B8F29E60D7C197A}Prefabs/Weapons/Warheads/Warhead_Mine_M14AP.et"
+     SoundEvent "SOUND_EXPLOSION"
+    }
+   }
+  }
+  MeshObject "{5968D9C73C08706E}" {
+   Object "{8D8FE4BD1107FE30}Assets/Weapons/Explosives/Mine_M14/Mine_M14.xob"
+  }
+  SCR_AntiPersonnelMineCollisionHandlerComponent "{6530DCC4D6C412BD}" {
+  }
+  SCR_MineDamageManager "{5A187C4DB2CF86F2}" {
+   "Additional hit zones" {
+    SCR_MineHitZone Main {
+     "Explosive multiplier" 2.8
+     "Incendiary multiplier" 2
+    }
+   }
+  }
+  SCR_MineInventoryItemComponent "{59E4E694B93DC656}" {
+   Attributes SCR_ItemAttributeCollection "{5A10B8E3F1D55606}" {
+    ItemDisplayName WeaponUIInfo "{5A10B8E3F31D239B}" {
+     Name "#AR-Weapon_M14APERS_Name"
+     Description "#AR-Weapon_M14APERS_Description"
+    }
+    ItemPhysAttributes ItemPhysicalAttributes "{5A10B8E3E50A16D2}" {
+     Weight 0.099
+    }
+    ItemAnimationAttributes ItemAnimationAttributes "{5A10B8E3C98BD0A4}" {
+     AnimationInstance "{4FCBEA45CAEBC9C0}anims/workspaces/player/player_main_1h.asi"
+     AnimationIKPose "{403D9B1823143A51}Assets/Weapons/Explosives/Mine_M14/anims/anm/p_mine_us_M14_ik.anm"
+    }
+    CustomAttributes {
+     PreviewRenderAttributes "{5A12A52945DC707E}" {
+      CameraOffset 0 0 0
+      FOV 15
+      AnimationInstance "{CD706CDA25024989}anims/workspaces/player/player_inventory_1handed.asi"
+      LodModel 1
+     }
+     CharacterModifierAttributes "{5A4CB6450DEB8E32}" {
+      StanceLimits 0.05 1
+      SpeedLimit 3
+      ADSSpeedLimit 3
+      SpeedLimitHighready 3
+      AllowJumping 1
+     }
+    }
+    m_Size SLOT_1x1
+   }
+  }
+  SCR_PressureTriggerComponent "{59E6BE151DCC9953}" {
+   ArmingTime 2
+   m_sFuzeMeshName "Mine_M14_Clip"
+  }
+  SCR_MineWeaponComponent "{59F2DC2C202D1AFB}" {
+   WeaponType FragGrenade
+   AllowedRaise "ADS, raised and lowered allowed"
+   UIInfo GrenadeUIInfo "{5CDCD73FE938D67D}" {
+    Name "#AR-Weapon_M14APERS_Name"
+    Description "#AR-Weapon_PMN4_Description"
+    m_sAmmoType "#AR-AmmoType_M14"
+   }
+   WeaponSlotType "grenade"
+  }
+  ActionsManagerComponent "{59E4E6938E65C2ED}" {
+   additionalActions {
+    SCR_ActivateMineUserAction "{59F2823F52BEB01F}" {
+     m_vAdditionalRotation -90 0 0
+    }
+    SCR_DisarmMineAction "{65146DC9EB635B0B}" : "{7BD7363B3A75A5E1}Prefabs/Weapons/Core/Configs/Actions/DisarmMineAction.conf" {
+     m_vAdditionalRotation -90 0 0
+    }
+   }
+  }
+  SCR_MineAnimationComponent "{61A8AE3FA8E6A63C}" {
+   AnimGraph "{7018F6E7B8273396}Assets/Weapons/Explosives/workspace/M14_mine.agr"
+   AnimInstance "{189D38A184CB588C}Assets/Weapons/Explosives/workspace/M14_weapon.asi"
+   AnimInjection AnimationAttachmentInfo "{61A8AE33E1A15517}" {
+    AnimGraph "{7018F6E7B8273396}Assets/Weapons/Explosives/workspace/M14_mine.agr"
+    AnimInstance "{E3C3A9901CCA3C60}Assets/Weapons/Explosives/workspace/M14_player.asi"
+    BindingName "Weapon"
+   }
+   BindWithInjection 1
+   AutoVariablesBind 1
+   DeactivationDelay 0
+  }
+ }
+}

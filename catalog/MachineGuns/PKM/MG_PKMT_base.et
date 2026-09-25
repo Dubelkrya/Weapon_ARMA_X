@@ -1,0 +1,112 @@
+GenericEntity : "{F54F6C453A8CB478}Prefabs/Weapons/Core/MachineGun_Base.et" {
+ ID "CFBAA4B725411E45"
+ components {
+  WeaponSoundComponent "{5A8685198A9AEEDD}" {
+   Filenames {
+    "{5049E0395DB2A548}Sounds/Weapons/Machineguns/PKM/Weapons_Machineguns_PKMT_Shot.acp" "{9BD32DC9C8D31988}Sounds/Weapons/Machineguns/PKM/Weapons_Machineguns_PKM_Handling.acp"
+   }
+   IncludeInactive 1
+  }
+  MeshObject "{CFBAA4B701F95D69}" {
+   Object "{BBCC383293E619E5}Assets/Weapons/MachineGuns/PKMT/PKMT_body.xob"
+   PixelSizeScale 10
+  }
+  RigidBody "{5EA688BB5D9FA742}" {
+   SimState Collision
+   ModelGeometry 1
+  }
+  SCR_WeaponAttachmentsStorageComponent "{51F080D5CE45A1A2}" {
+   Attributes SCR_ItemAttributeCollection "{51F080D5C64F12C5}" {
+    ItemDisplayName WeaponUIInfo "{5222CB07E1D123E9}" {
+     Name "#AR-Weapon_PKMT_Name"
+     Description "#AR-Weapon_PKMT_Description"
+    }
+    ItemPhysAttributes ItemPhysicalAttributes "{5534C2679936A41C}" {
+     Weight 11.7
+     SizeSetupStrategy Volume
+     ItemVolume 3000
+    }
+    CustomAttributes {
+     PreviewRenderAttributes "{5534BB9B9A3E369E}" {
+      CameraPreset Right
+      CameraDistanceToItem 1.1
+     }
+    }
+   }
+  }
+  WeaponComponent "{CFBAA4B706BA66E8}" {
+   components {
+    AttachmentSlotComponent "{B502E4DC8A9E835E}" {
+     AttachmentSlot InventoryStorageSlot optics {
+      PivotID "slot_optics"
+      ChildPivotID "snap_weapon"
+      Enabled 0
+     }
+    }
+    SightsComponent "{BB23A637957CFFF8}" {
+     SightsPosition PointInfo "{BB23A63796688E69}" {
+      PivotID "eye"
+     }
+    }
+    MuzzleComponent "{50F64C4591CD7AA6}" {
+     components {
+      CaseEjectingEffectComponent "{5122AAD190FCA21D}" {
+       Enabled 1
+       ParticleEffect "{40C8AD1204EC2629}Particles/Weapon/Smoke_PKM.ptc"
+       EffectPosition EntitySlotInfo "{513A938439231378}" {
+        PivotID "barrel_muzzle"
+        Angles 0 0 0
+       }
+       HasSound 0
+      }
+      SCR_MuzzleEffectComponent "{C9B3271BB22CDB68}" {
+       ParticleEffect "{A0CCFED3034A6B8D}Particles/Weapon/Muzzle_PKMT.ptc"
+       EffectPosition EntitySlotInfo "{C9B3271BB85B5D32}" {
+       }
+      }
+     }
+     FireModes {
+      BaseFireMode "{B80A64F4A8EF8333}" : "{A512F292D96BCB9F}Prefabs/Weapons/Core/Configs/FireModes/FireMode_Auto.conf" {
+       RoundsPerMinute 800
+      }
+     }
+     MagazineWell MagazineWellPKMT "{5534C2679936A420}" {
+     }
+     BulletInitSpeedCoef 1.036
+     DispersionDiameter 0.4
+     DispersionRange 260
+     UIInfo MuzzleUIInfo "{2FBBA72C906C627E}" {
+      m_bShowCaliber 1
+      m_sCaliber "#AR-AmmunitionID_762x54mm"
+     }
+     MagazinePosition InventoryStorageSlot "{B80A64F4C834E9CB}" {
+      PivotID ""
+      Offset 0.18 -0.13 0.15
+     }
+     MagazineTemplate "{D8421F6E70B2FB4F}Prefabs/Weapons/Magazines/Box_762x54_PK_250rnd_4Ball_1Tracer.et"
+    }
+    WeaponAnimationComponent "{60B4EA76EB15F6E0}" {
+     AnimGraph "{952A214C4F090BC0}Assets/Weapons/MachineGuns/workspaces/pkm.agr"
+     AnimInstance "{5E31DF5D7C33047C}Assets/Weapons/MachineGuns/workspaces/pkm_weapon.asi"
+     AutoVariablesBind 1
+    }
+   }
+   slightObstrWeaponMaxZOffset 0.1
+   signiObstrWeaponMaxZOffset 0.3
+   SoundInt 1040300
+   UIInfo WeaponUIInfo "{CC3BA6A2C42F09F4}" {
+    Name "#AR-Weapon_PKMT_Name"
+    Icon ""
+    m_bShowWeaponName 1
+   }
+   WeaponSlotType "hmg"
+  }
+  WeaponGamepadEffectsManagerComponent "{61A2E5C3F4458F86}" {
+   "Default ADS Trigger effect" GamepadTriggerEffect "{61B129618F212411}" : "{0DE3E1891C66DCEB}Prefabs/Weapons/Core/Configs/TriggerEffects/ADS/TriggerEffect_ADSMedium.conf" {
+   }
+  }
+  RplComponent "{E052E71DCB007AF2}" {
+   "Parent Node From Parent Entity" 1
+  }
+ }
+}

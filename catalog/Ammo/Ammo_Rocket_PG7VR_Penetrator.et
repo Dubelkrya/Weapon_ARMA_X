@@ -1,0 +1,17 @@
+Projectile : "{165D6196250A1320}Prefabs/Weapons/Core/Ammo_Penetrator_Base.et" {
+ ID "DA5C6308000CDEF2"
+ components {
+  ShellMoveComponent "{851AA4A2AE0A5691}" {
+   ProjectileEffects {
+    BaseDamageEffect "{5168BBF3DBD79134}" {
+    }
+    ExplosionEffect "{85DB664DDCA5D5B0}" {
+    }
+    BaseDamageEffect "{56C56AA872D12431}" {
+    }
+   }
+   Diameter 37
+   PenetrationDepth 620
+  }
+ }
+}

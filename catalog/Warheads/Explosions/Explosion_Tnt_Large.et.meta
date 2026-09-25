@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{87240248E885D95D}Imported/VanillaSources/Prefabs/Weapons/Warheads/Explosions/Explosion_Tnt_Large.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

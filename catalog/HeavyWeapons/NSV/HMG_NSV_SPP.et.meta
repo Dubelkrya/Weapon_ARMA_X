@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{26EE34EEEA2E55CB}Imported/VanillaSources/Prefabs/Weapons/HeavyWeapons/NSV/HMG_NSV_SPP.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

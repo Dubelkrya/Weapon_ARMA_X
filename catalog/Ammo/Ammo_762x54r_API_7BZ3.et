@@ -1,0 +1,26 @@
+Projectile : "{AC29AE3D5ECD6390}Prefabs/Weapons/Ammo/Ammo_762x54r_Ball_57N323S.et" {
+ ID "DA5C6308000CDEF2"
+ components {
+  CollisionTriggerComponent "{62EAC200F7EAA83B}" : "{6CCC3AAFB5A64CE0}Prefabs/Weapons/Core/Components/CollisionTrigger_API.ct" {
+   PROJECTILE_EFFECTS {
+    ProjectileDamage "{62EAC20FC782CED5}" {
+     DamageValue 3
+    }
+   }
+  }
+  ShellMoveComponent "{851AA4A2AE0A5691}" {
+   InitSpeedVariation 15
+   DispersionMultiplier 1.5
+   Mass 0.0104
+   BallisticTableConfig "{BA5C9CD2D97BE93C}Configs/Weapons/AIBallisticTables/AIBT_762x54r_API_7BZ3.conf"
+   AirDrag 0.000009
+   Length 38.15
+   MushroomingDamageMultiplier 0
+   TumblingDamageMultiplier 0
+   PenetrationDepth 10
+   PenetrationSpeed 605
+  }
+ }
+ ProjectileModel "{3AA8F2E77A8CB6DB}Assets/Weapons/Ammo/Bullets/762x54/Bullet_762x54_T46.xob"
+ CartridgeModel "{71F92160489B0A8E}Assets/Weapons/Ammo/Bullets/762x54/Cartridge_762x54_T46.xob"
+}

@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{251CE0FF3282B6F9}Imported/VanillaSources/Prefabs/Weapons/Core/Configs/TriggerEffects/ADS/TriggerEffect_ADS.conf"
+ Configurations {
+  CONFResourceClass PC {
+  }
+  CONFResourceClass XBOX_ONE : PC {
+  }
+  CONFResourceClass XBOX_SERIES : PC {
+  }
+  CONFResourceClass PS4 : PC {
+  }
+  CONFResourceClass PS5 : PC {
+  }
+  CONFResourceClass HEADLESS : PC {
+  }
+ }
+}

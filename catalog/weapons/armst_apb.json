@@ -1,0 +1,133 @@
+{
+  "id": "armst_apb",
+  "role": "leaf",
+  "source": {
+    "resource": "Prefabs/Weapons/Handguns/armst_APB.et",
+    "resource_guid": "5D3DA7E84135B278",
+    "meta_name": null,
+    "class": "GenericEntity",
+    "defined_in": "Prefabs/Weapons/Handguns/armst_APB.et"
+  },
+  "identity": {
+    "name": "armst_APB",
+    "resource": "Prefabs/Weapons/Handguns/armst_APB.et"
+  },
+  "classification": {
+    "kind": "weapon",
+    "confidence": "components"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Weapons/Handguns/armst_APB.et",
+        "status": "local",
+        "class": "GenericEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Handguns/armst_PM.et",
+        "status": "local",
+        "class": "GenericEntity"
+      }
+    ],
+    "external_parents": [
+      {
+        "guid": "B7132459C07777CA",
+        "path": "Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et",
+        "raw": "{B7132459C07777CA}Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et"
+      }
+    ],
+    "used_as_base_by": [],
+    "chain_depth_local": 2
+  },
+  "references": [
+    {
+      "guid": "A72F391188860251",
+      "path": "Assets/Apb/APB_weapon.xob",
+      "resolved": "local",
+      "target": "Assets/Weapons_RUS/Apb/APB_weapon.xob",
+      "defined_in": "Prefabs/Weapons/Handguns/armst_APB.et"
+    },
+    {
+      "guid": "091997F8F8C15516",
+      "path": "Particles/Weapon/Attachments/Suppressor_PBS4.ptc",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "Prefabs/Weapons/Handguns/armst_APB.et"
+    },
+    {
+      "guid": "389EB226473CD590",
+      "path": "Prefabs/Weapons/Magazines/Magazine_9x18_APB_20rnd_Ball.et",
+      "resolved": "local",
+      "target": "Prefabs/Weapons/Magazines/Magazine_9x18_APB_20rnd_Ball.et",
+      "defined_in": "Prefabs/Weapons/Handguns/armst_APB.et"
+    }
+  ],
+  "warnings": [],
+  "data": {
+    "identity": {
+      "name": {
+        "value": "APB",
+        "defined_in": "Prefabs/Weapons/Handguns/armst_APB.et",
+        "inherited": false
+      }
+    },
+    "fire_modes": [
+      {
+        "mode_id": "{65F2620630730947}",
+        "ui_name": "Auto",
+        "rounds_per_minute": null,
+        "max_burst": {
+          "value": -1,
+          "defined_in": "Prefabs/Weapons/Handguns/armst_APB.et",
+          "inherited": false
+        },
+        "defined_in": "Prefabs/Weapons/Handguns/armst_APB.et"
+      }
+    ],
+    "physical": {
+      "MeleeDamage": {
+        "value": 2,
+        "defined_in": "Prefabs/Weapons/Handguns/armst_APB.et",
+        "inherited": false
+      },
+      "Model": {
+        "guid": "A72F391188860251",
+        "path": "Assets/Apb/APB_weapon.xob",
+        "defined_in": "Prefabs/Weapons/Handguns/armst_APB.et"
+      }
+    },
+    "magazine": {
+      "magazine_well": {
+        "name": "MagazineWell",
+        "class": "MagazineWellAPB",
+        "defined_in": "Prefabs/Weapons/Handguns/armst_APB.et"
+      },
+      "magazine_template": {
+        "guid": "389EB226473CD590",
+        "path": "Prefabs/Weapons/Magazines/Magazine_9x18_APB_20rnd_Ball.et",
+        "defined_in": "Prefabs/Weapons/Handguns/armst_APB.et"
+      }
+    },
+    "ballistics": {
+      "bullet_init_speed_coef": null,
+      "dispersion_diameter": null,
+      "dispersion_range": null
+    },
+    "aim": {
+      "recoil": null,
+      "sway": null
+    },
+    "sights": {
+      "switch_skip": null,
+      "ranges": [],
+      "defined_in": "Prefabs/Weapons/Handguns/armst_APB.et"
+    },
+    "attachment_slots": [],
+    "muzzle_attachment": null,
+    "animation": {
+      "anim_graph": null,
+      "anim_instance": null
+    }
+  },
+  "derived": {}
+}

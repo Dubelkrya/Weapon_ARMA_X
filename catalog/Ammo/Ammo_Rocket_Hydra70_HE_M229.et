@@ -1,0 +1,36 @@
+EjectableProjectile : "{ECD8628EBF7E5F6B}Prefabs/Weapons/Ammo/Ammo_Rocket_Hydra70.et" {
+ ID "DA5C6308000CDEF2"
+ components {
+  CollisionTriggerComponent "{60C2F0C44D951E69}" {
+   PROJECTILE_EFFECTS {
+    ExplosionEffect "{60C2F0C44D951E63}" {
+     EffectPrefab "{E010E4F56E16252C}Prefabs/Weapons/Warheads/Warhead_Hydra70_HE_M229.et"
+    }
+    SCR_ExplosionAmmoEffect "{66A0CD1AEC008B6D}" {
+    }
+   }
+  }
+  InventoryItemComponent "{526E87778842822F}" {
+   Attributes SCR_ItemAttributeCollection "{526E87778ACB229F}" {
+    ItemDisplayName UIInfo "{526E8777859BAACF}" {
+     Name "#AR-Magazine_Hydra70_M229_Name"
+     Description "#AR-Magazine_Hydra70_M229_Description"
+    }
+    ItemPhysAttributes ItemPhysicalAttributes "{60C2F0C44D951E10}" {
+     Weight 13.9
+    }
+   }
+  }
+  MagazineComponent "{50F6614BB5D5B0A8}" {
+   UIInfo MagazineUIInfo "{560AE4EBFA0176D4}" {
+    m_eAmmoTypeFlags FRAG
+   }
+   ItemModel "{93D6B830252A6FEC}Assets/Weapons/Ammo/Rockets/Hydra/Hydra70_M229_item.xob"
+  }
+  MeshObject "{851AA4A2AE0A56BF}" {
+   Object "{7144B0ACBE74109B}Assets/Weapons/Ammo/Rockets/Hydra/Hydra70_M229.xob"
+  }
+ }
+ ProjectileModel "{7144B0ACBE74109B}Assets/Weapons/Ammo/Rockets/Hydra/Hydra70_M229.xob"
+ CartridgeModel "{93D6B830252A6FEC}Assets/Weapons/Ammo/Rockets/Hydra/Hydra70_M229_item.xob"
+}

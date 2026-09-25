@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{5598835C46FC5D92}Imported/VanillaSources/Prefabs/Weapons/Rifles/Rifle_M16A2_carbine.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

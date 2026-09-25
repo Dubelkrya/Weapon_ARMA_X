@@ -1,0 +1,43 @@
+{
+  "id": "armst_m9",
+  "role": "leaf",
+  "source": {
+    "resource": "Prefabs/Weapons/Handguns/armst_M9.et",
+    "resource_guid": "1353C6EAD1DCFE43",
+    "meta_name": null,
+    "class": "GenericEntity",
+    "defined_in": "Prefabs/Weapons/Handguns/armst_M9.et"
+  },
+  "identity": {
+    "name": "armst_M9",
+    "resource": "Prefabs/Weapons/Handguns/armst_M9.et"
+  },
+  "classification": {
+    "kind": "weapon",
+    "confidence": "folder"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Weapons/Handguns/armst_M9.et",
+        "status": "local",
+        "class": "GenericEntity"
+      }
+    ],
+    "external_parents": [
+      {
+        "guid": "809488C4984AC087",
+        "path": "Prefabs/Weapons/Handguns/M9/Handgun_M9_base.et",
+        "raw": "{809488C4984AC087}Prefabs/Weapons/Handguns/M9/Handgun_M9_base.et"
+      }
+    ],
+    "used_as_base_by": [],
+    "chain_depth_local": 1
+  },
+  "references": [],
+  "warnings": [],
+  "data": {
+    "error": "no WeaponComponent found"
+  },
+  "derived": {}
+}

@@ -1,0 +1,80 @@
+GameEntity : "{2E0E3D7D1DD0FF8F}Prefabs/Weapons/Core/Attachment_Base.et" {
+ ID "4BA426CBAED42A14"
+ components {
+  InventoryItemComponent "{52627A1F45CD4EB6}" {
+   Attributes SCR_ItemAttributeCollection "{52627A1EBB0698FD}" {
+    ItemPhysAttributes ItemPhysicalAttributes "{618A8428E1E08833}" {
+    }
+    CustomAttributes {
+     WeaponAttachmentAttributes "{5284D858FFF9BE66}" {
+      AttachmentType AttachmentMuzzle "{618A843CE28C7529}" {
+      }
+     }
+    }
+   }
+  }
+  MeshObject "{5C46D45E03D7AD12}" {
+   InheritVisibility 1
+  }
+  RigidBody "{5C46D45E03D7AD6A}" {
+   ModelGeometry 1
+  }
+  SCR_SoundDataComponent "{5B18D200265FA2CB}" {
+   m_aAudioSourceConfiguration {
+    SCR_AudioSourceConfiguration "{5B18D2091B885AE6}" {
+     m_sSoundProject "{92CB09CB84872CB4}Sounds/Weapons/_SharedData/PickUp/Weapons_PickUp_Attachments_LongGeneric.acp"
+    }
+    SCR_AudioSourceConfiguration "{61A28279C00E0A2D}" {
+     m_sSoundProject "{92CB09CB84872CB4}Sounds/Weapons/_SharedData/PickUp/Weapons_PickUp_Attachments_LongGeneric.acp"
+     m_sSoundEventName "SOUND_UNEQUIP"
+    }
+   }
+  }
+  ActionsManagerComponent "{5284E0EFF569AD07}" {
+   ActionContexts {
+    UserActionContext "{618A8427BADA3E0B}" {
+     UIInfo SCR_ActionContextUIInfo "{618A84269A967204}" {
+     }
+     ContextName "muzzle"
+     Position PointInfo "{618A8426906822BF}" {
+     }
+     Radius 0.1
+    }
+   }
+   additionalActions {
+    SCR_EquipWeaponAttachment "{5284E0EFDA00C63B}" {
+     ParentContextList {
+      "muzzle"
+     }
+    }
+    SCR_PickUpItemAction "{585CED82E5DD85D6}" {
+     ParentContextList {
+      "muzzle"
+     }
+    }
+    SCR_AttachementAction "{618A842EE43D889E}" {
+     ParentContextList {
+      "muzzle"
+     }
+     UIInfo UIInfo "{5CB8A0964428CA7A}" {
+      Name "#AR-UserAction_Detach"
+     }
+     Duration 0.5
+     CanAggregate 1
+     m_WeaponAttachmentActionType Muzzle
+    }
+    SCR_AttachItemFromInventoryAction "{618A842E0B4638A3}" {
+     ParentContextList {
+      "muzzle"
+     }
+     UIInfo UIInfo "{5CB8A09647770950}" {
+      Name "#AR-UserAction_Attach"
+     }
+     Duration 0.5
+     CanAggregate 1
+     "Inventory action" 1
+    }
+   }
+  }
+ }
+}

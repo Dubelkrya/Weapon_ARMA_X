@@ -1,0 +1,119 @@
+GameEntity : "{2E0E3D7D1DD0FF8F}Prefabs/Weapons/Core/Attachment_Base.et" {
+ ID "50989DC991E68512"
+ components {
+  ParametricMaterialInstanceComponent "{60EA7E61A4599BCB}" {
+   UserParamTwo 0
+  }
+  InventoryItemComponent "{52627A1F45CD4EB6}" {
+   Attributes SCR_ItemAttributeCollection "{60A8948019D3F7B6}" {
+    ItemDisplayName UIInfo "{60A8948019D3F7B0}" {
+     Name "loc M9 Bayonet"
+     Description "loc Bayonet which can be attached to M16"
+    }
+    ItemPhysAttributes ItemPhysicalAttributes "{60A8948019D3F7B2}" {
+     Weight 0.46
+     SizeSetupStrategy Manual
+     RestingUP Right
+     ActivePhysicalSimulation None
+    }
+    CustomAttributes {
+     SCR_WeaponAttachmentBayonetAttributes "{61967DD811A4DEE5}" {
+      AttachmentType AttachmentBayonet "{61967DE895246CF5}" {
+      }
+      m_fDamageModificationFactor 5
+      m_fRangeModificationFactor 1.6
+      m_fPrecisionModificationFactor 0.3
+      m_fExtraObstructionLength 0.2
+     }
+     PreviewRenderAttributes "{60A8948019D3F7BE}" {
+      CameraPreset Right
+      ItemRenderRotation 0 0 45
+     }
+     SCR_WeaponAttachmentObstructionAttributes "{61B08C8F8182650A}" {
+      AttachmentType AttachmentBayonet "{61B08C8F8889D9AD}" {
+      }
+      m_aObstructedAttachmentTypes {
+       AttachmentSuppressor "{61B485C49DDB99C6}" {
+       }
+       AttachmentUnderBarrel "{61B485C4AAA8AE0B}" {
+       }
+      }
+     }
+    }
+    CommonItemType "BAYONET"
+    m_Size SLOT_1x1
+    m_bStackable 0
+   }
+  }
+  MeshObject "{60A894809670984D}" {
+   Object "{CB4B410E5D99D4CF}Assets/Weapons/Attachments/Bayonets/Bayonet_M9/Bayonet_M9.xob"
+   InheritVisibility 1
+  }
+  RigidBody "{60A894809472EB83}" {
+   ModelGeometry 1
+  }
+  SCR_BayonetComponent "{60A8948019D3F7BB}" {
+  }
+  SCR_BayonetEffectComponent "{60EC975981FD9093}" {
+   m_aDefaultParticles {
+    "{95FC4204F9B06FF7}Particles/Enviroment/Impact_Tiny/Hit_default_enter_tiny_01.ptc"
+   }
+   m_iEffectMagnitude 0
+  }
+  SCR_SoundDataComponent "{5B18D200265FA2CB}" {
+   m_aAudioSourceConfiguration {
+    SCR_AudioSourceConfiguration "{5B18D209080A5D15}" {
+     m_sSoundProject "{92CB09CB84872CB4}Sounds/Weapons/_SharedData/PickUp/Weapons_PickUp_Attachments_LongGeneric.acp"
+    }
+    SCR_AudioSourceConfiguration "{5B18D2091B885AE6}" {
+     m_sSoundProject "{92CB09CB84872CB4}Sounds/Weapons/_SharedData/PickUp/Weapons_PickUp_Attachments_LongGeneric.acp"
+    }
+    SCR_AudioSourceConfiguration "{60AA62D0649DAE5E}" {
+     m_sSoundProject "{92CB09CB84872CB4}Sounds/Weapons/_SharedData/PickUp/Weapons_PickUp_Attachments_LongGeneric.acp"
+     m_sSoundEventName "SOUND_UNEQUIP"
+     m_eFlags 0
+    }
+   }
+  }
+  ActionsManagerComponent "{5284E0EFF569AD07}" {
+   ActionContexts {
+    UserActionContext "{60ECB1E8B72F02DA}" {
+     UIInfo SCR_ActionContextUIInfo "{6104781BCDA3EC09}" {
+     }
+     ContextName "bayonet"
+     Position PointInfo "{60ECB1E8B9487FF3}" {
+     }
+     Radius 0.1
+    }
+   }
+   additionalActions {
+    SCR_EquipWeaponAttachment "{5284E0EFDA00C63B}" {
+     UIInfo SCR_ActionUIInfo "{5284E0EFD09FA6F2}" {
+      m_sIconName "bayonet"
+     }
+    }
+    SCR_PickUpItemAction "{585CED82E5DD85D6}" {
+    }
+    SCR_AttachementAction "{618A842EE43D889E}" {
+     ParentContextList {
+      "bayonet"
+     }
+     UIInfo SCR_ActionUIInfo "{60A8948019D3F7A3}" {
+      m_sIconName "bayonet"
+     }
+     CanAggregate 1
+    }
+    SCR_AttachItemFromInventoryAction "{618A842E0B4638A3}" {
+     ParentContextList {
+      "bayonet"
+     }
+     UIInfo SCR_ActionUIInfo "{60A8948019D38640}" {
+      m_sIconName "bayonet"
+     }
+     CanAggregate 1
+     "Inventory action" 1
+    }
+   }
+  }
+ }
+}

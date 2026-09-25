@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{488B2158BC3E5C34}Imported/VanillaSources/Prefabs/Weapons/Core/Configs/TriggerEffects/ADS/TriggerEffect_ADSGrenade.conf"
+ Configurations {
+  CONFResourceClass PC {
+  }
+  CONFResourceClass XBOX_ONE : PC {
+  }
+  CONFResourceClass XBOX_SERIES : PC {
+  }
+  CONFResourceClass PS4 : PC {
+  }
+  CONFResourceClass PS5 : PC {
+  }
+  CONFResourceClass HEADLESS : PC {
+  }
+ }
+}

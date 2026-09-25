@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{60B0FC29181A99F4}Imported/VanillaSources/Prefabs/Weapons/Core/Configs/FireModes/FireMode_Safe.conf"
+ Configurations {
+  CONFResourceClass PC {
+  }
+  CONFResourceClass XBOX_ONE : PC {
+  }
+  CONFResourceClass XBOX_SERIES : PC {
+  }
+  CONFResourceClass PS4 : PC {
+  }
+  CONFResourceClass PS5 : PC {
+  }
+  CONFResourceClass HEADLESS : PC {
+  }
+ }
+}

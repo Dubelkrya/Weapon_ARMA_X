@@ -1,0 +1,14 @@
+GenericEntity : "{3E413771E1834D2F}Prefabs/Weapons/Rifles/Rifle_M16A2.et" {
+ ID "CFBAA4B725411E45"
+ components {
+  WeaponComponent "{CFBAA4B706BA66E8}" {
+   components {
+    MuzzleComponent "{CA6BE4D6B867541F}" {
+     MagazineTemplate ""
+    }
+   }
+  }
+ }
+ coords 1346.595 11.325 1880.799
+ angles 0 -147.637 90
+}

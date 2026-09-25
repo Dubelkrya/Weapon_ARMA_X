@@ -1,0 +1,173 @@
+Projectile {
+ ID "5098E3DEA78F878B"
+ components {
+  Persistence "{64EE8D731739362D}" {
+  }
+  SignalsManagerComponent "{60AC944138EFA940}" {
+  }
+  SCR_ShellSoundComponent "{60C8EAEE6F7B13A8}" {
+   Filenames {
+    "{5690822984961E30}Sounds/Weapons/_SharedData/ProjectileTravelling/Weapons_ProjectileTravelling_Mortar_Generic.acp"
+   }
+   ScriptCallbacks 1
+   DistanceManagement 0
+  }
+  CollisionTriggerComponent "{60AC9441243E3504}" {
+   PROJECTILE_EFFECTS {
+    ExplosionEffect "{66448E9CBD7626AB}" {
+     SoundEvent "SOUND_EXPLOSION"
+    }
+    AIExplosionEffect "{620E9EA150622FA0}" {
+    }
+   }
+   "Trigger Offset" 0 0 -0.05
+   SafetyDistance 30
+  }
+  MagazineComponent "{51A2B9D6DA866EF0}" {
+   MagazineWell MagazineWellMortar "{60AC9440C3F831DF}" {
+   }
+   UIInfo MagazineUIInfo "{60AC9440C81EC976}" {
+    m_eAmmoTypeFlags 40
+    m_MagIndicator SCR_MagazineIndicatorConfiguration "{60AC9440F3940F2E}" {
+    }
+   }
+   MaxAmmo 1
+  }
+  MeshObject "{5098E3DEA78F87BE}" {
+  }
+  RigidBody "{60AC9440016FD3D4}" {
+   Mass 3.1
+   ModelGeometry 1
+  }
+  SCR_MortarShellGadgetComponent "{60AC94402A1A228B}" {
+   m_eAnimVariable ANPRC68
+   m_eUseMask CUSTOM
+  }
+  SCR_SoundDataComponent "{60C8EAEE46159213}" {
+   m_aAudioSourceConfiguration {
+    SCR_AudioSourceConfiguration "{60C8EAEE4772890D}" {
+     m_sSoundProject "{0026043E3CD828D0}Sounds/Items/_SharedData/PickUp/Items_PickUp_Generic_Metallic.acp"
+     m_sSoundEventName "SOUND_PICK_UP"
+     m_eFlags 0
+    }
+    SCR_AudioSourceConfiguration "{60C8EAEE4718CB66}" {
+     m_sSoundProject "{0026043E3CD828D0}Sounds/Items/_SharedData/PickUp/Items_PickUp_Generic_Metallic.acp"
+     m_sSoundEventName "SOUND_EQUIP"
+     m_eFlags 0
+    }
+    SCR_AudioSourceConfiguration "{60C8EAEE47395697}" {
+     m_sSoundProject "{DB06E3D5DFC046B4}Sounds/Weapons/_SharedData/Drop/Weapons_Drop_Rocket.acp"
+     m_sSoundEventName "SOUND_DROP"
+    }
+    SCR_AudioSourceConfiguration "{62BA57857D725178}" {
+     m_sSoundProject "{DE85A249D4AA6EB9}Sounds/Weapons/Ammo/MortarShells/Weapons_Ammo_MortarShell_ChargeRings.acp"
+     m_sSoundEventName "SOUND_SHELL_CHARGE_RING_ADD"
+     m_eFlags 0
+    }
+    SCR_AudioSourceConfiguration "{62CA88D68B931796}" {
+     m_sSoundProject "{DE85A249D4AA6EB9}Sounds/Weapons/Ammo/MortarShells/Weapons_Ammo_MortarShell_ChargeRings.acp"
+     m_sSoundEventName "SOUND_SHELL_CHARGE_RING_REMOVE"
+     m_eFlags 0
+    }
+   }
+  }
+  SCR_VisibleInventoryItemComponent "{52627A115A9FDADB}" {
+   Attributes SCR_ItemAttributeCollection "{52627A1159C64CDD}" {
+    ItemDisplayName UIInfo "{60AC944172F0F118}" {
+    }
+    ItemPhysAttributes ItemPhysicalAttributes "{60AC94417B58CB7F}" {
+     Weight 1
+     SizeSetupStrategy Manual
+     ItemDimensions 10 10 10
+     ItemVolume 100
+    }
+    ItemAnimationAttributes ItemAnimationAttributes "{61267CEBCD285422}" {
+     AnimationAttachments {
+      AnimationAttachmentInfo "{5D2AE4CEE3FC959E}" {
+       AnimGraph "{402BB5FA2891D687}Assets/Items/Equipment/workspaces/Radio_ANPRC68.agr"
+       AnimInstance "{332D4A7512E78419}Assets/Items/Equipment/workspaces/Radio_ANPRC68_player.asi"
+       BindingName "Gadget"
+      }
+     }
+     HandAdditiveRotation -90 0 0
+     AllowInspection 1
+    }
+    CustomAttributes {
+     PreviewRenderAttributes "{60AC9440A0FA2A65}" {
+      CameraOrbitAngles -45 -45 0
+      CameraDistanceToItem 0.35
+      CameraOffset -0.05 -0.025 0
+      FOV 45
+     }
+     CharacterModifierAttributes "{6122C8959E039BF8}" {
+      CanBeEquippedInVehicle 0
+     }
+    }
+    CommonItemType "AMMO_MORTAR"
+    m_SlotType SLOT_BACKPACK
+   }
+  }
+  ShellMoveComponent "{5098E3DEA78F87A3}" {
+   InitSpeed 77
+   InitSpeedVariation 3
+   DispersionMultiplier 1
+   Mass 0.25
+   TimeToLive 60
+   LayerPreset "Projectile"
+   ProjectileEffects {
+    ProjectileDamage "{5184D780ECE06751}" {
+     DamageValue 250
+     DamageType Collision
+     DamageEffects {
+      SCR_BaseBulletDamageEffect "{61267CE99692A1A2}" {
+      }
+     }
+    }
+    ProjectileDamage "{627670F4666B7036}" {
+     DamageValue 1000
+    }
+    AIActivateEffect "{62C28D78A12F66B3}" {
+    }
+   }
+   BallisticTableGenerationConfig "{ACA14C2861AFEF28}Prefabs/Weapons/Core/MortarBallisticTableGeneratorConfig.conf"
+   Diameter 60
+   PenetrationDensity 1
+   PenetrationSpeed 60
+  }
+  SlotManagerComponent "{629C6AA0D8D852AB}" {
+  }
+  ActionsManagerComponent "{51A2B9D50D603C79}" {
+   ActionContexts {
+    UserActionContext "{51A2B9D50CC13943}" {
+     ContextName "default"
+     Position PointInfo "{51A2B9D3185EFD7B}" {
+     }
+    }
+   }
+   additionalActions {
+    SCR_PickUpItemAction "{61708E414CE3E537}" {
+     ParentContextList {
+      "default"
+     }
+     UIInfo SCR_ActionUIInfo "{61708E4173613D8E}" {
+      Name "#AR-Inventory_PickUp"
+      m_sIconName "pick-up"
+     }
+    }
+    SCR_EquipItemAction "{61788121A49C6CB0}" : "{80CE1D08B6EA91C0}Prefabs/Characters/Core/Actions/EquipItemAction.conf" {
+     m_iEquipmentSlotIdOverride 4
+    }
+    SCR_AdjustShellChargeRingsAction "{629C6AB1194F002B}" : "{792EB5A8023FD0DF}Prefabs/Characters/Core/Actions/ShellAdjustChargeRingAction.conf" {
+    }
+   }
+  }
+  RplComponent "{51A2B9D6823E09EC}" {
+   "Parent Node From Parent Entity" 0
+  }
+  Hierarchy "{51A2B9D6F46508AE}" {
+  }
+ }
+ SpawnAsCartridge 1
+ ProjectileVisibleTimeScale 2
+ CartridgeLayerPreset "ItemFireView"
+}

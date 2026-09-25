@@ -1,0 +1,27 @@
+GenericEntity : "{8C3C62C58D2DBEDA}Prefabs/Weapons/Warheads/Warhead_HEAT.et" {
+ ID "9D9BE68EA2672F76"
+ components {
+  BaseTriggerComponent "{55129E81CBAA1390}" {
+   PROJECTILE_EFFECTS {
+    ExplosionDamageContainer "{567CBC1D0F5B4AEA}" {
+     ExplosionEffects {
+      ExplosionFragmentationEffect "{567CBC1D7AB652C7}" {
+       DamageFragmentCount 112
+       GurneyConstant 2900
+       CaseWeight 1120
+      }
+     }
+     ChargeWeight 360
+     TntEquivalent 1.7
+    }
+    SubmunitionEffect "{567CB8E002C26D97}" {
+     Prefab "{1FA4AAB93A178168}Prefabs/Weapons/Ammo/Ammo_Rocket_PG22_Penetrator.et"
+    }
+    SubmunitionEffect "{5D692C94EC533259}" {
+     Prefab "{9A38F14A74F91F68}Prefabs/Weapons/Ammo/Ammo_Rocket_PG22_Spall.et"
+    }
+   }
+   "Trigger Offset" 0 0 -0.2
+  }
+ }
+}

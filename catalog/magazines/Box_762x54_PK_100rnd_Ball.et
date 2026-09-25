@@ -1,0 +1,10 @@
+GenericEntity : "{E045E14D186D580F}Prefabs/Weapons/Magazines/Box_762x54_PK_100rnd_Base.et" {
+ ID "55DAD3EB4EEB5E82"
+ components {
+  InventoryMagazineComponent "{51EED12B803954CC}" {
+   Attributes SCR_ItemAttributeCollection "{51EED12B86960275}" {
+    m_Size SLOT_1x1
+   }
+  }
+ }
+}

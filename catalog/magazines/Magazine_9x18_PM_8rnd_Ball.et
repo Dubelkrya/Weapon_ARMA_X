@@ -1,0 +1,24 @@
+GenericEntity : "{9B5AA2C731485ACA}Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Base.et" {
+ ID "532EF6B3452A529A"
+ components {
+  InventoryMagazineComponent "{51EED12B803954CC}" {
+   Attributes SCR_ItemAttributeCollection "{51EED12B86960275}" {
+    m_bAutoDetectGridSize 0
+    m_iCustomGridHeight 1
+   }
+  }
+  SCR_EditableEntityComponent "{65B26504B0CBA6C3}" {
+   Enabled 0
+   m_UIInfo SCR_EditableEntityUIInfo "{65B26504B5150965}" {
+    Name "#AR-Magazine_PM_Name"
+    m_aAuthoredLabels +{
+    }
+    m_aAutoLabels +{
+    }
+   }
+   m_bAutoRegister NEVER
+   m_bVisible 0
+  }
+ }
+ coords 5089.806 301.794 58.147
+}

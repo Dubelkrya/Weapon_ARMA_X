@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{98EB858B552EF663}Imported/VanillaSources/Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_M80.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

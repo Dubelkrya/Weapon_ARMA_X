@@ -1,0 +1,48 @@
+{
+  "id": "armst_pm",
+  "role": "base",
+  "source": {
+    "resource": "Prefabs/Weapons/Handguns/armst_PM.et",
+    "resource_guid": "C0F7DD85A86B2900",
+    "meta_name": null,
+    "class": "GenericEntity",
+    "defined_in": "Prefabs/Weapons/Handguns/armst_PM.et"
+  },
+  "identity": {
+    "name": "armst_PM",
+    "resource": "Prefabs/Weapons/Handguns/armst_PM.et"
+  },
+  "classification": {
+    "kind": "weapon",
+    "confidence": "folder"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Weapons/Handguns/armst_PM.et",
+        "status": "local",
+        "class": "GenericEntity"
+      }
+    ],
+    "external_parents": [
+      {
+        "guid": "B7132459C07777CA",
+        "path": "Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et",
+        "raw": "{B7132459C07777CA}Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et"
+      }
+    ],
+    "used_as_base_by": [
+      "Prefabs/Weapons/Handguns/armst_APB.et",
+      "Prefabs/Weapons/Handguns/armst_PP91.et",
+      "Prefabs/Weapons/Handguns/armst_SR_2.et",
+      "Prefabs/Weapons/Handguns/armst_TT.et"
+    ],
+    "chain_depth_local": 1
+  },
+  "references": [],
+  "warnings": [],
+  "data": {
+    "error": "no WeaponComponent found"
+  },
+  "derived": {}
+}

@@ -1,0 +1,20 @@
+GameEntity : "{BD496EE1B40DC510}Prefabs/Weapons/Attachments/Optics/Optic_4x20/Optic_4x20.et" {
+ ID "4BA426CBAED42A14"
+ components {
+  InventoryItemComponent "{52627A1F45CD4EB6}" {
+   Attributes SCR_ItemAttributeCollection "{52627A1EBB0698FD}" {
+    ItemDisplayName UIInfo "{5D0CC83435B5584E}" {
+     Name "#AR-Item_Colt4x20_Camo_Name"
+    }
+   }
+  }
+  MeshObject "{5D0CC83435B55858}" {
+   Materials {
+    MaterialAssignClass "{5E72830995C4F19F}" {
+     SourceMaterial "Optic_4x20"
+     AssignedMaterial "{711174551A8847CB}Assets/Weapons/Attachments/Optics/4x20/Data/Optic_4x20_OliveGreen_Sand_Stripes.emat"
+    }
+   }
+  }
+ }
+}

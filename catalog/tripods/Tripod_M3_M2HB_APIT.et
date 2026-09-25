@@ -1,0 +1,34 @@
+Turret : "{73530808E4B455BA}Prefabs/Weapons/Tripods/Tripod_M3_M2HB.et" {
+ ID "52D30EFBEBC74642"
+ components {
+  SCR_EditableVehicleComponent "{58FE9E4F05DC95A3}" {
+   m_UIInfo SCR_EditableVehicleUIInfo "{5298E609432D192D}" {
+    m_aAuthoredLabels {
+     ENTITYTYPE_VEHICLE TRAIT_ARMED TRAIT_SUPPRESSIVE
+    }
+    m_aAutoLabels + {
+     FACTION_US
+    }
+   }
+  }
+  SCR_UniversalInventoryStorageComponent "{570EACF4F2F94F1B}" {
+   InitialStorageSlots {
+    InventoryStorageSlot Magazine_1 {
+     Prefab "{C820846B0521423B}Prefabs/Weapons/Magazines/Box_127x99_M2_100rnd_4AP_1APIT.et"
+    }
+    InventoryStorageSlot Magazine_2 {
+     Prefab "{C820846B0521423B}Prefabs/Weapons/Magazines/Box_127x99_M2_100rnd_4AP_1APIT.et"
+    }
+    InventoryStorageSlot Magazine_3 {
+     Prefab "{C820846B0521423B}Prefabs/Weapons/Magazines/Box_127x99_M2_100rnd_4AP_1APIT.et"
+    }
+    InventoryStorageSlot Magazine_4 {
+     Prefab "{4068585808DF8DF2}Prefabs/Weapons/Magazines/Box_127x99_M2_100rnd_Tracer.et"
+    }
+   }
+  }
+  WeaponSlotComponent "{51ACD09C6BFEEE6A}" {
+   WeaponTemplate "{C7AE4D35F6131E92}Prefabs/Weapons/HeavyWeapons/HMG_M2HB_APIT.et"
+  }
+ }
+}

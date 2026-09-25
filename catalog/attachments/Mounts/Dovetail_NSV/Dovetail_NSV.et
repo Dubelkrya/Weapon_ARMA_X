@@ -1,0 +1,8 @@
+GenericEntity : "{F2B25E5A12774DD9}Prefabs/Weapons/Attachments/Mounts/Dovetail_NSV/Dovetail_NSV_base.et" {
+ ID "557E85EEE1B603F1"
+ components {
+  MeshObject "{557E85EE39CED921}" {
+   Object "{9D5EE41AF59F1FD9}Assets/Weapons/Attachments/Mounts/Dovetail_NSV/Dovetail_NSV.xob"
+  }
+ }
+}

@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{30CF366DD4E72C66}Imported/VanillaSources/Prefabs/Weapons/Core/Damage/ExplosionContainer_Fire.conf"
+ Configurations {
+  CONFResourceClass PC {
+  }
+  CONFResourceClass XBOX_ONE : PC {
+  }
+  CONFResourceClass XBOX_SERIES : PC {
+  }
+  CONFResourceClass PS4 : PC {
+  }
+  CONFResourceClass PS5 : PC {
+  }
+  CONFResourceClass HEADLESS : PC {
+  }
+ }
+}

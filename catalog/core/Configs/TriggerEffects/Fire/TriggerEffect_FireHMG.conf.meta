@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{342A6A7F7B1795FF}Imported/VanillaSources/Prefabs/Weapons/Core/Configs/TriggerEffects/Fire/TriggerEffect_FireHMG.conf"
+ Configurations {
+  CONFResourceClass PC {
+  }
+  CONFResourceClass XBOX_ONE : PC {
+  }
+  CONFResourceClass XBOX_SERIES : PC {
+  }
+  CONFResourceClass PS4 : PC {
+  }
+  CONFResourceClass PS5 : PC {
+  }
+  CONFResourceClass HEADLESS : PC {
+  }
+ }
+}

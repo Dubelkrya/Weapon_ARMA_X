@@ -1,0 +1,114 @@
+Projectile : "{EEF8495A9A6787A6}Prefabs/Weapons/Core/Ammo_MortarShell_Base.et" {
+ ID "5098E3DEA78F878B"
+ components {
+  TimerTriggerComponent "{60AC9441243E3504}" {
+   PROJECTILE_EFFECTS {
+    ExplosionEffect "{66448E9CBD7626AB}" {
+     Enabled 0
+    }
+    SubmunitionEffect "{6694DB695DB4D572}" {
+     Prefab "{863D1FE82506BD56}Prefabs/Weapons/Ammo/FlareEffect_81mm_M853A1_White.et"
+     Dispersion 0
+     InitSpeedCoef 0
+     SoundEvent "SOUND_DEPLOY"
+    }
+   }
+   TIMER 24
+  }
+  MagazineComponent "{51A2B9D6DA866EF0}" {
+   MagazineWell MagazineWellMortar81mm "{60AC9440C3F831DF}" {
+   }
+   UIInfo MagazineUIInfo "{60AC9440C81EC976}" {
+    Name "#AR-Magazine_M853A1_Name"
+    Description "#AR-Magazine_M853A1_Description"
+    m_sAmmoCaliber "#AR-AmmunitionID_81mm"
+    m_sAmmoType "#AR-AmmoType_M853A1"
+    m_eAmmoTypeFlags ILLUMINATION
+   }
+  }
+  MeshObject "{5098E3DEA78F87BE}" {
+   Object "{B63A4B3B56B258AB}Assets/Weapons/Ammo/Shells/81mm_Mortar_M252/Shell_81mm_Illum_M853A1.xob"
+  }
+  RigidBody "{60AC9440016FD3D4}" {
+   Mass 4
+  }
+  SCR_MortarShellGadgetComponent "{60AC94402A1A228B}" {
+   m_bIsUsingTimeFuze 1
+   m_fMinFuzeTime 10
+   m_fMaxFuzeTime 40
+   m_aChargeRingConfig {
+    1 0.638 0 2 1 0 3 1.281 0 4 1.596 1
+   }
+  }
+  SCR_VisibleInventoryItemComponent "{52627A115A9FDADB}" {
+   Attributes SCR_ItemAttributeCollection "{52627A1159C64CDD}" {
+    ItemDisplayName UIInfo "{52C6F8E3F328CB5D}" {
+     Name "#AR-Magazine_M853A1_Name"
+     Description "#AR-Magazine_M853A1_Description"
+    }
+    ItemPhysAttributes ItemPhysicalAttributes "{60AC94417B58CB7F}" {
+     Weight 4
+     ItemDimensions 8 8 20
+     ItemVolume 2100
+    }
+    ItemAnimationAttributes ItemAnimationAttributes "{61267CEBCD285422}" {
+     AnimationAttachments {
+      AnimationAttachmentInfo "{5D2AE4CEE3FC959E}" {
+       AnimGraph "{A5EA68B1344023BE}Assets/Weapons/Ammo/Shells/workspaces/Shell_Mortar_81mm_US.agr"
+       AnimInstance "{2AB705A268301ECD}Assets/Weapons/Ammo/Shells/workspaces/Shell_Mortar_81mm_US_player.asi"
+      }
+     }
+    }
+    CustomAttributes {
+     PreviewRenderAttributes "{60AC9440A0FA2A65}" {
+      CameraDistanceToItem 0.55
+      CameraOffset -0.05 -0.05 0
+     }
+    }
+   }
+  }
+  ShellMoveComponent "{5098E3DEA78F87A3}" {
+   InitSpeed 152
+   Mass 4
+   BallisticTableConfig "{1776217937D7D5AB}Configs/Weapons/Ammo/M853A1_Shell_81mm_Illumination.conf"
+   BallisticTableGenerationConfig "{23BF39122B8544E9}Configs/Weapons/Ammo/MortarBallisticTableGeneratorConfig_M853A1.conf"
+   ProjectileWindTableConfig "{57EE2625B53A5763}Configs/Weapons/Ammo/WindData/WindData_Shell_81mm_Illum_M853A1.conf"
+   AirDrag 0.001488
+   Diameter 81
+   Length 630
+  }
+  SlotManagerComponent "{629C6AA0D8D852AB}" {
+   Slots {
+    EntitySlotInfo chargeRing0 {
+     Offset 0 0 -0.2187
+     Prefab "{4B94AD7F5B4055DF}Prefabs/Weapons/Ammo/Shell_81mm_Charge_Ring.et"
+    }
+    EntitySlotInfo chargeRing1 {
+     Offset 0 0 -0.1977
+     Angles 0 0 -135
+     Prefab "{4B94AD7F5B4055DF}Prefabs/Weapons/Ammo/Shell_81mm_Charge_Ring.et"
+    }
+    EntitySlotInfo chargeRing2 {
+     Offset 0 0 -0.1767
+     Angles 0 0 -45
+     Prefab "{4B94AD7F5B4055DF}Prefabs/Weapons/Ammo/Shell_81mm_Charge_Ring.et"
+    }
+    EntitySlotInfo chargeRing3 {
+     Offset 0 0 -0.1557
+     Angles 0 0 45
+     Prefab "{4B94AD7F5B4055DF}Prefabs/Weapons/Ammo/Shell_81mm_Charge_Ring.et"
+    }
+   }
+  }
+  ActionsManagerComponent "{51A2B9D50D603C79}" {
+   additionalActions {
+    SCR_AdjustShellChargeRingsAction "{629C6AB1194F002B}" {
+    }
+    SCR_AdjustShellTimeFuzeAction "{621CB093CF26B6E0}" : "{A3C2F960E1DB330E}Prefabs/Characters/Core/Actions/ShellAdjustFuzeTimeAction.conf" {
+    }
+   }
+  }
+ }
+ ProjectileModel "{B63A4B3B56B258AB}Assets/Weapons/Ammo/Shells/81mm_Mortar_M252/Shell_81mm_Illum_M853A1.xob"
+ CartridgeModel "{B63A4B3B56B258AB}Assets/Weapons/Ammo/Shells/81mm_Mortar_M252/Shell_81mm_Illum_M853A1.xob"
+}

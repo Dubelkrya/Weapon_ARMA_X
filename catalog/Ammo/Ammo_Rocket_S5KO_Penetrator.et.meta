@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{D01FA8F165744C73}Imported/VanillaSources/Prefabs/Weapons/Ammo/Ammo_Rocket_S5KO_Penetrator.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

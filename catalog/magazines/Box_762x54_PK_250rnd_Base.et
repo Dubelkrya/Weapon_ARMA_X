@@ -1,0 +1,63 @@
+GenericEntity : "{F9E1A46E3ABA116F}Prefabs/Weapons/Core/Magazine_Base.et" {
+ ID "5F8B274FDBD4F390"
+ components {
+  AICombatPropertiesComponent "{59CE86D96C332DDF}" {
+   Priority 30
+   UsedAgainst 0x17 0
+  }
+  InventoryMagazineComponent "{51EED12B803954CC}" {
+   Attributes SCR_ItemAttributeCollection "{51EED12B86960275}" {
+    ItemDisplayName UIInfo "{51FEE38527BFEA5B}" {
+     Name "#AR-Magazine_PKMT_Name"
+     Description "#AR-Magazine_PKMT_Description"
+    }
+    ItemPhysAttributes ItemPhysicalAttributes PhysicalAttributes {
+     Weight 2.15
+     SizeSetupStrategy Manual
+     ItemDimensions 15 15 15
+     ItemVolume 4000
+    }
+    CustomAttributes {
+     PreviewRenderAttributes "{52D6B596E5B55903}" {
+      CameraPreset Front
+      CameraOrbitAngles -25 25 0
+      CameraDistanceToItem 1.8
+      FOV 12
+     }
+    }
+   }
+   WeightPerAmmo 0.029
+  }
+  MagazineComponent "{CA6BE4D6B4DAFD69}" {
+   MagazineWell MagazineWellPKMT "{5F8B274F3566936E}" {
+   }
+   UIInfo MagazineUIInfo "{57126733AA401586}" {
+    Name "#AR-Magazine_PKMT_Name"
+    Icon ""
+    m_sAmmoCaliber "#AR-AmmunitionID_762x54mm"
+   }
+   MaxAmmo 250
+   AmmoConfig "{B0020DFAF0D1E3C8}Configs/Weapons/Ammo/Ammo_762x54.conf"
+   AmmoMapping {
+    0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+   }
+  }
+  MeshObject "{CA6BE4D6A23F8EF0}" {
+   Object "{B32D2E9A888F5C98}Assets/Weapons/Magazines/PKMT/PKMT_magazine.xob"
+  }
+  SCR_SoundDataComponent "{5B18D200EBB5EA25}" {
+   m_aAudioSourceConfiguration {
+    SCR_AudioSourceConfiguration "{5B18D209080A5D15}" {
+     m_sSoundProject "{BFCDAA99AC588B1E}Sounds/Weapons/_SharedData/PickUp/Weapons_PickUp_MGPKM_Magazine.acp"
+    }
+    SCR_AudioSourceConfiguration "{5B18D2091B885AE6}" {
+     m_sSoundProject "{BFCDAA99AC588B1E}Sounds/Weapons/_SharedData/PickUp/Weapons_PickUp_MGPKM_Magazine.acp"
+    }
+    SCR_AudioSourceConfiguration "{5B18D20930D9E274}" {
+     m_sSoundProject "{F04B9D36CA351E7A}Sounds/Weapons/_SharedData/Drop/Weapons_Drop_LMG_762_Magazine.acp"
+    }
+   }
+  }
+ }
+ coords 4.682 2.933 -0.088
+}

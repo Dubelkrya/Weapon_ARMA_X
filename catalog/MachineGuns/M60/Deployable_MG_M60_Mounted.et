@@ -1,0 +1,12 @@
+GenericEntity : "{6AF5FA1A839A4980}Prefabs/Weapons/MachineGuns/M60/MG_M60_Mounted.et" {
+ ID "476AE74DE20E1061"
+ components {
+  WeaponComponent "{CFBAA4B706BA66E8}" {
+   components {
+    MuzzleComponent "{50F64C4591CD7AA6}" {
+     MagazineTemplate ""
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,151 @@
+GenericEntity : "{CD00FFBAFD036BE2}Prefabs/Weapons/Core/Explosives_base.et" {
+ ID "5968D2B6A82C6019"
+ components {
+  SignalsManagerComponent "{5AA692DC30B9C641}" {
+  }
+  BaseTriggerComponent "{5AA692DC30B9C65A}" {
+   PROJECTILE_EFFECTS {
+    AIExplosionEffect "{5F24761C77A3CDE3}" {
+    }
+   }
+  }
+  RigidBody "{5968D9C731425A95}" {
+   ResponseIndex "TinyDestructible"
+   ModelGeometry 1
+   Static 1
+  }
+  SCR_ExplosiveChargeComponent "{5F1CBB2ECAC5A29E}" {
+  }
+  SCR_ExplosiveChargeInventoryItemComponent "{5AA692DC30B9C62B}" {
+   Attributes SCR_ItemAttributeCollection "{60D6BB563667D737}" {
+    ItemDisplayName WeaponUIInfo "{60D6BB563543F2F2}" {
+    }
+    CustomAttributes {
+     PreviewRenderAttributes "{5F10E041F98252F3}" {
+     }
+     CharacterModifierAttributes "{5F10E041F357BA2C}" {
+     }
+    }
+    CommonItemType "EXPLOSIVE_CHARGE"
+    m_Size SLOT_1x1
+    m_SlotType SLOT_BACKPACK
+   }
+  }
+  SCR_MineDamageManager "{5AA692DC30B9C651}" {
+   "Additional hit zones" {
+    HitZone Main {
+     HZDefault 1
+     "Melee multiplier" 0
+    }
+   }
+  }
+  SCR_PlaceableItemComponent "{5AA692DC30B9C62D}" {
+   m_bCanAttachToDynamicObject 1
+   m_fMaxAllowedTilt -1
+   m_eIgnoredPhysicsLayers 4718592
+   m_aIgnoredComponents {
+    "WeaponComponent"
+   }
+   m_eMeasurementMethod FROM_CENTER_OF_MASS
+   m_fMaxPlacementDistance 1.4
+   m_ePlacementType XYZ
+  }
+  SCR_SoundDataComponent "{60EC86A347013CCA}" {
+   m_aAudioSourceConfiguration {
+    SCR_AudioSourceConfiguration "{60EC86A344A8438F}" {
+     m_sSoundProject "{CC0E5A1324E761C1}Sounds/Items/_SharedData/Drop/Items_Drop_Generic.acp"
+     m_sSoundEventName "SOUND_DROP"
+    }
+    SCR_AudioSourceConfiguration "{60EC86A344780641}" {
+     m_sSoundProject "{12A94705DF2BFD25}Sounds/Items/_SharedData/PickUp/Items_PickUp_Generic.acp"
+     m_sSoundEventName "SOUND_PICK_UP"
+    }
+    SCR_AudioSourceConfiguration "{60EC86A34421B9C7}" {
+     m_sSoundProject "{12A94705DF2BFD25}Sounds/Items/_SharedData/PickUp/Items_PickUp_Generic.acp"
+     m_sSoundEventName "SOUND_EQUIP"
+    }
+    SCR_AudioSourceConfiguration "{60EC86A345C1D05F}" {
+     m_sSoundProject "{180B4B22F7EBB2BB}Sounds/Weapons/Explosives/DemoBlocks/_SharedData/Weapons_DemoBlock_Handling.acp"
+     m_sSoundEventName "SOUND_PLACEMENT"
+    }
+    SCR_AudioSourceConfiguration "{60EC86A37F9E6B08}" {
+     m_sSoundProject "{180B4B22F7EBB2BB}Sounds/Weapons/Explosives/DemoBlocks/_SharedData/Weapons_DemoBlock_Handling.acp"
+     m_sSoundEventName "SOUND_ARM"
+    }
+    SCR_AudioSourceConfiguration "{60EC86A376AC5FF0}" {
+     m_sSoundProject "{180B4B22F7EBB2BB}Sounds/Weapons/Explosives/DemoBlocks/_SharedData/Weapons_DemoBlock_Handling.acp"
+     m_sSoundEventName "SOUND_DISARM"
+    }
+    SCR_AudioSourceConfiguration "{60EC86A314888019}" {
+     m_sSoundProject "{180B4B22F7EBB2BB}Sounds/Weapons/Explosives/DemoBlocks/_SharedData/Weapons_DemoBlock_Handling.acp"
+     m_sSoundEventName "SOUND_TIMER_ADJUST"
+    }
+    SCR_AudioSourceConfiguration "{60EC86A306226A88}" {
+     m_sSoundProject "{180B4B22F7EBB2BB}Sounds/Weapons/Explosives/DemoBlocks/_SharedData/Weapons_DemoBlock_Handling.acp"
+     m_sSoundEventName "SOUND_CONNECT"
+    }
+   }
+  }
+  SlotManagerComponent "{5F1CD138A009B549}" {
+   Slots {
+    FuzeSlotInfo timedFuze_PoC {
+     Prefab "{97AFF96B7AB95845}Prefabs/Weapons/Explosives/DemoBlock_TSh400g/DemoBlock_TSh400g_Fuze_VZD-1M.et"
+     m_eFuzeType TIMED
+    }
+    FuzeSlotInfo remoteFuze_PoC {
+     Prefab "{97AFF96B7AB95844}Prefabs/Weapons/Explosives/DemoBlock_TSh400g/DemoBlock_TSh400g_Fuze_ZDP-r.et"
+     m_eFuzeType REMOTE
+    }
+   }
+  }
+  WeaponComponent "{5AA692DC30B9C621}" {
+   AllowedRaise "Only lowered"
+  }
+  ActionsManagerComponent "{5AA692DC30B9C623}" {
+   ActionContexts {
+    UserActionContext "{5AA692DC30B9C627}" {
+     ContextName "default"
+     Position PointInfo "{5AA692DC30B9C638}" {
+     }
+    }
+   }
+   additionalActions {
+    SCR_PickUpItemAction "{5AA692DC30B9C63D}" : "{F39A4E9B190C1846}Prefabs/Characters/Core/Actions/PickUpItemAction.conf" {
+     "Sort Priority" 10
+    }
+    SCR_EquipWeaponAction "{5AA692DC30B9C63E}" : "{356D19E2210E4C48}Prefabs/Characters/Core/Actions/EquipWeaponAction.conf" {
+     "Sort Priority" 11
+    }
+    SCR_DisarmExplosiveChargeAction "{5F1CD13994BFA81F}" : "{B8389A2B9EED8AA6}Prefabs/Weapons/Core/Configs/Actions/DisarmExplosiveChargeAction.conf" {
+    }
+    SCR_ArmExplosiveChargeWithRemoteFuzeAction "{5F1CD13997E320A5}" : "{A6BD00F7E5A9E6EF}Prefabs/Weapons/Core/Configs/Actions/ArmExplosiveChargeWithRemoteFuzeAction.conf" {
+    }
+    SCR_ArmExplosiveChargeWithTimedFuzeAction "{5F1CD1393FC36E3C}" : "{C65D88D69C618E67}Prefabs/Weapons/Core/Configs/Actions/ArmExplosiveChargeWithTimedFuze.conf" {
+    }
+    SCR_AdjustTimedFuzeAction "{60D077AFA3844219}" : "{0D1A136367E92AC8}Prefabs/Weapons/Core/Configs/Actions/AdjustTimedFuzeAction.conf" {
+    }
+   }
+  }
+  WeaponAnimationComponent "{5F1CD773403DEE55}" {
+   AnimGraph "{BF24E06454754E64}Assets/Weapons/Explosives/workspace/m112_explosive.agr"
+   AnimInstance "{CD76B2501A263ED9}Assets/Weapons/Explosives/workspace/M15AT_weapon.asi"
+   AnimInjection AnimationAttachmentInfo "{5F1CD77366000D91}" {
+    AnimGraph "{0292B12F97C52891}Assets/Weapons/Explosives/workspace/M15AT_mine.agr"
+    AnimInstance "{6B45479C2EB8C5AA}Assets/Weapons/Explosives/workspace/M15AT_player.asi"
+    BindingName "Heavy"
+   }
+   BindWithInjection 1
+   AnimCommandsToBind {
+    "" ""
+   }
+   AutoVariablesBind 1
+   AnimVariablesToBind {
+    "" ""
+   }
+  }
+  RplComponent "{5AA692DC30B9C60A}" {
+   "Rpl State Override" Runtime
+   "Parent Node From Parent Entity" 0
+  }
+ }
+}

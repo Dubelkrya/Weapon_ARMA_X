@@ -1,0 +1,17 @@
+GenericEntity : "{4FD1A5A6670E015A}Prefabs/Weapons/MachineGuns/PKM/MG_PKMT.et" {
+ ID "324BA7485B3737E0"
+ components {
+  WeaponComponent "{CFBAA4B706BA66E8}" {
+   components {
+    MuzzleComponent "{50F64C4591CD7AA6}" {
+     WeaponAimModifiers {
+      SCR_RecoilForceAimModifier "{691496C5D319D02A}" : "{FB34D3E63E513BBC}Prefabs/Weapons/Core/Configs/AimModifiers/RecoilForceAimModifier_MountedPKM.conf" {
+      }
+     }
+     ReloadDuration 7
+     MagazineTemplate "{AFC7F529E6293E2A}Prefabs/Weapons/Magazines/Box_762x54_PK_250rnd_2Ball_1Tracer.et"
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{B52E677015E66E97}Imported/VanillaSources/Prefabs/Weapons/Warheads/Warhead_HEAT_M72A3.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

@@ -1,0 +1,23 @@
+GenericEntity {
+ ID "660AAB8CC26C1DF4"
+ components {
+  MeshObject "{660AAB8EE888948B}" {
+   Object "{6225F32E5CAC127C}Assets/Weapons/MachineGuns/PKM/PKM_body.xob"
+   Materials {
+    MaterialAssignClass "{660AAB8E6DED10CF}" {
+     SourceMaterial "PKM_body_1"
+     AssignedMaterial "{1E0864FCCB56EB87}Assets/Weapons/MachineGuns/PKM/Data/PKM_body_1_dmg.emat"
+    }
+    MaterialAssignClass "{660AAB8E6DED10E6}" {
+     SourceMaterial "PKM_body_2"
+     AssignedMaterial "{65BFC0D334C9CDA8}Assets/Weapons/MachineGuns/PKM/Data/PKM_body_2_dmg.emat"
+    }
+    MaterialAssignClass "{660AAB8E6DED10EE}" {
+     SourceMaterial "PKM_body_3"
+     AssignedMaterial "{4CD2A33661BCD04D}Assets/Weapons/MachineGuns/PKM/Data/PKM_body_3_dmg.emat"
+    }
+   }
+  }
+ }
+ coords 131.746 1 73.609
+}

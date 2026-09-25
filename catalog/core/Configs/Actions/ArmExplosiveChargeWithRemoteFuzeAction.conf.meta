@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{828E1C5A4DB5B711}Imported/VanillaSources/Prefabs/Weapons/Core/Configs/Actions/ArmExplosiveChargeWithRemoteFuzeAction.conf"
+ Configurations {
+  CONFResourceClass PC {
+  }
+  CONFResourceClass XBOX_ONE : PC {
+  }
+  CONFResourceClass XBOX_SERIES : PC {
+  }
+  CONFResourceClass PS4 : PC {
+  }
+  CONFResourceClass PS5 : PC {
+  }
+  CONFResourceClass HEADLESS : PC {
+  }
+ }
+}

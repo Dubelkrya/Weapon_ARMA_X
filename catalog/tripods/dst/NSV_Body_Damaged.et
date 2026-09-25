@@ -1,0 +1,23 @@
+GenericEntity {
+ ID "660AAB8CC8402D92"
+ components {
+  MeshObject "{660AAB8EFED4493B}" {
+   Object "{1C372CC3C2897372}Assets/Weapons/HeavyWeapons/NSV/NSV_body.xob"
+   Materials {
+    MaterialAssignClass "{660AAB8FB861FD3C}" {
+     SourceMaterial "Body"
+     AssignedMaterial "{755AF1D321FC7788}Assets/Weapons/HeavyWeapons/NSV/Data/Body_dmg.emat"
+    }
+    MaterialAssignClass "{660AAB8FB861FDD5}" {
+     SourceMaterial "Body2"
+     AssignedMaterial "{A4E16832E95F07B3}Assets/Weapons/HeavyWeapons/NSV/Data/Body2_dmg.emat"
+    }
+    MaterialAssignClass "{660AAB8FB861FDDD}" {
+     SourceMaterial "Body3"
+     AssignedMaterial "{8D8C0BD7BC2A1A56}Assets/Weapons/HeavyWeapons/NSV/Data/Body3_dmg.emat"
+    }
+   }
+  }
+ }
+ coords 131.641 1 73.187
+}

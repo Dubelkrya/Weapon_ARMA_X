@@ -1,0 +1,94 @@
+GenericEntity : "{9C80A507960AA473}Prefabs/Weapons/Core/Mine_base.et" {
+ ID "5968D2B6A82C6019"
+ components {
+  SoundComponent "{5A6B57364EA203C7}" {
+   Filenames {
+    "{CEB036D3FA90F3C3}Sounds/Weapons/_SharedData/PickUp/Weapons_PickUp_ATMine_Generic.acp" "{A7B672B164032EE4}Sounds/Weapons/_SharedData/Drop/Weapons_Drop_ATMine_Generic.acp" "{49BA74662F0ACA8C}Sounds/Weapons/Explosives/Mine_TM62M/Weapons_Explosives_TM62M_Handling.acp" "{764506B0AF57183F}Sounds/Weapons/Explosives/_SharedData/Weapons_Explosives_ATMine_Generic_Placement.acp"
+   }
+  }
+  BaseTriggerComponent "{59E4E69D8E9B4323}" {
+   PROJECTILE_EFFECTS {
+    ExplosionEffect "{59EC98924EA033BD}" {
+     EffectPrefab "{BD25277C883BF4DC}Prefabs/Weapons/Warheads/Warhead_Mine_TM62M.et"
+     SoundEvent "SOUND_EXPLOSION"
+    }
+   }
+  }
+  MeshObject "{5968D9C73C08706E}" {
+   Object "{20A62E4E269243F0}Assets/Weapons/Explosives/Mine_TM62M/Mine_TM62M.xob"
+  }
+  SCR_MineInventoryItemComponent "{59E4E694B93DC656}" {
+   Attributes SCR_ItemAttributeCollection "{5A10B8E3F1D55606}" {
+    ItemDisplayName WeaponUIInfo "{5A10B8E3F31D239B}" {
+     Name "#AR-Weapon_TM62M_Name"
+     Description "#AR-Weapon_TM62M_Description"
+    }
+    ItemPhysAttributes ItemPhysicalAttributes "{5A10B8E3E50A16D2}" {
+     Weight 9.5
+     ItemDimensions 20 20 20
+     ItemVolume 4000
+    }
+   }
+  }
+  SCR_PressureTriggerComponent "{59E6BE151DCC9953}" {
+   m_fMinWeight 150
+   m_sFuzeMeshName "Mine_Fuse_TM_62M"
+  }
+  SCR_MineWeaponComponent "{59F2DC2C202D1AFB}" {
+   UIInfo GrenadeUIInfo "{5CDCD73FE938D67D}" {
+    Name "#AR-Weapon_TM62M_Name"
+    Description "#AR-Weapon_TM62M_Description"
+    m_sAmmoType "#AR-AmmoType_TM62M"
+   }
+   WeaponSlotType "primary"
+  }
+  ActionsManagerComponent "{59E4E6938E65C2ED}" {
+   additionalActions {
+    SCR_DisarmMineAction "{65146DC8F9B330F0}" : "{7BD7363B3A75A5E1}Prefabs/Weapons/Core/Configs/Actions/DisarmMineAction.conf" {
+     m_fSpottingDistance 2
+    }
+   }
+  }
+  SCR_MineAnimationComponent "{5A208BD25A3D8CE4}" {
+   AnimGraph "{61DD6C3BDA7D48F5}Assets/Weapons/Explosives/workspace/mine_TM62M.agr"
+   AnimInstance "{95992E047B24E710}Assets/Weapons/Explosives/workspace/TM62M_weapon.asi"
+   AnimInjection AnimationAttachmentInfo "{5A208BD24038C772}" {
+    AnimGraph "{61DD6C3BDA7D48F5}Assets/Weapons/Explosives/workspace/mine_TM62M.agr"
+    AnimInstance "{6EC7BF35E32583FC}Assets/Weapons/Explosives/workspace/TM62M_player.asi"
+    BindingName "Heavy"
+   }
+   BindWithInjection 1
+   AutoVariablesBind 1
+   MeshVisibilityConfigurations {
+    MeshesVisibilitySwitchConfig "{5A6CEED4B29186DA}" {
+     Event "ShowFuse"
+     Meshes {
+      "Mine_Fuse_TM_62M"
+     }
+     HideMesh 0
+    }
+    MeshesVisibilitySwitchConfig "{6514A4EE51DA6C54}" {
+     Event "ShowPin"
+     Meshes {
+      "TM_62M_pin"
+     }
+     HideMesh 0
+    }
+    MeshesVisibilitySwitchConfig "{5A6CEED687EDF251}" {
+     Event "HidePin"
+     Meshes {
+      "TM_62M_pin"
+     }
+    }
+    MeshesVisibilitySwitchConfig "{6514A4EE44185351}" {
+     Event "HideFuse"
+     Meshes {
+      "Mine_Fuse_TM_62M"
+     }
+    }
+   }
+   ResetOnDeactivation 1
+   DeactivationDelay 0
+  }
+ }
+}

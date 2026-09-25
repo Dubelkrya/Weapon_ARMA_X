@@ -1,0 +1,13 @@
+Projectile : "{0C6C681A37E22821}Prefabs/Weapons/Ammo/FlareEffect_40mm_M661_Green.et" {
+ ID "5A52CD9231D8AB66"
+ components {
+  FlareMoveComponent "{5A52CD9231D8AB6E}" {
+   DispersionMultiplier 0
+   MoveWithParent 1
+  }
+  SCR_EffectsModuleChildComponent "{61A4959B04450F97}" {
+  }
+  Hierarchy "{61A4959B064E8AB7}" {
+  }
+ }
+}

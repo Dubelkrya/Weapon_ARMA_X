@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{3D0E695E11199F2E}Imported/VanillaSources/Prefabs/Weapons/Launchers/M72/Launcher_M72A3.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

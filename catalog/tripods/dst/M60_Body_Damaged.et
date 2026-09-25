@@ -1,0 +1,35 @@
+GenericEntity {
+ ID "660AAB8CC510E030"
+ components {
+  MeshObject "{660AAB8ED40C148C}" {
+   Object "{7C7F521634ADBF9A}Assets/Weapons/MachineGuns/M60/M60_Body.xob"
+   Materials {
+    MaterialAssignClass "{660AAB8FC223F125}" {
+     SourceMaterial "M60_Body1"
+     AssignedMaterial "{78A4EF714A0F3251}Assets/Weapons/MachineGuns/M60/Data/M60_Body1_dmg.emat"
+    }
+    MaterialAssignClass "{660AAB8FC223F1DB}" {
+     SourceMaterial "M60_Body2"
+     AssignedMaterial "{03134B5EB590147E}Assets/Weapons/MachineGuns/M60/Data/M60_Body2_dmg.emat"
+    }
+    MaterialAssignClass "{660AAB8FC223F1C2}" {
+     SourceMaterial "M60_Body3"
+     AssignedMaterial "{2A7E28BBE0E5099B}Assets/Weapons/MachineGuns/M60/Data/M60_Body3_dmg.emat"
+    }
+    MaterialAssignClass "{660AAB8FC223F1CE}" {
+     SourceMaterial "M60_Body4"
+     AssignedMaterial "{78A4EF714A0F3251}Assets/Weapons/MachineGuns/M60/Data/M60_Body1_dmg.emat"
+    }
+    MaterialAssignClass "{660AAB8FC223F1C9}" {
+     SourceMaterial "M60_Body5"
+     AssignedMaterial "{03134B5EB590147E}Assets/Weapons/MachineGuns/M60/Data/M60_Body2_dmg.emat"
+    }
+    MaterialAssignClass "{660AAB8FC223F1F5}" {
+     SourceMaterial "M60_Body6"
+     AssignedMaterial "{2A7E28BBE0E5099B}Assets/Weapons/MachineGuns/M60/Data/M60_Body3_dmg.emat"
+    }
+   }
+  }
+ }
+ coords 131.882 1 74.016
+}

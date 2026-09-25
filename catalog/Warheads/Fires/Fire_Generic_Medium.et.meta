@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{DED8D6338EE54295}Imported/VanillaSources/Prefabs/Weapons/Warheads/Fires/Fire_Generic_Medium.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

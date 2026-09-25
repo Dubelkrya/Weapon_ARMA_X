@@ -1,0 +1,15 @@
+Projectile : "{A4E070505C87AD42}Prefabs/Weapons/Ammo/Ammo_127x99_Ball_M33.et" {
+ ID "476AE74C1F2F140D"
+ components {
+  ShellMoveComponent "{851AA4A2AE0A5691}" {
+   InitSpeed 857
+   BallisticTableConfig "{63348C46363FA2FB}Configs/Weapons/AIBallisticTables/AIBT_127x99_AP_M2.conf"
+   Diameter 13
+   TumblingDamageMultiplier 0.05
+   PenetrationDepth 19
+   PenetrationSpeed 623
+  }
+ }
+ ProjectileModel "{CD048AA1B01EDEB9}Assets/Weapons/Ammo/Bullets/127x99/Bullet_127x99_M2.xob"
+ CartridgeModel "{6CD22BAEA87AC697}Assets/Weapons/Ammo/Bullets/127x99/Cartridge_127x99_M2.xob"
+}

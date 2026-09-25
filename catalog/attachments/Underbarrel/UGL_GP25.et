@@ -1,0 +1,12 @@
+GameEntity : "{8A820ADCE8D05357}Prefabs/Weapons/Core/UGL_Base.et" {
+ ID "BB6A64F1F86B644E"
+ components {
+  SCR_WeaponAttachmentsStorageComponent "{544E830BB9261A86}" {
+   Attributes SCR_ItemAttributeCollection AttributeCollection {
+    m_bAutoDetectGridSize 0
+    m_iCustomGridWidth 2
+    m_iCustomGridHeight 2
+   }
+  }
+ }
+}

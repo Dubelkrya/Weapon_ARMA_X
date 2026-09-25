@@ -1,0 +1,21 @@
+GenericEntity : "{E5965C8A004629D0}Prefabs/Weapons/Warheads/Fires/Warhead_Fire_Base.et" {
+ ID "9D9BE68EA2672F76"
+ components {
+  TimerTriggerComponent "{55129E81CBAA1390}" {
+   PROJECTILE_EFFECTS {
+    ExplosionDamageContainer "{5D8D1EB2400CDFFE}" {
+     ChargeWeight 500
+    }
+    SpawnDecalEffect "{5E24C6340FE0175F}" {
+     Scale 2
+    }
+    SpawnParticleEffect "{5E24C63471F26FAE}" {
+     ParticleEffect "{79DD3A5F1F3069CD}Particles/Vehicle/Vehicle_fire_engine_small.ptc"
+    }
+   }
+  }
+  HitEffectComponent "{9D9BE68D6F65A10F}" {
+   ParticleEffect "{C0E2E7DC28B71E2C}Particles/Enviroment/Campfire_medium_normal.ptc"
+  }
+ }
+}

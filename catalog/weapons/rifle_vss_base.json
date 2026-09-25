@@ -1,0 +1,280 @@
+{
+  "id": "rifle_vss_base",
+  "role": "base",
+  "source": {
+    "resource": "Prefabs/Weapons/Rifles/VSS/Rifle_vss_base.et",
+    "resource_guid": "902A79E4B2A66E63",
+    "meta_name": null,
+    "class": "GenericEntity",
+    "defined_in": "Prefabs/Weapons/Rifles/VSS/Rifle_vss_base.et"
+  },
+  "identity": {
+    "name": "Rifle_vss_base",
+    "resource": "Prefabs/Weapons/Rifles/VSS/Rifle_vss_base.et"
+  },
+  "classification": {
+    "kind": "weapon",
+    "confidence": "components"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Weapons/Rifles/VSS/Rifle_vss_base.et",
+        "status": "local",
+        "class": "GenericEntity"
+      }
+    ],
+    "external_parents": [
+      {
+        "guid": "1FA22B1F5E7BC80B",
+        "path": "Prefabs/Weapons/Rifles/AK74/Rifle_AK74_short_base.et",
+        "raw": "{1FA22B1F5E7BC80B}Prefabs/Weapons/Rifles/AK74/Rifle_AK74_short_base.et"
+      }
+    ],
+    "used_as_base_by": [
+      "Prefabs/Weapons/Rifles/VSS/Rifle_VSS.et"
+    ],
+    "chain_depth_local": 1
+  },
+  "references": [
+    {
+      "guid": "C4A692199548E245",
+      "path": "Assets/Weapons_RUS/VSS/Vss.xob",
+      "resolved": "local",
+      "target": "Assets/Weapons_RUS/VSS/Vss.xob",
+      "defined_in": "Prefabs/Weapons/Rifles/VSS/Rifle_vss_base.et"
+    },
+    {
+      "guid": "A3754338B3EE4F1E",
+      "path": "Assets/Weapons_RUS/VSS/Anim/Diff/p_rfl_VSS_01_ik.anm",
+      "resolved": "local",
+      "target": "Assets/Weapons_RUS/VSS/Anim/Diff/p_rfl_VSS_01_ik.anm",
+      "defined_in": "Prefabs/Weapons/Rifles/VSS/Rifle_vss_base.et"
+    },
+    {
+      "guid": "83DC2DCAF6EDC75F",
+      "path": "Particles/Weapon/Casing_762x54.ptc",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "Prefabs/Weapons/Rifles/VSS/Rifle_vss_base.et"
+    },
+    {
+      "guid": "0D9400A03DDEA9AC",
+      "path": "Particles/Weapon/Attachments/Suppressor_Carbine.ptc",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "Prefabs/Weapons/Rifles/VSS/Rifle_vss_base.et"
+    },
+    {
+      "guid": "70D023F899C9C226",
+      "path": "Prefabs/Weapons/Magazines/9x39/Magazine_9x39_20rnd_vss_SP5.et",
+      "resolved": "local",
+      "target": "Prefabs/Weapons/Magazines/9x39/Magazine_9x39_20rnd_vss_SP5.et",
+      "defined_in": "Prefabs/Weapons/Rifles/VSS/Rifle_vss_base.et"
+    },
+    {
+      "guid": "127F777AF7430A62",
+      "path": "Assets/Weapons_RUS/VSS/Anim/Vss.agr",
+      "resolved": "local",
+      "target": "Assets/Weapons_RUS/VSS/Anim/Vss.agr",
+      "defined_in": "Prefabs/Weapons/Rifles/VSS/Rifle_vss_base.et"
+    },
+    {
+      "guid": "819D32D40F937C40",
+      "path": "Assets/Weapons_RUS/VSS/Anim/Vss_weapon.asi",
+      "resolved": "local",
+      "target": "Assets/Weapons_RUS/VSS/Anim/Vss_weapon.asi",
+      "defined_in": "Prefabs/Weapons/Rifles/VSS/Rifle_vss_base.et"
+    },
+    {
+      "guid": "7AC3A3E5979218AC",
+      "path": "Assets/Weapons_RUS/VSS/Anim/Vss_player.asi",
+      "resolved": "local",
+      "target": "Assets/Weapons_RUS/VSS/Anim/Vss_player.asi",
+      "defined_in": "Prefabs/Weapons/Rifles/VSS/Rifle_vss_base.et"
+    }
+  ],
+  "warnings": [],
+  "data": {
+    "identity": {
+      "name": null
+    },
+    "fire_modes": [
+      {
+        "mode_id": "{B80A64F4A8EF8333}",
+        "ui_name": null,
+        "rounds_per_minute": {
+          "value": 700,
+          "defined_in": "Prefabs/Weapons/Rifles/VSS/Rifle_vss_base.et",
+          "inherited": false
+        },
+        "max_burst": null,
+        "defined_in": "Prefabs/Weapons/Rifles/VSS/Rifle_vss_base.et",
+        "rounds_per_second": {
+          "value": 11.667,
+          "derived": true
+        }
+      },
+      {
+        "mode_id": "{619AB45C30091E43}",
+        "ui_name": null,
+        "rounds_per_minute": {
+          "value": 700,
+          "defined_in": "Prefabs/Weapons/Rifles/VSS/Rifle_vss_base.et",
+          "inherited": false
+        },
+        "max_burst": null,
+        "defined_in": "Prefabs/Weapons/Rifles/VSS/Rifle_vss_base.et",
+        "rounds_per_second": {
+          "value": 11.667,
+          "derived": true
+        }
+      }
+    ],
+    "physical": {
+      "Weight": null,
+      "SizeSetupStrategy": null,
+      "ItemDimensions": null,
+      "ItemVolume": null,
+      "DimensionScaler": null,
+      "_defined_in": "Prefabs/Weapons/Rifles/VSS/Rifle_vss_base.et",
+      "MeleeDamage": {
+        "value": 2,
+        "defined_in": "Prefabs/Weapons/Rifles/VSS/Rifle_vss_base.et",
+        "inherited": false
+      },
+      "Model": {
+        "guid": "C4A692199548E245",
+        "path": "Assets/Weapons_RUS/VSS/Vss.xob",
+        "defined_in": "Prefabs/Weapons/Rifles/VSS/Rifle_vss_base.et"
+      }
+    },
+    "magazine": {
+      "magazine_well": {
+        "name": "MagazineWell",
+        "class": "MagazineWell9x39",
+        "defined_in": "Prefabs/Weapons/Rifles/VSS/Rifle_vss_base.et"
+      },
+      "magazine_template": {
+        "guid": "70D023F899C9C226",
+        "path": "Prefabs/Weapons/Magazines/9x39/Magazine_9x39_20rnd_vss_SP5.et",
+        "defined_in": "Prefabs/Weapons/Rifles/VSS/Rifle_vss_base.et"
+      }
+    },
+    "ballistics": {
+      "bullet_init_speed_coef": {
+        "value": 0.835,
+        "defined_in": "Prefabs/Weapons/Rifles/VSS/Rifle_vss_base.et",
+        "inherited": false
+      },
+      "dispersion_diameter": {
+        "value": 0.4,
+        "defined_in": "Prefabs/Weapons/Rifles/VSS/Rifle_vss_base.et",
+        "inherited": false
+      },
+      "dispersion_range": {
+        "value": 200,
+        "defined_in": "Prefabs/Weapons/Rifles/VSS/Rifle_vss_base.et",
+        "inherited": false
+      }
+    },
+    "aim": {
+      "recoil": {
+        "LinearData": {
+          "values": {
+            "curve_magnitudes": null,
+            "curve_mins": null,
+            "curve_maxs": null,
+            "curve_time_scale": null,
+            "base_recoil_scale": null
+          },
+          "defined_in": "Prefabs/Weapons/Rifles/VSS/Rifle_vss_base.et"
+        },
+        "AngularData": {
+          "values": {
+            "curve_magnitudes": null,
+            "curve_mins": null,
+            "curve_maxs": null,
+            "curve_time_scale": null,
+            "base_recoil_scale": null
+          },
+          "defined_in": "Prefabs/Weapons/Rifles/VSS/Rifle_vss_base.et"
+        },
+        "TurnOffsetData": {
+          "values": {
+            "curve_magnitudes": null,
+            "curve_mins": null,
+            "curve_maxs": null,
+            "curve_time_scale": null,
+            "base_recoil_scale": null
+          },
+          "defined_in": "Prefabs/Weapons/Rifles/VSS/Rifle_vss_base.et"
+        }
+      },
+      "sway": null
+    },
+    "sights": {
+      "switch_skip": null,
+      "ranges": [],
+      "defined_in": "Prefabs/Weapons/Rifles/VSS/Rifle_vss_base.et"
+    },
+    "attachment_slots": [
+      {
+        "slot": null,
+        "pivot": null,
+        "enabled": {
+          "value": 0,
+          "defined_in": "Prefabs/Weapons/Rifles/VSS/Rifle_vss_base.et",
+          "inherited": false
+        },
+        "attachment_types": [],
+        "defined_in": "Prefabs/Weapons/Rifles/VSS/Rifle_vss_base.et"
+      },
+      {
+        "slot": null,
+        "pivot": {
+          "value": "slot_optics",
+          "defined_in": "Prefabs/Weapons/Rifles/VSS/Rifle_vss_base.et",
+          "inherited": false
+        },
+        "enabled": null,
+        "attachment_types": [
+          "{60AAE435165C80B8}"
+        ],
+        "defined_in": "Prefabs/Weapons/Rifles/VSS/Rifle_vss_base.et"
+      }
+    ],
+    "muzzle_attachment": {
+      "slot": null,
+      "enabled": {
+        "value": 0,
+        "defined_in": "Prefabs/Weapons/Rifles/VSS/Rifle_vss_base.et",
+        "inherited": false
+      },
+      "defined_in": "Prefabs/Weapons/Rifles/VSS/Rifle_vss_base.et"
+    },
+    "animation": {
+      "anim_graph": {
+        "guid": "127F777AF7430A62",
+        "path": "Assets/Weapons_RUS/VSS/Anim/Vss.agr",
+        "defined_in": "Prefabs/Weapons/Rifles/VSS/Rifle_vss_base.et"
+      },
+      "anim_instance": {
+        "guid": "819D32D40F937C40",
+        "path": "Assets/Weapons_RUS/VSS/Anim/Vss_weapon.asi",
+        "defined_in": "Prefabs/Weapons/Rifles/VSS/Rifle_vss_base.et"
+      }
+    }
+  },
+  "derived": {
+    "max_rounds_per_second": 11.667,
+    "dispersion_m_per_m": {
+      "value": 2.0,
+      "formula": "DispersionDiameter / DispersionRange * 1000"
+    },
+    "approx_moa": {
+      "value": 6.875,
+      "formula": "DispersionDiameter / DispersionRange * 3437.75"
+    }
+  }
+}

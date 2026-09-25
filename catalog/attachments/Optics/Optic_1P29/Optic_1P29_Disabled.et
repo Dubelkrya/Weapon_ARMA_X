@@ -1,0 +1,17 @@
+GameEntity : "{952D9BD7B6F8F591}Prefabs/Weapons/Attachments/Optics/Optic_1P29/Optic_1P29_base.et" {
+ ID "4BA426CBAED42A14"
+ components {
+  InventoryItemComponent "{52627A1F45CD4EB6}" {
+   Enabled 0
+  }
+  SCR_2DPIPSightsComponent "{5D0CC83435B55855}" {
+   Enabled 0
+  }
+  SCR_SoundDataComponent "{5B18D200265FA2CB}" {
+   Enabled 0
+  }
+  ActionsManagerComponent "{5284E0EFF569AD07}" {
+   Enabled 0
+  }
+ }
+}

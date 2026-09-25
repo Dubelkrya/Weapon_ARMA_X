@@ -1,0 +1,27 @@
+GenericEntity : "{BD0E49080CC706E0}Prefabs/Weapons/MachineGuns/PKM/MG_PKMT_base.et" {
+ ID "324BA7485B3737E0"
+ components {
+  SCR_WeaponAttachmentsStorageComponent "{51F080D5CE45A1A2}" {
+   Attributes SCR_ItemAttributeCollection "{51F080D5C64F12C5}" {
+    CustomAttributes {
+     PreviewRenderAttributes "{5534BB9B9A3E369E}" {
+      CameraPreset Left
+      CameraDistanceToItem 1.2
+     }
+    }
+   }
+  }
+  WeaponComponent "{CFBAA4B706BA66E8}" {
+   components {
+    MuzzleComponent "{50F64C4591CD7AA6}" {
+     WeaponAimModifiers {
+      RecoilWeaponAimModifier "{691496C5D8C286E3}" : "{D5418B4C2D854595}Prefabs/Weapons/Core/Configs/AimModifiers/RecoilAimModifier_PKM.conf" {
+      }
+     }
+     ReloadDuration 10
+     AllowWeaponDeployment 0
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,10 @@
+GenericEntity : "{7B700D1ED89F2F8D}Prefabs/Weapons/MachineGuns/PKM/MG_PKMT_Mi8_Base.et" {
+ ID "324BA7485B3737E0"
+ components {
+  WeaponSoundComponent "{5A8685198A9AEEDD}" {
+   Filenames {
+    "{8F18033E457F92C8}Sounds/Weapons/Machineguns/PKM/Weapons_Machineguns_PKM_Mi8_Aft_Shot.acp" "{9BD32DC9C8D31988}Sounds/Weapons/Machineguns/PKM/Weapons_Machineguns_PKM_Handling.acp"
+   }
+  }
+ }
+}

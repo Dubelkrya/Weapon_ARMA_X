@@ -1,0 +1,42 @@
+GenericEntity : "{AD2709F5F6F0D871}Prefabs/Weapons/Grenades/M18/Smoke_M18_Base.et" {
+ ID "51F6738D92498759"
+ components {
+  InventoryItemComponent "{51FAA3E3CF6F087A}" {
+   Attributes SCR_ItemAttributeCollection "{51FAA3E3C2D19BD4}" {
+    ItemDisplayName WeaponUIInfo "{56CA90F8241C013A}" {
+     Name "#AR-Weapon_M18Green_Name"
+     Description "#AR-Weapon_M18Green_Description"
+    }
+   }
+  }
+  MeshObject "{51EC93F29BA5F234}" {
+   Materials {
+    MaterialAssignClass "{51F6738DFBE0AA49}" {
+     SourceMaterial "m18"
+     AssignedMaterial "{37D948A3EB3DAC93}Assets/Weapons/Grenades/M18/Data/m18_green.emat"
+    }
+   }
+  }
+  SCR_WeaponAttachmentsStorageComponent "{5260C447D58750FE}" {
+   Attributes SCR_ItemAttributeCollection "{5260C447CBDC5D43}" {
+    ItemDisplayName WeaponUIInfo "{5270794ED1D0FAF9}" {
+     Name "#AR-Weapon_M18Green_Name"
+     Description "#AR-Weapon_M18Green_Description"
+    }
+    CustomAttributes {
+     PreviewRenderAttributes "{52D4E9EEB3A118DE}" {
+      CameraPreset Right
+      CameraDistanceToItem 0.5
+      FOV 20
+     }
+    }
+   }
+  }
+  WeaponComponent "{6D23670EA18BF513}" {
+   UIInfo GrenadeUIInfo "{172367262E10E042}" {
+    m_sAmmoType "#AR-AmmoType_M18Green"
+   }
+  }
+ }
+ coords 2.982 3.707 -1.472
+}

@@ -1,0 +1,57 @@
+GenericEntity : "{F9E1A46E3ABA116F}Prefabs/Weapons/Core/Magazine_Base.et" {
+ ID "CA6BE4D6BB2D1077"
+ components {
+  InventoryMagazineComponent "{51EED12B803954CC}" {
+   Attributes SCR_ItemAttributeCollection "{51EED12B86960275}" {
+    ItemDisplayName UIInfo "{51FEE38527BFEA5B}" {
+     Name "#AR-Magazine_RPK74_Name"
+     Description "#AR-Magazine_RPK74_Description"
+    }
+    ItemPhysAttributes ItemPhysicalAttributes "{548695E22AFB97DA}" {
+     Weight 0.3
+     SizeSetupStrategy Manual
+     ItemVolume 300
+     RestingUP Left
+    }
+    CustomAttributes {
+     PreviewRenderAttributes "{548695E22AFB97DC}" {
+      CameraPreset Left
+      CameraOrbitAngles -25 25 0
+      CameraDistanceToItem 1.4
+      FOV 12
+     }
+    }
+   }
+   WbPlacementFromAttributes 0
+   WeightPerAmmo 0.01
+  }
+  MagazineComponent "{CA6BE4D6B4DAFD69}" {
+   MagazineWell MagazineWellAK545 "{548695E22AFB97C7}" {
+   }
+   UIInfo MagazineUIInfo "{57126733AA401586}" {
+    m_sAmmoCaliber "#AR-AmmunitionID_545x39mm"
+    m_MagIndicator SCR_MagazineIndicatorConfiguration "{5866951DE2665916}" : "{1AA788302FE3C53A}Configs/WeaponInfo/MagazineIndicators/ak74_30.conf" {
+    }
+   }
+   MaxAmmo 45
+   AmmoConfig "{3D41E1B0D6EEC0AF}Configs/Weapons/Ammo/Ammo_545x39.conf"
+   AmmoMapping {
+    0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+   }
+  }
+  MeshObject "{CA6BE4D6A23F8EF0}" {
+   Object "{49EAB2EE6A0BBECA}Assets/Weapons/Magazines/RPK74/Magazine_45rnd_RPK74.xob"
+  }
+  ActionsManagerComponent "{F092E6B0537754FD}" {
+   ActionContexts {
+    UserActionContext "{5086F9AB010868CE}" {
+     Position PointInfo "{5086F9AC96DB9752}" {
+      Offset 0 0.003 -0.011
+     }
+    }
+   }
+  }
+ }
+ Flags 0x400003 0
+ coords 2631.639 390.043 5198.697
+}

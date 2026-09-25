@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{01733565DD4B5DA3}Imported/VanillaSources/Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Base.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

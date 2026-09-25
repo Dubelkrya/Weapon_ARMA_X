@@ -1,0 +1,193 @@
+{
+  "id": "armst_remington_870",
+  "role": "leaf",
+  "source": {
+    "resource": "Prefabs/Weapons/Rifles/Shotgun/armst_Remington_870.et",
+    "resource_guid": "6DBEF115AA35E404",
+    "meta_name": null,
+    "class": "GenericEntity",
+    "defined_in": "Prefabs/Weapons/Rifles/Shotgun/armst_Remington_870.et"
+  },
+  "identity": {
+    "name": "armst_Remington_870",
+    "resource": "Prefabs/Weapons/Rifles/Shotgun/armst_Remington_870.et"
+  },
+  "classification": {
+    "kind": "weapon",
+    "confidence": "components"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Weapons/Rifles/Shotgun/armst_Remington_870.et",
+        "status": "local",
+        "class": "GenericEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Rifles/Shotgun/shotgun_base.et",
+        "status": "local",
+        "class": "GenericEntity"
+      }
+    ],
+    "external_parents": [
+      {
+        "guid": "B31929F65F0D0279",
+        "path": "Prefabs/Weapons/Rifles/M14/Rifle_M21.et",
+        "raw": "{B31929F65F0D0279}Prefabs/Weapons/Rifles/M14/Rifle_M21.et"
+      }
+    ],
+    "used_as_base_by": [],
+    "chain_depth_local": 2
+  },
+  "references": [
+    {
+      "guid": "A84D9F22F2C0D9CE",
+      "path": "Sounds/Weapons/_SharedData/PickUp/Weapons_PickUp_Rifle_WoodMetal.acp",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "Prefabs/Weapons/Rifles/Shotgun/armst_Remington_870.et"
+    },
+    {
+      "guid": "A909D1A74C4FBE0F",
+      "path": "Assets/Remington_870/Remington870_weapon.xob",
+      "resolved": "local",
+      "target": "Assets/Remington_870/Remington870_weapon.xob",
+      "defined_in": "Prefabs/Weapons/Rifles/Shotgun/armst_Remington_870.et"
+    },
+    {
+      "guid": "FC362DDB3A38298D",
+      "path": "Assets/Remington_870/Anim/Diff/P_Remington_870_ik.anm",
+      "resolved": "local",
+      "target": "Assets/Remington_870/Anim/Diff/P_Remington_870_ik.anm",
+      "defined_in": "Prefabs/Weapons/Rifles/Shotgun/armst_Remington_870.et"
+    },
+    {
+      "guid": "3E62CF528279BC22",
+      "path": "Particles/Weapon/Casing_12ga.ptc",
+      "resolved": "local",
+      "target": "Particles/Weapon/Casing_12ga.ptc",
+      "defined_in": "Prefabs/Weapons/Rifles/Shotgun/shotgun_base.et"
+    },
+    {
+      "guid": "7D4D61DB49505CB7",
+      "path": "Particles/Weapon/Shotgun_Muzzle_NSV.ptc",
+      "resolved": "local",
+      "target": "Particles/Weapon/Shotgun_Muzzle_NSV.ptc",
+      "defined_in": "Prefabs/Weapons/Rifles/Shotgun/shotgun_base.et"
+    },
+    {
+      "guid": "B0DFDF7AAA9C5D39",
+      "path": "Prefabs/Weapons/Magazines/12ga/12ga_Buckshot.et",
+      "resolved": "local",
+      "target": "Prefabs/Weapons/Magazines/12ga/12ga_Buckshot.et",
+      "defined_in": "Prefabs/Weapons/Rifles/Shotgun/shotgun_base.et"
+    },
+    {
+      "guid": "8B08F75508B151CA",
+      "path": "Assets/Remington_870/Anim/Remington_870.agr",
+      "resolved": "local",
+      "target": "Assets/Remington_870/Anim/Remington_870.agr",
+      "defined_in": "Prefabs/Weapons/Rifles/Shotgun/armst_Remington_870.et"
+    },
+    {
+      "guid": "0E5488603A5EF99F",
+      "path": "Assets/Remington_870/Anim/Remington_870_weapon.asi",
+      "resolved": "local",
+      "target": "Assets/Remington_870/Anim/Remington_870_weapon.asi",
+      "defined_in": "Prefabs/Weapons/Rifles/Shotgun/armst_Remington_870.et"
+    },
+    {
+      "guid": "F50A1951A25F9D73",
+      "path": "Assets/Remington_870/Anim/Remington_870_player.asi",
+      "resolved": "local",
+      "target": "Assets/Remington_870/Anim/Remington_870_player.asi",
+      "defined_in": "Prefabs/Weapons/Rifles/Shotgun/armst_Remington_870.et"
+    }
+  ],
+  "warnings": [],
+  "data": {
+    "identity": {
+      "name": null
+    },
+    "fire_modes": [
+      {
+        "mode_id": "{B80A64F4A8EF8333}",
+        "ui_name": null,
+        "rounds_per_minute": null,
+        "max_burst": null,
+        "defined_in": "Prefabs/Weapons/Rifles/Shotgun/armst_Remington_870.et"
+      }
+    ],
+    "physical": {
+      "Weight": null,
+      "SizeSetupStrategy": null,
+      "ItemDimensions": null,
+      "ItemVolume": null,
+      "DimensionScaler": null,
+      "_defined_in": "Prefabs/Weapons/Rifles/Shotgun/armst_Remington_870.et",
+      "MeleeDamage": {
+        "value": 2,
+        "defined_in": "Prefabs/Weapons/Rifles/Shotgun/shotgun_base.et",
+        "inherited": true
+      },
+      "Model": {
+        "guid": "A909D1A74C4FBE0F",
+        "path": "Assets/Remington_870/Remington870_weapon.xob",
+        "defined_in": "Prefabs/Weapons/Rifles/Shotgun/armst_Remington_870.et"
+      }
+    },
+    "magazine": {
+      "magazine_well": {
+        "name": "MagazineWell",
+        "class": "MagazineWell12g",
+        "defined_in": "Prefabs/Weapons/Rifles/Shotgun/shotgun_base.et"
+      },
+      "magazine_template": {
+        "guid": "B0DFDF7AAA9C5D39",
+        "path": "Prefabs/Weapons/Magazines/12ga/12ga_Buckshot.et",
+        "defined_in": "Prefabs/Weapons/Rifles/Shotgun/shotgun_base.et"
+      }
+    },
+    "ballistics": {
+      "bullet_init_speed_coef": null,
+      "dispersion_diameter": null,
+      "dispersion_range": {
+        "value": 701,
+        "defined_in": "Prefabs/Weapons/Rifles/Shotgun/shotgun_base.et",
+        "inherited": true
+      }
+    },
+    "aim": {
+      "recoil": null,
+      "sway": null
+    },
+    "sights": null,
+    "attachment_slots": [
+      {
+        "slot": null,
+        "pivot": null,
+        "enabled": {
+          "value": 0,
+          "defined_in": "Prefabs/Weapons/Rifles/Shotgun/shotgun_base.et",
+          "inherited": true
+        },
+        "attachment_types": [],
+        "defined_in": "Prefabs/Weapons/Rifles/Shotgun/shotgun_base.et"
+      }
+    ],
+    "muzzle_attachment": null,
+    "animation": {
+      "anim_graph": {
+        "guid": "8B08F75508B151CA",
+        "path": "Assets/Remington_870/Anim/Remington_870.agr",
+        "defined_in": "Prefabs/Weapons/Rifles/Shotgun/armst_Remington_870.et"
+      },
+      "anim_instance": {
+        "guid": "0E5488603A5EF99F",
+        "path": "Assets/Remington_870/Anim/Remington_870_weapon.asi",
+        "defined_in": "Prefabs/Weapons/Rifles/Shotgun/armst_Remington_870.et"
+      }
+    }
+  },
+  "derived": {}
+}

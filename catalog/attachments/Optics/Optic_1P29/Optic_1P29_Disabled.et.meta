@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{7526FEAD5792CA0E}Imported/VanillaSources/Prefabs/Weapons/Attachments/Optics/Optic_1P29/Optic_1P29_Disabled.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

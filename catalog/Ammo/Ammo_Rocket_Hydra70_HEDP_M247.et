@@ -1,0 +1,11 @@
+EjectableProjectile : "{ECD8628EBF7E5F6B}Prefabs/Weapons/Ammo/Ammo_Rocket_Hydra70.et" {
+ ID "DA5C6308000CDEF2"
+ components {
+  CollisionTriggerComponent "{60C2F0C44D951E69}" {
+   PROJECTILE_EFFECTS {
+    SCR_ExplosionAmmoEffect "{66A0CD1A9A82499C}" {
+    }
+   }
+  }
+ }
+}

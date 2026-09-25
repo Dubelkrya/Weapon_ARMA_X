@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{EDCF76725BF1A961}Imported/VanillaSources/Prefabs/Weapons/Magazines/NSV/Box_127x108_NSV_50rnd_API.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

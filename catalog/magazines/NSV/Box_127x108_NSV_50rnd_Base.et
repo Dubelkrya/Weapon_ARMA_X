@@ -1,0 +1,61 @@
+GenericEntity : "{F9E1A46E3ABA116F}Prefabs/Weapons/Core/Magazine_Base.et" {
+ ID "CA6BE4D6BB2D1077"
+ components {
+  AICombatPropertiesComponent "{59CE86D96C332DDF}" {
+   Priority 25
+   PriorityAgainstVehicles 35
+   UsedAgainst 0x7 0x10
+  }
+  InventoryMagazineComponent "{51EED12B803954CC}" {
+   Attributes SCR_ItemAttributeCollection "{51EED12B86960275}" {
+    ItemDisplayName UIInfo "{51FEE38527BFEA5B}" {
+     Name "#AR-Magazine_NSV_API_Name"
+     Description "#AR-Magazine_NSV_API_Description"
+    }
+    ItemPhysAttributes ItemPhysicalAttributes "{5AF070F2C2467B5F}" {
+     Weight 2.5
+     SizeSetupStrategy Manual
+     ItemDimensions 15 15 15
+     ItemVolume 4000
+    }
+    CustomAttributes {
+     PreviewRenderAttributes "{5AF070F2C2467B31}" {
+      CameraOrbitAngles -25 25 0
+      CameraDistanceToItem 2
+      FOV 16
+     }
+    }
+   }
+   WeightPerAmmo 0.22
+  }
+  MagazineComponent "{CA6BE4D6B4DAFD69}" {
+   MagazineWell MagazineWellNSV "{6092E243280F7F92}" {
+   }
+   UIInfo MagazineUIInfo "{57126733AA401586}" {
+    Name "#AR-Magazine_NSV_Name"
+    Description "#AR-Magazine_NSV_Description"
+    m_sAmmoCaliber "#AR-AmmunitionID_127x108mm"
+    m_eAmmoTypeFlags 132
+   }
+   ItemModel "{A394D249DDFDBBC6}Assets/Weapons/Magazines/NSV/Magazine_50rn_NSV_item.xob"
+   MaxAmmo 50
+   AmmoConfig "{7DD62B887C8764FA}Configs/Weapons/Ammo/Ammo_127x108.conf"
+   AmmoMapping {
+    0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+   }
+  }
+  MeshObject "{CA6BE4D6A23F8EF0}" {
+   Object "{C291C96EEA55E5F3}Assets/Weapons/Magazines/NSV/Magazine_50rn_NSV.xob"
+  }
+  MagazineAnimationComponent "{5F269916F2117423}" {
+   AnimGraph "{78DE520D7BDED5E1}Assets/Weapons/Magazines/workspaces/NSV_magazine.agr"
+   AnimInstance "{95B407D667D7870F}Assets/Weapons/Magazines/workspaces/NSV_magazine.asi"
+   AutoVariablesBind 1
+   AnimatedMesh "{C291C96EEA55E5F3}Assets/Weapons/Magazines/NSV/Magazine_50rn_NSV.xob"
+   BulletMeshesToHide {
+    "bullet_bottom" "bullet_12" "bullet_11" "bullet_10" "bullet_09" "bullet_08" "bullet_07" "bullet_06" "bullet_05" "bullet_04" "bullet_03" "bullet_02" "bullet_01"
+   }
+  }
+ }
+ coords 3.087 1.634 4.036
+}

@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{0CB606A765338F5A}Imported/VanillaSources/Prefabs/Weapons/HeavyWeapons/Deployable_HMG_M2HB.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

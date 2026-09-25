@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{4C821B5B8F5DB7EB}Imported/VanillaSources/Prefabs/Weapons/Warheads/Warhead_Hydra70_HE_M229.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

@@ -1,0 +1,94 @@
+{
+  "id": "ammo_12ga_shell",
+  "role": "leaf",
+  "source": {
+    "resource": "Prefabs/Weapons/Ammo/12g/Ammo_12ga_shell.et",
+    "resource_guid": "9F7537128778361F",
+    "meta_name": null,
+    "class": "Projectile",
+    "defined_in": "Prefabs/Weapons/Ammo/12g/Ammo_12ga_shell.et"
+  },
+  "identity": {
+    "name": "Ammo_12ga_shell",
+    "resource": "Prefabs/Weapons/Ammo/12g/Ammo_12ga_shell.et"
+  },
+  "classification": {
+    "kind": "ammunition",
+    "confidence": "class"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Weapons/Ammo/12g/Ammo_12ga_shell.et",
+        "status": "local",
+        "class": "Projectile"
+      }
+    ],
+    "external_parents": [
+      {
+        "guid": "AC29AE3D5ECD6390",
+        "path": "Prefabs/Weapons/Ammo/Ammo_762x54r_Ball_57N323S.et",
+        "raw": "{AC29AE3D5ECD6390}Prefabs/Weapons/Ammo/Ammo_762x54r_Ball_57N323S.et"
+      }
+    ],
+    "used_as_base_by": [],
+    "chain_depth_local": 1
+  },
+  "references": [],
+  "warnings": [],
+  "data": {
+    "shell": {
+      "InitSpeed": {
+        "value": 720,
+        "defined_in": "Prefabs/Weapons/Ammo/12g/Ammo_12ga_shell.et",
+        "inherited": false
+      },
+      "InitSpeedVariation": null,
+      "DispersionMultiplier": null,
+      "Mass": null,
+      "TumblingDamageMultiplier": null,
+      "PenetrationDepth": null,
+      "PenetrationSpeed": null,
+      "PenetrationDensity": {
+        "value": 3.36,
+        "defined_in": "Prefabs/Weapons/Ammo/12g/Ammo_12ga_shell.et",
+        "inherited": false
+      },
+      "AirDrag": null,
+      "ballistic_table": null,
+      "_defined_in": "Prefabs/Weapons/Ammo/12g/Ammo_12ga_shell.et"
+    },
+    "timer": {
+      "time": {
+        "value": 0.025,
+        "defined_in": "Prefabs/Weapons/Ammo/12g/Ammo_12ga_shell.et",
+        "inherited": false
+      },
+      "safety_distance": {
+        "value": 0,
+        "defined_in": "Prefabs/Weapons/Ammo/12g/Ammo_12ga_shell.et",
+        "inherited": false
+      },
+      "_defined_in": "Prefabs/Weapons/Ammo/12g/Ammo_12ga_shell.et"
+    },
+    "effects": [
+      {
+        "type": "ProjectileDamage",
+        "id": "{5168BBF3DBD79134}",
+        "defined_in": "Prefabs/Weapons/Ammo/12g/Ammo_12ga_shell.et",
+        "DamageValue": {
+          "value": 100,
+          "defined_in": "Prefabs/Weapons/Ammo/12g/Ammo_12ga_shell.et",
+          "inherited": false
+        },
+        "DamageType": null,
+        "MinimumDamage": null
+      }
+    ],
+    "_defined_in": "Prefabs/Weapons/Ammo/12g/Ammo_12ga_shell.et"
+  },
+  "derived": {
+    "init_speed": 720,
+    "projectile_damage": 100
+  }
+}

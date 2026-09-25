@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{249D7E50D931D9F4}Imported/VanillaSources/Prefabs/Weapons/Core/Damage/FragmentationDamageEffect_HEDP.conf"
+ Configurations {
+  CONFResourceClass PC {
+  }
+  CONFResourceClass XBOX_ONE : PC {
+  }
+  CONFResourceClass XBOX_SERIES : PC {
+  }
+  CONFResourceClass PS4 : PC {
+  }
+  CONFResourceClass PS5 : PC {
+  }
+  CONFResourceClass HEADLESS : PC {
+  }
+ }
+}

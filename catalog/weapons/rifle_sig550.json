@@ -1,0 +1,169 @@
+{
+  "id": "rifle_sig550",
+  "role": "leaf",
+  "source": {
+    "resource": "Prefabs/Weapons/Rifles/Rifle_Sig550.et",
+    "resource_guid": "CA3BEBAADDFAF1DE",
+    "meta_name": null,
+    "class": "GenericEntity",
+    "defined_in": "Prefabs/Weapons/Rifles/Rifle_Sig550.et"
+  },
+  "identity": {
+    "name": "Rifle_Sig550",
+    "resource": "Prefabs/Weapons/Rifles/Rifle_Sig550.et"
+  },
+  "classification": {
+    "kind": "weapon",
+    "confidence": "components"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Weapons/Rifles/Rifle_Sig550.et",
+        "status": "local",
+        "class": "GenericEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Rifles/Rifle_M16A2.et",
+        "status": "local",
+        "class": "GenericEntity"
+      }
+    ],
+    "external_parents": [
+      {
+        "guid": "C63227C0E70EA62E",
+        "path": "Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et",
+        "raw": "{C63227C0E70EA62E}Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et"
+      }
+    ],
+    "used_as_base_by": [],
+    "chain_depth_local": 2
+  },
+  "references": [
+    {
+      "guid": "C49097527FAF33B1",
+      "path": "Assets/Weapons_NATO/Sig SG 550/SG550.xob",
+      "resolved": "local",
+      "target": "Assets/Weapons_NATO/Sig SG 550/SG550.xob",
+      "defined_in": "Prefabs/Weapons/Rifles/Rifle_Sig550.et"
+    },
+    {
+      "guid": "A467945D1C570C24",
+      "path": "Assets/Weapons_NATO/Sig SG 550/Anim/Diff/p_rfl_sg550_ik.anm",
+      "resolved": "local",
+      "target": "Assets/Weapons_NATO/Sig SG 550/Anim/Diff/p_rfl_sg550_ik.anm",
+      "defined_in": "Prefabs/Weapons/Rifles/Rifle_Sig550.et"
+    },
+    {
+      "guid": "E3DC6C2FBBE4F825",
+      "path": "Prefabs/Weapons/Magazines/Magazine_556x45_SIG_550.et",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "Prefabs/Weapons/Rifles/Rifle_Sig550.et"
+    },
+    {
+      "guid": "E7E67E4426E24066",
+      "path": "Assets/Weapons/Rifles/workspaces/VZ58.agr",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "Prefabs/Weapons/Rifles/Rifle_Sig550.et"
+    },
+    {
+      "guid": "FFB391312D0E84C5",
+      "path": "Assets/Weapons/Rifles/workspaces/VZ58_weapon.asi",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "Prefabs/Weapons/Rifles/Rifle_Sig550.et"
+    },
+    {
+      "guid": "04ED0000B50FE029",
+      "path": "Assets/Weapons/Rifles/workspaces/VZ58_player.asi",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "Prefabs/Weapons/Rifles/Rifle_Sig550.et"
+    }
+  ],
+  "warnings": [],
+  "data": {
+    "identity": {
+      "name": null
+    },
+    "fire_modes": [],
+    "physical": {
+      "MeleeDamage": {
+        "value": 2,
+        "defined_in": "Prefabs/Weapons/Rifles/Rifle_Sig550.et",
+        "inherited": false
+      },
+      "Model": {
+        "guid": "C49097527FAF33B1",
+        "path": "Assets/Weapons_NATO/Sig SG 550/SG550.xob",
+        "defined_in": "Prefabs/Weapons/Rifles/Rifle_Sig550.et"
+      }
+    },
+    "magazine": {
+      "magazine_well": null,
+      "magazine_template": {
+        "guid": "E3DC6C2FBBE4F825",
+        "path": "Prefabs/Weapons/Magazines/Magazine_556x45_SIG_550.et",
+        "defined_in": "Prefabs/Weapons/Rifles/Rifle_Sig550.et"
+      }
+    },
+    "ballistics": {
+      "bullet_init_speed_coef": null,
+      "dispersion_diameter": null,
+      "dispersion_range": null
+    },
+    "aim": {
+      "recoil": null,
+      "sway": null
+    },
+    "sights": {
+      "switch_skip": null,
+      "ranges": [],
+      "defined_in": "Prefabs/Weapons/Rifles/Rifle_Sig550.et"
+    },
+    "attachment_slots": [
+      {
+        "slot": null,
+        "pivot": null,
+        "enabled": {
+          "value": 0,
+          "defined_in": "Prefabs/Weapons/Rifles/Rifle_Sig550.et",
+          "inherited": false
+        },
+        "attachment_types": [],
+        "defined_in": "Prefabs/Weapons/Rifles/Rifle_Sig550.et"
+      },
+      {
+        "slot": null,
+        "pivot": null,
+        "enabled": {
+          "value": 0,
+          "defined_in": "Prefabs/Weapons/Rifles/Rifle_Sig550.et",
+          "inherited": false
+        },
+        "attachment_types": [],
+        "defined_in": "Prefabs/Weapons/Rifles/Rifle_Sig550.et"
+      }
+    ],
+    "muzzle_attachment": {
+      "slot": null,
+      "enabled": null,
+      "defined_in": "Prefabs/Weapons/Rifles/Rifle_Sig550.et"
+    },
+    "animation": {
+      "anim_graph": {
+        "guid": "E7E67E4426E24066",
+        "path": "Assets/Weapons/Rifles/workspaces/VZ58.agr",
+        "defined_in": "Prefabs/Weapons/Rifles/Rifle_Sig550.et"
+      },
+      "anim_instance": {
+        "guid": "FFB391312D0E84C5",
+        "path": "Assets/Weapons/Rifles/workspaces/VZ58_weapon.asi",
+        "defined_in": "Prefabs/Weapons/Rifles/Rifle_Sig550.et"
+      }
+    }
+  },
+  "derived": {}
+}

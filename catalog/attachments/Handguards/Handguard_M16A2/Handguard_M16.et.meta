@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{1D344A32C2012E0E}Imported/VanillaSources/Prefabs/Weapons/Attachments/Handguards/Handguard_M16A2/Handguard_M16.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

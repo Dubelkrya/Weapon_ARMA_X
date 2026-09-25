@@ -1,0 +1,10 @@
+Turret : "{47541B3743EBD348}Prefabs/Weapons/Tripods/6T7/Tripod_6T7_base.et" {
+ ID "52D30EFBEBC74642"
+ components {
+  WeaponSlotComponent "{51ACD09C6BFEEE6A}" {
+   AttachType InventoryStorageSlot "{0AACE7470E421D82}" {
+    PivotID "slot_gun"
+   }
+  }
+ }
+}

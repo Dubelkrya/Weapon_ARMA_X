@@ -1,0 +1,14 @@
+EjectableProjectile : "{C9A1612DC5340613}Prefabs/Weapons/Ammo/Ammo_Rocket_S5.et" {
+ ID "DA5C6308000CDEF2"
+ components {
+  CollisionTriggerComponent "{549302EDFF95851E}" {
+   PROJECTILE_EFFECTS {
+    SCR_ExplosionAmmoEffect "{66A0CD1AD162CDA5}" {
+    }
+   }
+  }
+  MagazineComponent "{50F6614BB5D5B0A8}" {
+   ItemModel "{180CED78848A492B}Assets/Weapons/Ammo/Rockets/S5/S5KO_item.xob"
+  }
+ }
+}

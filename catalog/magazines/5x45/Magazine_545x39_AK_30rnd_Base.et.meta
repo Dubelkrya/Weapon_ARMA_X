@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{E86A8A9A91C800C2}Imported/VanillaSources/Prefabs/Weapons/Magazines/5x45/Magazine_545x39_AK_30rnd_Base.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

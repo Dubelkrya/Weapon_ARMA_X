@@ -1,0 +1,81 @@
+GameEntity : "{966B4E5523D2F166}Prefabs/Weapons/Attachments/Optics/WeaponOptic_Base.et" {
+ ID "4BA426CBAED42A14"
+ components {
+  InventoryItemComponent "{52627A1F45CD4EB6}" {
+   Enabled 1
+   Attributes SCR_ItemAttributeCollection "{52627A1EBB0698FD}" {
+    ItemDisplayName UIInfo "{5D0CC83435B5584E}" {
+     Name "#AR-Item_SPP_Name"
+     Description "#AR-Item_SPP_Description"
+    }
+    ItemPhysAttributes ItemPhysicalAttributes "{5D0CC83435B55848}" {
+     Weight 1.7
+     ItemVolume 600
+     RestingUP Left
+     RestingAdditiveOffsetLS 0.03 0 0
+    }
+    CustomAttributes {
+     BaseItemAttributeData "{5284D858FFF9BE66}" {
+     }
+    }
+    m_Size SLOT_1x1
+   }
+  }
+  MeshObject "{5D0CC83435B55858}" {
+   Object "{7516F3AE4D768FD1}Assets/Weapons/Attachments/Optics/SPP/Scope_SPP.xob"
+  }
+  SCR_2DPIPSightsComponent "{5D0CC83435B55855}" {
+   SightsPosition PointInfo "{5D0CC83435B55853}" {
+   }
+   SightsFOVInfo SCR_SightsZoomFOVInfo "{5EB6D7357E0A7425}" {
+    m_fBaseZoom 3
+    m_fZoomMax 6
+   }
+   SightsPointFront PointInfo "{5EB6D7357E0A7426}" {
+   }
+   SightsPointRear PointInfo "{5EB6D7357E0A7428}" {
+    PivotID "sight_rear"
+   }
+   CameraRecoilAmount -0.9
+   SightsPriority 1
+   SoundInt 10001
+   m_sReticleTexture "{2124B6AC40893CBD}UI/Textures/Sights/PGO7/PGO7_white_solid_UI.edds"
+   m_sReticleGlowTexture "{2124B6AC40893CBD}UI/Textures/Sights/PGO7/PGO7_white_solid_UI.edds"
+   m_bHasIllumination 1
+   m_cReticleTextureIllumination 0.804 0.02 0.02 1
+   m_vCameraOffset 0 0.035 0
+   m_rScopeHDRMatrial "{E8738368ECB4F8FE}Assets/Weapons/Attachments/Optics/PGO7/Data/Optic_PGO7V_HDR.emat"
+   m_fObjectiveFov 13
+   m_fReticleAngularSize 6
+   m_fReticlePortion 0.7681
+   m_fReticleBaseZoom 3
+   m_fMagnification 3
+  }
+  ActionsManagerComponent "{5284E0EFF569AD07}" {
+   Enabled 1
+   ActionContexts {
+    UserActionContext "{5284E0EFF4E818E9}" {
+     Position PointInfo "{5284E0EFC526E6F0}" {
+      Offset 0.0159 0.1049 -0.1001
+     }
+    }
+   }
+   additionalActions {
+    SCR_EquipWeaponAttachment "{5284E0EFDA00C63B}" {
+     ParentContextList {
+     }
+    }
+    SCR_PickUpLooseItemAction "{585CED82E5DD85D6}" {
+    }
+    SCR_AttachItemFromInventoryAction "{5D0CC83435B55B88}" {
+     ParentContextList {
+     }
+    }
+    SCR_AttachementAction "{5D0CC83435B55B8D}" {
+     ParentContextList {
+     }
+    }
+   }
+  }
+ }
+}

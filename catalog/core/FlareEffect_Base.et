@@ -1,0 +1,67 @@
+Projectile {
+ ID "5A52CD9231D8AB66"
+ components {
+  SignalsManagerComponent "{6104C6F011AF2B66}" {
+  }
+  SoundComponent "{60C8D458549023EE}" {
+   Filenames {
+    "{A175E59B081F5D71}Sounds/Ammo/Flares/Ammo_Flares_ProjectileTravelling_40mm_Deployed.acp"
+   }
+  }
+  TimerTriggerComponent "{60F2D6E8520B1C8B}" {
+   TIMER 40
+  }
+  FlareMoveComponent "{5A52CD9231D8AB6E}" {
+   InitSpeed 71
+   Mass 0.2
+   WindInfluenceMultiplier 0.25
+   TimeToLive 40
+   DeleteWhenStop 0
+   AirDrag 0.75
+   SideAirDragScale 0.05
+   Diameter 40
+   RotationSpeed 90
+   SmokeParticleDirection 0 0 0
+   SmokeParticle "{A56239A0DC6636AC}Particles/Weapon/Flare_Parachute.ptc"
+  }
+  MeshObject "{5A52CD9231D8AB5E}" {
+   Object "{3D2DFC533F142E11}Assets/Weapons/Ammo/Bullets/9x18/Bullet_9x18.xob"
+   Materials {
+    MaterialAssignClass "{65026C52B180753E}" {
+     SourceMaterial "9x18M"
+     AssignedMaterial "{8FBC3A6E946F056E}Common/Materials/Default_Transparent.emat"
+    }
+   }
+  }
+  RigidBody "{5A52CD9231D8AB46}" {
+   LayerPreset "Projectile"
+   Mass 0.1
+   LinearDamping 0.99
+   AngularDamping 0.8
+   ResponseIndex "Normal"
+   ModelGeometry 1
+  }
+  SCR_FlareEffectComponent "{611868B460E2F003}" {
+   m_aLightData {
+    SCR_BaseLightData "{611868B4754ECDDD}" {
+     m_eLightType POINT
+     m_vLightOffset 0 0.2 0
+     m_vLightColor 0.398 1 0
+     m_fRadius 75
+     m_fIntensityClipEV -10
+     m_fScale 3
+     m_eLightFlags 3
+    }
+   }
+   m_fLV 7
+   m_fDistanceAttenuation 1
+   m_iLightLifetime 60
+   m_eInitialLightState LIT
+  }
+  RplComponent "{6160C046DA20095C}" {
+  }
+ }
+ coords 117.908 123.415 123.437
+ scale 0.1
+ ProjectileVisibleTimeScale 2
+}

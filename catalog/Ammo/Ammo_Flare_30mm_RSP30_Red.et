@@ -1,0 +1,20 @@
+Projectile : "{6FCF820BB2668D0E}Prefabs/Weapons/Ammo/Ammo_Flare_30mm_RSP30_Base.et" {
+ ID "50C6F965BA00F9FA"
+ components {
+  TimerTriggerComponent "{62E676DDFA5E2E9B}" {
+   PROJECTILE_EFFECTS {
+    SubmunitionEffect "{62E676DDCC924E54}" {
+     Prefab "{4DF62982D8A52DB8}Prefabs/Weapons/Ammo/FlareEffect_30mm_RSP30_Red.et"
+    }
+   }
+  }
+  InventoryItemComponent "{52627A12350994B6}" {
+   Attributes SCR_ItemAttributeCollection "{52627A1234AD20A4}" {
+    ItemDisplayName UIInfo "{60F4A8D930FDD9BD}" {
+     Name "#AR-Item_RSP30_Red_Name"
+     Description "#AR-Item_RSP30_Red_Description"
+    }
+   }
+  }
+ }
+}

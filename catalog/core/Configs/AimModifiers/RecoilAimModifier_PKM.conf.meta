@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{9A45552C75BEAD17}Imported/VanillaSources/Prefabs/Weapons/Core/Configs/AimModifiers/RecoilAimModifier_PKM.conf"
+ Configurations {
+  CONFResourceClass PC {
+  }
+  CONFResourceClass XBOX_ONE : PC {
+  }
+  CONFResourceClass XBOX_SERIES : PC {
+  }
+  CONFResourceClass PS4 : PC {
+  }
+  CONFResourceClass PS5 : PC {
+  }
+  CONFResourceClass HEADLESS : PC {
+  }
+ }
+}

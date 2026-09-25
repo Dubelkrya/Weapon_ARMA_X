@@ -1,0 +1,76 @@
+GenericEntity : "{F9E1A46E3ABA116F}Prefabs/Weapons/Core/Magazine_Base.et" {
+ ID "CA6BE4D6BB2D1077"
+ components {
+  AICombatPropertiesComponent "{59CE86D96C332DDF}" {
+   PriorityAgainstVehicles 70
+   UsedAgainst 0x1f 0
+  }
+  InventoryMagazineComponent "{51EED12B803954CC}" {
+   Attributes SCR_ItemAttributeCollection "{51EED12B86960275}" {
+    ItemDisplayName UIInfo "{51FEE38527BFEA5B}" {
+     Name "#AR-Magazine_M242_APDS_Name"
+     Description "#AR-Magazine_M242_APDS_Description"
+    }
+    ItemPhysAttributes ItemPhysicalAttributes "{6072B4F5052C4A91}" {
+     Weight 0
+     SizeSetupStrategy Manual
+     ItemDimensions 30 30 30
+     ItemVolume 10000
+    }
+    CustomAttributes {
+     PreviewRenderAttributes "{6072B4F5052C4A98}" {
+      CameraPreset Back
+      CameraOrbitAngles -25 -25 0
+      CameraDistanceToItem 2
+      ItemRenderRotation 0 180 180
+      FOV 12
+      PreviewModel "{E1D9125A7EB3BD1C}Assets/Weapons/Magazines/M2/Magazine_100rnd_M2.xob"
+     }
+    }
+    m_Size SLOT_2x2
+    m_bVisible 0
+   }
+   WeightPerAmmo 0.542
+  }
+  MagazineComponent "{CA6BE4D6B4DAFD69}" {
+   MagazineWell MagazineWell_Cannon_M242_APDST "{62C8B0D8F86D4219}" {
+   }
+   UIInfo MagazineUIInfo "{57126733AA401586}" {
+    Name "#AR-Magazine_M242_APDS_Name"
+    Description "#AR-Magazine_M242_APDS_Description"
+    m_sAmmoCaliber "#AR-AmmunitionID_25x137mm"
+    m_sAmmoType "#AR-AmmunitionType_APDST"
+    m_bShowAmmoTypeText 1
+    m_eAmmoTypeFlags 6
+   }
+   ItemModel "{C606B6A19900E01E}Assets/Weapons/Magazines/Magazine_M242/Magazine_25x137_M242_60rnd_APDST.xob"
+   MaxAmmo 60
+   AmmoConfig "{4B735215480BF99B}Configs/Weapons/Ammo/Ammo_25x137.conf"
+   AmmoMapping {
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+   }
+  }
+  MeshObject "{CA6BE4D6A23F8EF0}" {
+   Object "{AAD3D58CE0E6C60F}Assets/Weapons/Magazines/Magazine_M242/Magazine_25x137_M242_dummy.xob"
+   Materials {
+    MaterialAssignClass "{62A45B843B6DF2FC}" {
+     SourceMaterial "Common/Materials/Default"
+     AssignedMaterial "{8FBC3A6E946F056E}Common/Materials/Default_Transparent.emat"
+    }
+   }
+  }
+  SCR_SoundDataComponent "{5B18D200EBB5EA25}" {
+   m_aAudioSourceConfiguration {
+    SCR_AudioSourceConfiguration "{5B18D209080A5D15}" {
+     m_sSoundProject "{EE729B0CFB7CBF61}Sounds/Weapons/_SharedData/PickUp/Weapons_PickUp_HMG_Magazine.acp"
+    }
+    SCR_AudioSourceConfiguration "{5B18D2091B885AE6}" {
+     m_sSoundProject "{EE729B0CFB7CBF61}Sounds/Weapons/_SharedData/PickUp/Weapons_PickUp_HMG_Magazine.acp"
+    }
+    SCR_AudioSourceConfiguration "{5B18D20930D9E274}" {
+     m_sSoundProject "{2DBF1C67021E3DA9}Sounds/Weapons/_SharedData/Drop/Weapons_Drop_HMG_Magazine.acp"
+    }
+   }
+  }
+ }
+}

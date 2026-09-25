@@ -1,0 +1,16 @@
+Projectile : "{F7807293E94D3C88}Prefabs/Weapons/Ammo/Ammo_Shell_81mm_Smoke_M819.et" {
+ ID "5098E3DEA78F878B"
+ components {
+  CollisionTriggerComponent "{60AC9441243E3504}" {
+   TRIGGER_ALIVE 1
+  }
+  SCR_EffectsModuleChildComponent "{61A4A8ADF2C5938D}" {
+  }
+  ShellMoveComponent "{5098E3DEA78F87A3}" {
+   DispersionMultiplier 0
+  }
+  RplComponent "{51A2B9D6823E09EC}" {
+   "Rpl State Override" Runtime
+  }
+ }
+}

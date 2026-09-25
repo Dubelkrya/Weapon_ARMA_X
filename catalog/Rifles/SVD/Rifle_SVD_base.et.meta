@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{366BF2DA1832CB66}Imported/VanillaSources/Prefabs/Weapons/Rifles/SVD/Rifle_SVD_base.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

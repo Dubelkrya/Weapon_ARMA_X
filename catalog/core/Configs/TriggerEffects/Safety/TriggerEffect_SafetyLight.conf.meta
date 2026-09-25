@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{F2E911B732BA0840}Imported/VanillaSources/Prefabs/Weapons/Core/Configs/TriggerEffects/Safety/TriggerEffect_SafetyLight.conf"
+ Configurations {
+  CONFResourceClass PC {
+  }
+  CONFResourceClass XBOX_ONE : PC {
+  }
+  CONFResourceClass XBOX_SERIES : PC {
+  }
+  CONFResourceClass PS4 : PC {
+  }
+  CONFResourceClass PS5 : PC {
+  }
+  CONFResourceClass HEADLESS : PC {
+  }
+ }
+}

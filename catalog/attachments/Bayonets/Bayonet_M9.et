@@ -1,0 +1,48 @@
+GameEntity : "{9CB58C6DD96AF131}Prefabs/Weapons/Attachments/Bayonets/Bayonet_Base.et" {
+ ID "50989DC991E68512"
+ components {
+  InventoryItemComponent "{52627A1F45CD4EB6}" {
+   Attributes SCR_ItemAttributeCollection "{60A8948019D3F7B6}" {
+    ItemDisplayName UIInfo "{60A8948019D3F7B0}" {
+     Name "#AR-Weapon_M9Bayonet_Name"
+     Description "#AR-Weapon_M9Bayonet_Description"
+    }
+    CustomAttributes {
+     SCR_WeaponAttachmentBayonetAttributes "{61967DD811A4DEE5}" {
+      AttachmentType AttachmentBayonetM9 "{61967DE895246CF5}" {
+      }
+     }
+     SCR_WeaponAttachmentObstructionAttributes "{61B08C8F8182650A}" {
+      AttachmentType AttachmentBayonetM9 "{61B08C8F8889D9AD}" {
+      }
+      m_aObstructedAttachmentTypes {
+       AttachmentSuppressorMark3 "{61B485C49DDB99C6}" {
+       }
+       AttachmentUnderBarrelM203 "{61B485C4AAA8AE0B}" {
+       }
+       AttachmentUnderBarrelM203Carbine "{61B485CA04005467}" {
+       }
+      }
+      m_aRequiredAttachmentTypes {
+       AttachmentFlashHiderA2 "{61B485CA45D3C7FC}" {
+       }
+      }
+     }
+     AttachmentAttributes "{61967DD3121C95A3}" {
+      AttachmentType AttachmentBayonetM9 "{61967DE89A1EAA98}" {
+      }
+     }
+    }
+   }
+  }
+  ActionsManagerComponent "{5284E0EFF569AD07}" {
+   ActionContexts {
+    UserActionContext "{60ECB1E8B72F02DA}" {
+     Position PointInfo "{60ECB1E8B9487FF3}" {
+      Offset 0 0.002 -0.1291
+     }
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{71CD8927D29FDF4E}Imported/VanillaSources/Prefabs/Weapons/Tripods/dst/Tripod_6T5_Damaged.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

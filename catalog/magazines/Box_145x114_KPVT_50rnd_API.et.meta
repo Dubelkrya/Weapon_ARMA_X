@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{A8AE94C8C162D481}Imported/VanillaSources/Prefabs/Weapons/Magazines/Box_145x114_KPVT_50rnd_API.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

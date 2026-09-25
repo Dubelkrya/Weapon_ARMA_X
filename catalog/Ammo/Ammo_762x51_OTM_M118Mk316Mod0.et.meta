@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{97E6D426939B5CEE}Imported/VanillaSources/Prefabs/Weapons/Ammo/Ammo_762x51_OTM_M118Mk316Mod0.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

@@ -1,0 +1,8 @@
+GenericEntity : "{49A7611AD04D8878}Prefabs/Weapons/Attachments/Mounts/Dovetail_PKM/Dovetail_PKM_base.et" {
+ ID "557E85EEE1B603F1"
+ components {
+  MeshObject "{557E85EE39CED921}" {
+   Object "{F9C4DAC5C538C4F7}Assets/Weapons/Attachments/Mounts/Dovetail_PKM/Dovetail_PKM.xob"
+  }
+ }
+}

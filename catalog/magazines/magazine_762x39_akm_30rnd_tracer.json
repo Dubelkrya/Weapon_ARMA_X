@@ -1,0 +1,64 @@
+{
+  "id": "magazine_762x39_akm_30rnd_tracer",
+  "role": "leaf",
+  "source": {
+    "resource": "Prefabs/Weapons/Magazines/7x62/Magazine_762x39_AKM_30rnd_Tracer.et",
+    "resource_guid": "FAFA0D71E75CEBE2",
+    "meta_name": null,
+    "class": "GenericEntity",
+    "defined_in": "Prefabs/Weapons/Magazines/7x62/Magazine_762x39_AKM_30rnd_Tracer.et"
+  },
+  "identity": {
+    "name": "Magazine_762x39_AKM_30rnd_Tracer",
+    "resource": "Prefabs/Weapons/Magazines/7x62/Magazine_762x39_AKM_30rnd_Tracer.et"
+  },
+  "classification": {
+    "kind": "magazine",
+    "confidence": "folder"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Weapons/Magazines/7x62/Magazine_762x39_AKM_30rnd_Tracer.et",
+        "status": "local",
+        "class": "GenericEntity"
+      }
+    ],
+    "external_parents": [
+      {
+        "guid": "892F30500E6E7E04",
+        "path": "Prefabs/Weapons/Magazines/Vz58/Magazine_762x39_Vz58_30rnd_Base.et",
+        "raw": "{892F30500E6E7E04}Prefabs/Weapons/Magazines/Vz58/Magazine_762x39_Vz58_30rnd_Base.et"
+      }
+    ],
+    "used_as_base_by": [],
+    "chain_depth_local": 1
+  },
+  "references": [
+    {
+      "guid": "D8DAD0D45D295D86",
+      "path": "Assets/Weapons_RUS/akm/akm_magazine.xob",
+      "resolved": "local",
+      "target": "Assets/Weapons_RUS/akm/akm_magazine.xob",
+      "defined_in": "Prefabs/Weapons/Magazines/7x62/Magazine_762x39_AKM_30rnd_Tracer.et"
+    }
+  ],
+  "warnings": [],
+  "data": {
+    "grid": {
+      "width": null,
+      "height": {
+        "value": 2,
+        "defined_in": "Prefabs/Weapons/Magazines/7x62/Magazine_762x39_AKM_30rnd_Tracer.et",
+        "inherited": false
+      }
+    },
+    "_inv_defined_in": "Prefabs/Weapons/Magazines/7x62/Magazine_762x39_AKM_30rnd_Tracer.et",
+    "model": {
+      "guid": "D8DAD0D45D295D86",
+      "path": "Assets/Weapons_RUS/akm/akm_magazine.xob",
+      "defined_in": "Prefabs/Weapons/Magazines/7x62/Magazine_762x39_AKM_30rnd_Tracer.et"
+    }
+  },
+  "derived": {}
+}

@@ -1,0 +1,30 @@
+GenericEntity : "{A9EF01A7A6FE60CD}Prefabs/Weapons/Core/Throw_Base.et" {
+ ID "5D73670E82296968"
+ components {
+  SoundComponent "{57227A5D228316FB}" {
+   Filenames {
+    "{12A94705DF2BFD25}Sounds/Items/_SharedData/PickUp/Items_PickUp_Generic.acp" "{78AABDC24E452BB8}Sounds/Weapons/_SharedData/Drop/Weapons_Drop_Grenade_Cardboard.acp" "{27E5FEBCE92BE40B}Sounds/Weapons/_SharedData/Melee/Weapons_Melee.acp"
+   }
+  }
+  GrenadeMoveComponent "{516678993D839A22}" {
+   InitSpeed 25
+   Mass 0.2
+   TimeToLive 4
+   DeleteWhenStop 0
+   TriggerWhenStop 0
+   IsDangerous 0
+  }
+  SCR_MeleeWeaponProperties "{516678993D839A52}" {
+   m_fDamage 15
+  }
+  WeaponComponent "{516678993D839A5B}" {
+   isThrowable 1
+   UIInfo WeaponUIInfo "{516678993D839A5F}" {
+    Name "#AR-Item_Flare_Name"
+    Description "#AR-Item_Flare_Name"
+    Icon ""
+   }
+   WeaponSlotType "grenade"
+  }
+ }
+}

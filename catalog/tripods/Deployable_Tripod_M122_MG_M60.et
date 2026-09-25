@@ -1,0 +1,59 @@
+Turret : "{887DB60486A18575}Prefabs/Weapons/Tripods/Tripod_M122_MG_M60.et" {
+ ID "52D30EFBEBC74642"
+ components {
+  SoundComponent "{58E0961DB6C453D6}" {
+   Filenames + {
+    "{1B4D2E3FE51ABC31}Sounds/Weapons/_SharedData/CSW/Weapons_CSW_Deploy.acp"
+   }
+  }
+  SCR_MultiPartDeployableItemComponent "{6556B930A1BCD626}" {
+   m_bRemoveAllItemsWhenDeleted 1
+   m_aVariants {
+    SCR_DeployableVariantContainer "{65647005E652B458}" {
+     m_sReplacementPrefab "{EF55A296E50DC8B8}Prefabs/Items/Equipment/Tripods/M60/Part_Tripod_M122.et"
+     m_aAdditionalPrefabs {
+      SCR_WeaponDeployablePart "{656479545A5127C8}" {
+       m_sPrefab "{D182DCDD72BF7E34}Prefabs/Weapons/MachineGuns/M60/MG_M60.et"
+      }
+     }
+     m_bUsePartRotationAndPosition 1
+    }
+   }
+   m_eSurfaceObservationBehaviour DISMANTLE
+  }
+  SCR_SlotCompositionComponent "{6556B930A25B6BC5}" {
+  }
+  SCR_UniversalInventoryStorageComponent "{570EACF4F2F94F1B}" {
+   InitialStorageSlots {
+    InventoryStorageSlot Magazine_1 {
+     Prefab ""
+    }
+    InventoryStorageSlot Magazine_2 {
+     Prefab ""
+    }
+    InventoryStorageSlot Magazine_3 {
+     Prefab ""
+    }
+   }
+  }
+  WeaponSlotComponent "{51ACD09C6BFEEE6A}" {
+   WeaponTemplate "{9F19BA2C3ACA4551}Prefabs/Weapons/MachineGuns/M60/Deployable_MG_M60_Mounted.et"
+  }
+  ActionsManagerComponent "{51ACD09C7181BA0B}" {
+   additionalActions {
+    SCR_DeployMultiPartInventoryItemAction "{6556B937A406EE6F}" : "{53ACE069C87D43A3}Prefabs/Weapons/Core/Configs/Actions/DismantleMultipartInventoryItemAction.conf" {
+     UIInfo SCR_ActionUIInfo "{61B48E9F567C096C}" {
+      Description "#AR-EditableEntity_Tripod_M122_MG_M60_Name"
+     }
+     "Sort Priority" 5
+    }
+   }
+  }
+ }
+ {
+  GenericEntity : "{E51E2E1D77B54223}Prefabs/Compositions/Misc/CustomEntities/CompositionDecals/CompositionDecal_Dirt_Patch_01.et" {
+   ID "6556A2F2FE003476"
+   coords 0 0 -0.122
+  }
+ }
+}

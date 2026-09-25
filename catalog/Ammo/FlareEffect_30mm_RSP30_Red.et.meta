@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{E27C7FE1BAF06E3B}Imported/VanillaSources/Prefabs/Weapons/Ammo/FlareEffect_30mm_RSP30_Red.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

@@ -1,0 +1,58 @@
+GenericEntity : "{76C400582D3C4AF9}Prefabs/Weapons/MachineGuns/PKM/MG_PKM_base.et" {
+ ID "CFBAA4B725411E45"
+ components {
+  SCR_WeaponAttachmentsStorageComponent "{51F080D5CE45A1A2}" {
+   Attributes SCR_ItemAttributeCollection "{51F080D5C64F12C5}" {
+    ItemDisplayName WeaponUIInfo "{5222CB07E1D123E9}" {
+     Name "#AR-Weapon_PKMN_Name"
+     Description "#AR-Weapon_PKMN_Description"
+    }
+   }
+  }
+  SlotManagerComponent "{615E8B91882AE3DC}" {
+   Slots {
+    EntitySlotInfo Dovetail {
+     Prefab "{2D26D2AE25429499}Prefabs/Weapons/Attachments/Mounts/Dovetail_PKM/Dovetail_PKM.et"
+     InheritParentSkeleton 1
+    }
+   }
+  }
+  WeaponComponent "{CFBAA4B706BA66E8}" {
+   components {
+    AttachmentSlotComponent "{B502E4DC8A9E835E}" {
+     AttachmentSlot InventoryStorageSlot optics {
+      PivotID "w_dov_rail_hinge"
+      Offset -0.0107 0.0024 0.0267
+      Angles -90 0 0
+      Enabled 1
+      InspectionWidgetOffset -0.0402 0.0932 -0.0441
+     }
+     AttachmentType AttachmentOpticsDovetailAK "{615EA6E8FB095D1F}" {
+     }
+     ShowInInspection 1
+    }
+    WeaponAnimationComponent "{60B4EA76EB15F6E0}" {
+     AnimGraph "{A56F6924103AC08C}Assets/Weapons/MachineGuns/workspaces/pkmn.agr"
+     AnimInstance "{5D2F8033DD6E67CA}Assets/Weapons/MachineGuns/workspaces/pkmn_weapon.asi"
+     AnimInjection AnimationAttachmentInfo "{5534BB9B9A3E3684}" {
+      AnimGraph "{A56F6924103AC08C}Assets/Weapons/MachineGuns/workspaces/pkmn.agr"
+      AnimInstance "{A6711102456F0326}Assets/Weapons/MachineGuns/workspaces/pkmn_player.asi"
+     }
+    }
+   }
+  }
+  ActionsManagerComponent "{A29AE67FF4D82B0F}" {
+   ActionContexts {
+    UserActionContext "{647CF9A326226892}" {
+     ContextName "optic"
+     Position PointInfo "{647CF9A35858D5B0}" {
+      PivotID "w_dov_rail_hinge"
+      Offset -0.0107 0.0024 0.0267
+      Angles -90 0 0
+     }
+     Radius 0.075
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,108 @@
+{
+  "id": "rifle_m16a2",
+  "role": "base",
+  "source": {
+    "resource": "Prefabs/Weapons/Rifles/Rifle_M16A2.et",
+    "resource_guid": "3E413771E1834D2F",
+    "meta_name": null,
+    "class": "GenericEntity",
+    "defined_in": "Prefabs/Weapons/Rifles/Rifle_M16A2.et"
+  },
+  "identity": {
+    "name": "Rifle_M16A2",
+    "resource": "Prefabs/Weapons/Rifles/Rifle_M16A2.et"
+  },
+  "classification": {
+    "kind": "weapon",
+    "confidence": "components"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Weapons/Rifles/Rifle_M16A2.et",
+        "status": "local",
+        "class": "GenericEntity"
+      }
+    ],
+    "external_parents": [
+      {
+        "guid": "C63227C0E70EA62E",
+        "path": "Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et",
+        "raw": "{C63227C0E70EA62E}Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et"
+      }
+    ],
+    "used_as_base_by": [
+      "Prefabs/Weapons/Rifles/Rifle_HKG33.et",
+      "Prefabs/Weapons/Rifles/Rifle_L85.et",
+      "Prefabs/Weapons/Rifles/Rifle_Sig550.et",
+      "Prefabs/Weapons/Rifles/SLR.et"
+    ],
+    "chain_depth_local": 1
+  },
+  "references": [
+    {
+      "guid": "0E3ECFC4E84386BC",
+      "path": "Assets/NATO/L1A1/Anim/L1A1.agr",
+      "resolved": "local",
+      "target": "Assets/Weapons_NATO/L1A1/Anim/L1A1.agr",
+      "defined_in": "Prefabs/Weapons/Rifles/Rifle_M16A2.et"
+    },
+    {
+      "guid": "3B86B943995121A3",
+      "path": "Assets/NATO/L1A1/Anim/L1A1_weapon.asi",
+      "resolved": "local",
+      "target": "Assets/Weapons_NATO/L1A1/Anim/L1A1_weapon.asi",
+      "defined_in": "Prefabs/Weapons/Rifles/Rifle_M16A2.et"
+    },
+    {
+      "guid": "C0D828720150454F",
+      "path": "Assets/NATO/L1A1/Anim/L1A1_player.asi",
+      "resolved": "local",
+      "target": "Assets/Weapons_NATO/L1A1/Anim/L1A1_player.asi",
+      "defined_in": "Prefabs/Weapons/Rifles/Rifle_M16A2.et"
+    }
+  ],
+  "warnings": [],
+  "data": {
+    "identity": {
+      "name": null
+    },
+    "fire_modes": [],
+    "physical": {
+      "MeleeDamage": {
+        "value": 2,
+        "defined_in": "Prefabs/Weapons/Rifles/Rifle_M16A2.et",
+        "inherited": false
+      }
+    },
+    "magazine": {
+      "magazine_well": null,
+      "magazine_template": null
+    },
+    "ballistics": {
+      "bullet_init_speed_coef": null,
+      "dispersion_diameter": null,
+      "dispersion_range": null
+    },
+    "aim": {
+      "recoil": null,
+      "sway": null
+    },
+    "sights": null,
+    "attachment_slots": [],
+    "muzzle_attachment": null,
+    "animation": {
+      "anim_graph": {
+        "guid": "0E3ECFC4E84386BC",
+        "path": "Assets/NATO/L1A1/Anim/L1A1.agr",
+        "defined_in": "Prefabs/Weapons/Rifles/Rifle_M16A2.et"
+      },
+      "anim_instance": {
+        "guid": "3B86B943995121A3",
+        "path": "Assets/NATO/L1A1/Anim/L1A1_weapon.asi",
+        "defined_in": "Prefabs/Weapons/Rifles/Rifle_M16A2.et"
+      }
+    }
+  },
+  "derived": {}
+}

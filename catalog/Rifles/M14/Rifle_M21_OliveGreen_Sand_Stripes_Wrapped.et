@@ -1,0 +1,39 @@
+GenericEntity : "{6EDAE05DF7CC8E78}Prefabs/Weapons/Rifles/M14/Rifle_M21_OliveGreen_Sand_Stripes.et" {
+ ID "5254ACCA959048B9"
+ components {
+  MeshObject "{CFBAA4B701F95D69}" {
+   Materials {
+    MaterialAssignClass "{6608C5F3FD81E4C8}" {
+     SourceMaterial "Body_Metal"
+     AssignedMaterial "{88D7C4D733FE0972}Assets/Weapons/Rifles/M14/Data/Body_Metal_OliveGreen_Sand_Stripes.emat"
+    }
+    MaterialAssignClass "{6608C5F3FD81E526}" {
+     SourceMaterial "Body_Wood"
+     AssignedMaterial "{E4BE3805F42C2037}Assets/Weapons/Rifles/M14/Data/Body_Wood_OliveGreen_Sand_Stripes.emat"
+    }
+   }
+  }
+  SCR_WeaponAttachmentsStorageComponent "{51F080D5CE45A1A2}" {
+   Attributes SCR_ItemAttributeCollection "{51F080D5C64F12C5}" {
+    ItemDisplayName WeaponUIInfo "{5222CB07CFF6712A}" {
+     Name "#AR-Weapon_M21_Camo_Wrap_Name"
+    }
+    CustomAttributes {
+     PreviewRenderAttributes "{52BAB5E48C906DB8}" {
+      PreviewPrefab "{8D6553BEAF8640D1}Prefabs/Weapons/Rifles/M14/Rifle_M21_OliveGreen_Sand_Stripes_Wrapped.et"
+     }
+    }
+   }
+  }
+  WeaponComponent "{CFBAA4B706BA66E8}" {
+   components {
+    AttachmentSlotComponent "{660E634FB7432A69}" {
+     AttachmentSlot InventoryStorageSlot Camouflage {
+      ChildPivotID "snap_weapon"
+      Prefab "{6060A767D637310F}Prefabs/Weapons/Attachments/Camouflage/Camouflage_M21/Camouflage_Wrap_M21.et"
+     }
+    }
+   }
+  }
+ }
+}

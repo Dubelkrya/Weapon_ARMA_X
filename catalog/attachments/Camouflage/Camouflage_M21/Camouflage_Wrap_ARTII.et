@@ -1,0 +1,11 @@
+GenericEntity : "{6F6E328F3155E677}Prefabs/Weapons/Attachments/Camouflage/Camouflage_M21/Camouflage_Wrap_M21_base.et" {
+ ID "65A2C665A8D09239"
+ components {
+  MeshObject "{65A2C665A8D09282}" {
+   Object "{3E77668912978027}Assets/Weapons/Attachments/Camouflage/Camouflage_ARTII/Camouflage_ARTII.xob"
+  }
+  RigidBody "{65A2C665A8D09280}" {
+   ModelGeometry 0
+  }
+ }
+}

@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{4300FB438E4769EF}Imported/VanillaSources/Prefabs/Weapons/Ammo/FlareEffect_40mm_M583A1_White_EffectModule.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

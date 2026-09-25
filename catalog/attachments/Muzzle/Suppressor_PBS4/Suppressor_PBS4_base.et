@@ -1,0 +1,11 @@
+GameEntity : "{491CEF88656BE6C2}Prefabs/Weapons/Core/Suppressor_base.et" {
+ ID "4BA426CBAED42A14"
+ components {
+  InventoryItemComponent "{52627A1F45CD4EB6}" {
+   Attributes SCR_ItemAttributeCollection "{52627A1EBB0698FD}" {
+    m_bAutoDetectGridSize 0
+    m_iCustomGridWidth 2
+   }
+  }
+ }
+}

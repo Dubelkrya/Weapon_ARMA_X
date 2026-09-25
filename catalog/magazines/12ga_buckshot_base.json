@@ -32,7 +32,7 @@
       }
     ],
     "used_as_base_by": [
-      "Prefabs/Weapons/Magazines/12ga/armst_12ga_Buckshot.et"
+      "Prefabs/Weapons/Magazines/12ga/12ga_Buckshot.et"
     ],
     "chain_depth_local": 1
   },
@@ -69,18 +69,7 @@
       "defined_in": "Prefabs/Weapons/Magazines/12ga/12ga_Buckshot_base.et",
       "inherited": false
     },
-    "ammo_mapping": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
+    "ammo_mapping": [],
     "caliber_id": {
       "value": " ",
       "defined_in": "Prefabs/Weapons/Magazines/12ga/12ga_Buckshot_base.et",

@@ -1,0 +1,15 @@
+GenericEntity {
+ ID "660A8AF8D0FF3C23"
+ components {
+  MeshObject "{660A8AE606A10780}" {
+   Object "{C45CC9C950115B07}Assets/Weapons/Tripods/6T5/Tripod_6T5.xob"
+   Materials {
+    MaterialAssignClass "{660A8AE7E5A5014C}" {
+     SourceMaterial "Tripod_6T5"
+     AssignedMaterial "{26A256A4C1AF6425}Assets/Weapons/Tripods/6T5/Data/Tripod_6T5_dmg.emat"
+    }
+   }
+  }
+ }
+ coords 133.278 1 70.813
+}

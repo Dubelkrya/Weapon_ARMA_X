@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{449EC44E1524CAD1}Imported/VanillaSources/Prefabs/Weapons/Grenades/M18/Smoke_M18_Violet_Repeating.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

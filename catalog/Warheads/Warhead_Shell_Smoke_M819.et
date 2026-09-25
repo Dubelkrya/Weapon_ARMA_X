@@ -1,0 +1,26 @@
+GenericEntity : "{D584F2FFFDC7DE49}Prefabs/Weapons/Warheads/Warhead_Shell_HE.et" {
+ ID "9D9BE68EA2672F76"
+ components {
+  SoundComponent "{D092A75ECEFAE456}" {
+   Filenames {
+    "{4E68EBF20582499D}Sounds/Weapons/Ammo/MortarShells/Weapons_Ammo_MortarShell_8xmm_Smoke.acp"
+   }
+  }
+  BaseTriggerComponent "{55129E81CBAA1390}" {
+   PROJECTILE_EFFECTS {
+    ExplosionDamageContainer "{5D38C8F8C6A477C7}" {
+     ChargeWeight 100
+    }
+    SpawnDecalEffect "{5D5727F06F70F2E3}" {
+    }
+    SpawnParticleEffect "{6178813019C18F86}" {
+     UseFrameEvent 1
+     ParticleEffect "{273A8DD1950A31DA}Particles/Weapon/Smoke_Mortar_Shell.ptc"
+    }
+   }
+  }
+  HitEffectComponent "{9D9BE68D6F65A10F}" {
+   ParticleEffect "{273A8DD1950A31DA}Particles/Weapon/Smoke_Mortar_Shell.ptc"
+  }
+ }
+}

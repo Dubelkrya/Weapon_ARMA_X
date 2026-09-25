@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{8AD3C3B5241DA54B}Imported/VanillaSources/Prefabs/Weapons/Attachments/Underbarrel/UGL_M203_long_OliveGreen_Solid.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

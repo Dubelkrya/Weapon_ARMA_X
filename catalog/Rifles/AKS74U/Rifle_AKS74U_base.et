@@ -1,0 +1,85 @@
+GenericEntity : "{1FA22B1F5E7BC80B}Prefabs/Weapons/Rifles/AK74/Rifle_AK74_short_base.et" {
+ ID "CFBAA4B725411E45"
+ components {
+  MeshObject "{CFBAA4B701F95D69}" {
+   Object "{916D9FBDE2DEE994}Assets/Weapons/Rifles/AKS74U/AKS74U_body.xob"
+  }
+  SCR_WeaponAttachmentsStorageComponent "{51F080D5CE45A1A2}" {
+   Attributes SCR_ItemAttributeCollection "{51F080D5C64F12C5}" {
+    ItemDisplayName WeaponUIInfo "{5222CB07CFF6712A}" {
+     Name "#AR-Weapon_AKS74U_Name"
+     Description "#AR-Weapon_AKS74U_Description"
+    }
+    ItemPhysAttributes ItemPhysicalAttributes "{55349E9229B55E3D}" {
+     Weight 2.48
+     SizeSetupStrategy Manual
+     ItemDimensions 20 20 20
+     ItemVolume 1200
+    }
+    ItemAnimationAttributes ItemAnimationAttributes "{5284960E1D29F45C}" {
+     AnimationIKPose "{4B441006170A287F}Assets/Weapons/Rifles/AKS74U/anims/anm/p_aks74u_ik.anm"
+    }
+   }
+  }
+  WeaponComponent "{CFBAA4B706BA66E8}" {
+   components {
+    AttachmentSlotComponent "{51F6738D2EC74BE1}" {
+     Enabled 0
+     AttachmentSlot InventoryStorageSlot underbarrel {
+      Enabled 0
+     }
+     ShowInInspection 0
+    }
+    AttachmentSlotComponent "{5F189C826D592450}" {
+     Enabled 0
+     AttachmentSlot InventoryStorageSlot BayonetSlot {
+      Enabled 0
+     }
+     ShowInInspection 0
+    }
+    MuzzleComponent "{CA6BE4D6B867541F}" {
+     components {
+      AttachmentSlotComponent "{4E2B66CBA589F625}" {
+       AttachmentSlot InventoryStorageSlot Muzzle {
+        Angles 0 0 23
+       }
+      }
+      SCR_MuzzleEffectComponent "{C9B3271BB22CDB68}" {
+       EffectPosition EntitySlotInfo "{C9B3271BB85B5D32}" {
+        Offset 0 0 0.08
+       }
+      }
+     }
+     BulletInitSpeedCoef 0.835
+     DispersionDiameter 0.4
+     DispersionRange 200
+     WeaponAimModifiers {
+      RecoilWeaponAimModifier "{55349E9229B55D9A}" {
+       LinearData RecoilData "{58789524E765774D}" {
+        "Curve Magnitudes" 1 0.9 0.9
+       }
+       AngularData RecoilData "{58789524E7CAB55F}" {
+        "Curve Magnitudes" 1 0.9 1
+       }
+       TurnOffsetData RecoilData "{58789524E0951484}" {
+        "Curve Magnitudes" 1 0.9 0
+       }
+      }
+     }
+    }
+    WeaponAnimationComponent "{60B4EA76EB15F6E0}" {
+     AnimGraph "{AA7B31668A813A8E}Assets/Weapons/Rifles/workspaces/aks74u.agr"
+     AnimInstance "{E5E86175F5B85792}Assets/Weapons/Rifles/workspaces/aks74u_weapon.asi"
+     AnimInjection AnimationAttachmentInfo "{55349E9229B55D8A}" {
+      AnimGraph "{AA7B31668A813A8E}Assets/Weapons/Rifles/workspaces/aks74u.agr"
+      AnimInstance "{1EB6F0446DB9337E}Assets/Weapons/Rifles/workspaces/aks74u_player.asi"
+     }
+    }
+   }
+   UIInfo WeaponUIInfo "{CC3BA6A2C42F09F4}" {
+    Name "#AR-Weapon_AKS74U_Name"
+    Description "#AR-Weapon_AKS74U_Description"
+   }
+  }
+ }
+}

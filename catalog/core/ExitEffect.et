@@ -1,0 +1,8 @@
+GenericEntity {
+ ID "5888EA4D8CF0ED70"
+ components {
+  HitEffectComponent "{5888EA4C5E84D7E5}" {
+  }
+ }
+ coords 1303 51 1682
+}

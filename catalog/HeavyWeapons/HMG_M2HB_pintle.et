@@ -1,0 +1,185 @@
+GenericEntity : "{F54F6C453A8CB478}Prefabs/Weapons/Core/MachineGun_Base.et" {
+ ID "476AE74DE20E1061"
+ components {
+  WeaponSoundComponent "{5A8685198A9AEEDD}" {
+   Filenames {
+    "{EE8892C4180091FD}Sounds/Weapons/HeavyWeapons/M2/Weapons_HeavyWeapons_M2_Shot.acp" "{4928189A8BCB7932}Sounds/Vehicles/Wheeled/M998/Vehicles_M998_Turret.acp" "{EC7E8631CBC17F15}Sounds/Weapons/HeavyWeapons/M2/Weapons_HeavyWeapons_M2_Handling.acp"
+   }
+   IncludeInactive 1
+  }
+  ControllersManagerComponent "{6D6D2834E6D1CDF3}" {
+  }
+  MeshObject "{CFBAA4B701F95D69}" {
+   Object "{E71679A4B28D5B23}Assets/Weapons/HeavyWeapons/M2HB/M2.xob"
+   PixelSizeScale 10
+  }
+  RigidBody "{506CDB90557DDA8B}" {
+   Mass 58
+   ModelGeometry 1
+  }
+  ProcAnimComponent "{506CDB95EAFBAE76}" {
+   Parameters {
+    ProcAnimParams "{506CDB95E8872FA5}" {
+     ResourceName "{F41BA441BB78161D}anims/proc/turret.pap"
+     BoneNames {
+      "w_root" "w_turret_vertical"
+     }
+     SimulationDistance 1000
+     AlwaysSimulateOwner 1
+    }
+   }
+  }
+  SCR_WeaponAttachmentsStorageComponent "{51F080D5CE45A1A2}" {
+   Attributes SCR_ItemAttributeCollection "{51F080D5C64F12C5}" {
+    ItemDisplayName WeaponUIInfo "{5222CB07E1D123E9}" {
+     Name "#AR-Weapon_M2HB_Name"
+     Description "#AR-Weapon_M2HB_Description"
+    }
+    ItemPhysAttributes ItemPhysicalAttributes PhysicalAttributes {
+     Weight 38.1
+     SizeSetupStrategy Volume
+     ItemVolume 12000
+    }
+    CustomAttributes {
+     PreviewRenderAttributes "{5534BB9B9A3E369E}" {
+      CameraPreset Right
+      CameraDistanceToItem 1.9
+      CameraOffset 0 0 0
+     }
+    }
+   }
+  }
+  TurretComponent "{6D6D283BE816D8C3}" {
+   SignalsSourceAccess SignalsSourceAccessClass "{6D6D283BCBA271E2}" {
+    signalsSuffix "Turret"
+   }
+   InitAiming 0 5
+   AimingSpeedControls 0.1 0.1
+   ikTargets {
+    AnimationIKTargetInfo "{52A8F6FBFC729D0C}" {
+     BindingName "LHandIKTargetTurret"
+     PositionInfo PointInfo "{52A8F6FBF92A2E39}" {
+      PivotID "v_hand_l_target"
+     }
+    }
+    AnimationIKTargetInfo "{52A8F6FBFD4FABD2}" {
+     BindingName "RHandIKTargetTurret"
+     PositionInfo PointInfo "{52A8F6FBF1B039F8}" {
+      PivotID "v_hand_r_target"
+     }
+    }
+   }
+   TurretSpeed 100 120
+   TurretAcceleration 343.77 343.77
+   TurretDeceleration 687.54 687.54
+  }
+  WeaponComponent "{CFBAA4B706BA66E8}" {
+   components {
+    AttachmentSlotComponent "{B502E4DC8A9E835E}" {
+     AttachmentSlot InventoryStorageSlot optics {
+      PivotID "slot_optics"
+      ChildPivotID "snap_weapon"
+      Enabled 0
+     }
+    }
+    SightsComponent "{BB23A637957CFFF8}" {
+     SightsPosition PointInfo "{BB23A63796688E69}" {
+      PivotID "w_sight"
+      Offset 0 0.01 -0.25
+      Angles 0 0 0
+     }
+    }
+    MuzzleComponent "{50F64C4591CD7AA6}" {
+     components {
+      CaseEjectingEffectComponent "{5122AAD190FCA21D}" {
+       ParticleEffect "{2FA34F96F9A5018B}Particles/Weapon/Casing_127x99.ptc"
+       EffectPosition EntitySlotInfo "{513A938439231378}" {
+        PivotID "barrel_chamber"
+        Offset 0 -0.08 -0.0953
+        Angles -83 0 0
+        AutoTransform 1
+       }
+      }
+      CaseEjectingEffectComponent "{52D4A6D19FE1F420}" {
+       ParticleEffect "{45D764EF557E02B4}Particles/Weapon/Smoke_M2.ptc"
+       EffectPosition EntitySlotInfo "{52D4A6D19A301391}" {
+        PivotID "barrel_muzzle"
+       }
+       HasSound 0
+      }
+      CaseEjectingEffectComponent "{56D2FD459B34A0B8}" {
+       ParticleEffect "{E7ACDE0ACCBCB07A}Particles/Weapon/Casing_Holder.ptc"
+       EffectPosition EntitySlotInfo casing_holder {
+        PivotID "barrel_chamber"
+        Angles 0 90 0
+       }
+       HasSound 0
+      }
+     }
+     FireModes {
+      BaseFireMode "{B80A64F4A8EF8333}" : "{A512F292D96BCB9F}Prefabs/Weapons/Core/Configs/FireModes/FireMode_Auto.conf" {
+       RoundsPerMinute 600
+      }
+     }
+     MagazineWell MagazineWellM2HB "{476AE746AB0E8948}" {
+     }
+     DispersionDiameter 0.4
+     DispersionRange 400
+     WeaponAimModifiers {
+      RecoilWeaponAimModifier "{691496C4C637EB93}" : "{F441921164A0FAAA}Prefabs/Weapons/Core/Configs/AimModifiers/RecoilAimModifier_M2HB.conf" {
+      }
+      ZeroingWeaponAimModifier "{691496C4EADC83F8}" {
+      }
+      SCR_RecoilForceAimModifier "{691496C20B3878BB}" : "{BF54F0962956B341}Prefabs/Weapons/Core/Configs/AimModifiers/RecoilForceAimModifier_M2HB.conf" {
+      }
+     }
+     UIInfo MuzzleUIInfo "{2FBBA72C906C627E}" {
+      m_bShowCaliber 1
+      m_sCaliber "#AR-AmmunitionID_127x99mm"
+     }
+     ReloadDuration 12.5
+     AllowWeaponDeployment 0
+     MagazinePosition InventoryStorageSlot "{B80A64F4C834E9CB}" {
+      PivotID "slot_ammoBox"
+     }
+     MagazineTemplate "{CC7F787C3ECF678F}Prefabs/Weapons/Magazines/Box_127x99_M2_100rnd_4Ball_1Tracer.et"
+    }
+    WeaponAnimationComponent "{60B4EA76EB15F6E0}" {
+     AnimGraph "{C727601154428730}Assets/Weapons/HeavyWeapons/workspaces/M2HB_tripod.agr"
+     AnimInstance "{26749793D7EDEB6D}Assets/Weapons/HeavyWeapons/workspaces/M2HB_Weapon_tripod.asi"
+     StartNode "WeaponMasterControl"
+     AnimVariables {
+      AnimationVariable "{6538B75BD5FA5D2C}" {
+       VariableName "AimX"
+       SignalName "AimTurnTurret"
+      }
+      AnimationVariable "{6538B75BD49BD2C4}" {
+       VariableName "AimY"
+       SignalName "AimElevationTurret"
+      }
+     }
+     AutoVariablesBind 1
+    }
+   }
+   UIInfo WeaponUIInfo "{CC3BA6A2C42F09F4}" {
+    Name "#AR-Weapon_M2HB_Name"
+    Description "#AR-Weapon_M2HB_Description"
+    Icon ""
+    m_bShowWeaponName 1
+   }
+   WeaponSlotType "hmg"
+  }
+  ActionsManagerComponent "{A29AE67FF4D82B0F}" {
+   Enabled 0
+  }
+  WeaponGamepadEffectsManagerComponent "{61A2E5C3F4458F86}" {
+   "Default ADS Trigger effect" GamepadTriggerEffect "{61B129618F212411}" : "{0DE3E1891C66DCEB}Prefabs/Weapons/Core/Configs/TriggerEffects/ADS/TriggerEffect_ADSMedium.conf" {
+   }
+   "Default Firing Trigger effect" GamepadTriggerEffect "{61D30BF7F81F8C61}" : "{5A67879DEFFDBD73}Prefabs/Weapons/Core/Configs/TriggerEffects/Fire/TriggerEffect_FireHMG.conf" {
+   }
+  }
+  RplComponent "{E052E71DCB007AF2}" {
+   "Parent Node From Parent Entity" 1
+  }
+ }
+}

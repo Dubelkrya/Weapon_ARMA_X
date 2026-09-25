@@ -1,0 +1,15 @@
+GenericEntity : "{3BFBE9145E9C40B9}Prefabs/Weapons/MachineGuns/RPK74/MG_RPK74_base.et" {
+ ID "CFBAA4B725411E45"
+ components {
+  SCR_MeleeWeaponProperties "{5534B7DA16FF55EE}" {
+   m_fDamage 2
+  }
+  SCR_WeaponAttachmentsStorageComponent "{51F080D5CE45A1A2}" {
+   Attributes SCR_ItemAttributeCollection "{51F080D5C64F12C5}" {
+    m_bAutoDetectGridSize 0
+    m_iCustomGridWidth 8
+    m_iCustomGridHeight 2
+   }
+  }
+ }
+}

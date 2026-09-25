@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{6596B9EFBA0718EA}Imported/VanillaSources/Prefabs/Weapons/Core/Configs/TriggerEffects/Charged/TriggerEffect_Charged.conf"
+ Configurations {
+  CONFResourceClass PC {
+  }
+  CONFResourceClass XBOX_ONE : PC {
+  }
+  CONFResourceClass XBOX_SERIES : PC {
+  }
+  CONFResourceClass PS4 : PC {
+  }
+  CONFResourceClass PS5 : PC {
+  }
+  CONFResourceClass HEADLESS : PC {
+  }
+ }
+}

@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{B3CF27EBB06AC7C3}Imported/VanillaSources/Prefabs/Weapons/Ammo/Ammo_Grenade_HE_VOG25.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

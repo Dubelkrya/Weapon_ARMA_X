@@ -1,0 +1,55 @@
+{
+  "id": "magazine_556x45_stanag_30rnd_m855_ball",
+  "role": "leaf",
+  "source": {
+    "resource": "Prefabs/Weapons/Magazines/5x56/Magazine_556x45_STANAG_30rnd_M855_Ball.et",
+    "resource_guid": "2EBF60EF24B108FC",
+    "meta_name": null,
+    "class": "GenericEntity",
+    "defined_in": "Prefabs/Weapons/Magazines/5x56/Magazine_556x45_STANAG_30rnd_M855_Ball.et"
+  },
+  "identity": {
+    "name": "Magazine_556x45_STANAG_30rnd_M855_Ball",
+    "resource": "Prefabs/Weapons/Magazines/5x56/Magazine_556x45_STANAG_30rnd_M855_Ball.et"
+  },
+  "classification": {
+    "kind": "magazine",
+    "confidence": "folder"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Weapons/Magazines/5x56/Magazine_556x45_STANAG_30rnd_M855_Ball.et",
+        "status": "local",
+        "class": "GenericEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Magazines/5x56/Magazine_556x45_STANAG_30rnd_Base.et",
+        "status": "local",
+        "class": "GenericEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Core/Magazine_Base.et",
+        "status": "local",
+        "class": "GenericEntity"
+      }
+    ],
+    "external_parents": [],
+    "used_as_base_by": [],
+    "chain_depth_local": 3
+  },
+  "references": [],
+  "warnings": [],
+  "data": {
+    "grid": {
+      "width": null,
+      "height": {
+        "value": 2,
+        "defined_in": "Prefabs/Weapons/Magazines/5x56/Magazine_556x45_STANAG_30rnd_Base.et",
+        "inherited": true
+      }
+    },
+    "_inv_defined_in": "Prefabs/Weapons/Core/Magazine_Base.et"
+  },
+  "derived": {}
+}

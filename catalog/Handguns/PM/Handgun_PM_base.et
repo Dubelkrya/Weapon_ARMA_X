@@ -1,0 +1,147 @@
+GenericEntity : "{EE7028E9DF49763A}Prefabs/Weapons/Core/Handgun_Base.et" {
+ ID "CFBAA4B725411E45"
+ components {
+  WeaponSoundComponent "{5A8685198A9AEEDD}" {
+   Filenames {
+    "{4B8E12C5E23CA29B}Sounds/Weapons/Handguns/PM/Weapons_Handguns_PM_Shot.acp" "{44CBBB2C398E653B}Sounds/Weapons/Handguns/PM/Weapons_Handguns_PM_Handling.acp" "{8D040E18DFEC29AF}Sounds/Weapons/_SharedData/PickUp/Weapons_PickUp_HandGun.acp" "{430CD8162D17C2FF}Sounds/Weapons/_SharedData/Melee/Weapons_Melee_Pistol.acp" "{D32144A00CA494A6}Sounds/Weapons/_SharedData/Drop/Weapons_Drop_Pistol.acp" "{62A8FCC1AB0B7AA5}Sounds/Weapons/_SharedData/Drop/Weapons_Drop_Physical_PIstol.acp"
+   }
+  }
+  MeshObject "{CFBAA4B701F95D69}" {
+   Object "{6F3FF53AF2AB04B3}Assets/Weapons/Handguns/PM/PM_body.xob"
+  }
+  RigidBody "{0F2AA6AEBF450F0F}" {
+   SimState None
+   ModelGeometry 1
+  }
+  SCR_MeleeWeaponProperties "{6742271DE0B9AD55}" {
+   m_fRange 1
+  }
+  SCR_WeaponAttachmentsStorageComponent "{51F080D5CE45A1A2}" {
+   Attributes SCR_ItemAttributeCollection "{51F080D5C64F12C5}" {
+    ItemDisplayName WeaponUIInfo "{5222CB0701437228}" {
+     Name "#AR-Weapon_PM_Name"
+     Description "#AR-Weapon_PM_Description"
+    }
+    ItemPhysAttributes ItemPhysicalAttributes PhysicalAttributes {
+     Weight 0.7
+     SizeSetupStrategy Volume
+     ItemVolume 200
+    }
+    ItemAnimationAttributes ItemAnimationAttributes "{5284960F659FDDA7}" {
+     AnimationInstance "{41AABAE44257A657}anims/workspaces/player/player_main_pistol.asi"
+     AnimationIKPose "{E8E2308AB43CB0E6}Assets/Weapons/Handguns/PM/anims/anm/p_PM_ik.anm"
+    }
+   }
+  }
+  WeaponComponent "{CFBAA4B706BA66E8}" {
+   components {
+    SightsComponent "{BB23A637957CFFF8}" {
+     SightsPosition PointInfo "{BB23A63796688E69}" {
+      PivotID "eye"
+      Offset 0 0 -0.3
+     }
+     SightsRanges {
+      SightRangeInfo "{5EEACC0F3BFD890B}" {
+       Range 0 0
+       WeaponPosition PointInfo "{5EEACC0F3BFD892B}" {
+        Offset 0 -0.0026 0
+        Angles 0.15 0 0
+       }
+      }
+     }
+     SightsPointFront PointInfo "{5EEACA2840F1AFA8}" {
+      Offset 0 0.0698 0.1072
+     }
+     SightsPointRear PointInfo "{5EEACA285E995EB9}" {
+      Offset 0 0.0707 -0.0237
+     }
+     ADSTime 0.2
+     ZeroingGenerator BaseZeroingGenerator "{5EEACA28BC3CC87D}" {
+      ZeroRaiseToEye 1
+     }
+     m_iOpticDOFDistanceScale 225
+    }
+    MuzzleComponent "{50F64C45E7271D47}" {
+     components {
+      CaseEjectingEffectComponent "{5122AAD190FCA21D}" {
+       ParticleEffect "{BFCAD887920029A2}Particles/Weapon/Casing_9x18.ptc"
+       EffectPosition EntitySlotInfo "{513A9384CEFB83CB}" {
+        PivotID "barrel_chamber"
+        Offset 0.007 0.008 -0.03
+        Angles 0 90 0
+       }
+      }
+      CaseEjectingEffectComponent "{52C8933882699871}" {
+       ParticleEffect "{A42825D4030412A3}Particles/Weapon/Smoke_PM.ptc"
+       EffectPosition EntitySlotInfo "{52C8933887AD233F}" {
+        PivotID "barrel_muzzle"
+       }
+       HasSound 0
+      }
+      SCR_MuzzleEffectComponent "{C9B3271BB22CDB68}" {
+       ParticleEffect "{929E2053B2409DB4}Particles/Weapon/Muzzle_PM.ptc"
+      }
+     }
+     MagazineWell MagazineWellMakarovPM "{26EA67622A1DA48B}" {
+     }
+     DispersionDiameter 0.4
+     DispersionRange 100
+     WeaponAimModifiers {
+      ZeroingWeaponAimModifier "{5EEACC0F11A30F18}" {
+      }
+      RecoilWeaponAimModifier "{58FCF59C4FED2924}" : "{7EE41322045592D4}Prefabs/Weapons/Core/Recoil/Handgun_9_recoil.conf" {
+      }
+     }
+     MagazinePosition InventoryStorageSlot "{B80A64F4C834E9CB}" {
+      InspectionWidgetOffset 0 -0.0129 -0.0137
+     }
+     MagazineTemplate "{8B853CDD11BA916E}Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Ball.et"
+    }
+    WeaponAnimationComponent "{60B4EA76EB15F6E0}" {
+     AnimGraph "{0A046C9C356F9198}Assets/Weapons/Handguns/workspaces/PM.agr"
+     AnimInstance "{9D1FA29C8172197B}Assets/Weapons/Handguns/workspaces/PM_weapon.asi"
+     StartNode "IdleFireSTM"
+     AnimInjection AnimationAttachmentInfo "{51B2B2E3D520136A}" {
+      AnimGraph "{0A046C9C356F9198}Assets/Weapons/Handguns/workspaces/PM.agr"
+      AnimInstance "{664133AD19737D97}Assets/Weapons/Handguns/workspaces/PM_player.asi"
+      StartNode "IdleFireSTM"
+      BindingName "Weapon"
+     }
+     BindWithInjection 1
+     AnimVariablesToBind + {
+      "State"
+     }
+    }
+   }
+   SignalsSourceAccess SignalsSourceAccessClass "{CC7B64C6B99546FB}" {
+   }
+   SoundInt 1010100
+   UIInfo WeaponUIInfo "{CC3BA6A2C42F09F4}" {
+    Name "#AR-Weapon_PM_Name"
+    Description "#AR-Weapon_PM_Description"
+    Icon ""
+   }
+  }
+  ActionsManagerComponent "{A29AE67FF4D82B0F}" {
+   ActionContexts {
+    UserActionContext "{5956E32BAAADE657}" {
+     Radius 0
+    }
+    UserActionContext "{5A1E58F7B04F9BE5}" {
+     Position PointInfo "{5A1E5C46BBD153DB}" {
+      PivotID "slot_magazine"
+     }
+     Radius 0.05
+    }
+    UserActionContext "{5A1E58F7AED270D4}" {
+     Position PointInfo "{5A1E5C46BCB4499D}" {
+      PivotID "w_fire_mode"
+      Angles 0 -90 90
+     }
+     Radius 0.05
+     Omnidirectional 0
+    }
+   }
+  }
+ }
+}

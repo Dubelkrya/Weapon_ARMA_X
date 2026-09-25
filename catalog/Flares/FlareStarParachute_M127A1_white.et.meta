@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{70831C02A88BF3B7}Imported/VanillaSources/Prefabs/Weapons/Flares/FlareStarParachute_M127A1_white.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

@@ -1,0 +1,23 @@
+GenericEntity {
+ ID "660AAB8F3E763135"
+ components {
+  MeshObject "{660AAB8EED3F6CEE}" {
+   Object "{AD6418835A435475}Assets/Weapons/HeavyWeapons/M2HB/M2_body.xob"
+   Materials {
+    MaterialAssignClass "{660AAB8F10526C88}" {
+     SourceMaterial "M2_1"
+     AssignedMaterial "{384D1F5F98EFF7C6}Assets/Weapons/HeavyWeapons/M2HB/Data/M2_1_dmg.emat"
+    }
+    MaterialAssignClass "{660AAB8F10526D54}" {
+     SourceMaterial "M2_2"
+     AssignedMaterial "{43FABB706770D1E9}Assets/Weapons/HeavyWeapons/M2HB/Data/M2_2_dmg.emat"
+    }
+    MaterialAssignClass "{660AAB8F10526D5F}" {
+     SourceMaterial "M2_3"
+     AssignedMaterial "{6A97D8953205CC0C}Assets/Weapons/HeavyWeapons/M2HB/Data/M2_3_dmg.emat"
+    }
+   }
+  }
+ }
+ coords 131.985 1 73.981
+}

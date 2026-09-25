@@ -1,0 +1,16 @@
+Projectile : "{38BAE094333E31BF}Prefabs/Weapons/Ammo/Ammo_Shell_81mm_HE_M821.et" {
+ ID "5098E3DEA78F878B"
+ components {
+  CollisionTriggerComponent "{60AC9441243E3504}" {
+   TRIGGER_ALIVE 1
+  }
+  SCR_EffectsModuleChildComponent "{61A49AE0F53AB783}" {
+  }
+  ShellMoveComponent "{5098E3DEA78F87A3}" {
+   DispersionMultiplier 0
+  }
+  RplComponent "{51A2B9D6823E09EC}" {
+   "Rpl State Override" Runtime
+  }
+ }
+}

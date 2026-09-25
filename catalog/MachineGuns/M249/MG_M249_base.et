@@ -1,0 +1,292 @@
+GenericEntity : "{F54F6C453A8CB478}Prefabs/Weapons/Core/MachineGun_Base.et" {
+ ID "CFBAA4B725411E45"
+ components {
+  WeaponSoundComponent "{5A8685198A9AEEDD}" {
+   Filenames {
+    "{C58276FAF1433490}Sounds/Weapons/Machineguns/M249/Weapons_Machineguns_M249_Shot.acp" "{D815ACC8D793A669}Sounds/Weapons/Machineguns/M249/Weapons_Machineguns_M249_Handling.acp" "{E08211071D0175E2}Sounds/Weapons/_SharedData/PickUp/Weapons_PickUp_LMG.acp" "{D8F675F3468362E2}Sounds/Weapons/_SharedData/Weapons_Sights_Actions.acp" "{214445E9606EFCD0}Sounds/Weapons/_SharedData/Melee/Weapons_Melee_LMG.acp" "{5DB34B1BB17CA63B}Sounds/Weapons/_SharedData/Drop/Weapons_Drop_LMG.acp" "{10C1421961C34D26}Sounds/Weapons/_SharedData/Weapons_Deployment.acp" "{BDFC85F7540620BA}Sounds/Weapons/_SharedData/Drop/Weapons_Drop_Physical_LMG.acp"
+   }
+  }
+  MeshObject "{CFBAA4B701F95D69}" {
+   Object "{75AADA242B52AE25}Assets/Weapons/MachineGuns/M249/M249_body.xob"
+  }
+  RigidBody "{5534C496A19A52B2}" {
+   SimState None
+   ModelGeometry 1
+  }
+  SCR_MeleeWeaponProperties "{5534C496A19A52B7}" {
+   m_fDamage 45
+   m_fRange 1
+  }
+  SCR_WeaponAttachmentsStorageComponent "{51F080D5CE45A1A2}" {
+   Attributes SCR_ItemAttributeCollection "{51F080D5C64F12C5}" {
+    ItemDisplayName WeaponUIInfo "{5222CB07E1D123E9}" {
+     Name "#AR-Weapon_M249_Name"
+     Description "#AR-Weapon_M249_Description"
+    }
+    ItemPhysAttributes ItemPhysicalAttributes "{5534C496A19A52A0}" {
+     Weight 6.9
+     SizeSetupStrategy Manual
+     ItemDimensions 30 30 30
+     ItemVolume 2000
+     RestingUP Left
+     RestingAdditiveRotationLS 0 0 0
+     PivotBoneName "barrel_muzzle"
+     RestingAdditiveOffsetLS -0.2 0 0
+    }
+    ItemAnimationAttributes ItemAnimationAttributes "{5284960E60421307}" {
+     IkSettings {
+      ItemIKSettings "{62748189754136FA}" {
+       ProneTurn 1
+       IkSettingsStand 0x7 0
+      }
+     }
+     AnimationInstance "{60945F10BF15FC09}anims/workspaces/player/player_main_machinegun.asi"
+     AnimationIKPose "{9091BBA8DB3CDF20}Assets/Weapons/MachineGuns/M249/anims/anm/p_M249_ik.anm"
+     AnimIKPoseProneOverride "{5FB5E0B2F0E034D3}Assets/Weapons/MachineGuns/M249/anims/anm/p_m249_pne_ik.anm"
+    }
+    CustomAttributes {
+     AimingModifierAttributes "{566C7D15A071B88E}" {
+      DeploymentPoints {
+       PivotPointInfoItem "{5AA6F54D19746722}" {
+        "Point info" DeploymentPointInfo ppii {
+         PivotID "Scene_Root"
+         Offset 0 0.0701 0.4358
+        }
+        StabilizationSize 0.07 0.15 0.4
+       }
+       PivotPointInfoItem "{5AA6F54D19087496}" {
+        "Point info" DeploymentPointInfo ppii {
+         Offset 0 0.0203 0.3696
+        }
+        SystemIdentifier 2
+        StabilizationPoints {
+         DeploymentPointInfo sp_left {
+          PivotID "w_bipodleg_left"
+          Offset -0.1148 -0.2 0
+         }
+         DeploymentPointInfo sp_right {
+          PivotID "w_bipodleg_right"
+          Offset 0.1179 -0.2 0
+         }
+        }
+       }
+      }
+     }
+     SCR_RecoilCameraShakeParams "{58DEF2AB0413E346}" {
+      m_vTranslationMin 0.003 0.003 0
+      m_vTranslationMax 0.004 0.004 0
+      m_fImpulseCrouchMagnitudeModifier 0.6
+     }
+     PreviewRenderAttributes "{5534BB9B9A3E369E}" {
+      CameraPreset Right
+      CameraDistanceToItem 1.5
+      FOV 20
+     }
+    }
+   }
+  }
+  WeaponComponent "{CFBAA4B706BA66E8}" {
+   components {
+    SightsComponent "{BB23A637957CFFF8}" {
+     SightsPosition PointInfo "{BB23A63796688E69}" {
+      PivotID "eye"
+     }
+     SightsRanges {
+      SightRangeInfo "{594AD81905F4BD76}" {
+       Range 0.302 300
+       WeaponPosition PointInfo "{594AD81908FE4D41}" {
+        Offset 0 -0.0017 0
+        Angles 0.18 0 0
+       }
+      }
+      SightRangeInfo "{590ACA5ECEB40DD0}" {
+       Range 0.356 400
+       WeaponPosition PointInfo "{590ACA5ECEB40DEB}" {
+        Offset 0 -0.0024 0
+        Angles 0.24 0 0
+       }
+      }
+      SightRangeInfo "{590ACA5ECEB5C75E}" {
+       Range 0.404 500
+       WeaponPosition PointInfo "{590ACA5ECEB5C76D}" {
+        Offset 0 -0.0031 0
+        Angles 0.31 0 0
+       }
+      }
+      SightRangeInfo "{590ACA5ECEB69B98}" {
+       Range 0.475 600
+       WeaponPosition PointInfo "{590ACA5ECEB69B90}" {
+        Offset 0 -0.004 0
+        Angles 0.39 0 0
+       }
+      }
+      SightRangeInfo "{590ACA5ECE885841}" {
+       Range 0.549 700
+       WeaponPosition PointInfo "{590ACA5ECE885857}" {
+        Offset 0 -0.0051 0
+        Angles 0.5 0 0
+       }
+      }
+      SightRangeInfo "{590ACA5ECE891366}" {
+       Range 0.64 800
+       WeaponPosition PointInfo "{590ACA5ECE891379}" {
+        Offset 0 -0.0065 0
+        Angles 0.63 0 0
+       }
+      }
+      SightRangeInfo "{590ACA5ECE8AD6EE}" {
+       Range 0.765 900
+       WeaponPosition PointInfo "{590ACA5ECE8AD6FF}" {
+        Offset 0 -0.0082 0
+        Angles 0.79 0 0
+       }
+      }
+      SightRangeInfo "{590ACA5ECE8BA81F}" {
+       Range 1 1000
+       WeaponPosition PointInfo "{590ACA5ECE8BA814}" {
+        Offset 0 -0.0105 0
+        Angles 1 0 0
+       }
+      }
+     }
+     SightsPointFront PointInfo "{5534C496A19A52E3}" {
+      PivotID "Scene_Root"
+      Offset 0 0.1043 0
+     }
+     SightsPointRear PointInfo "{5534C496A19A52E1}" {
+      PivotID "w_sight"
+      Offset -0.0005 0.008 0
+     }
+     ADSTime 0.5
+     m_iOpticDOFDistanceScale 60
+    }
+    MuzzleComponent "{50F64C4591CD7AA6}" {
+     components {
+      AttachmentSlotComponent "{5B28E1674ABA35A7}" {
+       AttachmentSlot InventoryStorageSlot Stock {
+       }
+      }
+      CaseEjectingEffectComponent "{5122AAD190FCA21D}" {
+       ParticleEffect "{4BF43F7D0D462D39}Particles/Weapon/Casing_556x45.ptc"
+       EffectPosition EntitySlotInfo "{513A938439231378}" {
+        PivotID "barrel_chamber"
+        Offset 0 -0.03 -0.1
+        Angles -20 90 0
+       }
+      }
+      CaseEjectingEffectComponent "{5534C496A19A5211}" {
+       ParticleEffect "{40C8AD1204EC2629}Particles/Weapon/Smoke_PKM.ptc"
+       EffectPosition EntitySlotInfo "{52DAEB64DC0634B5}" {
+        PivotID "barrel_muzzle"
+       }
+       HasSound 0
+      }
+      CaseEjectingEffectComponent "{56D2F5D94257244A}" {
+       ParticleEffect "{E7ACDE0ACCBCB07A}Particles/Weapon/Casing_Holder.ptc"
+       EffectPosition EntitySlotInfo casing_holder {
+        PivotID "barrel_chamber"
+        Offset 0 0.01 -0.1
+        Angles -20 90 0
+       }
+       HasSound 0
+      }
+      SCR_MuzzleEffectComponent "{C9B3271BB22CDB68}" {
+       ParticleEffect "{57A509D9293B172D}Particles/Weapon/Muzzle_PKM_flashHider.ptc"
+      }
+     }
+     ChamberedAmmo 0
+     FireModes {
+      BaseFireMode "{506B20D1476BA99E}" : "{687B3DA431730CFA}Prefabs/Weapons/Core/Configs/FireModes/FireMode_Safe.conf" {
+       "Gamepad Trigger effect" GamepadTriggerEffect "{619AA72C28DF32C1}" : "{E63ADC0ED1431B24}Prefabs/Weapons/Core/Configs/TriggerEffects/Safety/TriggerEffect_SafetyMedium.conf" {
+       }
+       "Empty Trigger effect" GamepadTriggerEffect "{61C354AD4F73FF39}" : "{E63ADC0ED1431B24}Prefabs/Weapons/Core/Configs/TriggerEffects/Safety/TriggerEffect_SafetyMedium.conf" {
+       }
+      }
+      BaseFireMode "{B80A64F4A8EF8333}" : "{A512F292D96BCB9F}Prefabs/Weapons/Core/Configs/FireModes/FireMode_Auto.conf" {
+       RoundsPerMinute 800
+      }
+     }
+     MagazineWell MagazineWellM249 "{5534C496A19A521F}" {
+     }
+     BulletInitSpeedCoef 0.983
+     DispersionDiameter 0.4
+     DispersionRange 265
+     WeaponAimModifiers {
+      RecoilWeaponAimModifier "{691496C59BD30FBD}" : "{CB28FE22978BA7DE}Prefabs/Weapons/Core/Configs/AimModifiers/RecoilAimModifier_M249.conf" {
+      }
+      ZeroingWeaponAimModifier "{5534C496A19A5205}" {
+      }
+     }
+     "LEFT HAND TARGET" DeploymentPointInfo lht {
+      PivotID "snap_hand_left"
+      Offset 0.0198 -0.0692 -0.3994
+     }
+     RIGHT_HAND_TARGET DeploymentPointInfo rht {
+      PivotID "snap_hand_right"
+     }
+     BUTSTOCK_TRANSFORMATION DeploymentPointInfo bt {
+      PivotID "Scene_Root"
+      Offset 0 0.0516 -0.4031
+     }
+     MagazinePosition InventoryStorageSlot "{B80A64F4C834E9CB}" {
+      InspectionWidgetOffset 0 -0.0369 0.0544
+     }
+     MagazineTemplate "{06D722FC2666EB83}Prefabs/Weapons/Magazines/Box_556x45_M249_200rnd_4Ball_1Tracer.et"
+    }
+    WeaponAnimationComponent "{60B4EA76EB15F6E0}" {
+     AnimGraph "{5C41727F96285D4E}Assets/Weapons/MachineGuns/workspaces/M249.agr"
+     AnimInstance "{23E7B8806482C9FA}Assets/Weapons/MachineGuns/workspaces/M249_weapon.asi"
+     AnimInjection AnimationAttachmentInfo "{5534C496A19A52D7}" {
+      AnimGraph "{5C41727F96285D4E}Assets/Weapons/MachineGuns/workspaces/M249.agr"
+      AnimInstance "{D8B929B1FC83AD16}Assets/Weapons/MachineGuns/workspaces/M249_player.asi"
+      BindingName "Weapon"
+     }
+     BindWithInjection 1
+    }
+   }
+   slightObstrWeaponMaxZOffset 0
+   SoundInt 1040100
+   UIInfo WeaponUIInfo "{CC3BA6A2C42F09F4}" {
+    Name "#AR-Weapon_M249_Name"
+    Icon ""
+   }
+  }
+  ActionsManagerComponent "{A29AE67FF4D82B0F}" {
+   ActionContexts {
+    UserActionContext "{5086F9ADF588DCA4}" {
+     Position PointInfo "{5086F9ADE97650DF}" {
+      Offset 0 -0.0109 -0.1377
+     }
+    }
+    UserActionContext "{5956E32BAAADE657}" {
+     Position PointInfo "{5956E329E6B11261}" {
+     }
+    }
+    UserActionContext "{5A1E58F7B04F9BE5}" {
+     Position PointInfo "{5A1E5C464BE97CE5}" {
+      PivotID "slot_magazine"
+      Offset -0.0183 -0.0767 0
+     }
+    }
+    UserActionContext "{5A1E58F7AED270D4}" {
+     Position PointInfo "{5A1E5C46444D13C9}" {
+      PivotID "w_fire_mode"
+     }
+    }
+   }
+   additionalActions {
+    SCR_FireModeSwitchUserAction "{5A1E74156C2DB00D}" {
+     ParentContextList {
+      ""
+     }
+    }
+   }
+  }
+  WeaponGamepadEffectsManagerComponent "{61A2E5C3F4458F86}" {
+   "Default Chambered Trigger effect" GamepadTriggerEffect "{61D30BF7F0381163}" : "{4C187800824D6794}Prefabs/Weapons/Core/Configs/TriggerEffects/Charged/TriggerEffect_ChargedMedium.conf" {
+   }
+   "Default Firing Trigger effect" GamepadTriggerEffect "{61D30BF7F81F8C61}" : "{5CC7F3281D67289E}Prefabs/Weapons/Core/Configs/TriggerEffects/Fire/TriggerEffect_FireLight.conf" {
+   }
+  }
+ }
+}

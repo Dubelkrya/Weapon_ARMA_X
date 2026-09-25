@@ -1,0 +1,12 @@
+GenericEntity {
+ ID "5F1EE1D25A879FCD"
+ components {
+  MeshObject "{5F1EE1D2E8ED393E}" {
+   Object "{9FED5F5B54B8921C}Assets/Weapons/Explosives/DemoBlock_TSh400g/DemoBlock_TSh400g_Fuze_VZD-1M.xob"
+  }
+  Hierarchy "{5F2693EDA61D1C86}" {
+  }
+ }
+ coords 0.339 0.181 0.015
+ angles 85.472 0 0
+}

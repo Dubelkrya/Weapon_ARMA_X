@@ -1,0 +1,16 @@
+Projectile : "{1D9DDE1632F33A9E}Prefabs/Weapons/Ammo/Ammo_545x39_Ball_7N6.et" {
+ ID "DA5C6308000CDEF2"
+ components {
+  ShellMoveComponent "{851AA4A2AE0A5691}" {
+   InitSpeed 840
+   DispersionMultiplier 1.3
+   Mass 0.00415
+   BallisticTableConfig "{567E245F5FA16629}Configs/Weapons/AIBallisticTables/AIBT_545x39_AP_7N24M.conf"
+   AirDrag 0.0000043
+   MushroomingDamageMultiplier 0.05
+   TumblingDamageMultiplier 0.1
+   PenetrationDepth 5
+   PenetrationSpeed 495
+  }
+ }
+}

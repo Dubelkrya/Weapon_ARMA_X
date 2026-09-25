@@ -1,0 +1,13 @@
+GameEntity : "{AB268D088F2D6291}Prefabs/Weapons/Attachments/Underbarrel/UGL_M203_short.et" {
+ ID "50D6D3D8D7C645EE"
+ components {
+  MeshObject "{BB6A64F1D169741D}" {
+   Materials {
+    MaterialAssignClass "{5E567EEDBAFDF7D2}" {
+     SourceMaterial "M203_carbine"
+     AssignedMaterial "{32F8283692F5AACF}Assets/Weapons/Attachments/Underbarrel/M203/Data/M203_carbine_OliveGreen_Solid.emat"
+    }
+   }
+  }
+ }
+}
