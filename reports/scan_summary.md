@@ -1,7 +1,7 @@
 # Scan summary
 
 - Mod root: `C:\Users\yshky\Documents\My Games\ArmaReforgerWorkbench\addons\ARMST-PLATFORM---Weapons`
-- Repository: `C:\Users\yshky\Documents\Codex\2026-09-22\github-plugin-github-openai-curated-remote\work\canonical-rescan-f5b`
+- Repository: `.` (repository root)
 - Entities (.et with local chain): 158
 - Warnings: 1
 - Graph edges: 384
