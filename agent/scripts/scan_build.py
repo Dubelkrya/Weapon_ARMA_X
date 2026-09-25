@@ -17,16 +17,19 @@ weapon -> magazine -> ammo reference graph, and exports:
   agent/     - scan_state.json
 
 Rules honoured:
-  * local mod is the source of truth
-  * never invent values that cannot be reached through the local file chain
+  * local mod is the source of truth and always wins path resolution
+  * materialized vanilla resources may resolve otherwise-external base-game
+    paths, but keep explicit base_game_snapshot provenance
+  * never invent values that cannot be reached through serialized source data
   * every resolved value keeps provenance (defined_in / inherited)
-  * unresolved/external parents are reported, never guessed
+  * unresolved parents remain reported, never guessed
 
 Usage:
   python agent/scripts/scan_build.py
 Environment:
   MOD_ROOT  - path to the addon (default: workbench addons dir)
   REPO_ROOT - path to this repository (default: two dirs up from this file)
+  BASE_GAME_SNAPSHOT_ROOT - materialized vanilla corpus (default: repo/catalog)
 """
 
 import os
@@ -38,6 +41,7 @@ from collections import OrderedDict
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from et_parser import (parse_file, find_child, find_children, find_recursive,
                        GUID_REF_RE, Node)
+from base_game_snapshot import build_snapshot_index, lookup_snapshot
 
 # ----------------------------------------------------------------------------
 # environment / paths
@@ -56,6 +60,9 @@ INDEX_DIR = os.path.join(REPO_ROOT, "indexes")
 REPORT_DIR = os.path.join(REPO_ROOT, "reports")
 SCHEMA_DIR = os.path.join(REPO_ROOT, "schema")
 AGENT_DIR = os.path.join(REPO_ROOT, "agent")
+BASE_GAME_SNAPSHOT_ROOT = os.path.abspath(os.environ.get(
+    "BASE_GAME_SNAPSHOT_ROOT", CATALOG_DIR
+))
 
 W = []  # warnings / anomalies collected during scan
 
