@@ -8,7 +8,7 @@ SCRIPTS = ROOT / "agent" / "scripts"
 sys.path.insert(0, str(SCRIPTS))
 
 from et_parser import parse_file, parse_text  # noqa: E402
-from scan_build import array_values  # noqa: E402
+from scan_build import array_values, functional_magazine_component  # noqa: E402
 from check_data_quality import (  # noqa: E402
     weapon_magazine_is_cataloged,
     weapon_magazine_is_external,
@@ -69,6 +69,34 @@ class ParserRegressionTests(unittest.TestCase):
             is_et=False,
         )
         self.assertEqual(array_values(root.children[0]), [0, 1, 0, 1])
+
+
+    def test_functional_magazine_component_can_be_nested(self):
+        _, root = parse_text(
+            '''components {
+ MagazineComponent "{SPARSE}" {
+ }
+ Wrapper {
+  MagazineComponent "{FUNCTIONAL}" {
+   AmmoConfig "{ABCD}Configs/Weapons/Ammo/Test.conf"
+   AmmoMapping {
+    0
+    1
+   }
+   MaxAmmo 2
+  }
+ }
+}
+''',
+            source_name="nested-magazine.conf",
+            is_et=False,
+        )
+        mag = functional_magazine_component(root)
+        self.assertIsNotNone(mag)
+        self.assertEqual(mag.id, "{FUNCTIONAL}")
+        self.assertIsNotNone(next((c for c in mag.children if c.name == "AmmoConfig"), None))
+        self.assertIsNotNone(next((c for c in mag.children if c.name == "AmmoMapping"), None))
+        self.assertIsNotNone(next((c for c in mag.children if c.name == "MaxAmmo"), None))
 
 
 class DataQualityRegressionTests(unittest.TestCase):
