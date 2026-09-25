@@ -207,7 +207,7 @@ def render_9x39() -> str:
         "",
         "### Handling snapshot",
         "",
-        "All current 9×39 weapon entries resolve to 700 RPM, velocity coefficient 0.835 and dispersion 0.4 at 200 (approximately 6.875 MOA). Capacity is shown only when the linked magazine catalog resolves it.",
+        "The handling rows above are generated from the current catalog. Capacity is shown only when the linked magazine catalog resolves it; RPM, velocity coefficient and dispersion remain per-entry evidence rather than family-wide assumptions.",
         "",
         "## Magazine layer",
         "",
@@ -224,14 +224,11 @@ def render_9x39() -> str:
 
     lines.extend([
         "",
-        "> [!WARNING]",
-        "> Current 9×39 magazine records have empty serialized `ammo_mapping` arrays, so this snapshot does **not** prove which projectile is actually loaded in each magazine. The generator therefore does not infer SP5/SP6 from filenames.",
+        "> [!NOTE]",
+        "> AmmoMapping entry counts and capacities above come from the current catalog. The generator does not infer projectile identity or capacity from magazine filenames; caliber IDs are shown verbatim from resolved source evidence.",
         "",
-        "> [!WARNING]",
-        "> Current 9×39 magazine records expose `#AR-AmmunitionID_545x39mm` as `caliber_id`. This is recorded as a catalog/data-quality anomaly, not silently corrected here.",
-        "",
-        "> [!WARNING]",
-        "> The VAL files named `30rnd` do not resolve `max_ammo` / derived capacity in the current catalog. Capacity remains unknown here rather than being inferred from the filename.",
+        "> [!NOTE]",
+        "> A derived capacity is shown only when the catalog has source-backed evidence (for example, serialized AmmoMapping length when MaxAmmo is absent). Mapping indices must be interpreted through the resolved AmmoConfig resource list.",
         "",
         "## Projectile layer",
         "",
@@ -252,17 +249,24 @@ def render_9x39() -> str:
         "",
         "### What the current projectile snapshot actually proves",
         "",
-        "- `Ammo_9x39_SP6_Ball.et` has an explicit local `DamageValue` of **150**.",
-        "- `Ammo_9x39_SP5_Ball.et` does **not** expose a resolved local/inherited damage value in the current catalog, so its damage remains unknown here.",
-        "- Both current catalog projectiles resolve `PenetrationDepth = 3.7` and `PenetrationSpeed = 615`.",
-        "- SP5 resolves 290 m/s and mass 0.01959 kg; SP6 resolves 305 m/s and mass 0.02559 kg.",
-        "- Both reference `AIBT_762x54r_Ball_7N1.conf` in the current catalog snapshot.",
+    ])
+    for row in sorted(projectiles, key=lambda x: x["id"]):
+        lines.append(
+            f"- `{basename(row['resource'])}`: InitSpeed={text(row['init_speed'])}, "
+            f"Mass={text(row['mass'])}, Damage={text(row['damage'])}, "
+            f"PenetrationDepth={text(row['penetration_depth'])}, "
+            f"PenetrationSpeed={text(row['penetration_speed'])}, "
+            f"AirDrag={text(row['air_drag'])}, "
+            f"BallisticTable=`{basename(row['ballistic_table'])}`."
+        )
+
+    lines.extend([
         "",
         "## Authority boundary",
         "",
         "The older `indexes/ammunition_reference/part-06.json` contains different 9×39 SP5/SP6 resources from `Weapons.zip` (`Ammo_9x39_Ball_SP5.et` / `Ammo_9x39_AP_SP6.et`) with different penetration values. Those older reference rows are useful historical/source evidence but must not be merged into the current ARMST projectile rows as if they were the same resources.",
         "",
-        "Before making balance changes, resolve the current `Ammo_9x39.conf` resource list and serialized magazine `AmmoMapping` from the primary addon, then validate one projectile/magazine family at a time in Workbench.",
+        "Before making balance changes, use the current generated AmmoConfig resource list together with serialized magazine AmmoMapping evidence, then validate one projectile/magazine family at a time in Workbench.",
         "",
     ])
     return "\n".join(lines)
