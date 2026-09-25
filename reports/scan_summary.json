@@ -1,6 +1,6 @@
 {
   "mod_root": "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons",
-  "repo_root": "C:\\Users\\yshky\\Documents\\Codex\\2026-09-22\\github-plugin-github-openai-curated-remote\\work\\canonical-rescan-f5b",
+  "repo_root": ".",
   "entities": 158,
   "entities_with_local_chain": 158,
   "counts_by_classification": {
