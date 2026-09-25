@@ -124,3 +124,39 @@ Dispersion reference   = DispersionRange
 
 The existing overview column `Дальность, м` should not be reinterpreted as
 ballistic-table range until its intended semantics are explicitly changed.
+
+
+## Read-only snapshot inspection before Workbench
+
+The repository already contains evidence that a vanilla weapon/config dataset was
+materialized locally in the resolver-v2 research flow, while
+`Imported/VanillaSources/` itself was intentionally kept out of Git.
+
+Before relying on the runtime probe, inspect any surviving local materialized
+AIBT snapshot with:
+
+```bat
+python agent\scripts\inspect_aiballistic_snapshot.py ^
+  --output agent\aibt_snapshot_inspection.json
+```
+
+Default reference configs:
+
+- `AIBT_545x39_Ball_7N6.conf`
+- `AIBT_556x45_Ball_M855.conf`
+- `AIBT_762x54r_Ball_7N1.conf`
+- `AIBT_9x39_Ball_SP5.conf`
+
+Use `--all` to inspect every materialized AIBT config.
+
+The inspector is deliberately semantic-neutral. It records the parsed config
+tree, numeric leaves and 3-number leaves as structural candidates only. It does
+not assume which serialized field is distance, aim height or time until the
+actual snapshot shape has been reviewed.
+
+This ordering is preferred:
+
+1. inspect the existing materialized AIBT snapshot;
+2. establish the exact serialized `BallisticTableArray` shape from evidence;
+3. add a source-backed offline max-range extractor;
+4. use the Workbench/runtime probe only as an independent cross-check.
