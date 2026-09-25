@@ -731,11 +731,43 @@ def _physical_extract(resolved):
 
 # ---------------------------------------------------------------- magazines
 
+def _field_presence_score(node, weights):
+    score = 0
+    for name, weight in weights.items():
+        if find_child(node, name) is not None:
+            score += weight
+    return score
+
+
+def functional_magazine_component(resolved):
+    """Select the functional MagazineComponent from anywhere in the resolved tree.
+
+    Classification already searches recursively. Extraction must use the same
+    visibility or a nested/duplicate functional component can be classified as
+    present while its gameplay fields are silently skipped.
+    """
+    candidates = find_recursive(resolved, "MagazineComponent") if resolved else []
+    if not candidates:
+        return None
+    return max(
+        candidates,
+        key=lambda node: _field_presence_score(
+            node,
+            {
+                "AmmoConfig": 8,
+                "AmmoMapping": 4,
+                "MaxAmmo": 2,
+                "MagazineWell": 1,
+            },
+        ),
+    )
+
+
 def magazine_extract(resolved, context):
     global TOP_REL
     TOP_REL = context["rel"]
     comps = comps_children(resolved)
-    mag = next((c for c in comps if c.name == "MagazineComponent"), None)
+    mag = functional_magazine_component(resolved)
     inv = next((c for c in comps
                 if c.name == "InventoryMagazineComponent"), None)
     editable = next((c for c in comps
