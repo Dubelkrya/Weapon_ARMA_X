@@ -1401,13 +1401,17 @@ def build_catalog_entry(ent, res, resources, all_files, guid_index, by_actual):
         "identity": _extract_identity(ent, kind),
         "classification": ent["categories"],
         "inheritance": {
-            "chain": [{"resource": c.get("rel"),
+            "chain": [{"resource": c.get("resource") or c.get("rel"),
                        "status": c.get("status"),
                        "class": c.get("class")} for c in ent["chain"]],
             "external_parents": ent["external_parents"],
             "used_as_base_by": ent.get("used_as_base_by", []),
             "chain_depth_local": len([c for c in ent["chain"]
                                       if c.get("status") == "local"]),
+            "chain_depth_base_game_snapshot": len([
+                c for c in ent["chain"]
+                if c.get("status") == "base_game_snapshot"
+            ]),
         },
         "references": _resolve_ref_list(refs, all_files, guid_index),
         "warnings": [w for w in W if w["category"] in ("PARSE", "INHERIT-LOOP")
@@ -1444,10 +1448,23 @@ def _resolve_ref_list(refs, all_files, guid_index):
         if key in seen:
             continue
         res = resolve_ref(r["guid"], r["path"], all_files, guid_index)
-        seen[key] = {"guid": r["guid"], "path": r["path"],
-                     "resolved": res["status"],
-                     "target": res.get("rel"),
-                     "defined_in": r.get("defined_in")}
+        seen[key] = {
+            "guid": r["guid"],
+            "path": r["path"],
+            "resolved": res["status"],
+            "target": (
+                res.get("snapshot_original_path")
+                or res.get("rel")
+            ),
+            "defined_in": r.get("defined_in"),
+        }
+        if res["status"] == "base_game_snapshot":
+            seen[key]["snapshot_import_guid"] = res.get(
+                "snapshot_import_guid"
+            )
+            seen[key]["snapshot_physical_rel"] = res.get(
+                "snapshot_physical_rel"
+            )
     return list(seen.values())
 
 
@@ -1674,7 +1691,7 @@ def export_schemas():
         "type": "object",
         "properties": {
             "resource": {"type": "string"},
-            "status": {"enum": ["local", "file", "loop"]},
+            "status": {"enum": ["local", "base_game_snapshot", "file", "loop"]},
             "class": {"type": "string"},
         },
     }
@@ -1689,7 +1706,7 @@ def export_schemas():
         "type": "object",
         "properties": {
             "guid": {"type": "string"}, "path": {"type": "string"},
-            "resolved": {"enum": ["local", "external"]},
+            "resolved": {"enum": ["local", "base_game_snapshot", "external"]},
             "target": {"type": ["string", "null"]},
             "defined_in": {"type": ["string", "null"]},
         },
@@ -1723,6 +1740,7 @@ def export_schemas():
                 "external_parents": {"type": "array", "items": ext_parent},
                 "used_as_base_by": {"type": "array", "items": {"type": "string"}},
                 "chain_depth_local": {"type": "integer"},
+                "chain_depth_base_game_snapshot": {"type": "integer"},
             }},
             "references": {"type": "array", "items": ref_entry},
             "warnings": {"type": "array"},
