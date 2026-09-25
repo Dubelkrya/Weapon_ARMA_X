@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "mod_root": "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons",
-  "repo_root": "C:\\Users\\yshky\\Documents\\Codex\\2026-09-22\\github-plugin-github-openai-curated-remote\\work\\canonical-rescan-f5b",
+  "repo_root": ".",
   "scan_date": "2026-09-25",
   "tool": "agent/scripts/scan_build.py",
   "stats": {
