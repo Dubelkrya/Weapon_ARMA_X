@@ -1090,13 +1090,7 @@ def main():
     os.makedirs(CATALOG_DIR, exist_ok=True)
     dump_working_tables(entities)
 
-    import shutil
-    for d in (CATALOG_DIR, INDEX_DIR, REPORT_DIR, SCHEMA_DIR):
-        if os.path.isdir(d):
-            shutil.rmtree(d, ignore_errors=True)
-    for f in (os.path.join(AGENT_DIR, "scan_state.json"),):
-        if os.path.isfile(f):
-            os.remove(f)
+    clean_generated_outputs()
 
     # export catalogs
     stats = export_catalogs(entities, resources, all_files, guid_index, by_actual)
@@ -1278,10 +1272,69 @@ def build_reference_graph(entities, resources, all_files, guid_index):
     }
 
 
+GENERATED_CATALOG_DIRS = (
+    "weapons", "magazines", "ammunition", "optics", "attachments",
+    "grenades", "tripods", "core", "particles", "misc",
+)
+
+GENERATED_INDEX_FILES = (
+    "weapons.json", "magazines.json", "ammunition.json", "optics.json",
+    "attachments.json", "references.json", "reference_graph.json",
+)
+
+GENERATED_REPORT_FILES = (
+    "scan_summary.json", "scan_summary.md",
+    "unresolved_references.json", "unresolved_references.md",
+    "inheritance_issues.json", "inheritance_issues.md",
+    "anomalies.json", "anomalies.md",
+    "weapon_ballistics.json",
+)
+
+GENERATED_SCHEMA_FILES = (
+    "entity.schema.json", "weapon.schema.json",
+    "magazine.schema.json", "ammunition.schema.json",
+)
+
+
+def _remove_generated_file(path):
+    if os.path.isfile(path):
+        os.remove(path)
+
+
+def clean_generated_outputs():
+    """Remove only outputs owned by this scanner.
+
+    Physical .et/.conf/.meta snapshot resources, supplied reference indexes,
+    curated reports, samples, and unrelated schemas must survive a rescan.
+    """
+    for dirname in GENERATED_CATALOG_DIRS:
+        directory = os.path.join(CATALOG_DIR, dirname)
+        if not os.path.isdir(directory):
+            continue
+        for filename in os.listdir(directory):
+            path = os.path.join(directory, filename)
+            if os.path.isfile(path) and filename.lower().endswith(".json"):
+                os.remove(path)
+
+    for filename in GENERATED_INDEX_FILES:
+        _remove_generated_file(os.path.join(INDEX_DIR, filename))
+    _remove_generated_file(os.path.join(
+        INDEX_DIR, "generated_config_reference", "ammo_configs.json"
+    ))
+
+    for filename in GENERATED_REPORT_FILES:
+        _remove_generated_file(os.path.join(REPORT_DIR, filename))
+
+    for filename in GENERATED_SCHEMA_FILES:
+        _remove_generated_file(os.path.join(SCHEMA_DIR, filename))
+
+    _remove_generated_file(os.path.join(AGENT_DIR, "scan_state.json"))
+    _remove_generated_file(os.path.join(
+        SCRIPT_DIR, "working_tables", "entities.json"
+    ))
+
+
 def export_catalogs(entities, resources, all_files, guid_index, by_actual):
-    import shutil
-    if os.path.isdir(CATALOG_DIR):
-        shutil.rmtree(CATALOG_DIR, ignore_errors=True)
     stats = {"entities": len(entities), "weapons": 0, "magazines": 0,
              "ammunition": 0, "optics": 0, "attachments": 0, "grenades": 0,
              "tripods": 0, "core": 0, "particles": 0, "misc": 0}
