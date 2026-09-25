@@ -17,16 +17,19 @@ weapon -> magazine -> ammo reference graph, and exports:
   agent/     - scan_state.json
 
 Rules honoured:
-  * local mod is the source of truth
-  * never invent values that cannot be reached through the local file chain
+  * local mod is the source of truth and always wins path resolution
+  * materialized vanilla resources may resolve otherwise-external base-game
+    paths, but keep explicit base_game_snapshot provenance
+  * never invent values that cannot be reached through serialized source data
   * every resolved value keeps provenance (defined_in / inherited)
-  * unresolved/external parents are reported, never guessed
+  * unresolved parents remain reported, never guessed
 
 Usage:
   python agent/scripts/scan_build.py
 Environment:
   MOD_ROOT  - path to the addon (default: workbench addons dir)
   REPO_ROOT - path to this repository (default: two dirs up from this file)
+  BASE_GAME_SNAPSHOT_ROOT - materialized vanilla corpus (default: repo/catalog)
 """
 
 import os
@@ -38,6 +41,7 @@ from collections import OrderedDict
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from et_parser import (parse_file, find_child, find_children, find_recursive,
                        GUID_REF_RE, Node)
+from base_game_snapshot import build_snapshot_index, lookup_snapshot
 
 # ----------------------------------------------------------------------------
 # environment / paths
@@ -56,8 +60,12 @@ INDEX_DIR = os.path.join(REPO_ROOT, "indexes")
 REPORT_DIR = os.path.join(REPO_ROOT, "reports")
 SCHEMA_DIR = os.path.join(REPO_ROOT, "schema")
 AGENT_DIR = os.path.join(REPO_ROOT, "agent")
+BASE_GAME_SNAPSHOT_ROOT = os.path.abspath(os.environ.get(
+    "BASE_GAME_SNAPSHOT_ROOT", CATALOG_DIR
+))
 
 W = []  # warnings / anomalies collected during scan
+BASE_GAME_SNAPSHOT = None  # populated once per scan, read-only
 
 
 def warn(cat, msg):
@@ -277,13 +285,41 @@ def lookup_file(relpath, all_files):
     return None
 
 
-def resolve_ref(guid, path, all_files, guid_index):
+def _snapshot_resolution(snapshot, guid, path):
+    if snapshot is None:
+        snapshot = BASE_GAME_SNAPSHOT
+    record = lookup_snapshot(snapshot, path)
+    if not record:
+        return None
+    return {
+        "status": "base_game_snapshot",
+        "rel": record["key"],
+        "guid": guid,
+        "path": path,
+        "resolved_by": "imported_original_path",
+        "snapshot_original_path": record["original_path"],
+        "snapshot_import_guid": record["import_guid"],
+        "snapshot_physical_rel": record["physical_rel"],
+    }
+
+
+def resolve_ref(guid, path, all_files, guid_index, snapshot=None):
+    """Resolve a resource with strict layer precedence.
+
+    Primary ARMST files win. A live/mod GUID may only resolve inside the
+    primary addon GUID index. If the target is absent locally, the materialized
+    base-game snapshot may resolve it by declared original resource path.
+    Imported-local GUIDs are never compared to live GUIDs.
+    """
     rel = lookup_file(path, all_files)
     if rel:
         return {"status": "local", "rel": rel, "guid": guid, "path": path}
     if guid and guid in guid_index:
         return {"status": "local", "rel": guid_index[guid], "guid": guid,
                 "path": path, "resolved_by": "guid"}
+    snap = _snapshot_resolution(snapshot, guid, path)
+    if snap:
+        return snap
     return {"status": "external", "guid": guid, "path": path}
 
 
@@ -298,35 +334,95 @@ def collect_refs(node):
     return refs
 
 
-def build_chain(resource, resources_by_rel, all_files, guid_index, depth=64):
+def build_chain(resource, resources_by_rel, all_files, guid_index,
+                snapshot=None, depth=64):
+    """Resolve inheritance across ARMST local -> materialized base-game layers.
+
+    Once resolution enters the base-game snapshot, parent lookup stays inside
+    that snapshot. This prevents a vanilla parent from accidentally inheriting
+    a same-path ARMST override.
+    """
     chain = []
     external = []
     seen = set()
+    if snapshot is None:
+        snapshot = BASE_GAME_SNAPSHOT
+    snapshot_resources = (snapshot or {}).get("resources", {})
+    snapshot_metadata = (snapshot or {}).get("metadata", {})
     cur = resource.relpath
+
     while cur and depth:
         depth -= 1
-        rs = resources_by_rel.get(cur)
-        if rs is None:
-            chain.append({"rel": cur, "kind": "file", "status": "file"})
+
+        if cur in resources_by_rel:
+            rs = resources_by_rel[cur]
+            status = "local"
+            display_resource = cur
+        elif cur in snapshot_resources:
+            rs = snapshot_resources[cur]
+            status = "base_game_snapshot"
+            record = snapshot_metadata.get(cur) or {}
+            display_resource = record.get("original_path") or cur
+        else:
+            chain.append({
+                "rel": cur,
+                "resource": cur,
+                "kind": "file",
+                "status": "file",
+            })
             break
-        chain.append({"rel": cur, "kind": rs.kind, "status": "local",
-                      "class": rs.et_class})
-        if cur in seen:
-            warn("INHERIT-LOOP", f"cycle detected at {cur}")
-            chain.append({"rel": cur, "status": "loop"})
+
+        chain.append({
+            "rel": cur,
+            "resource": display_resource,
+            "kind": rs.kind,
+            "status": status,
+            "class": rs.et_class,
+        })
+
+        seen_key = (status, cur)
+        if seen_key in seen:
+            warn("INHERIT-LOOP", f"cycle detected at {display_resource}")
+            chain.append({
+                "rel": cur,
+                "resource": display_resource,
+                "status": "loop",
+            })
             break
-        seen.add(cur)
+        seen.add(seen_key)
+
         parent = rs.parent
         if not parent:
             break
-        resolved = resolve_ref(parent["guid"], parent["path"], all_files,
-                               guid_index)
-        if resolved["status"] == "local":
+
+        if status == "base_game_snapshot":
+            resolved = _snapshot_resolution(
+                snapshot, parent["guid"], parent["path"]
+            )
+            if not resolved:
+                resolved = {
+                    "status": "external",
+                    "guid": parent["guid"],
+                    "path": parent["path"],
+                }
+        else:
+            resolved = resolve_ref(
+                parent["guid"], parent["path"], all_files, guid_index, snapshot
+            )
+
+        if resolved["status"] in ("local", "base_game_snapshot"):
             cur = resolved["rel"]
             continue
-        external.append({"guid": parent["guid"], "path": parent["path"],
-                         "raw": parent["raw"]})
+
+        external.append({
+            "guid": parent["guid"],
+            "path": parent["path"],
+            "raw": parent["raw"],
+            "defined_in": display_resource,
+            "from_status": status,
+        })
         break
+
     return chain, external
 
 
@@ -911,8 +1007,24 @@ def build_ref_graph(entities, resources, all_files, guid_index):
 
 
 def main():
+    global BASE_GAME_SNAPSHOT
+
     print(f"MOD_ROOT   = {MOD_ROOT}")
     print(f"REPO_ROOT  = {REPO_ROOT}")
+    print(f"BASE_GAME_SNAPSHOT_ROOT = {BASE_GAME_SNAPSHOT_ROOT}")
+
+    # Snapshot indexing is read-only and happens before generated-output cleanup.
+    # It may point at the repository catalog where materialized .et/.conf files
+    # coexist with generated JSON.
+    BASE_GAME_SNAPSHOT = build_snapshot_index(BASE_GAME_SNAPSHOT_ROOT)
+    print(
+        "base-game snapshot: "
+        f"{BASE_GAME_SNAPSHOT.get('resource_count', 0)} resource(s), "
+        f"{BASE_GAME_SNAPSHOT.get('meta_count', 0)} meta file(s), "
+        f"{len(BASE_GAME_SNAPSHOT.get('issues', []))} issue(s)"
+    )
+    for issue in BASE_GAME_SNAPSHOT.get("issues", []):
+        warn("BASE-GAME-SNAPSHOT", json.dumps(issue, ensure_ascii=False))
 
     all_files = index_all_files(MOD_ROOT)
     print(f"files indexed: {len(all_files)}")
@@ -926,12 +1038,33 @@ def main():
     guid_index, aliases, by_actual = build_guid_index(resources)
     print(f"guid index entries: {len(guid_index)}")
 
+    # Synthetic snapshot keys are merge-only support resources. They are never
+    # exported as ARMST entities and therefore do not affect entity counts.
+    merge_resources = dict(et_resources)
+    merge_resources.update({
+        key: resource
+        for key, resource in BASE_GAME_SNAPSHOT.get("resources", {}).items()
+        if resource.kind == "et"
+    })
+
     entities = OrderedDict()
     for rel in sorted(et_resources):
         res = et_resources[rel]
-        chain, external = build_chain(res, et_resources, all_files, guid_index)
+        chain, external = build_chain(
+            res, et_resources, all_files, guid_index, BASE_GAME_SNAPSHOT
+        )
+        merge_rels = [
+            c["rel"] for c in chain
+            if c.get("status") in ("local", "base_game_snapshot")
+        ]
         local_rels = [c["rel"] for c in chain if c.get("status") == "local"]
-        resolved = chain_merge(local_rels, et_resources) if local_rels else None
+        snapshot_rels = [
+            c["rel"] for c in chain
+            if c.get("status") == "base_game_snapshot"
+        ]
+        resolved = (
+            chain_merge(merge_rels, merge_resources) if merge_rels else None
+        )
         categories = classify(res, resolved)
         entities[rel] = {
             "rel": rel,
@@ -942,6 +1075,7 @@ def main():
             "external_parents": external,
             "resolved": resolved,
             "has_local_components": bool(local_rels),
+            "has_base_game_snapshot": bool(snapshot_rels),
         }
 
     # role: base templates vs leaf items
@@ -956,13 +1090,7 @@ def main():
     os.makedirs(CATALOG_DIR, exist_ok=True)
     dump_working_tables(entities)
 
-    import shutil
-    for d in (CATALOG_DIR, INDEX_DIR, REPORT_DIR, SCHEMA_DIR):
-        if os.path.isdir(d):
-            shutil.rmtree(d, ignore_errors=True)
-    for f in (os.path.join(AGENT_DIR, "scan_state.json"),):
-        if os.path.isfile(f):
-            os.remove(f)
+    clean_generated_outputs()
 
     # export catalogs
     stats = export_catalogs(entities, resources, all_files, guid_index, by_actual)
@@ -1144,10 +1272,69 @@ def build_reference_graph(entities, resources, all_files, guid_index):
     }
 
 
+GENERATED_CATALOG_DIRS = (
+    "weapons", "magazines", "ammunition", "optics", "attachments",
+    "grenades", "tripods", "core", "particles", "misc",
+)
+
+GENERATED_INDEX_FILES = (
+    "weapons.json", "magazines.json", "ammunition.json", "optics.json",
+    "attachments.json", "references.json", "reference_graph.json",
+)
+
+GENERATED_REPORT_FILES = (
+    "scan_summary.json", "scan_summary.md",
+    "unresolved_references.json", "unresolved_references.md",
+    "inheritance_issues.json", "inheritance_issues.md",
+    "anomalies.json", "anomalies.md",
+    "weapon_ballistics.json",
+)
+
+GENERATED_SCHEMA_FILES = (
+    "entity.schema.json", "weapon.schema.json",
+    "magazine.schema.json", "ammunition.schema.json",
+)
+
+
+def _remove_generated_file(path):
+    if os.path.isfile(path):
+        os.remove(path)
+
+
+def clean_generated_outputs():
+    """Remove only outputs owned by this scanner.
+
+    Physical .et/.conf/.meta snapshot resources, supplied reference indexes,
+    curated reports, samples, and unrelated schemas must survive a rescan.
+    """
+    for dirname in GENERATED_CATALOG_DIRS:
+        directory = os.path.join(CATALOG_DIR, dirname)
+        if not os.path.isdir(directory):
+            continue
+        for filename in os.listdir(directory):
+            path = os.path.join(directory, filename)
+            if os.path.isfile(path) and filename.lower().endswith(".json"):
+                os.remove(path)
+
+    for filename in GENERATED_INDEX_FILES:
+        _remove_generated_file(os.path.join(INDEX_DIR, filename))
+    _remove_generated_file(os.path.join(
+        INDEX_DIR, "generated_config_reference", "ammo_configs.json"
+    ))
+
+    for filename in GENERATED_REPORT_FILES:
+        _remove_generated_file(os.path.join(REPORT_DIR, filename))
+
+    for filename in GENERATED_SCHEMA_FILES:
+        _remove_generated_file(os.path.join(SCHEMA_DIR, filename))
+
+    _remove_generated_file(os.path.join(AGENT_DIR, "scan_state.json"))
+    _remove_generated_file(os.path.join(
+        SCRIPT_DIR, "working_tables", "entities.json"
+    ))
+
+
 def export_catalogs(entities, resources, all_files, guid_index, by_actual):
-    import shutil
-    if os.path.isdir(CATALOG_DIR):
-        shutil.rmtree(CATALOG_DIR, ignore_errors=True)
     stats = {"entities": len(entities), "weapons": 0, "magazines": 0,
              "ammunition": 0, "optics": 0, "attachments": 0, "grenades": 0,
              "tripods": 0, "core": 0, "particles": 0, "misc": 0}
@@ -1214,13 +1401,17 @@ def build_catalog_entry(ent, res, resources, all_files, guid_index, by_actual):
         "identity": _extract_identity(ent, kind),
         "classification": ent["categories"],
         "inheritance": {
-            "chain": [{"resource": c.get("rel"),
+            "chain": [{"resource": c.get("resource") or c.get("rel"),
                        "status": c.get("status"),
                        "class": c.get("class")} for c in ent["chain"]],
             "external_parents": ent["external_parents"],
             "used_as_base_by": ent.get("used_as_base_by", []),
             "chain_depth_local": len([c for c in ent["chain"]
                                       if c.get("status") == "local"]),
+            "chain_depth_base_game_snapshot": len([
+                c for c in ent["chain"]
+                if c.get("status") == "base_game_snapshot"
+            ]),
         },
         "references": _resolve_ref_list(refs, all_files, guid_index),
         "warnings": [w for w in W if w["category"] in ("PARSE", "INHERIT-LOOP")
@@ -1257,10 +1448,23 @@ def _resolve_ref_list(refs, all_files, guid_index):
         if key in seen:
             continue
         res = resolve_ref(r["guid"], r["path"], all_files, guid_index)
-        seen[key] = {"guid": r["guid"], "path": r["path"],
-                     "resolved": res["status"],
-                     "target": res.get("rel"),
-                     "defined_in": r.get("defined_in")}
+        seen[key] = {
+            "guid": r["guid"],
+            "path": r["path"],
+            "resolved": res["status"],
+            "target": (
+                res.get("snapshot_original_path")
+                or res.get("rel")
+            ),
+            "defined_in": r.get("defined_in"),
+        }
+        if res["status"] == "base_game_snapshot":
+            seen[key]["snapshot_import_guid"] = res.get(
+                "snapshot_import_guid"
+            )
+            seen[key]["snapshot_physical_rel"] = res.get(
+                "snapshot_physical_rel"
+            )
     return list(seen.values())
 
 
@@ -1487,7 +1691,7 @@ def export_schemas():
         "type": "object",
         "properties": {
             "resource": {"type": "string"},
-            "status": {"enum": ["local", "file", "loop"]},
+            "status": {"enum": ["local", "base_game_snapshot", "file", "loop"]},
             "class": {"type": "string"},
         },
     }
@@ -1502,7 +1706,7 @@ def export_schemas():
         "type": "object",
         "properties": {
             "guid": {"type": "string"}, "path": {"type": "string"},
-            "resolved": {"enum": ["local", "external"]},
+            "resolved": {"enum": ["local", "base_game_snapshot", "external"]},
             "target": {"type": ["string", "null"]},
             "defined_in": {"type": ["string", "null"]},
         },
@@ -1536,6 +1740,7 @@ def export_schemas():
                 "external_parents": {"type": "array", "items": ext_parent},
                 "used_as_base_by": {"type": "array", "items": {"type": "string"}},
                 "chain_depth_local": {"type": "integer"},
+                "chain_depth_base_game_snapshot": {"type": "integer"},
             }},
             "references": {"type": "array", "items": ref_entry},
             "warnings": {"type": "array"},
