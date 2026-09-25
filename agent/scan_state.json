@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
   "mod_root": "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons",
-  "repo_root": "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\Weapon_ARMA_X\\Weapon_ARMA_X",
-  "scan_date": "2026-09-24",
+  "repo_root": ".",
+  "scan_date": "2026-09-25",
   "tool": "agent/scripts/scan_build.py",
   "stats": {
     "entities": 158,

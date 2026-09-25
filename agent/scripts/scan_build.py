@@ -1600,7 +1600,7 @@ def write_reports(entities, stats, graph=None):
     sum_kind = Counter(e["categories"].get("kind") for e in local)
     summary = {
         "mod_root": MOD_ROOT,
-        "repo_root": REPO_ROOT,
+        "repo_root": ".",
         "entities": len(local),
         "entities_with_local_chain": len(resolved_local),
         "counts_by_classification": dict(sum_kind.most_common()),
@@ -1617,7 +1617,7 @@ def write_reports(entities, stats, graph=None):
               encoding="utf-8") as f:
         f.write("# Scan summary\n\n")
         f.write(f"- Mod root: `{MOD_ROOT}`\n")
-        f.write(f"- Repository: `{REPO_ROOT}`\n")
+        f.write("- Repository: `.` (repository root)\n")
         f.write(f"- Entities (.et with local chain): {len(local)}\n")
         f.write(f"- Warnings: {len(W)}\n")
         f.write(f"- Graph edges: {summary['graph_edges']}\n\n")
@@ -1708,7 +1708,7 @@ def write_scan_state(stats):
     state = {
         "schema_version": "1.0",
         "mod_root": MOD_ROOT,
-        "repo_root": REPO_ROOT,
+        "repo_root": ".",
         "scan_date": datetime.date.today().isoformat(),
         "tool": "agent/scripts/scan_build.py",
         "stats": stats,

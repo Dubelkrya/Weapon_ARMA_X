@@ -1,6 +1,6 @@
 {
   "mod_root": "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons",
-  "repo_root": "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\Weapon_ARMA_X\\Weapon_ARMA_X",
+  "repo_root": ".",
   "entities": 158,
   "entities_with_local_chain": 158,
   "counts_by_classification": {

@@ -59,7 +59,28 @@
       "defined_in": "Prefabs/Weapons/Magazines/Western/762x51/HK3/armst_Magazine_762x51_HK3_20_M80_Ball.et"
     },
     "max_ammo": null,
-    "ammo_mapping": [],
+    "ammo_mapping": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
     "caliber_id": null,
     "name": {
       "value": "HK3 magazine 20rnd",
@@ -74,5 +95,8 @@
     },
     "_inv_defined_in": "Prefabs/Weapons/Magazines/Western/762x51/HK3/armst_Magazine_762x51_HK3_20_M80_Ball.et"
   },
-  "derived": {}
+  "derived": {
+    "capacity": 20,
+    "capacity_source": "AmmoMapping length"
+  }
 }

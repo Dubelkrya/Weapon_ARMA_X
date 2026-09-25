@@ -59,7 +59,38 @@
       "defined_in": "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_30rnd_Ball_BP.et"
     },
     "max_ammo": null,
-    "ammo_mapping": [],
+    "ammo_mapping": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
     "caliber_id": null,
     "name": null,
     "_defined_in": "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_30rnd_Ball_BP.et",
@@ -84,5 +115,8 @@
       "defined_in": "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_30rnd_Ball_BP.et"
     }
   },
-  "derived": {}
+  "derived": {
+    "capacity": 30,
+    "capacity_source": "AmmoMapping length"
+  }
 }

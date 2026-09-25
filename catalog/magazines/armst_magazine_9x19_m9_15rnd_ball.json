@@ -52,7 +52,23 @@
       "defined_in": "Prefabs/Weapons/Magazines/Western/9x19/M9/armst_Magazine_9x19_M9_15rnd_Ball.et"
     },
     "max_ammo": null,
-    "ammo_mapping": [],
+    "ammo_mapping": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
     "caliber_id": null,
     "name": null,
     "_defined_in": "Prefabs/Weapons/Magazines/Western/9x19/M9/armst_Magazine_9x19_M9_15rnd_Ball.et",
@@ -72,5 +88,8 @@
       "inherited": false
     }
   },
-  "derived": {}
+  "derived": {
+    "capacity": 15,
+    "capacity_source": "AmmoMapping length"
+  }
 }

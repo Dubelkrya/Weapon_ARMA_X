@@ -52,7 +52,38 @@
       "defined_in": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M193_Ball_BP.et"
     },
     "max_ammo": null,
-    "ammo_mapping": [],
+    "ammo_mapping": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
     "caliber_id": null,
     "name": {
       "value": "#AR-Magazine_STANAG_Name",
@@ -72,5 +103,8 @@
       "inherited": false
     }
   },
-  "derived": {}
+  "derived": {
+    "capacity": 30,
+    "capacity_source": "AmmoMapping length"
+  }
 }

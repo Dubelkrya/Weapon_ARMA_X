@@ -1,0 +1,150 @@
+{
+  "generated_from": "current primary addon scan",
+  "count": 8,
+  "data": {
+    "Configs/Weapons/Ammo/ARMST/armst_Ammo_556x45_ARMST.conf": {
+      "resource_guid": "5513C2BA0B7B48F8",
+      "resources": [
+        {
+          "guid": "62FA6A6363394955",
+          "path": "Prefabs/Weapons/Ammo/Western/5x56/armst_Ammo_556x45_PP.et",
+          "resolved": "local",
+          "target": "Prefabs/Weapons/Ammo/Western/5x56/armst_Ammo_556x45_PP.et"
+        },
+        {
+          "guid": "716F41EFBBB14F9C",
+          "path": "Prefabs/Weapons/Ammo/Western/5x56/armst_Ammo_556x45_BP.et",
+          "resolved": "local",
+          "target": "Prefabs/Weapons/Ammo/Western/5x56/armst_Ammo_556x45_BP.et"
+        }
+      ],
+      "coverage": "local_array"
+    },
+    "Configs/Weapons/Ammo/ARMST/armst_Ammo_762x39_ARMST.conf": {
+      "resource_guid": "EA0E25BAF3BD459F",
+      "resources": [
+        {
+          "guid": "3E395A4A4B0C4F0E",
+          "path": "Prefabs/Weapons/Ammo/Eastern/762x39/armst_Ammo_762x39_PP.et",
+          "resolved": "local",
+          "target": "Prefabs/Weapons/Ammo/Eastern/762x39/armst_Ammo_762x39_PP.et"
+        },
+        {
+          "guid": "1785D92E5A104937",
+          "path": "Prefabs/Weapons/Ammo/Eastern/762x39/armst_Ammo_762x39_BP.et",
+          "resolved": "local",
+          "target": "Prefabs/Weapons/Ammo/Eastern/762x39/armst_Ammo_762x39_BP.et"
+        }
+      ],
+      "coverage": "local_array"
+    },
+    "Configs/Weapons/Ammo/ARMST/armst_Ammo_762x51_ARMST.conf": {
+      "resource_guid": "94FC75B17BBA4DB7",
+      "resources": [
+        {
+          "guid": "8FAC2EB7CA474E5E",
+          "path": "Prefabs/Weapons/Ammo/Western/762x51/armst_Ammo_762x51_PP.et",
+          "resolved": "local",
+          "target": "Prefabs/Weapons/Ammo/Western/762x51/armst_Ammo_762x51_PP.et"
+        },
+        {
+          "guid": "647D4F418F9F4655",
+          "path": "Prefabs/Weapons/Ammo/Western/762x51/armst_Ammo_762x51_BP.et",
+          "resolved": "local",
+          "target": "Prefabs/Weapons/Ammo/Western/762x51/armst_Ammo_762x51_BP.et"
+        }
+      ],
+      "coverage": "local_array"
+    },
+    "Configs/Weapons/Ammo/ARMST/armst_Ammo_9x19_ARMST.conf": {
+      "resource_guid": "48496091DE244325",
+      "resources": [
+        {
+          "guid": "DFADF7628FAC4A05",
+          "path": "Prefabs/Weapons/Ammo/Western/9x19/armst_Ammo_9x19_PP.et",
+          "resolved": "local",
+          "target": "Prefabs/Weapons/Ammo/Western/9x19/armst_Ammo_9x19_PP.et"
+        },
+        {
+          "guid": "9F5580C950084760",
+          "path": "Prefabs/Weapons/Ammo/Western/9x19/armst_Ammo_9x19_BP.et",
+          "resolved": "local",
+          "target": "Prefabs/Weapons/Ammo/Western/9x19/armst_Ammo_9x19_BP.et"
+        }
+      ],
+      "coverage": "local_array"
+    },
+    "Configs/Weapons/Ammo/Ammo_12g.conf": {
+      "resource_guid": null,
+      "resources": [
+        {
+          "guid": "862E8EB633CED07D",
+          "path": "Prefabs/Weapons/Ammo/12g/armst_Ammo_12ga.et",
+          "resolved": "local",
+          "target": "Prefabs/Weapons/Ammo/12g/armst_Ammo_12ga.et"
+        },
+        {
+          "guid": "9F7537128778361F",
+          "path": "Prefabs/Weapons/Ammo/12g/armst_Ammo_12ga_shell.et",
+          "resolved": "local",
+          "target": "Prefabs/Weapons/Ammo/12g/armst_Ammo_12ga_shell.et"
+        },
+        {
+          "guid": "9A2EC4D810705428",
+          "path": "Prefabs/Weapons/Ammo/12g/armst_Ammo_12ga_shell_test.et",
+          "resolved": "local",
+          "target": "Prefabs/Weapons/Ammo/12g/armst_Ammo_12ga_shell_test.et"
+        }
+      ],
+      "coverage": "local_array"
+    },
+    "Configs/Weapons/Ammo/armst_Ammo_763x25.conf": {
+      "resource_guid": null,
+      "resources": [
+        {
+          "guid": "5AE7AF31B9D7EB6C",
+          "path": "Prefabs/Weapons/Ammo/Russian/763x25/armst_Ammo_763x25_Ball.et",
+          "resolved": "local",
+          "target": "Prefabs/Weapons/Ammo/Russian/763x25/armst_Ammo_763x25_Ball.et"
+        }
+      ],
+      "coverage": "local_array"
+    },
+    "Configs/Weapons/Ammo/armst_Ammo_9x18_ARMST.conf": {
+      "resource_guid": "F2D8D099211C2451",
+      "resources": [
+        {
+          "guid": "2EECBE22BC8BE0BA",
+          "path": "Prefabs/Weapons/Ammo/armst_Ammo_9x18_PP.et",
+          "resolved": "local",
+          "target": "Prefabs/Weapons/Ammo/armst_Ammo_9x18_PP.et"
+        },
+        {
+          "guid": "64F210837ACBAF9E",
+          "path": "Prefabs/Weapons/Ammo/armst_Ammo_9x18_BP.et",
+          "resolved": "local",
+          "target": "Prefabs/Weapons/Ammo/armst_Ammo_9x18_BP.et"
+        }
+      ],
+      "coverage": "local_array"
+    },
+    "Configs/Weapons/Ammo/armst_Ammo_9x39.conf": {
+      "resource_guid": null,
+      "resources": [
+        {
+          "guid": "2CB8EAD4A52F3290",
+          "path": "Prefabs/Weapons/Ammo/Russian/9x39/armst_Ammo_9x39_SP5_Ball.et",
+          "resolved": "local",
+          "target": "Prefabs/Weapons/Ammo/Russian/9x39/armst_Ammo_9x39_SP5_Ball.et"
+        },
+        {
+          "guid": "FB468B29C75FE46A",
+          "path": "Prefabs/Weapons/Ammo/Russian/9x39/armst_Ammo_9x39_SP6_Ball.et",
+          "resolved": "local",
+          "target": "Prefabs/Weapons/Ammo/Russian/9x39/armst_Ammo_9x39_SP6_Ball.et"
+        }
+      ],
+      "coverage": "local_array"
+    }
+  }
+}

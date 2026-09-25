@@ -158,14 +158,14 @@
     },
     "fire_modes": [
       {
-        "mode_id": ":",
+        "mode_id": "{506B20D1476BA99E}",
         "ui_name": null,
         "rounds_per_minute": null,
         "max_burst": null,
         "defined_in": "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_base.et"
       },
       {
-        "mode_id": ":",
+        "mode_id": "{B80A64F4A8EF8333}",
         "ui_name": null,
         "rounds_per_minute": {
           "value": 800,
