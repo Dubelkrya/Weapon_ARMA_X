@@ -284,13 +284,39 @@ def lookup_file(relpath, all_files):
     return None
 
 
-def resolve_ref(guid, path, all_files, guid_index):
+def _snapshot_resolution(snapshot, guid, path):
+    record = lookup_snapshot(snapshot, path)
+    if not record:
+        return None
+    return {
+        "status": "base_game_snapshot",
+        "rel": record["key"],
+        "guid": guid,
+        "path": path,
+        "resolved_by": "imported_original_path",
+        "snapshot_original_path": record["original_path"],
+        "snapshot_import_guid": record["import_guid"],
+        "snapshot_physical_rel": record["physical_rel"],
+    }
+
+
+def resolve_ref(guid, path, all_files, guid_index, snapshot=None):
+    """Resolve a resource with strict layer precedence.
+
+    Primary ARMST files win. A live/mod GUID may only resolve inside the
+    primary addon GUID index. If the target is absent locally, the materialized
+    base-game snapshot may resolve it by declared original resource path.
+    Imported-local GUIDs are never compared to live GUIDs.
+    """
     rel = lookup_file(path, all_files)
     if rel:
         return {"status": "local", "rel": rel, "guid": guid, "path": path}
     if guid and guid in guid_index:
         return {"status": "local", "rel": guid_index[guid], "guid": guid,
                 "path": path, "resolved_by": "guid"}
+    snap = _snapshot_resolution(snapshot, guid, path)
+    if snap:
+        return snap
     return {"status": "external", "guid": guid, "path": path}
 
 
@@ -305,35 +331,93 @@ def collect_refs(node):
     return refs
 
 
-def build_chain(resource, resources_by_rel, all_files, guid_index, depth=64):
+def build_chain(resource, resources_by_rel, all_files, guid_index,
+                snapshot=None, depth=64):
+    """Resolve inheritance across ARMST local -> materialized base-game layers.
+
+    Once resolution enters the base-game snapshot, parent lookup stays inside
+    that snapshot. This prevents a vanilla parent from accidentally inheriting
+    a same-path ARMST override.
+    """
     chain = []
     external = []
     seen = set()
+    snapshot_resources = (snapshot or {}).get("resources", {})
+    snapshot_metadata = (snapshot or {}).get("metadata", {})
     cur = resource.relpath
+
     while cur and depth:
         depth -= 1
-        rs = resources_by_rel.get(cur)
-        if rs is None:
-            chain.append({"rel": cur, "kind": "file", "status": "file"})
+
+        if cur in resources_by_rel:
+            rs = resources_by_rel[cur]
+            status = "local"
+            display_resource = cur
+        elif cur in snapshot_resources:
+            rs = snapshot_resources[cur]
+            status = "base_game_snapshot"
+            record = snapshot_metadata.get(cur) or {}
+            display_resource = record.get("original_path") or cur
+        else:
+            chain.append({
+                "rel": cur,
+                "resource": cur,
+                "kind": "file",
+                "status": "file",
+            })
             break
-        chain.append({"rel": cur, "kind": rs.kind, "status": "local",
-                      "class": rs.et_class})
-        if cur in seen:
-            warn("INHERIT-LOOP", f"cycle detected at {cur}")
-            chain.append({"rel": cur, "status": "loop"})
+
+        chain.append({
+            "rel": cur,
+            "resource": display_resource,
+            "kind": rs.kind,
+            "status": status,
+            "class": rs.et_class,
+        })
+
+        seen_key = (status, cur)
+        if seen_key in seen:
+            warn("INHERIT-LOOP", f"cycle detected at {display_resource}")
+            chain.append({
+                "rel": cur,
+                "resource": display_resource,
+                "status": "loop",
+            })
             break
-        seen.add(cur)
+        seen.add(seen_key)
+
         parent = rs.parent
         if not parent:
             break
-        resolved = resolve_ref(parent["guid"], parent["path"], all_files,
-                               guid_index)
-        if resolved["status"] == "local":
+
+        if status == "base_game_snapshot":
+            resolved = _snapshot_resolution(
+                snapshot, parent["guid"], parent["path"]
+            )
+            if not resolved:
+                resolved = {
+                    "status": "external",
+                    "guid": parent["guid"],
+                    "path": parent["path"],
+                }
+        else:
+            resolved = resolve_ref(
+                parent["guid"], parent["path"], all_files, guid_index, snapshot
+            )
+
+        if resolved["status"] in ("local", "base_game_snapshot"):
             cur = resolved["rel"]
             continue
-        external.append({"guid": parent["guid"], "path": parent["path"],
-                         "raw": parent["raw"]})
+
+        external.append({
+            "guid": parent["guid"],
+            "path": parent["path"],
+            "raw": parent["raw"],
+            "defined_in": display_resource,
+            "from_status": status,
+        })
         break
+
     return chain, external
 
 
