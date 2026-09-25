@@ -127,13 +127,15 @@ def build_snapshot_index(root: str | None) -> dict:
         key = snapshot_key(identity["original_path"])
         if norm in result["by_path"]:
             prior = result["by_path"][norm]
+            paths = [
+                os.path.relpath(physical_path, root).replace("\\", "/"),
+            ]
+            if prior:
+                paths.insert(0, prior["physical_rel"])
             result["issues"].append({
                 "code": "SNAPSHOT_IDENTITY_AMBIGUOUS",
                 "original_path": identity["original_path"],
-                "paths": [
-                    prior["physical_rel"],
-                    os.path.relpath(physical_path, root).replace("\\", "/"),
-                ],
+                "paths": paths,
             })
             # Remove the ambiguous identity from automatic resolution.
             result["by_path"][norm] = None
