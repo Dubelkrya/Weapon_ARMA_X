@@ -79,7 +79,18 @@
       "defined_in": "Prefabs/Weapons/Magazines/12ga/12ga_Buckshot_base.et",
       "inherited": true
     },
-    "ammo_mapping": [],
+    "ammo_mapping": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
     "caliber_id": {
       "value": " ",
       "defined_in": "Prefabs/Weapons/Magazines/12ga/12ga_Buckshot_base.et",

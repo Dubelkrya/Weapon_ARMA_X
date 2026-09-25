@@ -64,7 +64,38 @@
       "defined_in": "Prefabs/Weapons/Magazines/Western/5x56/HKG36/armst_Magazine_556x45_HKG36.et"
     },
     "max_ammo": null,
-    "ammo_mapping": [],
+    "ammo_mapping": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
     "caliber_id": null,
     "name": {
       "value": "HKG36 magazine 30rnd",
@@ -84,5 +115,8 @@
       "inherited": true
     }
   },
-  "derived": {}
+  "derived": {
+    "capacity": 30,
+    "capacity_source": "AmmoMapping length"
+  }
 }

@@ -184,7 +184,7 @@
     },
     "fire_modes": [
       {
-        "mode_id": ":",
+        "mode_id": "{65AE4CB4EF794DAB}",
         "ui_name": null,
         "rounds_per_minute": {
           "value": 800,

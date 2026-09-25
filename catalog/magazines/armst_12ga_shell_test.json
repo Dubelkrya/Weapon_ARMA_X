@@ -81,7 +81,13 @@
       "defined_in": "Prefabs/Weapons/Magazines/12ga/armst_12ga_Shell_test.et",
       "inherited": false
     },
-    "ammo_mapping": [],
+    "ammo_mapping": [
+      2,
+      2,
+      2,
+      2,
+      2
+    ],
     "caliber_id": null,
     "name": {
       "value": "12g 5rnd Shell",
