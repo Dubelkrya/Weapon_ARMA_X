@@ -26,7 +26,10 @@ def check_json(errors: list[str]) -> None:
             continue
         for path in root.rglob("*.json"):
             try:
-                json.loads(path.read_text(encoding="utf-8"))
+                # utf-8-sig transparently accepts both BOM and BOM-less UTF-8.
+                # Imported/archived material is written by Windows tooling and may
+                # carry a BOM, which is valid to read but not valid strict JSON.
+                json.loads(path.read_text(encoding="utf-8-sig"))
             except Exception as exc:
                 fail(f"Invalid JSON: {path.relative_to(ROOT)}: {exc}", errors)
 

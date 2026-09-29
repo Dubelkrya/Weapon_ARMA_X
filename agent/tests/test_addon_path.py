@@ -9,6 +9,8 @@ tests pin the policy.
     python agent/tests/test_addon_path.py
 """
 
+import contextlib
+import io
 import os
 import sys
 import tempfile
@@ -138,7 +140,13 @@ class ValidateAddonRootTests(unittest.TestCase):
 
     def test_non_strict_returns_none_instead_of_raising(self):
         os.environ[addon_path.ENV_PRIMARY] = str(self.base / "does_not_exist")
-        self.assertIsNone(addon_path.resolve_addon_root(strict=False))
+        # non-strict still reports the problem, on stderr; capture it so the
+        # test run's output stays clean and the message is actually asserted.
+        buf = io.StringIO()
+        with contextlib.redirect_stderr(buf):
+            result = addon_path.resolve_addon_root(strict=False)
+        self.assertIsNone(result)
+        self.assertIn("refusing to fall back", buf.getvalue())
 
     def test_error_message_names_the_env_var(self):
         os.environ[addon_path.ENV_PRIMARY] = str(self.base / "does_not_exist")
