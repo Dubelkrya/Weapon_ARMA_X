@@ -1,0 +1,40 @@
+{
+ "resource": "Prefabs/Weapons/Russian/Handguns/Sr_2/armst_SR_2.et",
+ "guid": "31FB2EC4F4AFFC05",
+ "SR2_magazine": {
+  "path": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_SR2_30rnd_Ball.et",
+  "guid": "2610CA8D8632DEF4",
+  "parent": "{8B853CDD11BA916E}Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball.et",
+  "capacity": 30,
+  "magazine_well": "MagazineWellPP91 {05B3A6C89A212814}",
+  "model": "{F2231EA6A4185BF9}Assets/Weapons_RUS/sr2/SR2_mag.xob"
+ },
+ "magazine_well_sr2": {
+  "name": "MagazineWellSR2",
+  "defined_in": "Scripts/Gamecode/MagazinePP91.c (class MagazineWellSR2 : BaseMagazineWell)",
+  "resource_users": "NONE - no prefab/resource anywhere declares `MagazineWell MagazineWellSR2 \"{GUID}\"`",
+  "guid": "no prefab instance GUID exists"
+ },
+ "magazine_well_pp91_users": [
+  "armst_Magazine_9x18_PP91_30rnd_Ball.et (MagazineWellPP91 {05B3A6C89A212814})",
+  "armst_Magazine_9x18_SR2_30rnd_Ball.et (MagazineWellPP91 {05B3A6C89A212814})",
+  "armst_PP91.et (MagazineWellPP91 {26EA67622A1DA48B})",
+  "armst_SR_2.et (MagazineWellPP91 {26EA67622A1DA48B})"
+ ],
+ "MAGAZINE_WELL_BEFORE": "MagazineWellPP91 {26EA67622A1DA48B}",
+ "PROVEN_SR2_WELL": null,
+ "PROOF_OF_COMPATIBILITY": "The SR2 magazine declares `MagazineWell MagazineWellPP91 \"{05B3A6C89A212814}\"` - the SAME well class+instance as the PP91 magazine. It is therefore compatible with MagazineWellPP91, NOT with MagazineWellSR2 (which is class-defined but used by no magazine).",
+ "DEFAULT_MAGAZINE_BEFORE": "armst_Magazine_9x18_PP91_30rnd_Ball.et",
+ "safe_partial_change_available": {
+  "change": "default MagazineTemplate -> armst_Magazine_9x18_SR2_30rnd_Ball.et (compatible: same MagazineWellPP91)",
+  "applied": false,
+  "reason": "Bundled with the unproven MagazineWellSR2 well change; task gate requires no modification when the well change is unproven."
+ },
+ "PP91_DEFAULT_SETUP_REFS_REMAINING": 2,
+ "GAMEPLAY_CHANGES_OTHER_THAN_MAGAZINE_SETUP": 0,
+ "GUID_CHANGES": 0,
+ "OTHER_WEAPONS_CHANGED": 0,
+ "SAFETY_GATE": "TRIPPED",
+ "mutation_performed": false,
+ "status": "REVIEW_REQUIRED"
+}

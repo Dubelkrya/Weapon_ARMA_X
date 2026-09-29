@@ -1,0 +1,43 @@
+{
+ "RESOURCE_FOLDER": "Prefabs/Weapons/Attachments/Optics/Optic_1P29/ (ARMST)",
+ "RESOURCES_FOUND": [
+  {
+   "path": "Prefabs/Weapons/Attachments/Optics/Optic_1P29/Optic_1P29_base.et",
+   "type": ".et",
+   "guid": "952D9BD7B6F8F591",
+   "role": "EMPTY STUB: GameEntity : WeaponOptic_Base { ID 4BA426CBAED42A14 } with no components"
+  },
+  {
+   "path": "Prefabs/Weapons/Attachments/Optics/Optic_1P29/Optic_1P29_base.et.meta",
+   "type": ".meta",
+   "guid": "952D9BD7B6F8F591",
+   "role": "resource identity"
+  }
+ ],
+ "MODEL": {
+  "path": "{B7A579385AFC8581}Assets/Weapons/Attachments/Optic:Assets/Weapons/Attachments/Optics/1P29/Optic_1P29.xob",
+  "note": "referenced by the proven vanilla 1P29 base; asset not exported into ARMST/ARMA_X (game-provided)",
+  "reshdr": "{3BD4127D635A335E}Assets/Weapons/Attachments/Optics/1P29/Data/Optic_1P29_HDR.emat",
+  "reticle": "{4E6095CD6A337D2A}UI/Textures/Sights/1P29/1P29_black_solid_UI.edds"
+ },
+ "EXISTING_1P29_PREFAB": "YES (but empty stubs)",
+ "EXISTING_PREFAB_PATHS": {
+  "ARMST_base_952D9BD7B6F8F591": "empty stub (inherits WeaponOptic_Base)",
+  "ARMA_X_playable_83FED4852D52BDDD (Optic_1P29.et)": "empty stub inheriting ARMST 952D base",
+  "PROVEN_FULL_1P29_BASE_0745A57C37C15101 (Optic_1P29_base.et)": "FULL: InventoryItemComponent + WeaponAttachmentAttributes{AttachmentOpticsDovetailAK} + MeshObject(Optic_1P29.xob) + SCR_2DPIPSightsComponent + ActionsManagerComponent"
+ },
+ "REFERENCE_OPTIC_STRUCTURE": {
+  "PSO1": "armst_Optic_PSO1.et overrides only InventoryItemComponent(WeaponAttachmentAttributes AttachmentOpticsDovetailAK); model/sights inherited from vanilla Optic_PSO1_base; parent WeaponOptic_Base.",
+  "proven_1P29_base_0745A57C37C15101": "parent WeaponOptic_Base; components InventoryItemComponent (name/desc/phys/WeaponAttachmentAttributes), MeshObject, SCR_2DPIPSightsComponent (zoom 4x, ranges 100-500, reticle, HDR emat, FOV), ActionsManagerComponent (attach action context optic)."
+ },
+ "TARGET_ATTACHMENT_TYPE": "AttachmentOpticsDovetailAK (already the type on the proven 1P29 base and on all unified Russian slots)",
+ "PROPOSED_PREFAB_PATH": "Prefabs/Weapons/Attachments/Optics/Optic_1P29/armst_Optic_1P29.et (preferred) OR populate the existing ARMST base stub 952D9BD7B6F8F591",
+ "PROPOSED_PARENT": "{0745A57C37C15101}Prefabs/Weapons/Attachments/Optics/Optic_1P29/Optic_1P29_base.et (proven full 1P29 base, correct 1P29 sight values) — OR {966B4E5523D2F166}WeaponOptic_Base.et if populating the ARMST base directly",
+ "SIGHT_STRUCTURE_PROVEN": "YES (SCR_2DPIPSightsComponent with full fields exists in proven vanilla 1P29 base)",
+ "VALUES_STILL_NEEDED": [],
+ "WEAPON_CHANGES_REQUIRED": "NO (all unified slots already accept AttachmentOpticsDovetailAK)",
+ "OPEN_ISSUE": "Base-GUID discrepancy: ARMST 952D9BD7B6F8F591 is empty while the full content lives under 0745A57C37C15101; the playable ARMA_X Optic_1P29.et (83FED...) inherits the EMPTY 952D stub. A decision is required: populate 952D vs create armst prefab inheriting 0745. No GUID to be invented.",
+ "READY_FOR_BUILD": "YES (structurally) — pending target-path/GUID decision (no mutation performed)",
+ "LIVE_FILES_CHANGED": "NONE",
+ "STATUS": "REVIEW_REQUIRED"
+}

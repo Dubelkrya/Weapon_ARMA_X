@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "pp": {
+    "path": "Prefabs/Weapons/Ammo/Eastern/762x39/Ammo_762x39_PP.et",
+    "guid": "3E395A4A4B0C4F0E",
+    "method": "EXPORTED_DELTA",
+    "parent": "67FED88E5085F63F",
+    "parent_path": "Prefabs/Weapons/Core/Ammo_Bullet_Base.et",
+    "baseline_DamageValue": 62.82,
+    "baseline_PenetrationDepth": 5.4
+  },
+  "bp": {
+    "path": "Prefabs/Weapons/Ammo/Eastern/762x39/Ammo_762x39_BP.et",
+    "guid": "1785D92E5A104937",
+    "method": "EXPORTED_DELTA",
+    "parent": "67FED88E5085F63F",
+    "parent_path": "Prefabs/Weapons/Core/Ammo_Bullet_Base.et",
+    "bp_DamageValue": 50.256,
+    "bp_PenetrationDepth": 8.1
+  },
+  "config": {
+    "path": "Configs/Weapons/Ammo/ARMST/Ammo_762x39_ARMST.conf",
+    "guid": "EA0E25BAF3BD459F",
+    "index0": "3E395A4A4B0C4F0E",
+    "index1": "1785D92E5A104937"
+  },
+  "magazines": [
+    {
+      "path": "Prefabs/Weapons/Magazines/Russian/7x62/AKM/Magazine_762x39_AKM_10rnd_Ball.et",
+      "guid_unchanged": true,
+      "parent_unchanged": true,
+      "config_ok": true,
+      "mapping_zero": true,
+      "capacity": 10
+    },
+    {
+      "path": "Prefabs/Weapons/Magazines/Russian/7x62/AKM/Magazine_762x39_AKM_30rnd_Ball.et",
+      "guid_unchanged": true,
+      "parent_unchanged": true,
+      "config_ok": true,
+      "mapping_zero": true,
+      "capacity": 30
+    }
+  ],
+  "validation": {
+    "pp_equals_57N231_89": true,
+    "bp_differs_only": [
+      "DamageValue",
+      "PenetrationDepth"
+    ],
+    "mag_guid_unchanged": true,
+    "mag_parent_unchanged": true,
+    "mag_config_ok": true,
+    "mag_mapping_zero": true,
+    "new_projectiles": 2,
+    "local_configs": 1,
+    "status": "PASS"
+  },
+  "global_safety": {
+    "weapons_found": 32,
+    "weapon_dangling_refs": 0,
+    "dangling_refs_introduced": 0,
+    "556_changed": 0,
+    "762x51_changed": 0,
+    "9x19_changed": 0,
+    "val_magazines_changed": 0,
+    "akm_tracer_recreated": 0,
+    "akm_tracer_still_absent": true,
+    "12ga_changed": 0,
+    "manually_invented_source_values": 0
+  }
+}

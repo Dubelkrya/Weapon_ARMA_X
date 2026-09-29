@@ -1,0 +1,19 @@
+{
+ "TARGET": "Prefabs/Weapons/Russian/Rifle/Aek971/armst_Rifle_AEK971_base.et",
+ "issues": [],
+ "REMOVED_INSTANCE": "51F6738D2EC74BE1",
+ "present_after": false,
+ "underbarrel_placeholder_count": 0,
+ "slots_before": 4,
+ "slots_after": 3,
+ "guid_unchanged": true,
+ "parent_unchanged": true,
+ "actions_unchanged": true,
+ "OVERRIDES_CHANGED": 0,
+ "ACTION_CONTEXT_CHANGES": 0,
+ "GUID_CHANGES": 0,
+ "PARENT_CHANGES": 0,
+ "DANGLING_REFS": 0,
+ "UNRELATED_GAMEPLAY_CHANGES": 0,
+ "STATIC_STATUS": "PASS"
+}

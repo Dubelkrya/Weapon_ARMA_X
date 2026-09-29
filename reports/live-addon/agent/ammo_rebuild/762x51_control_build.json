@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "pp": {
+    "path": "Prefabs/Weapons/Ammo/Western/762x51/Ammo_762x51_PP.et",
+    "guid": "8FAC2EB7CA474E5E",
+    "source_path": "Prefabs/Weapons/Ammo/Ammo_762x51_Ball_M80.et",
+    "source_guid": "C14C5DE6F97F06F0"
+  },
+  "bp": {
+    "path": "Prefabs/Weapons/Ammo/Western/762x51/Ammo_762x51_BP.et",
+    "guid": "647D4F418F9F4655",
+    "source_path": "Prefabs/Weapons/Ammo/Ammo_762x51_AP_M61.et",
+    "source_guid": "9F39DD07E2860466"
+  },
+  "config": {
+    "path": "Configs/Weapons/Ammo/ARMST/Ammo_762x51_ARMST.conf",
+    "guid": "94FC75B17BBA4DB7",
+    "index0": "8FAC2EB7CA474E5E",
+    "index1": "647D4F418F9F4655"
+  },
+  "control_magazine": {
+    "path": "Prefabs/Weapons/Magazines/Western/762x51/HK3/L1A1/armst_Magazine_762x51_HK3_20_M80_Ball.et",
+    "guid": "6D18CC33708EE713",
+    "old_config": "Configs/Weapons/Ammo/Ammo_762x51.conf",
+    "new_config": "Configs/Weapons/Ammo/ARMST/Ammo_762x51_ARMST.conf",
+    "mapping": "PP index0 for all rounds"
+  },
+  "validation": {
+    "new_projectiles": 2,
+    "local_configs_created": 1,
+    "control_magazines_changed": 1,
+    "control_magazine_guid": "6D18CC33708EE713",
+    "control_magazine_guid_unchanged": true,
+    "control_magazine_parent_unchanged": true,
+    "control_magazine_capacity_changed": false,
+    "control_magazine_config_rebound": true,
+    "control_magazine_mapping": "PP_ONLY index0 x20",
+    "pp_parent": "C14C5DE6F97F06F0",
+    "bp_parent": "9F39DD07E2860466",
+    "weapons_found": 32,
+    "weapon_dangling_refs": 0,
+    "parent_guid_differences": 0,
+    "dangling_magazine_refs": 2,
+    "dangling_ammo_refs": 0,
+    "val_magazines_changed": 0,
+    "akm_tracer_recreated": 0,
+    "12ga_resources_changed": 0,
+    "other_caliber_ammo_changed": 0,
+    "live_files_changed": [
+      "Prefabs/Weapons/Ammo/Western/762x51/Ammo_762x51_PP.et",
+      "Prefabs/Weapons/Ammo/Western/762x51/Ammo_762x51_PP.et.meta",
+      "Prefabs/Weapons/Ammo/Western/762x51/Ammo_762x51_BP.et",
+      "Prefabs/Weapons/Ammo/Western/762x51/Ammo_762x51_BP.et.meta",
+      "Configs/Weapons/Ammo/ARMST/Ammo_762x51_ARMST.conf",
+      "Configs/Weapons/Ammo/ARMST/Ammo_762x51_ARMST.conf.meta",
+      "Prefabs/Weapons/Magazines/Western/762x51/HK3/L1A1/armst_Magazine_762x51_HK3_20_M80_Ball.et"
+    ]
+  }
+}

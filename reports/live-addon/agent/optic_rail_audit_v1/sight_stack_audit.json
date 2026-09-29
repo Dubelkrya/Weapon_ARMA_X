@@ -1,0 +1,1280 @@
+[
+    {
+        "Path":  "Prefabs/Particles/Bullet_Case/Bullet_Case_12ga.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Particles/Bullet_Case/Bullet_Case_12ga_blue.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Ammo/12g/armst_Ammo_12ga.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Ammo/12g/armst_Ammo_12ga_shell.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Ammo/12g/armst_Ammo_12ga_shell_test.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Ammo/12g/armst_Ammo_Buckshot_pellet.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Ammo/armst_Ammo_9x18_BP.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Ammo/armst_Ammo_9x18_PP.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Ammo/Eastern/762x39/armst_Ammo_762x39_BP.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Ammo/Eastern/762x39/armst_Ammo_762x39_PP.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Ammo/Russian/763x25/armst_Ammo_763x25.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Ammo/Russian/763x25/armst_Ammo_763x25_Ball.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Ammo/Russian/9x39/armst_Ammo_9x39_SP5_Ball.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Ammo/Russian/9x39/armst_Ammo_9x39_SP6_Ball.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Ammo/Russian/grenade/armst_Ammo_Grenade_HE_VOG25.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Ammo/Western/5x56/armst_Ammo_556x45_BP.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Ammo/Western/5x56/armst_Ammo_556x45_PP.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Ammo/Western/762x51/armst_Ammo_762x51_BP.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Ammo/Western/762x51/armst_Ammo_762x51_PP.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Ammo/Western/9x19/armst_Ammo_9x19_BP.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Ammo/Western/9x19/armst_Ammo_9x19_PP.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Attachments/Handguards/armst_Handguard_AK74M2.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Attachments/Muzzle/armst_Suppressor_9a91.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Attachments/Muzzle/Suppressor_PBS4/Suppressor_PBS4_base.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_Collimator.et",
+        "Coll":  1,
+        "CollCtrl":  1,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Optic.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  1,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Picatinny.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Attachments/Optics/Optic_1P29/armst_Optic_1P29.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Attachments/Optics/WeaponOptic_Base.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Attachments/Stocks/armst_Handguard_AK74M.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Attachments/Stocks/armst_Handguard_AKS.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Attachments/Stocks/armst_Stock_akm.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Attachments/Underbarrel/armst_UGL_GP25.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Core/Grenade_Base.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Core/Magazine_Base.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Core/Rifle_Base.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Core/Weapon_Base.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Grenades/armst_Grenade_M67.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Grenades/armst_Grenade_RGD5.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Grenades/armst_Smoke_ANM8HC.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Grenades/armst_Smoke_RDG2.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Handguns/armst_Handgun_Knife_base.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  1,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/12ga/12ga_Buckshot_base.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/12ga/armst_12ga_Buckshot.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/12ga/armst_12ga_Shell.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/12ga/armst_12ga_Shell_test.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_AK_30rnd_Ball.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_AK_30rnd_Tracer.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_RPK_45rnd_Ball.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_RPK_45rnd_Tracer.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Russian/5x45/AK74/Magazine_545x39_AK_30rnd_Base.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Russian/762x54/SVD/armst_Box_762x54_PK_250rnd_Ball.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Russian/762x54/SVD/armst_Magazine_762x54_SVD_10rnd_7BZ3API.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Russian/763x25/TT/armst_Magazine_763x25_TT_8rnd_Ball.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_10rnd_Ball.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_10rnd_Ball_BP.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_30rnd_Ball.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_30rnd_Ball_BP.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_APB_20rnd_Ball.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_APB_20rnd_Ball_BP.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball_BP.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball_PP.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PP91_30rnd_Ball.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PP91_30rnd_Ball_BP.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_SR2_30rnd_Ball.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Russian/9x39/9a91/armst_Magazine_9x39_20rnd_9a91_SP5.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Russian/9x39/9a91/armst_Magazine_9x39_20rnd_9a91_SP6.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Russian/9x39/Groza/armst_Magazine_9x39_Groza_20rnd_SP5.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Russian/9x39/Groza/armst_Magazine_9x39_Groza_20rnd_SP6.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_20rnd_vss_SP5.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_20rnd_vss_SP6.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_30rnd_val_SP5.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_30rnd_val_SP6.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Western/5x56/HKG36/armst_Magazine_556x45_HKG36.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Western/5x56/HKG36/armst_Magazine_556x45_HKG36_BP.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Western/5x56/SIG550/armst_Magazine_556x45_SIG_550.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Western/5x56/SIG550/armst_Magazine_556x45_SIG_550_BP.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M193_Ball.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M193_Ball_BP.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M855_Ball.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M855_Ball_BP.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Western/5x56/STANAG/Magazine_556x45_STANAG_30rnd_Base.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Western/762x51/HK3/armst_Magazine_762x51_HK3_20_M80_Ball.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Western/762x51/HK3/armst_Magazine_762x51_HK3_20_M80_Ball_BP.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_20_M80_Ball.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_20_M80_Ball_BP.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_30_M80_Ball.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_30_M80_Ball_BP.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Western/9x19/M9/armst_Magazine_9x19_M9_15rnd_Ball.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Western/9x19/M9/armst_Magazine_9x19_M9_15rnd_Ball_BP.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Russian/Handguns/armst_APB/armst_APB_base.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  1,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Russian/Handguns/Pm/armst_PM_base.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Russian/Handguns/PP_19/armst_PP91_base.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  1,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Russian/Handguns/Sr_2/armst_SR_2_base.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  1,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Russian/Handguns/TT/armst_TT_base.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  1,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Russian/MachineGuns/armst_PKM_base.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Russian/MachineGuns/armst_RPK74_base.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Russian/Rifle/9a91/armst_Rifle_9a91_base.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  1,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Russian/Rifle/Aek971/armst_Rifle_AEK971_base.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  1,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK105.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74_base.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74M.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74M_full.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74N.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AKS.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AKS74U.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AKS74UN.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_base.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  1,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_full.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKMS.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_VPO136.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Russian/Rifle/Groza/armst_Groza_base.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  1,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Russian/Rifle/SOC94/armst_Rifle_SOC94_base.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  1,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Russian/Rifle/SVD/armst_Rifle_SVD_base.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Russian/Rifle/VAL/armst_Rifle_val_base.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  1,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Russian/Rifle/VSK94/armst_Rifle_VSK94_base.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  1,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Russian/Rifle/VSS/armst_Rifle_vss_base.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  1,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Russian/Shotgun/armst_izh_27.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Russian/Shotgun/armst_mp_133.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Russian/Shotgun/armst_mp_153.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Russian/Shotgun/armst_toz_66.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  1,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Russian/Shotgun/armst_toz_66_pantera.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Russian/Shotgun/armst_toz_66_saw.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  1,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Tripods/armst_Tripod_6T5.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Tripods/armst_Tripod_6T5_PKM.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Western/Handguns/armst_M9_base.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Western/Rifle/armst_Rifle_M16A2_base.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Western/Rifle/armst_Rifle_M16A2_carbine.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Western/Rifle/armst_VZ58P_base.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Western/Rifle/armst_VZ58V_base.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Western/Rifle/HKG33/armst_Rifle_HKG33_base.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  1,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Western/Rifle/HKG36/armst_Rifle_HKG36_base.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  1,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Western/Rifle/L85/armst_Rifle_L85_base.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  1,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Western/Rifle/Sig550/armst_Rifle_Sig550_base.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  1,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Western/Rifle/SLR/armst_SLR_base.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  1,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Western/Shotgun/armst_Remington_870.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Western/Shotgun/armst_shotgun_base.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    },
+    {
+        "Path":  "Prefabs/Weapons/Western/Shotgun/armst_spas_12.et",
+        "Coll":  0,
+        "CollCtrl":  0,
+        "PIP":  0,
+        "Iron":  0,
+        "StackStatus":  "CLEAN",
+        "Note":  ""
+    }
+]

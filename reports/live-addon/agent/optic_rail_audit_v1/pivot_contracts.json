@@ -1,0 +1,450 @@
+[
+    {
+        "Host":  "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et",
+        "SlotGID":  "BB6000C24BAA468F",
+        "PivotID":  "-",
+        "ChildPivotID":  "-",
+        "HostPivotClass":  "serialized",
+        "ChildPivotClass":  "MODEL_DATA_UNREADABLE (read-only; no model parse)"
+    },
+    {
+        "Host":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Picatinny.et",
+        "SlotGID":  "A92E9A7AB757674E",
+        "PivotID":  "-",
+        "ChildPivotID":  "-",
+        "HostPivotClass":  "serialized",
+        "ChildPivotClass":  "MODEL_DATA_UNREADABLE (read-only; no model parse)"
+    },
+    {
+        "Host":  "Prefabs/Weapons/Handguns/armst_Handgun_Knife_base.et",
+        "SlotGID":  "B502E4DC8A9E835E",
+        "PivotID":  "-",
+        "ChildPivotID":  "-",
+        "HostPivotClass":  "serialized",
+        "ChildPivotClass":  "MODEL_DATA_UNREADABLE (read-only; no model parse)"
+    },
+    {
+        "Host":  "Prefabs/Weapons/Russian/Rifle/9a91/armst_Rifle_9a91_base.et",
+        "SlotGID":  "4E2B66CBA589F625",
+        "PivotID":  "-",
+        "ChildPivotID":  "-",
+        "HostPivotClass":  "serialized",
+        "ChildPivotClass":  "MODEL_DATA_UNREADABLE (read-only; no model parse)"
+    },
+    {
+        "Host":  "Prefabs/Weapons/Russian/Rifle/9a91/armst_Rifle_9a91_base.et",
+        "SlotGID":  "5F189C826D592450",
+        "PivotID":  "-",
+        "ChildPivotID":  "-",
+        "HostPivotClass":  "serialized",
+        "ChildPivotClass":  "MODEL_DATA_UNREADABLE (read-only; no model parse)"
+    },
+    {
+        "Host":  "Prefabs/Weapons/Russian/Rifle/Aek971/armst_Rifle_AEK971_base.et",
+        "SlotGID":  "5F189C826D592450",
+        "PivotID":  "-",
+        "ChildPivotID":  "-",
+        "HostPivotClass":  "serialized",
+        "ChildPivotClass":  "MODEL_DATA_UNREADABLE (read-only; no model parse)"
+    },
+    {
+        "Host":  "Prefabs/Weapons/Russian/Rifle/Aek971/armst_Rifle_AEK971_base.et",
+        "SlotGID":  "55349E9229B55E29",
+        "PivotID":  "-",
+        "ChildPivotID":  "-",
+        "HostPivotClass":  "serialized",
+        "ChildPivotClass":  "MODEL_DATA_UNREADABLE (read-only; no model parse)"
+    },
+    {
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK105.et",
+        "SlotGID":  "4E2B66CBA589F625",
+        "PivotID":  "-",
+        "ChildPivotID":  "-",
+        "HostPivotClass":  "serialized",
+        "ChildPivotClass":  "MODEL_DATA_UNREADABLE (read-only; no model parse)"
+    },
+    {
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK105.et",
+        "SlotGID":  "5F189C826D592450",
+        "PivotID":  "-",
+        "ChildPivotID":  "-",
+        "HostPivotClass":  "serialized",
+        "ChildPivotClass":  "MODEL_DATA_UNREADABLE (read-only; no model parse)"
+    },
+    {
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74_base.et",
+        "SlotGID":  "4E2B66CBA589F625",
+        "PivotID":  "-",
+        "ChildPivotID":  "-",
+        "HostPivotClass":  "serialized",
+        "ChildPivotClass":  "MODEL_DATA_UNREADABLE (read-only; no model parse)"
+    },
+    {
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74M.et",
+        "SlotGID":  "51F6738D2EC74BE1",
+        "PivotID":  "-",
+        "ChildPivotID":  "-",
+        "HostPivotClass":  "serialized",
+        "ChildPivotClass":  "MODEL_DATA_UNREADABLE (read-only; no model parse)"
+    },
+    {
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74M_full.et",
+        "SlotGID":  "4E2B66CBA589F625",
+        "PivotID":  "-",
+        "ChildPivotID":  "-",
+        "HostPivotClass":  "serialized",
+        "ChildPivotClass":  "MODEL_DATA_UNREADABLE (read-only; no model parse)"
+    },
+    {
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74M_full.et",
+        "SlotGID":  "55349E9229B55E29",
+        "PivotID":  "-",
+        "ChildPivotID":  "-",
+        "HostPivotClass":  "serialized",
+        "ChildPivotClass":  "MODEL_DATA_UNREADABLE (read-only; no model parse)"
+    },
+    {
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74M_full.et",
+        "SlotGID":  "51F6738D2EC74BE1",
+        "PivotID":  "-",
+        "ChildPivotID":  "-",
+        "HostPivotClass":  "serialized",
+        "ChildPivotClass":  "MODEL_DATA_UNREADABLE (read-only; no model parse)"
+    },
+    {
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74N.et",
+        "SlotGID":  "55349E9229B55E29",
+        "PivotID":  "-",
+        "ChildPivotID":  "-",
+        "HostPivotClass":  "serialized",
+        "ChildPivotClass":  "MODEL_DATA_UNREADABLE (read-only; no model parse)"
+    },
+    {
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AKS.et",
+        "SlotGID":  "51F6738D2EC74BE1",
+        "PivotID":  "-",
+        "ChildPivotID":  "-",
+        "HostPivotClass":  "serialized",
+        "ChildPivotClass":  "MODEL_DATA_UNREADABLE (read-only; no model parse)"
+    },
+    {
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM.et",
+        "SlotGID":  "65AE4CB5E23C0F2C",
+        "PivotID":  "-",
+        "ChildPivotID":  "-",
+        "HostPivotClass":  "serialized",
+        "ChildPivotClass":  "MODEL_DATA_UNREADABLE (read-only; no model parse)"
+    },
+    {
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM.et",
+        "SlotGID":  "673A7B215304A28B",
+        "PivotID":  "-",
+        "ChildPivotID":  "-",
+        "HostPivotClass":  "serialized",
+        "ChildPivotClass":  "MODEL_DATA_UNREADABLE (read-only; no model parse)"
+    },
+    {
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM.et",
+        "SlotGID":  "65AE4CB5E23C0F65",
+        "PivotID":  "-",
+        "ChildPivotID":  "-",
+        "HostPivotClass":  "serialized",
+        "ChildPivotClass":  "MODEL_DATA_UNREADABLE (read-only; no model parse)"
+    },
+    {
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM.et",
+        "SlotGID":  "65AE4CB5E23C0F63",
+        "PivotID":  "-",
+        "ChildPivotID":  "-",
+        "HostPivotClass":  "serialized",
+        "ChildPivotClass":  "MODEL_DATA_UNREADABLE (read-only; no model parse)"
+    },
+    {
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_base.et",
+        "SlotGID":  "65AE4CB5E23C0F2C",
+        "PivotID":  "-",
+        "ChildPivotID":  "-",
+        "HostPivotClass":  "serialized",
+        "ChildPivotClass":  "MODEL_DATA_UNREADABLE (read-only; no model parse)"
+    },
+    {
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_base.et",
+        "SlotGID":  "673A7B215304A28B",
+        "PivotID":  "-",
+        "ChildPivotID":  "-",
+        "HostPivotClass":  "serialized",
+        "ChildPivotClass":  "MODEL_DATA_UNREADABLE (read-only; no model parse)"
+    },
+    {
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_base.et",
+        "SlotGID":  "65AE4CB5E23C0F65",
+        "PivotID":  "-",
+        "ChildPivotID":  "-",
+        "HostPivotClass":  "serialized",
+        "ChildPivotClass":  "MODEL_DATA_UNREADABLE (read-only; no model parse)"
+    },
+    {
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_base.et",
+        "SlotGID":  "65AE4CB5E23C0F63",
+        "PivotID":  "-",
+        "ChildPivotID":  "-",
+        "HostPivotClass":  "serialized",
+        "ChildPivotClass":  "MODEL_DATA_UNREADABLE (read-only; no model parse)"
+    },
+    {
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_full.et",
+        "SlotGID":  "673A7B215304A28B",
+        "PivotID":  "-",
+        "ChildPivotID":  "-",
+        "HostPivotClass":  "serialized",
+        "ChildPivotClass":  "MODEL_DATA_UNREADABLE (read-only; no model parse)"
+    },
+    {
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_full.et",
+        "SlotGID":  "65AE4CB5E23C0F65",
+        "PivotID":  "-",
+        "ChildPivotID":  "-",
+        "HostPivotClass":  "serialized",
+        "ChildPivotClass":  "MODEL_DATA_UNREADABLE (read-only; no model parse)"
+    },
+    {
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKMS.et",
+        "SlotGID":  "65AE4CB5E23C0F63",
+        "PivotID":  "-",
+        "ChildPivotID":  "-",
+        "HostPivotClass":  "serialized",
+        "ChildPivotClass":  "MODEL_DATA_UNREADABLE (read-only; no model parse)"
+    },
+    {
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_VPO136.et",
+        "SlotGID":  "65AE4CB5E23C0F63",
+        "PivotID":  "-",
+        "ChildPivotID":  "-",
+        "HostPivotClass":  "serialized",
+        "ChildPivotClass":  "MODEL_DATA_UNREADABLE (read-only; no model parse)"
+    },
+    {
+        "Host":  "Prefabs/Weapons/Russian/Rifle/Groza/armst_Groza_base.et",
+        "SlotGID":  "4E2B66CBA589F625",
+        "PivotID":  "-",
+        "ChildPivotID":  "-",
+        "HostPivotClass":  "serialized",
+        "ChildPivotClass":  "MODEL_DATA_UNREADABLE (read-only; no model parse)"
+    },
+    {
+        "Host":  "Prefabs/Weapons/Russian/Rifle/SOC94/armst_Rifle_SOC94_base.et",
+        "SlotGID":  "65AE4CB5E23C0F2C",
+        "PivotID":  "-",
+        "ChildPivotID":  "-",
+        "HostPivotClass":  "serialized",
+        "ChildPivotClass":  "MODEL_DATA_UNREADABLE (read-only; no model parse)"
+    },
+    {
+        "Host":  "Prefabs/Weapons/Russian/Rifle/SOC94/armst_Rifle_SOC94_base.et",
+        "SlotGID":  "673A7B215304A28B",
+        "PivotID":  "-",
+        "ChildPivotID":  "-",
+        "HostPivotClass":  "serialized",
+        "ChildPivotClass":  "MODEL_DATA_UNREADABLE (read-only; no model parse)"
+    },
+    {
+        "Host":  "Prefabs/Weapons/Russian/Rifle/SOC94/armst_Rifle_SOC94_base.et",
+        "SlotGID":  "65AE4CB5E23C0F65",
+        "PivotID":  "-",
+        "ChildPivotID":  "-",
+        "HostPivotClass":  "serialized",
+        "ChildPivotClass":  "MODEL_DATA_UNREADABLE (read-only; no model parse)"
+    },
+    {
+        "Host":  "Prefabs/Weapons/Russian/Rifle/SOC94/armst_Rifle_SOC94_base.et",
+        "SlotGID":  "65AE4CB5E23C0F63",
+        "PivotID":  "-",
+        "ChildPivotID":  "-",
+        "HostPivotClass":  "serialized",
+        "ChildPivotClass":  "MODEL_DATA_UNREADABLE (read-only; no model parse)"
+    },
+    {
+        "Host":  "Prefabs/Weapons/Russian/Rifle/SVD/armst_Rifle_SVD_base.et",
+        "SlotGID":  "5472D211BFD78F81",
+        "PivotID":  "-",
+        "ChildPivotID":  "-",
+        "HostPivotClass":  "serialized",
+        "ChildPivotClass":  "MODEL_DATA_UNREADABLE (read-only; no model parse)"
+    },
+    {
+        "Host":  "Prefabs/Weapons/Russian/Rifle/VAL/armst_Rifle_val_base.et",
+        "SlotGID":  "4E2B66CBA589F625",
+        "PivotID":  "-",
+        "ChildPivotID":  "-",
+        "HostPivotClass":  "serialized",
+        "ChildPivotClass":  "MODEL_DATA_UNREADABLE (read-only; no model parse)"
+    },
+    {
+        "Host":  "Prefabs/Weapons/Russian/Rifle/VAL/armst_Rifle_val_base.et",
+        "SlotGID":  "5F189C826D592450",
+        "PivotID":  "-",
+        "ChildPivotID":  "-",
+        "HostPivotClass":  "serialized",
+        "ChildPivotClass":  "MODEL_DATA_UNREADABLE (read-only; no model parse)"
+    },
+    {
+        "Host":  "Prefabs/Weapons/Russian/Rifle/VSK94/armst_Rifle_VSK94_base.et",
+        "SlotGID":  "4E2B66CBA589F625",
+        "PivotID":  "-",
+        "ChildPivotID":  "-",
+        "HostPivotClass":  "serialized",
+        "ChildPivotClass":  "MODEL_DATA_UNREADABLE (read-only; no model parse)"
+    },
+    {
+        "Host":  "Prefabs/Weapons/Russian/Rifle/VSK94/armst_Rifle_VSK94_base.et",
+        "SlotGID":  "5F189C826D592450",
+        "PivotID":  "-",
+        "ChildPivotID":  "-",
+        "HostPivotClass":  "serialized",
+        "ChildPivotClass":  "MODEL_DATA_UNREADABLE (read-only; no model parse)"
+    },
+    {
+        "Host":  "Prefabs/Weapons/Russian/Rifle/VSS/armst_Rifle_vss_base.et",
+        "SlotGID":  "4E2B66CBA589F625",
+        "PivotID":  "-",
+        "ChildPivotID":  "-",
+        "HostPivotClass":  "serialized",
+        "ChildPivotClass":  "MODEL_DATA_UNREADABLE (read-only; no model parse)"
+    },
+    {
+        "Host":  "Prefabs/Weapons/Russian/Rifle/VSS/armst_Rifle_vss_base.et",
+        "SlotGID":  "5F189C826D592450",
+        "PivotID":  "-",
+        "ChildPivotID":  "-",
+        "HostPivotClass":  "serialized",
+        "ChildPivotClass":  "MODEL_DATA_UNREADABLE (read-only; no model parse)"
+    },
+    {
+        "Host":  "Prefabs/Weapons/Western/Rifle/HKG33/armst_Rifle_HKG33_base.et",
+        "SlotGID":  "5D527627CCB8F756",
+        "PivotID":  "-",
+        "ChildPivotID":  "-",
+        "HostPivotClass":  "serialized",
+        "ChildPivotClass":  "MODEL_DATA_UNREADABLE (read-only; no model parse)"
+    },
+    {
+        "Host":  "Prefabs/Weapons/Western/Rifle/HKG33/armst_Rifle_HKG33_base.et",
+        "SlotGID":  "5F16E0B4B2D0D72C",
+        "PivotID":  "-",
+        "ChildPivotID":  "-",
+        "HostPivotClass":  "serialized",
+        "ChildPivotClass":  "MODEL_DATA_UNREADABLE (read-only; no model parse)"
+    },
+    {
+        "Host":  "Prefabs/Weapons/Western/Rifle/HKG33/armst_Rifle_HKG33_base.et",
+        "SlotGID":  "56DE9C900611C1AF",
+        "PivotID":  "-",
+        "ChildPivotID":  "-",
+        "HostPivotClass":  "serialized",
+        "ChildPivotClass":  "MODEL_DATA_UNREADABLE (read-only; no model parse)"
+    },
+    {
+        "Host":  "Prefabs/Weapons/Western/Rifle/HKG36/armst_Rifle_HKG36_base.et",
+        "SlotGID":  "6A0470709BAE053A",
+        "PivotID":  "-",
+        "ChildPivotID":  "-",
+        "HostPivotClass":  "serialized",
+        "ChildPivotClass":  "MODEL_DATA_UNREADABLE (read-only; no model parse)"
+    },
+    {
+        "Host":  "Prefabs/Weapons/Western/Rifle/HKG36/armst_Rifle_HKG36_base.et",
+        "SlotGID":  "6A0470709BAE058E",
+        "PivotID":  "-",
+        "ChildPivotID":  "-",
+        "HostPivotClass":  "serialized",
+        "ChildPivotClass":  "MODEL_DATA_UNREADABLE (read-only; no model parse)"
+    },
+    {
+        "Host":  "Prefabs/Weapons/Western/Rifle/HKG36/armst_Rifle_HKG36_base.et",
+        "SlotGID":  "6A0470709BAE0574",
+        "PivotID":  "-",
+        "ChildPivotID":  "-",
+        "HostPivotClass":  "serialized",
+        "ChildPivotClass":  "MODEL_DATA_UNREADABLE (read-only; no model parse)"
+    },
+    {
+        "Host":  "Prefabs/Weapons/Western/Rifle/L85/armst_Rifle_L85_base.et",
+        "SlotGID":  "5D527627CCB8F756",
+        "PivotID":  "-",
+        "ChildPivotID":  "-",
+        "HostPivotClass":  "serialized",
+        "ChildPivotClass":  "MODEL_DATA_UNREADABLE (read-only; no model parse)"
+    },
+    {
+        "Host":  "Prefabs/Weapons/Western/Rifle/L85/armst_Rifle_L85_base.et",
+        "SlotGID":  "5F16E0B4B2D0D72C",
+        "PivotID":  "-",
+        "ChildPivotID":  "-",
+        "HostPivotClass":  "serialized",
+        "ChildPivotClass":  "MODEL_DATA_UNREADABLE (read-only; no model parse)"
+    },
+    {
+        "Host":  "Prefabs/Weapons/Western/Rifle/L85/armst_Rifle_L85_base.et",
+        "SlotGID":  "56DE9C900611C1AF",
+        "PivotID":  "-",
+        "ChildPivotID":  "-",
+        "HostPivotClass":  "serialized",
+        "ChildPivotClass":  "MODEL_DATA_UNREADABLE (read-only; no model parse)"
+    },
+    {
+        "Host":  "Prefabs/Weapons/Western/Rifle/L85/armst_Rifle_L85_base.et",
+        "SlotGID":  "5534745C44D1EF58",
+        "PivotID":  "-",
+        "ChildPivotID":  "-",
+        "HostPivotClass":  "serialized",
+        "ChildPivotClass":  "MODEL_DATA_UNREADABLE (read-only; no model parse)"
+    },
+    {
+        "Host":  "Prefabs/Weapons/Western/Rifle/Sig550/armst_Rifle_Sig550_base.et",
+        "SlotGID":  "5D527627CCB8F756",
+        "PivotID":  "-",
+        "ChildPivotID":  "-",
+        "HostPivotClass":  "serialized",
+        "ChildPivotClass":  "MODEL_DATA_UNREADABLE (read-only; no model parse)"
+    },
+    {
+        "Host":  "Prefabs/Weapons/Western/Rifle/Sig550/armst_Rifle_Sig550_base.et",
+        "SlotGID":  "5F16E0B4B2D0D72C",
+        "PivotID":  "-",
+        "ChildPivotID":  "-",
+        "HostPivotClass":  "serialized",
+        "ChildPivotClass":  "MODEL_DATA_UNREADABLE (read-only; no model parse)"
+    },
+    {
+        "Host":  "Prefabs/Weapons/Western/Rifle/Sig550/armst_Rifle_Sig550_base.et",
+        "SlotGID":  "56DE9C900611C1AF",
+        "PivotID":  "-",
+        "ChildPivotID":  "-",
+        "HostPivotClass":  "serialized",
+        "ChildPivotClass":  "MODEL_DATA_UNREADABLE (read-only; no model parse)"
+    },
+    {
+        "Host":  "Prefabs/Weapons/Western/Rifle/SLR/armst_SLR_base.et",
+        "SlotGID":  "5F16E0B4B2D0D72C",
+        "PivotID":  "-",
+        "ChildPivotID":  "-",
+        "HostPivotClass":  "serialized",
+        "ChildPivotClass":  "MODEL_DATA_UNREADABLE (read-only; no model parse)"
+    },
+    {
+        "Host":  "Prefabs/Weapons/Western/Rifle/SLR/armst_SLR_base.et",
+        "SlotGID":  "56DE9C900611C1AF",
+        "PivotID":  "-",
+        "ChildPivotID":  "-",
+        "HostPivotClass":  "serialized",
+        "ChildPivotClass":  "MODEL_DATA_UNREADABLE (read-only; no model parse)"
+    },
+    {
+        "Host":  "Prefabs/Weapons/Western/Shotgun/armst_shotgun_base.et",
+        "SlotGID":  "5472D21A19B61CDF",
+        "PivotID":  "-",
+        "ChildPivotID":  "-",
+        "HostPivotClass":  "serialized",
+        "ChildPivotClass":  "MODEL_DATA_UNREADABLE (read-only; no model parse)"
+    }
+]

@@ -1,0 +1,56 @@
+{
+ "m16_path": "Prefabs/Weapons/Western/Rifle/armst_Rifle_M16A2.et",
+ "m16_guid": "3E413771E1834D2F",
+ "parent_before": "{C63227C0E70EA62E}Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et",
+ "parent_after": "{C63227C0E70EA62E}Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et",
+ "bad_animation_refs_before": [
+  "{0E3ECFC4E84386BC}Assets/NATO/L1A1/Anim/L1A1.agr",
+  "{3B86B943995121A3}Assets/NATO/L1A1/Anim/L1A1_weapon.asi",
+  "{0E3ECFC4E84386BC}Assets/NATO/L1A1/Anim/L1A1.agr",
+  "{C0D828720150454F}Assets/NATO/L1A1/Anim/L1A1_player.asi"
+ ],
+ "bad_animation_refs_after": [],
+ "provenance": {
+  "kind": "LOCAL_OVERRIDE",
+  "component": "WeaponComponent {CFBAA4B706BA66E8} > WeaponAnimationComponent {60B4EA76EB15F6E0}",
+  "injection": "AnimationAttachmentInfo {5534745C44D1EF5A}",
+  "source": "AUTHORED_DIRECTLY_IN_M16"
+ },
+ "correct_animation_refs": {
+  "AnimGraph": "{C10E1E127E210526}Assets/Weapons/Rifles/workspaces/m16.agr",
+  "AnimInstance": "{278604E4583F2647}Assets/Weapons/Rifles/workspaces/m16_weapon.asi",
+  "InjectionAnimGraph": "{C10E1E127E210526}Assets/Weapons/Rifles/workspaces/m16.agr",
+  "InjectionAnimInstance": "{DCD895D5C03E42AB}Assets/Weapons/Rifles/workspaces/m16_player.asi"
+ },
+ "evidence_source": "Weapon_ARMA_X\\Weapons\\Rifles\\M16\\Rifle_M16A2_base.et",
+ "changed_fields": [
+  "AnimGraph",
+  "AnimInstance",
+  "AnimInjection.AnimGraph",
+  "AnimInjection.AnimInstance"
+ ],
+ "diff_added": [
+  "     AnimGraph \"{C10E1E127E210526}Assets/Weapons/Rifles/workspaces/m16.agr\"\r",
+  "     AnimInstance \"{278604E4583F2647}Assets/Weapons/Rifles/workspaces/m16_weapon.asi\"\r",
+  "      AnimGraph \"{C10E1E127E210526}Assets/Weapons/Rifles/workspaces/m16.agr\"\r",
+  "      AnimInstance \"{DCD895D5C03E42AB}Assets/Weapons/Rifles/workspaces/m16_player.asi\"\r"
+ ],
+ "diff_removed": [
+  "     AnimGraph \"{0E3ECFC4E84386BC}Assets/NATO/L1A1/Anim/L1A1.agr\"\r",
+  "     AnimInstance \"{3B86B943995121A3}Assets/NATO/L1A1/Anim/L1A1_weapon.asi\"\r",
+  "      AnimGraph \"{0E3ECFC4E84386BC}Assets/NATO/L1A1/Anim/L1A1.agr\"\r",
+  "      AnimInstance \"{C0D828720150454F}Assets/NATO/L1A1/Anim/L1A1_player.asi\"\r"
+ ],
+ "M16_PARENT_CHANGED": 0,
+ "L1A1_ANIMATION_REFS_IN_M16": 0,
+ "GUID_CHANGES": 0,
+ "PATH_CHANGES": 0,
+ "MODEL_CHANGES": 0,
+ "MAGAZINE_WELL_CHANGES": 0,
+ "FIREMODE_CHANGES": 0,
+ "WEAPON_STAT_CHANGES": 0,
+ "OTHER_WEAPONS_CHANGED": 0,
+ "12GA_CHANGED": 0,
+ "only_anim_lines_changed": true,
+ "correct_refs_match_parent": true
+}

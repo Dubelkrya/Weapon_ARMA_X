@@ -1,0 +1,77 @@
+{
+    "AKDovetailMount":  {
+                            "PATH":  "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et",
+                            "GUID":  "D71FD2BD68AC4B31",
+                            "LOCAL_MESHOBJECT_COUNT":  2,
+                            "EFFECTIVE_MESHOBJECT_COUNT":  2,
+                            "ENABLED_MESHOBJECT_COUNT":  1,
+                            "MODEL_BINDING":  "{18C9F66F09FF1531}Assets/addons/Dovetail/AKDovetailMount.xob",
+                            "OUTER_ATTACHMENT_TYPE":  "AttachmentOpticsDovetailAK (WeaponAttachmentAttributes 0CDB065C629144D0)",
+                            "RIS_SLOT_INSTANCE":  "BB6000C24BAA468F",
+                            "RIS_SLOT_TYPE":  "AttachmentOpticsRIS1913",
+                            "RIS_PIVOTID":  "snap_ris",
+                            "RIS_CHILDPIVOTID":  "snap_weapon",
+                            "CLASSIFICATION":  "CURRENTLY_VALID",
+                            "NOTE":  "One MeshObject is explicitly Enabled 0 (no Object) -\u003e no duplicate render role; one disabled inert entry remains (LOW debt)."
+                        },
+    "PSO":  {
+                "PSO_PREFAB_COUNT":  1,
+                "PATH":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et",
+                "GUID":  "C850A33226B8F9C1",
+                "TYPE":  "AttachmentOpticsDovetailAK",
+                "duplicate_guid_refs":  0,
+                "duplicate_path_refs":  0,
+                "STATUS":  "PASS"
+            },
+    "Optic_1P29":  {
+                       "PATH":  "Prefabs/Weapons/Attachments/Optics/Optic_1P29/armst_Optic_1P29.et",
+                       "GUID":  "952D9BD7B6F8F591",
+                       "PARENT":  "{0745A57C37C15101}.../Optic_1P29_base.et (vanilla)",
+                       "STRUCTURE":  "MINIMAL_CHILD - ID-only descriptor, effective inherited from vanilla 1P29 base",
+                       "STATUS":  "PASS_RUNTIME_VERIFIED (user runtime confirmed working); no materialization"
+                   },
+    "RussianOpticsPolicy":  {
+                                "CONVERGED_TYPE":  "AttachmentOpticsDovetailAK",
+                                "converged_targets":  [
+                                                          "AKM",
+                                                          "AKMS",
+                                                          "VPO136",
+                                                          "AK74",
+                                                          "AK74M",
+                                                          "AK74N",
+                                                          "AKS",
+                                                          "AKS74U",
+                                                          "AKS74UN",
+                                                          "AEK971",
+                                                          "9A91",
+                                                          "VAL",
+                                                          "VSS",
+                                                          "VSK94",
+                                                          "SOC94",
+                                                          "SVD",
+                                                          "Groza"
+                                                      ],
+                                "NOTE":  "Gameplay compatibility type; no structural errors found; naming of physical mounts not reinterpreted."
+                            },
+    "G36":  {
+                "WEAPON_SLOT":  "AttachmentOpticsG36 (no direct RIS on weapon)",
+                "CARRY_HANDLE_OPTIC":  "AttachmentOpticsG36",
+                "CARRY_HANDLE_PICATINNY":  "outer AttachmentOpticsG36 + child AttachmentOpticsRIS1913",
+                "IK_WORKAROUND":  "AnimationIKPose p_ak74_ik.anm (intentional, not audited)",
+                "META_ISSUE":  "armst_HKG36_CarryHandle_Optic.et missing .meta (INFO/REVIEW_REQUIRED)"
+            },
+    "SR2":  {
+                "MAGAZINE":  "armst_Magazine_9x18_SR2_30rnd_Ball.et",
+                "GUID":  "2610CA8D8632DEF4",
+                "CAPACITY":  30,
+                "MAGAZINE_WELL":  "MagazineWellPP91 (intentional shared compatibility)",
+                "STATUS":  "PASS"
+            },
+    "AKM_Legacy":  {
+                       "DOVETAIL_INSTANCE":  "65AE4CB5E23C0F65",
+                       "CLASSIFICATION":  "KEEP_LEGACY_OVERRIDE_DEPENDENCY",
+                       "STOCK_INSTANCE":  "65AE4CB5E23C0F63",
+                       "STOCK_TYPE":  "AttachmentStockVz58",
+                       "note":  "no change"
+                   }
+}

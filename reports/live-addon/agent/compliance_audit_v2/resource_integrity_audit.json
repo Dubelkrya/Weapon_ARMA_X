@@ -1,0 +1,27 @@
+{
+    "GUID_COLLISIONS":  0,
+    "MISSING_META":  [
+                         "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Optic.et (prefab, REVIEW_REQUIRED - do NOT auto-create)"
+                     ],
+    "SCRIPTS_WITHOUT_META_design":  10,
+    "RAW_TEXTURE_NO_META_design":  1,
+    "ORPHAN_META":  [
+                        "Prefabs/Weapons/Rifles.meta (stale folder meta for removed \"Rifles\" folder; 0 live GUID refs)"
+                    ],
+    "STALE_META_NAME_PATHS":  490,
+    "STALE_REF_PATHS_GUID_RESOLVABLE":  183,
+    "DANGLING_GUID_REFS":  0,
+    "DANGLING_PATH_REFS":  0,
+    "BROKEN_PARENTS":  0,
+    "MALFORMED_PARENT_PATH":  [
+                                  "armst_Rifle_SOC94_base.et -\u003e \"Rifles/AKM/armst_Rifle_AKM_base.et\" (missing Prefabs/Weapons prefix; GUID 140E94F473B60FE3 resolves to local AKM_base)"
+                              ],
+    "EXTERNAL_REFS_VANILLA":  1123,
+    "INTENTIONALLY_DELETED_NOT_RECREATED":  [
+                                                "Magazine_762x39_AKM_30rnd_Tracer.et (absent; no refs)"
+                                            ],
+    "Deleted_PSO_duplicates_absent":  [
+                                          "armst_Optic_PSO1_ak.et (F325FE2E3DDCDDAD)",
+                                          "armst_Optic_PSO1_DovetailRU.et (5B318FB72398CB0A)"
+                                      ]
+}

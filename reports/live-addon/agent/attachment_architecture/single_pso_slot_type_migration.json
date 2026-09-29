@@ -1,0 +1,54 @@
+{
+ "migration": "single_pso_slot_types",
+ "results": {
+  "Prefabs/Weapons/Russian/Rifle/Aek971/armst_Rifle_AEK971_base.et": {
+   "instance": "55349E9229B55E29",
+   "type_before": "AttachmentOpticsARMST_DovetailRU",
+   "type_after": "AttachmentOpticsDovetailAK",
+   "type_after_present": true,
+   "old_type_present": false,
+   "other_fields_same": true
+  },
+  "Prefabs/Weapons/Russian/Rifle/SOC94/armst_Rifle_SOC94_base.et": {
+   "instance": "65AE4CB5E23C0F63",
+   "type_before": "AttachmentOpticsDovetailSVD",
+   "type_after": "AttachmentOpticsDovetailAK",
+   "type_after_present": true,
+   "old_type_present": false,
+   "other_fields_same": true
+  }
+ },
+ "target_type": "AttachmentOpticsDovetailAK",
+ "types_after": {
+  "AttachmentOpticsDovetailAK": [
+   "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et",
+   "Prefabs/Weapons/Russian/Rifle/9a91/armst_Rifle_9a91_base.et",
+   "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_base.et",
+   "Prefabs/Weapons/Russian/Rifle/Aek971/armst_Rifle_AEK971_base.et",
+   "Prefabs/Weapons/Russian/Rifle/SOC94/armst_Rifle_SOC94_base.et",
+   "Prefabs/Weapons/Russian/Rifle/SVD/armst_Rifle_SVD_base.et",
+   "Prefabs/Weapons/Russian/Rifle/VAL/armst_Rifle_val_base.et",
+   "Prefabs/Weapons/Russian/Rifle/VSK94/armst_Rifle_VSK94_base.et",
+   "Prefabs/Weapons/Russian/Rifle/VSS/armst_Rifle_vss_base.et"
+  ],
+  "AttachmentOpticsDovetailSVD": [
+   "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1_ak.et"
+  ],
+  "AttachmentOpticsARMST_DovetailRU": [
+   "armst_Optic_PSO1_DovetailRU.et"
+  ]
+ },
+ "canonical_refs": [
+  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74M_full.et",
+  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_full.et"
+ ],
+ "duplicates_left_untouched": [
+  "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1_ak.et",
+  "armst_Optic_PSO1_DovetailRU.et"
+ ],
+ "other_override_fields_changed": 0,
+ "defaults_broken": 0,
+ "dangling_refs": 0,
+ "unrelated_gameplay_changes": 0,
+ "STATIC_STATUS": "PASS"
+}

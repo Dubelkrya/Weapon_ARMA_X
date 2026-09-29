@@ -1,0 +1,37 @@
+# OPTICS / SIGHTS / RAILS - COMPATIBILITY MATRIX (READ ONLY)
+
+Criterion: module WAA AttachmentType == OR PROVEN-INHERITS host slot AttachmentType.
+Attachment-type inheritance is UNRESOLVED (type classes live in game paks); only EXACT_MATCH proven.
+
+| HostType | HostTypeGID | ModuleType | ModuleTypeGID | Status |
+|---|---|---|---|---|
+| AttachmentOpticsRIS1913 | 4289872E53434277 | AttachmentOpticsDovetailAK | 0CDB065C629144D0 | TYPE_MISMATCH |
+| AttachmentOpticsRIS1913 | 4289872E53434277 | AttachmentOpticsRIS1913 | 4289872E53434277 | EXACT_MATCH |
+| AttachmentOpticsRIS1913 | 4289872E53434277 | AttachmentOpticsG36 | F56C225D0E397818 | TYPE_MISMATCH |
+|  |  | AttachmentOpticsDovetailAK | 0CDB065C629144D0 | TYPE_MISMATCH |
+|  |  | AttachmentOpticsRIS1913 | 4289872E53434277 | TYPE_MISMATCH |
+|  |  | AttachmentOpticsG36 | F56C225D0E397818 | TYPE_MISMATCH |
+| AttachmentMuzzle9_39_armst | 66088C7B8F0591E5 | AttachmentOpticsDovetailAK | 0CDB065C629144D0 | TYPE_MISMATCH |
+| AttachmentMuzzle9_39_armst | 66088C7B8F0591E5 | AttachmentOpticsRIS1913 | 4289872E53434277 | TYPE_MISMATCH |
+| AttachmentMuzzle9_39_armst | 66088C7B8F0591E5 | AttachmentOpticsG36 | F56C225D0E397818 | TYPE_MISMATCH |
+| AttachmentOpticsDovetailAK | 60AAE435165C80B8 | AttachmentOpticsDovetailAK | 0CDB065C629144D0 | EXACT_MATCH |
+| AttachmentOpticsDovetailAK | 60AAE435165C80B8 | AttachmentOpticsRIS1913 | 4289872E53434277 | TYPE_MISMATCH |
+| AttachmentOpticsDovetailAK | 60AAE435165C80B8 | AttachmentOpticsG36 | F56C225D0E397818 | TYPE_MISMATCH |
+| AttachmentMuzzle762_39 | 65AE4CB5E23C0F2E | AttachmentOpticsDovetailAK | 0CDB065C629144D0 | TYPE_MISMATCH |
+| AttachmentMuzzle762_39 | 65AE4CB5E23C0F2E | AttachmentOpticsRIS1913 | 4289872E53434277 | TYPE_MISMATCH |
+| AttachmentMuzzle762_39 | 65AE4CB5E23C0F2E | AttachmentOpticsG36 | F56C225D0E397818 | TYPE_MISMATCH |
+| AttachmentUnderBarrelGP25 | 673A7B217FA4A5C8 | AttachmentOpticsDovetailAK | 0CDB065C629144D0 | TYPE_MISMATCH |
+| AttachmentUnderBarrelGP25 | 673A7B217FA4A5C8 | AttachmentOpticsRIS1913 | 4289872E53434277 | TYPE_MISMATCH |
+| AttachmentUnderBarrelGP25 | 673A7B217FA4A5C8 | AttachmentOpticsG36 | F56C225D0E397818 | TYPE_MISMATCH |
+| AttachmentStockVz58 | 65AE4CB5E23C0F7D | AttachmentOpticsDovetailAK | 0CDB065C629144D0 | TYPE_MISMATCH |
+| AttachmentStockVz58 | 65AE4CB5E23C0F7D | AttachmentOpticsRIS1913 | 4289872E53434277 | TYPE_MISMATCH |
+| AttachmentStockVz58 | 65AE4CB5E23C0F7D | AttachmentOpticsG36 | F56C225D0E397818 | TYPE_MISMATCH |
+| AttachmentMuzzle556_45 | 6A0470709BAE0525 | AttachmentOpticsDovetailAK | 0CDB065C629144D0 | TYPE_MISMATCH |
+| AttachmentMuzzle556_45 | 6A0470709BAE0525 | AttachmentOpticsRIS1913 | 4289872E53434277 | TYPE_MISMATCH |
+| AttachmentMuzzle556_45 | 6A0470709BAE0525 | AttachmentOpticsG36 | F56C225D0E397818 | TYPE_MISMATCH |
+| AttachmentOpticsG36 | 6A0470709BAE058B | AttachmentOpticsDovetailAK | 0CDB065C629144D0 | TYPE_MISMATCH |
+| AttachmentOpticsG36 | 6A0470709BAE058B | AttachmentOpticsRIS1913 | 4289872E53434277 | TYPE_MISMATCH |
+| AttachmentOpticsG36 | 6A0470709BAE058B | AttachmentOpticsG36 | F56C225D0E397818 | EXACT_MATCH |
+| AttachmentBayonetM9 | 6A0470709BAE0571 | AttachmentOpticsDovetailAK | 0CDB065C629144D0 | TYPE_MISMATCH |
+| AttachmentBayonetM9 | 6A0470709BAE0571 | AttachmentOpticsRIS1913 | 4289872E53434277 | TYPE_MISMATCH |
+| AttachmentBayonetM9 | 6A0470709BAE0571 | AttachmentOpticsG36 | F56C225D0E397818 | TYPE_MISMATCH |

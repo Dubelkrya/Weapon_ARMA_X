@@ -1,0 +1,56 @@
+{
+ "path": "Prefabs/Weapons/Russian/Handguns/Sr_2/armst_SR_2.et",
+ "guid": "31FB2EC4F4AFFC05",
+ "parent_before": "{3968B2A856852CBD}Handguns/New_armst_PP91.et",
+ "parent_after": "{B7132459C07777CA}Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et",
+ "parent_target": "{B7132459C07777CA}Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et",
+ "pp91_contributions_bypassed": [
+  "ARMST_ITEMS_STATS_COMPONENTS {657ABA0547189DD7}",
+  "SCR_EditableEntityComponent {65F28786D4603482}: Enabled 0, m_bAutoRegister NEVER, m_UIInfo labels",
+  "Attributes SCR_ItemAttributeCollection {51F080D5C64F12C5}: m_bAutoDetectGridSize 0, m_iCustomGridHeight 2 (width 4 already local)"
+ ],
+ "local_overrides_added": [
+  "GenericEntity : \"{B7132459C07777CA}Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et\" {",
+  "  ARMST_ITEMS_STATS_COMPONENTS \"{657ABA0547189DD7}\" {",
+  "   Enabled 0",
+  "   m_bAutoRegister NEVER",
+  "    m_aAuthoredLabels {",
+  "     CONTENT_MODDED 4141368",
+  "    m_aAutoLabels {",
+  "     4141368",
+  "    m_bAutoDetectGridSize 0",
+  "    m_iCustomGridHeight 2"
+ ],
+ "PARENT_CHANGED": 1,
+ "GUID_CHANGES": 0,
+ "PATH_CHANGES": 0,
+ "META_UNCHANGED": true,
+ "braces_balanced": true,
+ "effective_behavior_preserved": "YES",
+ "materialized_check": {
+  "ARMST_ITEMS_STATS_COMPONENTS": true,
+  "Enabled 0": true,
+  "m_bAutoRegister NEVER": true,
+  "m_aAuthoredLabels": true,
+  "CONTENT_MODDED 4141368": true,
+  "m_aAutoLabels": true,
+  "m_bAutoDetectGridSize 0": true,
+  "m_iCustomGridWidth 4": true,
+  "m_iCustomGridHeight 2": true
+ },
+ "OTHER_WEAPONS_CHANGED": 0,
+ "final_handgun_tree": {
+  "armst_PM.et": "{B7132459C07777CA}Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et",
+  "armst_PP91.et": "{B7132459C07777CA}Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et",
+  "armst_APB.et": "{B7132459C07777CA}Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et",
+  "armst_TT.et": "{B7132459C07777CA}Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et",
+  "armst_SR_2.et": "{B7132459C07777CA}Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et",
+  "armst_M9.et": "{809488C4984AC087}Prefabs/Weapons/Handguns/M9/Handgun_M9_base.et"
+ },
+ "LOCAL_CONCRETE_HANDGUN_PARENT_EDGES": [],
+ "foreign_legacy_refs_found": {
+  "pp91_magazine_well_26EA67622A1DA48B": "pre-existing local SR_2 reference (INTENTIONAL/pre-existing)",
+  "pp91_magazine_template_armst_Magazine_9x18_PP91_30rnd_Ball.et": "pre-existing local SR_2 reference (INTENTIONAL/pre-existing)",
+  "editor_name_PP-91": "FOREIGN_LEGACY (SR_2 editor Name still \"PP-91\"); not repaired (identity/localization out of scope)"
+ }
+}

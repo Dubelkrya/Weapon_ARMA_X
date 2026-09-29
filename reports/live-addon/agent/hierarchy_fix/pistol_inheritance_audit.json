@@ -1,0 +1,734 @@
+{
+ "all_pistols": {
+  "armst_APB.et": {
+   "path": "Prefabs/Weapons/Russian/Handguns/armst_APB/armst_APB.et",
+   "guid": "5D3DA7E84135B278",
+   "model": "{A72F391188860251}Assets/Apb/APB_weapon.xob"
+  },
+  "armst_PM.et": {
+   "path": "Prefabs/Weapons/Russian/Handguns/Pm/armst_PM.et",
+   "guid": "C0F7DD85A86B2900",
+   "model": "(inherited)"
+  },
+  "armst_PP91.et": {
+   "path": "Prefabs/Weapons/Russian/Handguns/PP_19/armst_PP91.et",
+   "guid": "3968B2A856852CBD",
+   "model": "{C783576039056FE8}Assets/Kedr/Kedr_weapons.xob"
+  },
+  "armst_SR_2.et": {
+   "path": "Prefabs/Weapons/Russian/Handguns/Sr_2/armst_SR_2.et",
+   "guid": "31FB2EC4F4AFFC05",
+   "model": "{DE11A7B572066CCA}Assets/sr2/SR2.xob"
+  },
+  "armst_TT.et": {
+   "path": "Prefabs/Weapons/Russian/Handguns/TT/armst_TT.et",
+   "guid": "0D469F42B65E350E",
+   "model": "{3142577B6CD35911}Assets/TT/TT_weapon.xob"
+  },
+  "armst_M9.et": {
+   "path": "Prefabs/Weapons/Western/Handguns/armst_M9.et",
+   "guid": "1353C6EAD1DCFE43",
+   "model": "(inherited)"
+  }
+ },
+ "inheritance_edges": [
+  {
+   "child": "armst_APB.et",
+   "parent_ref_guid": "C0F7DD85A86B2900",
+   "parent_ref_path": "Handguns/armst_PM.et",
+   "parent_resolved": "armst_PM.et",
+   "class": "SUSPICIOUS_CONCRETE_WEAPON_PARENT"
+  },
+  {
+   "child": "armst_PM.et",
+   "parent_ref_guid": "B7132459C07777CA",
+   "parent_ref_path": "Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et",
+   "parent_resolved": "Handgun_PM_base.et",
+   "class": "VALID_VARIANT_INHERITANCE"
+  },
+  {
+   "child": "Handgun_PM_base.et",
+   "parent_ref_guid": "EE7028E9DF49763A",
+   "parent_ref_path": "Prefabs/Weapons/Core/Handgun_Base.et",
+   "parent_resolved": "Handgun_Base.et",
+   "class": "COMMON_BASE"
+  },
+  {
+   "child": "Handgun_Base.et",
+   "parent_ref_guid": "E1F14DB52DBFBC57",
+   "parent_ref_path": "Prefabs/Weapons/Core/Weapon_Base.et",
+   "parent_resolved": "Weapon_Base.et",
+   "class": "AMBIGUOUS"
+  },
+  {
+   "child": "Weapon_Base.et",
+   "parent_ref_guid": null,
+   "parent_ref_path": null,
+   "parent_resolved": null,
+   "class": "EXTERNAL_BOUNDARY"
+  },
+  {
+   "child": "armst_PM.et",
+   "parent_ref_guid": "B7132459C07777CA",
+   "parent_ref_path": "Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et",
+   "parent_resolved": "Handgun_PM_base.et",
+   "class": "VALID_VARIANT_INHERITANCE"
+  },
+  {
+   "child": "Handgun_PM_base.et",
+   "parent_ref_guid": "EE7028E9DF49763A",
+   "parent_ref_path": "Prefabs/Weapons/Core/Handgun_Base.et",
+   "parent_resolved": "Handgun_Base.et",
+   "class": "COMMON_BASE"
+  },
+  {
+   "child": "Handgun_Base.et",
+   "parent_ref_guid": "E1F14DB52DBFBC57",
+   "parent_ref_path": "Prefabs/Weapons/Core/Weapon_Base.et",
+   "parent_resolved": "Weapon_Base.et",
+   "class": "AMBIGUOUS"
+  },
+  {
+   "child": "Weapon_Base.et",
+   "parent_ref_guid": null,
+   "parent_ref_path": null,
+   "parent_resolved": null,
+   "class": "EXTERNAL_BOUNDARY"
+  },
+  {
+   "child": "armst_PP91.et",
+   "parent_ref_guid": "C0F7DD85A86B2900",
+   "parent_ref_path": "Handguns/armst_PM.et",
+   "parent_resolved": "armst_PM.et",
+   "class": "SUSPICIOUS_CONCRETE_WEAPON_PARENT"
+  },
+  {
+   "child": "armst_PM.et",
+   "parent_ref_guid": "B7132459C07777CA",
+   "parent_ref_path": "Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et",
+   "parent_resolved": "Handgun_PM_base.et",
+   "class": "VALID_VARIANT_INHERITANCE"
+  },
+  {
+   "child": "Handgun_PM_base.et",
+   "parent_ref_guid": "EE7028E9DF49763A",
+   "parent_ref_path": "Prefabs/Weapons/Core/Handgun_Base.et",
+   "parent_resolved": "Handgun_Base.et",
+   "class": "COMMON_BASE"
+  },
+  {
+   "child": "Handgun_Base.et",
+   "parent_ref_guid": "E1F14DB52DBFBC57",
+   "parent_ref_path": "Prefabs/Weapons/Core/Weapon_Base.et",
+   "parent_resolved": "Weapon_Base.et",
+   "class": "AMBIGUOUS"
+  },
+  {
+   "child": "Weapon_Base.et",
+   "parent_ref_guid": null,
+   "parent_ref_path": null,
+   "parent_resolved": null,
+   "class": "EXTERNAL_BOUNDARY"
+  },
+  {
+   "child": "armst_SR_2.et",
+   "parent_ref_guid": "3968B2A856852CBD",
+   "parent_ref_path": "Handguns/New_armst_PP91.et",
+   "parent_resolved": "armst_PP91.et",
+   "class": "AMBIGUOUS"
+  },
+  {
+   "child": "armst_PP91.et",
+   "parent_ref_guid": "C0F7DD85A86B2900",
+   "parent_ref_path": "Handguns/armst_PM.et",
+   "parent_resolved": "armst_PM.et",
+   "class": "SUSPICIOUS_CONCRETE_WEAPON_PARENT"
+  },
+  {
+   "child": "armst_PM.et",
+   "parent_ref_guid": "B7132459C07777CA",
+   "parent_ref_path": "Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et",
+   "parent_resolved": "Handgun_PM_base.et",
+   "class": "VALID_VARIANT_INHERITANCE"
+  },
+  {
+   "child": "Handgun_PM_base.et",
+   "parent_ref_guid": "EE7028E9DF49763A",
+   "parent_ref_path": "Prefabs/Weapons/Core/Handgun_Base.et",
+   "parent_resolved": "Handgun_Base.et",
+   "class": "COMMON_BASE"
+  },
+  {
+   "child": "Handgun_Base.et",
+   "parent_ref_guid": "E1F14DB52DBFBC57",
+   "parent_ref_path": "Prefabs/Weapons/Core/Weapon_Base.et",
+   "parent_resolved": "Weapon_Base.et",
+   "class": "AMBIGUOUS"
+  },
+  {
+   "child": "Weapon_Base.et",
+   "parent_ref_guid": null,
+   "parent_ref_path": null,
+   "parent_resolved": null,
+   "class": "EXTERNAL_BOUNDARY"
+  },
+  {
+   "child": "armst_TT.et",
+   "parent_ref_guid": "C0F7DD85A86B2900",
+   "parent_ref_path": "Handguns/armst_PM.et",
+   "parent_resolved": "armst_PM.et",
+   "class": "SUSPICIOUS_CONCRETE_WEAPON_PARENT"
+  },
+  {
+   "child": "armst_PM.et",
+   "parent_ref_guid": "B7132459C07777CA",
+   "parent_ref_path": "Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et",
+   "parent_resolved": "Handgun_PM_base.et",
+   "class": "VALID_VARIANT_INHERITANCE"
+  },
+  {
+   "child": "Handgun_PM_base.et",
+   "parent_ref_guid": "EE7028E9DF49763A",
+   "parent_ref_path": "Prefabs/Weapons/Core/Handgun_Base.et",
+   "parent_resolved": "Handgun_Base.et",
+   "class": "COMMON_BASE"
+  },
+  {
+   "child": "Handgun_Base.et",
+   "parent_ref_guid": "E1F14DB52DBFBC57",
+   "parent_ref_path": "Prefabs/Weapons/Core/Weapon_Base.et",
+   "parent_resolved": "Weapon_Base.et",
+   "class": "AMBIGUOUS"
+  },
+  {
+   "child": "Weapon_Base.et",
+   "parent_ref_guid": null,
+   "parent_ref_path": null,
+   "parent_resolved": null,
+   "class": "EXTERNAL_BOUNDARY"
+  },
+  {
+   "child": "armst_M9.et",
+   "parent_ref_guid": "809488C4984AC087",
+   "parent_ref_path": "Prefabs/Weapons/Handguns/M9/Handgun_M9_base.et",
+   "parent_resolved": "Handgun_M9_base.et",
+   "class": "VALID_VARIANT_INHERITANCE"
+  },
+  {
+   "child": "Handgun_M9_base.et",
+   "parent_ref_guid": "EE7028E9DF49763A",
+   "parent_ref_path": "Prefabs/Weapons/Core/Handgun_Base.et",
+   "parent_resolved": "Handgun_Base.et",
+   "class": "COMMON_BASE"
+  },
+  {
+   "child": "Handgun_Base.et",
+   "parent_ref_guid": "E1F14DB52DBFBC57",
+   "parent_ref_path": "Prefabs/Weapons/Core/Weapon_Base.et",
+   "parent_resolved": "Weapon_Base.et",
+   "class": "AMBIGUOUS"
+  },
+  {
+   "child": "Weapon_Base.et",
+   "parent_ref_guid": null,
+   "parent_ref_path": null,
+   "parent_resolved": null,
+   "class": "EXTERNAL_BOUNDARY"
+  }
+ ],
+ "common_pistol_base": {
+  "path": "Prefabs/Weapons/Core/Handgun_Base.et",
+  "engine_guid": "EE7028E9DF49763A",
+  "class": "EntityTemplateResourceClass",
+  "direct_examples": [
+   "Handgun_PM_base.et",
+   "Handgun_M9_base.et"
+  ],
+  "components": 29
+ },
+ "suspicious_edges": [
+  {
+   "child": "armst_APB.et",
+   "parent_ref_guid": "C0F7DD85A86B2900",
+   "parent_ref_path": "Handguns/armst_PM.et",
+   "parent_resolved": "armst_PM.et",
+   "class": "SUSPICIOUS_CONCRETE_WEAPON_PARENT"
+  },
+  {
+   "child": "armst_PP91.et",
+   "parent_ref_guid": "C0F7DD85A86B2900",
+   "parent_ref_path": "Handguns/armst_PM.et",
+   "parent_resolved": "armst_PM.et",
+   "class": "SUSPICIOUS_CONCRETE_WEAPON_PARENT"
+  },
+  {
+   "child": "armst_PP91.et",
+   "parent_ref_guid": "C0F7DD85A86B2900",
+   "parent_ref_path": "Handguns/armst_PM.et",
+   "parent_resolved": "armst_PM.et",
+   "class": "SUSPICIOUS_CONCRETE_WEAPON_PARENT"
+  },
+  {
+   "child": "armst_TT.et",
+   "parent_ref_guid": "C0F7DD85A86B2900",
+   "parent_ref_path": "Handguns/armst_PM.et",
+   "parent_resolved": "armst_PM.et",
+   "class": "SUSPICIOUS_CONCRETE_WEAPON_PARENT"
+  }
+ ],
+ "per_pistol_delta": {
+  "armst_APB.et": {
+   "chain": [
+    "armst_APB.et",
+    "armst_PM.et",
+    "Handgun_PM_base.et",
+    "Handgun_Base.et",
+    "Weapon_Base.et"
+   ],
+   "local_comps": 25,
+   "inherited_not_local": 35,
+   "would_be_lost": {
+    "657ABA0547189DD7": {
+     "type": "ARMST_ITEMS_STATS_COMPONENTS",
+     "name": null,
+     "from": "armst_PM.et"
+    },
+    "0F2AA6AEBF450F0F": {
+     "type": "RigidBody",
+     "name": null,
+     "from": "Handgun_PM_base.et"
+    },
+    "5EEACC0F3BFD890B": {
+     "type": "SightRangeInfo",
+     "name": null,
+     "from": "Handgun_PM_base.et"
+    },
+    "5EEACC0F3BFD892B": {
+     "type": "WeaponPosition",
+     "name": "PointInfo",
+     "from": "Handgun_PM_base.et"
+    },
+    "5EEACA28BC3CC87D": {
+     "type": "ZeroingGenerator",
+     "name": "BaseZeroingGenerator",
+     "from": "Handgun_PM_base.et"
+    },
+    "5EEACC0F11A30F18": {
+     "type": "ZeroingWeaponAimModifier",
+     "name": null,
+     "from": "Handgun_PM_base.et"
+    },
+    "51B2B2E3D520136A": {
+     "type": "AnimInjection",
+     "name": "AnimationAttachmentInfo",
+     "from": "Handgun_PM_base.et"
+    },
+    "5A1E58F7B04F9BE5": {
+     "type": "UserActionContext",
+     "name": null,
+     "from": "Handgun_PM_base.et"
+    },
+    "5A1E5C46BBD153DB": {
+     "type": "Position",
+     "name": "PointInfo",
+     "from": "Handgun_PM_base.et"
+    },
+    "5A1E58F7AED270D4": {
+     "type": "UserActionContext",
+     "name": null,
+     "from": "Handgun_PM_base.et"
+    },
+    "5A1E5C46BCB4499D": {
+     "type": "Position",
+     "name": "PointInfo",
+     "from": "Handgun_PM_base.et"
+    },
+    "5A28749C602565F8": {
+     "type": "EPF_PersistenceComponent",
+     "name": null,
+     "from": "Weapon_Base.et"
+    },
+    "5A28749F9ED6F91D": {
+     "type": "m_pSaveData",
+     "name": "EPF_ItemSaveDataClass",
+     "from": "Weapon_Base.et"
+    },
+    "670F5CD3F92AE759": {
+     "type": "EPF_ARMST_ITEMS_STATS_COMPONENTS_SaveDataClass",
+     "name": null,
+     "from": "Weapon_Base.et"
+    },
+    "66AD4181F51BBAB1": {
+     "type": "ARMST_USER_CHECK_COND",
+     "name": null,
+     "from": "Weapon_Base.et"
+    }
+   },
+   "would_be_lost_critical": {
+    "0F2AA6AEBF450F0F": {
+     "type": "RigidBody",
+     "name": null,
+     "from": "Handgun_PM_base.et"
+    },
+    "5EEACC0F11A30F18": {
+     "type": "ZeroingWeaponAimModifier",
+     "name": null,
+     "from": "Handgun_PM_base.et"
+    },
+    "51B2B2E3D520136A": {
+     "type": "AnimInjection",
+     "name": "AnimationAttachmentInfo",
+     "from": "Handgun_PM_base.et"
+    },
+    "5A1E58F7B04F9BE5": {
+     "type": "UserActionContext",
+     "name": null,
+     "from": "Handgun_PM_base.et"
+    },
+    "5A1E58F7AED270D4": {
+     "type": "UserActionContext",
+     "name": null,
+     "from": "Handgun_PM_base.et"
+    }
+   },
+   "classification": "HIGH_RISK"
+  },
+  "armst_PP91.et": {
+   "chain": [
+    "armst_PP91.et",
+    "armst_PM.et",
+    "Handgun_PM_base.et",
+    "Handgun_Base.et",
+    "Weapon_Base.et"
+   ],
+   "local_comps": 36,
+   "inherited_not_local": 29,
+   "would_be_lost": {
+    "657ABA0547189DD7": {
+     "type": "ARMST_ITEMS_STATS_COMPONENTS",
+     "name": null,
+     "from": "armst_PM.et"
+    },
+    "0F2AA6AEBF450F0F": {
+     "type": "RigidBody",
+     "name": null,
+     "from": "Handgun_PM_base.et"
+    },
+    "5EEACA28BC3CC87D": {
+     "type": "ZeroingGenerator",
+     "name": "BaseZeroingGenerator",
+     "from": "Handgun_PM_base.et"
+    },
+    "5EEACC0F11A30F18": {
+     "type": "ZeroingWeaponAimModifier",
+     "name": null,
+     "from": "Handgun_PM_base.et"
+    },
+    "5A1E58F7B04F9BE5": {
+     "type": "UserActionContext",
+     "name": null,
+     "from": "Handgun_PM_base.et"
+    },
+    "5A1E5C46BBD153DB": {
+     "type": "Position",
+     "name": "PointInfo",
+     "from": "Handgun_PM_base.et"
+    },
+    "5A1E58F7AED270D4": {
+     "type": "UserActionContext",
+     "name": null,
+     "from": "Handgun_PM_base.et"
+    },
+    "5A1E5C46BCB4499D": {
+     "type": "Position",
+     "name": "PointInfo",
+     "from": "Handgun_PM_base.et"
+    },
+    "5A28749C602565F8": {
+     "type": "EPF_PersistenceComponent",
+     "name": null,
+     "from": "Weapon_Base.et"
+    },
+    "5A28749F9ED6F91D": {
+     "type": "m_pSaveData",
+     "name": "EPF_ItemSaveDataClass",
+     "from": "Weapon_Base.et"
+    },
+    "670F5CD3F92AE759": {
+     "type": "EPF_ARMST_ITEMS_STATS_COMPONENTS_SaveDataClass",
+     "name": null,
+     "from": "Weapon_Base.et"
+    },
+    "66AD4181F51BBAB1": {
+     "type": "ARMST_USER_CHECK_COND",
+     "name": null,
+     "from": "Weapon_Base.et"
+    }
+   },
+   "would_be_lost_critical": {
+    "0F2AA6AEBF450F0F": {
+     "type": "RigidBody",
+     "name": null,
+     "from": "Handgun_PM_base.et"
+    },
+    "5EEACC0F11A30F18": {
+     "type": "ZeroingWeaponAimModifier",
+     "name": null,
+     "from": "Handgun_PM_base.et"
+    },
+    "5A1E58F7B04F9BE5": {
+     "type": "UserActionContext",
+     "name": null,
+     "from": "Handgun_PM_base.et"
+    },
+    "5A1E58F7AED270D4": {
+     "type": "UserActionContext",
+     "name": null,
+     "from": "Handgun_PM_base.et"
+    }
+   },
+   "classification": "HIGH_RISK"
+  },
+  "armst_SR_2.et": {
+   "chain": [
+    "armst_SR_2.et",
+    "armst_PP91.et",
+    "armst_PM.et",
+    "Handgun_PM_base.et",
+    "Handgun_Base.et",
+    "Weapon_Base.et"
+   ],
+   "local_comps": 36,
+   "inherited_not_local": 29,
+   "would_be_lost": {
+    "657ABA0547189DD7": {
+     "type": "ARMST_ITEMS_STATS_COMPONENTS",
+     "name": null,
+     "from": "armst_PM.et"
+    },
+    "0F2AA6AEBF450F0F": {
+     "type": "RigidBody",
+     "name": null,
+     "from": "Handgun_PM_base.et"
+    },
+    "5EEACA28BC3CC87D": {
+     "type": "ZeroingGenerator",
+     "name": "BaseZeroingGenerator",
+     "from": "Handgun_PM_base.et"
+    },
+    "5EEACC0F11A30F18": {
+     "type": "ZeroingWeaponAimModifier",
+     "name": null,
+     "from": "Handgun_PM_base.et"
+    },
+    "5A1E58F7B04F9BE5": {
+     "type": "UserActionContext",
+     "name": null,
+     "from": "Handgun_PM_base.et"
+    },
+    "5A1E5C46BBD153DB": {
+     "type": "Position",
+     "name": "PointInfo",
+     "from": "Handgun_PM_base.et"
+    },
+    "5A1E58F7AED270D4": {
+     "type": "UserActionContext",
+     "name": null,
+     "from": "Handgun_PM_base.et"
+    },
+    "5A1E5C46BCB4499D": {
+     "type": "Position",
+     "name": "PointInfo",
+     "from": "Handgun_PM_base.et"
+    },
+    "5A28749C602565F8": {
+     "type": "EPF_PersistenceComponent",
+     "name": null,
+     "from": "Weapon_Base.et"
+    },
+    "5A28749F9ED6F91D": {
+     "type": "m_pSaveData",
+     "name": "EPF_ItemSaveDataClass",
+     "from": "Weapon_Base.et"
+    },
+    "670F5CD3F92AE759": {
+     "type": "EPF_ARMST_ITEMS_STATS_COMPONENTS_SaveDataClass",
+     "name": null,
+     "from": "Weapon_Base.et"
+    },
+    "66AD4181F51BBAB1": {
+     "type": "ARMST_USER_CHECK_COND",
+     "name": null,
+     "from": "Weapon_Base.et"
+    }
+   },
+   "would_be_lost_critical": {
+    "0F2AA6AEBF450F0F": {
+     "type": "RigidBody",
+     "name": null,
+     "from": "Handgun_PM_base.et"
+    },
+    "5EEACC0F11A30F18": {
+     "type": "ZeroingWeaponAimModifier",
+     "name": null,
+     "from": "Handgun_PM_base.et"
+    },
+    "5A1E58F7B04F9BE5": {
+     "type": "UserActionContext",
+     "name": null,
+     "from": "Handgun_PM_base.et"
+    },
+    "5A1E58F7AED270D4": {
+     "type": "UserActionContext",
+     "name": null,
+     "from": "Handgun_PM_base.et"
+    }
+   },
+   "classification": "HIGH_RISK"
+  },
+  "armst_TT.et": {
+   "chain": [
+    "armst_TT.et",
+    "armst_PM.et",
+    "Handgun_PM_base.et",
+    "Handgun_Base.et",
+    "Weapon_Base.et"
+   ],
+   "local_comps": 22,
+   "inherited_not_local": 36,
+   "would_be_lost": {
+    "657ABA0547189DD7": {
+     "type": "ARMST_ITEMS_STATS_COMPONENTS",
+     "name": null,
+     "from": "armst_PM.et"
+    },
+    "5A8685198A9AEEDD": {
+     "type": "WeaponSoundComponent",
+     "name": null,
+     "from": "Handgun_PM_base.et"
+    },
+    "0F2AA6AEBF450F0F": {
+     "type": "RigidBody",
+     "name": null,
+     "from": "Handgun_PM_base.et"
+    },
+    "5EEACC0F3BFD890B": {
+     "type": "SightRangeInfo",
+     "name": null,
+     "from": "Handgun_PM_base.et"
+    },
+    "5EEACC0F3BFD892B": {
+     "type": "WeaponPosition",
+     "name": "PointInfo",
+     "from": "Handgun_PM_base.et"
+    },
+    "5EEACA28BC3CC87D": {
+     "type": "ZeroingGenerator",
+     "name": "BaseZeroingGenerator",
+     "from": "Handgun_PM_base.et"
+    },
+    "5EEACC0F11A30F18": {
+     "type": "ZeroingWeaponAimModifier",
+     "name": null,
+     "from": "Handgun_PM_base.et"
+    },
+    "51B2B2E3D520136A": {
+     "type": "AnimInjection",
+     "name": "AnimationAttachmentInfo",
+     "from": "Handgun_PM_base.et"
+    },
+    "5A1E58F7B04F9BE5": {
+     "type": "UserActionContext",
+     "name": null,
+     "from": "Handgun_PM_base.et"
+    },
+    "5A1E5C46BBD153DB": {
+     "type": "Position",
+     "name": "PointInfo",
+     "from": "Handgun_PM_base.et"
+    },
+    "5A1E58F7AED270D4": {
+     "type": "UserActionContext",
+     "name": null,
+     "from": "Handgun_PM_base.et"
+    },
+    "5A1E5C46BCB4499D": {
+     "type": "Position",
+     "name": "PointInfo",
+     "from": "Handgun_PM_base.et"
+    },
+    "5A28749C602565F8": {
+     "type": "EPF_PersistenceComponent",
+     "name": null,
+     "from": "Weapon_Base.et"
+    },
+    "5A28749F9ED6F91D": {
+     "type": "m_pSaveData",
+     "name": "EPF_ItemSaveDataClass",
+     "from": "Weapon_Base.et"
+    },
+    "670F5CD3F92AE759": {
+     "type": "EPF_ARMST_ITEMS_STATS_COMPONENTS_SaveDataClass",
+     "name": null,
+     "from": "Weapon_Base.et"
+    },
+    "66AD4181F51BBAB1": {
+     "type": "ARMST_USER_CHECK_COND",
+     "name": null,
+     "from": "Weapon_Base.et"
+    }
+   },
+   "would_be_lost_critical": {
+    "5A8685198A9AEEDD": {
+     "type": "WeaponSoundComponent",
+     "name": null,
+     "from": "Handgun_PM_base.et"
+    },
+    "0F2AA6AEBF450F0F": {
+     "type": "RigidBody",
+     "name": null,
+     "from": "Handgun_PM_base.et"
+    },
+    "5EEACC0F11A30F18": {
+     "type": "ZeroingWeaponAimModifier",
+     "name": null,
+     "from": "Handgun_PM_base.et"
+    },
+    "51B2B2E3D520136A": {
+     "type": "AnimInjection",
+     "name": "AnimationAttachmentInfo",
+     "from": "Handgun_PM_base.et"
+    },
+    "5A1E58F7B04F9BE5": {
+     "type": "UserActionContext",
+     "name": null,
+     "from": "Handgun_PM_base.et"
+    },
+    "5A1E58F7AED270D4": {
+     "type": "UserActionContext",
+     "name": null,
+     "from": "Handgun_PM_base.et"
+    }
+   },
+   "classification": "HIGH_RISK"
+  }
+ },
+ "risk_classification": {
+  "SAFE_SIMPLE_REPARENT": [],
+  "REPARENT_WITH_SMALL_OVERRIDES": [],
+  "HIGH_RISK": [
+   "armst_APB.et",
+   "armst_PP91.et",
+   "armst_SR_2.et",
+   "armst_TT.et"
+  ],
+  "AMBIGUOUS": []
+ },
+ "notes": [
+  "Candidate common base Core/Handgun_Base.et (engine GUID EE7028E9DF49763A).",
+  "Exported Weapon_ARMA_X .meta GUIDs are contaminated; engine GUIDs taken from live parent references.",
+  "SR_2 parent path Handguns/New_armst_PP91.et is stale but resolves to armst_PP91.et.",
+  "Reparenting the suspicious pistols straight to Handgun_Base would drop critical Handgun_PM_base contributions currently effective."
+ ],
+ "LIVE_FILES_CHANGED": "NONE"
+}

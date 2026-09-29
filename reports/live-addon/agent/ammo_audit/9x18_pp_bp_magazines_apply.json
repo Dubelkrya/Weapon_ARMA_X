@@ -1,0 +1,121 @@
+{
+ "report": "9x18 PP/BP Magazine Layer Apply",
+ "mags": {
+  "PM_PP": {
+   "capacity": 8,
+   "config": "{F2D8D099211C2451}Configs/Weapons/Ammo/armst_Ammo_9x18_ARMST.conf",
+   "config_ok": true,
+   "mapping_len": 8,
+   "mapping_all": "0",
+   "well": "MagazineWellMakarovPM",
+   "len_eq_cap": true
+  },
+  "PM_BP": {
+   "capacity": 8,
+   "config": "{F2D8D099211C2451}Configs/Weapons/Ammo/armst_Ammo_9x18_ARMST.conf",
+   "config_ok": true,
+   "mapping_len": 8,
+   "mapping_all": "1",
+   "well": "MagazineWellMakarovPM",
+   "len_eq_cap": true
+  },
+  "APB_PP": {
+   "capacity": 20,
+   "config": "{F2D8D099211C2451}Configs/Weapons/Ammo/armst_Ammo_9x18_ARMST.conf",
+   "config_ok": true,
+   "mapping_len": 20,
+   "mapping_all": "0",
+   "well": "MagazineWellAPB",
+   "len_eq_cap": true
+  },
+  "APB_BP": {
+   "capacity": 20,
+   "config": "{F2D8D099211C2451}Configs/Weapons/Ammo/armst_Ammo_9x18_ARMST.conf",
+   "config_ok": true,
+   "mapping_len": 20,
+   "mapping_all": "1",
+   "well": "MagazineWellAPB",
+   "len_eq_cap": true
+  },
+  "PP91_PP": {
+   "capacity": 30,
+   "config": "{F2D8D099211C2451}Configs/Weapons/Ammo/armst_Ammo_9x18_ARMST.conf",
+   "config_ok": true,
+   "mapping_len": 30,
+   "mapping_all": "0",
+   "well": "MagazineWellPP91",
+   "len_eq_cap": true
+  },
+  "PP91_BP": {
+   "capacity": 30,
+   "config": "{F2D8D099211C2451}Configs/Weapons/Ammo/armst_Ammo_9x18_ARMST.conf",
+   "config_ok": true,
+   "mapping_len": 30,
+   "mapping_all": "1",
+   "well": "MagazineWellPP91",
+   "len_eq_cap": true
+  }
+ },
+ "ALL_SIX_AMMOCONFIG": "{F2D8D099211C2451}Configs/Weapons/Ammo/armst_Ammo_9x18_ARMST.conf",
+ "ALL_SIX_USE_CFG": true,
+ "ALL_SIX_LEN_EQ_CAP": true,
+ "PM_DEFAULT": true,
+ "PM_WEAPON_MAG_TEMPLATE": "{75B5C65F2DA68A01}Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball_PP.et",
+ "SR2_magazine_effective": {
+  "capacity": 30,
+  "config": "{4A7B5486D9167E2A}Configs/Weapons/Ammo/Ammo_9x18Mak.conf",
+  "mapping": [
+   "0",
+   "0",
+   "0",
+   "0",
+   "0",
+   "0",
+   "0",
+   "0",
+   "0",
+   "0",
+   "0",
+   "0",
+   "0",
+   "0",
+   "0",
+   "0",
+   "0",
+   "0",
+   "0",
+   "0",
+   "0",
+   "0",
+   "0",
+   "0",
+   "0",
+   "0",
+   "0",
+   "0",
+   "0",
+   "0"
+  ],
+  "mapping_len": 30,
+  "well": "MagazineWellPP91",
+  "model": "{F2231EA6A4185BF9}Assets/Weapons_RUS/sr2/SR2_mag.xob"
+ },
+ "SR2_MAGAZINE_EFFECTIVE_DIFF": 0,
+ "SR2_WEAPON_EFFECTIVE_DIFF": 0,
+ "PM_SHARED_LEGACY_MAG_UNCHANGED": true,
+ "LIVE_FILES_CHANGED": "4 new mags + metas; modified APB/PP91 PP, armst_PM.et",
+ "PM_SHARED_LEGACY_MAG_PATH": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball.et",
+ "GUID_COLLISIONS": 0,
+ "DANGLING_REFS": 0,
+ "NEW_MAG_GUIDS": {
+  "PM_PP": "75B5C65F2DA68A01",
+  "PM_BP": "44EF59B51DB21EA9",
+  "APB_BP": "A67F38168B64541A",
+  "PP91_BP": "318796D9FD213751"
+ },
+ "OTHER_RESOURCES_CHANGED": [
+  "armst_PM.et (default MagazineTemplate -> PM PP)",
+  "armst_Magazine_9x18_APB_20rnd_Ball.et (AmmoConfig added)",
+  "armst_Magazine_9x18_PP91_30rnd_Ball.et (AmmoConfig added)"
+ ]
+}

@@ -1,0 +1,6 @@
+{
+    "Note":  "Read-only; range/reticle data only where serialized in live weapons/optics. Reticle/zeroing audit scope: weapons carry SightsComponent ranges; no PIP scopes serialized in ARMST beyond vanilla-inherited.",
+    "Counts":  {
+                   "WeaponIronSystems":  21
+               }
+}

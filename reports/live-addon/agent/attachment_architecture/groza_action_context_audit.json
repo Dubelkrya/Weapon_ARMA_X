@@ -1,0 +1,153 @@
+{
+ "target": "Prefabs/Weapons/Russian/Rifle/Groza/armst_Groza_base.et",
+ "total_contexts": 9,
+ "counts": {
+  "KEEP_REQUIRED": 1,
+  "KEEP_OVERRIDE": 0,
+  "REMOVE_STALE_LOCAL": 5,
+  "REVIEW_REQUIRED": 3
+ },
+ "contexts": [
+  {
+   "instance": "5086F9ADF588DCA4",
+   "name": null,
+   "pivot": null,
+   "origin": "LOCAL_ADDITION",
+   "references": [
+    "agent/weapon_relocation/magazine_move_backup/Prefabs/Weapons/Russian/Rifle/Groza/armst_Groza_base.et",
+    "agent/weapon_relocation/magazine_move_backup/Prefabs/Weapons/Western/Rifle/HKG36/armst_Rifle_hk_g36.et",
+    "Assets/Toz/1.et",
+    "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_base.et",
+    "Prefabs/Weapons/Western/Rifle/HKG36/armst_Rifle_HKG36_base.et"
+   ],
+   "live_owner": null,
+   "classification": "REVIEW_REQUIRED",
+   "live_owner2": "UNKNOWN (unnamed interaction point)",
+   "live_refs": "possibly core action context (muzzle/firemode/bipod)"
+  },
+  {
+   "instance": "5956E32BAAADE657",
+   "name": null,
+   "pivot": null,
+   "origin": "LOCAL_ADDITION",
+   "references": [
+    "agent/weapon_relocation/magazine_move_backup/Prefabs/Weapons/Handguns/armst_Handgun_Knife_base.et",
+    "agent/weapon_relocation/magazine_move_backup/Prefabs/Weapons/Russian/Rifle/Groza/armst_Groza_base.et",
+    "agent/weapon_relocation/magazine_move_backup/Prefabs/Weapons/Western/Rifle/HKG36/armst_Rifle_hk_g36.et",
+    "Prefabs/Weapons/Handguns/armst_Handgun_Knife_base.et",
+    "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_base.et",
+    "Prefabs/Weapons/Western/Rifle/HKG36/armst_Rifle_HKG36_base.et"
+   ],
+   "live_owner": null,
+   "classification": "REVIEW_REQUIRED",
+   "live_owner2": "UNKNOWN (unnamed interaction point)",
+   "live_refs": "possibly core action context (muzzle/firemode/bipod)"
+  },
+  {
+   "instance": "5A1E58F7B04F9BE5",
+   "name": null,
+   "pivot": "slot_magazine",
+   "origin": "LOCAL_ADDITION",
+   "references": [
+    "agent/weapon_relocation/magazine_move_backup/Prefabs/Weapons/Handguns/armst_Handgun_Knife_base.et",
+    "agent/weapon_relocation/magazine_move_backup/Prefabs/Weapons/Russian/Rifle/Groza/armst_Groza_base.et",
+    "agent/weapon_relocation/magazine_move_backup/Prefabs/Weapons/Western/Rifle/HKG36/armst_Rifle_hk_g36.et",
+    "Assets/Toz/1.et",
+    "Prefabs/Weapons/Handguns/armst_Handgun_Knife_base.et",
+    "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_base.et",
+    "Prefabs/Weapons/Western/Rifle/HKG36/armst_Rifle_HKG36_base.et"
+   ],
+   "live_owner": null,
+   "classification": "KEEP_REQUIRED",
+   "live_owner2": "magazine well / MagazineWell",
+   "live_refs": "magazine action"
+  },
+  {
+   "instance": "5A1E58F7AED270D4",
+   "name": null,
+   "pivot": null,
+   "origin": "LOCAL_ADDITION",
+   "references": [
+    "agent/weapon_relocation/magazine_move_backup/Prefabs/Weapons/Handguns/armst_Handgun_Knife_base.et",
+    "agent/weapon_relocation/magazine_move_backup/Prefabs/Weapons/Russian/Rifle/Groza/armst_Groza_base.et",
+    "agent/weapon_relocation/magazine_move_backup/Prefabs/Weapons/Western/Rifle/HKG36/armst_Rifle_hk_g36.et",
+    "Assets/Toz/1.et",
+    "Prefabs/Weapons/Handguns/armst_Handgun_Knife_base.et",
+    "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_base.et",
+    "Prefabs/Weapons/Western/Rifle/HKG36/armst_Rifle_HKG36_base.et"
+   ],
+   "live_owner": null,
+   "classification": "REVIEW_REQUIRED",
+   "live_owner2": "UNKNOWN (unnamed interaction point)",
+   "live_refs": "possibly core action context (muzzle/firemode/bipod)"
+  },
+  {
+   "instance": "5AF896EFFE8D407A",
+   "name": "optic",
+   "pivot": "slot_optics",
+   "origin": "LOCAL_ADDITION",
+   "references": [
+    "agent/weapon_relocation/magazine_move_backup/Prefabs/Weapons/Russian/Rifle/Groza/armst_Groza_base.et"
+   ],
+   "live_owner": "NO_LIVE_OWNER",
+   "classification": "REMOVE_STALE_LOCAL",
+   "live_owner2": "NO_LIVE_OWNER",
+   "live_refs": "none (only agent backup copies)"
+  },
+  {
+   "instance": "5D16CD572EBFE7C3",
+   "name": "ris_right",
+   "pivot": "slot_ris_right",
+   "origin": "LOCAL_ADDITION",
+   "references": [
+    "agent/weapon_relocation/magazine_move_backup/Prefabs/Weapons/Russian/Rifle/Groza/armst_Groza_base.et"
+   ],
+   "live_owner": "NO_LIVE_OWNER",
+   "classification": "REMOVE_STALE_LOCAL",
+   "live_owner2": "NO_LIVE_OWNER",
+   "live_refs": "none (only agent backup copies)"
+  },
+  {
+   "instance": "5D16CD57294C5019",
+   "name": "ris_left",
+   "pivot": "slot_ris_left",
+   "origin": "LOCAL_ADDITION",
+   "references": [
+    "agent/weapon_relocation/magazine_move_backup/Prefabs/Weapons/Russian/Rifle/Groza/armst_Groza_base.et"
+   ],
+   "live_owner": "NO_LIVE_OWNER",
+   "classification": "REMOVE_STALE_LOCAL",
+   "live_owner2": "NO_LIVE_OWNER",
+   "live_refs": "none (only agent backup copies)"
+  },
+  {
+   "instance": "5D16CD5729B8BD31",
+   "name": "ironsight_front",
+   "pivot": "slot_ironsight_front",
+   "origin": "LOCAL_ADDITION",
+   "references": [
+    "agent/weapon_relocation/magazine_move_backup/Prefabs/Weapons/Russian/Rifle/Groza/armst_Groza_base.et"
+   ],
+   "live_owner": "NO_LIVE_OWNER",
+   "classification": "REMOVE_STALE_LOCAL",
+   "live_owner2": "NO_LIVE_OWNER",
+   "live_refs": "none (only agent backup copies)"
+  },
+  {
+   "instance": "5D16CD57285E8439",
+   "name": "ironsight_rear",
+   "pivot": "slot_ironsight_rear",
+   "origin": "LOCAL_ADDITION",
+   "references": [
+    "agent/weapon_relocation/magazine_move_backup/Prefabs/Weapons/Russian/Rifle/Groza/armst_Groza_base.et"
+   ],
+   "live_owner": "NO_LIVE_OWNER",
+   "classification": "REMOVE_STALE_LOCAL",
+   "live_owner2": "NO_LIVE_OWNER",
+   "live_refs": "none (only agent backup copies)"
+  }
+ ],
+ "remaining_slots": [
+  "4E2B66CBA589F625"
+ ]
+}

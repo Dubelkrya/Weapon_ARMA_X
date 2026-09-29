@@ -1,0 +1,57 @@
+[
+    {
+        "Module":  "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et",
+        "IIC":  1,
+        "PhysPresent":  false,
+        "PhysW":  "-",
+        "PhysV":  "-",
+        "CharMod":  0,
+        "Preview":  1,
+        "WAA":  1,
+        "WAA_Dup":  false
+    },
+    {
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_Collimator.et",
+        "IIC":  1,
+        "PhysPresent":  true,
+        "PhysW":  "0.6",
+        "PhysV":  "500",
+        "CharMod":  1,
+        "Preview":  1,
+        "WAA":  1,
+        "WAA_Dup":  false
+    },
+    {
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et",
+        "IIC":  1,
+        "PhysPresent":  false,
+        "PhysW":  "-",
+        "PhysV":  "-",
+        "CharMod":  0,
+        "Preview":  0,
+        "WAA":  1,
+        "WAA_Dup":  false
+    },
+    {
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Optic.et",
+        "IIC":  1,
+        "PhysPresent":  false,
+        "PhysW":  "-",
+        "PhysV":  "-",
+        "CharMod":  0,
+        "Preview":  0,
+        "WAA":  1,
+        "WAA_Dup":  false
+    },
+    {
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Picatinny.et",
+        "IIC":  1,
+        "PhysPresent":  false,
+        "PhysW":  "-",
+        "PhysV":  "-",
+        "CharMod":  0,
+        "Preview":  1,
+        "WAA":  1,
+        "WAA_Dup":  false
+    }
+]

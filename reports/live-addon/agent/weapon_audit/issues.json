@@ -1,0 +1,86 @@
+[
+ {
+  "severity": "KNOWN_DEBT",
+  "type": "CASING",
+  "detail": "Casing_762x39_PS.ptc WRONG_FOR_9x39 no proven replacement",
+  "weapon": "armst_Groza_base.et"
+ },
+ {
+  "severity": "INFO",
+  "type": "UNRESOLVED_ASSET",
+  "detail": "{B7869ABD0EEE379D}Assets/Weapons/Rifles/AK74/anims/anm/p_ak74_ik.anm",
+  "weapon": "armst_Rifle_hk_g36.et"
+ },
+ {
+  "severity": "INTENTIONAL",
+  "type": "APPROVED",
+  "detail": "AK74 IK workaround",
+  "weapon": "armst_Rifle_hk_g36.et"
+ },
+ {
+  "severity": "INFO",
+  "type": "UNRESOLVED_ASSET",
+  "detail": "{B7869ABD0EEE379D}Assets/Weapons/Rifles/AK74/anims/anm/p_ak74_ik.anm",
+  "weapon": "armst_SLR.et"
+ },
+ {
+  "severity": "MEDIUM",
+  "type": "KNOW_WORKAROUND_CANDIDATE",
+  "detail": "AK74 IK pose on L1A1 (pre-existing; earlier classified AMBIGUOUS)",
+  "weapon": "armst_SLR.et"
+ },
+ {
+  "severity": "INFO",
+  "type": "UNRESOLVED_ASSET",
+  "detail": "{E7E67E4426E24066}Assets/Weapons/Rifles/workspaces/VZ58.agr",
+  "weapon": "armst_Rifle_Sig550.et"
+ },
+ {
+  "severity": "INFO",
+  "type": "UNRESOLVED_ASSET",
+  "detail": "{FFB391312D0E84C5}Assets/Weapons/Rifles/workspaces/VZ58_weapon.asi",
+  "weapon": "armst_Rifle_Sig550.et"
+ },
+ {
+  "severity": "INFO",
+  "type": "UNRESOLVED_ASSET",
+  "detail": "{E7E67E4426E24066}Assets/Weapons/Rifles/workspaces/VZ58.agr",
+  "weapon": "armst_Rifle_Sig550.et"
+ },
+ {
+  "severity": "INFO",
+  "type": "UNRESOLVED_ASSET",
+  "detail": "{04ED0000B50FE029}Assets/Weapons/Rifles/workspaces/VZ58_player.asi",
+  "weapon": "armst_Rifle_Sig550.et"
+ },
+ {
+  "severity": "HIGH",
+  "type": "ANIMATION_MISMATCH",
+  "detail": "Sign550 animation refs point to VZ58 workspace assets (foreign family) - verify",
+  "weapon": "armst_Rifle_Sig550.et"
+ },
+ {
+  "severity": "INFO",
+  "type": "UNRESOLVED_ASSET",
+  "detail": "{C10E1E127E210526}Assets/Weapons/Rifles/workspaces/m16.agr",
+  "weapon": "armst_Rifle_M16A2.et"
+ },
+ {
+  "severity": "INFO",
+  "type": "UNRESOLVED_ASSET",
+  "detail": "{278604E4583F2647}Assets/Weapons/Rifles/workspaces/m16_weapon.asi",
+  "weapon": "armst_Rifle_M16A2.et"
+ },
+ {
+  "severity": "INFO",
+  "type": "UNRESOLVED_ASSET",
+  "detail": "{C10E1E127E210526}Assets/Weapons/Rifles/workspaces/m16.agr",
+  "weapon": "armst_Rifle_M16A2.et"
+ },
+ {
+  "severity": "INFO",
+  "type": "UNRESOLVED_ASSET",
+  "detail": "{DCD895D5C03E42AB}Assets/Weapons/Rifles/workspaces/m16_player.asi",
+  "weapon": "armst_Rifle_M16A2.et"
+ }
+]

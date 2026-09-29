@@ -1,0 +1,82 @@
+GenericEntity armst_Rifle_HKG33_6A62F895124AFC4E : "{035CFC7DD44455D0}Prefabs/Weapons/Western/Rifles/armst_Rifle_HKG33/armst_Rifle_HKG33.et" {
+ components {
+  WeaponComponent "{CFBAA4B706BA66E8}" {
+   components {
+    MuzzleComponent "{CA6BE4D6B867541F}" {
+     components {
+      AttachmentSlotComponent "{5D527627CCB8F756}" {
+       AttachmentSlot InventoryStorageSlot Muzzle {
+        Enabled 0
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+ coords 128.723 1.963 78.062
+}
+GenericEntity armst_TT_6A62F895124AE6BE : "{0D469F42B65E350E}Prefabs/Weapons/Russian/Handguns/armst_TT/armst_TT.et" {
+ coords 131.424 1.9 77.776
+}
+GenericEntity armst_M9_6A62F895124AD7FB : "{1353C6EAD1DCFE43}Prefabs/Weapons/Western/Handguns/armst_M9/armst_M9.et" {
+ coords 130.7 1.9 77.827
+}
+GenericEntity armst_SR_2_6A62F895124AC2AD : "{31FB2EC4F4AFFC05}Prefabs/Weapons/Russian/Handguns/armst_SR_2/armst_SR_2.et" {
+ coords 131.241 1.9 77.866
+}
+GenericEntity armst_PP91_6A62F895124ABED7 : "{3968B2A856852CBD}Prefabs/Weapons/Handguns/armst_PP91.et" {
+ coords 131.044 1.9 77.82
+}
+GenericEntity armst_Rifle_L85_6A62F895124AABC0 : "{45D3FCA77AF1709B}Prefabs/Weapons/Western/Rifles/armst_Rifle_L85/armst_Rifle_L85.et" {
+ coords 128.914 1.985 78.082
+}
+GenericEntity armst_APB_6A62F895124AA737 : "{5D3DA7E84135B278}Prefabs/Weapons/Russian/Handguns/armst_APB/armst_APB.et" {
+ coords 130.493 1.9 77.84
+}
+GenericEntity : "{6005623D3AA5F5C2}Prefabs/Weapons/Rifles/VSK94/armst_Rifle_VSK94_base.et" {
+ coords 132.752 2.007 78.009
+}
+GenericEntity armst_Rifle_vss_base_6A62F895124A882E : "{902A79E4B2A66E63}Prefabs/Weapons/Rifles/VSS/armst_Rifle_vss_base.et" {
+ coords 132.453 1.972 78.044
+}
+GenericEntity armst_Rifle_hk_g36_6A62F895124979D0 : "{A802C718201D72DF}Prefabs/Weapons/Western/Rifles/armst_Rifle_hk_g36/armst_Rifle_hk_g36.et" {
+ components {
+  WeaponComponent "{CFBAA4B706BA66E8}" {
+   components {
+    MuzzleComponent "{CA6BE4D6B867541F}" {
+     MagazinePosition InventoryStorageSlot "{B80A64F4C834E9CB}" {
+      Offset 0 -0.028 -0.0269
+     }
+    }
+   }
+  }
+ }
+ coords 128.528 2.006 78.045
+}
+GenericEntity armst_AEK971_test_v11_6A62F89512496915 : "{AC198EAC9BDD9841}Prefabs/Weapons/Russian/Rifles/armst_AEK971_test_v11/armst_AEK971_test_v11.et" {
+ coords 132.997 1.9 77.96
+}
+$grp GenericEntity : "{AD31622B73944B43}Prefabs/Props/Furniture/DeskSchool_01.et" {
+ {
+  coords 130.796 1 77.997
+ }
+ {
+  coords 129.234 1 77.994
+ }
+ {
+  coords 132.344 1 77.992
+ }
+}
+GenericEntity armst_PM_6A62F895124932F3 : "{C0F7DD85A86B2900}Prefabs/Weapons/Handguns/armst_PM.et" {
+ coords 130.839 1.9 77.808
+}
+GenericEntity armst_SLR_6A62F89512492FCE : "{C11ED52EAAF856A8}Prefabs/Weapons/Western/Rifles/armst_SLR/armst_SLR.et" {
+ coords 129.07 2.008 78.059
+}
+GenericEntity armst_Rifle_9a91_base_6A62F895124924F0 : "{E2D8F39AE1B9B8F1}Prefabs/Weapons/Rifles/9a91/armst_Rifle_9a91_base.et" {
+ coords 132.846 1.952 78.026
+}
+GenericEntity armst_Rifle_val_base_6A62F895124916AD : "{F25D16BD5F748372}Prefabs/Weapons/Rifles/VAL/armst_Rifle_val_base.et" {
+ coords 132.579 1.967 78.042
+}

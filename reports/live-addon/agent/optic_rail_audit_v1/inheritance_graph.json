@@ -1,0 +1,3521 @@
+[
+    {
+        "Path":  "Prefabs/Particles/Bullet_Case/Bullet_Case_12ga.et",
+        "Guid":  "BE7D3DF00BBB2D6F",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Particles/Bullet_Case/Bullet_Case_12ga.et",
+                          "Guid":  "BE7D3DF00BBB2D6F",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "BE79A6E700CF746A",
+                                       "RefPath":  "Prefabs/Particles/Bullet_Case/Bullet_Case_Base.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Particles/Bullet_Case/Bullet_Case_Base.et",
+                          "Guid":  "BE79A6E700CF746A",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Particles/Bullet_Case/Bullet_Case_12ga_blue.et",
+        "Guid":  "8705B7674FB2F927",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Particles/Bullet_Case/Bullet_Case_12ga_blue.et",
+                          "Guid":  "8705B7674FB2F927",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "BE79A6E700CF746A",
+                                       "RefPath":  "Prefabs/Particles/Bullet_Case/Bullet_Case_Base.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Particles/Bullet_Case/Bullet_Case_Base.et",
+                          "Guid":  "BE79A6E700CF746A",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Ammo/12g/armst_Ammo_12ga.et",
+        "Guid":  "862E8EB633CED07D",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Ammo/12g/armst_Ammo_12ga.et",
+                          "Guid":  "862E8EB633CED07D",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "AC29AE3D5ECD6390",
+                                       "RefPath":  "Prefabs/Weapons/Ammo/Ammo_762x54r_Ball_57N323S.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Ammo/Ammo_762x54r_Ball_57N323S.et",
+                          "Guid":  "AC29AE3D5ECD6390",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Ammo/12g/armst_Ammo_12ga_shell.et",
+        "Guid":  "9F7537128778361F",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Ammo/12g/armst_Ammo_12ga_shell.et",
+                          "Guid":  "9F7537128778361F",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "AC29AE3D5ECD6390",
+                                       "RefPath":  "Prefabs/Weapons/Ammo/Ammo_762x54r_Ball_57N323S.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Ammo/Ammo_762x54r_Ball_57N323S.et",
+                          "Guid":  "AC29AE3D5ECD6390",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Ammo/12g/armst_Ammo_12ga_shell_test.et",
+        "Guid":  "9A2EC4D810705428",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Ammo/12g/armst_Ammo_12ga_shell_test.et",
+                          "Guid":  "9A2EC4D810705428",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "AC29AE3D5ECD6390",
+                                       "RefPath":  "Prefabs/Weapons/Ammo/Ammo_762x54r_Ball_57N323S.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Ammo/Ammo_762x54r_Ball_57N323S.et",
+                          "Guid":  "AC29AE3D5ECD6390",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Ammo/12g/armst_Ammo_Buckshot_pellet.et",
+        "Guid":  "8A45841AC9BA3AE7",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Ammo/12g/armst_Ammo_Buckshot_pellet.et",
+                          "Guid":  "8A45841AC9BA3AE7",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "67FED88E5085F63F",
+                                       "RefPath":  "Prefabs/Weapons/Core/Ammo_Bullet_Base.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Core/Ammo_Bullet_Base.et",
+                          "Guid":  "67FED88E5085F63F",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Ammo/armst_Ammo_9x18_BP.et",
+        "Guid":  "64F210837ACBAF9E",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Ammo/armst_Ammo_9x18_BP.et",
+                          "Guid":  "64F210837ACBAF9E",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "B3010C5DF1ED82ED",
+                                       "RefPath":  "Prefabs/Weapons/Ammo/Ammo_9x18_AP_7N25.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Ammo/Ammo_9x18_AP_7N25.et",
+                          "Guid":  "B3010C5DF1ED82ED",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Ammo/armst_Ammo_9x18_PP.et",
+        "Guid":  "2EECBE22BC8BE0BA",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Ammo/armst_Ammo_9x18_PP.et",
+                          "Guid":  "2EECBE22BC8BE0BA",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "4DE72DF927310A8B",
+                                       "RefPath":  "Prefabs/Weapons/Ammo/Ammo_9x18_Ball_57N181.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Ammo/Ammo_9x18_Ball_57N181.et",
+                          "Guid":  "4DE72DF927310A8B",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Ammo/Eastern/762x39/armst_Ammo_762x39_BP.et",
+        "Guid":  "1785D92E5A104937",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Ammo/Eastern/762x39/armst_Ammo_762x39_BP.et",
+                          "Guid":  "1785D92E5A104937",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "67FED88E5085F63F",
+                                       "RefPath":  "Prefabs/Weapons/Core/Ammo_Bullet_Base.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Core/Ammo_Bullet_Base.et",
+                          "Guid":  "67FED88E5085F63F",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Ammo/Eastern/762x39/armst_Ammo_762x39_PP.et",
+        "Guid":  "3E395A4A4B0C4F0E",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Ammo/Eastern/762x39/armst_Ammo_762x39_PP.et",
+                          "Guid":  "3E395A4A4B0C4F0E",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "67FED88E5085F63F",
+                                       "RefPath":  "Prefabs/Weapons/Core/Ammo_Bullet_Base.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Core/Ammo_Bullet_Base.et",
+                          "Guid":  "67FED88E5085F63F",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Ammo/Russian/763x25/armst_Ammo_763x25.et",
+        "Guid":  "8221593DFA48E4B3",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Ammo/Russian/763x25/armst_Ammo_763x25.et",
+                          "Guid":  "8221593DFA48E4B3",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "AC29AE3D5ECD6390",
+                                       "RefPath":  "Prefabs/Weapons/Ammo/Ammo_762x54r_Ball_57N323S.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Ammo/Ammo_762x54r_Ball_57N323S.et",
+                          "Guid":  "AC29AE3D5ECD6390",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Ammo/Russian/763x25/armst_Ammo_763x25_Ball.et",
+        "Guid":  "5AE7AF31B9D7EB6C",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Ammo/Russian/763x25/armst_Ammo_763x25_Ball.et",
+                          "Guid":  "5AE7AF31B9D7EB6C",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "67FED88E5085F63F",
+                                       "RefPath":  "Prefabs/Weapons/Core/Ammo_Bullet_Base.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Core/Ammo_Bullet_Base.et",
+                          "Guid":  "67FED88E5085F63F",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Ammo/Russian/9x39/armst_Ammo_9x39_SP5_Ball.et",
+        "Guid":  "2CB8EAD4A52F3290",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Ammo/Russian/9x39/armst_Ammo_9x39_SP5_Ball.et",
+                          "Guid":  "2CB8EAD4A52F3290",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "AC29AE3D5ECD6390",
+                                       "RefPath":  "Prefabs/Weapons/Ammo/Ammo_762x54r_Ball_57N323S.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Ammo/Ammo_762x54r_Ball_57N323S.et",
+                          "Guid":  "AC29AE3D5ECD6390",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Ammo/Russian/9x39/armst_Ammo_9x39_SP6_Ball.et",
+        "Guid":  "FB468B29C75FE46A",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Ammo/Russian/9x39/armst_Ammo_9x39_SP6_Ball.et",
+                          "Guid":  "FB468B29C75FE46A",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "AC29AE3D5ECD6390",
+                                       "RefPath":  "Prefabs/Weapons/Ammo/Ammo_762x54r_Ball_57N323S.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Ammo/Ammo_762x54r_Ball_57N323S.et",
+                          "Guid":  "AC29AE3D5ECD6390",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Ammo/Russian/grenade/armst_Ammo_Grenade_HE_VOG25.et",
+        "Guid":  "262F0D09C4130826",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Ammo/Russian/grenade/armst_Ammo_Grenade_HE_VOG25.et",
+                          "Guid":  "262F0D09C4130826",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "D40A105437369C1D",
+                                       "RefPath":  "Prefabs/Weapons/Core/Ammo_GrenadeLauncher_Base.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Core/Ammo_GrenadeLauncher_Base.et",
+                          "Guid":  "D40A105437369C1D",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Ammo/Western/5x56/armst_Ammo_556x45_BP.et",
+        "Guid":  "716F41EFBBB14F9C",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Ammo/Western/5x56/armst_Ammo_556x45_BP.et",
+                          "Guid":  "716F41EFBBB14F9C",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "AC26AB660097633D",
+                                       "RefPath":  "Prefabs/Weapons/Ammo/Ammo_556x45_Ball_M855.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Ammo/Ammo_556x45_Ball_M855.et",
+                          "Guid":  "AC26AB660097633D",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Ammo/Western/5x56/armst_Ammo_556x45_PP.et",
+        "Guid":  "62FA6A6363394955",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Ammo/Western/5x56/armst_Ammo_556x45_PP.et",
+                          "Guid":  "62FA6A6363394955",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "AC26AB660097633D",
+                                       "RefPath":  "Prefabs/Weapons/Ammo/Ammo_556x45_Ball_M855.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Ammo/Ammo_556x45_Ball_M855.et",
+                          "Guid":  "AC26AB660097633D",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Ammo/Western/762x51/armst_Ammo_762x51_BP.et",
+        "Guid":  "647D4F418F9F4655",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Ammo/Western/762x51/armst_Ammo_762x51_BP.et",
+                          "Guid":  "647D4F418F9F4655",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "9F39DD07E2860466",
+                                       "RefPath":  "Prefabs/Weapons/Ammo/Ammo_762x51_AP_M61.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Ammo/Ammo_762x51_AP_M61.et",
+                          "Guid":  "9F39DD07E2860466",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Ammo/Western/762x51/armst_Ammo_762x51_PP.et",
+        "Guid":  "8FAC2EB7CA474E5E",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Ammo/Western/762x51/armst_Ammo_762x51_PP.et",
+                          "Guid":  "8FAC2EB7CA474E5E",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "C14C5DE6F97F06F0",
+                                       "RefPath":  "Prefabs/Weapons/Ammo/Ammo_762x51_Ball_M80.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Ammo/Ammo_762x51_Ball_M80.et",
+                          "Guid":  "C14C5DE6F97F06F0",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Ammo/Western/9x19/armst_Ammo_9x19_BP.et",
+        "Guid":  "9F5580C950084760",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Ammo/Western/9x19/armst_Ammo_9x19_BP.et",
+                          "Guid":  "9F5580C950084760",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "7687761020B01947",
+                                       "RefPath":  "Prefabs/Weapons/Ammo/Ammo_9x19_AP_7N21.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Ammo/Ammo_9x19_AP_7N21.et",
+                          "Guid":  "7687761020B01947",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Ammo/Western/9x19/armst_Ammo_9x19_PP.et",
+        "Guid":  "DFADF7628FAC4A05",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Ammo/Western/9x19/armst_Ammo_9x19_PP.et",
+                          "Guid":  "DFADF7628FAC4A05",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "9DA944F4D6A611BA",
+                                       "RefPath":  "Prefabs/Weapons/Ammo/Ammo_9x19_HP_JHP.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Ammo/Ammo_9x19_HP_JHP.et",
+                          "Guid":  "9DA944F4D6A611BA",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Attachments/Handguards/armst_Handguard_AK74M2.et",
+        "Guid":  "7851F29BDAAAD7DB",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Attachments/Handguards/armst_Handguard_AK74M2.et",
+                          "Guid":  "7851F29BDAAAD7DB",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "5E36B9F5B54CDA2E",
+                                       "RefPath":  "Prefabs/Weapons/Attachments/Handguards/Handguard_M16_carbine/Handguard_M16_carbine_base.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Attachments/Handguards/Handguard_M16_carbine/Handguard_M16_carbine_base.et",
+                          "Guid":  "5E36B9F5B54CDA2E",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Attachments/Muzzle/armst_Suppressor_9a91.et",
+        "Guid":  "E10F09941AF1E123",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Attachments/Muzzle/armst_Suppressor_9a91.et",
+                          "Guid":  "E10F09941AF1E123",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "5677861A692ED3EB",
+                                       "RefPath":  "Prefabs/Weapons/Attachments/Muzzle/Suppressor_PBS4/Suppressor_PBS4_base.et",
+                                       "Mechanism":  "GUID_EXACT",
+                                       "RegisteredGuid":  "5677861A692ED3EB"
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Attachments/Muzzle/Suppressor_PBS4/Suppressor_PBS4_base.et",
+                          "Guid":  "5677861A692ED3EB",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "491CEF88656BE6C2",
+                                       "RefPath":  "Prefabs/Weapons/Core/Suppressor_base.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Core/Suppressor_base.et",
+                          "Guid":  "491CEF88656BE6C2",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Attachments/Muzzle/Suppressor_PBS4/Suppressor_PBS4_base.et",
+        "Guid":  "5677861A692ED3EB",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Attachments/Muzzle/Suppressor_PBS4/Suppressor_PBS4_base.et",
+                          "Guid":  "5677861A692ED3EB",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "491CEF88656BE6C2",
+                                       "RefPath":  "Prefabs/Weapons/Core/Suppressor_base.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Core/Suppressor_base.et",
+                          "Guid":  "491CEF88656BE6C2",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et",
+        "Guid":  "D71FD2BD68AC4B31",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et",
+                          "Guid":  "D71FD2BD68AC4B31",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "0A9CD090EE3440E7",
+                                       "RefPath":  "Prefabs/Weapons/Core/WeaponPart_Base.et",
+                                       "Mechanism":  "VANILLA_KB",
+                                       "RegisteredGuid":  "0A9CD090EE3440E7"
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Core/WeaponPart_Base.et",
+                          "Guid":  "0A9CD090EE3440E7",
+                          "Kind":  "VANILLA",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_Collimator.et",
+        "Guid":  "28DE12055E70E762",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_Collimator.et",
+                          "Guid":  "28DE12055E70E762",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "78689FF321194268",
+                                       "RefPath":  "Prefabs/Weapons/Attachments/Optics/WeaponCollimator_Base.et",
+                                       "Mechanism":  "VANILLA_KB",
+                                       "RegisteredGuid":  "78689FF321194268"
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Attachments/Optics/WeaponCollimator_Base.et",
+                          "Guid":  "78689FF321194268",
+                          "Kind":  "VANILLA",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et",
+        "Guid":  "C850A33226B8F9C1",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et",
+                          "Guid":  "C850A33226B8F9C1",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "AB71C533945104AE",
+                                       "RefPath":  "Prefabs/Weapons/Attachments/Optics/Optic_PSO1/Optic_PSO1_base.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Attachments/Optics/Optic_PSO1/Optic_PSO1_base.et",
+                          "Guid":  "AB71C533945104AE",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Optic.et",
+        "Guid":  null,
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Optic.et",
+                          "Guid":  null,
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "966B4E5523D2F166",
+                                       "RefPath":  "Prefabs/Weapons/Attachments/Optics/WeaponOptic_Base.et",
+                                       "Mechanism":  "GUID_EXACT",
+                                       "RegisteredGuid":  "966B4E5523D2F166"
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Attachments/Optics/WeaponOptic_Base.et",
+                          "Guid":  "966B4E5523D2F166",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "3E15C1C882DBB587",
+                                       "RefPath":  "Prefabs/Weapons/Core/WeaponSight_Base.et",
+                                       "Mechanism":  "VANILLA_KB",
+                                       "RegisteredGuid":  "3E15C1C882DBB587"
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Core/WeaponSight_Base.et",
+                          "Guid":  "3E15C1C882DBB587",
+                          "Kind":  "VANILLA",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Picatinny.et",
+        "Guid":  "8965EFD9F6CC9B95",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Picatinny.et",
+                          "Guid":  "8965EFD9F6CC9B95",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "C3DAB8D1B6068170",
+                                       "RefPath":  "Prefabs/Weapons/Core/WeaponPart_Base.et",
+                                       "Mechanism":  "VANILLA_KB",
+                                       "RegisteredGuid":  "C3DAB8D1B6068170"
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Core/WeaponPart_Base.et",
+                          "Guid":  "C3DAB8D1B6068170",
+                          "Kind":  "VANILLA",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Attachments/Optics/Optic_1P29/armst_Optic_1P29.et",
+        "Guid":  "952D9BD7B6F8F591",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Attachments/Optics/Optic_1P29/armst_Optic_1P29.et",
+                          "Guid":  "952D9BD7B6F8F591",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "0745A57C37C15101",
+                                       "RefPath":  "Prefabs/Weapons/Attachments/Optics/Optic_1P29/Optic_1P29_base.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Attachments/Optics/Optic_1P29/Optic_1P29_base.et",
+                          "Guid":  "0745A57C37C15101",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Attachments/Optics/WeaponOptic_Base.et",
+        "Guid":  "966B4E5523D2F166",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Attachments/Optics/WeaponOptic_Base.et",
+                          "Guid":  "966B4E5523D2F166",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "3E15C1C882DBB587",
+                                       "RefPath":  "Prefabs/Weapons/Core/WeaponSight_Base.et",
+                                       "Mechanism":  "VANILLA_KB",
+                                       "RegisteredGuid":  "3E15C1C882DBB587"
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Core/WeaponSight_Base.et",
+                          "Guid":  "3E15C1C882DBB587",
+                          "Kind":  "VANILLA",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Attachments/Stocks/armst_Handguard_AK74M.et",
+        "Guid":  "FCE52BA4B5789E65",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Attachments/Stocks/armst_Handguard_AK74M.et",
+                          "Guid":  "FCE52BA4B5789E65",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "5E36B9F5B54CDA2E",
+                                       "RefPath":  "Prefabs/Weapons/Attachments/Handguards/Handguard_M16_carbine/Handguard_M16_carbine_base.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Attachments/Handguards/Handguard_M16_carbine/Handguard_M16_carbine_base.et",
+                          "Guid":  "5E36B9F5B54CDA2E",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Attachments/Stocks/armst_Handguard_AKS.et",
+        "Guid":  "31E8EF2214161A25",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Attachments/Stocks/armst_Handguard_AKS.et",
+                          "Guid":  "31E8EF2214161A25",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "5E36B9F5B54CDA2E",
+                                       "RefPath":  "Prefabs/Weapons/Attachments/Handguards/Handguard_M16_carbine/Handguard_M16_carbine_base.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Attachments/Handguards/Handguard_M16_carbine/Handguard_M16_carbine_base.et",
+                          "Guid":  "5E36B9F5B54CDA2E",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Attachments/Stocks/armst_Stock_akm.et",
+        "Guid":  "B0E764B069F6A153",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Attachments/Stocks/armst_Stock_akm.et",
+                          "Guid":  "B0E764B069F6A153",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "2DBBEA8AE9BD2C36",
+                                       "RefPath":  "Prefabs/Weapons/Attachments/Stocks/Stock_VZ58/Stock_VZ58_base.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Attachments/Stocks/Stock_VZ58/Stock_VZ58_base.et",
+                          "Guid":  "2DBBEA8AE9BD2C36",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Attachments/Underbarrel/armst_UGL_GP25.et",
+        "Guid":  "1ABABE3551512B0A",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Attachments/Underbarrel/armst_UGL_GP25.et",
+                          "Guid":  "1ABABE3551512B0A",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "8A820ADCE8D05357",
+                                       "RefPath":  "Prefabs/Weapons/Core/UGL_Base.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Core/UGL_Base.et",
+                          "Guid":  "8A820ADCE8D05357",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Core/Grenade_Base.et",
+        "Guid":  "D7EB24176E5CEAA6",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Core/Grenade_Base.et",
+                          "Guid":  "D7EB24176E5CEAA6",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "A9EF01A7A6FE60CD",
+                                       "RefPath":  "Prefabs/Weapons/Core/Throw_Base.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Core/Throw_Base.et",
+                          "Guid":  "A9EF01A7A6FE60CD",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Core/Magazine_Base.et",
+        "Guid":  "F9E1A46E3ABA116F",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Core/Magazine_Base.et",
+                          "Guid":  "F9E1A46E3ABA116F",
+                          "Kind":  "LOCAL",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Core/Rifle_Base.et",
+        "Guid":  "911D6C8DC7BA2D63",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Core/Rifle_Base.et",
+                          "Guid":  "911D6C8DC7BA2D63",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "E1F14DB52DBFBC57",
+                                       "RefPath":  "Prefabs/Weapons/Core/Weapon_Base.et",
+                                       "Mechanism":  "GUID_EXACT",
+                                       "RegisteredGuid":  "E1F14DB52DBFBC57"
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Core/Weapon_Base.et",
+                          "Guid":  "E1F14DB52DBFBC57",
+                          "Kind":  "LOCAL",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Core/Weapon_Base.et",
+        "Guid":  "E1F14DB52DBFBC57",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Core/Weapon_Base.et",
+                          "Guid":  "E1F14DB52DBFBC57",
+                          "Kind":  "LOCAL",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Grenades/armst_Grenade_M67.et",
+        "Guid":  "E8F00BF730225B00",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Grenades/armst_Grenade_M67.et",
+                          "Guid":  "E8F00BF730225B00",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "8B55F8686833B12B",
+                                       "RefPath":  "Prefabs/Weapons/Core/FragGrenade_Base.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Core/FragGrenade_Base.et",
+                          "Guid":  "8B55F8686833B12B",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Grenades/armst_Grenade_RGD5.et",
+        "Guid":  "645C73791ECA1698",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Grenades/armst_Grenade_RGD5.et",
+                          "Guid":  "645C73791ECA1698",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "8B55F8686833B12B",
+                                       "RefPath":  "Prefabs/Weapons/Core/FragGrenade_Base.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Core/FragGrenade_Base.et",
+                          "Guid":  "8B55F8686833B12B",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Grenades/armst_Smoke_ANM8HC.et",
+        "Guid":  "9DB69176CEF0EE97",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Grenades/armst_Smoke_ANM8HC.et",
+                          "Guid":  "9DB69176CEF0EE97",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "0DCE9A9A4F31BE1C",
+                                       "RefPath":  "Prefabs/Weapons/Core/SmokeGrenade_Base.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Core/SmokeGrenade_Base.et",
+                          "Guid":  "0DCE9A9A4F31BE1C",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Grenades/armst_Smoke_RDG2.et",
+        "Guid":  "77EAE5E07DC4678A",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Grenades/armst_Smoke_RDG2.et",
+                          "Guid":  "77EAE5E07DC4678A",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "0DCE9A9A4F31BE1C",
+                                       "RefPath":  "Prefabs/Weapons/Core/SmokeGrenade_Base.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Core/SmokeGrenade_Base.et",
+                          "Guid":  "0DCE9A9A4F31BE1C",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Handguns/armst_Handgun_Knife_base.et",
+        "Guid":  "26ADE11C416B3840",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Handguns/armst_Handgun_Knife_base.et",
+                          "Guid":  "26ADE11C416B3840",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "EE7028E9DF49763A",
+                                       "RefPath":  "Prefabs/Weapons/Core/Handgun_Base.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Core/Handgun_Base.et",
+                          "Guid":  "EE7028E9DF49763A",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/12ga/12ga_Buckshot_base.et",
+        "Guid":  "9F9380F5E2ECAF59",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/12ga/12ga_Buckshot_base.et",
+                          "Guid":  "9F9380F5E2ECAF59",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "6D18CC33708EE712",
+                                       "RefPath":  "Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et",
+                          "Guid":  "6D18CC33708EE712",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/12ga/armst_12ga_Buckshot.et",
+        "Guid":  "B0DFDF7AAA9C5D39",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/12ga/armst_12ga_Buckshot.et",
+                          "Guid":  "B0DFDF7AAA9C5D39",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "9F9380F5E2ECAF59",
+                                       "RefPath":  "Prefabs/Weapons/Magazines/12ga/12ga_Buckshot_base.et",
+                                       "Mechanism":  "PATH_FALLBACK_ONLY",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/12ga/12ga_Buckshot_base.et",
+                          "Guid":  "9F9380F5E2ECAF59",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "6D18CC33708EE712",
+                                       "RefPath":  "Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et",
+                          "Guid":  "6D18CC33708EE712",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/12ga/armst_12ga_Shell.et",
+        "Guid":  "0346C78F29531C70",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/12ga/armst_12ga_Shell.et",
+                          "Guid":  "0346C78F29531C70",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "6D18CC33708EE712",
+                                       "RefPath":  "Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et",
+                          "Guid":  "6D18CC33708EE712",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/12ga/armst_12ga_Shell_test.et",
+        "Guid":  "5220A773A621C2BB",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/12ga/armst_12ga_Shell_test.et",
+                          "Guid":  "5220A773A621C2BB",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "6D18CC33708EE712",
+                                       "RefPath":  "Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et",
+                          "Guid":  "6D18CC33708EE712",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_AK_30rnd_Ball.et",
+        "Guid":  "BBB50A815A2F916B",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_AK_30rnd_Ball.et",
+                          "Guid":  "BBB50A815A2F916B",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "63C1E699345B24F9",
+                                       "RefPath":  "Prefabs/Weapons/Magazines/Russian/5x45/AK74/Magazine_545x39_AK_30rnd_Base.et",
+                                       "Mechanism":  "PATH_FALLBACK_ONLY",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Russian/5x45/AK74/Magazine_545x39_AK_30rnd_Base.et",
+                          "Guid":  "63C1E699345B24F9",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "F9E1A46E3ABA116F",
+                                       "RefPath":  "Prefabs/Weapons/Core/Magazine_Base.et",
+                                       "Mechanism":  "GUID_EXACT",
+                                       "RegisteredGuid":  "F9E1A46E3ABA116F"
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Core/Magazine_Base.et",
+                          "Guid":  "F9E1A46E3ABA116F",
+                          "Kind":  "LOCAL",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_AK_30rnd_Tracer.et",
+        "Guid":  "E5912E45754CD421",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_AK_30rnd_Tracer.et",
+                          "Guid":  "E5912E45754CD421",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "63C1E699345B24F9",
+                                       "RefPath":  "Prefabs/Weapons/Magazines/Russian/5x45/AK74/Magazine_545x39_AK_30rnd_Base.et",
+                                       "Mechanism":  "PATH_FALLBACK_ONLY",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Russian/5x45/AK74/Magazine_545x39_AK_30rnd_Base.et",
+                          "Guid":  "63C1E699345B24F9",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "F9E1A46E3ABA116F",
+                                       "RefPath":  "Prefabs/Weapons/Core/Magazine_Base.et",
+                                       "Mechanism":  "GUID_EXACT",
+                                       "RegisteredGuid":  "F9E1A46E3ABA116F"
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Core/Magazine_Base.et",
+                          "Guid":  "F9E1A46E3ABA116F",
+                          "Kind":  "LOCAL",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_RPK_45rnd_Ball.et",
+        "Guid":  "BC74DAC891D48540",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_RPK_45rnd_Ball.et",
+                          "Guid":  "BC74DAC891D48540",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "9569026177545A20",
+                                       "RefPath":  "Prefabs/Weapons/Magazines/Magazine_545x39_RPK_45rnd_Base.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Magazine_545x39_RPK_45rnd_Base.et",
+                          "Guid":  "9569026177545A20",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_RPK_45rnd_Tracer.et",
+        "Guid":  "5897D01F41DB5D2D",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_RPK_45rnd_Tracer.et",
+                          "Guid":  "5897D01F41DB5D2D",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "9569026177545A20",
+                                       "RefPath":  "Prefabs/Weapons/Magazines/Magazine_545x39_RPK_45rnd_Base.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Magazine_545x39_RPK_45rnd_Base.et",
+                          "Guid":  "9569026177545A20",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Russian/5x45/AK74/Magazine_545x39_AK_30rnd_Base.et",
+        "Guid":  "63C1E699345B24F9",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Russian/5x45/AK74/Magazine_545x39_AK_30rnd_Base.et",
+                          "Guid":  "63C1E699345B24F9",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "F9E1A46E3ABA116F",
+                                       "RefPath":  "Prefabs/Weapons/Core/Magazine_Base.et",
+                                       "Mechanism":  "GUID_EXACT",
+                                       "RegisteredGuid":  "F9E1A46E3ABA116F"
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Core/Magazine_Base.et",
+                          "Guid":  "F9E1A46E3ABA116F",
+                          "Kind":  "LOCAL",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Russian/762x54/SVD/armst_Box_762x54_PK_250rnd_Ball.et",
+        "Guid":  "1C260E65B7F290BA",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Russian/762x54/SVD/armst_Box_762x54_PK_250rnd_Ball.et",
+                          "Guid":  "1C260E65B7F290BA",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "D99AF37E07F32ECB",
+                                       "RefPath":  "Prefabs/Weapons/Magazines/Box_762x54_PK_250rnd_Base.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Box_762x54_PK_250rnd_Base.et",
+                          "Guid":  "D99AF37E07F32ECB",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Russian/762x54/SVD/armst_Magazine_762x54_SVD_10rnd_7BZ3API.et",
+        "Guid":  "19600CCA33279D20",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Russian/762x54/SVD/armst_Magazine_762x54_SVD_10rnd_7BZ3API.et",
+                          "Guid":  "19600CCA33279D20",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "761A03A9C5BA8D68",
+                                       "RefPath":  "Prefabs/Weapons/Magazines/Magazine_762x54_SVD_10rnd_Base.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Magazine_762x54_SVD_10rnd_Base.et",
+                          "Guid":  "761A03A9C5BA8D68",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Russian/763x25/TT/armst_Magazine_763x25_TT_8rnd_Ball.et",
+        "Guid":  "AA99F5E678010DB3",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Russian/763x25/TT/armst_Magazine_763x25_TT_8rnd_Ball.et",
+                          "Guid":  "AA99F5E678010DB3",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "8B853CDD11BA916E",
+                                       "RefPath":  "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball.et",
+                                       "Mechanism":  "GUID_EXACT",
+                                       "RegisteredGuid":  "8B853CDD11BA916E"
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball.et",
+                          "Guid":  "8B853CDD11BA916E",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "9B5AA2C731485ACA",
+                                       "RefPath":  "Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Base.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Base.et",
+                          "Guid":  "9B5AA2C731485ACA",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_10rnd_Ball.et",
+        "Guid":  "07805AE177F52646",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_10rnd_Ball.et",
+                          "Guid":  "07805AE177F52646",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "48720FC416263FC1",
+                                       "RefPath":  "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_30rnd_Ball.et",
+                                       "Mechanism":  "PATH_FALLBACK_ONLY",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_30rnd_Ball.et",
+                          "Guid":  "48720FC416263FC1",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "892F30500E6E7E04",
+                                       "RefPath":  "Prefabs/Weapons/Magazines/Vz58/Magazine_762x39_Vz58_30rnd_Base.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Vz58/Magazine_762x39_Vz58_30rnd_Base.et",
+                          "Guid":  "892F30500E6E7E04",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_10rnd_Ball_BP.et",
+        "Guid":  "7882EC8AE9CD4CF3",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_10rnd_Ball_BP.et",
+                          "Guid":  "7882EC8AE9CD4CF3",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "48720FC416263FC1",
+                                       "RefPath":  "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_30rnd_Ball.et",
+                                       "Mechanism":  "PATH_FALLBACK_ONLY",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_30rnd_Ball.et",
+                          "Guid":  "48720FC416263FC1",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "892F30500E6E7E04",
+                                       "RefPath":  "Prefabs/Weapons/Magazines/Vz58/Magazine_762x39_Vz58_30rnd_Base.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Vz58/Magazine_762x39_Vz58_30rnd_Base.et",
+                          "Guid":  "892F30500E6E7E04",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_30rnd_Ball.et",
+        "Guid":  "48720FC416263FC1",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_30rnd_Ball.et",
+                          "Guid":  "48720FC416263FC1",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "892F30500E6E7E04",
+                                       "RefPath":  "Prefabs/Weapons/Magazines/Vz58/Magazine_762x39_Vz58_30rnd_Base.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Vz58/Magazine_762x39_Vz58_30rnd_Base.et",
+                          "Guid":  "892F30500E6E7E04",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_30rnd_Ball_BP.et",
+        "Guid":  "21BD2CA7421B4D5C",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_30rnd_Ball_BP.et",
+                          "Guid":  "21BD2CA7421B4D5C",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "892F30500E6E7E04",
+                                       "RefPath":  "Prefabs/Weapons/Magazines/Vz58/Magazine_762x39_Vz58_30rnd_Base.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Vz58/Magazine_762x39_Vz58_30rnd_Base.et",
+                          "Guid":  "892F30500E6E7E04",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_APB_20rnd_Ball.et",
+        "Guid":  "389EB226473CD590",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_APB_20rnd_Ball.et",
+                          "Guid":  "389EB226473CD590",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "8B853CDD11BA916E",
+                                       "RefPath":  "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball.et",
+                                       "Mechanism":  "GUID_EXACT",
+                                       "RegisteredGuid":  "8B853CDD11BA916E"
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball.et",
+                          "Guid":  "8B853CDD11BA916E",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "9B5AA2C731485ACA",
+                                       "RefPath":  "Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Base.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Base.et",
+                          "Guid":  "9B5AA2C731485ACA",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_APB_20rnd_Ball_BP.et",
+        "Guid":  "A67F38168B64541A",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_APB_20rnd_Ball_BP.et",
+                          "Guid":  "A67F38168B64541A",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "8B853CDD11BA916E",
+                                       "RefPath":  "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball.et",
+                                       "Mechanism":  "GUID_EXACT",
+                                       "RegisteredGuid":  "8B853CDD11BA916E"
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball.et",
+                          "Guid":  "8B853CDD11BA916E",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "9B5AA2C731485ACA",
+                                       "RefPath":  "Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Base.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Base.et",
+                          "Guid":  "9B5AA2C731485ACA",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball.et",
+        "Guid":  "8B853CDD11BA916E",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball.et",
+                          "Guid":  "8B853CDD11BA916E",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "9B5AA2C731485ACA",
+                                       "RefPath":  "Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Base.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Base.et",
+                          "Guid":  "9B5AA2C731485ACA",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball_BP.et",
+        "Guid":  "44EF59B51DB21EA9",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball_BP.et",
+                          "Guid":  "44EF59B51DB21EA9",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "9B5AA2C731485ACA",
+                                       "RefPath":  "Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Base.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Base.et",
+                          "Guid":  "9B5AA2C731485ACA",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball_PP.et",
+        "Guid":  "75B5C65F2DA68A01",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball_PP.et",
+                          "Guid":  "75B5C65F2DA68A01",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "9B5AA2C731485ACA",
+                                       "RefPath":  "Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Base.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Base.et",
+                          "Guid":  "9B5AA2C731485ACA",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PP91_30rnd_Ball.et",
+        "Guid":  "4488C415F3CA1890",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PP91_30rnd_Ball.et",
+                          "Guid":  "4488C415F3CA1890",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "8B853CDD11BA916E",
+                                       "RefPath":  "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball.et",
+                                       "Mechanism":  "GUID_EXACT",
+                                       "RegisteredGuid":  "8B853CDD11BA916E"
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball.et",
+                          "Guid":  "8B853CDD11BA916E",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "9B5AA2C731485ACA",
+                                       "RefPath":  "Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Base.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Base.et",
+                          "Guid":  "9B5AA2C731485ACA",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PP91_30rnd_Ball_BP.et",
+        "Guid":  "318796D9FD213751",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PP91_30rnd_Ball_BP.et",
+                          "Guid":  "318796D9FD213751",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "8B853CDD11BA916E",
+                                       "RefPath":  "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball.et",
+                                       "Mechanism":  "GUID_EXACT",
+                                       "RegisteredGuid":  "8B853CDD11BA916E"
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball.et",
+                          "Guid":  "8B853CDD11BA916E",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "9B5AA2C731485ACA",
+                                       "RefPath":  "Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Base.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Base.et",
+                          "Guid":  "9B5AA2C731485ACA",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_SR2_30rnd_Ball.et",
+        "Guid":  "2610CA8D8632DEF4",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_SR2_30rnd_Ball.et",
+                          "Guid":  "2610CA8D8632DEF4",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "8B853CDD11BA916E",
+                                       "RefPath":  "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball.et",
+                                       "Mechanism":  "GUID_EXACT",
+                                       "RegisteredGuid":  "8B853CDD11BA916E"
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball.et",
+                          "Guid":  "8B853CDD11BA916E",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "9B5AA2C731485ACA",
+                                       "RefPath":  "Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Base.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Base.et",
+                          "Guid":  "9B5AA2C731485ACA",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Russian/9x39/9a91/armst_Magazine_9x39_20rnd_9a91_SP5.et",
+        "Guid":  "B7EC6D4222AE12BE",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Russian/9x39/9a91/armst_Magazine_9x39_20rnd_9a91_SP5.et",
+                          "Guid":  "B7EC6D4222AE12BE",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "F9E1A46E3ABA116F",
+                                       "RefPath":  "Prefabs/Weapons/Core/Magazine_Base.et",
+                                       "Mechanism":  "GUID_EXACT",
+                                       "RegisteredGuid":  "F9E1A46E3ABA116F"
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Core/Magazine_Base.et",
+                          "Guid":  "F9E1A46E3ABA116F",
+                          "Kind":  "LOCAL",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Russian/9x39/9a91/armst_Magazine_9x39_20rnd_9a91_SP6.et",
+        "Guid":  "3F47C33B88171646",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Russian/9x39/9a91/armst_Magazine_9x39_20rnd_9a91_SP6.et",
+                          "Guid":  "3F47C33B88171646",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "F9E1A46E3ABA116F",
+                                       "RefPath":  "Prefabs/Weapons/Core/Magazine_Base.et",
+                                       "Mechanism":  "GUID_EXACT",
+                                       "RegisteredGuid":  "F9E1A46E3ABA116F"
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Core/Magazine_Base.et",
+                          "Guid":  "F9E1A46E3ABA116F",
+                          "Kind":  "LOCAL",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Russian/9x39/Groza/armst_Magazine_9x39_Groza_20rnd_SP5.et",
+        "Guid":  "77215B3A185D1EFD",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Russian/9x39/Groza/armst_Magazine_9x39_Groza_20rnd_SP5.et",
+                          "Guid":  "77215B3A185D1EFD",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "F9E1A46E3ABA116F",
+                                       "RefPath":  "Prefabs/Weapons/Core/Magazine_Base.et",
+                                       "Mechanism":  "GUID_EXACT",
+                                       "RegisteredGuid":  "F9E1A46E3ABA116F"
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Core/Magazine_Base.et",
+                          "Guid":  "F9E1A46E3ABA116F",
+                          "Kind":  "LOCAL",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Russian/9x39/Groza/armst_Magazine_9x39_Groza_20rnd_SP6.et",
+        "Guid":  "168348351F5C3F54",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Russian/9x39/Groza/armst_Magazine_9x39_Groza_20rnd_SP6.et",
+                          "Guid":  "168348351F5C3F54",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "F9E1A46E3ABA116F",
+                                       "RefPath":  "Prefabs/Weapons/Core/Magazine_Base.et",
+                                       "Mechanism":  "GUID_EXACT",
+                                       "RegisteredGuid":  "F9E1A46E3ABA116F"
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Core/Magazine_Base.et",
+                          "Guid":  "F9E1A46E3ABA116F",
+                          "Kind":  "LOCAL",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_20rnd_vss_SP5.et",
+        "Guid":  "70D023F899C9C226",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_20rnd_vss_SP5.et",
+                          "Guid":  "70D023F899C9C226",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "F9E1A46E3ABA116F",
+                                       "RefPath":  "Prefabs/Weapons/Core/Magazine_Base.et",
+                                       "Mechanism":  "GUID_EXACT",
+                                       "RegisteredGuid":  "F9E1A46E3ABA116F"
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Core/Magazine_Base.et",
+                          "Guid":  "F9E1A46E3ABA116F",
+                          "Kind":  "LOCAL",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_20rnd_vss_SP6.et",
+        "Guid":  "51E9CE2EB27B3DBD",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_20rnd_vss_SP6.et",
+                          "Guid":  "51E9CE2EB27B3DBD",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "F9E1A46E3ABA116F",
+                                       "RefPath":  "Prefabs/Weapons/Core/Magazine_Base.et",
+                                       "Mechanism":  "GUID_EXACT",
+                                       "RegisteredGuid":  "F9E1A46E3ABA116F"
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Core/Magazine_Base.et",
+                          "Guid":  "F9E1A46E3ABA116F",
+                          "Kind":  "LOCAL",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_30rnd_val_SP5.et",
+        "Guid":  "6C22F58BBF5D6AED",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_30rnd_val_SP5.et",
+                          "Guid":  "6C22F58BBF5D6AED",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "F9E1A46E3ABA116F",
+                                       "RefPath":  "Prefabs/Weapons/Core/Magazine_Base.et",
+                                       "Mechanism":  "GUID_EXACT",
+                                       "RegisteredGuid":  "F9E1A46E3ABA116F"
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Core/Magazine_Base.et",
+                          "Guid":  "F9E1A46E3ABA116F",
+                          "Kind":  "LOCAL",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_30rnd_val_SP6.et",
+        "Guid":  "6CBF1E50EB22F09B",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_30rnd_val_SP6.et",
+                          "Guid":  "6CBF1E50EB22F09B",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "F9E1A46E3ABA116F",
+                                       "RefPath":  "Prefabs/Weapons/Core/Magazine_Base.et",
+                                       "Mechanism":  "GUID_EXACT",
+                                       "RegisteredGuid":  "F9E1A46E3ABA116F"
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Core/Magazine_Base.et",
+                          "Guid":  "F9E1A46E3ABA116F",
+                          "Kind":  "LOCAL",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Western/5x56/HKG36/armst_Magazine_556x45_HKG36.et",
+        "Guid":  "969F6FFF810D2145",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Western/5x56/HKG36/armst_Magazine_556x45_HKG36.et",
+                          "Guid":  "969F6FFF810D2145",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "FB5EB0F6D447E859",
+                                       "RefPath":  "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M193_Ball.et",
+                                       "Mechanism":  "GUID_EXACT",
+                                       "RegisteredGuid":  "FB5EB0F6D447E859"
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M193_Ball.et",
+                          "Guid":  "FB5EB0F6D447E859",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "FB5EB0F6D447E858",
+                                       "RefPath":  "Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M193_Ball.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M193_Ball.et",
+                          "Guid":  "FB5EB0F6D447E858",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Western/5x56/HKG36/armst_Magazine_556x45_HKG36_BP.et",
+        "Guid":  "39C8796C070E44DD",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Western/5x56/HKG36/armst_Magazine_556x45_HKG36_BP.et",
+                          "Guid":  "39C8796C070E44DD",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "FB5EB0F6D447E859",
+                                       "RefPath":  "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M193_Ball.et",
+                                       "Mechanism":  "GUID_EXACT",
+                                       "RegisteredGuid":  "FB5EB0F6D447E859"
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M193_Ball.et",
+                          "Guid":  "FB5EB0F6D447E859",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "FB5EB0F6D447E858",
+                                       "RefPath":  "Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M193_Ball.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M193_Ball.et",
+                          "Guid":  "FB5EB0F6D447E858",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Western/5x56/SIG550/armst_Magazine_556x45_SIG_550.et",
+        "Guid":  "E3DC6C2FBBE4F825",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Western/5x56/SIG550/armst_Magazine_556x45_SIG_550.et",
+                          "Guid":  "E3DC6C2FBBE4F825",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "FB5EB0F6D447E859",
+                                       "RefPath":  "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M193_Ball.et",
+                                       "Mechanism":  "GUID_EXACT",
+                                       "RegisteredGuid":  "FB5EB0F6D447E859"
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M193_Ball.et",
+                          "Guid":  "FB5EB0F6D447E859",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "FB5EB0F6D447E858",
+                                       "RefPath":  "Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M193_Ball.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M193_Ball.et",
+                          "Guid":  "FB5EB0F6D447E858",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Western/5x56/SIG550/armst_Magazine_556x45_SIG_550_BP.et",
+        "Guid":  "70D7F0AE523E4FFF",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Western/5x56/SIG550/armst_Magazine_556x45_SIG_550_BP.et",
+                          "Guid":  "70D7F0AE523E4FFF",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "FB5EB0F6D447E859",
+                                       "RefPath":  "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M193_Ball.et",
+                                       "Mechanism":  "GUID_EXACT",
+                                       "RegisteredGuid":  "FB5EB0F6D447E859"
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M193_Ball.et",
+                          "Guid":  "FB5EB0F6D447E859",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "FB5EB0F6D447E858",
+                                       "RefPath":  "Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M193_Ball.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M193_Ball.et",
+                          "Guid":  "FB5EB0F6D447E858",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M193_Ball.et",
+        "Guid":  "FB5EB0F6D447E859",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M193_Ball.et",
+                          "Guid":  "FB5EB0F6D447E859",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "FB5EB0F6D447E858",
+                                       "RefPath":  "Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M193_Ball.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M193_Ball.et",
+                          "Guid":  "FB5EB0F6D447E858",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M193_Ball_BP.et",
+        "Guid":  "A277B4BFA07E47CF",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M193_Ball_BP.et",
+                          "Guid":  "A277B4BFA07E47CF",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "FB5EB0F6D447E858",
+                                       "RefPath":  "Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M193_Ball.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M193_Ball.et",
+                          "Guid":  "FB5EB0F6D447E858",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M855_Ball.et",
+        "Guid":  "2EBF60EF24B108FC",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M855_Ball.et",
+                          "Guid":  "2EBF60EF24B108FC",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "11B9CC1FB4AEE740",
+                                       "RefPath":  "Prefabs/Weapons/Magazines/Western/5x56/STANAG/Magazine_556x45_STANAG_30rnd_Base.et",
+                                       "Mechanism":  "PATH_FALLBACK_ONLY",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Western/5x56/STANAG/Magazine_556x45_STANAG_30rnd_Base.et",
+                          "Guid":  "11B9CC1FB4AEE740",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "F9E1A46E3ABA116F",
+                                       "RefPath":  "Prefabs/Weapons/Core/Magazine_Base.et",
+                                       "Mechanism":  "GUID_EXACT",
+                                       "RegisteredGuid":  "F9E1A46E3ABA116F"
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Core/Magazine_Base.et",
+                          "Guid":  "F9E1A46E3ABA116F",
+                          "Kind":  "LOCAL",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M855_Ball_BP.et",
+        "Guid":  "DDF6F15392E84746",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M855_Ball_BP.et",
+                          "Guid":  "DDF6F15392E84746",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "11B9CC1FB4AEE740",
+                                       "RefPath":  "Prefabs/Weapons/Magazines/Western/5x56/STANAG/Magazine_556x45_STANAG_30rnd_Base.et",
+                                       "Mechanism":  "PATH_FALLBACK_ONLY",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Western/5x56/STANAG/Magazine_556x45_STANAG_30rnd_Base.et",
+                          "Guid":  "11B9CC1FB4AEE740",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "F9E1A46E3ABA116F",
+                                       "RefPath":  "Prefabs/Weapons/Core/Magazine_Base.et",
+                                       "Mechanism":  "GUID_EXACT",
+                                       "RegisteredGuid":  "F9E1A46E3ABA116F"
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Core/Magazine_Base.et",
+                          "Guid":  "F9E1A46E3ABA116F",
+                          "Kind":  "LOCAL",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Western/5x56/STANAG/Magazine_556x45_STANAG_30rnd_Base.et",
+        "Guid":  "11B9CC1FB4AEE740",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Western/5x56/STANAG/Magazine_556x45_STANAG_30rnd_Base.et",
+                          "Guid":  "11B9CC1FB4AEE740",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "F9E1A46E3ABA116F",
+                                       "RefPath":  "Prefabs/Weapons/Core/Magazine_Base.et",
+                                       "Mechanism":  "GUID_EXACT",
+                                       "RegisteredGuid":  "F9E1A46E3ABA116F"
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Core/Magazine_Base.et",
+                          "Guid":  "F9E1A46E3ABA116F",
+                          "Kind":  "LOCAL",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Western/762x51/HK3/armst_Magazine_762x51_HK3_20_M80_Ball.et",
+        "Guid":  "6D18CC33708EE713",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Western/762x51/HK3/armst_Magazine_762x51_HK3_20_M80_Ball.et",
+                          "Guid":  "6D18CC33708EE713",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "6D18CC33708EE712",
+                                       "RefPath":  "Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et",
+                          "Guid":  "6D18CC33708EE712",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Western/762x51/HK3/armst_Magazine_762x51_HK3_20_M80_Ball_BP.et",
+        "Guid":  "263A4BF691DC4E33",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Western/762x51/HK3/armst_Magazine_762x51_HK3_20_M80_Ball_BP.et",
+                          "Guid":  "263A4BF691DC4E33",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "6D18CC33708EE712",
+                                       "RefPath":  "Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et",
+                          "Guid":  "6D18CC33708EE712",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_20_M80_Ball.et",
+        "Guid":  "AA9A48AAEE6E4F1B",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_20_M80_Ball.et",
+                          "Guid":  "AA9A48AAEE6E4F1B",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "6D18CC33708EE712",
+                                       "RefPath":  "Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et",
+                          "Guid":  "6D18CC33708EE712",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_20_M80_Ball_BP.et",
+        "Guid":  "9EEBB92B6CEA45E0",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_20_M80_Ball_BP.et",
+                          "Guid":  "9EEBB92B6CEA45E0",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "6D18CC33708EE712",
+                                       "RefPath":  "Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et",
+                          "Guid":  "6D18CC33708EE712",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_30_M80_Ball.et",
+        "Guid":  "531AA7DB88D84184",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_30_M80_Ball.et",
+                          "Guid":  "531AA7DB88D84184",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "AA9A48AAEE6E4F1B",
+                                       "RefPath":  "Prefabs/Weapons/Magazines/Western/762x51/HK3/L1A1/armst_Magazine_762x51_L1A1_20_M80_Ball.et",
+                                       "Mechanism":  "GUID_EXACT_EXTERNAL",
+                                       "RegisteredGuid":  "AA9A48AAEE6E4F1B"
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Western/762x51/HK3/L1A1/armst_Magazine_762x51_L1A1_20_M80_Ball.et",
+                          "Guid":  "AA9A48AAEE6E4F1B",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_30_M80_Ball_BP.et",
+        "Guid":  "8046F3CFD92D43BA",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_30_M80_Ball_BP.et",
+                          "Guid":  "8046F3CFD92D43BA",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "AA9A48AAEE6E4F1B",
+                                       "RefPath":  "Prefabs/Weapons/Magazines/Western/762x51/HK3/L1A1/armst_Magazine_762x51_L1A1_20_M80_Ball.et",
+                                       "Mechanism":  "GUID_EXACT_EXTERNAL",
+                                       "RegisteredGuid":  "AA9A48AAEE6E4F1B"
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Western/762x51/HK3/L1A1/armst_Magazine_762x51_L1A1_20_M80_Ball.et",
+                          "Guid":  "AA9A48AAEE6E4F1B",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Western/9x19/M9/armst_Magazine_9x19_M9_15rnd_Ball.et",
+        "Guid":  "9C05543A503DB80E",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Western/9x19/M9/armst_Magazine_9x19_M9_15rnd_Ball.et",
+                          "Guid":  "9C05543A503DB80E",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "DFFBF5F097FCF797",
+                                       "RefPath":  "Prefabs/Weapons/Magazines/Magazine_9x19_M9_15rnd_Base.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Magazine_9x19_M9_15rnd_Base.et",
+                          "Guid":  "DFFBF5F097FCF797",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Magazines/Western/9x19/M9/armst_Magazine_9x19_M9_15rnd_Ball_BP.et",
+        "Guid":  "4BF437F81CEE4039",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Western/9x19/M9/armst_Magazine_9x19_M9_15rnd_Ball_BP.et",
+                          "Guid":  "4BF437F81CEE4039",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "DFFBF5F097FCF797",
+                                       "RefPath":  "Prefabs/Weapons/Magazines/Magazine_9x19_M9_15rnd_Base.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Magazines/Magazine_9x19_M9_15rnd_Base.et",
+                          "Guid":  "DFFBF5F097FCF797",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Russian/Handguns/armst_APB/armst_APB_base.et",
+        "Guid":  "5D3DA7E84135B278",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Russian/Handguns/armst_APB/armst_APB_base.et",
+                          "Guid":  "5D3DA7E84135B278",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "B7132459C07777CA",
+                                       "RefPath":  "Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et",
+                          "Guid":  "B7132459C07777CA",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Russian/Handguns/Pm/armst_PM_base.et",
+        "Guid":  "C0F7DD85A86B2900",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Russian/Handguns/Pm/armst_PM_base.et",
+                          "Guid":  "C0F7DD85A86B2900",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "B7132459C07777CA",
+                                       "RefPath":  "Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et",
+                          "Guid":  "B7132459C07777CA",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Russian/Handguns/PP_19/armst_PP91_base.et",
+        "Guid":  "3968B2A856852CBD",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Russian/Handguns/PP_19/armst_PP91_base.et",
+                          "Guid":  "3968B2A856852CBD",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "B7132459C07777CA",
+                                       "RefPath":  "Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et",
+                          "Guid":  "B7132459C07777CA",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Russian/Handguns/Sr_2/armst_SR_2_base.et",
+        "Guid":  "31FB2EC4F4AFFC05",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Russian/Handguns/Sr_2/armst_SR_2_base.et",
+                          "Guid":  "31FB2EC4F4AFFC05",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "B7132459C07777CA",
+                                       "RefPath":  "Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et",
+                          "Guid":  "B7132459C07777CA",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Russian/Handguns/TT/armst_TT_base.et",
+        "Guid":  "0D469F42B65E350E",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Russian/Handguns/TT/armst_TT_base.et",
+                          "Guid":  "0D469F42B65E350E",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "B7132459C07777CA",
+                                       "RefPath":  "Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et",
+                          "Guid":  "B7132459C07777CA",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Russian/MachineGuns/armst_PKM_base.et",
+        "Guid":  "A89BC9D55FFB4CD8",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Russian/MachineGuns/armst_PKM_base.et",
+                          "Guid":  "A89BC9D55FFB4CD8",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "76C400582D3C4AF9",
+                                       "RefPath":  "Prefabs/Weapons/MachineGuns/PKM/MG_PKM_base.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/MachineGuns/PKM/MG_PKM_base.et",
+                          "Guid":  "76C400582D3C4AF9",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Russian/MachineGuns/armst_RPK74_base.et",
+        "Guid":  "A7AF84C6C58BA3E8",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Russian/MachineGuns/armst_RPK74_base.et",
+                          "Guid":  "A7AF84C6C58BA3E8",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "3BFBE9145E9C40B9",
+                                       "RefPath":  "Prefabs/Weapons/MachineGuns/RPK74/MG_RPK74_base.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/MachineGuns/RPK74/MG_RPK74_base.et",
+                          "Guid":  "3BFBE9145E9C40B9",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Russian/Rifle/9a91/armst_Rifle_9a91_base.et",
+        "Guid":  "E2D8F39AE1B9B8F1",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Russian/Rifle/9a91/armst_Rifle_9a91_base.et",
+                          "Guid":  "E2D8F39AE1B9B8F1",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "1FA22B1F5E7BC80B",
+                                       "RefPath":  "Prefabs/Weapons/Rifles/AK74/Rifle_AK74_short_base.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Rifles/AK74/Rifle_AK74_short_base.et",
+                          "Guid":  "1FA22B1F5E7BC80B",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Russian/Rifle/Aek971/armst_Rifle_AEK971_base.et",
+        "Guid":  "AC198EAC9BDD9841",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Russian/Rifle/Aek971/armst_Rifle_AEK971_base.et",
+                          "Guid":  "AC198EAC9BDD9841",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "EAE9A298979C4721",
+                                       "RefPath":  "Prefabs/Weapons/Rifles/AK74/Rifle_AK74N_base.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Rifles/AK74/Rifle_AK74N_base.et",
+                          "Guid":  "EAE9A298979C4721",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK105.et",
+        "Guid":  "6FC3151D0DED22A9",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK105.et",
+                          "Guid":  "6FC3151D0DED22A9",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "FA5C25BF66A53DCF",
+                                       "RefPath":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74_base.et",
+                                       "Mechanism":  "GUID_EXACT",
+                                       "RegisteredGuid":  "FA5C25BF66A53DCF"
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74_base.et",
+                          "Guid":  "FA5C25BF66A53DCF",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "923D948AB0D57A50",
+                                       "RefPath":  "Prefabs/Weapons/Rifles/AK74/Rifle_AK74_long_base.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Rifles/AK74/Rifle_AK74_long_base.et",
+                          "Guid":  "923D948AB0D57A50",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74_base.et",
+        "Guid":  "FA5C25BF66A53DCF",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74_base.et",
+                          "Guid":  "FA5C25BF66A53DCF",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "923D948AB0D57A50",
+                                       "RefPath":  "Prefabs/Weapons/Rifles/AK74/Rifle_AK74_long_base.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Rifles/AK74/Rifle_AK74_long_base.et",
+                          "Guid":  "923D948AB0D57A50",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74M.et",
+        "Guid":  "5B8E766C0E3C13EE",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74M.et",
+                          "Guid":  "5B8E766C0E3C13EE",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "96DFD2E7E63B3386",
+                                       "RefPath":  "Prefabs/Weapons/Rifles/AK74/armst_AK74N.et",
+                                       "Mechanism":  "GUID_RESOLVES_STALE_PATH",
+                                       "RegisteredGuid":  "Prefabs/Weapons/Rifles/armst_AK74N.et"
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Rifles/AK74/armst_AK74N.et",
+                          "Guid":  "96DFD2E7E63B3386",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74M_full.et",
+        "Guid":  "63892659A632A0FD",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74M_full.et",
+                          "Guid":  "63892659A632A0FD",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "5B8E766C0E3C13EE",
+                                       "RefPath":  "Prefabs/Weapons/Rifles/AK74/armst_AK74M.et",
+                                       "Mechanism":  "GUID_RESOLVES_STALE_PATH",
+                                       "RegisteredGuid":  "Prefabs/Weapons/Rifles/armst_AK74M.et"
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Rifles/AK74/armst_AK74M.et",
+                          "Guid":  "5B8E766C0E3C13EE",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74N.et",
+        "Guid":  "96DFD2E7E63B3386",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74N.et",
+                          "Guid":  "96DFD2E7E63B3386",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "EAE9A298979C4721",
+                                       "RefPath":  "Prefabs/Weapons/Rifles/AK74/Rifle_AK74N_base.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Rifles/AK74/Rifle_AK74N_base.et",
+                          "Guid":  "EAE9A298979C4721",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AKS.et",
+        "Guid":  "25A64724FD416989",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AKS.et",
+                          "Guid":  "25A64724FD416989",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "96DFD2E7E63B3386",
+                                       "RefPath":  "Prefabs/Weapons/Rifles/AK74/armst_AK74N.et",
+                                       "Mechanism":  "GUID_RESOLVES_STALE_PATH",
+                                       "RegisteredGuid":  "Prefabs/Weapons/Rifles/armst_AK74N.et"
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Rifles/AK74/armst_AK74N.et",
+                          "Guid":  "96DFD2E7E63B3386",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AKS74U.et",
+        "Guid":  "BFEA719491610A45",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AKS74U.et",
+                          "Guid":  "BFEA719491610A45",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "8BA0D0DE316D1B44",
+                                       "RefPath":  "Prefabs/Weapons/Rifles/AKS74U/Rifle_AKS74U_base.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Rifles/AKS74U/Rifle_AKS74U_base.et",
+                          "Guid":  "8BA0D0DE316D1B44",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AKS74UN.et",
+        "Guid":  "FA0E25CE35EE945F",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AKS74UN.et",
+                          "Guid":  "FA0E25CE35EE945F",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "9AE416F8879DDA6D",
+                                       "RefPath":  "Prefabs/Weapons/Rifles/AKS74U/Rifle_AKS74UN_base.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Rifles/AKS74U/Rifle_AKS74UN_base.et",
+                          "Guid":  "9AE416F8879DDA6D",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM.et",
+        "Guid":  "5BFF97EFD0BF6D9F",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM.et",
+                          "Guid":  "5BFF97EFD0BF6D9F",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "140E94F473B60FE3",
+                                       "RefPath":  "Prefabs/Weapons/Rifles/AKM/armst_Rifle_AKM_base.et",
+                                       "Mechanism":  "GUID_EXACT_EXTERNAL",
+                                       "RegisteredGuid":  "140E94F473B60FE3"
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Rifles/AKM/armst_Rifle_AKM_base.et",
+                          "Guid":  "140E94F473B60FE3",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_base.et",
+        "Guid":  "140E94F473B60FE3",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_base.et",
+                          "Guid":  "140E94F473B60FE3",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "911D6C8DC7BA2D63",
+                                       "RefPath":  "Prefabs/Weapons/Core/Rifle_Base.et",
+                                       "Mechanism":  "GUID_EXACT",
+                                       "RegisteredGuid":  "911D6C8DC7BA2D63"
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Core/Rifle_Base.et",
+                          "Guid":  "911D6C8DC7BA2D63",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "E1F14DB52DBFBC57",
+                                       "RefPath":  "Prefabs/Weapons/Core/Weapon_Base.et",
+                                       "Mechanism":  "GUID_EXACT",
+                                       "RegisteredGuid":  "E1F14DB52DBFBC57"
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Core/Weapon_Base.et",
+                          "Guid":  "E1F14DB52DBFBC57",
+                          "Kind":  "LOCAL",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_full.et",
+        "Guid":  "33BEE1A93C920B26",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_full.et",
+                          "Guid":  "33BEE1A93C920B26",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "5BFF97EFD0BF6D9F",
+                                       "RefPath":  "Prefabs/Weapons/Rifles/AKM/armst_Rifle_AKM.et",
+                                       "Mechanism":  "GUID_EXACT_EXTERNAL",
+                                       "RegisteredGuid":  "5BFF97EFD0BF6D9F"
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Rifles/AKM/armst_Rifle_AKM.et",
+                          "Guid":  "5BFF97EFD0BF6D9F",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKMS.et",
+        "Guid":  "5712F6F88A014F0B",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKMS.et",
+                          "Guid":  "5712F6F88A014F0B",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "140E94F473B60FE3",
+                                       "RefPath":  "Prefabs/Weapons/Rifles/AKM/armst_Rifle_AKM_base.et",
+                                       "Mechanism":  "GUID_EXACT_EXTERNAL",
+                                       "RegisteredGuid":  "140E94F473B60FE3"
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Rifles/AKM/armst_Rifle_AKM_base.et",
+                          "Guid":  "140E94F473B60FE3",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_VPO136.et",
+        "Guid":  "90EADC5DD9AD35D5",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_VPO136.et",
+                          "Guid":  "90EADC5DD9AD35D5",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "140E94F473B60FE3",
+                                       "RefPath":  "Prefabs/Weapons/Rifles/AKM/armst_Rifle_AKM_base.et",
+                                       "Mechanism":  "GUID_EXACT_EXTERNAL",
+                                       "RegisteredGuid":  "140E94F473B60FE3"
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Rifles/AKM/armst_Rifle_AKM_base.et",
+                          "Guid":  "140E94F473B60FE3",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Russian/Rifle/Groza/armst_Groza_base.et",
+        "Guid":  "903C7920F00AB654",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Russian/Rifle/Groza/armst_Groza_base.et",
+                          "Guid":  "903C7920F00AB654",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "911D6C8DC7BA2D63",
+                                       "RefPath":  "Prefabs/Weapons/Core/Rifle_Base.et",
+                                       "Mechanism":  "GUID_EXACT",
+                                       "RegisteredGuid":  "911D6C8DC7BA2D63"
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Core/Rifle_Base.et",
+                          "Guid":  "911D6C8DC7BA2D63",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "E1F14DB52DBFBC57",
+                                       "RefPath":  "Prefabs/Weapons/Core/Weapon_Base.et",
+                                       "Mechanism":  "GUID_EXACT",
+                                       "RegisteredGuid":  "E1F14DB52DBFBC57"
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Core/Weapon_Base.et",
+                          "Guid":  "E1F14DB52DBFBC57",
+                          "Kind":  "LOCAL",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Russian/Rifle/SOC94/armst_Rifle_SOC94_base.et",
+        "Guid":  "E394112ABBC198D8",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Russian/Rifle/SOC94/armst_Rifle_SOC94_base.et",
+                          "Guid":  "E394112ABBC198D8",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "140E94F473B60FE3",
+                                       "RefPath":  "Rifles/AKM/armst_Rifle_AKM_base.et",
+                                       "Mechanism":  "GUID_RESOLVES_STALE_PATH",
+                                       "RegisteredGuid":  "Prefabs/Weapons/Rifles/AKM/armst_Rifle_AKM_base.et"
+                                   }
+                      },
+                      {
+                          "Path":  "Rifles/AKM/armst_Rifle_AKM_base.et",
+                          "Guid":  "140E94F473B60FE3",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Russian/Rifle/SVD/armst_Rifle_SVD_base.et",
+        "Guid":  "3EB02CDAD5F23C82",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Russian/Rifle/SVD/armst_Rifle_SVD_base.et",
+                          "Guid":  "3EB02CDAD5F23C82",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "A3E183EB5A2F3A38",
+                                       "RefPath":  "Prefabs/Weapons/Rifles/SVD/Rifle_SVD_base.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Rifles/SVD/Rifle_SVD_base.et",
+                          "Guid":  "A3E183EB5A2F3A38",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Russian/Rifle/VAL/armst_Rifle_val_base.et",
+        "Guid":  "F25D16BD5F748372",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Russian/Rifle/VAL/armst_Rifle_val_base.et",
+                          "Guid":  "F25D16BD5F748372",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "1FA22B1F5E7BC80B",
+                                       "RefPath":  "Prefabs/Weapons/Rifles/AK74/Rifle_AK74_short_base.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Rifles/AK74/Rifle_AK74_short_base.et",
+                          "Guid":  "1FA22B1F5E7BC80B",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Russian/Rifle/VSK94/armst_Rifle_VSK94_base.et",
+        "Guid":  "6005623D3AA5F5C2",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Russian/Rifle/VSK94/armst_Rifle_VSK94_base.et",
+                          "Guid":  "6005623D3AA5F5C2",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "1FA22B1F5E7BC80B",
+                                       "RefPath":  "Prefabs/Weapons/Rifles/AK74/Rifle_AK74_short_base.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Rifles/AK74/Rifle_AK74_short_base.et",
+                          "Guid":  "1FA22B1F5E7BC80B",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Russian/Rifle/VSS/armst_Rifle_vss_base.et",
+        "Guid":  "902A79E4B2A66E63",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Russian/Rifle/VSS/armst_Rifle_vss_base.et",
+                          "Guid":  "902A79E4B2A66E63",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "1FA22B1F5E7BC80B",
+                                       "RefPath":  "Prefabs/Weapons/Rifles/AK74/Rifle_AK74_short_base.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Rifles/AK74/Rifle_AK74_short_base.et",
+                          "Guid":  "1FA22B1F5E7BC80B",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Russian/Shotgun/armst_izh_27.et",
+        "Guid":  "57F153EFAD34E1CA",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Russian/Shotgun/armst_izh_27.et",
+                          "Guid":  "57F153EFAD34E1CA",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "6C5E2009CDCD0BD3",
+                                       "RefPath":  "Prefabs/Weapons/Rifles/Shotgun/armst_shotgun_base.et",
+                                       "Mechanism":  "GUID_EXACT_EXTERNAL",
+                                       "RegisteredGuid":  "6C5E2009CDCD0BD3"
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Rifles/Shotgun/armst_shotgun_base.et",
+                          "Guid":  "6C5E2009CDCD0BD3",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Russian/Shotgun/armst_mp_133.et",
+        "Guid":  "63FF6FDCA4E7E735",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Russian/Shotgun/armst_mp_133.et",
+                          "Guid":  "63FF6FDCA4E7E735",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "6C5E2009CDCD0BD3",
+                                       "RefPath":  "Prefabs/Weapons/Rifles/Shotgun/armst_shotgun_base.et",
+                                       "Mechanism":  "GUID_EXACT_EXTERNAL",
+                                       "RegisteredGuid":  "6C5E2009CDCD0BD3"
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Rifles/Shotgun/armst_shotgun_base.et",
+                          "Guid":  "6C5E2009CDCD0BD3",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Russian/Shotgun/armst_mp_153.et",
+        "Guid":  "92DB80A098AABF1C",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Russian/Shotgun/armst_mp_153.et",
+                          "Guid":  "92DB80A098AABF1C",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "6C5E2009CDCD0BD3",
+                                       "RefPath":  "Prefabs/ShotGun/ShotGun/armst_shotgun_base.et",
+                                       "Mechanism":  "GUID_RESOLVES_STALE_PATH",
+                                       "RegisteredGuid":  "Prefabs/Weapons/Rifles/Shotgun/armst_shotgun_base.et"
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/ShotGun/ShotGun/armst_shotgun_base.et",
+                          "Guid":  "6C5E2009CDCD0BD3",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Russian/Shotgun/armst_toz_66.et",
+        "Guid":  "923B067A74826419",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Russian/Shotgun/armst_toz_66.et",
+                          "Guid":  "923B067A74826419",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "6C5E2009CDCD0BD3",
+                                       "RefPath":  "Prefabs/Weapons/Rifles/Shotgun/armst_shotgun_base.et",
+                                       "Mechanism":  "GUID_EXACT_EXTERNAL",
+                                       "RegisteredGuid":  "6C5E2009CDCD0BD3"
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Rifles/Shotgun/armst_shotgun_base.et",
+                          "Guid":  "6C5E2009CDCD0BD3",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Russian/Shotgun/armst_toz_66_pantera.et",
+        "Guid":  "A9B143751CB07F45",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Russian/Shotgun/armst_toz_66_pantera.et",
+                          "Guid":  "A9B143751CB07F45",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "923B067A74826419",
+                                       "RefPath":  "Prefabs/Weapons/Rifles/Shotgun/armst_toz_66.et",
+                                       "Mechanism":  "GUID_EXACT_EXTERNAL",
+                                       "RegisteredGuid":  "923B067A74826419"
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Rifles/Shotgun/armst_toz_66.et",
+                          "Guid":  "923B067A74826419",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Russian/Shotgun/armst_toz_66_saw.et",
+        "Guid":  "9C7C3BE87956383A",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Russian/Shotgun/armst_toz_66_saw.et",
+                          "Guid":  "9C7C3BE87956383A",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "923B067A74826419",
+                                       "RefPath":  "Prefabs/Weapons/Rifles/Shotgun/armst_toz_66.et",
+                                       "Mechanism":  "GUID_EXACT_EXTERNAL",
+                                       "RegisteredGuid":  "923B067A74826419"
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Rifles/Shotgun/armst_toz_66.et",
+                          "Guid":  "923B067A74826419",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Tripods/armst_Tripod_6T5.et",
+        "Guid":  "7C4D1A64D60F2C92",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Tripods/armst_Tripod_6T5.et",
+                          "Guid":  "7C4D1A64D60F2C92",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "16CAF1AAD82A3127",
+                                       "RefPath":  "Prefabs/Weapons/Core/Tripod_Base.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Core/Tripod_Base.et",
+                          "Guid":  "16CAF1AAD82A3127",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Tripods/armst_Tripod_6T5_PKM.et",
+        "Guid":  "723870DBB19D30B0",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Tripods/armst_Tripod_6T5_PKM.et",
+                          "Guid":  "723870DBB19D30B0",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "7C4D1A64D60F2C92",
+                                       "RefPath":  "Prefabs/Weapons/Tripods/armst_Tripod_6T5.et",
+                                       "Mechanism":  "GUID_EXACT",
+                                       "RegisteredGuid":  "7C4D1A64D60F2C92"
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Tripods/armst_Tripod_6T5.et",
+                          "Guid":  "7C4D1A64D60F2C92",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "16CAF1AAD82A3127",
+                                       "RefPath":  "Prefabs/Weapons/Core/Tripod_Base.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Core/Tripod_Base.et",
+                          "Guid":  "16CAF1AAD82A3127",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Western/Handguns/armst_M9_base.et",
+        "Guid":  "1353C6EAD1DCFE43",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Western/Handguns/armst_M9_base.et",
+                          "Guid":  "1353C6EAD1DCFE43",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "809488C4984AC087",
+                                       "RefPath":  "Prefabs/Weapons/Handguns/M9/Handgun_M9_base.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Handguns/M9/Handgun_M9_base.et",
+                          "Guid":  "809488C4984AC087",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Western/Rifle/armst_Rifle_M16A2_base.et",
+        "Guid":  "3E413771E1834D2F",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Western/Rifle/armst_Rifle_M16A2_base.et",
+                          "Guid":  "3E413771E1834D2F",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "C63227C0E70EA62E",
+                                       "RefPath":  "Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et",
+                          "Guid":  "C63227C0E70EA62E",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Western/Rifle/armst_Rifle_M16A2_carbine.et",
+        "Guid":  "F97A4AC994231900",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Western/Rifle/armst_Rifle_M16A2_carbine.et",
+                          "Guid":  "F97A4AC994231900",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "9207B5D36C3C8C94",
+                                       "RefPath":  "Prefabs/Weapons/Rifles/M16/Rifle_M16A2_carbine_base.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Rifles/M16/Rifle_M16A2_carbine_base.et",
+                          "Guid":  "9207B5D36C3C8C94",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Western/Rifle/armst_VZ58P_base.et",
+        "Guid":  "9C948630078D154D",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Western/Rifle/armst_VZ58P_base.et",
+                          "Guid":  "9C948630078D154D",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "C19BFAF8A6334FD5",
+                                       "RefPath":  "Prefabs/Weapons/Rifles/VZ58/Rifle_VZ58_base.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Rifles/VZ58/Rifle_VZ58_base.et",
+                          "Guid":  "C19BFAF8A6334FD5",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Western/Rifle/armst_VZ58V_base.et",
+        "Guid":  "443CEFF17E040B11",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Western/Rifle/armst_VZ58V_base.et",
+                          "Guid":  "443CEFF17E040B11",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "C19BFAF8A6334FD5",
+                                       "RefPath":  "Prefabs/Weapons/Rifles/VZ58/Rifle_VZ58_base.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Rifles/VZ58/Rifle_VZ58_base.et",
+                          "Guid":  "C19BFAF8A6334FD5",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Western/Rifle/HKG33/armst_Rifle_HKG33_base.et",
+        "Guid":  "035CFC7DD44455D0",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Western/Rifle/HKG33/armst_Rifle_HKG33_base.et",
+                          "Guid":  "035CFC7DD44455D0",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "C63227C0E70EA62E",
+                                       "RefPath":  "Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et",
+                          "Guid":  "C63227C0E70EA62E",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Western/Rifle/HKG36/armst_Rifle_HKG36_base.et",
+        "Guid":  "A802C718201D72DF",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Western/Rifle/HKG36/armst_Rifle_HKG36_base.et",
+                          "Guid":  "A802C718201D72DF",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "911D6C8DC7BA2D63",
+                                       "RefPath":  "Prefabs/Weapons/Core/Rifle_Base.et",
+                                       "Mechanism":  "GUID_EXACT",
+                                       "RegisteredGuid":  "911D6C8DC7BA2D63"
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Core/Rifle_Base.et",
+                          "Guid":  "911D6C8DC7BA2D63",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "E1F14DB52DBFBC57",
+                                       "RefPath":  "Prefabs/Weapons/Core/Weapon_Base.et",
+                                       "Mechanism":  "GUID_EXACT",
+                                       "RegisteredGuid":  "E1F14DB52DBFBC57"
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Core/Weapon_Base.et",
+                          "Guid":  "E1F14DB52DBFBC57",
+                          "Kind":  "LOCAL",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Western/Rifle/L85/armst_Rifle_L85_base.et",
+        "Guid":  "45D3FCA77AF1709B",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Western/Rifle/L85/armst_Rifle_L85_base.et",
+                          "Guid":  "45D3FCA77AF1709B",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "C63227C0E70EA62E",
+                                       "RefPath":  "Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et",
+                          "Guid":  "C63227C0E70EA62E",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Western/Rifle/Sig550/armst_Rifle_Sig550_base.et",
+        "Guid":  "CA3BEBAADDFAF1DE",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Western/Rifle/Sig550/armst_Rifle_Sig550_base.et",
+                          "Guid":  "CA3BEBAADDFAF1DE",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "3E413771E1834D2F",
+                                       "RefPath":  "Prefabs/Weapons/Western/Rifle/armst_Rifle_M16A2_base.et",
+                                       "Mechanism":  "GUID_EXACT",
+                                       "RegisteredGuid":  "3E413771E1834D2F"
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Western/Rifle/armst_Rifle_M16A2_base.et",
+                          "Guid":  "3E413771E1834D2F",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "C63227C0E70EA62E",
+                                       "RefPath":  "Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et",
+                          "Guid":  "C63227C0E70EA62E",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Western/Rifle/SLR/armst_SLR_base.et",
+        "Guid":  "C11ED52EAAF856A8",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Western/Rifle/SLR/armst_SLR_base.et",
+                          "Guid":  "C11ED52EAAF856A8",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "C63227C0E70EA62E",
+                                       "RefPath":  "Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et",
+                          "Guid":  "C63227C0E70EA62E",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Western/Shotgun/armst_Remington_870.et",
+        "Guid":  "6DBEF115AA35E404",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Western/Shotgun/armst_Remington_870.et",
+                          "Guid":  "6DBEF115AA35E404",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "6C5E2009CDCD0BD3",
+                                       "RefPath":  "Prefabs/ShotGun/ShotGun/armst_shotgun_base.et",
+                                       "Mechanism":  "GUID_RESOLVES_STALE_PATH",
+                                       "RegisteredGuid":  "Prefabs/Weapons/Rifles/Shotgun/armst_shotgun_base.et"
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/ShotGun/ShotGun/armst_shotgun_base.et",
+                          "Guid":  "6C5E2009CDCD0BD3",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Western/Shotgun/armst_shotgun_base.et",
+        "Guid":  "6C5E2009CDCD0BD3",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Western/Shotgun/armst_shotgun_base.et",
+                          "Guid":  "6C5E2009CDCD0BD3",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "B31929F65F0D0279",
+                                       "RefPath":  "Prefabs/Weapons/Rifles/M14/Rifle_M21.et",
+                                       "Mechanism":  "DANGLING",
+                                       "RegisteredGuid":  null
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/Weapons/Rifles/M14/Rifle_M21.et",
+                          "Guid":  "B31929F65F0D0279",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    },
+    {
+        "Path":  "Prefabs/Weapons/Western/Shotgun/armst_spas_12.et",
+        "Guid":  "221AED80163B7C60",
+        "Chain":  [
+                      {
+                          "Path":  "Prefabs/Weapons/Western/Shotgun/armst_spas_12.et",
+                          "Guid":  "221AED80163B7C60",
+                          "Kind":  "LOCAL",
+                          "Edge":  {
+                                       "RefGuid":  "6C5E2009CDCD0BD3",
+                                       "RefPath":  "Prefabs/ShotGun/ShotGun/armst_shotgun_base.et",
+                                       "Mechanism":  "GUID_RESOLVES_STALE_PATH",
+                                       "RegisteredGuid":  "Prefabs/Weapons/Rifles/Shotgun/armst_shotgun_base.et"
+                                   }
+                      },
+                      {
+                          "Path":  "Prefabs/ShotGun/ShotGun/armst_shotgun_base.et",
+                          "Guid":  "6C5E2009CDCD0BD3",
+                          "Kind":  "EXTERNAL_UNKNOWN",
+                          "Edge":  null
+                      }
+                  ]
+    }
+]

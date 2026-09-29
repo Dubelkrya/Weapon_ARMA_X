@@ -1,0 +1,307 @@
+{
+    "Purpose":  "Manual Workbench/game runtime regression sequence derived from runtime_regression_matrix.json (authoritative audit V2). No new tests invented; 8 matrix cases preserved.",
+    "SourceMatrix":  "agent/compliance_audit_v2/runtime_regression_matrix.json",
+    "Preflight":  "All test targets verified present; GUIDs matched; parents/models resolve (see each card). Note: HKG36_CarryHandle_Optic.et has no .meta (known REVIEW state).",
+    "TestOrderByID":  [
+                          "RT-01A",
+                          "RT-01B",
+                          "RT-01C",
+                          "RT-01D",
+                          "RT-01E",
+                          "RT-02",
+                          "RT-03",
+                          "RT-05",
+                          "RT-04",
+                          "RT-07",
+                          "RT-06",
+                          "RT-08"
+                      ],
+    "FailureTriageCategories":  [
+                                    "RENDERING",
+                                    "ATTACHMENT_OUTER_CONTRACT",
+                                    "ATTACHMENT_CHILD_CONTRACT",
+                                    "PIVOT_ALIGNMENT",
+                                    "INVENTORY/ACTION",
+                                    "SIGHTS/PIP",
+                                    "ANIMATION/IK",
+                                    "AMMO/MAGAZINE",
+                                    "RESOURCE_LOADING",
+                                    "OTHER"
+                                ],
+    "Cards":  [
+                  {
+                      "TEST_ID":  "RT-01A",
+                      "RESOURCE":  "armst_Optic_AKDovetailMount.et (adapter standalone)",
+                      "CURRENT_PATH":  "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et",
+                      "GUID":  "D71FD2BD68AC4B31",
+                      "PRECONDITION":  "Workbench open in prefab preview; current addon resource database loaded",
+                      "STEPS":  [
+                                    "Open prefab preview for adapter",
+                                    "Confirm the Dovetail AK model renders (one visible mesh)",
+                                    "Zoom/rotate - no empty or invisible state"
+                                ],
+                      "PASS_CRITERIA":  [
+                                            "Adapter renders visible Dovetail model",
+                                            "No mesh/entity errors in console"
+                                        ],
+                      "FAIL_SYMPTOMS":  [
+                                            "Adapter invisible (historical duplicate-mesh symptom)",
+                                            "Double geometry / z-fighting"
+                                        ],
+                      "RESULT":  "NOT_TESTED",
+                      "NOTES":  "PREFAB_VISIBILITY (A) - one visible MeshObject; other MeshObject is Enabled 0 (inert).",
+                      "FAILURE_TRIAGE":  "RENDERING"
+                  },
+                  {
+                      "TEST_ID":  "RT-01B",
+                      "RESOURCE":  "armst_Optic_AKDovetailMount.et (weapon -\u003e adapter)",
+                      "CURRENT_PATH":  "armst_Rifle_AKM.et + armst_Rifle_AKM_base.et (dovetail slot)",
+                      "GUID":  "D71FD2BD68AC4B31",
+                      "PRECONDITION":  "RT-01A passed",
+                      "STEPS":  [
+                                    "Spawn armst_Rifle_AKM",
+                                    "Open inventory, place adapter into dovetail slot",
+                                    "Confirm adapter model attaches at dovetail, snap_weapon pivot aligns"
+                                ],
+                      "PASS_CRITERIA":  [
+                                            "Adapter attaches to AKM dovetail slot; renders in correct position/orientation"
+                                        ],
+                      "FAIL_SYMPTOMS":  [
+                                            "Adapter rejected by slot",
+                                            "Adapter floating/misaligned",
+                                            "Invisible after attach"
+                                        ],
+                      "RESULT":  "NOT_TESTED",
+                      "NOTES":  "ATTACHMENT_OUTER_CONTRACT (B) - outer type AttachmentOpticsDovetailAK.",
+                      "FAILURE_TRIAGE":  "ATTACHMENT_OUTER_CONTRACT"
+                  },
+                  {
+                      "TEST_ID":  "RT-01C",
+                      "RESOURCE":  "armst_Optic_AKDovetailMount.et (adapter -\u003e RIS optic)",
+                      "CURRENT_PATH":  "armst_Rifle_AKM.et + armst_Rifle_AKM_base.et (dovetail slot)",
+                      "GUID":  "D71FD2BD68AC4B31",
+                      "PRECONDITION":  "RT-01B passed",
+                      "STEPS":  [
+                                    "With adapter attached, open child RIS1913 slot",
+                                    "Place a RIS/Picatinny optic",
+                                    "Confirm optic mounts on snap_ris pivot"
+                                ],
+                      "PASS_CRITERIA":  [
+                                            "RIS optic attaches via BB6000C24BAA468F (AttachmentOpticsRIS1913); renders on snap_ris"
+                                        ],
+                      "FAIL_SYMPTOMS":  [
+                                            "RIS optic rejected",
+                                            "Optic misaligned on adapter"
+                                        ],
+                      "RESULT":  "NOT_TESTED",
+                      "NOTES":  "ATTACHMENT_CHILD_CONTRACT (C) - PivotID snap_ris / ChildPivotID snap_weapon.",
+                      "FAILURE_TRIAGE":  "ATTACHMENT_CHILD_CONTRACT"
+                  },
+                  {
+                      "TEST_ID":  "RT-01D",
+                      "RESOURCE":  "armst_Optic_AKDovetailMount.et (chain simultaneous)",
+                      "CURRENT_PATH":  "armst_Rifle_AKM.et + armst_Rifle_AKM_base.et (dovetail slot)",
+                      "GUID":  "D71FD2BD68AC4B31",
+                      "PRECONDITION":  "RT-01B and RT-01C passed",
+                      "STEPS":  [
+                                    "AKM + adapter + RIS optic equipped together",
+                                    "ADS through optic, fire"
+                                ],
+                      "PASS_CRITERIA":  [
+                                            "WEAPON-\u003eADAPTER-\u003eOPTIC chain correct visually and mechanically while firing"
+                                        ],
+                      "FAIL_SYMPTOMS":  [
+                                            "Elements spontaneously detach",
+                                            "Sight axis wrong during fire"
+                                        ],
+                      "RESULT":  "NOT_TESTED",
+                      "NOTES":  "Combined chain state (D).",
+                      "FAILURE_TRIAGE":  "ATTACHMENT_OUTER_CONTRACT"
+                  },
+                  {
+                      "TEST_ID":  "RT-01E",
+                      "RESOURCE":  "armst_Optic_AKDovetailMount.et (remove / re-add)",
+                      "CURRENT_PATH":  "armst_Rifle_AKM.et + armst_Rifle_AKM_base.et (dovetail slot)",
+                      "GUID":  "D71FD2BD68AC4B31",
+                      "PRECONDITION":  "RT-01D passed",
+                      "STEPS":  [
+                                    "Remove adapter, re-add",
+                                    "Remove RIS optic, re-add",
+                                    "Confirm final chain state identical"
+                                ],
+                      "PASS_CRITERIA":  [
+                                            "Remove/re-add completes without corruption; no orphan or duplicate attachments"
+                                        ],
+                      "FAIL_SYMPTOMS":  [
+                                            "Adapter invisible after re-add",
+                                            "Attachment duplication",
+                                            "Inventory desync"
+                                        ],
+                      "RESULT":  "NOT_TESTED",
+                      "NOTES":  "Cleanup cycle (E).",
+                      "FAILURE_TRIAGE":  "ATTACHMENT_OUTER_CONTRACT"
+                  },
+                  {
+                      "TEST_ID":  "RT-02",
+                      "RESOURCE":  "armst_Optic_PSO1.et (canonical)",
+                      "CURRENT_PATH":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et",
+                      "GUID":  "C850A33226B8F9C1",
+                      "PRECONDITION":  "PSO default refs present on armst_Rifle_AKM_full and armst_AK74M_full",
+                      "STEPS":  [
+                                    "Spawn armst_Rifle_AKM_full (default PSO installed)",
+                                    "Confirm PSO renders on dovetail, ADS shows 4x PIP reticle",
+                                    "Spawn armst_AK74M_full and repeat",
+                                    "Manually attach armst_Optic_PSO1 to a stock AK dovetail slot"
+                                ],
+                      "PASS_CRITERIA":  [
+                                            "PSO renders with PIP sight on both full variants",
+                                            "PSO performs 4x view with correct range behavior"
+                                        ],
+                      "FAIL_SYMPTOMS":  [
+                                            "PSO invisible",
+                                            "PIP black/blank",
+                                            "PSO rejects dovetail slot"
+                                        ],
+                      "RESULT":  "NOT_TESTED",
+                      "NOTES":  "Single PSO architecture (AttachmentOpticsDovetailAK unified type).",
+                      "FAILURE_TRIAGE":  "SIGHTS/PIP"
+                  },
+                  {
+                      "TEST_ID":  "RT-03",
+                      "RESOURCE":  "armst_Optic_1P29.et",
+                      "CURRENT_PATH":  "Prefabs/Weapons/Attachments/Optics/Optic_1P29/armst_Optic_1P29.et",
+                      "GUID":  "952D9BD7B6F8F591",
+                      "PRECONDITION":  "Already user runtime verified WORKING. No regression warranted: no dependent file changed since verification (audit read-only)",
+                      "STEPS":  [
+                                    "Optional co-verify only: attach armst_Optic_1P29 to the same AK dovetail slot used in RT-02"
+                                ],
+                      "PASS_CRITERIA":  [
+                                            "[Reference] If co-verified: 1P29 renders 4x PIP and functions (as previously confirmed)"
+                                        ],
+                      "FAIL_SYMPTOMS":  [
+                                            "[Reference] 1P29 invisible / PIP broken / slot rejected"
+                                        ],
+                      "RESULT":  "VERIFIED_RUNTIME (PASS)",
+                      "NOTES":  "User-confirmed WORKING (4x PIP, ranges 100-500). Regression NOT warranted (no change since verification).",
+                      "FAILURE_TRIAGE":  "SIGHTS/PIP"
+                  },
+                  {
+                      "TEST_ID":  "RT-04",
+                      "RESOURCE":  "armst_Groza_base.et",
+                      "CURRENT_PATH":  "Prefabs/Weapons/Russian/Rifle/Groza/armst_Groza_base.et",
+                      "GUID":  "903C7920F00AB654",
+                      "PRECONDITION":  "Preflight: parent Rifle_Base.et; MagazineWell9x39; default magazine SP5 (77215B3A185D1EFD)",
+                      "STEPS":  [
+                                    "Spawn Groza (SP5 20rnd default loaded)",
+                                    "Check magazine well accepts Groza 9x39 SP5/SP6 magazines",
+                                    "Fire - confirm ejection cycle and casing particle (Casing_762x39_PS.ptc known debt)"
+                                ],
+                      "PASS_CRITERIA":  [
+                                            "SP5 loads by default; SP6 also loads; weapon fires and ejects; muzzle (Muzzle_AK74.ptc) and casing particle play"
+                                        ],
+                      "FAIL_SYMPTOMS":  [
+                                            "Magazine rejected (wrong well)",
+                                            "Firing fails",
+                                            "No ejection/casing particle (caliber mismatch of casing is accepted known debt)"
+                                        ],
+                      "RESULT":  "NOT_TESTED",
+                      "NOTES":  "Known debt remains visible as-is; not to be fixed by this test.",
+                      "FAILURE_TRIAGE":  "AMMO/MAGAZINE"
+                  },
+                  {
+                      "TEST_ID":  "RT-05",
+                      "RESOURCE":  "armst_Rifle_SOC94_base.et",
+                      "CURRENT_PATH":  "Prefabs/Weapons/Russian/Rifle/SOC94/armst_Rifle_SOC94_base.et",
+                      "GUID":  "E394112ABBC198D8",
+                      "PRECONDITION":  "Parent resolves by GUID 140E94F473B60FE3 (armst_Rifle_AKM_base); parent path string malformed but GUID-matched",
+                      "STEPS":  [
+                                    "Spawn SOC94",
+                                    "Confirm full AKM-derived structure (attachments, stock interface)",
+                                    "Fire a few rounds"
+                                ],
+                      "PASS_CRITERIA":  [
+                                            "SOC94 inherits correctly; no load failure despite malformed parent path (GUID resolution works); fires normally"
+                                        ],
+                      "FAIL_SYMPTOMS":  [
+                                            "SOC94 fails to spawn / empty entity / missing inherited components"
+                                        ],
+                      "RESULT":  "NOT_TESTED",
+                      "NOTES":  "Verifies malformed parent path does not break inherited structure.",
+                      "FAILURE_TRIAGE":  "RESOURCE_LOADING"
+                  },
+                  {
+                      "TEST_ID":  "RT-06",
+                      "RESOURCE":  "armst_SR_2_base.et + armst_Magazine_9x18_SR2_30rnd_Ball.et",
+                      "CURRENT_PATH":  "Prefabs/Weapons/Russian/Handguns/Sr_2/armst_SR_2_base.et + Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_SR2_30rnd_Ball.et",
+                      "GUID":  "31FB2EC4F4AFFC05 / 2610CA8D8632DEF4",
+                      "PRECONDITION":  "Preflight: MagazineWellPP91 shared compat; own mag capacity 30",
+                      "STEPS":  [
+                                    "Spawn SR-2",
+                                    "Load armst_Magazine_9x18_SR2_30rnd_Ball (capacity 30)",
+                                    "Fire and reload"
+                                ],
+                      "PASS_CRITERIA":  [
+                                            "SR-2 accepts its 30rnd mag via PP91 well; loads, fires, feeds 30 rounds; reload works"
+                                        ],
+                      "FAIL_SYMPTOMS":  [
+                                            "Magazine rejected",
+                                            "Capacity mismatch visible",
+                                            "Feeding failure"
+                                        ],
+                      "RESULT":  "NOT_TESTED",
+                      "NOTES":  "Shared PP91 well is intentional.",
+                      "FAILURE_TRIAGE":  "AMMO/MAGAZINE"
+                  },
+                  {
+                      "TEST_ID":  "RT-07",
+                      "RESOURCE":  "armst_Rifle_HKG36_base.et + armst_HKG36_CarryHandle_Optic.et",
+                      "CURRENT_PATH":  "Prefabs/Weapons/Western/Rifle/HKG36/armst_Rifle_HKG36_base.et + Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Optic.et",
+                      "GUID":  "A802C718201D72DF / none (missing meta - known)",
+                      "PRECONDITION":  "Preflight: weapon slot AttachmentOpticsG36; no direct RIS on weapon; carry-handle optic = factory variant",
+                      "STEPS":  [
+                                    "Spawn HKG36; verify no direct RIS slot on weapon",
+                                    "Attach Carry Handle Optic (AttachmentOpticsG36)",
+                                    "Attach Picatinny carry handle variant, then a RIS optic into it",
+                                    "Confirm factory handling (AnimationIKPose p_ak74_ik.anm workaround) works"
+                                ],
+                      "PASS_CRITERIA":  [
+                                            "Carry handle optic mounts on G36 slot; sight/PIP functions; picatinny chain works; no direct RIS on weapon"
+                                        ],
+                      "FAIL_SYMPTOMS":  [
+                                            "Carry handle rejected",
+                                            "Factory sight inoperative",
+                                            "ADS animation glitch (workaround - report only, not to fix)"
+                                        ],
+                      "RESULT":  "NOT_TESTED",
+                      "NOTES":  "Carry-handle .et has no .meta (known REVIEW state) - load path must still work for testing.",
+                      "FAILURE_TRIAGE":  "SIGHTS/PIP"
+                  },
+                  {
+                      "TEST_ID":  "RT-08",
+                      "RESOURCE":  "All main weapons (28 bases + 20 non-base playable variants; 12ga excluded by scope)",
+                      "CURRENT_PATH":  "Prefabs/Weapons/Russian/... + Prefabs/Weapons/Western/... (see NOTES)",
+                      "GUID":  "multiple",
+                      "PRECONDITION":  "RT-01..RT-07 subsystem smoke tests completed or referenced",
+                      "STEPS":  [
+                                    "For each weapon in the sweep list: spawn in game/editor",
+                                    "Confirm mesh visible (no invisible entity)",
+                                    "ADS + fire one mag",
+                                    "Reload (where applicable)",
+                                    "Attach its default optic/magazine where defined"
+                                ],
+                      "PASS_CRITERIA":  [
+                                            "Every listed weapon spawns visibly, fires, reloads; default submounts attach; no console load errors"
+                                        ],
+                      "FAIL_SYMPTOMS":  [
+                                            "Invisible weapon",
+                                            "Spawn failure",
+                                            "Fire/reload failure",
+                                            "Missing default magazine/optic",
+                                            "Console resource load errors"
+                                        ],
+                      "RESULT":  "NOT_TESTED",
+                      "NOTES":  "Sweep target set = 28 bases + 20 non-base variants from full_mod_inventory.json / weapon_compliance_audit.json of audit V2.",
+                      "FAILURE_TRIAGE":  "RESOURCE_LOADING"
+                  }
+              ]
+}

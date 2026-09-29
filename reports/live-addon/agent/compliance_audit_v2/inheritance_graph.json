@@ -1,0 +1,2362 @@
+[
+    {
+        "PATH":  "Prefabs/Particles/Bullet_Case/Bullet_Case_12ga.et",
+        "GUID":  "BE7D3DF00BBB2D6F",
+        "DIRECT_PARENT":  "{BE79A6E700CF746A}Prefabs/Particles/Bullet_Case/Bullet_Case_Base.et",
+        "PARENT_GUID":  "BE79A6E700CF746A",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Particles/Bullet_Case/Bullet_Case_12ga.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "BE79A6E700CF746A",
+                       "RefPath":  "Prefabs/Particles/Bullet_Case/Bullet_Case_Base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Particles/Bullet_Case/Bullet_Case_12ga_blue.et",
+        "GUID":  "8705B7674FB2F927",
+        "DIRECT_PARENT":  "{BE79A6E700CF746A}Prefabs/Particles/Bullet_Case/Bullet_Case_Base.et",
+        "PARENT_GUID":  "BE79A6E700CF746A",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Particles/Bullet_Case/Bullet_Case_12ga_blue.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "BE79A6E700CF746A",
+                       "RefPath":  "Prefabs/Particles/Bullet_Case/Bullet_Case_Base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Ammo/armst_Ammo_9x18_BP.et",
+        "GUID":  "64F210837ACBAF9E",
+        "DIRECT_PARENT":  "{B3010C5DF1ED82ED}Prefabs/Weapons/Ammo/Ammo_9x18_AP_7N25.et",
+        "PARENT_GUID":  "B3010C5DF1ED82ED",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Ammo/armst_Ammo_9x18_BP.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "B3010C5DF1ED82ED",
+                       "RefPath":  "Prefabs/Weapons/Ammo/Ammo_9x18_AP_7N25.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Ammo/armst_Ammo_9x18_PP.et",
+        "GUID":  "2EECBE22BC8BE0BA",
+        "DIRECT_PARENT":  "{4DE72DF927310A8B}Prefabs/Weapons/Ammo/Ammo_9x18_Ball_57N181.et",
+        "PARENT_GUID":  "4DE72DF927310A8B",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Ammo/armst_Ammo_9x18_PP.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "4DE72DF927310A8B",
+                       "RefPath":  "Prefabs/Weapons/Ammo/Ammo_9x18_Ball_57N181.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Ammo/12g/armst_Ammo_12ga.et",
+        "GUID":  "862E8EB633CED07D",
+        "DIRECT_PARENT":  "{AC29AE3D5ECD6390}Prefabs/Weapons/Ammo/Ammo_762x54r_Ball_57N323S.et",
+        "PARENT_GUID":  "AC29AE3D5ECD6390",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Ammo/12g/armst_Ammo_12ga.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "AC29AE3D5ECD6390",
+                       "RefPath":  "Prefabs/Weapons/Ammo/Ammo_762x54r_Ball_57N323S.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Ammo/12g/armst_Ammo_12ga_shell.et",
+        "GUID":  "9F7537128778361F",
+        "DIRECT_PARENT":  "{AC29AE3D5ECD6390}Prefabs/Weapons/Ammo/Ammo_762x54r_Ball_57N323S.et",
+        "PARENT_GUID":  "AC29AE3D5ECD6390",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Ammo/12g/armst_Ammo_12ga_shell.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "AC29AE3D5ECD6390",
+                       "RefPath":  "Prefabs/Weapons/Ammo/Ammo_762x54r_Ball_57N323S.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Ammo/12g/armst_Ammo_12ga_shell_test.et",
+        "GUID":  "9A2EC4D810705428",
+        "DIRECT_PARENT":  "{AC29AE3D5ECD6390}Prefabs/Weapons/Ammo/Ammo_762x54r_Ball_57N323S.et",
+        "PARENT_GUID":  "AC29AE3D5ECD6390",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Ammo/12g/armst_Ammo_12ga_shell_test.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "AC29AE3D5ECD6390",
+                       "RefPath":  "Prefabs/Weapons/Ammo/Ammo_762x54r_Ball_57N323S.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Ammo/12g/armst_Ammo_Buckshot_pellet.et",
+        "GUID":  null,
+        "DIRECT_PARENT":  "{67FED88E5085F63F}Prefabs/Weapons/Core/Ammo_Bullet_Base.et",
+        "PARENT_GUID":  "67FED88E5085F63F",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Ammo/12g/armst_Ammo_Buckshot_pellet.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "67FED88E5085F63F",
+                       "RefPath":  "Prefabs/Weapons/Core/Ammo_Bullet_Base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Ammo/Eastern/762x39/armst_Ammo_762x39_BP.et",
+        "GUID":  "1785D92E5A104937",
+        "DIRECT_PARENT":  "{67FED88E5085F63F}Prefabs/Weapons/Core/Ammo_Bullet_Base.et",
+        "PARENT_GUID":  "67FED88E5085F63F",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Ammo/Eastern/762x39/armst_Ammo_762x39_BP.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "67FED88E5085F63F",
+                       "RefPath":  "Prefabs/Weapons/Core/Ammo_Bullet_Base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Ammo/Eastern/762x39/armst_Ammo_762x39_PP.et",
+        "GUID":  "3E395A4A4B0C4F0E",
+        "DIRECT_PARENT":  "{67FED88E5085F63F}Prefabs/Weapons/Core/Ammo_Bullet_Base.et",
+        "PARENT_GUID":  "67FED88E5085F63F",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Ammo/Eastern/762x39/armst_Ammo_762x39_PP.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "67FED88E5085F63F",
+                       "RefPath":  "Prefabs/Weapons/Core/Ammo_Bullet_Base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Ammo/Russian/763x25/armst_Ammo_763x25.et",
+        "GUID":  "8221593DFA48E4B3",
+        "DIRECT_PARENT":  "{AC29AE3D5ECD6390}Prefabs/Weapons/Ammo/Ammo_762x54r_Ball_57N323S.et",
+        "PARENT_GUID":  "AC29AE3D5ECD6390",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Ammo/Russian/763x25/armst_Ammo_763x25.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "AC29AE3D5ECD6390",
+                       "RefPath":  "Prefabs/Weapons/Ammo/Ammo_762x54r_Ball_57N323S.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Ammo/Russian/763x25/armst_Ammo_763x25_Ball.et",
+        "GUID":  "5AE7AF31B9D7EB6C",
+        "DIRECT_PARENT":  "{67FED88E5085F63F}Prefabs/Weapons/Core/Ammo_Bullet_Base.et",
+        "PARENT_GUID":  "67FED88E5085F63F",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Ammo/Russian/763x25/armst_Ammo_763x25_Ball.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "67FED88E5085F63F",
+                       "RefPath":  "Prefabs/Weapons/Core/Ammo_Bullet_Base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Ammo/Russian/9x39/armst_Ammo_9x39_SP5_Ball.et",
+        "GUID":  "2CB8EAD4A52F3290",
+        "DIRECT_PARENT":  "{AC29AE3D5ECD6390}Prefabs/Weapons/Ammo/Ammo_762x54r_Ball_57N323S.et",
+        "PARENT_GUID":  "AC29AE3D5ECD6390",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Ammo/Russian/9x39/armst_Ammo_9x39_SP5_Ball.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "AC29AE3D5ECD6390",
+                       "RefPath":  "Prefabs/Weapons/Ammo/Ammo_762x54r_Ball_57N323S.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Ammo/Russian/9x39/armst_Ammo_9x39_SP6_Ball.et",
+        "GUID":  "FB468B29C75FE46A",
+        "DIRECT_PARENT":  "{AC29AE3D5ECD6390}Prefabs/Weapons/Ammo/Ammo_762x54r_Ball_57N323S.et",
+        "PARENT_GUID":  "AC29AE3D5ECD6390",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Ammo/Russian/9x39/armst_Ammo_9x39_SP6_Ball.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "AC29AE3D5ECD6390",
+                       "RefPath":  "Prefabs/Weapons/Ammo/Ammo_762x54r_Ball_57N323S.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Ammo/Russian/grenade/armst_Ammo_Grenade_HE_VOG25.et",
+        "GUID":  "262F0D09C4130826",
+        "DIRECT_PARENT":  "{D40A105437369C1D}Prefabs/Weapons/Core/Ammo_GrenadeLauncher_Base.et",
+        "PARENT_GUID":  "D40A105437369C1D",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Ammo/Russian/grenade/armst_Ammo_Grenade_HE_VOG25.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "D40A105437369C1D",
+                       "RefPath":  "Prefabs/Weapons/Core/Ammo_GrenadeLauncher_Base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Ammo/Western/5x56/armst_Ammo_556x45_BP.et",
+        "GUID":  "716F41EFBBB14F9C",
+        "DIRECT_PARENT":  "{AC26AB660097633D}Prefabs/Weapons/Ammo/Ammo_556x45_Ball_M855.et",
+        "PARENT_GUID":  "AC26AB660097633D",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Ammo/Western/5x56/armst_Ammo_556x45_BP.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "AC26AB660097633D",
+                       "RefPath":  "Prefabs/Weapons/Ammo/Ammo_556x45_Ball_M855.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Ammo/Western/5x56/armst_Ammo_556x45_PP.et",
+        "GUID":  "62FA6A6363394955",
+        "DIRECT_PARENT":  "{AC26AB660097633D}Prefabs/Weapons/Ammo/Ammo_556x45_Ball_M855.et",
+        "PARENT_GUID":  "AC26AB660097633D",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Ammo/Western/5x56/armst_Ammo_556x45_PP.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "AC26AB660097633D",
+                       "RefPath":  "Prefabs/Weapons/Ammo/Ammo_556x45_Ball_M855.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Ammo/Western/762x51/armst_Ammo_762x51_BP.et",
+        "GUID":  "647D4F418F9F4655",
+        "DIRECT_PARENT":  "{9F39DD07E2860466}Prefabs/Weapons/Ammo/Ammo_762x51_AP_M61.et",
+        "PARENT_GUID":  "9F39DD07E2860466",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Ammo/Western/762x51/armst_Ammo_762x51_BP.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "9F39DD07E2860466",
+                       "RefPath":  "Prefabs/Weapons/Ammo/Ammo_762x51_AP_M61.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Ammo/Western/762x51/armst_Ammo_762x51_PP.et",
+        "GUID":  "8FAC2EB7CA474E5E",
+        "DIRECT_PARENT":  "{C14C5DE6F97F06F0}Prefabs/Weapons/Ammo/Ammo_762x51_Ball_M80.et",
+        "PARENT_GUID":  "C14C5DE6F97F06F0",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Ammo/Western/762x51/armst_Ammo_762x51_PP.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "C14C5DE6F97F06F0",
+                       "RefPath":  "Prefabs/Weapons/Ammo/Ammo_762x51_Ball_M80.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Ammo/Western/9x19/armst_Ammo_9x19_BP.et",
+        "GUID":  "9F5580C950084760",
+        "DIRECT_PARENT":  "{7687761020B01947}Prefabs/Weapons/Ammo/Ammo_9x19_AP_7N21.et",
+        "PARENT_GUID":  "7687761020B01947",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Ammo/Western/9x19/armst_Ammo_9x19_BP.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "7687761020B01947",
+                       "RefPath":  "Prefabs/Weapons/Ammo/Ammo_9x19_AP_7N21.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Ammo/Western/9x19/armst_Ammo_9x19_PP.et",
+        "GUID":  "DFADF7628FAC4A05",
+        "DIRECT_PARENT":  "{9DA944F4D6A611BA}Prefabs/Weapons/Ammo/Ammo_9x19_HP_JHP.et",
+        "PARENT_GUID":  "9DA944F4D6A611BA",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Ammo/Western/9x19/armst_Ammo_9x19_PP.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "9DA944F4D6A611BA",
+                       "RefPath":  "Prefabs/Weapons/Ammo/Ammo_9x19_HP_JHP.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Attachments/Handguards/armst_Handguard_AK74M2.et",
+        "GUID":  "7851F29BDAAAD7DB",
+        "DIRECT_PARENT":  "{5E36B9F5B54CDA2E}Prefabs/Weapons/Attachments/Handguards/Handguard_M16_carbine/Handguard_M16_carbine_base.et",
+        "PARENT_GUID":  "5E36B9F5B54CDA2E",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Attachments/Handguards/armst_Handguard_AK74M2.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "5E36B9F5B54CDA2E",
+                       "RefPath":  "Prefabs/Weapons/Attachments/Handguards/Handguard_M16_carbine/Handguard_M16_carbine_base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Attachments/Muzzle/armst_Suppressor_9a91.et",
+        "GUID":  null,
+        "DIRECT_PARENT":  "{5677861A692ED3EB}Prefabs/Weapons/Attachments/Muzzle/Suppressor_PBS4/Suppressor_PBS4_base.et",
+        "PARENT_GUID":  "5677861A692ED3EB",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Attachments/Muzzle/armst_Suppressor_9a91.et",
+                                  "Prefabs/Weapons/Attachments/Muzzle/Suppressor_PBS4/Suppressor_PBS4_base.et"
+                              ],
+        "CHAIN_LENGTH":  2,
+        "BROKEN":  {
+                       "RefGuid":  "491CEF88656BE6C2",
+                       "RefPath":  "Prefabs/Weapons/Core/Suppressor_base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Attachments/Muzzle/Suppressor_PBS4/Suppressor_PBS4_base.et",
+        "GUID":  "5677861A692ED3EB",
+        "DIRECT_PARENT":  "{491CEF88656BE6C2}Prefabs/Weapons/Core/Suppressor_base.et",
+        "PARENT_GUID":  "491CEF88656BE6C2",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Attachments/Muzzle/Suppressor_PBS4/Suppressor_PBS4_base.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "491CEF88656BE6C2",
+                       "RefPath":  "Prefabs/Weapons/Core/Suppressor_base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et",
+        "GUID":  null,
+        "DIRECT_PARENT":  "{AB71C533945104AE}Prefabs/Weapons/Attachments/Optics/Optic_PSO1/Optic_PSO1_base.et",
+        "PARENT_GUID":  "AB71C533945104AE",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "AB71C533945104AE",
+                       "RefPath":  "Prefabs/Weapons/Attachments/Optics/Optic_PSO1/Optic_PSO1_base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Attachments/Optics/WeaponOptic_Base.et",
+        "GUID":  "966B4E5523D2F166",
+        "DIRECT_PARENT":  "{3E15C1C882DBB587}Prefabs/Weapons/Core/WeaponSight_Base.et",
+        "PARENT_GUID":  "3E15C1C882DBB587",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Attachments/Optics/WeaponOptic_Base.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "3E15C1C882DBB587",
+                       "RefPath":  "Prefabs/Weapons/Core/WeaponSight_Base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et",
+        "GUID":  "D71FD2BD68AC4B31",
+        "DIRECT_PARENT":  "{0A9CD090EE3440E7}Prefabs/Weapons/Core/WeaponPart_Base.et",
+        "PARENT_GUID":  "0A9CD090EE3440E7",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "0A9CD090EE3440E7",
+                       "RefPath":  "Prefabs/Weapons/Core/WeaponPart_Base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Optic.et",
+        "GUID":  null,
+        "DIRECT_PARENT":  "{966B4E5523D2F166}Prefabs/Weapons/Attachments/Optics/WeaponOptic_Base.et",
+        "PARENT_GUID":  "966B4E5523D2F166",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Optic.et",
+                                  "Prefabs/Weapons/Attachments/Optics/WeaponOptic_Base.et"
+                              ],
+        "CHAIN_LENGTH":  2,
+        "BROKEN":  {
+                       "RefGuid":  "3E15C1C882DBB587",
+                       "RefPath":  "Prefabs/Weapons/Core/WeaponSight_Base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Picatinny.et",
+        "GUID":  "8965EFD9F6CC9B95",
+        "DIRECT_PARENT":  "{C3DAB8D1B6068170}Prefabs/Weapons/Core/WeaponPart_Base.et",
+        "PARENT_GUID":  "C3DAB8D1B6068170",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Picatinny.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "C3DAB8D1B6068170",
+                       "RefPath":  "Prefabs/Weapons/Core/WeaponPart_Base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Attachments/Optics/Optic_1P29/armst_Optic_1P29.et",
+        "GUID":  "952D9BD7B6F8F591",
+        "DIRECT_PARENT":  "{0745A57C37C15101}Prefabs/Weapons/Attachments/Optics/Optic_1P29/Optic_1P29_base.et",
+        "PARENT_GUID":  "0745A57C37C15101",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Attachments/Optics/Optic_1P29/armst_Optic_1P29.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "0745A57C37C15101",
+                       "RefPath":  "Prefabs/Weapons/Attachments/Optics/Optic_1P29/Optic_1P29_base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Attachments/Stocks/armst_Handguard_AK74M.et",
+        "GUID":  null,
+        "DIRECT_PARENT":  "{5E36B9F5B54CDA2E}Prefabs/Weapons/Attachments/Handguards/Handguard_M16_carbine/Handguard_M16_carbine_base.et",
+        "PARENT_GUID":  "5E36B9F5B54CDA2E",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Attachments/Stocks/armst_Handguard_AK74M.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "5E36B9F5B54CDA2E",
+                       "RefPath":  "Prefabs/Weapons/Attachments/Handguards/Handguard_M16_carbine/Handguard_M16_carbine_base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Attachments/Stocks/armst_Handguard_AKS.et",
+        "GUID":  "31E8EF2214161A25",
+        "DIRECT_PARENT":  "{5E36B9F5B54CDA2E}Prefabs/Weapons/Attachments/Handguards/Handguard_M16_carbine/Handguard_M16_carbine_base.et",
+        "PARENT_GUID":  "5E36B9F5B54CDA2E",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Attachments/Stocks/armst_Handguard_AKS.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "5E36B9F5B54CDA2E",
+                       "RefPath":  "Prefabs/Weapons/Attachments/Handguards/Handguard_M16_carbine/Handguard_M16_carbine_base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Attachments/Stocks/armst_Stock_akm.et",
+        "GUID":  null,
+        "DIRECT_PARENT":  "{2DBBEA8AE9BD2C36}Prefabs/Weapons/Attachments/Stocks/Stock_VZ58/Stock_VZ58_base.et",
+        "PARENT_GUID":  "2DBBEA8AE9BD2C36",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Attachments/Stocks/armst_Stock_akm.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "2DBBEA8AE9BD2C36",
+                       "RefPath":  "Prefabs/Weapons/Attachments/Stocks/Stock_VZ58/Stock_VZ58_base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Attachments/Underbarrel/armst_UGL_GP25.et",
+        "GUID":  "1ABABE3551512B0A",
+        "DIRECT_PARENT":  "{8A820ADCE8D05357}Prefabs/Weapons/Core/UGL_Base.et",
+        "PARENT_GUID":  "8A820ADCE8D05357",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Attachments/Underbarrel/armst_UGL_GP25.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "8A820ADCE8D05357",
+                       "RefPath":  "Prefabs/Weapons/Core/UGL_Base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Core/Grenade_Base.et",
+        "GUID":  "D7EB24176E5CEAA6",
+        "DIRECT_PARENT":  "{A9EF01A7A6FE60CD}Prefabs/Weapons/Core/Throw_Base.et",
+        "PARENT_GUID":  "A9EF01A7A6FE60CD",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Core/Grenade_Base.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "A9EF01A7A6FE60CD",
+                       "RefPath":  "Prefabs/Weapons/Core/Throw_Base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Core/Magazine_Base.et",
+        "GUID":  "F9E1A46E3ABA116F",
+        "DIRECT_PARENT":  null,
+        "PARENT_GUID":  null,
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Core/Magazine_Base.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  null,
+        "CYCLE":  null,
+        "ALL_LOCAL":  true
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Core/Rifle_Base.et",
+        "GUID":  "911D6C8DC7BA2D63",
+        "DIRECT_PARENT":  "{E1F14DB52DBFBC57}Prefabs/Weapons/Core/Weapon_Base.et",
+        "PARENT_GUID":  "E1F14DB52DBFBC57",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Core/Rifle_Base.et",
+                                  "Prefabs/Weapons/Core/Weapon_Base.et"
+                              ],
+        "CHAIN_LENGTH":  2,
+        "BROKEN":  null,
+        "CYCLE":  null,
+        "ALL_LOCAL":  true
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Core/Weapon_Base.et",
+        "GUID":  "E1F14DB52DBFBC57",
+        "DIRECT_PARENT":  null,
+        "PARENT_GUID":  null,
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Core/Weapon_Base.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  null,
+        "CYCLE":  null,
+        "ALL_LOCAL":  true
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Grenades/armst_Grenade_M67.et",
+        "GUID":  "E8F00BF730225B00",
+        "DIRECT_PARENT":  "{8B55F8686833B12B}Prefabs/Weapons/Core/FragGrenade_Base.et",
+        "PARENT_GUID":  "8B55F8686833B12B",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Grenades/armst_Grenade_M67.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "8B55F8686833B12B",
+                       "RefPath":  "Prefabs/Weapons/Core/FragGrenade_Base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Grenades/armst_Grenade_RGD5.et",
+        "GUID":  "645C73791ECA1698",
+        "DIRECT_PARENT":  "{8B55F8686833B12B}Prefabs/Weapons/Core/FragGrenade_Base.et",
+        "PARENT_GUID":  "8B55F8686833B12B",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Grenades/armst_Grenade_RGD5.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "8B55F8686833B12B",
+                       "RefPath":  "Prefabs/Weapons/Core/FragGrenade_Base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Grenades/armst_Smoke_ANM8HC.et",
+        "GUID":  "9DB69176CEF0EE97",
+        "DIRECT_PARENT":  "{0DCE9A9A4F31BE1C}Prefabs/Weapons/Core/SmokeGrenade_Base.et",
+        "PARENT_GUID":  "0DCE9A9A4F31BE1C",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Grenades/armst_Smoke_ANM8HC.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "0DCE9A9A4F31BE1C",
+                       "RefPath":  "Prefabs/Weapons/Core/SmokeGrenade_Base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Grenades/armst_Smoke_RDG2.et",
+        "GUID":  "77EAE5E07DC4678A",
+        "DIRECT_PARENT":  "{0DCE9A9A4F31BE1C}Prefabs/Weapons/Core/SmokeGrenade_Base.et",
+        "PARENT_GUID":  "0DCE9A9A4F31BE1C",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Grenades/armst_Smoke_RDG2.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "0DCE9A9A4F31BE1C",
+                       "RefPath":  "Prefabs/Weapons/Core/SmokeGrenade_Base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Handguns/armst_Handgun_Knife_base.et",
+        "GUID":  null,
+        "DIRECT_PARENT":  "{EE7028E9DF49763A}Prefabs/Weapons/Core/Handgun_Base.et",
+        "PARENT_GUID":  "EE7028E9DF49763A",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Handguns/armst_Handgun_Knife_base.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "EE7028E9DF49763A",
+                       "RefPath":  "Prefabs/Weapons/Core/Handgun_Base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/12ga/12ga_Buckshot_base.et",
+        "GUID":  null,
+        "DIRECT_PARENT":  "{6D18CC33708EE712}Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et",
+        "PARENT_GUID":  "6D18CC33708EE712",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Magazines/12ga/12ga_Buckshot_base.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "6D18CC33708EE712",
+                       "RefPath":  "Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/12ga/armst_12ga_Buckshot.et",
+        "GUID":  "B0DFDF7AAA9C5D39",
+        "DIRECT_PARENT":  "{9F9380F5E2ECAF59}Prefabs/Weapons/Magazines/12ga/12ga_Buckshot_base.et",
+        "PARENT_GUID":  "9F9380F5E2ECAF59",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Magazines/12ga/armst_12ga_Buckshot.et",
+                                  "Prefabs/Weapons/Magazines/12ga/12ga_Buckshot_base.et"
+                              ],
+        "CHAIN_LENGTH":  2,
+        "BROKEN":  {
+                       "RefGuid":  "6D18CC33708EE712",
+                       "RefPath":  "Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/12ga/armst_12ga_Shell.et",
+        "GUID":  "0346C78F29531C70",
+        "DIRECT_PARENT":  "{6D18CC33708EE712}Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et",
+        "PARENT_GUID":  "6D18CC33708EE712",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Magazines/12ga/armst_12ga_Shell.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "6D18CC33708EE712",
+                       "RefPath":  "Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/12ga/armst_12ga_Shell_test.et",
+        "GUID":  null,
+        "DIRECT_PARENT":  "{6D18CC33708EE712}Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et",
+        "PARENT_GUID":  "6D18CC33708EE712",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Magazines/12ga/armst_12ga_Shell_test.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "6D18CC33708EE712",
+                       "RefPath":  "Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_AK_30rnd_Ball.et",
+        "GUID":  null,
+        "DIRECT_PARENT":  "{63C1E699345B24F9}Prefabs/Weapons/Magazines/Russian/5x45/AK74/Magazine_545x39_AK_30rnd_Base.et",
+        "PARENT_GUID":  "63C1E699345B24F9",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_AK_30rnd_Ball.et",
+                                  "Prefabs/Weapons/Magazines/Russian/5x45/AK74/Magazine_545x39_AK_30rnd_Base.et",
+                                  "Prefabs/Weapons/Core/Magazine_Base.et"
+                              ],
+        "CHAIN_LENGTH":  3,
+        "BROKEN":  null,
+        "CYCLE":  null,
+        "ALL_LOCAL":  true
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_AK_30rnd_Tracer.et",
+        "GUID":  null,
+        "DIRECT_PARENT":  "{63C1E699345B24F9}Prefabs/Weapons/Magazines/Russian/5x45/AK74/Magazine_545x39_AK_30rnd_Base.et",
+        "PARENT_GUID":  "63C1E699345B24F9",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_AK_30rnd_Tracer.et",
+                                  "Prefabs/Weapons/Magazines/Russian/5x45/AK74/Magazine_545x39_AK_30rnd_Base.et",
+                                  "Prefabs/Weapons/Core/Magazine_Base.et"
+                              ],
+        "CHAIN_LENGTH":  3,
+        "BROKEN":  null,
+        "CYCLE":  null,
+        "ALL_LOCAL":  true
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_RPK_45rnd_Ball.et",
+        "GUID":  null,
+        "DIRECT_PARENT":  "{9569026177545A20}Prefabs/Weapons/Magazines/Magazine_545x39_RPK_45rnd_Base.et",
+        "PARENT_GUID":  "9569026177545A20",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_RPK_45rnd_Ball.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "9569026177545A20",
+                       "RefPath":  "Prefabs/Weapons/Magazines/Magazine_545x39_RPK_45rnd_Base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_RPK_45rnd_Tracer.et",
+        "GUID":  null,
+        "DIRECT_PARENT":  "{9569026177545A20}Prefabs/Weapons/Magazines/Magazine_545x39_RPK_45rnd_Base.et",
+        "PARENT_GUID":  "9569026177545A20",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_RPK_45rnd_Tracer.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "9569026177545A20",
+                       "RefPath":  "Prefabs/Weapons/Magazines/Magazine_545x39_RPK_45rnd_Base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Russian/5x45/AK74/Magazine_545x39_AK_30rnd_Base.et",
+        "GUID":  null,
+        "DIRECT_PARENT":  "{F9E1A46E3ABA116F}Prefabs/Weapons/Core/Magazine_Base.et",
+        "PARENT_GUID":  "F9E1A46E3ABA116F",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Magazines/Russian/5x45/AK74/Magazine_545x39_AK_30rnd_Base.et",
+                                  "Prefabs/Weapons/Core/Magazine_Base.et"
+                              ],
+        "CHAIN_LENGTH":  2,
+        "BROKEN":  null,
+        "CYCLE":  null,
+        "ALL_LOCAL":  true
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Russian/762x54/SVD/armst_Box_762x54_PK_250rnd_Ball.et",
+        "GUID":  "1C260E65B7F290BA",
+        "DIRECT_PARENT":  "{D99AF37E07F32ECB}Prefabs/Weapons/Magazines/Box_762x54_PK_250rnd_Base.et",
+        "PARENT_GUID":  "D99AF37E07F32ECB",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Magazines/Russian/762x54/SVD/armst_Box_762x54_PK_250rnd_Ball.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "D99AF37E07F32ECB",
+                       "RefPath":  "Prefabs/Weapons/Magazines/Box_762x54_PK_250rnd_Base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Russian/762x54/SVD/armst_Magazine_762x54_SVD_10rnd_7BZ3API.et",
+        "GUID":  "19600CCA33279D20",
+        "DIRECT_PARENT":  "{761A03A9C5BA8D68}Prefabs/Weapons/Magazines/Magazine_762x54_SVD_10rnd_Base.et",
+        "PARENT_GUID":  "761A03A9C5BA8D68",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Magazines/Russian/762x54/SVD/armst_Magazine_762x54_SVD_10rnd_7BZ3API.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "761A03A9C5BA8D68",
+                       "RefPath":  "Prefabs/Weapons/Magazines/Magazine_762x54_SVD_10rnd_Base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Russian/763x25/TT/armst_Magazine_763x25_TT_8rnd_Ball.et",
+        "GUID":  "AA99F5E678010DB3",
+        "DIRECT_PARENT":  "{8B853CDD11BA916E}Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball.et",
+        "PARENT_GUID":  "8B853CDD11BA916E",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Magazines/Russian/763x25/TT/armst_Magazine_763x25_TT_8rnd_Ball.et",
+                                  "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball.et"
+                              ],
+        "CHAIN_LENGTH":  2,
+        "BROKEN":  {
+                       "RefGuid":  "9B5AA2C731485ACA",
+                       "RefPath":  "Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_10rnd_Ball.et",
+        "GUID":  null,
+        "DIRECT_PARENT":  "{48720FC416263FC1}Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_30rnd_Ball.et",
+        "PARENT_GUID":  "48720FC416263FC1",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_10rnd_Ball.et",
+                                  "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_30rnd_Ball.et"
+                              ],
+        "CHAIN_LENGTH":  2,
+        "BROKEN":  {
+                       "RefGuid":  "892F30500E6E7E04",
+                       "RefPath":  "Prefabs/Weapons/Magazines/Vz58/Magazine_762x39_Vz58_30rnd_Base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_10rnd_Ball_BP.et",
+        "GUID":  "7882EC8AE9CD4CF3",
+        "DIRECT_PARENT":  "{48720FC416263FC1}Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_30rnd_Ball.et",
+        "PARENT_GUID":  "48720FC416263FC1",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_10rnd_Ball_BP.et",
+                                  "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_30rnd_Ball.et"
+                              ],
+        "CHAIN_LENGTH":  2,
+        "BROKEN":  {
+                       "RefGuid":  "892F30500E6E7E04",
+                       "RefPath":  "Prefabs/Weapons/Magazines/Vz58/Magazine_762x39_Vz58_30rnd_Base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_30rnd_Ball.et",
+        "GUID":  null,
+        "DIRECT_PARENT":  "{892F30500E6E7E04}Prefabs/Weapons/Magazines/Vz58/Magazine_762x39_Vz58_30rnd_Base.et",
+        "PARENT_GUID":  "892F30500E6E7E04",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_30rnd_Ball.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "892F30500E6E7E04",
+                       "RefPath":  "Prefabs/Weapons/Magazines/Vz58/Magazine_762x39_Vz58_30rnd_Base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_30rnd_Ball_BP.et",
+        "GUID":  "21BD2CA7421B4D5C",
+        "DIRECT_PARENT":  "{892F30500E6E7E04}Prefabs/Weapons/Magazines/Vz58/Magazine_762x39_Vz58_30rnd_Base.et",
+        "PARENT_GUID":  "892F30500E6E7E04",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_30rnd_Ball_BP.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "892F30500E6E7E04",
+                       "RefPath":  "Prefabs/Weapons/Magazines/Vz58/Magazine_762x39_Vz58_30rnd_Base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_APB_20rnd_Ball.et",
+        "GUID":  "389EB226473CD590",
+        "DIRECT_PARENT":  "{8B853CDD11BA916E}Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball.et",
+        "PARENT_GUID":  "8B853CDD11BA916E",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_APB_20rnd_Ball.et",
+                                  "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball.et"
+                              ],
+        "CHAIN_LENGTH":  2,
+        "BROKEN":  {
+                       "RefGuid":  "9B5AA2C731485ACA",
+                       "RefPath":  "Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_APB_20rnd_Ball_BP.et",
+        "GUID":  "A67F38168B64541A",
+        "DIRECT_PARENT":  "{8B853CDD11BA916E}Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball.et",
+        "PARENT_GUID":  "8B853CDD11BA916E",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_APB_20rnd_Ball_BP.et",
+                                  "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball.et"
+                              ],
+        "CHAIN_LENGTH":  2,
+        "BROKEN":  {
+                       "RefGuid":  "9B5AA2C731485ACA",
+                       "RefPath":  "Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball.et",
+        "GUID":  "8B853CDD11BA916E",
+        "DIRECT_PARENT":  "{9B5AA2C731485ACA}Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Base.et",
+        "PARENT_GUID":  "9B5AA2C731485ACA",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "9B5AA2C731485ACA",
+                       "RefPath":  "Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball_BP.et",
+        "GUID":  "44EF59B51DB21EA9",
+        "DIRECT_PARENT":  "{9B5AA2C731485ACA}Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Base.et",
+        "PARENT_GUID":  "9B5AA2C731485ACA",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball_BP.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "9B5AA2C731485ACA",
+                       "RefPath":  "Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball_PP.et",
+        "GUID":  "75B5C65F2DA68A01",
+        "DIRECT_PARENT":  "{9B5AA2C731485ACA}Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Base.et",
+        "PARENT_GUID":  "9B5AA2C731485ACA",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball_PP.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "9B5AA2C731485ACA",
+                       "RefPath":  "Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PP91_30rnd_Ball.et",
+        "GUID":  "4488C415F3CA1890",
+        "DIRECT_PARENT":  "{8B853CDD11BA916E}Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball.et",
+        "PARENT_GUID":  "8B853CDD11BA916E",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PP91_30rnd_Ball.et",
+                                  "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball.et"
+                              ],
+        "CHAIN_LENGTH":  2,
+        "BROKEN":  {
+                       "RefGuid":  "9B5AA2C731485ACA",
+                       "RefPath":  "Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PP91_30rnd_Ball_BP.et",
+        "GUID":  "318796D9FD213751",
+        "DIRECT_PARENT":  "{8B853CDD11BA916E}Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball.et",
+        "PARENT_GUID":  "8B853CDD11BA916E",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PP91_30rnd_Ball_BP.et",
+                                  "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball.et"
+                              ],
+        "CHAIN_LENGTH":  2,
+        "BROKEN":  {
+                       "RefGuid":  "9B5AA2C731485ACA",
+                       "RefPath":  "Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_SR2_30rnd_Ball.et",
+        "GUID":  "2610CA8D8632DEF4",
+        "DIRECT_PARENT":  "{8B853CDD11BA916E}Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball.et",
+        "PARENT_GUID":  "8B853CDD11BA916E",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_SR2_30rnd_Ball.et",
+                                  "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball.et"
+                              ],
+        "CHAIN_LENGTH":  2,
+        "BROKEN":  {
+                       "RefGuid":  "9B5AA2C731485ACA",
+                       "RefPath":  "Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Russian/9x39/9a91/armst_Magazine_9x39_20rnd_9a91_SP5.et",
+        "GUID":  null,
+        "DIRECT_PARENT":  "{F9E1A46E3ABA116F}Prefabs/Weapons/Core/Magazine_Base.et",
+        "PARENT_GUID":  "F9E1A46E3ABA116F",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Magazines/Russian/9x39/9a91/armst_Magazine_9x39_20rnd_9a91_SP5.et",
+                                  "Prefabs/Weapons/Core/Magazine_Base.et"
+                              ],
+        "CHAIN_LENGTH":  2,
+        "BROKEN":  null,
+        "CYCLE":  null,
+        "ALL_LOCAL":  true
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Russian/9x39/9a91/armst_Magazine_9x39_20rnd_9a91_SP6.et",
+        "GUID":  "3F47C33B88171646",
+        "DIRECT_PARENT":  "{F9E1A46E3ABA116F}Prefabs/Weapons/Core/Magazine_Base.et",
+        "PARENT_GUID":  "F9E1A46E3ABA116F",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Magazines/Russian/9x39/9a91/armst_Magazine_9x39_20rnd_9a91_SP6.et",
+                                  "Prefabs/Weapons/Core/Magazine_Base.et"
+                              ],
+        "CHAIN_LENGTH":  2,
+        "BROKEN":  null,
+        "CYCLE":  null,
+        "ALL_LOCAL":  true
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Russian/9x39/Groza/armst_Magazine_9x39_Groza_20rnd_SP5.et",
+        "GUID":  "77215B3A185D1EFD",
+        "DIRECT_PARENT":  "{F9E1A46E3ABA116F}Prefabs/Weapons/Core/Magazine_Base.et",
+        "PARENT_GUID":  "F9E1A46E3ABA116F",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Magazines/Russian/9x39/Groza/armst_Magazine_9x39_Groza_20rnd_SP5.et",
+                                  "Prefabs/Weapons/Core/Magazine_Base.et"
+                              ],
+        "CHAIN_LENGTH":  2,
+        "BROKEN":  null,
+        "CYCLE":  null,
+        "ALL_LOCAL":  true
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Russian/9x39/Groza/armst_Magazine_9x39_Groza_20rnd_SP6.et",
+        "GUID":  "168348351F5C3F54",
+        "DIRECT_PARENT":  "{F9E1A46E3ABA116F}Prefabs/Weapons/Core/Magazine_Base.et",
+        "PARENT_GUID":  "F9E1A46E3ABA116F",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Magazines/Russian/9x39/Groza/armst_Magazine_9x39_Groza_20rnd_SP6.et",
+                                  "Prefabs/Weapons/Core/Magazine_Base.et"
+                              ],
+        "CHAIN_LENGTH":  2,
+        "BROKEN":  null,
+        "CYCLE":  null,
+        "ALL_LOCAL":  true
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_20rnd_vss_SP5.et",
+        "GUID":  null,
+        "DIRECT_PARENT":  "{F9E1A46E3ABA116F}Prefabs/Weapons/Core/Magazine_Base.et",
+        "PARENT_GUID":  "F9E1A46E3ABA116F",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_20rnd_vss_SP5.et",
+                                  "Prefabs/Weapons/Core/Magazine_Base.et"
+                              ],
+        "CHAIN_LENGTH":  2,
+        "BROKEN":  null,
+        "CYCLE":  null,
+        "ALL_LOCAL":  true
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_20rnd_vss_SP6.et",
+        "GUID":  "51E9CE2EB27B3DBD",
+        "DIRECT_PARENT":  "{F9E1A46E3ABA116F}Prefabs/Weapons/Core/Magazine_Base.et",
+        "PARENT_GUID":  "F9E1A46E3ABA116F",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_20rnd_vss_SP6.et",
+                                  "Prefabs/Weapons/Core/Magazine_Base.et"
+                              ],
+        "CHAIN_LENGTH":  2,
+        "BROKEN":  null,
+        "CYCLE":  null,
+        "ALL_LOCAL":  true
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_30rnd_val_SP5.et",
+        "GUID":  null,
+        "DIRECT_PARENT":  "{F9E1A46E3ABA116F}Prefabs/Weapons/Core/Magazine_Base.et",
+        "PARENT_GUID":  "F9E1A46E3ABA116F",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_30rnd_val_SP5.et",
+                                  "Prefabs/Weapons/Core/Magazine_Base.et"
+                              ],
+        "CHAIN_LENGTH":  2,
+        "BROKEN":  null,
+        "CYCLE":  null,
+        "ALL_LOCAL":  true
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_30rnd_val_SP6.et",
+        "GUID":  null,
+        "DIRECT_PARENT":  "{F9E1A46E3ABA116F}Prefabs/Weapons/Core/Magazine_Base.et",
+        "PARENT_GUID":  "F9E1A46E3ABA116F",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_30rnd_val_SP6.et",
+                                  "Prefabs/Weapons/Core/Magazine_Base.et"
+                              ],
+        "CHAIN_LENGTH":  2,
+        "BROKEN":  null,
+        "CYCLE":  null,
+        "ALL_LOCAL":  true
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Western/5x56/HKG36/armst_Magazine_556x45_HKG36.et",
+        "GUID":  "969F6FFF810D2145",
+        "DIRECT_PARENT":  "{FB5EB0F6D447E859}Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M193_Ball.et",
+        "PARENT_GUID":  "FB5EB0F6D447E859",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Magazines/Western/5x56/HKG36/armst_Magazine_556x45_HKG36.et",
+                                  "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M193_Ball.et"
+                              ],
+        "CHAIN_LENGTH":  2,
+        "BROKEN":  {
+                       "RefGuid":  "FB5EB0F6D447E858",
+                       "RefPath":  "Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M193_Ball.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Western/5x56/HKG36/armst_Magazine_556x45_HKG36_BP.et",
+        "GUID":  "39C8796C070E44DD",
+        "DIRECT_PARENT":  "{FB5EB0F6D447E859}Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M193_Ball.et",
+        "PARENT_GUID":  "FB5EB0F6D447E859",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Magazines/Western/5x56/HKG36/armst_Magazine_556x45_HKG36_BP.et",
+                                  "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M193_Ball.et"
+                              ],
+        "CHAIN_LENGTH":  2,
+        "BROKEN":  {
+                       "RefGuid":  "FB5EB0F6D447E858",
+                       "RefPath":  "Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M193_Ball.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Western/5x56/SIG550/armst_Magazine_556x45_SIG_550.et",
+        "GUID":  "E3DC6C2FBBE4F825",
+        "DIRECT_PARENT":  "{FB5EB0F6D447E859}Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M193_Ball.et",
+        "PARENT_GUID":  "FB5EB0F6D447E859",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Magazines/Western/5x56/SIG550/armst_Magazine_556x45_SIG_550.et",
+                                  "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M193_Ball.et"
+                              ],
+        "CHAIN_LENGTH":  2,
+        "BROKEN":  {
+                       "RefGuid":  "FB5EB0F6D447E858",
+                       "RefPath":  "Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M193_Ball.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Western/5x56/SIG550/armst_Magazine_556x45_SIG_550_BP.et",
+        "GUID":  "70D7F0AE523E4FFF",
+        "DIRECT_PARENT":  "{FB5EB0F6D447E859}Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M193_Ball.et",
+        "PARENT_GUID":  "FB5EB0F6D447E859",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Magazines/Western/5x56/SIG550/armst_Magazine_556x45_SIG_550_BP.et",
+                                  "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M193_Ball.et"
+                              ],
+        "CHAIN_LENGTH":  2,
+        "BROKEN":  {
+                       "RefGuid":  "FB5EB0F6D447E858",
+                       "RefPath":  "Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M193_Ball.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M193_Ball.et",
+        "GUID":  "FB5EB0F6D447E859",
+        "DIRECT_PARENT":  "{FB5EB0F6D447E858}Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M193_Ball.et",
+        "PARENT_GUID":  "FB5EB0F6D447E858",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M193_Ball.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "FB5EB0F6D447E858",
+                       "RefPath":  "Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M193_Ball.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M193_Ball_BP.et",
+        "GUID":  "A277B4BFA07E47CF",
+        "DIRECT_PARENT":  "{FB5EB0F6D447E858}Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M193_Ball.et",
+        "PARENT_GUID":  "FB5EB0F6D447E858",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M193_Ball_BP.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "FB5EB0F6D447E858",
+                       "RefPath":  "Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M193_Ball.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M855_Ball.et",
+        "GUID":  null,
+        "DIRECT_PARENT":  "{11B9CC1FB4AEE740}Prefabs/Weapons/Magazines/Western/5x56/STANAG/Magazine_556x45_STANAG_30rnd_Base.et",
+        "PARENT_GUID":  "11B9CC1FB4AEE740",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M855_Ball.et",
+                                  "Prefabs/Weapons/Magazines/Western/5x56/STANAG/Magazine_556x45_STANAG_30rnd_Base.et",
+                                  "Prefabs/Weapons/Core/Magazine_Base.et"
+                              ],
+        "CHAIN_LENGTH":  3,
+        "BROKEN":  null,
+        "CYCLE":  null,
+        "ALL_LOCAL":  true
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M855_Ball_BP.et",
+        "GUID":  "DDF6F15392E84746",
+        "DIRECT_PARENT":  "{11B9CC1FB4AEE740}Prefabs/Weapons/Magazines/Western/5x56/STANAG/Magazine_556x45_STANAG_30rnd_Base.et",
+        "PARENT_GUID":  "11B9CC1FB4AEE740",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M855_Ball_BP.et",
+                                  "Prefabs/Weapons/Magazines/Western/5x56/STANAG/Magazine_556x45_STANAG_30rnd_Base.et",
+                                  "Prefabs/Weapons/Core/Magazine_Base.et"
+                              ],
+        "CHAIN_LENGTH":  3,
+        "BROKEN":  null,
+        "CYCLE":  null,
+        "ALL_LOCAL":  true
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Western/5x56/STANAG/Magazine_556x45_STANAG_30rnd_Base.et",
+        "GUID":  null,
+        "DIRECT_PARENT":  "{F9E1A46E3ABA116F}Prefabs/Weapons/Core/Magazine_Base.et",
+        "PARENT_GUID":  "F9E1A46E3ABA116F",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Magazines/Western/5x56/STANAG/Magazine_556x45_STANAG_30rnd_Base.et",
+                                  "Prefabs/Weapons/Core/Magazine_Base.et"
+                              ],
+        "CHAIN_LENGTH":  2,
+        "BROKEN":  null,
+        "CYCLE":  null,
+        "ALL_LOCAL":  true
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Western/762x51/HK3/armst_Magazine_762x51_HK3_20_M80_Ball.et",
+        "GUID":  null,
+        "DIRECT_PARENT":  "{6D18CC33708EE712}Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et",
+        "PARENT_GUID":  "6D18CC33708EE712",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Magazines/Western/762x51/HK3/armst_Magazine_762x51_HK3_20_M80_Ball.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "6D18CC33708EE712",
+                       "RefPath":  "Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Western/762x51/HK3/armst_Magazine_762x51_HK3_20_M80_Ball_BP.et",
+        "GUID":  "263A4BF691DC4E33",
+        "DIRECT_PARENT":  "{6D18CC33708EE712}Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et",
+        "PARENT_GUID":  "6D18CC33708EE712",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Magazines/Western/762x51/HK3/armst_Magazine_762x51_HK3_20_M80_Ball_BP.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "6D18CC33708EE712",
+                       "RefPath":  "Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_20_M80_Ball.et",
+        "GUID":  null,
+        "DIRECT_PARENT":  "{6D18CC33708EE712}Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et",
+        "PARENT_GUID":  "6D18CC33708EE712",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_20_M80_Ball.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "6D18CC33708EE712",
+                       "RefPath":  "Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_20_M80_Ball_BP.et",
+        "GUID":  "9EEBB92B6CEA45E0",
+        "DIRECT_PARENT":  "{6D18CC33708EE712}Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et",
+        "PARENT_GUID":  "6D18CC33708EE712",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_20_M80_Ball_BP.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "6D18CC33708EE712",
+                       "RefPath":  "Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_30_M80_Ball.et",
+        "GUID":  null,
+        "DIRECT_PARENT":  "{AA9A48AAEE6E4F1B}Prefabs/Weapons/Magazines/Western/762x51/HK3/L1A1/armst_Magazine_762x51_L1A1_20_M80_Ball.et",
+        "PARENT_GUID":  "AA9A48AAEE6E4F1B",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_30_M80_Ball.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "AA9A48AAEE6E4F1B",
+                       "RefPath":  "Prefabs/Weapons/Magazines/Western/762x51/HK3/L1A1/armst_Magazine_762x51_L1A1_20_M80_Ball.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_30_M80_Ball_BP.et",
+        "GUID":  "8046F3CFD92D43BA",
+        "DIRECT_PARENT":  "{AA9A48AAEE6E4F1B}Prefabs/Weapons/Magazines/Western/762x51/HK3/L1A1/armst_Magazine_762x51_L1A1_20_M80_Ball.et",
+        "PARENT_GUID":  "AA9A48AAEE6E4F1B",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_30_M80_Ball_BP.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "AA9A48AAEE6E4F1B",
+                       "RefPath":  "Prefabs/Weapons/Magazines/Western/762x51/HK3/L1A1/armst_Magazine_762x51_L1A1_20_M80_Ball.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Western/9x19/M9/armst_Magazine_9x19_M9_15rnd_Ball.et",
+        "GUID":  "9C05543A503DB80E",
+        "DIRECT_PARENT":  "{DFFBF5F097FCF797}Prefabs/Weapons/Magazines/Magazine_9x19_M9_15rnd_Base.et",
+        "PARENT_GUID":  "DFFBF5F097FCF797",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Magazines/Western/9x19/M9/armst_Magazine_9x19_M9_15rnd_Ball.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "DFFBF5F097FCF797",
+                       "RefPath":  "Prefabs/Weapons/Magazines/Magazine_9x19_M9_15rnd_Base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Western/9x19/M9/armst_Magazine_9x19_M9_15rnd_Ball_BP.et",
+        "GUID":  "4BF437F81CEE4039",
+        "DIRECT_PARENT":  "{DFFBF5F097FCF797}Prefabs/Weapons/Magazines/Magazine_9x19_M9_15rnd_Base.et",
+        "PARENT_GUID":  "DFFBF5F097FCF797",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Magazines/Western/9x19/M9/armst_Magazine_9x19_M9_15rnd_Ball_BP.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "DFFBF5F097FCF797",
+                       "RefPath":  "Prefabs/Weapons/Magazines/Magazine_9x19_M9_15rnd_Base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Russian/Handguns/armst_APB/armst_APB_base.et",
+        "GUID":  "5D3DA7E84135B278",
+        "DIRECT_PARENT":  "{B7132459C07777CA}Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et",
+        "PARENT_GUID":  "B7132459C07777CA",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Russian/Handguns/armst_APB/armst_APB_base.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "B7132459C07777CA",
+                       "RefPath":  "Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Russian/Handguns/Pm/armst_PM_base.et",
+        "GUID":  "C0F7DD85A86B2900",
+        "DIRECT_PARENT":  "{B7132459C07777CA}Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et",
+        "PARENT_GUID":  "B7132459C07777CA",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Russian/Handguns/Pm/armst_PM_base.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "B7132459C07777CA",
+                       "RefPath":  "Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Russian/Handguns/PP_19/armst_PP91_base.et",
+        "GUID":  "3968B2A856852CBD",
+        "DIRECT_PARENT":  "{B7132459C07777CA}Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et",
+        "PARENT_GUID":  "B7132459C07777CA",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Russian/Handguns/PP_19/armst_PP91_base.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "B7132459C07777CA",
+                       "RefPath":  "Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Russian/Handguns/Sr_2/armst_SR_2_base.et",
+        "GUID":  "31FB2EC4F4AFFC05",
+        "DIRECT_PARENT":  "{B7132459C07777CA}Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et",
+        "PARENT_GUID":  "B7132459C07777CA",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Russian/Handguns/Sr_2/armst_SR_2_base.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "B7132459C07777CA",
+                       "RefPath":  "Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Russian/Handguns/TT/armst_TT_base.et",
+        "GUID":  "0D469F42B65E350E",
+        "DIRECT_PARENT":  "{B7132459C07777CA}Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et",
+        "PARENT_GUID":  "B7132459C07777CA",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Russian/Handguns/TT/armst_TT_base.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "B7132459C07777CA",
+                       "RefPath":  "Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Russian/MachineGuns/armst_PKM_base.et",
+        "GUID":  "A89BC9D55FFB4CD8",
+        "DIRECT_PARENT":  "{76C400582D3C4AF9}Prefabs/Weapons/MachineGuns/PKM/MG_PKM_base.et",
+        "PARENT_GUID":  "76C400582D3C4AF9",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Russian/MachineGuns/armst_PKM_base.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "76C400582D3C4AF9",
+                       "RefPath":  "Prefabs/Weapons/MachineGuns/PKM/MG_PKM_base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Russian/MachineGuns/armst_RPK74_base.et",
+        "GUID":  "A7AF84C6C58BA3E8",
+        "DIRECT_PARENT":  "{3BFBE9145E9C40B9}Prefabs/Weapons/MachineGuns/RPK74/MG_RPK74_base.et",
+        "PARENT_GUID":  "3BFBE9145E9C40B9",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Russian/MachineGuns/armst_RPK74_base.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "3BFBE9145E9C40B9",
+                       "RefPath":  "Prefabs/Weapons/MachineGuns/RPK74/MG_RPK74_base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Russian/Rifle/9a91/armst_Rifle_9a91_base.et",
+        "GUID":  null,
+        "DIRECT_PARENT":  "{1FA22B1F5E7BC80B}Prefabs/Weapons/Rifles/AK74/Rifle_AK74_short_base.et",
+        "PARENT_GUID":  "1FA22B1F5E7BC80B",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Russian/Rifle/9a91/armst_Rifle_9a91_base.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "1FA22B1F5E7BC80B",
+                       "RefPath":  "Prefabs/Weapons/Rifles/AK74/Rifle_AK74_short_base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Russian/Rifle/Aek971/armst_Rifle_AEK971_base.et",
+        "GUID":  null,
+        "DIRECT_PARENT":  "{EAE9A298979C4721}Prefabs/Weapons/Rifles/AK74/Rifle_AK74N_base.et",
+        "PARENT_GUID":  "EAE9A298979C4721",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Russian/Rifle/Aek971/armst_Rifle_AEK971_base.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "EAE9A298979C4721",
+                       "RefPath":  "Prefabs/Weapons/Rifles/AK74/Rifle_AK74N_base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK105.et",
+        "GUID":  null,
+        "DIRECT_PARENT":  "{FA5C25BF66A53DCF}Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74_base.et",
+        "PARENT_GUID":  "FA5C25BF66A53DCF",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK105.et",
+                                  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74_base.et"
+                              ],
+        "CHAIN_LENGTH":  2,
+        "BROKEN":  {
+                       "RefGuid":  "923D948AB0D57A50",
+                       "RefPath":  "Prefabs/Weapons/Rifles/AK74/Rifle_AK74_long_base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74M.et",
+        "GUID":  null,
+        "DIRECT_PARENT":  "{96DFD2E7E63B3386}Prefabs/Weapons/Rifles/AK74/armst_AK74N.et",
+        "PARENT_GUID":  "96DFD2E7E63B3386",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74M.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "96DFD2E7E63B3386",
+                       "RefPath":  "Prefabs/Weapons/Rifles/AK74/armst_AK74N.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74M_full.et",
+        "GUID":  null,
+        "DIRECT_PARENT":  "{5B8E766C0E3C13EE}Prefabs/Weapons/Rifles/AK74/armst_AK74M.et",
+        "PARENT_GUID":  "5B8E766C0E3C13EE",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74M_full.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "5B8E766C0E3C13EE",
+                       "RefPath":  "Prefabs/Weapons/Rifles/AK74/armst_AK74M.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74N.et",
+        "GUID":  null,
+        "DIRECT_PARENT":  "{EAE9A298979C4721}Prefabs/Weapons/Rifles/AK74/Rifle_AK74N_base.et",
+        "PARENT_GUID":  "EAE9A298979C4721",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74N.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "EAE9A298979C4721",
+                       "RefPath":  "Prefabs/Weapons/Rifles/AK74/Rifle_AK74N_base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74_base.et",
+        "GUID":  "FA5C25BF66A53DCF",
+        "DIRECT_PARENT":  "{923D948AB0D57A50}Prefabs/Weapons/Rifles/AK74/Rifle_AK74_long_base.et",
+        "PARENT_GUID":  "923D948AB0D57A50",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74_base.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "923D948AB0D57A50",
+                       "RefPath":  "Prefabs/Weapons/Rifles/AK74/Rifle_AK74_long_base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AKS.et",
+        "GUID":  null,
+        "DIRECT_PARENT":  "{96DFD2E7E63B3386}Prefabs/Weapons/Rifles/AK74/armst_AK74N.et",
+        "PARENT_GUID":  "96DFD2E7E63B3386",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AKS.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "96DFD2E7E63B3386",
+                       "RefPath":  "Prefabs/Weapons/Rifles/AK74/armst_AK74N.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AKS74U.et",
+        "GUID":  null,
+        "DIRECT_PARENT":  "{8BA0D0DE316D1B44}Prefabs/Weapons/Rifles/AKS74U/Rifle_AKS74U_base.et",
+        "PARENT_GUID":  "8BA0D0DE316D1B44",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AKS74U.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "8BA0D0DE316D1B44",
+                       "RefPath":  "Prefabs/Weapons/Rifles/AKS74U/Rifle_AKS74U_base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AKS74UN.et",
+        "GUID":  null,
+        "DIRECT_PARENT":  "{9AE416F8879DDA6D}Prefabs/Weapons/Rifles/AKS74U/Rifle_AKS74UN_base.et",
+        "PARENT_GUID":  "9AE416F8879DDA6D",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AKS74UN.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "9AE416F8879DDA6D",
+                       "RefPath":  "Prefabs/Weapons/Rifles/AKS74U/Rifle_AKS74UN_base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM.et",
+        "GUID":  null,
+        "DIRECT_PARENT":  "{140E94F473B60FE3}Prefabs/Weapons/Rifles/AKM/armst_Rifle_AKM_base.et",
+        "PARENT_GUID":  "140E94F473B60FE3",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "140E94F473B60FE3",
+                       "RefPath":  "Prefabs/Weapons/Rifles/AKM/armst_Rifle_AKM_base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKMS.et",
+        "GUID":  null,
+        "DIRECT_PARENT":  "{140E94F473B60FE3}Prefabs/Weapons/Rifles/AKM/armst_Rifle_AKM_base.et",
+        "PARENT_GUID":  "140E94F473B60FE3",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKMS.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "140E94F473B60FE3",
+                       "RefPath":  "Prefabs/Weapons/Rifles/AKM/armst_Rifle_AKM_base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_base.et",
+        "GUID":  null,
+        "DIRECT_PARENT":  "{911D6C8DC7BA2D63}Prefabs/Weapons/Core/Rifle_Base.et",
+        "PARENT_GUID":  "911D6C8DC7BA2D63",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_base.et",
+                                  "Prefabs/Weapons/Core/Rifle_Base.et",
+                                  "Prefabs/Weapons/Core/Weapon_Base.et"
+                              ],
+        "CHAIN_LENGTH":  3,
+        "BROKEN":  null,
+        "CYCLE":  null,
+        "ALL_LOCAL":  true
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_full.et",
+        "GUID":  null,
+        "DIRECT_PARENT":  "{5BFF97EFD0BF6D9F}Prefabs/Weapons/Rifles/AKM/armst_Rifle_AKM.et",
+        "PARENT_GUID":  "5BFF97EFD0BF6D9F",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_full.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "5BFF97EFD0BF6D9F",
+                       "RefPath":  "Prefabs/Weapons/Rifles/AKM/armst_Rifle_AKM.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_VPO136.et",
+        "GUID":  null,
+        "DIRECT_PARENT":  "{140E94F473B60FE3}Prefabs/Weapons/Rifles/AKM/armst_Rifle_AKM_base.et",
+        "PARENT_GUID":  "140E94F473B60FE3",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_VPO136.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "140E94F473B60FE3",
+                       "RefPath":  "Prefabs/Weapons/Rifles/AKM/armst_Rifle_AKM_base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Russian/Rifle/Groza/armst_Groza_base.et",
+        "GUID":  null,
+        "DIRECT_PARENT":  "{911D6C8DC7BA2D63}Prefabs/Weapons/Core/Rifle_Base.et",
+        "PARENT_GUID":  "911D6C8DC7BA2D63",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Russian/Rifle/Groza/armst_Groza_base.et",
+                                  "Prefabs/Weapons/Core/Rifle_Base.et",
+                                  "Prefabs/Weapons/Core/Weapon_Base.et"
+                              ],
+        "CHAIN_LENGTH":  3,
+        "BROKEN":  null,
+        "CYCLE":  null,
+        "ALL_LOCAL":  true
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Russian/Rifle/SOC94/armst_Rifle_SOC94_base.et",
+        "GUID":  null,
+        "DIRECT_PARENT":  "{140E94F473B60FE3}Rifles/AKM/armst_Rifle_AKM_base.et",
+        "PARENT_GUID":  "140E94F473B60FE3",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Russian/Rifle/SOC94/armst_Rifle_SOC94_base.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "140E94F473B60FE3",
+                       "RefPath":  "Rifles/AKM/armst_Rifle_AKM_base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Russian/Rifle/SVD/armst_Rifle_SVD_base.et",
+        "GUID":  "3EB02CDAD5F23C82",
+        "DIRECT_PARENT":  "{A3E183EB5A2F3A38}Prefabs/Weapons/Rifles/SVD/Rifle_SVD_base.et",
+        "PARENT_GUID":  "A3E183EB5A2F3A38",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Russian/Rifle/SVD/armst_Rifle_SVD_base.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "A3E183EB5A2F3A38",
+                       "RefPath":  "Prefabs/Weapons/Rifles/SVD/Rifle_SVD_base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Russian/Rifle/VAL/armst_Rifle_val_base.et",
+        "GUID":  null,
+        "DIRECT_PARENT":  "{1FA22B1F5E7BC80B}Prefabs/Weapons/Rifles/AK74/Rifle_AK74_short_base.et",
+        "PARENT_GUID":  "1FA22B1F5E7BC80B",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Russian/Rifle/VAL/armst_Rifle_val_base.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "1FA22B1F5E7BC80B",
+                       "RefPath":  "Prefabs/Weapons/Rifles/AK74/Rifle_AK74_short_base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Russian/Rifle/VSK94/armst_Rifle_VSK94_base.et",
+        "GUID":  null,
+        "DIRECT_PARENT":  "{1FA22B1F5E7BC80B}Prefabs/Weapons/Rifles/AK74/Rifle_AK74_short_base.et",
+        "PARENT_GUID":  "1FA22B1F5E7BC80B",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Russian/Rifle/VSK94/armst_Rifle_VSK94_base.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "1FA22B1F5E7BC80B",
+                       "RefPath":  "Prefabs/Weapons/Rifles/AK74/Rifle_AK74_short_base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Russian/Rifle/VSS/armst_Rifle_vss_base.et",
+        "GUID":  null,
+        "DIRECT_PARENT":  "{1FA22B1F5E7BC80B}Prefabs/Weapons/Rifles/AK74/Rifle_AK74_short_base.et",
+        "PARENT_GUID":  "1FA22B1F5E7BC80B",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Russian/Rifle/VSS/armst_Rifle_vss_base.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "1FA22B1F5E7BC80B",
+                       "RefPath":  "Prefabs/Weapons/Rifles/AK74/Rifle_AK74_short_base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Russian/Shotgun/armst_izh_27.et",
+        "GUID":  null,
+        "DIRECT_PARENT":  "{6C5E2009CDCD0BD3}Prefabs/Weapons/Rifles/Shotgun/armst_shotgun_base.et",
+        "PARENT_GUID":  "6C5E2009CDCD0BD3",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Russian/Shotgun/armst_izh_27.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "6C5E2009CDCD0BD3",
+                       "RefPath":  "Prefabs/Weapons/Rifles/Shotgun/armst_shotgun_base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Russian/Shotgun/armst_mp_133.et",
+        "GUID":  null,
+        "DIRECT_PARENT":  "{6C5E2009CDCD0BD3}Prefabs/Weapons/Rifles/Shotgun/armst_shotgun_base.et",
+        "PARENT_GUID":  "6C5E2009CDCD0BD3",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Russian/Shotgun/armst_mp_133.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "6C5E2009CDCD0BD3",
+                       "RefPath":  "Prefabs/Weapons/Rifles/Shotgun/armst_shotgun_base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Russian/Shotgun/armst_mp_153.et",
+        "GUID":  null,
+        "DIRECT_PARENT":  "{6C5E2009CDCD0BD3}Prefabs/ShotGun/ShotGun/armst_shotgun_base.et",
+        "PARENT_GUID":  "6C5E2009CDCD0BD3",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Russian/Shotgun/armst_mp_153.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "6C5E2009CDCD0BD3",
+                       "RefPath":  "Prefabs/ShotGun/ShotGun/armst_shotgun_base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Russian/Shotgun/armst_toz_66.et",
+        "GUID":  null,
+        "DIRECT_PARENT":  "{6C5E2009CDCD0BD3}Prefabs/Weapons/Rifles/Shotgun/armst_shotgun_base.et",
+        "PARENT_GUID":  "6C5E2009CDCD0BD3",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Russian/Shotgun/armst_toz_66.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "6C5E2009CDCD0BD3",
+                       "RefPath":  "Prefabs/Weapons/Rifles/Shotgun/armst_shotgun_base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Russian/Shotgun/armst_toz_66_pantera.et",
+        "GUID":  null,
+        "DIRECT_PARENT":  "{923B067A74826419}Prefabs/Weapons/Rifles/Shotgun/armst_toz_66.et",
+        "PARENT_GUID":  "923B067A74826419",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Russian/Shotgun/armst_toz_66_pantera.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "923B067A74826419",
+                       "RefPath":  "Prefabs/Weapons/Rifles/Shotgun/armst_toz_66.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Russian/Shotgun/armst_toz_66_saw.et",
+        "GUID":  null,
+        "DIRECT_PARENT":  "{923B067A74826419}Prefabs/Weapons/Rifles/Shotgun/armst_toz_66.et",
+        "PARENT_GUID":  "923B067A74826419",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Russian/Shotgun/armst_toz_66_saw.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "923B067A74826419",
+                       "RefPath":  "Prefabs/Weapons/Rifles/Shotgun/armst_toz_66.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Tripods/armst_Tripod_6T5.et",
+        "GUID":  "7C4D1A64D60F2C92",
+        "DIRECT_PARENT":  "{16CAF1AAD82A3127}Prefabs/Weapons/Core/Tripod_Base.et",
+        "PARENT_GUID":  "16CAF1AAD82A3127",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Tripods/armst_Tripod_6T5.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "16CAF1AAD82A3127",
+                       "RefPath":  "Prefabs/Weapons/Core/Tripod_Base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Tripods/armst_Tripod_6T5_PKM.et",
+        "GUID":  "723870DBB19D30B0",
+        "DIRECT_PARENT":  "{7C4D1A64D60F2C92}Prefabs/Weapons/Tripods/armst_Tripod_6T5.et",
+        "PARENT_GUID":  "7C4D1A64D60F2C92",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Tripods/armst_Tripod_6T5_PKM.et",
+                                  "Prefabs/Weapons/Tripods/armst_Tripod_6T5.et"
+                              ],
+        "CHAIN_LENGTH":  2,
+        "BROKEN":  {
+                       "RefGuid":  "16CAF1AAD82A3127",
+                       "RefPath":  "Prefabs/Weapons/Core/Tripod_Base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Western/Handguns/armst_M9_base.et",
+        "GUID":  "1353C6EAD1DCFE43",
+        "DIRECT_PARENT":  "{809488C4984AC087}Prefabs/Weapons/Handguns/M9/Handgun_M9_base.et",
+        "PARENT_GUID":  "809488C4984AC087",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Western/Handguns/armst_M9_base.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "809488C4984AC087",
+                       "RefPath":  "Prefabs/Weapons/Handguns/M9/Handgun_M9_base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Western/Rifle/armst_Rifle_M16A2_base.et",
+        "GUID":  "3E413771E1834D2F",
+        "DIRECT_PARENT":  "{C63227C0E70EA62E}Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et",
+        "PARENT_GUID":  "C63227C0E70EA62E",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Western/Rifle/armst_Rifle_M16A2_base.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "C63227C0E70EA62E",
+                       "RefPath":  "Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Western/Rifle/armst_Rifle_M16A2_carbine.et",
+        "GUID":  null,
+        "DIRECT_PARENT":  "{9207B5D36C3C8C94}Prefabs/Weapons/Rifles/M16/Rifle_M16A2_carbine_base.et",
+        "PARENT_GUID":  "9207B5D36C3C8C94",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Western/Rifle/armst_Rifle_M16A2_carbine.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "9207B5D36C3C8C94",
+                       "RefPath":  "Prefabs/Weapons/Rifles/M16/Rifle_M16A2_carbine_base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Western/Rifle/armst_VZ58P_base.et",
+        "GUID":  "9C948630078D154D",
+        "DIRECT_PARENT":  "{C19BFAF8A6334FD5}Prefabs/Weapons/Rifles/VZ58/Rifle_VZ58_base.et",
+        "PARENT_GUID":  "C19BFAF8A6334FD5",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Western/Rifle/armst_VZ58P_base.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "C19BFAF8A6334FD5",
+                       "RefPath":  "Prefabs/Weapons/Rifles/VZ58/Rifle_VZ58_base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Western/Rifle/armst_VZ58V_base.et",
+        "GUID":  "443CEFF17E040B11",
+        "DIRECT_PARENT":  "{C19BFAF8A6334FD5}Prefabs/Weapons/Rifles/VZ58/Rifle_VZ58_base.et",
+        "PARENT_GUID":  "C19BFAF8A6334FD5",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Western/Rifle/armst_VZ58V_base.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "C19BFAF8A6334FD5",
+                       "RefPath":  "Prefabs/Weapons/Rifles/VZ58/Rifle_VZ58_base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Western/Rifle/HKG33/armst_Rifle_HKG33_base.et",
+        "GUID":  "035CFC7DD44455D0",
+        "DIRECT_PARENT":  "{C63227C0E70EA62E}Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et",
+        "PARENT_GUID":  "C63227C0E70EA62E",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Western/Rifle/HKG33/armst_Rifle_HKG33_base.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "C63227C0E70EA62E",
+                       "RefPath":  "Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Western/Rifle/HKG36/armst_Rifle_HKG36_base.et",
+        "GUID":  "A802C718201D72DF",
+        "DIRECT_PARENT":  "{911D6C8DC7BA2D63}Prefabs/Weapons/Core/Rifle_Base.et",
+        "PARENT_GUID":  "911D6C8DC7BA2D63",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Western/Rifle/HKG36/armst_Rifle_HKG36_base.et",
+                                  "Prefabs/Weapons/Core/Rifle_Base.et",
+                                  "Prefabs/Weapons/Core/Weapon_Base.et"
+                              ],
+        "CHAIN_LENGTH":  3,
+        "BROKEN":  null,
+        "CYCLE":  null,
+        "ALL_LOCAL":  true
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Western/Rifle/L85/armst_Rifle_L85_base.et",
+        "GUID":  "45D3FCA77AF1709B",
+        "DIRECT_PARENT":  "{C63227C0E70EA62E}Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et",
+        "PARENT_GUID":  "C63227C0E70EA62E",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Western/Rifle/L85/armst_Rifle_L85_base.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "C63227C0E70EA62E",
+                       "RefPath":  "Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Western/Rifle/Sig550/armst_Rifle_Sig550_base.et",
+        "GUID":  "CA3BEBAADDFAF1DE",
+        "DIRECT_PARENT":  "{3E413771E1834D2F}Prefabs/Weapons/Western/Rifle/armst_Rifle_M16A2_base.et",
+        "PARENT_GUID":  "3E413771E1834D2F",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Western/Rifle/Sig550/armst_Rifle_Sig550_base.et",
+                                  "Prefabs/Weapons/Western/Rifle/armst_Rifle_M16A2_base.et"
+                              ],
+        "CHAIN_LENGTH":  2,
+        "BROKEN":  {
+                       "RefGuid":  "C63227C0E70EA62E",
+                       "RefPath":  "Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Western/Rifle/SLR/armst_SLR_base.et",
+        "GUID":  "C11ED52EAAF856A8",
+        "DIRECT_PARENT":  "{C63227C0E70EA62E}Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et",
+        "PARENT_GUID":  "C63227C0E70EA62E",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Western/Rifle/SLR/armst_SLR_base.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "C63227C0E70EA62E",
+                       "RefPath":  "Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Western/Shotgun/armst_Remington_870.et",
+        "GUID":  null,
+        "DIRECT_PARENT":  "{6C5E2009CDCD0BD3}Prefabs/ShotGun/ShotGun/armst_shotgun_base.et",
+        "PARENT_GUID":  "6C5E2009CDCD0BD3",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Western/Shotgun/armst_Remington_870.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "6C5E2009CDCD0BD3",
+                       "RefPath":  "Prefabs/ShotGun/ShotGun/armst_shotgun_base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Western/Shotgun/armst_shotgun_base.et",
+        "GUID":  null,
+        "DIRECT_PARENT":  "{B31929F65F0D0279}Prefabs/Weapons/Rifles/M14/Rifle_M21.et",
+        "PARENT_GUID":  "B31929F65F0D0279",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Western/Shotgun/armst_shotgun_base.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "B31929F65F0D0279",
+                       "RefPath":  "Prefabs/Weapons/Rifles/M14/Rifle_M21.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Western/Shotgun/armst_spas_12.et",
+        "GUID":  null,
+        "DIRECT_PARENT":  "{6C5E2009CDCD0BD3}Prefabs/ShotGun/ShotGun/armst_shotgun_base.et",
+        "PARENT_GUID":  "6C5E2009CDCD0BD3",
+        "FULL_PARENT_CHAIN":  [
+                                  "Prefabs/Weapons/Western/Shotgun/armst_spas_12.et"
+                              ],
+        "CHAIN_LENGTH":  1,
+        "BROKEN":  {
+                       "RefGuid":  "6C5E2009CDCD0BD3",
+                       "RefPath":  "Prefabs/ShotGun/ShotGun/armst_shotgun_base.et",
+                       "LocalResolved":  false
+                   },
+        "CYCLE":  null,
+        "ALL_LOCAL":  false
+    }
+]

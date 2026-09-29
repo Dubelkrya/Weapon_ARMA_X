@@ -1,0 +1,156 @@
+{
+ "schema_version": 1,
+ "source": "external/vanilla evidence read from Weapon_ARMA_X/Imported/VanillaSources",
+ "calibers": {
+  "5.56x45": {
+   "caliber": "5x56",
+   "region": "WESTERN",
+   "magazines": [
+    "Prefabs/Weapons/Magazines/Western/5x56/STANAG/Magazine_556x45_STANAG_30rnd_Base.et",
+    "Prefabs/Weapons/Magazines/Western/5x56/STANAG/Magazine_556x45_STANAG_30rnd_M193_Ball.et",
+    "Prefabs/Weapons/Magazines/Western/5x56/STANAG/Magazine_556x45_STANAG_30rnd_M855_Ball.et",
+    "Prefabs/Weapons/Magazines/Western/5x56/HKG36/Magazine_556x45_HKG36.et",
+    "Prefabs/Weapons/Magazines/Western/5x56/SIG550/Magazine_556x45_SIG_550.et"
+   ],
+   "weapons": [
+    "Prefabs/Weapons/Western/Rifle/HKG33/armst_Rifle_HKG33.et",
+    "Prefabs/Weapons/Western/Rifle/L85/armst_Rifle_L85.et",
+    "Prefabs/Weapons/Western/Rifle/Sig550/armst_Rifle_Sig550.et",
+    "Prefabs/Weapons/Western/Rifle/HKG36/armst_Rifle_hk_g36.et",
+    "Prefabs/Weapons/Western/Rifle/SLR/armst_SLR.et"
+   ],
+   "current_dependency_chain": "magazine -> AmmoConfig Configs/Weapons/Ammo/Ammo_556x45.conf -> AmmoResourceArray -> Ammo_556x45_* -> parent Ammo_Bullet_Base.et",
+   "ammo_config": {"path": "Configs/Weapons/Ammo/Ammo_556x45.conf", "guid": "2689915ED0E00994", "source": "EXTERNAL/VANILLA"},
+   "ammo_resource": {"path": "Prefabs/Weapons/Ammo/Ammo_556x45_Ball_M193.et", "guid": "9CE4CC890A2A574F", "source": "EXTERNAL/VANILLA"},
+   "projectile": {"path": "Prefabs/Weapons/Core/Ammo_Bullet_Base.et", "guid": "67FED88E5085F63F", "source": "EXTERNAL/VANILLA"},
+   "parent": {"path": "Prefabs/Weapons/Core/Ammo_Bullet_Base.et", "guid": "67FED88E5085F63F"},
+   "ammo_resource_array": [
+    {"resource": "Prefabs/Weapons/Ammo/Ammo_556x45_Ball_M855.et", "guid": "AC26AB660097633D"},
+    {"resource": "Prefabs/Weapons/Ammo/Ammo_556x45_Tracer_M856.et", "guid": "A0CEFA7FA41091F7"},
+    {"resource": "Prefabs/Weapons/Ammo/Ammo_556x45_Ball_M193.et", "guid": "9CE4CC890A2A574F"},
+    {"resource": "Prefabs/Weapons/Ammo/Ammo_556x45_Tracer_M196.et", "guid": "9F01DD8C46AD2618"}
+   ],
+   "external_variants": [
+    {"name": "Ammo_556x45_Ball_M193.et", "guid": "9CE4CC890A2A574F", "parent": "Ammo_Bullet_Base.et", "shell_fields": {}},
+    {"name": "Ammo_556x45_Ball_M855.et", "guid": "AC26AB660097633D", "parent": "Ammo_Bullet_Base.et", "shell_fields": {"InitSpeed": 930, "InitSpeedVariation": 9.1, "Mass": 0.00402, "AirDrag": 0.000005, "Diameter": 5.7, "MushroomingDamageMultiplier": 0.1, "TumblingDamageMultiplier": 0.1, "PenetrationDepth": 4, "PenetrationSpeed": 675, "BallisticTableConfig": "Configs/Weapons/AIBallisticTables/AIBT_556x45_Ball_M855.conf"}},
+    {"name": "Ammo_556x45_AP_M995.et", "guid": "external", "parent": "Ammo_556x45_Ball_M855.et", "shell_fields": {"InitSpeed": 1030, "Mass": 0.0034, "AirDrag": 0.0000035, "MushroomingDamageMultiplier": 0, "PenetrationDepth": 12, "PenetrationSpeed": 926}},
+    {"name": "Ammo_556x45_Ball_M855A1.et", "guid": "external"},
+    {"name": "Ammo_556x45_OTM_Mk262.et", "guid": "external"},
+    {"name": "Ammo_556x45_OTM_Mk318.et", "guid": "external"}
+   ],
+   "serialized_ballistic_fields": ["ShellMoveComponent.InitSpeed", "ShellMoveComponent.InitSpeedVariation", "ShellMoveComponent.Mass", "ShellMoveComponent.BallisticTableConfig", "ShellMoveComponent.AirDrag", "ShellMoveComponent.Diameter", "ShellMoveComponent.MushroomingDamageMultiplier", "ShellMoveComponent.TumblingDamageMultiplier", "ShellMoveComponent.PenetrationDepth", "ShellMoveComponent.PenetrationSpeed", "ShellMoveComponent.SubsonicFlybys", "ProjectileModel", "CartridgeModel"],
+   "pp_template_candidate": {"resource": "Prefabs/Weapons/Ammo/Ammo_556x45_Ball_M855.et", "config": "Configs/Weapons/Ammo/Ammo_556x45.conf", "projectile": "Ammo_Bullet_Base.et", "confidence": "PARTIAL"},
+   "bp_template_candidate": {"resource": "Prefabs/Weapons/Ammo/Ammo_556x45_AP_M995.et", "config": null, "projectile": "Ammo_556x45_Ball_M855.et", "confidence": "PARTIAL"},
+   "local_creation_strategy": "A) local prefab inheriting external ammo/projectile",
+   "proposed_pp_path": "Prefabs/Weapons/Ammo/Western/5x56/Ammo_556x45_PP.et",
+   "proposed_bp_path": "Prefabs/Weapons/Ammo/Western/5x56/Ammo_556x45_BP.et",
+   "local_config_required": "REVIEW_REQUIRED",
+   "ready_for_creation": false,
+   "review_reason": "PP/BP mapping is user-defined; AP M995 is not in the external magazine AmmoResourceArray (only M855/M856/M193/M196)."
+  },
+  "7.62x51": {
+   "caliber": "762x51",
+   "region": "WESTERN",
+   "magazines": [
+    "Prefabs/Weapons/Magazines/Western/762x51/HK3/L1A1/armst_Magazine_762x51_HK3_20_M80_Ball.et",
+    "Prefabs/Weapons/Magazines/Western/762x51/HK3/L1A1/armst_Magazine_762x51_L1A1_20_M61_AP.et",
+    "Prefabs/Weapons/Magazines/Western/762x51/HK3/L1A1/armst_Magazine_762x51_L1A1_20_M80_Ball.et",
+    "Prefabs/Weapons/Magazines/Western/762x51/HK3/L1A1/armst_Magazine_762x51_L1A1_30_M61_AP.et",
+    "Prefabs/Weapons/Magazines/Western/762x51/HK3/L1A1/armst_Magazine_762x51_L1A1_30_M80_Ball.et"
+   ],
+   "weapons": [
+    "Prefabs/Weapons/Western/Rifle/HKG33/armst_Rifle_HKG33.et",
+    "Prefabs/Weapons/Western/Rifle/SLR/armst_SLR.et"
+   ],
+   "current_dependency_chain": "HK3/L1A1 magazines -> parent external Magazine_762x51_M14_20rnd_Base.et -> AmmoConfig Configs/Weapons/Ammo/Ammo_762x51.conf -> Ammo_762x51_* -> parent Ammo_Bullet_Base.et",
+   "ammo_config": {"path": "Configs/Weapons/Ammo/Ammo_762x51.conf", "guid": "533A763E304771D9", "source": "EXTERNAL/VANILLA"},
+   "ammo_resource": {"path": "Prefabs/Weapons/Ammo/Ammo_762x51_Ball_M80.et", "guid": "C14C5DE6F97F06F0", "source": "EXTERNAL/VANILLA"},
+   "projectile": {"path": "Prefabs/Weapons/Core/Ammo_Bullet_Base.et", "guid": "67FED88E5085F63F", "source": "EXTERNAL/VANILLA"},
+   "parent": {"path": "Prefabs/Weapons/Core/Ammo_Bullet_Base.et", "guid": "67FED88E5085F63F"},
+   "ammo_resource_array": [
+    {"resource": "Prefabs/Weapons/Ammo/Ammo_762x51_Ball_M80.et", "guid": "C14C5DE6F97F06F0"},
+    {"resource": "Prefabs/Weapons/Ammo/Ammo_762x51_Tracer_M62.et", "guid": "9CCBDD2ACB73FFA9"},
+    {"resource": "Prefabs/Weapons/Ammo/Ammo_762x51_AP_M61.et", "guid": "9F39DD07E2860466"},
+    {"resource": "Prefabs/Weapons/Ammo/Ammo_762x51_Ball_M118.et", "guid": "B7DC0C3C3D1784C2"}
+   ],
+   "external_variants": [
+    {"name": "Ammo_762x51_Ball_M80.et", "guid": "C14C5DE6F97F06F0", "parent": "Ammo_Bullet_Base.et", "shell_fields": {"InitSpeed": 856, "InitSpeedVariation": 9.1, "Mass": 0.00953, "DamageValue": 142, "AirDrag": 0.0000083, "Diameter": 7.82, "Length": 28.6, "MushroomingDamageMultiplier": 0.1, "TumblingDamageMultiplier": 0.1, "PenetrationDepth": 4, "PenetrationSpeed": 654, "BallisticTableConfig": "Configs/Weapons/AIBallisticTables/AIBT_762x51_Ball_M80.conf"}},
+    {"name": "Ammo_762x51_AP_M61.et", "guid": "9F39DD07E2860466", "parent": "Ammo_762x51_Ball_M80.et", "shell_fields": {"Mass": 0.00975, "AirDrag": 0.0000082, "Length": 34.9, "MushroomingDamageMultiplier": 0, "TumblingDamageMultiplier": 0, "PenetrationDepth": 10, "PenetrationSpeed": 780, "BallisticTableConfig": "Configs/Weapons/AIBallisticTables/AIBT_762x51_AP_M61.conf"}},
+    {"name": "Ammo_762x51_Ball_M80A1.et", "guid": "external"},
+    {"name": "Ammo_762x51_AP_M993.et", "guid": "external"},
+    {"name": "Ammo_762x51_OTM_M118LR.et", "guid": "external"}
+   ],
+   "serialized_ballistic_fields": ["ShellMoveComponent.InitSpeed", "ShellMoveComponent.InitSpeedVariation", "ShellMoveComponent.Mass", "ShellMoveComponent.ProjectileEffects.ProjectileDamage.DamageValue", "ShellMoveComponent.BallisticTableConfig", "ShellMoveComponent.SonicCracks", "ShellMoveComponent.SubsonicFlybys", "ShellMoveComponent.AirDrag", "ShellMoveComponent.Diameter", "ShellMoveComponent.Length", "ShellMoveComponent.MushroomingDamageMultiplier", "ShellMoveComponent.TumblingDamageMultiplier", "ShellMoveComponent.PenetrationDepth", "ShellMoveComponent.PenetrationSpeed", "ProjectileModel", "CartridgeModel"],
+   "pp_template_candidate": {"resource": "Prefabs/Weapons/Ammo/Ammo_762x51_Ball_M80.et", "config": "Configs/Weapons/Ammo/Ammo_762x51.conf", "projectile": "Ammo_Bullet_Base.et", "confidence": "PROVEN"},
+   "bp_template_candidate": {"resource": "Prefabs/Weapons/Ammo/Ammo_762x51_AP_M61.et", "config": "Configs/Weapons/Ammo/Ammo_762x51.conf", "projectile": "Ammo_762x51_Ball_M80.et", "confidence": "PROVEN"},
+   "local_creation_strategy": "A) local prefab inheriting external ammo/projectile",
+   "proposed_pp_path": "Prefabs/Weapons/Ammo/Western/762x51/Ammo_762x51_PP.et",
+   "proposed_bp_path": "Prefabs/Weapons/Ammo/Western/762x51/Ammo_762x51_BP.et",
+   "local_config_required": "REVIEW_REQUIRED",
+   "ready_for_creation": false,
+   "review_reason": "Two external templates exist in the external config (M80/M61); PP/BP labeling remains user-defined and local config/magazine rebinding is unresolved."
+  },
+  "9x19": {
+   "caliber": "9x19",
+   "region": "WESTERN",
+   "magazines": ["Prefabs/Weapons/Magazines/Western/9x19/M9/Magazine_9x19_M9_15rnd_Ball.et"],
+   "weapons": ["Prefabs/Weapons/Western/Handguns/armst_M9.et"],
+   "current_dependency_chain": "M9 magazine -> parent external Magazine_9x19_M9_15rnd_Base.et -> AmmoConfig Configs/Weapons/Ammo/Ammo_9x19.conf -> Ammo_9x19_* -> parent Ammo_Bullet_Base.et",
+   "ammo_config": {"path": "Configs/Weapons/Ammo/Ammo_9x19.conf", "guid": "BC69F995CEEF2196", "source": "EXTERNAL/VANILLA"},
+   "ammo_resource": {"path": "Prefabs/Weapons/Ammo/Ammo_9x19_Ball_M882.et", "guid": "9D290AA75ADA4618", "source": "EXTERNAL/VANILLA"},
+   "projectile": {"path": "Prefabs/Weapons/Core/Ammo_Bullet_Base.et", "guid": "67FED88E5085F63F", "source": "EXTERNAL/VANILLA"},
+   "parent": {"path": "Prefabs/Weapons/Core/Ammo_Bullet_Base.et", "guid": "67FED88E5085F63F"},
+   "ammo_resource_array": [
+    {"resource": "Prefabs/Weapons/Ammo/Ammo_9x19_Ball_M882.et", "guid": "9D290AA75ADA4618"},
+    {"resource": "Prefabs/Weapons/Ammo/Ammo_9x19_HP_JHP.et", "guid": "9DA944F4D6A611BA"}
+   ],
+   "external_variants": [
+    {"name": "Ammo_9x19_Ball_M882.et", "guid": "9D290AA75ADA4618", "parent": "Ammo_Bullet_Base.et", "shell_fields": {}},
+    {"name": "Ammo_9x19_AP_7N21.et", "guid": "external", "parent": "Ammo_Bullet_Base.et", "shell_fields": {"InitSpeed": 460, "InitSpeedVariation": 7.5, "DispersionMultiplier": 0.9, "Mass": 0.0054, "AirDrag": 0.000013, "Diameter": 9.1, "PenetrationDepth": 2.6, "PenetrationSpeed": 401, "BallisticTableConfig": "Configs/Weapons/AIBallisticTables/AIBT_9x19_AP_7N21.conf"}},
+    {"name": "Ammo_9x19_AP_7N31.et", "guid": "external"},
+    {"name": "Ammo_9x19_HP_M1153.et", "guid": "external"}
+   ],
+   "serialized_ballistic_fields": ["ShellMoveComponent.InitSpeed", "ShellMoveComponent.InitSpeedVariation", "ShellMoveComponent.DispersionMultiplier", "ShellMoveComponent.Mass", "ShellMoveComponent.BallisticTableConfig", "ShellMoveComponent.SonicCracks", "ShellMoveComponent.SubsonicFlybys", "ShellMoveComponent.AirDrag", "ShellMoveComponent.Diameter", "ShellMoveComponent.PenetrationDepth", "ShellMoveComponent.PenetrationSpeed", "ProjectileModel", "CartridgeModel"],
+   "pp_template_candidate": {"resource": "Prefabs/Weapons/Ammo/Ammo_9x19_Ball_M882.et", "config": "Configs/Weapons/Ammo/Ammo_9x19.conf", "projectile": "Ammo_Bullet_Base.et", "confidence": "PARTIAL"},
+   "bp_template_candidate": {"resource": "Prefabs/Weapons/Ammo/Ammo_9x19_AP_7N21.et", "config": null, "projectile": "Ammo_Bullet_Base.et", "confidence": "PARTIAL"},
+   "local_creation_strategy": "A) local prefab inheriting external ammo/projectile",
+   "proposed_pp_path": "Prefabs/Weapons/Ammo/Western/9x19/Ammo_9x19_PP.et",
+   "proposed_bp_path": "Prefabs/Weapons/Ammo/Western/9x19/Ammo_9x19_BP.et",
+   "local_config_required": "REVIEW_REQUIRED",
+   "ready_for_creation": false,
+   "review_reason": "AP 7N21/7N31 exist externally but are not in the external magazine AmmoResourceArray (only M882/JHP)."
+  },
+  "7.62x39": {
+   "caliber": "762x39",
+   "region": "EASTERN",
+   "magazines": [
+    "Prefabs/Weapons/Magazines/Russian/7x62/AKM/Magazine_762x39_AKM_10rnd_Ball.et",
+    "Prefabs/Weapons/Magazines/Russian/7x62/AKM/Magazine_762x39_AKM_30rnd_Ball.et"
+   ],
+   "weapons": ["Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_SOC94.et"],
+   "current_dependency_chain": "SOC94/AKM magazines -> parent external Vz58 Magazine_762x39_Vz58_30rnd_Base.et / external base -> AmmoConfig Configs/Weapons/Ammo/Ammo_762x39.conf -> Ammo_762x39_* -> parent Ammo_Bullet_Base.et",
+   "ammo_config": {"path": "Configs/Weapons/Ammo/Ammo_762x39.conf", "guid": "6810AE1CC6F1621D", "source": "EXTERNAL/VANILLA"},
+   "ammo_resource": {"path": "Prefabs/Weapons/Ammo/Ammo_762x39_Ball_57N231.et", "guid": "2FBCA0A7CEDDE7B0", "source": "EXTERNAL/VANILLA"},
+   "projectile": {"path": "Prefabs/Weapons/Core/Ammo_Bullet_Base.et", "guid": "67FED88E5085F63F", "source": "EXTERNAL/VANILLA"},
+   "parent": {"path": "Prefabs/Weapons/Core/Ammo_Bullet_Base.et", "guid": "67FED88E5085F63F"},
+   "ammo_resource_array": [
+    {"resource": "Prefabs/Weapons/Ammo/Ammo_762x39_Ball_57N231.et", "guid": "2FBCA0A7CEDDE7B0"},
+    {"resource": "Prefabs/Weapons/Ammo/Ammo_762x39_Tracer_57T231P.et", "guid": "B9AB11A51D795EC5"}
+   ],
+   "external_variants": [
+    {"name": "Ammo_762x39_Ball_57N231.et", "guid": "2FBCA0A7CEDDE7B0", "parent": "Ammo_Bullet_Base.et", "shell_fields": {}},
+    {"name": "Ammo_762x39_AP_7N23.et", "guid": "external", "parent": "Ammo_Bullet_Base.et", "shell_fields": {"InitSpeed": 732, "InitSpeedVariation": 7, "Mass": 0.0079, "DamageValue": 62.82, "AirDrag": 0.0000105, "Diameter": 7.9, "Length": 27.5, "TumblingDamageMultiplier": 0.1, "PenetrationDepth": 5, "PenetrationSpeed": 535, "BallisticTableConfig": "Configs/Weapons/AIBallisticTables/AIBT_762x39_AP_7N23.conf"}},
+    {"name": "Ammo_762x39_API_57BZ231.et", "guid": "external"}
+   ],
+   "serialized_ballistic_fields": ["ShellMoveComponent.InitSpeed", "ShellMoveComponent.InitSpeedVariation", "ShellMoveComponent.Mass", "ShellMoveComponent.ProjectileEffects.ProjectileDamage.DamageValue", "ShellMoveComponent.BallisticTableConfig", "ShellMoveComponent.SonicCracks", "ShellMoveComponent.SubsonicFlybys", "ShellMoveComponent.AirDrag", "ShellMoveComponent.Diameter", "ShellMoveComponent.Length", "ShellMoveComponent.TumblingDamageMultiplier", "ShellMoveComponent.PenetrationDepth", "ShellMoveComponent.PenetrationSpeed", "CartridgeModel"],
+   "pp_template_candidate": {"resource": "Prefabs/Weapons/Ammo/Ammo_762x39_Ball_57N231.et", "config": "Configs/Weapons/Ammo/Ammo_762x39.conf", "projectile": "Ammo_Bullet_Base.et", "confidence": "PARTIAL"},
+   "bp_template_candidate": {"resource": "Prefabs/Weapons/Ammo/Ammo_762x39_AP_7N23.et", "config": null, "projectile": "Ammo_Bullet_Base.et", "confidence": "PARTIAL"},
+   "local_creation_strategy": "A) local prefab inheriting external ammo/projectile",
+   "proposed_pp_path": "Prefabs/Weapons/Ammo/Eastern/762x39/Ammo_762x39_PP.et",
+   "proposed_bp_path": "Prefabs/Weapons/Ammo/Eastern/762x39/Ammo_762x39_BP.et",
+   "local_config_required": "REVIEW_REQUIRED",
+   "ready_for_creation": false,
+   "review_reason": "AP 7N23 exists externally but is not in the external magazine AmmoResourceArray (only 57N231/tracer)."
+  }
+ }
+}

@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "stanag_base": {
+    "pp": {
+      "path": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/Magazine_556x45_STANAG_30rnd_Base.et",
+      "guid": "11B9CC1FB4AEE740",
+      "parent": "{F9E1A46E3ABA116F}Prefabs/Weapons/Core/Magazine_Base.et",
+      "capacity": 30,
+      "config": "Configs/Weapons/Ammo/ARMST/armst_Ammo_556x45_ARMST.conf",
+      "mapping": "0 x30",
+      "children": [
+        "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M855_Ball.et",
+        "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M855_Ball_BP.et"
+      ],
+      "direct_references": [
+        "M855 Ball child",
+        "M855 Ball BP child"
+      ],
+      "weapon_compatibility_references": []
+    },
+    "bp": {
+      "path": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_Base_BP.et",
+      "guid": "98011CC596464D8F",
+      "parent": "{F9E1A46E3ABA116F}Prefabs/Weapons/Core/Magazine_Base.et",
+      "capacity": 30,
+      "config": "Configs/Weapons/Ammo/ARMST/armst_Ammo_556x45_ARMST.conf",
+      "mapping": "1 x30",
+      "children": [],
+      "direct_references": [],
+      "weapon_compatibility_references": []
+    },
+    "base_role": "INHERITANCE_BASE",
+    "bp_classification": "BP_BASE_REDUNDANT"
+  },
+  "l1a1_m61": [
+    {
+      "path": "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_20_M61_AP.et",
+      "guid": "5D4E812AEAA7CC1F",
+      "parent": "{AA9A48AAEE6E4F1B}Prefabs/Weapons/Magazines/Western/762x51/HK3/L1A1/armst_Magazine_762x51_L1A1_20_M80_Ball.et",
+      "capacity": 20,
+      "config": "inherited",
+      "mapping": "2 x20",
+      "projectile_identity": "M61 AP via external Ammo_762x51.conf index 2",
+      "direct_references": [],
+      "weapon_compatibility": [],
+      "classification": "REDUNDANT_LEGACY_AP",
+      "replaced_by": "armst_Magazine_762x51_L1A1_20_M80_Ball_BP.et"
+    },
+    {
+      "path": "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_30_M61_AP.et",
+      "guid": "E70FEC32673242CB",
+      "parent": "{531AA7DB88D84184}Prefabs/Weapons/Magazines/Western/762x51/HK3/L1A1/armst_Magazine_762x51_L1A1_30_M80_Ball.et",
+      "capacity": 30,
+      "config": "inherited",
+      "mapping": "2 x30",
+      "projectile_identity": "M61 AP via external Ammo_762x51.conf index 2",
+      "direct_references": [],
+      "weapon_compatibility": [],
+      "classification": "REDUNDANT_LEGACY_AP",
+      "replaced_by": "armst_Magazine_762x51_L1A1_30_M80_Ball_BP.et"
+    }
+  ],
+  "references_to_redundant": {
+    "armst_Magazine_556x45_STANAG_30rnd_Base_BP.et": [],
+    "armst_Magazine_762x51_L1A1_20_M61_AP.et": [],
+    "armst_Magazine_762x51_L1A1_30_M61_AP.et": []
+  }
+}

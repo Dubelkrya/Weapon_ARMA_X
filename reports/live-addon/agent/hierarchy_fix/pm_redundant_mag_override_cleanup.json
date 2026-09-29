@@ -1,0 +1,21 @@
+{
+ "resource": "Prefabs/Weapons/Russian/Handguns/Pm/armst_PM.et",
+ "guid": "C0F7DD85A86B2900",
+ "LOCAL_PM_MAGAZINE_TEMPLATE_OVERRIDE": 0,
+ "LOCAL_WEAPONCOMPONENT_OVERRIDE_REMAINING": 0,
+ "EFFECTIVE_MAGAZINE_GUID": "8B853CDD11BA916E (inherited from Handgun_PM_base)",
+ "EFFECTIVE_MAGAZINE": "armst_Magazine_9x18_PM_8rnd_Ball.et (resolved by GUID)",
+ "MAGAZINE_WELL": "MagazineWellMakarovPM",
+ "CAPACITY": 8,
+ "EFFECTIVE_BEHAVIOR_CHANGED": 0,
+ "GUID_CHANGES": 0,
+ "OTHER_WEAPONS_CHANGED": 0,
+ "META_UNCHANGED": true,
+ "braces_balanced": true,
+ "lines_removed": [
+  "  WeaponComponent \"{CFBAA4B706BA66E8}\" {",
+  "   components {",
+  "    MuzzleComponent \"{50F64C45E7271D47}\" {",
+  "     MagazineTemplate \"{8B853CDD11BA916E}Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball.et\""
+ ]
+}

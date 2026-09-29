@@ -1,0 +1,212 @@
+{
+ "families": {
+  "PM": {
+   "path": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball.et",
+   "guid": "8B853CDD11BA916E",
+   "parent": "{9B5AA2C731485ACA}Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Base.et",
+   "chain": [
+    "armst_Magazine_9x18_PM_8rnd_Ball.et",
+    "Magazine_9x18_PM_8rnd_Base.et (VANILLA)",
+    "Magazine_Base.et (VANILLA)"
+   ],
+   "well": {
+    "class": "MagazineWellMakarovPM",
+    "instance": "{05B3A6C89A212814}",
+    "serialized_locally": false,
+    "source": "VANILLA Magazine_9x18_PM_8rnd_Base.et"
+   },
+   "capacity": 8,
+   "capacity_locally_authored": false,
+   "mapping_len": null,
+   "mesh": "inherited: {2482E01261AB2FB5}Assets/Weapons/Magazines/PM/Magazine_8rnd_PM.xob",
+   "display_name": "inherited #AR-Magazine_PM_Name",
+   "grid_height": 1,
+   "weight": null,
+   "desc_key": "#AR-ARMST_Magazine_armst_Magazine_9x18_PM_8rnd_Ball_Description"
+  },
+  "APB": {
+   "path": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_APB_20rnd_Ball.et",
+   "guid": "389EB226473CD590",
+   "parent": "{8B853CDD11BA916E}Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball.et",
+   "chain": [
+    "armst_Magazine_9x18_APB_20rnd_Ball.et",
+    "armst_Magazine_9x18_PM_8rnd_Ball.et (ARMST shared)",
+    "Magazine_9x18_PM_8rnd_Base.et (VANILLA)",
+    "Magazine_Base.et (VANILLA)"
+   ],
+   "well": {
+    "class": "MagazineWellAPB",
+    "instance": "{05B3A6C89A212814}",
+    "serialized_locally": true
+   },
+   "capacity": 20,
+   "capacity_locally_authored": true,
+   "mapping_len": 12,
+   "mesh": "{FFCF07878591D096}Assets/Apb/APB_magazine.xob",
+   "display_name": "APB Magazine",
+   "grid_height": "inherited 1 (from ARMST PM mag)",
+   "weight": null,
+   "desc_key": "#AR-ARMST_Magazine_armst_Magazine_9x18_APB_20rnd_Ball_Description"
+  },
+  "PP91": {
+   "path": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PP91_30rnd_Ball.et",
+   "guid": "4488C415F3CA1890",
+   "parent": "{8B853CDD11BA916E}Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball.et",
+   "chain": [
+    "armst_Magazine_9x18_PP91_30rnd_Ball.et",
+    "armst_Magazine_9x18_PM_8rnd_Ball.et (ARMST shared)",
+    "Magazine_9x18_PM_8rnd_Base.et (VANILLA)",
+    "Magazine_Base.et (VANILLA)"
+   ],
+   "well": {
+    "class": "MagazineWellPP91",
+    "instance": "{05B3A6C89A212814}",
+    "serialized_locally": true
+   },
+   "capacity": 30,
+   "capacity_locally_authored": true,
+   "mapping_len": 22,
+   "mesh": "{616109F8BCB6B70E}Assets/Kedr/Kedr_magazine.xob",
+   "display_name": "PP-91 Magazine",
+   "grid_height": 2,
+   "weight": 0.15,
+   "desc_key": "#AR-ARMST_Magazine_armst_Magazine_9x18_PP91_30rnd_Ball_Description"
+  },
+  "SR2": {
+   "path": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_SR2_30rnd_Ball.et",
+   "guid": "2610CA8D8632DEF4",
+   "parent": "{8B853CDD11BA916E}Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball.et",
+   "chain": [
+    "armst_Magazine_9x18_SR2_30rnd_Ball.et",
+    "armst_Magazine_9x18_PM_8rnd_Ball.et (ARMST shared)",
+    "Magazine_9x18_PM_8rnd_Base.et (VANILLA)",
+    "Magazine_Base.et (VANILLA)"
+   ],
+   "well": {
+    "class": "MagazineWellPP91",
+    "instance": "{05B3A6C89A212814}",
+    "serialized_locally": true
+   },
+   "capacity": 30,
+   "capacity_locally_authored": true,
+   "mapping_len": 22,
+   "mesh": "{F2231EA6A4185BF9}Assets/Weapons_RUS/sr2/SR2_mag.xob",
+   "display_name": "PP-91 Magazine (WRONG legacy identity)",
+   "grid_height": 2,
+   "weight": 0.15,
+   "desc_key": "#AR-ARMST_Magazine_armst_Magazine_9x18_SR2_30rnd_Ball_Description"
+  }
+ },
+ "weapon_defaults": {
+  "armst_PM": {
+   "well": "MagazineWellMakarovPM {26EA67622A1DA48B} (inherited from Handgun_PM_base)",
+   "template": "{8B853CDD11BA916E}Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Ball.et (VANILLA)",
+   "expected": "armst_Magazine_9x18_PM_8rnd_Ball.et",
+   "match": false
+  },
+  "armst_APB": {
+   "well": "MagazineWellAPB {26EA67622A1DA48B}",
+   "template": "{389EB226473CD590}...armst_Magazine_9x18_APB_20rnd_Ball.et",
+   "expected": "armst_Magazine_9x18_APB_20rnd_Ball.et",
+   "match": true
+  },
+  "armst_PP91": {
+   "well": "MagazineWellPP91 {26EA67622A1DA48B}",
+   "template": "{4488C415F3CA1890}...armst_Magazine_9x18_PP91_30rnd_Ball.et",
+   "expected": "armst_Magazine_9x18_PP91_30rnd_Ball.et",
+   "match": true
+  },
+  "armst_SR_2": {
+   "well": "MagazineWellPP91 {26EA67622A1DA48B}",
+   "template": "{2610CA8D8632DEF4}...armst_Magazine_9x18_SR2_30rnd_Ball.et",
+   "expected": "armst_Magazine_9x18_SR2_30rnd_Ball.et",
+   "match": true
+  }
+ },
+ "inheritance_edges": [
+  {
+   "edge": "PM mag -> VANILLA Magazine_9x18_PM_8rnd_Base",
+   "class": "GENERIC_BASE",
+   "contributes": "capacity 8, MagazineWellMakarovPM, mesh, vanilla defaults"
+  },
+  {
+   "edge": "APB mag -> ARMST PM mag",
+   "class": "VALID_SHARED_BASE",
+   "contributes": "editor flags (Enabled 0, m_bAutoRegister NEVER, m_bVisible 0, labels), m_bAutoDetectGridSize 0, m_iCustomGridHeight 1; identity/desc keys; capacity/well/mesh/mapping overridden locally"
+  },
+  {
+   "edge": "PP91 mag -> ARMST PM mag",
+   "class": "VALID_SHARED_BASE",
+   "contributes": "same shared editor/grid metadata; overridden locally where needed"
+  },
+  {
+   "edge": "SR2 mag -> ARMST PM mag",
+   "class": "VALID_SHARED_BASE",
+   "contributes": "same shared editor/grid metadata; overridden locally"
+  }
+ ],
+ "magazine_well_matrix": {
+  "PM": "MagazineWellMakarovPM",
+  "APB": "MagazineWellAPB",
+  "PP91": "MagazineWellPP91",
+  "SR2": "MagazineWellPP91"
+ },
+ "weapon_well_matrix": {
+  "armst_PM": "MagazineWellMakarovPM {26EA67622A1DA48B} (inherited from Handgun_PM_base)",
+  "armst_APB": "MagazineWellAPB {26EA67622A1DA48B}",
+  "armst_PP91": "MagazineWellPP91 {26EA67622A1DA48B}",
+  "armst_SR_2": "MagazineWellPP91 {26EA67622A1DA48B}"
+ },
+ "compatibility": {
+  "PM": "MagazineWellMakarovPM (mag) == MagazineWellMakarovPM (weapon) OK",
+  "APB": "MagazineWellAPB == MagazineWellAPB OK",
+  "PP91": "MagazineWellPP91 == MagazineWellPP91 OK",
+  "SR2": "MagazineWellPP91 (mag) == MagazineWellPP91 (weapon) OK (intentionally shared)",
+  "note": "Well compatibility is class-based; instance GUID {05B3A6C89A212814}/{26EA67622A1DA48B} reuse across classes is harmless."
+ },
+ "capacity_check": {
+  "PM": 8,
+  "APB": 20,
+  "PP91": 30,
+  "SR2": 30,
+  "expected": {
+   "PM": 8,
+   "APB": 20,
+   "PP91": 30,
+   "SR2": 30
+  },
+  "all_match": true
+ },
+ "DEVIATIONS": [
+  {
+   "item": "PM weapon default magazine",
+   "expected": "armst_Magazine_9x18_PM_8rnd_Ball.et",
+   "actual": "Magazine_9x18_PM_8rnd_Ball.et (VANILLA)",
+   "note": "armst_PM.et does not author MagazineTemplate; inherits vanilla PM base template."
+  },
+  {
+   "item": "SR2 magazine display Name",
+   "expected": "SR-2M identity",
+   "actual": "PP-91 Magazine",
+   "note": "legacy wrong identity in magazine resource"
+  },
+  {
+   "item": "AmmoMapping length vs capacity",
+   "actual": "APB 12 vs 20; PP91 22 vs 30; SR2 22 vs 30",
+   "note": "AmmoMapping arrays shorter than MaxAmmo (pre-existing)"
+  },
+  {
+   "item": "AmmoConfig",
+   "actual": "none authored locally on any of the four",
+   "note": "inherited from vanilla magazine base / external configs"
+  }
+ ],
+ "AmmoConfig_AmmoMapping_matrix": {
+  "PM": "none local (vanilla inherited)",
+  "APB": "mapping 12 entries / MaxAmmo 20",
+  "PP91": "mapping 22 entries / MaxAmmo 30",
+  "SR2": "mapping 22 entries / MaxAmmo 30"
+ },
+ "LIVE_FILES_CHANGED": "NONE",
+ "task_note": "Incoming task text was truncated after section 6; audit covers sections 1-6 with summary."
+}

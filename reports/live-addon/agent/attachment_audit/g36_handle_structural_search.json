@@ -1,0 +1,49 @@
+{
+ "attachment_type_users": {
+  "AttachmentOpticsG36": [
+   "Prefabs/Weapons/Western/Rifle/HKG36/armst_Rifle_hk_g36.et (slot AttachmentSlotComponent {6A0470709BAE058E})",
+   "Scripts/Gamecode/Attachment_optic.c (class AttachmentOpticsG36 : AttachmentOptics; comment says \"M16 carryhandle mount\")"
+  ],
+  "AttachmentOpticsCarryHandle": [
+   "Attachments/Optics/Optic_4x20/Optic_4x20_base.et",
+   "Attachments/Optics/Optic_AP2k/Collim_AP2k_base.et",
+   "Rifles/M16/Rifle_M16A2_base.et (slot)"
+  ]
+ },
+ "compatible_prefabs": [
+  {
+   "path": "Prefabs/Weapons/Attachments/Optics/Optic_4x20/Optic_4x20_base.et",
+   "guid": "9D450824D9661395",
+   "parent": "{966B4E5523D2F166}Prefabs/Weapons/Attachments/Optics/WeaponOptic_Base.et",
+   "model": "{FB0E7050A887C7F5}Assets/Weapons/Attachments/Optics/4x20/Optic_4x20.xob",
+   "attachment_type": "AttachmentOpticsCarryHandle {58E2B316401F7A2D}",
+   "sights": "SCR_2DPIPSightsComponent {5D0CC83435B55855} (SightsPosition {5D0CC83435B55853}; zoom 4x)",
+   "identity_key": "#AR-Item_Colt4x20_Name",
+   "role": "primary candidate (carry-handle 4x20 optic)"
+  },
+  {
+   "path": "Prefabs/Weapons/Attachments/Optics/Optic_AP2k/Collim_AP2k_base.et",
+   "guid": "41F0FA8ED5CEC018",
+   "parent": "{78689FF321194268}Prefabs/Weapons/Attachments/Optics/WeaponCollimator_Base.et",
+   "model": "{0C16AEED5C13BF74}Assets/Weapons/Attachments/Optics/AP2k/Optic_AP2k.xob",
+   "attachment_type": "AttachmentOpticsCarryHandle {604ACAC56AE9B0AA}",
+   "sights": "SCR_...SightsComponent (owns active sights)",
+   "role": "secondary candidate (carry-handle collimator)"
+  }
+ ],
+ "found_prefab": "Prefabs/Weapons/Attachments/Optics/Optic_4x20/Optic_4x20_base.et",
+ "found_guid": "9D450824D9661395",
+ "model": "{FB0E7050A887C7F5}Assets/Weapons/Attachments/Optics/4x20/Optic_4x20.xob",
+ "sights_component": "SCR_2DPIPSightsComponent {5D0CC83435B55855} + SightsPosition {5D0CC83435B55853}",
+ "target_slot": "AttachmentSlotComponent {6A0470709BAE058E} > AttachmentSlot InventoryStorageSlot optics",
+ "proposed_default_prefab_ref": "Prefab \"{9D450824D9661395}Prefabs/Weapons/Attachments/Optics/Optic_4x20/Optic_4x20_base.et\"",
+ "class_compatibility": {
+  "slot_class": "AttachmentOpticsG36 (ARMST-defined in Scripts/Gamecode/Attachment_optic.c; parent AttachmentOptics)",
+  "candidate_class": "AttachmentOpticsCarryHandle (vanilla carry-handle mount; parent AttachmentOptics)",
+  "issue": "No prefab declares AttachmentOpticsG36; candidates declare AttachmentOpticsCarryHandle. Both derive from AttachmentOptics but are not proven to be interchangeable by the slot matcher. Exact mount is therefore not proven locally (may require slot class change or an ARMST AttachmentOpticsG36 prefab that is not present in the authoritative addon)."
+ },
+ "default_prefab_ref_search": "No weapon/default slot references a prefab with AttachmentOpticsG36; no stale-path GUID reference to such a prefab found.",
+ "classification": "FOUND_COMPATIBLE_CANDIDATES",
+ "LIVE_FILES_CHANGED": "NONE",
+ "STATUS": "REVIEW_REQUIRED"
+}

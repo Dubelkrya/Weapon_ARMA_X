@@ -1,0 +1,152 @@
+{
+ "targets": {
+  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74_base.et": {
+   "current": "none",
+   "type": null,
+   "origin": "-",
+   "matching": [],
+   "pattern": "A",
+   "notes": "no local optic slot; only disabled muzzle placeholder"
+  },
+  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_base.et": {
+   "current": "Stock",
+   "type": "AttachmentOpticsDovetailAK",
+   "origin": "LOCAL_ADDITION",
+   "matching": [
+    "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et"
+   ],
+   "pattern": "B",
+   "notes": "native AK side dovetail; used by AKM/AKMS/VPO136 + SOC94 override; RIS optics would need adapter (pattern D later)"
+  },
+  "Prefabs/Weapons/Russian/Rifle/Aek971/armst_Rifle_AEK971_base.et": {
+   "current": "sights",
+   "type": "AttachmentOpticsARMST_DovetailRU",
+   "origin": "LOCAL_OVERRIDE",
+   "matching": [
+    "armst_Optic_PSO1_DovetailRU.et"
+   ],
+   "pattern": "E",
+   "notes": "override of vanilla AK74N sights slot (vanilla type AttachmentOpticsDovetailAK); frozen; AEK971_OPTIC_INTERFACE=KEEP_CURRENT"
+  },
+  "Prefabs/Weapons/Russian/Rifle/Groza/armst_Groza_base.et": {
+   "current": "none",
+   "type": null,
+   "origin": "-",
+   "matching": [],
+   "pattern": "A",
+   "notes": "no optic slot; project decided no generic mount; GROZA_OPTIC_INTERFACE=NONE"
+  },
+  "Prefabs/Weapons/Russian/Rifle/SOC94/armst_Rifle_SOC94_base.et": {
+   "current": "none/Stock",
+   "type": "AttachmentOpticsDovetailSVD",
+   "origin": "LOCAL_OVERRIDE",
+   "matching": [],
+   "pattern": "E",
+   "notes": "overrides frozen; 65AE4CB5E23C0F63 repurposes AKM stock instance as SVD dovetail (conceptual oddity, INFO only)"
+  },
+  "Prefabs/Weapons/Russian/Rifle/SVD/armst_Rifle_SVD_base.et": {
+   "current": "Dovetail",
+   "type": "AttachmentOpticsDovetailSVD",
+   "origin": "LOCAL_OVERRIDE",
+   "matching": [],
+   "pattern": "E",
+   "notes": "override of vanilla SVD dovetail; distinct native mount, no unification; no matching optic prefab yet (NO_ATTACHMENT_EXISTS_YET)"
+  },
+  "Prefabs/Weapons/Russian/Rifle/9a91/armst_Rifle_9a91_base.et": {
+   "current": "BayonetSlot",
+   "type": "AttachmentOpticsDovetailAK",
+   "origin": "LOCAL_OVERRIDE",
+   "matching": [
+    "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et"
+   ],
+   "pattern": "E",
+   "notes": "override of vanilla AK74 BayonetSlot (vanilla type AttachmentBayonet6Kh4) repurposed to dovetail optic; SlotName misleading; frozen"
+  },
+  "Prefabs/Weapons/Russian/Rifle/VAL/armst_Rifle_val_base.et": {
+   "current": "BayonetSlot",
+   "type": "AttachmentOpticsDovetailAK",
+   "origin": "LOCAL_OVERRIDE",
+   "matching": [
+    "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et"
+   ],
+   "pattern": "E",
+   "notes": "same as 9A91; live context Optic(slot_optics)"
+  },
+  "Prefabs/Weapons/Russian/Rifle/VSS/armst_Rifle_vss_base.et": {
+   "current": "BayonetSlot",
+   "type": "AttachmentOpticsDovetailAK",
+   "origin": "LOCAL_OVERRIDE",
+   "matching": [
+    "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et"
+   ],
+   "pattern": "E",
+   "notes": "same as 9A91"
+  },
+  "Prefabs/Weapons/Russian/Rifle/VSK94/armst_Rifle_VSK94_base.et": {
+   "current": "BayonetSlot",
+   "type": "AttachmentOpticsDovetailAK",
+   "origin": "LOCAL_OVERRIDE",
+   "matching": [
+    "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et"
+   ],
+   "pattern": "E",
+   "notes": "same as 9A91; live context optic(slot_optics)"
+  },
+  "Prefabs/Weapons/Russian/MachineGuns/armst_PKM_base.et": {
+   "current": "none",
+   "type": null,
+   "origin": "-",
+   "matching": [],
+   "pattern": "A",
+   "notes": "0 local slots; no local optic interface"
+  },
+  "Prefabs/Weapons/Russian/MachineGuns/armst_RPK74_base.et": {
+   "current": "none",
+   "type": null,
+   "origin": "-",
+   "matching": [],
+   "pattern": "A",
+   "notes": "0 local slots; no local optic interface"
+  }
+ },
+ "patterns_legend": {
+  "A": "NO_OPTIC_ATTACHMENT_INTERFACE",
+  "B": "DIRECT_NATIVE_OPTIC_INTERFACE",
+  "C": "DIRECT_STOCK_PICATINNY_INTERFACE",
+  "D": "NATIVE_INTERFACE -> OPTIONAL_RIS_ADAPTER",
+  "E": "KEEP_OVERRIDE / DO_NOT_TOUCH",
+  "F": "REVIEW_REQUIRED"
+ },
+ "optic_type_matrix": {
+  "AttachmentOpticsDovetailAK": {
+   "weapons": [
+    "Prefabs/Weapons/Russian/Rifle/9a91/armst_Rifle_9a91_base.et",
+    "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_base.et",
+    "Prefabs/Weapons/Russian/Rifle/SVD/armst_Rifle_SVD_base.et",
+    "Prefabs/Weapons/Russian/Rifle/VAL/armst_Rifle_val_base.et",
+    "Prefabs/Weapons/Russian/Rifle/VSK94/armst_Rifle_VSK94_base.et",
+    "Prefabs/Weapons/Russian/Rifle/VSS/armst_Rifle_vss_base.et"
+   ],
+   "matching_optic_prefabs": [
+    "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et"
+   ],
+   "defaults": []
+  },
+  "AttachmentOpticsARMST_DovetailRU": {
+   "weapons": [
+    "Prefabs/Weapons/Russian/Rifle/Aek971/armst_Rifle_AEK971_base.et"
+   ],
+   "matching_optic_prefabs": [
+    "armst_Optic_PSO1_DovetailRU.et"
+   ],
+   "defaults": []
+  },
+  "AttachmentOpticsDovetailSVD": {
+   "weapons": [
+    "Prefabs/Weapons/Russian/Rifle/SOC94/armst_Rifle_SOC94_base.et"
+   ],
+   "matching_optic_prefabs": [],
+   "defaults": []
+  }
+ }
+}

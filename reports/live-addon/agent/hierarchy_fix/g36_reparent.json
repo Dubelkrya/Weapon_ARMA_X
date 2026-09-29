@@ -1,0 +1,289 @@
+{
+ "path": "Prefabs/Weapons/Western/Rifle/HKG36/armst_Rifle_hk_g36.et",
+ "guid": "A802C718201D72DF",
+ "model": "{9319B3B8F246C59B}Assets/Weapons_NATO/HKG36/HKG36.xob",
+ "inheritance_chain_before": [
+  "{911D6C8DC7BA2D63}Prefabs/Weapons/Core/Rifle_Base.et",
+  "{E1F14DB52DBFBC57}Prefabs/Weapons/Core/Weapon_Base.et"
+ ],
+ "parent_before": "{911D6C8DC7BA2D63}Prefabs/Weapons/Core/Rifle_Base.et",
+ "parent_after": "{C63227C0E70EA62E}Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et",
+ "g36_parent_contributions": {
+  "source": "Rifle_Base (5 components)",
+  "note": "G36 locally overrides the shared core components; current parent contributes only Rifle_Base base values"
+ },
+ "effective_state_before": {
+  "model": "{9319B3B8F246C59B}Assets/Weapons_NATO/HKG36/HKG36.xob",
+  "animations": [
+   "{D20C08C61B86483F}Assets/Weapons_NATO/HKG36/Anim/HKg36.agr",
+   "{C25C4C620483ED2D}Assets/Weapons_NATO/HKG36/Anim/HKg36_weapon.asi",
+   "{D20C08C61B86483F}Assets/Weapons_NATO/HKG36/Anim/HKg36.agr",
+   "{3902DD539C8289C1}Assets/Weapons_NATO/HKG36/Anim/HKg36_player.asi"
+  ],
+  "ik_pose": "{B7869ABD0EEE379D}Assets/Weapons/Rifles/AK74/anims/anm/p_ak74_ik.anm",
+  "magazine_well": "{6A0470709BAE052D}",
+  "magazine_template": "{969F6FFF810D2145}Prefabs/Weapons/Magazines/Western/5x56/HKG36/armst_Magazine_556x45_HKG36.et",
+  "sights_component": true,
+  "muzzle_component": true,
+  "fire_modes": true,
+  "recoil": true,
+  "sound": true,
+  "stats_manager": true
+ },
+ "effective_state_after": null,
+ "fields_changed_by_reparent": null,
+ "local_overrides_added": null,
+ "M16_ONLY_COMPONENTS_NOT_SHADOWED": {
+  "5534745C44D1EF08": {
+   "type": "SightsPointFront",
+   "name": "PointInfo"
+  },
+  "5534745C44D1EF0D": {
+   "type": "SightsPointRear",
+   "name": "PointInfo"
+  },
+  "5534745C44D1EF26": {
+   "type": "MagazineWell",
+   "name": "MagazineWellStanag556"
+  },
+  "5534745C44D1EF52": {
+   "type": "ZeroingWeaponAimModifier",
+   "name": null
+  },
+  "5534745C44D1EF58": {
+   "type": "AttachmentSlotComponent",
+   "name": null
+  },
+  "5534745C44D1EF5A": {
+   "type": "AnimInjection",
+   "name": "AnimationAttachmentInfo"
+  },
+  "5534745C44D1EFE1": {
+   "type": "ItemPhysAttributes",
+   "name": "ItemPhysicalAttributes"
+  },
+  "5534745C44D1EFF0": {
+   "type": "RigidBody",
+   "name": null
+  },
+  "5534745C44D1EFF6": {
+   "type": "SCR_MeleeWeaponProperties",
+   "name": null
+  },
+  "5584D01594F61795": {
+   "type": "RecoilWeaponAimModifier",
+   "name": null
+  },
+  "56DE9C900611C1AF": {
+   "type": "AttachmentSlotComponent",
+   "name": null
+  },
+  "584CED30AF80A560": {
+   "type": "WeaponPosition",
+   "name": "PointInfo"
+  },
+  "584CED30AF80A576": {
+   "type": "SightRangeInfo",
+   "name": null
+  },
+  "584CED30AF821312": {
+   "type": "SightRangeInfo",
+   "name": null
+  },
+  "584CED30AF82131E": {
+   "type": "WeaponPosition",
+   "name": "PointInfo"
+  },
+  "584CED30AF834928": {
+   "type": "SightRangeInfo",
+   "name": null
+  },
+  "584CED30AF834957": {
+   "type": "WeaponPosition",
+   "name": "PointInfo"
+  },
+  "584CED30AF84A542": {
+   "type": "SightRangeInfo",
+   "name": null
+  },
+  "584CED30AF84A549": {
+   "type": "WeaponPosition",
+   "name": "PointInfo"
+  },
+  "584CED30AF8617A6": {
+   "type": "SightRangeInfo",
+   "name": null
+  },
+  "584CED30AF8617AE": {
+   "type": "WeaponPosition",
+   "name": "PointInfo"
+  },
+  "584CED30AF874F57": {
+   "type": "SightRangeInfo",
+   "name": null
+  },
+  "584CED30AF874F5C": {
+   "type": "WeaponPosition",
+   "name": "PointInfo"
+  },
+  "584CED30AFBE1EB5": {
+   "type": "SightRangeInfo",
+   "name": null
+  },
+  "584CED30AFBE1ED1": {
+   "type": "WeaponPosition",
+   "name": "PointInfo"
+  },
+  "58789524F404F395": {
+   "type": "LinearData",
+   "name": "RecoilData"
+  },
+  "58789524F4CD2BD3": {
+   "type": "AngularData",
+   "name": "RecoilData"
+  },
+  "58789524F59F941B": {
+   "type": "TurnOffsetData",
+   "name": "RecoilData"
+  },
+  "58B27D69C690588D": {
+   "type": "ItemOneHandAnimAttributes",
+   "name": null
+  },
+  "58E2B5510A713A07": {
+   "type": "AttachmentType",
+   "name": "AttachmentHandGuardM16"
+  },
+  "5A1E5C473E2F34A7": {
+   "type": "Position",
+   "name": "PointInfo"
+  },
+  "5A1E5C474348FA82": {
+   "type": "Position",
+   "name": "PointInfo"
+  },
+  "5A5CDB17A85868B7": {
+   "type": "AttachmentType",
+   "name": "AttachmentOpticsCarryHandle"
+  },
+  "5A8ABE3D0B1123A8": {
+   "type": "PivotPointInfoItem",
+   "name": null
+  },
+  "5D527627CCB8F756": {
+   "type": "AttachmentSlotComponent",
+   "name": null
+  },
+  "5D527627EB018141": {
+   "type": "AttachmentType",
+   "name": "AttachmentMuzzle556_45"
+  },
+  "5F16E0B4B2D0D72C": {
+   "type": "AttachmentSlotComponent",
+   "name": null
+  },
+  "60AAE4351FBECDEA": {
+   "type": "AttachmentType",
+   "name": "AttachmentBayonetM9"
+  },
+  "60ECB1E9AB301676": {
+   "type": "UserActionContext",
+   "name": null
+  },
+  "60ECB1E9B0F14366": {
+   "type": "Position",
+   "name": "PointInfo"
+  },
+  "6188FC1045F23E2A": {
+   "type": "SCR_WeaponStatsManagerComponent",
+   "name": null
+  },
+  "61FECC7EE21E0318": {
+   "type": "UserActionContext",
+   "name": null
+  },
+  "61FECC7EE69BACE9": {
+   "type": "Position",
+   "name": "PointInfo"
+  }
+ },
+ "M16_ONLY_CRITICAL": {
+  "5534745C44D1EF26": {
+   "type": "MagazineWell",
+   "name": "MagazineWellStanag556"
+  },
+  "5534745C44D1EF52": {
+   "type": "ZeroingWeaponAimModifier",
+   "name": null
+  },
+  "5534745C44D1EF58": {
+   "type": "AttachmentSlotComponent",
+   "name": null
+  },
+  "5534745C44D1EF5A": {
+   "type": "AnimInjection",
+   "name": "AnimationAttachmentInfo"
+  },
+  "5534745C44D1EFF0": {
+   "type": "RigidBody",
+   "name": null
+  },
+  "5534745C44D1EFF6": {
+   "type": "SCR_MeleeWeaponProperties",
+   "name": null
+  },
+  "5584D01594F61795": {
+   "type": "RecoilWeaponAimModifier",
+   "name": null
+  },
+  "56DE9C900611C1AF": {
+   "type": "AttachmentSlotComponent",
+   "name": null
+  },
+  "58E2B5510A713A07": {
+   "type": "AttachmentType",
+   "name": "AttachmentHandGuardM16"
+  },
+  "5A5CDB17A85868B7": {
+   "type": "AttachmentType",
+   "name": "AttachmentOpticsCarryHandle"
+  },
+  "5D527627CCB8F756": {
+   "type": "AttachmentSlotComponent",
+   "name": null
+  },
+  "5D527627EB018141": {
+   "type": "AttachmentType",
+   "name": "AttachmentMuzzle556_45"
+  },
+  "5F16E0B4B2D0D72C": {
+   "type": "AttachmentSlotComponent",
+   "name": null
+  },
+  "60AAE4351FBECDEA": {
+   "type": "AttachmentType",
+   "name": "AttachmentBayonetM9"
+  },
+  "60ECB1E9AB301676": {
+   "type": "UserActionContext",
+   "name": null
+  },
+  "6188FC1045F23E2A": {
+   "type": "SCR_WeaponStatsManagerComponent",
+   "name": null
+  },
+  "61FECC7EE21E0318": {
+   "type": "UserActionContext",
+   "name": null
+  }
+ },
+ "SHARED_COMPONENTS_WITH_UNSHADOWED_M16_FIELDS": [],
+ "foreign_legacy_refs_found": {
+  "ik_pose_ak74": "{B7869ABD0EEE379D}Assets/Weapons/Rifles/AK74/anims/anm/p_ak74_ik.anm",
+  "note": "p_ak74_ik.anm present locally BEFORE reparent; not introduced by this task"
+ },
+ "SAFETY_GATE": "TRIPPED",
+ "AMBIGUOUS_CRITICAL_COUNT": 17,
+ "status": "REVIEW_REQUIRED",
+ "mutation_performed": false
+}

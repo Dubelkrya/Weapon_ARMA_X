@@ -1,0 +1,26 @@
+{
+    "exc_12ga_out_of_scope":  "All 12ga resources explicitly excluded from this audit",
+    "exc_deleted_tracer_magazine":  "Magazine_762x39_AKM_30rnd_Tracer.et permanently retired; must never be recreated",
+    "exc_groza_muzzle_AK74_particle":  "Particles/Weapon/Muzzle_AK74.ptc intentional",
+    "exc_groza_wrong_casing":  "Casing_762x39_PS.ptc known debt (WRONG_FOR_9x39, no proven replacement) - PASS_WITH_KNOWN_DEBT",
+    "exc_g36_ak74_ik":  "AnimationIKPose p_ak74_ik.anm workaround - do not audit/fix",
+    "exc_sig550_vz58_animation":  "SIG550 VZ58 animation graph/instances/injection - intentional workaround, KEEP",
+    "exc_sr2_magazinewellpp91":  "SR-2 shared PP91 magazine well - intentional",
+    "exc_l1a1_slr_ak74_ik":  "L1A1/SLR AK74 IK - UNRESOLVED / KEEP until proven replacement",
+    "exc_existing_overrides_frozen":  "All existing overrides frozen except the approved single-PSO AttachmentType migration below",
+    "exc_authorized_single_pso_migration":  [
+                                                {
+                                                    "CHANGED":  "AttachmentOpticsARMST_DovetailRU -\u003e AttachmentOpticsDovetailAK",
+                                                    "INSTANCE":  "55349E9229B55E29",
+                                                    "WEAPON":  "AEK971"
+                                                },
+                                                {
+                                                    "CHANGED":  "AttachmentOpticsDovetailSVD -\u003e AttachmentOpticsDovetailAK",
+                                                    "INSTANCE":  "65AE4CB5E23C0F63",
+                                                    "WEAPON":  "SOC94"
+                                                }
+                                            ],
+    "exc_vpo136":  "VPO136 is an AKM variant; no separate base required",
+    "exc_soc94":  "SOC94 distinct weapon; own folder/base",
+    "exc_external_backups":  "agent/ directory and any backup copies are not live resources"
+}

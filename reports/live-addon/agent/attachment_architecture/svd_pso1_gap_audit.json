@@ -1,0 +1,63 @@
+{
+ "pso1_lines": [
+  "GameEntity : \"{AB71C533945104AE}Prefabs/Weapons/Attachments/Optics/Optic_PSO1/Optic_PSO1_base.et\" {",
+  " ID \"AA9AE4DCB3E360AC\"",
+  " components {",
+  "  ARMST_ITEMS_STATS_COMPONENTS \"{66A73B4253B0CD56}\" {",
+  "  }",
+  "  InventoryItemComponent \"{52627A1F45CD4EB6}\" {",
+  "   Attributes SCR_ItemAttributeCollection \"{52627A1EBB0698FD}\" {",
+  "    CustomAttributes {",
+  "     WeaponAttachmentAttributes \"{5284D858FFF9BE66}\" {",
+  "      AttachmentType AttachmentOpticsDovetailAK \"{5D0CCDD0615C597D}\" {",
+  "      }",
+  "     }",
+  "    }",
+  "    m_bAutoDetectGridSize 0",
+  "    m_iCustomGridWidth 2",
+  "   }",
+  "  }",
+  " }",
+  "}"
+ ],
+ "pso1_ak_lines": [
+  "GameEntity : \"{C850A33226B8F9C1}Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et\" {",
+  " ID \"AA9AE4DCB3E360AC\"",
+  " components {",
+  "  ARMST_ITEMS_STATS_COMPONENTS \"{66A73B4253B0CD56}\" {",
+  "  }",
+  "  InventoryItemComponent \"{52627A1F45CD4EB6}\" {",
+  "   Attributes SCR_ItemAttributeCollection \"{52627A1EBB0698FD}\" {",
+  "    CustomAttributes {",
+  "     WeaponAttachmentAttributes \"{5284D858FFF9BE66}\" {",
+  "      AttachmentType AttachmentOpticsDovetailAKSVD \"{5D0CCDD0615C597D}\" {",
+  "      }",
+  "     }",
+  "    }",
+  "   }",
+  "  }",
+  " }",
+  "}"
+ ],
+ "type_hits": {
+  "AttachmentOpticsDovetailAKSVD": [
+   "ARMST:Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1_ak.et"
+  ],
+  "AttachmentOpticsDovetailSVD": [
+   "ARMST:Prefabs/Weapons/Russian/Rifle/SOC94/armst_Rifle_SOC94_base.et",
+   "Weapon_ARMA_X:Attachments/Optics/Optic_PSO1/Optic_PSO1_base.et",
+   "Weapon_ARMA_X:Rifles/SVD/Rifle_SVD_base.et",
+   "VanillaSources:Prefabs/Weapons/Attachments/Optics/Optic_PSO1/Optic_PSO1_base.et",
+   "VanillaSources:Prefabs/Weapons/Rifles/SVD/Rifle_SVD_base.et"
+  ]
+ },
+ "svd_slot_block": "    AttachmentSlotComponent \"{5472D211BFD78F81}\" {\n     AttachmentType AttachmentOpticsDovetailAK \"{58E2BCF926D50DE5}\" {\n     }\n    }",
+ "soc_slot_block": "    AttachmentSlotComponent \"{65AE4CB5E23C0F63}\" {\n     AttachmentSlot InventoryStorageSlot \"{610874056E7424A6}\" {\n      Offset -0.022 0.0587 0.0709\n      InspectionWidgetOffset -0.0256 0.0486 0.0199\n     }\n     AttachmentType AttachmentOpticsDovetailSVD \"{65AE4CB5E23C0F7D}\" {\n     }\n    }",
+ "pso1_ak_refs": [],
+ "pso1_refs": [
+  "armst_Optic_PSO1_DovetailRU.et",
+  "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1_ak.et",
+  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74M_full.et",
+  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_full.et"
+ ]
+}

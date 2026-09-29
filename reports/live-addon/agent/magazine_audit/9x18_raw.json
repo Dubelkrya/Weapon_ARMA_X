@@ -1,0 +1,1491 @@
+{
+ "targets": {
+  "PM": {
+   "path": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball.et",
+   "local_capacity": null,
+   "local_ammoconfig": null,
+   "local_mapping": null,
+   "local_mapping_len": null,
+   "local_plus": false,
+   "effective_capacity": 8,
+   "effective_ammoconfig": "{4A7B5486D9167E2A}Configs/Weapons/Ammo/Ammo_9x18Mak.conf",
+   "effective_mapping_len": null,
+   "effective_sources": {
+    "cap": "Magazine_9x18_PM_8rnd_Base.et",
+    "cfg": "Magazine_9x18_PM_8rnd_Base.et"
+   },
+   "chain": [
+    "armst_Magazine_9x18_PM_8rnd_Ball.et",
+    "Magazine_9x18_PM_8rnd_Base.et",
+    "Magazine_Base.et"
+   ]
+  },
+  "APB": {
+   "path": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_APB_20rnd_Ball.et",
+   "local_capacity": 20,
+   "local_ammoconfig": null,
+   "local_mapping": [
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0"
+   ],
+   "local_mapping_len": 12,
+   "local_plus": true,
+   "effective_capacity": 20,
+   "effective_ammoconfig": "{4A7B5486D9167E2A}Configs/Weapons/Ammo/Ammo_9x18Mak.conf",
+   "effective_mapping_len": null,
+   "effective_sources": {
+    "cap": "armst_Magazine_9x18_APB_20rnd_Ball.et",
+    "cfg": "Magazine_9x18_PM_8rnd_Base.et"
+   },
+   "chain": [
+    "armst_Magazine_9x18_APB_20rnd_Ball.et",
+    "armst_Magazine_9x18_PM_8rnd_Ball.et",
+    "Magazine_9x18_PM_8rnd_Base.et",
+    "Magazine_Base.et"
+   ]
+  },
+  "PP91": {
+   "path": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PP91_30rnd_Ball.et",
+   "local_capacity": 30,
+   "local_ammoconfig": null,
+   "local_mapping": [
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0"
+   ],
+   "local_mapping_len": 22,
+   "local_plus": true,
+   "effective_capacity": 30,
+   "effective_ammoconfig": "{4A7B5486D9167E2A}Configs/Weapons/Ammo/Ammo_9x18Mak.conf",
+   "effective_mapping_len": null,
+   "effective_sources": {
+    "cap": "armst_Magazine_9x18_PP91_30rnd_Ball.et",
+    "cfg": "Magazine_9x18_PM_8rnd_Base.et"
+   },
+   "chain": [
+    "armst_Magazine_9x18_PP91_30rnd_Ball.et",
+    "armst_Magazine_9x18_PM_8rnd_Ball.et",
+    "Magazine_9x18_PM_8rnd_Base.et",
+    "Magazine_Base.et"
+   ]
+  },
+  "SR2": {
+   "path": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_SR2_30rnd_Ball.et",
+   "local_capacity": 30,
+   "local_ammoconfig": null,
+   "local_mapping": [
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0"
+   ],
+   "local_mapping_len": 22,
+   "local_plus": true,
+   "effective_capacity": 30,
+   "effective_ammoconfig": "{4A7B5486D9167E2A}Configs/Weapons/Ammo/Ammo_9x18Mak.conf",
+   "effective_mapping_len": null,
+   "effective_sources": {
+    "cap": "armst_Magazine_9x18_SR2_30rnd_Ball.et",
+    "cfg": "Magazine_9x18_PM_8rnd_Base.et"
+   },
+   "chain": [
+    "armst_Magazine_9x18_SR2_30rnd_Ball.et",
+    "armst_Magazine_9x18_PM_8rnd_Ball.et",
+    "Magazine_9x18_PM_8rnd_Base.et",
+    "Magazine_Base.et"
+   ]
+  }
+ },
+ "all_magazines": [
+  {
+   "file": "Prefabs/Weapons/Magazines/12ga/12ga_Buckshot_base.et",
+   "local_capacity": 10,
+   "local_map_len": 10,
+   "effective_capacity": 10,
+   "effective_map_len": null,
+   "local_plus": false,
+   "mapping_all_zero": true
+  },
+  {
+   "file": "Prefabs/Weapons/Magazines/12ga/armst_12ga_Shell.et",
+   "local_capacity": 10,
+   "local_map_len": 10,
+   "effective_capacity": 10,
+   "effective_map_len": null,
+   "local_plus": false,
+   "mapping_all_zero": false
+  },
+  {
+   "file": "Prefabs/Weapons/Magazines/12ga/armst_12ga_Shell_test.et",
+   "local_capacity": 5,
+   "local_map_len": 5,
+   "effective_capacity": 5,
+   "effective_map_len": null,
+   "local_plus": false,
+   "mapping_all_zero": false
+  },
+  {
+   "file": "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_10rnd_Ball.et",
+   "local_capacity": 10,
+   "local_map_len": 10,
+   "effective_capacity": 10,
+   "effective_map_len": null,
+   "local_plus": false,
+   "mapping_all_zero": true
+  },
+  {
+   "file": "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_10rnd_Ball_BP.et",
+   "local_capacity": 10,
+   "local_map_len": 10,
+   "effective_capacity": 10,
+   "effective_map_len": null,
+   "local_plus": false,
+   "mapping_all_zero": false
+  },
+  {
+   "file": "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_30rnd_Ball.et",
+   "local_capacity": null,
+   "local_map_len": 30,
+   "effective_capacity": null,
+   "effective_map_len": null,
+   "local_plus": false,
+   "mapping_all_zero": true
+  },
+  {
+   "file": "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_30rnd_Ball_BP.et",
+   "local_capacity": null,
+   "local_map_len": 30,
+   "effective_capacity": null,
+   "effective_map_len": null,
+   "local_plus": false,
+   "mapping_all_zero": false
+  },
+  {
+   "file": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_APB_20rnd_Ball.et",
+   "local_capacity": 20,
+   "local_map_len": 12,
+   "effective_capacity": 20,
+   "effective_map_len": null,
+   "local_plus": true,
+   "mapping_all_zero": true
+  },
+  {
+   "file": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PP91_30rnd_Ball.et",
+   "local_capacity": 30,
+   "local_map_len": 22,
+   "effective_capacity": 30,
+   "effective_map_len": null,
+   "local_plus": true,
+   "mapping_all_zero": true
+  },
+  {
+   "file": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_SR2_30rnd_Ball.et",
+   "local_capacity": 30,
+   "local_map_len": 22,
+   "effective_capacity": 30,
+   "effective_map_len": null,
+   "local_plus": true,
+   "mapping_all_zero": true
+  },
+  {
+   "file": "Prefabs/Weapons/Magazines/Russian/9x39/9a91/armst_Magazine_9x39_20rnd_9a91_SP5.et",
+   "local_capacity": 20,
+   "local_map_len": 20,
+   "effective_capacity": 20,
+   "effective_map_len": null,
+   "local_plus": false,
+   "mapping_all_zero": true
+  },
+  {
+   "file": "Prefabs/Weapons/Magazines/Russian/9x39/9a91/armst_Magazine_9x39_20rnd_9a91_SP6.et",
+   "local_capacity": 20,
+   "local_map_len": 20,
+   "effective_capacity": 20,
+   "effective_map_len": null,
+   "local_plus": false,
+   "mapping_all_zero": false
+  },
+  {
+   "file": "Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_20rnd_vss_SP5.et",
+   "local_capacity": 20,
+   "local_map_len": 20,
+   "effective_capacity": 20,
+   "effective_map_len": null,
+   "local_plus": false,
+   "mapping_all_zero": true
+  },
+  {
+   "file": "Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_20rnd_vss_SP6.et",
+   "local_capacity": 20,
+   "local_map_len": 20,
+   "effective_capacity": 20,
+   "effective_map_len": null,
+   "local_plus": false,
+   "mapping_all_zero": false
+  },
+  {
+   "file": "Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_30rnd_val_SP5.et",
+   "local_capacity": null,
+   "local_map_len": 30,
+   "effective_capacity": null,
+   "effective_map_len": null,
+   "local_plus": false,
+   "mapping_all_zero": true
+  },
+  {
+   "file": "Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_30rnd_val_SP6.et",
+   "local_capacity": null,
+   "local_map_len": 30,
+   "effective_capacity": null,
+   "effective_map_len": null,
+   "local_plus": false,
+   "mapping_all_zero": false
+  },
+  {
+   "file": "Prefabs/Weapons/Magazines/Western/5x56/HKG36/armst_Magazine_556x45_HKG36.et",
+   "local_capacity": null,
+   "local_map_len": 30,
+   "effective_capacity": 30,
+   "effective_map_len": null,
+   "local_plus": false,
+   "mapping_all_zero": true
+  },
+  {
+   "file": "Prefabs/Weapons/Magazines/Western/5x56/HKG36/armst_Magazine_556x45_HKG36_BP.et",
+   "local_capacity": null,
+   "local_map_len": 30,
+   "effective_capacity": 30,
+   "effective_map_len": null,
+   "local_plus": false,
+   "mapping_all_zero": false
+  },
+  {
+   "file": "Prefabs/Weapons/Magazines/Western/5x56/SIG550/armst_Magazine_556x45_SIG_550.et",
+   "local_capacity": null,
+   "local_map_len": 30,
+   "effective_capacity": 30,
+   "effective_map_len": null,
+   "local_plus": false,
+   "mapping_all_zero": true
+  },
+  {
+   "file": "Prefabs/Weapons/Magazines/Western/5x56/SIG550/armst_Magazine_556x45_SIG_550_BP.et",
+   "local_capacity": null,
+   "local_map_len": 30,
+   "effective_capacity": 30,
+   "effective_map_len": null,
+   "local_plus": false,
+   "mapping_all_zero": false
+  },
+  {
+   "file": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M193_Ball.et",
+   "local_capacity": null,
+   "local_map_len": 30,
+   "effective_capacity": 30,
+   "effective_map_len": null,
+   "local_plus": false,
+   "mapping_all_zero": true
+  },
+  {
+   "file": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M193_Ball_BP.et",
+   "local_capacity": null,
+   "local_map_len": 30,
+   "effective_capacity": 30,
+   "effective_map_len": null,
+   "local_plus": false,
+   "mapping_all_zero": false
+  },
+  {
+   "file": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M855_Ball.et",
+   "local_capacity": null,
+   "local_map_len": 30,
+   "effective_capacity": 30,
+   "effective_map_len": null,
+   "local_plus": false,
+   "mapping_all_zero": true
+  },
+  {
+   "file": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M855_Ball_BP.et",
+   "local_capacity": null,
+   "local_map_len": 30,
+   "effective_capacity": 30,
+   "effective_map_len": null,
+   "local_plus": false,
+   "mapping_all_zero": false
+  },
+  {
+   "file": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/Magazine_556x45_STANAG_30rnd_Base.et",
+   "local_capacity": 30,
+   "local_map_len": 30,
+   "effective_capacity": 30,
+   "effective_map_len": null,
+   "local_plus": false,
+   "mapping_all_zero": true
+  },
+  {
+   "file": "Prefabs/Weapons/Magazines/Western/762x51/HK3/armst_Magazine_762x51_HK3_20_M80_Ball.et",
+   "local_capacity": null,
+   "local_map_len": 20,
+   "effective_capacity": 20,
+   "effective_map_len": null,
+   "local_plus": false,
+   "mapping_all_zero": true
+  },
+  {
+   "file": "Prefabs/Weapons/Magazines/Western/762x51/HK3/armst_Magazine_762x51_HK3_20_M80_Ball_BP.et",
+   "local_capacity": null,
+   "local_map_len": 20,
+   "effective_capacity": 20,
+   "effective_map_len": null,
+   "local_plus": false,
+   "mapping_all_zero": false
+  },
+  {
+   "file": "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_20_M80_Ball.et",
+   "local_capacity": null,
+   "local_map_len": 20,
+   "effective_capacity": 20,
+   "effective_map_len": null,
+   "local_plus": false,
+   "mapping_all_zero": true
+  },
+  {
+   "file": "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_20_M80_Ball_BP.et",
+   "local_capacity": null,
+   "local_map_len": 20,
+   "effective_capacity": 20,
+   "effective_map_len": null,
+   "local_plus": false,
+   "mapping_all_zero": false
+  },
+  {
+   "file": "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_30_M80_Ball.et",
+   "local_capacity": 30,
+   "local_map_len": 30,
+   "effective_capacity": 30,
+   "effective_map_len": null,
+   "local_plus": false,
+   "mapping_all_zero": true
+  },
+  {
+   "file": "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_30_M80_Ball_BP.et",
+   "local_capacity": 30,
+   "local_map_len": 30,
+   "effective_capacity": 30,
+   "effective_map_len": null,
+   "local_plus": false,
+   "mapping_all_zero": false
+  },
+  {
+   "file": "Prefabs/Weapons/Magazines/Western/9x19/M9/armst_Magazine_9x19_M9_15rnd_Ball.et",
+   "local_capacity": null,
+   "local_map_len": 15,
+   "effective_capacity": 15,
+   "effective_map_len": null,
+   "local_plus": false,
+   "mapping_all_zero": true
+  },
+  {
+   "file": "Prefabs/Weapons/Magazines/Western/9x19/M9/armst_Magazine_9x19_M9_15rnd_Ball_BP.et",
+   "local_capacity": null,
+   "local_map_len": 15,
+   "effective_capacity": 15,
+   "effective_map_len": null,
+   "local_plus": false,
+   "mapping_all_zero": false
+  }
+ ],
+ "vanilla_examples": [
+  {
+   "tag": "V",
+   "file": "Magazines/Box_127x99_M2_100rnd_4AP_1APIT.et",
+   "local_capacity": null,
+   "local_map_len": 100,
+   "effective_capacity": 100,
+   "effective_map_len": null,
+   "mapping_all_zero": false
+  },
+  {
+   "tag": "V",
+   "file": "Magazines/Box_127x99_M2_100rnd_4AP_1Tracer.et",
+   "local_capacity": null,
+   "local_map_len": 100,
+   "effective_capacity": 100,
+   "effective_map_len": null,
+   "mapping_all_zero": false
+  },
+  {
+   "tag": "V",
+   "file": "Magazines/Box_127x99_M2_100rnd_4Ball_1Tracer.et",
+   "local_capacity": null,
+   "local_map_len": 100,
+   "effective_capacity": 100,
+   "effective_map_len": null,
+   "mapping_all_zero": false
+  },
+  {
+   "tag": "V",
+   "file": "Magazines/Box_127x99_M2_100rnd_AP.et",
+   "local_capacity": null,
+   "local_map_len": 100,
+   "effective_capacity": 100,
+   "effective_map_len": null,
+   "mapping_all_zero": false
+  },
+  {
+   "tag": "V",
+   "file": "Magazines/Box_127x99_M2_100rnd_Base.et",
+   "local_capacity": 100,
+   "local_map_len": 100,
+   "effective_capacity": 100,
+   "effective_map_len": null,
+   "mapping_all_zero": true
+  },
+  {
+   "tag": "V",
+   "file": "Magazines/Box_127x99_M2_100rnd_Tracer.et",
+   "local_capacity": null,
+   "local_map_len": 100,
+   "effective_capacity": 100,
+   "effective_map_len": null,
+   "mapping_all_zero": false
+  },
+  {
+   "tag": "V",
+   "file": "Magazines/Box_145x114_KPVT_50rnd_4API_1APIT.et",
+   "local_capacity": null,
+   "local_map_len": 50,
+   "effective_capacity": 50,
+   "effective_map_len": null,
+   "mapping_all_zero": false
+  },
+  {
+   "tag": "V",
+   "file": "Magazines/Box_145x114_KPVT_50rnd_APIT.et",
+   "local_capacity": null,
+   "local_map_len": 50,
+   "effective_capacity": 50,
+   "effective_map_len": null,
+   "mapping_all_zero": false
+  },
+  {
+   "tag": "V",
+   "file": "Magazines/Box_145x114_KPVT_50rnd_Base.et",
+   "local_capacity": 50,
+   "local_map_len": 50,
+   "effective_capacity": 50,
+   "effective_map_len": null,
+   "mapping_all_zero": true
+  },
+  {
+   "tag": "V",
+   "file": "Magazines/Box_145x114_KPVT_50rnd_IAI.et",
+   "local_capacity": null,
+   "local_map_len": 50,
+   "effective_capacity": 50,
+   "effective_map_len": null,
+   "mapping_all_zero": false
+  },
+  {
+   "tag": "V",
+   "file": "Magazines/Box_556x45_M249_200rnd_4Ball_1Tracer.et",
+   "local_capacity": null,
+   "local_map_len": 200,
+   "effective_capacity": 200,
+   "effective_map_len": null,
+   "mapping_all_zero": false
+  },
+  {
+   "tag": "V",
+   "file": "Magazines/Box_556x45_M249_200rnd_base.et",
+   "local_capacity": 200,
+   "local_map_len": 200,
+   "effective_capacity": 200,
+   "effective_map_len": null,
+   "mapping_all_zero": true
+  },
+  {
+   "tag": "V",
+   "file": "Magazines/Box_556x45_M249_200rnd_Tracer.et",
+   "local_capacity": null,
+   "local_map_len": 200,
+   "effective_capacity": 200,
+   "effective_map_len": null,
+   "mapping_all_zero": false
+  },
+  {
+   "tag": "V",
+   "file": "Magazines/Box_762x51_M60_100rnd_4AP_1Tracer.et",
+   "local_capacity": null,
+   "local_map_len": 100,
+   "effective_capacity": 100,
+   "effective_map_len": null,
+   "mapping_all_zero": false
+  },
+  {
+   "tag": "V",
+   "file": "Magazines/Box_762x51_M60_100rnd_4Ball_1Tracer.et",
+   "local_capacity": null,
+   "local_map_len": 100,
+   "effective_capacity": 100,
+   "effective_map_len": null,
+   "mapping_all_zero": false
+  },
+  {
+   "tag": "V",
+   "file": "Magazines/Box_762x51_M60_100rnd_AP.et",
+   "local_capacity": null,
+   "local_map_len": 100,
+   "effective_capacity": 100,
+   "effective_map_len": null,
+   "mapping_all_zero": false
+  },
+  {
+   "tag": "V",
+   "file": "Magazines/Box_762x51_M60_100rnd_Base.et",
+   "local_capacity": 100,
+   "local_map_len": 100,
+   "effective_capacity": 100,
+   "effective_map_len": null,
+   "mapping_all_zero": true
+  },
+  {
+   "tag": "V",
+   "file": "Magazines/Box_762x51_M60_100rnd_Tracer.et",
+   "local_capacity": null,
+   "local_map_len": 100,
+   "effective_capacity": 100,
+   "effective_map_len": null,
+   "mapping_all_zero": false
+  },
+  {
+   "tag": "V",
+   "file": "Magazines/Box_762x51_M60_500rnd_2Ball_1Tracer.et",
+   "local_capacity": null,
+   "local_map_len": 500,
+   "effective_capacity": 500,
+   "effective_map_len": null,
+   "mapping_all_zero": false
+  },
+  {
+   "tag": "V",
+   "file": "Magazines/Box_762x51_M60_500rnd_Base.et",
+   "local_capacity": 500,
+   "local_map_len": 500,
+   "effective_capacity": 500,
+   "effective_map_len": null,
+   "mapping_all_zero": true
+  },
+  {
+   "tag": "V",
+   "file": "Magazines/Box_762x51_M60_500rnd_Tracer.et",
+   "local_capacity": null,
+   "local_map_len": 500,
+   "effective_capacity": 500,
+   "effective_map_len": null,
+   "mapping_all_zero": false
+  },
+  {
+   "tag": "V",
+   "file": "Magazines/Box_762x54_PK_100rnd_4Ball_1Tracer.et",
+   "local_capacity": null,
+   "local_map_len": 100,
+   "effective_capacity": 100,
+   "effective_map_len": null,
+   "mapping_all_zero": false
+  },
+  {
+   "tag": "V",
+   "file": "Magazines/Box_762x54_PK_100rnd_Base.et",
+   "local_capacity": 100,
+   "local_map_len": 100,
+   "effective_capacity": 100,
+   "effective_map_len": null,
+   "mapping_all_zero": true
+  },
+  {
+   "tag": "V",
+   "file": "Magazines/Box_762x54_PK_100rnd_Tracer.et",
+   "local_capacity": null,
+   "local_map_len": 100,
+   "effective_capacity": 100,
+   "effective_map_len": null,
+   "mapping_all_zero": false
+  },
+  {
+   "tag": "V",
+   "file": "Magazines/Box_762x54_PK_250rnd_2Ball_1Tracer.et",
+   "local_capacity": null,
+   "local_map_len": 250,
+   "effective_capacity": 250,
+   "effective_map_len": null,
+   "mapping_all_zero": false
+  },
+  {
+   "tag": "V",
+   "file": "Magazines/Box_762x54_PK_250rnd_4Ball_1Tracer.et",
+   "local_capacity": null,
+   "local_map_len": 250,
+   "effective_capacity": 250,
+   "effective_map_len": null,
+   "mapping_all_zero": false
+  },
+  {
+   "tag": "V",
+   "file": "Magazines/Box_762x54_PK_250rnd_Base.et",
+   "local_capacity": 250,
+   "local_map_len": 250,
+   "effective_capacity": 250,
+   "effective_map_len": null,
+   "mapping_all_zero": true
+  },
+  {
+   "tag": "V",
+   "file": "Magazines/Box_762x54_PK_250rnd_Tracer.et",
+   "local_capacity": null,
+   "local_map_len": 250,
+   "effective_capacity": 250,
+   "effective_map_len": null,
+   "mapping_all_zero": false
+  },
+  {
+   "tag": "V",
+   "file": "Magazines/Magazine_545x39_AK_30rnd_Last_5Tracer.et",
+   "local_capacity": null,
+   "local_map_len": 30,
+   "effective_capacity": null,
+   "effective_map_len": null,
+   "mapping_all_zero": false
+  },
+  {
+   "tag": "V",
+   "file": "Magazines/Magazine_545x39_RPK_45rnd_4Ball_1Tracer.et",
+   "local_capacity": null,
+   "local_map_len": 45,
+   "effective_capacity": 45,
+   "effective_map_len": null,
+   "mapping_all_zero": false
+  },
+  {
+   "tag": "V",
+   "file": "Magazines/Magazine_545x39_RPK_45rnd_Base.et",
+   "local_capacity": 45,
+   "local_map_len": 45,
+   "effective_capacity": 45,
+   "effective_map_len": null,
+   "mapping_all_zero": true
+  },
+  {
+   "tag": "V",
+   "file": "Magazines/Magazine_556x45_STANAG_30rnd_M193_Ball.et",
+   "local_capacity": null,
+   "local_map_len": 30,
+   "effective_capacity": 30,
+   "effective_map_len": null,
+   "mapping_all_zero": false
+  },
+  {
+   "tag": "V",
+   "file": "Magazines/Magazine_556x45_STANAG_30rnd_M193_M196_Last_5Tracer.et",
+   "local_capacity": null,
+   "local_map_len": 30,
+   "effective_capacity": 30,
+   "effective_map_len": null,
+   "mapping_all_zero": false
+  },
+  {
+   "tag": "V",
+   "file": "Magazines/Magazine_556x45_STANAG_30rnd_M855_M856_Last_5Tracer.et",
+   "local_capacity": null,
+   "local_map_len": 30,
+   "effective_capacity": 30,
+   "effective_map_len": null,
+   "mapping_all_zero": false
+  },
+  {
+   "tag": "V",
+   "file": "Magazines/Magazine_762x51_M14_20rnd_Base.et",
+   "local_capacity": 20,
+   "local_map_len": 20,
+   "effective_capacity": 20,
+   "effective_map_len": null,
+   "mapping_all_zero": true
+  },
+  {
+   "tag": "V",
+   "file": "Magazines/Magazine_762x51_M14_20rnd_M61_AP.et",
+   "local_capacity": null,
+   "local_map_len": 20,
+   "effective_capacity": 20,
+   "effective_map_len": null,
+   "mapping_all_zero": false
+  },
+  {
+   "tag": "V",
+   "file": "Magazines/Magazine_762x51_M14_20rnd_M62_Tracer.et",
+   "local_capacity": null,
+   "local_map_len": 20,
+   "effective_capacity": 20,
+   "effective_map_len": null,
+   "mapping_all_zero": false
+  },
+  {
+   "tag": "V",
+   "file": "Magazines/Magazine_762x51_M14_20rnd_SpecialBall.et",
+   "local_capacity": null,
+   "local_map_len": 20,
+   "effective_capacity": 20,
+   "effective_map_len": null,
+   "mapping_all_zero": false
+  },
+  {
+   "tag": "V",
+   "file": "Magazines/Magazine_762x54_SVD_10rnd_Base.et",
+   "local_capacity": 10,
+   "local_map_len": 10,
+   "effective_capacity": 10,
+   "effective_map_len": null,
+   "mapping_all_zero": true
+  },
+  {
+   "tag": "V",
+   "file": "Magazines/Magazine_762x54_SVD_10rnd_Tracer.et",
+   "local_capacity": null,
+   "local_map_len": 10,
+   "effective_capacity": 10,
+   "effective_map_len": null,
+   "mapping_all_zero": false
+  },
+  {
+   "tag": "V",
+   "file": "Magazines/Magazine_9x18_PM_8rnd_Base.et",
+   "local_capacity": 8,
+   "local_map_len": 8,
+   "effective_capacity": 8,
+   "effective_map_len": null,
+   "mapping_all_zero": true
+  },
+  {
+   "tag": "V",
+   "file": "Magazines/Magazine_9x19_M9_15rnd_Base.et",
+   "local_capacity": 15,
+   "local_map_len": 15,
+   "effective_capacity": 15,
+   "effective_map_len": null,
+   "mapping_all_zero": true
+  },
+  {
+   "tag": "V",
+   "file": "Magazines/Magazine_M240_Coax/Box_762x51_M240_coax_200rnd_4AP_1Tracer.et",
+   "local_capacity": null,
+   "local_map_len": 200,
+   "effective_capacity": 200,
+   "effective_map_len": null,
+   "mapping_all_zero": false
+  },
+  {
+   "tag": "V",
+   "file": "Magazines/Magazine_M240_Coax/Box_762x51_M240_coax_200rnd_4Ball_1Tracer.et",
+   "local_capacity": null,
+   "local_map_len": 200,
+   "effective_capacity": 200,
+   "effective_map_len": null,
+   "mapping_all_zero": false
+  },
+  {
+   "tag": "V",
+   "file": "Magazines/Magazine_M240_Coax/Box_762x51_M240_coax_200rnd_AP.et",
+   "local_capacity": null,
+   "local_map_len": 200,
+   "effective_capacity": 200,
+   "effective_map_len": null,
+   "mapping_all_zero": false
+  },
+  {
+   "tag": "V",
+   "file": "Magazines/Magazine_M240_Coax/Box_762x51_M240_coax_200rnd_Base.et",
+   "local_capacity": 200,
+   "local_map_len": 200,
+   "effective_capacity": 200,
+   "effective_map_len": null,
+   "mapping_all_zero": true
+  },
+  {
+   "tag": "V",
+   "file": "Magazines/Magazine_M240_Coax/Box_762x51_M240_coax_200rnd_Tracer.et",
+   "local_capacity": null,
+   "local_map_len": 200,
+   "effective_capacity": 200,
+   "effective_map_len": null,
+   "mapping_all_zero": false
+  },
+  {
+   "tag": "V",
+   "file": "Magazines/Magazine_M242/Box_25x137_M242_150rnd_HEIT_Base.et",
+   "local_capacity": 150,
+   "local_map_len": 150,
+   "effective_capacity": 150,
+   "effective_map_len": null,
+   "mapping_all_zero": true
+  },
+  {
+   "tag": "V",
+   "file": "Magazines/Magazine_M242/Box_25x137_M242_60rnd_APDST.et",
+   "local_capacity": null,
+   "local_map_len": null,
+   "effective_capacity": 60,
+   "effective_map_len": null,
+   "mapping_all_zero": false
+  },
+  {
+   "tag": "V",
+   "file": "Magazines/Magazine_M242/Box_25x137_M242_60rnd_APDST_base.et",
+   "local_capacity": 60,
+   "local_map_len": 60,
+   "effective_capacity": 60,
+   "effective_map_len": null,
+   "mapping_all_zero": false
+  },
+  {
+   "tag": "V",
+   "file": "Magazines/NSV/Box_127x108_NSV_50rnd_4AP_1APIT.et",
+   "local_capacity": null,
+   "local_map_len": 50,
+   "effective_capacity": 50,
+   "effective_map_len": null,
+   "mapping_all_zero": false
+  },
+  {
+   "tag": "V",
+   "file": "Magazines/NSV/Box_127x108_NSV_50rnd_APIT.et",
+   "local_capacity": null,
+   "local_map_len": 50,
+   "effective_capacity": 50,
+   "effective_map_len": null,
+   "mapping_all_zero": false
+  },
+  {
+   "tag": "V",
+   "file": "Magazines/NSV/Box_127x108_NSV_50rnd_Base.et",
+   "local_capacity": 50,
+   "local_map_len": 50,
+   "effective_capacity": 50,
+   "effective_map_len": null,
+   "mapping_all_zero": true
+  },
+  {
+   "tag": "V",
+   "file": "Magazines/UK59/Box_762x54_UK59_50rnd_4Ball_1Tracer.et",
+   "local_capacity": null,
+   "local_map_len": 50,
+   "effective_capacity": 50,
+   "effective_map_len": null,
+   "mapping_all_zero": false
+  },
+  {
+   "tag": "V",
+   "file": "Magazines/UK59/Box_762x54_UK59_50rnd_Base.et",
+   "local_capacity": 50,
+   "local_map_len": 50,
+   "effective_capacity": 50,
+   "effective_map_len": null,
+   "mapping_all_zero": true
+  },
+  {
+   "tag": "V",
+   "file": "Magazines/UK59/Box_762x54_UK59_50rnd_Tracer.et",
+   "local_capacity": null,
+   "local_map_len": 50,
+   "effective_capacity": 50,
+   "effective_map_len": null,
+   "mapping_all_zero": false
+  },
+  {
+   "tag": "V",
+   "file": "Magazines/Vz58/Magazine_762x39_Vz58_30rnd_Base.et",
+   "local_capacity": null,
+   "local_map_len": 30,
+   "effective_capacity": null,
+   "effective_map_len": null,
+   "mapping_all_zero": true
+  },
+  {
+   "tag": "V",
+   "file": "Magazines/Vz58/Magazine_762x39_Vz58_30rnd_Last_5Tracer.et",
+   "local_capacity": null,
+   "local_map_len": 30,
+   "effective_capacity": null,
+   "effective_map_len": null,
+   "mapping_all_zero": false
+  },
+  {
+   "tag": "S",
+   "file": "Prefabs/Weapons/Magazines/Box_127x99_M2_100rnd_4AP_1APIT.et",
+   "local_capacity": null,
+   "local_map_len": 100,
+   "effective_capacity": 100,
+   "effective_map_len": null,
+   "mapping_all_zero": false
+  },
+  {
+   "tag": "S",
+   "file": "Prefabs/Weapons/Magazines/Box_127x99_M2_100rnd_4AP_1Tracer.et",
+   "local_capacity": null,
+   "local_map_len": 100,
+   "effective_capacity": 100,
+   "effective_map_len": null,
+   "mapping_all_zero": false
+  },
+  {
+   "tag": "S",
+   "file": "Prefabs/Weapons/Magazines/Box_127x99_M2_100rnd_4Ball_1Tracer.et",
+   "local_capacity": null,
+   "local_map_len": 100,
+   "effective_capacity": 100,
+   "effective_map_len": null,
+   "mapping_all_zero": false
+  },
+  {
+   "tag": "S",
+   "file": "Prefabs/Weapons/Magazines/Box_127x99_M2_100rnd_AP.et",
+   "local_capacity": null,
+   "local_map_len": 100,
+   "effective_capacity": 100,
+   "effective_map_len": null,
+   "mapping_all_zero": false
+  },
+  {
+   "tag": "S",
+   "file": "Prefabs/Weapons/Magazines/Box_127x99_M2_100rnd_Base.et",
+   "local_capacity": 100,
+   "local_map_len": 100,
+   "effective_capacity": 100,
+   "effective_map_len": null,
+   "mapping_all_zero": true
+  },
+  {
+   "tag": "S",
+   "file": "Prefabs/Weapons/Magazines/Box_127x99_M2_100rnd_Tracer.et",
+   "local_capacity": null,
+   "local_map_len": 100,
+   "effective_capacity": 100,
+   "effective_map_len": null,
+   "mapping_all_zero": false
+  },
+  {
+   "tag": "S",
+   "file": "Prefabs/Weapons/Magazines/Box_145x114_KPVT_50rnd_4API_1APIT.et",
+   "local_capacity": null,
+   "local_map_len": 50,
+   "effective_capacity": 50,
+   "effective_map_len": null,
+   "mapping_all_zero": false
+  },
+  {
+   "tag": "S",
+   "file": "Prefabs/Weapons/Magazines/Box_145x114_KPVT_50rnd_APIT.et",
+   "local_capacity": null,
+   "local_map_len": 50,
+   "effective_capacity": 50,
+   "effective_map_len": null,
+   "mapping_all_zero": false
+  },
+  {
+   "tag": "S",
+   "file": "Prefabs/Weapons/Magazines/Box_145x114_KPVT_50rnd_Base.et",
+   "local_capacity": 50,
+   "local_map_len": 50,
+   "effective_capacity": 50,
+   "effective_map_len": null,
+   "mapping_all_zero": true
+  },
+  {
+   "tag": "S",
+   "file": "Prefabs/Weapons/Magazines/Box_145x114_KPVT_50rnd_IAI.et",
+   "local_capacity": null,
+   "local_map_len": 50,
+   "effective_capacity": 50,
+   "effective_map_len": null,
+   "mapping_all_zero": false
+  },
+  {
+   "tag": "S",
+   "file": "Prefabs/Weapons/Magazines/Box_556x45_M249_200rnd_4Ball_1Tracer.et",
+   "local_capacity": null,
+   "local_map_len": 200,
+   "effective_capacity": 200,
+   "effective_map_len": null,
+   "mapping_all_zero": false
+  },
+  {
+   "tag": "S",
+   "file": "Prefabs/Weapons/Magazines/Box_556x45_M249_200rnd_base.et",
+   "local_capacity": 200,
+   "local_map_len": 200,
+   "effective_capacity": 200,
+   "effective_map_len": null,
+   "mapping_all_zero": true
+  },
+  {
+   "tag": "S",
+   "file": "Prefabs/Weapons/Magazines/Box_556x45_M249_200rnd_Tracer.et",
+   "local_capacity": null,
+   "local_map_len": 200,
+   "effective_capacity": 200,
+   "effective_map_len": null,
+   "mapping_all_zero": false
+  },
+  {
+   "tag": "S",
+   "file": "Prefabs/Weapons/Magazines/Box_762x51_M60_100rnd_4AP_1Tracer.et",
+   "local_capacity": null,
+   "local_map_len": 100,
+   "effective_capacity": 100,
+   "effective_map_len": null,
+   "mapping_all_zero": false
+  },
+  {
+   "tag": "S",
+   "file": "Prefabs/Weapons/Magazines/Box_762x51_M60_100rnd_4Ball_1Tracer.et",
+   "local_capacity": null,
+   "local_map_len": 100,
+   "effective_capacity": 100,
+   "effective_map_len": null,
+   "mapping_all_zero": false
+  },
+  {
+   "tag": "S",
+   "file": "Prefabs/Weapons/Magazines/Box_762x51_M60_100rnd_AP.et",
+   "local_capacity": null,
+   "local_map_len": 100,
+   "effective_capacity": 100,
+   "effective_map_len": null,
+   "mapping_all_zero": false
+  },
+  {
+   "tag": "S",
+   "file": "Prefabs/Weapons/Magazines/Box_762x51_M60_100rnd_Base.et",
+   "local_capacity": 100,
+   "local_map_len": 100,
+   "effective_capacity": 100,
+   "effective_map_len": null,
+   "mapping_all_zero": true
+  },
+  {
+   "tag": "S",
+   "file": "Prefabs/Weapons/Magazines/Box_762x51_M60_100rnd_Tracer.et",
+   "local_capacity": null,
+   "local_map_len": 100,
+   "effective_capacity": 100,
+   "effective_map_len": null,
+   "mapping_all_zero": false
+  },
+  {
+   "tag": "S",
+   "file": "Prefabs/Weapons/Magazines/Box_762x51_M60_500rnd_2Ball_1Tracer.et",
+   "local_capacity": null,
+   "local_map_len": 500,
+   "effective_capacity": 500,
+   "effective_map_len": null,
+   "mapping_all_zero": false
+  },
+  {
+   "tag": "S",
+   "file": "Prefabs/Weapons/Magazines/Box_762x51_M60_500rnd_Base.et",
+   "local_capacity": 500,
+   "local_map_len": 500,
+   "effective_capacity": 500,
+   "effective_map_len": null,
+   "mapping_all_zero": true
+  },
+  {
+   "tag": "S",
+   "file": "Prefabs/Weapons/Magazines/Box_762x51_M60_500rnd_Tracer.et",
+   "local_capacity": null,
+   "local_map_len": 500,
+   "effective_capacity": 500,
+   "effective_map_len": null,
+   "mapping_all_zero": false
+  },
+  {
+   "tag": "S",
+   "file": "Prefabs/Weapons/Magazines/Box_762x54_PK_100rnd_4Ball_1Tracer.et",
+   "local_capacity": null,
+   "local_map_len": 100,
+   "effective_capacity": 100,
+   "effective_map_len": null,
+   "mapping_all_zero": false
+  },
+  {
+   "tag": "S",
+   "file": "Prefabs/Weapons/Magazines/Box_762x54_PK_100rnd_Base.et",
+   "local_capacity": 100,
+   "local_map_len": 100,
+   "effective_capacity": 100,
+   "effective_map_len": null,
+   "mapping_all_zero": true
+  },
+  {
+   "tag": "S",
+   "file": "Prefabs/Weapons/Magazines/Box_762x54_PK_100rnd_Tracer.et",
+   "local_capacity": null,
+   "local_map_len": 100,
+   "effective_capacity": 100,
+   "effective_map_len": null,
+   "mapping_all_zero": false
+  },
+  {
+   "tag": "S",
+   "file": "Prefabs/Weapons/Magazines/Box_762x54_PK_250rnd_2Ball_1Tracer.et",
+   "local_capacity": null,
+   "local_map_len": 250,
+   "effective_capacity": 250,
+   "effective_map_len": null,
+   "mapping_all_zero": false
+  },
+  {
+   "tag": "S",
+   "file": "Prefabs/Weapons/Magazines/Box_762x54_PK_250rnd_4Ball_1Tracer.et",
+   "local_capacity": null,
+   "local_map_len": 250,
+   "effective_capacity": 250,
+   "effective_map_len": null,
+   "mapping_all_zero": false
+  },
+  {
+   "tag": "S",
+   "file": "Prefabs/Weapons/Magazines/Box_762x54_PK_250rnd_Base.et",
+   "local_capacity": 250,
+   "local_map_len": 250,
+   "effective_capacity": 250,
+   "effective_map_len": null,
+   "mapping_all_zero": true
+  },
+  {
+   "tag": "S",
+   "file": "Prefabs/Weapons/Magazines/Box_762x54_PK_250rnd_Tracer.et",
+   "local_capacity": null,
+   "local_map_len": 250,
+   "effective_capacity": 250,
+   "effective_map_len": null,
+   "mapping_all_zero": false
+  },
+  {
+   "tag": "S",
+   "file": "Prefabs/Weapons/Magazines/Magazine_545x39_AK_30rnd_Last_5Tracer.et",
+   "local_capacity": null,
+   "local_map_len": 30,
+   "effective_capacity": null,
+   "effective_map_len": null,
+   "mapping_all_zero": false
+  },
+  {
+   "tag": "S",
+   "file": "Prefabs/Weapons/Magazines/Magazine_545x39_RPK_45rnd_4Ball_1Tracer.et",
+   "local_capacity": null,
+   "local_map_len": 45,
+   "effective_capacity": 45,
+   "effective_map_len": null,
+   "mapping_all_zero": false
+  },
+  {
+   "tag": "S",
+   "file": "Prefabs/Weapons/Magazines/Magazine_545x39_RPK_45rnd_Base.et",
+   "local_capacity": 45,
+   "local_map_len": 45,
+   "effective_capacity": 45,
+   "effective_map_len": null,
+   "mapping_all_zero": true
+  },
+  {
+   "tag": "S",
+   "file": "Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M193_Ball.et",
+   "local_capacity": null,
+   "local_map_len": 30,
+   "effective_capacity": 30,
+   "effective_map_len": null,
+   "mapping_all_zero": false
+  },
+  {
+   "tag": "S",
+   "file": "Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M193_M196_Last_5Tracer.et",
+   "local_capacity": null,
+   "local_map_len": 30,
+   "effective_capacity": 30,
+   "effective_map_len": null,
+   "mapping_all_zero": false
+  },
+  {
+   "tag": "S",
+   "file": "Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M855_M856_Last_5Tracer.et",
+   "local_capacity": null,
+   "local_map_len": 30,
+   "effective_capacity": 30,
+   "effective_map_len": null,
+   "mapping_all_zero": false
+  },
+  {
+   "tag": "S",
+   "file": "Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et",
+   "local_capacity": 20,
+   "local_map_len": 20,
+   "effective_capacity": 20,
+   "effective_map_len": null,
+   "mapping_all_zero": true
+  },
+  {
+   "tag": "S",
+   "file": "Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_M61_AP.et",
+   "local_capacity": null,
+   "local_map_len": 20,
+   "effective_capacity": 20,
+   "effective_map_len": null,
+   "mapping_all_zero": false
+  },
+  {
+   "tag": "S",
+   "file": "Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_M62_Tracer.et",
+   "local_capacity": null,
+   "local_map_len": 20,
+   "effective_capacity": 20,
+   "effective_map_len": null,
+   "mapping_all_zero": false
+  },
+  {
+   "tag": "S",
+   "file": "Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_SpecialBall.et",
+   "local_capacity": null,
+   "local_map_len": 20,
+   "effective_capacity": 20,
+   "effective_map_len": null,
+   "mapping_all_zero": false
+  },
+  {
+   "tag": "S",
+   "file": "Prefabs/Weapons/Magazines/Magazine_762x54_SVD_10rnd_Base.et",
+   "local_capacity": 10,
+   "local_map_len": 10,
+   "effective_capacity": 10,
+   "effective_map_len": null,
+   "mapping_all_zero": true
+  },
+  {
+   "tag": "S",
+   "file": "Prefabs/Weapons/Magazines/Magazine_762x54_SVD_10rnd_Tracer.et",
+   "local_capacity": null,
+   "local_map_len": 10,
+   "effective_capacity": 10,
+   "effective_map_len": null,
+   "mapping_all_zero": false
+  },
+  {
+   "tag": "S",
+   "file": "Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Base.et",
+   "local_capacity": 8,
+   "local_map_len": 8,
+   "effective_capacity": 8,
+   "effective_map_len": null,
+   "mapping_all_zero": true
+  },
+  {
+   "tag": "S",
+   "file": "Prefabs/Weapons/Magazines/Magazine_9x19_M9_15rnd_Base.et",
+   "local_capacity": 15,
+   "local_map_len": 15,
+   "effective_capacity": 15,
+   "effective_map_len": null,
+   "mapping_all_zero": true
+  },
+  {
+   "tag": "S",
+   "file": "Prefabs/Weapons/Magazines/Magazine_M240_Coax/Box_762x51_M240_coax_200rnd_4AP_1Tracer.et",
+   "local_capacity": null,
+   "local_map_len": 200,
+   "effective_capacity": 200,
+   "effective_map_len": null,
+   "mapping_all_zero": false
+  },
+  {
+   "tag": "S",
+   "file": "Prefabs/Weapons/Magazines/Magazine_M240_Coax/Box_762x51_M240_coax_200rnd_4Ball_1Tracer.et",
+   "local_capacity": null,
+   "local_map_len": 200,
+   "effective_capacity": 200,
+   "effective_map_len": null,
+   "mapping_all_zero": false
+  },
+  {
+   "tag": "S",
+   "file": "Prefabs/Weapons/Magazines/Magazine_M240_Coax/Box_762x51_M240_coax_200rnd_AP.et",
+   "local_capacity": null,
+   "local_map_len": 200,
+   "effective_capacity": 200,
+   "effective_map_len": null,
+   "mapping_all_zero": false
+  },
+  {
+   "tag": "S",
+   "file": "Prefabs/Weapons/Magazines/Magazine_M240_Coax/Box_762x51_M240_coax_200rnd_Base.et",
+   "local_capacity": 200,
+   "local_map_len": 200,
+   "effective_capacity": 200,
+   "effective_map_len": null,
+   "mapping_all_zero": true
+  },
+  {
+   "tag": "S",
+   "file": "Prefabs/Weapons/Magazines/Magazine_M240_Coax/Box_762x51_M240_coax_200rnd_Tracer.et",
+   "local_capacity": null,
+   "local_map_len": 200,
+   "effective_capacity": 200,
+   "effective_map_len": null,
+   "mapping_all_zero": false
+  },
+  {
+   "tag": "S",
+   "file": "Prefabs/Weapons/Magazines/Magazine_M242/Box_25x137_M242_150rnd_HEIT_Base.et",
+   "local_capacity": 150,
+   "local_map_len": 150,
+   "effective_capacity": 150,
+   "effective_map_len": null,
+   "mapping_all_zero": true
+  },
+  {
+   "tag": "S",
+   "file": "Prefabs/Weapons/Magazines/Magazine_M242/Box_25x137_M242_60rnd_APDST.et",
+   "local_capacity": null,
+   "local_map_len": null,
+   "effective_capacity": 60,
+   "effective_map_len": null,
+   "mapping_all_zero": false
+  },
+  {
+   "tag": "S",
+   "file": "Prefabs/Weapons/Magazines/Magazine_M242/Box_25x137_M242_60rnd_APDST_base.et",
+   "local_capacity": 60,
+   "local_map_len": 60,
+   "effective_capacity": 60,
+   "effective_map_len": null,
+   "mapping_all_zero": false
+  },
+  {
+   "tag": "S",
+   "file": "Prefabs/Weapons/Magazines/NSV/Box_127x108_NSV_50rnd_4AP_1APIT.et",
+   "local_capacity": null,
+   "local_map_len": 50,
+   "effective_capacity": 50,
+   "effective_map_len": null,
+   "mapping_all_zero": false
+  },
+  {
+   "tag": "S",
+   "file": "Prefabs/Weapons/Magazines/NSV/Box_127x108_NSV_50rnd_APIT.et",
+   "local_capacity": null,
+   "local_map_len": 50,
+   "effective_capacity": 50,
+   "effective_map_len": null,
+   "mapping_all_zero": false
+  },
+  {
+   "tag": "S",
+   "file": "Prefabs/Weapons/Magazines/NSV/Box_127x108_NSV_50rnd_Base.et",
+   "local_capacity": 50,
+   "local_map_len": 50,
+   "effective_capacity": 50,
+   "effective_map_len": null,
+   "mapping_all_zero": true
+  },
+  {
+   "tag": "S",
+   "file": "Prefabs/Weapons/Magazines/UK59/Box_762x54_UK59_50rnd_4Ball_1Tracer.et",
+   "local_capacity": null,
+   "local_map_len": 50,
+   "effective_capacity": 50,
+   "effective_map_len": null,
+   "mapping_all_zero": false
+  },
+  {
+   "tag": "S",
+   "file": "Prefabs/Weapons/Magazines/UK59/Box_762x54_UK59_50rnd_Base.et",
+   "local_capacity": 50,
+   "local_map_len": 50,
+   "effective_capacity": 50,
+   "effective_map_len": null,
+   "mapping_all_zero": true
+  },
+  {
+   "tag": "S",
+   "file": "Prefabs/Weapons/Magazines/UK59/Box_762x54_UK59_50rnd_Tracer.et",
+   "local_capacity": null,
+   "local_map_len": 50,
+   "effective_capacity": 50,
+   "effective_map_len": null,
+   "mapping_all_zero": false
+  },
+  {
+   "tag": "S",
+   "file": "Prefabs/Weapons/Magazines/Vz58/Magazine_762x39_Vz58_30rnd_Base.et",
+   "local_capacity": null,
+   "local_map_len": 30,
+   "effective_capacity": null,
+   "effective_map_len": null,
+   "mapping_all_zero": true
+  },
+  {
+   "tag": "S",
+   "file": "Prefabs/Weapons/Magazines/Vz58/Magazine_762x39_Vz58_30rnd_Last_5Tracer.et",
+   "local_capacity": null,
+   "local_map_len": 30,
+   "effective_capacity": null,
+   "effective_map_len": null,
+   "mapping_all_zero": false
+  }
+ ]
+}

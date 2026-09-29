@@ -1,0 +1,42 @@
+{
+ "path": "Prefabs/Weapons/Russian/Handguns/armst_APB/armst_APB.et",
+ "guid": "5D3DA7E84135B278",
+ "parent_before": "{C0F7DD85A86B2900}Handguns/armst_PM.et",
+ "parent_after": "{B7132459C07777CA}Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et",
+ "parent_target": "{B7132459C07777CA}Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et",
+ "armst_pm_contributions_bypassed": [
+  "ARMST_ITEMS_STATS_COMPONENTS {657ABA0547189DD7}",
+  "SCR_EditableEntityComponent {65F28786D4603482}: Enabled 0, m_bAutoRegister NEVER, m_UIInfo labels (grid fields already fully local on APB)"
+ ],
+ "local_overrides_added": [
+  "GenericEntity : \"{B7132459C07777CA}Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et\" {",
+  "  ARMST_ITEMS_STATS_COMPONENTS \"{657ABA0547189DD7}\" {",
+  "   Enabled 0",
+  "   m_bAutoRegister NEVER",
+  "    m_aAuthoredLabels {",
+  "     CONTENT_MODDED 4141368",
+  "    m_aAutoLabels {",
+  "     4141368"
+ ],
+ "PARENT_CHANGED": 1,
+ "GUID_CHANGES": 0,
+ "PATH_CHANGES": 0,
+ "META_UNCHANGED": true,
+ "braces_balanced": true,
+ "effective_behavior_preserved": "YES",
+ "materialized_check": {
+  "ARMST_ITEMS_STATS_COMPONENTS": true,
+  "Enabled 0": true,
+  "m_bAutoRegister NEVER": true,
+  "m_aAuthoredLabels": true,
+  "CONTENT_MODDED 4141368": true,
+  "m_aAutoLabels": true,
+  "m_bAutoDetectGridSize 0": true,
+  "m_iCustomGridWidth 4": true,
+  "m_iCustomGridHeight 2": true
+ },
+ "OTHER_WEAPONS_CHANGED": 0,
+ "foreign_legacy_refs_found": {
+  "note": "none introduced; APB uses its own model/MagazineWellAPB/mag template; inherits PM-family handgun anims from Handgun_PM_base as before"
+ }
+}

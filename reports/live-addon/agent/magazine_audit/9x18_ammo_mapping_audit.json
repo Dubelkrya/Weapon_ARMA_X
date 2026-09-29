@@ -1,0 +1,270 @@
+{
+ "report": "9x18 Ammo Mapping Semantics Audit",
+ "semantics": {
+  "rule": "AmmoMapping is one entry per physical cartridge (length == effective capacity).",
+  "plus_operator": "`AmmoMapping + { ... }` APPENDS to the inherited array (does not replace). Plain `AmmoMapping { ... }` replaces.",
+  "mapping_value_meaning": "Each value is an index into the effective AmmoConfig AmmoResourceArray (here only index 0 exists -> Ammo_9x18_Ball_57N181).",
+  "proof": "PM vanilla base declares 8-entry AmmoMapping; APB appends +12 -> 20; PP91/SR2 append +22 -> 30. 36/36 live magazines have effective mapping length == effective capacity."
+ },
+ "ammo_config": {
+  "guid_path": "{4A7B5486D9167E2A}Configs/Weapons/Ammo/Ammo_9x18Mak.conf",
+  "AmmoResourceArray": [
+   "{4DE72DF927310A8B}Prefabs/Weapons/Ammo/Ammo_9x18_Ball_57N181.et"
+  ],
+  "entries": 1,
+  "index_meaning": "AmmoMapping value = index into AmmoConfig AmmoResourceArray; 0 -> Ammo_9x18_Ball_57N181",
+  "effective_config_source": "Magazine_9x18_PM_8rnd_Base.et (inherited; children do not override AmmoConfig)"
+ },
+ "targets": {
+  "PM": {
+   "path": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball.et",
+   "local_capacity": null,
+   "local_ammoconfig": null,
+   "local_mapping_len": null,
+   "local_plus": false,
+   "effective_capacity": 8,
+   "effective_ammoconfig": "{4A7B5486D9167E2A}Configs/Weapons/Ammo/Ammo_9x18Mak.conf",
+   "effective_mapping_len": 8,
+   "effective_log": [
+    "=8 by Magazine_9x18_PM_8rnd_Base.et"
+   ],
+   "chain": [
+    "armst_Magazine_9x18_PM_8rnd_Ball.et",
+    "Magazine_9x18_PM_8rnd_Base.et",
+    "Magazine_Base.et"
+   ],
+   "local_mapping_all_zero": false
+  },
+  "APB": {
+   "path": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_APB_20rnd_Ball.et",
+   "local_capacity": 20,
+   "local_ammoconfig": null,
+   "local_mapping_len": 12,
+   "local_plus": true,
+   "effective_capacity": 20,
+   "effective_ammoconfig": "{4A7B5486D9167E2A}Configs/Weapons/Ammo/Ammo_9x18Mak.conf",
+   "effective_mapping_len": 20,
+   "effective_log": [
+    "=8 by Magazine_9x18_PM_8rnd_Base.et",
+    "+12 by armst_Magazine_9x18_APB_20rnd_Ball.et"
+   ],
+   "chain": [
+    "armst_Magazine_9x18_APB_20rnd_Ball.et",
+    "armst_Magazine_9x18_PM_8rnd_Ball.et",
+    "Magazine_9x18_PM_8rnd_Base.et",
+    "Magazine_Base.et"
+   ],
+   "local_mapping_all_zero": true
+  },
+  "PP91": {
+   "path": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PP91_30rnd_Ball.et",
+   "local_capacity": 30,
+   "local_ammoconfig": null,
+   "local_mapping_len": 22,
+   "local_plus": true,
+   "effective_capacity": 30,
+   "effective_ammoconfig": "{4A7B5486D9167E2A}Configs/Weapons/Ammo/Ammo_9x18Mak.conf",
+   "effective_mapping_len": 30,
+   "effective_log": [
+    "=8 by Magazine_9x18_PM_8rnd_Base.et",
+    "+22 by armst_Magazine_9x18_PP91_30rnd_Ball.et"
+   ],
+   "chain": [
+    "armst_Magazine_9x18_PP91_30rnd_Ball.et",
+    "armst_Magazine_9x18_PM_8rnd_Ball.et",
+    "Magazine_9x18_PM_8rnd_Base.et",
+    "Magazine_Base.et"
+   ],
+   "local_mapping_all_zero": true
+  },
+  "SR2": {
+   "path": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_SR2_30rnd_Ball.et",
+   "local_capacity": 30,
+   "local_ammoconfig": null,
+   "local_mapping_len": 22,
+   "local_plus": true,
+   "effective_capacity": 30,
+   "effective_ammoconfig": "{4A7B5486D9167E2A}Configs/Weapons/Ammo/Ammo_9x18Mak.conf",
+   "effective_mapping_len": 30,
+   "effective_log": [
+    "=8 by Magazine_9x18_PM_8rnd_Base.et",
+    "+22 by armst_Magazine_9x18_SR2_30rnd_Ball.et"
+   ],
+   "chain": [
+    "armst_Magazine_9x18_SR2_30rnd_Ball.et",
+    "armst_Magazine_9x18_PM_8rnd_Ball.et",
+    "Magazine_9x18_PM_8rnd_Base.et",
+    "Magazine_Base.et"
+   ],
+   "local_mapping_all_zero": true
+  }
+ },
+ "classification": {
+  "PM": {
+   "capacity": 8,
+   "local_mapping_len": null,
+   "effective_mapping_len": 8,
+   "classification": "VALID",
+   "reason": "effective mapping length equals capacity (8) via inherited 8-entry base mapping + local append"
+  },
+  "APB": {
+   "capacity": 20,
+   "local_mapping_len": 12,
+   "effective_mapping_len": 20,
+   "classification": "VALID",
+   "reason": "effective mapping length equals capacity (20) via inherited 8-entry base mapping + local append"
+  },
+  "PP91": {
+   "capacity": 30,
+   "local_mapping_len": 22,
+   "effective_mapping_len": 30,
+   "classification": "VALID",
+   "reason": "effective mapping length equals capacity (30) via inherited 8-entry base mapping + local append"
+  },
+  "SR2": {
+   "capacity": 30,
+   "local_mapping_len": 22,
+   "effective_mapping_len": 30,
+   "classification": "VALID",
+   "reason": "effective mapping length equals capacity (30) via inherited 8-entry base mapping + local append"
+  }
+ },
+ "working_examples": {
+  "5": [
+   {
+    "file": "armst_12ga_Shell_test.et",
+    "capacity": 5,
+    "effective_mapping_len": 5
+   }
+  ],
+  "8": [
+   {
+    "file": "armst_Magazine_763x25_TT_8rnd_Ball.et",
+    "capacity": 8,
+    "effective_mapping_len": 8
+   },
+   {
+    "file": "armst_Magazine_9x18_PM_8rnd_Ball.et",
+    "capacity": 8,
+    "effective_mapping_len": 8
+   }
+  ],
+  "10": [
+   {
+    "file": "12ga_Buckshot_base.et",
+    "capacity": 10,
+    "effective_mapping_len": 10
+   },
+   {
+    "file": "armst_12ga_Buckshot.et",
+    "capacity": 10,
+    "effective_mapping_len": 10
+   },
+   {
+    "file": "armst_12ga_Shell.et",
+    "capacity": 10,
+    "effective_mapping_len": 10
+   },
+   {
+    "file": "armst_Magazine_762x54_SVD_10rnd_7BZ3API.et",
+    "capacity": 10,
+    "effective_mapping_len": 10
+   },
+   {
+    "file": "armst_Magazine_762x39_AKM_10rnd_Ball.et",
+    "capacity": 10,
+    "effective_mapping_len": 10
+   }
+  ],
+  "15": [
+   {
+    "file": "armst_Magazine_9x19_M9_15rnd_Ball.et",
+    "capacity": 15,
+    "effective_mapping_len": 15
+   },
+   {
+    "file": "armst_Magazine_9x19_M9_15rnd_Ball_BP.et",
+    "capacity": 15,
+    "effective_mapping_len": 15
+   }
+  ],
+  "20": [
+   {
+    "file": "armst_Magazine_9x18_APB_20rnd_Ball.et",
+    "capacity": 20,
+    "effective_mapping_len": 20
+   },
+   {
+    "file": "armst_Magazine_9x39_20rnd_9a91_SP5.et",
+    "capacity": 20,
+    "effective_mapping_len": 20
+   },
+   {
+    "file": "armst_Magazine_9x39_20rnd_9a91_SP6.et",
+    "capacity": 20,
+    "effective_mapping_len": 20
+   },
+   {
+    "file": "armst_Magazine_9x39_20rnd_vss_SP5.et",
+    "capacity": 20,
+    "effective_mapping_len": 20
+   },
+   {
+    "file": "armst_Magazine_9x39_20rnd_vss_SP6.et",
+    "capacity": 20,
+    "effective_mapping_len": 20
+   }
+  ],
+  "30": [
+   {
+    "file": "armst_Magazine_9x18_PP91_30rnd_Ball.et",
+    "capacity": 30,
+    "effective_mapping_len": 30
+   },
+   {
+    "file": "armst_Magazine_9x18_SR2_30rnd_Ball.et",
+    "capacity": 30,
+    "effective_mapping_len": 30
+   },
+   {
+    "file": "armst_Magazine_556x45_HKG36.et",
+    "capacity": 30,
+    "effective_mapping_len": 30
+   },
+   {
+    "file": "armst_Magazine_556x45_HKG36_BP.et",
+    "capacity": 30,
+    "effective_mapping_len": 30
+   },
+   {
+    "file": "armst_Magazine_556x45_SIG_550.et",
+    "capacity": 30,
+    "effective_mapping_len": 30
+   }
+  ],
+  "45": [
+   {
+    "file": "armst_Magazine_545x39_RPK_45rnd_Ball.et",
+    "capacity": 45,
+    "effective_mapping_len": 45
+   },
+   {
+    "file": "armst_Magazine_545x39_RPK_45rnd_Tracer.et",
+    "capacity": 45,
+    "effective_mapping_len": 45
+   }
+  ],
+  "250": [
+   {
+    "file": "armst_Box_762x54_PK_250rnd_Ball.et",
+    "capacity": 250,
+    "effective_mapping_len": 250
+   }
+  ]
+ },
+ "examples_total": 36,
+ "examples_match": 36,
+ "MAPPING_LENGTH_EQUALS_CAPACITY_RULE": "PROVEN",
+ "REPAIR_NEEDED": "NONE",
+ "LIVE_FILES_CHANGED": "NONE"
+}

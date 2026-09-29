@@ -1,0 +1,257 @@
+{
+ "resource": "Prefabs/Weapons/Russian/Rifle/Groza/armst_Groza_base.et",
+ "guid": "903C7920F00AB654",
+ "model": "{277CC12370C4BCF0}Assets/Weapons_RUS/Groza/GROZA.xob",
+ "parent_current": "{911D6C8DC7BA2D63}Prefabs/Weapons/Core/Rifle_Base.et",
+ "target_parent": "{923D948AB0D57A50}Prefabs/Weapons/Rifles/AK74/Rifle_AK74_long_base.et",
+ "inheritance_chain_before": [
+  "{911D6C8DC7BA2D63}Prefabs/Weapons/Core/Rifle_Base.et",
+  "{E1F14DB52DBFBC57}Prefabs/Weapons/Core/Weapon_Base.et"
+ ],
+ "effective_state_before": {
+  "model": "{277CC12370C4BCF0}Assets/Weapons_RUS/Groza/GROZA.xob",
+  "animation_refs": [
+   "{DB3B289A5EDE0051}Assets/Weapons_RUS/Groza/anim/Groza_Oc.agr",
+   "{22C1B974F01F1684}Assets/Weapons_RUS/Groza/anim/Groza_Oc_weapon.asi",
+   "{DB3B289A5EDE0051}Assets/Weapons_RUS/Groza/anim/Groza_Oc.agr",
+   "{D99F2845681E7268}Assets/Weapons_RUS/Groza/anim/Groza_Oc_player.asi"
+  ],
+  "ik_pose": "{564FCD270D84AF8A}Assets/Weapons_RUS/Groza/anim/Anims_Player/P_Groza_IK.anm",
+  "magazine_well": "{5464E0EAAF7815B4}",
+  "magazine_template": "{48720FC416263FC1}Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_30rnd_Ball.et",
+  "sights": true,
+  "muzzle": true,
+  "fire_modes": [
+   "Single",
+   "Auto"
+  ],
+  "recoil_local": true,
+  "sound_local": true,
+  "action_contexts": 9
+ },
+ "TARGET_COMPONENTS_ADDED": {
+  "51F6738D2EC74BE1": {
+   "type": "AttachmentSlotComponent",
+   "name": null
+  },
+  "55349E9229B55E74": {
+   "type": "SightsPointFront",
+   "name": "PointInfo"
+  },
+  "55349E9229B55E7A": {
+   "type": "SightsPointRear",
+   "name": "PointInfo"
+  },
+  "584CED329E401420": {
+   "type": "SightRangeInfo",
+   "name": null
+  },
+  "584CED329E40145B": {
+   "type": "WeaponPosition",
+   "name": "PointInfo"
+  },
+  "584CED329E42F017": {
+   "type": "WeaponPosition",
+   "name": "PointInfo"
+  },
+  "584CED329E42F0E4": {
+   "type": "SightRangeInfo",
+   "name": null
+  },
+  "584CED329E44A70D": {
+   "type": "SightRangeInfo",
+   "name": null
+  },
+  "584CED329E44A73B": {
+   "type": "WeaponPosition",
+   "name": "PointInfo"
+  },
+  "584CED329E45D8C3": {
+   "type": "WeaponPosition",
+   "name": "PointInfo"
+  },
+  "584CED329E45D8D6": {
+   "type": "SightRangeInfo",
+   "name": null
+  },
+  "584CED329E469695": {
+   "type": "WeaponPosition",
+   "name": "PointInfo"
+  },
+  "584CED329E46976E": {
+   "type": "SightRangeInfo",
+   "name": null
+  },
+  "584CED329E478DA3": {
+   "type": "SightRangeInfo",
+   "name": null
+  },
+  "584CED329E478DAA": {
+   "type": "WeaponPosition",
+   "name": "PointInfo"
+  },
+  "584CED329E484221": {
+   "type": "SightRangeInfo",
+   "name": null
+  },
+  "584CED329E484228": {
+   "type": "WeaponPosition",
+   "name": "PointInfo"
+  },
+  "584CED329E49782B": {
+   "type": "SightRangeInfo",
+   "name": null
+  },
+  "584CED329E497853": {
+   "type": "WeaponPosition",
+   "name": "PointInfo"
+  },
+  "584CED329E4A3248": {
+   "type": "SightRangeInfo",
+   "name": null
+  },
+  "584CED329E4A3270": {
+   "type": "WeaponPosition",
+   "name": "PointInfo"
+  },
+  "584CED329E4B2895": {
+   "type": "SightRangeInfo",
+   "name": null
+  },
+  "584CED329E4B289C": {
+   "type": "WeaponPosition",
+   "name": "PointInfo"
+  },
+  "584CED329E4D1BD6": {
+   "type": "SightRangeInfo",
+   "name": null
+  },
+  "584CED329E4D1BDE": {
+   "type": "WeaponPosition",
+   "name": "PointInfo"
+  },
+  "5A1E5C47AE23F25A": {
+   "type": "UserActionContext",
+   "name": null
+  },
+  "5F189C826D592450": {
+   "type": "AttachmentSlotComponent",
+   "name": null
+  },
+  "60ECB1EBE1387B1B": {
+   "type": "UserActionContext",
+   "name": null
+  },
+  "60ECB1EBE48BA151": {
+   "type": "Position",
+   "name": "PointInfo"
+  },
+  "618A84270A2BFDC0": {
+   "type": "UserActionContext",
+   "name": null
+  },
+  "618A842792A66B70": {
+   "type": "Position",
+   "name": "PointInfo"
+  }
+ },
+ "TARGET_CRITICAL_ADDITIONS": {
+  "51F6738D2EC74BE1": {
+   "type": "AttachmentSlotComponent",
+   "name": null
+  },
+  "5A1E5C47AE23F25A": {
+   "type": "UserActionContext",
+   "name": null
+  },
+  "5F189C826D592450": {
+   "type": "AttachmentSlotComponent",
+   "name": null
+  },
+  "60ECB1EBE1387B1B": {
+   "type": "UserActionContext",
+   "name": null
+  },
+  "618A84270A2BFDC0": {
+   "type": "UserActionContext",
+   "name": null
+  }
+ },
+ "CURRENT_COMPONENTS_LOST": {
+  "51F080D5C64F12C5": {
+   "type": "Attributes",
+   "name": "SCR_ItemAttributeCollection"
+  },
+  "51F080D5CE45A1A2": {
+   "type": "SCR_WeaponAttachmentsStorageComponent",
+   "name": null
+  },
+  "5222CB07CFF6712A": {
+   "type": "ItemDisplayName",
+   "name": "SCR_ItemHintUIInfo"
+  },
+  "5A28749C602565F8": {
+   "type": "EPF_PersistenceComponent",
+   "name": null
+  },
+  "5A28749F9ED6F91D": {
+   "type": "m_pSaveData",
+   "name": "EPF_ItemSaveDataClass"
+  }
+ },
+ "FIELDS_THAT_WOULD_CHANGE": [
+  {
+   "guid": "58789524E765774D",
+   "type": "LinearData",
+   "name": "RecoilData",
+   "unshadowed": {
+    "Curve Magnitudes": "1.4 1.2 1"
+   }
+  },
+  {
+   "guid": "58789524E7CAB55F",
+   "type": "AngularData",
+   "name": "RecoilData",
+   "unshadowed": {
+    "Curve Magnitudes": "1.4 1.2 1"
+   }
+  },
+  {
+   "guid": "4E2B66CBA589F625",
+   "type": "AttachmentSlotComponent",
+   "name": null,
+   "unshadowed": {
+    "InspectionWidgetOffset": "0 0.07 0.568"
+   }
+  },
+  {
+   "guid": "BB23A63796688E69",
+   "type": "SightsPosition",
+   "name": "PointInfo",
+   "unshadowed": {
+    "PivotID": "\"eye\""
+   }
+  },
+  {
+   "guid": "58789524E0951484",
+   "type": "TurnOffsetData",
+   "name": "RecoilData",
+   "unshadowed": {
+    "Curve Magnitudes": "1.4 1.2 0"
+   }
+  }
+ ],
+ "foreign_legacy_refs": {
+  "groza_magazine_template": "{48720FC416263FC1}Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_30rnd_Ball.et",
+  "groza_magazine_well": "{5464E0EAAF7815B4}",
+  "note": "Groza already uses a VZ58 MagazineWell + AKM magazine template and AK74 muzzle particle (pre-existing, not introduced here); AK74_long_base would add AK74 attachment/action/sight instances"
+ },
+ "LOCAL_OVERRIDES_REQUIRED": [
+  "neutralize 31 AK74-only components (5 critical)",
+  "resolve 5 unshadowed shared-field collisions"
+ ],
+ "SAFE_TO_REPARENT": "NO",
+ "reason": "AK74_long_base would inject %d components Groza does not shadow (%d gameplay-critical: 2 AttachmentSlotComponent, 3 UserActionContext) plus AK74 sight-range nodes and unshadowed recoil/sight fields. Preserving Groza state would require many explicit neutralizing overrides; duplicate/foreign instance risk.",
+ "LIVE_FILES_CHANGED": "NONE",
+ "status": "PASS"
+}

@@ -1,0 +1,62 @@
+{
+    "Guidance":  "Items that cannot be closed statically. Runtime status is never claimed from static evidence alone except where explicitly reported by user.",
+    "Matrix":  [
+                   {
+                       "RESOURCE":  "armst_Optic_AKDovetailMount.et",
+                       "STATIC_STATUS":  "CURRENTLY_VALID",
+                       "RUNTIME_ALREADY_VERIFIED":  false,
+                       "RUNTIME_TEST_NEEDED":  "YES",
+                       "TEST_DESCRIPTION":  "Spawn, attach to AKM/AK74 dovetail slot, verify model visible and RIS adapter accepts a RIS optic"
+                   },
+                   {
+                       "RESOURCE":  "armst_Optic_PSO1.et (canonical)",
+                       "STATIC_STATUS":  "PASS",
+                       "RUNTIME_ALREADY_VERIFIED":  false,
+                       "RUNTIME_TEST_NEEDED":  "YES",
+                       "TEST_DESCRIPTION":  "Verify default PSO on armst_Rifle_AKM_full and armst_AK74M_full renders and functions (PIP) at runtime"
+                   },
+                   {
+                       "RESOURCE":  "armst_Optic_1P29.et",
+                       "STATIC_STATUS":  "MINIMAL_CHILD",
+                       "RUNTIME_ALREADY_VERIFIED":  true,
+                       "RUNTIME_TEST_NEEDED":  "NO",
+                       "TEST_DESCRIPTION":  "User runtime result: WORKING (4x PIP, ranges 100-500)"
+                   },
+                   {
+                       "RESOURCE":  "armst_Groza_base.et",
+                       "STATIC_STATUS":  "PASS_WITH_KNOWN_DEBT",
+                       "RUNTIME_ALREADY_VERIFIED":  false,
+                       "RUNTIME_TEST_NEEDED":  "YES",
+                       "TEST_DESCRIPTION":  "Verify 9x39 SP5 default mag loads, firing/eject - casing particle plays (Casing_762x39_PS.ptc debt is known-visible)"
+                   },
+                   {
+                       "RESOURCE":  "armst_Rifle_SOC94_base.et",
+                       "STATIC_STATUS":  "PASS (parent via GUID)",
+                       "RUNTIME_ALREADY_VERIFIED":  false,
+                       "RUNTIME_TEST_NEEDED":  "YES",
+                       "TEST_DESCRIPTION":  "Spawn SOC94, verify it inherits from AKM_base correctly (malformed parent path resolves by GUID)"
+                   },
+                   {
+                       "RESOURCE":  "armst_SR_2_base.et + armst_Magazine_9x18_SR2_30rnd_Ball.et",
+                       "STATIC_STATUS":  "PASS",
+                       "RUNTIME_ALREADY_VERIFIED":  false,
+                       "RUNTIME_TEST_NEEDED":  "YES",
+                       "TEST_DESCRIPTION":  "Verify SR-2 uses PP91 well, 30rnd magazine loads and feeds"
+                   },
+                   {
+                       "RESOURCE":  "armst_Rifle_HKG36_base.et + HKG36_CarryHandle_Optic.et",
+                       "STATIC_STATUS":  "PASS / REVIEW(missing meta)",
+                       "RUNTIME_ALREADY_VERIFIED":  false,
+                       "RUNTIME_TEST_NEEDED":  "YES",
+                       "TEST_DESCRIPTION":  "Verify carry-handle optic attaches, no direct RIS on weapon; factory handling works"
+                   },
+                   {
+                       "RESOURCE":  "All main weapons (20 non-base + 27 bases)",
+                       "STATIC_STATUS":  "PASS",
+                       "RUNTIME_ALREADY_VERIFIED":  false,
+                       "RUNTIME_TEST_NEEDED":  "YES",
+                       "TEST_DESCRIPTION":  "Broad runtime coverage: spawn each weapon, ADS, fire, reload, attach default optics"
+                   }
+               ],
+    "QueueCount":  8
+}

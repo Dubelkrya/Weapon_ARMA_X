@@ -1,0 +1,108 @@
+{
+  "schema_version": 1,
+  "targets": [
+    {
+      "old_path": "Configs/Weapons/Ammo/Ammo_763x25.conf",
+      "new_path": "Configs/Weapons/Ammo/armst_Ammo_763x25.conf",
+      "type": "conf",
+      "guid_before": "9379B9A38F29D508",
+      "guid_after": "9379B9A38F29D508",
+      "refs_updated": [
+        "Prefabs/Weapons/Magazines/Russian/763x25/TT/armst_Magazine_763x25_TT_8rnd_Ball.et"
+      ],
+      "semantic_content_changed": false,
+      "new_path_exists": true,
+      "old_path_absent": true,
+      "guid_unchanged": true,
+      "ammo_resource_array_before": [
+        "Prefabs/Weapons/Ammo/Russian/763x25/armst_Ammo_763x25_Ball.et"
+      ],
+      "ammo_resource_array_after": [
+        "Prefabs/Weapons/Ammo/Russian/763x25/armst_Ammo_763x25_Ball.et"
+      ],
+      "array_unchanged": true
+    },
+    {
+      "old_path": "Configs/Weapons/Ammo/Ammo_9x39.conf",
+      "new_path": "Configs/Weapons/Ammo/armst_Ammo_9x39.conf",
+      "type": "conf",
+      "guid_before": "710039458DA9911D",
+      "guid_after": "710039458DA9911D",
+      "refs_updated": [
+        "Prefabs/Weapons/Magazines/Russian/9x39/9a91/armst_Magazine_9x39_20rnd_9a91_SP5.et",
+        "Prefabs/Weapons/Magazines/Russian/9x39/9a91/armst_Magazine_9x39_20rnd_9a91_SP6.et",
+        "Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_20rnd_vss_SP5.et",
+        "Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_20rnd_vss_SP6.et",
+        "Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_30rnd_val_SP5.et",
+        "Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_30rnd_val_SP6.et"
+      ],
+      "semantic_content_changed": false,
+      "new_path_exists": true,
+      "old_path_absent": true,
+      "guid_unchanged": true,
+      "ammo_resource_array_before": [
+        "Prefabs/Weapons/Ammo/Russian/9x39/armst_Ammo_9x39_SP5_Ball.et",
+        "Prefabs/Weapons/Ammo/Russian/9x39/armst_Ammo_9x39_SP6_Ball.et"
+      ],
+      "ammo_resource_array_after": [
+        "Prefabs/Weapons/Ammo/Russian/9x39/armst_Ammo_9x39_SP5_Ball.et",
+        "Prefabs/Weapons/Ammo/Russian/9x39/armst_Ammo_9x39_SP6_Ball.et"
+      ],
+      "array_unchanged": true
+    },
+    {
+      "old_path": "Prefabs/Weapons/Magazines/Russian/9x39/VSS/Magazine_9x39_30rnd_val_SP5.et",
+      "new_path": "Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_30rnd_val_SP5.et",
+      "type": "et",
+      "guid_before": "6C22F58BBF5D6AED",
+      "guid_after": "6C22F58BBF5D6AED",
+      "refs_updated": [],
+      "semantic_content_changed": false,
+      "new_path_exists": true,
+      "old_path_absent": true,
+      "guid_unchanged": true,
+      "parent_before": "F9E1A46E3ABA116F",
+      "parent_after": "F9E1A46E3ABA116F",
+      "capacity_before": null,
+      "capacity_after": null,
+      "well_before": "MagazineWell MagazineWell9x39 \"{65AD272C6CDDD352}\" {",
+      "well_after": "MagazineWell MagazineWell9x39 \"{65AD272C6CDDD352}\" {",
+      "ammo_config_before": "AmmoConfig \"{710039458DA9911D}Configs/Weapons/Ammo/Ammo_9x39.conf\"",
+      "ammo_config_after": "AmmoConfig \"{710039458DA9911D}Configs/Weapons/Ammo/armst_Ammo_9x39.conf\"",
+      "ammo_mapping_before": "AmmoMapping {",
+      "ammo_mapping_after": "AmmoMapping {",
+      "val_gameplay_unchanged": true
+    },
+    {
+      "old_path": "Prefabs/Weapons/Magazines/Russian/9x39/VSS/Magazine_9x39_30rnd_val_SP6.et",
+      "new_path": "Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_30rnd_val_SP6.et",
+      "type": "et",
+      "guid_before": "6CBF1E50EB22F09B",
+      "guid_after": "6CBF1E50EB22F09B",
+      "refs_updated": [],
+      "semantic_content_changed": false,
+      "new_path_exists": true,
+      "old_path_absent": true,
+      "guid_unchanged": true,
+      "parent_before": "F9E1A46E3ABA116F",
+      "parent_after": "F9E1A46E3ABA116F",
+      "capacity_before": null,
+      "capacity_after": null,
+      "well_before": "MagazineWell MagazineWell9x39 \"{673A6EBFEE188D21}\" {",
+      "well_after": "MagazineWell MagazineWell9x39 \"{673A6EBFEE188D21}\" {",
+      "ammo_config_before": "AmmoConfig \"{710039458DA9911D}Configs/Weapons/Ammo/Ammo_9x39.conf\"",
+      "ammo_config_after": "AmmoConfig \"{710039458DA9911D}Configs/Weapons/Ammo/armst_Ammo_9x39.conf\"",
+      "ammo_mapping_before": "AmmoMapping {",
+      "ammo_mapping_after": "AmmoMapping {",
+      "val_gameplay_unchanged": true
+    }
+  ],
+  "validation": {
+    "renamed": 4,
+    "old_refs_remaining": [],
+    "dangling": [],
+    "guid_changes": 0,
+    "array_changed": false,
+    "val_changed": false
+  }
+}

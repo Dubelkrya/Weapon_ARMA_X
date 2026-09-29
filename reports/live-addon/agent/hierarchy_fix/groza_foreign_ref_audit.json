@@ -1,0 +1,87 @@
+{
+ "groza_state": {
+  "path": "Prefabs/Weapons/Russian/Rifle/Groza/armst_Groza_base.et",
+  "guid": "903C7920F00AB654",
+  "model": "{277CC12370C4BCF0}Assets/Weapons_RUS/Groza/GROZA.xob",
+  "parent": "{911D6C8DC7BA2D63}Prefabs/Weapons/Core/Rifle_Base.et",
+  "magazine_well": {
+   "component": "MuzzleComponent {CA6BE4D6B867541F} > MagazineWell",
+   "class": "MagazineWellVZ58_762",
+   "instance": "{5464E0EAAF7815B4}",
+   "template": "{48720FC416263FC1}Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_30rnd_Ball.et"
+  },
+  "muzzle": {
+   "MuzzleComponent": "{CA6BE4D6B867541F}",
+   "SCR_MuzzleEffectComponent": "{C9B3271BB22CDB68} ParticleEffect {6FC79968CA7F6FD2}Particles/Weapon/Muzzle_AK74.ptc",
+   "CaseEjectingEffectComponent": "{5122AAD190FCA21D} ParticleEffect {6A0F068A792EA37C}Particles/Weapon/Casing_762x51.ptc"
+  },
+  "animations": "Groza_Oc.agr / Groza_Oc_weapon.asi / Groza_Oc_player.asi",
+  "ik": "{564FCD270D84AF8A}Assets/Weapons_RUS/Groza/anim/Anims_Player/P_Groza_IK.anm",
+  "fire_modes": "Single 750 / Auto 750"
+ },
+ "magazine_well_provenance": {
+  "class_defined_in": "No ARMST/Weapon_ARMA_X script defines MagazineWellVZ58_762 -> vanilla/game class.",
+  "authored_locally_by_groza": true,
+  "declared_in": [
+   "Prefabs/Weapons/Rifles/VZ58/Rifle_VZ58_base.et (VANILLA)",
+   "Prefabs/Weapons/Magazines/Vz58/Magazine_762x39_Vz58_30rnd_Base.et (VANILLA)",
+   "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_base.et (ARMST AKM)",
+   "Prefabs/Weapons/Russian/Rifle/Groza/armst_Groza_base.et (Groza)"
+  ],
+  "compatibility_proof": "Groza magazine template armst_Magazine_762x39_AKM_30rnd_Ball.et parents to Prefabs/Weapons/Magazines/Vz58/Magazine_762x39_Vz58_30rnd_Base.et which declares the same MagazineWellVZ58_762 well -> functional match."
+ },
+ "magazine_well_users": [
+  "armst_Groza_base.et",
+  "armst_Rifle_AKM_base.et",
+  "Rifle_VZ58_base.et (VANILLA)",
+  "Magazine_762x39_Vz58_30rnd_Base.et (VANILLA)"
+ ],
+ "magazine_well_candidates": [
+  {
+   "current": "{5464E0EAAF7815B4}MagazineWellVZ58_762",
+   "candidate": null,
+   "evidence": "ARMST shared 7.62x39 well (AKM base + VZ58); no Groza-specific well resource exists.",
+   "confidence": "HIGH"
+  }
+ ],
+ "magazine_well_classification": "INTENTIONAL_SHARED_RESOURCE",
+ "muzzle_particle_provenance": {
+  "authored_locally_by_groza": true,
+  "note": "Groza is the ONLY live user of Particles/Weapon/Muzzle_AK74.ptc.",
+  "family_convention": "ARMST AKM base and vanilla VZ58 base use Muzzle_VZ58.ptc + Smoke_VZ58.ptc + Casing_762x39_PS.ptc with the same MagazineWellVZ58_762 well Groza uses."
+ },
+ "muzzle_particle_users": {
+  "Particles/Weapon/Muzzle_AK74.ptc": [
+   "armst_Groza_base.et"
+  ],
+  "Particles/Weapon/Muzzle_VZ58.ptc": [
+   "armst_Rifle_AKM_base.et",
+   "Rifle_VZ58_base.et (VANILLA)"
+  ],
+  "Particles/Weapon/Smoke_VZ58.ptc": [
+   "armst_Rifle_AKM_base.et",
+   "Rifle_VZ58_base.et (VANILLA)"
+  ],
+  "Particles/Weapon/Casing_762x39_PS.ptc": [
+   "armst_Rifle_AKM_base.et",
+   "Rifle_VZ58_base.et (VANILLA)"
+  ]
+ },
+ "muzzle_particle_candidates": [
+  {
+   "current": "{6FC79968CA7F6FD2}Particles/Weapon/Muzzle_AK74.ptc",
+   "candidate": "{0E66192FC96CDFB7}Particles/Weapon/Muzzle_VZ58.ptc",
+   "evidence": "Groza shares VZ58_762 well and VZ58-derived AKM magazine; entire 7.62x39 family uses Muzzle_VZ58. No Groza-specific muzzle particle exists.",
+   "confidence": "HIGH"
+  },
+  {
+   "current": "{6A0F068A792EA37C}Particles/Weapon/Casing_762x51.ptc (supplementary)",
+   "candidate": "{A89D3276591C9F57}Particles/Weapon/Casing_762x39_PS.ptc",
+   "evidence": "Groza is 7.62x39, not 7.62x51.",
+   "confidence": "HIGH"
+  }
+ ],
+ "muzzle_particle_classification": "FOREIGN_LEGACY_ERROR",
+ "replacement_applied": false,
+ "LIVE_FILES_CHANGED": "NONE"
+}

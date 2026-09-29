@@ -1,0 +1,712 @@
+{
+  "magazines": [
+    {
+      "path": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_AK_30rnd_Ball.et",
+      "guid": "BBB50A815A2F916B",
+      "current_display_name": "#AR-Magazine_AK74_Name",
+      "current_description": null,
+      "description_key": null,
+      "description_source": "LOCAL_PREFAB",
+      "resolution_chain": [
+        "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_AK_30rnd_Ball.et"
+      ],
+      "well": null,
+      "max_ammo": null,
+      "ammo_config": null,
+      "mapping": null,
+      "caliber": "545x39",
+      "magazine_family": "AK74",
+      "pp_bp_role": "PP"
+    },
+    {
+      "path": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_AK_30rnd_Tracer.et",
+      "guid": "E5912E45754CD421",
+      "current_display_name": null,
+      "current_description": null,
+      "description_key": null,
+      "description_source": "EXTERNAL_PARENT",
+      "resolution_chain": [
+        "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_AK_30rnd_Tracer.et"
+      ],
+      "well": null,
+      "max_ammo": null,
+      "ammo_config": null,
+      "mapping": null,
+      "caliber": "545x39",
+      "magazine_family": "AK74",
+      "pp_bp_role": "UNKNOWN"
+    },
+    {
+      "path": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_RPK_45rnd_Ball.et",
+      "guid": "BC74DAC891D48540",
+      "current_display_name": null,
+      "current_description": null,
+      "description_key": null,
+      "description_source": "EXTERNAL_PARENT",
+      "resolution_chain": [
+        "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_RPK_45rnd_Ball.et"
+      ],
+      "well": null,
+      "max_ammo": null,
+      "ammo_config": null,
+      "mapping": null,
+      "caliber": "545x39",
+      "magazine_family": "AK74",
+      "pp_bp_role": "PP"
+    },
+    {
+      "path": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_RPK_45rnd_Tracer.et",
+      "guid": "5897D01F41DB5D2D",
+      "current_display_name": null,
+      "current_description": null,
+      "description_key": null,
+      "description_source": "EXTERNAL_PARENT",
+      "resolution_chain": [
+        "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_RPK_45rnd_Tracer.et"
+      ],
+      "well": null,
+      "max_ammo": null,
+      "ammo_config": null,
+      "mapping": null,
+      "caliber": "545x39",
+      "magazine_family": "AK74",
+      "pp_bp_role": "UNKNOWN"
+    },
+    {
+      "path": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/Magazine_545x39_AK_30rnd_Base.et",
+      "guid": "63C1E699345B24F9",
+      "current_display_name": null,
+      "current_description": null,
+      "description_key": null,
+      "description_source": "EXTERNAL_PARENT",
+      "resolution_chain": [
+        "Prefabs/Weapons/Magazines/Russian/5x45/AK74/Magazine_545x39_AK_30rnd_Base.et"
+      ],
+      "well": null,
+      "max_ammo": null,
+      "ammo_config": null,
+      "mapping": null,
+      "caliber": "545x39",
+      "magazine_family": "AK74",
+      "pp_bp_role": "PP"
+    },
+    {
+      "path": "Prefabs/Weapons/Magazines/Russian/762x54/SVD/armst_Box_762x54_PK_250rnd_Ball.et",
+      "guid": "1C260E65B7F290BA",
+      "current_display_name": "#AR-Magazine_PKMT_Name",
+      "current_description": null,
+      "description_key": null,
+      "description_source": "LOCAL_PREFAB",
+      "resolution_chain": [
+        "Prefabs/Weapons/Magazines/Russian/762x54/SVD/armst_Box_762x54_PK_250rnd_Ball.et"
+      ],
+      "well": null,
+      "max_ammo": null,
+      "ammo_config": null,
+      "mapping": null,
+      "caliber": "UNKNOWN",
+      "magazine_family": "SVD",
+      "pp_bp_role": "PP"
+    },
+    {
+      "path": "Prefabs/Weapons/Magazines/Russian/762x54/SVD/armst_Magazine_762x54_SVD_10rnd_7BZ3API.et",
+      "guid": "19600CCA33279D20",
+      "current_display_name": "#AR-Magazine_SVDAPI_Name",
+      "current_description": null,
+      "description_key": null,
+      "description_source": "LOCAL_PREFAB",
+      "resolution_chain": [
+        "Prefabs/Weapons/Magazines/Russian/762x54/SVD/armst_Magazine_762x54_SVD_10rnd_7BZ3API.et"
+      ],
+      "well": null,
+      "max_ammo": null,
+      "ammo_config": null,
+      "mapping": null,
+      "caliber": "UNKNOWN",
+      "magazine_family": "SVD",
+      "pp_bp_role": "UNKNOWN"
+    },
+    {
+      "path": "Prefabs/Weapons/Magazines/Russian/763x25/TT/armst_Magazine_763x25_TT_8rnd_Ball.et",
+      "guid": "AA99F5E678010DB3",
+      "current_display_name": "TT Magazine",
+      "current_description": null,
+      "description_key": null,
+      "description_source": "LOCAL_PREFAB",
+      "resolution_chain": [
+        "Prefabs/Weapons/Magazines/Russian/763x25/TT/armst_Magazine_763x25_TT_8rnd_Ball.et"
+      ],
+      "well": "05B3A6C89A212814",
+      "max_ammo": null,
+      "ammo_config": "Configs/Weapons/Ammo/armst_Ammo_763x25.conf",
+      "mapping": null,
+      "caliber": "763x25",
+      "magazine_family": "TT",
+      "pp_bp_role": "PP"
+    },
+    {
+      "path": "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_10rnd_Ball.et",
+      "guid": "07805AE177F52646",
+      "current_display_name": "AKM magazine 10rnd",
+      "current_description": "AKM magazine 10rnd",
+      "description_key": null,
+      "description_source": "LOCAL_PREFAB",
+      "resolution_chain": [
+        "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_10rnd_Ball.et"
+      ],
+      "well": null,
+      "max_ammo": 10,
+      "ammo_config": "Configs/Weapons/Ammo/ARMST/armst_Ammo_762x39_ARMST.conf",
+      "mapping": "0 0 0 0 0 0 0 0 0 0",
+      "caliber": "762x39",
+      "magazine_family": "AKM",
+      "pp_bp_role": "PP"
+    },
+    {
+      "path": "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_10rnd_Ball_BP.et",
+      "guid": "7882EC8AE9CD4CF3",
+      "current_display_name": "AKM magazine 10rnd",
+      "current_description": "AKM magazine 10rnd",
+      "description_key": null,
+      "description_source": "LOCAL_PREFAB",
+      "resolution_chain": [
+        "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_10rnd_Ball_BP.et"
+      ],
+      "well": null,
+      "max_ammo": 10,
+      "ammo_config": "Configs/Weapons/Ammo/ARMST/armst_Ammo_762x39_ARMST.conf",
+      "mapping": "1 1 1 1 1 1 1 1 1 1",
+      "caliber": "762x39",
+      "magazine_family": "AKM",
+      "pp_bp_role": "BP"
+    },
+    {
+      "path": "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_30rnd_Ball.et",
+      "guid": "48720FC416263FC1",
+      "current_display_name": "AKM magazine 30rnd",
+      "current_description": "AKM magazine 30rnd",
+      "description_key": null,
+      "description_source": "LOCAL_PREFAB",
+      "resolution_chain": [
+        "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_30rnd_Ball.et"
+      ],
+      "well": null,
+      "max_ammo": null,
+      "ammo_config": "Configs/Weapons/Ammo/ARMST/armst_Ammo_762x39_ARMST.conf",
+      "mapping": "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+      "caliber": "762x39",
+      "magazine_family": "AKM",
+      "pp_bp_role": "PP"
+    },
+    {
+      "path": "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_30rnd_Ball_BP.et",
+      "guid": "21BD2CA7421B4D5C",
+      "current_display_name": "AKM magazine 30rnd",
+      "current_description": "AKM magazine 30rnd",
+      "description_key": null,
+      "description_source": "LOCAL_PREFAB",
+      "resolution_chain": [
+        "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_30rnd_Ball_BP.et"
+      ],
+      "well": null,
+      "max_ammo": null,
+      "ammo_config": "Configs/Weapons/Ammo/ARMST/armst_Ammo_762x39_ARMST.conf",
+      "mapping": "1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1",
+      "caliber": "762x39",
+      "magazine_family": "AKM",
+      "pp_bp_role": "BP"
+    },
+    {
+      "path": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_APB_20rnd_Ball.et",
+      "guid": "389EB226473CD590",
+      "current_display_name": "APB Magazine",
+      "current_description": null,
+      "description_key": null,
+      "description_source": "LOCAL_PREFAB",
+      "resolution_chain": [
+        "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_APB_20rnd_Ball.et"
+      ],
+      "well": "05B3A6C89A212814",
+      "max_ammo": 20,
+      "ammo_config": null,
+      "mapping": null,
+      "caliber": "9x18",
+      "magazine_family": "9x18",
+      "pp_bp_role": "PP"
+    },
+    {
+      "path": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball.et",
+      "guid": "8B853CDD11BA916E",
+      "current_display_name": "#AR-Magazine_PM_Name",
+      "current_description": null,
+      "description_key": null,
+      "description_source": "LOCAL_PREFAB",
+      "resolution_chain": [
+        "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball.et"
+      ],
+      "well": null,
+      "max_ammo": null,
+      "ammo_config": null,
+      "mapping": null,
+      "caliber": "9x18",
+      "magazine_family": "9x18",
+      "pp_bp_role": "PP"
+    },
+    {
+      "path": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PP91_30rnd_Ball.et",
+      "guid": "4488C415F3CA1890",
+      "current_display_name": "PP-91 Magazine",
+      "current_description": null,
+      "description_key": null,
+      "description_source": "LOCAL_PREFAB",
+      "resolution_chain": [
+        "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PP91_30rnd_Ball.et"
+      ],
+      "well": "05B3A6C89A212814",
+      "max_ammo": 30,
+      "ammo_config": null,
+      "mapping": null,
+      "caliber": "9x18",
+      "magazine_family": "9x18",
+      "pp_bp_role": "PP"
+    },
+    {
+      "path": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_SR2_30rnd_Ball.et",
+      "guid": "2610CA8D8632DEF4",
+      "current_display_name": "PP-91 Magazine",
+      "current_description": null,
+      "description_key": null,
+      "description_source": "LOCAL_PREFAB",
+      "resolution_chain": [
+        "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_SR2_30rnd_Ball.et"
+      ],
+      "well": "05B3A6C89A212814",
+      "max_ammo": 30,
+      "ammo_config": null,
+      "mapping": null,
+      "caliber": "9x18",
+      "magazine_family": "9x18",
+      "pp_bp_role": "PP"
+    },
+    {
+      "path": "Prefabs/Weapons/Magazines/Russian/9x39/9a91/armst_Magazine_9x39_20rnd_9a91_SP5.et",
+      "guid": "B7EC6D4222AE12BE",
+      "current_display_name": "9A91 magazine SP5",
+      "current_description": "9A91 magazine SP5",
+      "description_key": null,
+      "description_source": "LOCAL_PREFAB",
+      "resolution_chain": [
+        "Prefabs/Weapons/Magazines/Russian/9x39/9a91/armst_Magazine_9x39_20rnd_9a91_SP5.et"
+      ],
+      "well": "65ACF622AE16E7C8",
+      "max_ammo": 20,
+      "ammo_config": "Configs/Weapons/Ammo/armst_Ammo_9x39.conf",
+      "mapping": "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+      "caliber": "9x39",
+      "magazine_family": "9a91",
+      "pp_bp_role": "UNKNOWN"
+    },
+    {
+      "path": "Prefabs/Weapons/Magazines/Russian/9x39/9a91/armst_Magazine_9x39_20rnd_9a91_SP6.et",
+      "guid": "3F47C33B88171646",
+      "current_display_name": "9A91 magazine SP6",
+      "current_description": "9A91 magazine SP6",
+      "description_key": null,
+      "description_source": "LOCAL_PREFAB",
+      "resolution_chain": [
+        "Prefabs/Weapons/Magazines/Russian/9x39/9a91/armst_Magazine_9x39_20rnd_9a91_SP6.et"
+      ],
+      "well": "673A6EBFEB337DB1",
+      "max_ammo": 20,
+      "ammo_config": "Configs/Weapons/Ammo/armst_Ammo_9x39.conf",
+      "mapping": "1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1",
+      "caliber": "9x39",
+      "magazine_family": "9a91",
+      "pp_bp_role": "UNKNOWN"
+    },
+    {
+      "path": "Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_20rnd_vss_SP5.et",
+      "guid": "70D023F899C9C226",
+      "current_display_name": "VSS magazine 20rnd SP5",
+      "current_description": "VSS magazine 20rnd SP5",
+      "description_key": null,
+      "description_source": "LOCAL_PREFAB",
+      "resolution_chain": [
+        "Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_20rnd_vss_SP5.et"
+      ],
+      "well": "65AD1CF54397A5FA",
+      "max_ammo": 20,
+      "ammo_config": "Configs/Weapons/Ammo/armst_Ammo_9x39.conf",
+      "mapping": "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+      "caliber": "9x39",
+      "magazine_family": "VSS",
+      "pp_bp_role": "UNKNOWN"
+    },
+    {
+      "path": "Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_20rnd_vss_SP6.et",
+      "guid": "51E9CE2EB27B3DBD",
+      "current_display_name": "VSS magazine 20rnd SP6",
+      "current_description": "VSS magazine 20rnd SP6",
+      "description_key": null,
+      "description_source": "LOCAL_PREFAB",
+      "resolution_chain": [
+        "Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_20rnd_vss_SP6.et"
+      ],
+      "well": "673A6EBFE84A32BE",
+      "max_ammo": 20,
+      "ammo_config": "Configs/Weapons/Ammo/armst_Ammo_9x39.conf",
+      "mapping": "1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1",
+      "caliber": "9x39",
+      "magazine_family": "VSS",
+      "pp_bp_role": "UNKNOWN"
+    },
+    {
+      "path": "Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_30rnd_val_SP5.et",
+      "guid": "6C22F58BBF5D6AED",
+      "current_display_name": "VSS magazine 30rnd SP5",
+      "current_description": "VSS magazine 30rnd SP6",
+      "description_key": null,
+      "description_source": "LOCAL_PREFAB",
+      "resolution_chain": [
+        "Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_30rnd_val_SP5.et"
+      ],
+      "well": "65AD272C6CDDD352",
+      "max_ammo": null,
+      "ammo_config": "Configs/Weapons/Ammo/armst_Ammo_9x39.conf",
+      "mapping": "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+      "caliber": "9x39",
+      "magazine_family": "VSS",
+      "pp_bp_role": "UNKNOWN"
+    },
+    {
+      "path": "Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_30rnd_val_SP6.et",
+      "guid": "6CBF1E50EB22F09B",
+      "current_display_name": "VSS magazine 30rnd SP6",
+      "current_description": "VSS magazine 30rnd SP6",
+      "description_key": null,
+      "description_source": "LOCAL_PREFAB",
+      "resolution_chain": [
+        "Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_30rnd_val_SP6.et"
+      ],
+      "well": "673A6EBFEE188D21",
+      "max_ammo": null,
+      "ammo_config": "Configs/Weapons/Ammo/armst_Ammo_9x39.conf",
+      "mapping": "1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1",
+      "caliber": "9x39",
+      "magazine_family": "VSS",
+      "pp_bp_role": "UNKNOWN"
+    },
+    {
+      "path": "Prefabs/Weapons/Magazines/Western/5x56/HKG36/armst_Magazine_556x45_HKG36.et",
+      "guid": "969F6FFF810D2145",
+      "current_display_name": "HKG36 magazine 30rnd",
+      "current_description": "HKG36 magazine 30rnd",
+      "description_key": null,
+      "description_source": "LOCAL_PREFAB",
+      "resolution_chain": [
+        "Prefabs/Weapons/Magazines/Western/5x56/HKG36/armst_Magazine_556x45_HKG36.et"
+      ],
+      "well": "B84706E2BE534676",
+      "max_ammo": null,
+      "ammo_config": "Configs/Weapons/Ammo/ARMST/armst_Ammo_556x45_ARMST.conf",
+      "mapping": "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+      "caliber": "556",
+      "magazine_family": "HKG36",
+      "pp_bp_role": "UNKNOWN"
+    },
+    {
+      "path": "Prefabs/Weapons/Magazines/Western/5x56/HKG36/armst_Magazine_556x45_HKG36_BP.et",
+      "guid": "39C8796C070E44DD",
+      "current_display_name": "HKG36 magazine 30rnd",
+      "current_description": "HKG36 magazine 30rnd",
+      "description_key": null,
+      "description_source": "LOCAL_PREFAB",
+      "resolution_chain": [
+        "Prefabs/Weapons/Magazines/Western/5x56/HKG36/armst_Magazine_556x45_HKG36_BP.et"
+      ],
+      "well": "B84706E2BE534676",
+      "max_ammo": null,
+      "ammo_config": "Configs/Weapons/Ammo/ARMST/armst_Ammo_556x45_ARMST.conf",
+      "mapping": "1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1",
+      "caliber": "556",
+      "magazine_family": "HKG36",
+      "pp_bp_role": "BP"
+    },
+    {
+      "path": "Prefabs/Weapons/Magazines/Western/5x56/SIG550/armst_Magazine_556x45_SIG_550.et",
+      "guid": "E3DC6C2FBBE4F825",
+      "current_display_name": "SIG550 magazine 30rnd",
+      "current_description": "SIG550 magazine 30rnd",
+      "description_key": null,
+      "description_source": "LOCAL_PREFAB",
+      "resolution_chain": [
+        "Prefabs/Weapons/Magazines/Western/5x56/SIG550/armst_Magazine_556x45_SIG_550.et"
+      ],
+      "well": null,
+      "max_ammo": null,
+      "ammo_config": "Configs/Weapons/Ammo/ARMST/armst_Ammo_556x45_ARMST.conf",
+      "mapping": "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+      "caliber": "556",
+      "magazine_family": "SIG550",
+      "pp_bp_role": "UNKNOWN"
+    },
+    {
+      "path": "Prefabs/Weapons/Magazines/Western/5x56/SIG550/armst_Magazine_556x45_SIG_550_BP.et",
+      "guid": "70D7F0AE523E4FFF",
+      "current_display_name": "SIG550 magazine 30rnd",
+      "current_description": "SIG550 magazine 30rnd",
+      "description_key": null,
+      "description_source": "LOCAL_PREFAB",
+      "resolution_chain": [
+        "Prefabs/Weapons/Magazines/Western/5x56/SIG550/armst_Magazine_556x45_SIG_550_BP.et"
+      ],
+      "well": null,
+      "max_ammo": null,
+      "ammo_config": "Configs/Weapons/Ammo/ARMST/armst_Ammo_556x45_ARMST.conf",
+      "mapping": "1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1",
+      "caliber": "556",
+      "magazine_family": "SIG550",
+      "pp_bp_role": "BP"
+    },
+    {
+      "path": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M193_Ball.et",
+      "guid": "FB5EB0F6D447E859",
+      "current_display_name": "#AR-Magazine_STANAG_Name",
+      "current_description": "#AR-Magazine_STANAG_M193_Description",
+      "description_key": "#AR-Magazine_STANAG_M193_Description",
+      "description_source": "LOCAL_PREFAB",
+      "resolution_chain": [
+        "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M193_Ball.et"
+      ],
+      "well": null,
+      "max_ammo": null,
+      "ammo_config": "Configs/Weapons/Ammo/ARMST/armst_Ammo_556x45_ARMST.conf",
+      "mapping": "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+      "caliber": "556",
+      "magazine_family": "STANAG",
+      "pp_bp_role": "PP"
+    },
+    {
+      "path": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M193_Ball_BP.et",
+      "guid": "A277B4BFA07E47CF",
+      "current_display_name": "#AR-Magazine_STANAG_Name",
+      "current_description": "#AR-Magazine_STANAG_M193_Description",
+      "description_key": "#AR-Magazine_STANAG_M193_Description",
+      "description_source": "LOCAL_PREFAB",
+      "resolution_chain": [
+        "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M193_Ball_BP.et"
+      ],
+      "well": null,
+      "max_ammo": null,
+      "ammo_config": "Configs/Weapons/Ammo/ARMST/armst_Ammo_556x45_ARMST.conf",
+      "mapping": "1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1",
+      "caliber": "556",
+      "magazine_family": "STANAG",
+      "pp_bp_role": "BP"
+    },
+    {
+      "path": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M855_Ball.et",
+      "guid": "2EBF60EF24B108FC",
+      "current_display_name": null,
+      "current_description": null,
+      "description_key": null,
+      "description_source": "EXTERNAL_PARENT",
+      "resolution_chain": [
+        "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M855_Ball.et"
+      ],
+      "well": null,
+      "max_ammo": null,
+      "ammo_config": "Configs/Weapons/Ammo/ARMST/armst_Ammo_556x45_ARMST.conf",
+      "mapping": "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+      "caliber": "556",
+      "magazine_family": "STANAG",
+      "pp_bp_role": "PP"
+    },
+    {
+      "path": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M855_Ball_BP.et",
+      "guid": "DDF6F15392E84746",
+      "current_display_name": null,
+      "current_description": null,
+      "description_key": null,
+      "description_source": "EXTERNAL_PARENT",
+      "resolution_chain": [
+        "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M855_Ball_BP.et"
+      ],
+      "well": null,
+      "max_ammo": null,
+      "ammo_config": "Configs/Weapons/Ammo/ARMST/armst_Ammo_556x45_ARMST.conf",
+      "mapping": "1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1",
+      "caliber": "556",
+      "magazine_family": "STANAG",
+      "pp_bp_role": "BP"
+    },
+    {
+      "path": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/Magazine_556x45_STANAG_30rnd_Base.et",
+      "guid": "11B9CC1FB4AEE740",
+      "current_display_name": null,
+      "current_description": null,
+      "description_key": null,
+      "description_source": "EXTERNAL_PARENT",
+      "resolution_chain": [
+        "Prefabs/Weapons/Magazines/Western/5x56/STANAG/Magazine_556x45_STANAG_30rnd_Base.et"
+      ],
+      "well": "5534745C44D1EF26",
+      "max_ammo": 30,
+      "ammo_config": "Configs/Weapons/Ammo/ARMST/armst_Ammo_556x45_ARMST.conf",
+      "mapping": "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+      "caliber": "556",
+      "magazine_family": "STANAG",
+      "pp_bp_role": "PP"
+    },
+    {
+      "path": "Prefabs/Weapons/Magazines/Western/762x51/HK3/armst_Magazine_762x51_HK3_20_M80_Ball.et",
+      "guid": "6D18CC33708EE713",
+      "current_display_name": "HK3 magazine 20rnd",
+      "current_description": "HK3 magazine 20rnd",
+      "description_key": null,
+      "description_source": "LOCAL_PREFAB",
+      "resolution_chain": [
+        "Prefabs/Weapons/Magazines/Western/762x51/HK3/armst_Magazine_762x51_HK3_20_M80_Ball.et"
+      ],
+      "well": "84B5988DEAD14CBB",
+      "max_ammo": null,
+      "ammo_config": "Configs/Weapons/Ammo/ARMST/armst_Ammo_762x51_ARMST.conf",
+      "mapping": "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+      "caliber": "762x51",
+      "magazine_family": "HK3",
+      "pp_bp_role": "PP"
+    },
+    {
+      "path": "Prefabs/Weapons/Magazines/Western/762x51/HK3/armst_Magazine_762x51_HK3_20_M80_Ball_BP.et",
+      "guid": "263A4BF691DC4E33",
+      "current_display_name": "HK3 magazine 20rnd",
+      "current_description": "HK3 magazine 20rnd",
+      "description_key": null,
+      "description_source": "LOCAL_PREFAB",
+      "resolution_chain": [
+        "Prefabs/Weapons/Magazines/Western/762x51/HK3/armst_Magazine_762x51_HK3_20_M80_Ball_BP.et"
+      ],
+      "well": "84B5988DEAD14CBB",
+      "max_ammo": null,
+      "ammo_config": "Configs/Weapons/Ammo/ARMST/armst_Ammo_762x51_ARMST.conf",
+      "mapping": "1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1",
+      "caliber": "762x51",
+      "magazine_family": "HK3",
+      "pp_bp_role": "BP"
+    },
+    {
+      "path": "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_20_M80_Ball.et",
+      "guid": "AA9A48AAEE6E4F1B",
+      "current_display_name": "L1A1 magazine 20rnd",
+      "current_description": "L1A1 magazine 20rnd",
+      "description_key": null,
+      "description_source": "LOCAL_PREFAB",
+      "resolution_chain": [
+        "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_20_M80_Ball.et"
+      ],
+      "well": "0CF340C642E3435B",
+      "max_ammo": null,
+      "ammo_config": "Configs/Weapons/Ammo/ARMST/armst_Ammo_762x51_ARMST.conf",
+      "mapping": "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+      "caliber": "762x51",
+      "magazine_family": "L1A1",
+      "pp_bp_role": "PP"
+    },
+    {
+      "path": "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_20_M80_Ball_BP.et",
+      "guid": "9EEBB92B6CEA45E0",
+      "current_display_name": "L1A1 magazine 20rnd",
+      "current_description": "L1A1 magazine 20rnd",
+      "description_key": null,
+      "description_source": "LOCAL_PREFAB",
+      "resolution_chain": [
+        "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_20_M80_Ball_BP.et"
+      ],
+      "well": "0CF340C642E3435B",
+      "max_ammo": null,
+      "ammo_config": "Configs/Weapons/Ammo/ARMST/armst_Ammo_762x51_ARMST.conf",
+      "mapping": "1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1",
+      "caliber": "762x51",
+      "magazine_family": "L1A1",
+      "pp_bp_role": "BP"
+    },
+    {
+      "path": "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_30_M80_Ball.et",
+      "guid": "531AA7DB88D84184",
+      "current_display_name": null,
+      "current_description": null,
+      "description_key": null,
+      "description_source": "EXTERNAL_PARENT",
+      "resolution_chain": [
+        "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_30_M80_Ball.et"
+      ],
+      "well": null,
+      "max_ammo": 30,
+      "ammo_config": "Configs/Weapons/Ammo/ARMST/armst_Ammo_762x51_ARMST.conf",
+      "mapping": "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+      "caliber": "762x51",
+      "magazine_family": "L1A1",
+      "pp_bp_role": "PP"
+    },
+    {
+      "path": "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_30_M80_Ball_BP.et",
+      "guid": "8046F3CFD92D43BA",
+      "current_display_name": null,
+      "current_description": null,
+      "description_key": null,
+      "description_source": "EXTERNAL_PARENT",
+      "resolution_chain": [
+        "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_30_M80_Ball_BP.et"
+      ],
+      "well": null,
+      "max_ammo": 30,
+      "ammo_config": "Configs/Weapons/Ammo/ARMST/armst_Ammo_762x51_ARMST.conf",
+      "mapping": "1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1",
+      "caliber": "762x51",
+      "magazine_family": "L1A1",
+      "pp_bp_role": "BP"
+    },
+    {
+      "path": "Prefabs/Weapons/Magazines/Western/9x19/M9/armst_Magazine_9x19_M9_15rnd_Ball.et",
+      "guid": "9C05543A503DB80E",
+      "current_display_name": "#AR-Magazine_BerettaM9_Name",
+      "current_description": null,
+      "description_key": null,
+      "description_source": "LOCAL_PREFAB",
+      "resolution_chain": [
+        "Prefabs/Weapons/Magazines/Western/9x19/M9/armst_Magazine_9x19_M9_15rnd_Ball.et"
+      ],
+      "well": null,
+      "max_ammo": null,
+      "ammo_config": "Configs/Weapons/Ammo/ARMST/armst_Ammo_9x19_ARMST.conf",
+      "mapping": "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+      "caliber": "9x19",
+      "magazine_family": "M9",
+      "pp_bp_role": "PP"
+    },
+    {
+      "path": "Prefabs/Weapons/Magazines/Western/9x19/M9/armst_Magazine_9x19_M9_15rnd_Ball_BP.et",
+      "guid": "4BF437F81CEE4039",
+      "current_display_name": "#AR-Magazine_BerettaM9_Name",
+      "current_description": null,
+      "description_key": null,
+      "description_source": "LOCAL_PREFAB",
+      "resolution_chain": [
+        "Prefabs/Weapons/Magazines/Western/9x19/M9/armst_Magazine_9x19_M9_15rnd_Ball_BP.et"
+      ],
+      "well": null,
+      "max_ammo": null,
+      "ammo_config": "Configs/Weapons/Ammo/ARMST/armst_Ammo_9x19_ARMST.conf",
+      "mapping": "1 1 1 1 1 1 1 1 1 1 1 1 1 1 1",
+      "caliber": "9x19",
+      "magazine_family": "M9",
+      "pp_bp_role": "BP"
+    }
+  ],
+  "shared_keys": {
+    "#AR-Magazine_STANAG_M193_Description": [
+      "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M193_Ball.et",
+      "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M193_Ball_BP.et"
+    ]
+  }
+}

@@ -1,0 +1,52 @@
+[
+    {
+        "Module":  "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et",
+        "AM":  "557E85EEE1B603FA",
+        "AM_Enabled":  true,
+        "Contexts":  1,
+        "PickUp":  0,
+        "AttachInv":  0,
+        "Equip":  1,
+        "Attachement":  0
+    },
+    {
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_Collimator.et",
+        "AM":  "5284E0EFF569AD07",
+        "AM_Enabled":  true,
+        "Contexts":  1,
+        "PickUp":  0,
+        "AttachInv":  1,
+        "Equip":  0,
+        "Attachement":  1
+    },
+    {
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et",
+        "AM":  "-",
+        "AM_Enabled":  false,
+        "Contexts":  0,
+        "PickUp":  0,
+        "AttachInv":  0,
+        "Equip":  0,
+        "Attachement":  0
+    },
+    {
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Optic.et",
+        "AM":  "-",
+        "AM_Enabled":  false,
+        "Contexts":  0,
+        "PickUp":  0,
+        "AttachInv":  0,
+        "Equip":  0,
+        "Attachement":  0
+    },
+    {
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Picatinny.et",
+        "AM":  "557E85EEE1B603FA",
+        "AM_Enabled":  false,
+        "Contexts":  1,
+        "PickUp":  0,
+        "AttachInv":  0,
+        "Equip":  1,
+        "Attachement":  0
+    }
+]

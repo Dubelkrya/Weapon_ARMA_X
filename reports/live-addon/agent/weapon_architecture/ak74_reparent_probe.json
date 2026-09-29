@@ -1,0 +1,215 @@
+{
+ "armst_AK74N.et": {
+  "current_parent": "Rifle_AK74N_base.et",
+  "changed_component_count": 4,
+  "changed": {
+   "A29AE67FF4D82B0F": {
+    "type": "ActionsManagerComponent",
+    "fields": {
+     "UserActionContext": "\"{61FECC7C715A8200}\" {",
+     "Position": "PointInfo \"{61FECC7C11845F16}\" {",
+     "Offset": "-0.02 0.0538 0.0209",
+     "ContextName": "\"optic\""
+    }
+   },
+   "51F080D5C64F12C5": {
+    "type": "Attributes",
+    "fields": {
+     "Name": "\"#AR-Weapon_AK74N_Name\"",
+     "Description": "\"#AR-Weapon_AK74N_Description\""
+    }
+   },
+   "CFBAA4B706BA66E8": {
+    "type": "WeaponComponent",
+    "fields": {
+     "PivotID": "\"slot_optics\"",
+     "InspectionWidgetOffset": "-0.0204 0.0521 0.0168"
+    }
+   },
+   "559E78319D6C8CFA": {
+    "type": "SlotManagerComponent",
+    "fields": {
+     "Slots": "{",
+     "EntitySlotInfo": "Dovetail {",
+     "PivotID": "\"slot_dovetail\"",
+     "Prefab": "\"{D92368B78263A9E0}Prefabs/Weapons/Attachments/Mounts/Dovetail_AK/Dovetail_AK.et\""
+    }
+   }
+  }
+ },
+ "armst_AK74M.et": {
+  "current_parent": "armst_AK74N.et",
+  "changed_component_count": 6,
+  "changed": {
+   "A29AE67FF4D82B0F": {
+    "type": "ActionsManagerComponent",
+    "fields": {
+     "UserActionContext": "\"{61FECC7C715A8200}\" {",
+     "Position": "PointInfo \"{61FECC7C11845F16}\" {",
+     "Offset": "-0.02 0.0538 0.0209",
+     "ContextName": "\"optic\""
+    }
+   },
+   "51F080D5C64F12C5": {
+    "type": "Attributes",
+    "fields": {
+     "Description": "\"#AR-Weapon_AK74N_Description\""
+    }
+   },
+   "CFBAA4B706BA66E8": {
+    "type": "WeaponComponent",
+    "fields": {
+     "PivotID": "\"slot_optics\"",
+     "InspectionWidgetOffset": "-0.0204 0.0521 0.0168",
+     "Offset": "0 0 0.0418"
+    }
+   },
+   "559E78319D6C8CFA": {
+    "type": "SlotManagerComponent",
+    "fields": {
+     "PivotID": "\"slot_dovetail\""
+    }
+   },
+   "65B265034B23979A": {
+    "type": "SCR_EditableEntityComponent",
+    "fields": {
+     "m_aAutoLabels": "+{"
+    }
+   },
+   "65B265034C4E74AA": {
+    "type": "m_UIInfo",
+    "fields": {
+     "m_aAuthoredLabels": "+{"
+    }
+   }
+  }
+ },
+ "armst_AKS.et": {
+  "current_parent": "armst_AK74N.et",
+  "changed_component_count": 5,
+  "changed": {
+   "A29AE67FF4D82B0F": {
+    "type": "ActionsManagerComponent",
+    "fields": {
+     "UserActionContext": "\"{61FECC7C715A8200}\" {",
+     "Position": "PointInfo \"{61FECC7C11845F16}\" {",
+     "Offset": "-0.02 0.0538 0.0209",
+     "ContextName": "\"optic\""
+    }
+   },
+   "CFBAA4B706BA66E8": {
+    "type": "WeaponComponent",
+    "fields": {
+     "PivotID": "\"slot_optics\"",
+     "InspectionWidgetOffset": "-0.0204 0.0521 0.0168",
+     "Offset": "0 0 0.0418"
+    }
+   },
+   "559E78319D6C8CFA": {
+    "type": "SlotManagerComponent",
+    "fields": {
+     "PivotID": "\"slot_dovetail\""
+    }
+   },
+   "65B265034B23979A": {
+    "type": "SCR_EditableEntityComponent",
+    "fields": {
+     "m_aAutoLabels": "+{"
+    }
+   },
+   "65B265034C4E74AA": {
+    "type": "m_UIInfo",
+    "fields": {
+     "m_aAuthoredLabels": "+{"
+    }
+   }
+  }
+ },
+ "armst_AK74M_full.et": {
+  "current_parent": "armst_AK74M.et",
+  "changed_component_count": 9,
+  "changed": {
+   "A29AE67FF4D82B0F": {
+    "type": "ActionsManagerComponent",
+    "fields": {
+     "UserActionContext": "\"{61FECC7C715A8200}\" {",
+     "Position": "PointInfo \"{61FECC7C11845F16}\" {",
+     "Offset": "-0.02 0.0538 0.0209",
+     "ContextName": "\"optic\""
+    }
+   },
+   "51F080D5C64F12C5": {
+    "type": "Attributes",
+    "fields": {
+     "Name": "\"AK-74M\"",
+     "Description": "\"#AR-Weapon_AK74N_Description\""
+    }
+   },
+   "CFBAA4B701F95D69": {
+    "type": "MeshObject",
+    "fields": {
+     "Materials": "{",
+     "MaterialAssignClass": "\"{65B65835F69FCBFF}\" {",
+     "SourceMaterial": "\"AK74_Grip\"",
+     "AssignedMaterial": "\"{6537A24B4FD3FC5A}Assets/Weapons/Rifles/AK74/Data/AK74_Grip.emat\""
+    }
+   },
+   "55349E9229B55E31": {
+    "type": "SCR_MeleeWeaponProperties",
+    "fields": {
+     "m_fDamage": "2"
+    }
+   },
+   "CFBAA4B706BA66E8": {
+    "type": "WeaponComponent",
+    "fields": {
+     "PivotID": "\"slot_optics\"",
+     "InspectionWidgetOffset": "-0.0204 0.0521 0.0168",
+     "Offset": "0 0 0.0418"
+    }
+   },
+   "CC3BA6A2C42F09F4": {
+    "type": "UIInfo",
+    "fields": {
+     "Name": "\"AK-74M\""
+    }
+   },
+   "559E78319D6C8CFA": {
+    "type": "SlotManagerComponent",
+    "fields": {
+     "Slots": "{",
+     "EntitySlotInfo": "hand {",
+     "PivotID": "\"slot_dovetail\"",
+     "Prefab": "\"{FCE52BA4B5789E65}Prefabs/Weapons/Attachments/Handguards/Handguard_AK74M.et\"",
+     "Offset": "0.0043 -0.002 0.0028",
+     "Angles": "-3.1674 0.4868 0"
+    }
+   },
+   "65B265034B23979A": {
+    "type": "SCR_EditableEntityComponent",
+    "fields": {
+     "m_aAutoLabels": "+{"
+    }
+   },
+   "65B265034C4E74AA": {
+    "type": "m_UIInfo",
+    "fields": {
+     "Name": "\"AK-74M\"",
+     "m_aAuthoredLabels": "+{"
+    }
+   }
+  }
+ },
+ "armst_AK105.et": {
+  "current_parent": "armst_AK74.et",
+  "changed_component_count": 1,
+  "changed": {
+   "65B265034C4E74AA": {
+    "type": "m_UIInfo",
+    "fields": {
+     "CONTENT_MODDED": "4141368"
+    }
+   }
+  }
+ }
+}

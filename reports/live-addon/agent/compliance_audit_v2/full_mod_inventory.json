@@ -1,0 +1,37 @@
+{
+    "Scope":  "Authoritative live addon only. agent/ backups and external evidence excluded.",
+    "AddonName":  "ARMST PLATFORM - Weapons",
+    "LiveAddonPath":  "C:\\Users\\yshky\\OneDrive\\Документы\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons",
+    "GeneratedAt":  "2026-09-20 00:19:22",
+    "NonLiveArtifacts":  [
+                             "Assets\\Toz\\1.et - stray TOZ-66 (12ga) scratch prefab kept under Assets; out-of-scope (12ga exception)."
+                         ],
+    "AddonID":  "658C6EB4EF2A8A59",
+    "Totals":  {
+                   "ANIMATION_GRAPH_agr":  20,
+                   "ANIMATION_GRAPH_asi":  41,
+                   "PARTICLE_OTHER":  0,
+                   "SOURCE_MODEL_fbx":  68,
+                   "ResourceFiles":  1197,
+                   "SOUNDS_wav":  20,
+                   "PARTICLES_ptc":  3,
+                   "PREFABS_et":  142,
+                   "PREFABS_underPrefabsDir":  141,
+                   "ANIMATION_GRAPH_agf":  20,
+                   "CONFIGS_conf":  22,
+                   "TEXTURES_edds":  157,
+                   "TEXTURE_XO_txo":  69,
+                   "MODELS_xob":  69,
+                   "SCRIPTS_c":  10,
+                   "TEXTURES_Other":  26,
+                   "ANIMATION_GRAPH_ast":  20,
+                   "TOTAL_RESOURCES":  1197,
+                   "TotalLiveFiles":  2024,
+                   "TEXTURES_txa":  185,
+                   "MetaFiles":  827,
+                   "SOUNDS_acp":  10,
+                   "MATERIALS_emat":  98,
+                   "ANIMATIONS_anm":  181,
+                   "ANIMATION_GRAPH_aw":  20
+               }
+}

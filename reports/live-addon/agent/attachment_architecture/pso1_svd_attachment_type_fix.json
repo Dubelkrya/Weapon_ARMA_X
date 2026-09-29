@@ -1,0 +1,28 @@
+{
+ "TARGET": "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1_ak.et",
+ "issues": [],
+ "GUID": "F325FE2E3DDCDDAD",
+ "TYPE_BEFORE": "AttachmentOpticsDovetailAKSVD",
+ "TYPE_AFTER": "AttachmentOpticsDovetailSVD",
+ "LIVE_REFERENCES_BEFORE": 0,
+ "TYPE_AFTER_PRESENT": true,
+ "OLD_TYPE_PRESENT": false,
+ "GUID_CHANGED": false,
+ "PATH_CHANGED": false,
+ "PARENT_CHANGED": false,
+ "MODEL_CHANGED": false,
+ "SIGHTS_CHANGED": false,
+ "WEAPON_PREFABS_CHANGED": false,
+ "OVERRIDES_CHANGED": 0,
+ "DANGLING_REFS": 0,
+ "UNRELATED_GAMEPLAY_CHANGES": 0,
+ "SOC94_TYPE": "AttachmentOpticsDovetailSVD",
+ "SOC94_TYPE_MATCH": "YES",
+ "CURRENT_ARMST_SVD_TYPE": "AttachmentOpticsDovetailAK",
+ "CURRENT_ARMST_SVD_MATCH": "NO",
+ "AKSVD_OCCURRENCES_AFTER": [],
+ "LIVE_FILES_CHANGED": [
+  "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1_ak.et"
+ ],
+ "STATIC_STATUS": "PASS"
+}

@@ -1,0 +1,166 @@
+{
+ "nine_x39_resources": {
+  "weapons": [
+   [
+    "R",
+    "Prefabs/Weapons/Attachments/Muzzle/armst_Suppressor_9a91.et"
+   ],
+   [
+    "R",
+    "Prefabs/Weapons/Magazines/Russian/9x39/9a91/armst_Magazine_9x39_20rnd_9a91_SP5.et"
+   ],
+   [
+    "R",
+    "Prefabs/Weapons/Magazines/Russian/9x39/9a91/armst_Magazine_9x39_20rnd_9a91_SP6.et"
+   ],
+   [
+    "R",
+    "Prefabs/Weapons/Magazines/Russian/9x39/Groza/armst_Magazine_9x39_Groza_20rnd_SP5.et"
+   ],
+   [
+    "R",
+    "Prefabs/Weapons/Magazines/Russian/9x39/Groza/armst_Magazine_9x39_Groza_20rnd_SP6.et"
+   ],
+   [
+    "R",
+    "Prefabs/Weapons/Russian/Rifle/9a91/armst_Rifle_9a91_base.et"
+   ],
+   [
+    "R",
+    "Prefabs/Weapons/Russian/Rifle/Groza/armst_Groza_base.et"
+   ],
+   [
+    "R",
+    "Prefabs/Weapons/Russian/Rifle/VSK94/armst_Rifle_VSK94_base.et"
+   ]
+  ],
+  "magazines": [
+   [
+    "R",
+    "Prefabs/Weapons/Magazines/Russian/9x39/9a91/armst_Magazine_9x39_20rnd_9a91_SP5.et"
+   ],
+   [
+    "R",
+    "Prefabs/Weapons/Magazines/Russian/9x39/9a91/armst_Magazine_9x39_20rnd_9a91_SP6.et"
+   ],
+   [
+    "R",
+    "Prefabs/Weapons/Magazines/Russian/9x39/Groza/armst_Magazine_9x39_Groza_20rnd_SP5.et"
+   ],
+   [
+    "R",
+    "Prefabs/Weapons/Magazines/Russian/9x39/Groza/armst_Magazine_9x39_Groza_20rnd_SP6.et"
+   ],
+   [
+    "R",
+    "Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_20rnd_vss_SP5.et"
+   ],
+   [
+    "R",
+    "Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_20rnd_vss_SP6.et"
+   ],
+   [
+    "R",
+    "Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_30rnd_val_SP5.et"
+   ],
+   [
+    "R",
+    "Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_30rnd_val_SP6.et"
+   ]
+  ],
+  "configs": [
+   [
+    "R",
+    "Configs/Weapons/Ammo/armst_Ammo_9x39.conf"
+   ],
+   [
+    "S",
+    "Configs/Weapons/AIBallisticTables/AIBT_9x39_AP_SP6.conf"
+   ],
+   [
+    "S",
+    "Configs/Weapons/AIBallisticTables/AIBT_9x39_Ball_SP5.conf"
+   ]
+  ],
+  "projectiles": [
+   [
+    "R",
+    "Prefabs/Weapons/Ammo/Russian/9x39/armst_Ammo_9x39_SP5_Ball.et"
+   ],
+   [
+    "R",
+    "Prefabs/Weapons/Ammo/Russian/9x39/armst_Ammo_9x39_SP6_Ball.et"
+   ],
+   [
+    "V",
+    "Ammo/Ammo_9x39_AP_SP6.et"
+   ],
+   [
+    "V",
+    "Ammo/Ammo_9x39_Ball_SP5.et"
+   ],
+   [
+    "S",
+    "Prefabs/Weapons/Ammo/Ammo_9x39_AP_SP6.et"
+   ],
+   [
+    "S",
+    "Prefabs/Weapons/Ammo/Ammo_9x39_Ball_SP5.et"
+   ]
+  ]
+ },
+ "wrong_545x39_metadata": [
+  {
+   "root": "R",
+   "file": "Prefabs/Weapons/Magazines/Russian/9x39/9a91/armst_Magazine_9x39_20rnd_9a91_SP5.et",
+   "value": "#AR-AmmunitionID_545x39mm",
+   "is_9x39_resource": true
+  },
+  {
+   "root": "R",
+   "file": "Prefabs/Weapons/Magazines/Russian/9x39/9a91/armst_Magazine_9x39_20rnd_9a91_SP6.et",
+   "value": "#AR-AmmunitionID_545x39mm",
+   "is_9x39_resource": true
+  },
+  {
+   "root": "R",
+   "file": "Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_20rnd_vss_SP5.et",
+   "value": "#AR-AmmunitionID_545x39mm",
+   "is_9x39_resource": true
+  },
+  {
+   "root": "R",
+   "file": "Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_20rnd_vss_SP6.et",
+   "value": "#AR-AmmunitionID_545x39mm",
+   "is_9x39_resource": true
+  },
+  {
+   "root": "R",
+   "file": "Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_30rnd_val_SP5.et",
+   "value": "#AR-AmmunitionID_545x39mm",
+   "is_9x39_resource": true
+  },
+  {
+   "root": "R",
+   "file": "Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_30rnd_val_SP6.et",
+   "value": "#AR-AmmunitionID_545x39mm",
+   "is_9x39_resource": true
+  }
+ ],
+ "proven_9x39_metadata_value": "NONE (no #AR-AmmunitionID_9x39mm style key found in live or exported resources; the only 9x39 #AR keys are magazine Description keys)",
+ "pattern_note": "Other calibers use #AR-AmmunitionID_<cal>mm (e.g. #AR-AmmunitionID_9x18mm, #AR-AmmunitionID_762x39mm); the 9x39 equivalent is not present locally.",
+ "field_semantics": "m_sAmmoCaliber is authored inside MagazineComponent>UIInfo MagazineUIInfo (next to m_MagIndicator) = inventory/display metadata for the ammo-type label/filter; NOT gameplay ballistics (ballistics come from projectile/AmmoConfig). Placement evidence only; not runtime-verified.",
+ "confirmed_fix_targets": [
+  "Prefabs/Weapons/Magazines/Russian/9x39/9a91/armst_Magazine_9x39_20rnd_9a91_SP5.et",
+  "Prefabs/Weapons/Magazines/Russian/9x39/9a91/armst_Magazine_9x39_20rnd_9a91_SP6.et",
+  "Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_20rnd_vss_SP5.et",
+  "Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_20rnd_vss_SP6.et",
+  "Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_30rnd_val_SP5.et",
+  "Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_30rnd_val_SP6.et"
+ ],
+ "ambiguous": [],
+ "groza_casing": "OPEN_TECHNICAL_DEBT / NO_PROVEN_9x39_CASING",
+ "groza_new_mags_note": "New Groza SP5/SP6 magazines do NOT set m_sAmmoCaliber (omitted) so they are not affected.",
+ "LIVE_FILES_CHANGED": "NONE",
+ "STATUS": "REVIEW_REQUIRED"
+}

@@ -1,0 +1,182 @@
+{
+ "attachment_prefabs": [
+  {
+   "path": "armst_Optic_PSO1_DovetailRU.et",
+   "guid": "5B318FB72398CB0A",
+   "parent": "{C850A33226B8F9C1}Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et",
+   "model": null,
+   "outer_types": [
+    "AttachmentOpticsARMST_DovetailRU"
+   ],
+   "child_slots": [],
+   "has_sights": false,
+   "used_as_default": false,
+   "meta_present": true
+  },
+  {
+   "path": "Prefabs/Weapons/Attachments/Handguards/armst_Handguard_AK74M2.et",
+   "guid": "7851F29BDAAAD7DB",
+   "parent": "{5E36B9F5B54CDA2E}Prefabs/Weapons/Attachments/Handguards/Handguard_M16_carbine/Handguard_M16_carbine_base.et",
+   "model": "{0E026625889956A3}Assets/AK74m/ak74m_acs.xob",
+   "outer_types": [
+    "AttachmentHandGuardM16"
+   ],
+   "child_slots": [],
+   "has_sights": false,
+   "used_as_default": false,
+   "meta_present": true
+  },
+  {
+   "path": "Prefabs/Weapons/Attachments/Muzzle/armst_Suppressor_9a91.et",
+   "guid": "E10F09941AF1E123",
+   "parent": "{5677861A692ED3EB}Prefabs/Weapons/Attachments/Muzzle/Suppressor_PBS4/Suppressor_PBS4_base.et",
+   "model": "{FDA30A8E857B6324}Assets/Weapons_RUS/9a91/9a91_supprender.xob",
+   "outer_types": [
+    "AttachmentMuzzle9_39_armst"
+   ],
+   "child_slots": [],
+   "has_sights": false,
+   "used_as_default": true,
+   "meta_present": true
+  },
+  {
+   "path": "Prefabs/Weapons/Attachments/Muzzle/Suppressor_PBS4/Suppressor_PBS4_base.et",
+   "guid": "5677861A692ED3EB",
+   "parent": "{491CEF88656BE6C2}Prefabs/Weapons/Core/Suppressor_base.et",
+   "model": null,
+   "outer_types": [
+    "AttachmentSuppressor"
+   ],
+   "child_slots": [],
+   "has_sights": false,
+   "used_as_default": false,
+   "meta_present": true
+  },
+  {
+   "path": "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et",
+   "guid": "C850A33226B8F9C1",
+   "parent": "{AB71C533945104AE}Prefabs/Weapons/Attachments/Optics/Optic_PSO1/Optic_PSO1_base.et",
+   "model": null,
+   "outer_types": [
+    "AttachmentOpticsDovetailAK"
+   ],
+   "child_slots": [],
+   "has_sights": false,
+   "used_as_default": false,
+   "meta_present": true
+  },
+  {
+   "path": "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1_ak.et",
+   "guid": "F325FE2E3DDCDDAD",
+   "parent": "{C850A33226B8F9C1}Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et",
+   "model": null,
+   "outer_types": [
+    "AttachmentOpticsDovetailAKSVD"
+   ],
+   "child_slots": [],
+   "has_sights": false,
+   "used_as_default": false,
+   "meta_present": true
+  },
+  {
+   "path": "Prefabs/Weapons/Attachments/Optics/WeaponOptic_Base.et",
+   "guid": "966B4E5523D2F166",
+   "parent": "{3E15C1C882DBB587}Prefabs/Weapons/Core/WeaponSight_Base.et",
+   "model": null,
+   "outer_types": [],
+   "child_slots": [],
+   "has_sights": false,
+   "used_as_default": false,
+   "meta_present": true
+  },
+  {
+   "path": "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Optic.et",
+   "guid": "966B4E5523D2F166",
+   "parent": "{966B4E5523D2F166}Prefabs/Weapons/Attachments/Optics/WeaponOptic_Base.et",
+   "model": "{9CF0737D5CB7F17D}Assets/Weapons_NATO/HKG36/HKG36_Plank.xob",
+   "outer_types": [
+    "AttachmentOpticsG36"
+   ],
+   "child_slots": [],
+   "has_sights": true,
+   "used_as_default": false,
+   "meta_present": false
+  },
+  {
+   "path": "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Picatinny.et",
+   "guid": "8965EFD9F6CC9B95",
+   "parent": "{C3DAB8D1B6068170}Prefabs/Weapons/Core/WeaponPart_Base.et",
+   "model": "{3F231402B4C00493}Assets/Weapons_NATO/HKG36/Plank_Pika.xob",
+   "outer_types": [
+    "AttachmentOpticsG36"
+   ],
+   "child_slots": [
+    {
+     "instance": "A92E9A7AB757674E",
+     "slot": "optics",
+     "type": "AttachmentOpticsRIS1913",
+     "pivot": "slot_optics",
+     "child_pivot": "snap_weapon",
+     "offset": null,
+     "enabled": "1",
+     "show_inspection": "1",
+     "default_prefab": null,
+     "default_resolved": null
+    }
+   ],
+   "has_sights": false,
+   "used_as_default": false,
+   "meta_present": true
+  },
+  {
+   "path": "Prefabs/Weapons/Attachments/Stocks/armst_Handguard_AK74M.et",
+   "guid": "FCE52BA4B5789E65",
+   "parent": "{5E36B9F5B54CDA2E}Prefabs/Weapons/Attachments/Handguards/Handguard_M16_carbine/Handguard_M16_carbine_base.et",
+   "model": "{FFB27257CF22782F}Assets/AK74m/ak74m_acs2.xob",
+   "outer_types": [
+    "AttachmentHandGuardM16"
+   ],
+   "child_slots": [],
+   "has_sights": false,
+   "used_as_default": false,
+   "meta_present": true
+  },
+  {
+   "path": "Prefabs/Weapons/Attachments/Stocks/armst_Handguard_AKS.et",
+   "guid": "31E8EF2214161A25",
+   "parent": "{5E36B9F5B54CDA2E}Prefabs/Weapons/Attachments/Handguards/Handguard_M16_carbine/Handguard_M16_carbine_base.et",
+   "model": "{23AEA862685B1812}Assets/addons/stocks/STOCK_SMALL.xob",
+   "outer_types": [
+    "AttachmentHandGuardM16"
+   ],
+   "child_slots": [],
+   "has_sights": false,
+   "used_as_default": false,
+   "meta_present": true
+  },
+  {
+   "path": "Prefabs/Weapons/Attachments/Stocks/armst_Stock_akm.et",
+   "guid": "B0E764B069F6A153",
+   "parent": "{2DBBEA8AE9BD2C36}Prefabs/Weapons/Attachments/Stocks/Stock_VZ58/Stock_VZ58_base.et",
+   "model": "{258515D10E89D62F}Assets/akm/akm_stock.xob",
+   "outer_types": [
+    "AttachmentStockVz58"
+   ],
+   "child_slots": [],
+   "has_sights": false,
+   "used_as_default": false,
+   "meta_present": true
+  },
+  {
+   "path": "Prefabs/Weapons/Attachments/Underbarrel/armst_UGL_GP25.et",
+   "guid": "1ABABE3551512B0A",
+   "parent": "{8A820ADCE8D05357}Prefabs/Weapons/Core/UGL_Base.et",
+   "model": null,
+   "outer_types": [],
+   "child_slots": [],
+   "has_sights": false,
+   "used_as_default": false,
+   "meta_present": true
+  }
+ ]
+}

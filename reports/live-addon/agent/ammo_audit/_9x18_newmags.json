@@ -1,0 +1,27 @@
+{
+ "PM_PP": {
+  "path": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball_PP.et",
+  "guid": "75B5C65F2DA68A01",
+  "capacity": 8,
+  "mapping": "0x8"
+ },
+ "PM_BP": {
+  "path": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball_BP.et",
+  "guid": "44EF59B51DB21EA9",
+  "capacity": 8,
+  "mapping": "1x8"
+ },
+ "APB_BP": {
+  "path": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_APB_20rnd_Ball_BP.et",
+  "guid": "A67F38168B64541A",
+  "capacity": 20,
+  "mapping": "1x20"
+ },
+ "PP91_BP": {
+  "path": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PP91_30rnd_Ball_BP.et",
+  "guid": "318796D9FD213751",
+  "capacity": 30,
+  "mapping": "1x30"
+ },
+ "PM_DEFAULT": "{75B5C65F2DA68A01}Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball_PP.et"
+}

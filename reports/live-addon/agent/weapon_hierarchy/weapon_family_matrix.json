@@ -1,0 +1,335 @@
+{
+  "schema_version": 1,
+  "family_count": 22,
+  "families": [
+    {
+      "number": 1,
+      "family_root": "Prefabs/Weapons/Core/Grenade_Base.et",
+      "root_guid": "D7EB24176E5CEAA6",
+      "member_count": 1,
+      "leaf_count": 0,
+      "max_local_depth": 0,
+      "external_boundary": true,
+      "core_connected": false,
+      "shared_base_count": 0,
+      "structural_attributes": [
+        "EXTERNAL_BOUNDARY_FAMILY"
+      ]
+    },
+    {
+      "number": 2,
+      "family_root": "Prefabs/Weapons/Core/Weapon_Base.et",
+      "root_guid": "E1F14DB52DBFBC57",
+      "member_count": 10,
+      "leaf_count": 5,
+      "max_local_depth": 4,
+      "external_boundary": false,
+      "core_connected": true,
+      "shared_base_count": 2,
+      "structural_attributes": [
+        "LOCAL_BASE_WITH_LEAVES",
+        "MULTI_LEVEL_LOCAL_CHAIN",
+        "SHARED_INTERMEDIATE_BASE",
+        "CORE_CONNECTED"
+      ]
+    },
+    {
+      "number": 3,
+      "family_root": "Prefabs/Weapons/Handguns/armst_Handgun_Knife_base.et",
+      "root_guid": "26ADE11C416B3840",
+      "member_count": 1,
+      "leaf_count": 0,
+      "max_local_depth": 0,
+      "external_boundary": true,
+      "core_connected": false,
+      "shared_base_count": 0,
+      "structural_attributes": [
+        "EXTERNAL_BOUNDARY_FAMILY"
+      ]
+    },
+    {
+      "number": 4,
+      "family_root": "Prefabs/Weapons/Handguns/armst_M9.et",
+      "root_guid": "1353C6EAD1DCFE43",
+      "member_count": 1,
+      "leaf_count": 1,
+      "max_local_depth": 0,
+      "external_boundary": true,
+      "core_connected": false,
+      "shared_base_count": 0,
+      "structural_attributes": [
+        "SINGLE_LEAF_EXTERNAL",
+        "EXTERNAL_BOUNDARY_FAMILY"
+      ]
+    },
+    {
+      "number": 5,
+      "family_root": "Prefabs/Weapons/Handguns/armst_PM.et",
+      "root_guid": "C0F7DD85A86B2900",
+      "member_count": 5,
+      "leaf_count": 3,
+      "max_local_depth": 2,
+      "external_boundary": true,
+      "core_connected": false,
+      "shared_base_count": 1,
+      "structural_attributes": [
+        "MULTI_LEVEL_LOCAL_CHAIN",
+        "SHARED_INTERMEDIATE_BASE",
+        "EXTERNAL_BOUNDARY_FAMILY"
+      ]
+    },
+    {
+      "number": 6,
+      "family_root": "Prefabs/Weapons/MachineGuns/armst_PKM.et",
+      "root_guid": "A89BC9D55FFB4CD8",
+      "member_count": 1,
+      "leaf_count": 1,
+      "max_local_depth": 0,
+      "external_boundary": true,
+      "core_connected": false,
+      "shared_base_count": 0,
+      "structural_attributes": [
+        "SINGLE_LEAF_EXTERNAL",
+        "EXTERNAL_BOUNDARY_FAMILY"
+      ]
+    },
+    {
+      "number": 7,
+      "family_root": "Prefabs/Weapons/MachineGuns/armst_RPK74.et",
+      "root_guid": "A7AF84C6C58BA3E8",
+      "member_count": 1,
+      "leaf_count": 1,
+      "max_local_depth": 0,
+      "external_boundary": true,
+      "core_connected": false,
+      "shared_base_count": 0,
+      "structural_attributes": [
+        "SINGLE_LEAF_EXTERNAL",
+        "EXTERNAL_BOUNDARY_FAMILY"
+      ]
+    },
+    {
+      "number": 8,
+      "family_root": "Prefabs/Weapons/Rifles/9a91/armst_Rifle_9a91_base.et",
+      "root_guid": "E2D8F39AE1B9B8F1",
+      "member_count": 1,
+      "leaf_count": 0,
+      "max_local_depth": 0,
+      "external_boundary": true,
+      "core_connected": false,
+      "shared_base_count": 0,
+      "structural_attributes": [
+        "EXTERNAL_BOUNDARY_FAMILY"
+      ]
+    },
+    {
+      "number": 9,
+      "family_root": "Prefabs/Weapons/Rifles/AK74/armst_AK74.et",
+      "root_guid": "FA5C25BF66A53DCF",
+      "member_count": 2,
+      "leaf_count": 1,
+      "max_local_depth": 1,
+      "external_boundary": true,
+      "core_connected": false,
+      "shared_base_count": 0,
+      "structural_attributes": [
+        "EXTERNAL_BOUNDARY_FAMILY"
+      ]
+    },
+    {
+      "number": 10,
+      "family_root": "Prefabs/Weapons/Rifles/AK74/armst_AK74N.et",
+      "root_guid": "96DFD2E7E63B3386",
+      "member_count": 4,
+      "leaf_count": 2,
+      "max_local_depth": 2,
+      "external_boundary": true,
+      "core_connected": false,
+      "shared_base_count": 1,
+      "structural_attributes": [
+        "MULTI_LEVEL_LOCAL_CHAIN",
+        "SHARED_INTERMEDIATE_BASE",
+        "EXTERNAL_BOUNDARY_FAMILY"
+      ]
+    },
+    {
+      "number": 11,
+      "family_root": "Prefabs/Weapons/Rifles/AK74/armst_AKS74U.et",
+      "root_guid": "BFEA719491610A45",
+      "member_count": 1,
+      "leaf_count": 1,
+      "max_local_depth": 0,
+      "external_boundary": true,
+      "core_connected": false,
+      "shared_base_count": 0,
+      "structural_attributes": [
+        "SINGLE_LEAF_EXTERNAL",
+        "EXTERNAL_BOUNDARY_FAMILY"
+      ]
+    },
+    {
+      "number": 12,
+      "family_root": "Prefabs/Weapons/Rifles/AK74/armst_AKS74UN.et",
+      "root_guid": "FA0E25CE35EE945F",
+      "member_count": 1,
+      "leaf_count": 1,
+      "max_local_depth": 0,
+      "external_boundary": true,
+      "core_connected": false,
+      "shared_base_count": 0,
+      "structural_attributes": [
+        "SINGLE_LEAF_EXTERNAL",
+        "EXTERNAL_BOUNDARY_FAMILY"
+      ]
+    },
+    {
+      "number": 13,
+      "family_root": "Prefabs/Weapons/Rifles/Shotgun/armst_shotgun_base.et",
+      "root_guid": "6C5E2009CDCD0BD3",
+      "member_count": 9,
+      "leaf_count": 7,
+      "max_local_depth": 2,
+      "external_boundary": true,
+      "core_connected": false,
+      "shared_base_count": 2,
+      "structural_attributes": [
+        "LOCAL_BASE_WITH_LEAVES",
+        "MULTI_LEVEL_LOCAL_CHAIN",
+        "SHARED_INTERMEDIATE_BASE",
+        "EXTERNAL_BOUNDARY_FAMILY"
+      ]
+    },
+    {
+      "number": 14,
+      "family_root": "Prefabs/Weapons/Rifles/VAL/armst_Rifle_val_base.et",
+      "root_guid": "F25D16BD5F748372",
+      "member_count": 1,
+      "leaf_count": 0,
+      "max_local_depth": 0,
+      "external_boundary": true,
+      "core_connected": false,
+      "shared_base_count": 0,
+      "structural_attributes": [
+        "EXTERNAL_BOUNDARY_FAMILY"
+      ]
+    },
+    {
+      "number": 15,
+      "family_root": "Prefabs/Weapons/Rifles/VSK94/armst_Rifle_VSK94_base.et",
+      "root_guid": "6005623D3AA5F5C2",
+      "member_count": 1,
+      "leaf_count": 0,
+      "max_local_depth": 0,
+      "external_boundary": true,
+      "core_connected": false,
+      "shared_base_count": 0,
+      "structural_attributes": [
+        "EXTERNAL_BOUNDARY_FAMILY"
+      ]
+    },
+    {
+      "number": 16,
+      "family_root": "Prefabs/Weapons/Rifles/VSS/armst_Rifle_vss_base.et",
+      "root_guid": "902A79E4B2A66E63",
+      "member_count": 1,
+      "leaf_count": 0,
+      "max_local_depth": 0,
+      "external_boundary": true,
+      "core_connected": false,
+      "shared_base_count": 0,
+      "structural_attributes": [
+        "EXTERNAL_BOUNDARY_FAMILY"
+      ]
+    },
+    {
+      "number": 17,
+      "family_root": "Prefabs/Weapons/Rifles/armst_AEK971_test_v11.et",
+      "root_guid": "AC198EAC9BDD9841",
+      "member_count": 1,
+      "leaf_count": 1,
+      "max_local_depth": 0,
+      "external_boundary": true,
+      "core_connected": false,
+      "shared_base_count": 0,
+      "structural_attributes": [
+        "SINGLE_LEAF_EXTERNAL",
+        "EXTERNAL_BOUNDARY_FAMILY"
+      ]
+    },
+    {
+      "number": 18,
+      "family_root": "Prefabs/Weapons/Rifles/armst_Rifle_M16A2.et",
+      "root_guid": "3E413771E1834D2F",
+      "member_count": 5,
+      "leaf_count": 4,
+      "max_local_depth": 1,
+      "external_boundary": true,
+      "core_connected": false,
+      "shared_base_count": 1,
+      "structural_attributes": [
+        "SHARED_INTERMEDIATE_BASE",
+        "EXTERNAL_BOUNDARY_FAMILY"
+      ]
+    },
+    {
+      "number": 19,
+      "family_root": "Prefabs/Weapons/Rifles/armst_Rifle_M16A2_carbine.et",
+      "root_guid": "F97A4AC994231900",
+      "member_count": 1,
+      "leaf_count": 1,
+      "max_local_depth": 0,
+      "external_boundary": true,
+      "core_connected": false,
+      "shared_base_count": 0,
+      "structural_attributes": [
+        "SINGLE_LEAF_EXTERNAL",
+        "EXTERNAL_BOUNDARY_FAMILY"
+      ]
+    },
+    {
+      "number": 20,
+      "family_root": "Prefabs/Weapons/Rifles/armst_SVD.et",
+      "root_guid": "3EB02CDAD5F23C82",
+      "member_count": 1,
+      "leaf_count": 1,
+      "max_local_depth": 0,
+      "external_boundary": true,
+      "core_connected": false,
+      "shared_base_count": 0,
+      "structural_attributes": [
+        "SINGLE_LEAF_EXTERNAL",
+        "EXTERNAL_BOUNDARY_FAMILY"
+      ]
+    },
+    {
+      "number": 21,
+      "family_root": "Prefabs/Weapons/Rifles/armst_VZ58P.et",
+      "root_guid": "9C948630078D154D",
+      "member_count": 1,
+      "leaf_count": 1,
+      "max_local_depth": 0,
+      "external_boundary": true,
+      "core_connected": false,
+      "shared_base_count": 0,
+      "structural_attributes": [
+        "SINGLE_LEAF_EXTERNAL",
+        "EXTERNAL_BOUNDARY_FAMILY"
+      ]
+    },
+    {
+      "number": 22,
+      "family_root": "Prefabs/Weapons/Rifles/armst_VZ58V.et",
+      "root_guid": "443CEFF17E040B11",
+      "member_count": 1,
+      "leaf_count": 1,
+      "max_local_depth": 0,
+      "external_boundary": true,
+      "core_connected": false,
+      "shared_base_count": 0,
+      "structural_attributes": [
+        "SINGLE_LEAF_EXTERNAL",
+        "EXTERNAL_BOUNDARY_FAMILY"
+      ]
+    }
+  ]
+}

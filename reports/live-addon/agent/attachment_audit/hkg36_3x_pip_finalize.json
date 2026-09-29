@@ -1,0 +1,85 @@
+{
+ "PIP_COMPONENT": "SCR_2DPIPSightsComponent {SightsComponent instance}",
+ "MAGNIFICATION": "3x",
+ "FOV": "4 degrees",
+ "ENGINE_FIELDS": {
+  "m_fBaseZoom": 3,
+  "m_fZoomMax": 3,
+  "m_fMagnification": 3,
+  "m_fReticleBaseZoom": 3,
+  "m_fObjectiveFov": 4,
+  "m_fInterpolationSpeed": 50,
+  "m_eZeroingType": "EPZ_RETICLE_OFFSET",
+  "m_iOpticDOFDistanceScale": 30
+ },
+ "PIP_MATERIAL": "{271341545D2AA982}Assets/Weapons_NATO/HKG36/data/Optic_pip.emat (AlbedoMap \"$rendertarget\")",
+ "RETICLE_CANDIDATES": [
+  "UI/Textures/Sights/PSO1/PSO1_white_solid_UI.edds (PSO1-specific)",
+  "UI/Textures/Sights/4x20/4x202048_UI.edds (4x20-specific)",
+  "UI/Textures/Sights/AP2k/... (AP2k collimator)",
+  "UI/Textures/Sights/ARTII/ARTII_UI.edds (ARTII-specific)",
+  "UI/Textures/Sights/PGO7/PGO7_white_solid_UI.edds (PGO7-specific)",
+  "UI/Textures/Sights/UK59_4x8/UK59_4x8_white_solid_UI.edds (UK59-specific)",
+  "UI/Textures/Sights/1P29/1P29_black_solid_UI.edds (1P29-specific)",
+  "SPP reticles (SPP-specific)",
+  "mortar reticles MPM44/M64A1 (mortar-specific)"
+ ],
+ "RETICLE_SELECTED": null,
+ "RETICLE_ASSET_REQUIRED": "YES",
+ "RANGES": "200/400/600/800 (preserved; default index 1)",
+ "UPPER_REFLEX": "DEFERRED",
+ "G36_DEFAULT_PREFAB_INSTALLED": "NO",
+ "G36_LOCAL_SIGHTS": "DISABLED (Enabled 0, unchanged)",
+ "OTHER_G36_GAMEPLAY_CHANGES": 0,
+ "OTHER_WEAPONS_CHANGED": 0,
+ "GUID_COLLISIONS": 0,
+ "DANGLING_REFS": 0,
+ "checks": {
+  "class": true,
+  "magnification_3": true,
+  "objective_fov_4": true,
+  "base_zoom_3": true,
+  "zoommax_3": true,
+  "reticle_base_zoom_3": true,
+  "hkg36_pip_material": true,
+  "ranges_preserved": true,
+  "default_index_1": true,
+  "pivot_w_sight": true,
+  "dof_30": true,
+  "reticle_texture_absent": true,
+  "braces": true,
+  "guid_same": true
+ },
+ "LIVE_FILES_CHANGED": "1 attachment prefab (structure finalized; not installed)",
+ "STATUS": "REVIEW_REQUIRED",
+ "ranges_offsets_proven": [
+  [
+   "0.213",
+   "200"
+  ],
+  [
+   "0.314",
+   "300"
+  ],
+  [
+   "0.44",
+   "400"
+  ],
+  [
+   "0.59",
+   "500"
+  ],
+  [
+   "0.76",
+   "600"
+  ],
+  [
+   "0.927",
+   "700"
+  ],
+  [
+   "0.995",
+   "800"
+  ]
+ ]
+}

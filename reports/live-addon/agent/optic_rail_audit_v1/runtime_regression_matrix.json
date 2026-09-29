@@ -1,0 +1,40 @@
+{
+    "Priority":  [
+                     {
+                         "P":  "P0",
+                         "Test":  "AKM Dovetail -\u003e AKDovetail -\u003e armst_Optic_Collimator (attach + ADS)",
+                         "Status":  "CURRENTLY_FAILING/UNSAT",
+                         "Runtime":  "NOT_TESTED"
+                     },
+                     {
+                         "P":  "P0",
+                         "Test":  "HKG36 handle \"Heavy\" pickup after physical-profile fix",
+                         "Status":  "CURRENTLY_FAILING (Heavy)",
+                         "Runtime":  "NOT_TESTED"
+                     },
+                     {
+                         "P":  "P1",
+                         "Test":  "Adapter world pickup (AKDovetail)",
+                         "Status":  "FIXED-STATIC",
+                         "Runtime":  "NOT_TESTED"
+                     },
+                     {
+                         "P":  "P2",
+                         "Test":  "PSO on AKM_full/AK74M_full PIP",
+                         "Status":  "FROZEN",
+                         "Runtime":  "HISTORIC_PASS"
+                     },
+                     {
+                         "P":  "P2",
+                         "Test":  "1P29 ATTACH",
+                         "Status":  "FROZEN",
+                         "Runtime":  "HISTORIC_PASS"
+                     },
+                     {
+                         "P":  "P3",
+                         "Test":  "G36 carry handle factory vs picatinny chain",
+                         "Status":  "OPEN",
+                         "Runtime":  "NOT_TESTED"
+                     }
+                 ]
+}

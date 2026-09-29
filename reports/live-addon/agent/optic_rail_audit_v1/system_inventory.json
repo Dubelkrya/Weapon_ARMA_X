@@ -1,0 +1,30 @@
+{
+    "Generated":  "2026-09-21 18:10:08",
+    "PrefabsLoaded":  142,
+    "Roles":  [
+                  {
+                      "Role":  "OTHER",
+                      "Count":  105
+                  },
+                  {
+                      "Role":  "ADAPTER",
+                      "Count":  2
+                  },
+                  {
+                      "Role":  "COLLIMATOR_MODULE",
+                      "Count":  1
+                  },
+                  {
+                      "Role":  "OPTIC_MODULE",
+                      "Count":  1
+                  },
+                  {
+                      "Role":  "IRON_SIGHT_SYSTEM",
+                      "Count":  21
+                  },
+                  {
+                      "Role":  "HOST_ONLY",
+                      "Count":  12
+                  }
+              ]
+}

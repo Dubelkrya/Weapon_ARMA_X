@@ -1,0 +1,62 @@
+{
+ "AttachmentOpticsARMST_DovetailRU": {
+  "DEFINITION": "ARMST:Scripts/Gamecode/Attachment_optic.c (lines 11-19)",
+  "BASE": "AttachmentOptics",
+  "ORIGIN": "ADDON_DEFINED",
+  "BODY": [
+   "class AttachmentOpticsARMST_DovetailRUClass {};",
+   "AttachmentOpticsARMST_DovetailRUClass AttachmentOpticsARMST_DovetailRUSource;",
+   "class AttachmentOpticsARMST_DovetailRU : AttachmentOptics {};"
+  ],
+  "COMMENTS": "// ARMST Russian / Soviet side-rail compatibility",
+  "LIVE_REFERENCES": [
+   "Scripts/Gamecode/Attachment_optic.c (definition only)"
+  ],
+  "LIVE_WEAPON_SLOTS": 0,
+  "ATTACHMENT_PREFABS_USING": 0,
+  "CHILD_CLASSES": 0,
+  "LIVE_CHILD_USAGE": 0,
+  "SCRIPT_DEPENDENCIES": 0,
+  "RESOURCE_BACKED": "PURE_SCRIPT_CLASS",
+  "CLASSIFICATION": "SAFE_REMOVE_ADDON_ORPHAN"
+ },
+ "AttachmentOpticsDovetailAKSVD": {
+  "DEFINITION": null,
+  "BASE": null,
+  "ORIGIN": "NOT_FOUND",
+  "LIVE_REFERENCES": [],
+  "LIVE_WEAPON_SLOTS": 0,
+  "ATTACHMENT_PREFABS_USING": 0,
+  "CHILD_CLASSES": 0,
+  "LIVE_CHILD_USAGE": 0,
+  "SCRIPT_DEPENDENCIES": 0,
+  "RESOURCE_BACKED": "N/A (no definition, no resource)",
+  "NOTE": "Undefined type; was only ever referenced by the now-corrected armst_Optic_PSO1_ak.et. No definition/refs remain anywhere (ARMST/Weapon_ARMA_X/VanillaSources).",
+  "CLASSIFICATION": "NOT_FOUND (no cleanup action; nothing to remove)"
+ },
+ "AttachmentOpticsRIS1913": {
+  "STATUS": "KEEP_FUTURE_INTERFACE",
+  "CURRENT_LIVE_USAGE": [
+   "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Picatinny.et child slot"
+  ],
+  "CURRENT_DEFINITION": "game-defined (not locally inspectable)"
+ },
+ "AttachmentOpticsDovetailSVD": {
+  "STATUS": "KEEP_EXTERNAL_TYPE",
+  "CURRENT_ARMST_USAGE": 0,
+  "VANILLA_PROVENANCE": [
+   "Weapon_ARMA_X/Rifles/SVD/Rifle_SVD_base.et",
+   "Weapon_ARMA_X/Attachments/Optics/Optic_PSO1/Optic_PSO1_base.et",
+   "VanillaSources equivalents"
+  ]
+ },
+ "SAFE_CLEANUP_CANDIDATES": [
+  "AttachmentOpticsARMST_DovetailRU"
+ ],
+ "EXPECTED_FILES_CHANGED_IF_BUILT": [
+  "Scripts/Gamecode/Attachment_optic.c — remove 3 lines: attachment class `AttachmentOpticsARMST_DovetailRUClass`, its `AttachmentOpticsARMST_DovetailRUSource` variable, and `class AttachmentOpticsARMST_DovetailRU : AttachmentOptics {}`.",
+  "Keep `AttachmentOpticsG36` + `AttachmentOpticsG36Class` + `AttachmentOpticsG36Source` (still used by G36 attachments). No other class in the file needs modification."
+ ],
+ "LIVE_FILES_CHANGED": "NONE",
+ "STATUS": "PASS"
+}

@@ -1,0 +1,276 @@
+{
+  "schema_version": 1,
+  "western_magazines": [
+    {
+      "magazine_name": "armst_Magazine_762x51_HK3_20_M80_Ball.et",
+      "magazine_guid": "6D18CC33708EE713",
+      "magazine_path": "Prefabs/Weapons/Magazines/Western/762x51/HK3/L1A1/armst_Magazine_762x51_HK3_20_M80_Ball.et",
+      "region": "WESTERN",
+      "caliber": "762x51",
+      "family": "HK3/L1A1",
+      "et_exists": true,
+      "parent_guid": "6D18CC33708EE712",
+      "parent_path": "Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et",
+      "ammo_config_guid": null,
+      "ammo_config_path": null,
+      "ammo_source": "EXTERNAL/VANILLA_PARENT",
+      "compatible_weapons": []
+    },
+    {
+      "magazine_name": "armst_Magazine_762x51_L1A1_20_M61_AP.et",
+      "magazine_guid": "5D4E812AEAA7CC1F",
+      "magazine_path": "Prefabs/Weapons/Magazines/Western/762x51/HK3/L1A1/armst_Magazine_762x51_L1A1_20_M61_AP.et",
+      "region": "WESTERN",
+      "caliber": "762x51",
+      "family": "HK3/L1A1",
+      "et_exists": true,
+      "parent_guid": "AA9A48AAEE6E4F1B",
+      "parent_path": "Prefabs/Weapons/Magazines/Western/762x51/HK3/L1A1/armst_Magazine_762x51_L1A1_20_M80_Ball.et",
+      "ammo_config_guid": null,
+      "ammo_config_path": null,
+      "ammo_source": "EXTERNAL/VANILLA_PARENT",
+      "compatible_weapons": []
+    },
+    {
+      "magazine_name": "armst_Magazine_762x51_L1A1_20_M80_Ball.et",
+      "magazine_guid": "AA9A48AAEE6E4F1B",
+      "magazine_path": "Prefabs/Weapons/Magazines/Western/762x51/HK3/L1A1/armst_Magazine_762x51_L1A1_20_M80_Ball.et",
+      "region": "WESTERN",
+      "caliber": "762x51",
+      "family": "HK3/L1A1",
+      "et_exists": true,
+      "parent_guid": "6D18CC33708EE712",
+      "parent_path": "Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et",
+      "ammo_config_guid": null,
+      "ammo_config_path": null,
+      "ammo_source": "EXTERNAL/VANILLA_PARENT",
+      "compatible_weapons": []
+    },
+    {
+      "magazine_name": "armst_Magazine_762x51_L1A1_30_M61_AP.et",
+      "magazine_guid": "E70FEC32673242CB",
+      "magazine_path": "Prefabs/Weapons/Magazines/Western/762x51/HK3/L1A1/armst_Magazine_762x51_L1A1_30_M61_AP.et",
+      "region": "WESTERN",
+      "caliber": "762x51",
+      "family": "HK3/L1A1",
+      "et_exists": true,
+      "parent_guid": "531AA7DB88D84184",
+      "parent_path": "Prefabs/Weapons/Magazines/Western/762x51/HK3/L1A1/armst_Magazine_762x51_L1A1_30_M80_Ball.et",
+      "ammo_config_guid": null,
+      "ammo_config_path": null,
+      "ammo_source": "EXTERNAL/VANILLA_PARENT",
+      "compatible_weapons": []
+    },
+    {
+      "magazine_name": "armst_Magazine_762x51_L1A1_30_M80_Ball.et",
+      "magazine_guid": "531AA7DB88D84184",
+      "magazine_path": "Prefabs/Weapons/Magazines/Western/762x51/HK3/L1A1/armst_Magazine_762x51_L1A1_30_M80_Ball.et",
+      "region": "WESTERN",
+      "caliber": "762x51",
+      "family": "HK3/L1A1",
+      "et_exists": true,
+      "parent_guid": "AA9A48AAEE6E4F1B",
+      "parent_path": "Prefabs/Weapons/Magazines/Western/762x51/HK3/L1A1/armst_Magazine_762x51_L1A1_20_M80_Ball.et",
+      "ammo_config_guid": null,
+      "ammo_config_path": null,
+      "ammo_source": "EXTERNAL/VANILLA_PARENT",
+      "compatible_weapons": []
+    },
+    {
+      "magazine_name": "Magazine_556x45_HKG36.et",
+      "magazine_guid": "969F6FFF810D2145",
+      "magazine_path": "Prefabs/Weapons/Magazines/Western/5x56/HKG36/Magazine_556x45_HKG36.et",
+      "region": "WESTERN",
+      "caliber": "5x56",
+      "family": "HKG36",
+      "et_exists": true,
+      "parent_guid": "FB5EB0F6D447E859",
+      "parent_path": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/Magazine_556x45_STANAG_30rnd_M193_Ball.et",
+      "ammo_config_guid": null,
+      "ammo_config_path": null,
+      "ammo_source": "EXTERNAL/VANILLA_PARENT",
+      "compatible_weapons": []
+    },
+    {
+      "magazine_name": "Magazine_556x45_SIG_550.et",
+      "magazine_guid": "E3DC6C2FBBE4F825",
+      "magazine_path": "Prefabs/Weapons/Magazines/Western/5x56/SIG550/Magazine_556x45_SIG_550.et",
+      "region": "WESTERN",
+      "caliber": "5x56",
+      "family": "SIG550",
+      "et_exists": true,
+      "parent_guid": "FB5EB0F6D447E859",
+      "parent_path": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/Magazine_556x45_STANAG_30rnd_M193_Ball.et",
+      "ammo_config_guid": null,
+      "ammo_config_path": null,
+      "ammo_source": "EXTERNAL/VANILLA_PARENT",
+      "compatible_weapons": []
+    },
+    {
+      "magazine_name": "Magazine_9x19_M9_15rnd_Ball.et",
+      "magazine_guid": "9C05543A503DB80E",
+      "magazine_path": "Prefabs/Weapons/Magazines/Western/9x19/M9/Magazine_9x19_M9_15rnd_Ball.et",
+      "region": "WESTERN",
+      "caliber": "9x19",
+      "family": "M9",
+      "et_exists": true,
+      "parent_guid": "DFFBF5F097FCF797",
+      "parent_path": "Prefabs/Weapons/Magazines/Magazine_9x19_M9_15rnd_Base.et",
+      "ammo_config_guid": null,
+      "ammo_config_path": null,
+      "ammo_source": "EXTERNAL/VANILLA_PARENT",
+      "compatible_weapons": []
+    },
+    {
+      "magazine_name": "Magazine_556x45_STANAG_30rnd_Base.et",
+      "magazine_guid": "11B9CC1FB4AEE740",
+      "magazine_path": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/Magazine_556x45_STANAG_30rnd_Base.et",
+      "region": "WESTERN",
+      "caliber": "5x56",
+      "family": "STANAG",
+      "et_exists": true,
+      "parent_guid": "F9E1A46E3ABA116F",
+      "parent_path": "Prefabs/Weapons/Core/Magazine_Base.et",
+      "ammo_config_guid": "2689915ED0E00994",
+      "ammo_config_path": "Configs/Weapons/Ammo/Ammo_556x45.conf",
+      "ammo_source": "EXTERNAL/VANILLA_CONFIG",
+      "compatible_weapons": []
+    },
+    {
+      "magazine_name": "Magazine_556x45_STANAG_30rnd_M193_Ball.et",
+      "magazine_guid": "FB5EB0F6D447E859",
+      "magazine_path": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/Magazine_556x45_STANAG_30rnd_M193_Ball.et",
+      "region": "WESTERN",
+      "caliber": "5x56",
+      "family": "STANAG",
+      "et_exists": true,
+      "parent_guid": "FB5EB0F6D447E858",
+      "parent_path": "Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M193_Ball.et",
+      "ammo_config_guid": null,
+      "ammo_config_path": null,
+      "ammo_source": "EXTERNAL/VANILLA_PARENT",
+      "compatible_weapons": []
+    },
+    {
+      "magazine_name": "Magazine_556x45_STANAG_30rnd_M196_Tracer.et",
+      "magazine_guid": "4575737B3D3A4505",
+      "magazine_path": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/Magazine_556x45_STANAG_30rnd_M196_Tracer.et",
+      "region": "WESTERN",
+      "caliber": "5x56",
+      "family": "STANAG",
+      "et_exists": false,
+      "parent_guid": null,
+      "parent_path": null,
+      "ammo_config_guid": null,
+      "ammo_config_path": null,
+      "ammo_source": null,
+      "compatible_weapons": []
+    },
+    {
+      "magazine_name": "Magazine_556x45_STANAG_30rnd_M855_Ball.et",
+      "magazine_guid": "2EBF60EF24B108FC",
+      "magazine_path": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/Magazine_556x45_STANAG_30rnd_M855_Ball.et",
+      "region": "WESTERN",
+      "caliber": "5x56",
+      "family": "STANAG",
+      "et_exists": true,
+      "parent_guid": "11B9CC1FB4AEE740",
+      "parent_path": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/Magazine_556x45_STANAG_30rnd_Base.et",
+      "ammo_config_guid": null,
+      "ammo_config_path": null,
+      "ammo_source": "EXTERNAL/VANILLA_PARENT",
+      "compatible_weapons": []
+    },
+    {
+      "magazine_name": "Magazine_556x45_STANAG_30rnd_M856_Tracer.et",
+      "magazine_guid": "A9A385FE1F7BF4BD",
+      "magazine_path": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/Magazine_556x45_STANAG_30rnd_M856_Tracer.et",
+      "region": "WESTERN",
+      "caliber": "5x56",
+      "family": "STANAG",
+      "et_exists": false,
+      "parent_guid": null,
+      "parent_path": null,
+      "ammo_config_guid": null,
+      "ammo_config_path": null,
+      "ammo_source": null,
+      "compatible_weapons": []
+    }
+  ],
+  "eastern_magazines": [],
+  "eastern_weapons": [
+    {
+      "weapon": "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_SOC94.et",
+      "guid": "E394112ABBC198D8",
+      "magazines": [
+        {
+          "path": "Prefabs/Weapons/Magazines/Russian/7x62/AKM/Magazine_762x39_AKM_10rnd_Ball.et",
+          "guid": "07805AE177F52646",
+          "magazine_region": "RUSSIAN",
+          "magazine_caliber": "7x62"
+        }
+      ]
+    },
+    {
+      "weapon": "Prefabs/Weapons/Western/Rifle/armst_VZ58P.et",
+      "guid": "9C948630078D154D",
+      "magazines": []
+    },
+    {
+      "weapon": "Prefabs/Weapons/Western/Rifle/armst_VZ58V.et",
+      "guid": "443CEFF17E040B11",
+      "magazines": []
+    }
+  ],
+  "local_ammo_resources": [
+    "Prefabs/Weapons/Ammo/12g/Ammo_12ga.et",
+    "Prefabs/Weapons/Ammo/12g/Ammo_12ga_shell.et",
+    "Prefabs/Weapons/Ammo/12g/Ammo_12ga_shell_test.et",
+    "Prefabs/Weapons/Ammo/12g/Ammo_Buckshot_pellet.et",
+    "Prefabs/Weapons/Ammo/Russian/763x25/Ammo_763x25.et",
+    "Prefabs/Weapons/Ammo/Russian/763x25/Ammo_763x25_Ball.et",
+    "Prefabs/Weapons/Ammo/Russian/9x39/Ammo_9x39_SP5_Ball.et",
+    "Prefabs/Weapons/Ammo/Russian/9x39/Ammo_9x39_SP6_Ball.et",
+    "Prefabs/Weapons/Ammo/Russian/grenade/Ammo_Grenade_HE_VOG25.et"
+  ],
+  "local_ammo_configs": [
+    "Ammo_12g.conf",
+    "Ammo_763x25.conf",
+    "Ammo_9x39.conf"
+  ],
+  "issues": [
+    {
+      "type": "MISSING_MAGAZINE_FILE",
+      "guid": "4575737B3D3A4505",
+      "path": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/Magazine_556x45_STANAG_30rnd_M196_Tracer.et"
+    },
+    {
+      "type": "MISSING_MAGAZINE_FILE",
+      "guid": "A9A385FE1F7BF4BD",
+      "path": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/Magazine_556x45_STANAG_30rnd_M856_Tracer.et"
+    },
+    {
+      "type": "MISSING_MAGAZINE_FILE",
+      "guid": "FAFA0D71E75CEBE2",
+      "path": "Prefabs/Weapons/Magazines/Russian/7x62/AKM/Magazine_762x39_AKM_30rnd_Tracer.et"
+    },
+    {
+      "type": "MAGAZINE_MISPLACED",
+      "guid": "6C22F58BBF5D6AED",
+      "expected": "Prefabs/Weapons/Magazines/Russian/9x39/VAL/",
+      "actual": "Prefabs/Weapons/Magazines/Russian/9x39/VSS/"
+    },
+    {
+      "type": "MAGAZINE_MISPLACED",
+      "guid": "6CBF1E50EB22F09B",
+      "expected": "Prefabs/Weapons/Magazines/Russian/9x39/VAL/",
+      "actual": "Prefabs/Weapons/Magazines/Russian/9x39/VSS/"
+    },
+    {
+      "type": "PARENT_GUID_MISMATCH",
+      "resource": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/Magazine_556x45_STANAG_30rnd_M193_Ball.et",
+      "parent_guid": "FB5EB0F6D447E858",
+      "current_local_guid": "FB5EB0F6D447E859"
+    }
+  ]
+}

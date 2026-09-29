@@ -1,0 +1,106 @@
+{
+ "live_refs_total": 59,
+ "unique": 59,
+ "locales": {
+  "cs_cz": {
+   "ids": 59,
+   "texts": 59,
+   "match": true,
+   "empty": 0,
+   "guid": "0AD4179A60AC8C65"
+  },
+  "de_de": {
+   "ids": 59,
+   "texts": 59,
+   "match": true,
+   "empty": 0,
+   "guid": "155B8785B40320A5"
+  },
+  "en_us": {
+   "ids": 59,
+   "texts": 59,
+   "match": true,
+   "empty": 0,
+   "guid": "FD056F6A77D94BBD"
+  },
+  "es_es": {
+   "ids": 59,
+   "texts": 59,
+   "match": true,
+   "empty": 0,
+   "guid": "A50D9D243F2214B2"
+  },
+  "fr_fr": {
+   "ids": 59,
+   "texts": 59,
+   "match": true,
+   "empty": 0,
+   "guid": "00B2AA18FD609EAD"
+  },
+  "it_it": {
+   "ids": 59,
+   "texts": 59,
+   "match": true,
+   "empty": 0,
+   "guid": "E9B0EFA7BD0DC122"
+  },
+  "ja_jp": {
+   "ids": 59,
+   "texts": 59,
+   "match": true,
+   "empty": 0,
+   "guid": "B4B3E630945BFFFB"
+  },
+  "ko_kr": {
+   "ids": 59,
+   "texts": 59,
+   "match": true,
+   "empty": 0,
+   "guid": "F1A2533581AB710A"
+  },
+  "pl_pl": {
+   "ids": 59,
+   "texts": 59,
+   "match": true,
+   "empty": 0,
+   "guid": "0910A9463A6EA8B7"
+  },
+  "pt_br": {
+   "ids": 59,
+   "texts": 59,
+   "match": true,
+   "empty": 0,
+   "guid": "3AB1CE9E74578E52"
+  },
+  "ru_ru": {
+   "ids": 59,
+   "texts": 59,
+   "match": true,
+   "empty": 0,
+   "guid": "294CC9C152D6A424"
+  },
+  "uk_ua": {
+   "ids": 59,
+   "texts": 59,
+   "match": true,
+   "empty": 0,
+   "guid": "937D00DDAA2B1EF4"
+  },
+  "zh_cn": {
+   "ids": 59,
+   "texts": 59,
+   "match": true,
+   "empty": 0,
+   "guid": "B62E0E6E79D5A688"
+  }
+ },
+ "missing": [],
+ "identical_order": true,
+ "missing_live": [],
+ "dups": [],
+ "checks": {
+  "en_ok": true,
+  "ru_ok": true,
+  "fallback_ok": true
+ }
+}

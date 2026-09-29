@@ -1,0 +1,2802 @@
+[
+    {
+        "HostSlot":  "BB6000C24BAA468F",
+        "Host":  "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et",
+        "HostType":  "AttachmentOpticsRIS1913",
+        "HostTypeGID":  "4289872E53434277",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "0CDB065C629144D0",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "BB6000C24BAA468F",
+        "Host":  "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et",
+        "HostType":  "AttachmentOpticsRIS1913",
+        "HostTypeGID":  "4289872E53434277",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_Collimator.et",
+        "ModuleType":  "AttachmentOpticsRIS1913",
+        "ModuleTypeGID":  "4289872E53434277",
+        "Status":  "EXACT_MATCH"
+    },
+    {
+        "HostSlot":  "BB6000C24BAA468F",
+        "Host":  "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et",
+        "HostType":  "AttachmentOpticsRIS1913",
+        "HostTypeGID":  "4289872E53434277",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "5D0CCDD0615C597D",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "BB6000C24BAA468F",
+        "Host":  "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et",
+        "HostType":  "AttachmentOpticsRIS1913",
+        "HostTypeGID":  "4289872E53434277",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Optic.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "F56C225D0E397818",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "BB6000C24BAA468F",
+        "Host":  "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et",
+        "HostType":  "AttachmentOpticsRIS1913",
+        "HostTypeGID":  "4289872E53434277",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Picatinny.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "13F247560306791B",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "A92E9A7AB757674E",
+        "Host":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Picatinny.et",
+        "HostType":  "AttachmentOpticsRIS1913",
+        "HostTypeGID":  "F45ED5FCDB8FB358",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "0CDB065C629144D0",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "A92E9A7AB757674E",
+        "Host":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Picatinny.et",
+        "HostType":  "AttachmentOpticsRIS1913",
+        "HostTypeGID":  "F45ED5FCDB8FB358",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_Collimator.et",
+        "ModuleType":  "AttachmentOpticsRIS1913",
+        "ModuleTypeGID":  "4289872E53434277",
+        "Status":  "EXACT_MATCH"
+    },
+    {
+        "HostSlot":  "A92E9A7AB757674E",
+        "Host":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Picatinny.et",
+        "HostType":  "AttachmentOpticsRIS1913",
+        "HostTypeGID":  "F45ED5FCDB8FB358",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "5D0CCDD0615C597D",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "A92E9A7AB757674E",
+        "Host":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Picatinny.et",
+        "HostType":  "AttachmentOpticsRIS1913",
+        "HostTypeGID":  "F45ED5FCDB8FB358",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Optic.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "F56C225D0E397818",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "A92E9A7AB757674E",
+        "Host":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Picatinny.et",
+        "HostType":  "AttachmentOpticsRIS1913",
+        "HostTypeGID":  "F45ED5FCDB8FB358",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Picatinny.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "13F247560306791B",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "B502E4DC8A9E835E",
+        "Host":  "Prefabs/Weapons/Handguns/armst_Handgun_Knife_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "0CDB065C629144D0",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "B502E4DC8A9E835E",
+        "Host":  "Prefabs/Weapons/Handguns/armst_Handgun_Knife_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_Collimator.et",
+        "ModuleType":  "AttachmentOpticsRIS1913",
+        "ModuleTypeGID":  "4289872E53434277",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "B502E4DC8A9E835E",
+        "Host":  "Prefabs/Weapons/Handguns/armst_Handgun_Knife_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "5D0CCDD0615C597D",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "B502E4DC8A9E835E",
+        "Host":  "Prefabs/Weapons/Handguns/armst_Handgun_Knife_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Optic.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "F56C225D0E397818",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "B502E4DC8A9E835E",
+        "Host":  "Prefabs/Weapons/Handguns/armst_Handgun_Knife_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Picatinny.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "13F247560306791B",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "4E2B66CBA589F625",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/9a91/armst_Rifle_9a91_base.et",
+        "HostType":  "AttachmentMuzzle9_39_armst",
+        "HostTypeGID":  "66088C7B8F0591E5",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "0CDB065C629144D0",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "4E2B66CBA589F625",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/9a91/armst_Rifle_9a91_base.et",
+        "HostType":  "AttachmentMuzzle9_39_armst",
+        "HostTypeGID":  "66088C7B8F0591E5",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_Collimator.et",
+        "ModuleType":  "AttachmentOpticsRIS1913",
+        "ModuleTypeGID":  "4289872E53434277",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "4E2B66CBA589F625",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/9a91/armst_Rifle_9a91_base.et",
+        "HostType":  "AttachmentMuzzle9_39_armst",
+        "HostTypeGID":  "66088C7B8F0591E5",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "5D0CCDD0615C597D",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "4E2B66CBA589F625",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/9a91/armst_Rifle_9a91_base.et",
+        "HostType":  "AttachmentMuzzle9_39_armst",
+        "HostTypeGID":  "66088C7B8F0591E5",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Optic.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "F56C225D0E397818",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "4E2B66CBA589F625",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/9a91/armst_Rifle_9a91_base.et",
+        "HostType":  "AttachmentMuzzle9_39_armst",
+        "HostTypeGID":  "66088C7B8F0591E5",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Picatinny.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "13F247560306791B",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "5F189C826D592450",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/9a91/armst_Rifle_9a91_base.et",
+        "HostType":  "AttachmentOpticsDovetailAK",
+        "HostTypeGID":  "60AAE435165C80B8",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "0CDB065C629144D0",
+        "Status":  "EXACT_MATCH"
+    },
+    {
+        "HostSlot":  "5F189C826D592450",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/9a91/armst_Rifle_9a91_base.et",
+        "HostType":  "AttachmentOpticsDovetailAK",
+        "HostTypeGID":  "60AAE435165C80B8",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_Collimator.et",
+        "ModuleType":  "AttachmentOpticsRIS1913",
+        "ModuleTypeGID":  "4289872E53434277",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "5F189C826D592450",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/9a91/armst_Rifle_9a91_base.et",
+        "HostType":  "AttachmentOpticsDovetailAK",
+        "HostTypeGID":  "60AAE435165C80B8",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "5D0CCDD0615C597D",
+        "Status":  "EXACT_MATCH"
+    },
+    {
+        "HostSlot":  "5F189C826D592450",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/9a91/armst_Rifle_9a91_base.et",
+        "HostType":  "AttachmentOpticsDovetailAK",
+        "HostTypeGID":  "60AAE435165C80B8",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Optic.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "F56C225D0E397818",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "5F189C826D592450",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/9a91/armst_Rifle_9a91_base.et",
+        "HostType":  "AttachmentOpticsDovetailAK",
+        "HostTypeGID":  "60AAE435165C80B8",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Picatinny.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "13F247560306791B",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "5F189C826D592450",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/Aek971/armst_Rifle_AEK971_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "0CDB065C629144D0",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "5F189C826D592450",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/Aek971/armst_Rifle_AEK971_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_Collimator.et",
+        "ModuleType":  "AttachmentOpticsRIS1913",
+        "ModuleTypeGID":  "4289872E53434277",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "5F189C826D592450",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/Aek971/armst_Rifle_AEK971_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "5D0CCDD0615C597D",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "5F189C826D592450",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/Aek971/armst_Rifle_AEK971_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Optic.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "F56C225D0E397818",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "5F189C826D592450",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/Aek971/armst_Rifle_AEK971_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Picatinny.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "13F247560306791B",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "55349E9229B55E29",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/Aek971/armst_Rifle_AEK971_base.et",
+        "HostType":  "AttachmentOpticsDovetailAK",
+        "HostTypeGID":  "5A16F04B258689D6",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "0CDB065C629144D0",
+        "Status":  "EXACT_MATCH"
+    },
+    {
+        "HostSlot":  "55349E9229B55E29",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/Aek971/armst_Rifle_AEK971_base.et",
+        "HostType":  "AttachmentOpticsDovetailAK",
+        "HostTypeGID":  "5A16F04B258689D6",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_Collimator.et",
+        "ModuleType":  "AttachmentOpticsRIS1913",
+        "ModuleTypeGID":  "4289872E53434277",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "55349E9229B55E29",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/Aek971/armst_Rifle_AEK971_base.et",
+        "HostType":  "AttachmentOpticsDovetailAK",
+        "HostTypeGID":  "5A16F04B258689D6",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "5D0CCDD0615C597D",
+        "Status":  "EXACT_MATCH"
+    },
+    {
+        "HostSlot":  "55349E9229B55E29",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/Aek971/armst_Rifle_AEK971_base.et",
+        "HostType":  "AttachmentOpticsDovetailAK",
+        "HostTypeGID":  "5A16F04B258689D6",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Optic.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "F56C225D0E397818",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "55349E9229B55E29",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/Aek971/armst_Rifle_AEK971_base.et",
+        "HostType":  "AttachmentOpticsDovetailAK",
+        "HostTypeGID":  "5A16F04B258689D6",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Picatinny.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "13F247560306791B",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "4E2B66CBA589F625",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK105.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "0CDB065C629144D0",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "4E2B66CBA589F625",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK105.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_Collimator.et",
+        "ModuleType":  "AttachmentOpticsRIS1913",
+        "ModuleTypeGID":  "4289872E53434277",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "4E2B66CBA589F625",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK105.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "5D0CCDD0615C597D",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "4E2B66CBA589F625",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK105.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Optic.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "F56C225D0E397818",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "4E2B66CBA589F625",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK105.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Picatinny.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "13F247560306791B",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "5F189C826D592450",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK105.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "0CDB065C629144D0",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "5F189C826D592450",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK105.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_Collimator.et",
+        "ModuleType":  "AttachmentOpticsRIS1913",
+        "ModuleTypeGID":  "4289872E53434277",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "5F189C826D592450",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK105.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "5D0CCDD0615C597D",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "5F189C826D592450",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK105.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Optic.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "F56C225D0E397818",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "5F189C826D592450",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK105.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Picatinny.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "13F247560306791B",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "4E2B66CBA589F625",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "0CDB065C629144D0",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "4E2B66CBA589F625",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_Collimator.et",
+        "ModuleType":  "AttachmentOpticsRIS1913",
+        "ModuleTypeGID":  "4289872E53434277",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "4E2B66CBA589F625",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "5D0CCDD0615C597D",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "4E2B66CBA589F625",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Optic.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "F56C225D0E397818",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "4E2B66CBA589F625",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Picatinny.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "13F247560306791B",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "51F6738D2EC74BE1",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74M.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "0CDB065C629144D0",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "51F6738D2EC74BE1",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74M.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_Collimator.et",
+        "ModuleType":  "AttachmentOpticsRIS1913",
+        "ModuleTypeGID":  "4289872E53434277",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "51F6738D2EC74BE1",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74M.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "5D0CCDD0615C597D",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "51F6738D2EC74BE1",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74M.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Optic.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "F56C225D0E397818",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "51F6738D2EC74BE1",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74M.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Picatinny.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "13F247560306791B",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "4E2B66CBA589F625",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74M_full.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "0CDB065C629144D0",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "4E2B66CBA589F625",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74M_full.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_Collimator.et",
+        "ModuleType":  "AttachmentOpticsRIS1913",
+        "ModuleTypeGID":  "4289872E53434277",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "4E2B66CBA589F625",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74M_full.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "5D0CCDD0615C597D",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "4E2B66CBA589F625",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74M_full.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Optic.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "F56C225D0E397818",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "4E2B66CBA589F625",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74M_full.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Picatinny.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "13F247560306791B",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "55349E9229B55E29",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74M_full.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "0CDB065C629144D0",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "55349E9229B55E29",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74M_full.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_Collimator.et",
+        "ModuleType":  "AttachmentOpticsRIS1913",
+        "ModuleTypeGID":  "4289872E53434277",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "55349E9229B55E29",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74M_full.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "5D0CCDD0615C597D",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "55349E9229B55E29",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74M_full.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Optic.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "F56C225D0E397818",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "55349E9229B55E29",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74M_full.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Picatinny.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "13F247560306791B",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "51F6738D2EC74BE1",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74M_full.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "0CDB065C629144D0",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "51F6738D2EC74BE1",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74M_full.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_Collimator.et",
+        "ModuleType":  "AttachmentOpticsRIS1913",
+        "ModuleTypeGID":  "4289872E53434277",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "51F6738D2EC74BE1",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74M_full.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "5D0CCDD0615C597D",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "51F6738D2EC74BE1",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74M_full.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Optic.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "F56C225D0E397818",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "51F6738D2EC74BE1",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74M_full.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Picatinny.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "13F247560306791B",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "55349E9229B55E29",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74N.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "0CDB065C629144D0",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "55349E9229B55E29",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74N.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_Collimator.et",
+        "ModuleType":  "AttachmentOpticsRIS1913",
+        "ModuleTypeGID":  "4289872E53434277",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "55349E9229B55E29",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74N.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "5D0CCDD0615C597D",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "55349E9229B55E29",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74N.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Optic.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "F56C225D0E397818",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "55349E9229B55E29",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74N.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Picatinny.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "13F247560306791B",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "51F6738D2EC74BE1",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AKS.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "0CDB065C629144D0",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "51F6738D2EC74BE1",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AKS.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_Collimator.et",
+        "ModuleType":  "AttachmentOpticsRIS1913",
+        "ModuleTypeGID":  "4289872E53434277",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "51F6738D2EC74BE1",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AKS.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "5D0CCDD0615C597D",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "51F6738D2EC74BE1",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AKS.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Optic.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "F56C225D0E397818",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "51F6738D2EC74BE1",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AKS.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Picatinny.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "13F247560306791B",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "65AE4CB5E23C0F2C",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "0CDB065C629144D0",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "65AE4CB5E23C0F2C",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_Collimator.et",
+        "ModuleType":  "AttachmentOpticsRIS1913",
+        "ModuleTypeGID":  "4289872E53434277",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "65AE4CB5E23C0F2C",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "5D0CCDD0615C597D",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "65AE4CB5E23C0F2C",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Optic.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "F56C225D0E397818",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "65AE4CB5E23C0F2C",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Picatinny.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "13F247560306791B",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "673A7B215304A28B",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "0CDB065C629144D0",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "673A7B215304A28B",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_Collimator.et",
+        "ModuleType":  "AttachmentOpticsRIS1913",
+        "ModuleTypeGID":  "4289872E53434277",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "673A7B215304A28B",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "5D0CCDD0615C597D",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "673A7B215304A28B",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Optic.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "F56C225D0E397818",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "673A7B215304A28B",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Picatinny.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "13F247560306791B",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "65AE4CB5E23C0F65",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "0CDB065C629144D0",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "65AE4CB5E23C0F65",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_Collimator.et",
+        "ModuleType":  "AttachmentOpticsRIS1913",
+        "ModuleTypeGID":  "4289872E53434277",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "65AE4CB5E23C0F65",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "5D0CCDD0615C597D",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "65AE4CB5E23C0F65",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Optic.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "F56C225D0E397818",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "65AE4CB5E23C0F65",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Picatinny.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "13F247560306791B",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "65AE4CB5E23C0F63",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "0CDB065C629144D0",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "65AE4CB5E23C0F63",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_Collimator.et",
+        "ModuleType":  "AttachmentOpticsRIS1913",
+        "ModuleTypeGID":  "4289872E53434277",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "65AE4CB5E23C0F63",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "5D0CCDD0615C597D",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "65AE4CB5E23C0F63",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Optic.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "F56C225D0E397818",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "65AE4CB5E23C0F63",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Picatinny.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "13F247560306791B",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "65AE4CB5E23C0F2C",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_base.et",
+        "HostType":  "AttachmentMuzzle762_39",
+        "HostTypeGID":  "65AE4CB5E23C0F2E",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "0CDB065C629144D0",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "65AE4CB5E23C0F2C",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_base.et",
+        "HostType":  "AttachmentMuzzle762_39",
+        "HostTypeGID":  "65AE4CB5E23C0F2E",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_Collimator.et",
+        "ModuleType":  "AttachmentOpticsRIS1913",
+        "ModuleTypeGID":  "4289872E53434277",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "65AE4CB5E23C0F2C",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_base.et",
+        "HostType":  "AttachmentMuzzle762_39",
+        "HostTypeGID":  "65AE4CB5E23C0F2E",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "5D0CCDD0615C597D",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "65AE4CB5E23C0F2C",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_base.et",
+        "HostType":  "AttachmentMuzzle762_39",
+        "HostTypeGID":  "65AE4CB5E23C0F2E",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Optic.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "F56C225D0E397818",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "65AE4CB5E23C0F2C",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_base.et",
+        "HostType":  "AttachmentMuzzle762_39",
+        "HostTypeGID":  "65AE4CB5E23C0F2E",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Picatinny.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "13F247560306791B",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "673A7B215304A28B",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_base.et",
+        "HostType":  "AttachmentUnderBarrelGP25",
+        "HostTypeGID":  "673A7B217FA4A5C8",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "0CDB065C629144D0",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "673A7B215304A28B",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_base.et",
+        "HostType":  "AttachmentUnderBarrelGP25",
+        "HostTypeGID":  "673A7B217FA4A5C8",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_Collimator.et",
+        "ModuleType":  "AttachmentOpticsRIS1913",
+        "ModuleTypeGID":  "4289872E53434277",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "673A7B215304A28B",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_base.et",
+        "HostType":  "AttachmentUnderBarrelGP25",
+        "HostTypeGID":  "673A7B217FA4A5C8",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "5D0CCDD0615C597D",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "673A7B215304A28B",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_base.et",
+        "HostType":  "AttachmentUnderBarrelGP25",
+        "HostTypeGID":  "673A7B217FA4A5C8",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Optic.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "F56C225D0E397818",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "673A7B215304A28B",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_base.et",
+        "HostType":  "AttachmentUnderBarrelGP25",
+        "HostTypeGID":  "673A7B217FA4A5C8",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Picatinny.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "13F247560306791B",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "65AE4CB5E23C0F65",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_base.et",
+        "HostType":  "AttachmentOpticsDovetailAK",
+        "HostTypeGID":  "65AE4CB5E23C0F61",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "0CDB065C629144D0",
+        "Status":  "EXACT_MATCH"
+    },
+    {
+        "HostSlot":  "65AE4CB5E23C0F65",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_base.et",
+        "HostType":  "AttachmentOpticsDovetailAK",
+        "HostTypeGID":  "65AE4CB5E23C0F61",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_Collimator.et",
+        "ModuleType":  "AttachmentOpticsRIS1913",
+        "ModuleTypeGID":  "4289872E53434277",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "65AE4CB5E23C0F65",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_base.et",
+        "HostType":  "AttachmentOpticsDovetailAK",
+        "HostTypeGID":  "65AE4CB5E23C0F61",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "5D0CCDD0615C597D",
+        "Status":  "EXACT_MATCH"
+    },
+    {
+        "HostSlot":  "65AE4CB5E23C0F65",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_base.et",
+        "HostType":  "AttachmentOpticsDovetailAK",
+        "HostTypeGID":  "65AE4CB5E23C0F61",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Optic.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "F56C225D0E397818",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "65AE4CB5E23C0F65",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_base.et",
+        "HostType":  "AttachmentOpticsDovetailAK",
+        "HostTypeGID":  "65AE4CB5E23C0F61",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Picatinny.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "13F247560306791B",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "65AE4CB5E23C0F63",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_base.et",
+        "HostType":  "AttachmentStockVz58",
+        "HostTypeGID":  "65AE4CB5E23C0F7D",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "0CDB065C629144D0",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "65AE4CB5E23C0F63",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_base.et",
+        "HostType":  "AttachmentStockVz58",
+        "HostTypeGID":  "65AE4CB5E23C0F7D",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_Collimator.et",
+        "ModuleType":  "AttachmentOpticsRIS1913",
+        "ModuleTypeGID":  "4289872E53434277",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "65AE4CB5E23C0F63",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_base.et",
+        "HostType":  "AttachmentStockVz58",
+        "HostTypeGID":  "65AE4CB5E23C0F7D",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "5D0CCDD0615C597D",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "65AE4CB5E23C0F63",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_base.et",
+        "HostType":  "AttachmentStockVz58",
+        "HostTypeGID":  "65AE4CB5E23C0F7D",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Optic.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "F56C225D0E397818",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "65AE4CB5E23C0F63",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_base.et",
+        "HostType":  "AttachmentStockVz58",
+        "HostTypeGID":  "65AE4CB5E23C0F7D",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Picatinny.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "13F247560306791B",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "673A7B215304A28B",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_full.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "0CDB065C629144D0",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "673A7B215304A28B",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_full.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_Collimator.et",
+        "ModuleType":  "AttachmentOpticsRIS1913",
+        "ModuleTypeGID":  "4289872E53434277",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "673A7B215304A28B",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_full.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "5D0CCDD0615C597D",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "673A7B215304A28B",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_full.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Optic.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "F56C225D0E397818",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "673A7B215304A28B",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_full.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Picatinny.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "13F247560306791B",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "65AE4CB5E23C0F65",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_full.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "0CDB065C629144D0",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "65AE4CB5E23C0F65",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_full.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_Collimator.et",
+        "ModuleType":  "AttachmentOpticsRIS1913",
+        "ModuleTypeGID":  "4289872E53434277",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "65AE4CB5E23C0F65",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_full.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "5D0CCDD0615C597D",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "65AE4CB5E23C0F65",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_full.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Optic.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "F56C225D0E397818",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "65AE4CB5E23C0F65",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_full.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Picatinny.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "13F247560306791B",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "65AE4CB5E23C0F63",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKMS.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "0CDB065C629144D0",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "65AE4CB5E23C0F63",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKMS.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_Collimator.et",
+        "ModuleType":  "AttachmentOpticsRIS1913",
+        "ModuleTypeGID":  "4289872E53434277",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "65AE4CB5E23C0F63",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKMS.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "5D0CCDD0615C597D",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "65AE4CB5E23C0F63",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKMS.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Optic.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "F56C225D0E397818",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "65AE4CB5E23C0F63",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKMS.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Picatinny.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "13F247560306791B",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "65AE4CB5E23C0F63",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_VPO136.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "0CDB065C629144D0",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "65AE4CB5E23C0F63",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_VPO136.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_Collimator.et",
+        "ModuleType":  "AttachmentOpticsRIS1913",
+        "ModuleTypeGID":  "4289872E53434277",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "65AE4CB5E23C0F63",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_VPO136.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "5D0CCDD0615C597D",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "65AE4CB5E23C0F63",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_VPO136.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Optic.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "F56C225D0E397818",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "65AE4CB5E23C0F63",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_VPO136.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Picatinny.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "13F247560306791B",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "4E2B66CBA589F625",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/Groza/armst_Groza_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "0CDB065C629144D0",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "4E2B66CBA589F625",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/Groza/armst_Groza_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_Collimator.et",
+        "ModuleType":  "AttachmentOpticsRIS1913",
+        "ModuleTypeGID":  "4289872E53434277",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "4E2B66CBA589F625",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/Groza/armst_Groza_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "5D0CCDD0615C597D",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "4E2B66CBA589F625",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/Groza/armst_Groza_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Optic.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "F56C225D0E397818",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "4E2B66CBA589F625",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/Groza/armst_Groza_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Picatinny.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "13F247560306791B",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "65AE4CB5E23C0F2C",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/SOC94/armst_Rifle_SOC94_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "0CDB065C629144D0",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "65AE4CB5E23C0F2C",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/SOC94/armst_Rifle_SOC94_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_Collimator.et",
+        "ModuleType":  "AttachmentOpticsRIS1913",
+        "ModuleTypeGID":  "4289872E53434277",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "65AE4CB5E23C0F2C",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/SOC94/armst_Rifle_SOC94_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "5D0CCDD0615C597D",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "65AE4CB5E23C0F2C",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/SOC94/armst_Rifle_SOC94_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Optic.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "F56C225D0E397818",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "65AE4CB5E23C0F2C",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/SOC94/armst_Rifle_SOC94_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Picatinny.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "13F247560306791B",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "673A7B215304A28B",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/SOC94/armst_Rifle_SOC94_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "0CDB065C629144D0",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "673A7B215304A28B",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/SOC94/armst_Rifle_SOC94_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_Collimator.et",
+        "ModuleType":  "AttachmentOpticsRIS1913",
+        "ModuleTypeGID":  "4289872E53434277",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "673A7B215304A28B",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/SOC94/armst_Rifle_SOC94_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "5D0CCDD0615C597D",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "673A7B215304A28B",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/SOC94/armst_Rifle_SOC94_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Optic.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "F56C225D0E397818",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "673A7B215304A28B",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/SOC94/armst_Rifle_SOC94_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Picatinny.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "13F247560306791B",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "65AE4CB5E23C0F65",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/SOC94/armst_Rifle_SOC94_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "0CDB065C629144D0",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "65AE4CB5E23C0F65",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/SOC94/armst_Rifle_SOC94_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_Collimator.et",
+        "ModuleType":  "AttachmentOpticsRIS1913",
+        "ModuleTypeGID":  "4289872E53434277",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "65AE4CB5E23C0F65",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/SOC94/armst_Rifle_SOC94_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "5D0CCDD0615C597D",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "65AE4CB5E23C0F65",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/SOC94/armst_Rifle_SOC94_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Optic.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "F56C225D0E397818",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "65AE4CB5E23C0F65",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/SOC94/armst_Rifle_SOC94_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Picatinny.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "13F247560306791B",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "65AE4CB5E23C0F63",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/SOC94/armst_Rifle_SOC94_base.et",
+        "HostType":  "AttachmentOpticsDovetailAK",
+        "HostTypeGID":  "65AE4CB5E23C0F7D",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "0CDB065C629144D0",
+        "Status":  "EXACT_MATCH"
+    },
+    {
+        "HostSlot":  "65AE4CB5E23C0F63",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/SOC94/armst_Rifle_SOC94_base.et",
+        "HostType":  "AttachmentOpticsDovetailAK",
+        "HostTypeGID":  "65AE4CB5E23C0F7D",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_Collimator.et",
+        "ModuleType":  "AttachmentOpticsRIS1913",
+        "ModuleTypeGID":  "4289872E53434277",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "65AE4CB5E23C0F63",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/SOC94/armst_Rifle_SOC94_base.et",
+        "HostType":  "AttachmentOpticsDovetailAK",
+        "HostTypeGID":  "65AE4CB5E23C0F7D",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "5D0CCDD0615C597D",
+        "Status":  "EXACT_MATCH"
+    },
+    {
+        "HostSlot":  "65AE4CB5E23C0F63",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/SOC94/armst_Rifle_SOC94_base.et",
+        "HostType":  "AttachmentOpticsDovetailAK",
+        "HostTypeGID":  "65AE4CB5E23C0F7D",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Optic.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "F56C225D0E397818",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "65AE4CB5E23C0F63",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/SOC94/armst_Rifle_SOC94_base.et",
+        "HostType":  "AttachmentOpticsDovetailAK",
+        "HostTypeGID":  "65AE4CB5E23C0F7D",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Picatinny.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "13F247560306791B",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "5472D211BFD78F81",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/SVD/armst_Rifle_SVD_base.et",
+        "HostType":  "AttachmentOpticsDovetailAK",
+        "HostTypeGID":  "58E2BCF926D50DE5",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "0CDB065C629144D0",
+        "Status":  "EXACT_MATCH"
+    },
+    {
+        "HostSlot":  "5472D211BFD78F81",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/SVD/armst_Rifle_SVD_base.et",
+        "HostType":  "AttachmentOpticsDovetailAK",
+        "HostTypeGID":  "58E2BCF926D50DE5",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_Collimator.et",
+        "ModuleType":  "AttachmentOpticsRIS1913",
+        "ModuleTypeGID":  "4289872E53434277",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "5472D211BFD78F81",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/SVD/armst_Rifle_SVD_base.et",
+        "HostType":  "AttachmentOpticsDovetailAK",
+        "HostTypeGID":  "58E2BCF926D50DE5",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "5D0CCDD0615C597D",
+        "Status":  "EXACT_MATCH"
+    },
+    {
+        "HostSlot":  "5472D211BFD78F81",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/SVD/armst_Rifle_SVD_base.et",
+        "HostType":  "AttachmentOpticsDovetailAK",
+        "HostTypeGID":  "58E2BCF926D50DE5",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Optic.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "F56C225D0E397818",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "5472D211BFD78F81",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/SVD/armst_Rifle_SVD_base.et",
+        "HostType":  "AttachmentOpticsDovetailAK",
+        "HostTypeGID":  "58E2BCF926D50DE5",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Picatinny.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "13F247560306791B",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "4E2B66CBA589F625",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/VAL/armst_Rifle_val_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "0CDB065C629144D0",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "4E2B66CBA589F625",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/VAL/armst_Rifle_val_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_Collimator.et",
+        "ModuleType":  "AttachmentOpticsRIS1913",
+        "ModuleTypeGID":  "4289872E53434277",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "4E2B66CBA589F625",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/VAL/armst_Rifle_val_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "5D0CCDD0615C597D",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "4E2B66CBA589F625",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/VAL/armst_Rifle_val_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Optic.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "F56C225D0E397818",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "4E2B66CBA589F625",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/VAL/armst_Rifle_val_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Picatinny.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "13F247560306791B",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "5F189C826D592450",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/VAL/armst_Rifle_val_base.et",
+        "HostType":  "AttachmentOpticsDovetailAK",
+        "HostTypeGID":  "60AAE435165C80B8",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "0CDB065C629144D0",
+        "Status":  "EXACT_MATCH"
+    },
+    {
+        "HostSlot":  "5F189C826D592450",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/VAL/armst_Rifle_val_base.et",
+        "HostType":  "AttachmentOpticsDovetailAK",
+        "HostTypeGID":  "60AAE435165C80B8",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_Collimator.et",
+        "ModuleType":  "AttachmentOpticsRIS1913",
+        "ModuleTypeGID":  "4289872E53434277",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "5F189C826D592450",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/VAL/armst_Rifle_val_base.et",
+        "HostType":  "AttachmentOpticsDovetailAK",
+        "HostTypeGID":  "60AAE435165C80B8",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "5D0CCDD0615C597D",
+        "Status":  "EXACT_MATCH"
+    },
+    {
+        "HostSlot":  "5F189C826D592450",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/VAL/armst_Rifle_val_base.et",
+        "HostType":  "AttachmentOpticsDovetailAK",
+        "HostTypeGID":  "60AAE435165C80B8",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Optic.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "F56C225D0E397818",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "5F189C826D592450",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/VAL/armst_Rifle_val_base.et",
+        "HostType":  "AttachmentOpticsDovetailAK",
+        "HostTypeGID":  "60AAE435165C80B8",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Picatinny.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "13F247560306791B",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "4E2B66CBA589F625",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/VSK94/armst_Rifle_VSK94_base.et",
+        "HostType":  "AttachmentMuzzle9_39_armst",
+        "HostTypeGID":  "66088C7B8F0591E5",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "0CDB065C629144D0",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "4E2B66CBA589F625",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/VSK94/armst_Rifle_VSK94_base.et",
+        "HostType":  "AttachmentMuzzle9_39_armst",
+        "HostTypeGID":  "66088C7B8F0591E5",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_Collimator.et",
+        "ModuleType":  "AttachmentOpticsRIS1913",
+        "ModuleTypeGID":  "4289872E53434277",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "4E2B66CBA589F625",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/VSK94/armst_Rifle_VSK94_base.et",
+        "HostType":  "AttachmentMuzzle9_39_armst",
+        "HostTypeGID":  "66088C7B8F0591E5",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "5D0CCDD0615C597D",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "4E2B66CBA589F625",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/VSK94/armst_Rifle_VSK94_base.et",
+        "HostType":  "AttachmentMuzzle9_39_armst",
+        "HostTypeGID":  "66088C7B8F0591E5",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Optic.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "F56C225D0E397818",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "4E2B66CBA589F625",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/VSK94/armst_Rifle_VSK94_base.et",
+        "HostType":  "AttachmentMuzzle9_39_armst",
+        "HostTypeGID":  "66088C7B8F0591E5",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Picatinny.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "13F247560306791B",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "5F189C826D592450",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/VSK94/armst_Rifle_VSK94_base.et",
+        "HostType":  "AttachmentOpticsDovetailAK",
+        "HostTypeGID":  "60AAE435165C80B8",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "0CDB065C629144D0",
+        "Status":  "EXACT_MATCH"
+    },
+    {
+        "HostSlot":  "5F189C826D592450",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/VSK94/armst_Rifle_VSK94_base.et",
+        "HostType":  "AttachmentOpticsDovetailAK",
+        "HostTypeGID":  "60AAE435165C80B8",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_Collimator.et",
+        "ModuleType":  "AttachmentOpticsRIS1913",
+        "ModuleTypeGID":  "4289872E53434277",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "5F189C826D592450",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/VSK94/armst_Rifle_VSK94_base.et",
+        "HostType":  "AttachmentOpticsDovetailAK",
+        "HostTypeGID":  "60AAE435165C80B8",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "5D0CCDD0615C597D",
+        "Status":  "EXACT_MATCH"
+    },
+    {
+        "HostSlot":  "5F189C826D592450",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/VSK94/armst_Rifle_VSK94_base.et",
+        "HostType":  "AttachmentOpticsDovetailAK",
+        "HostTypeGID":  "60AAE435165C80B8",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Optic.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "F56C225D0E397818",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "5F189C826D592450",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/VSK94/armst_Rifle_VSK94_base.et",
+        "HostType":  "AttachmentOpticsDovetailAK",
+        "HostTypeGID":  "60AAE435165C80B8",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Picatinny.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "13F247560306791B",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "4E2B66CBA589F625",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/VSS/armst_Rifle_vss_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "0CDB065C629144D0",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "4E2B66CBA589F625",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/VSS/armst_Rifle_vss_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_Collimator.et",
+        "ModuleType":  "AttachmentOpticsRIS1913",
+        "ModuleTypeGID":  "4289872E53434277",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "4E2B66CBA589F625",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/VSS/armst_Rifle_vss_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "5D0CCDD0615C597D",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "4E2B66CBA589F625",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/VSS/armst_Rifle_vss_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Optic.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "F56C225D0E397818",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "4E2B66CBA589F625",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/VSS/armst_Rifle_vss_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Picatinny.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "13F247560306791B",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "5F189C826D592450",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/VSS/armst_Rifle_vss_base.et",
+        "HostType":  "AttachmentOpticsDovetailAK",
+        "HostTypeGID":  "60AAE435165C80B8",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "0CDB065C629144D0",
+        "Status":  "EXACT_MATCH"
+    },
+    {
+        "HostSlot":  "5F189C826D592450",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/VSS/armst_Rifle_vss_base.et",
+        "HostType":  "AttachmentOpticsDovetailAK",
+        "HostTypeGID":  "60AAE435165C80B8",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_Collimator.et",
+        "ModuleType":  "AttachmentOpticsRIS1913",
+        "ModuleTypeGID":  "4289872E53434277",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "5F189C826D592450",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/VSS/armst_Rifle_vss_base.et",
+        "HostType":  "AttachmentOpticsDovetailAK",
+        "HostTypeGID":  "60AAE435165C80B8",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "5D0CCDD0615C597D",
+        "Status":  "EXACT_MATCH"
+    },
+    {
+        "HostSlot":  "5F189C826D592450",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/VSS/armst_Rifle_vss_base.et",
+        "HostType":  "AttachmentOpticsDovetailAK",
+        "HostTypeGID":  "60AAE435165C80B8",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Optic.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "F56C225D0E397818",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "5F189C826D592450",
+        "Host":  "Prefabs/Weapons/Russian/Rifle/VSS/armst_Rifle_vss_base.et",
+        "HostType":  "AttachmentOpticsDovetailAK",
+        "HostTypeGID":  "60AAE435165C80B8",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Picatinny.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "13F247560306791B",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "5D527627CCB8F756",
+        "Host":  "Prefabs/Weapons/Western/Rifle/HKG33/armst_Rifle_HKG33_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "0CDB065C629144D0",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "5D527627CCB8F756",
+        "Host":  "Prefabs/Weapons/Western/Rifle/HKG33/armst_Rifle_HKG33_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_Collimator.et",
+        "ModuleType":  "AttachmentOpticsRIS1913",
+        "ModuleTypeGID":  "4289872E53434277",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "5D527627CCB8F756",
+        "Host":  "Prefabs/Weapons/Western/Rifle/HKG33/armst_Rifle_HKG33_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "5D0CCDD0615C597D",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "5D527627CCB8F756",
+        "Host":  "Prefabs/Weapons/Western/Rifle/HKG33/armst_Rifle_HKG33_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Optic.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "F56C225D0E397818",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "5D527627CCB8F756",
+        "Host":  "Prefabs/Weapons/Western/Rifle/HKG33/armst_Rifle_HKG33_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Picatinny.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "13F247560306791B",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "5F16E0B4B2D0D72C",
+        "Host":  "Prefabs/Weapons/Western/Rifle/HKG33/armst_Rifle_HKG33_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "0CDB065C629144D0",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "5F16E0B4B2D0D72C",
+        "Host":  "Prefabs/Weapons/Western/Rifle/HKG33/armst_Rifle_HKG33_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_Collimator.et",
+        "ModuleType":  "AttachmentOpticsRIS1913",
+        "ModuleTypeGID":  "4289872E53434277",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "5F16E0B4B2D0D72C",
+        "Host":  "Prefabs/Weapons/Western/Rifle/HKG33/armst_Rifle_HKG33_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "5D0CCDD0615C597D",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "5F16E0B4B2D0D72C",
+        "Host":  "Prefabs/Weapons/Western/Rifle/HKG33/armst_Rifle_HKG33_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Optic.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "F56C225D0E397818",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "5F16E0B4B2D0D72C",
+        "Host":  "Prefabs/Weapons/Western/Rifle/HKG33/armst_Rifle_HKG33_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Picatinny.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "13F247560306791B",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "56DE9C900611C1AF",
+        "Host":  "Prefabs/Weapons/Western/Rifle/HKG33/armst_Rifle_HKG33_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "0CDB065C629144D0",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "56DE9C900611C1AF",
+        "Host":  "Prefabs/Weapons/Western/Rifle/HKG33/armst_Rifle_HKG33_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_Collimator.et",
+        "ModuleType":  "AttachmentOpticsRIS1913",
+        "ModuleTypeGID":  "4289872E53434277",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "56DE9C900611C1AF",
+        "Host":  "Prefabs/Weapons/Western/Rifle/HKG33/armst_Rifle_HKG33_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "5D0CCDD0615C597D",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "56DE9C900611C1AF",
+        "Host":  "Prefabs/Weapons/Western/Rifle/HKG33/armst_Rifle_HKG33_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Optic.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "F56C225D0E397818",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "56DE9C900611C1AF",
+        "Host":  "Prefabs/Weapons/Western/Rifle/HKG33/armst_Rifle_HKG33_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Picatinny.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "13F247560306791B",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "6A0470709BAE053A",
+        "Host":  "Prefabs/Weapons/Western/Rifle/HKG36/armst_Rifle_HKG36_base.et",
+        "HostType":  "AttachmentMuzzle556_45",
+        "HostTypeGID":  "6A0470709BAE0525",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "0CDB065C629144D0",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "6A0470709BAE053A",
+        "Host":  "Prefabs/Weapons/Western/Rifle/HKG36/armst_Rifle_HKG36_base.et",
+        "HostType":  "AttachmentMuzzle556_45",
+        "HostTypeGID":  "6A0470709BAE0525",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_Collimator.et",
+        "ModuleType":  "AttachmentOpticsRIS1913",
+        "ModuleTypeGID":  "4289872E53434277",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "6A0470709BAE053A",
+        "Host":  "Prefabs/Weapons/Western/Rifle/HKG36/armst_Rifle_HKG36_base.et",
+        "HostType":  "AttachmentMuzzle556_45",
+        "HostTypeGID":  "6A0470709BAE0525",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "5D0CCDD0615C597D",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "6A0470709BAE053A",
+        "Host":  "Prefabs/Weapons/Western/Rifle/HKG36/armst_Rifle_HKG36_base.et",
+        "HostType":  "AttachmentMuzzle556_45",
+        "HostTypeGID":  "6A0470709BAE0525",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Optic.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "F56C225D0E397818",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "6A0470709BAE053A",
+        "Host":  "Prefabs/Weapons/Western/Rifle/HKG36/armst_Rifle_HKG36_base.et",
+        "HostType":  "AttachmentMuzzle556_45",
+        "HostTypeGID":  "6A0470709BAE0525",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Picatinny.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "13F247560306791B",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "6A0470709BAE058E",
+        "Host":  "Prefabs/Weapons/Western/Rifle/HKG36/armst_Rifle_HKG36_base.et",
+        "HostType":  "AttachmentOpticsG36",
+        "HostTypeGID":  "6A0470709BAE058B",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "0CDB065C629144D0",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "6A0470709BAE058E",
+        "Host":  "Prefabs/Weapons/Western/Rifle/HKG36/armst_Rifle_HKG36_base.et",
+        "HostType":  "AttachmentOpticsG36",
+        "HostTypeGID":  "6A0470709BAE058B",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_Collimator.et",
+        "ModuleType":  "AttachmentOpticsRIS1913",
+        "ModuleTypeGID":  "4289872E53434277",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "6A0470709BAE058E",
+        "Host":  "Prefabs/Weapons/Western/Rifle/HKG36/armst_Rifle_HKG36_base.et",
+        "HostType":  "AttachmentOpticsG36",
+        "HostTypeGID":  "6A0470709BAE058B",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "5D0CCDD0615C597D",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "6A0470709BAE058E",
+        "Host":  "Prefabs/Weapons/Western/Rifle/HKG36/armst_Rifle_HKG36_base.et",
+        "HostType":  "AttachmentOpticsG36",
+        "HostTypeGID":  "6A0470709BAE058B",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Optic.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "F56C225D0E397818",
+        "Status":  "EXACT_MATCH"
+    },
+    {
+        "HostSlot":  "6A0470709BAE058E",
+        "Host":  "Prefabs/Weapons/Western/Rifle/HKG36/armst_Rifle_HKG36_base.et",
+        "HostType":  "AttachmentOpticsG36",
+        "HostTypeGID":  "6A0470709BAE058B",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Picatinny.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "13F247560306791B",
+        "Status":  "EXACT_MATCH"
+    },
+    {
+        "HostSlot":  "6A0470709BAE0574",
+        "Host":  "Prefabs/Weapons/Western/Rifle/HKG36/armst_Rifle_HKG36_base.et",
+        "HostType":  "AttachmentBayonetM9",
+        "HostTypeGID":  "6A0470709BAE0571",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "0CDB065C629144D0",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "6A0470709BAE0574",
+        "Host":  "Prefabs/Weapons/Western/Rifle/HKG36/armst_Rifle_HKG36_base.et",
+        "HostType":  "AttachmentBayonetM9",
+        "HostTypeGID":  "6A0470709BAE0571",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_Collimator.et",
+        "ModuleType":  "AttachmentOpticsRIS1913",
+        "ModuleTypeGID":  "4289872E53434277",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "6A0470709BAE0574",
+        "Host":  "Prefabs/Weapons/Western/Rifle/HKG36/armst_Rifle_HKG36_base.et",
+        "HostType":  "AttachmentBayonetM9",
+        "HostTypeGID":  "6A0470709BAE0571",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "5D0CCDD0615C597D",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "6A0470709BAE0574",
+        "Host":  "Prefabs/Weapons/Western/Rifle/HKG36/armst_Rifle_HKG36_base.et",
+        "HostType":  "AttachmentBayonetM9",
+        "HostTypeGID":  "6A0470709BAE0571",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Optic.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "F56C225D0E397818",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "6A0470709BAE0574",
+        "Host":  "Prefabs/Weapons/Western/Rifle/HKG36/armst_Rifle_HKG36_base.et",
+        "HostType":  "AttachmentBayonetM9",
+        "HostTypeGID":  "6A0470709BAE0571",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Picatinny.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "13F247560306791B",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "5D527627CCB8F756",
+        "Host":  "Prefabs/Weapons/Western/Rifle/L85/armst_Rifle_L85_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "0CDB065C629144D0",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "5D527627CCB8F756",
+        "Host":  "Prefabs/Weapons/Western/Rifle/L85/armst_Rifle_L85_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_Collimator.et",
+        "ModuleType":  "AttachmentOpticsRIS1913",
+        "ModuleTypeGID":  "4289872E53434277",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "5D527627CCB8F756",
+        "Host":  "Prefabs/Weapons/Western/Rifle/L85/armst_Rifle_L85_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "5D0CCDD0615C597D",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "5D527627CCB8F756",
+        "Host":  "Prefabs/Weapons/Western/Rifle/L85/armst_Rifle_L85_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Optic.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "F56C225D0E397818",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "5D527627CCB8F756",
+        "Host":  "Prefabs/Weapons/Western/Rifle/L85/armst_Rifle_L85_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Picatinny.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "13F247560306791B",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "5F16E0B4B2D0D72C",
+        "Host":  "Prefabs/Weapons/Western/Rifle/L85/armst_Rifle_L85_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "0CDB065C629144D0",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "5F16E0B4B2D0D72C",
+        "Host":  "Prefabs/Weapons/Western/Rifle/L85/armst_Rifle_L85_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_Collimator.et",
+        "ModuleType":  "AttachmentOpticsRIS1913",
+        "ModuleTypeGID":  "4289872E53434277",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "5F16E0B4B2D0D72C",
+        "Host":  "Prefabs/Weapons/Western/Rifle/L85/armst_Rifle_L85_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "5D0CCDD0615C597D",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "5F16E0B4B2D0D72C",
+        "Host":  "Prefabs/Weapons/Western/Rifle/L85/armst_Rifle_L85_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Optic.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "F56C225D0E397818",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "5F16E0B4B2D0D72C",
+        "Host":  "Prefabs/Weapons/Western/Rifle/L85/armst_Rifle_L85_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Picatinny.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "13F247560306791B",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "56DE9C900611C1AF",
+        "Host":  "Prefabs/Weapons/Western/Rifle/L85/armst_Rifle_L85_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "0CDB065C629144D0",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "56DE9C900611C1AF",
+        "Host":  "Prefabs/Weapons/Western/Rifle/L85/armst_Rifle_L85_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_Collimator.et",
+        "ModuleType":  "AttachmentOpticsRIS1913",
+        "ModuleTypeGID":  "4289872E53434277",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "56DE9C900611C1AF",
+        "Host":  "Prefabs/Weapons/Western/Rifle/L85/armst_Rifle_L85_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "5D0CCDD0615C597D",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "56DE9C900611C1AF",
+        "Host":  "Prefabs/Weapons/Western/Rifle/L85/armst_Rifle_L85_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Optic.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "F56C225D0E397818",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "56DE9C900611C1AF",
+        "Host":  "Prefabs/Weapons/Western/Rifle/L85/armst_Rifle_L85_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Picatinny.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "13F247560306791B",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "5534745C44D1EF58",
+        "Host":  "Prefabs/Weapons/Western/Rifle/L85/armst_Rifle_L85_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "0CDB065C629144D0",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "5534745C44D1EF58",
+        "Host":  "Prefabs/Weapons/Western/Rifle/L85/armst_Rifle_L85_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_Collimator.et",
+        "ModuleType":  "AttachmentOpticsRIS1913",
+        "ModuleTypeGID":  "4289872E53434277",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "5534745C44D1EF58",
+        "Host":  "Prefabs/Weapons/Western/Rifle/L85/armst_Rifle_L85_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "5D0CCDD0615C597D",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "5534745C44D1EF58",
+        "Host":  "Prefabs/Weapons/Western/Rifle/L85/armst_Rifle_L85_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Optic.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "F56C225D0E397818",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "5534745C44D1EF58",
+        "Host":  "Prefabs/Weapons/Western/Rifle/L85/armst_Rifle_L85_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Picatinny.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "13F247560306791B",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "5D527627CCB8F756",
+        "Host":  "Prefabs/Weapons/Western/Rifle/Sig550/armst_Rifle_Sig550_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "0CDB065C629144D0",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "5D527627CCB8F756",
+        "Host":  "Prefabs/Weapons/Western/Rifle/Sig550/armst_Rifle_Sig550_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_Collimator.et",
+        "ModuleType":  "AttachmentOpticsRIS1913",
+        "ModuleTypeGID":  "4289872E53434277",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "5D527627CCB8F756",
+        "Host":  "Prefabs/Weapons/Western/Rifle/Sig550/armst_Rifle_Sig550_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "5D0CCDD0615C597D",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "5D527627CCB8F756",
+        "Host":  "Prefabs/Weapons/Western/Rifle/Sig550/armst_Rifle_Sig550_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Optic.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "F56C225D0E397818",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "5D527627CCB8F756",
+        "Host":  "Prefabs/Weapons/Western/Rifle/Sig550/armst_Rifle_Sig550_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Picatinny.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "13F247560306791B",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "5F16E0B4B2D0D72C",
+        "Host":  "Prefabs/Weapons/Western/Rifle/Sig550/armst_Rifle_Sig550_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "0CDB065C629144D0",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "5F16E0B4B2D0D72C",
+        "Host":  "Prefabs/Weapons/Western/Rifle/Sig550/armst_Rifle_Sig550_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_Collimator.et",
+        "ModuleType":  "AttachmentOpticsRIS1913",
+        "ModuleTypeGID":  "4289872E53434277",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "5F16E0B4B2D0D72C",
+        "Host":  "Prefabs/Weapons/Western/Rifle/Sig550/armst_Rifle_Sig550_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "5D0CCDD0615C597D",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "5F16E0B4B2D0D72C",
+        "Host":  "Prefabs/Weapons/Western/Rifle/Sig550/armst_Rifle_Sig550_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Optic.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "F56C225D0E397818",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "5F16E0B4B2D0D72C",
+        "Host":  "Prefabs/Weapons/Western/Rifle/Sig550/armst_Rifle_Sig550_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Picatinny.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "13F247560306791B",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "56DE9C900611C1AF",
+        "Host":  "Prefabs/Weapons/Western/Rifle/Sig550/armst_Rifle_Sig550_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "0CDB065C629144D0",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "56DE9C900611C1AF",
+        "Host":  "Prefabs/Weapons/Western/Rifle/Sig550/armst_Rifle_Sig550_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_Collimator.et",
+        "ModuleType":  "AttachmentOpticsRIS1913",
+        "ModuleTypeGID":  "4289872E53434277",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "56DE9C900611C1AF",
+        "Host":  "Prefabs/Weapons/Western/Rifle/Sig550/armst_Rifle_Sig550_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "5D0CCDD0615C597D",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "56DE9C900611C1AF",
+        "Host":  "Prefabs/Weapons/Western/Rifle/Sig550/armst_Rifle_Sig550_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Optic.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "F56C225D0E397818",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "56DE9C900611C1AF",
+        "Host":  "Prefabs/Weapons/Western/Rifle/Sig550/armst_Rifle_Sig550_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Picatinny.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "13F247560306791B",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "5F16E0B4B2D0D72C",
+        "Host":  "Prefabs/Weapons/Western/Rifle/SLR/armst_SLR_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "0CDB065C629144D0",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "5F16E0B4B2D0D72C",
+        "Host":  "Prefabs/Weapons/Western/Rifle/SLR/armst_SLR_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_Collimator.et",
+        "ModuleType":  "AttachmentOpticsRIS1913",
+        "ModuleTypeGID":  "4289872E53434277",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "5F16E0B4B2D0D72C",
+        "Host":  "Prefabs/Weapons/Western/Rifle/SLR/armst_SLR_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "5D0CCDD0615C597D",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "5F16E0B4B2D0D72C",
+        "Host":  "Prefabs/Weapons/Western/Rifle/SLR/armst_SLR_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Optic.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "F56C225D0E397818",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "5F16E0B4B2D0D72C",
+        "Host":  "Prefabs/Weapons/Western/Rifle/SLR/armst_SLR_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Picatinny.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "13F247560306791B",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "56DE9C900611C1AF",
+        "Host":  "Prefabs/Weapons/Western/Rifle/SLR/armst_SLR_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "0CDB065C629144D0",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "56DE9C900611C1AF",
+        "Host":  "Prefabs/Weapons/Western/Rifle/SLR/armst_SLR_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_Collimator.et",
+        "ModuleType":  "AttachmentOpticsRIS1913",
+        "ModuleTypeGID":  "4289872E53434277",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "56DE9C900611C1AF",
+        "Host":  "Prefabs/Weapons/Western/Rifle/SLR/armst_SLR_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "5D0CCDD0615C597D",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "56DE9C900611C1AF",
+        "Host":  "Prefabs/Weapons/Western/Rifle/SLR/armst_SLR_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Optic.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "F56C225D0E397818",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "56DE9C900611C1AF",
+        "Host":  "Prefabs/Weapons/Western/Rifle/SLR/armst_SLR_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Picatinny.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "13F247560306791B",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "5472D21A19B61CDF",
+        "Host":  "Prefabs/Weapons/Western/Shotgun/armst_shotgun_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "0CDB065C629144D0",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "5472D21A19B61CDF",
+        "Host":  "Prefabs/Weapons/Western/Shotgun/armst_shotgun_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_Collimator.et",
+        "ModuleType":  "AttachmentOpticsRIS1913",
+        "ModuleTypeGID":  "4289872E53434277",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "5472D21A19B61CDF",
+        "Host":  "Prefabs/Weapons/Western/Shotgun/armst_shotgun_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et",
+        "ModuleType":  "AttachmentOpticsDovetailAK",
+        "ModuleTypeGID":  "5D0CCDD0615C597D",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "5472D21A19B61CDF",
+        "Host":  "Prefabs/Weapons/Western/Shotgun/armst_shotgun_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Optic.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "F56C225D0E397818",
+        "Status":  "TYPE_MISMATCH"
+    },
+    {
+        "HostSlot":  "5472D21A19B61CDF",
+        "Host":  "Prefabs/Weapons/Western/Shotgun/armst_shotgun_base.et",
+        "HostType":  "",
+        "HostTypeGID":  "",
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Picatinny.et",
+        "ModuleType":  "AttachmentOpticsG36",
+        "ModuleTypeGID":  "13F247560306791B",
+        "Status":  "TYPE_MISMATCH"
+    }
+]

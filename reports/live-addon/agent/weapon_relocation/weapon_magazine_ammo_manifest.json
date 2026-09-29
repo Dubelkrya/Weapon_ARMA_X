@@ -1,0 +1,4664 @@
+{
+  "schema_version": 1,
+  "scope": [
+    "WEAPON",
+    "MAGAZINE",
+    "AMMO"
+  ],
+  "resources": [
+    {
+      "current_path": "Prefabs/Weapons/Handguns/armst_APB.et",
+      "guid": "5D3DA7E84135B278",
+      "meta_path": "Prefabs/Weapons/Handguns/armst_APB.et.meta",
+      "meta_registered_name": "Prefabs/Weapons/Handguns/armst_APB.et",
+      "category": "WEAPON",
+      "region": "RUSSIAN",
+      "weapon_family": "armst_APB.et",
+      "caliber": null,
+      "suggested_target_path": "Prefabs/Weapons/Russian/Handguns/armst_APB/armst_APB.et",
+      "references_to_current_path": [],
+      "children": [],
+      "parent_guid": "C0F7DD85A86B2900",
+      "parent_path": "Handguns/armst_PM.et",
+      "explicit_local_components": [
+        {
+          "class": "WeaponSoundComponent",
+          "instance_id": "5A8685198A9AEEDD"
+        },
+        {
+          "class": "MeshObject",
+          "instance_id": "CFBAA4B701F95D69"
+        },
+        {
+          "class": "SCR_EditableEntityComponent",
+          "instance_id": "65F28786D4603482"
+        },
+        {
+          "class": "SCR_MeleeWeaponProperties",
+          "instance_id": "6742271DE0B9AD55"
+        },
+        {
+          "class": "SCR_WeaponAttachmentsStorageComponent",
+          "instance_id": "51F080D5CE45A1A2"
+        },
+        {
+          "class": "WeaponComponent",
+          "instance_id": "CFBAA4B706BA66E8"
+        },
+        {
+          "class": "SightsComponent",
+          "instance_id": "BB23A637957CFFF8"
+        },
+        {
+          "class": "MuzzleComponent",
+          "instance_id": "50F64C45E7271D47"
+        },
+        {
+          "class": "CaseEjectingEffectComponent",
+          "instance_id": "5122AAD190FCA21D"
+        },
+        {
+          "class": "CaseEjectingEffectComponent",
+          "instance_id": "52C8933882699871"
+        },
+        {
+          "class": "SCR_MuzzleEffectComponent",
+          "instance_id": "C9B3271BB22CDB68"
+        },
+        {
+          "class": "PointInfo",
+          "instance_id": "B80A64F4B6CFB9BF"
+        },
+        {
+          "class": "BaseFireMode",
+          "instance_id": "65F2620630730947"
+        }
+      ],
+      "explicit_local_overrides": [
+        "Name \"APB\"",
+        "m_fDamage 2",
+        "Name \"APB\"",
+        "Description \"\"",
+        "m_bAutoDetectGridSize 0",
+        "m_iCustomGridWidth 4",
+        "m_iCustomGridHeight 2",
+        "Offset 0 0 0",
+        "PivotID \"slot_ironsight_front\"",
+        "Offset 0 0 0",
+        "PivotID \"slot_ironsight_rear\"",
+        "Offset 0 0 0",
+        "Offset 0.0062 0.008 -0.0051",
+        "Offset 0 0 0.237",
+        "Offset 0 0 0.235",
+        "Offset 0 0 0",
+        "MaxBurst -1",
+        "UIName \"Auto\"",
+        "Offset 0 0 0",
+        "Angles 0 0 0",
+        "Name \"APB\"",
+        "Description \"\""
+      ],
+      "move_safe": "REVIEW_REQUIRED",
+      "reason": [
+        "region/category inferred from serialized family/path and known weapon identity"
+      ],
+      "proposed_action": "KEEP_AS_IS"
+    },
+    {
+      "current_path": "Prefabs/Weapons/Handguns/armst_M9.et",
+      "guid": "1353C6EAD1DCFE43",
+      "meta_path": "Prefabs/Weapons/Handguns/armst_M9.et.meta",
+      "meta_registered_name": "Prefabs/Weapons/Handguns/M9/Handgun_M9.et",
+      "category": "WEAPON",
+      "region": "WESTERN",
+      "weapon_family": "armst_M9.et",
+      "caliber": null,
+      "suggested_target_path": "Prefabs/Weapons/Western/Handguns/armst_M9/armst_M9.et",
+      "references_to_current_path": [],
+      "children": [],
+      "parent_guid": "809488C4984AC087",
+      "parent_path": "Prefabs/Weapons/Handguns/M9/Handgun_M9_base.et",
+      "explicit_local_components": [
+        {
+          "class": "ARMST_ITEMS_STATS_COMPONENTS",
+          "instance_id": "657ABA0547189DD7"
+        },
+        {
+          "class": "SCR_EditableEntityComponent",
+          "instance_id": "65F287869C9D1FBC"
+        },
+        {
+          "class": "SCR_MeleeWeaponProperties",
+          "instance_id": "5534C5023A57E44C"
+        },
+        {
+          "class": "SCR_WeaponAttachmentsStorageComponent",
+          "instance_id": "51F080D5CE45A1A2"
+        }
+      ],
+      "explicit_local_overrides": [
+        "Enabled 0",
+        "Name \"#AR-Weapon_BerettaM9_Name\"",
+        "CONTENT_MODDED 4141368",
+        "m_bAutoRegister NEVER",
+        "m_fDamage 2",
+        "m_bAutoDetectGridSize 0",
+        "m_iCustomGridWidth 2",
+        "m_iCustomGridHeight 2"
+      ],
+      "move_safe": "REVIEW_REQUIRED",
+      "reason": [
+        "region/category inferred from serialized family/path and known weapon identity"
+      ],
+      "proposed_action": "KEEP_AS_IS"
+    },
+    {
+      "current_path": "Prefabs/Weapons/Handguns/armst_SR_2.et",
+      "guid": "31FB2EC4F4AFFC05",
+      "meta_path": "Prefabs/Weapons/Handguns/armst_SR_2.et.meta",
+      "meta_registered_name": "Handguns/New_armst_Veresk_SR_@.et",
+      "category": "WEAPON",
+      "region": "RUSSIAN",
+      "weapon_family": "armst_SR_2",
+      "caliber": null,
+      "suggested_target_path": "Prefabs/Weapons/Russian/Handguns/armst_SR_2/armst_SR_2.et",
+      "references_to_current_path": [],
+      "children": [],
+      "parent_guid": "3968B2A856852CBD",
+      "parent_path": "Handguns/New_armst_PP91.et",
+      "explicit_local_components": [
+        {
+          "class": "WeaponSoundComponent",
+          "instance_id": "5A8685198A9AEEDD"
+        },
+        {
+          "class": "MeshObject",
+          "instance_id": "CFBAA4B701F95D69"
+        },
+        {
+          "class": "SCR_EditableEntityComponent",
+          "instance_id": "65F28786D4603482"
+        },
+        {
+          "class": "SCR_MeleeWeaponProperties",
+          "instance_id": "6742271DE0B9AD55"
+        },
+        {
+          "class": "SCR_WeaponAttachmentsStorageComponent",
+          "instance_id": "51F080D5CE45A1A2"
+        },
+        {
+          "class": "PreviewRenderAttributes",
+          "instance_id": "52D2D34CD4A7302B"
+        },
+        {
+          "class": "WeaponComponent",
+          "instance_id": "CFBAA4B706BA66E8"
+        },
+        {
+          "class": "SightsComponent",
+          "instance_id": "BB23A637957CFFF8"
+        },
+        {
+          "class": "SightRangeInfo",
+          "instance_id": "5EEACC0F3BFD890B"
+        },
+        {
+          "class": "MuzzleComponent",
+          "instance_id": "50F64C45E7271D47"
+        },
+        {
+          "class": "CaseEjectingEffectComponent",
+          "instance_id": "5122AAD190FCA21D"
+        },
+        {
+          "class": "CaseEjectingEffectComponent",
+          "instance_id": "52C8933882699871"
+        },
+        {
+          "class": "SCR_MuzzleEffectComponent",
+          "instance_id": "C9B3271BB22CDB68"
+        },
+        {
+          "class": "PointInfo",
+          "instance_id": "B80A64F4B6CFB9BF"
+        },
+        {
+          "class": "BaseFireMode",
+          "instance_id": "B80A64F4A8EF8333"
+        },
+        {
+          "class": "BaseFireMode",
+          "instance_id": "65F2621AD7495FAD"
+        },
+        {
+          "class": "RecoilWeaponAimModifier",
+          "instance_id": "58FCF59C4FED2924"
+        },
+        {
+          "class": "WeaponAnimationComponent",
+          "instance_id": "60B4EA76EB15F6E0"
+        }
+      ],
+      "explicit_local_overrides": [
+        "Name \"PP-91\"",
+        "m_fDamage 2",
+        "Name \"PP-91\"",
+        "Description \"\"",
+        "Weight 1.66",
+        "ItemVolume 350",
+        "m_iCustomGridWidth 4",
+        "Offset 0 0 0",
+        "Offset 0 0 0",
+        "Angles 0 0 0",
+        "PivotID \"slot_ironsight_front\"",
+        "Offset 0 0 0",
+        "PivotID \"slot_ironsight_rear\"",
+        "Offset 0 0 0",
+        "m_iOpticDOFDistanceScale 49",
+        "Offset 0.0088 0.0179 0",
+        "Angles 0 0 73.2915",
+        "Offset 0 0 0.0061",
+        "Offset 0 0 -0.0038",
+        "Offset 0 0 0",
+        "RoundsPerMinute 700",
+        "MaxBurst -1",
+        "RoundsPerMinute 800",
+        "UIName \"Auto\"",
+        "\"Curve Time Scale\" 2.894",
+        "\"Base Recoil Scale\" 3.041",
+        "\"Move Recoil Scale\" 0.289",
+        "\"OneHand Scale\" 2.732",
+        "\"Base Recoil Scale\" 2.68",
+        "\"Move Recoil Scale\" 0.273",
+        "\"OneHand Scale\" 2.784",
+        "Offset 0 0 0",
+        "Angles 0 0 0",
+        "Name \"PP-91\"",
+        "Description \"\"",
+        "WeaponSlotType \"primary\""
+      ],
+      "move_safe": "REVIEW_REQUIRED",
+      "reason": [
+        "existing serialized path/family/ammo/weapon evidence supports the assigned region or leaves the resource unresolved without inventing a target"
+      ],
+      "proposed_action": "KEEP_AS_IS"
+    },
+    {
+      "current_path": "Prefabs/Weapons/Handguns/armst_TT.et",
+      "guid": "0D469F42B65E350E",
+      "meta_path": "Prefabs/Weapons/Handguns/armst_TT.et.meta",
+      "meta_registered_name": "Prefabs/Weapons/Handguns/armst_TT.et",
+      "category": "WEAPON",
+      "region": "RUSSIAN",
+      "weapon_family": "armst_TT.et",
+      "caliber": null,
+      "suggested_target_path": "Prefabs/Weapons/Russian/Handguns/armst_TT/armst_TT.et",
+      "references_to_current_path": [
+        "Prefabs/Weapons/Handguns/armst_TT_prefab_balance_profile.et"
+      ],
+      "children": [],
+      "parent_guid": "C0F7DD85A86B2900",
+      "parent_path": "Handguns/armst_PM.et",
+      "explicit_local_components": [
+        {
+          "class": "MeshObject",
+          "instance_id": "CFBAA4B701F95D69"
+        },
+        {
+          "class": "SCR_EditableEntityComponent",
+          "instance_id": "65F28786D4603482"
+        },
+        {
+          "class": "SCR_MeleeWeaponProperties",
+          "instance_id": "6742271DE0B9AD55"
+        },
+        {
+          "class": "SCR_WeaponAttachmentsStorageComponent",
+          "instance_id": "51F080D5CE45A1A2"
+        },
+        {
+          "class": "WeaponComponent",
+          "instance_id": "CFBAA4B706BA66E8"
+        },
+        {
+          "class": "SightsComponent",
+          "instance_id": "BB23A637957CFFF8"
+        },
+        {
+          "class": "MuzzleComponent",
+          "instance_id": "50F64C45E7271D47"
+        },
+        {
+          "class": "CaseEjectingEffectComponent",
+          "instance_id": "5122AAD190FCA21D"
+        },
+        {
+          "class": "CaseEjectingEffectComponent",
+          "instance_id": "52C8933882699871"
+        },
+        {
+          "class": "SCR_MuzzleEffectComponent",
+          "instance_id": "C9B3271BB22CDB68"
+        }
+      ],
+      "explicit_local_overrides": [
+        "Name \"TT\"",
+        "m_fDamage 2",
+        "Name \"TT\"",
+        "Description \"\"",
+        "Offset 0 0 0",
+        "PivotID \"slot_ironsight_front\"",
+        "Offset 0 0 0",
+        "PivotID \"slot_ironsight_rear\"",
+        "Offset 0 0 0",
+        "Offset 0 0 0.0166",
+        "Angles 0 0 38.7063",
+        "Offset -0.0011 -0.0047 0",
+        "Offset -0.0008 -0.0052 0",
+        "Offset 0 -0.0078 0.001",
+        "Angles 0 0 0",
+        "Name \"TT\"",
+        "Description \"\""
+      ],
+      "move_safe": "REVIEW_REQUIRED",
+      "reason": [
+        "region/category inferred from serialized family/path and known weapon identity"
+      ],
+      "proposed_action": "KEEP_AS_IS"
+    },
+    {
+      "current_path": "Prefabs/Weapons/MachineGuns/armst_PKM.et",
+      "guid": "A89BC9D55FFB4CD8",
+      "meta_path": "Prefabs/Weapons/MachineGuns/armst_PKM.et.meta",
+      "meta_registered_name": "Prefabs/Weapons/MachineGuns/PKM/MG_PKM.et",
+      "category": "WEAPON",
+      "region": "RUSSIAN",
+      "weapon_family": "armst_PKM.et",
+      "caliber": null,
+      "suggested_target_path": "Prefabs/Weapons/Russian/MachineGuns/armst_PKM/armst_PKM.et",
+      "references_to_current_path": [],
+      "children": [],
+      "parent_guid": "76C400582D3C4AF9",
+      "parent_path": "Prefabs/Weapons/MachineGuns/PKM/MG_PKM_base.et",
+      "explicit_local_components": [
+        {
+          "class": "ARMST_ITEMS_STATS_COMPONENTS",
+          "instance_id": "657ABA0547189DD7"
+        },
+        {
+          "class": "SCR_MeleeWeaponProperties",
+          "instance_id": "5534BB9B9A3E3765"
+        },
+        {
+          "class": "SCR_WeaponAttachmentsStorageComponent",
+          "instance_id": "51F080D5CE45A1A2"
+        }
+      ],
+      "explicit_local_overrides": [
+        "m_fDamage 2",
+        "m_bAutoDetectGridSize 0",
+        "m_iCustomGridWidth 10",
+        "m_iCustomGridHeight 4"
+      ],
+      "move_safe": "REVIEW_REQUIRED",
+      "reason": [
+        "region/category inferred from serialized family/path and known weapon identity"
+      ],
+      "proposed_action": "KEEP_AS_IS"
+    },
+    {
+      "current_path": "Prefabs/Weapons/MachineGuns/armst_RPK74.et",
+      "guid": "A7AF84C6C58BA3E8",
+      "meta_path": "Prefabs/Weapons/MachineGuns/armst_RPK74.et.meta",
+      "meta_registered_name": "Prefabs/Weapons/MachineGuns/RPK74/MG_RPK74.et",
+      "category": "WEAPON",
+      "region": "RUSSIAN",
+      "weapon_family": "armst_RPK74.et",
+      "caliber": null,
+      "suggested_target_path": "Prefabs/Weapons/Russian/MachineGuns/armst_RPK74/armst_RPK74.et",
+      "references_to_current_path": [],
+      "children": [],
+      "parent_guid": "3BFBE9145E9C40B9",
+      "parent_path": "Prefabs/Weapons/MachineGuns/RPK74/MG_RPK74_base.et",
+      "explicit_local_components": [
+        {
+          "class": "SCR_MeleeWeaponProperties",
+          "instance_id": "5534B7DA16FF55EE"
+        },
+        {
+          "class": "SCR_WeaponAttachmentsStorageComponent",
+          "instance_id": "51F080D5CE45A1A2"
+        }
+      ],
+      "explicit_local_overrides": [
+        "m_fDamage 2",
+        "m_bAutoDetectGridSize 0",
+        "m_iCustomGridWidth 8",
+        "m_iCustomGridHeight 2"
+      ],
+      "move_safe": "REVIEW_REQUIRED",
+      "reason": [
+        "region/category inferred from serialized family/path and known weapon identity"
+      ],
+      "proposed_action": "KEEP_AS_IS"
+    },
+    {
+      "current_path": "Prefabs/Weapons/Rifles/AK74/armst_AK105.et",
+      "guid": "6FC3151D0DED22A9",
+      "meta_path": "Prefabs/Weapons/Rifles/AK74/armst_AK105.et.meta",
+      "meta_registered_name": "Rifles/AK74/armst_AK105.et",
+      "category": "WEAPON",
+      "region": "RUSSIAN",
+      "weapon_family": "AK74",
+      "caliber": null,
+      "suggested_target_path": "Prefabs/Weapons/Russian/Rifles/armst_AK105/armst_AK105.et",
+      "references_to_current_path": [],
+      "children": [],
+      "parent_guid": "FA5C25BF66A53DCF",
+      "parent_path": "Rifles/AK74/armst_AK74.et",
+      "explicit_local_components": [
+        {
+          "class": "MeshObject",
+          "instance_id": "CFBAA4B701F95D69"
+        },
+        {
+          "class": "SCR_EditableEntityComponent",
+          "instance_id": "65B265034B23979A"
+        },
+        {
+          "class": "WeaponComponent",
+          "instance_id": "CFBAA4B706BA66E8"
+        },
+        {
+          "class": "AttachmentSlotComponent",
+          "instance_id": "5F189C826D592450"
+        },
+        {
+          "class": "MuzzleComponent",
+          "instance_id": "CA6BE4D6B867541F"
+        },
+        {
+          "class": "AttachmentSlotComponent",
+          "instance_id": "4E2B66CBA589F625"
+        }
+      ],
+      "explicit_local_overrides": [
+        "Enabled 0",
+        "Name \"#AR-Weapon_AK74_Name\"",
+        "m_bAutoRegister NEVER",
+        "PivotID \"barrel_muzzle\"",
+        "Angles 0 0 0",
+        "Enabled 1",
+        "PivotID \"barrel_muzzle\"",
+        "Offset 0 -0.001 0.0122"
+      ],
+      "move_safe": "REVIEW_REQUIRED",
+      "reason": [
+        "region/category inferred from serialized family/path and known weapon identity"
+      ],
+      "proposed_action": "KEEP_AS_IS"
+    },
+    {
+      "current_path": "Prefabs/Weapons/Rifles/AK74/armst_AK74M_full.et",
+      "guid": "63892659A632A0FD",
+      "meta_path": "Prefabs/Weapons/Rifles/AK74/armst_AK74M_full.et.meta",
+      "meta_registered_name": "Prefabs/Weapons/Rifles/AK74/armst_AK74M_full.et",
+      "category": "WEAPON",
+      "region": "RUSSIAN",
+      "weapon_family": "AK74",
+      "caliber": null,
+      "suggested_target_path": "Prefabs/Weapons/Russian/Rifles/armst_AK74M_full/armst_AK74M_full.et",
+      "references_to_current_path": [],
+      "children": [],
+      "parent_guid": "5B8E766C0E3C13EE",
+      "parent_path": "Prefabs/Weapons/Rifles/AK74/armst_AK74M.et",
+      "explicit_local_components": [
+        {
+          "class": "WeaponComponent",
+          "instance_id": "CFBAA4B706BA66E8"
+        },
+        {
+          "class": "AttachmentSlotComponent",
+          "instance_id": "51F6738D2EC74BE1"
+        },
+        {
+          "class": "AttachmentSlotComponent",
+          "instance_id": "55349E9229B55E29"
+        },
+        {
+          "class": "MuzzleComponent",
+          "instance_id": "CA6BE4D6B867541F"
+        },
+        {
+          "class": "AttachmentSlotComponent",
+          "instance_id": "4E2B66CBA589F625"
+        }
+      ],
+      "explicit_local_overrides": [
+        "Offset 0.0032 0.0064 0.0418"
+      ],
+      "move_safe": "REVIEW_REQUIRED",
+      "reason": [
+        "region/category inferred from serialized family/path and known weapon identity"
+      ],
+      "proposed_action": "KEEP_AS_IS"
+    },
+    {
+      "current_path": "Prefabs/Weapons/Rifles/AK74/armst_AKS.et",
+      "guid": "25A64724FD416989",
+      "meta_path": "Prefabs/Weapons/Rifles/AK74/armst_AKS.et.meta",
+      "meta_registered_name": "Prefabs/Weapons/Rifles/AK74/armst_AKS.et",
+      "category": "WEAPON",
+      "region": "RUSSIAN",
+      "weapon_family": "armst_AKS",
+      "caliber": null,
+      "suggested_target_path": "Prefabs/Weapons/Russian/Rifles/armst_AKS/armst_AKS.et",
+      "references_to_current_path": [],
+      "children": [],
+      "parent_guid": "96DFD2E7E63B3386",
+      "parent_path": "Prefabs/Weapons/Rifles/AK74/armst_AK74N.et",
+      "explicit_local_components": [
+        {
+          "class": "MeshObject",
+          "instance_id": "CFBAA4B701F95D69"
+        },
+        {
+          "class": "MaterialAssignClass",
+          "instance_id": "69DF6A28EEDC1457"
+        },
+        {
+          "class": "SCR_EditableEntityComponent",
+          "instance_id": "65B265034B23979A"
+        },
+        {
+          "class": "SCR_MeleeWeaponProperties",
+          "instance_id": "55349E9229B55E31"
+        },
+        {
+          "class": "SCR_WeaponAttachmentsStorageComponent",
+          "instance_id": "51F080D5CE45A1A2"
+        },
+        {
+          "class": "SlotManagerComponent",
+          "instance_id": "559E78319D6C8CFA"
+        },
+        {
+          "class": "WeaponComponent",
+          "instance_id": "CFBAA4B706BA66E8"
+        },
+        {
+          "class": "AttachmentSlotComponent",
+          "instance_id": "51F6738D2EC74BE1"
+        }
+      ],
+      "explicit_local_overrides": [
+        "SourceMaterial \"AK74_Stock\"",
+        "Enabled 0",
+        "Name \"AK-74M\"",
+        "m_fDamage 2",
+        "Name \"AKS-74\"",
+        "Weight 2.8",
+        "Offset 0.0043 -0.0017 -0.0036",
+        "Angles -3.1674 0.4868 0",
+        "Offset 0.0042 0.0031 -0.0106",
+        "Angles 0 0.4868 0",
+        "Enabled 0",
+        "Name \"AKS-74\""
+      ],
+      "move_safe": "REVIEW_REQUIRED",
+      "reason": [
+        "existing serialized path/family/ammo/weapon evidence supports the assigned region or leaves the resource unresolved without inventing a target"
+      ],
+      "proposed_action": "KEEP_AS_IS"
+    },
+    {
+      "current_path": "Prefabs/Weapons/Rifles/AK74/armst_AKS74U.et",
+      "guid": "BFEA719491610A45",
+      "meta_path": "Prefabs/Weapons/Rifles/AK74/armst_AKS74U.et.meta",
+      "meta_registered_name": "Prefabs/Weapons/Rifles/armst_AKS74U.et",
+      "category": "WEAPON",
+      "region": "RUSSIAN",
+      "weapon_family": "AK74",
+      "caliber": null,
+      "suggested_target_path": "Prefabs/Weapons/Russian/Rifles/armst_AKS74U/armst_AKS74U.et",
+      "references_to_current_path": [],
+      "children": [],
+      "parent_guid": "8BA0D0DE316D1B44",
+      "parent_path": "Prefabs/Weapons/Rifles/AKS74U/Rifle_AKS74U_base.et",
+      "explicit_local_components": [
+        {
+          "class": "ARMST_ITEMS_STATS_COMPONENTS",
+          "instance_id": "657ABA0547189DD7"
+        },
+        {
+          "class": "SCR_EditableEntityComponent",
+          "instance_id": "65B265034B23979A"
+        },
+        {
+          "class": "SCR_MeleeWeaponProperties",
+          "instance_id": "55349E9229B55E31"
+        }
+      ],
+      "explicit_local_overrides": [
+        "Enabled 0",
+        "Name \"#AR-Weapon_AKS74U_Name\"",
+        "1001 4141368",
+        "m_bAutoRegister NEVER",
+        "m_fDamage 2"
+      ],
+      "move_safe": "REVIEW_REQUIRED",
+      "reason": [
+        "region/category inferred from serialized family/path and known weapon identity"
+      ],
+      "proposed_action": "KEEP_AS_IS"
+    },
+    {
+      "current_path": "Prefabs/Weapons/Rifles/AK74/armst_AKS74UN.et",
+      "guid": "FA0E25CE35EE945F",
+      "meta_path": "Prefabs/Weapons/Rifles/AK74/armst_AKS74UN.et.meta",
+      "meta_registered_name": "Prefabs/Weapons/Rifles/armst_AKS74UN.et",
+      "category": "WEAPON",
+      "region": "RUSSIAN",
+      "weapon_family": "AK74",
+      "caliber": null,
+      "suggested_target_path": "Prefabs/Weapons/Russian/Rifles/armst_AKS74UN/armst_AKS74UN.et",
+      "references_to_current_path": [],
+      "children": [],
+      "parent_guid": "9AE416F8879DDA6D",
+      "parent_path": "Prefabs/Weapons/Rifles/AKS74U/Rifle_AKS74UN_base.et",
+      "explicit_local_components": [
+        {
+          "class": "ARMST_ITEMS_STATS_COMPONENTS",
+          "instance_id": "657ABA0547189DD7"
+        },
+        {
+          "class": "SCR_MeleeWeaponProperties",
+          "instance_id": "55349E9229B55E31"
+        }
+      ],
+      "explicit_local_overrides": [
+        "m_fDamage 2"
+      ],
+      "move_safe": "REVIEW_REQUIRED",
+      "reason": [
+        "region/category inferred from serialized family/path and known weapon identity"
+      ],
+      "proposed_action": "KEEP_AS_IS"
+    },
+    {
+      "current_path": "Prefabs/Weapons/Rifles/AKM/armst_Rifle_AKMS.et",
+      "guid": "5712F6F88A014F0B",
+      "meta_path": "Prefabs/Weapons/Rifles/AKM/armst_Rifle_AKMS.et.meta",
+      "meta_registered_name": "Prefabs/Weapons/Rifles/AKM/armst_Rifle_AKMS.et",
+      "category": "WEAPON",
+      "region": "RUSSIAN",
+      "weapon_family": "AKM",
+      "caliber": null,
+      "suggested_target_path": "Prefabs/Weapons/Russian/Rifles/armst_Rifle_AKMS/armst_Rifle_AKMS.et",
+      "references_to_current_path": [],
+      "children": [],
+      "parent_guid": "140E94F473B60FE3",
+      "parent_path": "Prefabs/Weapons/Rifles/AKM/armst_Rifle_AKM_base.et",
+      "explicit_local_components": [
+        {
+          "class": "SCR_EditableEntityComponent",
+          "instance_id": "65B527CEF347B9BB"
+        },
+        {
+          "class": "SCR_WeaponAttachmentsStorageComponent",
+          "instance_id": "51F080D5CE45A1A2"
+        },
+        {
+          "class": "WeaponComponent",
+          "instance_id": "CFBAA4B706BA66E8"
+        },
+        {
+          "class": "AttachmentSlotComponent",
+          "instance_id": "65AE4CB5E23C0F63"
+        },
+        {
+          "class": "MuzzleComponent",
+          "instance_id": "CA6BE4D6B867541F"
+        }
+      ],
+      "explicit_local_overrides": [
+        "Enabled 0",
+        "Name \"AKM\"",
+        "1001 4141368",
+        "m_bAutoRegister NEVER",
+        "Name \"AKMS\"",
+        "Offset -0.0014 -0.0143 0.0075",
+        "Angles -5.1589 0 0",
+        "RoundsPerMinute 800",
+        "Name \"AKMS\""
+      ],
+      "move_safe": "REVIEW_REQUIRED",
+      "reason": [
+        "region/category inferred from serialized family/path and known weapon identity"
+      ],
+      "proposed_action": "KEEP_AS_IS"
+    },
+    {
+      "current_path": "Prefabs/Weapons/Rifles/AKM/armst_Rifle_AKM_full.et",
+      "guid": "33BEE1A93C920B26",
+      "meta_path": "Prefabs/Weapons/Rifles/AKM/armst_Rifle_AKM_full.et.meta",
+      "meta_registered_name": "Prefabs/Weapons/Rifles/AKM/armst_Rifle_AKM_full.et",
+      "category": "WEAPON",
+      "region": "RUSSIAN",
+      "weapon_family": "AKM",
+      "caliber": null,
+      "suggested_target_path": "Prefabs/Weapons/Russian/Rifles/armst_Rifle_AKM_full/armst_Rifle_AKM_full.et",
+      "references_to_current_path": [],
+      "children": [],
+      "parent_guid": "5BFF97EFD0BF6D9F",
+      "parent_path": "Prefabs/Weapons/Rifles/AKM/armst_Rifle_AKM.et",
+      "explicit_local_components": [
+        {
+          "class": "WeaponComponent",
+          "instance_id": "CFBAA4B706BA66E8"
+        },
+        {
+          "class": "AttachmentSlotComponent",
+          "instance_id": "65AE4CB5E23C0F65"
+        },
+        {
+          "class": "AttachmentSlotComponent",
+          "instance_id": "673A7B215304A28B"
+        }
+      ],
+      "explicit_local_overrides": [],
+      "move_safe": "REVIEW_REQUIRED",
+      "reason": [
+        "region/category inferred from serialized family/path and known weapon identity"
+      ],
+      "proposed_action": "KEEP_AS_IS"
+    },
+    {
+      "current_path": "Prefabs/Weapons/Rifles/AKM/armst_Rifle_SOC94.et",
+      "guid": "E394112ABBC198D8",
+      "meta_path": "Prefabs/Weapons/Rifles/AKM/armst_Rifle_SOC94.et.meta",
+      "meta_registered_name": "Prefabs/Weapons/Rifles/AKM/armst_Rifle_SOC94.et",
+      "category": "WEAPON",
+      "region": "EASTERN",
+      "weapon_family": "armst_Rifle_SOC94",
+      "caliber": null,
+      "suggested_target_path": "Prefabs/Weapons/Eastern/Rifles/armst_Rifle_SOC94/armst_Rifle_SOC94.et",
+      "references_to_current_path": [],
+      "children": [],
+      "parent_guid": "140E94F473B60FE3",
+      "parent_path": "Rifles/AKM/armst_Rifle_AKM_base.et",
+      "explicit_local_components": [
+        {
+          "class": "MeshObject",
+          "instance_id": "CFBAA4B701F95D69"
+        },
+        {
+          "class": "SCR_EditableEntityComponent",
+          "instance_id": "65B265034B23979A"
+        },
+        {
+          "class": "SCR_WeaponAttachmentsStorageComponent",
+          "instance_id": "51F080D5CE45A1A2"
+        },
+        {
+          "class": "SlotManagerComponent",
+          "instance_id": "673A7B21D011B7E9"
+        },
+        {
+          "class": "WeaponComponent",
+          "instance_id": "CFBAA4B706BA66E8"
+        },
+        {
+          "class": "AttachmentSlotComponent",
+          "instance_id": "65AE4CB5E23C0F63"
+        },
+        {
+          "class": "AttachmentSlotComponent",
+          "instance_id": "65AE4CB5E23C0F65"
+        },
+        {
+          "class": "AttachmentSlotComponent",
+          "instance_id": "673A7B215304A28B"
+        },
+        {
+          "class": "SightsComponent",
+          "instance_id": "BB23A637957CFFF8"
+        },
+        {
+          "class": "MuzzleComponent",
+          "instance_id": "CA6BE4D6B867541F"
+        },
+        {
+          "class": "AttachmentSlotComponent",
+          "instance_id": "65AE4CB5E23C0F2C"
+        },
+        {
+          "class": "WeaponAnimationComponent",
+          "instance_id": "60B4EA76EB15F6E0"
+        },
+        {
+          "class": "ActionsManagerComponent",
+          "instance_id": "A29AE67FF4D82B0F"
+        },
+        {
+          "class": "UserActionContext",
+          "instance_id": "69F2A461E52826BA"
+        }
+      ],
+      "explicit_local_overrides": [
+        "Enabled 0",
+        "Name \"SOK-94\"",
+        "m_bAutoRegister NEVER",
+        "Name \"SOK-94\"",
+        "Description \"SOK-94\"",
+        "Enabled 0",
+        "Offset -0.022 0.0587 0.0709",
+        "InspectionWidgetOffset -0.0256 0.0486 0.0199",
+        "Offset 0 0 0",
+        "ChildPivotID \"slot_optic\"",
+        "Enabled 0",
+        "Offset 0 0 -0.0957",
+        "PivotID \"slot_ironsight_front\"",
+        "Offset 0 0 0",
+        "PivotID \"slot_ironsight_rear\"",
+        "Offset 0 0 0",
+        "Enabled 0",
+        "Offset 0 0 0",
+        "Angles 0 0 0",
+        "Offset 0 0 0",
+        "Offset 0 0 0",
+        "Angles 0 0 0",
+        "Name \"SOK-94\"",
+        "Description \"SOK-94\"",
+        "PivotID \"slot_optics\""
+      ],
+      "move_safe": "REVIEW_REQUIRED",
+      "reason": [
+        "existing serialized path/family/ammo/weapon evidence supports the assigned region or leaves the resource unresolved without inventing a target"
+      ],
+      "proposed_action": "KEEP_AS_IS"
+    },
+    {
+      "current_path": "Prefabs/Weapons/Rifles/AKM/armst_Rifle_VPO136.et",
+      "guid": "90EADC5DD9AD35D5",
+      "meta_path": "Prefabs/Weapons/Rifles/AKM/armst_Rifle_VPO136.et.meta",
+      "meta_registered_name": "Prefabs/Weapons/Rifles/AKM/armst_Rifle_VPO136.et",
+      "category": "WEAPON",
+      "region": "RUSSIAN",
+      "weapon_family": "armst_Rifle_VPO136",
+      "caliber": null,
+      "suggested_target_path": "Prefabs/Weapons/Russian/Rifles/armst_Rifle_VPO136/armst_Rifle_VPO136.et",
+      "references_to_current_path": [],
+      "children": [],
+      "parent_guid": "140E94F473B60FE3",
+      "parent_path": "Prefabs/Weapons/Rifles/AKM/armst_Rifle_AKM_base.et",
+      "explicit_local_components": [
+        {
+          "class": "SCR_EditableEntityComponent",
+          "instance_id": "65B265034B23979A"
+        },
+        {
+          "class": "SCR_WeaponAttachmentsStorageComponent",
+          "instance_id": "51F080D5CE45A1A2"
+        },
+        {
+          "class": "SlotManagerComponent",
+          "instance_id": "673A7B21D011B7E9"
+        },
+        {
+          "class": "WeaponComponent",
+          "instance_id": "CFBAA4B706BA66E8"
+        },
+        {
+          "class": "AttachmentSlotComponent",
+          "instance_id": "65AE4CB5E23C0F63"
+        },
+        {
+          "class": "MuzzleComponent",
+          "instance_id": "CA6BE4D6B867541F"
+        }
+      ],
+      "explicit_local_overrides": [
+        "Enabled 0",
+        "Name \"VPO-136\"",
+        "CONTENT_MODDED 4141368",
+        "m_bAutoRegister NEVER",
+        "Name \"VPO-136\"",
+        "Description \"VPO-136\"",
+        "Enabled 0",
+        "Offset 0.0038 0.0271 -0.2064",
+        "Name \"VPO-136\"",
+        "Description \"VPO-136\""
+      ],
+      "move_safe": "REVIEW_REQUIRED",
+      "reason": [
+        "existing serialized path/family/ammo/weapon evidence supports the assigned region or leaves the resource unresolved without inventing a target"
+      ],
+      "proposed_action": "KEEP_AS_IS"
+    },
+    {
+      "current_path": "Prefabs/Weapons/Rifles/Shotgun/armst_Remington_870.et",
+      "guid": "6DBEF115AA35E404",
+      "meta_path": "Prefabs/Weapons/Rifles/Shotgun/armst_Remington_870.et.meta",
+      "meta_registered_name": "Prefabs/Weapons/Rifles/Shotgun/armst_Remington_870.et",
+      "category": "WEAPON",
+      "region": "WESTERN",
+      "weapon_family": "Shotgun",
+      "caliber": null,
+      "suggested_target_path": "Prefabs/Weapons/Western/Shotguns/armst_Remington_870/armst_Remington_870.et",
+      "references_to_current_path": [],
+      "children": [],
+      "parent_guid": "6C5E2009CDCD0BD3",
+      "parent_path": "Prefabs/ShotGun/ShotGun/armst_shotgun_base.et",
+      "explicit_local_components": [
+        {
+          "class": "WeaponSoundComponent",
+          "instance_id": "5A8685198A9AEEDD"
+        },
+        {
+          "class": "ARMST_SHOTGUN_COMPONENTS",
+          "instance_id": "69E4C57F6C1EE3A6"
+        },
+        {
+          "class": "MeshObject",
+          "instance_id": "CFBAA4B701F95D69"
+        },
+        {
+          "class": "SCR_WeaponAttachmentsStorageComponent",
+          "instance_id": "51F080D5CE45A1A2"
+        },
+        {
+          "class": "WeaponComponent",
+          "instance_id": "CFBAA4B706BA66E8"
+        },
+        {
+          "class": "MuzzleComponent",
+          "instance_id": "CA6BE4D6B867541F"
+        },
+        {
+          "class": "CaseEjectingEffectComponent",
+          "instance_id": "5122AAD190FCA21D"
+        },
+        {
+          "class": "PointInfo",
+          "instance_id": "50F64C476EC435CA"
+        },
+        {
+          "class": "BaseFireMode",
+          "instance_id": "B80A64F4A8EF8333"
+        },
+        {
+          "class": "WeaponAnimationComponent",
+          "instance_id": "60B4EA76EB15F6E0"
+        }
+      ],
+      "explicit_local_overrides": [
+        "m_MaxMagazineAmmo 6",
+        "Name \"Remington 870\"",
+        "Weight 3.6",
+        "Offset 0.0437 -0.0164 -0.6166",
+        "Offset 0 0 0.0282",
+        "ManualAction 1",
+        "Name \"Remington 870\""
+      ],
+      "move_safe": "REVIEW_REQUIRED",
+      "reason": [
+        "region/category inferred from serialized family/path and known weapon identity"
+      ],
+      "proposed_action": "KEEP_AS_IS"
+    },
+    {
+      "current_path": "Prefabs/Weapons/Rifles/Shotgun/armst_izh_27.et",
+      "guid": "57F153EFAD34E1CA",
+      "meta_path": "Prefabs/Weapons/Rifles/Shotgun/armst_izh_27.et.meta",
+      "meta_registered_name": "Prefabs/Weapons/Rifles/Shotgun/armst_izh_27.et",
+      "category": "WEAPON",
+      "region": "RUSSIAN",
+      "weapon_family": "Shotgun",
+      "caliber": null,
+      "suggested_target_path": "Prefabs/Weapons/Russian/Shotguns/armst_izh_27/armst_izh_27.et",
+      "references_to_current_path": [],
+      "children": [],
+      "parent_guid": "6C5E2009CDCD0BD3",
+      "parent_path": "Prefabs/Weapons/Rifles/Shotgun/armst_shotgun_base.et",
+      "explicit_local_components": [
+        {
+          "class": "WeaponSoundComponent",
+          "instance_id": "5A8685198A9AEEDD"
+        },
+        {
+          "class": "SCR_WeaponAttachmentsStorageComponent",
+          "instance_id": "51F080D5CE45A1A2"
+        },
+        {
+          "class": "PreviewRenderAttributes",
+          "instance_id": "52BAB5E48C906DB8"
+        },
+        {
+          "class": "WeaponComponent",
+          "instance_id": "CFBAA4B706BA66E8"
+        },
+        {
+          "class": "MuzzleComponent",
+          "instance_id": "CA6BE4D6B867541F"
+        },
+        {
+          "class": "CaseEjectingEffectComponent",
+          "instance_id": "5122AAD190FCA21D"
+        },
+        {
+          "class": "CaseEjectingEffectComponent",
+          "instance_id": "54ACE71283EC783A"
+        },
+        {
+          "class": "PointInfo",
+          "instance_id": "B80A64F4B6CFB9BF"
+        },
+        {
+          "class": "PointInfo",
+          "instance_id": "50F64C476EC435CA"
+        },
+        {
+          "class": "BaseFireMode",
+          "instance_id": "B80A64F4A8EF8333"
+        },
+        {
+          "class": "WeaponAnimationComponent",
+          "instance_id": "60B4EA76EB15F6E0"
+        }
+      ],
+      "explicit_local_overrides": [
+        "Name \"IZH-27\"",
+        "Description \"12 Gauge shotgun\"",
+        "Weight 3.3",
+        "LodModel 0",
+        "Enabled 0",
+        "Offset 0 0 0.1223",
+        "Offset 0 0 0.1112",
+        "Offset 0 0 0.6409",
+        "RoundsPerMinute 1500"
+      ],
+      "move_safe": "REVIEW_REQUIRED",
+      "reason": [
+        "region/category inferred from serialized family/path and known weapon identity"
+      ],
+      "proposed_action": "KEEP_AS_IS"
+    },
+    {
+      "current_path": "Prefabs/Weapons/Rifles/Shotgun/armst_mp_133.et",
+      "guid": "63FF6FDCA4E7E735",
+      "meta_path": "Prefabs/Weapons/Rifles/Shotgun/armst_mp_133.et.meta",
+      "meta_registered_name": "Prefabs/Weapons/Rifles/Shotgun/armst_mp_133.et",
+      "category": "WEAPON",
+      "region": "RUSSIAN",
+      "weapon_family": "armst_mp_133",
+      "caliber": null,
+      "suggested_target_path": "Prefabs/Weapons/Russian/Shotguns/armst_mp_133/armst_mp_133.et",
+      "references_to_current_path": [],
+      "children": [],
+      "parent_guid": "6C5E2009CDCD0BD3",
+      "parent_path": "Prefabs/Weapons/Rifles/Shotgun/armst_shotgun_base.et",
+      "explicit_local_components": [
+        {
+          "class": "WeaponSoundComponent",
+          "instance_id": "5A8685198A9AEEDD"
+        },
+        {
+          "class": "MeshObject",
+          "instance_id": "CFBAA4B701F95D69"
+        },
+        {
+          "class": "MaterialAssignClass",
+          "instance_id": "6A2690C2669914B2"
+        },
+        {
+          "class": "SCR_WeaponAttachmentsStorageComponent",
+          "instance_id": "51F080D5CE45A1A2"
+        },
+        {
+          "class": "WeaponComponent",
+          "instance_id": "CFBAA4B706BA66E8"
+        },
+        {
+          "class": "MuzzleComponent",
+          "instance_id": "CA6BE4D6B867541F"
+        },
+        {
+          "class": "CaseEjectingEffectComponent",
+          "instance_id": "5122AAD190FCA21D"
+        },
+        {
+          "class": "PointInfo",
+          "instance_id": "B80A64F4B6CFB9BF"
+        },
+        {
+          "class": "PointInfo",
+          "instance_id": "50F64C476EC435CA"
+        },
+        {
+          "class": "BaseFireMode",
+          "instance_id": "B80A64F4A8EF8333"
+        },
+        {
+          "class": "WeaponAnimationComponent",
+          "instance_id": "60B4EA76EB15F6E0"
+        }
+      ],
+      "explicit_local_overrides": [
+        "SourceMaterial \"Mat_2\"",
+        "Name \"MP 133\"",
+        "Weight 3.3",
+        "Offset 0.0533 -0.0064 -0.0687",
+        "Offset 0 0 0.0158",
+        "Offset 0 0 0.5568",
+        "RoundsPerMinute 1400",
+        "ManualAction 1",
+        "Offset 0 0.0235 -0.0098",
+        "Angles -88.4028 -180 -180",
+        "Name \"MP 133\""
+      ],
+      "move_safe": "REVIEW_REQUIRED",
+      "reason": [
+        "existing serialized path/family/ammo/weapon evidence supports the assigned region or leaves the resource unresolved without inventing a target"
+      ],
+      "proposed_action": "KEEP_AS_IS"
+    },
+    {
+      "current_path": "Prefabs/Weapons/Rifles/Shotgun/armst_mp_153.et",
+      "guid": "92DB80A098AABF1C",
+      "meta_path": "Prefabs/Weapons/Rifles/Shotgun/armst_mp_153.et.meta",
+      "meta_registered_name": "Prefabs/Weapons/Rifles/Shotgun/armst_mp_153.et",
+      "category": "WEAPON",
+      "region": "RUSSIAN",
+      "weapon_family": "armst_mp_153",
+      "caliber": null,
+      "suggested_target_path": "Prefabs/Weapons/Russian/Shotguns/armst_mp_153/armst_mp_153.et",
+      "references_to_current_path": [],
+      "children": [],
+      "parent_guid": "6C5E2009CDCD0BD3",
+      "parent_path": "Prefabs/ShotGun/ShotGun/armst_shotgun_base.et",
+      "explicit_local_components": [
+        {
+          "class": "WeaponSoundComponent",
+          "instance_id": "5A8685198A9AEEDD"
+        },
+        {
+          "class": "ARMST_SHOTGUN_COMPONENTS",
+          "instance_id": "69E4C57F6C1EE3A6"
+        },
+        {
+          "class": "MeshObject",
+          "instance_id": "CFBAA4B701F95D69"
+        },
+        {
+          "class": "SCR_WeaponAttachmentsStorageComponent",
+          "instance_id": "51F080D5CE45A1A2"
+        },
+        {
+          "class": "WeaponComponent",
+          "instance_id": "CFBAA4B706BA66E8"
+        },
+        {
+          "class": "MuzzleComponent",
+          "instance_id": "CA6BE4D6B867541F"
+        },
+        {
+          "class": "CaseEjectingEffectComponent",
+          "instance_id": "5122AAD190FCA21D"
+        },
+        {
+          "class": "PointInfo",
+          "instance_id": "50F64C476EC435CA"
+        },
+        {
+          "class": "BaseFireMode",
+          "instance_id": "B80A64F4A8EF8333"
+        },
+        {
+          "class": "WeaponAnimationComponent",
+          "instance_id": "60B4EA76EB15F6E0"
+        }
+      ],
+      "explicit_local_overrides": [
+        "m_MaxMagazineAmmo 4",
+        "Name \"MP 153\"",
+        "Weight 3.45",
+        "Offset 0.0425 -0.0176 -0.2323",
+        "Offset 0 0 0.4963",
+        "RoundsPerMinute 1400",
+        "ManualAction 0",
+        "Name \"MP 153\""
+      ],
+      "move_safe": "REVIEW_REQUIRED",
+      "reason": [
+        "existing serialized path/family/ammo/weapon evidence supports the assigned region or leaves the resource unresolved without inventing a target"
+      ],
+      "proposed_action": "KEEP_AS_IS"
+    },
+    {
+      "current_path": "Prefabs/Weapons/Rifles/Shotgun/armst_spas_12.et",
+      "guid": "221AED80163B7C60",
+      "meta_path": "Prefabs/Weapons/Rifles/Shotgun/armst_spas_12.et.meta",
+      "meta_registered_name": "Prefabs/Weapons/Rifles/Shotgun/armst_spas_12.et",
+      "category": "WEAPON",
+      "region": "RUSSIAN",
+      "weapon_family": "Shotgun",
+      "caliber": null,
+      "suggested_target_path": "Prefabs/Weapons/Russian/Shotguns/armst_spas_12/armst_spas_12.et",
+      "references_to_current_path": [],
+      "children": [],
+      "parent_guid": "6C5E2009CDCD0BD3",
+      "parent_path": "Prefabs/ShotGun/ShotGun/armst_shotgun_base.et",
+      "explicit_local_components": [
+        {
+          "class": "WeaponSoundComponent",
+          "instance_id": "5A8685198A9AEEDD"
+        },
+        {
+          "class": "ARMST_SHOTGUN_COMPONENTS",
+          "instance_id": "69E4C57F6C1EE3A6"
+        },
+        {
+          "class": "MeshObject",
+          "instance_id": "CFBAA4B701F95D69"
+        },
+        {
+          "class": "SCR_WeaponAttachmentsStorageComponent",
+          "instance_id": "51F080D5CE45A1A2"
+        },
+        {
+          "class": "WeaponComponent",
+          "instance_id": "CFBAA4B706BA66E8"
+        },
+        {
+          "class": "MuzzleComponent",
+          "instance_id": "CA6BE4D6B867541F"
+        },
+        {
+          "class": "CaseEjectingEffectComponent",
+          "instance_id": "5122AAD190FCA21D"
+        },
+        {
+          "class": "PointInfo",
+          "instance_id": "50F64C476EC435CA"
+        },
+        {
+          "class": "BaseFireMode",
+          "instance_id": "B80A64F4A8EF8333"
+        },
+        {
+          "class": "BaseFireMode",
+          "instance_id": "69E4C575BB013BEB"
+        },
+        {
+          "class": "WeaponAnimationComponent",
+          "instance_id": "60B4EA76EB15F6E0"
+        }
+      ],
+      "explicit_local_overrides": [
+        "m_MaxMagazineAmmo 8",
+        "Name \"SPAS-12\"",
+        "Weight 4.4",
+        "Offset 0.0509 -0.0168 -0.1143",
+        "Offset 0 0 0.4891",
+        "RoundsPerMinute 1400",
+        "ManualAction 1",
+        "RoundsPerMinute 1400",
+        "UIName \"Auto\"",
+        "Name \"SPAS-12\""
+      ],
+      "move_safe": "REVIEW_REQUIRED",
+      "reason": [
+        "region/category inferred from serialized family/path and known weapon identity"
+      ],
+      "proposed_action": "KEEP_AS_IS"
+    },
+    {
+      "current_path": "Prefabs/Weapons/Rifles/Shotgun/armst_toz_66_pantera.et",
+      "guid": "A9B143751CB07F45",
+      "meta_path": "Prefabs/Weapons/Rifles/Shotgun/armst_toz_66_pantera.et.meta",
+      "meta_registered_name": "Prefabs/Weapons/Rifles/Shotgun/armst_toz_66_pantera.et",
+      "category": "WEAPON",
+      "region": "RUSSIAN",
+      "weapon_family": "Shotgun",
+      "caliber": null,
+      "suggested_target_path": "Prefabs/Weapons/Russian/Shotguns/armst_toz_66_pantera/armst_toz_66_pantera.et",
+      "references_to_current_path": [],
+      "children": [],
+      "parent_guid": "923B067A74826419",
+      "parent_path": "Prefabs/Weapons/Rifles/Shotgun/armst_toz_66.et",
+      "explicit_local_components": [
+        {
+          "class": "MeshObject",
+          "instance_id": "CFBAA4B701F95D69"
+        },
+        {
+          "class": "MaterialAssignClass",
+          "instance_id": "69E4C5760E184310"
+        }
+      ],
+      "explicit_local_overrides": [
+        "SourceMaterial \"Izh\""
+      ],
+      "move_safe": "REVIEW_REQUIRED",
+      "reason": [
+        "region/category inferred from serialized family/path and known weapon identity"
+      ],
+      "proposed_action": "KEEP_AS_IS"
+    },
+    {
+      "current_path": "Prefabs/Weapons/Rifles/Shotgun/armst_toz_66_saw.et",
+      "guid": "9C7C3BE87956383A",
+      "meta_path": "Prefabs/Weapons/Rifles/Shotgun/armst_toz_66_saw.et.meta",
+      "meta_registered_name": "Prefabs/Weapons/Rifles/Shotgun/armst_toz_66_saw.et",
+      "category": "WEAPON",
+      "region": "RUSSIAN",
+      "weapon_family": "Shotgun",
+      "caliber": null,
+      "suggested_target_path": "Prefabs/Weapons/Russian/Shotguns/armst_toz_66_saw/armst_toz_66_saw.et",
+      "references_to_current_path": [],
+      "children": [],
+      "parent_guid": "923B067A74826419",
+      "parent_path": "Prefabs/Weapons/Rifles/Shotgun/armst_toz_66.et",
+      "explicit_local_components": [
+        {
+          "class": "MeshObject",
+          "instance_id": "CFBAA4B701F95D69"
+        },
+        {
+          "class": "SCR_WeaponAttachmentsStorageComponent",
+          "instance_id": "51F080D5CE45A1A2"
+        },
+        {
+          "class": "WeaponComponent",
+          "instance_id": "CFBAA4B706BA66E8"
+        },
+        {
+          "class": "SightsComponent",
+          "instance_id": "BB23A637957CFFF8"
+        },
+        {
+          "class": "MuzzleComponent",
+          "instance_id": "CA6BE4D6B867541F"
+        },
+        {
+          "class": "PointInfo",
+          "instance_id": "B80A64F4B6CFB9BF"
+        },
+        {
+          "class": "PointInfo",
+          "instance_id": "50F64C476EC435CA"
+        }
+      ],
+      "explicit_local_overrides": [
+        "Weight 2.2",
+        "m_iCustomGridWidth 4",
+        "Offset 0 0.0041 0.0417",
+        "Offset 0 0 0.009",
+        "Offset 0 0 0.0149",
+        "WeaponSlotType \"secondary\""
+      ],
+      "move_safe": "REVIEW_REQUIRED",
+      "reason": [
+        "region/category inferred from serialized family/path and known weapon identity"
+      ],
+      "proposed_action": "KEEP_AS_IS"
+    },
+    {
+      "current_path": "Prefabs/Weapons/Rifles/armst_AEK971_test_v11.et",
+      "guid": "AC198EAC9BDD9841",
+      "meta_path": "Prefabs/Weapons/Rifles/armst_AEK971_test_v11.et.meta",
+      "meta_registered_name": "Prefabs/Weapons/Rifles/armst_AEK971_test_v11_DOVETAIL_RU (1).et",
+      "category": "WEAPON",
+      "region": "RUSSIAN",
+      "weapon_family": "armst_AEK971_test_v11.et",
+      "caliber": null,
+      "suggested_target_path": "Prefabs/Weapons/Russian/Rifles/armst_AEK971_test_v11/armst_AEK971_test_v11.et",
+      "references_to_current_path": [],
+      "children": [],
+      "parent_guid": "EAE9A298979C4721",
+      "parent_path": "Prefabs/Weapons/Rifles/AK74/Rifle_AK74N_base.et",
+      "explicit_local_components": [
+        {
+          "class": "MeshObject",
+          "instance_id": "CFBAA4B701F95D69"
+        },
+        {
+          "class": "SCR_EditableEntityComponent",
+          "instance_id": "65B265034B23979A"
+        },
+        {
+          "class": "SCR_WeaponAttachmentsStorageComponent",
+          "instance_id": "51F080D5CE45A1A2"
+        },
+        {
+          "class": "SlotManagerComponent",
+          "instance_id": "559E78319D6C8CFA"
+        },
+        {
+          "class": "WeaponComponent",
+          "instance_id": "CFBAA4B706BA66E8"
+        },
+        {
+          "class": "AttachmentSlotComponent",
+          "instance_id": "51F6738D2EC74BE1"
+        },
+        {
+          "class": "AttachmentSlotComponent",
+          "instance_id": "55349E9229B55E29"
+        },
+        {
+          "class": "AttachmentSlotComponent",
+          "instance_id": "5F189C826D592450"
+        },
+        {
+          "class": "SightsComponent",
+          "instance_id": "BB23A637957CFFF8"
+        },
+        {
+          "class": "MuzzleComponent",
+          "instance_id": "CA6BE4D6B867541F"
+        },
+        {
+          "class": "AttachmentSlotComponent",
+          "instance_id": "4E2B66CBA589F625"
+        },
+        {
+          "class": "BaseFireMode",
+          "instance_id": "B80A64F4A8EF8333"
+        },
+        {
+          "class": "RecoilWeaponAimModifier",
+          "instance_id": "55349E9229B55D9A"
+        },
+        {
+          "class": "WeaponAnimationComponent",
+          "instance_id": "60B4EA76EB15F6E0"
+        }
+      ],
+      "explicit_local_overrides": [
+        "Enabled 0",
+        "Name \"AEK-971 [V11 DOVETAIL RU TEST]\"",
+        "m_bAutoRegister NEVER",
+        "Weight 3.5",
+        "Enabled 0",
+        "Enabled 0",
+        "InspectionWidgetOffset -0.0204 0.0521 -0.1015",
+        "PivotID \"slot_ironsight_front\"",
+        "Offset 0 0 0",
+        "PivotID \"slot_ironsight_rear\"",
+        "Offset 0 0 0",
+        "Enabled 0",
+        "RoundsPerMinute 900",
+        "BurstType Interruptable",
+        "RoundsPerMinute 900",
+        "\"Curve Magnitudes\" 0.94 0.8 1",
+        "\"Curve Magnitudes\" 0.94 0.8 1",
+        "Offset 0 0.0036 0.0206",
+        "InspectionWidgetOffset 0 0 0"
+      ],
+      "move_safe": "REVIEW_REQUIRED",
+      "reason": [
+        "region/category inferred from serialized family/path and known weapon identity"
+      ],
+      "proposed_action": "KEEP_AS_IS"
+    },
+    {
+      "current_path": "Prefabs/Weapons/Rifles/armst_Rifle_HKG33.et",
+      "guid": "035CFC7DD44455D0",
+      "meta_path": "Prefabs/Weapons/Rifles/armst_Rifle_HKG33.et.meta",
+      "meta_registered_name": "Rifles/armst_Rifle_HKG33.et",
+      "category": "WEAPON",
+      "region": "WESTERN",
+      "weapon_family": "armst_Rifle_HKG33.et",
+      "caliber": null,
+      "suggested_target_path": "Prefabs/Weapons/Western/Rifles/armst_Rifle_HKG33/armst_Rifle_HKG33.et",
+      "references_to_current_path": [],
+      "children": [],
+      "parent_guid": "3E413771E1834D2F",
+      "parent_path": "Rifles/armst_Rifle_M16A2.et",
+      "explicit_local_components": [
+        {
+          "class": "MeshObject",
+          "instance_id": "CFBAA4B701F95D69"
+        },
+        {
+          "class": "SCR_MeleeWeaponProperties",
+          "instance_id": "5534745C44D1EFF6"
+        },
+        {
+          "class": "SCR_WeaponAttachmentsStorageComponent",
+          "instance_id": "51F080D5CE45A1A2"
+        },
+        {
+          "class": "WeaponComponent",
+          "instance_id": "CFBAA4B706BA66E8"
+        },
+        {
+          "class": "AttachmentSlotComponent",
+          "instance_id": "56DE9C900611C1AF"
+        },
+        {
+          "class": "AttachmentSlotComponent",
+          "instance_id": "5F16E0B4B2D0D72C"
+        },
+        {
+          "class": "SightsComponent",
+          "instance_id": "BB23A637957CFFF8"
+        },
+        {
+          "class": "MuzzleComponent",
+          "instance_id": "CA6BE4D6B867541F"
+        },
+        {
+          "class": "AttachmentSlotComponent",
+          "instance_id": "5D527627CCB8F756"
+        },
+        {
+          "class": "SCR_MuzzleEffectComponent",
+          "instance_id": "C9B3271BB22CDB68"
+        },
+        {
+          "class": "WeaponAnimationComponent",
+          "instance_id": "60B4EA76EB15F6E0"
+        }
+      ],
+      "explicit_local_overrides": [
+        "m_fDamage 2",
+        "Enabled 0",
+        "Enabled 0",
+        "Offset 0 0 0",
+        "PivotID \"slot_ironsight_front\"",
+        "Offset 0 0 0",
+        "PivotID \"slot_ironsight_rear\"",
+        "Offset 0 0 0",
+        "PivotID \"\"",
+        "Offset 0 0 0.1752",
+        "Offset 0.0018 0.1243 0.0291"
+      ],
+      "move_safe": "REVIEW_REQUIRED",
+      "reason": [
+        "region/category inferred from serialized family/path and known weapon identity"
+      ],
+      "proposed_action": "KEEP_AS_IS"
+    },
+    {
+      "current_path": "Prefabs/Weapons/Rifles/armst_Rifle_L85.et",
+      "guid": "45D3FCA77AF1709B",
+      "meta_path": "Prefabs/Weapons/Rifles/armst_Rifle_L85.et.meta",
+      "meta_registered_name": "Prefabs/Weapons/Rifles/armst_Rifle_L85.et",
+      "category": "WEAPON",
+      "region": "WESTERN",
+      "weapon_family": "armst_Rifle_L85.et",
+      "caliber": null,
+      "suggested_target_path": "Prefabs/Weapons/Western/Rifles/armst_Rifle_L85/armst_Rifle_L85.et",
+      "references_to_current_path": [],
+      "children": [],
+      "parent_guid": "3E413771E1834D2F",
+      "parent_path": "Prefabs/Weapons/Rifles/armst_Rifle_M16A2.et",
+      "explicit_local_components": [
+        {
+          "class": "MeshObject",
+          "instance_id": "CFBAA4B701F95D69"
+        },
+        {
+          "class": "SCR_MeleeWeaponProperties",
+          "instance_id": "5534745C44D1EFF6"
+        },
+        {
+          "class": "SCR_WeaponAttachmentsStorageComponent",
+          "instance_id": "51F080D5CE45A1A2"
+        },
+        {
+          "class": "WeaponComponent",
+          "instance_id": "CFBAA4B706BA66E8"
+        },
+        {
+          "class": "AttachmentSlotComponent",
+          "instance_id": "5534745C44D1EF58"
+        },
+        {
+          "class": "AttachmentSlotComponent",
+          "instance_id": "56DE9C900611C1AF"
+        },
+        {
+          "class": "AttachmentSlotComponent",
+          "instance_id": "5F16E0B4B2D0D72C"
+        },
+        {
+          "class": "SightsComponent",
+          "instance_id": "BB23A637957CFFF8"
+        },
+        {
+          "class": "MuzzleComponent",
+          "instance_id": "CA6BE4D6B867541F"
+        },
+        {
+          "class": "AttachmentSlotComponent",
+          "instance_id": "5D527627CCB8F756"
+        },
+        {
+          "class": "WeaponAnimationComponent",
+          "instance_id": "60B4EA76EB15F6E0"
+        }
+      ],
+      "explicit_local_overrides": [
+        "m_fDamage 2",
+        "PivotID \"slot_optics\"",
+        "Offset 0 0.0064 0",
+        "Angles 0.4322 0 0",
+        "Enabled 0",
+        "Enabled 0",
+        "Offset 0 0 0",
+        "PivotID \"slot_ironsight_front\"",
+        "Offset 0 0 0",
+        "PivotID \"slot_ironsight_rear\"",
+        "Offset 0 0 0",
+        "PivotID \"barrel_muzzle\"",
+        "Offset 0 0 -0.0114",
+        "Offset 0 -0.0155 0.03"
+      ],
+      "move_safe": "REVIEW_REQUIRED",
+      "reason": [
+        "region/category inferred from serialized family/path and known weapon identity"
+      ],
+      "proposed_action": "KEEP_AS_IS"
+    },
+    {
+      "current_path": "Prefabs/Weapons/Rifles/armst_Rifle_M16A2_carbine.et",
+      "guid": "F97A4AC994231900",
+      "meta_path": "Prefabs/Weapons/Rifles/armst_Rifle_M16A2_carbine.et.meta",
+      "meta_registered_name": "Prefabs/Weapons/Rifles/M16/armst_Rifle_M16A2_carbine.et",
+      "category": "WEAPON",
+      "region": "WESTERN",
+      "weapon_family": "armst_Rifle_M16A2_carbine.et",
+      "caliber": null,
+      "suggested_target_path": "Prefabs/Weapons/Western/Rifles/armst_Rifle_M16A2_carbine/armst_Rifle_M16A2_carbine.et",
+      "references_to_current_path": [],
+      "children": [],
+      "parent_guid": "9207B5D36C3C8C94",
+      "parent_path": "Prefabs/Weapons/Rifles/M16/Rifle_M16A2_carbine_base.et",
+      "explicit_local_components": [
+        {
+          "class": "ARMST_ITEMS_STATS_COMPONENTS",
+          "instance_id": "657ABA0547189DD7"
+        },
+        {
+          "class": "SCR_MeleeWeaponProperties",
+          "instance_id": "5534745C44D1EFF6"
+        }
+      ],
+      "explicit_local_overrides": [
+        "m_fDamage 2"
+      ],
+      "move_safe": "REVIEW_REQUIRED",
+      "reason": [
+        "region/category inferred from serialized family/path and known weapon identity"
+      ],
+      "proposed_action": "KEEP_AS_IS"
+    },
+    {
+      "current_path": "Prefabs/Weapons/Rifles/armst_Rifle_Sig550.et",
+      "guid": "CA3BEBAADDFAF1DE",
+      "meta_path": "Prefabs/Weapons/Rifles/armst_Rifle_Sig550.et.meta",
+      "meta_registered_name": "Rifles/armst_Rifle_Sig550.et",
+      "category": "WEAPON",
+      "region": "WESTERN",
+      "weapon_family": "armst_Rifle_Sig550.et",
+      "caliber": null,
+      "suggested_target_path": "Prefabs/Weapons/Western/Rifles/armst_Rifle_Sig550/armst_Rifle_Sig550.et",
+      "references_to_current_path": [],
+      "children": [],
+      "parent_guid": "3E413771E1834D2F",
+      "parent_path": "Prefabs/Weapons/Rifles/armst_Rifle_M16A2.et",
+      "explicit_local_components": [
+        {
+          "class": "MeshObject",
+          "instance_id": "CFBAA4B701F95D69"
+        },
+        {
+          "class": "SCR_MeleeWeaponProperties",
+          "instance_id": "5534745C44D1EFF6"
+        },
+        {
+          "class": "SCR_WeaponAttachmentsStorageComponent",
+          "instance_id": "51F080D5CE45A1A2"
+        },
+        {
+          "class": "WeaponComponent",
+          "instance_id": "CFBAA4B706BA66E8"
+        },
+        {
+          "class": "AttachmentSlotComponent",
+          "instance_id": "56DE9C900611C1AF"
+        },
+        {
+          "class": "AttachmentSlotComponent",
+          "instance_id": "5F16E0B4B2D0D72C"
+        },
+        {
+          "class": "SightsComponent",
+          "instance_id": "BB23A637957CFFF8"
+        },
+        {
+          "class": "MuzzleComponent",
+          "instance_id": "CA6BE4D6B867541F"
+        },
+        {
+          "class": "AttachmentSlotComponent",
+          "instance_id": "5D527627CCB8F756"
+        },
+        {
+          "class": "WeaponAnimationComponent",
+          "instance_id": "60B4EA76EB15F6E0"
+        }
+      ],
+      "explicit_local_overrides": [
+        "m_fDamage 2",
+        "Enabled 0",
+        "Enabled 0",
+        "PivotID \"slot_ironsight_front\"",
+        "Offset 0 0 0",
+        "PivotID \"slot_ironsight_rear\"",
+        "Offset 0 0 0",
+        "PivotID \"barrel_muzzle\"",
+        "Offset 0 -0.0142 -0.0804"
+      ],
+      "move_safe": "REVIEW_REQUIRED",
+      "reason": [
+        "region/category inferred from serialized family/path and known weapon identity"
+      ],
+      "proposed_action": "KEEP_AS_IS"
+    },
+    {
+      "current_path": "Prefabs/Weapons/Rifles/armst_Rifle_hk_g36.et",
+      "guid": "A802C718201D72DF",
+      "meta_path": "Prefabs/Weapons/Rifles/armst_Rifle_hk_g36.et.meta",
+      "meta_registered_name": "Prefabs/Weapons/Rifles/M16/armst_Rifle_hk_g36.et",
+      "category": "WEAPON",
+      "region": "WESTERN",
+      "weapon_family": "armst_Rifle_hk_g36.et",
+      "caliber": null,
+      "suggested_target_path": "Prefabs/Weapons/Western/Rifles/armst_Rifle_hk_g36/armst_Rifle_hk_g36.et",
+      "references_to_current_path": [],
+      "children": [],
+      "parent_guid": "911D6C8DC7BA2D63",
+      "parent_path": "Prefabs/Weapons/Core/Rifle_Base.et",
+      "explicit_local_components": [
+        {
+          "class": "WeaponSoundComponent",
+          "instance_id": "5A8685198A9AEEDD"
+        },
+        {
+          "class": "MeshObject",
+          "instance_id": "CFBAA4B701F95D69"
+        },
+        {
+          "class": "RigidBody",
+          "instance_id": "6A0470709BAE05BC"
+        },
+        {
+          "class": "SCR_MeleeWeaponProperties",
+          "instance_id": "6A0470709BAE05A8"
+        },
+        {
+          "class": "SCR_WeaponAttachmentsStorageComponent",
+          "instance_id": "51F080D5CE45A1A2"
+        },
+        {
+          "class": "AimingModifierAttributes",
+          "instance_id": "566C7D15A071B88E"
+        },
+        {
+          "class": "PivotPointInfoItem",
+          "instance_id": "6A0470709BAE059B"
+        },
+        {
+          "class": "SCR_RecoilCameraShakeParams",
+          "instance_id": "58DEF2AB0413E346"
+        },
+        {
+          "class": "PreviewRenderAttributes",
+          "instance_id": "52BAB5E48C906DB8"
+        },
+        {
+          "class": "ItemOneHandAnimAttributes",
+          "instance_id": "6A0470709BAE0585"
+        },
+        {
+          "class": "SCR_WeaponStatsManagerComponent",
+          "instance_id": "6A0470709BAE0581"
+        },
+        {
+          "class": "WeaponComponent",
+          "instance_id": "CFBAA4B706BA66E8"
+        },
+        {
+          "class": "AttachmentSlotComponent",
+          "instance_id": "6A0470709BAE0574"
+        },
+        {
+          "class": "AttachmentSlotComponent",
+          "instance_id": "6A0470709BAE0589"
+        },
+        {
+          "class": "AttachmentSlotComponent",
+          "instance_id": "6A0470709BAE058E"
+        },
+        {
+          "class": "SightsComponent",
+          "instance_id": "BB23A637957CFFF8"
+        },
+        {
+          "class": "SightRangeInfo",
+          "instance_id": "6A0470709BAE057D"
+        },
+        {
+          "class": "SightRangeInfo",
+          "instance_id": "6A0470709BAE0568"
+        },
+        {
+          "class": "SightRangeInfo",
+          "instance_id": "6A0470709BAE055F"
+        },
+        {
+          "class": "SightRangeInfo",
+          "instance_id": "6A0470709BAE055C"
+        },
+        {
+          "class": "SightRangeInfo",
+          "instance_id": "6A0470709BAE0559"
+        },
+        {
+          "class": "SightRangeInfo",
+          "instance_id": "6A0470709BAE0545"
+        },
+        {
+          "class": "SightRangeInfo",
+          "instance_id": "6A0470709BAE0537"
+        },
+        {
+          "class": "MuzzleComponent",
+          "instance_id": "CA6BE4D6B867541F"
+        },
+        {
+          "class": "AttachmentSlotComponent",
+          "instance_id": "6A0470709BAE053A"
+        },
+        {
+          "class": "CaseEjectingEffectComponent",
+          "instance_id": "5122AAD190FCA21D"
+        },
+        {
+          "class": "SCR_MuzzleEffectComponent",
+          "instance_id": "C9B3271BB22CDB68"
+        },
+        {
+          "class": "SwayWeaponAimModifier",
+          "instance_id": "521AE9A27BDC1E6F"
+        },
+        {
+          "class": "RecoilWeaponAimModifier",
+          "instance_id": "6A0470709BAE0529"
+        },
+        {
+          "class": "ZeroingWeaponAimModifier",
+          "instance_id": "6A0470709BAE0511"
+        },
+        {
+          "class": "WeaponAnimationComponent",
+          "instance_id": "60B4EA76EB15F6E0"
+        },
+        {
+          "class": "ActionsManagerComponent",
+          "instance_id": "A29AE67FF4D82B0F"
+        },
+        {
+          "class": "UserActionContext",
+          "instance_id": "5086F9ADF588DCA4"
+        },
+        {
+          "class": "UserActionContext",
+          "instance_id": "5956E32BAAADE657"
+        },
+        {
+          "class": "UserActionContext",
+          "instance_id": "5A1E58F7B04F9BE5"
+        },
+        {
+          "class": "UserActionContext",
+          "instance_id": "5A1E58F7AED270D4"
+        },
+        {
+          "class": "UserActionContext",
+          "instance_id": "618A84270A2BFDC0"
+        },
+        {
+          "class": "UserActionContext",
+          "instance_id": "6A0470709BAE0508"
+        },
+        {
+          "class": "UserActionContext",
+          "instance_id": "6A0470709BAE04F4"
+        }
+      ],
+      "explicit_local_overrides": [
+        "SimState None",
+        "m_fDamage 20",
+        "Name \"#AR-Weapon_M16A2_Name\"",
+        "Description \"#AR-Weapon_M16A2_Description\"",
+        "Weight 3.5",
+        "SizeSetupStrategy Manual",
+        "ItemDimensions 25 25 25",
+        "ItemVolume 1500",
+        "RestingUP Left",
+        "PivotID \"Scene_Root\"",
+        "Offset 0 0.0777 0.4321",
+        "StabilizationSize 0.05 0.12 0.37",
+        "m_fRecoilTarget 0.038",
+        "m_vTranslationMin 0.002 0.002 0",
+        "m_vTranslationMax 0.003 0.003 0",
+        "m_vRotationImpulseMin 0 0 7",
+        "m_vRotationImpulseMax 0 0 8",
+        "CameraDistanceToItem 1",
+        "FOV 30",
+        "AspectRatio 3",
+        "ErectLinearOffsetUpper 0 0 0",
+        "ErectLinearOffset 0.018 -0.2 -0.1",
+        "ErectLinearOffsetLower 0.018 -0.05 0",
+        "CrouchLinearOffsetUpper 0 0 0",
+        "CrouchLinearOffset 0.018 -0.16 -0.1",
+        "CrouchLinearOffsetLower 0 -0.15 0",
+        "SpringCoefficient 2.2",
+        "DamperCoefficient 2.4",
+        "Enabled 0",
+        "PivotID \"slot_barrel_muzzle\"",
+        "Offset 0 -0.0294 0.0047",
+        "ChildPivotID \"snap_weapon\"",
+        "InspectionWidgetOffset 0 0.0486 0.4467",
+        "ShowInInspection 1",
+        "Enabled 0",
+        "PivotID \"slot_hand_guard\"",
+        "DeactivatePhysicsOnAtaching 1",
+        "InspectionWidgetOffset 0 0.0789 0.2607",
+        "PivotID \"slot_optics\"",
+        "ChildPivotID \"snap_weapon\"",
+        "InspectionWidgetOffset 0 0.1222 0.0283",
+        "ShowInInspection 1",
+        "Enabled 0",
+        "Offset 0 0 0",
+        "Range 0.213 200",
+        "Offset 0 -0.0012 0",
+        "Angles 0.11 0 0",
+        "Range 0.314 300",
+        "Offset 0 -0.0019 0",
+        "Angles 0.18 0 0",
+        "Range 0.44 400",
+        "Offset 0 -0.0026 0",
+        "Angles 0.24 0 0",
+        "Range 0.59 500",
+        "Offset 0 -0.0035 0",
+        "Angles 0.33 0 0",
+        "Range 0.76 600",
+        "Offset 0 -0.0045 0",
+        "Angles 0.42 0 0",
+        "Range 0.927 700",
+        "Offset 0 -0.0059 0",
+        "Angles 0.55 0 0",
+        "Range 0.995 800",
+        "Offset 0 -0.0074 0",
+        "Angles 0.69 0 0",
+        "SightsRangesDefaultIndex 1",
+        "Offset 0 0.1444 0.4649",
+        "PivotID \"w_sight\"",
+        "Offset 0 0.0076 0",
+        "m_iOpticDOFDistanceScale 30",
+        "PivotID \"slot_barrel_muzzle\"",
+        "ChildPivotID \"snap_barrel_muzzle\"",
+        "InspectionWidgetOffset 0 0.0826 0.61",
+        "ShowInInspection 1",
+        "PivotID \"barrel_chamber\"",
+        "Offset 0.015 0.006 -0.055",
+        "ResetOnFire 0",
+        "RoundsPerMinute 800",
+        "BurstType Interruptable",
+        "RoundsPerMinute 800",
+        "DispersionDiameter 0.4",
+        "DispersionRange 400",
+        "\"Lower Translation\" 0.05 -0.005 -0.013",
+        "\"Lower Rotation\" -10 -8 -10",
+        "0 0.5 0.034 0.553 0.051 0.905 0.203 0.641 0.301 0.518 1 0.5",
+        "0 0.5 0.032 0.55 0.045 0.75 0.071 0.65 0.095 0.5 0.261 0.5 1 0.5",
+        "0 0.5 0.008 0.809 0.026 0.997 0.032 0.944 0.046 0.948 0.081 0.62 0.177 0.512 0.436 0.5 1 0.5",
+        "\"Curve Magnitudes\" 1 1 1",
+        "\"Curve Mins\" -0.001 -0.001 -0.022",
+        "\"Curve Maxs\" 0 -0.001 -0.018",
+        "\"Base Recoil Scale\" 3",
+        "0 0.5 0.019 0.411 0.055 0.539 0.11 0.474 0.216 0.497 1 0.5",
+        "0 0.5 0.038 0.796 0.093 1 0.222 0.765 0.349 0.571 0.529 0.508 1 0.5",
+        "0 0.5 0.033 0.641 0.049 0.892 0.095 0.7 0.238 0.487 0.443 0.5 0.7 0.5 1 0.5",
+        "\"Curve Time Scale\" 1.25",
+        "\"Curve Magnitudes\" 1 1 1",
+        "\"Curve Mins\" -1 1.5 1",
+        "\"Curve Maxs\" 1 1.8 1",
+        "\"Base Recoil Scale\" 3",
+        "0 0.5 0.06 1 0.093 0.752 0.116 0.539 0.148 0.502 1 0.5",
+        "0.031 0.998 0.105 0.576 0.236 0.5 1 0.5",
+        "\"Curve Time Scale\" 1",
+        "\"Curve Magnitudes\" 1 1 0",
+        "\"Curve Mins\" -1.5 4.5 0",
+        "\"Curve Maxs\" 1.5 6 0",
+        "\"Base Recoil Scale\" 3",
+        "PivotID \"snap_hand_left\"",
+        "Offset 0 -0.0515 -0.1692",
+        "PivotID \"snap_hand_right\"",
+        "Offset 0 0.041 -0.3423",
+        "Offset 0 -0.0353 -0.0269",
+        "InspectionWidgetOffset 0 -0.0431 0.0743",
+        "BindingName \"Weapon\"",
+        "BindWithInjection 1",
+        "obstructionTestAddedLength 0.05",
+        "signiObstrWeaponMaxZOffset 0.25",
+        "obstructionTestBBScale 0.08 0.08 0.08",
+        "SoundInt 1020200",
+        "Name \"#AR-Weapon_M16A2_Name\"",
+        "Description \"#AR-Weapon_M16A2_Description\"",
+        "Icon \"\"",
+        "Offset 0 -0.0178 -0.053",
+        "Offset 0 0.0745 0.4719",
+        "PivotID \"slot_magazine\"",
+        "Offset 0 -0.0493 -0.0254",
+        "PivotID \"w_fire_mode\"",
+        "Angles 0 -90 0",
+        "Radius 0.05",
+        "Omnidirectional 0",
+        "Offset 0 0.0009 0.0047",
+        "ContextName \"bayonet\"",
+        "PivotID \"slot_barrel_muzzle\"",
+        "Offset 0 -0.0278 -0.1254",
+        "Radius 0.1",
+        "ContextName \"optic\"",
+        "Offset 0 0.1351 0.0448",
+        "Radius 0.075"
+      ],
+      "move_safe": "REVIEW_REQUIRED",
+      "reason": [
+        "region/category inferred from serialized family/path and known weapon identity"
+      ],
+      "proposed_action": "KEEP_AS_IS"
+    },
+    {
+      "current_path": "Prefabs/Weapons/Rifles/armst_SLR.et",
+      "guid": "C11ED52EAAF856A8",
+      "meta_path": "Prefabs/Weapons/Rifles/armst_SLR.et.meta",
+      "meta_registered_name": "Rifles/armst_SLR.et",
+      "category": "WEAPON",
+      "region": "WESTERN",
+      "weapon_family": "armst_SLR.et",
+      "caliber": null,
+      "suggested_target_path": "Prefabs/Weapons/Western/Rifles/armst_SLR/armst_SLR.et",
+      "references_to_current_path": [],
+      "children": [],
+      "parent_guid": "3E413771E1834D2F",
+      "parent_path": "Rifles/armst_Rifle_M16A2.et",
+      "explicit_local_components": [
+        {
+          "class": "MeshObject",
+          "instance_id": "CFBAA4B701F95D69"
+        },
+        {
+          "class": "SCR_MeleeWeaponProperties",
+          "instance_id": "5534745C44D1EFF6"
+        },
+        {
+          "class": "SCR_WeaponAttachmentsStorageComponent",
+          "instance_id": "51F080D5CE45A1A2"
+        },
+        {
+          "class": "WeaponComponent",
+          "instance_id": "CFBAA4B706BA66E8"
+        },
+        {
+          "class": "AttachmentSlotComponent",
+          "instance_id": "56DE9C900611C1AF"
+        },
+        {
+          "class": "AttachmentSlotComponent",
+          "instance_id": "5F16E0B4B2D0D72C"
+        },
+        {
+          "class": "SightsComponent",
+          "instance_id": "BB23A637957CFFF8"
+        },
+        {
+          "class": "MuzzleComponent",
+          "instance_id": "CA6BE4D6B867541F"
+        },
+        {
+          "class": "WeaponAnimationComponent",
+          "instance_id": "60B4EA76EB15F6E0"
+        }
+      ],
+      "explicit_local_overrides": [
+        "m_fDamage 2",
+        "Enabled 0",
+        "Enabled 0",
+        "Offset 0 0 0.0352",
+        "PivotID \"slot_ironsight_front\"",
+        "Offset 0 0 0",
+        "PivotID \"slot_ironsight_rear\"",
+        "Offset 0 0 0",
+        "Offset 0.003 -0.0457 0.0057",
+        "Angles -8.4523 -180 0"
+      ],
+      "move_safe": "REVIEW_REQUIRED",
+      "reason": [
+        "region/category inferred from serialized family/path and known weapon identity"
+      ],
+      "proposed_action": "KEEP_AS_IS"
+    },
+    {
+      "current_path": "Prefabs/Weapons/Rifles/armst_SVD.et",
+      "guid": "3EB02CDAD5F23C82",
+      "meta_path": "Prefabs/Weapons/Rifles/armst_SVD.et.meta",
+      "meta_registered_name": "Prefabs/Weapons/Rifles/armst_SVD.et",
+      "category": "WEAPON",
+      "region": "RUSSIAN",
+      "weapon_family": "armst_SVD.et",
+      "caliber": null,
+      "suggested_target_path": "Prefabs/Weapons/Russian/Rifles/armst_SVD/armst_SVD.et",
+      "references_to_current_path": [],
+      "children": [],
+      "parent_guid": "A3E183EB5A2F3A38",
+      "parent_path": "Prefabs/Weapons/Rifles/SVD/Rifle_SVD_base.et",
+      "explicit_local_components": [
+        {
+          "class": "SCR_EditableEntityComponent",
+          "instance_id": "65B265034B23979A"
+        },
+        {
+          "class": "SCR_MeleeWeaponProperties",
+          "instance_id": "54EED426F1352F30"
+        },
+        {
+          "class": "SCR_WeaponAttachmentsStorageComponent",
+          "instance_id": "51F080D5CE45A1A2"
+        },
+        {
+          "class": "WeaponComponent",
+          "instance_id": "CFBAA4B706BA66E8"
+        },
+        {
+          "class": "AttachmentSlotComponent",
+          "instance_id": "5472D211BFD78F81"
+        }
+      ],
+      "explicit_local_overrides": [
+        "Enabled 0",
+        "Name \"#AR-Weapon_SVD_Name\"",
+        "CONTENT_MODDED 4141368",
+        "m_bAutoRegister NEVER",
+        "m_fDamage 2",
+        "m_iCustomGridWidth 8"
+      ],
+      "move_safe": "REVIEW_REQUIRED",
+      "reason": [
+        "region/category inferred from serialized family/path and known weapon identity"
+      ],
+      "proposed_action": "KEEP_AS_IS"
+    },
+    {
+      "current_path": "Prefabs/Weapons/Rifles/armst_VZ58P.et",
+      "guid": "9C948630078D154D",
+      "meta_path": "Prefabs/Weapons/Rifles/armst_VZ58P.et.meta",
+      "meta_registered_name": "Prefabs/Weapons/Rifles/armst_VZ58P.et",
+      "category": "WEAPON",
+      "region": "EASTERN",
+      "weapon_family": "armst_VZ58P.et",
+      "caliber": null,
+      "suggested_target_path": "Prefabs/Weapons/Eastern/Rifles/armst_VZ58P/armst_VZ58P.et",
+      "references_to_current_path": [],
+      "children": [],
+      "parent_guid": "C19BFAF8A6334FD5",
+      "parent_path": "Prefabs/Weapons/Rifles/VZ58/Rifle_VZ58_base.et",
+      "explicit_local_components": [
+        {
+          "class": "ARMST_ITEMS_STATS_COMPONENTS",
+          "instance_id": "657ABA0547189DD7"
+        },
+        {
+          "class": "SCR_MeleeWeaponProperties",
+          "instance_id": "545EBBB5FB8FA0D3"
+        }
+      ],
+      "explicit_local_overrides": [
+        "m_fDamage 2"
+      ],
+      "move_safe": "REVIEW_REQUIRED",
+      "reason": [
+        "region/category inferred from serialized family/path and known weapon identity"
+      ],
+      "proposed_action": "KEEP_AS_IS"
+    },
+    {
+      "current_path": "Prefabs/Weapons/Rifles/armst_VZ58V.et",
+      "guid": "443CEFF17E040B11",
+      "meta_path": "Prefabs/Weapons/Rifles/armst_VZ58V.et.meta",
+      "meta_registered_name": "Prefabs/Weapons/Rifles/armst_VZ58V.et",
+      "category": "WEAPON",
+      "region": "EASTERN",
+      "weapon_family": "armst_VZ58V.et",
+      "caliber": null,
+      "suggested_target_path": "Prefabs/Weapons/Eastern/Rifles/armst_VZ58V/armst_VZ58V.et",
+      "references_to_current_path": [],
+      "children": [],
+      "parent_guid": "C19BFAF8A6334FD5",
+      "parent_path": "Prefabs/Weapons/Rifles/VZ58/Rifle_VZ58_base.et",
+      "explicit_local_components": [
+        {
+          "class": "ARMST_ITEMS_STATS_COMPONENTS",
+          "instance_id": "657ABA0547189DD7"
+        },
+        {
+          "class": "SCR_MeleeWeaponProperties",
+          "instance_id": "545EBBB5FB8FA0D3"
+        },
+        {
+          "class": "WeaponComponent",
+          "instance_id": "CFBAA4B706BA66E8"
+        },
+        {
+          "class": "MuzzleComponent",
+          "instance_id": "CA6BE4D6B867541F"
+        }
+      ],
+      "explicit_local_overrides": [
+        "m_fDamage 2",
+        "m_sFiremodeBurst \"firemode-rifle-single\"",
+        "m_sFiremodeAuto \"firemode-rifle-single\""
+      ],
+      "move_safe": "REVIEW_REQUIRED",
+      "reason": [
+        "region/category inferred from serialized family/path and known weapon identity"
+      ],
+      "proposed_action": "KEEP_AS_IS"
+    },
+    {
+      "current_path": "Prefabs/Weapons/Magazines/armst_Magazine_762x51_HK3_20_M80_Ball.et",
+      "guid": "6D18CC33708EE713",
+      "meta_path": "Prefabs/Weapons/Magazines/armst_Magazine_762x51_HK3_20_M80_Ball.et.meta",
+      "meta_registered_name": "Prefabs/Weapons/Magazines/armst_Magazine_762x51_HK3_20_M80_Ball.et",
+      "category": "MAGAZINE",
+      "region": "WESTERN",
+      "magazine_family": "HK3/L1A1",
+      "caliber": "762x51",
+      "suggested_target_path": "Prefabs/Weapons/Magazines/Western/762x51/HK3/L1A1/armst_Magazine_762x51_HK3_20_M80_Ball.et",
+      "references_to_current_path": [
+        "Prefabs/Weapons/Rifles/armst_Rifle_HKG33.et"
+      ],
+      "children": [],
+      "parent_guid": "6D18CC33708EE712",
+      "parent_path": "Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et",
+      "explicit_local_components": [
+        {
+          "class": "ARMST_ITEMS_STATS_COMPONENTS",
+          "instance_id": "657ABA04337B7547"
+        },
+        {
+          "class": "InventoryMagazineComponent",
+          "instance_id": "51EED12B803954CC"
+        },
+        {
+          "class": "MagazineComponent",
+          "instance_id": "CA6BE4D6B4DAFD69"
+        },
+        {
+          "class": "MeshObject",
+          "instance_id": "CA6BE4D6A23F8EF0"
+        },
+        {
+          "class": "SCR_EditableEntityComponent",
+          "instance_id": "65B265057DB4A0C0"
+        }
+      ],
+      "explicit_local_overrides": [
+        "Name \"HK3 magazine 20rnd\"",
+        "Description \"HK3 magazine 20rnd\"",
+        "Name \"HK3 magazine 20rnd\"",
+        "Description \"HK3 magazine 20rnd\"",
+        "Enabled 0",
+        "Name \"HK3 magazine 20rnd\"",
+        "1001 4141369",
+        "m_bAutoRegister NEVER",
+        "m_bVisible 0"
+      ],
+      "move_safe": "REVIEW_REQUIRED",
+      "reason": [
+        "region/caliber/family derived from existing path/name/parent/ammo evidence"
+      ],
+      "proposed_action": "KEEP_AS_IS"
+    },
+    {
+      "current_path": "Prefabs/Weapons/Magazines/armst_Magazine_762x51_L1A1_20_M61_AP.et",
+      "guid": "5D4E812AEAA7CC1F",
+      "meta_path": "Prefabs/Weapons/Magazines/armst_Magazine_762x51_L1A1_20_M61_AP.et.meta",
+      "meta_registered_name": "Prefabs/Weapons/Magazines/armst_Magazine_762x51_L1A1_20_M61_AP.et",
+      "category": "MAGAZINE",
+      "region": "WESTERN",
+      "magazine_family": "HK3/L1A1",
+      "caliber": "762x51",
+      "suggested_target_path": "Prefabs/Weapons/Magazines/Western/762x51/HK3/L1A1/armst_Magazine_762x51_L1A1_20_M61_AP.et",
+      "references_to_current_path": [],
+      "children": [],
+      "parent_guid": "AA9A48AAEE6E4F1B",
+      "parent_path": "Prefabs/Weapons/Magazines/armst_Magazine_762x51_L1A1_20_M80_Ball.et",
+      "explicit_local_components": [
+        {
+          "class": "MagazineComponent",
+          "instance_id": "CA6BE4D6B4DAFD69"
+        }
+      ],
+      "explicit_local_overrides": [
+        "2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2"
+      ],
+      "move_safe": "REVIEW_REQUIRED",
+      "reason": [
+        "region/caliber/family derived from existing path/name/parent/ammo evidence"
+      ],
+      "proposed_action": "KEEP_AS_IS"
+    },
+    {
+      "current_path": "Prefabs/Weapons/Magazines/armst_Magazine_762x51_L1A1_20_M80_Ball.et",
+      "guid": "AA9A48AAEE6E4F1B",
+      "meta_path": "Prefabs/Weapons/Magazines/armst_Magazine_762x51_L1A1_20_M80_Ball.et.meta",
+      "meta_registered_name": "Prefabs/Weapons/Magazines/armst_Magazine_762x51_L1A1_20_M80_Ball.et",
+      "category": "MAGAZINE",
+      "region": "WESTERN",
+      "magazine_family": "HK3/L1A1",
+      "caliber": "762x51",
+      "suggested_target_path": "Prefabs/Weapons/Magazines/Western/762x51/HK3/L1A1/armst_Magazine_762x51_L1A1_20_M80_Ball.et",
+      "references_to_current_path": [
+        "Prefabs/Weapons/Magazines/armst_Magazine_762x51_L1A1_20_M61_AP.et",
+        "Prefabs/Weapons/Magazines/armst_Magazine_762x51_L1A1_30_M80_Ball.et",
+        "Prefabs/Weapons/Rifles/armst_SLR.et"
+      ],
+      "children": [
+        "Prefabs/Weapons/Magazines/armst_Magazine_762x51_L1A1_20_M61_AP.et",
+        "Prefabs/Weapons/Magazines/armst_Magazine_762x51_L1A1_30_M80_Ball.et"
+      ],
+      "parent_guid": "6D18CC33708EE712",
+      "parent_path": "Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et",
+      "explicit_local_components": [
+        {
+          "class": "ARMST_ITEMS_STATS_COMPONENTS",
+          "instance_id": "657ABA04337B7547"
+        },
+        {
+          "class": "InventoryMagazineComponent",
+          "instance_id": "51EED12B803954CC"
+        },
+        {
+          "class": "MagazineComponent",
+          "instance_id": "CA6BE4D6B4DAFD69"
+        },
+        {
+          "class": "MeshObject",
+          "instance_id": "CA6BE4D6A23F8EF0"
+        },
+        {
+          "class": "SCR_EditableEntityComponent",
+          "instance_id": "65B265057DB4A0C0"
+        }
+      ],
+      "explicit_local_overrides": [
+        "Name \"L1A1 magazine 20rnd\"",
+        "Description \"L1A1 magazine 20rnd\"",
+        "Name \"L1A1 magazine 20rnd\"",
+        "Description \"L1A1 magazine 20rnd\"",
+        "Enabled 0",
+        "Name \"L1A1 magazine 20rnd\"",
+        "1001 4141369",
+        "m_bAutoRegister NEVER",
+        "m_bVisible 0"
+      ],
+      "move_safe": "REVIEW_REQUIRED",
+      "reason": [
+        "region/caliber/family derived from existing path/name/parent/ammo evidence"
+      ],
+      "proposed_action": "KEEP_AS_IS"
+    },
+    {
+      "current_path": "Prefabs/Weapons/Magazines/armst_Magazine_762x51_L1A1_30_M61_AP.et",
+      "guid": "E70FEC32673242CB",
+      "meta_path": "Prefabs/Weapons/Magazines/armst_Magazine_762x51_L1A1_30_M61_AP.et.meta",
+      "meta_registered_name": "Prefabs/Weapons/Magazines/armst_Magazine_762x51_L1A1_30_M61_AP.et",
+      "category": "MAGAZINE",
+      "region": "WESTERN",
+      "magazine_family": "HK3/L1A1",
+      "caliber": "762x51",
+      "suggested_target_path": "Prefabs/Weapons/Magazines/Western/762x51/HK3/L1A1/armst_Magazine_762x51_L1A1_30_M61_AP.et",
+      "references_to_current_path": [],
+      "children": [],
+      "parent_guid": "531AA7DB88D84184",
+      "parent_path": "Prefabs/Weapons/Magazines/armst_Magazine_762x51_L1A1_30_M80_Ball.et",
+      "explicit_local_components": [
+        {
+          "class": "MagazineComponent",
+          "instance_id": "CA6BE4D6B4DAFD69"
+        }
+      ],
+      "explicit_local_overrides": [
+        "2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2"
+      ],
+      "move_safe": "REVIEW_REQUIRED",
+      "reason": [
+        "region/caliber/family derived from existing path/name/parent/ammo evidence"
+      ],
+      "proposed_action": "KEEP_AS_IS"
+    },
+    {
+      "current_path": "Prefabs/Weapons/Magazines/armst_Magazine_762x51_L1A1_30_M80_Ball.et",
+      "guid": "531AA7DB88D84184",
+      "meta_path": "Prefabs/Weapons/Magazines/armst_Magazine_762x51_L1A1_30_M80_Ball.et.meta",
+      "meta_registered_name": "Prefabs/Weapons/Magazines/armst_Magazine_762x51_L1A1_30_M80_Ball.et",
+      "category": "MAGAZINE",
+      "region": "WESTERN",
+      "magazine_family": "HK3/L1A1",
+      "caliber": "762x51",
+      "suggested_target_path": "Prefabs/Weapons/Magazines/Western/762x51/HK3/L1A1/armst_Magazine_762x51_L1A1_30_M80_Ball.et",
+      "references_to_current_path": [
+        "Prefabs/Weapons/Magazines/armst_Magazine_762x51_L1A1_30_M61_AP.et"
+      ],
+      "children": [
+        "Prefabs/Weapons/Magazines/armst_Magazine_762x51_L1A1_30_M61_AP.et"
+      ],
+      "parent_guid": "AA9A48AAEE6E4F1B",
+      "parent_path": "Prefabs/Weapons/Magazines/armst_Magazine_762x51_L1A1_20_M80_Ball.et",
+      "explicit_local_components": [
+        {
+          "class": "MagazineComponent",
+          "instance_id": "CA6BE4D6B4DAFD69"
+        },
+        {
+          "class": "MeshObject",
+          "instance_id": "CA6BE4D6A23F8EF0"
+        }
+      ],
+      "explicit_local_overrides": [
+        "MaxAmmo 30",
+        "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"
+      ],
+      "move_safe": "REVIEW_REQUIRED",
+      "reason": [
+        "region/caliber/family derived from existing path/name/parent/ammo evidence"
+      ],
+      "proposed_action": "KEEP_AS_IS"
+    },
+    {
+      "current_path": "Prefabs/Weapons/Magazines/Box_762x54_PK_250rnd_Ball.et",
+      "guid": "1C260E65B7F290BA",
+      "meta_path": "Prefabs/Weapons/Magazines/Box_762x54_PK_250rnd_Ball.et.meta",
+      "meta_registered_name": "Prefabs/Weapons/Magazines/Box_762x54_PK_250rnd_Ball.et",
+      "category": "MAGAZINE",
+      "region": "RUSSIAN",
+      "magazine_family": "SVD",
+      "caliber": "762x54",
+      "suggested_target_path": "Prefabs/Weapons/Magazines/Russian/762x54/SVD/Box_762x54_PK_250rnd_Ball.et",
+      "references_to_current_path": [],
+      "children": [],
+      "parent_guid": "D99AF37E07F32ECB",
+      "parent_path": "Prefabs/Weapons/Magazines/Box_762x54_PK_250rnd_Base.et",
+      "explicit_local_components": [
+        {
+          "class": "InventoryMagazineComponent",
+          "instance_id": "51EED12B803954CC"
+        },
+        {
+          "class": "SCR_EditableEntityComponent",
+          "instance_id": "65B265057DB4A0C0"
+        }
+      ],
+      "explicit_local_overrides": [
+        "m_iCustomGridWidth 2",
+        "m_iCustomGridHeight 2",
+        "Enabled 0",
+        "Name \"#AR-Magazine_PKMT_Name\"",
+        "CONTENT_MODDED 4141369",
+        "m_bAutoRegister NEVER",
+        "m_bVisible 0"
+      ],
+      "move_safe": "REVIEW_REQUIRED",
+      "reason": [
+        "region/caliber/family derived from existing path/name/parent/ammo evidence"
+      ],
+      "proposed_action": "KEEP_AS_IS"
+    },
+    {
+      "current_path": "Prefabs/Weapons/Magazines/Magazine_556x45_HKG36.et",
+      "guid": "969F6FFF810D2145",
+      "meta_path": "Prefabs/Weapons/Magazines/Magazine_556x45_HKG36.et.meta",
+      "meta_registered_name": "Prefabs/Weapons/Magazines/Magazine_556x45_HKG36.et",
+      "category": "MAGAZINE",
+      "region": "WESTERN",
+      "magazine_family": "HKG36",
+      "caliber": "5x56",
+      "suggested_target_path": "Prefabs/Weapons/Magazines/Western/5x56/HKG36/Magazine_556x45_HKG36.et",
+      "references_to_current_path": [
+        "Prefabs/Weapons/Rifles/armst_Rifle_hk_g36.et"
+      ],
+      "children": [],
+      "parent_guid": "FB5EB0F6D447E859",
+      "parent_path": "Prefabs/Weapons/Magazines/5x56/Magazine_556x45_STANAG_30rnd_M193_Ball.et",
+      "explicit_local_components": [
+        {
+          "class": "InventoryMagazineComponent",
+          "instance_id": "51EED12B803954CC"
+        },
+        {
+          "class": "MagazineComponent",
+          "instance_id": "CA6BE4D6B4DAFD69"
+        },
+        {
+          "class": "MeshObject",
+          "instance_id": "CA6BE4D6A23F8EF0"
+        },
+        {
+          "class": "SCR_EditableEntityComponent",
+          "instance_id": "65B265057DB4A0C0"
+        }
+      ],
+      "explicit_local_overrides": [
+        "Name \"HKG36 magazine 30rnd\"",
+        "Description \"HKG36 magazine 30rnd\"",
+        "Name \"HKG36 magazine 30rnd\"",
+        "Description \"HKG36 magazine 30rnd\"",
+        "Enabled 0",
+        "Name \"HKG36 magazine 30rnd\"",
+        "1001 4141369",
+        "m_bAutoRegister NEVER",
+        "m_bVisible 0"
+      ],
+      "move_safe": "REVIEW_REQUIRED",
+      "reason": [
+        "existing serialized path/family/ammo/weapon evidence supports the assigned region or leaves the resource unresolved without inventing a target"
+      ],
+      "proposed_action": "KEEP_AS_IS"
+    },
+    {
+      "current_path": "Prefabs/Weapons/Magazines/Magazine_556x45_SIG_550.et",
+      "guid": "E3DC6C2FBBE4F825",
+      "meta_path": "Prefabs/Weapons/Magazines/Magazine_556x45_SIG_550.et.meta",
+      "meta_registered_name": "Prefabs/Weapons/Magazines/Magazine_556x45_SIG_550.et",
+      "category": "MAGAZINE",
+      "region": "WESTERN",
+      "magazine_family": "SIG550",
+      "caliber": "5x56",
+      "suggested_target_path": "Prefabs/Weapons/Magazines/Western/5x56/SIG550/Magazine_556x45_SIG_550.et",
+      "references_to_current_path": [
+        "Prefabs/Weapons/Rifles/armst_Rifle_Sig550.et"
+      ],
+      "children": [],
+      "parent_guid": "FB5EB0F6D447E859",
+      "parent_path": "Prefabs/Weapons/Magazines/5x56/Magazine_556x45_STANAG_30rnd_M193_Ball.et",
+      "explicit_local_components": [
+        {
+          "class": "InventoryMagazineComponent",
+          "instance_id": "51EED12B803954CC"
+        },
+        {
+          "class": "MagazineComponent",
+          "instance_id": "CA6BE4D6B4DAFD69"
+        },
+        {
+          "class": "MeshObject",
+          "instance_id": "CA6BE4D6A23F8EF0"
+        },
+        {
+          "class": "SCR_EditableEntityComponent",
+          "instance_id": "65B265057DB4A0C0"
+        }
+      ],
+      "explicit_local_overrides": [
+        "Name \"SIG550 magazine 30rnd\"",
+        "Description \"SIG550 magazine 30rnd\"",
+        "Name \"SIG550 magazine 30rnd\"",
+        "Description \"SIG550 magazine 30rnd\"",
+        "Enabled 0",
+        "Name \"SIG550 magazine 30rnd\"",
+        "1001 4141369",
+        "m_bAutoRegister NEVER",
+        "m_bVisible 0"
+      ],
+      "move_safe": "REVIEW_REQUIRED",
+      "reason": [
+        "existing serialized path/family/ammo/weapon evidence supports the assigned region or leaves the resource unresolved without inventing a target"
+      ],
+      "proposed_action": "KEEP_AS_IS"
+    },
+    {
+      "current_path": "Prefabs/Weapons/Magazines/Magazine_762x54_SVD_10rnd_7BZ3API.et",
+      "guid": "19600CCA33279D20",
+      "meta_path": "Prefabs/Weapons/Magazines/Magazine_762x54_SVD_10rnd_7BZ3API.et.meta",
+      "meta_registered_name": "Prefabs/Weapons/Magazines/Magazine_762x54_SVD_10rnd_7BZ3API.et",
+      "category": "MAGAZINE",
+      "region": "RUSSIAN",
+      "magazine_family": "SVD",
+      "caliber": "762x54",
+      "suggested_target_path": "Prefabs/Weapons/Magazines/Russian/762x54/SVD/Magazine_762x54_SVD_10rnd_7BZ3API.et",
+      "references_to_current_path": [],
+      "children": [],
+      "parent_guid": "761A03A9C5BA8D68",
+      "parent_path": "Prefabs/Weapons/Magazines/Magazine_762x54_SVD_10rnd_Base.et",
+      "explicit_local_components": [
+        {
+          "class": "InventoryMagazineComponent",
+          "instance_id": "51EED12B803954CC"
+        },
+        {
+          "class": "SCR_EditableEntityComponent",
+          "instance_id": "65B265057DB4A0C0"
+        }
+      ],
+      "explicit_local_overrides": [
+        "m_iCustomGridHeight 1",
+        "Enabled 0",
+        "Name \"#AR-Magazine_SVDAPI_Name\"",
+        "CONTENT_MODDED 4141369",
+        "m_bAutoRegister NEVER",
+        "m_bVisible 0"
+      ],
+      "move_safe": "REVIEW_REQUIRED",
+      "reason": [
+        "region/caliber/family derived from existing path/name/parent/ammo evidence"
+      ],
+      "proposed_action": "KEEP_AS_IS"
+    },
+    {
+      "current_path": "Prefabs/Weapons/Magazines/Magazine_763x25_TT_8rnd_Ball.et",
+      "guid": "AA99F5E678010DB3",
+      "meta_path": "Prefabs/Weapons/Magazines/Magazine_763x25_TT_8rnd_Ball.et.meta",
+      "meta_registered_name": "Prefabs/Weapons/Magazines/Magazine_763x25_TT_8rnd_Ball.et",
+      "category": "MAGAZINE",
+      "region": "RUSSIAN",
+      "magazine_family": "TT",
+      "caliber": "763x25",
+      "suggested_target_path": "Prefabs/Weapons/Magazines/Russian/763x25/TT/Magazine_763x25_TT_8rnd_Ball.et",
+      "references_to_current_path": [
+        "Prefabs/Weapons/Handguns/armst_TT.et",
+        "Prefabs/Weapons/Handguns/armst_TT_prefab_balance_profile.et"
+      ],
+      "children": [],
+      "parent_guid": "8B853CDD11BA916E",
+      "parent_path": "Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Ball.et",
+      "explicit_local_components": [
+        {
+          "class": "ARMST_ITEMS_STATS_COMPONENTS",
+          "instance_id": "657ABA04337B7547"
+        },
+        {
+          "class": "InventoryMagazineComponent",
+          "instance_id": "51EED12B803954CC"
+        },
+        {
+          "class": "MagazineComponent",
+          "instance_id": "CA6BE4D6B4DAFD69"
+        },
+        {
+          "class": "MeshObject",
+          "instance_id": "CA6BE4D6A23F8EF0"
+        },
+        {
+          "class": "SCR_EditableEntityComponent",
+          "instance_id": "65B26504B0CBA6C3"
+        }
+      ],
+      "explicit_local_overrides": [
+        "Name \"TT Magazine\"",
+        "Description \"\"",
+        "m_bAutoDetectGridSize 0",
+        "Enabled 0",
+        "Name \"TT Magazine\""
+      ],
+      "move_safe": "REVIEW_REQUIRED",
+      "reason": [
+        "region/caliber/family derived from existing path/name/parent/ammo evidence"
+      ],
+      "proposed_action": "KEEP_AS_IS"
+    },
+    {
+      "current_path": "Prefabs/Weapons/Magazines/Magazine_9x18_APB_20rnd_Ball.et",
+      "guid": "389EB226473CD590",
+      "meta_path": "Prefabs/Weapons/Magazines/Magazine_9x18_APB_20rnd_Ball.et.meta",
+      "meta_registered_name": "Prefabs/Weapons/Magazines/Magazine_9x18_APB_20rnd_Ball.et",
+      "category": "MAGAZINE",
+      "region": "RUSSIAN",
+      "magazine_family": "PM/9x18",
+      "caliber": "9x18",
+      "suggested_target_path": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/Magazine_9x18_APB_20rnd_Ball.et",
+      "references_to_current_path": [
+        "Prefabs/Weapons/Handguns/armst_APB.et"
+      ],
+      "children": [],
+      "parent_guid": "8B853CDD11BA916E",
+      "parent_path": "Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Ball.et",
+      "explicit_local_components": [
+        {
+          "class": "ARMST_ITEMS_STATS_COMPONENTS",
+          "instance_id": "657ABA04337B7547"
+        },
+        {
+          "class": "InventoryMagazineComponent",
+          "instance_id": "51EED12B803954CC"
+        },
+        {
+          "class": "MagazineComponent",
+          "instance_id": "CA6BE4D6B4DAFD69"
+        },
+        {
+          "class": "MeshObject",
+          "instance_id": "CA6BE4D6A23F8EF0"
+        },
+        {
+          "class": "SCR_EditableEntityComponent",
+          "instance_id": "65B26504B0CBA6C3"
+        }
+      ],
+      "explicit_local_overrides": [
+        "Name \"APB Magazine\"",
+        "Description \"\"",
+        "m_bAutoDetectGridSize 0",
+        "MaxAmmo 20",
+        "0 0 0 0 0 0 0 0 0 0 0 0",
+        "Enabled 0",
+        "Name \"APB Magazine\""
+      ],
+      "move_safe": "REVIEW_REQUIRED",
+      "reason": [
+        "region/caliber/family derived from existing path/name/parent/ammo evidence"
+      ],
+      "proposed_action": "KEEP_AS_IS"
+    },
+    {
+      "current_path": "Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Ball.et",
+      "guid": "8B853CDD11BA916E",
+      "meta_path": "Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Ball.et.meta",
+      "meta_registered_name": "Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Ball.et",
+      "category": "MAGAZINE",
+      "region": "RUSSIAN",
+      "magazine_family": "PM/9x18",
+      "caliber": "9x18",
+      "suggested_target_path": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/Magazine_9x18_PM_8rnd_Ball.et",
+      "references_to_current_path": [
+        "Prefabs/Weapons/Handguns/armst_Handgun_Knife_base.et",
+        "Prefabs/Weapons/Magazines/Magazine_763x25_TT_8rnd_Ball.et",
+        "Prefabs/Weapons/Magazines/Magazine_9x18_APB_20rnd_Ball.et",
+        "Prefabs/Weapons/Magazines/Magazine_9x18_PP91_30rnd_Ball.et",
+        "Prefabs/Weapons/Magazines/Magazine_9x18_SR2_30rnd_Ball.et"
+      ],
+      "children": [
+        "Prefabs/Weapons/Magazines/Magazine_763x25_TT_8rnd_Ball.et",
+        "Prefabs/Weapons/Magazines/Magazine_9x18_APB_20rnd_Ball.et",
+        "Prefabs/Weapons/Magazines/Magazine_9x18_PP91_30rnd_Ball.et",
+        "Prefabs/Weapons/Magazines/Magazine_9x18_SR2_30rnd_Ball.et"
+      ],
+      "parent_guid": "9B5AA2C731485ACA",
+      "parent_path": "Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Base.et",
+      "explicit_local_components": [
+        {
+          "class": "InventoryMagazineComponent",
+          "instance_id": "51EED12B803954CC"
+        },
+        {
+          "class": "SCR_EditableEntityComponent",
+          "instance_id": "65B26504B0CBA6C3"
+        }
+      ],
+      "explicit_local_overrides": [
+        "m_bAutoDetectGridSize 0",
+        "m_iCustomGridHeight 1",
+        "Enabled 0",
+        "Name \"#AR-Magazine_PM_Name\"",
+        "CONTENT_MODDED 4141369",
+        "m_bAutoRegister NEVER",
+        "m_bVisible 0"
+      ],
+      "move_safe": "REVIEW_REQUIRED",
+      "reason": [
+        "region/caliber/family derived from existing path/name/parent/ammo evidence"
+      ],
+      "proposed_action": "KEEP_AS_IS"
+    },
+    {
+      "current_path": "Prefabs/Weapons/Magazines/Magazine_9x18_PP91_30rnd_Ball.et",
+      "guid": "4488C415F3CA1890",
+      "meta_path": "Prefabs/Weapons/Magazines/Magazine_9x18_PP91_30rnd_Ball.et.meta",
+      "meta_registered_name": "Prefabs/Weapons/Magazines/Magazine_9x18_PP91_30rnd_Ball.et",
+      "category": "MAGAZINE",
+      "region": "RUSSIAN",
+      "magazine_family": "PM/9x18",
+      "caliber": "9x18",
+      "suggested_target_path": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/Magazine_9x18_PP91_30rnd_Ball.et",
+      "references_to_current_path": [
+        "Prefabs/Weapons/Handguns/armst_PP91.et",
+        "Prefabs/Weapons/Handguns/armst_SR_2.et"
+      ],
+      "children": [],
+      "parent_guid": "8B853CDD11BA916E",
+      "parent_path": "Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Ball.et",
+      "explicit_local_components": [
+        {
+          "class": "InventoryMagazineComponent",
+          "instance_id": "51EED12B803954CC"
+        },
+        {
+          "class": "MagazineComponent",
+          "instance_id": "CA6BE4D6B4DAFD69"
+        },
+        {
+          "class": "MeshObject",
+          "instance_id": "CA6BE4D6A23F8EF0"
+        },
+        {
+          "class": "SCR_EditableEntityComponent",
+          "instance_id": "65B26504B0CBA6C3"
+        }
+      ],
+      "explicit_local_overrides": [
+        "Name \"PP-91 Magazine\"",
+        "Description \"\"",
+        "Weight 0.15",
+        "m_iCustomGridHeight 2",
+        "MaxAmmo 30",
+        "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+        "Name \"PP-91 Magazine\""
+      ],
+      "move_safe": "REVIEW_REQUIRED",
+      "reason": [
+        "region/caliber/family derived from existing path/name/parent/ammo evidence"
+      ],
+      "proposed_action": "KEEP_AS_IS"
+    },
+    {
+      "current_path": "Prefabs/Weapons/Magazines/Magazine_9x18_SR2_30rnd_Ball.et",
+      "guid": "2610CA8D8632DEF4",
+      "meta_path": "Prefabs/Weapons/Magazines/Magazine_9x18_SR2_30rnd_Ball.et.meta",
+      "meta_registered_name": "Prefabs/Weapons/Magazines/Magazine_9x18_SR2_30rnd_Ball.et",
+      "category": "MAGAZINE",
+      "region": "RUSSIAN",
+      "magazine_family": "PM/9x18",
+      "caliber": "9x18",
+      "suggested_target_path": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/Magazine_9x18_SR2_30rnd_Ball.et",
+      "references_to_current_path": [],
+      "children": [],
+      "parent_guid": "8B853CDD11BA916E",
+      "parent_path": "Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Ball.et",
+      "explicit_local_components": [
+        {
+          "class": "InventoryMagazineComponent",
+          "instance_id": "51EED12B803954CC"
+        },
+        {
+          "class": "MagazineComponent",
+          "instance_id": "CA6BE4D6B4DAFD69"
+        },
+        {
+          "class": "MeshObject",
+          "instance_id": "CA6BE4D6A23F8EF0"
+        },
+        {
+          "class": "SCR_EditableEntityComponent",
+          "instance_id": "65B26504B0CBA6C3"
+        }
+      ],
+      "explicit_local_overrides": [
+        "Name \"PP-91 Magazine\"",
+        "Description \"\"",
+        "Weight 0.15",
+        "m_iCustomGridHeight 2",
+        "MaxAmmo 30",
+        "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+        "Name \"PP-91 Magazine\""
+      ],
+      "move_safe": "REVIEW_REQUIRED",
+      "reason": [
+        "region/caliber/family derived from existing path/name/parent/ammo evidence"
+      ],
+      "proposed_action": "KEEP_AS_IS"
+    },
+    {
+      "current_path": "Prefabs/Weapons/Magazines/Magazine_9x19_M9_15rnd_Ball.et",
+      "guid": "9C05543A503DB80E",
+      "meta_path": "Prefabs/Weapons/Magazines/Magazine_9x19_M9_15rnd_Ball.et.meta",
+      "meta_registered_name": "Prefabs/Weapons/Magazines/Magazine_9x19_M9_15rnd_Ball.et",
+      "category": "MAGAZINE",
+      "region": "WESTERN",
+      "magazine_family": "M9",
+      "caliber": "9x19",
+      "suggested_target_path": "Prefabs/Weapons/Magazines/Western/9x19/M9/Magazine_9x19_M9_15rnd_Ball.et",
+      "references_to_current_path": [],
+      "children": [],
+      "parent_guid": "DFFBF5F097FCF797",
+      "parent_path": "Prefabs/Weapons/Magazines/Magazine_9x19_M9_15rnd_Base.et",
+      "explicit_local_components": [
+        {
+          "class": "InventoryMagazineComponent",
+          "instance_id": "51EED12B803954CC"
+        },
+        {
+          "class": "SCR_EditableEntityComponent",
+          "instance_id": "65B265057DB4A0C0"
+        }
+      ],
+      "explicit_local_overrides": [
+        "m_bAutoDetectGridSize 0",
+        "m_iCustomGridHeight 1",
+        "Enabled 0",
+        "Name \"#AR-Magazine_BerettaM9_Name\"",
+        "CONTENT_MODDED 4141369",
+        "m_bAutoRegister NEVER",
+        "m_bVisible 0"
+      ],
+      "move_safe": "REVIEW_REQUIRED",
+      "reason": [
+        "region/caliber/family derived from existing path/name/parent/ammo evidence"
+      ],
+      "proposed_action": "KEEP_AS_IS"
+    },
+    {
+      "current_path": "Prefabs/Weapons/Magazines/12ga/12ga_Buckshot.et",
+      "guid": "B0DFDF7AAA9C5D39",
+      "meta_path": "Prefabs/Weapons/Magazines/12ga/12ga_Buckshot.et.meta",
+      "meta_registered_name": "Prefabs/Weapons/Magazines/12ga/12ga_Buckshot.et",
+      "category": "MAGAZINE",
+      "region": "UNRESOLVED",
+      "magazine_family": "12ga shotgun",
+      "caliber": "12ga",
+      "suggested_target_path": null,
+      "references_to_current_path": [
+        "Assets/Toz/1.et",
+        "Prefabs/Weapons/Rifles/Shotgun/armst_shotgun_base.et"
+      ],
+      "children": [],
+      "parent_guid": "9F9380F5E2ECAF59",
+      "parent_path": "Prefabs/Weapons/Magazines/12ga/12ga_Buckshot_base.et",
+      "explicit_local_components": [
+        {
+          "class": "MeshObject",
+          "instance_id": "CA6BE4D6A23F8EF0"
+        },
+        {
+          "class": "MaterialAssignClass",
+          "instance_id": "69E4C5789D7710F5"
+        }
+      ],
+      "explicit_local_overrides": [
+        "SourceMaterial \"12g_0000\""
+      ],
+      "move_safe": "REVIEW_REQUIRED",
+      "reason": [
+        "existing serialized path/family/ammo/weapon evidence supports the assigned region or leaves the resource unresolved without inventing a target"
+      ],
+      "proposed_action": "REVIEW_REQUIRED"
+    },
+    {
+      "current_path": "Prefabs/Weapons/Magazines/12ga/12ga_Buckshot_base.et",
+      "guid": "9F9380F5E2ECAF59",
+      "meta_path": "Prefabs/Weapons/Magazines/12ga/12ga_Buckshot_base.et.meta",
+      "meta_registered_name": "Prefabs/Weapons/Magazines/New_12ga_Buckshot.et",
+      "category": "MAGAZINE",
+      "region": "UNRESOLVED",
+      "magazine_family": "12ga shotgun",
+      "caliber": "12ga",
+      "suggested_target_path": null,
+      "references_to_current_path": [
+        "Prefabs/Weapons/Magazines/12ga/12ga_Buckshot.et"
+      ],
+      "children": [
+        "Prefabs/Weapons/Magazines/12ga/12ga_Buckshot.et"
+      ],
+      "parent_guid": "6D18CC33708EE712",
+      "parent_path": "Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et",
+      "explicit_local_components": [
+        {
+          "class": "InventoryMagazineComponent",
+          "instance_id": "51EED12B803954CC"
+        },
+        {
+          "class": "PreviewRenderAttributes",
+          "instance_id": "52D2D343138B2397"
+        },
+        {
+          "class": "MagazineComponent",
+          "instance_id": "CA6BE4D6B4DAFD69"
+        },
+        {
+          "class": "MeshObject",
+          "instance_id": "CA6BE4D6A23F8EF0"
+        },
+        {
+          "class": "RigidBody",
+          "instance_id": "571B0382401B1385"
+        }
+      ],
+      "explicit_local_overrides": [
+        "Name \"12g 10rnd Slug\"",
+        "Description \"\"",
+        "Weight 0.15",
+        "ItemDimensions 0.1 0.1 0.1",
+        "ItemVolume 0.1",
+        "LodModel 1",
+        "m_bAutoDetectGridSize 0",
+        "m_iCustomGridHeight 1",
+        "m_mStackableCustom 0",
+        "Name \"12g 10rnd\"",
+        "Description \"\"",
+        "m_sAmmoCaliber \" \"",
+        "m_bProgressBar 0",
+        "MaxAmmo 10",
+        "0 0 0 0 0 0 0 0 0 0"
+      ],
+      "move_safe": "REVIEW_REQUIRED",
+      "reason": [
+        "existing serialized path/family/ammo/weapon evidence supports the assigned region or leaves the resource unresolved without inventing a target"
+      ],
+      "proposed_action": "REVIEW_REQUIRED"
+    },
+    {
+      "current_path": "Prefabs/Weapons/Magazines/12ga/12ga_Shell.et",
+      "guid": "0346C78F29531C70",
+      "meta_path": "Prefabs/Weapons/Magazines/12ga/12ga_Shell.et.meta",
+      "meta_registered_name": "Prefabs/Weapons/Magazines/12ga/12ga_Shell.et",
+      "category": "MAGAZINE",
+      "region": "UNRESOLVED",
+      "magazine_family": "12ga shotgun",
+      "caliber": "12ga",
+      "suggested_target_path": null,
+      "references_to_current_path": [],
+      "children": [],
+      "parent_guid": "6D18CC33708EE712",
+      "parent_path": "Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et",
+      "explicit_local_components": [
+        {
+          "class": "InventoryMagazineComponent",
+          "instance_id": "51EED12B803954CC"
+        },
+        {
+          "class": "MagazineComponent",
+          "instance_id": "CA6BE4D6B4DAFD69"
+        },
+        {
+          "class": "MeshObject",
+          "instance_id": "CA6BE4D6A23F8EF0"
+        },
+        {
+          "class": "MaterialAssignClass",
+          "instance_id": "69E4C578A1421BF6"
+        },
+        {
+          "class": "RigidBody",
+          "instance_id": "571B0382401B1385"
+        },
+        {
+          "class": "SCR_EditableEntityComponent",
+          "instance_id": "673A6EBE0274B6B2"
+        }
+      ],
+      "explicit_local_overrides": [
+        "Name \"12g 10rnd Shell\"",
+        "Description \"\"",
+        "Weight 0.15",
+        "ItemDimensions 2 2 2",
+        "ItemVolume 20",
+        "m_bAutoDetectGridSize 0",
+        "m_iCustomGridHeight 1",
+        "m_mStackableCustom 1",
+        "Name \"12g 10rnd Shell\"",
+        "Description \"\"",
+        "m_bProgressBar 0",
+        "MaxAmmo 10",
+        "1 1 1 1 1 0 0 0 0 0",
+        "SourceMaterial \"12g_0000\"",
+        "Enabled 0",
+        "Name \"12 Gauge 00 Buckshot\"",
+        "CONTENT_MODDED 4141369",
+        "m_bAutoRegister NEVER",
+        "m_bVisible 0"
+      ],
+      "move_safe": "REVIEW_REQUIRED",
+      "reason": [
+        "existing serialized path/family/ammo/weapon evidence supports the assigned region or leaves the resource unresolved without inventing a target"
+      ],
+      "proposed_action": "REVIEW_REQUIRED"
+    },
+    {
+      "current_path": "Prefabs/Weapons/Magazines/12ga/12ga_Shell_test.et",
+      "guid": "5220A773A621C2BB",
+      "meta_path": "Prefabs/Weapons/Magazines/12ga/12ga_Shell_test.et.meta",
+      "meta_registered_name": "Prefabs/Weapons/Magazines/12ga_Shell_test.et",
+      "category": "MAGAZINE",
+      "region": "UNRESOLVED",
+      "magazine_family": "12ga shotgun",
+      "caliber": "12ga",
+      "suggested_target_path": null,
+      "references_to_current_path": [],
+      "children": [],
+      "parent_guid": "6D18CC33708EE712",
+      "parent_path": "Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et",
+      "explicit_local_components": [
+        {
+          "class": "ARMST_ITEMS_STATS_COMPONENTS",
+          "instance_id": "657ABA04337B7547"
+        },
+        {
+          "class": "InventoryMagazineComponent",
+          "instance_id": "51EED12B803954CC"
+        },
+        {
+          "class": "MagazineComponent",
+          "instance_id": "CA6BE4D6B4DAFD69"
+        },
+        {
+          "class": "MeshObject",
+          "instance_id": "CA6BE4D6A23F8EF0"
+        },
+        {
+          "class": "MaterialAssignClass",
+          "instance_id": "673AAD9BC6FE3856"
+        },
+        {
+          "class": "SCR_EditableEntityComponent",
+          "instance_id": "673AAD9BC6FE3824"
+        }
+      ],
+      "explicit_local_overrides": [
+        "Name \"12g 5rnd Shell\"",
+        "Description \"\"",
+        "Weight 0.15",
+        "ItemDimensions 2 2 2",
+        "ItemVolume 20",
+        "Name \"12g 5rnd Shell\"",
+        "Description \"\"",
+        "m_bProgressBar 0",
+        "MaxAmmo 5",
+        "2 2 2 2 2",
+        "SourceMaterial \"Mat_2\"",
+        "Enabled 0",
+        "Name \"12 Gauge 00 Buckshot\"",
+        "CONTENT_MODDED 4141369",
+        "m_bAutoRegister NEVER",
+        "m_bVisible 0"
+      ],
+      "move_safe": "REVIEW_REQUIRED",
+      "reason": [
+        "existing serialized path/family/ammo/weapon evidence supports the assigned region or leaves the resource unresolved without inventing a target"
+      ],
+      "proposed_action": "REVIEW_REQUIRED"
+    },
+    {
+      "current_path": "Prefabs/Weapons/Magazines/5x45/Magazine_545x39_AK_30rnd_Ball.et",
+      "guid": "BBB50A815A2F916B",
+      "meta_path": "Prefabs/Weapons/Magazines/5x45/Magazine_545x39_AK_30rnd_Ball.et.meta",
+      "meta_registered_name": "Prefabs/Weapons/Magazines/Magazine_545x39_AK_30rnd_Ball.et",
+      "category": "MAGAZINE",
+      "region": "RUSSIAN",
+      "magazine_family": "AK74",
+      "caliber": "5x45",
+      "suggested_target_path": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/Magazine_545x39_AK_30rnd_Ball.et",
+      "references_to_current_path": [],
+      "children": [],
+      "parent_guid": "63C1E699345B24F9",
+      "parent_path": "Prefabs/Weapons/Magazines/5x45/Magazine_545x39_AK_30rnd_Base.et",
+      "explicit_local_components": [
+        {
+          "class": "SCR_EditableEntityComponent",
+          "instance_id": "65B265057DB4A0C0"
+        }
+      ],
+      "explicit_local_overrides": [
+        "Enabled 0",
+        "Name \"#AR-Magazine_AK74_Name\"",
+        "CONTENT_MODDED 4141369",
+        "m_bAutoRegister NEVER",
+        "m_bVisible 0"
+      ],
+      "move_safe": "REVIEW_REQUIRED",
+      "reason": [
+        "region/caliber/family derived from existing path/name/parent/ammo evidence"
+      ],
+      "proposed_action": "KEEP_AS_IS"
+    },
+    {
+      "current_path": "Prefabs/Weapons/Magazines/5x45/Magazine_545x39_AK_30rnd_Base.et",
+      "guid": "63C1E699345B24F9",
+      "meta_path": "Prefabs/Weapons/Magazines/5x45/Magazine_545x39_AK_30rnd_Base.et.meta",
+      "meta_registered_name": "Prefabs/Weapons/Magazines/Magazine_545x39_AK_30rnd_Base.et",
+      "category": "MAGAZINE",
+      "region": "RUSSIAN",
+      "magazine_family": "AK74",
+      "caliber": "5x45",
+      "suggested_target_path": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/Magazine_545x39_AK_30rnd_Base.et",
+      "references_to_current_path": [
+        "Prefabs/Weapons/Magazines/5x45/Magazine_545x39_AK_30rnd_Ball.et",
+        "Prefabs/Weapons/Magazines/5x45/Magazine_545x39_AK_30rnd_Tracer.et"
+      ],
+      "children": [
+        "Prefabs/Weapons/Magazines/5x45/Magazine_545x39_AK_30rnd_Ball.et",
+        "Prefabs/Weapons/Magazines/5x45/Magazine_545x39_AK_30rnd_Tracer.et"
+      ],
+      "parent_guid": "F9E1A46E3ABA116F",
+      "parent_path": "Prefabs/Weapons/Core/Magazine_Base.et",
+      "explicit_local_components": [
+        {
+          "class": "InventoryMagazineComponent",
+          "instance_id": "51EED12B803954CC"
+        }
+      ],
+      "explicit_local_overrides": [
+        "m_iCustomGridHeight 2"
+      ],
+      "move_safe": "REVIEW_REQUIRED",
+      "reason": [
+        "region/caliber/family derived from existing path/name/parent/ammo evidence"
+      ],
+      "proposed_action": "KEEP_AS_IS"
+    },
+    {
+      "current_path": "Prefabs/Weapons/Magazines/5x45/Magazine_545x39_AK_30rnd_Tracer.et",
+      "guid": "E5912E45754CD421",
+      "meta_path": "Prefabs/Weapons/Magazines/5x45/Magazine_545x39_AK_30rnd_Tracer.et.meta",
+      "meta_registered_name": "Prefabs/Weapons/Magazines/Magazine_545x39_AK_30rnd_Tracer.et",
+      "category": "MAGAZINE",
+      "region": "RUSSIAN",
+      "magazine_family": "AK74",
+      "caliber": "5x45",
+      "suggested_target_path": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/Magazine_545x39_AK_30rnd_Tracer.et",
+      "references_to_current_path": [],
+      "children": [],
+      "parent_guid": "63C1E699345B24F9",
+      "parent_path": "Prefabs/Weapons/Magazines/5x45/Magazine_545x39_AK_30rnd_Base.et",
+      "explicit_local_components": [
+        {
+          "class": "ARMST_ITEMS_STATS_COMPONENTS",
+          "instance_id": "657ABA04337B7547"
+        }
+      ],
+      "explicit_local_overrides": [],
+      "move_safe": "REVIEW_REQUIRED",
+      "reason": [
+        "region/caliber/family derived from existing path/name/parent/ammo evidence"
+      ],
+      "proposed_action": "KEEP_AS_IS"
+    },
+    {
+      "current_path": "Prefabs/Weapons/Magazines/5x45/Magazine_545x39_RPK_45rnd_Ball.et",
+      "guid": "BC74DAC891D48540",
+      "meta_path": "Prefabs/Weapons/Magazines/5x45/Magazine_545x39_RPK_45rnd_Ball.et.meta",
+      "meta_registered_name": "Prefabs/Weapons/Magazines/Magazine_545x39_RPK_45rnd_Ball.et",
+      "category": "MAGAZINE",
+      "region": "RUSSIAN",
+      "magazine_family": "AK74",
+      "caliber": "5x45",
+      "suggested_target_path": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/Magazine_545x39_RPK_45rnd_Ball.et",
+      "references_to_current_path": [],
+      "children": [],
+      "parent_guid": "9569026177545A20",
+      "parent_path": "Prefabs/Weapons/Magazines/Magazine_545x39_RPK_45rnd_Base.et",
+      "explicit_local_components": [
+        {
+          "class": "ARMST_ITEMS_STATS_COMPONENTS",
+          "instance_id": "657ABA04337B7547"
+        }
+      ],
+      "explicit_local_overrides": [],
+      "move_safe": "REVIEW_REQUIRED",
+      "reason": [
+        "region/caliber/family derived from existing path/name/parent/ammo evidence"
+      ],
+      "proposed_action": "KEEP_AS_IS"
+    },
+    {
+      "current_path": "Prefabs/Weapons/Magazines/5x45/Magazine_545x39_RPK_45rnd_Tracer.et",
+      "guid": "5897D01F41DB5D2D",
+      "meta_path": "Prefabs/Weapons/Magazines/5x45/Magazine_545x39_RPK_45rnd_Tracer.et.meta",
+      "meta_registered_name": "Prefabs/Weapons/Magazines/Magazine_545x39_RPK_45rnd_Tracer.et",
+      "category": "MAGAZINE",
+      "region": "RUSSIAN",
+      "magazine_family": "AK74",
+      "caliber": "5x45",
+      "suggested_target_path": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/Magazine_545x39_RPK_45rnd_Tracer.et",
+      "references_to_current_path": [],
+      "children": [],
+      "parent_guid": "9569026177545A20",
+      "parent_path": "Prefabs/Weapons/Magazines/Magazine_545x39_RPK_45rnd_Base.et",
+      "explicit_local_components": [
+        {
+          "class": "ARMST_ITEMS_STATS_COMPONENTS",
+          "instance_id": "657ABA04337B7547"
+        }
+      ],
+      "explicit_local_overrides": [],
+      "move_safe": "REVIEW_REQUIRED",
+      "reason": [
+        "region/caliber/family derived from existing path/name/parent/ammo evidence"
+      ],
+      "proposed_action": "KEEP_AS_IS"
+    },
+    {
+      "current_path": "Prefabs/Weapons/Magazines/5x56/Magazine_556x45_STANAG_30rnd_Base.et",
+      "guid": "11B9CC1FB4AEE740",
+      "meta_path": "Prefabs/Weapons/Magazines/5x56/Magazine_556x45_STANAG_30rnd_Base.et.meta",
+      "meta_registered_name": "Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_Base.et",
+      "category": "MAGAZINE",
+      "region": "WESTERN",
+      "magazine_family": "STANAG",
+      "caliber": "5x56",
+      "suggested_target_path": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/Magazine_556x45_STANAG_30rnd_Base.et",
+      "references_to_current_path": [
+        "Prefabs/Weapons/Magazines/5x56/Magazine_556x45_STANAG_30rnd_M196_Tracer.et",
+        "Prefabs/Weapons/Magazines/5x56/Magazine_556x45_STANAG_30rnd_M855_Ball.et",
+        "Prefabs/Weapons/Magazines/5x56/Magazine_556x45_STANAG_30rnd_M856_Tracer.et"
+      ],
+      "children": [
+        "Prefabs/Weapons/Magazines/5x56/Magazine_556x45_STANAG_30rnd_M196_Tracer.et",
+        "Prefabs/Weapons/Magazines/5x56/Magazine_556x45_STANAG_30rnd_M855_Ball.et",
+        "Prefabs/Weapons/Magazines/5x56/Magazine_556x45_STANAG_30rnd_M856_Tracer.et"
+      ],
+      "parent_guid": "F9E1A46E3ABA116F",
+      "parent_path": "Prefabs/Weapons/Core/Magazine_Base.et",
+      "explicit_local_components": [
+        {
+          "class": "InventoryMagazineComponent",
+          "instance_id": "51EED12B803954CC"
+        },
+        {
+          "class": "MagazineComponent",
+          "instance_id": "CA6BE4D6B4DAFD69"
+        }
+      ],
+      "explicit_local_overrides": [
+        "m_iCustomGridHeight 2",
+        "MaxAmmo 30"
+      ],
+      "move_safe": "REVIEW_REQUIRED",
+      "reason": [
+        "region/caliber/family derived from existing path/name/parent/ammo evidence"
+      ],
+      "proposed_action": "KEEP_AS_IS"
+    },
+    {
+      "current_path": "Prefabs/Weapons/Magazines/5x56/Magazine_556x45_STANAG_30rnd_M193_Ball.et",
+      "guid": "FB5EB0F6D447E859",
+      "meta_path": "Prefabs/Weapons/Magazines/5x56/Magazine_556x45_STANAG_30rnd_M193_Ball.et.meta",
+      "meta_registered_name": "Prefabs/Weapons/Magazines/5x56/Magazine_556x45_STANAG_30rnd_M193_Ball.et",
+      "category": "MAGAZINE",
+      "region": "WESTERN",
+      "magazine_family": "STANAG",
+      "caliber": "5x56",
+      "suggested_target_path": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/Magazine_556x45_STANAG_30rnd_M193_Ball.et",
+      "references_to_current_path": [
+        "Prefabs/Weapons/Magazines/Magazine_556x45_HKG36.et",
+        "Prefabs/Weapons/Magazines/Magazine_556x45_SIG_550.et"
+      ],
+      "children": [
+        "Prefabs/Weapons/Magazines/Magazine_556x45_HKG36.et",
+        "Prefabs/Weapons/Magazines/Magazine_556x45_SIG_550.et"
+      ],
+      "parent_guid": "FB5EB0F6D447E858",
+      "parent_path": "Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M193_Ball.et",
+      "explicit_local_components": [
+        {
+          "class": "ARMST_ITEMS_STATS_COMPONENTS",
+          "instance_id": "657ABA04337B7547"
+        },
+        {
+          "class": "InventoryMagazineComponent",
+          "instance_id": "51EED12B803954CC"
+        },
+        {
+          "class": "MagazineComponent",
+          "instance_id": "CA6BE4D6B4DAFD69"
+        },
+        {
+          "class": "SCR_EditableEntityComponent",
+          "instance_id": "65B265057DB4A0C0"
+        }
+      ],
+      "explicit_local_overrides": [
+        "Name \"#AR-Magazine_STANAG_Name\"",
+        "Description \"#AR-Magazine_STANAG_M193_Description\"",
+        "Name \"#AR-Magazine_STANAG_Name\"",
+        "Description \"#AR-Magazine_STANAG_M193_Description\"",
+        "2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2",
+        "Enabled 0",
+        "Name \"#AR-Magazine_STANAG_Name\"",
+        "1001 4141369",
+        "m_bAutoRegister NEVER",
+        "m_bVisible 0"
+      ],
+      "move_safe": "REVIEW_REQUIRED",
+      "reason": [
+        "region/caliber/family derived from existing path/name/parent/ammo evidence"
+      ],
+      "proposed_action": "KEEP_AS_IS"
+    },
+    {
+      "current_path": "Prefabs/Weapons/Magazines/5x56/Magazine_556x45_STANAG_30rnd_M196_Tracer.et",
+      "guid": "4575737B3D3A4505",
+      "meta_path": "Prefabs/Weapons/Magazines/5x56/Magazine_556x45_STANAG_30rnd_M196_Tracer.et.meta",
+      "meta_registered_name": "Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M196_Tracer.et",
+      "category": "MAGAZINE",
+      "region": "WESTERN",
+      "magazine_family": "STANAG",
+      "caliber": "5x56",
+      "suggested_target_path": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/Magazine_556x45_STANAG_30rnd_M196_Tracer.et",
+      "references_to_current_path": [],
+      "children": [],
+      "parent_guid": "11B9CC1FB4AEE740",
+      "parent_path": "Prefabs/Weapons/Magazines/5x56/Magazine_556x45_STANAG_30rnd_Base.et",
+      "explicit_local_components": [
+        {
+          "class": "ARMST_ITEMS_STATS_COMPONENTS",
+          "instance_id": "657ABA04337B7547"
+        }
+      ],
+      "explicit_local_overrides": [],
+      "move_safe": "REVIEW_REQUIRED",
+      "reason": [
+        "region/caliber/family derived from existing path/name/parent/ammo evidence"
+      ],
+      "proposed_action": "KEEP_AS_IS"
+    },
+    {
+      "current_path": "Prefabs/Weapons/Magazines/5x56/Magazine_556x45_STANAG_30rnd_M855_Ball.et",
+      "guid": "2EBF60EF24B108FC",
+      "meta_path": "Prefabs/Weapons/Magazines/5x56/Magazine_556x45_STANAG_30rnd_M855_Ball.et.meta",
+      "meta_registered_name": "Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M855_Ball.et",
+      "category": "MAGAZINE",
+      "region": "WESTERN",
+      "magazine_family": "STANAG",
+      "caliber": "5x56",
+      "suggested_target_path": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/Magazine_556x45_STANAG_30rnd_M855_Ball.et",
+      "references_to_current_path": [],
+      "children": [],
+      "parent_guid": "11B9CC1FB4AEE740",
+      "parent_path": "Prefabs/Weapons/Magazines/5x56/Magazine_556x45_STANAG_30rnd_Base.et",
+      "explicit_local_components": [
+        {
+          "class": "ARMST_ITEMS_STATS_COMPONENTS",
+          "instance_id": "657ABA04337B7547"
+        }
+      ],
+      "explicit_local_overrides": [],
+      "move_safe": "REVIEW_REQUIRED",
+      "reason": [
+        "region/caliber/family derived from existing path/name/parent/ammo evidence"
+      ],
+      "proposed_action": "KEEP_AS_IS"
+    },
+    {
+      "current_path": "Prefabs/Weapons/Magazines/5x56/Magazine_556x45_STANAG_30rnd_M856_Tracer.et",
+      "guid": "A9A385FE1F7BF4BD",
+      "meta_path": "Prefabs/Weapons/Magazines/5x56/Magazine_556x45_STANAG_30rnd_M856_Tracer.et.meta",
+      "meta_registered_name": "Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M856_Tracer.et",
+      "category": "MAGAZINE",
+      "region": "WESTERN",
+      "magazine_family": "STANAG",
+      "caliber": "5x56",
+      "suggested_target_path": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/Magazine_556x45_STANAG_30rnd_M856_Tracer.et",
+      "references_to_current_path": [],
+      "children": [],
+      "parent_guid": "11B9CC1FB4AEE740",
+      "parent_path": "Prefabs/Weapons/Magazines/5x56/Magazine_556x45_STANAG_30rnd_Base.et",
+      "explicit_local_components": [
+        {
+          "class": "ARMST_ITEMS_STATS_COMPONENTS",
+          "instance_id": "657ABA04337B7547"
+        }
+      ],
+      "explicit_local_overrides": [],
+      "move_safe": "REVIEW_REQUIRED",
+      "reason": [
+        "region/caliber/family derived from existing path/name/parent/ammo evidence"
+      ],
+      "proposed_action": "KEEP_AS_IS"
+    },
+    {
+      "current_path": "Prefabs/Weapons/Magazines/7x62/Magazine_762x39_AKM_10rnd_Ball.et",
+      "guid": "07805AE177F52646",
+      "meta_path": "Prefabs/Weapons/Magazines/7x62/Magazine_762x39_AKM_10rnd_Ball.et.meta",
+      "meta_registered_name": "Prefabs/Weapons/Magazines/Magazine_762x39_AKM_10rnd_Ball.et",
+      "category": "MAGAZINE",
+      "region": "RUSSIAN",
+      "magazine_family": "AKM",
+      "caliber": "7x62",
+      "suggested_target_path": "Prefabs/Weapons/Magazines/Russian/7x62/AKM/Magazine_762x39_AKM_10rnd_Ball.et",
+      "references_to_current_path": [
+        "Prefabs/Weapons/Rifles/AKM/armst_Rifle_SOC94.et",
+        "Prefabs/Weapons/Rifles/AKM/armst_Rifle_VPO136.et"
+      ],
+      "children": [],
+      "parent_guid": "48720FC416263FC1",
+      "parent_path": "Prefabs/Weapons/Magazines/7x62/Magazine_762x39_AKM_30rnd_Ball.et",
+      "explicit_local_components": [
+        {
+          "class": "InventoryMagazineComponent",
+          "instance_id": "51EED12B803954CC"
+        },
+        {
+          "class": "MagazineComponent",
+          "instance_id": "CA6BE4D6B4DAFD69"
+        },
+        {
+          "class": "MeshObject",
+          "instance_id": "CA6BE4D6A23F8EF0"
+        },
+        {
+          "class": "SCR_EditableEntityComponent",
+          "instance_id": "65B265057DB4A0C0"
+        }
+      ],
+      "explicit_local_overrides": [
+        "Name \"AKM magazine 10rnd\"",
+        "Description \"AKM magazine 10rnd\"",
+        "m_bAutoDetectGridSize 0",
+        "m_iCustomGridHeight 1",
+        "MaxAmmo 10",
+        "0 0 0 0 0 0 0 0 0 0",
+        "Enabled 0",
+        "Name \"AKM magazine 10rnd\"",
+        "m_bAutoRegister NEVER",
+        "m_bVisible 0"
+      ],
+      "move_safe": "REVIEW_REQUIRED",
+      "reason": [
+        "region/caliber/family derived from existing path/name/parent/ammo evidence"
+      ],
+      "proposed_action": "KEEP_AS_IS"
+    },
+    {
+      "current_path": "Prefabs/Weapons/Magazines/7x62/Magazine_762x39_AKM_30rnd_Ball.et",
+      "guid": "48720FC416263FC1",
+      "meta_path": "Prefabs/Weapons/Magazines/7x62/Magazine_762x39_AKM_30rnd_Ball.et.meta",
+      "meta_registered_name": "Prefabs/Weapons/Magazines/Magazine_762x39_AKM_30rnd_Ball.et",
+      "category": "MAGAZINE",
+      "region": "RUSSIAN",
+      "magazine_family": "AKM",
+      "caliber": "7x62",
+      "suggested_target_path": "Prefabs/Weapons/Magazines/Russian/7x62/AKM/Magazine_762x39_AKM_30rnd_Ball.et",
+      "references_to_current_path": [
+        "Prefabs/Weapons/Magazines/7x62/Magazine_762x39_AKM_10rnd_Ball.et",
+        "Prefabs/Weapons/Rifles/AKM/armst_Rifle_AKM.et",
+        "Prefabs/Weapons/Rifles/Groza/armst_Groza_base.et"
+      ],
+      "children": [
+        "Prefabs/Weapons/Magazines/7x62/Magazine_762x39_AKM_10rnd_Ball.et"
+      ],
+      "parent_guid": "892F30500E6E7E04",
+      "parent_path": "Prefabs/Weapons/Magazines/Vz58/Magazine_762x39_Vz58_30rnd_Base.et",
+      "explicit_local_components": [
+        {
+          "class": "InventoryMagazineComponent",
+          "instance_id": "51EED12B803954CC"
+        },
+        {
+          "class": "MeshObject",
+          "instance_id": "CA6BE4D6A23F8EF0"
+        },
+        {
+          "class": "SCR_EditableEntityComponent",
+          "instance_id": "65B265057DB4A0C0"
+        }
+      ],
+      "explicit_local_overrides": [
+        "Name \"AKM magazine 30rnd\"",
+        "Description \"AKM magazine 30rnd\"",
+        "m_iCustomGridHeight 2",
+        "Enabled 0",
+        "Name \"AKM magazine 30rnd\"",
+        "m_bAutoRegister NEVER",
+        "m_bVisible 0"
+      ],
+      "move_safe": "REVIEW_REQUIRED",
+      "reason": [
+        "region/caliber/family derived from existing path/name/parent/ammo evidence"
+      ],
+      "proposed_action": "KEEP_AS_IS"
+    },
+    {
+      "current_path": "Prefabs/Weapons/Magazines/7x62/Magazine_762x39_AKM_30rnd_Tracer.et",
+      "guid": "FAFA0D71E75CEBE2",
+      "meta_path": "Prefabs/Weapons/Magazines/7x62/Magazine_762x39_AKM_30rnd_Tracer.et.meta",
+      "meta_registered_name": "Prefabs/Weapons/Magazines/Vz58/Magazine_762x39_Vz58_30rnd_Tracer.et",
+      "category": "MAGAZINE",
+      "region": "RUSSIAN",
+      "magazine_family": "AKM",
+      "caliber": "7x62",
+      "suggested_target_path": "Prefabs/Weapons/Magazines/Russian/7x62/AKM/Magazine_762x39_AKM_30rnd_Tracer.et",
+      "references_to_current_path": [],
+      "children": [],
+      "parent_guid": "892F30500E6E7E04",
+      "parent_path": "Prefabs/Weapons/Magazines/Vz58/Magazine_762x39_Vz58_30rnd_Base.et",
+      "explicit_local_components": [
+        {
+          "class": "InventoryMagazineComponent",
+          "instance_id": "51EED12B803954CC"
+        },
+        {
+          "class": "MeshObject",
+          "instance_id": "CA6BE4D6A23F8EF0"
+        }
+      ],
+      "explicit_local_overrides": [
+        "m_iCustomGridHeight 2"
+      ],
+      "move_safe": "REVIEW_REQUIRED",
+      "reason": [
+        "region/caliber/family derived from existing path/name/parent/ammo evidence"
+      ],
+      "proposed_action": "KEEP_AS_IS"
+    },
+    {
+      "current_path": "Prefabs/Weapons/Magazines/9x39/Magazine_9x39_20rnd_9a91_SP5.et",
+      "guid": "B7EC6D4222AE12BE",
+      "meta_path": "Prefabs/Weapons/Magazines/9x39/Magazine_9x39_20rnd_9a91_SP5.et.meta",
+      "meta_registered_name": "Prefabs/Weapons/Magazines/Magazine_9x39_20rnd_9a91.et",
+      "category": "MAGAZINE",
+      "region": "RUSSIAN",
+      "magazine_family": "9a91",
+      "caliber": "9x39",
+      "suggested_target_path": "Prefabs/Weapons/Magazines/Russian/9x39/9a91/Magazine_9x39_20rnd_9a91_SP5.et",
+      "references_to_current_path": [
+        "Prefabs/Weapons/Rifles/9a91/armst_Rifle_9a91_base.et",
+        "Prefabs/Weapons/Rifles/VSK94/armst_Rifle_VSK94_base.et"
+      ],
+      "children": [],
+      "parent_guid": "F9E1A46E3ABA116F",
+      "parent_path": "Prefabs/Weapons/Core/Magazine_Base.et",
+      "explicit_local_components": [
+        {
+          "class": "InventoryMagazineComponent",
+          "instance_id": "51EED12B803954CC"
+        },
+        {
+          "class": "PreviewRenderAttributes",
+          "instance_id": "65ACF622AE16E7F1"
+        },
+        {
+          "class": "MagazineComponent",
+          "instance_id": "CA6BE4D6B4DAFD69"
+        },
+        {
+          "class": "MeshObject",
+          "instance_id": "CA6BE4D6A23F8EF0"
+        },
+        {
+          "class": "SCR_EditableEntityComponent",
+          "instance_id": "65B265057DB4A0C0"
+        },
+        {
+          "class": "ActionsManagerComponent",
+          "instance_id": "F092E6B0537754FD"
+        },
+        {
+          "class": "UserActionContext",
+          "instance_id": "5086F9AB010868CE"
+        }
+      ],
+      "explicit_local_overrides": [
+        "Name \"9A91 magazine SP5\"",
+        "Description \"9A91 magazine SP5\"",
+        "Weight 0.23",
+        "SizeSetupStrategy Manual",
+        "ItemVolume 200",
+        "RestingUP Left",
+        "RestingAdditiveOffsetLS -0.5 0 0",
+        "CameraPreset Left",
+        "CameraOrbitAngles -25 25 0",
+        "CameraDistanceToItem 1",
+        "FOV 12",
+        "m_iCustomGridHeight 2",
+        "WbPlacementFromAttributes 0",
+        "WeightPerAmmo 0.01",
+        "m_sAmmoCaliber \"#AR-AmmunitionID_545x39mm\"",
+        "MaxAmmo 20",
+        "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+        "Enabled 0",
+        "Name \"9A91 magazine\"",
+        "CONTENT_MODDED 4141369",
+        "m_bAutoRegister NEVER",
+        "m_bVisible 0",
+        "Offset 0 0 0",
+        "Flags 0x400003 0"
+      ],
+      "move_safe": "REVIEW_REQUIRED",
+      "reason": [
+        "region/caliber/family derived from existing path/name/parent/ammo evidence"
+      ],
+      "proposed_action": "KEEP_AS_IS"
+    },
+    {
+      "current_path": "Prefabs/Weapons/Magazines/9x39/Magazine_9x39_20rnd_9a91_SP6.et",
+      "guid": "3F47C33B88171646",
+      "meta_path": "Prefabs/Weapons/Magazines/9x39/Magazine_9x39_20rnd_9a91_SP6.et.meta",
+      "meta_registered_name": "Prefabs/Weapons/Magazines/9x39/Magazine_9x39_20rnd_9a91_SP6.et",
+      "category": "MAGAZINE",
+      "region": "RUSSIAN",
+      "magazine_family": "9a91",
+      "caliber": "9x39",
+      "suggested_target_path": "Prefabs/Weapons/Magazines/Russian/9x39/9a91/Magazine_9x39_20rnd_9a91_SP6.et",
+      "references_to_current_path": [],
+      "children": [],
+      "parent_guid": "F9E1A46E3ABA116F",
+      "parent_path": "Prefabs/Weapons/Core/Magazine_Base.et",
+      "explicit_local_components": [
+        {
+          "class": "InventoryMagazineComponent",
+          "instance_id": "51EED12B803954CC"
+        },
+        {
+          "class": "PreviewRenderAttributes",
+          "instance_id": "673A6EBFEB337DB5"
+        },
+        {
+          "class": "MagazineComponent",
+          "instance_id": "CA6BE4D6B4DAFD69"
+        },
+        {
+          "class": "MeshObject",
+          "instance_id": "CA6BE4D6A23F8EF0"
+        },
+        {
+          "class": "SCR_EditableEntityComponent",
+          "instance_id": "673A6EBFEB337D8E"
+        },
+        {
+          "class": "ActionsManagerComponent",
+          "instance_id": "F092E6B0537754FD"
+        },
+        {
+          "class": "UserActionContext",
+          "instance_id": "5086F9AB010868CE"
+        }
+      ],
+      "explicit_local_overrides": [
+        "Name \"9A91 magazine SP6\"",
+        "Description \"9A91 magazine SP6\"",
+        "Weight 0.29",
+        "SizeSetupStrategy Manual",
+        "ItemVolume 200",
+        "RestingUP Left",
+        "RestingAdditiveOffsetLS -0.5 0 0",
+        "CameraPreset Left",
+        "CameraOrbitAngles -25 25 0",
+        "CameraDistanceToItem 1",
+        "FOV 12",
+        "m_iCustomGridHeight 2",
+        "WbPlacementFromAttributes 0",
+        "WeightPerAmmo 0.01",
+        "m_sAmmoCaliber \"#AR-AmmunitionID_545x39mm\"",
+        "MaxAmmo 20",
+        "1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1",
+        "Enabled 0",
+        "Name \"9A91 magazine\"",
+        "CONTENT_MODDED 4141369",
+        "m_bAutoRegister NEVER",
+        "m_bVisible 0",
+        "Offset 0 0 0",
+        "Flags 0x400003 0"
+      ],
+      "move_safe": "REVIEW_REQUIRED",
+      "reason": [
+        "region/caliber/family derived from existing path/name/parent/ammo evidence"
+      ],
+      "proposed_action": "KEEP_AS_IS"
+    },
+    {
+      "current_path": "Prefabs/Weapons/Magazines/9x39/Magazine_9x39_20rnd_vss_SP5.et",
+      "guid": "70D023F899C9C226",
+      "meta_path": "Prefabs/Weapons/Magazines/9x39/Magazine_9x39_20rnd_vss_SP5.et.meta",
+      "meta_registered_name": "Prefabs/Weapons/Magazines/Magazine_9x39_20rnd_vss.et",
+      "category": "MAGAZINE",
+      "region": "RUSSIAN",
+      "magazine_family": "VSS",
+      "caliber": "9x39",
+      "suggested_target_path": "Prefabs/Weapons/Magazines/Russian/9x39/VSS/Magazine_9x39_20rnd_vss_SP5.et",
+      "references_to_current_path": [
+        "Prefabs/Weapons/Rifles/VSS/armst_Rifle_vss_base.et"
+      ],
+      "children": [],
+      "parent_guid": "F9E1A46E3ABA116F",
+      "parent_path": "Prefabs/Weapons/Core/Magazine_Base.et",
+      "explicit_local_components": [
+        {
+          "class": "ARMST_ITEMS_STATS_COMPONENTS",
+          "instance_id": "657ABA04337B7547"
+        },
+        {
+          "class": "InventoryMagazineComponent",
+          "instance_id": "51EED12B803954CC"
+        },
+        {
+          "class": "PreviewRenderAttributes",
+          "instance_id": "65AD1CF54397A5FC"
+        },
+        {
+          "class": "MagazineComponent",
+          "instance_id": "CA6BE4D6B4DAFD69"
+        },
+        {
+          "class": "MeshObject",
+          "instance_id": "CA6BE4D6A23F8EF0"
+        },
+        {
+          "class": "SCR_EditableEntityComponent",
+          "instance_id": "65B265057DB4A0C0"
+        },
+        {
+          "class": "ActionsManagerComponent",
+          "instance_id": "F092E6B0537754FD"
+        },
+        {
+          "class": "UserActionContext",
+          "instance_id": "5086F9AB010868CE"
+        }
+      ],
+      "explicit_local_overrides": [
+        "Name \"VSS magazine 20rnd SP5\"",
+        "Description \"VSS magazine 20rnd SP5\"",
+        "Weight 0.23",
+        "SizeSetupStrategy Manual",
+        "ItemVolume 200",
+        "RestingUP Left",
+        "RestingAdditiveOffsetLS -0.5 0 0",
+        "CameraPreset Left",
+        "CameraOrbitAngles -25 25 0",
+        "CameraDistanceToItem 1",
+        "FOV 12",
+        "WbPlacementFromAttributes 0",
+        "WeightPerAmmo 0.01",
+        "m_sAmmoCaliber \"#AR-AmmunitionID_545x39mm\"",
+        "MaxAmmo 20",
+        "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+        "Enabled 0",
+        "Name \"VSS magazine 20rnd\"",
+        "CONTENT_MODDED 4141369",
+        "m_bAutoRegister NEVER",
+        "m_bVisible 0",
+        "Offset 0 0 0",
+        "Flags 0x400003 0"
+      ],
+      "move_safe": "REVIEW_REQUIRED",
+      "reason": [
+        "region/caliber/family derived from existing path/name/parent/ammo evidence"
+      ],
+      "proposed_action": "KEEP_AS_IS"
+    },
+    {
+      "current_path": "Prefabs/Weapons/Magazines/9x39/Magazine_9x39_20rnd_vss_SP6.et",
+      "guid": "51E9CE2EB27B3DBD",
+      "meta_path": "Prefabs/Weapons/Magazines/9x39/Magazine_9x39_20rnd_vss_SP6.et.meta",
+      "meta_registered_name": "Prefabs/Weapons/Magazines/9x39/Magazine_9x39_20rnd_vss_SP6.et",
+      "category": "MAGAZINE",
+      "region": "RUSSIAN",
+      "magazine_family": "VSS",
+      "caliber": "9x39",
+      "suggested_target_path": "Prefabs/Weapons/Magazines/Russian/9x39/VSS/Magazine_9x39_20rnd_vss_SP6.et",
+      "references_to_current_path": [],
+      "children": [],
+      "parent_guid": "F9E1A46E3ABA116F",
+      "parent_path": "Prefabs/Weapons/Core/Magazine_Base.et",
+      "explicit_local_components": [
+        {
+          "class": "ARMST_ITEMS_STATS_COMPONENTS",
+          "instance_id": "657ABA04337B7547"
+        },
+        {
+          "class": "InventoryMagazineComponent",
+          "instance_id": "51EED12B803954CC"
+        },
+        {
+          "class": "PreviewRenderAttributes",
+          "instance_id": "673A6EBFE84A32A3"
+        },
+        {
+          "class": "MagazineComponent",
+          "instance_id": "CA6BE4D6B4DAFD69"
+        },
+        {
+          "class": "MeshObject",
+          "instance_id": "CA6BE4D6A23F8EF0"
+        },
+        {
+          "class": "SCR_EditableEntityComponent",
+          "instance_id": "673A6EBFE84A32B4"
+        },
+        {
+          "class": "ActionsManagerComponent",
+          "instance_id": "F092E6B0537754FD"
+        },
+        {
+          "class": "UserActionContext",
+          "instance_id": "5086F9AB010868CE"
+        }
+      ],
+      "explicit_local_overrides": [
+        "Name \"VSS magazine 20rnd SP6\"",
+        "Description \"VSS magazine 20rnd SP6\"",
+        "Weight 0.33",
+        "SizeSetupStrategy Manual",
+        "ItemVolume 200",
+        "RestingUP Left",
+        "RestingAdditiveOffsetLS -0.5 0 0",
+        "CameraPreset Left",
+        "CameraOrbitAngles -25 25 0",
+        "CameraDistanceToItem 1",
+        "FOV 12",
+        "WbPlacementFromAttributes 0",
+        "WeightPerAmmo 0.01",
+        "m_sAmmoCaliber \"#AR-AmmunitionID_545x39mm\"",
+        "MaxAmmo 20",
+        "1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1",
+        "Enabled 0",
+        "Name \"VSS magazine 20rnd\"",
+        "CONTENT_MODDED 4141369",
+        "m_bAutoRegister NEVER",
+        "m_bVisible 0",
+        "Offset 0 0 0",
+        "Flags 0x400003 0"
+      ],
+      "move_safe": "REVIEW_REQUIRED",
+      "reason": [
+        "region/caliber/family derived from existing path/name/parent/ammo evidence"
+      ],
+      "proposed_action": "KEEP_AS_IS"
+    },
+    {
+      "current_path": "Prefabs/Weapons/Magazines/9x39/Magazine_9x39_30rnd_val_SP5.et",
+      "guid": "6C22F58BBF5D6AED",
+      "meta_path": "Prefabs/Weapons/Magazines/9x39/Magazine_9x39_30rnd_val_SP5.et.meta",
+      "meta_registered_name": "Prefabs/Weapons/Magazines/Magazine_9x39_30rnd_val.et",
+      "category": "MAGAZINE",
+      "region": "RUSSIAN",
+      "magazine_family": "VAL",
+      "caliber": "9x39",
+      "suggested_target_path": "Prefabs/Weapons/Magazines/Russian/9x39/VAL/Magazine_9x39_30rnd_val_SP5.et",
+      "references_to_current_path": [
+        "Prefabs/Weapons/Rifles/VAL/armst_Rifle_val_base.et"
+      ],
+      "children": [],
+      "parent_guid": "F9E1A46E3ABA116F",
+      "parent_path": "Prefabs/Weapons/Core/Magazine_Base.et",
+      "explicit_local_components": [
+        {
+          "class": "InventoryMagazineComponent",
+          "instance_id": "51EED12B803954CC"
+        },
+        {
+          "class": "PreviewRenderAttributes",
+          "instance_id": "65AD272C6CDDD354"
+        },
+        {
+          "class": "MagazineComponent",
+          "instance_id": "CA6BE4D6B4DAFD69"
+        },
+        {
+          "class": "MeshObject",
+          "instance_id": "CA6BE4D6A23F8EF0"
+        },
+        {
+          "class": "SCR_EditableEntityComponent",
+          "instance_id": "65B265057DB4A0C0"
+        },
+        {
+          "class": "ActionsManagerComponent",
+          "instance_id": "F092E6B0537754FD"
+        },
+        {
+          "class": "UserActionContext",
+          "instance_id": "5086F9AB010868CE"
+        }
+      ],
+      "explicit_local_overrides": [
+        "Name \"VSS magazine 30rnd SP5\"",
+        "Description \"VSS magazine 30rnd SP6\"",
+        "Weight 0.33",
+        "SizeSetupStrategy Manual",
+        "ItemVolume 200",
+        "RestingUP Left",
+        "RestingAdditiveOffsetLS -0.5 0 0",
+        "CameraPreset Left",
+        "CameraOrbitAngles -25 25 0",
+        "CameraDistanceToItem 1",
+        "FOV 12",
+        "m_iCustomGridHeight 2",
+        "WbPlacementFromAttributes 0",
+        "WeightPerAmmo 0.01",
+        "m_sAmmoCaliber \"#AR-AmmunitionID_545x39mm\"",
+        "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0",
+        "Enabled 0",
+        "Name \"VSS magazine 30rnd\"",
+        "CONTENT_MODDED 4141369",
+        "m_bAutoRegister NEVER",
+        "m_bVisible 0",
+        "Offset 0 0 0",
+        "Flags 0x400003 0"
+      ],
+      "move_safe": "REVIEW_REQUIRED",
+      "reason": [
+        "region/caliber/family derived from existing path/name/parent/ammo evidence"
+      ],
+      "proposed_action": "KEEP_AS_IS"
+    },
+    {
+      "current_path": "Prefabs/Weapons/Magazines/9x39/Magazine_9x39_30rnd_val_SP6.et",
+      "guid": "6CBF1E50EB22F09B",
+      "meta_path": "Prefabs/Weapons/Magazines/9x39/Magazine_9x39_30rnd_val_SP6.et.meta",
+      "meta_registered_name": "Prefabs/Weapons/Magazines/9x39/Magazine_9x39_30rnd_val_SP6.et",
+      "category": "MAGAZINE",
+      "region": "RUSSIAN",
+      "magazine_family": "VAL",
+      "caliber": "9x39",
+      "suggested_target_path": "Prefabs/Weapons/Magazines/Russian/9x39/VAL/Magazine_9x39_30rnd_val_SP6.et",
+      "references_to_current_path": [],
+      "children": [],
+      "parent_guid": "F9E1A46E3ABA116F",
+      "parent_path": "Prefabs/Weapons/Core/Magazine_Base.et",
+      "explicit_local_components": [
+        {
+          "class": "InventoryMagazineComponent",
+          "instance_id": "51EED12B803954CC"
+        },
+        {
+          "class": "PreviewRenderAttributes",
+          "instance_id": "673A6EBFEE188D25"
+        },
+        {
+          "class": "MagazineComponent",
+          "instance_id": "CA6BE4D6B4DAFD69"
+        },
+        {
+          "class": "MeshObject",
+          "instance_id": "CA6BE4D6A23F8EF0"
+        },
+        {
+          "class": "SCR_EditableEntityComponent",
+          "instance_id": "673A6EBFEE188D3E"
+        },
+        {
+          "class": "ActionsManagerComponent",
+          "instance_id": "F092E6B0537754FD"
+        },
+        {
+          "class": "UserActionContext",
+          "instance_id": "5086F9AB010868CE"
+        }
+      ],
+      "explicit_local_overrides": [
+        "Name \"VSS magazine 30rnd SP6\"",
+        "Description \"VSS magazine 30rnd SP6\"",
+        "Weight 0.42",
+        "SizeSetupStrategy Manual",
+        "ItemVolume 200",
+        "RestingUP Left",
+        "RestingAdditiveOffsetLS -0.5 0 0",
+        "CameraPreset Left",
+        "CameraOrbitAngles -25 25 0",
+        "CameraDistanceToItem 1",
+        "FOV 12",
+        "m_iCustomGridHeight 2",
+        "WbPlacementFromAttributes 0",
+        "WeightPerAmmo 0.01",
+        "m_sAmmoCaliber \"#AR-AmmunitionID_545x39mm\"",
+        "1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1",
+        "Enabled 0",
+        "Name \"VSS magazine 30rnd\"",
+        "CONTENT_MODDED 4141369",
+        "m_bAutoRegister NEVER",
+        "m_bVisible 0",
+        "Offset 0 0 0",
+        "Flags 0x400003 0"
+      ],
+      "move_safe": "REVIEW_REQUIRED",
+      "reason": [
+        "region/caliber/family derived from existing path/name/parent/ammo evidence"
+      ],
+      "proposed_action": "KEEP_AS_IS"
+    },
+    {
+      "current_path": "Prefabs/Weapons/Ammo/Ammo_763x25.et",
+      "guid": "8221593DFA48E4B3",
+      "meta_path": "Prefabs/Weapons/Ammo/Ammo_763x25.et.meta",
+      "meta_registered_name": "Prefabs/Weapons/Ammo/Ammo_763x25.et",
+      "category": "AMMO",
+      "region": "RUSSIAN",
+      "caliber": "763x25",
+      "suggested_target_path": "Prefabs/Weapons/Ammo/Russian/763x25/Ammo_763x25.et",
+      "references_to_current_path": [],
+      "children": [],
+      "parent_guid": "AC29AE3D5ECD6390",
+      "parent_path": "Prefabs/Weapons/Ammo/Ammo_762x54r_Ball_57N323S.et",
+      "explicit_local_components": [
+        {
+          "class": "ShellMoveComponent",
+          "instance_id": "851AA4A2AE0A5691"
+        },
+        {
+          "class": "ProjectileDamage",
+          "instance_id": "5168BBF3DBD79134"
+        }
+      ],
+      "explicit_local_overrides": [
+        "InitSpeed 340",
+        "InitSpeedVariation 7.5",
+        "DispersionMultiplier 0.55",
+        "Mass 0.018",
+        "AirDrag 0.0000094",
+        "TumblingDamageMultiplier 0.05",
+        "PenetrationDepth 3.7",
+        "PenetrationSpeed 615"
+      ],
+      "projectile_semantic_override": [
+        "InitSpeed 340",
+        "InitSpeedVariation 7.5",
+        "DispersionMultiplier 0.55",
+        "Mass 0.018",
+        "AirDrag 0.0000094",
+        "TumblingDamageMultiplier 0.05",
+        "PenetrationDepth 3.7",
+        "PenetrationSpeed 615"
+      ],
+      "move_safe": "REVIEW_REQUIRED",
+      "reason": [
+        "region/caliber derived from existing resource path/name evidence"
+      ],
+      "proposed_action": "KEEP_AS_IS"
+    },
+    {
+      "current_path": "Prefabs/Weapons/Ammo/Ammo_763x25_Ball.et",
+      "guid": "5AE7AF31B9D7EB6C",
+      "meta_path": "Prefabs/Weapons/Ammo/Ammo_763x25_Ball.et.meta",
+      "meta_registered_name": "Prefabs/Weapons/Ammo/Ammo_763x25_Ball.et",
+      "category": "AMMO",
+      "region": "RUSSIAN",
+      "caliber": "763x25",
+      "suggested_target_path": "Prefabs/Weapons/Ammo/Russian/763x25/Ammo_763x25_Ball.et",
+      "references_to_current_path": [
+        "Prefabs/Weapons/Handguns/armst_TT_prefab_balance_profile.et"
+      ],
+      "children": [],
+      "parent_guid": "67FED88E5085F63F",
+      "parent_path": "Prefabs/Weapons/Core/Ammo_Bullet_Base.et",
+      "explicit_local_components": [
+        {
+          "class": "ShellMoveComponent",
+          "instance_id": "851AA4A2AE0A5691"
+        }
+      ],
+      "explicit_local_overrides": [
+        "InitSpeed 430",
+        "InitSpeedVariation 15",
+        "Mass 0.00804",
+        "AirDrag 0.0000125",
+        "Diameter 9.1",
+        "Length 15.5",
+        "MushroomingDamageMultiplier 0.05",
+        "TumblingDamageMultiplier 0.1",
+        "PenetrationDepth 20",
+        "PenetrationDensity 0.65",
+        "PenetrationSpeed 355"
+      ],
+      "projectile_semantic_override": [
+        "InitSpeed 430",
+        "InitSpeedVariation 15",
+        "Mass 0.00804",
+        "AirDrag 0.0000125",
+        "Diameter 9.1",
+        "Length 15.5",
+        "MushroomingDamageMultiplier 0.05",
+        "TumblingDamageMultiplier 0.1",
+        "PenetrationDepth 20",
+        "PenetrationDensity 0.65",
+        "PenetrationSpeed 355"
+      ],
+      "move_safe": "REVIEW_REQUIRED",
+      "reason": [
+        "region/caliber derived from existing resource path/name evidence"
+      ],
+      "proposed_action": "KEEP_AS_IS"
+    },
+    {
+      "current_path": "Prefabs/Weapons/Ammo/Ammo_9x39_SP5_Ball.et",
+      "guid": "2CB8EAD4A52F3290",
+      "meta_path": "Prefabs/Weapons/Ammo/Ammo_9x39_SP5_Ball.et.meta",
+      "meta_registered_name": "Prefabs/Weapons/Ammo/Ammo_9x39_SP5_Ball.et",
+      "category": "AMMO",
+      "region": "RUSSIAN",
+      "caliber": "9x39",
+      "suggested_target_path": "Prefabs/Weapons/Ammo/Russian/9x39/Ammo_9x39_SP5_Ball.et",
+      "references_to_current_path": [],
+      "children": [],
+      "parent_guid": "AC29AE3D5ECD6390",
+      "parent_path": "Prefabs/Weapons/Ammo/Ammo_762x54r_Ball_57N323S.et",
+      "explicit_local_components": [
+        {
+          "class": "ShellMoveComponent",
+          "instance_id": "851AA4A2AE0A5691"
+        },
+        {
+          "class": "ProjectileDamage",
+          "instance_id": "5168BBF3DBD79134"
+        }
+      ],
+      "explicit_local_overrides": [
+        "InitSpeed 290",
+        "InitSpeedVariation 7.5",
+        "DispersionMultiplier 0.55",
+        "Mass 0.01959",
+        "AirDrag 0.0000094",
+        "TumblingDamageMultiplier 0.05",
+        "PenetrationDepth 3.7",
+        "PenetrationSpeed 615"
+      ],
+      "projectile_semantic_override": [
+        "InitSpeed 290",
+        "InitSpeedVariation 7.5",
+        "DispersionMultiplier 0.55",
+        "Mass 0.01959",
+        "AirDrag 0.0000094",
+        "TumblingDamageMultiplier 0.05",
+        "PenetrationDepth 3.7",
+        "PenetrationSpeed 615"
+      ],
+      "move_safe": "REVIEW_REQUIRED",
+      "reason": [
+        "region/caliber derived from existing resource path/name evidence"
+      ],
+      "proposed_action": "KEEP_AS_IS"
+    },
+    {
+      "current_path": "Prefabs/Weapons/Ammo/Ammo_9x39_SP6_Ball.et",
+      "guid": "FB468B29C75FE46A",
+      "meta_path": "Prefabs/Weapons/Ammo/Ammo_9x39_SP6_Ball.et.meta",
+      "meta_registered_name": "Prefabs/Weapons/Ammo/Ammo_9x39_SP6_Ball.et",
+      "category": "AMMO",
+      "region": "RUSSIAN",
+      "caliber": "9x39",
+      "suggested_target_path": "Prefabs/Weapons/Ammo/Russian/9x39/Ammo_9x39_SP6_Ball.et",
+      "references_to_current_path": [],
+      "children": [],
+      "parent_guid": "AC29AE3D5ECD6390",
+      "parent_path": "Prefabs/Weapons/Ammo/Ammo_762x54r_Ball_57N323S.et",
+      "explicit_local_components": [
+        {
+          "class": "ShellMoveComponent",
+          "instance_id": "851AA4A2AE0A5691"
+        },
+        {
+          "class": "ProjectileDamage",
+          "instance_id": "5168BBF3DBD79134"
+        }
+      ],
+      "explicit_local_overrides": [
+        "InitSpeed 305",
+        "InitSpeedVariation 7.5",
+        "DispersionMultiplier 0.55",
+        "Mass 0.02559",
+        "DamageValue 150",
+        "AirDrag 0.0000094",
+        "TumblingDamageMultiplier 0.05",
+        "PenetrationDepth 5.55",
+        "PenetrationSpeed 615"
+      ],
+      "projectile_semantic_override": [
+        "InitSpeed 305",
+        "InitSpeedVariation 7.5",
+        "DispersionMultiplier 0.55",
+        "Mass 0.02559",
+        "DamageValue 150",
+        "AirDrag 0.0000094",
+        "TumblingDamageMultiplier 0.05",
+        "PenetrationDepth 5.55",
+        "PenetrationSpeed 615"
+      ],
+      "move_safe": "REVIEW_REQUIRED",
+      "reason": [
+        "region/caliber derived from existing resource path/name evidence"
+      ],
+      "proposed_action": "KEEP_AS_IS"
+    },
+    {
+      "current_path": "Prefabs/Weapons/Ammo/Ammo_Grenade_HE_VOG25.et",
+      "guid": "262F0D09C4130826",
+      "meta_path": "Prefabs/Weapons/Ammo/Ammo_Grenade_HE_VOG25.et.meta",
+      "meta_registered_name": "Prefabs/Weapons/Ammo/Ammo_Grenade_HE_VOG25.et",
+      "category": "AMMO",
+      "region": "RUSSIAN",
+      "caliber": "grenade",
+      "suggested_target_path": "Prefabs/Weapons/Ammo/Russian/grenade/Ammo_Grenade_HE_VOG25.et",
+      "references_to_current_path": [],
+      "children": [],
+      "parent_guid": "D40A105437369C1D",
+      "parent_path": "Prefabs/Weapons/Core/Ammo_GrenadeLauncher_Base.et",
+      "explicit_local_components": [
+        {
+          "class": "ARMST_ITEMS_STATS_COMPONENTS",
+          "instance_id": "66A73B41DBC89B96"
+        }
+      ],
+      "explicit_local_overrides": [],
+      "projectile_semantic_override": "NONE",
+      "move_safe": "REVIEW_REQUIRED",
+      "reason": [
+        "existing serialized path/family/ammo/weapon evidence supports the assigned region or leaves the resource unresolved without inventing a target"
+      ],
+      "proposed_action": "KEEP_AS_IS"
+    },
+    {
+      "current_path": "Prefabs/Weapons/Ammo/12g/Ammo_12ga.et",
+      "guid": "862E8EB633CED07D",
+      "meta_path": "Prefabs/Weapons/Ammo/12g/Ammo_12ga.et.meta",
+      "meta_registered_name": "Prefabs/Weapons/Ammo/12g/Ammo_12ga.et",
+      "category": "AMMO",
+      "region": "UNRESOLVED",
+      "caliber": "12ga",
+      "suggested_target_path": null,
+      "references_to_current_path": [],
+      "children": [],
+      "parent_guid": "AC29AE3D5ECD6390",
+      "parent_path": "Prefabs/Weapons/Ammo/Ammo_762x54r_Ball_57N323S.et",
+      "explicit_local_components": [
+        {
+          "class": "TimerTriggerComponent",
+          "instance_id": "670B0738C9F2C1EC"
+        },
+        {
+          "class": "ARMST_12g_SpreadEffect",
+          "instance_id": "670B0738C9F2C1CD"
+        },
+        {
+          "class": "ShellMoveComponent",
+          "instance_id": "851AA4A2AE0A5691"
+        },
+        {
+          "class": "ProjectileDamage",
+          "instance_id": "5168BBF3DBD79134"
+        },
+        {
+          "class": "SubmunitionEffect",
+          "instance_id": "670B0990658FAC4F"
+        }
+      ],
+      "explicit_local_overrides": [
+        "Enabled 1",
+        "m_iPelletCount 9",
+        "m_fSpreadAngle 1.432",
+        "SafetyDistance 0",
+        "TIMER 0.025",
+        "InitSpeed 350",
+        "InitSpeedVariation 0",
+        "Mass 0.0096",
+        "DamageValue 10",
+        "Enabled 0",
+        "Count 9",
+        "Dispersion 7",
+        "AirDrag 0.0015",
+        "PenetrationDepth 80",
+        "PenetrationDensity 0.65"
+      ],
+      "projectile_semantic_override": [
+        "Enabled 1",
+        "m_iPelletCount 9",
+        "m_fSpreadAngle 1.432",
+        "SafetyDistance 0",
+        "TIMER 0.025",
+        "InitSpeed 350",
+        "InitSpeedVariation 0",
+        "Mass 0.0096",
+        "DamageValue 10",
+        "Enabled 0",
+        "Count 9",
+        "Dispersion 7",
+        "AirDrag 0.0015",
+        "PenetrationDepth 80",
+        "PenetrationDensity 0.65"
+      ],
+      "move_safe": "REVIEW_REQUIRED",
+      "reason": [
+        "existing serialized path/family/ammo/weapon evidence supports the assigned region or leaves the resource unresolved without inventing a target"
+      ],
+      "proposed_action": "REVIEW_REQUIRED"
+    },
+    {
+      "current_path": "Prefabs/Weapons/Ammo/12g/Ammo_12ga_shell.et",
+      "guid": "9F7537128778361F",
+      "meta_path": "Prefabs/Weapons/Ammo/12g/Ammo_12ga_shell.et.meta",
+      "meta_registered_name": "Prefabs/Weapons/Ammo/12g/Ammo_12ga_shell.et",
+      "category": "AMMO",
+      "region": "UNRESOLVED",
+      "caliber": "12ga",
+      "suggested_target_path": null,
+      "references_to_current_path": [],
+      "children": [],
+      "parent_guid": "AC29AE3D5ECD6390",
+      "parent_path": "Prefabs/Weapons/Ammo/Ammo_762x54r_Ball_57N323S.et",
+      "explicit_local_components": [
+        {
+          "class": "TimerTriggerComponent",
+          "instance_id": "673A6EBD84502D7C"
+        },
+        {
+          "class": "ShellMoveComponent",
+          "instance_id": "851AA4A2AE0A5691"
+        },
+        {
+          "class": "ProjectileDamage",
+          "instance_id": "5168BBF3DBD79134"
+        }
+      ],
+      "explicit_local_overrides": [
+        "SafetyDistance 0",
+        "TIMER 0.025",
+        "InitSpeed 720",
+        "DamageValue 100",
+        "PenetrationDensity 3.36"
+      ],
+      "projectile_semantic_override": [
+        "SafetyDistance 0",
+        "TIMER 0.025",
+        "InitSpeed 720",
+        "DamageValue 100",
+        "PenetrationDensity 3.36"
+      ],
+      "move_safe": "REVIEW_REQUIRED",
+      "reason": [
+        "existing serialized path/family/ammo/weapon evidence supports the assigned region or leaves the resource unresolved without inventing a target"
+      ],
+      "proposed_action": "REVIEW_REQUIRED"
+    },
+    {
+      "current_path": "Prefabs/Weapons/Ammo/12g/Ammo_12ga_shell_test.et",
+      "guid": "9A2EC4D810705428",
+      "meta_path": "Prefabs/Weapons/Ammo/12g/Ammo_12ga_shell_test.et.meta",
+      "meta_registered_name": "Prefabs/Weapons/Ammo/12g/Ammo_12ga_shell_test.et",
+      "category": "AMMO",
+      "region": "UNRESOLVED",
+      "caliber": "12ga",
+      "suggested_target_path": null,
+      "references_to_current_path": [],
+      "children": [],
+      "parent_guid": "AC29AE3D5ECD6390",
+      "parent_path": "Prefabs/Weapons/Ammo/Ammo_762x54r_Ball_57N323S.et",
+      "explicit_local_components": [
+        {
+          "class": "TimerTriggerComponent",
+          "instance_id": "673AAD9A65F0EA16"
+        },
+        {
+          "class": "ShellMoveComponent",
+          "instance_id": "851AA4A2AE0A5691"
+        },
+        {
+          "class": "ProjectileDamage",
+          "instance_id": "5168BBF3DBD79134"
+        },
+        {
+          "class": "SCR_BandageDamageEffect",
+          "instance_id": "611E7405A19DBF5F"
+        },
+        {
+          "class": "AIHitEffect",
+          "instance_id": "C422E51CCDDF6BD3"
+        },
+        {
+          "class": "ExplosionEffect",
+          "instance_id": "85DB664DDCA5D5B0"
+        },
+        {
+          "class": "HitSoundEffect",
+          "instance_id": "2FC22748C7ABD466"
+        }
+      ],
+      "explicit_local_overrides": [
+        "Enabled 0",
+        "SafetyDistance 0",
+        "TIMER 0.025",
+        "InitSpeed 40",
+        "InitSpeedVariation 0",
+        "ParentSpeedMultiplier 0",
+        "DispersionMultiplier 0",
+        "Mass 0",
+        "WindInfluenceMultiplier 0",
+        "DeleteWhenStop 0",
+        "Layers 0xc023 0",
+        "CollisionEnabled 1",
+        "DamageValue 400",
+        "DamageType Collision",
+        "Enabled 0",
+        "MushroomingDamageMultiplier 0",
+        "TumblingDamageThreshold 0",
+        "TumblingDamageMultiplier 0",
+        "PenetrationDepth 0",
+        "PenetrationDensity 0.001",
+        "PenetrationSpeed 0.001",
+        "PenetrationDirDistribution 0",
+        "ProjectileVisibleTimeScale 2",
+        "CartridgeLayers 0x3 0",
+        "CartridgeLayerPreset \"Building\""
+      ],
+      "projectile_semantic_override": [
+        "Enabled 0",
+        "SafetyDistance 0",
+        "TIMER 0.025",
+        "InitSpeed 40",
+        "InitSpeedVariation 0",
+        "ParentSpeedMultiplier 0",
+        "DispersionMultiplier 0",
+        "Mass 0",
+        "WindInfluenceMultiplier 0",
+        "DeleteWhenStop 0",
+        "Layers 0xc023 0",
+        "CollisionEnabled 1",
+        "DamageValue 400",
+        "DamageType Collision",
+        "Enabled 0",
+        "MushroomingDamageMultiplier 0",
+        "TumblingDamageThreshold 0",
+        "TumblingDamageMultiplier 0",
+        "PenetrationDepth 0",
+        "PenetrationDensity 0.001",
+        "PenetrationSpeed 0.001",
+        "PenetrationDirDistribution 0",
+        "ProjectileVisibleTimeScale 2",
+        "CartridgeLayers 0x3 0",
+        "CartridgeLayerPreset \"Building\""
+      ],
+      "move_safe": "REVIEW_REQUIRED",
+      "reason": [
+        "existing serialized path/family/ammo/weapon evidence supports the assigned region or leaves the resource unresolved without inventing a target"
+      ],
+      "proposed_action": "REVIEW_REQUIRED"
+    },
+    {
+      "current_path": "Prefabs/Weapons/Ammo/12g/Ammo_Buckshot_pellet.et",
+      "guid": "8A45841AC9BA3AE7",
+      "meta_path": "Prefabs/Weapons/Ammo/12g/Ammo_Buckshot_pellet.et.meta",
+      "meta_registered_name": "Prefabs/Weapons/Ammo/Ammo_Buckshot_pellet.et",
+      "category": "AMMO",
+      "region": "UNRESOLVED",
+      "caliber": "12ga",
+      "suggested_target_path": null,
+      "references_to_current_path": [
+        "Prefabs/Weapons/Ammo/12g/Ammo_12ga.et"
+      ],
+      "children": [],
+      "parent_guid": "67FED88E5085F63F",
+      "parent_path": "Prefabs/Weapons/Core/Ammo_Bullet_Base.et",
+      "explicit_local_components": [
+        {
+          "class": "ShellMoveComponent",
+          "instance_id": "851AA4A2AE0A5691"
+        },
+        {
+          "class": "ProjectileDamage",
+          "instance_id": "5168BBF3DBD79134"
+        }
+      ],
+      "explicit_local_overrides": [
+        "InitSpeed 420",
+        "InitSpeedVariation 1",
+        "Mass 0.0075",
+        "DamageValue 30",
+        "AirDrag 0.000025",
+        "Diameter 8.3",
+        "PenetrationDepth 40",
+        "PenetrationDensity 0.65",
+        "PenetrationSpeed 250"
+      ],
+      "projectile_semantic_override": [
+        "InitSpeed 420",
+        "InitSpeedVariation 1",
+        "Mass 0.0075",
+        "DamageValue 30",
+        "AirDrag 0.000025",
+        "Diameter 8.3",
+        "PenetrationDepth 40",
+        "PenetrationDensity 0.65",
+        "PenetrationSpeed 250"
+      ],
+      "move_safe": "REVIEW_REQUIRED",
+      "reason": [
+        "existing serialized path/family/ammo/weapon evidence supports the assigned region or leaves the resource unresolved without inventing a target"
+      ],
+      "proposed_action": "REVIEW_REQUIRED"
+    }
+  ],
+  "summary": {
+    "weapons": 32,
+    "magazines": 38,
+    "ammo": 9,
+    "russian": 47,
+    "western": 21,
+    "eastern": 3,
+    "review_required": 8,
+    "target_collisions": [],
+    "duplicate_guid_owners": [],
+    "unresolved": 8,
+    "category_region_counts": {
+      "WEAPON": {
+        "RUSSIAN": 21,
+        "WESTERN": 8,
+        "EASTERN": 3
+      },
+      "MAGAZINE": {
+        "WESTERN": 13,
+        "RUSSIAN": 21,
+        "UNRESOLVED": 4
+      },
+      "AMMO": {
+        "RUSSIAN": 5,
+        "UNRESOLVED": 4
+      }
+    }
+  }
+}

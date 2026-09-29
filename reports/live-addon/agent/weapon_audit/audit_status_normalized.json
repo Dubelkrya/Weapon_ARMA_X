@@ -1,0 +1,55 @@
+{
+ "TOTAL_WEAPONS_AUDITED": 34,
+ "PASS": [
+  "armst_AK105.et",
+  "armst_AK74.et",
+  "armst_AK74M_full.et",
+  "armst_AKS.et",
+  "armst_AKS74U.et",
+  "armst_AKS74UN.et",
+  "armst_Rifle_AKMS.et",
+  "armst_Rifle_AKM_full.et",
+  "armst_Rifle_SOC94.et",
+  "armst_Rifle_VPO136.et",
+  "armst_AEK971_test_v11.et",
+  "armst_SVD.et",
+  "armst_Rifle_9a91_base.et",
+  "armst_Rifle_val_base.et",
+  "armst_Rifle_vss_base.et",
+  "armst_Rifle_VSK94_base.et",
+  "armst_Rifle_HKG33.et",
+  "armst_Rifle_hk_g36.et",
+  "armst_Rifle_L85.et",
+  "armst_SLR.et",
+  "armst_Rifle_M16A2.et",
+  "armst_Rifle_M16A2_carbine.et",
+  "armst_VZ58P.et",
+  "armst_VZ58V.et",
+  "armst_PM.et",
+  "armst_APB.et",
+  "armst_PP91.et",
+  "armst_SR_2.et",
+  "armst_TT.et",
+  "armst_M9.et",
+  "armst_PKM.et",
+  "armst_RPK74.et"
+ ],
+ "PASS_WITH_KNOWN_DEBT": [
+  {
+   "weapon": "armst_Groza_base.et",
+   "debt": [
+    "Casing_762x39_PS.ptc WRONG_FOR_9x39 no proven replacement"
+   ]
+  }
+ ],
+ "REVIEW_REQUIRED": [
+  {
+   "weapon": "armst_Rifle_Sig550.et",
+   "reason": [
+    "Sign550 animation refs point to VZ58 workspace assets (foreign family) - verify"
+   ]
+  }
+ ],
+ "FAIL": [],
+ "COUNT_RECONCILED": "YES"
+}

@@ -1,0 +1,175 @@
+{
+ "current_ammo_state": {
+  "config": "{4A7B5486D9167E2A}Configs/Weapons/Ammo/Ammo_9x18Mak.conf",
+  "AmmoResourceArray": [
+   "{4DE72DF927310A8B}Prefabs/Weapons/Ammo/Ammo_9x18_Ball_57N181.et"
+  ],
+  "projectiles": {
+   "Ball_57N181": {
+    "path": "Prefabs/Weapons/Ammo/Ammo_9x18_Ball_57N181.et",
+    "guid_ref": "4DE72DF927310A8B",
+    "parent": "{67FED88E5085F63F}Prefabs/Weapons/Core/Ammo_Bullet_Base.et",
+    "local_delta": "ID only (thin child)",
+    "aiballistic": "Configs/Weapons/AIBallisticTables/AIBT_9x18_Ball_57N181.conf"
+   },
+   "AP_7N25": {
+    "path": "Prefabs/Weapons/Ammo/Ammo_9x18_AP_7N25.et",
+    "guid_ref": "? (vanilla)",
+    "parent": "{67FED88E5085F63F}Prefabs/Weapons/Core/Ammo_Bullet_Base.et",
+    "InitSpeed": 490,
+    "InitSpeedVariation": 9,
+    "Mass": 0.0036,
+    "AirDrag": 1.15e-05,
+    "Diameter": 9.27,
+    "PenetrationDepth": 5,
+    "PenetrationSpeed": 490,
+    "aiballistic": "Configs/Weapons/AIBallisticTables/AIBT_9x18_AP_7N25.conf",
+    "models": [
+     "{3D2DFC533F142E11}Assets/Weapons/Ammo/Bullets/9x18/Bullet_9x18.xob",
+     "{7B3C031A24D06FC2}Assets/Weapons/Ammo/Bullets/9x18/Cartridge_9x18.xob"
+    ]
+   }
+  }
+ },
+ "projectile_candidates": [
+  "Ammo_9x18_Ball_57N181.et (standard ball, 57N181) -> PP candidate",
+  "Ammo_9x18_AP_7N25.et (armour-piercing, 7N25, PenDepth 5) -> BP candidate"
+ ],
+ "canonical_9x19_pattern": {
+  "projectiles": [
+   "Prefabs/Weapons/Ammo/Western/9x19/armst_Ammo_9x19_PP.et (child of {9DA944F4D6A611BA}Ammo_9x19_HP_JHP.et; ID only)",
+   "Prefabs/Weapons/Ammo/Western/9x19/armst_Ammo_9x19_BP.et (child of {7687761020B01947}Ammo_9x19_AP_7N21.et; ShellMove overrides)"
+  ],
+  "config": "Configs/Weapons/Ammo/ARMST/armst_Ammo_9x19_ARMST.conf",
+  "AmmoResourceArray_order": [
+   "{DFADF7628FAC4A05}...armst_Ammo_9x19_PP.et (index 0)",
+   "{9F5580C950084760}...armst_Ammo_9x19_BP.et (index 1)"
+  ],
+  "magazines": [
+   "armst_Magazine_9x19_M9_15rnd_Ball.et (PP)",
+   "armst_Magazine_9x19_M9_15rnd_Ball_BP.et (BP)"
+  ],
+  "magazine_convention": {
+   "parent": "both siblings parent to Magazine_9x19_M9_15rnd_Base.et (not PP->BP)",
+   "component": "MagazineComponent {CA6BE4D6B4DAFD69}",
+   "AmmoConfig": "ARMST config on both",
+   "AmmoMapping": "plain (no +), full length == capacity; PP all 0, BP all 1",
+   "instance": "MagazineComponent {CA6BE4D6B4DAFD69} reused on both"
+  }
+ },
+ "target_weapons": {
+  "PM": {
+   "magazine": "armst_Magazine_9x18_PM_8rnd_Ball.et",
+   "capacity": 8,
+   "parent": "{9B5AA2C731485ACA}Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Base.et",
+   "MagazineWell": "MagazineWellMakarovPM",
+   "model": "vanilla PM mesh (inherited)",
+   "MagazineComponent": "{CA6BE4D6B4DAFD69}",
+   "effective_config": "vanilla Ammo_9x18Mak.conf",
+   "effective_mapping": "8x0 (base)"
+  },
+  "APB": {
+   "magazine": "armst_Magazine_9x18_APB_20rnd_Ball.et",
+   "capacity": 20,
+   "parent": "{8B853CDD11BA916E}...armst_Magazine_9x18_PM_8rnd_Ball.et",
+   "MagazineWell": "MagazineWellAPB",
+   "model": "{FFCF07878591D096}Assets/Apb/APB_magazine.xob",
+   "MagazineComponent": "{CA6BE4D6B4DAFD69}",
+   "effective_config": "vanilla Ammo_9x18Mak.conf",
+   "effective_mapping": "8 base + 12 append = 20x0"
+  },
+  "PP91": {
+   "magazine": "armst_Magazine_9x18_PP91_30rnd_Ball.et",
+   "capacity": 30,
+   "parent": "{8B853CDD11BA916E}...armst_Magazine_9x18_PM_8rnd_Ball.et",
+   "MagazineWell": "MagazineWellPP91",
+   "model": "{616109F8BCB6B70E}Assets/Kedr/Kedr_magazine.xob",
+   "MagazineComponent": "{CA6BE4D6B4DAFD69}",
+   "effective_config": "vanilla Ammo_9x18Mak.conf",
+   "effective_mapping": "8 base + 22 append = 30x0"
+  }
+ },
+ "sr2m": {
+  "status": "SR2M_CALIBER_REVIEW_REQUIRED",
+  "magazine": "armst_Magazine_9x18_SR2_30rnd_Ball.et",
+  "note": "excluded from the 9x18 PP/BP implementation; do not modify"
+ },
+ "proposed_layer": {
+  "projectiles": [
+   {
+    "proposed": "armst_Ammo_9x18_PP.et",
+    "source_resource": "Prefabs/Weapons/Ammo/Ammo_9x18_Ball_57N181.et",
+    "delta_required": "new ID only (thin child) - mirror 9x19 PP",
+    "confidence": "HIGH"
+   },
+   {
+    "proposed": "armst_Ammo_9x18_BP.et",
+    "source_resource": "Prefabs/Weapons/Ammo/Ammo_9x18_AP_7N25.et",
+    "delta_required": "new ID only; AP_7N25 already carries BP ballistics (PenDepth 5) - or explicit overrides if project wants BP deltas",
+    "confidence": "HIGH"
+   }
+  ],
+  "config": {
+   "proposed": "armst_Ammo_9x18_ARMST.conf",
+   "AmmoResourceArray": [
+    "index 0 = armst_Ammo_9x18_PP.et",
+    "index 1 = armst_Ammo_9x18_BP.et"
+   ]
+  }
+ },
+ "proposed_magazines": {
+  "PM": {
+   "PP": "armst_Magazine_9x18_PM_8rnd_Ball.et (existing, modify AmmoConfig -> ARMST; mapping stays all 0)",
+   "BP": "armst_Magazine_9x18_PM_8rnd_Ball_BP.et (NEW; parent vanilla PM base; plain AmmoMapping 8x1)"
+  },
+  "APB": {
+   "PP": "armst_Magazine_9x18_APB_20rnd_Ball.et (existing, modify AmmoConfig -> ARMST; mapping 20x0)",
+   "BP": "armst_Magazine_9x18_APB_20rnd_Ball_BP.et (NEW; plain AmmoMapping 20x1)"
+  },
+  "PP91": {
+   "PP": "armst_Magazine_9x18_PP91_30rnd_Ball.et (existing, modify AmmoConfig -> ARMST; mapping 30x0)",
+   "BP": "armst_Magazine_9x18_PP91_30rnd_Ball_BP.et (NEW; plain AmmoMapping 30x1)"
+  }
+ },
+ "mapping_plan": {
+  "PM_PP": "8x0 (inherited 8x0 or local +8x0)",
+  "PM_BP": "plain 8x1",
+  "APB_PP": "8 base +12 append = 20x0",
+  "APB_BP": "plain 20x1",
+  "PP91_PP": "8 base +22 append = 30x0",
+  "PP91_BP": "plain 30x1",
+  "rule_note": "BP siblings must use plain AmmoMapping (full length) to override the inherited base zeros; PP can keep all-zero mapping."
+ },
+ "chosen_option_for_existing_ball": "A + C hybrid (matches 9x19): existing `_Ball.et` remains and becomes PP via AmmoConfig/mapping; add explicit `_Ball_BP.et` siblings. Minimum GUID/path disruption.",
+ "implementation_set": {
+  "PROJECTILES_TO_CREATE": [
+   "armst_Ammo_9x18_PP.et",
+   "armst_Ammo_9x18_BP.et"
+  ],
+  "CONFIGS_TO_CREATE": [
+   "armst_Ammo_9x18_ARMST.conf"
+  ],
+  "MAGAZINES_TO_CREATE": [
+   "armst_Magazine_9x18_PM_8rnd_Ball_BP.et",
+   "armst_Magazine_9x18_APB_20rnd_Ball_BP.et",
+   "armst_Magazine_9x18_PP91_30rnd_Ball_BP.et"
+  ],
+  "MAGAZINES_TO_MODIFY": [
+   "armst_Magazine_9x18_PM_8rnd_Ball.et",
+   "armst_Magazine_9x18_APB_20rnd_Ball.et",
+   "armst_Magazine_9x18_PP91_30rnd_Ball.et"
+  ],
+  "EXISTING_RESOURCES_TO_KEEP": [
+   "Ammo_9x18_Ball_57N181.et",
+   "Ammo_9x18_AP_7N25.et",
+   "Ammo_9x18Mak.conf",
+   "armst_Magazine_9x18_SR2_30rnd_Ball.et (SR2M separate)"
+  ]
+ },
+ "followups": [
+  "New BP magazines need localization description keys (out of scope here).",
+  "Weapon default magazine remains the PP (`_Ball`) resource; BP is selectable/alternate."
+ ],
+ "LIVE_FILES_CHANGED": "NONE",
+ "STATUS": "PASS"
+}
