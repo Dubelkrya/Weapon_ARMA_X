@@ -109,6 +109,57 @@ here instead.
 
 ---
 
+## The live ARMST addon
+
+The game addon is a **separate project on a separate disk path with its own
+remote**:
+
+```
+C:\Users\yshky\Documents\My Games\ArmaReforgerWorkbench\addons\ARMST-PLATFORM---Weapons
+```
+
+`Weapon_ARMA_X` is tooling only. It is not the mod, and it must never be
+mistaken for it.
+
+### Branch policy for the live addon
+
+```
+main            = the only active, permanent branch
+test_weapon     = retired; deleted locally and remotely
+```
+
+Normal addon development happens directly on `main`.
+
+- **Never recreate `test_weapon` automatically.**
+- **Do not create feature branches** unless the user explicitly requests one.
+- Do not force-push the addon, and do not reset or rewrite its history.
+
+### Current checkpoint
+
+```
+ARMST-PLATFORM---Weapons  main = 6ec5015f572720223789cd82c4e3232097f11b99
+ARMST-PLATFORM---Weapons  test_weapon = DELETED
+```
+
+This SHA is a **checkpoint, not a permanent expected HEAD** — future `main`
+commits will advance it. Re-read it with `git -C <addon> rev-parse HEAD`; never
+treat a stale value here as authoritative.
+
+### Never discard the user's Workbench work
+
+Do not automatically run `git stash`, `git reset`, `git restore`, `git clean` or
+any other discard against the live addon. Uncommitted changes there are the
+user's active work, not cleanup targets. Preserve `.meta` files and GUID
+identity at all times.
+
+### Artifacts belong here, not in the addon
+
+Agent prompts, reports, audits, task documents, scanner dumps and diagnostics
+must **never** be written into the live addon. They belong in `Weapon_ARMA_X`.
+Default scratch output is `artifacts/` (rule 5).
+
+---
+
 ## Repository map
 
 | Path | Purpose |
@@ -129,14 +180,16 @@ here instead.
 ```powershell
 python agent/scripts/addon_path.py                 # resolves the right addon
 python agent/scripts/check_repository_integrity.py  # JSON/schemas/links still valid
-python agent/tests/test_addon_path.py
-python agent/tests/test_scanner_regressions.py
-python agent/tests/test_imported_vanilla_reference.py
-python agent/tests/test_balance_report_regressions.py
+python -m unittest discover -s agent/tests -p "test_*.py"
 ```
 
 Then confirm: the live addon's path is unchanged, no gameplay file changed, and
 no GUID changed.
+
+Note that `catalog/` holds both generated JSON and the imported vanilla
+reference corpus (`catalog/**/*.et|.conf|.meta`). The corpus is intentional and
+must survive a rescan — never hand-edit generated catalog JSON to chase a
+changed prefab path, regenerate it with `python agent/scripts/scan_build.py`.
 
 ## See also
 

@@ -45,16 +45,30 @@ Set `ARMST_WEAPONS_ALLOW_ANY_ADDON=1` only for a genuine fork.
 
 | Repo | Branch | HEAD |
 |---|---|---|
-| Live addon | `test_weapon` | `965edc5671e47221d277830439ab906342899348` |
-| Live addon `main` | frozen | `8d234c3c3e6430b596fcd5bf9bb35aac7df2bff4` |
-| Tools repo | `agent/local-worktree-snapshot-2026-09-25` | `06f69a8355f5147692e4a4741159c5e456a9b991` |
+| Live addon | `main` | `6ec5015f572720223789cd82c4e3232097f11b99` |
+| Tools repo | `main` | see `git log` |
 
-`main` in the live addon is **frozen** — do not commit to it.
+The live addon is on `main` and its working tree is **clean**. `test_weapon`
+was fully promoted to `main` and then deleted, locally and remotely; it must not
+be recreated automatically. Normal addon development happens directly on
+`main`. Do not create feature branches unless the user explicitly asks.
+
+The checkpoint SHA above is a point-in-time marker, not a permanent expected
+HEAD — future `main` commits will advance it. Re-read it with
+`git -C <addon> rev-parse HEAD` rather than trusting this line.
+
+### Branch history (for provenance only)
+
+| SHA | Meaning |
+|---|---|
+| `8d234c3` | previously frozen `main`; fast-forwarded to the `test_weapon` tip |
+| `80dcbde` | artifact cleanup landed here |
+| `6ec5015` | the 13 previously-uncommitted user files committed by the user |
 
 ## 4. Live addon state — preserve this
 
-The live addon carries **uncommitted user work**. It is not cleanup material and
-must not be reverted, stashed, or reset:
+The work that was uncommitted at the time of the cleanup has since been
+committed by the user as `6ec5015`. It is now part of `main`:
 
 | File | Note |
 |---|---|
@@ -66,11 +80,16 @@ must not be reverted, stashed, or reset:
 | `Prefabs/.../Groza/armst_Rifle_Groza_base.et` | post-rebuild tuning |
 | `resourceDatabase.rdb` | Workbench-generated |
 | `worlds/Weapon_test/weapon_test_Layers/default.layer` | **never touch** |
-| `Assets/addons/Dovetail/Data/Collimator_dot_A.edds.meta` | untracked |
-| `Assets/addons/Dovetail/Data/DefaultMaterial_A.edds` | untracked |
-| `Assets/addons/Dovetail/Data/DefaultMaterial_A.edds.meta` | untracked |
-| `Assets/addons/Dovetail/Data/collimat.emat` | untracked |
-| `Assets/addons/Dovetail/Data/collimat.emat.meta` | untracked |
+| `Assets/addons/Dovetail/Data/Collimator_dot_A.edds.meta` | added in `6ec5015` |
+| `Assets/addons/Dovetail/Data/DefaultMaterial_A.edds` | added in `6ec5015` |
+| `Assets/addons/Dovetail/Data/DefaultMaterial_A.edds.meta` | added in `6ec5015` |
+| `Assets/addons/Dovetail/Data/collimat.emat` | added in `6ec5015` |
+| `Assets/addons/Dovetail/Data/collimat.emat.meta` | added in `6ec5015` |
+
+These are committed, but they are still the user's authored work. Do not revert,
+reset or "tidy" them. The general rule stands regardless of commit status: never
+automatically `stash`, `reset`, `restore`, `clean` or discard dirty Workbench
+files, and preserve `.meta` and GUID identity.
 
 ## 5. Completed work
 
@@ -109,6 +128,19 @@ unchanged.
   `UNRESOLVED` (effective model is vanilla `Bayonet_6Kh4.xob`, not on disk).
   `armst_Rifle_AK74N.et` references a `slot_optics` with no model on disk.
   These are honest gaps, not tasks to guess at.
+- **Stale generated catalog (2026-09-29, found during the main merge).** The
+  addon reorganised prefab paths (`Prefabs/Weapons/Rifles/…` →
+  `Prefabs/Weapons/Russian/Rifle/…`, `Western/Rifle/…`). The generated
+  `catalog/**/*.json` on **both** merge sides still reference the old
+  `Prefabs/Weapons/Rifles/` paths, which no longer exist in the addon — the
+  directory itself is gone. Roughly 1455 stale references remain. During the
+  merge, `origin/main`'s version was kept for the 9 entities it had already
+  rescanned, because it was the more current of the two.
+  **The real fix is to regenerate** `catalog/`, `indexes/`, `reports/` and
+  `schema/` with `python agent/scripts/scan_build.py`, which now resolves the
+  external addon via `addon_path.py`. This has deliberately *not* been done yet
+  — it rewrites generated data and deserves its own reviewed commit. Do not
+  hand-edit the JSON to chase paths.
 
 ## 7. Do not repeat
 
@@ -121,13 +153,17 @@ unchanged.
 
 ## 8. State of this repository
 
-- `AGENTS.md` — the 14 startup rules. Read first, every session.
+- `AGENTS.md` — the startup rules. Read first, every session.
 - `artifacts/` — git-ignored scratch output.
 - `docs/guides/` — authoring guides (RU), migrated from the addon's `docs/`.
 - `reports/live-addon/`, `tools/live-addon/` — imported verbatim from the
   addon's former `agent/` directory. See `reports/live-addon/README.md` for
   provenance and the caveat that these tools still carry their original
   hardcoded paths.
+- `catalog/` — generated per-entity JSON *plus* the imported vanilla reference
+  corpus (`catalog/**/*.et|.conf|.meta`). The corpus is intentional reference
+  material and must survive any rescan; `clean_generated_outputs()` exists to
+  guarantee exactly that.
 
 ## 9. Session start checklist
 
