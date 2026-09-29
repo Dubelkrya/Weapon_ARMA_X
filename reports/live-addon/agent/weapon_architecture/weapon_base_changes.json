@@ -1,0 +1,118 @@
+{
+ "renames": [
+  {
+   "old": "Prefabs/Weapons/Western/Rifle/HKG33/armst_Rifle_HKG33.et",
+   "new": "Prefabs/Weapons/Western/Rifle/HKG33/armst_Rifle_HKG33_base.et",
+   "guid": "035CFC7DD44455D0"
+  },
+  {
+   "old": "Prefabs/Weapons/Western/Rifle/HKG36/armst_Rifle_hk_g36.et",
+   "new": "Prefabs/Weapons/Western/Rifle/HKG36/armst_Rifle_HKG36_base.et",
+   "guid": "A802C718201D72DF"
+  },
+  {
+   "old": "Prefabs/Weapons/Western/Rifle/L85/armst_Rifle_L85.et",
+   "new": "Prefabs/Weapons/Western/Rifle/L85/armst_Rifle_L85_base.et",
+   "guid": "45D3FCA77AF1709B"
+  },
+  {
+   "old": "Prefabs/Weapons/Western/Rifle/SLR/armst_SLR.et",
+   "new": "Prefabs/Weapons/Western/Rifle/SLR/armst_SLR_base.et",
+   "guid": "C11ED52EAAF856A8"
+  },
+  {
+   "old": "Prefabs/Weapons/Western/Rifle/Sig550/armst_Rifle_Sig550.et",
+   "new": "Prefabs/Weapons/Western/Rifle/Sig550/armst_Rifle_Sig550_base.et",
+   "guid": "CA3BEBAADDFAF1DE"
+  },
+  {
+   "old": "Prefabs/Weapons/Russian/Rifle/Aek971/armst_AEK971_test_v11.et",
+   "new": "Prefabs/Weapons/Russian/Rifle/Aek971/armst_Rifle_AEK971_base.et",
+   "guid": "AC198EAC9BDD9841"
+  },
+  {
+   "old": "Prefabs/Weapons/Russian/Rifle/SVD/armst_SVD.et",
+   "new": "Prefabs/Weapons/Russian/Rifle/SVD/armst_Rifle_SVD_base.et",
+   "guid": "3EB02CDAD5F23C82"
+  },
+  {
+   "old": "Prefabs/Weapons/Russian/Handguns/Pm/armst_PM.et",
+   "new": "Prefabs/Weapons/Russian/Handguns/Pm/armst_PM_base.et",
+   "guid": "C0F7DD85A86B2900"
+  },
+  {
+   "old": "Prefabs/Weapons/Russian/Handguns/PP_19/armst_PP91.et",
+   "new": "Prefabs/Weapons/Russian/Handguns/PP_19/armst_PP91_base.et",
+   "guid": "3968B2A856852CBD"
+  },
+  {
+   "old": "Prefabs/Weapons/Russian/Handguns/Sr_2/armst_SR_2.et",
+   "new": "Prefabs/Weapons/Russian/Handguns/Sr_2/armst_SR_2_base.et",
+   "guid": "31FB2EC4F4AFFC05"
+  },
+  {
+   "old": "Prefabs/Weapons/Russian/Handguns/armst_APB/armst_APB.et",
+   "new": "Prefabs/Weapons/Russian/Handguns/armst_APB/armst_APB_base.et",
+   "guid": "5D3DA7E84135B278"
+  },
+  {
+   "old": "Prefabs/Weapons/Russian/Handguns/TT/armst_TT.et",
+   "new": "Prefabs/Weapons/Russian/Handguns/TT/armst_TT_base.et",
+   "guid": "0D469F42B65E350E"
+  },
+  {
+   "old": "Prefabs/Weapons/Western/Handguns/armst_M9.et",
+   "new": "Prefabs/Weapons/Western/Handguns/armst_M9_base.et",
+   "guid": "1353C6EAD1DCFE43"
+  },
+  {
+   "old": "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74.et",
+   "new": "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74_base.et",
+   "guid": "FA5C25BF66A53DCF"
+  },
+  {
+   "old": "Prefabs/Weapons/Western/Rifle/armst_Rifle_M16A2.et",
+   "new": "Prefabs/Weapons/Western/Rifle/armst_Rifle_M16A2_base.et",
+   "guid": "3E413771E1834D2F"
+  },
+  {
+   "old": "Prefabs/Weapons/Western/Rifle/armst_VZ58P.et",
+   "new": "Prefabs/Weapons/Western/Rifle/armst_VZ58P_base.et",
+   "guid": "9C948630078D154D"
+  },
+  {
+   "old": "Prefabs/Weapons/Western/Rifle/armst_VZ58V.et",
+   "new": "Prefabs/Weapons/Western/Rifle/armst_VZ58V_base.et",
+   "guid": "443CEFF17E040B11"
+  },
+  {
+   "old": "Prefabs/Weapons/Russian/MachineGuns/armst_PKM.et",
+   "new": "Prefabs/Weapons/Russian/MachineGuns/armst_PKM_base.et",
+   "guid": "A89BC9D55FFB4CD8"
+  },
+  {
+   "old": "Prefabs/Weapons/Russian/MachineGuns/armst_RPK74.et",
+   "new": "Prefabs/Weapons/Russian/MachineGuns/armst_RPK74_base.et",
+   "guid": "A7AF84C6C58BA3E8"
+  }
+ ],
+ "ref_updates": {
+  "worlds/Weapon_test/weapon_test_Layers/default.layer": [
+   "Prefabs/Weapons/Western/Rifle/HKG33/armst_Rifle_HKG33.et",
+   "Prefabs/Weapons/Western/Rifle/HKG36/armst_Rifle_hk_g36.et",
+   "Prefabs/Weapons/Western/Rifle/L85/armst_Rifle_L85.et",
+   "Prefabs/Weapons/Western/Rifle/SLR/armst_SLR.et",
+   "Prefabs/Weapons/Western/Rifle/Sig550/armst_Rifle_Sig550.et",
+   "Prefabs/Weapons/Russian/Rifle/Aek971/armst_AEK971_test_v11.et",
+   "Prefabs/Weapons/Russian/Rifle/SVD/armst_SVD.et",
+   "Prefabs/Weapons/Russian/Handguns/Pm/armst_PM.et",
+   "Prefabs/Weapons/Russian/Handguns/PP_19/armst_PP91.et",
+   "Prefabs/Weapons/Russian/Handguns/Sr_2/armst_SR_2.et",
+   "Prefabs/Weapons/Russian/Handguns/armst_APB/armst_APB.et",
+   "Prefabs/Weapons/Russian/Handguns/TT/armst_TT.et",
+   "Prefabs/Weapons/Western/Handguns/armst_M9.et",
+   "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74.et",
+   "Prefabs/Weapons/Western/Rifle/armst_Rifle_M16A2.et"
+  ]
+ }
+}

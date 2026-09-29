@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{E4C1783D5F0A041B}Imported/VanillaSources/Prefabs/Weapons/Ammo/Ammo_127x99_Ball_M33.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

@@ -1,0 +1,27 @@
+GenericEntity : "{D584F2FFFDC7DE49}Prefabs/Weapons/Warheads/Warhead_Shell_HE.et" {
+ ID "9D9BE68EA2672F76"
+ components {
+  SoundComponent "{D092A75ECEFAE456}" {
+   Filenames {
+    "{56B63C7C3F28632C}Sounds/Weapons/Ammo/M203/Weapons_Ammo_M203_40mm_Smoke.acp"
+   }
+  }
+  BaseTriggerComponent "{55129E81CBAA1390}" {
+   PROJECTILE_EFFECTS {
+    ExplosionDamageContainer "{5D38C8F8C6A477C7}" {
+     ChargeWeight 15
+    }
+    SpawnDecalEffect "{5D5727F06F70F2E3}" {
+     Material "{9EC972F6E6DD4842}Assets/Decals/Logistics/Impact/Data/Decal_Logistics_Grenade_01.emat"
+    }
+    SpawnParticleEffect "{693AB5DB77CFDDBC}" {
+     UseFrameEvent 1
+     ParticleEffect "{DEC046FF1B5C95A0}Particles/Weapon/Smoke_grenade_M715_Green.ptc"
+    }
+   }
+  }
+  HitEffectComponent "{9D9BE68D6F65A10F}" {
+   ParticleEffect "{DEC046FF1B5C95A0}Particles/Weapon/Smoke_grenade_M715_Green.ptc"
+  }
+ }
+}

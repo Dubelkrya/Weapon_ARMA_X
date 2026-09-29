@@ -1,0 +1,133 @@
+Turret : "{29F0CC704A582154}Prefabs/Weapons/Tripods/6T7/Tripod_6T7_NSV.et" {
+ ID "52D30EFBEBC74642"
+ components {
+  SoundComponent "{58E0961DB6C453D6}" {
+   Filenames + {
+    "{D8F675F3468362E2}Sounds/Weapons/_SharedData/Weapons_Sights_Actions.acp"
+   }
+  }
+  SCR_BaseCompartmentManagerComponent "{51ACFBB07A14CFA6}" {
+   DoorInfoList {
+    CompartmentDoorInfo "{6084956E6D716EEF}" {
+     AccessibilitySettings CompartmentAccessibilityContext "{61AA71BED0F77AA3}" {
+      BBHalfExtents 0.5 0.4 0.005
+     }
+    }
+   }
+  }
+  SCR_DestructionMultiPhaseComponent "{51ACD09C524A7924}" {
+   m_DestroySpawnObjects {
+    SCR_DebrisSpawnable "{660ABC82A946995B}" : "{C2BD61C5E05B8971}Configs/Destruction/MultiphaseDestruction/FX_Debris/FX_Debris_Metal_Light.conf" {
+     m_vOffsetPosition -0.051 0.551 -0.532
+     m_ModelPrefabs {
+      "{1C10F285C71F868B}Prefabs/Weapons/Tripods/dst/Scope_SPP_Damaged.et"
+     }
+     m_fMass 1.7
+    }
+   }
+  }
+  SCR_EditableVehicleComponent "{58FE9E4F05DC95A3}" {
+   m_UIInfo SCR_EditableVehicleUIInfo "{5298E609432D192D}" {
+    Name "#AR-EditableEntity_Tripod_6T7_NSV_SPP"
+    m_Image "{4E0AEC9A1B4515B2}UI/Textures/EditorPreviews/Weapons/Tripods/Tripod_6T7_NSV_SPP.edds"
+    m_aAuthoredLabels + {
+     TRAIT_OPTICS
+    }
+   }
+  }
+  SCR_PreviewEntityComponent "{5ECC91C02782BF7F}" : "{6CADA7A88A6265FD}Prefabs/Editor/Components/PreviewEntityComponentClass.ct" {
+   m_aEntries {
+    SCR_BasePreviewEntry "{5ECC91C032B149EB}" {
+     m_iParentID -1
+     m_Mesh "{13AFBB0D97F4666E}Assets/Weapons/Tripods/6T7/Tripod_6T7.xob"
+     m_Flags EDITABLE
+     m_Shape MESH
+     m_iPivotID ""
+     m_vPosition 0 0 0
+     m_vAngles 0 0 0
+    }
+    SCR_BasePreviewEntry "{5ECC91C03431B1D4}" {
+     m_iParentID 0
+     m_Mesh "{1C372CC3C2897372}Assets/Weapons/HeavyWeapons/NSV/NSV_body.xob"
+     m_Flags 0
+     m_Shape MESH
+     m_iPivotID "slot_gun"
+     m_vPosition 0 0 0
+     m_vAngles 0 0 0
+    }
+    SCR_BasePreviewEntry "{609E78442965F973}" {
+     m_iParentID 1
+     m_Mesh "{9D5EE41AF59F1FD9}Assets/Weapons/Attachments/Mounts/Dovetail_NSV/Dovetail_NSV.xob"
+     m_Flags 0
+     m_Shape MESH
+     m_iPivotID "hw_root"
+     m_vPosition -0.027 0.1 -0.046
+     m_vAngles 0 0 0
+    }
+    SCR_BasePreviewEntry "{609E784436720346}" {
+     m_iParentID 2
+     m_Mesh "{7516F3AE4D768FD1}Assets/Weapons/Attachments/Optics/SPP/Scope_SPP.xob"
+     m_Flags 0
+     m_Shape MESH
+     m_iPivotID "hw_root"
+     m_vPosition 0 0 0
+     m_vAngles 0 0 0
+    }
+   }
+  }
+  SCR_UniversalInventoryStorageComponent "{570EACF4F2F94F1B}" {
+   Attributes SCR_ItemAttributeCollection "{608AEB5D9B2FFDB4}" {
+    ItemDisplayName WeaponUIInfo "{608AEB5D9EBB403C}" {
+     Name "#AR-EditableEntity_Tripod_6T7_NSV_SPP"
+    }
+    CustomAttributes {
+     PreviewRenderAttributes "{608AEB5C90A25CE8}" {
+      PreviewPrefab "{3EA26CFD7A202636}Prefabs/Weapons/Tripods/6T7/Tripod_6T7_NSV_SPP.et"
+     }
+    }
+   }
+  }
+  TurretComponent "{5B10DCF63177AACC}" {
+   components {
+    SCR_2DSightsComponent "{6052DC3CA71E0CDC}" {
+     SightsPosition PointInfo "{6052DC3C8933A4F1}" {
+      PivotID "slot_gun"
+      Offset -0.0301 0.2124 0.1354
+      Angles -0.45 0 0
+     }
+     SightsFOVInfo SCR_SightsZoomFOVInfo "{6052DC3C87C02D98}" {
+      m_fBaseZoom 3
+      m_fZoomMax 6
+      m_fStepZoomSize 3
+      m_fInterpolationSpeed 100
+     }
+     SightsPointFront PointInfo "{6052DC3C85FEB436}" {
+      PivotID "slot_gun"
+      Offset -0.0301 0.2124 0.1224
+     }
+     SightsPointRear PointInfo "{6052DC3C81C43A84}" {
+      PivotID "slot_gun"
+      Offset -0.0301 0.2124 -0.1755
+     }
+     CameraRecoilAmount -0.9
+     SightsPriority 1
+     m_sReticleTexture "{2642135853EB26C1}UI/Textures/Sights/SPP/SPP-white_UI.edds"
+     m_sReticleGlowTexture "{C727BEA5E71E459B}UI/Textures/Sights/SPP/SPP-white_blur_UI.edds"
+     m_bHasIllumination 1
+     m_cReticleTextureIllumination 0.804 0.02 0.02 1
+     m_bShouldHideParentObject 0
+     m_fMisalignmentDampingSpeed 5
+     m_fVignetteMoveSpeed 3
+     m_eZeroingType EPZ_RETICLE_OFFSET
+     m_fObjectiveFov 12
+     m_fReticleAngularSize 1.2
+     m_fReticlePortion 0.297
+     m_fMagnification 3
+    }
+   }
+  }
+  WeaponSlotComponent "{51ACD09C6BFEEE6A}" {
+   WeaponTemplate "{9483B197D72F2AE9}Prefabs/Weapons/HeavyWeapons/NSV/HMG_NSV_SPP.et"
+  }
+ }
+}

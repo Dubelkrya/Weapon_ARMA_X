@@ -1,0 +1,12 @@
+Turret : "{16CAF1AAD82A3127}Prefabs/Weapons/Core/Tripod_Base.et" {
+ ID "52D30EFBEBC74642"
+ components {
+  EPF_PersistenceComponent "{5D46D95CC53F48C8}" {
+   Enabled 1
+  }
+  SCR_UniversalInventoryStorageComponent "{570EACF4F2F94F1B}" {
+   m_iGridColumns 100
+   m_iGridRows 100
+  }
+ }
+}

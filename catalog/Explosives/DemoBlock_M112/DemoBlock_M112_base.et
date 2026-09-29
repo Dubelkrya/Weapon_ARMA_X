@@ -1,0 +1,121 @@
+GenericEntity : "{B37F2B14F49A65E8}Prefabs/Weapons/Core/DemoBlock_base.et" {
+ ID "5968D2B6A82C6019"
+ components {
+  MeshObject "{5968D9C73C08706E}" {
+   Object "{AF064FFD5FFCB477}Assets/Weapons/Explosives/DemoBlock_M112/DemoBlock_M112.xob"
+  }
+  SCR_ExplosiveChargeInventoryItemComponent "{5AA692DC30B9C62B}" {
+   Attributes SCR_ItemAttributeCollection "{60D6BB563667D737}" {
+    ItemDisplayName WeaponUIInfo "{60D6BB563543F2F2}" {
+     Name "#AR-Weapon_M112DemoCharge_Name"
+     Description "#AR-Weapon_M112DemoCharge_Description"
+    }
+    ItemPhysAttributes ItemPhysicalAttributes "{5F10E041E86255CD}" {
+     Weight 0.57
+     SizeSetupStrategy Manual
+     ItemDimensions 10 10 10
+     ItemVolume 400
+     DimensionScaler 1
+     RestingAdditiveRotationLS 0 0 0
+     RestingAdditiveOffsetLS 0 0 0
+    }
+    ItemAnimationAttributes ItemAnimationAttributes "{5F10E041E06EA55A}" {
+     IkSettings {
+      ItemIKSettings "{59E4E696CE54F34A}" {
+       MovementSpeedRange 0 3
+      }
+      ItemIKSettings "{5F1099957AD2A778}" {
+       Lowered 1
+       InAds 0
+       OutAds 0
+       MovementSpeedRange 0 0
+      }
+      ItemIKSettings "{5F109995781AC4F5}" {
+       Jumping 1
+       InAds 0
+       OutAds 0
+       MovementSpeedRange 0 0
+      }
+      ItemIKSettings "{5F10999579F7ED39}" {
+       ProneTurn 1
+       MovementSpeedRange 0 0
+       IkSettingsStand 0x4 0
+      }
+     }
+     AnimationInstance "{4FCBEA45CAEBC9C0}anims/workspaces/player/player_main_1h.asi"
+     AnimationIKPose "{ADA8287EEE81F47D}Assets/Weapons/Explosives/DemoBlock_M112/anims/p_M112_IK.anm"
+    }
+    CustomAttributes {
+     PreviewRenderAttributes "{5F10E041F98252F3}" {
+      CameraPreset Top
+      CameraOrbitAngles -25 -30 0
+      CameraOffset 0.025 0 0
+      FOV 60
+      AspectRatio 1
+      LodModel 1
+     }
+    }
+   }
+  }
+  SCR_ExplosiveTriggerComponent "{5AA692DC30B9C65A}" {
+   PROJECTILE_EFFECTS {
+    ExplosionEffect "{5F10E04100CCC508}" {
+     EffectPrefab "{A1195711333615DF}Prefabs/Weapons/Warheads/Warhead_ExplosiveCharge_M112.et"
+     SoundEvent "SOUND_EXPLOSION"
+    }
+   }
+  }
+  SCR_MineDamageManager "{5AA692DC30B9C651}" {
+   "Additional hit zones" {
+    SCR_HitZone Main {
+     DamageReduction 0
+     DamageThreshold 0.8
+     "Collision multiplier" 0
+     "Kinetic multiplier" 0
+     "Fragmentation multiplier" 0
+     "Explosive multiplier" 2.5
+     "Incendiary multiplier" 0
+    }
+   }
+   EnableDamage 1
+  }
+  SlotManagerComponent "{5F1CD138A009B549}" {
+   Slots {
+    FuzeSlotInfo timedFuze_PoC {
+     Offset -0.1412 0.0128 0
+     Angles 90 -90 -180
+    }
+    FuzeSlotInfo remoteFuze_PoC {
+     Offset -0.1412 0.0128 0
+     Angles 90 -90 -180
+    }
+   }
+  }
+  WeaponComponent "{5AA692DC30B9C621}" {
+   WeaponType FragGrenade
+   AllowedRaise "ADS and raised allowed"
+   shouldHandleObstruction 0
+   UIInfo GrenadeUIInfo "{5F10E042F3D3E901}" {
+    Name "#AR-Weapon_ExplosiveCharge_M112_Name"
+    Description "#AR-Weapon_ExplosiveCharge_M112_Description"
+    m_MagIndicator SCR_MagazineIndicatorConfiguration "{611492CFB3C5205F}" {
+     m_sOutline "explosive-charge"
+     m_bProgressBar 0
+    }
+    m_eAmmoTypeFlags HE
+   }
+   WeaponSlotType "grenade"
+   WeaponOffset 0 0 0
+   WeaponOffsetADS 0 0 0
+  }
+  WeaponAnimationComponent "{5F1CD773403DEE55}" {
+   AnimGraph "{7A7092BE09EA333C}Assets/Weapons/Explosives/workspace/M112.agr"
+   AnimInstance "{971AC76515E361D2}Assets/Weapons/Explosives/workspace/M112.asi"
+   AnimInjection AnimationAttachmentInfo "{5F1CD77366000D91}" {
+    AnimGraph "{7A7092BE09EA333C}Assets/Weapons/Explosives/workspace/M112.agr"
+    AnimInstance "{971AC76515E361D2}Assets/Weapons/Explosives/workspace/M112.asi"
+    BindingName "Weapon"
+   }
+  }
+ }
+}

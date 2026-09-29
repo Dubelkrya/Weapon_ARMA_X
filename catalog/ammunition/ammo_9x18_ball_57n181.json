@@ -1,0 +1,44 @@
+{
+  "id": "ammo_9x18_ball_57n181",
+  "role": "leaf",
+  "source": {
+    "resource": "Prefabs/Weapons/Ammo/Ammo_9x18_Ball_57N181.et",
+    "resource_guid": "4DE72DF927310A8B",
+    "meta_name": null,
+    "class": "Projectile",
+    "defined_in": "Prefabs/Weapons/Ammo/Ammo_9x18_Ball_57N181.et"
+  },
+  "identity": {
+    "name": "Ammo_9x18_Ball_57N181",
+    "resource": "Prefabs/Weapons/Ammo/Ammo_9x18_Ball_57N181.et"
+  },
+  "classification": {
+    "kind": "ammunition",
+    "confidence": "class"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Weapons/Ammo/Ammo_9x18_Ball_57N181.et",
+        "status": "local",
+        "class": "Projectile"
+      }
+    ],
+    "external_parents": [
+      {
+        "guid": "67FED88E5085F63F",
+        "path": "Prefabs/Weapons/Core/Ammo_Bullet_Base.et",
+        "raw": "{67FED88E5085F63F}Prefabs/Weapons/Core/Ammo_Bullet_Base.et"
+      }
+    ],
+    "used_as_base_by": [],
+    "chain_depth_local": 1
+  },
+  "references": [],
+  "warnings": [],
+  "data": {
+    "effects": null,
+    "_defined_in": null
+  },
+  "derived": {}
+}

@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{DFCD7C137018E685}Imported/VanillaSources/Prefabs/Weapons/Tripods/Deployable_Tripod_6T5_PKMN.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

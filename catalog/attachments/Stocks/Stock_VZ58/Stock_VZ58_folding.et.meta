@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{80551D6BF073C71C}Imported/VanillaSources/Prefabs/Weapons/Attachments/Stocks/Stock_VZ58/Stock_VZ58_folding.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

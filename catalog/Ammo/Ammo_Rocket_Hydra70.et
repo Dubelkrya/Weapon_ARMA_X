@@ -1,0 +1,84 @@
+EjectableProjectile : "{C0BDA86B5AA5648C}Prefabs/Weapons/Core/Ammo_Rocket_Base.et" {
+ ID "DA5C6308000CDEF2"
+ components {
+  SCR_ShellSoundComponent "{60C2960B45ABE97D}" {
+   Filenames {
+    "{F5DFD164933A6AA9}Sounds/Weapons/_SharedData/ProjectileTravelling/Weapons_ProjectileTravelling_HeliRocket_Generic.acp"
+   }
+  }
+  CollisionTriggerComponent "{60C2F0C44D951E69}" {
+   PROJECTILE_EFFECTS {
+    ExplosionEffect "{60C2F0C44D951E63}" {
+     EffectPrefab "{3562F141F39D1093}Prefabs/Weapons/Warheads/Warhead_Hydra70_HEDP_M247.et"
+     ParticleEffect "{636C188C0D4E6074}Particles/Weapon/Explosion_S5KO.ptc"
+     SoundEvent "SOUND_EXPLOSION"
+    }
+   }
+   "Trigger Offset" 0 0 -0.05
+   SafetyDistance 40
+  }
+  InventoryItemComponent "{526E87778842822F}" {
+   Attributes SCR_ItemAttributeCollection "{526E87778ACB229F}" {
+    ItemDisplayName UIInfo "{526E8777859BAACF}" {
+     Name "#AR-Magazine_Hydra70_M247_Name"
+     Description "#AR-Magazine_Hydra70_M247_Description"
+    }
+    ItemPhysAttributes ItemPhysicalAttributes "{60C2F0C44D951E10}" {
+     Weight 10.2
+     SizeSetupStrategy Manual
+     ItemDimensions 35 35 35
+     ItemVolume 10000
+    }
+    CustomAttributes {
+     PreviewRenderAttributes "{52D6F6A5FB82EE10}" {
+      CameraPreset Right
+      CameraOrbitAngles 0 0 0
+      CameraDistanceToItem 2
+      CameraOffset 0 0 0
+      ItemRenderRotation 0 0 -20
+      FOV 22
+      AspectRatio 1
+     }
+    }
+    m_SlotType SLOT_BACKPACK
+    m_bVisible 0
+   }
+  }
+  MagazineComponent "{50F6614BB5D5B0A8}" {
+   UIInfo MagazineUIInfo "{560AE4EBFA0176D4}" {
+    m_eAmmoTypeFlags HEAT
+   }
+   ItemModel "{5E92E56795047A2F}Assets/Weapons/Ammo/Rockets/Hydra/Hydra70_M247_item.xob"
+  }
+  MeshObject "{851AA4A2AE0A56BF}" {
+   Object "{5B5E720CE21DCA65}Assets/Weapons/Ammo/Rockets/Hydra/Hydra70_M247.xob"
+  }
+  MissileMoveComponent "{0EF36690881261EF}" {
+   InitSpeed 7
+   Mass 10.1
+   TimeToLive 65
+   ProjectileEffects {
+    HitSoundEffect "{5ADCBBC4B2F96245}" {
+     Filename "{EBD4926A12EF4CBF}Sounds/Weapons/_SharedData/RocketHits/Weapons_HeliRocketHits.acp"
+    }
+   }
+   SonicCracks "{C3A0B35219284289}Sounds/Weapons/_SharedData/BulletSonicCracks/HeliRocket/Weapons_BulletSonicCracks_HeliRocket.acp"
+   ThrustInitTime 0.1
+   ThrustTime 1.1
+   ThrustForce 7188
+   ForwardAirFriction 0.01
+   DistanceEnableGravitation 0.7
+  }
+  RigidBody "{529E88841E9EDFB4}" {
+   Mass 10.1
+  }
+  RocketTraceEffectComponent "{61A6C93BCC763C73}" {
+   ParticleEffect "{DAEA514B4F15B5C4}Particles/Weapon/Trail_M229.ptc"
+  }
+ }
+ coords 4.138 2.907 3.456
+ ProjectileModel "{5B5E720CE21DCA65}Assets/Weapons/Ammo/Rockets/Hydra/Hydra70_M247.xob"
+ CartridgeModel "{5E92E56795047A2F}Assets/Weapons/Ammo/Rockets/Hydra/Hydra70_M247_item.xob"
+ EjectorInterface EjectorInterfaceHydra70 "{624CD2272F61B528}" {
+ }
+}

@@ -1,0 +1,27 @@
+{
+ "path": "Prefabs/Weapons/Russian/Rifle/Groza/armst_Groza_base.et",
+ "guid": "903C7920F00AB654",
+ "field": "MuzzleComponent {CA6BE4D6B867541F} > CaseEjectingEffectComponent {5122AAD190FCA21D} > ParticleEffect",
+ "casing_before": "{6A0F068A792EA37C}Particles/Weapon/Casing_762x51.ptc",
+ "casing_after": "{A89D3276591C9F57}Particles/Weapon/Casing_762x39_PS.ptc",
+ "MAGAZINE_WELL": "KEEP (MagazineWellVZ58_762 present, unchanged)",
+ "MUZZLE_PARTICLE": "KEEP (Muzzle_AK74.ptc present, unchanged)",
+ "template_unchanged": true,
+ "GUID_CHANGES": 0,
+ "PATH_CHANGES": 0,
+ "META_UNCHANGED": true,
+ "braces_balanced": true,
+ "lines_added": [
+  "       ParticleEffect \"{A89D3276591C9F57}Particles/Weapon/Casing_762x39_PS.ptc\""
+ ],
+ "lines_removed": [
+  "       ParticleEffect \"{6A0F068A792EA37C}Particles/Weapon/Casing_762x51.ptc\""
+ ],
+ "OTHER_GAMEPLAY_CHANGES": 0,
+ "OTHER_WEAPONS_CHANGED": 0,
+ "checks": {
+  "casing_762x51_remaining": false,
+  "muzzle_ak74_present": true,
+  "well_present": true
+ }
+}

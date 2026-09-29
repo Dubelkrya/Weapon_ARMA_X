@@ -1,0 +1,314 @@
+{
+  "rifles": [
+    {
+      "path": "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK105.et",
+      "guid": "6FC3151D0DED22A9",
+      "filename": "armst_AK105.et",
+      "current_display_name": "#AR-Weapon_AK74_Name",
+      "current_description": null,
+      "display_name_key": "#AR-Weapon_AK74_Name",
+      "description_key": null,
+      "description_source": "LOCAL_PREFAB",
+      "resolution_chain": [
+        "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK105.et"
+      ],
+      "real_world_counterpart": "AK-105",
+      "identity_confidence": "HIGH",
+      "identity_class": "REAL_VARIANT"
+    },
+    {
+      "path": "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74M_full.et",
+      "guid": "63892659A632A0FD",
+      "filename": "armst_AK74M_full.et",
+      "current_display_name": null,
+      "current_description": null,
+      "display_name_key": null,
+      "description_key": null,
+      "description_source": "EXTERNAL_PARENT",
+      "resolution_chain": [
+        "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74M_full.et"
+      ],
+      "real_world_counterpart": "AK-74M",
+      "identity_confidence": "HIGH",
+      "identity_class": "EXACT_REAL_MODEL"
+    },
+    {
+      "path": "Prefabs/Weapons/Russian/Rifle/AK74/armst_AKS.et",
+      "guid": "25A64724FD416989",
+      "filename": "armst_AKS.et",
+      "current_display_name": "AKS-74",
+      "current_description": null,
+      "display_name_key": null,
+      "description_key": null,
+      "description_source": "LOCAL_PREFAB",
+      "resolution_chain": [
+        "Prefabs/Weapons/Russian/Rifle/AK74/armst_AKS.et"
+      ],
+      "real_world_counterpart": "AK-74",
+      "identity_confidence": "HIGH",
+      "identity_class": "EXACT_REAL_MODEL"
+    },
+    {
+      "path": "Prefabs/Weapons/Russian/Rifle/AK74/armst_AKS74U.et",
+      "guid": "BFEA719491610A45",
+      "filename": "armst_AKS74U.et",
+      "current_display_name": "#AR-Weapon_AKS74U_Name",
+      "current_description": null,
+      "display_name_key": "#AR-Weapon_AKS74U_Name",
+      "description_key": null,
+      "description_source": "LOCAL_PREFAB",
+      "resolution_chain": [
+        "Prefabs/Weapons/Russian/Rifle/AK74/armst_AKS74U.et"
+      ],
+      "real_world_counterpart": "AKS-74U",
+      "identity_confidence": "HIGH",
+      "identity_class": "EXACT_REAL_MODEL"
+    },
+    {
+      "path": "Prefabs/Weapons/Russian/Rifle/AK74/armst_AKS74UN.et",
+      "guid": "FA0E25CE35EE945F",
+      "filename": "armst_AKS74UN.et",
+      "current_display_name": null,
+      "current_description": null,
+      "display_name_key": null,
+      "description_key": null,
+      "description_source": "EXTERNAL_PARENT",
+      "resolution_chain": [
+        "Prefabs/Weapons/Russian/Rifle/AK74/armst_AKS74UN.et"
+      ],
+      "real_world_counterpart": "AKS-74UN",
+      "identity_confidence": "HIGH",
+      "identity_class": "REAL_VARIANT"
+    },
+    {
+      "path": "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKMS.et",
+      "guid": "5712F6F88A014F0B",
+      "filename": "armst_Rifle_AKMS.et",
+      "current_display_name": "AKMS",
+      "current_description": null,
+      "display_name_key": null,
+      "description_key": null,
+      "description_source": "LOCAL_PREFAB",
+      "resolution_chain": [
+        "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKMS.et"
+      ],
+      "real_world_counterpart": "AKMS",
+      "identity_confidence": "HIGH",
+      "identity_class": "REAL_VARIANT"
+    },
+    {
+      "path": "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_full.et",
+      "guid": "33BEE1A93C920B26",
+      "filename": "armst_Rifle_AKM_full.et",
+      "current_display_name": null,
+      "current_description": null,
+      "display_name_key": null,
+      "description_key": null,
+      "description_source": "EXTERNAL_PARENT",
+      "resolution_chain": [
+        "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_full.et"
+      ],
+      "real_world_counterpart": "AKM",
+      "identity_confidence": "HIGH",
+      "identity_class": "EXACT_REAL_MODEL"
+    },
+    {
+      "path": "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_SOC94.et",
+      "guid": "E394112ABBC198D8",
+      "filename": "armst_Rifle_SOC94.et",
+      "current_display_name": "SOK-94",
+      "current_description": "SOK-94",
+      "display_name_key": null,
+      "description_key": null,
+      "description_source": "LOCAL_PREFAB",
+      "resolution_chain": [
+        "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_SOC94.et"
+      ],
+      "real_world_counterpart": "SOK-94",
+      "identity_confidence": "HIGH",
+      "identity_class": "REAL_VARIANT"
+    },
+    {
+      "path": "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_VPO136.et",
+      "guid": "90EADC5DD9AD35D5",
+      "filename": "armst_Rifle_VPO136.et",
+      "current_display_name": "VPO-136",
+      "current_description": "VPO-136",
+      "display_name_key": null,
+      "description_key": null,
+      "description_source": "LOCAL_PREFAB",
+      "resolution_chain": [
+        "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_VPO136.et"
+      ],
+      "real_world_counterpart": "VPO-136 Vepr",
+      "identity_confidence": "HIGH",
+      "identity_class": "REAL_VARIANT"
+    },
+    {
+      "path": "Prefabs/Weapons/Russian/Rifle/Aek971/armst_AEK971_test_v11.et",
+      "guid": "AC198EAC9BDD9841",
+      "filename": "armst_AEK971_test_v11.et",
+      "current_display_name": "AEK-971 [V11 DOVETAIL RU TEST]",
+      "current_description": null,
+      "display_name_key": null,
+      "description_key": null,
+      "description_source": "LOCAL_PREFAB",
+      "resolution_chain": [
+        "Prefabs/Weapons/Russian/Rifle/Aek971/armst_AEK971_test_v11.et"
+      ],
+      "real_world_counterpart": "AEK-971",
+      "identity_confidence": "HIGH",
+      "identity_class": "EXACT_REAL_MODEL"
+    },
+    {
+      "path": "Prefabs/Weapons/Western/Rifle/HKG33/armst_Rifle_HKG33.et",
+      "guid": "035CFC7DD44455D0",
+      "filename": "armst_Rifle_HKG33.et",
+      "current_display_name": null,
+      "current_description": null,
+      "display_name_key": null,
+      "description_key": null,
+      "description_source": "EXTERNAL_PARENT",
+      "resolution_chain": [
+        "Prefabs/Weapons/Western/Rifle/HKG33/armst_Rifle_HKG33.et"
+      ],
+      "real_world_counterpart": "HK G33",
+      "identity_confidence": "HIGH",
+      "identity_class": "REAL_VARIANT"
+    },
+    {
+      "path": "Prefabs/Weapons/Western/Rifle/L85/armst_Rifle_L85.et",
+      "guid": "45D3FCA77AF1709B",
+      "filename": "armst_Rifle_L85.et",
+      "current_display_name": null,
+      "current_description": null,
+      "display_name_key": null,
+      "description_key": null,
+      "description_source": "EXTERNAL_PARENT",
+      "resolution_chain": [
+        "Prefabs/Weapons/Western/Rifle/L85/armst_Rifle_L85.et"
+      ],
+      "real_world_counterpart": "L85A1",
+      "identity_confidence": "HIGH",
+      "identity_class": "EXACT_REAL_MODEL"
+    },
+    {
+      "path": "Prefabs/Weapons/Western/Rifle/armst_Rifle_M16A2_carbine.et",
+      "guid": "F97A4AC994231900",
+      "filename": "armst_Rifle_M16A2_carbine.et",
+      "current_display_name": null,
+      "current_description": null,
+      "display_name_key": null,
+      "description_key": null,
+      "description_source": "EXTERNAL_PARENT",
+      "resolution_chain": [
+        "Prefabs/Weapons/Western/Rifle/armst_Rifle_M16A2_carbine.et"
+      ],
+      "real_world_counterpart": "M16A2",
+      "identity_confidence": "HIGH",
+      "identity_class": "REAL_VARIANT"
+    },
+    {
+      "path": "Prefabs/Weapons/Western/Rifle/Sig550/armst_Rifle_Sig550.et",
+      "guid": "CA3BEBAADDFAF1DE",
+      "filename": "armst_Rifle_Sig550.et",
+      "current_display_name": null,
+      "current_description": null,
+      "display_name_key": null,
+      "description_key": null,
+      "description_source": "EXTERNAL_PARENT",
+      "resolution_chain": [
+        "Prefabs/Weapons/Western/Rifle/Sig550/armst_Rifle_Sig550.et"
+      ],
+      "real_world_counterpart": "SIG SG 550",
+      "identity_confidence": "AMBIGUOUS",
+      "identity_class": "AMBIGUOUS"
+    },
+    {
+      "path": "Prefabs/Weapons/Western/Rifle/HKG36/armst_Rifle_hk_g36.et",
+      "guid": "A802C718201D72DF",
+      "filename": "armst_Rifle_hk_g36.et",
+      "current_display_name": "#AR-Weapon_M16A2_Name",
+      "current_description": "#AR-Weapon_M16A2_Description",
+      "display_name_key": "#AR-Weapon_M16A2_Name",
+      "description_key": "#AR-Weapon_M16A2_Description",
+      "description_source": "LOCAL_PREFAB",
+      "resolution_chain": [
+        "Prefabs/Weapons/Western/Rifle/HKG36/armst_Rifle_hk_g36.et"
+      ],
+      "real_world_counterpart": "HK G36",
+      "identity_confidence": "HIGH",
+      "identity_class": "EXACT_REAL_MODEL"
+    },
+    {
+      "path": "Prefabs/Weapons/Western/Rifle/SLR/armst_SLR.et",
+      "guid": "C11ED52EAAF856A8",
+      "filename": "armst_SLR.et",
+      "current_display_name": null,
+      "current_description": null,
+      "display_name_key": null,
+      "description_key": null,
+      "description_source": "EXTERNAL_PARENT",
+      "resolution_chain": [
+        "Prefabs/Weapons/Western/Rifle/SLR/armst_SLR.et"
+      ],
+      "real_world_counterpart": "L1A1 SLR",
+      "identity_confidence": "HIGH",
+      "identity_class": "REAL_VARIANT"
+    },
+    {
+      "path": "Prefabs/Weapons/Russian/Rifle/SVD/armst_SVD.et",
+      "guid": "3EB02CDAD5F23C82",
+      "filename": "armst_SVD.et",
+      "current_display_name": "#AR-Weapon_SVD_Name",
+      "current_description": null,
+      "display_name_key": "#AR-Weapon_SVD_Name",
+      "description_key": null,
+      "description_source": "LOCAL_PREFAB",
+      "resolution_chain": [
+        "Prefabs/Weapons/Russian/Rifle/SVD/armst_SVD.et"
+      ],
+      "real_world_counterpart": "SVD",
+      "identity_confidence": "HIGH",
+      "identity_class": "EXACT_REAL_MODEL"
+    },
+    {
+      "path": "Prefabs/Weapons/Western/Rifle/armst_VZ58P.et",
+      "guid": "9C948630078D154D",
+      "filename": "armst_VZ58P.et",
+      "current_display_name": null,
+      "current_description": null,
+      "display_name_key": null,
+      "description_key": null,
+      "description_source": "EXTERNAL_PARENT",
+      "resolution_chain": [
+        "Prefabs/Weapons/Western/Rifle/armst_VZ58P.et"
+      ],
+      "real_world_counterpart": "Vz.58",
+      "identity_confidence": "AMBIGUOUS",
+      "identity_class": "AMBIGUOUS"
+    },
+    {
+      "path": "Prefabs/Weapons/Western/Rifle/armst_VZ58V.et",
+      "guid": "443CEFF17E040B11",
+      "filename": "armst_VZ58V.et",
+      "current_display_name": null,
+      "current_description": null,
+      "display_name_key": null,
+      "description_key": null,
+      "description_source": "EXTERNAL_PARENT",
+      "resolution_chain": [
+        "Prefabs/Weapons/Western/Rifle/armst_VZ58V.et"
+      ],
+      "real_world_counterpart": "Vz.58",
+      "identity_confidence": "AMBIGUOUS",
+      "identity_class": "AMBIGUOUS"
+    }
+  ],
+  "shared_keys": {
+    "#AR-Magazine_STANAG_M193_Description": [
+      "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M193_Ball.et",
+      "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M193_Ball_BP.et"
+    ]
+  }
+}

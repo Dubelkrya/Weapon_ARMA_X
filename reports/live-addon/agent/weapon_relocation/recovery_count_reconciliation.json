@@ -1,0 +1,56 @@
+{
+  "total_weapon_manifest_entries": 32,
+  "total_affected_identities": 25,
+  "does_partial_reference_update_25_include_apb": "YES",
+  "apb_already_moved": 1,
+  "affected_unmoved_identities": 24,
+  "safe_repair_pairs": 24,
+  "affected_but_not_safe": [
+    {
+      "resource": "Prefabs/Weapons/Handguns/armst_APB.et",
+      "guid": "5D3DA7E84135B278",
+      "classification": "ALREADY_MOVED"
+    }
+  ],
+  "target_refs_total": 28,
+  "target_refs_valid": 2,
+  "target_refs_dangling": 26,
+  "unaffected_weapons": [
+    "Prefabs/Weapons/MachineGuns/armst_PKM.et",
+    "Prefabs/Weapons/MachineGuns/armst_RPK74.et",
+    "Prefabs/Weapons/Rifles/AK74/armst_AK105.et",
+    "Prefabs/Weapons/Rifles/AK74/armst_AKS74U.et",
+    "Prefabs/Weapons/Rifles/AK74/armst_AKS74UN.et",
+    "Prefabs/Weapons/Rifles/armst_Rifle_M16A2_carbine.et",
+    "Prefabs/Weapons/Rifles/armst_Rifle_Sig550.et"
+  ],
+  "safe_repair_pairs_list": [
+    "Prefabs/Weapons/Handguns/armst_M9.et",
+    "Prefabs/Weapons/Handguns/armst_SR_2.et",
+    "Prefabs/Weapons/Handguns/armst_TT.et",
+    "Prefabs/Weapons/Rifles/AK74/armst_AK74M_full.et",
+    "Prefabs/Weapons/Rifles/AK74/armst_AKS.et",
+    "Prefabs/Weapons/Rifles/AKM/armst_Rifle_AKMS.et",
+    "Prefabs/Weapons/Rifles/AKM/armst_Rifle_AKM_full.et",
+    "Prefabs/Weapons/Rifles/AKM/armst_Rifle_SOC94.et",
+    "Prefabs/Weapons/Rifles/AKM/armst_Rifle_VPO136.et",
+    "Prefabs/Weapons/Rifles/Shotgun/armst_Remington_870.et",
+    "Prefabs/Weapons/Rifles/Shotgun/armst_izh_27.et",
+    "Prefabs/Weapons/Rifles/Shotgun/armst_mp_133.et",
+    "Prefabs/Weapons/Rifles/Shotgun/armst_mp_153.et",
+    "Prefabs/Weapons/Rifles/Shotgun/armst_spas_12.et",
+    "Prefabs/Weapons/Rifles/Shotgun/armst_toz_66_pantera.et",
+    "Prefabs/Weapons/Rifles/Shotgun/armst_toz_66_saw.et",
+    "Prefabs/Weapons/Rifles/armst_AEK971_test_v11.et",
+    "Prefabs/Weapons/Rifles/armst_Rifle_HKG33.et",
+    "Prefabs/Weapons/Rifles/armst_Rifle_L85.et",
+    "Prefabs/Weapons/Rifles/armst_Rifle_hk_g36.et",
+    "Prefabs/Weapons/Rifles/armst_SLR.et",
+    "Prefabs/Weapons/Rifles/armst_SVD.et",
+    "Prefabs/Weapons/Rifles/armst_VZ58P.et",
+    "Prefabs/Weapons/Rifles/armst_VZ58V.et"
+  ],
+  "count_model": "25 = 1 + 24",
+  "live_files_changed": "NONE",
+  "validation_status": "PASS"
+}

@@ -1,0 +1,23 @@
+{
+ "AK74": {
+  "base": "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74_base.et",
+  "children": [
+   "armst_AK105.et (DIRECT via GUID)",
+   "armst_AK74N.et (concrete-parent VanillaSource)",
+   "armst_AK74M.et (via AK74N)",
+   "armst_AKS.et (via AK74N)",
+   "armst_AK74M_full.et (via AK74M)"
+  ]
+ },
+ "AKM": {
+  "base": "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_base.et",
+  "children": [
+   "armst_Rifle_AKM.et (DIRECT)",
+   "armst_Rifle_AKMS.et (DIRECT)",
+   "armst_Rifle_SOC94.et (DIRECT)",
+   "armst_Rifle_VPO136.et (DIRECT)",
+   "armst_Rifle_AKM_full.et (via concrete AKM)"
+  ]
+ },
+ "status": "concrete_parent_edges_pending_review"
+}

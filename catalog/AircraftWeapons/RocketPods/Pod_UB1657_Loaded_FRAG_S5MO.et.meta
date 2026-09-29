@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{EAA972E9B0F96CF2}Imported/VanillaSources/Prefabs/Weapons/AircraftWeapons/RocketPods/Pod_UB1657_Loaded_FRAG_S5MO.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

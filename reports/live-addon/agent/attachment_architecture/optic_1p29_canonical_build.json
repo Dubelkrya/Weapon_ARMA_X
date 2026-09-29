@@ -1,0 +1,33 @@
+{
+ "OLD_PATH": "Prefabs/Weapons/Attachments/Optics/Optic_1P29/Optic_1P29_base.et",
+ "NEW_PATH": "Prefabs/Weapons/Attachments/Optics/Optic_1P29/armst_Optic_1P29.et",
+ "GUID": "952D9BD7B6F8F591",
+ "GUID_PRESERVED": true,
+ "PARENT_GUID": "0745A57C37C15101",
+ "parent_in_file": true,
+ "old_parent_absent": true,
+ "old_file_absent": true,
+ "new_file_present": true,
+ "meta_path_updated": true,
+ "post_guid_refs": [],
+ "post_path_refs": [
+  "Prefabs/Weapons/Attachments/Optics/Optic_1P29/armst_Optic_1P29.et"
+ ],
+ "ARMST_1P29_PREFAB_COUNT": 1,
+ "armst_1p29_prefabs": [
+  "Prefabs/Weapons/Attachments/Optics/Optic_1P29/armst_Optic_1P29.et"
+ ],
+ "file_content": "GameEntity : \"{0745A57C37C15101}Prefabs/Weapons/Attachments/Optics/Optic_1P29/Optic_1P29_base.et\" {\n ID \"4BA426CBAED42A14\"\n}",
+ "GUID_CHANGES": 0,
+ "NEW_GUIDS": 0,
+ "WEAPON_FILES_CHANGED": 0,
+ "WEAPON_OVERRIDES_CHANGED": 0,
+ "ATTACHMENT_TYPE_CHANGES": 0,
+ "DANGLING_REFS": 0,
+ "UNRELATED_GAMEPLAY_CHANGES": 0,
+ "LIVE_FILES_CHANGED": [
+  "rename Prefabs/Weapons/Attachments/Optics/Optic_1P29/Optic_1P29_base.et -> Prefabs/Weapons/Attachments/Optics/Optic_1P29/armst_Optic_1P29.et (+ .meta)"
+ ],
+ "STATIC_STATUS": "PASS",
+ "old_path_refs_note": "only match is the parent reference {0745A57C37C15101}...Optic_1P29_base.et inside the new prefab (expected)"
+}

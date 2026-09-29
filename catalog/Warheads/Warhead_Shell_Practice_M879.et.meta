@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{8C2A053194500C81}Imported/VanillaSources/Prefabs/Weapons/Warheads/Warhead_Shell_Practice_M879.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

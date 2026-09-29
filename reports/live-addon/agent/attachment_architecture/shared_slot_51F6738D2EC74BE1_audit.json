@@ -1,0 +1,90 @@
+{
+ "instance": "51F6738D2EC74BE1",
+ "provenance": "Originates in external/vanilla {EAE9A298979C4721? no} Prefabs/Weapons/Rifles/AK74/Rifle_AK74_base.et (underbarrel GP-25 interface); also present in Rifle_AK74_GP25/AK74N_GP25/AK74_long_base/AKS74U_base.",
+ "matching_attachment_prefabs_for_local_slot": 0,
+ "local_slot_type": null,
+ "occurrences": {
+  "Prefabs/Weapons/Russian/Rifle/9a91/armst_Rifle_9a91_base.et": {
+   "slot": "underbarrel",
+   "type": "None",
+   "enabled": "0",
+   "pivot": null,
+   "cpivot": null,
+   "default": null,
+   "descendants_using_iid": [],
+   "related_action_contexts": []
+  },
+  "Prefabs/Weapons/Russian/Rifle/Aek971/armst_Rifle_AEK971_base.et": {
+   "slot": "underbarrel",
+   "type": "None",
+   "enabled": "0",
+   "pivot": null,
+   "cpivot": null,
+   "default": null,
+   "descendants_using_iid": [],
+   "related_action_contexts": []
+  },
+  "Prefabs/Weapons/Russian/Rifle/VAL/armst_Rifle_val_base.et": {
+   "slot": "underbarrel",
+   "type": "None",
+   "enabled": "0",
+   "pivot": null,
+   "cpivot": null,
+   "default": null,
+   "descendants_using_iid": [],
+   "related_action_contexts": []
+  },
+  "Prefabs/Weapons/Russian/Rifle/VSS/armst_Rifle_vss_base.et": {
+   "slot": "underbarrel",
+   "type": "None",
+   "enabled": "0",
+   "pivot": null,
+   "cpivot": null,
+   "default": null,
+   "descendants_using_iid": [],
+   "related_action_contexts": []
+  },
+  "Prefabs/Weapons/Russian/Rifle/VSK94/armst_Rifle_VSK94_base.et": {
+   "slot": "underbarrel",
+   "type": "None",
+   "enabled": "0",
+   "pivot": null,
+   "cpivot": null,
+   "default": null,
+   "descendants_using_iid": [],
+   "related_action_contexts": []
+  },
+  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74M.et": {
+   "slot": "underbarrel",
+   "type": "None",
+   "enabled": "1",
+   "pivot": null,
+   "cpivot": null,
+   "default": null,
+   "descendants_using_iid": [
+    "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74M_full.et"
+   ],
+   "related_action_contexts": []
+  },
+  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AKS.et": {
+   "slot": "underbarrel",
+   "type": "None",
+   "enabled": "1",
+   "pivot": null,
+   "cpivot": null,
+   "default": null,
+   "descendants_using_iid": [],
+   "related_action_contexts": []
+  },
+  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74M_full.et": {
+   "slot": "underbarrel",
+   "type": "None",
+   "enabled": "1",
+   "pivot": null,
+   "cpivot": null,
+   "default": "{1ABABE3551512B0A}Prefabs/Weapons/Attachments/Underbarrel/armst_UGL_GP25.et",
+   "descendants_using_iid": [],
+   "related_action_contexts": []
+  }
+ }
+}

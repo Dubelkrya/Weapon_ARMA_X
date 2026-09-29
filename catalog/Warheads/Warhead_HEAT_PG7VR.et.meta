@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{E0DC4CB61D1F1013}Imported/VanillaSources/Prefabs/Weapons/Warheads/Warhead_HEAT_PG7VR.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

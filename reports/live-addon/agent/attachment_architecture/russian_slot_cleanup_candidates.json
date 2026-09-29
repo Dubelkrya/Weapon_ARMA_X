@@ -1,0 +1,49 @@
+{
+ "candidates": [
+  {
+   "weapon": "Prefabs/Weapons/Russian/Rifle/Groza/armst_Groza_base.et",
+   "instance": "52D0FA201C0511E0",
+   "slot": "underbarrel",
+   "type": "AttachmentUnderbarrelRIS1913",
+   "function": "UNDERBARREL",
+   "enabled": "0",
+   "child_usage": [],
+   "why": "generic RIS/Picatinny interface on stock base without physical rail",
+   "expected_effective_diff": 0
+  },
+  {
+   "weapon": "Prefabs/Weapons/Russian/Rifle/Groza/armst_Groza_base.et",
+   "instance": "5848EDCA8A09E6F7",
+   "slot": "optic",
+   "type": "AttachmentOpticsRIS1913",
+   "function": "OPTIC",
+   "enabled": "0",
+   "child_usage": [],
+   "why": "generic RIS/Picatinny interface on stock base without physical rail",
+   "expected_effective_diff": 0
+  },
+  {
+   "weapon": "Prefabs/Weapons/Russian/Rifle/Groza/armst_Groza_base.et",
+   "instance": "5D168E76CE7C176C",
+   "slot": "RIS_Left",
+   "type": "AttachmentRIS1913",
+   "function": "SIDE_MOUNT",
+   "enabled": "0",
+   "child_usage": [],
+   "why": "generic RIS/Picatinny interface on stock base without physical rail",
+   "expected_effective_diff": 0
+  },
+  {
+   "weapon": "Prefabs/Weapons/Russian/Rifle/Groza/armst_Groza_base.et",
+   "instance": "5D168E76F4E59294",
+   "slot": "RIS_Right",
+   "type": "AttachmentRIS1913",
+   "function": "SIDE_MOUNT",
+   "enabled": "0",
+   "child_usage": [],
+   "why": "generic RIS/Picatinny interface on stock base without physical rail",
+   "expected_effective_diff": 0
+  }
+ ],
+ "count": 4
+}

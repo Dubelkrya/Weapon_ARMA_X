@@ -1,0 +1,12 @@
+Projectile : "{8D6F172BB019FD02}Prefabs/Weapons/Ammo/Ammo_Flare_40mm_StarParachute_Base.et" {
+ ID "50C6F965BA00F9FA"
+ components {
+  TimerTriggerComponent "{62EAC9F6705716CE}" {
+   PROJECTILE_EFFECTS {
+    SubmunitionEffect "{62EAC9F6705716EF}" {
+     Prefab "{4C0308FA410EFC44}Prefabs/Weapons/Ammo/FlareEffect_40mm_M127A1_White.et"
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{EF8B7A7CA1CC1E3C}Imported/VanillaSources/Prefabs/Weapons/Attachments/Optics/Optic_ARTII/Optic_ARTII.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

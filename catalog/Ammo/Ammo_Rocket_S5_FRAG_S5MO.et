@@ -1,0 +1,33 @@
+EjectableProjectile : "{C9A1612DC5340613}Prefabs/Weapons/Ammo/Ammo_Rocket_S5.et" {
+ ID "DA5C6308000CDEF2"
+ components {
+  CollisionTriggerComponent "{549302EDFF95851E}" {
+   PROJECTILE_EFFECTS {
+    ExplosionEffect "{549302EDF30A9796}" {
+     EffectPrefab "{8575BD9137E7C5CA}Prefabs/Weapons/Warheads/Warhead_S5_FRAG_S5MO.et"
+    }
+    SCR_ExplosionAmmoEffect "{66A0CD1AD8910DE4}" {
+    }
+   }
+  }
+  InventoryItemComponent "{526E87778842822F}" {
+   Attributes SCR_ItemAttributeCollection "{526E87778ACB229F}" {
+    ItemDisplayName UIInfo "{526E8777859BAACF}" {
+     Name "#AR-Magazine_S5_MO_Name"
+     Description "#AR-Magazine_S5_MO_Description"
+    }
+    ItemPhysAttributes ItemPhysicalAttributes "{52CA8780DF5FBCFB}" {
+     Weight 4.82
+    }
+   }
+  }
+  MagazineComponent "{50F6614BB5D5B0A8}" {
+   UIInfo MagazineUIInfo "{560AE4EBFA0176D4}" {
+    m_eAmmoTypeFlags FRAG
+   }
+   ItemModel "{9B627D9F4A4C7804}Assets/Weapons/Ammo/Rockets/S5/S5MO_item.xob"
+  }
+ }
+ ProjectileModel "{089EC44B7C2DA891}Assets/Weapons/Ammo/Rockets/S5/S5MO.xob"
+ CartridgeModel "{9B627D9F4A4C7804}Assets/Weapons/Ammo/Rockets/S5/S5MO_item.xob"
+}

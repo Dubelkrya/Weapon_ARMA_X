@@ -23,11 +23,13 @@ Rules honoured:
   * never invent values that cannot be reached through serialized source data
   * every resolved value keeps provenance (defined_in / inherited)
   * unresolved parents remain reported, never guessed
+  * the addon root is resolved and validated, never assumed
 
 Usage:
   python agent/scripts/scan_build.py
 Environment:
-  MOD_ROOT  - path to the addon (default: workbench addons dir)
+  ARMST_WEAPONS_ADDON_PATH - live addon root (preferred); validated by addon_path.py
+  MOD_ROOT  - legacy alias for the above
   REPO_ROOT - path to this repository (default: two dirs up from this file)
   BASE_GAME_SNAPSHOT_ROOT - materialized vanilla corpus (default: repo/catalog)
 """
@@ -42,17 +44,22 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from et_parser import (parse_file, find_child, find_children, find_recursive,
                        GUID_REF_RE, Node)
 from base_game_snapshot import build_snapshot_index, lookup_snapshot
+from addon_path import resolve_addon_root, AddonPathError
 
 # ----------------------------------------------------------------------------
 # environment / paths
 # ----------------------------------------------------------------------------
 
-DEFAULT_MOD_ROOT = (r"C:\Users\yshky\Documents\My Games\ArmaReforgerWorkbench"
-                    r"\addons\ARMST-PLATFORM---Weapons")
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 DEFAULT_REPO_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, "..", ".."))
 
-MOD_ROOT = os.path.abspath(os.environ.get("MOD_ROOT", DEFAULT_MOD_ROOT))
+# Resolved, never assumed. A wrong or missing addon root is a hard error rather
+# than a silently empty catalog written into this repository.
+try:
+    MOD_ROOT = str(resolve_addon_root())
+except AddonPathError as exc:
+    print(f"ERROR: {exc}", file=sys.stderr)
+    raise SystemExit(1)
 REPO_ROOT = os.path.abspath(os.environ.get("REPO_ROOT", DEFAULT_REPO_ROOT))
 
 CATALOG_DIR = os.path.join(REPO_ROOT, "catalog")

@@ -1,0 +1,20 @@
+{
+ "OLD_PATH": "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_SOC94_base.et",
+ "NEW_PATH": "Prefabs/Weapons/Russian/Rifle/SOC94/armst_Rifle_SOC94_base.et",
+ "GUID": "E394112ABBC198D8",
+ "PARENT_BEFORE": "{140E94F473B60FE3}Rifles/AKM/armst_Rifle_AKM_base.et",
+ "PARENT_AFTER": "{140E94F473B60FE3}Rifles/AKM/armst_Rifle_AKM_base.et",
+ "PATH_REFS_UPDATED": [
+  "worlds/Weapon_test/weapon_test_Layers/default.layer"
+ ],
+ "OLD_PATH_REFS_REMAINING": [],
+ "GUID_CHANGES": 0,
+ "PARENT_CHANGES": 0,
+ "OVERRIDES_CHANGED": 0,
+ "GAMEPLAY_CONTENT_DIFF": 0,
+ "DANGLING_REFS": 0,
+ "OLD_RESOURCE_EXISTS": false,
+ "NEW_RESOURCE_EXISTS": true,
+ "LIVE_FILES_CHANGED": "1 moved (+.meta) + 1 ref files",
+ "STATIC_STATUS": "PASS"
+}

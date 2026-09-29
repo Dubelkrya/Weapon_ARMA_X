@@ -1,0 +1,63 @@
+Turret : "{9D55C61FE5A7374F}Prefabs/Weapons/Tripods/Tripod_6T5_PKMN.et" {
+ ID "52D30EFBEBC74642"
+ components {
+  SCR_EditableVehicleComponent "{58FE9E4F05DC95A3}" {
+   m_UIInfo SCR_EditableVehicleUIInfo "{5298E609432D192D}" {
+    Name "#AR-EditableEntity_Tripod_6T5_PKMN_1P29"
+    m_aAuthoredLabels + {
+     TRAIT_OPTICS
+    }
+   }
+  }
+  SCR_UniversalInventoryStorageComponent "{570EACF4F2F94F1B}" {
+   Attributes SCR_ItemAttributeCollection "{694AAD168D686678}" {
+    ItemDisplayName WeaponUIInfo "{694AAD168D68667A}" {
+     Name "#AR-EditableEntity_Tripod_6T5_PKMN_1P29"
+    }
+   }
+  }
+  TurretComponent "{1D3DA71B9107070D}" {
+   components {
+    SCR_2DSightsComponent "{694AAD1042D59F26}" {
+     SightsPosition PointInfo "{694AAD1039CDC09B}" {
+      PivotID "w_weapon_holder_tripod"
+      Offset -0.0172 0.2027 -0.1837
+     }
+     SightsFOVInfo SCR_SightsZoomFOVInfo "{694AAD11C3337DF5}" {
+      m_fBaseZoom 4
+      m_fZoomMax 4
+      m_fInterpolationSpeed 50
+     }
+     SightsPointFront PointInfo "{694AAD11C19BB5BA}" {
+      PivotID "w_weapon_holder_tripod"
+      Offset -0.0172 0.2027 -0.0551
+     }
+     SightsPointRear PointInfo "{694AAD11C6320122}" {
+      PivotID "w_weapon_holder_tripod"
+      Offset -0.0172 0.2027 -0.1637
+     }
+     CameraRecoilAmount -0.9
+     SightsPriority 1
+     SoundInt 10001
+     m_sReticleTexture "{4E6095CD6A337D2A}UI/Textures/Sights/1P29/1P29_black_solid_UI.edds"
+     m_sReticleGlowTexture "{4E6095CD6A337D2A}UI/Textures/Sights/1P29/1P29_black_solid_UI.edds"
+     m_ReticleColor 0 0.571 0.145 1
+     m_fAnimationSpeedBlur 3
+     m_fVignetteMoveSpeed 2
+     m_fMotionBlurScale 10
+     m_eZeroingType EPZ_CAMERA_TURN
+     m_fReticleOffsetInterpSpeed 40
+     m_vCameraOffset -0.02 0 0
+     m_fObjectiveFov 8
+     m_fReticleAngularSize 8
+     m_fReticlePortion 0.9
+     m_fReticleBaseZoom 4
+     m_fMagnification 4
+    }
+   }
+  }
+  WeaponSlotComponent "{51ACD09C6BFEEE6A}" {
+   WeaponTemplate "{80558B1BBBAF7390}Prefabs/Weapons/MachineGuns/PKM/MG_PKMN_1P29_mounted.et"
+  }
+ }
+}

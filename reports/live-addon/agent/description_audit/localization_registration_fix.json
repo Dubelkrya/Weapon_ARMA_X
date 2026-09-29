@@ -1,0 +1,41 @@
+{
+ "LOCALIZATION_ST_EXISTS": true,
+ "LOCALIZATION_ST_META_EXISTS": true,
+ "ST_META_CLASS_OK": true,
+ "LOCALIZATION_ST_GUID": "69821F9E11916456",
+ "LOCALIZATION_ST_GUID_COLLISION": 0,
+ "SOURCE_KEYS": 59,
+ "SOURCE_UNIQUE": 59,
+ "SOURCE_SORTED": true,
+ "ARMST_STRINGTABLE_DEFINITIONS": 1,
+ "LANGUAGE_DEFINITIONS": 13,
+ "LOCALES": [
+  "en_us",
+  "ru_ru",
+  "de_de",
+  "fr_fr",
+  "es_es",
+  "it_it",
+  "pl_pl",
+  "pt_br",
+  "cs_cz",
+  "ja_jp",
+  "ko_kr",
+  "zh_cn",
+  "uk_ua"
+ ],
+ "LANGUAGES_UNIQUE": true,
+ "RUNTIME_REFS": 13,
+ "RUNTIME_UNIQUE": true,
+ "SOURCE_REF": [
+  [
+   "69821F9E11916456",
+   "Language/localization.st"
+  ]
+ ],
+ "SOURCE_MATCHES_META": true,
+ "RUNTIME_CONF_CONTENT_CHANGES": [],
+ "GAMEPLAY_FILES_CHANGED": 0,
+ "TWELVE_GA_CHANGED": 0,
+ "ST_ITEM_GUIDS_UNIQUE": true
+}

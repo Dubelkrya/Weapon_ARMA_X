@@ -1,0 +1,196 @@
+GenericEntity : "{1B915F6E9787F965}Prefabs/Weapons/Core/RocketPod_Base.et" {
+ ID "5102FE5B14D4181C"
+ components {
+  InventoryItemComponent "{61B28C67FEC7ABBA}" {
+   Attributes SCR_ItemAttributeCollection "{61B2A217F4C03790}" {
+    ItemDisplayName UIInfo "{62B46C6299EA734D}" {
+     Name "#AR-Weapon_M260_Name"
+     Description "#AR-Weapon_M260_Description"
+    }
+   }
+  }
+  MeshObject "{CFBAA4B701F95D69}" {
+   Object "{3303A46B1DDCD97C}Assets/Weapons/AircraftWeapons/M260/m260.xob"
+  }
+  RigidBody "{61628D840CBF74ED}" {
+   ModelGeometry 1
+   Static 1
+  }
+  WeaponComponent "{CFBAA4B706BA66E8}" {
+   components {
+    SCR_RocketEjectorMuzzleComponent "{61A6977B6DC1FE72}" {
+     components {
+      MultiBarrelMuzzleEffectComponent "{61A6977B64FD4BE6}" {
+       ParticleEffect "{6C2D3E7434E3D254}Particles/Weapon/Muzzle_Rocket_Pod_M260_Front.ptc"
+       EffectPositions {
+        EntitySlotInfo Rocket01 {
+         PivotID "barrel_muzzle_01"
+         Offset 0 0 0.06
+        }
+        EntitySlotInfo Rocket02 {
+         PivotID "barrel_muzzle_02"
+         Offset 0 0 0.06
+        }
+        EntitySlotInfo Rocket03 {
+         PivotID "barrel_muzzle_03"
+         Offset 0 0 0.06
+        }
+        EntitySlotInfo Rocket04 {
+         PivotID "barrel_muzzle_04"
+         Offset 0 0 0.06
+        }
+        EntitySlotInfo Rocket05 {
+         PivotID "barrel_muzzle_05"
+         Offset 0 0 0.06
+        }
+        EntitySlotInfo Rocket06 {
+         PivotID "barrel_muzzle_06"
+         Offset 0 0 0.06
+        }
+        EntitySlotInfo Rocket07 {
+         PivotID "barrel_muzzle_07"
+         Offset 0 0 0.06
+        }
+       }
+      }
+      MuzzleEffectComponent "{61A8B0C343680103}" {
+       ParticleEffect "{D4CDEE9D1C462324}Particles/Weapon/Muzzle_Rocket_Pod_M260_Back.ptc"
+       EffectPosition EntitySlotInfo Muzzle {
+        Offset -0.0074 -0.1041 -0.9604
+        Angles 0 180 0
+       }
+      }
+     }
+     MuzzleEndPositions {
+      PointInfo "{61A6A0879A3E7F13}" {
+       PivotID "barrel_muzzle_04"
+      }
+      PointInfo "{61A6A0879EB3ECF8}" {
+       PivotID "barrel_muzzle_02"
+      }
+      PointInfo "{61A6A08791AF5EC2}" {
+       PivotID "barrel_muzzle_06"
+      }
+      PointInfo "{61A6A087920A4B52}" {
+       PivotID "barrel_muzzle_01"
+      }
+      PointInfo "{61A6A0879358974B}" {
+       PivotID "barrel_muzzle_07"
+      }
+      PointInfo "{61A6A0879598780E}" {
+       PivotID "barrel_muzzle_05"
+      }
+      PointInfo "{61A6A08796372B0F}" {
+       PivotID "barrel_muzzle_03"
+      }
+     }
+     ProjectileSpawnPositions {
+      PointInfo "{61A6A08D463F214B}" {
+       PivotID "barrel_chamber_04"
+      }
+      PointInfo "{61A6A08D5F177F29}" {
+       PivotID "barrel_chamber_02"
+      }
+      PointInfo "{61A6A08D507C4086}" {
+       PivotID "barrel_chamber_06"
+      }
+      PointInfo "{61A6A08D52A7DF7C}" {
+       PivotID "barrel_chamber_01"
+      }
+      PointInfo "{61A6A08D531FB6FF}" {
+       PivotID "barrel_chamber_07"
+      }
+      PointInfo "{61A6A08D547C1A71}" {
+       PivotID "barrel_chamber_05"
+      }
+      PointInfo "{61A6A08D56243489}" {
+       PivotID "barrel_chamber_03"
+      }
+     }
+     DispersionRange 40
+     ProjectilePositions {
+      InventoryStorageSlot rocket01 {
+       PivotID "barrel_chamber_04"
+       DisablePhysicsInteraction 1
+      }
+      InventoryStorageSlot rocket02 {
+       PivotID "barrel_chamber_02"
+       DisablePhysicsInteraction 1
+      }
+      InventoryStorageSlot rocket03 {
+       PivotID "barrel_chamber_06"
+       DisablePhysicsInteraction 1
+      }
+      InventoryStorageSlot rocket04 {
+       PivotID "barrel_chamber_01"
+       DisablePhysicsInteraction 1
+      }
+      InventoryStorageSlot rocket05 {
+       PivotID "barrel_chamber_07"
+       DisablePhysicsInteraction 1
+      }
+      InventoryStorageSlot rocket06 {
+       PivotID "barrel_chamber_05"
+       DisablePhysicsInteraction 1
+      }
+      InventoryStorageSlot rocket07 {
+       PivotID "barrel_chamber_03"
+       DisablePhysicsInteraction 1
+      }
+     }
+     EjectorInterface EjectorInterfaceHydra70 "{624CD227044651AE}" {
+     }
+     m_sDefaultAmmoPrefab "{072A755D5CB85D47}Prefabs/Weapons/Ammo/Ammo_Rocket_Hydra70_HE_M229.et"
+    }
+   }
+   UIInfo WeaponUIInfo "{CC3BA6A2C42F09F4}" {
+    m_MagIndicator SCR_MagazineIndicatorConfiguration "{565ECA2FE3F0F3FB}" {
+     m_sMagazineLayout "{8A98061335A620E1}UI/layouts/HUD/WeaponInfo/SingleMagazineWidget_RocketPod.layout"
+     m_sOutline "magazine-rockets-outline"
+     m_sBackground "magazine-rockets-background"
+     m_sProgress "magazine-rockets-fill"
+     m_sProgressAlphaMask "magazine-rockets-alpha"
+     m_sEmptyMagazine "magazine-rockets-disabled"
+    }
+   }
+  }
+  ActionsManagerComponent "{A29AE67FF4D82B0F}" {
+   ActionContexts {
+    UserActionContext "{5086F9ADF588DCA4}" {
+     Position PointInfo "{5086F9ADE97650DF}" {
+      Offset -0.0097 -0.1026 0.7443
+     }
+    }
+   }
+   additionalActions {
+    SCR_ResupplyRocketPodSupportStationAction "{62B2B72BF58B3573}" {
+     ActionTitle "Resupply: HE"
+     "Sort Priority" -100
+     m_ResupplyData SCR_ResupplyItemSupportStationData "{62E4962C3079390A}" {
+      m_sItemPrefab "{072A755D5CB85D47}Prefabs/Weapons/Ammo/Ammo_Rocket_Hydra70_HE_M229.et"
+     }
+    }
+    SCR_ResupplyRocketPodSupportStationAction "{62B2D6A73B6E8077}" {
+     ParentContextList {
+      "default"
+     }
+     UIInfo SCR_ActionUIInfo "{61B2A657C1BEB907}" {
+      Name "#AR-SupportStation_Resupply_Vehicle_Weapon_ActionName"
+      m_sIconName "rearm-rocket"
+     }
+     ActionTitle "Resupply: HEDP"
+     Duration -0.5
+     PerformPerFrame 1
+     "Sort Priority" -90
+     m_fLoopActionHoldDuration 0.1
+     m_bLowerWeaponOnUse 1
+     m_sSoundProject "{EEAE2427DD990D12}Sounds/Weapons/AircraftWeapons/RocketPods/Weapons_RocketPods_Generic_Handling.acp"
+     m_sSoundEventName "SOUND_RELOAD"
+     m_ResupplyData SCR_ResupplyItemSupportStationData "{62E4962C4E318227}" {
+      m_sItemPrefab "{61AF60E0235DC3B1}Prefabs/Weapons/Ammo/Ammo_Rocket_Hydra70_HEDP_M247.et"
+     }
+    }
+   }
+  }
+ }
+}

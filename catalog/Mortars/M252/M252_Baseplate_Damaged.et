@@ -1,0 +1,14 @@
+GenericEntity {
+ ID "6226BCD8DA0B4DF1"
+ components {
+  MeshObject "{6226BCD8CF98ABC3}" {
+   Object "{CD99346DFFF701E8}Assets/Weapons/Mortars/M252/M252_Baseplate.xob"
+   Materials {
+    MaterialAssignClass "{6226BCD8902A4A33}" {
+     SourceMaterial "Baseplate1"
+     AssignedMaterial "{6280A8D617A4E2E9}Assets/Weapons/Mortars/M252/Data/Baseplate_dmg.emat"
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,46 @@
+GenericEntity : "{923D948AB0D57A50}Prefabs/Weapons/Rifles/AK74/Rifle_AK74_long_base.et" {
+ ID "CFBAA4B725411E45"
+ components {
+  SCR_WeaponAttachmentsStorageComponent "{51F080D5CE45A1A2}" {
+   Attributes SCR_ItemAttributeCollection "{51F080D5C64F12C5}" {
+    ItemDisplayName WeaponUIInfo "{5222CB07CFF6712A}" {
+     Name "#AR-Weapon_AK74N_Name"
+     Description "#AR-Weapon_AK74N_Description"
+    }
+   }
+  }
+  SlotManagerComponent "{559E78319D6C8CFA}" {
+   Slots {
+    EntitySlotInfo Dovetail {
+     PivotID "slot_dovetail"
+     Prefab "{D92368B78263A9E0}Prefabs/Weapons/Attachments/Mounts/Dovetail_AK/Dovetail_AK.et"
+    }
+   }
+  }
+  WeaponComponent "{CFBAA4B706BA66E8}" {
+   components {
+    AttachmentSlotComponent "{55349E9229B55E29}" {
+     AttachmentSlot InventoryStorageSlot sights {
+      PivotID "slot_optics"
+      ChildPivotID "snap_weapon"
+      InspectionWidgetOffset -0.0204 0.0521 0.0168
+     }
+     AttachmentType AttachmentOpticsDovetailAK "{5A16F04B258689D6}" {
+     }
+     ShowInInspection 1
+    }
+   }
+  }
+  ActionsManagerComponent "{A29AE67FF4D82B0F}" {
+   ActionContexts {
+    UserActionContext "{61FECC7C715A8200}" {
+     ContextName "optic"
+     Position PointInfo "{61FECC7C11845F16}" {
+      Offset -0.02 0.0538 0.0209
+     }
+     Radius 0.075
+    }
+   }
+  }
+ }
+}

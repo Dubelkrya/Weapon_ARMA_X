@@ -1,0 +1,117 @@
+{
+  "id": "ammo_9x39_sp6_ball",
+  "role": "leaf",
+  "source": {
+    "resource": "Prefabs/Weapons/Ammo/Ammo_9x39_SP6_Ball.et",
+    "resource_guid": "FB468B29C75FE46A",
+    "meta_name": null,
+    "class": "Projectile",
+    "defined_in": "Prefabs/Weapons/Ammo/Ammo_9x39_SP6_Ball.et"
+  },
+  "identity": {
+    "name": "Ammo_9x39_SP6_Ball",
+    "resource": "Prefabs/Weapons/Ammo/Ammo_9x39_SP6_Ball.et"
+  },
+  "classification": {
+    "kind": "ammunition",
+    "confidence": "class"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Weapons/Ammo/Ammo_9x39_SP6_Ball.et",
+        "status": "local",
+        "class": "Projectile"
+      }
+    ],
+    "external_parents": [
+      {
+        "guid": "AC29AE3D5ECD6390",
+        "path": "Prefabs/Weapons/Ammo/Ammo_762x54r_Ball_57N323S.et",
+        "raw": "{AC29AE3D5ECD6390}Prefabs/Weapons/Ammo/Ammo_762x54r_Ball_57N323S.et"
+      }
+    ],
+    "used_as_base_by": [],
+    "chain_depth_local": 1
+  },
+  "references": [
+    {
+      "guid": "0471293E3DE1E1DF",
+      "path": "Configs/Weapons/AIBallisticTables/AIBT_762x54r_Ball_7N1.conf",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "Prefabs/Weapons/Ammo/Ammo_9x39_SP6_Ball.et"
+    }
+  ],
+  "warnings": [],
+  "data": {
+    "shell": {
+      "InitSpeed": {
+        "value": 305,
+        "defined_in": "Prefabs/Weapons/Ammo/Ammo_9x39_SP6_Ball.et",
+        "inherited": false
+      },
+      "InitSpeedVariation": {
+        "value": 7.5,
+        "defined_in": "Prefabs/Weapons/Ammo/Ammo_9x39_SP6_Ball.et",
+        "inherited": false
+      },
+      "DispersionMultiplier": {
+        "value": 0.55,
+        "defined_in": "Prefabs/Weapons/Ammo/Ammo_9x39_SP6_Ball.et",
+        "inherited": false
+      },
+      "Mass": {
+        "value": 0.02559,
+        "defined_in": "Prefabs/Weapons/Ammo/Ammo_9x39_SP6_Ball.et",
+        "inherited": false
+      },
+      "TumblingDamageMultiplier": {
+        "value": 0.05,
+        "defined_in": "Prefabs/Weapons/Ammo/Ammo_9x39_SP6_Ball.et",
+        "inherited": false
+      },
+      "PenetrationDepth": {
+        "value": 3.7,
+        "defined_in": "Prefabs/Weapons/Ammo/Ammo_9x39_SP6_Ball.et",
+        "inherited": false
+      },
+      "PenetrationSpeed": {
+        "value": 615,
+        "defined_in": "Prefabs/Weapons/Ammo/Ammo_9x39_SP6_Ball.et",
+        "inherited": false
+      },
+      "PenetrationDensity": null,
+      "AirDrag": {
+        "value": 9.4e-06,
+        "defined_in": "Prefabs/Weapons/Ammo/Ammo_9x39_SP6_Ball.et",
+        "inherited": false
+      },
+      "ballistic_table": {
+        "guid": "0471293E3DE1E1DF",
+        "path": "Configs/Weapons/AIBallisticTables/AIBT_762x54r_Ball_7N1.conf",
+        "defined_in": "Prefabs/Weapons/Ammo/Ammo_9x39_SP6_Ball.et"
+      },
+      "_defined_in": "Prefabs/Weapons/Ammo/Ammo_9x39_SP6_Ball.et"
+    },
+    "effects": [
+      {
+        "type": "ProjectileDamage",
+        "id": "{5168BBF3DBD79134}",
+        "defined_in": "Prefabs/Weapons/Ammo/Ammo_9x39_SP6_Ball.et",
+        "DamageValue": {
+          "value": 150,
+          "defined_in": "Prefabs/Weapons/Ammo/Ammo_9x39_SP6_Ball.et",
+          "inherited": false
+        },
+        "DamageType": null,
+        "MinimumDamage": null
+      }
+    ],
+    "_defined_in": "Prefabs/Weapons/Ammo/Ammo_9x39_SP6_Ball.et"
+  },
+  "derived": {
+    "init_speed": 305,
+    "projectile_damage": 150
+  }
+}

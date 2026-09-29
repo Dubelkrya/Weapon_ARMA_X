@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{2AE2C7D292870AEC}Imported/VanillaSources/Prefabs/Weapons/Magazines/Box_762x51_M60_500rnd_Ball.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

@@ -1,0 +1,130 @@
+GenericEntity : "{C63227C0E70EA62E}Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et" {
+ ID "CFBAA4B725411E45"
+ components {
+  WeaponSoundComponent "{5A8685198A9AEEDD}" {
+   Filenames {
+    "{BE3172F945900716}Sounds/Weapons/Rifles/M16A2_Carbine/Weapons_Rifles_M16A2_Carbine_Shot.acp" "{E16782B12F11FEB1}Sounds/Weapons/Rifles/M16A2_Carbine/Weapons_Rifles_M16A2_Carbine_Shot_Suppressed_SuperSonic.acp" "{A6F3D0955462D8FE}Sounds/Weapons/Rifles/M16A2/Weapons_Rifles_M16A2_Handling.acp" "{D8F675F3468362E2}Sounds/Weapons/_SharedData/Weapons_Sights_Actions.acp" "{68E023371FDD3B12}Sounds/Weapons/_SharedData/Drop/Weapons_Drop_Rifle_WoodMetal.acp" "{07E8D425196745F4}Sounds/Weapons/_SharedData/PickUp/Weapons_PickUp_Rifle_Plastic.acp" "{332983CC95EE1E1E}Sounds/Weapons/_SharedData/Melee/Weapons_Melee_Rifle.acp" "{10C1421961C34D26}Sounds/Weapons/_SharedData/Weapons_Deployment.acp" "{E419B2CF55F4A389}Sounds/Weapons/_SharedData/Melee/Weapons_Melee_Bayonett.acp" "{F9B575E37280E5D7}Sounds/Weapons/_SharedData/Drop/Weapons_Drop_Physical_Rifle_WoodMetal.acp"
+   }
+  }
+  MeshObject "{CFBAA4B701F95D69}" {
+   Object "{165893BB94D40116}Assets/Weapons/Rifles/M16A2/M16A2_carbine_body.xob"
+   Materials {
+    MaterialAssignClass "{5E4C832970357276}" {
+     SourceMaterial "M16A2_FrontSight_01"
+     AssignedMaterial "{98D559D65B9736F3}Assets/Weapons/Rifles/M16A2/Data/M16A2_FrontSight_01.emat"
+    }
+    MaterialAssignClass "{5E4C83297035724B}" {
+     SourceMaterial "M16A2_Grip_01"
+     AssignedMaterial "{3C458975866E3A47}Assets/Weapons/Rifles/M16A2/Data/M16A2_Grip_01.emat"
+    }
+    MaterialAssignClass "{5E4C832970357253}" {
+     SourceMaterial "M16A2_Receiver1_01"
+     AssignedMaterial "{C4776498ED1BAA69}Assets/Weapons/Rifles/M16A2/Data/M16A2_Receiver1_01.emat"
+    }
+    MaterialAssignClass "{5E4C83297035725A}" {
+     SourceMaterial "M16A2_Receiver2_01"
+     AssignedMaterial "{CA6920D0D0ECA5B3}Assets/Weapons/Rifles/M16A2/Data/M16A2_Receiver2_01.emat"
+    }
+    MaterialAssignClass "{5E4C83297035725F}" {
+     SourceMaterial "M16A2_carbine_Barrel_01"
+     AssignedMaterial "{E5F534D8E719A0A5}Assets/Weapons/Rifles/M16A2/Data/M16A2_carbine_Barrel_01.emat"
+    }
+    MaterialAssignClass "{5E4C832970357224}" {
+     SourceMaterial "M16A2_carbine_Stock_01"
+     AssignedMaterial "{40593F465044A5A5}Assets/Weapons/Rifles/M16A2/Data/M16A2_carbine_Stock_01.emat"
+    }
+   }
+  }
+  SCR_WeaponAttachmentsStorageComponent "{51F080D5CE45A1A2}" {
+   Attributes SCR_ItemAttributeCollection "{51F080D5C64F12C5}" {
+    ItemDisplayName WeaponUIInfo "{5222CB07CFF6712A}" {
+     Name "#AR-Weapon_M16Carbine_Name"
+     Description "#AR-Weapon_M16Carbine_Description"
+    }
+    ItemPhysAttributes ItemPhysicalAttributes "{5534745C44D1EFE1}" {
+     Weight 2.71
+     ItemDimensions 20 20 20
+     ItemVolume 1200
+    }
+   }
+  }
+  WeaponComponent "{CFBAA4B706BA66E8}" {
+   components {
+    SightsComponent "{BB23A637957CFFF8}" {
+     SightsRanges {
+      SightRangeInfo "{584CED30AFBE1EB5}" {
+       Range 0 200
+       WeaponPosition PointInfo "{584CED30AFBE1ED1}" {
+        Offset 0 0 0
+        Angles 0 0 0
+       }
+      }
+      SightRangeInfo "{584CED30AF80A576}" {
+       Range 0.215 300
+       WeaponPosition PointInfo "{584CED30AF80A560}" {
+        Offset 0 -0.0013 0
+        Angles 0.16 0 0
+       }
+      }
+      SightRangeInfo "{584CED30AF834928}" {
+       Range 0.28 400
+       WeaponPosition PointInfo "{584CED30AF834957}" {
+        Offset 0 -0.0018 0
+        Angles 0.22 0 0
+       }
+      }
+      SightRangeInfo "{584CED30AF821312}" {
+       Range 0.38 500
+       WeaponPosition PointInfo "{584CED30AF82131E}" {
+        Offset 0 -0.0024 0
+        Angles 0.29 0 0
+       }
+      }
+      SightRangeInfo "{584CED30AF84A542}" {
+       Range 0.5 600
+       WeaponPosition PointInfo "{584CED30AF84A549}" {
+        Offset 0 -0.0031 0
+        Angles 0.37 0 0
+       }
+      }
+      SightRangeInfo "{584CED30AF874F57}" {
+       Range 0.64 700
+       WeaponPosition PointInfo "{584CED30AF874F5C}" {
+        Offset 0 -0.004 0
+        Angles 0.49 0 0
+       }
+      }
+      SightRangeInfo "{584CED30AF8617A6}" {
+       Range 0.804 800
+       WeaponPosition PointInfo "{584CED30AF8617AE}" {
+        Offset 0 -0.005 0
+        Angles 0.61 0 0
+       }
+      }
+     }
+    }
+    MuzzleComponent "{CA6BE4D6B867541F}" {
+     FireModes {
+      BaseFireMode "{B80A64F4A8EF8333}" : "{D5D52E848DBCAA53}Prefabs/Weapons/Core/Configs/FireModes/FireMode_Single.conf" {
+       RoundsPerMinute 800
+      }
+      BaseFireMode "{619AB45BF76565F3}" : "{A512F292D96BCB9F}Prefabs/Weapons/Core/Configs/FireModes/FireMode_Auto.conf" {
+       RoundsPerMinute 800
+      }
+     }
+     BulletInitSpeedCoef 0.93
+     DispersionRange 300
+     "LEFT HAND TARGET" DeploymentPointInfo lht {
+      Offset 0 -0.0557 -0.1556
+     }
+    }
+   }
+  }
+  WeaponGamepadEffectsManagerComponent "{61A2E5C3F4458F86}" {
+   "Default ADS Trigger effect" GamepadTriggerEffect "{61B129618F212411}" : "{506247CD50536A6A}Prefabs/Weapons/Core/Configs/TriggerEffects/ADS/TriggerEffect_ADSLight.conf" {
+   }
+   "Default Firing Trigger effect" GamepadTriggerEffect "{61D30BF7F81F8C61}" : "{F1C8849555C5B13D}Prefabs/Weapons/Core/Configs/TriggerEffects/Fire/TriggerEffect_FireHeavy.conf" {
+   }
+  }
+ }
+}

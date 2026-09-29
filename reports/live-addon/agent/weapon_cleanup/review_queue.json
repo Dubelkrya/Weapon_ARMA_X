@@ -1,0 +1,417 @@
+{
+ "duplicate_component_groups": [
+  {
+   "weapon": "Prefabs/Weapons/Russian/Handguns/PP_19/armst_PP91_base.et",
+   "class": "KEEP_OVERRIDE",
+   "instances": [
+    "657ABA0547189DD7",
+    "5A8685198A9AEEDD",
+    "CFBAA4B701F95D69",
+    "6742271DE0B9AD55",
+    "51F080D5CE45A1A2",
+    "51F080D5C64F12C5",
+    "CFBAA4B706BA66E8",
+    "CC3BA6A2C42F09F4"
+   ],
+   "classification": "INTENTIONAL/OVERRIDE"
+  },
+  {
+   "weapon": "Prefabs/Weapons/Russian/Handguns/PP_19/armst_PP91_base.et",
+   "class": "KEEP_VARIANT_HOOK",
+   "instances": [
+    "65F28786D4603482",
+    "65F28786DC4DA036"
+   ],
+   "classification": "INTENTIONAL/OVERRIDE"
+  },
+  {
+   "weapon": "Prefabs/Weapons/Russian/Handguns/Pm/armst_PM_base.et",
+   "class": "KEEP_OVERRIDE",
+   "instances": [
+    "CFBAA4B706BA66E8",
+    "657ABA0547189DD7",
+    "51F080D5CE45A1A2",
+    "51F080D5C64F12C5"
+   ],
+   "classification": "INTENTIONAL/OVERRIDE"
+  },
+  {
+   "weapon": "Prefabs/Weapons/Russian/Handguns/Pm/armst_PM_base.et",
+   "class": "KEEP_VARIANT_HOOK",
+   "instances": [
+    "65F28786D4603482",
+    "65F28786DC4DA036"
+   ],
+   "classification": "INTENTIONAL/OVERRIDE"
+  },
+  {
+   "weapon": "Prefabs/Weapons/Russian/Handguns/Sr_2/armst_SR_2_base.et",
+   "class": "KEEP_OVERRIDE",
+   "instances": [
+    "657ABA0547189DD7",
+    "5A8685198A9AEEDD",
+    "CFBAA4B701F95D69",
+    "6742271DE0B9AD55",
+    "51F080D5CE45A1A2",
+    "51F080D5C64F12C5",
+    "CFBAA4B706BA66E8",
+    "CC3BA6A2C42F09F4"
+   ],
+   "classification": "INTENTIONAL/OVERRIDE"
+  },
+  {
+   "weapon": "Prefabs/Weapons/Russian/Handguns/Sr_2/armst_SR_2_base.et",
+   "class": "KEEP_VARIANT_HOOK",
+   "instances": [
+    "65F28786D4603482",
+    "65F28786DC4DA036"
+   ],
+   "classification": "INTENTIONAL/OVERRIDE"
+  },
+  {
+   "weapon": "Prefabs/Weapons/Russian/Handguns/TT/armst_TT_base.et",
+   "class": "KEEP_OVERRIDE",
+   "instances": [
+    "657ABA0547189DD7",
+    "CFBAA4B701F95D69",
+    "6742271DE0B9AD55",
+    "51F080D5CE45A1A2",
+    "51F080D5C64F12C5",
+    "CFBAA4B706BA66E8",
+    "CC3BA6A2C42F09F4"
+   ],
+   "classification": "INTENTIONAL/OVERRIDE"
+  },
+  {
+   "weapon": "Prefabs/Weapons/Russian/Handguns/TT/armst_TT_base.et",
+   "class": "KEEP_VARIANT_HOOK",
+   "instances": [
+    "65F28786D4603482",
+    "65F28786DC4DA036"
+   ],
+   "classification": "INTENTIONAL/OVERRIDE"
+  },
+  {
+   "weapon": "Prefabs/Weapons/Russian/Handguns/armst_APB/armst_APB_base.et",
+   "class": "KEEP_OVERRIDE",
+   "instances": [
+    "657ABA0547189DD7",
+    "5A8685198A9AEEDD",
+    "CFBAA4B701F95D69",
+    "6742271DE0B9AD55",
+    "51F080D5CE45A1A2",
+    "51F080D5C64F12C5",
+    "CFBAA4B706BA66E8",
+    "CC3BA6A2C42F09F4"
+   ],
+   "classification": "INTENTIONAL/OVERRIDE"
+  },
+  {
+   "weapon": "Prefabs/Weapons/Russian/Handguns/armst_APB/armst_APB_base.et",
+   "class": "KEEP_VARIANT_HOOK",
+   "instances": [
+    "65F28786D4603482",
+    "65F28786DC4DA036"
+   ],
+   "classification": "INTENTIONAL/OVERRIDE"
+  },
+  {
+   "weapon": "Prefabs/Weapons/Russian/Rifle/9a91/armst_Rifle_9a91_base.et",
+   "class": "KEEP_OVERRIDE",
+   "instances": [
+    "5A8685198A9AEEDD",
+    "CFBAA4B701F95D69",
+    "55349E9229B55E31",
+    "51F080D5CE45A1A2",
+    "51F080D5C64F12C5",
+    "CC3BA6A2C42F09F4"
+   ],
+   "classification": "INTENTIONAL/OVERRIDE"
+  },
+  {
+   "weapon": "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74_base.et",
+   "class": "KEEP_VARIANT_HOOK",
+   "instances": [
+    "65B265034B23979A",
+    "65B265034C4E74AA"
+   ],
+   "classification": "INTENTIONAL/OVERRIDE"
+  },
+  {
+   "weapon": "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_base.et",
+   "class": "KEEP_VARIANT_HOOK",
+   "instances": [
+    "5A8685198A9AEEDD",
+    "CFBAA4B701F95D69",
+    "673A7B21D011B7E9",
+    "CC7B64C6B99546FB",
+    "CC3BA6A2C42F09F4"
+   ],
+   "classification": "INTENTIONAL/OVERRIDE"
+  },
+  {
+   "weapon": "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_base.et",
+   "class": "KEEP_REQUIRED",
+   "instances": [
+    "65AE4CB5E23C0F8E",
+    "65AE4CB5E23C0F87",
+    "65AE4CB5E23C0F6A"
+   ],
+   "classification": "INTENTIONAL/OVERRIDE"
+  },
+  {
+   "weapon": "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_base.et",
+   "class": "KEEP_OVERRIDE",
+   "instances": [
+    "51F080D5CE45A1A2",
+    "51F080D5C64F12C5",
+    "A29AE67FF4D82B0F"
+   ],
+   "classification": "INTENTIONAL/OVERRIDE"
+  },
+  {
+   "weapon": "Prefabs/Weapons/Russian/Rifle/Aek971/armst_Rifle_AEK971_base.et",
+   "class": "KEEP_OVERRIDE",
+   "instances": [
+    "CFBAA4B701F95D69",
+    "51F080D5CE45A1A2",
+    "51F080D5C64F12C5",
+    "559E78319D6C8CFA",
+    "CC3BA6A2C42F09F4"
+   ],
+   "classification": "INTENTIONAL/OVERRIDE"
+  },
+  {
+   "weapon": "Prefabs/Weapons/Russian/Rifle/Aek971/armst_Rifle_AEK971_base.et",
+   "class": "KEEP_VARIANT_HOOK",
+   "instances": [
+    "65B265034B23979A",
+    "65B265034C4E74AA"
+   ],
+   "classification": "INTENTIONAL/OVERRIDE"
+  },
+  {
+   "weapon": "Prefabs/Weapons/Russian/Rifle/Groza/armst_Groza_base.et",
+   "class": "KEEP_VARIANT_HOOK",
+   "instances": [
+    "5A8685198A9AEEDD",
+    "CFBAA4B701F95D69",
+    "CC3BA6A2C42F09F4"
+   ],
+   "classification": "INTENTIONAL/OVERRIDE"
+  },
+  {
+   "weapon": "Prefabs/Weapons/Russian/Rifle/Groza/armst_Groza_base.et",
+   "class": "KEEP_REQUIRED",
+   "instances": [
+    "52D2E00CD210FEB6",
+    "52D2E00CDA6E8F6B"
+   ],
+   "classification": "INTENTIONAL/OVERRIDE"
+  },
+  {
+   "weapon": "Prefabs/Weapons/Russian/Rifle/Groza/armst_Groza_base.et",
+   "class": "KEEP_OVERRIDE",
+   "instances": [
+    "51F080D5CE45A1A2",
+    "51F080D5C64F12C5",
+    "A29AE67FF4D82B0F"
+   ],
+   "classification": "INTENTIONAL/OVERRIDE"
+  },
+  {
+   "weapon": "Prefabs/Weapons/Russian/Rifle/SOC94/armst_Rifle_SOC94_base.et",
+   "class": "KEEP_OVERRIDE",
+   "instances": [
+    "CFBAA4B701F95D69",
+    "51F080D5CE45A1A2",
+    "51F080D5C64F12C5",
+    "673A7B21D011B7E9",
+    "CC3BA6A2C42F09F4",
+    "A29AE67FF4D82B0F"
+   ],
+   "classification": "INTENTIONAL/OVERRIDE"
+  },
+  {
+   "weapon": "Prefabs/Weapons/Russian/Rifle/SOC94/armst_Rifle_SOC94_base.et",
+   "class": "KEEP_VARIANT_HOOK",
+   "instances": [
+    "65B265034B23979A",
+    "65B265034C4E74AA"
+   ],
+   "classification": "INTENTIONAL/OVERRIDE"
+  },
+  {
+   "weapon": "Prefabs/Weapons/Russian/Rifle/SVD/armst_Rifle_SVD_base.et",
+   "class": "KEEP_VARIANT_HOOK",
+   "instances": [
+    "65B265034B23979A",
+    "65B265034C4E74AA"
+   ],
+   "classification": "INTENTIONAL/OVERRIDE"
+  },
+  {
+   "weapon": "Prefabs/Weapons/Russian/Rifle/SVD/armst_Rifle_SVD_base.et",
+   "class": "KEEP_OVERRIDE",
+   "instances": [
+    "54EED426F1352F30",
+    "51F080D5CE45A1A2",
+    "51F080D5C64F12C5",
+    "CC3BA6A2C42F09F4"
+   ],
+   "classification": "INTENTIONAL/OVERRIDE"
+  },
+  {
+   "weapon": "Prefabs/Weapons/Russian/Rifle/VAL/armst_Rifle_val_base.et",
+   "class": "KEEP_OVERRIDE",
+   "instances": [
+    "5A8685198A9AEEDD",
+    "CFBAA4B701F95D69",
+    "55349E9229B55E31",
+    "51F080D5CE45A1A2",
+    "51F080D5C64F12C5",
+    "CC3BA6A2C42F09F4",
+    "A29AE67FF4D82B0F"
+   ],
+   "classification": "INTENTIONAL/OVERRIDE"
+  },
+  {
+   "weapon": "Prefabs/Weapons/Russian/Rifle/VSK94/armst_Rifle_VSK94_base.et",
+   "class": "KEEP_OVERRIDE",
+   "instances": [
+    "5A8685198A9AEEDD",
+    "CFBAA4B701F95D69",
+    "55349E9229B55E31",
+    "51F080D5CE45A1A2",
+    "51F080D5C64F12C5",
+    "CC3BA6A2C42F09F4",
+    "A29AE67FF4D82B0F"
+   ],
+   "classification": "INTENTIONAL/OVERRIDE"
+  },
+  {
+   "weapon": "Prefabs/Weapons/Russian/Rifle/VSS/armst_Rifle_vss_base.et",
+   "class": "KEEP_OVERRIDE",
+   "instances": [
+    "5A8685198A9AEEDD",
+    "CFBAA4B701F95D69",
+    "55349E9229B55E31",
+    "51F080D5CE45A1A2",
+    "51F080D5C64F12C5",
+    "CC3BA6A2C42F09F4"
+   ],
+   "classification": "INTENTIONAL/OVERRIDE"
+  },
+  {
+   "weapon": "Prefabs/Weapons/Western/Rifle/HKG33/armst_Rifle_HKG33_base.et",
+   "class": "KEEP_OVERRIDE",
+   "instances": [
+    "5534745C44D1EFF6",
+    "51F080D5CE45A1A2",
+    "51F080D5C64F12C5",
+    "CC3BA6A2C42F09F4"
+   ],
+   "classification": "INTENTIONAL/OVERRIDE"
+  },
+  {
+   "weapon": "Prefabs/Weapons/Western/Rifle/HKG36/armst_Rifle_HKG36_base.et",
+   "class": "KEEP_VARIANT_HOOK",
+   "instances": [
+    "5A8685198A9AEEDD",
+    "CFBAA4B701F95D69",
+    "CC3BA6A2C42F09F4"
+   ],
+   "classification": "INTENTIONAL/OVERRIDE"
+  },
+  {
+   "weapon": "Prefabs/Weapons/Western/Rifle/HKG36/armst_Rifle_HKG36_base.et",
+   "class": "KEEP_REQUIRED",
+   "instances": [
+    "6A0470709BAE05BC",
+    "6A0470709BAE05A8",
+    "6A0470709BAE0581"
+   ],
+   "classification": "INTENTIONAL/OVERRIDE"
+  },
+  {
+   "weapon": "Prefabs/Weapons/Western/Rifle/HKG36/armst_Rifle_HKG36_base.et",
+   "class": "KEEP_OVERRIDE",
+   "instances": [
+    "51F080D5CE45A1A2",
+    "51F080D5C64F12C5",
+    "A29AE67FF4D82B0F"
+   ],
+   "classification": "INTENTIONAL/OVERRIDE"
+  },
+  {
+   "weapon": "Prefabs/Weapons/Western/Rifle/L85/armst_Rifle_L85_base.et",
+   "class": "KEEP_OVERRIDE",
+   "instances": [
+    "5534745C44D1EFF6",
+    "51F080D5CE45A1A2",
+    "51F080D5C64F12C5",
+    "CC3BA6A2C42F09F4"
+   ],
+   "classification": "INTENTIONAL/OVERRIDE"
+  },
+  {
+   "weapon": "Prefabs/Weapons/Western/Rifle/SLR/armst_SLR_base.et",
+   "class": "KEEP_OVERRIDE",
+   "instances": [
+    "5534745C44D1EFF6",
+    "51F080D5CE45A1A2",
+    "51F080D5C64F12C5",
+    "CC3BA6A2C42F09F4"
+   ],
+   "classification": "INTENTIONAL/OVERRIDE"
+  },
+  {
+   "weapon": "Prefabs/Weapons/Western/Rifle/Sig550/armst_Rifle_Sig550_base.et",
+   "class": "KEEP_OVERRIDE",
+   "instances": [
+    "5534745C44D1EFF6",
+    "51F080D5CE45A1A2",
+    "51F080D5C64F12C5",
+    "CC3BA6A2C42F09F4"
+   ],
+   "classification": "INTENTIONAL/OVERRIDE"
+  },
+  {
+   "weapon": "Prefabs/Weapons/Western/Rifle/armst_Rifle_M16A2_base.et",
+   "class": "KEEP_OVERRIDE",
+   "instances": [
+    "5534745C44D1EFF6",
+    "CFBAA4B706BA66E8"
+   ],
+   "classification": "INTENTIONAL/OVERRIDE"
+  },
+  {
+   "weapon": "Prefabs/Weapons/Western/Rifle/armst_VZ58P_base.et",
+   "class": "KEEP_OVERRIDE",
+   "instances": [
+    "CFBAA4B706BA66E8",
+    "CC3BA6A2C42F09F4",
+    "51F080D5CE45A1A2",
+    "51F080D5C64F12C5",
+    "5222CB07CFF6712A",
+    "657ABA0547189DD7",
+    "545EBBB5FB8FA0D3"
+   ],
+   "classification": "INTENTIONAL/OVERRIDE"
+  },
+  {
+   "weapon": "Prefabs/Weapons/Western/Rifle/armst_VZ58V_base.et",
+   "class": "KEEP_OVERRIDE",
+   "instances": [
+    "51F080D5CE45A1A2",
+    "51F080D5C64F12C5",
+    "5222CB07CFF6712A",
+    "657ABA0547189DD7",
+    "545EBBB5FB8FA0D3",
+    "CFBAA4B706BA66E8",
+    "CC3BA6A2C42F09F4"
+   ],
+   "classification": "INTENTIONAL/OVERRIDE"
+  }
+ ]
+}

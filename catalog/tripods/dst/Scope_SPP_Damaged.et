@@ -1,0 +1,15 @@
+GenericEntity {
+ ID "660AAB8F363F532C"
+ components {
+  MeshObject "{660AAB8E8C200C3F}" {
+   Object "{7516F3AE4D768FD1}Assets/Weapons/Attachments/Optics/SPP/Scope_SPP.xob"
+   Materials {
+    MaterialAssignClass "{660AAB8FF78DB63B}" {
+     SourceMaterial "Scope_SPP"
+     AssignedMaterial "{7E4853DA26B9CC3A}Assets/Weapons/Attachments/Optics/SPP/Data/Scope_SPP_dmg.emat"
+    }
+   }
+  }
+ }
+ coords 131.303 1 73.035
+}

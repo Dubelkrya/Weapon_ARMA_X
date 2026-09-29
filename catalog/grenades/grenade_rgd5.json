@@ -1,0 +1,39 @@
+{
+  "id": "grenade_rgd5",
+  "role": "leaf",
+  "source": {
+    "resource": "Prefabs/Weapons/Grenades/Grenade_RGD5.et",
+    "resource_guid": "645C73791ECA1698",
+    "meta_name": null,
+    "class": "GenericEntity",
+    "defined_in": "Prefabs/Weapons/Grenades/Grenade_RGD5.et"
+  },
+  "identity": {
+    "name": "Grenade_RGD5",
+    "resource": "Prefabs/Weapons/Grenades/Grenade_RGD5.et"
+  },
+  "classification": {
+    "kind": "grenade",
+    "confidence": "folder"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Weapons/Grenades/Grenade_RGD5.et",
+        "status": "local",
+        "class": "GenericEntity"
+      }
+    ],
+    "external_parents": [
+      {
+        "guid": "8B55F8686833B12B",
+        "path": "Prefabs/Weapons/Core/FragGrenade_Base.et",
+        "raw": "{8B55F8686833B12B}Prefabs/Weapons/Core/FragGrenade_Base.et"
+      }
+    ],
+    "used_as_base_by": [],
+    "chain_depth_local": 1
+  },
+  "references": [],
+  "warnings": []
+}

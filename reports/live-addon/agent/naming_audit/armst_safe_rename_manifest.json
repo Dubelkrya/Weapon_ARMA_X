@@ -1,0 +1,619 @@
+{
+  "schema_version": 1,
+  "renamed": 60,
+  "skipped_val": [
+    "Prefabs/Weapons/Magazines/Russian/9x39/VSS/Magazine_9x39_30rnd_val_SP5.et",
+    "Prefabs/Weapons/Magazines/Russian/9x39/VSS/Magazine_9x39_30rnd_val_SP6.et"
+  ],
+  "runtime_review": [],
+  "records": [
+    {
+      "old_path": "Prefabs/Weapons/Ammo/12g/Ammo_12ga.et",
+      "new_path": "Prefabs/Weapons/Ammo/12g/armst_Ammo_12ga.et",
+      "guid": "862E8EB633CED07D",
+      "type": "et",
+      "references_updated": [
+        "Configs/Weapons/Ammo/Ammo_12g.conf"
+      ],
+      "status": "RENAMED"
+    },
+    {
+      "old_path": "Prefabs/Weapons/Ammo/12g/Ammo_12ga_shell.et",
+      "new_path": "Prefabs/Weapons/Ammo/12g/armst_Ammo_12ga_shell.et",
+      "guid": "9F7537128778361F",
+      "type": "et",
+      "references_updated": [
+        "Configs/Weapons/Ammo/Ammo_12g.conf"
+      ],
+      "status": "RENAMED"
+    },
+    {
+      "old_path": "Prefabs/Weapons/Ammo/12g/Ammo_12ga_shell_test.et",
+      "new_path": "Prefabs/Weapons/Ammo/12g/armst_Ammo_12ga_shell_test.et",
+      "guid": "9A2EC4D810705428",
+      "type": "et",
+      "references_updated": [
+        "Configs/Weapons/Ammo/Ammo_12g.conf"
+      ],
+      "status": "RENAMED"
+    },
+    {
+      "old_path": "Prefabs/Weapons/Ammo/12g/Ammo_Buckshot_pellet.et",
+      "new_path": "Prefabs/Weapons/Ammo/12g/armst_Ammo_Buckshot_pellet.et",
+      "guid": "8A45841AC9BA3AE7",
+      "type": "et",
+      "references_updated": [
+        "Prefabs/Weapons/Ammo/12g/armst_Ammo_12ga.et"
+      ],
+      "status": "RENAMED"
+    },
+    {
+      "old_path": "Prefabs/Weapons/Ammo/Eastern/762x39/Ammo_762x39_BP.et",
+      "new_path": "Prefabs/Weapons/Ammo/Eastern/762x39/armst_Ammo_762x39_BP.et",
+      "guid": "1785D92E5A104937",
+      "type": "et",
+      "references_updated": [
+        "Configs/Weapons/Ammo/ARMST/armst_Ammo_762x39_ARMST.conf"
+      ],
+      "status": "RENAMED"
+    },
+    {
+      "old_path": "Prefabs/Weapons/Ammo/Eastern/762x39/Ammo_762x39_PP.et",
+      "new_path": "Prefabs/Weapons/Ammo/Eastern/762x39/armst_Ammo_762x39_PP.et",
+      "guid": "3E395A4A4B0C4F0E",
+      "type": "et",
+      "references_updated": [
+        "Configs/Weapons/Ammo/ARMST/armst_Ammo_762x39_ARMST.conf"
+      ],
+      "status": "RENAMED"
+    },
+    {
+      "old_path": "Prefabs/Weapons/Ammo/Russian/763x25/Ammo_763x25.et",
+      "new_path": "Prefabs/Weapons/Ammo/Russian/763x25/armst_Ammo_763x25.et",
+      "guid": "8221593DFA48E4B3",
+      "type": "et",
+      "references_updated": [],
+      "status": "RENAMED"
+    },
+    {
+      "old_path": "Prefabs/Weapons/Ammo/Russian/763x25/Ammo_763x25_Ball.et",
+      "new_path": "Prefabs/Weapons/Ammo/Russian/763x25/armst_Ammo_763x25_Ball.et",
+      "guid": "5AE7AF31B9D7EB6C",
+      "type": "et",
+      "references_updated": [
+        "Configs/Weapons/Ammo/Ammo_763x25.conf"
+      ],
+      "status": "RENAMED"
+    },
+    {
+      "old_path": "Prefabs/Weapons/Ammo/Russian/9x39/Ammo_9x39_SP5_Ball.et",
+      "new_path": "Prefabs/Weapons/Ammo/Russian/9x39/armst_Ammo_9x39_SP5_Ball.et",
+      "guid": "2CB8EAD4A52F3290",
+      "type": "et",
+      "references_updated": [
+        "Configs/Weapons/Ammo/Ammo_9x39.conf"
+      ],
+      "status": "RENAMED"
+    },
+    {
+      "old_path": "Prefabs/Weapons/Ammo/Russian/9x39/Ammo_9x39_SP6_Ball.et",
+      "new_path": "Prefabs/Weapons/Ammo/Russian/9x39/armst_Ammo_9x39_SP6_Ball.et",
+      "guid": "FB468B29C75FE46A",
+      "type": "et",
+      "references_updated": [
+        "Configs/Weapons/Ammo/Ammo_9x39.conf"
+      ],
+      "status": "RENAMED"
+    },
+    {
+      "old_path": "Prefabs/Weapons/Ammo/Russian/grenade/Ammo_Grenade_HE_VOG25.et",
+      "new_path": "Prefabs/Weapons/Ammo/Russian/grenade/armst_Ammo_Grenade_HE_VOG25.et",
+      "guid": "262F0D09C4130826",
+      "type": "et",
+      "references_updated": [],
+      "status": "RENAMED"
+    },
+    {
+      "old_path": "Prefabs/Weapons/Ammo/Western/5x56/Ammo_556x45_BP.et",
+      "new_path": "Prefabs/Weapons/Ammo/Western/5x56/armst_Ammo_556x45_BP.et",
+      "guid": "716F41EFBBB14F9C",
+      "type": "et",
+      "references_updated": [
+        "Configs/Weapons/Ammo/ARMST/armst_Ammo_556x45_ARMST.conf"
+      ],
+      "status": "RENAMED"
+    },
+    {
+      "old_path": "Prefabs/Weapons/Ammo/Western/5x56/Ammo_556x45_PP.et",
+      "new_path": "Prefabs/Weapons/Ammo/Western/5x56/armst_Ammo_556x45_PP.et",
+      "guid": "62FA6A6363394955",
+      "type": "et",
+      "references_updated": [
+        "Configs/Weapons/Ammo/ARMST/armst_Ammo_556x45_ARMST.conf"
+      ],
+      "status": "RENAMED"
+    },
+    {
+      "old_path": "Prefabs/Weapons/Ammo/Western/762x51/Ammo_762x51_BP.et",
+      "new_path": "Prefabs/Weapons/Ammo/Western/762x51/armst_Ammo_762x51_BP.et",
+      "guid": "647D4F418F9F4655",
+      "type": "et",
+      "references_updated": [
+        "Configs/Weapons/Ammo/ARMST/armst_Ammo_762x51_ARMST.conf"
+      ],
+      "status": "RENAMED"
+    },
+    {
+      "old_path": "Prefabs/Weapons/Ammo/Western/762x51/Ammo_762x51_PP.et",
+      "new_path": "Prefabs/Weapons/Ammo/Western/762x51/armst_Ammo_762x51_PP.et",
+      "guid": "8FAC2EB7CA474E5E",
+      "type": "et",
+      "references_updated": [
+        "Configs/Weapons/Ammo/ARMST/armst_Ammo_762x51_ARMST.conf"
+      ],
+      "status": "RENAMED"
+    },
+    {
+      "old_path": "Prefabs/Weapons/Ammo/Western/9x19/Ammo_9x19_BP.et",
+      "new_path": "Prefabs/Weapons/Ammo/Western/9x19/armst_Ammo_9x19_BP.et",
+      "guid": "9F5580C950084760",
+      "type": "et",
+      "references_updated": [
+        "Configs/Weapons/Ammo/ARMST/armst_Ammo_9x19_ARMST.conf"
+      ],
+      "status": "RENAMED"
+    },
+    {
+      "old_path": "Prefabs/Weapons/Ammo/Western/9x19/Ammo_9x19_PP.et",
+      "new_path": "Prefabs/Weapons/Ammo/Western/9x19/armst_Ammo_9x19_PP.et",
+      "guid": "DFADF7628FAC4A05",
+      "type": "et",
+      "references_updated": [
+        "Configs/Weapons/Ammo/ARMST/armst_Ammo_9x19_ARMST.conf"
+      ],
+      "status": "RENAMED"
+    },
+    {
+      "old_path": "Prefabs/Weapons/Attachments/Handguards/Handguard_AK74M2.et",
+      "new_path": "Prefabs/Weapons/Attachments/Handguards/armst_Handguard_AK74M2.et",
+      "guid": "7851F29BDAAAD7DB",
+      "type": "et",
+      "references_updated": [
+        "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74M.et",
+        "Prefabs/Weapons/Russian/Rifle/AK74/armst_AKS.et"
+      ],
+      "status": "RENAMED"
+    },
+    {
+      "old_path": "Prefabs/Weapons/Attachments/Muzzle/Suppressor_9a91.et",
+      "new_path": "Prefabs/Weapons/Attachments/Muzzle/armst_Suppressor_9a91.et",
+      "guid": "E10F09941AF1E123",
+      "type": "et",
+      "references_updated": [
+        "Prefabs/Weapons/Russian/Rifle/VSK94/armst_Rifle_VSK94_base.et"
+      ],
+      "status": "RENAMED"
+    },
+    {
+      "old_path": "Prefabs/Weapons/Attachments/Optics/Optic_PSO1.et",
+      "new_path": "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et",
+      "guid": "C850A33226B8F9C1",
+      "type": "et",
+      "references_updated": [
+        "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1_ak.et",
+        "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74M_full.et",
+        "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_full.et",
+        "armst_Optic_PSO1_DovetailRU.et"
+      ],
+      "status": "RENAMED"
+    },
+    {
+      "old_path": "Prefabs/Weapons/Attachments/Optics/Optic_PSO1_ak.et",
+      "new_path": "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1_ak.et",
+      "guid": "F325FE2E3DDCDDAD",
+      "type": "et",
+      "references_updated": [],
+      "status": "RENAMED"
+    },
+    {
+      "old_path": "Prefabs/Weapons/Attachments/Stocks/Handguard_AK74M.et",
+      "new_path": "Prefabs/Weapons/Attachments/Stocks/armst_Handguard_AK74M.et",
+      "guid": "FCE52BA4B5789E65",
+      "type": "et",
+      "references_updated": [],
+      "status": "RENAMED"
+    },
+    {
+      "old_path": "Prefabs/Weapons/Attachments/Stocks/Handguard_AKS.et",
+      "new_path": "Prefabs/Weapons/Attachments/Stocks/armst_Handguard_AKS.et",
+      "guid": "31E8EF2214161A25",
+      "type": "et",
+      "references_updated": [
+        "Prefabs/Weapons/Russian/Rifle/AK74/armst_AKS.et"
+      ],
+      "status": "RENAMED"
+    },
+    {
+      "old_path": "Prefabs/Weapons/Attachments/Stocks/Stock_akm.et",
+      "new_path": "Prefabs/Weapons/Attachments/Stocks/armst_Stock_akm.et",
+      "guid": "B0E764B069F6A153",
+      "type": "et",
+      "references_updated": [
+        "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM.et"
+      ],
+      "status": "RENAMED"
+    },
+    {
+      "old_path": "Prefabs/Weapons/Attachments/Underbarrel/UGL_GP25.et",
+      "new_path": "Prefabs/Weapons/Attachments/Underbarrel/armst_UGL_GP25.et",
+      "guid": "1ABABE3551512B0A",
+      "type": "et",
+      "references_updated": [
+        "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74M_full.et",
+        "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_full.et"
+      ],
+      "status": "RENAMED"
+    },
+    {
+      "old_path": "Prefabs/Weapons/Grenades/Grenade_M67.et",
+      "new_path": "Prefabs/Weapons/Grenades/armst_Grenade_M67.et",
+      "guid": "E8F00BF730225B00",
+      "type": "et",
+      "references_updated": [],
+      "status": "RENAMED"
+    },
+    {
+      "old_path": "Prefabs/Weapons/Grenades/Grenade_RGD5.et",
+      "new_path": "Prefabs/Weapons/Grenades/armst_Grenade_RGD5.et",
+      "guid": "645C73791ECA1698",
+      "type": "et",
+      "references_updated": [],
+      "status": "RENAMED"
+    },
+    {
+      "old_path": "Prefabs/Weapons/Grenades/Smoke_ANM8HC.et",
+      "new_path": "Prefabs/Weapons/Grenades/armst_Smoke_ANM8HC.et",
+      "guid": "9DB69176CEF0EE97",
+      "type": "et",
+      "references_updated": [],
+      "status": "RENAMED"
+    },
+    {
+      "old_path": "Prefabs/Weapons/Grenades/Smoke_RDG2.et",
+      "new_path": "Prefabs/Weapons/Grenades/armst_Smoke_RDG2.et",
+      "guid": "77EAE5E07DC4678A",
+      "type": "et",
+      "references_updated": [],
+      "status": "RENAMED"
+    },
+    {
+      "old_path": "Prefabs/Weapons/Magazines/12ga/12ga_Buckshot.et",
+      "new_path": "Prefabs/Weapons/Magazines/12ga/armst_12ga_Buckshot.et",
+      "guid": "B0DFDF7AAA9C5D39",
+      "type": "et",
+      "references_updated": [
+        "Prefabs/Weapons/Western/Shotgun/armst_shotgun_base.et"
+      ],
+      "status": "RENAMED"
+    },
+    {
+      "old_path": "Prefabs/Weapons/Magazines/12ga/12ga_Shell.et",
+      "new_path": "Prefabs/Weapons/Magazines/12ga/armst_12ga_Shell.et",
+      "guid": "0346C78F29531C70",
+      "type": "et",
+      "references_updated": [],
+      "status": "RENAMED"
+    },
+    {
+      "old_path": "Prefabs/Weapons/Magazines/12ga/12ga_Shell_test.et",
+      "new_path": "Prefabs/Weapons/Magazines/12ga/armst_12ga_Shell_test.et",
+      "guid": "5220A773A621C2BB",
+      "type": "et",
+      "references_updated": [],
+      "status": "RENAMED"
+    },
+    {
+      "old_path": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/Magazine_545x39_AK_30rnd_Ball.et",
+      "new_path": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_AK_30rnd_Ball.et",
+      "guid": "BBB50A815A2F916B",
+      "type": "et",
+      "references_updated": [],
+      "status": "RENAMED"
+    },
+    {
+      "old_path": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/Magazine_545x39_AK_30rnd_Tracer.et",
+      "new_path": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_AK_30rnd_Tracer.et",
+      "guid": "E5912E45754CD421",
+      "type": "et",
+      "references_updated": [],
+      "status": "RENAMED"
+    },
+    {
+      "old_path": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/Magazine_545x39_RPK_45rnd_Ball.et",
+      "new_path": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_RPK_45rnd_Ball.et",
+      "guid": "BC74DAC891D48540",
+      "type": "et",
+      "references_updated": [],
+      "status": "RENAMED"
+    },
+    {
+      "old_path": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/Magazine_545x39_RPK_45rnd_Tracer.et",
+      "new_path": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_RPK_45rnd_Tracer.et",
+      "guid": "5897D01F41DB5D2D",
+      "type": "et",
+      "references_updated": [],
+      "status": "RENAMED"
+    },
+    {
+      "old_path": "Prefabs/Weapons/Magazines/Russian/762x54/SVD/Box_762x54_PK_250rnd_Ball.et",
+      "new_path": "Prefabs/Weapons/Magazines/Russian/762x54/SVD/armst_Box_762x54_PK_250rnd_Ball.et",
+      "guid": "1C260E65B7F290BA",
+      "type": "et",
+      "references_updated": [],
+      "status": "RENAMED"
+    },
+    {
+      "old_path": "Prefabs/Weapons/Magazines/Russian/762x54/SVD/Magazine_762x54_SVD_10rnd_7BZ3API.et",
+      "new_path": "Prefabs/Weapons/Magazines/Russian/762x54/SVD/armst_Magazine_762x54_SVD_10rnd_7BZ3API.et",
+      "guid": "19600CCA33279D20",
+      "type": "et",
+      "references_updated": [],
+      "status": "RENAMED"
+    },
+    {
+      "old_path": "Prefabs/Weapons/Magazines/Russian/763x25/TT/Magazine_763x25_TT_8rnd_Ball.et",
+      "new_path": "Prefabs/Weapons/Magazines/Russian/763x25/TT/armst_Magazine_763x25_TT_8rnd_Ball.et",
+      "guid": "AA99F5E678010DB3",
+      "type": "et",
+      "references_updated": [
+        "Prefabs/Weapons/Russian/Handguns/TT/armst_TT.et"
+      ],
+      "status": "RENAMED"
+    },
+    {
+      "old_path": "Prefabs/Weapons/Magazines/Russian/7x62/AKM/Magazine_762x39_AKM_10rnd_Ball.et",
+      "new_path": "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_10rnd_Ball.et",
+      "guid": "07805AE177F52646",
+      "type": "et",
+      "references_updated": [
+        "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_SOC94.et",
+        "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_VPO136.et"
+      ],
+      "status": "RENAMED"
+    },
+    {
+      "old_path": "Prefabs/Weapons/Magazines/Russian/7x62/AKM/Magazine_762x39_AKM_30rnd_Ball.et",
+      "new_path": "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_30rnd_Ball.et",
+      "guid": "48720FC416263FC1",
+      "type": "et",
+      "references_updated": [
+        "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_10rnd_Ball.et",
+        "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM.et",
+        "Prefabs/Weapons/Russian/Rifle/Groza/armst_Groza_base.et"
+      ],
+      "status": "RENAMED"
+    },
+    {
+      "old_path": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/Magazine_9x18_APB_20rnd_Ball.et",
+      "new_path": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_APB_20rnd_Ball.et",
+      "guid": "389EB226473CD590",
+      "type": "et",
+      "references_updated": [
+        "Prefabs/Weapons/Russian/Handguns/armst_APB/armst_APB.et"
+      ],
+      "status": "RENAMED"
+    },
+    {
+      "old_path": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/Magazine_9x18_PM_8rnd_Ball.et",
+      "new_path": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball.et",
+      "guid": "8B853CDD11BA916E",
+      "type": "et",
+      "references_updated": [
+        "Prefabs/Weapons/Handguns/armst_Handgun_Knife_base.et",
+        "Prefabs/Weapons/Magazines/Russian/763x25/TT/armst_Magazine_763x25_TT_8rnd_Ball.et",
+        "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_APB_20rnd_Ball.et",
+        "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PP91_30rnd_Ball.et",
+        "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_SR2_30rnd_Ball.et"
+      ],
+      "status": "RENAMED"
+    },
+    {
+      "old_path": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/Magazine_9x18_PP91_30rnd_Ball.et",
+      "new_path": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PP91_30rnd_Ball.et",
+      "guid": "4488C415F3CA1890",
+      "type": "et",
+      "references_updated": [
+        "Prefabs/Weapons/Russian/Handguns/PP_19/armst_PP91.et",
+        "Prefabs/Weapons/Russian/Handguns/Sr_2/armst_SR_2.et"
+      ],
+      "status": "RENAMED"
+    },
+    {
+      "old_path": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/Magazine_9x18_SR2_30rnd_Ball.et",
+      "new_path": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_SR2_30rnd_Ball.et",
+      "guid": "2610CA8D8632DEF4",
+      "type": "et",
+      "references_updated": [],
+      "status": "RENAMED"
+    },
+    {
+      "old_path": "Prefabs/Weapons/Magazines/Russian/9x39/9a91/Magazine_9x39_20rnd_9a91_SP5.et",
+      "new_path": "Prefabs/Weapons/Magazines/Russian/9x39/9a91/armst_Magazine_9x39_20rnd_9a91_SP5.et",
+      "guid": "B7EC6D4222AE12BE",
+      "type": "et",
+      "references_updated": [
+        "Prefabs/Weapons/Russian/Rifle/9a91/armst_Rifle_9a91_base.et",
+        "Prefabs/Weapons/Russian/Rifle/VSK94/armst_Rifle_VSK94_base.et"
+      ],
+      "status": "RENAMED"
+    },
+    {
+      "old_path": "Prefabs/Weapons/Magazines/Russian/9x39/9a91/Magazine_9x39_20rnd_9a91_SP6.et",
+      "new_path": "Prefabs/Weapons/Magazines/Russian/9x39/9a91/armst_Magazine_9x39_20rnd_9a91_SP6.et",
+      "guid": "3F47C33B88171646",
+      "type": "et",
+      "references_updated": [],
+      "status": "RENAMED"
+    },
+    {
+      "old_path": "Prefabs/Weapons/Magazines/Russian/9x39/VSS/Magazine_9x39_20rnd_vss_SP5.et",
+      "new_path": "Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_20rnd_vss_SP5.et",
+      "guid": "70D023F899C9C226",
+      "type": "et",
+      "references_updated": [
+        "Prefabs/Weapons/Russian/Rifle/VSS/armst_Rifle_vss_base.et"
+      ],
+      "status": "RENAMED"
+    },
+    {
+      "old_path": "Prefabs/Weapons/Magazines/Russian/9x39/VSS/Magazine_9x39_20rnd_vss_SP6.et",
+      "new_path": "Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_20rnd_vss_SP6.et",
+      "guid": "51E9CE2EB27B3DBD",
+      "type": "et",
+      "references_updated": [],
+      "status": "RENAMED"
+    },
+    {
+      "old_path": "Prefabs/Weapons/Magazines/Western/5x56/HKG36/Magazine_556x45_HKG36.et",
+      "new_path": "Prefabs/Weapons/Magazines/Western/5x56/HKG36/armst_Magazine_556x45_HKG36.et",
+      "guid": "969F6FFF810D2145",
+      "type": "et",
+      "references_updated": [
+        "Prefabs/Weapons/Western/Rifle/HKG36/armst_Rifle_hk_g36.et"
+      ],
+      "status": "RENAMED"
+    },
+    {
+      "old_path": "Prefabs/Weapons/Magazines/Western/5x56/SIG550/Magazine_556x45_SIG_550.et",
+      "new_path": "Prefabs/Weapons/Magazines/Western/5x56/SIG550/armst_Magazine_556x45_SIG_550.et",
+      "guid": "E3DC6C2FBBE4F825",
+      "type": "et",
+      "references_updated": [
+        "Prefabs/Weapons/Western/Rifle/Sig550/armst_Rifle_Sig550.et"
+      ],
+      "status": "RENAMED"
+    },
+    {
+      "old_path": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/Magazine_556x45_STANAG_30rnd_M193_Ball.et",
+      "new_path": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M193_Ball.et",
+      "guid": "FB5EB0F6D447E859",
+      "type": "et",
+      "references_updated": [
+        "Prefabs/Weapons/Magazines/Western/5x56/HKG36/armst_Magazine_556x45_HKG36.et",
+        "Prefabs/Weapons/Magazines/Western/5x56/SIG550/armst_Magazine_556x45_SIG_550.et"
+      ],
+      "status": "RENAMED"
+    },
+    {
+      "old_path": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/Magazine_556x45_STANAG_30rnd_M855_Ball.et",
+      "new_path": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M855_Ball.et",
+      "guid": "2EBF60EF24B108FC",
+      "type": "et",
+      "references_updated": [],
+      "status": "RENAMED"
+    },
+    {
+      "old_path": "Prefabs/Weapons/Magazines/Western/9x19/M9/Magazine_9x19_M9_15rnd_Ball.et",
+      "new_path": "Prefabs/Weapons/Magazines/Western/9x19/M9/armst_Magazine_9x19_M9_15rnd_Ball.et",
+      "guid": "9C05543A503DB80E",
+      "type": "et",
+      "references_updated": [],
+      "status": "RENAMED"
+    },
+    {
+      "old_path": "Prefabs/Weapons/Tripods/Tripod_6T5.et",
+      "new_path": "Prefabs/Weapons/Tripods/armst_Tripod_6T5.et",
+      "guid": "7C4D1A64D60F2C92",
+      "type": "et",
+      "references_updated": [
+        "Prefabs/Weapons/Tripods/armst_Tripod_6T5_PKM.et"
+      ],
+      "status": "RENAMED"
+    },
+    {
+      "old_path": "Prefabs/Weapons/Tripods/Tripod_6T5_PKM.et",
+      "new_path": "Prefabs/Weapons/Tripods/armst_Tripod_6T5_PKM.et",
+      "guid": "723870DBB19D30B0",
+      "type": "et",
+      "references_updated": [],
+      "status": "RENAMED"
+    },
+    {
+      "old_path": "Configs/Weapons/Ammo/ARMST/Ammo_556x45_ARMST.conf",
+      "new_path": "Configs/Weapons/Ammo/ARMST/armst_Ammo_556x45_ARMST.conf",
+      "guid": "5513C2BA0B7B48F8",
+      "type": "conf",
+      "references_updated": [
+        "Configs/Weapons/Ammo/ARMST/armst_Ammo_556x45_ARMST.conf",
+        "Prefabs/Weapons/Magazines/Western/5x56/HKG36/armst_Magazine_556x45_HKG36.et",
+        "Prefabs/Weapons/Magazines/Western/5x56/SIG550/armst_Magazine_556x45_SIG_550.et",
+        "Prefabs/Weapons/Magazines/Western/5x56/STANAG/Magazine_556x45_STANAG_30rnd_Base.et",
+        "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M193_Ball.et",
+        "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M855_Ball.et"
+      ],
+      "status": "RENAMED"
+    },
+    {
+      "old_path": "Configs/Weapons/Ammo/ARMST/Ammo_762x39_ARMST.conf",
+      "new_path": "Configs/Weapons/Ammo/ARMST/armst_Ammo_762x39_ARMST.conf",
+      "guid": "EA0E25BAF3BD459F",
+      "type": "conf",
+      "references_updated": [
+        "Configs/Weapons/Ammo/ARMST/armst_Ammo_762x39_ARMST.conf",
+        "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_10rnd_Ball.et",
+        "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_30rnd_Ball.et"
+      ],
+      "status": "RENAMED"
+    },
+    {
+      "old_path": "Configs/Weapons/Ammo/ARMST/Ammo_762x51_ARMST.conf",
+      "new_path": "Configs/Weapons/Ammo/ARMST/armst_Ammo_762x51_ARMST.conf",
+      "guid": "94FC75B17BBA4DB7",
+      "type": "conf",
+      "references_updated": [
+        "Configs/Weapons/Ammo/ARMST/armst_Ammo_762x51_ARMST.conf",
+        "Prefabs/Weapons/Magazines/Western/762x51/HK3/armst_Magazine_762x51_HK3_20_M80_Ball.et"
+      ],
+      "status": "RENAMED"
+    },
+    {
+      "old_path": "Configs/Weapons/Ammo/ARMST/Ammo_9x19_ARMST.conf",
+      "new_path": "Configs/Weapons/Ammo/ARMST/armst_Ammo_9x19_ARMST.conf",
+      "guid": "48496091DE244325",
+      "type": "conf",
+      "references_updated": [
+        "Configs/Weapons/Ammo/ARMST/armst_Ammo_9x19_ARMST.conf",
+        "Prefabs/Weapons/Magazines/Western/9x19/M9/armst_Magazine_9x19_M9_15rnd_Ball.et"
+      ],
+      "status": "RENAMED"
+    }
+  ],
+  "validation": {
+    "renamed_successfully": 60,
+    "skipped_val_naming_resources": 2,
+    "review_required_unchanged": 9,
+    "review_required_runtime": 0,
+    "guids_changed": 0,
+    "parent_guids_changed": 0,
+    "old_path_references_remaining": 0,
+    "dangling_refs_introduced": 0,
+    "live_backups_created_inside_addon": 0,
+    "pre_existing_dangling_excluded": [
+      {
+        "file": "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_VPO136.et",
+        "guid": "B0E764B069F6A153",
+        "path": "Prefabs/Weapons/Attachments/Stocks/Stock_VZ58/Stock_akm.et"
+      },
+      {
+        "file": "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74M.et",
+        "guid": "FCE52BA4B5789E65",
+        "path": "Prefabs/Weapons/Attachments/Handguards/Handguard_AK74M.et"
+      },
+      {
+        "file": "Assets/Toz/1.et",
+        "guid": "B0DFDF7AAA9C5D39",
+        "path": "Prefabs/Weapons/Magazines/12ga_Buckshot.et"
+      }
+    ]
+  }
+}

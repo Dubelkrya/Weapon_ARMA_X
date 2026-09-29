@@ -1,0 +1,27 @@
+GenericEntity : "{809488C4984AC087}Prefabs/Weapons/Handguns/M9/Handgun_M9_base.et" {
+ ID "58BA2740D770C3DC"
+ components {
+  SCR_EditableEntityComponent "{65F287869C9D1FBC}" {
+   Enabled 0
+   m_UIInfo SCR_EditableEntityUIInfo "{65F28786A10EE94C}" {
+    Name "#AR-Weapon_BerettaM9_Name"
+    m_aAuthoredLabels +{
+    }
+    m_aAutoLabels +{
+    }
+   }
+   m_bAutoRegister NEVER
+  }
+  SCR_MeleeWeaponProperties "{5534C5023A57E44C}" {
+   m_fDamage 2
+  }
+  SCR_WeaponAttachmentsStorageComponent "{51F080D5CE45A1A2}" {
+   Attributes SCR_ItemAttributeCollection "{51F080D5C64F12C5}" {
+    m_bAutoDetectGridSize 0
+    m_iCustomGridWidth 2
+    m_iCustomGridHeight 2
+   }
+  }
+ }
+ coords 4163.531 306.523 721.648
+}

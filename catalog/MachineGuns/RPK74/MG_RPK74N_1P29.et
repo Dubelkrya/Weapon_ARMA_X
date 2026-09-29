@@ -1,0 +1,20 @@
+GenericEntity : "{5F365605E36597FB}Prefabs/Weapons/MachineGuns/RPK74/MG_RPK74N.et" {
+ ID "CFBAA4B725411E45"
+ components {
+  SlotManagerComponent "{557E85EDCD1BCEE3}" {
+   Slots {
+    EntitySlotInfo Dovetail {
+    }
+   }
+  }
+  WeaponComponent "{CFBAA4B706BA66E8}" {
+   components {
+    AttachmentSlotComponent "{6058A1FB679DB880}" {
+     AttachmentSlot InventoryStorageSlot dovetailRPK {
+      Prefab "{ACDF49FACD0701A8}Prefabs/Weapons/Attachments/Optics/Optic_1P29/Optic_1P29.et"
+     }
+    }
+   }
+  }
+ }
+}

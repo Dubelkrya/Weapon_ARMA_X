@@ -1,0 +1,85 @@
+GenericEntity : "{F9E1A46E3ABA116F}Prefabs/Weapons/Core/Magazine_Base.et" {
+ ID "476AE746F954DD20"
+ components {
+  AICombatPropertiesComponent "{59CE86D96C332DDF}" {
+   Priority 25
+   PriorityAgainstVehicles 35
+   UsedAgainst 0x17 0
+  }
+  InventoryMagazineComponent "{51EED12B803954CC}" {
+   Attributes SCR_ItemAttributeCollection "{51EED12B86960275}" {
+    ItemDisplayName UIInfo "{51FEE38527BFEA5B}" {
+     Name "#AR-Magazine_M2_Name"
+     Description "#AR-Magazine_M2_Description"
+    }
+    ItemPhysAttributes ItemPhysicalAttributes PhysicalAttributes {
+     Weight 2.54
+     SizeSetupStrategy Manual
+     ItemDimensions 15 15 15
+     ItemVolume 5000
+    }
+    CustomAttributes {
+     PreviewRenderAttributes "{52D6B596199B2E1C}" {
+      CameraPreset Back
+      CameraOrbitAngles 25 -25 0
+      CameraDistanceToItem 2
+      CameraOffset 0 0.17 0
+      ItemRenderRotation 0 0 180
+      FOV 10
+     }
+    }
+    m_Size SLOT_1x1
+   }
+   WeightPerAmmo 0.132
+  }
+  MagazineComponent "{CA6BE4D6B4DAFD69}" {
+   MagazineWell MagazineWellM2HB "{476AE746EC5FBEE9}" {
+   }
+   UIInfo MagazineUIInfo "{57126733AA401586}" {
+    Name "#AR-Magazine_M2_Name"
+    Icon ""
+    m_sAmmoCaliber "#AR-AmmunitionID_127x99mm"
+   }
+   ItemModel "{D102BDA59521A0AB}Assets/Weapons/Magazines/M2/Magazine_100rnd_M2_Item.xob"
+   MaxAmmo 100
+   AmmoConfig "{2EB5EF05F6217DBA}Configs/Weapons/Ammo/Ammo_127x99.conf"
+   AmmoMapping {
+    0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+   }
+  }
+  MeshObject "{CA6BE4D6A23F8EF0}" {
+   Object "{E1D9125A7EB3BD1C}Assets/Weapons/Magazines/M2/Magazine_100rnd_M2.xob"
+  }
+  SCR_SoundDataComponent "{5B18D200EBB5EA25}" {
+   m_aAudioSourceConfiguration {
+    SCR_AudioSourceConfiguration "{5B18D209080A5D15}" {
+     m_sSoundProject "{EE729B0CFB7CBF61}Sounds/Weapons/_SharedData/PickUp/Weapons_PickUp_HMG_Magazine.acp"
+    }
+    SCR_AudioSourceConfiguration "{5B18D2091B885AE6}" {
+     m_sSoundProject "{EE729B0CFB7CBF61}Sounds/Weapons/_SharedData/PickUp/Weapons_PickUp_HMG_Magazine.acp"
+    }
+    SCR_AudioSourceConfiguration "{5B18D20930D9E274}" {
+     m_sSoundProject "{2DBF1C67021E3DA9}Sounds/Weapons/_SharedData/Drop/Weapons_Drop_HMG_Magazine.acp"
+    }
+   }
+  }
+  ActionsManagerComponent "{F092E6B0537754FD}" {
+   ActionContexts {
+    UserActionContext "{5086F9AB010868CE}" {
+     Position PointInfo "{5086F9AC96DB9752}" {
+      Offset 0 0.1 0
+     }
+    }
+   }
+  }
+  MagazineAnimationComponent "{6538B77C8B474700}" {
+   AnimGraph "{A22941883C8D927E}Assets/Weapons/MachineGuns/workspaces/M2_100rnd_box.agr"
+   AnimInstance "{4F4314532084C090}Assets/Weapons/MachineGuns/workspaces/M2_100rnd_box.asi"
+   AutoVariablesBind 1
+   AnimatedMesh "{E1D9125A7EB3BD1C}Assets/Weapons/Magazines/M2/Magazine_100rnd_M2.xob"
+   BulletMeshesToHide {
+    "Belt_Link9" "Belt_Link8" "Belt_Link7" "Belt_Link6" "Belt_Link5" "Belt_Link4" "Belt_Link3" "Belt_Link2" "Belt_Link1"
+   }
+  }
+ }
+}

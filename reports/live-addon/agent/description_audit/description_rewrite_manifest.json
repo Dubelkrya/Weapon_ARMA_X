@@ -1,0 +1,510 @@
+{
+ "rifles": [
+  {
+   "path": "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK105.et",
+   "desc_key": "#AR-ARMST_Weapon_AK105_Description",
+   "name_key": "#AR-ARMST_Weapon_AK105_Name",
+   "actions": [
+    "item.injected-full",
+    "ui.injected"
+   ]
+  },
+  {
+   "path": "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74M_full.et",
+   "desc_key": "#AR-ARMST_Weapon_AK74M_Description",
+   "name_key": null,
+   "actions": [
+    "item.injected-full",
+    "ui.injected"
+   ]
+  },
+  {
+   "path": "Prefabs/Weapons/Russian/Rifle/AK74/armst_AKS.et",
+   "desc_key": "#AR-ARMST_Weapon_AKS74_Description",
+   "name_key": null,
+   "actions": []
+  },
+  {
+   "path": "Prefabs/Weapons/Russian/Rifle/AK74/armst_AKS74U.et",
+   "desc_key": "#AR-ARMST_Weapon_AKS74U_Description",
+   "name_key": null,
+   "actions": [
+    "item.injected-full",
+    "ui.injected-full"
+   ]
+  },
+  {
+   "path": "Prefabs/Weapons/Russian/Rifle/AK74/armst_AKS74UN.et",
+   "desc_key": "#AR-ARMST_Weapon_AKS74UN_Description",
+   "name_key": null,
+   "actions": [
+    "item.injected-full",
+    "ui.injected-full"
+   ]
+  },
+  {
+   "path": "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKMS.et",
+   "desc_key": "#AR-ARMST_Weapon_AKMS_Description",
+   "name_key": null,
+   "actions": []
+  },
+  {
+   "path": "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_full.et",
+   "desc_key": "#AR-ARMST_Weapon_AKM_Description",
+   "name_key": null,
+   "actions": [
+    "item.injected-full",
+    "ui.injected"
+   ]
+  },
+  {
+   "path": "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_SOC94.et",
+   "desc_key": "#AR-ARMST_Weapon_SOC94_Description",
+   "name_key": null,
+   "actions": [
+    "item.Description",
+    "ui.Description"
+   ]
+  },
+  {
+   "path": "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_VPO136.et",
+   "desc_key": "#AR-ARMST_Weapon_VPO136_Description",
+   "name_key": null,
+   "actions": [
+    "item.Description",
+    "ui.Description"
+   ]
+  },
+  {
+   "path": "Prefabs/Weapons/Russian/Rifle/Aek971/armst_AEK971_test_v11.et",
+   "desc_key": "#AR-ARMST_Weapon_AEK971_Description",
+   "name_key": null,
+   "actions": [
+    "item.injected-collection",
+    "ui.injected"
+   ]
+  },
+  {
+   "path": "Prefabs/Weapons/Western/Rifle/L85/armst_Rifle_L85.et",
+   "desc_key": "#AR-ARMST_Weapon_L85_Description",
+   "name_key": null,
+   "actions": [
+    "item.injected-collection",
+    "ui.injected"
+   ]
+  },
+  {
+   "path": "Prefabs/Weapons/Western/Rifle/armst_Rifle_M16A2_carbine.et",
+   "desc_key": "#AR-ARMST_Weapon_M16A2carbine_Description",
+   "name_key": null,
+   "actions": [
+    "item.injected-full",
+    "ui.injected-full"
+   ]
+  },
+  {
+   "path": "Prefabs/Weapons/Western/Rifle/Sig550/armst_Rifle_Sig550.et",
+   "desc_key": "#AR-ARMST_Weapon_SIG550_Description",
+   "name_key": null,
+   "actions": [
+    "item.injected-collection",
+    "ui.injected"
+   ]
+  },
+  {
+   "path": "Prefabs/Weapons/Western/Rifle/HKG36/armst_Rifle_hk_g36.et",
+   "desc_key": "#AR-ARMST_Weapon_G36_Description",
+   "name_key": "#AR-ARMST_Weapon_G36_Name",
+   "actions": [
+    "item.Name",
+    "item.Description",
+    "ui.Name",
+    "ui.Description"
+   ]
+  },
+  {
+   "path": "Prefabs/Weapons/Western/Rifle/SLR/armst_SLR.et",
+   "desc_key": "#AR-ARMST_Weapon_L1A1_Description",
+   "name_key": null,
+   "actions": [
+    "item.injected-collection",
+    "ui.injected"
+   ]
+  },
+  {
+   "path": "Prefabs/Weapons/Russian/Rifle/SVD/armst_SVD.et",
+   "desc_key": "#AR-ARMST_Weapon_SVD_Description",
+   "name_key": null,
+   "actions": [
+    "item.injected-collection",
+    "ui.injected"
+   ]
+  },
+  {
+   "path": "Prefabs/Weapons/Western/Rifle/armst_VZ58P.et",
+   "desc_key": "#AR-ARMST_Weapon_VZ58P_Description",
+   "name_key": null,
+   "actions": [
+    "item.injected-full",
+    "ui.injected-full"
+   ]
+  },
+  {
+   "path": "Prefabs/Weapons/Western/Rifle/armst_VZ58V.et",
+   "desc_key": "#AR-ARMST_Weapon_VZ58V_Description",
+   "name_key": null,
+   "actions": [
+    "item.injected-full",
+    "ui.injected"
+   ]
+  }
+ ],
+ "magazines": [
+  {
+   "path": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_AK_30rnd_Ball.et",
+   "desc_key": "#AR-ARMST_Magazine_armst_Magazine_545x39_AK_30rnd_Ball_Description",
+   "role": "PP/plain",
+   "actions": [
+    "item.injected-full",
+    "ui.injected-full"
+   ]
+  },
+  {
+   "path": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_AK_30rnd_Tracer.et",
+   "desc_key": "#AR-ARMST_Magazine_armst_Magazine_545x39_AK_30rnd_Tracer_Description",
+   "role": "PP/plain",
+   "actions": [
+    "item.injected-full",
+    "ui.injected-full"
+   ]
+  },
+  {
+   "path": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_RPK_45rnd_Ball.et",
+   "desc_key": "#AR-ARMST_Magazine_armst_Magazine_545x39_RPK_45rnd_Ball_Description",
+   "role": "PP/plain",
+   "actions": [
+    "item.injected-full",
+    "ui.injected-full"
+   ]
+  },
+  {
+   "path": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_RPK_45rnd_Tracer.et",
+   "desc_key": "#AR-ARMST_Magazine_armst_Magazine_545x39_RPK_45rnd_Tracer_Description",
+   "role": "PP/plain",
+   "actions": [
+    "item.injected-full",
+    "ui.injected-full"
+   ]
+  },
+  {
+   "path": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/Magazine_545x39_AK_30rnd_Base.et",
+   "desc_key": "#AR-ARMST_Magazine_Magazine_545x39_AK_30rnd_Base_Description",
+   "role": "PP/plain",
+   "actions": [
+    "item.injected-collection",
+    "ui.injected-full"
+   ]
+  },
+  {
+   "path": "Prefabs/Weapons/Magazines/Russian/762x54/SVD/armst_Box_762x54_PK_250rnd_Ball.et",
+   "desc_key": "#AR-ARMST_Magazine_armst_Box_762x54_PK_250rnd_Ball_Description",
+   "role": "PP/plain",
+   "actions": [
+    "item.injected-collection",
+    "ui.injected-full"
+   ]
+  },
+  {
+   "path": "Prefabs/Weapons/Magazines/Russian/762x54/SVD/armst_Magazine_762x54_SVD_10rnd_7BZ3API.et",
+   "desc_key": "#AR-ARMST_Magazine_armst_Magazine_762x54_SVD_10rnd_7BZ3API_Description",
+   "role": "PP/plain",
+   "actions": [
+    "item.injected-collection",
+    "ui.injected-full"
+   ]
+  },
+  {
+   "path": "Prefabs/Weapons/Magazines/Russian/763x25/TT/armst_Magazine_763x25_TT_8rnd_Ball.et",
+   "desc_key": "#AR-ARMST_Magazine_armst_Magazine_763x25_TT_8rnd_Ball_Description",
+   "role": "PP/plain",
+   "actions": [
+    "item.Description",
+    "ui.injected"
+   ]
+  },
+  {
+   "path": "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_10rnd_Ball.et",
+   "desc_key": "#AR-ARMST_Magazine_armst_Magazine_762x39_AKM_10rnd_Ball_Description",
+   "role": "PP",
+   "actions": [
+    "item.Description",
+    "ui.injected"
+   ]
+  },
+  {
+   "path": "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_30rnd_Ball.et",
+   "desc_key": "#AR-ARMST_Magazine_armst_Magazine_762x39_AKM_30rnd_Ball_Description",
+   "role": "PP",
+   "actions": [
+    "item.Description",
+    "ui.injected"
+   ]
+  },
+  {
+   "path": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_APB_20rnd_Ball.et",
+   "desc_key": "#AR-ARMST_Magazine_armst_Magazine_9x18_APB_20rnd_Ball_Description",
+   "role": "PP/plain",
+   "actions": [
+    "item.Description",
+    "ui.injected"
+   ]
+  },
+  {
+   "path": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball.et",
+   "desc_key": "#AR-ARMST_Magazine_armst_Magazine_9x18_PM_8rnd_Ball_Description",
+   "role": "PP/plain",
+   "actions": [
+    "item.injected-collection",
+    "ui.injected-full"
+   ]
+  },
+  {
+   "path": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PP91_30rnd_Ball.et",
+   "desc_key": "#AR-ARMST_Magazine_armst_Magazine_9x18_PP91_30rnd_Ball_Description",
+   "role": "PP/plain",
+   "actions": [
+    "item.Description",
+    "ui.injected"
+   ]
+  },
+  {
+   "path": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_SR2_30rnd_Ball.et",
+   "desc_key": "#AR-ARMST_Magazine_armst_Magazine_9x18_SR2_30rnd_Ball_Description",
+   "role": "PP/plain",
+   "actions": [
+    "item.Description",
+    "ui.injected"
+   ]
+  },
+  {
+   "path": "Prefabs/Weapons/Magazines/Russian/9x39/9a91/armst_Magazine_9x39_20rnd_9a91_SP5.et",
+   "desc_key": "#AR-ARMST_Magazine_armst_Magazine_9x39_20rnd_9a91_SP5_Description",
+   "role": "PP/plain",
+   "actions": [
+    "item.Description"
+   ]
+  },
+  {
+   "path": "Prefabs/Weapons/Magazines/Russian/9x39/9a91/armst_Magazine_9x39_20rnd_9a91_SP6.et",
+   "desc_key": "#AR-ARMST_Magazine_armst_Magazine_9x39_20rnd_9a91_SP6_Description",
+   "role": "PP/plain",
+   "actions": [
+    "item.Description"
+   ]
+  },
+  {
+   "path": "Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_20rnd_vss_SP5.et",
+   "desc_key": "#AR-ARMST_Magazine_armst_Magazine_9x39_20rnd_vss_SP5_Description",
+   "role": "PP/plain",
+   "actions": [
+    "item.Description"
+   ]
+  },
+  {
+   "path": "Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_20rnd_vss_SP6.et",
+   "desc_key": "#AR-ARMST_Magazine_armst_Magazine_9x39_20rnd_vss_SP6_Description",
+   "role": "PP/plain",
+   "actions": [
+    "item.Description"
+   ]
+  },
+  {
+   "path": "Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_30rnd_val_SP5.et",
+   "desc_key": "#AR-ARMST_Magazine_armst_Magazine_9x39_30rnd_val_SP5_Description",
+   "role": "PP/plain",
+   "actions": [
+    "item.Description"
+   ]
+  },
+  {
+   "path": "Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_30rnd_val_SP6.et",
+   "desc_key": "#AR-ARMST_Magazine_armst_Magazine_9x39_30rnd_val_SP6_Description",
+   "role": "PP/plain",
+   "actions": [
+    "item.Description"
+   ]
+  },
+  {
+   "path": "Prefabs/Weapons/Magazines/Western/5x56/HKG36/armst_Magazine_556x45_HKG36.et",
+   "desc_key": "#AR-ARMST_Magazine_armst_Magazine_556x45_HKG36_Description",
+   "role": "PP",
+   "actions": [
+    "item.Description",
+    "ui.Description"
+   ]
+  },
+  {
+   "path": "Prefabs/Weapons/Magazines/Western/5x56/SIG550/armst_Magazine_556x45_SIG_550.et",
+   "desc_key": "#AR-ARMST_Magazine_armst_Magazine_556x45_SIG_550_Description",
+   "role": "PP",
+   "actions": [
+    "item.Description",
+    "ui.Description"
+   ]
+  },
+  {
+   "path": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M193_Ball.et",
+   "desc_key": "#AR-ARMST_Magazine_armst_Magazine_556x45_STANAG_30rnd_M193_Ball_Description",
+   "role": "PP",
+   "actions": [
+    "item.Description",
+    "ui.Description"
+   ]
+  },
+  {
+   "path": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M855_Ball.et",
+   "desc_key": "#AR-ARMST_Magazine_armst_Magazine_556x45_STANAG_30rnd_M855_Ball_Description",
+   "role": "PP",
+   "actions": [
+    "item.injected-full",
+    "ui.injected"
+   ]
+  },
+  {
+   "path": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/Magazine_556x45_STANAG_30rnd_Base.et",
+   "desc_key": "#AR-ARMST_Magazine_Magazine_556x45_STANAG_30rnd_Base_Description",
+   "role": "PP",
+   "actions": [
+    "item.injected-collection",
+    "ui.injected"
+   ]
+  },
+  {
+   "path": "Prefabs/Weapons/Magazines/Western/762x51/HK3/armst_Magazine_762x51_HK3_20_M80_Ball.et",
+   "desc_key": "#AR-ARMST_Magazine_armst_Magazine_762x51_HK3_20_M80_Ball_Description",
+   "role": "PP",
+   "actions": [
+    "item.Description",
+    "ui.Description"
+   ]
+  },
+  {
+   "path": "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_20_M80_Ball.et",
+   "desc_key": "#AR-ARMST_Magazine_armst_Magazine_762x51_L1A1_20_M80_Ball_Description",
+   "role": "PP",
+   "actions": [
+    "item.Description",
+    "ui.Description"
+   ]
+  },
+  {
+   "path": "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_30_M80_Ball.et",
+   "desc_key": "#AR-ARMST_Magazine_armst_Magazine_762x51_L1A1_30_M80_Ball_Description",
+   "role": "PP",
+   "actions": [
+    "item.injected-full",
+    "ui.injected"
+   ]
+  },
+  {
+   "path": "Prefabs/Weapons/Magazines/Western/9x19/M9/armst_Magazine_9x19_M9_15rnd_Ball.et",
+   "desc_key": "#AR-ARMST_Magazine_armst_Magazine_9x19_M9_15rnd_Ball_Description",
+   "role": "PP",
+   "actions": [
+    "item.injected-collection",
+    "ui.injected"
+   ]
+  },
+  {
+   "path": "Prefabs/Weapons/Magazines/Western/5x56/HKG36/armst_Magazine_556x45_HKG36_BP.et",
+   "desc_key": "#AR-ARMST_Magazine_armst_Magazine_556x45_HKG36_BP_Description",
+   "role": "BP",
+   "actions": [
+    "item.Description",
+    "ui.Description"
+   ]
+  },
+  {
+   "path": "Prefabs/Weapons/Magazines/Western/5x56/SIG550/armst_Magazine_556x45_SIG_550_BP.et",
+   "desc_key": "#AR-ARMST_Magazine_armst_Magazine_556x45_SIG_550_BP_Description",
+   "role": "BP",
+   "actions": [
+    "item.Description",
+    "ui.Description"
+   ]
+  },
+  {
+   "path": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M193_Ball_BP.et",
+   "desc_key": "#AR-ARMST_Magazine_armst_Magazine_556x45_STANAG_30rnd_M193_Ball_BP_Description",
+   "role": "BP",
+   "actions": [
+    "item.Description",
+    "ui.Description"
+   ]
+  },
+  {
+   "path": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M855_Ball_BP.et",
+   "desc_key": "#AR-ARMST_Magazine_armst_Magazine_556x45_STANAG_30rnd_M855_Ball_BP_Description",
+   "role": "BP",
+   "actions": [
+    "item.injected-full",
+    "ui.injected"
+   ]
+  },
+  {
+   "path": "Prefabs/Weapons/Magazines/Western/762x51/HK3/armst_Magazine_762x51_HK3_20_M80_Ball_BP.et",
+   "desc_key": "#AR-ARMST_Magazine_armst_Magazine_762x51_HK3_20_M80_Ball_BP_Description",
+   "role": "BP",
+   "actions": [
+    "item.Description",
+    "ui.Description"
+   ]
+  },
+  {
+   "path": "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_20_M80_Ball_BP.et",
+   "desc_key": "#AR-ARMST_Magazine_armst_Magazine_762x51_L1A1_20_M80_Ball_BP_Description",
+   "role": "BP",
+   "actions": [
+    "item.Description",
+    "ui.Description"
+   ]
+  },
+  {
+   "path": "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_30_M80_Ball_BP.et",
+   "desc_key": "#AR-ARMST_Magazine_armst_Magazine_762x51_L1A1_30_M80_Ball_BP_Description",
+   "role": "BP",
+   "actions": [
+    "item.injected-full",
+    "ui.injected"
+   ]
+  },
+  {
+   "path": "Prefabs/Weapons/Magazines/Western/9x19/M9/armst_Magazine_9x19_M9_15rnd_Ball_BP.et",
+   "desc_key": "#AR-ARMST_Magazine_armst_Magazine_9x19_M9_15rnd_Ball_BP_Description",
+   "role": "BP",
+   "actions": [
+    "item.injected-collection",
+    "ui.injected"
+   ]
+  },
+  {
+   "path": "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_10rnd_Ball_BP.et",
+   "desc_key": "#AR-ARMST_Magazine_armst_Magazine_762x39_AKM_10rnd_Ball_BP_Description",
+   "role": "BP",
+   "actions": [
+    "item.Description",
+    "ui.injected"
+   ]
+  },
+  {
+   "path": "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_30rnd_Ball_BP.et",
+   "desc_key": "#AR-ARMST_Magazine_armst_Magazine_762x39_AKM_30rnd_Ball_BP_Description",
+   "role": "BP",
+   "actions": [
+    "item.Description",
+    "ui.injected"
+   ]
+  }
+ ],
+ "errors": []
+}

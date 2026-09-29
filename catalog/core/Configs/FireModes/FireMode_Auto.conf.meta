@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{09B76AF4205785A9}Imported/VanillaSources/Prefabs/Weapons/Core/Configs/FireModes/FireMode_Auto.conf"
+ Configurations {
+  CONFResourceClass PC {
+  }
+  CONFResourceClass XBOX_ONE : PC {
+  }
+  CONFResourceClass XBOX_SERIES : PC {
+  }
+  CONFResourceClass PS4 : PC {
+  }
+  CONFResourceClass PS5 : PC {
+  }
+  CONFResourceClass HEADLESS : PC {
+  }
+ }
+}

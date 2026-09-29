@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{DFAB8EB4E62DD008}Imported/VanillaSources/Prefabs/Weapons/Ammo/FlareEffect_82mm_S832S_White_EffectModule.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

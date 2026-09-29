@@ -1,0 +1,83 @@
+GameEntity : "{966B4E5523D2F166}Prefabs/Weapons/Attachments/Optics/WeaponOptic_Base.et" {
+ ID "4BA426CBAED42A14"
+ components {
+  InventoryItemComponent "{52627A1F45CD4EB6}" {
+   Attributes SCR_ItemAttributeCollection "{52627A1EBB0698FD}" {
+    ItemDisplayName UIInfo "{5D0CC83435B5584E}" {
+     Name "#AR-Item_ARTII_Name"
+     Description "#AR-Item_ARTII_Description"
+    }
+    CustomAttributes {
+     WeaponAttachmentAttributes "{5284D858FFF9BE66}" {
+      AttachmentType AttachmentOpticsM21 "{5D0CCDD062A6250E}" {
+      }
+     }
+    }
+   }
+  }
+  MeshObject "{5D0CC83435B55858}" {
+   Object "{2E43837CC7A79F69}Assets/Weapons/Attachments/Optics/ARTII/Optic_ARTII.xob"
+  }
+  SCR_2DPIPSightsComponent "{5D0CC83435B55855}" {
+   SightsPosition PointInfo "{5D0CC83435B55853}" {
+    Offset 0 0 0.003
+   }
+   SightsRanges {
+    SightRangeInfo "{5D0CCDD062A62502}" {
+     Range 0.16 300
+    }
+    SightRangeInfo "{5D0CCDD062A62503}" {
+     Range 0.22 400
+    }
+    SightRangeInfo "{5D0CCDD062A62500}" {
+     Range 0.28 500
+    }
+    SightRangeInfo "{5D0CCDD062A62501}" {
+     Range 0.33 600
+    }
+    SightRangeInfo "{5D0CCDD062A657C3}" {
+     Range 0.415 700
+    }
+    SightRangeInfo "{5D0CCDD062A657DC}" {
+     Range 0.495 800
+    }
+    SightRangeInfo "{5D0CCDD062A657DD}" {
+     Range 0.585 900
+    }
+   }
+   SightsFOVInfo SCR_SightsZoomFOVInfo "{5D0CCDD062A657D9}" {
+    m_fBaseZoom 3
+    m_fZoomMax 9
+    m_fInterpolationSpeed 20
+   }
+   SightsPointFront PointInfo "{5D0CCDD062A657DB}" {
+    PivotID "sight_front"
+   }
+   SightsPointRear PointInfo "{5D0CCDD062A657D5}" {
+    PivotID "sight_rear"
+   }
+   SoundInt 10002
+   m_sReticleTexture "{AE1DBD2308EDFF54}UI/Textures/Sights/ARTII/ARTII_UI.edds"
+   m_sReticleGlowTexture "{AE1DBD2308EDFF54}UI/Textures/Sights/ARTII/ARTII_UI.edds"
+   m_eZeroingType EPZ_CAMERA_TURN
+   m_fReticleOffsetInterpSpeed 20
+   m_rScopeHDRMatrial "{63FF28F3F6BB1727}Assets/Weapons/Attachments/Optics/ARTII/Data/Optic_ARTII_HDR.emat"
+   m_fCenterDistance 0.001
+   m_fObjectiveFov 7.41
+   m_fReticleAngularSize 2.176
+   m_fReticlePortion 0.19531
+   m_fReticleBaseZoom 4
+   m_fMagnification 3
+   m_fScopeRadius 0.015
+  }
+  ActionsManagerComponent "{5284E0EFF569AD07}" {
+   additionalActions {
+    SCR_AttachItemFromInventoryAction "{5D0CC83435B55B88}" {
+     ParentContextList {
+      "optic"
+     }
+    }
+   }
+  }
+ }
+}

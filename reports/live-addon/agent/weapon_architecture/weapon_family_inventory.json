@@ -1,0 +1,222 @@
+{
+ "nodes": {
+  "Prefabs/Weapons/Russian/Handguns/armst_APB/armst_APB.et": {
+   "parent_ref": "{B7132459C07777CA}Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et",
+   "parent": null,
+   "inside": false
+  },
+  "Prefabs/Weapons/Russian/Handguns/Pm/armst_PM.et": {
+   "parent_ref": "{B7132459C07777CA}Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et",
+   "parent": null,
+   "inside": false
+  },
+  "Prefabs/Weapons/Russian/Handguns/PP_19/armst_PP91.et": {
+   "parent_ref": "{B7132459C07777CA}Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et",
+   "parent": null,
+   "inside": false
+  },
+  "Prefabs/Weapons/Russian/Handguns/Sr_2/armst_SR_2.et": {
+   "parent_ref": "{B7132459C07777CA}Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et",
+   "parent": null,
+   "inside": false
+  },
+  "Prefabs/Weapons/Russian/Handguns/TT/armst_TT.et": {
+   "parent_ref": "{B7132459C07777CA}Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et",
+   "parent": null,
+   "inside": false
+  },
+  "Prefabs/Weapons/Russian/Rifle/9a91/armst_Rifle_9a91_base.et": {
+   "parent_ref": "{1FA22B1F5E7BC80B}Prefabs/Weapons/Rifles/AK74/Rifle_AK74_short_base.et",
+   "parent": null,
+   "inside": false
+  },
+  "Prefabs/Weapons/Russian/Rifle/Aek971/armst_AEK971_test_v11.et": {
+   "parent_ref": "{EAE9A298979C4721}Prefabs/Weapons/Rifles/AK74/Rifle_AK74N_base.et",
+   "parent": null,
+   "inside": false
+  },
+  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK105.et": {
+   "parent_ref": "{FA5C25BF66A53DCF}Rifles/AK74/armst_AK74.et",
+   "parent": "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74.et",
+   "inside": true
+  },
+  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74.et": {
+   "parent_ref": "{923D948AB0D57A50}Prefabs/Weapons/Rifles/AK74/Rifle_AK74_long_base.et",
+   "parent": null,
+   "inside": false
+  },
+  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74M.et": {
+   "parent_ref": "{96DFD2E7E63B3386}Prefabs/Weapons/Rifles/AK74/armst_AK74N.et",
+   "parent": "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74N.et",
+   "inside": true
+  },
+  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74M_full.et": {
+   "parent_ref": "{5B8E766C0E3C13EE}Prefabs/Weapons/Rifles/AK74/armst_AK74M.et",
+   "parent": "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74M.et",
+   "inside": true
+  },
+  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74N.et": {
+   "parent_ref": "{EAE9A298979C4721}Prefabs/Weapons/Rifles/AK74/Rifle_AK74N_base.et",
+   "parent": null,
+   "inside": false
+  },
+  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AKS.et": {
+   "parent_ref": "{96DFD2E7E63B3386}Prefabs/Weapons/Rifles/AK74/armst_AK74N.et",
+   "parent": "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74N.et",
+   "inside": true
+  },
+  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AKS74U.et": {
+   "parent_ref": "{8BA0D0DE316D1B44}Prefabs/Weapons/Rifles/AKS74U/Rifle_AKS74U_base.et",
+   "parent": null,
+   "inside": false
+  },
+  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AKS74UN.et": {
+   "parent_ref": "{9AE416F8879DDA6D}Prefabs/Weapons/Rifles/AKS74U/Rifle_AKS74UN_base.et",
+   "parent": null,
+   "inside": false
+  },
+  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM.et": {
+   "parent_ref": "{140E94F473B60FE3}Prefabs/Weapons/Rifles/AKM/armst_Rifle_AKM_base.et",
+   "parent": "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_base.et",
+   "inside": true
+  },
+  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKMS.et": {
+   "parent_ref": "{140E94F473B60FE3}Prefabs/Weapons/Rifles/AKM/armst_Rifle_AKM_base.et",
+   "parent": "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_base.et",
+   "inside": true
+  },
+  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_base.et": {
+   "parent_ref": "{911D6C8DC7BA2D63}Prefabs/Weapons/Core/Rifle_Base.et",
+   "parent": "Prefabs/Weapons/Core/Rifle_Base.et",
+   "inside": true
+  },
+  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_full.et": {
+   "parent_ref": "{5BFF97EFD0BF6D9F}Prefabs/Weapons/Rifles/AKM/armst_Rifle_AKM.et",
+   "parent": "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM.et",
+   "inside": true
+  },
+  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_SOC94.et": {
+   "parent_ref": "{140E94F473B60FE3}Rifles/AKM/armst_Rifle_AKM_base.et",
+   "parent": "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_base.et",
+   "inside": true
+  },
+  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_VPO136.et": {
+   "parent_ref": "{140E94F473B60FE3}Prefabs/Weapons/Rifles/AKM/armst_Rifle_AKM_base.et",
+   "parent": "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_base.et",
+   "inside": true
+  },
+  "Prefabs/Weapons/Russian/Rifle/Groza/armst_Groza_base.et": {
+   "parent_ref": "{911D6C8DC7BA2D63}Prefabs/Weapons/Core/Rifle_Base.et",
+   "parent": "Prefabs/Weapons/Core/Rifle_Base.et",
+   "inside": true
+  },
+  "Prefabs/Weapons/Russian/Rifle/SVD/armst_SVD.et": {
+   "parent_ref": "{A3E183EB5A2F3A38}Prefabs/Weapons/Rifles/SVD/Rifle_SVD_base.et",
+   "parent": null,
+   "inside": false
+  },
+  "Prefabs/Weapons/Russian/Rifle/VAL/armst_Rifle_val_base.et": {
+   "parent_ref": "{1FA22B1F5E7BC80B}Prefabs/Weapons/Rifles/AK74/Rifle_AK74_short_base.et",
+   "parent": null,
+   "inside": false
+  },
+  "Prefabs/Weapons/Russian/Rifle/VSK94/armst_Rifle_VSK94_base.et": {
+   "parent_ref": "{1FA22B1F5E7BC80B}Prefabs/Weapons/Rifles/AK74/Rifle_AK74_short_base.et",
+   "parent": null,
+   "inside": false
+  },
+  "Prefabs/Weapons/Russian/Rifle/VSS/armst_Rifle_vss_base.et": {
+   "parent_ref": "{1FA22B1F5E7BC80B}Prefabs/Weapons/Rifles/AK74/Rifle_AK74_short_base.et",
+   "parent": null,
+   "inside": false
+  },
+  "Prefabs/Weapons/Western/Rifle/armst_Rifle_M16A2.et": {
+   "parent_ref": "{C63227C0E70EA62E}Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et",
+   "parent": null,
+   "inside": false
+  },
+  "Prefabs/Weapons/Western/Rifle/armst_Rifle_M16A2_carbine.et": {
+   "parent_ref": "{9207B5D36C3C8C94}Prefabs/Weapons/Rifles/M16/Rifle_M16A2_carbine_base.et",
+   "parent": null,
+   "inside": false
+  },
+  "Prefabs/Weapons/Western/Rifle/armst_VZ58P.et": {
+   "parent_ref": "{C19BFAF8A6334FD5}Prefabs/Weapons/Rifles/VZ58/Rifle_VZ58_base.et",
+   "parent": null,
+   "inside": false
+  },
+  "Prefabs/Weapons/Western/Rifle/armst_VZ58V.et": {
+   "parent_ref": "{C19BFAF8A6334FD5}Prefabs/Weapons/Rifles/VZ58/Rifle_VZ58_base.et",
+   "parent": null,
+   "inside": false
+  },
+  "Prefabs/Weapons/Western/Rifle/HKG33/armst_Rifle_HKG33.et": {
+   "parent_ref": "{C63227C0E70EA62E}Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et",
+   "parent": null,
+   "inside": false
+  },
+  "Prefabs/Weapons/Western/Rifle/HKG36/armst_Rifle_hk_g36.et": {
+   "parent_ref": "{911D6C8DC7BA2D63}Prefabs/Weapons/Core/Rifle_Base.et",
+   "parent": "Prefabs/Weapons/Core/Rifle_Base.et",
+   "inside": true
+  },
+  "Prefabs/Weapons/Western/Rifle/L85/armst_Rifle_L85.et": {
+   "parent_ref": "{C63227C0E70EA62E}Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et",
+   "parent": null,
+   "inside": false
+  },
+  "Prefabs/Weapons/Western/Rifle/Sig550/armst_Rifle_Sig550.et": {
+   "parent_ref": "{3E413771E1834D2F}Prefabs/Weapons/Rifles/armst_Rifle_M16A2.et",
+   "parent": "Prefabs/Weapons/Western/Rifle/armst_Rifle_M16A2.et",
+   "inside": true
+  },
+  "Prefabs/Weapons/Western/Rifle/SLR/armst_SLR.et": {
+   "parent_ref": "{C63227C0E70EA62E}Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et",
+   "parent": null,
+   "inside": false
+  }
+ },
+ "families": {
+  "Prefabs/Weapons/Russian/Handguns": [
+   "Prefabs/Weapons/Russian/Handguns/PP_19/armst_PP91.et",
+   "Prefabs/Weapons/Russian/Handguns/Pm/armst_PM.et",
+   "Prefabs/Weapons/Russian/Handguns/Sr_2/armst_SR_2.et",
+   "Prefabs/Weapons/Russian/Handguns/TT/armst_TT.et",
+   "Prefabs/Weapons/Russian/Handguns/armst_APB/armst_APB.et"
+  ],
+  "Prefabs/Weapons/Russian/Rifle": [
+   "Prefabs/Weapons/Russian/Rifle/9a91/armst_Rifle_9a91_base.et",
+   "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK105.et",
+   "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74.et",
+   "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74M.et",
+   "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74M_full.et",
+   "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74N.et",
+   "Prefabs/Weapons/Russian/Rifle/AK74/armst_AKS.et",
+   "Prefabs/Weapons/Russian/Rifle/AK74/armst_AKS74U.et",
+   "Prefabs/Weapons/Russian/Rifle/AK74/armst_AKS74UN.et",
+   "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM.et",
+   "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKMS.et",
+   "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_base.et",
+   "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_full.et",
+   "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_SOC94.et",
+   "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_VPO136.et",
+   "Prefabs/Weapons/Russian/Rifle/Aek971/armst_AEK971_test_v11.et",
+   "Prefabs/Weapons/Russian/Rifle/Groza/armst_Groza_base.et",
+   "Prefabs/Weapons/Russian/Rifle/SVD/armst_SVD.et",
+   "Prefabs/Weapons/Russian/Rifle/VAL/armst_Rifle_val_base.et",
+   "Prefabs/Weapons/Russian/Rifle/VSK94/armst_Rifle_VSK94_base.et",
+   "Prefabs/Weapons/Russian/Rifle/VSS/armst_Rifle_vss_base.et"
+  ],
+  "Prefabs/Weapons/Western/Rifle": [
+   "Prefabs/Weapons/Western/Rifle/HKG33/armst_Rifle_HKG33.et",
+   "Prefabs/Weapons/Western/Rifle/HKG36/armst_Rifle_hk_g36.et",
+   "Prefabs/Weapons/Western/Rifle/L85/armst_Rifle_L85.et",
+   "Prefabs/Weapons/Western/Rifle/SLR/armst_SLR.et",
+   "Prefabs/Weapons/Western/Rifle/Sig550/armst_Rifle_Sig550.et",
+   "Prefabs/Weapons/Western/Rifle/armst_Rifle_M16A2.et",
+   "Prefabs/Weapons/Western/Rifle/armst_Rifle_M16A2_carbine.et",
+   "Prefabs/Weapons/Western/Rifle/armst_VZ58P.et",
+   "Prefabs/Weapons/Western/Rifle/armst_VZ58V.et"
+  ]
+ }
+}

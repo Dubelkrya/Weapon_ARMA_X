@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{23519F120E2DA6F5}Imported/VanillaSources/Prefabs/Weapons/Launchers/RPG22/Launcher_RPG22_base.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

@@ -1,0 +1,92 @@
+GenericEntity : "{E1F14DB52DBFBC57}Prefabs/Weapons/Core/Weapon_Base.et" {
+ ID "CFBAA4B725411E45"
+ components {
+  WeaponSoundComponent "{5A8685198A9AEEDD}" {
+   Filenames {
+    "{4623A5BCFEA997F1}Sounds/Weapons/AircraftWeapons/RocketPods/Weapons_RocketPods_Generic_Shot.acp" "{EEAE2427DD990D12}Sounds/Weapons/AircraftWeapons/RocketPods/Weapons_RocketPods_Generic_Handling.acp"
+   }
+  }
+  InventoryItemComponent "{61B28C67FEC7ABBA}" {
+   Attributes SCR_ItemAttributeCollection "{61B2A217F4C03790}" {
+    ItemPhysAttributes ItemPhysicalAttributes "{52CA8780DF5FBCFB}" {
+     Weight 0
+     ItemDimensions 10 10 10
+     ItemVolume 100
+     DimensionScaler 1
+     RestingAdditiveRotationLS 0 0 0
+     RestingAdditiveOffsetLS 0 0 0
+    }
+    m_bVisible 0
+   }
+  }
+  MeshObject "{CFBAA4B701F95D69}" {
+   Object "{A4048C2AA75EF832}Common/Models/Default.xob"
+  }
+  WeaponComponent "{CFBAA4B706BA66E8}" {
+   components {
+    SCR_RocketEjectorMuzzleComponent "{61A6977B6DC1FE72}" {
+     components {
+      MultiBarrelMuzzleEffectComponent "{61A6977B64FD4BE6}" {
+       ResetOnFire 0
+       WrapBarrelIndex 0
+      }
+     }
+     ChamberedAmmo 1
+     FireModes {
+      BaseFireMode "{61A6A08EA527A7A9}" {
+      }
+     }
+     ProjectilesVisible 1
+    }
+    WeaponAnimationComponent "{60B4EA76EB15F6E0}" {
+     Enabled 0
+    }
+   }
+   SignalsSourceAccess SignalsSourceAccessClass "{CC7B64C6B99546FB}" {
+    signalsSuffix "Turret"
+   }
+  }
+  ActionsManagerComponent "{A29AE67FF4D82B0F}" {
+   additionalActions {
+    SCR_ResupplyRocketPodSupportStationAction "{62B2B72BF58B3573}" {
+     ParentContextList {
+      "default"
+     }
+     UIInfo SCR_ActionUIInfo "{61B2A657C1BEB907}" {
+      Name "#AR-SupportStation_Resupply_Vehicle_Weapon_ActionName"
+      m_sIconName "rearm-rocket"
+     }
+     Duration -0.5
+     CanAggregate 1
+     PerformPerFrame 1
+     m_fLoopActionHoldDuration 0.1
+     m_bLowerWeaponOnUse 1
+     m_sSoundProject "{EEAE2427DD990D12}Sounds/Weapons/AircraftWeapons/RocketPods/Weapons_RocketPods_Generic_Handling.acp"
+     m_sSoundEventName "SOUND_RELOAD"
+    }
+    SCR_FireModeSwitchUserAction "{62B2D3B02D568C53}" {
+    }
+    SCR_RefundVehicleAmmoSupportStationAction "{62B2D3B0476BF33D}" {
+     ParentContextList {
+      "default"
+     }
+     UIInfo SCR_ActionUIInfo "{61B2A657F1E24C59}" {
+      Name "#AR-SupportStation_Refund_Helicopter_Weapon_ActionName"
+      Description "#AR-SupportStation_Refund_Helicopter_Weapon_Unknown"
+      m_sIconName "disarm"
+     }
+     ActionTitle "Refund Rocket"
+     Duration -0.5
+     CanAggregate 1
+     PerformPerFrame 1
+     "Sort Priority" -80
+     m_fLoopActionHoldDuration 0.1
+     m_bLowerWeaponOnUse 1
+     m_sSoundProject "{EEAE2427DD990D12}Sounds/Weapons/AircraftWeapons/RocketPods/Weapons_RocketPods_Generic_Handling.acp"
+     m_sSoundEventName "SOUND_UNLOAD"
+     m_bHideIfNoParent 0
+    }
+   }
+  }
+ }
+}

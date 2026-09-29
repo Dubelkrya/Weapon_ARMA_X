@@ -1,0 +1,129 @@
+GenericEntity : "{B37F2B14F49A65E8}Prefabs/Weapons/Core/DemoBlock_base.et" {
+ ID "5968D2B6A82C6019"
+ components {
+  MeshObject "{5968D9C73C08706E}" {
+   Object "{2927F67250AC5479}Assets/Weapons/Explosives/DemoBlock_TSh400g/DemoBlock_TSh400g.xob"
+   PixelSizeScale 2.5
+  }
+  SCR_ExplosiveChargeInventoryItemComponent "{5AA692DC30B9C62B}" {
+   Attributes SCR_ItemAttributeCollection "{60D6BB563667D737}" {
+    ItemDisplayName WeaponUIInfo "{60D6BB563543F2F2}" {
+     Name "#AR-Weapon_TNTBlock_Name"
+     Description "#AR-Weapon_TNTBlock_Description"
+    }
+    ItemPhysAttributes ItemPhysicalAttributes "{5F1A9209467583DB}" {
+     Weight 0.4
+     SizeSetupStrategy Manual
+     ItemDimensions 10 10 10
+     ItemVolume 200
+     DimensionScaler 1
+     RestingAdditiveRotationLS 0 0 0
+     RestingAdditiveOffsetLS 0 0 0
+    }
+    ItemAnimationAttributes ItemAnimationAttributes "{5F1A9209449348E6}" {
+     IkSettings {
+      ItemIKSettings "{59E4E696CE54F34A}" {
+       MovementSpeedRange 0 3
+      }
+      ItemIKSettings "{5F1099957AD2A778}" {
+       Lowered 1
+       InAds 0
+       OutAds 0
+       MovementSpeedRange 0 0
+      }
+      ItemIKSettings "{5F109995781AC4F5}" {
+       Jumping 1
+       InAds 0
+       OutAds 0
+       MovementSpeedRange 0 0
+      }
+      ItemIKSettings "{5F10999579F7ED39}" {
+       ProneTurn 1
+       MovementSpeedRange 0 0
+      }
+     }
+     AnimationInstance "{4FCBEA45CAEBC9C0}anims/workspaces/player/player_main_1h.asi"
+     AnimationIKPose "{2EA363B18AA6CD27}Assets/Weapons/Explosives/DemoBlock_TSh400g/anims/p_TSh_400g_IK.anm"
+    }
+    CustomAttributes {
+     PreviewRenderAttributes "{5F10E041F98252F3}" {
+      CameraPreset Top
+      CameraOrbitAngles -25 -30 0
+      FOV 27
+      AspectRatio 1
+      LodModel 1
+     }
+     CharacterModifierAttributes "{5F10E041F357BA2C}" {
+     }
+    }
+   }
+  }
+  SCR_ExplosiveTriggerComponent "{5AA692DC30B9C65A}" {
+   Enabled 1
+   PROJECTILE_EFFECTS {
+    ExplosionEffect "{5F1A7E953E23511C}" {
+     EffectPrefab "{F1929AE7DC824D81}Prefabs/Weapons/Warheads/Warhead_ExplosiveCharge_TNT400g.et"
+     SoundEvent "SOUND_EXPLOSION"
+    }
+   }
+  }
+  SCR_MineDamageManager "{5AA692DC30B9C651}" {
+   "Additional hit zones" {
+    SCR_HitZone Main {
+     DamageReduction 0
+     DamageThreshold 0.8
+     "Collision multiplier" 0
+     "Kinetic multiplier" 0
+     "Fragmentation multiplier" 0
+     "Explosive multiplier" 2.5
+    }
+   }
+  }
+  SlotManagerComponent "{5F1CD138A009B549}" {
+   Slots {
+    FuzeSlotInfo timedFuze_PoC {
+     PivotID "Socket_TNTBlock400g_Fuze"
+     Prefab "{97AFF96B7AB95845}Prefabs/Weapons/Explosives/DemoBlock_TSh400g/DemoBlock_TSh400g_Fuze_VZD-1M.et"
+    }
+    FuzeSlotInfo remoteFuze_PoC {
+     PivotID "Socket_TNTBlock400g_Fuze"
+     Prefab "{97AFF96B7AB95844}Prefabs/Weapons/Explosives/DemoBlock_TSh400g/DemoBlock_TSh400g_Fuze_ZDP-r.et"
+    }
+   }
+  }
+  WeaponComponent "{5AA692DC30B9C621}" {
+   WeaponType FragGrenade
+   AllowedRaise "ADS and raised allowed"
+   shouldHandleObstruction 0
+   UIInfo GrenadeUIInfo "{5F1AD87B63BEEEFD}" {
+    Name "#AR-Weapon_ExplosiveCharge_TNT400g_Name"
+    Description "#AR-Weapon_ExplosiveCharge_TNT400g_Description"
+    m_MagIndicator SCR_MagazineIndicatorConfiguration "{60B682F34A53BC9C}" {
+     m_sOutline "explosive-charge"
+     m_bProgressBar 0
+    }
+    m_eAmmoTypeFlags HE
+   }
+   WeaponSlotType "grenade"
+   WeaponOffset 0 0 0
+   WeaponOffsetADS 0 0 0
+   BeActiveWhenDropped 1
+   BeActiveWhenInitWithoutParent 1
+  }
+  WeaponAnimationComponent "{5F1CD773403DEE55}" {
+   AnimGraph "{0BB9F9EB94ED6ED0}Assets/Weapons/Explosives/workspace/TSh400g.agr"
+   AnimInstance "{E6D3AC3088E43C3E}Assets/Weapons/Explosives/workspace/TSh400g.asi"
+   AnimInjection AnimationAttachmentInfo "{5F1CD77366000D91}" {
+    AnimGraph "{0BB9F9EB94ED6ED0}Assets/Weapons/Explosives/workspace/TSh400g.agr"
+    AnimInstance "{E6D3AC3088E43C3E}Assets/Weapons/Explosives/workspace/TSh400g.asi"
+    BindingName "Weapon"
+   }
+   AnimCommandsToBind + {
+    "" ""
+   }
+   AnimVariablesToBind + {
+    "" ""
+   }
+  }
+ }
+}

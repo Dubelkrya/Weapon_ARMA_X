@@ -1,0 +1,1740 @@
+{
+  "schema_version": 1,
+  "scope": "live firearm weapon prefabs under Prefabs/Weapons; excluded categories are not leaves",
+  "nodes": [
+    {
+      "physical_path": "Prefabs/Weapons/Core/Grenade_Base.et",
+      "filename": "Grenade_Base.et",
+      "meta_exists": true,
+      "guid": "D7EB24176E5CEAA6",
+      "meta_registered_path": "Prefabs/Weapons/Core/Grenade_Base.et",
+      "serialized_entity_type": "GenericEntity",
+      "parent_guid": "A9EF01A7A6FE60CD",
+      "parent_serialized_path": "Prefabs/Weapons/Core/Throw_Base.et",
+      "parent_resolved_path": null,
+      "parent_status": "EXTERNAL_UNAVAILABLE",
+      "direct_children": [],
+      "descendant_count": 0,
+      "depth": 0,
+      "role": "BASE",
+      "family_root": "Prefabs/Weapons/Core/Grenade_Base.et",
+      "notes": []
+    },
+    {
+      "physical_path": "Prefabs/Weapons/Core/Rifle_Base.et",
+      "filename": "Rifle_Base.et",
+      "meta_exists": true,
+      "guid": "911D6C8DC7BA2D63",
+      "meta_registered_path": "Prefabs/Weapons/Core/Rifle_Base.et",
+      "serialized_entity_type": "GenericEntity",
+      "parent_guid": "E1F14DB52DBFBC57",
+      "parent_serialized_path": "Prefabs/Weapons/Core/Weapon_Base.et",
+      "parent_resolved_path": "Prefabs/Weapons/Core/Weapon_Base.et",
+      "parent_status": "LOCAL_RESOLVED",
+      "direct_children": [
+        "Prefabs/Weapons/Rifles/AKM/armst_Rifle_AKM_base.et",
+        "Prefabs/Weapons/Rifles/Groza/armst_Groza_base.et",
+        "Prefabs/Weapons/Rifles/armst_Rifle_hk_g36.et"
+      ],
+      "descendant_count": 8,
+      "depth": 1,
+      "role": "BASE",
+      "family_root": "Prefabs/Weapons/Core/Weapon_Base.et",
+      "notes": []
+    },
+    {
+      "physical_path": "Prefabs/Weapons/Core/Weapon_Base.et",
+      "filename": "Weapon_Base.et",
+      "meta_exists": true,
+      "guid": "E1F14DB52DBFBC57",
+      "meta_registered_path": "Prefabs/Weapons/Core/Weapon_Base.et",
+      "serialized_entity_type": "GenericEntity",
+      "parent_guid": null,
+      "parent_serialized_path": null,
+      "parent_resolved_path": null,
+      "parent_status": "ROOT",
+      "direct_children": [
+        "Prefabs/Weapons/Core/Rifle_Base.et"
+      ],
+      "descendant_count": 9,
+      "depth": 0,
+      "role": "BASE",
+      "family_root": "Prefabs/Weapons/Core/Weapon_Base.et",
+      "notes": []
+    },
+    {
+      "physical_path": "Prefabs/Weapons/Handguns/armst_APB.et",
+      "filename": "armst_APB.et",
+      "meta_exists": true,
+      "guid": "5D3DA7E84135B278",
+      "meta_registered_path": "Prefabs/Weapons/Handguns/armst_APB.et",
+      "serialized_entity_type": "GenericEntity",
+      "parent_guid": "C0F7DD85A86B2900",
+      "parent_serialized_path": "Handguns/armst_PM.et",
+      "parent_resolved_path": "Prefabs/Weapons/Handguns/armst_PM.et",
+      "parent_status": "LOCAL_RESOLVED",
+      "direct_children": [],
+      "descendant_count": 0,
+      "depth": 1,
+      "role": "LEAF",
+      "family_root": "Prefabs/Weapons/Handguns/armst_PM.et",
+      "notes": []
+    },
+    {
+      "physical_path": "Prefabs/Weapons/Handguns/armst_Handgun_Knife_base.et",
+      "filename": "armst_Handgun_Knife_base.et",
+      "meta_exists": true,
+      "guid": "26ADE11C416B3840",
+      "meta_registered_path": "Prefabs/Weapons/Handguns/PM/armst_Handgun_Knife_base.et",
+      "serialized_entity_type": "GenericEntity",
+      "parent_guid": "EE7028E9DF49763A",
+      "parent_serialized_path": "Prefabs/Weapons/Core/Handgun_Base.et",
+      "parent_resolved_path": null,
+      "parent_status": "EXTERNAL_UNAVAILABLE",
+      "direct_children": [],
+      "descendant_count": 0,
+      "depth": 0,
+      "role": "BASE",
+      "family_root": "Prefabs/Weapons/Handguns/armst_Handgun_Knife_base.et",
+      "notes": []
+    },
+    {
+      "physical_path": "Prefabs/Weapons/Handguns/armst_M9.et",
+      "filename": "armst_M9.et",
+      "meta_exists": true,
+      "guid": "1353C6EAD1DCFE43",
+      "meta_registered_path": "Prefabs/Weapons/Handguns/M9/Handgun_M9.et",
+      "serialized_entity_type": "GenericEntity",
+      "parent_guid": "809488C4984AC087",
+      "parent_serialized_path": "Prefabs/Weapons/Handguns/M9/Handgun_M9_base.et",
+      "parent_resolved_path": null,
+      "parent_status": "EXTERNAL_UNAVAILABLE",
+      "direct_children": [],
+      "descendant_count": 0,
+      "depth": 0,
+      "role": "LEAF",
+      "family_root": "Prefabs/Weapons/Handguns/armst_M9.et",
+      "notes": []
+    },
+    {
+      "physical_path": "Prefabs/Weapons/Handguns/armst_PM.et",
+      "filename": "armst_PM.et",
+      "meta_exists": true,
+      "guid": "C0F7DD85A86B2900",
+      "meta_registered_path": "Prefabs/Weapons/Handguns/PM/Handgun_PM.et",
+      "serialized_entity_type": "GenericEntity",
+      "parent_guid": "B7132459C07777CA",
+      "parent_serialized_path": "Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et",
+      "parent_resolved_path": null,
+      "parent_status": "EXTERNAL_UNAVAILABLE",
+      "direct_children": [
+        "Prefabs/Weapons/Handguns/armst_APB.et",
+        "Prefabs/Weapons/Handguns/armst_PP91.et",
+        "Prefabs/Weapons/Handguns/armst_TT.et"
+      ],
+      "descendant_count": 4,
+      "depth": 0,
+      "role": "INTERMEDIATE",
+      "family_root": "Prefabs/Weapons/Handguns/armst_PM.et",
+      "notes": []
+    },
+    {
+      "physical_path": "Prefabs/Weapons/Handguns/armst_PP91.et",
+      "filename": "armst_PP91.et",
+      "meta_exists": true,
+      "guid": "3968B2A856852CBD",
+      "meta_registered_path": "Prefabs/Weapons/Handguns/armst_PP91.et",
+      "serialized_entity_type": "GenericEntity",
+      "parent_guid": "C0F7DD85A86B2900",
+      "parent_serialized_path": "Handguns/armst_PM.et",
+      "parent_resolved_path": "Prefabs/Weapons/Handguns/armst_PM.et",
+      "parent_status": "LOCAL_RESOLVED",
+      "direct_children": [
+        "Prefabs/Weapons/Handguns/armst_SR_2.et"
+      ],
+      "descendant_count": 1,
+      "depth": 1,
+      "role": "INTERMEDIATE",
+      "family_root": "Prefabs/Weapons/Handguns/armst_PM.et",
+      "notes": []
+    },
+    {
+      "physical_path": "Prefabs/Weapons/Handguns/armst_SR_2.et",
+      "filename": "armst_SR_2.et",
+      "meta_exists": true,
+      "guid": "31FB2EC4F4AFFC05",
+      "meta_registered_path": "Handguns/New_armst_Veresk_SR_@.et",
+      "serialized_entity_type": "GenericEntity",
+      "parent_guid": "3968B2A856852CBD",
+      "parent_serialized_path": "Handguns/New_armst_PP91.et",
+      "parent_resolved_path": "Prefabs/Weapons/Handguns/armst_PP91.et",
+      "parent_status": "LOCAL_RESOLVED",
+      "direct_children": [],
+      "descendant_count": 0,
+      "depth": 2,
+      "role": "LEAF",
+      "family_root": "Prefabs/Weapons/Handguns/armst_PM.et",
+      "notes": []
+    },
+    {
+      "physical_path": "Prefabs/Weapons/Handguns/armst_TT.et",
+      "filename": "armst_TT.et",
+      "meta_exists": true,
+      "guid": "0D469F42B65E350E",
+      "meta_registered_path": "Prefabs/Weapons/Handguns/armst_TT.et",
+      "serialized_entity_type": "GenericEntity",
+      "parent_guid": "C0F7DD85A86B2900",
+      "parent_serialized_path": "Handguns/armst_PM.et",
+      "parent_resolved_path": "Prefabs/Weapons/Handguns/armst_PM.et",
+      "parent_status": "LOCAL_RESOLVED",
+      "direct_children": [],
+      "descendant_count": 0,
+      "depth": 1,
+      "role": "LEAF",
+      "family_root": "Prefabs/Weapons/Handguns/armst_PM.et",
+      "notes": []
+    },
+    {
+      "physical_path": "Prefabs/Weapons/MachineGuns/armst_PKM.et",
+      "filename": "armst_PKM.et",
+      "meta_exists": true,
+      "guid": "A89BC9D55FFB4CD8",
+      "meta_registered_path": "Prefabs/Weapons/MachineGuns/PKM/MG_PKM.et",
+      "serialized_entity_type": "GenericEntity",
+      "parent_guid": "76C400582D3C4AF9",
+      "parent_serialized_path": "Prefabs/Weapons/MachineGuns/PKM/MG_PKM_base.et",
+      "parent_resolved_path": null,
+      "parent_status": "EXTERNAL_UNAVAILABLE",
+      "direct_children": [],
+      "descendant_count": 0,
+      "depth": 0,
+      "role": "LEAF",
+      "family_root": "Prefabs/Weapons/MachineGuns/armst_PKM.et",
+      "notes": []
+    },
+    {
+      "physical_path": "Prefabs/Weapons/MachineGuns/armst_RPK74.et",
+      "filename": "armst_RPK74.et",
+      "meta_exists": true,
+      "guid": "A7AF84C6C58BA3E8",
+      "meta_registered_path": "Prefabs/Weapons/MachineGuns/RPK74/MG_RPK74.et",
+      "serialized_entity_type": "GenericEntity",
+      "parent_guid": "3BFBE9145E9C40B9",
+      "parent_serialized_path": "Prefabs/Weapons/MachineGuns/RPK74/MG_RPK74_base.et",
+      "parent_resolved_path": null,
+      "parent_status": "EXTERNAL_UNAVAILABLE",
+      "direct_children": [],
+      "descendant_count": 0,
+      "depth": 0,
+      "role": "LEAF",
+      "family_root": "Prefabs/Weapons/MachineGuns/armst_RPK74.et",
+      "notes": []
+    },
+    {
+      "physical_path": "Prefabs/Weapons/Rifles/9a91/armst_Rifle_9a91_base.et",
+      "filename": "armst_Rifle_9a91_base.et",
+      "meta_exists": true,
+      "guid": "E2D8F39AE1B9B8F1",
+      "meta_registered_path": "Prefabs/Weapons/Rifles/AKS74U/armst_Rifle_9a91_base.et",
+      "serialized_entity_type": "GenericEntity",
+      "parent_guid": "1FA22B1F5E7BC80B",
+      "parent_serialized_path": "Prefabs/Weapons/Rifles/AK74/Rifle_AK74_short_base.et",
+      "parent_resolved_path": null,
+      "parent_status": "EXTERNAL_UNAVAILABLE",
+      "direct_children": [],
+      "descendant_count": 0,
+      "depth": 0,
+      "role": "BASE",
+      "family_root": "Prefabs/Weapons/Rifles/9a91/armst_Rifle_9a91_base.et",
+      "notes": []
+    },
+    {
+      "physical_path": "Prefabs/Weapons/Rifles/AK74/armst_AK105.et",
+      "filename": "armst_AK105.et",
+      "meta_exists": true,
+      "guid": "6FC3151D0DED22A9",
+      "meta_registered_path": "Rifles/AK74/armst_AK105.et",
+      "serialized_entity_type": "GenericEntity",
+      "parent_guid": "FA5C25BF66A53DCF",
+      "parent_serialized_path": "Rifles/AK74/armst_AK74.et",
+      "parent_resolved_path": "Prefabs/Weapons/Rifles/AK74/armst_AK74.et",
+      "parent_status": "LOCAL_RESOLVED",
+      "direct_children": [],
+      "descendant_count": 0,
+      "depth": 1,
+      "role": "LEAF",
+      "family_root": "Prefabs/Weapons/Rifles/AK74/armst_AK74.et",
+      "notes": []
+    },
+    {
+      "physical_path": "Prefabs/Weapons/Rifles/AK74/armst_AK74.et",
+      "filename": "armst_AK74.et",
+      "meta_exists": true,
+      "guid": "FA5C25BF66A53DCF",
+      "meta_registered_path": "Prefabs/Weapons/Rifles/armst_AK74.et",
+      "serialized_entity_type": "GenericEntity",
+      "parent_guid": "923D948AB0D57A50",
+      "parent_serialized_path": "Prefabs/Weapons/Rifles/AK74/Rifle_AK74_long_base.et",
+      "parent_resolved_path": null,
+      "parent_status": "EXTERNAL_UNAVAILABLE",
+      "direct_children": [
+        "Prefabs/Weapons/Rifles/AK74/armst_AK105.et"
+      ],
+      "descendant_count": 1,
+      "depth": 0,
+      "role": "INTERMEDIATE",
+      "family_root": "Prefabs/Weapons/Rifles/AK74/armst_AK74.et",
+      "notes": []
+    },
+    {
+      "physical_path": "Prefabs/Weapons/Rifles/AK74/armst_AK74M.et",
+      "filename": "armst_AK74M.et",
+      "meta_exists": true,
+      "guid": "5B8E766C0E3C13EE",
+      "meta_registered_path": "Prefabs/Weapons/Rifles/armst_AK74M.et",
+      "serialized_entity_type": "GenericEntity",
+      "parent_guid": "96DFD2E7E63B3386",
+      "parent_serialized_path": "Prefabs/Weapons/Rifles/AK74/armst_AK74N.et",
+      "parent_resolved_path": "Prefabs/Weapons/Rifles/AK74/armst_AK74N.et",
+      "parent_status": "LOCAL_RESOLVED",
+      "direct_children": [
+        "Prefabs/Weapons/Rifles/AK74/armst_AK74M_full.et"
+      ],
+      "descendant_count": 1,
+      "depth": 1,
+      "role": "INTERMEDIATE",
+      "family_root": "Prefabs/Weapons/Rifles/AK74/armst_AK74N.et",
+      "notes": []
+    },
+    {
+      "physical_path": "Prefabs/Weapons/Rifles/AK74/armst_AK74M_full.et",
+      "filename": "armst_AK74M_full.et",
+      "meta_exists": true,
+      "guid": "63892659A632A0FD",
+      "meta_registered_path": "Prefabs/Weapons/Rifles/AK74/armst_AK74M_full.et",
+      "serialized_entity_type": "GenericEntity",
+      "parent_guid": "5B8E766C0E3C13EE",
+      "parent_serialized_path": "Prefabs/Weapons/Rifles/AK74/armst_AK74M.et",
+      "parent_resolved_path": "Prefabs/Weapons/Rifles/AK74/armst_AK74M.et",
+      "parent_status": "LOCAL_RESOLVED",
+      "direct_children": [],
+      "descendant_count": 0,
+      "depth": 2,
+      "role": "LEAF",
+      "family_root": "Prefabs/Weapons/Rifles/AK74/armst_AK74N.et",
+      "notes": []
+    },
+    {
+      "physical_path": "Prefabs/Weapons/Rifles/AK74/armst_AK74N.et",
+      "filename": "armst_AK74N.et",
+      "meta_exists": true,
+      "guid": "96DFD2E7E63B3386",
+      "meta_registered_path": "Prefabs/Weapons/Rifles/armst_AK74N.et",
+      "serialized_entity_type": "GenericEntity",
+      "parent_guid": "EAE9A298979C4721",
+      "parent_serialized_path": "Prefabs/Weapons/Rifles/AK74/Rifle_AK74N_base.et",
+      "parent_resolved_path": null,
+      "parent_status": "EXTERNAL_UNAVAILABLE",
+      "direct_children": [
+        "Prefabs/Weapons/Rifles/AK74/armst_AK74M.et",
+        "Prefabs/Weapons/Rifles/AK74/armst_AKS.et"
+      ],
+      "descendant_count": 3,
+      "depth": 0,
+      "role": "INTERMEDIATE",
+      "family_root": "Prefabs/Weapons/Rifles/AK74/armst_AK74N.et",
+      "notes": []
+    },
+    {
+      "physical_path": "Prefabs/Weapons/Rifles/AK74/armst_AKS.et",
+      "filename": "armst_AKS.et",
+      "meta_exists": true,
+      "guid": "25A64724FD416989",
+      "meta_registered_path": "Prefabs/Weapons/Rifles/AK74/armst_AKS.et",
+      "serialized_entity_type": "GenericEntity",
+      "parent_guid": "96DFD2E7E63B3386",
+      "parent_serialized_path": "Prefabs/Weapons/Rifles/AK74/armst_AK74N.et",
+      "parent_resolved_path": "Prefabs/Weapons/Rifles/AK74/armst_AK74N.et",
+      "parent_status": "LOCAL_RESOLVED",
+      "direct_children": [],
+      "descendant_count": 0,
+      "depth": 1,
+      "role": "LEAF",
+      "family_root": "Prefabs/Weapons/Rifles/AK74/armst_AK74N.et",
+      "notes": []
+    },
+    {
+      "physical_path": "Prefabs/Weapons/Rifles/AK74/armst_AKS74U.et",
+      "filename": "armst_AKS74U.et",
+      "meta_exists": true,
+      "guid": "BFEA719491610A45",
+      "meta_registered_path": "Prefabs/Weapons/Rifles/armst_AKS74U.et",
+      "serialized_entity_type": "GenericEntity",
+      "parent_guid": "8BA0D0DE316D1B44",
+      "parent_serialized_path": "Prefabs/Weapons/Rifles/AKS74U/Rifle_AKS74U_base.et",
+      "parent_resolved_path": null,
+      "parent_status": "EXTERNAL_UNAVAILABLE",
+      "direct_children": [],
+      "descendant_count": 0,
+      "depth": 0,
+      "role": "LEAF",
+      "family_root": "Prefabs/Weapons/Rifles/AK74/armst_AKS74U.et",
+      "notes": []
+    },
+    {
+      "physical_path": "Prefabs/Weapons/Rifles/AK74/armst_AKS74UN.et",
+      "filename": "armst_AKS74UN.et",
+      "meta_exists": true,
+      "guid": "FA0E25CE35EE945F",
+      "meta_registered_path": "Prefabs/Weapons/Rifles/armst_AKS74UN.et",
+      "serialized_entity_type": "GenericEntity",
+      "parent_guid": "9AE416F8879DDA6D",
+      "parent_serialized_path": "Prefabs/Weapons/Rifles/AKS74U/Rifle_AKS74UN_base.et",
+      "parent_resolved_path": null,
+      "parent_status": "EXTERNAL_UNAVAILABLE",
+      "direct_children": [],
+      "descendant_count": 0,
+      "depth": 0,
+      "role": "LEAF",
+      "family_root": "Prefabs/Weapons/Rifles/AK74/armst_AKS74UN.et",
+      "notes": []
+    },
+    {
+      "physical_path": "Prefabs/Weapons/Rifles/AKM/armst_Rifle_AKM.et",
+      "filename": "armst_Rifle_AKM.et",
+      "meta_exists": true,
+      "guid": "5BFF97EFD0BF6D9F",
+      "meta_registered_path": "Prefabs/Weapons/Rifles/AKM/armst_Rifle_AKM.et",
+      "serialized_entity_type": "GenericEntity",
+      "parent_guid": "140E94F473B60FE3",
+      "parent_serialized_path": "Prefabs/Weapons/Rifles/AKM/armst_Rifle_AKM_base.et",
+      "parent_resolved_path": "Prefabs/Weapons/Rifles/AKM/armst_Rifle_AKM_base.et",
+      "parent_status": "LOCAL_RESOLVED",
+      "direct_children": [
+        "Prefabs/Weapons/Rifles/AKM/armst_Rifle_AKM_full.et"
+      ],
+      "descendant_count": 1,
+      "depth": 3,
+      "role": "INTERMEDIATE",
+      "family_root": "Prefabs/Weapons/Core/Weapon_Base.et",
+      "notes": []
+    },
+    {
+      "physical_path": "Prefabs/Weapons/Rifles/AKM/armst_Rifle_AKMS.et",
+      "filename": "armst_Rifle_AKMS.et",
+      "meta_exists": true,
+      "guid": "5712F6F88A014F0B",
+      "meta_registered_path": "Prefabs/Weapons/Rifles/AKM/armst_Rifle_AKMS.et",
+      "serialized_entity_type": "GenericEntity",
+      "parent_guid": "140E94F473B60FE3",
+      "parent_serialized_path": "Prefabs/Weapons/Rifles/AKM/armst_Rifle_AKM_base.et",
+      "parent_resolved_path": "Prefabs/Weapons/Rifles/AKM/armst_Rifle_AKM_base.et",
+      "parent_status": "LOCAL_RESOLVED",
+      "direct_children": [],
+      "descendant_count": 0,
+      "depth": 3,
+      "role": "LEAF",
+      "family_root": "Prefabs/Weapons/Core/Weapon_Base.et",
+      "notes": []
+    },
+    {
+      "physical_path": "Prefabs/Weapons/Rifles/AKM/armst_Rifle_AKM_base.et",
+      "filename": "armst_Rifle_AKM_base.et",
+      "meta_exists": true,
+      "guid": "140E94F473B60FE3",
+      "meta_registered_path": "Prefabs/Weapons/Rifles/AKM/armst_Rifle_AKM_base.et",
+      "serialized_entity_type": "GenericEntity",
+      "parent_guid": "911D6C8DC7BA2D63",
+      "parent_serialized_path": "Prefabs/Weapons/Core/Rifle_Base.et",
+      "parent_resolved_path": "Prefabs/Weapons/Core/Rifle_Base.et",
+      "parent_status": "LOCAL_RESOLVED",
+      "direct_children": [
+        "Prefabs/Weapons/Rifles/AKM/armst_Rifle_AKM.et",
+        "Prefabs/Weapons/Rifles/AKM/armst_Rifle_AKMS.et",
+        "Prefabs/Weapons/Rifles/AKM/armst_Rifle_SOC94.et",
+        "Prefabs/Weapons/Rifles/AKM/armst_Rifle_VPO136.et"
+      ],
+      "descendant_count": 5,
+      "depth": 2,
+      "role": "BASE",
+      "family_root": "Prefabs/Weapons/Core/Weapon_Base.et",
+      "notes": []
+    },
+    {
+      "physical_path": "Prefabs/Weapons/Rifles/AKM/armst_Rifle_AKM_full.et",
+      "filename": "armst_Rifle_AKM_full.et",
+      "meta_exists": true,
+      "guid": "33BEE1A93C920B26",
+      "meta_registered_path": "Prefabs/Weapons/Rifles/AKM/armst_Rifle_AKM_full.et",
+      "serialized_entity_type": "GenericEntity",
+      "parent_guid": "5BFF97EFD0BF6D9F",
+      "parent_serialized_path": "Prefabs/Weapons/Rifles/AKM/armst_Rifle_AKM.et",
+      "parent_resolved_path": "Prefabs/Weapons/Rifles/AKM/armst_Rifle_AKM.et",
+      "parent_status": "LOCAL_RESOLVED",
+      "direct_children": [],
+      "descendant_count": 0,
+      "depth": 4,
+      "role": "LEAF",
+      "family_root": "Prefabs/Weapons/Core/Weapon_Base.et",
+      "notes": []
+    },
+    {
+      "physical_path": "Prefabs/Weapons/Rifles/AKM/armst_Rifle_SOC94.et",
+      "filename": "armst_Rifle_SOC94.et",
+      "meta_exists": true,
+      "guid": "E394112ABBC198D8",
+      "meta_registered_path": "Prefabs/Weapons/Rifles/AKM/armst_Rifle_SOC94.et",
+      "serialized_entity_type": "GenericEntity",
+      "parent_guid": "140E94F473B60FE3",
+      "parent_serialized_path": "Rifles/AKM/armst_Rifle_AKM_base.et",
+      "parent_resolved_path": "Prefabs/Weapons/Rifles/AKM/armst_Rifle_AKM_base.et",
+      "parent_status": "LOCAL_RESOLVED",
+      "direct_children": [],
+      "descendant_count": 0,
+      "depth": 3,
+      "role": "LEAF",
+      "family_root": "Prefabs/Weapons/Core/Weapon_Base.et",
+      "notes": []
+    },
+    {
+      "physical_path": "Prefabs/Weapons/Rifles/AKM/armst_Rifle_VPO136.et",
+      "filename": "armst_Rifle_VPO136.et",
+      "meta_exists": true,
+      "guid": "90EADC5DD9AD35D5",
+      "meta_registered_path": "Prefabs/Weapons/Rifles/AKM/armst_Rifle_VPO136.et",
+      "serialized_entity_type": "GenericEntity",
+      "parent_guid": "140E94F473B60FE3",
+      "parent_serialized_path": "Prefabs/Weapons/Rifles/AKM/armst_Rifle_AKM_base.et",
+      "parent_resolved_path": "Prefabs/Weapons/Rifles/AKM/armst_Rifle_AKM_base.et",
+      "parent_status": "LOCAL_RESOLVED",
+      "direct_children": [],
+      "descendant_count": 0,
+      "depth": 3,
+      "role": "LEAF",
+      "family_root": "Prefabs/Weapons/Core/Weapon_Base.et",
+      "notes": []
+    },
+    {
+      "physical_path": "Prefabs/Weapons/Rifles/Groza/armst_Groza_base.et",
+      "filename": "armst_Groza_base.et",
+      "meta_exists": true,
+      "guid": "903C7920F00AB654",
+      "meta_registered_path": "Prefabs/Weapons/Rifles/Groza/armst_Groza_base.et",
+      "serialized_entity_type": "GenericEntity",
+      "parent_guid": "911D6C8DC7BA2D63",
+      "parent_serialized_path": "Prefabs/Weapons/Core/Rifle_Base.et",
+      "parent_resolved_path": "Prefabs/Weapons/Core/Rifle_Base.et",
+      "parent_status": "LOCAL_RESOLVED",
+      "direct_children": [],
+      "descendant_count": 0,
+      "depth": 2,
+      "role": "BASE",
+      "family_root": "Prefabs/Weapons/Core/Weapon_Base.et",
+      "notes": []
+    },
+    {
+      "physical_path": "Prefabs/Weapons/Rifles/Shotgun/armst_Remington_870.et",
+      "filename": "armst_Remington_870.et",
+      "meta_exists": true,
+      "guid": "6DBEF115AA35E404",
+      "meta_registered_path": "Prefabs/Weapons/Rifles/Shotgun/armst_Remington_870.et",
+      "serialized_entity_type": "GenericEntity",
+      "parent_guid": "6C5E2009CDCD0BD3",
+      "parent_serialized_path": "Prefabs/ShotGun/ShotGun/armst_shotgun_base.et",
+      "parent_resolved_path": "Prefabs/Weapons/Rifles/Shotgun/armst_shotgun_base.et",
+      "parent_status": "LOCAL_RESOLVED",
+      "direct_children": [],
+      "descendant_count": 0,
+      "depth": 1,
+      "role": "LEAF",
+      "family_root": "Prefabs/Weapons/Rifles/Shotgun/armst_shotgun_base.et",
+      "notes": []
+    },
+    {
+      "physical_path": "Prefabs/Weapons/Rifles/Shotgun/armst_izh_27.et",
+      "filename": "armst_izh_27.et",
+      "meta_exists": true,
+      "guid": "57F153EFAD34E1CA",
+      "meta_registered_path": "Prefabs/Weapons/Rifles/Shotgun/armst_izh_27.et",
+      "serialized_entity_type": "GenericEntity",
+      "parent_guid": "6C5E2009CDCD0BD3",
+      "parent_serialized_path": "Prefabs/Weapons/Rifles/Shotgun/armst_shotgun_base.et",
+      "parent_resolved_path": "Prefabs/Weapons/Rifles/Shotgun/armst_shotgun_base.et",
+      "parent_status": "LOCAL_RESOLVED",
+      "direct_children": [],
+      "descendant_count": 0,
+      "depth": 1,
+      "role": "LEAF",
+      "family_root": "Prefabs/Weapons/Rifles/Shotgun/armst_shotgun_base.et",
+      "notes": []
+    },
+    {
+      "physical_path": "Prefabs/Weapons/Rifles/Shotgun/armst_mp_133.et",
+      "filename": "armst_mp_133.et",
+      "meta_exists": true,
+      "guid": "63FF6FDCA4E7E735",
+      "meta_registered_path": "Prefabs/Weapons/Rifles/Shotgun/armst_mp_133.et",
+      "serialized_entity_type": "GenericEntity",
+      "parent_guid": "6C5E2009CDCD0BD3",
+      "parent_serialized_path": "Prefabs/Weapons/Rifles/Shotgun/armst_shotgun_base.et",
+      "parent_resolved_path": "Prefabs/Weapons/Rifles/Shotgun/armst_shotgun_base.et",
+      "parent_status": "LOCAL_RESOLVED",
+      "direct_children": [],
+      "descendant_count": 0,
+      "depth": 1,
+      "role": "LEAF",
+      "family_root": "Prefabs/Weapons/Rifles/Shotgun/armst_shotgun_base.et",
+      "notes": []
+    },
+    {
+      "physical_path": "Prefabs/Weapons/Rifles/Shotgun/armst_mp_153.et",
+      "filename": "armst_mp_153.et",
+      "meta_exists": true,
+      "guid": "92DB80A098AABF1C",
+      "meta_registered_path": "Prefabs/Weapons/Rifles/Shotgun/armst_mp_153.et",
+      "serialized_entity_type": "GenericEntity",
+      "parent_guid": "6C5E2009CDCD0BD3",
+      "parent_serialized_path": "Prefabs/ShotGun/ShotGun/armst_shotgun_base.et",
+      "parent_resolved_path": "Prefabs/Weapons/Rifles/Shotgun/armst_shotgun_base.et",
+      "parent_status": "LOCAL_RESOLVED",
+      "direct_children": [],
+      "descendant_count": 0,
+      "depth": 1,
+      "role": "LEAF",
+      "family_root": "Prefabs/Weapons/Rifles/Shotgun/armst_shotgun_base.et",
+      "notes": []
+    },
+    {
+      "physical_path": "Prefabs/Weapons/Rifles/Shotgun/armst_shotgun_base.et",
+      "filename": "armst_shotgun_base.et",
+      "meta_exists": true,
+      "guid": "6C5E2009CDCD0BD3",
+      "meta_registered_path": "Prefabs/Weapons/Rifles/Shotgun/armst_shotgun_base.et",
+      "serialized_entity_type": "GenericEntity",
+      "parent_guid": "B31929F65F0D0279",
+      "parent_serialized_path": "Prefabs/Weapons/Rifles/M14/Rifle_M21.et",
+      "parent_resolved_path": null,
+      "parent_status": "EXTERNAL_UNAVAILABLE",
+      "direct_children": [
+        "Prefabs/Weapons/Rifles/Shotgun/armst_Remington_870.et",
+        "Prefabs/Weapons/Rifles/Shotgun/armst_izh_27.et",
+        "Prefabs/Weapons/Rifles/Shotgun/armst_mp_133.et",
+        "Prefabs/Weapons/Rifles/Shotgun/armst_mp_153.et",
+        "Prefabs/Weapons/Rifles/Shotgun/armst_spas_12.et",
+        "Prefabs/Weapons/Rifles/Shotgun/armst_toz_66.et"
+      ],
+      "descendant_count": 8,
+      "depth": 0,
+      "role": "BASE",
+      "family_root": "Prefabs/Weapons/Rifles/Shotgun/armst_shotgun_base.et",
+      "notes": []
+    },
+    {
+      "physical_path": "Prefabs/Weapons/Rifles/Shotgun/armst_spas_12.et",
+      "filename": "armst_spas_12.et",
+      "meta_exists": true,
+      "guid": "221AED80163B7C60",
+      "meta_registered_path": "Prefabs/Weapons/Rifles/Shotgun/armst_spas_12.et",
+      "serialized_entity_type": "GenericEntity",
+      "parent_guid": "6C5E2009CDCD0BD3",
+      "parent_serialized_path": "Prefabs/ShotGun/ShotGun/armst_shotgun_base.et",
+      "parent_resolved_path": "Prefabs/Weapons/Rifles/Shotgun/armst_shotgun_base.et",
+      "parent_status": "LOCAL_RESOLVED",
+      "direct_children": [],
+      "descendant_count": 0,
+      "depth": 1,
+      "role": "LEAF",
+      "family_root": "Prefabs/Weapons/Rifles/Shotgun/armst_shotgun_base.et",
+      "notes": []
+    },
+    {
+      "physical_path": "Prefabs/Weapons/Rifles/Shotgun/armst_toz_66.et",
+      "filename": "armst_toz_66.et",
+      "meta_exists": true,
+      "guid": "923B067A74826419",
+      "meta_registered_path": "Prefabs/Weapons/Rifles/Shotgun/armst_toz_66.et",
+      "serialized_entity_type": "GenericEntity",
+      "parent_guid": "6C5E2009CDCD0BD3",
+      "parent_serialized_path": "Prefabs/Weapons/Rifles/Shotgun/armst_shotgun_base.et",
+      "parent_resolved_path": "Prefabs/Weapons/Rifles/Shotgun/armst_shotgun_base.et",
+      "parent_status": "LOCAL_RESOLVED",
+      "direct_children": [
+        "Prefabs/Weapons/Rifles/Shotgun/armst_toz_66_pantera.et",
+        "Prefabs/Weapons/Rifles/Shotgun/armst_toz_66_saw.et"
+      ],
+      "descendant_count": 2,
+      "depth": 1,
+      "role": "INTERMEDIATE",
+      "family_root": "Prefabs/Weapons/Rifles/Shotgun/armst_shotgun_base.et",
+      "notes": []
+    },
+    {
+      "physical_path": "Prefabs/Weapons/Rifles/Shotgun/armst_toz_66_pantera.et",
+      "filename": "armst_toz_66_pantera.et",
+      "meta_exists": true,
+      "guid": "A9B143751CB07F45",
+      "meta_registered_path": "Prefabs/Weapons/Rifles/Shotgun/armst_toz_66_pantera.et",
+      "serialized_entity_type": "GenericEntity",
+      "parent_guid": "923B067A74826419",
+      "parent_serialized_path": "Prefabs/Weapons/Rifles/Shotgun/armst_toz_66.et",
+      "parent_resolved_path": "Prefabs/Weapons/Rifles/Shotgun/armst_toz_66.et",
+      "parent_status": "LOCAL_RESOLVED",
+      "direct_children": [],
+      "descendant_count": 0,
+      "depth": 2,
+      "role": "LEAF",
+      "family_root": "Prefabs/Weapons/Rifles/Shotgun/armst_shotgun_base.et",
+      "notes": []
+    },
+    {
+      "physical_path": "Prefabs/Weapons/Rifles/Shotgun/armst_toz_66_saw.et",
+      "filename": "armst_toz_66_saw.et",
+      "meta_exists": true,
+      "guid": "9C7C3BE87956383A",
+      "meta_registered_path": "Prefabs/Weapons/Rifles/Shotgun/armst_toz_66_saw.et",
+      "serialized_entity_type": "GenericEntity",
+      "parent_guid": "923B067A74826419",
+      "parent_serialized_path": "Prefabs/Weapons/Rifles/Shotgun/armst_toz_66.et",
+      "parent_resolved_path": "Prefabs/Weapons/Rifles/Shotgun/armst_toz_66.et",
+      "parent_status": "LOCAL_RESOLVED",
+      "direct_children": [],
+      "descendant_count": 0,
+      "depth": 2,
+      "role": "LEAF",
+      "family_root": "Prefabs/Weapons/Rifles/Shotgun/armst_shotgun_base.et",
+      "notes": []
+    },
+    {
+      "physical_path": "Prefabs/Weapons/Rifles/VAL/armst_Rifle_val_base.et",
+      "filename": "armst_Rifle_val_base.et",
+      "meta_exists": true,
+      "guid": "F25D16BD5F748372",
+      "meta_registered_path": "Prefabs/Weapons/Rifles/VSS/armst_Rifle_val_base.et",
+      "serialized_entity_type": "GenericEntity",
+      "parent_guid": "1FA22B1F5E7BC80B",
+      "parent_serialized_path": "Prefabs/Weapons/Rifles/AK74/Rifle_AK74_short_base.et",
+      "parent_resolved_path": null,
+      "parent_status": "EXTERNAL_UNAVAILABLE",
+      "direct_children": [],
+      "descendant_count": 0,
+      "depth": 0,
+      "role": "BASE",
+      "family_root": "Prefabs/Weapons/Rifles/VAL/armst_Rifle_val_base.et",
+      "notes": []
+    },
+    {
+      "physical_path": "Prefabs/Weapons/Rifles/VSK94/armst_Rifle_VSK94_base.et",
+      "filename": "armst_Rifle_VSK94_base.et",
+      "meta_exists": true,
+      "guid": "6005623D3AA5F5C2",
+      "meta_registered_path": "Prefabs/Weapons/Rifles/9a91/armst_Rifle_VSK94_base.et",
+      "serialized_entity_type": "GenericEntity",
+      "parent_guid": "1FA22B1F5E7BC80B",
+      "parent_serialized_path": "Prefabs/Weapons/Rifles/AK74/Rifle_AK74_short_base.et",
+      "parent_resolved_path": null,
+      "parent_status": "EXTERNAL_UNAVAILABLE",
+      "direct_children": [],
+      "descendant_count": 0,
+      "depth": 0,
+      "role": "BASE",
+      "family_root": "Prefabs/Weapons/Rifles/VSK94/armst_Rifle_VSK94_base.et",
+      "notes": []
+    },
+    {
+      "physical_path": "Prefabs/Weapons/Rifles/VSS/armst_Rifle_vss_base.et",
+      "filename": "armst_Rifle_vss_base.et",
+      "meta_exists": true,
+      "guid": "902A79E4B2A66E63",
+      "meta_registered_path": "Prefabs/Weapons/Rifles/9a91/Rifle_vss_vintorez_base.et",
+      "serialized_entity_type": "GenericEntity",
+      "parent_guid": "1FA22B1F5E7BC80B",
+      "parent_serialized_path": "Prefabs/Weapons/Rifles/AK74/Rifle_AK74_short_base.et",
+      "parent_resolved_path": null,
+      "parent_status": "EXTERNAL_UNAVAILABLE",
+      "direct_children": [],
+      "descendant_count": 0,
+      "depth": 0,
+      "role": "BASE",
+      "family_root": "Prefabs/Weapons/Rifles/VSS/armst_Rifle_vss_base.et",
+      "notes": []
+    },
+    {
+      "physical_path": "Prefabs/Weapons/Rifles/armst_AEK971_test_v11.et",
+      "filename": "armst_AEK971_test_v11.et",
+      "meta_exists": true,
+      "guid": "AC198EAC9BDD9841",
+      "meta_registered_path": "Prefabs/Weapons/Rifles/armst_AEK971_test_v11_DOVETAIL_RU (1).et",
+      "serialized_entity_type": "GenericEntity",
+      "parent_guid": "EAE9A298979C4721",
+      "parent_serialized_path": "Prefabs/Weapons/Rifles/AK74/Rifle_AK74N_base.et",
+      "parent_resolved_path": null,
+      "parent_status": "EXTERNAL_UNAVAILABLE",
+      "direct_children": [],
+      "descendant_count": 0,
+      "depth": 0,
+      "role": "LEAF",
+      "family_root": "Prefabs/Weapons/Rifles/armst_AEK971_test_v11.et",
+      "notes": []
+    },
+    {
+      "physical_path": "Prefabs/Weapons/Rifles/armst_Rifle_HKG33.et",
+      "filename": "armst_Rifle_HKG33.et",
+      "meta_exists": true,
+      "guid": "035CFC7DD44455D0",
+      "meta_registered_path": "Rifles/armst_Rifle_HKG33.et",
+      "serialized_entity_type": "GenericEntity",
+      "parent_guid": "3E413771E1834D2F",
+      "parent_serialized_path": "Rifles/armst_Rifle_M16A2.et",
+      "parent_resolved_path": "Prefabs/Weapons/Rifles/armst_Rifle_M16A2.et",
+      "parent_status": "LOCAL_RESOLVED",
+      "direct_children": [],
+      "descendant_count": 0,
+      "depth": 1,
+      "role": "LEAF",
+      "family_root": "Prefabs/Weapons/Rifles/armst_Rifle_M16A2.et",
+      "notes": []
+    },
+    {
+      "physical_path": "Prefabs/Weapons/Rifles/armst_Rifle_L85.et",
+      "filename": "armst_Rifle_L85.et",
+      "meta_exists": true,
+      "guid": "45D3FCA77AF1709B",
+      "meta_registered_path": "Prefabs/Weapons/Rifles/armst_Rifle_L85.et",
+      "serialized_entity_type": "GenericEntity",
+      "parent_guid": "3E413771E1834D2F",
+      "parent_serialized_path": "Prefabs/Weapons/Rifles/armst_Rifle_M16A2.et",
+      "parent_resolved_path": "Prefabs/Weapons/Rifles/armst_Rifle_M16A2.et",
+      "parent_status": "LOCAL_RESOLVED",
+      "direct_children": [],
+      "descendant_count": 0,
+      "depth": 1,
+      "role": "LEAF",
+      "family_root": "Prefabs/Weapons/Rifles/armst_Rifle_M16A2.et",
+      "notes": []
+    },
+    {
+      "physical_path": "Prefabs/Weapons/Rifles/armst_Rifle_M16A2.et",
+      "filename": "armst_Rifle_M16A2.et",
+      "meta_exists": true,
+      "guid": "3E413771E1834D2F",
+      "meta_registered_path": "Prefabs/Weapons/Rifles/M16/armst_Rifle_M16A2.et",
+      "serialized_entity_type": "GenericEntity",
+      "parent_guid": "C63227C0E70EA62E",
+      "parent_serialized_path": "Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et",
+      "parent_resolved_path": null,
+      "parent_status": "EXTERNAL_UNAVAILABLE",
+      "direct_children": [
+        "Prefabs/Weapons/Rifles/armst_Rifle_HKG33.et",
+        "Prefabs/Weapons/Rifles/armst_Rifle_L85.et",
+        "Prefabs/Weapons/Rifles/armst_Rifle_Sig550.et",
+        "Prefabs/Weapons/Rifles/armst_SLR.et"
+      ],
+      "descendant_count": 4,
+      "depth": 0,
+      "role": "INTERMEDIATE",
+      "family_root": "Prefabs/Weapons/Rifles/armst_Rifle_M16A2.et",
+      "notes": []
+    },
+    {
+      "physical_path": "Prefabs/Weapons/Rifles/armst_Rifle_M16A2_carbine.et",
+      "filename": "armst_Rifle_M16A2_carbine.et",
+      "meta_exists": true,
+      "guid": "F97A4AC994231900",
+      "meta_registered_path": "Prefabs/Weapons/Rifles/M16/armst_Rifle_M16A2_carbine.et",
+      "serialized_entity_type": "GenericEntity",
+      "parent_guid": "9207B5D36C3C8C94",
+      "parent_serialized_path": "Prefabs/Weapons/Rifles/M16/Rifle_M16A2_carbine_base.et",
+      "parent_resolved_path": null,
+      "parent_status": "EXTERNAL_UNAVAILABLE",
+      "direct_children": [],
+      "descendant_count": 0,
+      "depth": 0,
+      "role": "LEAF",
+      "family_root": "Prefabs/Weapons/Rifles/armst_Rifle_M16A2_carbine.et",
+      "notes": []
+    },
+    {
+      "physical_path": "Prefabs/Weapons/Rifles/armst_Rifle_Sig550.et",
+      "filename": "armst_Rifle_Sig550.et",
+      "meta_exists": true,
+      "guid": "CA3BEBAADDFAF1DE",
+      "meta_registered_path": "Rifles/armst_Rifle_Sig550.et",
+      "serialized_entity_type": "GenericEntity",
+      "parent_guid": "3E413771E1834D2F",
+      "parent_serialized_path": "Prefabs/Weapons/Rifles/armst_Rifle_M16A2.et",
+      "parent_resolved_path": "Prefabs/Weapons/Rifles/armst_Rifle_M16A2.et",
+      "parent_status": "LOCAL_RESOLVED",
+      "direct_children": [],
+      "descendant_count": 0,
+      "depth": 1,
+      "role": "LEAF",
+      "family_root": "Prefabs/Weapons/Rifles/armst_Rifle_M16A2.et",
+      "notes": []
+    },
+    {
+      "physical_path": "Prefabs/Weapons/Rifles/armst_Rifle_hk_g36.et",
+      "filename": "armst_Rifle_hk_g36.et",
+      "meta_exists": true,
+      "guid": "A802C718201D72DF",
+      "meta_registered_path": "Prefabs/Weapons/Rifles/M16/armst_Rifle_hk_g36.et",
+      "serialized_entity_type": "GenericEntity",
+      "parent_guid": "911D6C8DC7BA2D63",
+      "parent_serialized_path": "Prefabs/Weapons/Core/Rifle_Base.et",
+      "parent_resolved_path": "Prefabs/Weapons/Core/Rifle_Base.et",
+      "parent_status": "LOCAL_RESOLVED",
+      "direct_children": [],
+      "descendant_count": 0,
+      "depth": 2,
+      "role": "LEAF",
+      "family_root": "Prefabs/Weapons/Core/Weapon_Base.et",
+      "notes": []
+    },
+    {
+      "physical_path": "Prefabs/Weapons/Rifles/armst_SLR.et",
+      "filename": "armst_SLR.et",
+      "meta_exists": true,
+      "guid": "C11ED52EAAF856A8",
+      "meta_registered_path": "Rifles/armst_SLR.et",
+      "serialized_entity_type": "GenericEntity",
+      "parent_guid": "3E413771E1834D2F",
+      "parent_serialized_path": "Rifles/armst_Rifle_M16A2.et",
+      "parent_resolved_path": "Prefabs/Weapons/Rifles/armst_Rifle_M16A2.et",
+      "parent_status": "LOCAL_RESOLVED",
+      "direct_children": [],
+      "descendant_count": 0,
+      "depth": 1,
+      "role": "LEAF",
+      "family_root": "Prefabs/Weapons/Rifles/armst_Rifle_M16A2.et",
+      "notes": []
+    },
+    {
+      "physical_path": "Prefabs/Weapons/Rifles/armst_SVD.et",
+      "filename": "armst_SVD.et",
+      "meta_exists": true,
+      "guid": "3EB02CDAD5F23C82",
+      "meta_registered_path": "Prefabs/Weapons/Rifles/armst_SVD.et",
+      "serialized_entity_type": "GenericEntity",
+      "parent_guid": "A3E183EB5A2F3A38",
+      "parent_serialized_path": "Prefabs/Weapons/Rifles/SVD/Rifle_SVD_base.et",
+      "parent_resolved_path": null,
+      "parent_status": "EXTERNAL_UNAVAILABLE",
+      "direct_children": [],
+      "descendant_count": 0,
+      "depth": 0,
+      "role": "LEAF",
+      "family_root": "Prefabs/Weapons/Rifles/armst_SVD.et",
+      "notes": []
+    },
+    {
+      "physical_path": "Prefabs/Weapons/Rifles/armst_VZ58P.et",
+      "filename": "armst_VZ58P.et",
+      "meta_exists": true,
+      "guid": "9C948630078D154D",
+      "meta_registered_path": "Prefabs/Weapons/Rifles/armst_VZ58P.et",
+      "serialized_entity_type": "GenericEntity",
+      "parent_guid": "C19BFAF8A6334FD5",
+      "parent_serialized_path": "Prefabs/Weapons/Rifles/VZ58/Rifle_VZ58_base.et",
+      "parent_resolved_path": null,
+      "parent_status": "EXTERNAL_UNAVAILABLE",
+      "direct_children": [],
+      "descendant_count": 0,
+      "depth": 0,
+      "role": "LEAF",
+      "family_root": "Prefabs/Weapons/Rifles/armst_VZ58P.et",
+      "notes": []
+    },
+    {
+      "physical_path": "Prefabs/Weapons/Rifles/armst_VZ58V.et",
+      "filename": "armst_VZ58V.et",
+      "meta_exists": true,
+      "guid": "443CEFF17E040B11",
+      "meta_registered_path": "Prefabs/Weapons/Rifles/armst_VZ58V.et",
+      "serialized_entity_type": "GenericEntity",
+      "parent_guid": "C19BFAF8A6334FD5",
+      "parent_serialized_path": "Prefabs/Weapons/Rifles/VZ58/Rifle_VZ58_base.et",
+      "parent_resolved_path": null,
+      "parent_status": "EXTERNAL_UNAVAILABLE",
+      "direct_children": [],
+      "descendant_count": 0,
+      "depth": 0,
+      "role": "LEAF",
+      "family_root": "Prefabs/Weapons/Rifles/armst_VZ58V.et",
+      "notes": []
+    }
+  ],
+  "edges": [
+    {
+      "child": "Prefabs/Weapons/Core/Grenade_Base.et",
+      "parent": null,
+      "status": "EXTERNAL_UNAVAILABLE",
+      "parent_guid": "A9EF01A7A6FE60CD",
+      "parent_serialized_path": "Prefabs/Weapons/Core/Throw_Base.et"
+    },
+    {
+      "child": "Prefabs/Weapons/Core/Rifle_Base.et",
+      "parent": "Prefabs/Weapons/Core/Weapon_Base.et",
+      "status": "LOCAL_RESOLVED",
+      "parent_guid": "E1F14DB52DBFBC57",
+      "parent_serialized_path": "Prefabs/Weapons/Core/Weapon_Base.et"
+    },
+    {
+      "child": "Prefabs/Weapons/Handguns/armst_APB.et",
+      "parent": "Prefabs/Weapons/Handguns/armst_PM.et",
+      "status": "LOCAL_RESOLVED",
+      "parent_guid": "C0F7DD85A86B2900",
+      "parent_serialized_path": "Handguns/armst_PM.et"
+    },
+    {
+      "child": "Prefabs/Weapons/Handguns/armst_Handgun_Knife_base.et",
+      "parent": null,
+      "status": "EXTERNAL_UNAVAILABLE",
+      "parent_guid": "EE7028E9DF49763A",
+      "parent_serialized_path": "Prefabs/Weapons/Core/Handgun_Base.et"
+    },
+    {
+      "child": "Prefabs/Weapons/Handguns/armst_M9.et",
+      "parent": null,
+      "status": "EXTERNAL_UNAVAILABLE",
+      "parent_guid": "809488C4984AC087",
+      "parent_serialized_path": "Prefabs/Weapons/Handguns/M9/Handgun_M9_base.et"
+    },
+    {
+      "child": "Prefabs/Weapons/Handguns/armst_PM.et",
+      "parent": null,
+      "status": "EXTERNAL_UNAVAILABLE",
+      "parent_guid": "B7132459C07777CA",
+      "parent_serialized_path": "Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et"
+    },
+    {
+      "child": "Prefabs/Weapons/Handguns/armst_PP91.et",
+      "parent": "Prefabs/Weapons/Handguns/armst_PM.et",
+      "status": "LOCAL_RESOLVED",
+      "parent_guid": "C0F7DD85A86B2900",
+      "parent_serialized_path": "Handguns/armst_PM.et"
+    },
+    {
+      "child": "Prefabs/Weapons/Handguns/armst_SR_2.et",
+      "parent": "Prefabs/Weapons/Handguns/armst_PP91.et",
+      "status": "LOCAL_RESOLVED",
+      "parent_guid": "3968B2A856852CBD",
+      "parent_serialized_path": "Handguns/New_armst_PP91.et"
+    },
+    {
+      "child": "Prefabs/Weapons/Handguns/armst_TT.et",
+      "parent": "Prefabs/Weapons/Handguns/armst_PM.et",
+      "status": "LOCAL_RESOLVED",
+      "parent_guid": "C0F7DD85A86B2900",
+      "parent_serialized_path": "Handguns/armst_PM.et"
+    },
+    {
+      "child": "Prefabs/Weapons/MachineGuns/armst_PKM.et",
+      "parent": null,
+      "status": "EXTERNAL_UNAVAILABLE",
+      "parent_guid": "76C400582D3C4AF9",
+      "parent_serialized_path": "Prefabs/Weapons/MachineGuns/PKM/MG_PKM_base.et"
+    },
+    {
+      "child": "Prefabs/Weapons/MachineGuns/armst_RPK74.et",
+      "parent": null,
+      "status": "EXTERNAL_UNAVAILABLE",
+      "parent_guid": "3BFBE9145E9C40B9",
+      "parent_serialized_path": "Prefabs/Weapons/MachineGuns/RPK74/MG_RPK74_base.et"
+    },
+    {
+      "child": "Prefabs/Weapons/Rifles/9a91/armst_Rifle_9a91_base.et",
+      "parent": null,
+      "status": "EXTERNAL_UNAVAILABLE",
+      "parent_guid": "1FA22B1F5E7BC80B",
+      "parent_serialized_path": "Prefabs/Weapons/Rifles/AK74/Rifle_AK74_short_base.et"
+    },
+    {
+      "child": "Prefabs/Weapons/Rifles/AK74/armst_AK105.et",
+      "parent": "Prefabs/Weapons/Rifles/AK74/armst_AK74.et",
+      "status": "LOCAL_RESOLVED",
+      "parent_guid": "FA5C25BF66A53DCF",
+      "parent_serialized_path": "Rifles/AK74/armst_AK74.et"
+    },
+    {
+      "child": "Prefabs/Weapons/Rifles/AK74/armst_AK74.et",
+      "parent": null,
+      "status": "EXTERNAL_UNAVAILABLE",
+      "parent_guid": "923D948AB0D57A50",
+      "parent_serialized_path": "Prefabs/Weapons/Rifles/AK74/Rifle_AK74_long_base.et"
+    },
+    {
+      "child": "Prefabs/Weapons/Rifles/AK74/armst_AK74M.et",
+      "parent": "Prefabs/Weapons/Rifles/AK74/armst_AK74N.et",
+      "status": "LOCAL_RESOLVED",
+      "parent_guid": "96DFD2E7E63B3386",
+      "parent_serialized_path": "Prefabs/Weapons/Rifles/AK74/armst_AK74N.et"
+    },
+    {
+      "child": "Prefabs/Weapons/Rifles/AK74/armst_AK74M_full.et",
+      "parent": "Prefabs/Weapons/Rifles/AK74/armst_AK74M.et",
+      "status": "LOCAL_RESOLVED",
+      "parent_guid": "5B8E766C0E3C13EE",
+      "parent_serialized_path": "Prefabs/Weapons/Rifles/AK74/armst_AK74M.et"
+    },
+    {
+      "child": "Prefabs/Weapons/Rifles/AK74/armst_AK74N.et",
+      "parent": null,
+      "status": "EXTERNAL_UNAVAILABLE",
+      "parent_guid": "EAE9A298979C4721",
+      "parent_serialized_path": "Prefabs/Weapons/Rifles/AK74/Rifle_AK74N_base.et"
+    },
+    {
+      "child": "Prefabs/Weapons/Rifles/AK74/armst_AKS.et",
+      "parent": "Prefabs/Weapons/Rifles/AK74/armst_AK74N.et",
+      "status": "LOCAL_RESOLVED",
+      "parent_guid": "96DFD2E7E63B3386",
+      "parent_serialized_path": "Prefabs/Weapons/Rifles/AK74/armst_AK74N.et"
+    },
+    {
+      "child": "Prefabs/Weapons/Rifles/AK74/armst_AKS74U.et",
+      "parent": null,
+      "status": "EXTERNAL_UNAVAILABLE",
+      "parent_guid": "8BA0D0DE316D1B44",
+      "parent_serialized_path": "Prefabs/Weapons/Rifles/AKS74U/Rifle_AKS74U_base.et"
+    },
+    {
+      "child": "Prefabs/Weapons/Rifles/AK74/armst_AKS74UN.et",
+      "parent": null,
+      "status": "EXTERNAL_UNAVAILABLE",
+      "parent_guid": "9AE416F8879DDA6D",
+      "parent_serialized_path": "Prefabs/Weapons/Rifles/AKS74U/Rifle_AKS74UN_base.et"
+    },
+    {
+      "child": "Prefabs/Weapons/Rifles/AKM/armst_Rifle_AKM.et",
+      "parent": "Prefabs/Weapons/Rifles/AKM/armst_Rifle_AKM_base.et",
+      "status": "LOCAL_RESOLVED",
+      "parent_guid": "140E94F473B60FE3",
+      "parent_serialized_path": "Prefabs/Weapons/Rifles/AKM/armst_Rifle_AKM_base.et"
+    },
+    {
+      "child": "Prefabs/Weapons/Rifles/AKM/armst_Rifle_AKMS.et",
+      "parent": "Prefabs/Weapons/Rifles/AKM/armst_Rifle_AKM_base.et",
+      "status": "LOCAL_RESOLVED",
+      "parent_guid": "140E94F473B60FE3",
+      "parent_serialized_path": "Prefabs/Weapons/Rifles/AKM/armst_Rifle_AKM_base.et"
+    },
+    {
+      "child": "Prefabs/Weapons/Rifles/AKM/armst_Rifle_AKM_base.et",
+      "parent": "Prefabs/Weapons/Core/Rifle_Base.et",
+      "status": "LOCAL_RESOLVED",
+      "parent_guid": "911D6C8DC7BA2D63",
+      "parent_serialized_path": "Prefabs/Weapons/Core/Rifle_Base.et"
+    },
+    {
+      "child": "Prefabs/Weapons/Rifles/AKM/armst_Rifle_AKM_full.et",
+      "parent": "Prefabs/Weapons/Rifles/AKM/armst_Rifle_AKM.et",
+      "status": "LOCAL_RESOLVED",
+      "parent_guid": "5BFF97EFD0BF6D9F",
+      "parent_serialized_path": "Prefabs/Weapons/Rifles/AKM/armst_Rifle_AKM.et"
+    },
+    {
+      "child": "Prefabs/Weapons/Rifles/AKM/armst_Rifle_SOC94.et",
+      "parent": "Prefabs/Weapons/Rifles/AKM/armst_Rifle_AKM_base.et",
+      "status": "LOCAL_RESOLVED",
+      "parent_guid": "140E94F473B60FE3",
+      "parent_serialized_path": "Rifles/AKM/armst_Rifle_AKM_base.et"
+    },
+    {
+      "child": "Prefabs/Weapons/Rifles/AKM/armst_Rifle_VPO136.et",
+      "parent": "Prefabs/Weapons/Rifles/AKM/armst_Rifle_AKM_base.et",
+      "status": "LOCAL_RESOLVED",
+      "parent_guid": "140E94F473B60FE3",
+      "parent_serialized_path": "Prefabs/Weapons/Rifles/AKM/armst_Rifle_AKM_base.et"
+    },
+    {
+      "child": "Prefabs/Weapons/Rifles/Groza/armst_Groza_base.et",
+      "parent": "Prefabs/Weapons/Core/Rifle_Base.et",
+      "status": "LOCAL_RESOLVED",
+      "parent_guid": "911D6C8DC7BA2D63",
+      "parent_serialized_path": "Prefabs/Weapons/Core/Rifle_Base.et"
+    },
+    {
+      "child": "Prefabs/Weapons/Rifles/Shotgun/armst_Remington_870.et",
+      "parent": "Prefabs/Weapons/Rifles/Shotgun/armst_shotgun_base.et",
+      "status": "LOCAL_RESOLVED",
+      "parent_guid": "6C5E2009CDCD0BD3",
+      "parent_serialized_path": "Prefabs/ShotGun/ShotGun/armst_shotgun_base.et"
+    },
+    {
+      "child": "Prefabs/Weapons/Rifles/Shotgun/armst_izh_27.et",
+      "parent": "Prefabs/Weapons/Rifles/Shotgun/armst_shotgun_base.et",
+      "status": "LOCAL_RESOLVED",
+      "parent_guid": "6C5E2009CDCD0BD3",
+      "parent_serialized_path": "Prefabs/Weapons/Rifles/Shotgun/armst_shotgun_base.et"
+    },
+    {
+      "child": "Prefabs/Weapons/Rifles/Shotgun/armst_mp_133.et",
+      "parent": "Prefabs/Weapons/Rifles/Shotgun/armst_shotgun_base.et",
+      "status": "LOCAL_RESOLVED",
+      "parent_guid": "6C5E2009CDCD0BD3",
+      "parent_serialized_path": "Prefabs/Weapons/Rifles/Shotgun/armst_shotgun_base.et"
+    },
+    {
+      "child": "Prefabs/Weapons/Rifles/Shotgun/armst_mp_153.et",
+      "parent": "Prefabs/Weapons/Rifles/Shotgun/armst_shotgun_base.et",
+      "status": "LOCAL_RESOLVED",
+      "parent_guid": "6C5E2009CDCD0BD3",
+      "parent_serialized_path": "Prefabs/ShotGun/ShotGun/armst_shotgun_base.et"
+    },
+    {
+      "child": "Prefabs/Weapons/Rifles/Shotgun/armst_shotgun_base.et",
+      "parent": null,
+      "status": "EXTERNAL_UNAVAILABLE",
+      "parent_guid": "B31929F65F0D0279",
+      "parent_serialized_path": "Prefabs/Weapons/Rifles/M14/Rifle_M21.et"
+    },
+    {
+      "child": "Prefabs/Weapons/Rifles/Shotgun/armst_spas_12.et",
+      "parent": "Prefabs/Weapons/Rifles/Shotgun/armst_shotgun_base.et",
+      "status": "LOCAL_RESOLVED",
+      "parent_guid": "6C5E2009CDCD0BD3",
+      "parent_serialized_path": "Prefabs/ShotGun/ShotGun/armst_shotgun_base.et"
+    },
+    {
+      "child": "Prefabs/Weapons/Rifles/Shotgun/armst_toz_66.et",
+      "parent": "Prefabs/Weapons/Rifles/Shotgun/armst_shotgun_base.et",
+      "status": "LOCAL_RESOLVED",
+      "parent_guid": "6C5E2009CDCD0BD3",
+      "parent_serialized_path": "Prefabs/Weapons/Rifles/Shotgun/armst_shotgun_base.et"
+    },
+    {
+      "child": "Prefabs/Weapons/Rifles/Shotgun/armst_toz_66_pantera.et",
+      "parent": "Prefabs/Weapons/Rifles/Shotgun/armst_toz_66.et",
+      "status": "LOCAL_RESOLVED",
+      "parent_guid": "923B067A74826419",
+      "parent_serialized_path": "Prefabs/Weapons/Rifles/Shotgun/armst_toz_66.et"
+    },
+    {
+      "child": "Prefabs/Weapons/Rifles/Shotgun/armst_toz_66_saw.et",
+      "parent": "Prefabs/Weapons/Rifles/Shotgun/armst_toz_66.et",
+      "status": "LOCAL_RESOLVED",
+      "parent_guid": "923B067A74826419",
+      "parent_serialized_path": "Prefabs/Weapons/Rifles/Shotgun/armst_toz_66.et"
+    },
+    {
+      "child": "Prefabs/Weapons/Rifles/VAL/armst_Rifle_val_base.et",
+      "parent": null,
+      "status": "EXTERNAL_UNAVAILABLE",
+      "parent_guid": "1FA22B1F5E7BC80B",
+      "parent_serialized_path": "Prefabs/Weapons/Rifles/AK74/Rifle_AK74_short_base.et"
+    },
+    {
+      "child": "Prefabs/Weapons/Rifles/VSK94/armst_Rifle_VSK94_base.et",
+      "parent": null,
+      "status": "EXTERNAL_UNAVAILABLE",
+      "parent_guid": "1FA22B1F5E7BC80B",
+      "parent_serialized_path": "Prefabs/Weapons/Rifles/AK74/Rifle_AK74_short_base.et"
+    },
+    {
+      "child": "Prefabs/Weapons/Rifles/VSS/armst_Rifle_vss_base.et",
+      "parent": null,
+      "status": "EXTERNAL_UNAVAILABLE",
+      "parent_guid": "1FA22B1F5E7BC80B",
+      "parent_serialized_path": "Prefabs/Weapons/Rifles/AK74/Rifle_AK74_short_base.et"
+    },
+    {
+      "child": "Prefabs/Weapons/Rifles/armst_AEK971_test_v11.et",
+      "parent": null,
+      "status": "EXTERNAL_UNAVAILABLE",
+      "parent_guid": "EAE9A298979C4721",
+      "parent_serialized_path": "Prefabs/Weapons/Rifles/AK74/Rifle_AK74N_base.et"
+    },
+    {
+      "child": "Prefabs/Weapons/Rifles/armst_Rifle_HKG33.et",
+      "parent": "Prefabs/Weapons/Rifles/armst_Rifle_M16A2.et",
+      "status": "LOCAL_RESOLVED",
+      "parent_guid": "3E413771E1834D2F",
+      "parent_serialized_path": "Rifles/armst_Rifle_M16A2.et"
+    },
+    {
+      "child": "Prefabs/Weapons/Rifles/armst_Rifle_L85.et",
+      "parent": "Prefabs/Weapons/Rifles/armst_Rifle_M16A2.et",
+      "status": "LOCAL_RESOLVED",
+      "parent_guid": "3E413771E1834D2F",
+      "parent_serialized_path": "Prefabs/Weapons/Rifles/armst_Rifle_M16A2.et"
+    },
+    {
+      "child": "Prefabs/Weapons/Rifles/armst_Rifle_M16A2.et",
+      "parent": null,
+      "status": "EXTERNAL_UNAVAILABLE",
+      "parent_guid": "C63227C0E70EA62E",
+      "parent_serialized_path": "Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et"
+    },
+    {
+      "child": "Prefabs/Weapons/Rifles/armst_Rifle_M16A2_carbine.et",
+      "parent": null,
+      "status": "EXTERNAL_UNAVAILABLE",
+      "parent_guid": "9207B5D36C3C8C94",
+      "parent_serialized_path": "Prefabs/Weapons/Rifles/M16/Rifle_M16A2_carbine_base.et"
+    },
+    {
+      "child": "Prefabs/Weapons/Rifles/armst_Rifle_Sig550.et",
+      "parent": "Prefabs/Weapons/Rifles/armst_Rifle_M16A2.et",
+      "status": "LOCAL_RESOLVED",
+      "parent_guid": "3E413771E1834D2F",
+      "parent_serialized_path": "Prefabs/Weapons/Rifles/armst_Rifle_M16A2.et"
+    },
+    {
+      "child": "Prefabs/Weapons/Rifles/armst_Rifle_hk_g36.et",
+      "parent": "Prefabs/Weapons/Core/Rifle_Base.et",
+      "status": "LOCAL_RESOLVED",
+      "parent_guid": "911D6C8DC7BA2D63",
+      "parent_serialized_path": "Prefabs/Weapons/Core/Rifle_Base.et"
+    },
+    {
+      "child": "Prefabs/Weapons/Rifles/armst_SLR.et",
+      "parent": "Prefabs/Weapons/Rifles/armst_Rifle_M16A2.et",
+      "status": "LOCAL_RESOLVED",
+      "parent_guid": "3E413771E1834D2F",
+      "parent_serialized_path": "Rifles/armst_Rifle_M16A2.et"
+    },
+    {
+      "child": "Prefabs/Weapons/Rifles/armst_SVD.et",
+      "parent": null,
+      "status": "EXTERNAL_UNAVAILABLE",
+      "parent_guid": "A3E183EB5A2F3A38",
+      "parent_serialized_path": "Prefabs/Weapons/Rifles/SVD/Rifle_SVD_base.et"
+    },
+    {
+      "child": "Prefabs/Weapons/Rifles/armst_VZ58P.et",
+      "parent": null,
+      "status": "EXTERNAL_UNAVAILABLE",
+      "parent_guid": "C19BFAF8A6334FD5",
+      "parent_serialized_path": "Prefabs/Weapons/Rifles/VZ58/Rifle_VZ58_base.et"
+    },
+    {
+      "child": "Prefabs/Weapons/Rifles/armst_VZ58V.et",
+      "parent": null,
+      "status": "EXTERNAL_UNAVAILABLE",
+      "parent_guid": "C19BFAF8A6334FD5",
+      "parent_serialized_path": "Prefabs/Weapons/Rifles/VZ58/Rifle_VZ58_base.et"
+    }
+  ],
+  "roots": [
+    "Prefabs/Weapons/Core/Grenade_Base.et",
+    "Prefabs/Weapons/Core/Weapon_Base.et",
+    "Prefabs/Weapons/Handguns/armst_Handgun_Knife_base.et",
+    "Prefabs/Weapons/Handguns/armst_M9.et",
+    "Prefabs/Weapons/Handguns/armst_PM.et",
+    "Prefabs/Weapons/MachineGuns/armst_PKM.et",
+    "Prefabs/Weapons/MachineGuns/armst_RPK74.et",
+    "Prefabs/Weapons/Rifles/9a91/armst_Rifle_9a91_base.et",
+    "Prefabs/Weapons/Rifles/AK74/armst_AK74.et",
+    "Prefabs/Weapons/Rifles/AK74/armst_AK74N.et",
+    "Prefabs/Weapons/Rifles/AK74/armst_AKS74U.et",
+    "Prefabs/Weapons/Rifles/AK74/armst_AKS74UN.et",
+    "Prefabs/Weapons/Rifles/Shotgun/armst_shotgun_base.et",
+    "Prefabs/Weapons/Rifles/VAL/armst_Rifle_val_base.et",
+    "Prefabs/Weapons/Rifles/VSK94/armst_Rifle_VSK94_base.et",
+    "Prefabs/Weapons/Rifles/VSS/armst_Rifle_vss_base.et",
+    "Prefabs/Weapons/Rifles/armst_AEK971_test_v11.et",
+    "Prefabs/Weapons/Rifles/armst_Rifle_M16A2.et",
+    "Prefabs/Weapons/Rifles/armst_Rifle_M16A2_carbine.et",
+    "Prefabs/Weapons/Rifles/armst_SVD.et",
+    "Prefabs/Weapons/Rifles/armst_VZ58P.et",
+    "Prefabs/Weapons/Rifles/armst_VZ58V.et"
+  ],
+  "families": {
+    "Prefabs/Weapons/Rifles/AK74/armst_AK74N.et": [
+      "Prefabs/Weapons/Rifles/AK74/armst_AK74M.et",
+      "Prefabs/Weapons/Rifles/AK74/armst_AK74M_full.et",
+      "Prefabs/Weapons/Rifles/AK74/armst_AK74N.et",
+      "Prefabs/Weapons/Rifles/AK74/armst_AKS.et"
+    ],
+    "Prefabs/Weapons/Core/Weapon_Base.et": [
+      "Prefabs/Weapons/Core/Rifle_Base.et",
+      "Prefabs/Weapons/Core/Weapon_Base.et",
+      "Prefabs/Weapons/Rifles/AKM/armst_Rifle_AKM.et",
+      "Prefabs/Weapons/Rifles/AKM/armst_Rifle_AKMS.et",
+      "Prefabs/Weapons/Rifles/AKM/armst_Rifle_AKM_base.et",
+      "Prefabs/Weapons/Rifles/AKM/armst_Rifle_AKM_full.et",
+      "Prefabs/Weapons/Rifles/AKM/armst_Rifle_SOC94.et",
+      "Prefabs/Weapons/Rifles/AKM/armst_Rifle_VPO136.et",
+      "Prefabs/Weapons/Rifles/Groza/armst_Groza_base.et",
+      "Prefabs/Weapons/Rifles/armst_Rifle_hk_g36.et"
+    ],
+    "Prefabs/Weapons/Rifles/AK74/armst_AKS74U.et": [
+      "Prefabs/Weapons/Rifles/AK74/armst_AKS74U.et"
+    ],
+    "Prefabs/Weapons/Rifles/armst_Rifle_M16A2.et": [
+      "Prefabs/Weapons/Rifles/armst_Rifle_HKG33.et",
+      "Prefabs/Weapons/Rifles/armst_Rifle_L85.et",
+      "Prefabs/Weapons/Rifles/armst_Rifle_M16A2.et",
+      "Prefabs/Weapons/Rifles/armst_Rifle_Sig550.et",
+      "Prefabs/Weapons/Rifles/armst_SLR.et"
+    ],
+    "Prefabs/Weapons/Handguns/armst_Handgun_Knife_base.et": [
+      "Prefabs/Weapons/Handguns/armst_Handgun_Knife_base.et"
+    ],
+    "Prefabs/Weapons/Core/Grenade_Base.et": [
+      "Prefabs/Weapons/Core/Grenade_Base.et"
+    ],
+    "Prefabs/Weapons/Handguns/armst_PM.et": [
+      "Prefabs/Weapons/Handguns/armst_APB.et",
+      "Prefabs/Weapons/Handguns/armst_PM.et",
+      "Prefabs/Weapons/Handguns/armst_PP91.et",
+      "Prefabs/Weapons/Handguns/armst_SR_2.et",
+      "Prefabs/Weapons/Handguns/armst_TT.et"
+    ],
+    "Prefabs/Weapons/Rifles/Shotgun/armst_shotgun_base.et": [
+      "Prefabs/Weapons/Rifles/Shotgun/armst_Remington_870.et",
+      "Prefabs/Weapons/Rifles/Shotgun/armst_izh_27.et",
+      "Prefabs/Weapons/Rifles/Shotgun/armst_mp_133.et",
+      "Prefabs/Weapons/Rifles/Shotgun/armst_mp_153.et",
+      "Prefabs/Weapons/Rifles/Shotgun/armst_shotgun_base.et",
+      "Prefabs/Weapons/Rifles/Shotgun/armst_spas_12.et",
+      "Prefabs/Weapons/Rifles/Shotgun/armst_toz_66.et",
+      "Prefabs/Weapons/Rifles/Shotgun/armst_toz_66_pantera.et",
+      "Prefabs/Weapons/Rifles/Shotgun/armst_toz_66_saw.et"
+    ],
+    "Prefabs/Weapons/Rifles/VAL/armst_Rifle_val_base.et": [
+      "Prefabs/Weapons/Rifles/VAL/armst_Rifle_val_base.et"
+    ],
+    "Prefabs/Weapons/Rifles/armst_VZ58P.et": [
+      "Prefabs/Weapons/Rifles/armst_VZ58P.et"
+    ],
+    "Prefabs/Weapons/Rifles/AK74/armst_AK74.et": [
+      "Prefabs/Weapons/Rifles/AK74/armst_AK105.et",
+      "Prefabs/Weapons/Rifles/AK74/armst_AK74.et"
+    ],
+    "Prefabs/Weapons/Rifles/VSK94/armst_Rifle_VSK94_base.et": [
+      "Prefabs/Weapons/Rifles/VSK94/armst_Rifle_VSK94_base.et"
+    ],
+    "Prefabs/Weapons/MachineGuns/armst_PKM.et": [
+      "Prefabs/Weapons/MachineGuns/armst_PKM.et"
+    ],
+    "Prefabs/Weapons/Handguns/armst_M9.et": [
+      "Prefabs/Weapons/Handguns/armst_M9.et"
+    ],
+    "Prefabs/Weapons/Rifles/armst_AEK971_test_v11.et": [
+      "Prefabs/Weapons/Rifles/armst_AEK971_test_v11.et"
+    ],
+    "Prefabs/Weapons/Rifles/VSS/armst_Rifle_vss_base.et": [
+      "Prefabs/Weapons/Rifles/VSS/armst_Rifle_vss_base.et"
+    ],
+    "Prefabs/Weapons/Rifles/armst_VZ58V.et": [
+      "Prefabs/Weapons/Rifles/armst_VZ58V.et"
+    ],
+    "Prefabs/Weapons/Rifles/9a91/armst_Rifle_9a91_base.et": [
+      "Prefabs/Weapons/Rifles/9a91/armst_Rifle_9a91_base.et"
+    ],
+    "Prefabs/Weapons/Rifles/armst_Rifle_M16A2_carbine.et": [
+      "Prefabs/Weapons/Rifles/armst_Rifle_M16A2_carbine.et"
+    ],
+    "Prefabs/Weapons/MachineGuns/armst_RPK74.et": [
+      "Prefabs/Weapons/MachineGuns/armst_RPK74.et"
+    ],
+    "Prefabs/Weapons/Rifles/AK74/armst_AKS74UN.et": [
+      "Prefabs/Weapons/Rifles/AK74/armst_AKS74UN.et"
+    ],
+    "Prefabs/Weapons/Rifles/armst_SVD.et": [
+      "Prefabs/Weapons/Rifles/armst_SVD.et"
+    ]
+  },
+  "cycles": [],
+  "duplicate_guid_owners": {},
+  "issues": [
+    {
+      "type": "EXTERNAL_UNAVAILABLE",
+      "resource": "Prefabs/Weapons/Core/Grenade_Base.et",
+      "parent_guid": "A9EF01A7A6FE60CD",
+      "parent_path": "Prefabs/Weapons/Core/Throw_Base.et",
+      "candidates": []
+    },
+    {
+      "type": "meta registered-name mismatch",
+      "resource": "Prefabs/Weapons/Handguns/armst_Handgun_Knife_base.et",
+      "guid": "26ADE11C416B3840",
+      "meta_registered_path": "Prefabs/Weapons/Handguns/PM/armst_Handgun_Knife_base.et"
+    },
+    {
+      "type": "EXTERNAL_UNAVAILABLE",
+      "resource": "Prefabs/Weapons/Handguns/armst_Handgun_Knife_base.et",
+      "parent_guid": "EE7028E9DF49763A",
+      "parent_path": "Prefabs/Weapons/Core/Handgun_Base.et",
+      "candidates": []
+    },
+    {
+      "type": "meta registered-name mismatch",
+      "resource": "Prefabs/Weapons/Handguns/armst_M9.et",
+      "guid": "1353C6EAD1DCFE43",
+      "meta_registered_path": "Prefabs/Weapons/Handguns/M9/Handgun_M9.et"
+    },
+    {
+      "type": "EXTERNAL_UNAVAILABLE",
+      "resource": "Prefabs/Weapons/Handguns/armst_M9.et",
+      "parent_guid": "809488C4984AC087",
+      "parent_path": "Prefabs/Weapons/Handguns/M9/Handgun_M9_base.et",
+      "candidates": []
+    },
+    {
+      "type": "meta registered-name mismatch",
+      "resource": "Prefabs/Weapons/Handguns/armst_PM.et",
+      "guid": "C0F7DD85A86B2900",
+      "meta_registered_path": "Prefabs/Weapons/Handguns/PM/Handgun_PM.et"
+    },
+    {
+      "type": "EXTERNAL_UNAVAILABLE",
+      "resource": "Prefabs/Weapons/Handguns/armst_PM.et",
+      "parent_guid": "B7132459C07777CA",
+      "parent_path": "Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et",
+      "candidates": []
+    },
+    {
+      "type": "meta registered-name mismatch",
+      "resource": "Prefabs/Weapons/Handguns/armst_SR_2.et",
+      "guid": "31FB2EC4F4AFFC05",
+      "meta_registered_path": "Handguns/New_armst_Veresk_SR_@.et"
+    },
+    {
+      "type": "meta registered-name mismatch",
+      "resource": "Prefabs/Weapons/MachineGuns/armst_PKM.et",
+      "guid": "A89BC9D55FFB4CD8",
+      "meta_registered_path": "Prefabs/Weapons/MachineGuns/PKM/MG_PKM.et"
+    },
+    {
+      "type": "EXTERNAL_UNAVAILABLE",
+      "resource": "Prefabs/Weapons/MachineGuns/armst_PKM.et",
+      "parent_guid": "76C400582D3C4AF9",
+      "parent_path": "Prefabs/Weapons/MachineGuns/PKM/MG_PKM_base.et",
+      "candidates": []
+    },
+    {
+      "type": "meta registered-name mismatch",
+      "resource": "Prefabs/Weapons/MachineGuns/armst_RPK74.et",
+      "guid": "A7AF84C6C58BA3E8",
+      "meta_registered_path": "Prefabs/Weapons/MachineGuns/RPK74/MG_RPK74.et"
+    },
+    {
+      "type": "EXTERNAL_UNAVAILABLE",
+      "resource": "Prefabs/Weapons/MachineGuns/armst_RPK74.et",
+      "parent_guid": "3BFBE9145E9C40B9",
+      "parent_path": "Prefabs/Weapons/MachineGuns/RPK74/MG_RPK74_base.et",
+      "candidates": []
+    },
+    {
+      "type": "meta registered-name mismatch",
+      "resource": "Prefabs/Weapons/Rifles/9a91/armst_Rifle_9a91_base.et",
+      "guid": "E2D8F39AE1B9B8F1",
+      "meta_registered_path": "Prefabs/Weapons/Rifles/AKS74U/armst_Rifle_9a91_base.et"
+    },
+    {
+      "type": "EXTERNAL_UNAVAILABLE",
+      "resource": "Prefabs/Weapons/Rifles/9a91/armst_Rifle_9a91_base.et",
+      "parent_guid": "1FA22B1F5E7BC80B",
+      "parent_path": "Prefabs/Weapons/Rifles/AK74/Rifle_AK74_short_base.et",
+      "candidates": []
+    },
+    {
+      "type": "meta registered-name mismatch",
+      "resource": "Prefabs/Weapons/Rifles/AK74/armst_AK105.et",
+      "guid": "6FC3151D0DED22A9",
+      "meta_registered_path": "Rifles/AK74/armst_AK105.et"
+    },
+    {
+      "type": "meta registered-name mismatch",
+      "resource": "Prefabs/Weapons/Rifles/AK74/armst_AK74.et",
+      "guid": "FA5C25BF66A53DCF",
+      "meta_registered_path": "Prefabs/Weapons/Rifles/armst_AK74.et"
+    },
+    {
+      "type": "EXTERNAL_UNAVAILABLE",
+      "resource": "Prefabs/Weapons/Rifles/AK74/armst_AK74.et",
+      "parent_guid": "923D948AB0D57A50",
+      "parent_path": "Prefabs/Weapons/Rifles/AK74/Rifle_AK74_long_base.et",
+      "candidates": []
+    },
+    {
+      "type": "meta registered-name mismatch",
+      "resource": "Prefabs/Weapons/Rifles/AK74/armst_AK74M.et",
+      "guid": "5B8E766C0E3C13EE",
+      "meta_registered_path": "Prefabs/Weapons/Rifles/armst_AK74M.et"
+    },
+    {
+      "type": "meta registered-name mismatch",
+      "resource": "Prefabs/Weapons/Rifles/AK74/armst_AK74N.et",
+      "guid": "96DFD2E7E63B3386",
+      "meta_registered_path": "Prefabs/Weapons/Rifles/armst_AK74N.et"
+    },
+    {
+      "type": "EXTERNAL_UNAVAILABLE",
+      "resource": "Prefabs/Weapons/Rifles/AK74/armst_AK74N.et",
+      "parent_guid": "EAE9A298979C4721",
+      "parent_path": "Prefabs/Weapons/Rifles/AK74/Rifle_AK74N_base.et",
+      "candidates": []
+    },
+    {
+      "type": "meta registered-name mismatch",
+      "resource": "Prefabs/Weapons/Rifles/AK74/armst_AKS74U.et",
+      "guid": "BFEA719491610A45",
+      "meta_registered_path": "Prefabs/Weapons/Rifles/armst_AKS74U.et"
+    },
+    {
+      "type": "EXTERNAL_UNAVAILABLE",
+      "resource": "Prefabs/Weapons/Rifles/AK74/armst_AKS74U.et",
+      "parent_guid": "8BA0D0DE316D1B44",
+      "parent_path": "Prefabs/Weapons/Rifles/AKS74U/Rifle_AKS74U_base.et",
+      "candidates": []
+    },
+    {
+      "type": "meta registered-name mismatch",
+      "resource": "Prefabs/Weapons/Rifles/AK74/armst_AKS74UN.et",
+      "guid": "FA0E25CE35EE945F",
+      "meta_registered_path": "Prefabs/Weapons/Rifles/armst_AKS74UN.et"
+    },
+    {
+      "type": "EXTERNAL_UNAVAILABLE",
+      "resource": "Prefabs/Weapons/Rifles/AK74/armst_AKS74UN.et",
+      "parent_guid": "9AE416F8879DDA6D",
+      "parent_path": "Prefabs/Weapons/Rifles/AKS74U/Rifle_AKS74UN_base.et",
+      "candidates": []
+    },
+    {
+      "type": "EXTERNAL_UNAVAILABLE",
+      "resource": "Prefabs/Weapons/Rifles/Shotgun/armst_shotgun_base.et",
+      "parent_guid": "B31929F65F0D0279",
+      "parent_path": "Prefabs/Weapons/Rifles/M14/Rifle_M21.et",
+      "candidates": []
+    },
+    {
+      "type": "meta registered-name mismatch",
+      "resource": "Prefabs/Weapons/Rifles/VAL/armst_Rifle_val_base.et",
+      "guid": "F25D16BD5F748372",
+      "meta_registered_path": "Prefabs/Weapons/Rifles/VSS/armst_Rifle_val_base.et"
+    },
+    {
+      "type": "EXTERNAL_UNAVAILABLE",
+      "resource": "Prefabs/Weapons/Rifles/VAL/armst_Rifle_val_base.et",
+      "parent_guid": "1FA22B1F5E7BC80B",
+      "parent_path": "Prefabs/Weapons/Rifles/AK74/Rifle_AK74_short_base.et",
+      "candidates": []
+    },
+    {
+      "type": "meta registered-name mismatch",
+      "resource": "Prefabs/Weapons/Rifles/VSK94/armst_Rifle_VSK94_base.et",
+      "guid": "6005623D3AA5F5C2",
+      "meta_registered_path": "Prefabs/Weapons/Rifles/9a91/armst_Rifle_VSK94_base.et"
+    },
+    {
+      "type": "EXTERNAL_UNAVAILABLE",
+      "resource": "Prefabs/Weapons/Rifles/VSK94/armst_Rifle_VSK94_base.et",
+      "parent_guid": "1FA22B1F5E7BC80B",
+      "parent_path": "Prefabs/Weapons/Rifles/AK74/Rifle_AK74_short_base.et",
+      "candidates": []
+    },
+    {
+      "type": "meta registered-name mismatch",
+      "resource": "Prefabs/Weapons/Rifles/VSS/armst_Rifle_vss_base.et",
+      "guid": "902A79E4B2A66E63",
+      "meta_registered_path": "Prefabs/Weapons/Rifles/9a91/Rifle_vss_vintorez_base.et"
+    },
+    {
+      "type": "EXTERNAL_UNAVAILABLE",
+      "resource": "Prefabs/Weapons/Rifles/VSS/armst_Rifle_vss_base.et",
+      "parent_guid": "1FA22B1F5E7BC80B",
+      "parent_path": "Prefabs/Weapons/Rifles/AK74/Rifle_AK74_short_base.et",
+      "candidates": []
+    },
+    {
+      "type": "meta registered-name mismatch",
+      "resource": "Prefabs/Weapons/Rifles/armst_AEK971_test_v11.et",
+      "guid": "AC198EAC9BDD9841",
+      "meta_registered_path": "Prefabs/Weapons/Rifles/armst_AEK971_test_v11_DOVETAIL_RU (1).et"
+    },
+    {
+      "type": "EXTERNAL_UNAVAILABLE",
+      "resource": "Prefabs/Weapons/Rifles/armst_AEK971_test_v11.et",
+      "parent_guid": "EAE9A298979C4721",
+      "parent_path": "Prefabs/Weapons/Rifles/AK74/Rifle_AK74N_base.et",
+      "candidates": []
+    },
+    {
+      "type": "meta registered-name mismatch",
+      "resource": "Prefabs/Weapons/Rifles/armst_Rifle_HKG33.et",
+      "guid": "035CFC7DD44455D0",
+      "meta_registered_path": "Rifles/armst_Rifle_HKG33.et"
+    },
+    {
+      "type": "meta registered-name mismatch",
+      "resource": "Prefabs/Weapons/Rifles/armst_Rifle_M16A2.et",
+      "guid": "3E413771E1834D2F",
+      "meta_registered_path": "Prefabs/Weapons/Rifles/M16/armst_Rifle_M16A2.et"
+    },
+    {
+      "type": "EXTERNAL_UNAVAILABLE",
+      "resource": "Prefabs/Weapons/Rifles/armst_Rifle_M16A2.et",
+      "parent_guid": "C63227C0E70EA62E",
+      "parent_path": "Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et",
+      "candidates": []
+    },
+    {
+      "type": "meta registered-name mismatch",
+      "resource": "Prefabs/Weapons/Rifles/armst_Rifle_M16A2_carbine.et",
+      "guid": "F97A4AC994231900",
+      "meta_registered_path": "Prefabs/Weapons/Rifles/M16/armst_Rifle_M16A2_carbine.et"
+    },
+    {
+      "type": "EXTERNAL_UNAVAILABLE",
+      "resource": "Prefabs/Weapons/Rifles/armst_Rifle_M16A2_carbine.et",
+      "parent_guid": "9207B5D36C3C8C94",
+      "parent_path": "Prefabs/Weapons/Rifles/M16/Rifle_M16A2_carbine_base.et",
+      "candidates": []
+    },
+    {
+      "type": "meta registered-name mismatch",
+      "resource": "Prefabs/Weapons/Rifles/armst_Rifle_Sig550.et",
+      "guid": "CA3BEBAADDFAF1DE",
+      "meta_registered_path": "Rifles/armst_Rifle_Sig550.et"
+    },
+    {
+      "type": "meta registered-name mismatch",
+      "resource": "Prefabs/Weapons/Rifles/armst_Rifle_hk_g36.et",
+      "guid": "A802C718201D72DF",
+      "meta_registered_path": "Prefabs/Weapons/Rifles/M16/armst_Rifle_hk_g36.et"
+    },
+    {
+      "type": "meta registered-name mismatch",
+      "resource": "Prefabs/Weapons/Rifles/armst_SLR.et",
+      "guid": "C11ED52EAAF856A8",
+      "meta_registered_path": "Rifles/armst_SLR.et"
+    },
+    {
+      "type": "EXTERNAL_UNAVAILABLE",
+      "resource": "Prefabs/Weapons/Rifles/armst_SVD.et",
+      "parent_guid": "A3E183EB5A2F3A38",
+      "parent_path": "Prefabs/Weapons/Rifles/SVD/Rifle_SVD_base.et",
+      "candidates": []
+    },
+    {
+      "type": "EXTERNAL_UNAVAILABLE",
+      "resource": "Prefabs/Weapons/Rifles/armst_VZ58P.et",
+      "parent_guid": "C19BFAF8A6334FD5",
+      "parent_path": "Prefabs/Weapons/Rifles/VZ58/Rifle_VZ58_base.et",
+      "candidates": []
+    },
+    {
+      "type": "EXTERNAL_UNAVAILABLE",
+      "resource": "Prefabs/Weapons/Rifles/armst_VZ58V.et",
+      "parent_guid": "C19BFAF8A6334FD5",
+      "parent_path": "Prefabs/Weapons/Rifles/VZ58/Rifle_VZ58_base.et",
+      "candidates": []
+    }
+  ],
+  "summary": {
+    "total_included_nodes": 51,
+    "total_weapon_leaves": 32,
+    "total_local_bases": 11,
+    "total_local_edges": 29,
+    "total_external_parent_edges": 21,
+    "total_missing_parent_edges": 0,
+    "total_ambiguous_edges": 0,
+    "total_roots": 22,
+    "total_families": 22,
+    "cycles": 0,
+    "duplicate_guid_owners": 0
+  }
+}

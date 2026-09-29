@@ -1,0 +1,153 @@
+GenericEntity : "{43497A18DD888667}Prefabs/Weapons/Rifles/AK74/Rifle_AK74_base.et" {
+ ID "CFBAA4B725411E45"
+ components {
+  WeaponComponent "{CFBAA4B706BA66E8}" {
+   components {
+    AttachmentSlotComponent "{51F6738D2EC74BE1}" {
+     AttachmentSlot InventoryStorageSlot underbarrel {
+     }
+    }
+    AttachmentSlotComponent "{5F189C826D592450}" {
+     AttachmentSlot InventoryStorageSlot BayonetSlot {
+      InspectionWidgetOffset 0 0.035 0.3992
+     }
+    }
+    SightsComponent "{BB23A637957CFFF8}" {
+     SightsPosition PointInfo "{BB23A63796688E69}" {
+      PivotID "eye"
+      Offset 0 0 -0.025
+     }
+     SightsRanges {
+      SightRangeInfo "{584CED329E401420}" {
+       Range 0.323 440
+       WeaponPosition PointInfo "{584CED329E40145B}" {
+        Offset 0 -0.0029 0
+        Angles 0.25 0 0
+       }
+      }
+      SightRangeInfo "{584CED329E42F0E4}" {
+       Range 0.1 100
+       WeaponPosition PointInfo "{584CED329E42F017}" {
+        Offset 0 -0.0009 0
+        Angles 0.08 0 0
+       }
+      }
+      SightRangeInfo "{584CED329E45D8D6}" {
+       Range 0.153 200
+       WeaponPosition PointInfo "{584CED329E45D8C3}" {
+        Offset 0 -0.0013 0
+        Angles 0.11 0 0
+       }
+      }
+      SightRangeInfo "{584CED329E44A70D}" {
+       Range 0.208 300
+       WeaponPosition PointInfo "{584CED329E44A73B}" {
+        Offset 0 -0.0018 0
+        Angles 0.16 0 0
+       }
+      }
+      SightRangeInfo "{584CED329E478DA3}" {
+       Range 0.3 400
+       WeaponPosition PointInfo "{584CED329E478DAA}" {
+        Offset 0 -0.0026 0
+        Angles 0.23 0 0
+       }
+      }
+      SightRangeInfo "{584CED329E46976E}" {
+       Range 0.365 500
+       WeaponPosition PointInfo "{584CED329E469695}" {
+        Offset 0 -0.0035 0
+        Angles 0.31 0 0
+       }
+      }
+      SightRangeInfo "{584CED329E49782B}" {
+       Range 0.426 600
+       WeaponPosition PointInfo "{584CED329E497853}" {
+        Offset 0 -0.0043 0
+        Angles 0.38 0 0
+       }
+      }
+      SightRangeInfo "{584CED329E484221}" {
+       Range 0.526 700
+       WeaponPosition PointInfo "{584CED329E484228}" {
+        Offset 0 -0.0056 0
+        Angles 0.49 0 0
+       }
+      }
+      SightRangeInfo "{584CED329E4B2895}" {
+       Range 0.622 800
+       WeaponPosition PointInfo "{584CED329E4B289C}" {
+        Offset 0 -0.0071 0
+        Angles 0.63 0 0
+       }
+      }
+      SightRangeInfo "{584CED329E4A3248}" {
+       Range 0.703 900
+       WeaponPosition PointInfo "{584CED329E4A3270}" {
+        Offset 0 -0.0087 0
+        Angles 0.77 0 0
+       }
+      }
+      SightRangeInfo "{584CED329E4D1BD6}" {
+       Range 0.814 1000
+       WeaponPosition PointInfo "{584CED329E4D1BDE}" {
+        Offset 0 -0.011 0
+        Angles 0.97 0 0
+       }
+      }
+     }
+     SightsPointFront PointInfo "{55349E9229B55E74}" {
+      PivotID "barrel_muzzle"
+      Offset 0 0.0495 -0.018
+     }
+     SightsPointRear PointInfo "{55349E9229B55E7A}" {
+      PivotID "w_sight"
+      Offset 0 0.004 -0.0536
+     }
+     m_iOpticDOFDistanceScale 150
+    }
+    MuzzleComponent "{CA6BE4D6B867541F}" {
+     components {
+      AttachmentSlotComponent "{4E2B66CBA589F625}" {
+       AttachmentSlot InventoryStorageSlot Muzzle {
+        InspectionWidgetOffset 0 0.07 0.568
+       }
+      }
+      SCR_MuzzleEffectComponent "{C9B3271BB22CDB68}" {
+       EffectPosition EntitySlotInfo "{C9B3271BB85B5D32}" {
+       }
+      }
+     }
+     WeaponAimModifiers {
+      RecoilWeaponAimModifier "{55349E9229B55D9A}" {
+       LinearData RecoilData "{58789524E765774D}" {
+        "Curve Magnitudes" 1.4 1.2 1
+       }
+       AngularData RecoilData "{58789524E7CAB55F}" {
+        "Curve Magnitudes" 1.4 1.2 1
+       }
+       TurnOffsetData RecoilData "{58789524E0951484}" {
+        "Curve Magnitudes" 1.4 1.2 0
+       }
+      }
+     }
+    }
+   }
+  }
+  ActionsManagerComponent "{A29AE67FF4D82B0F}" {
+   ActionContexts {
+    UserActionContext "{618A84270A2BFDC0}" {
+     Position PointInfo "{618A842792A66B70}" {
+      Offset 0 0 0.0292
+     }
+    }
+    UserActionContext "{5A1E5C47AE23F25A}" {
+    }
+    UserActionContext "{60ECB1EBE1387B1B}" {
+     Position PointInfo "{60ECB1EBE48BA151}" {
+     }
+    }
+   }
+  }
+ }
+}

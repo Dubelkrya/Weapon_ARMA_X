@@ -1,0 +1,38 @@
+[
+    {
+        "Type":  "AttachmentBayonetM9",
+        "Inheritance":  "UNRESOLVED"
+    },
+    {
+        "Type":  "AttachmentMuzzle556_45",
+        "Inheritance":  "UNRESOLVED"
+    },
+    {
+        "Type":  "AttachmentMuzzle762_39",
+        "Inheritance":  "UNRESOLVED"
+    },
+    {
+        "Type":  "AttachmentMuzzle9_39_armst",
+        "Inheritance":  "UNRESOLVED"
+    },
+    {
+        "Type":  "AttachmentOpticsDovetailAK",
+        "Inheritance":  "UNRESOLVED"
+    },
+    {
+        "Type":  "AttachmentOpticsG36",
+        "Inheritance":  "UNRESOLVED"
+    },
+    {
+        "Type":  "AttachmentOpticsRIS1913",
+        "Inheritance":  "UNRESOLVED"
+    },
+    {
+        "Type":  "AttachmentStockVz58",
+        "Inheritance":  "UNRESOLVED"
+    },
+    {
+        "Type":  "AttachmentUnderBarrelGP25",
+        "Inheritance":  "UNRESOLVED"
+    }
+]

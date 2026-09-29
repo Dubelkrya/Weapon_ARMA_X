@@ -1,0 +1,163 @@
+{
+ "NEW_KEY_EXISTS": true,
+ "NEW_KEY_RESOLVES_ALL_13_LOCALES": true,
+ "EN_TEXT": "9x39 mm",
+ "RU_TEXT": "9×39 мм",
+ "SOURCE_KEY_COUNT": 63,
+ "runtime_key_counts": {
+  "en_us": {
+   "ids": 63,
+   "texts": 63,
+   "match": true,
+   "empty": 0,
+   "same_order": true
+  },
+  "ru_ru": {
+   "ids": 63,
+   "texts": 63,
+   "match": true,
+   "empty": 0,
+   "same_order": true
+  },
+  "de_de": {
+   "ids": 63,
+   "texts": 63,
+   "match": true,
+   "empty": 0,
+   "same_order": true
+  },
+  "fr_fr": {
+   "ids": 63,
+   "texts": 63,
+   "match": true,
+   "empty": 0,
+   "same_order": true
+  },
+  "es_es": {
+   "ids": 63,
+   "texts": 63,
+   "match": true,
+   "empty": 0,
+   "same_order": true
+  },
+  "it_it": {
+   "ids": 63,
+   "texts": 63,
+   "match": true,
+   "empty": 0,
+   "same_order": true
+  },
+  "pl_pl": {
+   "ids": 63,
+   "texts": 63,
+   "match": true,
+   "empty": 0,
+   "same_order": true
+  },
+  "pt_br": {
+   "ids": 63,
+   "texts": 63,
+   "match": true,
+   "empty": 0,
+   "same_order": true
+  },
+  "cs_cz": {
+   "ids": 63,
+   "texts": 63,
+   "match": true,
+   "empty": 0,
+   "same_order": true
+  },
+  "ja_jp": {
+   "ids": 63,
+   "texts": 63,
+   "match": true,
+   "empty": 0,
+   "same_order": true
+  },
+  "ko_kr": {
+   "ids": 63,
+   "texts": 63,
+   "match": true,
+   "empty": 0,
+   "same_order": true
+  },
+  "zh_cn": {
+   "ids": 63,
+   "texts": 63,
+   "match": true,
+   "empty": 0,
+   "same_order": true
+  },
+  "uk_ua": {
+   "ids": 63,
+   "texts": 63,
+   "match": true,
+   "empty": 0,
+   "same_order": true
+  }
+ },
+ "mags": {
+  "Prefabs/Weapons/Magazines/Russian/9x39/9a91/armst_Magazine_9x39_20rnd_9a91_SP5.et": {
+   "guid_same": true,
+   "wrong_remaining": 0,
+   "correct": 1,
+   "config_unchanged": true,
+   "mapping_unchanged": true,
+   "only_caliber_line_changed": true
+  },
+  "Prefabs/Weapons/Magazines/Russian/9x39/9a91/armst_Magazine_9x39_20rnd_9a91_SP6.et": {
+   "guid_same": true,
+   "wrong_remaining": 0,
+   "correct": 1,
+   "config_unchanged": true,
+   "mapping_unchanged": true,
+   "only_caliber_line_changed": true
+  },
+  "Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_20rnd_vss_SP5.et": {
+   "guid_same": true,
+   "wrong_remaining": 0,
+   "correct": 1,
+   "config_unchanged": true,
+   "mapping_unchanged": true,
+   "only_caliber_line_changed": true
+  },
+  "Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_20rnd_vss_SP6.et": {
+   "guid_same": true,
+   "wrong_remaining": 0,
+   "correct": 1,
+   "config_unchanged": true,
+   "mapping_unchanged": true,
+   "only_caliber_line_changed": true
+  },
+  "Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_30rnd_val_SP5.et": {
+   "guid_same": true,
+   "wrong_remaining": 0,
+   "correct": 1,
+   "config_unchanged": true,
+   "mapping_unchanged": true,
+   "only_caliber_line_changed": true
+  },
+  "Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_30rnd_val_SP6.et": {
+   "guid_same": true,
+   "wrong_remaining": 0,
+   "correct": 1,
+   "config_unchanged": true,
+   "mapping_unchanged": true,
+   "only_caliber_line_changed": true
+  }
+ },
+ "WRONG_545X39_METADATA_IN_9X39_MAGS": 0,
+ "CORRECT_9X39_METADATA_REFS": 6,
+ "FIXED_RESOURCE_COUNT": 6,
+ "all_same_order": true,
+ "no_dupes": true,
+ "AMMOCONFIG_CHANGES": 0,
+ "AMMOMAPPING_CHANGES": 0,
+ "GAMEPLAY_DIFF": 0,
+ "GUID_CHANGES": 0,
+ "GROZA_MAGS_UNTOUCHED": true,
+ "GROZA_CASING": "OPEN_TECHNICAL_DEBT / Casing_762x39_PS.ptc (unchanged)",
+ "MUZZLE_AK74": "INTENTIONAL_SHARED_EFFECT (unchanged)",
+ "LIVE_FILES_CHANGED": "localization.st + 13 runtime confs + 6 magazines"
+}

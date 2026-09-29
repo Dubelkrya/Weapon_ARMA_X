@@ -1,0 +1,50 @@
+{
+ "AK74N": {
+  "result": "REVIEW_REQUIRED",
+  "current_parent": "VanillaSources Rifle_AK74N_base.et (external)",
+  "target_parent": "armst_AK74_base.et",
+  "missing_in_new": 3,
+  "extra_in_new": 1,
+  "reason": "repackaging requires canceling values introduced by the new base; not exactly zero-diff materializable"
+ },
+ "AK74M": {
+  "result": "NOT_ATTEMPTED",
+  "current_parent": "armst_AK74N.et (concrete)",
+  "target_parent": "armst_AK74_base.et",
+  "missing_in_new": 3,
+  "extra_in_new": 1,
+  "reason": "upstream AK74N not normalized; baseline depends on it"
+ },
+ "AKS": {
+  "result": "NOT_ATTEMPTED",
+  "current_parent": "armst_AK74N.et (concrete)",
+  "target_parent": "armst_AK74_base.et",
+  "missing_in_new": 3,
+  "extra_in_new": 1,
+  "reason": "upstream AK74N not normalized; baseline depends on it"
+ },
+ "AK74M_full": {
+  "result": "NOT_ATTEMPTED",
+  "current_parent": "armst_AK74M.et (concrete)",
+  "target_parent": "armst_AK74_base.et",
+  "missing_in_new": 7,
+  "extra_in_new": 1,
+  "reason": "upstream AK74M not normalized; baseline depends on it"
+ },
+ "AKM_full": {
+  "result": "REVIEW_REQUIRED",
+  "current_parent": "armst_Rifle_AKM.et (concrete)",
+  "target_parent": "armst_Rifle_AKM_base.et",
+  "missing_in_new": 51,
+  "extra_in_new": 57,
+  "reason": "large effective delta (missing 51 / differing 57); not zero-diff materializable safely"
+ },
+ "mutation_performed": false,
+ "GUID_CHANGES": 0,
+ "DANGLING_PARENT_REFS": 0,
+ "DANGLING_RESOURCE_REFS": 0,
+ "UNRELATED_GAMEPLAY_CHANGES": 0,
+ "OLD_CONCRETE_PARENT_EDGES_REMAINING": 5,
+ "LIVE_FILES_CHANGED": "NONE",
+ "STATUS": "REVIEW_REQUIRED"
+}

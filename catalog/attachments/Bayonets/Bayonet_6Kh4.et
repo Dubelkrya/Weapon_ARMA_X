@@ -1,0 +1,44 @@
+GameEntity : "{9CB58C6DD96AF131}Prefabs/Weapons/Attachments/Bayonets/Bayonet_Base.et" {
+ ID "AA9AE4DCB3E360AC"
+ components {
+  InventoryItemComponent "{52627A1F45CD4EB6}" {
+   Attributes SCR_ItemAttributeCollection "{60A8948019D3F7B6}" {
+    ItemDisplayName UIInfo "{60A8948019D3F7B0}" {
+     Name "#AR-Weapon_6Kh4Bayonet_Name"
+     Description "#AR-Weapon_6Kh4Bayonet_Description"
+    }
+    ItemPhysAttributes ItemPhysicalAttributes "{60A8948019D3F7B2}" {
+     Weight 0.3
+    }
+    CustomAttributes {
+     SCR_WeaponAttachmentBayonetAttributes "{61967DD811A4DEE5}" {
+      AttachmentType AttachmentBayonet6Kh4 "{61967DD1493B6BE7}" {
+      }
+     }
+     SCR_WeaponAttachmentObstructionAttributes "{61B08C8F8182650A}" {
+      AttachmentType AttachmentBayonet6Kh4 "{61B485CA1E903726}" {
+      }
+      m_aObstructedAttachmentTypes {
+       AttachmentSuppressorPBS4 "{61B485C49DDB99C6}" {
+       }
+       AttachmentUnderBarrelGP25 "{61B485C4AAA8AE0B}" {
+       }
+      }
+     }
+    }
+   }
+  }
+  MeshObject "{60A894809670984D}" {
+   Object "{F2E1926C50C222E1}Assets/Weapons/Attachments/Bayonets/Bayonet_6Kh4/Bayonet_6Kh4.xob"
+  }
+  ActionsManagerComponent "{5284E0EFF569AD07}" {
+   ActionContexts {
+    UserActionContext "{60ECB1E8B72F02DA}" {
+     Position PointInfo "{60ECB1E8B9487FF3}" {
+      Offset 0 0.0168 -0.1733
+     }
+    }
+   }
+  }
+ }
+}

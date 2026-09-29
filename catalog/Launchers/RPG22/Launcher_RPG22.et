@@ -1,0 +1,44 @@
+GenericEntity : "{698B650CA555FF25}Prefabs/Weapons/Launchers/RPG22/Launcher_RPG22_base.et" {
+ ID "CFBAA4B725411E45"
+ components {
+  WeaponComponent "{CFBAA4B706BA66E8}" {
+   components {
+    WeaponAnimationComponent "{60B4EA76EB15F6E0}" {
+     MeshVisibilityConfigurations {
+      MeshesVisibilitySwitchConfig "{64E28CC04D88F8D6}" {
+       Event "HidePin"
+       Meshes {
+        "RPG22_Pin_skin"
+       }
+      }
+      MeshesVisibilitySwitchConfig "{64E28CC182308147}" {
+       Event "ShowPin"
+       Meshes {
+        "RPG22_Pin_skin"
+       }
+       HideMesh 0
+      }
+      MeshesVisibilitySwitchConfig "{64F502FF1DBD951E}" {
+       Event "HideCap"
+       Meshes {
+        "RPG22_BackCap_skin"
+       }
+      }
+      MeshesVisibilitySwitchConfig "{64F6A051A4970BF5}" {
+       Event "HideSupport"
+       Meshes {
+        "RPG22_GrenadeSupport_skin"
+       }
+      }
+      MeshesVisibilitySwitchConfig "{64F6A051A2471811}" {
+       Event "HideIgnition"
+       Meshes {
+        "RPG22_IgnitionTube_skin"
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,167 @@
+GenericEntity : "{9064206CBDE9CD95}Prefabs/Weapons/Core/Launcher_Base.et" {
+ ID "CFBAA4B725411E45"
+ components {
+  WeaponSoundComponent "{5A8685198A9AEEDD}" {
+   Filenames {
+    "{12A94705DF2BFD25}Sounds/Items/_SharedData/PickUp/Items_PickUp_Generic.acp" "{78AABDC24E452BB8}Sounds/Weapons/_SharedData/Drop/Weapons_Drop_Grenade_Cardboard.acp" "{A1359F0A67E318FB}Sounds/_SharedData/Signals/Weapons/Flares/RSP30/Weapons_Flares_RSP30_Handling.acp" "{13F41E89304927E5}Sounds/_SharedData/Signals/Weapons/_SharedData/Drop/Weapons_Drop_Physical_Flare_RSP30.acp"
+   }
+  }
+  MeshObject "{CFBAA4B701F95D69}" {
+   Object "{5299181D139439F9}Assets/Weapons/Flares/RSP30/Flare_RSP30.xob"
+  }
+  RigidBody "{6106660B6A4C617B}" {
+   Mass 0.2
+   CenterOfMass 0 0.1 0
+   LinearDamping 0.4
+   AngularDamping 0.6
+   SimState None
+   ResponseIndex "Normal"
+   ModelGeometry 1
+   CCDRadius 0.1
+  }
+  SCR_MeleeWeaponProperties "{6106660B1F84A3CA}" {
+  }
+  SCR_WeaponAttachmentsStorageComponent "{51F080D5CE45A1A2}" {
+   Attributes SCR_ItemAttributeCollection "{51F080D5C64F12C5}" {
+    ItemDisplayName WeaponUIInfo "{5222CB047B845168}" {
+     Name "#AR-Item_RSP30_White_Name"
+     Description "#AR-Item_RSP30_White_Description"
+     m_MagIndicator SCR_MagazineIndicatorConfiguration "{62E47B942062CC81}" {
+      m_sOutline "throwable-flare"
+      m_bProgressBar 0
+     }
+    }
+    ItemPhysAttributes ItemPhysicalAttributes "{6106660F3EA1C1F6}" {
+     Weight 0.1
+     SizeSetupStrategy Manual
+     ItemVolume 100
+    }
+    ItemAnimationAttributes ItemAnimationAttributes "{5284960DAA53DDFC}" {
+     AnimationInstance "{4FCBEA45CAEBC9C0}anims/workspaces/player/player_main_1h.asi"
+     AnimationIKPose "{E5CA1EEB55BE4F6F}Assets/Weapons/Flares/RSP30/anims/anm/p_erc_RSP30_ik.anm"
+     AllowInspection 0
+    }
+    CustomAttributes {
+     PreviewRenderAttributes "{6106660EFA94B482}" {
+      CameraOrbitAngles 230 40 45
+      CameraDistanceToItem 0.3
+      CameraOffset -0.015 0.015 0.07
+      FOV 30
+      AnimationInstance "{CD706CDA25024989}anims/workspaces/player/player_inventory_1handed.asi"
+     }
+     ItemActionAnimAttributes "{62CAA74A4D1A029C}" {
+      AnimationGraphTemplate "{DFFC0A34A77ADCB4}Anims/workspaces/player/player_main.agr"
+      ActionAnimationCommandName "CMD_Flare"
+     }
+     CharacterModifierAttributes "{65B6BB38CB93F2B7}" {
+      AllowGadgetUse 0
+      CanBeEquippedInVehicle 0
+      AllowReloadingWithRoll 0
+     }
+    }
+    CommonItemType "FLARE"
+    m_Size SLOT_1x1
+   }
+  }
+  SCR_WeaponBlastComponent "{624C97444AC1B357}" {
+   Enabled 0
+  }
+  SCR_WeaponComponent "{CFBAA4B706BA66E8}" {
+   components {
+    AttachmentSlotComponent "{B502E4DC8A9E835E}" {
+     AttachmentSlot InventoryStorageSlot optics {
+      ChildPivotID "snap_weapon"
+      Enabled 0
+     }
+    }
+    SCR_MuzzleInMagComponent "{50F65D04F21F7633}" {
+     components {
+      MuzzleEffectComponent "{50F65D04EE343E7E}" {
+       ParticleEffect "{6FBF925362CD6AAD}Particles/Weapon/Muzzle_RPG7V1_02.ptc"
+       EffectPosition EntitySlotInfo "{50F65D04CCCEB691}" {
+        PivotID "g_bottom"
+       }
+      }
+     }
+     MuzzleType BaseMuzzle
+     MuzzleEndPositions {
+      PointInfo "{50F65D0428599966}" {
+       PivotID "g_bottom"
+       Angles 180 0 0
+      }
+     }
+     ProjectileSpawnPositions {
+      PointInfo "{50F65D0454F95B2D}" {
+       PivotID "g_bottom"
+       Angles 180 0 0
+      }
+     }
+     DispersionRange 85
+     UIInfo MuzzleUIInfo "{50F65D05B8374621}" {
+      m_MagIndicator SCR_MagazineIndicatorConfiguration "{62E47B94438F26A2}" {
+       m_sOutline "throwable-flare"
+       m_bProgressBar 0
+      }
+     }
+     Disposable 1
+     ProjectilePosition InventoryStorageSlot "{51070C3B47428343}" {
+      PivotID "g_bottom"
+      Offset 0 0 0.1573
+      Angles 180 0 0
+      MergePhysics 0
+      ChildPivotID "g_bottom"
+     }
+     AmmoTemplate "{6FCF820BB2668D0E}Prefabs/Weapons/Ammo/Ammo_Flare_30mm_RSP30_Base.et"
+     m_bCanBeReloaded 0
+    }
+    SightsComponent "{BB23A637957CFFF8}" {
+     Enabled 0
+    }
+    SCR_FlareAnimationComponent "{60B4EA76EB15F6E0}" {
+     AnimGraph "{09332635850D4F5C}Assets/Weapons/Flares/workspaces/Flare_RSP30.agr"
+     AnimInstance "{9A76593F33F92A9D}Assets/Weapons/Flares/workspaces/RSP30_weapon.asi"
+     AnimInjection AnimationAttachmentInfo "{6106660AF13F86AB}" {
+      AnimGraph "{09332635850D4F5C}Assets/Weapons/Flares/workspaces/Flare_RSP30.agr"
+      AnimInstance "{6128C80EABF84E71}Assets/Weapons/Flares/workspaces/RSP30_player.asi"
+      BindingName "Weapon"
+     }
+     BindWithInjection 1
+     AutoVariablesBind 1
+     MeshVisibilityConfigurations {
+      MeshesVisibilitySwitchConfig "{62E47B9E9DF97FB7}" {
+       Event "Hide_Cap"
+       Meshes {
+        "TOP_LID" "Decal_top"
+       }
+      }
+      MeshesVisibilitySwitchConfig "{65F28D6D5E0C4857}" {
+       Event "Hide_Cap"
+       Meshes {
+        "Flare_pin_main"
+       }
+       HideMesh 0
+      }
+      MeshesVisibilitySwitchConfig "{65ECA7253BD626D7}" {
+       Event "Hide_String"
+       Meshes {
+        "Flare_pin_main"
+       }
+      }
+     }
+    }
+   }
+   isFiredFromScript 1
+   WeaponType Handgun
+   SoundInt 0
+   UIInfo WeaponUIInfo "{CC3BA6A2C42F09F4}" {
+    Name "#AR-Item_RSP30_White_Name"
+    Description "#AR-Item_RSP30_White_Description"
+    m_bShowWeaponName 1
+    m_MagIndicator SCR_MagazineIndicatorConfiguration "{565ECA2FE3F0F3FB}" {
+     m_sOutline "throwable-flare"
+    }
+   }
+   WeaponSlotType "secondary"
+  }
+ }
+}

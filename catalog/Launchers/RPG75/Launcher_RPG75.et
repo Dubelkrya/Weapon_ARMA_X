@@ -1,0 +1,31 @@
+GenericEntity : "{60E4C88B05B2F6B4}Prefabs/Weapons/Launchers/RPG75/Launcher_RPG75_base.et" {
+ ID "CFBAA4B725411E45"
+ components {
+  WeaponSoundComponent "{5A8685198A9AEEDD}" {
+   Filenames + {
+    "{EDDAFD7BFDC9098A}Sounds/Weapons/_SharedData/Drop/Weapons_Drop_Physical_Launcher.acp"
+   }
+  }
+  WeaponComponent "{CFBAA4B706BA66E8}" {
+   components {
+    WeaponAnimationComponent "{60B4EA76EB15F6E0}" {
+     MeshVisibilityConfigurations {
+      MeshesVisibilitySwitchConfig "{64E28CC128DC90E7}" {
+       Event "ShowPin"
+       Meshes {
+        "RPG75_safety_skin"
+       }
+       HideMesh 0
+      }
+      MeshesVisibilitySwitchConfig "{64E2CE458138BA5B}" {
+       Event "HidePin"
+       Meshes {
+        "RPG75_safety_skin"
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+}

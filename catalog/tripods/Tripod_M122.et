@@ -1,0 +1,44 @@
+Turret : "{16CAF1AAD82A3127}Prefabs/Weapons/Core/Tripod_Base.et" {
+ ID "52D30EFBEBC74642"
+ components {
+  RigidBody "{51ACD09C423F175F}" {
+   ModelGeometry 1
+   Static 1
+  }
+  SCR_BaseCompartmentManagerComponent "{51ACFBB07A14CFA6}" {
+   CompartmentSlots {
+    TurretCompartmentSlot TurretCompartment {
+     PassengerPositionInfo EntitySlotInfo "{51ACFBB1D6C27024}" {
+      Offset 0 0 -0.749
+     }
+     m_DefaultOccupantData SCR_DefaultOccupantData "{59BAA9F0A91122A9}" {
+      m_sDefaultOccupantPrefab "{26A9756790131354}Prefabs/Characters/Factions/BLUFOR/US_Army/Character_US_Rifleman.et"
+     }
+    }
+   }
+  }
+  SCR_DestructionMultiPhaseComponent "{51ACD09C524A7924}" {
+   m_DestroySpawnObjects {
+    SCR_DebrisSpawnable "{660A8AF87562E4EE}" : "{C2BD61C5E05B8971}Configs/Destruction/MultiphaseDestruction/FX_Debris/FX_Debris_Metal_Light.conf" {
+     m_ModelPrefabs {
+      "{E67AF041C307E970}Prefabs/Weapons/Tripods/dst/Tripod_M122_Damaged.et"
+     }
+     m_fMass 7.3
+    }
+   }
+  }
+  SCR_TurretControllerComponent "{51ACD09C61C183E4}" {
+   LimitsHoriz -45 45
+   LimitsVert -25 30
+   LimitsHorizProne -20 20
+   LimitsVertProne -10 15
+  }
+  WeaponSlotComponent "{51ACD09C6BFEEE6A}" {
+   AttachType InventoryStorageSlot "{0AACE7470E421D82}" {
+    PivotID "w_weapon_holder_01"
+    Offset 0 0.005 -0.13
+   }
+   WeaponTemplate ""
+  }
+ }
+}

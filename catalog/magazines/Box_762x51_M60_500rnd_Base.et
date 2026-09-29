@@ -1,0 +1,91 @@
+GenericEntity : "{F9E1A46E3ABA116F}Prefabs/Weapons/Core/Magazine_Base.et" {
+ ID "CA6BE4D6BB2D1077"
+ components {
+  AICombatPropertiesComponent "{59CE86D96C332DDF}" {
+   Priority 30
+   UsedAgainst 0x17 0
+  }
+  InventoryMagazineComponent "{51EED12B803954CC}" {
+   Attributes SCR_ItemAttributeCollection "{51EED12B86960275}" {
+    ItemDisplayName UIInfo "{51FEE38527BFEA5B}" {
+     Name "#AR-Magazine_M60D_Name"
+     Description "#AR-Magazine_M60_Description"
+    }
+    ItemPhysAttributes ItemPhysicalAttributes "{6124DE4ACB546258}" {
+     Weight 3
+     SizeSetupStrategy Manual
+     ItemDimensions 20 20 20
+     ItemVolume 7500
+     RestingAdditiveOffsetLS 0 -0.06 0
+    }
+    CustomAttributes {
+     PreviewRenderAttributes "{6124DE4ACB54624C}" {
+      CameraPreset Back
+      CameraOrbitAngles -25 25 0
+      CameraDistanceToItem 1.2
+      FOV 25
+     }
+    }
+    m_Size SLOT_1x1
+   }
+   WeightPerAmmo 0.029
+  }
+  MagazineComponent "{CA6BE4D6B4DAFD69}" {
+   MagazineWell MagazineWellM60D "{6124DE4ACB546243}" {
+   }
+   UIInfo MagazineUIInfo "{57126733AA401586}" {
+    Name "#AR-Magazine_M60_Name"
+    m_sAmmoCaliber "#AR-AmmunitionID_762x51mm"
+   }
+   ItemModel "{4EC0AAB27FA4B6B8}Assets/Weapons/Magazines/M60/Magazine_500rnd_M60D_item.xob"
+   MaxAmmo 500
+   AmmoConfig "{533A763E304771D9}Configs/Weapons/Ammo/Ammo_762x51.conf"
+   AmmoMapping {
+    0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+   }
+  }
+  MeshObject "{CA6BE4D6A23F8EF0}" {
+   Object "{22AB9C7452920D30}Assets/Weapons/Magazines/M60/Magazine_500rnd_M60D_dummy.xob"
+   Materials {
+    MaterialAssignClass "{6130C0C2CDBAB668}" {
+     SourceMaterial "Common/Materials/Default"
+     AssignedMaterial "{8FBC3A6E946F056E}Common/Materials/Default_Transparent.emat"
+    }
+   }
+  }
+  RigidBody "{571B0382401B1385}" {
+   Mass 2.5
+  }
+  SCR_SoundDataComponent "{5B18D200EBB5EA25}" {
+   m_aAudioSourceConfiguration {
+    SCR_AudioSourceConfiguration "{5B18D209080A5D15}" {
+     m_sSoundProject "{7E11250286B94F44}Sounds/Weapons/_SharedData/PickUp/Weapons_PickUp_MGM60_Magazine.acp"
+    }
+    SCR_AudioSourceConfiguration "{5B18D2091B885AE6}" {
+     m_sSoundProject "{7E11250286B94F44}Sounds/Weapons/_SharedData/PickUp/Weapons_PickUp_MGM60_Magazine.acp"
+    }
+    SCR_AudioSourceConfiguration "{5B18D20930D9E274}" {
+     m_sSoundProject "{1A98A88D1841C7A9}Sounds/Weapons/_SharedData/Drop/Weapons_Drop_LMG_M60_Magazine.acp"
+    }
+   }
+  }
+  ActionsManagerComponent "{F092E6B0537754FD}" {
+   ActionContexts {
+    UserActionContext "{5086F9AB010868CE}" {
+     Position PointInfo "{5086F9AC96DB9752}" {
+      Offset 0 0.15 0
+     }
+    }
+   }
+  }
+  MagazineAnimationComponent "{6124DE4ACB546266}" {
+   AnimGraph "{25DBDA37A532214A}Assets/Weapons/Magazines/workspaces/M60_magazine.agr"
+   AnimInstance "{C8B18FECB93B73A4}Assets/Weapons/Magazines/workspaces/M60_Magazine.asi"
+   AutoVariablesBind 1
+   BulletMeshesToHide {
+    "bullet_low_01" "bullet_low_02" "bullet_low_03" "bullet_low_04" "bullet_low_05" "bullet_low_06" "bullet_low_07" "bullet_low_08" "bullet_low_09" "bullet_low_10" "bullet_low_11"
+   }
+  }
+ }
+ coords 2.666 3.704 1.27
+}

@@ -1,0 +1,194 @@
+GenericEntity : "{F54F6C453A8CB478}Prefabs/Weapons/Core/MachineGun_Base.et" {
+ ID "CFBAA4B725411E45"
+ components {
+  WeaponSoundComponent "{5A8685198A9AEEDD}" {
+   Filenames {
+    "{EE8892C4180091FD}Sounds/Weapons/HeavyWeapons/M2/Weapons_HeavyWeapons_M2_Shot.acp" "{6616B1A0537FC180}Sounds/Vehicles/Wheeled/M151A2/Vehicles_M151A2_Turret.acp" "{EC7E8631CBC17F15}Sounds/Weapons/HeavyWeapons/M2/Weapons_HeavyWeapons_M2_Handling.acp"
+   }
+   IncludeInactive 1
+  }
+  MeshObject "{CFBAA4B701F95D69}" {
+   Object "{AD6418835A435475}Assets/Weapons/HeavyWeapons/M2HB/M2_body.xob"
+  }
+  RigidBody "{572AF6B736F67B4F}" {
+   Mass 58
+   ModelGeometry 1
+   Static 1
+  }
+  SCR_DamageManagerComponent "{660AB52DDB6EA6B3}" {
+   "Additional hit zones" {
+    SCR_DestructibleHitzone main : "{20D6C595AE450F55}Prefabs/Vehicles/Core/Configs/HitZones/VehiclePart_HZ.conf" {
+     IgnoreExplosions 1
+    }
+   }
+  }
+  SCR_WeaponAttachmentsStorageComponent "{51F080D5CE45A1A2}" {
+   Attributes SCR_ItemAttributeCollection "{51F080D5C64F12C5}" {
+    ItemDisplayName WeaponUIInfo "{5222CB07E1D123E9}" {
+     Name "#AR-Weapon_M2HB_Name"
+     Description "#AR-Weapon_M2HB_Description"
+    }
+    ItemPhysAttributes ItemPhysicalAttributes "{572AF6B736F67BFD}" {
+     Weight 38.1
+     SizeSetupStrategy Volume
+     ItemVolume 12000
+    }
+    CustomAttributes {
+     PreviewRenderAttributes "{5534BB9B9A3E369E}" {
+      CameraPreset Right
+      CameraDistanceToItem 1.7
+     }
+    }
+   }
+  }
+  WeaponComponent "{CFBAA4B706BA66E8}" {
+   components {
+    AttachmentSlotComponent "{B502E4DC8A9E835E}" {
+     AttachmentSlot InventoryStorageSlot optics {
+      PivotID "slot_optics"
+      ChildPivotID "snap_weapon"
+      Enabled 0
+     }
+    }
+    SightsComponent "{BB23A637957CFFF8}" {
+     SightsPosition PointInfo "{BB23A63796688E69}" {
+      PivotID "eye"
+     }
+     SightsRanges {
+      SightRangeInfo "{6958DA26049D837A}" {
+       Range 0 100
+       WeaponPosition PointInfo "{695AD64F2B542F45}" {
+        Offset 0 0.0006 0
+       }
+      }
+      SightRangeInfo "{695AD64F715894DB}" {
+       Range 0 200
+       WeaponPosition PointInfo "{695AD64F2A26D280}" {
+        Offset 0 0.0004 0
+       }
+      }
+      SightRangeInfo "{695AD64F711DFC84}" {
+       Range 0 300
+       WeaponPosition PointInfo "{695AD64F550D9EA4}" {
+       }
+      }
+      SightRangeInfo "{695AD64F496F79C1}" {
+       Range 0.1 400
+       WeaponPosition PointInfo "{695AD64F5423FF95}" {
+        Offset 0 -0.0005 0
+       }
+      }
+      SightRangeInfo "{695AD2C93C58E48D}" {
+       Range 0.106 500
+       WeaponPosition PointInfo "{695AD2C930C1BDD6}" {
+        Offset 0 -0.0011 0
+       }
+      }
+      SightRangeInfo "{695AD64F405CFBBB}" {
+       Range 0.121 600
+       WeaponPosition PointInfo "{695AD64F56915417}" {
+        Offset 0 -0.0017 0
+       }
+      }
+      SightRangeInfo "{695AD64F47CB2902}" {
+       Range 0.137 700
+       WeaponPosition PointInfo "{695AD64F519018FC}" {
+        Offset 0 -0.0024 0
+       }
+      }
+      SightRangeInfo "{695AD64F5A9FDBEB}" {
+       Range 0.154 800
+       WeaponPosition PointInfo "{695AD64F50899CE0}" {
+        Offset 0 -0.0032 0
+       }
+      }
+      SightRangeInfo "{695AD64F59E26E6C}" {
+       Range 0.174 900
+       WeaponPosition PointInfo "{695AD64F52794CAC}" {
+        Offset 0 -0.0041 0
+       }
+      }
+      SightRangeInfo "{6958DA2772BC0E2A}" {
+       Range 0.203 1000
+       WeaponPosition PointInfo "{6958DA279A526693}" {
+        Offset 0 -0.0054 0
+        Angles -0.0054 0 0
+       }
+      }
+     }
+    }
+    MuzzleComponent "{50F64C4591CD7AA6}" {
+     components {
+      CaseEjectingEffectComponent "{5122AAD190FCA21D}" {
+       ParticleEffect "{2FA34F96F9A5018B}Particles/Weapon/Casing_127x99.ptc"
+       EffectPosition EntitySlotInfo "{513A938439231378}" {
+        PivotID "barrel_chamber"
+        Offset 0 -0.08 -0.0953
+        Angles -83 0 0
+       }
+      }
+      CaseEjectingEffectComponent "{572AF6B736F67BC2}" {
+       ParticleEffect "{45D764EF557E02B4}Particles/Weapon/Smoke_M2.ptc"
+       EffectPosition EntitySlotInfo "{52D4A6D19A301391}" {
+        PivotID "barrel_muzzle"
+       }
+       HasSound 0
+      }
+      CaseEjectingEffectComponent "{572AF6B736F67BC6}" {
+       ParticleEffect "{E7ACDE0ACCBCB07A}Particles/Weapon/Casing_Holder.ptc"
+       EffectPosition EntitySlotInfo casing_holder {
+        PivotID "barrel_chamber"
+        Angles 0 90 0
+       }
+       HasSound 0
+      }
+     }
+     FireModes {
+      BaseFireMode "{B80A64F4A8EF8333}" : "{A512F292D96BCB9F}Prefabs/Weapons/Core/Configs/FireModes/FireMode_Auto.conf" {
+       RoundsPerMinute 600
+      }
+     }
+     MagazineWell MagazineWellM2HB "{572AF6B736F67437}" {
+     }
+     DispersionDiameter 0.4
+     DispersionRange 230
+     WeaponAimModifiers {
+      RecoilWeaponAimModifier "{691496C4DF367BC2}" : "{F441921164A0FAAA}Prefabs/Weapons/Core/Configs/AimModifiers/RecoilAimModifier_M2HB.conf" {
+      }
+      ZeroingWeaponAimModifier "{68F720243CF0639C}" {
+      }
+      SCR_RecoilForceAimModifier "{691496C2749B1F23}" : "{BF54F0962956B341}Prefabs/Weapons/Core/Configs/AimModifiers/RecoilForceAimModifier_M2HB.conf" {
+      }
+     }
+     UIInfo MuzzleUIInfo "{2FBBA72C906C627E}" {
+      m_bShowCaliber 1
+      m_sCaliber "#AR-AmmunitionID_127x99mm"
+     }
+     ReloadDuration 12.5
+     MagazinePosition InventoryStorageSlot "{B80A64F4C834E9CB}" {
+     }
+     MagazineTemplate "{CC7F787C3ECF678F}Prefabs/Weapons/Magazines/Box_127x99_M2_100rnd_4Ball_1Tracer.et"
+    }
+    WeaponAnimationComponent "{60B4EA76EB15F6E0}" {
+     AnimGraph "{C727601154428730}Assets/Weapons/HeavyWeapons/workspaces/M2HB_tripod.agr"
+     AnimInstance "{26749793D7EDEB6D}Assets/Weapons/HeavyWeapons/workspaces/M2HB_Weapon_tripod.asi"
+     StartNode "WeaponMasterControl"
+     AutoVariablesBind 1
+    }
+   }
+   UIInfo WeaponUIInfo "{CC3BA6A2C42F09F4}" {
+    Name "#AR-Weapon_M2HB_Name"
+    Description "#AR-Weapon_M2HB_Description"
+    Icon ""
+    m_bShowWeaponName 1
+   }
+   WeaponSlotType "hmg"
+  }
+  WeaponGamepadEffectsManagerComponent "{61A2E5C3F4458F86}" {
+   "Default ADS Trigger effect" GamepadTriggerEffect "{61B129618F212411}" : "{0DE3E1891C66DCEB}Prefabs/Weapons/Core/Configs/TriggerEffects/ADS/TriggerEffect_ADSMedium.conf" {
+   }
+   "Default Firing Trigger effect" GamepadTriggerEffect "{61D30BF7F81F8C61}" : "{5A67879DEFFDBD73}Prefabs/Weapons/Core/Configs/TriggerEffects/Fire/TriggerEffect_FireHMG.conf" {
+   }
+  }
+ }
+}

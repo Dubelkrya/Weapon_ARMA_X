@@ -1,0 +1,91 @@
+GameEntity : "{3E15C1C882DBB587}Prefabs/Weapons/Core/WeaponSight_Base.et" {
+ ID "4BA426CBAED42A14"
+ components {
+  InventoryItemComponent "{52627A1F45CD4EB6}" {
+   Attributes SCR_ItemAttributeCollection "{52627A1EBB0698FD}" {
+    ItemDisplayName UIInfo "{5D369D0F663A1227}" {
+    }
+    ItemPhysAttributes ItemPhysicalAttributes "{5D369D0F663A123F}" {
+     Weight 0.6
+     SizeSetupStrategy Manual
+     ItemVolume 500
+    }
+    CustomAttributes {
+     WeaponAttachmentAttributes "{5284D858FFF9BE66}" {
+     }
+     PreviewRenderAttributes "{52D69389645B4E4D}" {
+      CameraPreset Right
+      FOV 20
+     }
+     CharacterModifierAttributes "{5D369D0F663A1239}" {
+     }
+    }
+    m_Size SLOT_1x1
+   }
+  }
+  MeshObject "{5D369D0F663A1234}" {
+   InheritVisibility 1
+  }
+  RigidBody "{5D369D0F663A1233}" {
+   ModelGeometry 1
+  }
+  SCR_CollimatorSightsComponent "{5D0CC83435B55855}" {
+   components {
+    SCR_CollimatorControllerComponent "{5D369D0BB1149DFD}" {
+    }
+   }
+   SightsPosition PointInfo "{5D369D0BB9E9A7C9}" {
+   }
+  }
+  SCR_SoundDataComponent "{5B18D200265FA2CB}" {
+   m_aAudioSourceConfiguration {
+    SCR_AudioSourceConfiguration "{5B18D209080A5D15}" {
+     m_sSoundProject "{92CB09CB84872CB4}Sounds/Weapons/_SharedData/PickUp/Weapons_PickUp_Attachments_LongGeneric.acp"
+    }
+    SCR_AudioSourceConfiguration "{5B18D2091B885AE6}" {
+     m_sSoundProject "{92CB09CB84872CB4}Sounds/Weapons/_SharedData/PickUp/Weapons_PickUp_Attachments_LongGeneric.acp"
+    }
+    SCR_AudioSourceConfiguration "{5D369D0F663A1206}" {
+     m_sSoundProject "{92CB09CB84872CB4}Sounds/Weapons/_SharedData/PickUp/Weapons_PickUp_Attachments_LongGeneric.acp"
+     m_sSoundEventName "SOUND_UNEQUIP"
+    }
+    SCR_AudioSourceConfiguration "{5D369D0F663A1207}" {
+     m_sSoundProject "{92CB09CB84872CB4}Sounds/Weapons/_SharedData/PickUp/Weapons_PickUp_Attachments_LongGeneric.acp"
+     m_sSoundEventName "SOUND_SWITCH"
+    }
+   }
+  }
+  ActionsManagerComponent "{5284E0EFF569AD07}" {
+   ActionContexts {
+    UserActionContext "{5284E0EFF4E818E9}" {
+     Position PointInfo "{5284E0EFC526E6F0}" {
+      Offset 0 0.0491 0
+     }
+     Radius 0.1
+    }
+   }
+   additionalActions {
+    SCR_AttachementAction "{5D369D0F663A121B}" {
+     ParentContextList {
+      "user"
+     }
+     UIInfo UIInfo "{5D369D0F663A1218}" {
+      Name "#AR-UserAction_Detach"
+     }
+     Duration 0.5
+    }
+    SCR_AttachItemFromInventoryAction "{5D369D0F663A1219}" {
+     ParentContextList {
+      "default"
+     }
+     UIInfo UIInfo "{5D369D0F663A1216}" {
+      Name "#AR-UserAction_Attach"
+     }
+     Duration 0.5
+     "Inventory action" 1
+    }
+   }
+  }
+ }
+ Flags 0x400003 0
+}

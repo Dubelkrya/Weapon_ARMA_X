@@ -1,0 +1,156 @@
+{
+ "locales": {
+  "en_us": {
+   "ids": 62,
+   "texts": 62,
+   "match": true,
+   "empty": 0,
+   "same_order": true
+  },
+  "ru_ru": {
+   "ids": 62,
+   "texts": 62,
+   "match": true,
+   "empty": 0,
+   "same_order": true
+  },
+  "de_de": {
+   "ids": 62,
+   "texts": 62,
+   "match": true,
+   "empty": 0,
+   "same_order": true
+  },
+  "fr_fr": {
+   "ids": 62,
+   "texts": 62,
+   "match": true,
+   "empty": 0,
+   "same_order": true
+  },
+  "es_es": {
+   "ids": 62,
+   "texts": 62,
+   "match": true,
+   "empty": 0,
+   "same_order": true
+  },
+  "it_it": {
+   "ids": 62,
+   "texts": 62,
+   "match": true,
+   "empty": 0,
+   "same_order": true
+  },
+  "pl_pl": {
+   "ids": 62,
+   "texts": 62,
+   "match": true,
+   "empty": 0,
+   "same_order": true
+  },
+  "pt_br": {
+   "ids": 62,
+   "texts": 62,
+   "match": true,
+   "empty": 0,
+   "same_order": true
+  },
+  "cs_cz": {
+   "ids": 62,
+   "texts": 62,
+   "match": true,
+   "empty": 0,
+   "same_order": true
+  },
+  "ja_jp": {
+   "ids": 62,
+   "texts": 62,
+   "match": true,
+   "empty": 0,
+   "same_order": true
+  },
+  "ko_kr": {
+   "ids": 62,
+   "texts": 62,
+   "match": true,
+   "empty": 0,
+   "same_order": true
+  },
+  "zh_cn": {
+   "ids": 62,
+   "texts": 62,
+   "match": true,
+   "empty": 0,
+   "same_order": true
+  },
+  "uk_ua": {
+   "ids": 62,
+   "texts": 62,
+   "match": true,
+   "empty": 0,
+   "same_order": true
+  }
+ },
+ "all_same_order": true,
+ "unique_ids": true,
+ "key_count": 62,
+ "st_items": 62,
+ "st_unique": true,
+ "st_order_sorted": true,
+ "mags": {
+  "PM_PP": {
+   "keys": [
+    "#AR-ARMST_Magazine_armst_Magazine_9x18_PM_8rnd_Ball_Description",
+    "#AR-ARMST_Magazine_armst_Magazine_9x18_PM_8rnd_Ball_Description",
+    "#AR-Magazine_PM_Name"
+   ],
+   "name": null
+  },
+  "PM_BP": {
+   "keys": [
+    "#AR-ARMST_Magazine_armst_Magazine_9x18_PM_8rnd_Ball_BP_Description",
+    "#AR-ARMST_Magazine_armst_Magazine_9x18_PM_8rnd_Ball_BP_Description",
+    "#AR-Magazine_PM_Name"
+   ],
+   "name": null
+  },
+  "APB_PP": {
+   "keys": [
+    "#AR-ARMST_Magazine_armst_Magazine_9x18_APB_20rnd_Ball_Description",
+    "#AR-ARMST_Magazine_armst_Magazine_9x18_APB_20rnd_Ball_Description"
+   ],
+   "name": null
+  },
+  "APB_BP": {
+   "keys": [
+    "#AR-ARMST_Magazine_armst_Magazine_9x18_APB_20rnd_Ball_BP_Description",
+    "#AR-ARMST_Magazine_armst_Magazine_9x18_APB_20rnd_Ball_BP_Description"
+   ],
+   "name": null
+  },
+  "PP91_PP": {
+   "keys": [
+    "#AR-ARMST_Magazine_armst_Magazine_9x18_PP91_30rnd_Ball_Description",
+    "#AR-ARMST_Magazine_armst_Magazine_9x18_PP91_30rnd_Ball_Description"
+   ],
+   "name": null
+  },
+  "PP91_BP": {
+   "keys": [
+    "#AR-ARMST_Magazine_armst_Magazine_9x18_PP91_30rnd_Ball_BP_Description",
+    "#AR-ARMST_Magazine_armst_Magazine_9x18_PP91_30rnd_Ball_BP_Description"
+   ],
+   "name": null
+  }
+ },
+ "PP_BP_DESC_KEYS_DISTINCT": true,
+ "MISSING_KEYS": 2,
+ "DUPLICATE_KEYS": 0,
+ "GUID_CHANGES": 0,
+ "GAMEPLAY_DIFF": 0,
+ "MISSING_ARMST_KEYS": 0,
+ "MISSING_VANILLA_NAME_KEYS": [
+  "#AR-Magazine_PM_Name (vanilla-provided; used by PM PP/BP)"
+ ]
+}

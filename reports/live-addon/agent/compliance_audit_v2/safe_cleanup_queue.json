@@ -1,0 +1,23 @@
+{
+    "Guidance":  "Only items PROVEN safe under current rules. Existing overrides, known exceptions, runtime questions, unknown components, and naming debt are excluded.",
+    "Queue":  [
+                  {
+                      "PATH":  "Prefabs/Weapons/Rifles.meta",
+                      "RESOURCE":  "Folder meta (FolderResourceClass)",
+                      "INSTANCE_ID":  "2846E4F6F77233F4",
+                      "ISSUE":  "Orphan meta: registered path Prefabs/Weapons/Rifles (folder no longer exists; reorganized to Prefabs/Weapons/Russian/Rifle etc.)",
+                      "ORIGIN":  "Legacy folder registration not cleaned during folder re-organization",
+                      "WHY_INVALID":  "Describes a resource (folder) that no longer exists and is not referenced by any live file (0 GUID refs)",
+                      "WHY_SAFE":  "Deleting an orphan .meta with zero references cannot affect any live resource",
+                      "EXPECTED_EFFECTIVE_DIFF":  "None (no runtime behavior change); removes stale registry entry",
+                      "SEVERITY":  "LOW"
+                  }
+              ],
+    "NotQueued_ReviewOnly":  [
+                                 "armst_HKG36_CarryHandle_Optic.et - missing .meta: requires CREATION (mutation), not cleanup; REVIEW",
+                                 "490 stale .meta Name paths + 183 stale ref paths: Workbench re-save/registry rebuild scope; REVIEW/MEDIUM",
+                                 "AKDovetailMount disabled MeshObject 557E85EE39CED921: inert but part of previously-fixed live state - REVIEW, not auto-removal",
+                                 "SOC94 malformed parent path (Rifles/AKM/...): GUID-resolvable; normalizing is mutation - REVIEW/MEDIUM"
+                             ],
+    "QueueCount":  1
+}

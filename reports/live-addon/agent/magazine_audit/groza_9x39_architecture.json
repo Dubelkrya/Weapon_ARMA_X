@@ -1,0 +1,147 @@
+{
+ "current_groza": {
+  "path": "Prefabs/Weapons/Russian/Rifle/Groza/armst_Groza_base.et",
+  "guid": "903C7920F00AB654",
+  "model": "{277CC12370C4BCF0}Assets/Weapons_RUS/Groza/GROZA.xob",
+  "MagazineWell": "MagazineWellVZ58_762 {5464E0EAAF7815B4} (7.62x39 - legacy/wrong for 9x39)",
+  "MagazineTemplate": "{48720FC416263FC1}Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_30rnd_Ball.et (legacy 7.62x39)",
+  "AmmoConfig": "none authored on weapon",
+  "MuzzleComponent": "{CA6BE4D6B867541F}",
+  "CaseEjectingEffectComponent": "{5122AAD190FCA21D} ParticleEffect {A89D3276591C9F57}Particles/Weapon/Casing_762x39_PS.ptc",
+  "SCR_MuzzleEffectComponent": "{C9B3271BB22CDB68} ParticleEffect {6FC79968CA7F6FD2}Particles/Weapon/Muzzle_AK74.ptc (KEEP)",
+  "MagazinePosition": "{B80A64F4C834E9CB}"
+ },
+ "groza_mag_model": {
+  "asset": "Assets/Weapons_RUS/Groza/Groza_mag.xob",
+  "guid": "9889FE707F31F4A2",
+  "meta_name": "{9889FE707F31F4A2}Assets/Groza/Groza_mag.xob (stale path in meta)",
+  "material": "{A9EF12E92A6D0C68}Assets/Groza/data/GrozaMat.emat",
+  "users": "NONE - no prefab references Groza_mag.xob"
+ },
+ "nine_x39_magazines": {
+  "VAL_30rnd_SP5": {
+   "path": "Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_30rnd_val_SP5.et",
+   "parent": "{F9E1A46E3ABA116F}Prefabs/Weapons/Core/Magazine_Base.et",
+   "model": "{1596366D8715CE5A}Assets/VAL/val_magazine.xob",
+   "well": "MagazineWell9x39 {65AD272C6CDDD352}",
+   "component": "{CA6BE4D6B4DAFD69}",
+   "ammoconfig": "{710039458DA9911D}Configs/Weapons/Ammo/armst_Ammo_9x39.conf",
+   "mapping": "30x0",
+   "weight": 0.33,
+   "grid_height": 2,
+   "caliber_label": "#AR-AmmunitionID_545x39mm (WRONG label - pre-existing)"
+  },
+  "VAL_30rnd_SP6": {
+   "path": "Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_30rnd_val_SP6.et",
+   "well": "MagazineWell9x39 {673A6EBFEE188D21}",
+   "model": "{1596366D8715CE5A}Assets/VAL/val_magazine.xob",
+   "ammoconfig": "{710039458DA9911D}Configs/Weapons/Ammo/armst_Ammo_9x39.conf",
+   "mapping": "30x1",
+   "weight": 0.42,
+   "grid_height": 2
+  },
+  "VSS_20rnd_SP5": {
+   "path": ".../VSS/armst_Magazine_9x39_20rnd_vss_SP5.et",
+   "well": "MagazineWell9x39 {65AD1CF54397A5FA}",
+   "MaxAmmo": 20,
+   "model": "{64435261DAB19940}Assets/VSS/vss_magazine.xob"
+  },
+  "VSS_20rnd_SP6": {
+   "path": ".../VSS/armst_Magazine_9x39_20rnd_vss_SP6.et",
+   "well": "MagazineWell9x39 {673A6EBFE84A32BE}",
+   "MaxAmmo": 20,
+   "model": "{64435261DAB19940}Assets/VSS/vss_magazine.xob"
+  }
+ },
+ "nine_x39_config": {
+  "path": "Configs/Weapons/Ammo/armst_Ammo_9x39.conf",
+  "guid_ref": "710039458DA9911D",
+  "AmmoResourceArray": [
+   {
+    "index": 0,
+    "path": "Prefabs/Weapons/Ammo/Russian/9x39/armst_Ammo_9x39_SP5_Ball.et",
+    "guid": "2CB8EAD4A52F3290"
+   },
+   {
+    "index": 1,
+    "path": "Prefabs/Weapons/Ammo/Russian/9x39/armst_Ammo_9x39_SP6_Ball.et",
+    "guid": "FB468B29C75FE46A"
+   }
+  ]
+ },
+ "proven_9x39_well": {
+  "class": "MagazineWell9x39",
+  "defined_in": "Scripts/Gamecode/Magazine9x39.c",
+  "weapon_users": [
+   "armst_Rifle_val_base.et (MagazineWell9x39 {55349E9229B55D96})",
+   "armst_Rifle_vss_base.et (MagazineWell9x39 {55349E9229B55D96})"
+  ],
+  "magazine_users": [
+   "VAL 30rnd SP5/SP6",
+   "VSS 20rnd SP5/SP6",
+   "9a91 20rnd SP5/SP6"
+  ],
+  "groza_can_use": "YES (same class; Groza is 9x39 per project decision)"
+ },
+ "PROVEN_CAPACITY": "UNKNOWN",
+ "capacity_evidence_searched": [
+  "filenames",
+  "scripts",
+  "configs",
+  "localization",
+  "legacy refs",
+  "catalogs"
+ ],
+ "capacity_note": "No local evidence states a Groza 9x39 magazine capacity. Only legacy 7.62x39 template (30rnd) and the Groza_mag.xob mesh exist. Do NOT assume real-world 20rnd.",
+ "load_types": {
+  "pattern": "Separate SP5 and SP6 magazines distinguished by AmmoMapping (SP5 all 0, SP6 all 1) on the shared armst_Ammo_9x39.conf. No PP/BP terminology used for 9x39.",
+  "SP5_mapping": "index 0 (armst_Ammo_9x39_SP5_Ball.et)",
+  "SP6_mapping": "index 1 (armst_Ammo_9x39_SP6_Ball.et)"
+ },
+ "casing": {
+  "current": "Particles/Weapon/Casing_762x39_PS.ptc",
+  "proven_9x39_casing": "NONE - no 9x39/VSS/VAL casing particle exists in addon or exported resources",
+  "status": "AMBIGUOUS"
+ },
+ "reassessment_of_previous_casing_fix": {
+  "value": "Particles/Weapon/Casing_762x39_PS.ptc",
+  "classification": "WRONG_FOR_9x39",
+  "note": "Introduced by the previous casing task (changing 762x51 -> 762x39). Groza is now treated as 9x39, so BOTH the old Casing_762x51 and the current Casing_762x39 are incorrect; no proven 9x39 casing exists to replace it."
+ },
+ "required_weapon_changes": {
+  "A_MagazineWell": {
+   "change": "MagazineWellVZ58_762 -> MagazineWell9x39",
+   "class": "PROVEN_FIX",
+   "blocked_by": "dedicated 9x39 Groza magazine not yet creatable (capacity unknown)"
+  },
+  "B_default_MagazineTemplate": {
+   "change": "legacy 7.62x39 -> dedicated 9x39 Groza magazine (SP5)",
+   "class": "AMBIGUOUS",
+   "reason": "capacity UNKNOWN; no Groza 9x39 magazine prefab exists"
+  },
+  "C_casing_particle": {
+   "change": "Casing_762x39_PS -> dedicated 9x39 casing",
+   "class": "AMBIGUOUS",
+   "reason": "no proven 9x39 casing particle exists"
+  },
+  "D_caliber_refs": {
+   "change": "none on weapon; note VAL/VSS mags carry wrong m_sAmmoCaliber #AR-AmmunitionID_545x39mm",
+   "class": "AMBIGUOUS"
+  }
+ },
+ "muzzle_ak74": "KEEP / INTENTIONAL_SHARED_EFFECT",
+ "proposed_magazines_if_capacity_proven": {
+  "naming": [
+   "armst_Magazine_9x39_Groza_<capacity>rnd_SP5.et",
+   "armst_Magazine_9x39_Groza_<capacity>rnd_SP6.et"
+  ],
+  "model": "Groza_mag.xob",
+  "well": "MagazineWell9x39",
+  "ammoconfig": "Configs/Weapons/Ammo/armst_Ammo_9x39.conf",
+  "SP5_mapping": "all 0",
+  "SP6_mapping": "all 1",
+  "status": "NOT FINALIZED (capacity unknown)"
+ },
+ "LIVE_FILES_CHANGED": "NONE",
+ "STATUS": "REVIEW_REQUIRED"
+}

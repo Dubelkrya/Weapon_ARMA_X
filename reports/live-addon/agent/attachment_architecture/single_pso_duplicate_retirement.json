@@ -1,0 +1,50 @@
+{
+ "CANONICAL_PSO": "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et",
+ "CANONICAL_GUID": "C850A33226B8F9C1",
+ "CANONICAL_OK": true,
+ "REMOVED": [
+  [
+   "F325FE2E3DDCDDAD",
+   "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1_ak.et"
+  ],
+  [
+   "5B318FB72398CB0A",
+   "armst_Optic_PSO1_DovetailRU.et"
+  ]
+ ],
+ "REFS_BEFORE": {
+  "F325FE2E3DDCDDAD": {
+   "path": "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1_ak.et",
+   "guid_refs": [],
+   "inheritors": []
+  },
+  "5B318FB72398CB0A": {
+   "path": "armst_Optic_PSO1_DovetailRU.et",
+   "guid_refs": [],
+   "inheritors": []
+  }
+ },
+ "REFS_AFTER": {
+  "F325FE2E3DDCDDAD": 0,
+  "5B318FB72398CB0A": 0
+ },
+ "REMAINING_ARMST_PSO_PREFABS": [
+  "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et"
+ ],
+ "EXPECTED_COUNT": 1,
+ "DEFAULTS_BROKEN": 0,
+ "defaults_intact": true,
+ "WEAPON_FILES_CHANGED": 0,
+ "WEAPON_OVERRIDES_CHANGED": 0,
+ "CANONICAL_GUID_CHANGES": 0,
+ "DANGLING_REFS": 0,
+ "UNRELATED_GAMEPLAY_CHANGES": 0,
+ "LIVE_FILES_REMOVED": [
+  "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1_ak.et",
+  "armst_Optic_PSO1_DovetailRU.et",
+  "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1_ak.et.meta",
+  "armst_Optic_PSO1_DovetailRU.et.meta"
+ ],
+ "removed_absent": true,
+ "STATIC_STATUS": "PASS"
+}

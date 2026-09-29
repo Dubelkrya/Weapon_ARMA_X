@@ -1,0 +1,66 @@
+{
+ "CANONICAL_PSO": {
+  "path": "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et",
+  "guid": "C850A33226B8F9C1",
+  "type": "AttachmentOpticsDovetailAK",
+  "safe_to_preserve": true,
+  "live_defaults": [
+   "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_full.et",
+   "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74M_full.et"
+  ]
+ },
+ "REQUIRED_SLOT_TYPES": {
+  "AttachmentOpticsDovetailAK": [
+   "AKM 65AE4CB5E23C0F65",
+   "9A91/VAL/VSS/VSK94 5F189C826D592450"
+  ],
+  "AttachmentOpticsDovetailSVD": [
+   "SOC94 65AE4CB5E23C0F63",
+   "vanilla SVD native Dovetail"
+  ],
+  "AttachmentOpticsARMST_DovetailRU": [
+   "AEK971 55349E9229B55E29"
+  ]
+ },
+ "WEAPONATTACHMENTATTRIBUTES_CARDINALITY": {
+  "A_one_attributes_one_type": "OBSERVED for all optic attachments (each PSO prefab has exactly one WeaponAttachmentAttributes instance 5284D858FFF9BE66 with one AttachmentType)",
+  "B_one_attributes_multiple_types": "NO local example; no syntax field found for a type list inside WeaponAttachmentAttributes",
+  "C_multiple_attributes_instances": "Only observed across DIFFERENT components (UGL_M203_base.et: InventoryItemComponent attrs + SCR_WeaponAttachmentsStorageComponent attrs). No example of two WeaponAttachmentAttributes inside the same component.",
+  "D_inherited_compatibility": "AttachmentType values are classes; no compatibility inheritance observed on the attribute itself"
+ },
+ "MULTI_TYPE_MECHANISM": "Compatibility is by type identity/derivation. PROVEN: slot `AssetMuzzle545_39` (vanilla Rifle_AK74_base) accepts prefab whose outer type is `AttachmentFlashHider6P20`; base prefab declares `AttachmentFlashHider`. => attachment type must be the slot type or a subclass of it (slot type = category/ancestor, attachment type = specific/descendant). No list/polymorphic field exists locally.",
+ "TYPE_RELATIONSHIPS": {
+  "AttachmentOpticsDovetailAK": {
+   "source": "game-defined (not in addon)",
+   "inheritance": "unknown (not locally inspectable)"
+  },
+  "AttachmentOpticsDovetailSVD": {
+   "source": "game-defined (not in addon; used by vanilla SVD/PSO1)",
+   "inheritance": "unknown"
+  },
+  "AttachmentOpticsARMST_DovetailRU": {
+   "source": "ARMST Scripts/Gamecode/Attachment_optic.c",
+   "inheritance": "class AttachmentOpticsARMST_DovetailRU : AttachmentOptics"
+  },
+  "shared_ancestor": "all optics derive from AttachmentOptics, but that base is far too broad to be a slot type",
+  "aliases": "none"
+ },
+ "PSO1_AK_REFERENCES": {
+  "guid": "F325FE2E3DDCDDAD",
+  "live_refs": "0",
+  "note": "now exposes AttachmentOpticsDovetailSVD; the only ARMST optic with that type"
+ },
+ "PSO1_DOVETAIL_RU_REFERENCES": {
+  "guid": "5B318FB72398CB0A",
+  "live_refs": [],
+  "note": "the only optic exposing AttachmentOpticsARMST_DovetailRU; required by AEK971"
+ },
+ "DUPLICATES_REMOVABLE": [],
+ "DUPLICATES_THAT_MUST_REMAIN": [
+  "armst_Optic_PSO1_ak.et (only SVD-type optic)",
+  "armst_Optic_PSO1_DovetailRU.et (only RU-type optic)"
+ ],
+ "WEAPON_OVERRIDE_CHANGES_REQUIRED": "YES for a true single-prefab collapse (slot types must be unified)",
+ "CLASSIFICATION": "SINGLE_PSO_REQUIRES_WEAPON_OVERRIDE_CHANGE",
+ "STATUS": "REVIEW_REQUIRED"
+}

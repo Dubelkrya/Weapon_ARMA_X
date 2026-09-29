@@ -1,0 +1,23 @@
+GenericEntity : "{6BEC092D354A997E}Prefabs/Weapons/Warheads/Explosions/Warhead_Explosion_Base.et" {
+ ID "9D9BE68EA2672F76"
+ components {
+  SoundComponent "{D092A75ECEFAE456}" {
+   Filenames {
+    "{052A30036C5EC8A5}Sounds/Particles/Logistics/Explosion/Battery/Particles_Explosions_Battery.acp"
+   }
+  }
+  TimerTriggerComponent "{55129E81CBAA1390}" {
+   PROJECTILE_EFFECTS {
+    ExplosionDamageContainer "{5D8D1EB3E2893B43}" {
+     ChargeWeight 250
+    }
+    SpawnParticleEffect "{5E24A9E49067B7F5}" {
+     ParticleEffect "{C71EB0F15F014E3B}Particles/Logistics/Explosion/Battery/Explosion_Battery.ptc"
+    }
+   }
+  }
+  HitEffectComponent "{9D9BE68D6F65A10F}" {
+   ParticleEffect "{C71EB0F15F014E3B}Particles/Logistics/Explosion/Battery/Explosion_Battery.ptc"
+  }
+ }
+}

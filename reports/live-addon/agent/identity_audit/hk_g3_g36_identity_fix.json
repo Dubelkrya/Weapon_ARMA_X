@@ -1,0 +1,36 @@
+{
+ "HK_G3": {
+  "resource": "Prefabs/Weapons/Western/Rifle/HKG33/armst_Rifle_HKG33.et",
+  "value_after": "HK G3",
+  "insertions": {
+   "item_display": 1,
+   "weapon_uiinfo": 1
+  },
+  "names_now": [
+   "HK G3",
+   "HK G3"
+  ],
+  "fields_changed": [
+   "ItemDisplayName WeaponUIInfo {5222CB07CFF6712A} Name",
+   "UIInfo WeaponUIInfo {CC3BA6A2C42F09F4} Name"
+  ]
+ },
+ "HK_G36": {
+  "resource": "Prefabs/Weapons/Western/Rifle/HKG36/armst_Rifle_hk_g36.et",
+  "value_after": "HK G36",
+  "fields_changed": [],
+  "note": "already correct (#AR-ARMST_Weapon_G36_Name = \"HK G36\")"
+ },
+ "WRONG_HKG33_PLAYER_DISPLAY_REFS": 0,
+ "WRONG_M16_OR_OLD_G36_PLAYER_DISPLAY_REFS": 0,
+ "DESCRIPTION_IDENTITY_ISSUES": {
+  "HKG3": "#AR-Weapon_M16A2_Description still inherited (identifies M16) - NOT rewritten per scope",
+  "G36": "CLEAN (#AR-ARMST_Weapon_G36_Description)"
+ },
+ "GUID_CHANGES": 0,
+ "PATH_CHANGES": 0,
+ "META_UNCHANGED": true,
+ "braces_balanced": true,
+ "GAMEPLAY_DIFF": 0,
+ "OTHER_WEAPONS_CHANGED": 0
+}

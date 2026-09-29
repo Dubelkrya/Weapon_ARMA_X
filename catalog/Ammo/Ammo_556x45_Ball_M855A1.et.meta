@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{1FAEB6937D2A7F1B}Imported/VanillaSources/Prefabs/Weapons/Ammo/Ammo_556x45_Ball_M855A1.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

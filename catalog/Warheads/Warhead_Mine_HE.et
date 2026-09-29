@@ -1,0 +1,29 @@
+GenericEntity : "{9B5FF7EECAD376FA}Prefabs/Weapons/Warheads/Warhead_Base.et" {
+ ID "9D9BE68EA2672F76"
+ components {
+  SignalsManagerComponent "{C572A75F88B55309}" {
+   Enabled 1
+  }
+  SoundComponent "{D092A75ECEFAE456}" {
+   Enabled 1
+   Filenames {
+    "{87E0968F67279DFE}Sounds/Weapons/Explosives/_SharedData/Weapons_Explosives_ATMine_Generic.acp"
+   }
+  }
+  BaseTriggerComponent "{55129E81CBAA1390}" {
+   PROJECTILE_EFFECTS {
+    ExplosionDamageContainer "{5A12D2D8ABE24913}" : "{8A81F4702F919838}Prefabs/Weapons/Core/Damage/ExplosionContainer_HE.conf" {
+    }
+    SpawnDecalEffect "{5E24CB0404FD81A6}" {
+     Scale 3
+     Material "{AA6A649FCBF951DB}Assets/Decals/Logistics/Data/Logistics_Explosion_Decal_Small.emat"
+    }
+   }
+   HAS_VALID_DIRECTION 0
+  }
+  HitEffectComponent "{9D9BE68D6F65A10F}" {
+   Enabled 0
+   ParticleEffect "{728768DE31C8D1DE}Particles/Weapon/Explosion_VOG25.ptc"
+  }
+ }
+}

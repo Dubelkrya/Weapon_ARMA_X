@@ -1,0 +1,30 @@
+GenericEntity : "{9B5FF7EECAD376FA}Prefabs/Weapons/Warheads/Warhead_Base.et" {
+ ID "9D9BE68EA2672F76"
+ components {
+  TimerTriggerComponent "{55129E81CBAA1390}" {
+   PROJECTILE_EFFECTS {
+    ExplosionDamageContainer "{5D8D1EB3E2893B43}" : "{04BC445FB74FDAA9}Prefabs/Weapons/Core/Damage/ExplosionContainer_Base.conf" {
+     ExplosionEffects {
+      BaseExplosionDamage "{61DAF5E24D9CA168}" {
+       DamageDistance 1.5
+      }
+     }
+    }
+    SpawnDecalEffect "{5E24A9E4AE3FCD64}" {
+     Scale 1
+     Material "{9EC972F6E6DD4842}Assets/Decals/Logistics/Impact/Data/Decal_Logistics_Grenade_01.emat"
+    }
+    SpawnParticleEffect "{5E24A9E49067B7F5}" {
+     UseFrameEvent 1
+     ParticleEffect "{728768DE31C8D1DE}Particles/Weapon/Explosion_VOG25.ptc"
+    }
+   }
+   TIMER 0.05
+  }
+  HitEffectComponent "{9D9BE68D6F65A10F}" {
+   ParticleEffect "{728768DE31C8D1DE}Particles/Weapon/Explosion_VOG25.ptc"
+  }
+  RplComponent "{5E6D1CE1C6CA478E}" {
+  }
+ }
+}

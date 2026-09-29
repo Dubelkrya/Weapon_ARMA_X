@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{AA2AFE0CF6B9F39D}Imported/VanillaSources/Prefabs/Weapons/Ammo/Ammo_9x39_AP_SP6.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

@@ -1,0 +1,20 @@
+GameEntity : "{4308DBEE30E1A692}Prefabs/Weapons/Attachments/Muzzle/Suppressor_M16/Suppressor_M16_base.et" {
+ ID "4BA426CBAED42A14"
+ components {
+  InventoryItemComponent "{52627A1F45CD4EB6}" {
+   Attributes SCR_ItemAttributeCollection "{52627A1EBB0698FD}" {
+    ItemDisplayName UIInfo "{5CB8A09828130AD1}" {
+     Name "#AR-Item_Mark3Suppressor_Camo_Name"
+    }
+   }
+  }
+  MeshObject "{5C46D45E03D7AD12}" {
+   Materials {
+    MaterialAssignClass "{5E4C8328FB25EC6E}" {
+     SourceMaterial "Suppressor_M16"
+     AssignedMaterial "{B3A475026B753ABD}Assets/Weapons/Attachments/Muzzle/Suppressor_M16/Data/Suppressor_M16_OliveGreen_Sand_Stripes.emat"
+    }
+   }
+  }
+ }
+}

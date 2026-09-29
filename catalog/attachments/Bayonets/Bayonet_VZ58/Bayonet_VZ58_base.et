@@ -1,0 +1,35 @@
+GameEntity : "{9CB58C6DD96AF131}Prefabs/Weapons/Attachments/Bayonets/Bayonet_Base.et" {
+ ID "50989DC991E68512"
+ components {
+  InventoryItemComponent "{52627A1F45CD4EB6}" {
+   Attributes SCR_ItemAttributeCollection "{60A8948019D3F7B6}" {
+    ItemDisplayName UIInfo "{60A8948019D3F7B0}" {
+     Name "#AR-Weapon_Vz58Bayonet_Name"
+     Description "#AR-Weapon_Vz58Bayonet_Description"
+    }
+    ItemPhysAttributes ItemPhysicalAttributes "{60A8948019D3F7B2}" {
+     Weight 0.177
+    }
+    CustomAttributes {
+     SCR_WeaponAttachmentBayonetAttributes "{61967DD811A4DEE5}" {
+      AttachmentType AttachmentBayonetVz58 "{61967DE895246CF5}" {
+      }
+     }
+     PreviewRenderAttributes "{60A8948019D3F7BE}" {
+      CameraDistanceToItem 0.22
+     }
+     SCR_WeaponAttachmentObstructionAttributes "{61B08C8F8182650A}" {
+      AttachmentType AttachmentBayonetVz58 "{61B08C8F8889D9AD}" {
+      }
+     }
+    }
+   }
+  }
+  MeshObject "{60A894809670984D}" {
+   Object "{C5B2D75BDBB20CD4}Assets/Weapons/Attachments/Bayonets/Bayonet_VZ58/Bayonet_VZ58_v1.xob"
+  }
+  RigidBody "{60A894809472EB83}" {
+   ModelGeometry 1
+  }
+ }
+}

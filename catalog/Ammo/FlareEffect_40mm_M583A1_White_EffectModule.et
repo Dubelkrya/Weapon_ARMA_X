@@ -1,0 +1,13 @@
+Projectile : "{63E63BC95B61EC34}Prefabs/Weapons/Ammo/FlareEffect_40mm_M583A1_White.et" {
+ ID "5A52CD9231D8AB66"
+ components {
+  FlareMoveComponent "{5A52CD9231D8AB6E}" {
+   DispersionMultiplier 0
+   MoveWithParent 1
+  }
+  SCR_EffectsModuleChildComponent "{61A4959B026A9739}" {
+  }
+  Hierarchy "{61A4959B1C50EBF5}" {
+  }
+ }
+}

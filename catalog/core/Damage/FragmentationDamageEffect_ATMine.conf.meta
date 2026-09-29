@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{014E8A30F5C15A2B}Imported/VanillaSources/Prefabs/Weapons/Core/Damage/FragmentationDamageEffect_ATMine.conf"
+ Configurations {
+  CONFResourceClass PC {
+  }
+  CONFResourceClass XBOX_ONE : PC {
+  }
+  CONFResourceClass XBOX_SERIES : PC {
+  }
+  CONFResourceClass PS4 : PC {
+  }
+  CONFResourceClass PS5 : PC {
+  }
+  CONFResourceClass HEADLESS : PC {
+  }
+ }
+}

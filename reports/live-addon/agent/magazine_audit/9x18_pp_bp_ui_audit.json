@@ -1,0 +1,236 @@
+{
+ "mags_current": {
+  "PM_PP": {
+   "item_desc": "#AR-ARMST_Magazine_armst_Magazine_9x18_PM_8rnd_Ball_Description",
+   "edit_name": "#AR-Magazine_PM_Name",
+   "item_name": "#AR-Magazine_PM_Name",
+   "keys": [
+    "#AR-ARMST_Magazine_armst_Magazine_9x18_PM_8rnd_Ball_Description",
+    "#AR-AmmunitionID_9x18mm",
+    "#AR-Magazine_PM_Description",
+    "#AR-Magazine_PM_Name"
+   ],
+   "sources": {
+    "item_desc": "armst_Magazine_9x18_PM_8rnd_Ball_PP.et",
+    "edit_name": "armst_Magazine_9x18_PM_8rnd_Ball_PP.et",
+    "item_name": "Magazine_9x18_PM_8rnd_Base.et"
+   }
+  },
+  "PM_BP": {
+   "item_desc": "#AR-ARMST_Magazine_armst_Magazine_9x18_PM_8rnd_Ball_Description",
+   "edit_name": "#AR-Magazine_PM_Name",
+   "item_name": "#AR-Magazine_PM_Name",
+   "keys": [
+    "#AR-ARMST_Magazine_armst_Magazine_9x18_PM_8rnd_Ball_Description",
+    "#AR-AmmunitionID_9x18mm",
+    "#AR-Magazine_PM_Description",
+    "#AR-Magazine_PM_Name"
+   ],
+   "sources": {
+    "item_desc": "armst_Magazine_9x18_PM_8rnd_Ball_BP.et",
+    "edit_name": "armst_Magazine_9x18_PM_8rnd_Ball_BP.et",
+    "item_name": "Magazine_9x18_PM_8rnd_Base.et"
+   }
+  },
+  "APB_PP": {
+   "item_name": "APB Magazine",
+   "item_desc": "#AR-ARMST_Magazine_armst_Magazine_9x18_APB_20rnd_Ball_Description",
+   "edit_name": "APB Magazine",
+   "keys": [
+    "#AR-ARMST_Magazine_armst_Magazine_9x18_APB_20rnd_Ball_Description",
+    "#AR-ARMST_Magazine_armst_Magazine_9x18_PM_8rnd_Ball_Description",
+    "#AR-AmmunitionID_9x18mm",
+    "#AR-Magazine_PM_Description",
+    "#AR-Magazine_PM_Name"
+   ],
+   "sources": {
+    "item_name": "armst_Magazine_9x18_APB_20rnd_Ball.et",
+    "item_desc": "armst_Magazine_9x18_APB_20rnd_Ball.et",
+    "edit_name": "armst_Magazine_9x18_APB_20rnd_Ball.et"
+   }
+  },
+  "APB_BP": {
+   "item_name": "APB Magazine",
+   "item_desc": "#AR-ARMST_Magazine_armst_Magazine_9x18_APB_20rnd_Ball_Description",
+   "edit_name": "APB Magazine",
+   "keys": [
+    "#AR-ARMST_Magazine_armst_Magazine_9x18_APB_20rnd_Ball_Description",
+    "#AR-ARMST_Magazine_armst_Magazine_9x18_PM_8rnd_Ball_Description",
+    "#AR-AmmunitionID_9x18mm",
+    "#AR-Magazine_PM_Description",
+    "#AR-Magazine_PM_Name"
+   ],
+   "sources": {
+    "item_name": "armst_Magazine_9x18_APB_20rnd_Ball_BP.et",
+    "item_desc": "armst_Magazine_9x18_APB_20rnd_Ball_BP.et",
+    "edit_name": "armst_Magazine_9x18_APB_20rnd_Ball_BP.et"
+   }
+  },
+  "PP91_PP": {
+   "item_name": "PP-91 Magazine",
+   "item_desc": "#AR-ARMST_Magazine_armst_Magazine_9x18_PP91_30rnd_Ball_Description",
+   "edit_name": "PP-91 Magazine",
+   "keys": [
+    "#AR-ARMST_Magazine_armst_Magazine_9x18_PM_8rnd_Ball_Description",
+    "#AR-ARMST_Magazine_armst_Magazine_9x18_PP91_30rnd_Ball_Description",
+    "#AR-AmmunitionID_9x18mm",
+    "#AR-Magazine_PM_Description",
+    "#AR-Magazine_PM_Name"
+   ],
+   "sources": {
+    "item_name": "armst_Magazine_9x18_PP91_30rnd_Ball.et",
+    "item_desc": "armst_Magazine_9x18_PP91_30rnd_Ball.et",
+    "edit_name": "armst_Magazine_9x18_PP91_30rnd_Ball.et"
+   }
+  },
+  "PP91_BP": {
+   "item_name": "PP-91 Magazine",
+   "item_desc": "#AR-ARMST_Magazine_armst_Magazine_9x18_PP91_30rnd_Ball_Description",
+   "edit_name": "PP-91 Magazine",
+   "keys": [
+    "#AR-ARMST_Magazine_armst_Magazine_9x18_PM_8rnd_Ball_Description",
+    "#AR-ARMST_Magazine_armst_Magazine_9x18_PP91_30rnd_Ball_Description",
+    "#AR-AmmunitionID_9x18mm",
+    "#AR-Magazine_PM_Description",
+    "#AR-Magazine_PM_Name"
+   ],
+   "sources": {
+    "item_name": "armst_Magazine_9x18_PP91_30rnd_Ball_BP.et",
+    "item_desc": "armst_Magazine_9x18_PP91_30rnd_Ball_BP.et",
+    "edit_name": "armst_Magazine_9x18_PP91_30rnd_Ball_BP.et"
+   }
+  }
+ },
+ "reference_9x19": {
+  "M9_PP": {
+   "item_desc": "#AR-ARMST_Magazine_armst_Magazine_9x19_M9_15rnd_Ball_Description",
+   "edit_name": "#AR-Magazine_BerettaM9_Name",
+   "item_name": "#AR-Magazine_BerettaM9_Name",
+   "keys": [
+    "#AR-ARMST_Magazine_armst_Magazine_9x19_M9_15rnd_Ball_Description",
+    "#AR-AmmunitionID_9x19mm",
+    "#AR-Magazine_BerettaM9_Description",
+    "#AR-Magazine_BerettaM9_Name"
+   ],
+   "sources": {
+    "item_desc": "armst_Magazine_9x19_M9_15rnd_Ball.et",
+    "edit_name": "armst_Magazine_9x19_M9_15rnd_Ball.et",
+    "item_name": "Magazine_9x19_M9_15rnd_Base.et"
+   }
+  },
+  "M9_BP": {
+   "item_desc": "#AR-ARMST_Magazine_armst_Magazine_9x19_M9_15rnd_Ball_BP_Description",
+   "edit_name": "#AR-Magazine_BerettaM9_Name",
+   "item_name": "#AR-Magazine_BerettaM9_Name",
+   "keys": [
+    "#AR-ARMST_Magazine_armst_Magazine_9x19_M9_15rnd_Ball_BP_Description",
+    "#AR-AmmunitionID_9x19mm",
+    "#AR-Magazine_BerettaM9_Description",
+    "#AR-Magazine_BerettaM9_Name"
+   ],
+   "sources": {
+    "item_desc": "armst_Magazine_9x19_M9_15rnd_Ball_BP.et",
+    "edit_name": "armst_Magazine_9x19_M9_15rnd_Ball_BP.et",
+    "item_name": "Magazine_9x19_M9_15rnd_Base.et"
+   }
+  }
+ },
+ "duplicate_pp_bp_identities": [
+  [
+   "PM_PP",
+   "PM_BP",
+   "item_name",
+   "#AR-Magazine_PM_Name"
+  ],
+  [
+   "PM_PP",
+   "PM_BP",
+   "item_desc",
+   "#AR-ARMST_Magazine_armst_Magazine_9x18_PM_8rnd_Ball_Description"
+  ],
+  [
+   "APB_PP",
+   "APB_BP",
+   "item_name",
+   "APB Magazine"
+  ],
+  [
+   "APB_PP",
+   "APB_BP",
+   "item_desc",
+   "#AR-ARMST_Magazine_armst_Magazine_9x18_APB_20rnd_Ball_Description"
+  ],
+  [
+   "PP91_PP",
+   "PP91_BP",
+   "item_name",
+   "PP-91 Magazine"
+  ],
+  [
+   "PP91_PP",
+   "PP91_BP",
+   "item_desc",
+   "#AR-ARMST_Magazine_armst_Magazine_9x18_PP91_30rnd_Ball_Description"
+  ]
+ ],
+ "missing_keys": {
+  "PM_PP": [],
+  "PM_BP": [],
+  "APB_PP": [],
+  "APB_BP": [],
+  "PP91_PP": [],
+  "PP91_BP": []
+ },
+ "issues": [
+  "PP/BP pairs share identical display Name and identical Description key (no PP/BP distinction).",
+  "BP magazines lack dedicated *_Ball_BP_Description keys (9x19 convention uses distinct PP/BP description keys).",
+  "PM PP/BP reuse the legacy shared ARMST PM description key; wording is Ball-only and does not state PP/BP.",
+  "APB/PP91 descriptions are Ball-only; no loaded-ammunition role suffix."
+ ],
+ "recommended_identities": {
+  "PM_PP": {
+   "name": "#AR-Magazine_PM_Name",
+   "desc_key": "#AR-ARMST_Magazine_armst_Magazine_9x18_PM_8rnd_Ball_Description",
+   "ru": "Магазин на 8 патронов для пистолета Макарова под 9×18 мм. Снаряжён боеприпасами ARMST PP.",
+   "en": "8-round magazine for the Makarov pistol, chambered for 9x18 mm. Loaded with ARMST PP ammunition."
+  },
+  "PM_BP": {
+   "name": "#AR-Magazine_PM_Name",
+   "desc_key": "#AR-ARMST_Magazine_armst_Magazine_9x18_PM_8rnd_Ball_BP_Description",
+   "ru": "Магазин на 8 патронов для пистолета Макарова под 9×18 мм. Снаряжён боеприпасами ARMST BP.",
+   "en": "8-round magazine for the Makarov pistol, chambered for 9x18 mm. Loaded with ARMST BP ammunition."
+  },
+  "APB_PP": {
+   "name": "APB Magazine",
+   "desc_key": "#AR-ARMST_Magazine_armst_Magazine_9x18_APB_20rnd_Ball_Description",
+   "ru": "Магазин на 20 патронов для АПБ под 9×18 мм. Снаряжён боеприпасами ARMST PP.",
+   "en": "20-round magazine for the APB, chambered for 9x18 mm. Loaded with ARMST PP ammunition."
+  },
+  "APB_BP": {
+   "name": "APB Magazine",
+   "desc_key": "#AR-ARMST_Magazine_armst_Magazine_9x18_APB_20rnd_Ball_BP_Description",
+   "ru": "Магазин на 20 патронов для АПБ под 9×18 мм. Снаряжён боеприпасами ARMST BP.",
+   "en": "20-round magazine for the APB, chambered for 9x18 mm. Loaded with ARMST BP ammunition."
+  },
+  "PP91_PP": {
+   "name": "PP-91 Magazine",
+   "desc_key": "#AR-ARMST_Magazine_armst_Magazine_9x18_PP91_30rnd_Ball_Description",
+   "ru": "Магазин на 30 патронов для ПП-91 под 9×18 мм. Снаряжён боеприпасами ARMST PP.",
+   "en": "30-round magazine for the PP-91, chambered for 9x18 mm. Loaded with ARMST PP ammunition."
+  },
+  "PP91_BP": {
+   "name": "PP-91 Magazine",
+   "desc_key": "#AR-ARMST_Magazine_armst_Magazine_9x18_PP91_30rnd_Ball_BP_Description",
+   "ru": "Магазин на 30 патронов для ПП-91 под 9×18 мм. Снаряжён боеприпасами ARMST BP.",
+   "en": "30-round magazine for the PP-91, chambered for 9x18 mm. Loaded with ARMST BP ammunition."
+  }
+ },
+ "localization_changes_required": [
+  "NEW key #AR-ARMST_Magazine_armst_Magazine_9x18_PM_8rnd_Ball_BP_Description",
+  "NEW key #AR-ARMST_Magazine_armst_Magazine_9x18_APB_20rnd_Ball_BP_Description",
+  "NEW key #AR-ARMST_Magazine_armst_Magazine_9x18_PP91_30rnd_Ball_BP_Description"
+ ],
+ "gameplay_untouched": true,
+ "sr2m_untouched": true,
+ "LIVE_FILES_CHANGED": "NONE"
+}

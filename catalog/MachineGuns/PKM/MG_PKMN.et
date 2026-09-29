@@ -1,0 +1,14 @@
+GenericEntity : "{C617ECC635DA8D5C}Prefabs/Weapons/MachineGuns/PKM/MG_PKMN_base.et" {
+ ID "CFBAA4B725411E45"
+ components {
+  WeaponComponent "{CFBAA4B706BA66E8}" {
+   components {
+    WeaponAnimationComponent "{60B4EA76EB15F6E0}" {
+     AnimVariablesToBind + {
+      "HasOpticsAttached"
+     }
+    }
+   }
+  }
+ }
+}

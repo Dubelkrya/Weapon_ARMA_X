@@ -1,0 +1,28 @@
+{
+ "resource": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_SR2_30rnd_Ball.et",
+ "guid": "2610CA8D8632DEF4",
+ "value_before": "\"PP-91 Magazine\"",
+ "value_after": "\"Магазин СР-2М «Вереск»\"",
+ "fields_changed": [
+  "ItemDisplayName UIInfo {51FEE38527BFEA5B} Name",
+  "SCR_EditableEntityComponent {65B26504B0CBA6C3} > m_UIInfo SCR_EditableEntityUIInfo {65B26504B5150965} Name"
+ ],
+ "WRONG_PP91_DISPLAY_NAME_REFS_IN_SR2_MAG": 0,
+ "capacity": 30,
+ "magazine_well": "MagazineWellPP91",
+ "ammo_mapping_len": 22,
+ "description_unchanged_all": true,
+ "GUID_CHANGES": 0,
+ "META_UNCHANGED": true,
+ "braces_balanced": true,
+ "lines_added": [
+  "     Name \"Магазин СР-2М «Вереск»\"",
+  "    Name \"Магазин СР-2М «Вереск»\""
+ ],
+ "lines_removed": [
+  "     Name \"PP-91 Magazine\"",
+  "    Name \"PP-91 Magazine\""
+ ],
+ "GAMEPLAY_DIFF": 0,
+ "OTHER_RESOURCES_CHANGED": 0
+}

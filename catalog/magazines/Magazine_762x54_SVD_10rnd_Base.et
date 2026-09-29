@@ -1,0 +1,53 @@
+GenericEntity : "{F9E1A46E3ABA116F}Prefabs/Weapons/Core/Magazine_Base.et" {
+ ID "CA6BE4D6BB2D1077"
+ components {
+  AICombatPropertiesComponent "{59CE86D96C332DDF}" {
+   Priority 33
+   UsedAgainst 0x17 0
+  }
+  InventoryMagazineComponent "{51EED12B803954CC}" {
+   Attributes SCR_ItemAttributeCollection "{51EED12B86960275}" {
+    ItemDisplayName UIInfo "{51FEE38527BFEA5B}" {
+     Name "#AR-Magazine_SVD_Name"
+     Description "#AR-Magazine_SVD_Description"
+    }
+    ItemPhysAttributes ItemPhysicalAttributes "{52D8C68AF9363E70}" {
+     Weight 0.21
+     SizeSetupStrategy Manual
+     ItemVolume 150
+     RestingUP Left
+     RestingAdditiveOffsetLS -0.02 0 0
+    }
+    CustomAttributes {
+     PreviewRenderAttributes "{52D8C68AF9363E7A}" {
+      CameraPreset Left
+      CameraOrbitAngles -25 25 0
+      CameraDistanceToItem 0.9
+      FOV 10
+     }
+    }
+   }
+   WeightPerAmmo 0.022
+  }
+  MagazineComponent "{CA6BE4D6B4DAFD69}" {
+   MagazineWell MagazineWellSVD "{52D8C68AF9363E7D}" {
+   }
+   UIInfo MagazineUIInfo "{57126733AA401586}" {
+    Name "#AR-Magazine_SVD_Name"
+    Description "#AR-Magazine_SVD_Description"
+    m_sAmmoCaliber "#AR-AmmunitionID_762x54mm"
+    m_MagIndicator SCR_MagazineIndicatorConfiguration "{5866951DE2665916}" : "{6098E2D1A3DB2DA3}Configs/WeaponInfo/MagazineIndicators/svd_10.conf" {
+    }
+   }
+   ItemModel "{10D7B743E0A06735}Assets/Weapons/Magazines/SVD/Magazine_10rnd_SVD.xob"
+   MaxAmmo 10
+   AmmoConfig "{B0020DFAF0D1E3C8}Configs/Weapons/Ammo/Ammo_762x54.conf"
+   AmmoMapping {
+    0 0 0 0 0 0 0 0 0 0
+   }
+  }
+  MeshObject "{CA6BE4D6A23F8EF0}" {
+   Object "{10D7B743E0A06735}Assets/Weapons/Magazines/SVD/Magazine_10rnd_SVD.xob"
+  }
+ }
+}

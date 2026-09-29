@@ -1,0 +1,15 @@
+GenericEntity : "{026CE108BFB3EC03}Prefabs/Weapons/MachineGuns/UK59/MG_UK59.et" {
+ ID "CFBAA4B725411E45"
+ components {
+  WeaponComponent "{CFBAA4B706BA66E8}" {
+   components {
+    MuzzleComponent "{50F64C4591CD7AA6}" {
+     WeaponAimModifiers {
+      SCR_RecoilForceAimModifier "{691496C28C18A53D}" : "{98B350A16F223F89}Prefabs/Weapons/Core/Configs/AimModifiers/RecoilForceAimModifier_MountedUK59.conf" {
+      }
+     }
+    }
+   }
+  }
+ }
+}

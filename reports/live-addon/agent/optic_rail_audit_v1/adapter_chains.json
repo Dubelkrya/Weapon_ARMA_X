@@ -1,0 +1,18 @@
+[
+    {
+        "Adapter":  "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et",
+        "Guid":  "D71FD2BD68AC4B31",
+        "OuterType":  "AttachmentOpticsDovetailAK",
+        "InnerSlotType":  "AttachmentOpticsRIS1913",
+        "InnerPivotID":  null,
+        "InnerChildPivot":  null
+    },
+    {
+        "Adapter":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Picatinny.et",
+        "Guid":  "8965EFD9F6CC9B95",
+        "OuterType":  "AttachmentOpticsG36",
+        "InnerSlotType":  "AttachmentOpticsRIS1913",
+        "InnerPivotID":  null,
+        "InnerChildPivot":  null
+    }
+]

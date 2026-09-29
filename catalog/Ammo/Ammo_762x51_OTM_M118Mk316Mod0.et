@@ -1,0 +1,18 @@
+Projectile : "{C14C5DE6F97F06F0}Prefabs/Weapons/Ammo/Ammo_762x51_Ball_M80.et" {
+ ID "70A3674123B4BC16"
+ components {
+  ShellMoveComponent "{851AA4A2AE0A5691}" {
+   InitSpeed 800
+   InitSpeedVariation 2.25
+   DispersionMultiplier 0.41
+   Mass 0.0113
+   BallisticTableConfig "{B34BD0E218B58BAB}Configs/Weapons/AIBallisticTables/AIBT_762x51_OTM_M118Mk316Mod0.conf"
+   AirDrag 0.000009
+   Length 33.3
+   MushroomingDamageMultiplier 0.4
+   TumblingDamageMultiplier 0.15
+   PenetrationDepth 2.8
+   PenetrationSpeed 654
+  }
+ }
+}

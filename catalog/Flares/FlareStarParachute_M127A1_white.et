@@ -1,0 +1,24 @@
+GenericEntity : "{E85B6BC38C3BFEBC}Prefabs/Weapons/Flares/FlareStarParachute_base.et" {
+ ID "CFBAA4B725411E45"
+ components {
+  SCR_WeaponAttachmentsStorageComponent "{51F080D5CE45A1A2}" {
+   Attributes SCR_ItemAttributeCollection "{51F080D5C64F12C5}" {
+    ItemDisplayName WeaponUIInfo "{5222CB047B845168}" {
+     Name "#AR-Item_M127A1_Name"
+     Description "#AR-Item_M127A1_Description"
+    }
+   }
+  }
+  SCR_WeaponComponent "{CFBAA4B706BA66E8}" {
+   components {
+    SCR_MuzzleInMagComponent "{50F65D04F21F7633}" {
+     AmmoTemplate "{47665331979536BC}Prefabs/Weapons/Ammo/Ammo_Flare_40mm_StarParachute_White.et"
+    }
+   }
+   UIInfo WeaponUIInfo "{CC3BA6A2C42F09F4}" {
+    Name "#AR-Item_M127A1_Name"
+    Description "#AR-Item_M127A1_Description"
+   }
+  }
+ }
+}

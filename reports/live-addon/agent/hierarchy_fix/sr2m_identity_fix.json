@@ -1,0 +1,28 @@
+{
+ "path": "Prefabs/Weapons/Russian/Handguns/Sr_2/armst_SR_2.et",
+ "guid": "31FB2EC4F4AFFC05",
+ "value_before": "\"PP-91\"",
+ "value_after": "\"СР-2М «Вереск»\"",
+ "field_changed": "m_UIInfo SCR_EditableEntityUIInfo {65F28786DC4DA036} Name (plus other display Name fields)",
+ "pp91_name_occurrences_before": 3,
+ "WRONG_PP91_DISPLAY_NAME_REFS_IN_SR2M": 0,
+ "display_name_after": "СР-2М «Вереск»",
+ "PARENT_BEFORE": "{B7132459C07777CA}Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et",
+ "PARENT_AFTER": "{B7132459C07777CA}Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et",
+ "parent_unchanged": true,
+ "GUID_CHANGES": 0,
+ "META_UNCHANGED": true,
+ "braces_balanced": true,
+ "GAMEPLAY_DIFF": 0,
+ "OTHER_WEAPONS_CHANGED": 0,
+ "lines_added": [
+  "    Name \"СР-2М «Вереск»\"",
+  "     Name \"СР-2М «Вереск»\"",
+  "    Name \"СР-2М «Вереск»\""
+ ],
+ "lines_removed": [
+  "    Name \"PP-91\"",
+  "     Name \"PP-91\"",
+  "    Name \"PP-91\""
+ ]
+}

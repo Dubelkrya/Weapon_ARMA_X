@@ -1,0 +1,23 @@
+GenericEntity : "{761A03A9C5BA8D68}Prefabs/Weapons/Magazines/Magazine_762x54_SVD_10rnd_Base.et" {
+ ID "CA6BE4D6BB2D1077"
+ components {
+  InventoryMagazineComponent "{51EED12B803954CC}" {
+   Attributes SCR_ItemAttributeCollection "{51EED12B86960275}" {
+    m_iCustomGridHeight 1
+   }
+  }
+  SCR_EditableEntityComponent "{65B265057DB4A0C0}" {
+   Enabled 0
+   m_UIInfo SCR_EditableEntityUIInfo "{65B2650502B5A341}" {
+    Name "#AR-Magazine_SVDAPI_Name"
+    m_aAuthoredLabels +{
+    }
+    m_aAutoLabels +{
+    }
+   }
+   m_bAutoRegister NEVER
+   m_bVisible 0
+  }
+ }
+ coords 4163.283 306.523 721.666
+}

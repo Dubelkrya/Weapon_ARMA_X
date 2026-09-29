@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{1802D1DE0E49A045}Imported/VanillaSources/Prefabs/Weapons/Magazines/Box_762x51_M60_100rnd_Tracer.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

@@ -1,0 +1,86 @@
+{
+ "path": "Prefabs/Weapons/Western/Rifle/HKG33/armst_Rifle_HKG33.et",
+ "guid": "035CFC7DD44455D0",
+ "model": "{572D73728DF974EC}Assets/NATO/HKG3/Hk3.xob",
+ "parent_before": "{3E413771E1834D2F}Rifles/armst_Rifle_M16A2.et",
+ "parent_after": "{C63227C0E70EA62E}Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et",
+ "parent_target": "{C63227C0E70EA62E}Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et",
+ "intermediate_parent_contributions": [
+  "SCR_MeleeWeaponProperties {5534745C44D1EFF6} m_fDamage 2",
+  "WeaponComponent>WeaponAnimationComponent {60B4EA76EB15F6E0} M16 anims"
+ ],
+ "effective_state_before": {
+  "model": "{572D73728DF974EC}Assets/NATO/HKG3/Hk3.xob",
+  "magazine_well": "{24F41F1143114516}",
+  "magazine_template": "{6D18CC33708EE713}Prefabs/Weapons/Magazines/Western/762x51/HK3/L1A1/armst_Magazine_762x51_HK3_20_M80_Ball.et",
+  "animation_refs": [
+   "{B01F8B98949C62AE}Assets/NATO/HKG3/Anim/HKG3.agr",
+   "{3F06AB9540D64568}Assets/NATO/HKG3/Anim/HKG3_weapon.asi",
+   "{B01F8B98949C62AE}Assets/NATO/HKG3/Anim/HKG3.agr",
+   "{C4583AA4D8D72184}Assets/NATO/HKG3/Anim/HKG3_player.asi"
+  ],
+  "ik_pose": "{32130352F880E925}Assets/NATO/HKG3/Anim/Diff/p_rfl_HKG3_ik.anm",
+  "has_sights": true,
+  "melee_damage": "2",
+  "fire_modes_local": false,
+  "sounds_local": false,
+  "attachment_slots_local": true,
+  "muzzle_effect": "SCR_MuzzleEffectComponent"
+ },
+ "effective_state_after": {
+  "model": "{572D73728DF974EC}Assets/NATO/HKG3/Hk3.xob",
+  "magazine_well": "{24F41F1143114516}",
+  "magazine_template": "{6D18CC33708EE713}Prefabs/Weapons/Magazines/Western/762x51/HK3/L1A1/armst_Magazine_762x51_HK3_20_M80_Ball.et",
+  "animation_refs": [
+   "{B01F8B98949C62AE}Assets/NATO/HKG3/Anim/HKG3.agr",
+   "{3F06AB9540D64568}Assets/NATO/HKG3/Anim/HKG3_weapon.asi",
+   "{B01F8B98949C62AE}Assets/NATO/HKG3/Anim/HKG3.agr",
+   "{C4583AA4D8D72184}Assets/NATO/HKG3/Anim/HKG3_player.asi"
+  ],
+  "ik_pose": "{32130352F880E925}Assets/NATO/HKG3/Anim/Diff/p_rfl_HKG3_ik.anm",
+  "has_sights": true,
+  "melee_damage": "2",
+  "fire_modes_local": false,
+  "sounds_local": false,
+  "attachment_slots_local": true,
+  "muzzle_effect": "SCR_MuzzleEffectComponent"
+ },
+ "fields_changed_by_reparent": [],
+ "local_overrides_added": [],
+ "foreign_legacy_refs_found": {
+  "animation_ik": [],
+  "note": "none"
+ },
+ "animation_refs_before": [
+  "{B01F8B98949C62AE}Assets/NATO/HKG3/Anim/HKG3.agr",
+  "{3F06AB9540D64568}Assets/NATO/HKG3/Anim/HKG3_weapon.asi",
+  "{B01F8B98949C62AE}Assets/NATO/HKG3/Anim/HKG3.agr",
+  "{C4583AA4D8D72184}Assets/NATO/HKG3/Anim/HKG3_player.asi"
+ ],
+ "animation_refs_after": [
+  "{B01F8B98949C62AE}Assets/NATO/HKG3/Anim/HKG3.agr",
+  "{3F06AB9540D64568}Assets/NATO/HKG3/Anim/HKG3_weapon.asi",
+  "{B01F8B98949C62AE}Assets/NATO/HKG3/Anim/HKG3.agr",
+  "{C4583AA4D8D72184}Assets/NATO/HKG3/Anim/HKG3_player.asi"
+ ],
+ "identity_evidence_only": {
+  "filename_identity": "HKG33",
+  "model_asset": "Assets/NATO/HKG3/Hk3.xob",
+  "note": "identity resolution NOT performed"
+ },
+ "PARENT_CHANGED": 1,
+ "GUID_CHANGES": 0,
+ "PATH_CHANGES": 0,
+ "MODEL_CHANGED": 0,
+ "ANIMATION_BEHAVIOR_CHANGED": 0,
+ "IK_CHANGED": 0,
+ "MAGAZINE_WELL_CHANGED": 0,
+ "MAGAZINE_COMPATIBILITY_CHANGED": 0,
+ "FIRE_MODES_CHANGED": 0,
+ "SIGHTS_CHANGED": 0,
+ "SOUNDS_CHANGED": 0,
+ "WEAPON_STATS_CHANGED": 0,
+ "UIINFO_CHANGED": 0,
+ "ATTACHMENT_SLOTS_CHANGED": 0,
+ "UNINTENDED_EFFECTIVE_CHANGES": 0
+}

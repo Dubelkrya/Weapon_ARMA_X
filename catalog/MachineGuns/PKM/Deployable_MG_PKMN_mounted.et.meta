@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{7ED1E923222A8308}Imported/VanillaSources/Prefabs/Weapons/MachineGuns/PKM/Deployable_MG_PKMN_mounted.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

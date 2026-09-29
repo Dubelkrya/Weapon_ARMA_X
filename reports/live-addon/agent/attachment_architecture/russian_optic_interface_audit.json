@@ -1,0 +1,283 @@
+{
+ "weapons": {
+  "Prefabs/Weapons/Russian/Handguns/PP_19/armst_PP91_base.et": {
+   "guid": "3968B2A856852CBD",
+   "optic_slots": [],
+   "optic_contexts": []
+  },
+  "Prefabs/Weapons/Russian/Handguns/Pm/armst_PM_base.et": {
+   "guid": "C0F7DD85A86B2900",
+   "optic_slots": [],
+   "optic_contexts": []
+  },
+  "Prefabs/Weapons/Russian/Handguns/Sr_2/armst_SR_2_base.et": {
+   "guid": "31FB2EC4F4AFFC05",
+   "optic_slots": [],
+   "optic_contexts": []
+  },
+  "Prefabs/Weapons/Russian/Handguns/TT/armst_TT_base.et": {
+   "guid": "0D469F42B65E350E",
+   "optic_slots": [],
+   "optic_contexts": []
+  },
+  "Prefabs/Weapons/Russian/Handguns/armst_APB/armst_APB_base.et": {
+   "guid": "5D3DA7E84135B278",
+   "optic_slots": [],
+   "optic_contexts": []
+  },
+  "Prefabs/Weapons/Russian/Rifle/9a91/armst_Rifle_9a91_base.et": {
+   "guid": "E2D8F39AE1B9B8F1",
+   "optic_slots": [
+    {
+     "instance": "5F189C826D592450",
+     "slot": "BayonetSlot",
+     "type": "AttachmentOpticsDovetailAK",
+     "pivot": "slot_optics",
+     "cpivot": null,
+     "enabled": "1",
+     "show": null,
+     "default": null,
+     "origin": "LOCAL_OVERRIDE",
+     "descendants": []
+    }
+   ],
+   "optic_contexts": []
+  },
+  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74_base.et": {
+   "guid": "FA5C25BF66A53DCF",
+   "optic_slots": [],
+   "optic_contexts": []
+  },
+  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_base.et": {
+   "guid": "140E94F473B60FE3",
+   "optic_slots": [
+    {
+     "instance": "65AE4CB5E23C0F65",
+     "slot": "Stock",
+     "type": "AttachmentOpticsDovetailAK",
+     "pivot": "slot_optics",
+     "cpivot": "slot_stock",
+     "enabled": "1",
+     "show": "1",
+     "default": null,
+     "origin": "LOCAL_ADDITION",
+     "descendants": []
+    }
+   ],
+   "optic_contexts": []
+  },
+  "Prefabs/Weapons/Russian/Rifle/Aek971/armst_Rifle_AEK971_base.et": {
+   "guid": "AC198EAC9BDD9841",
+   "optic_slots": [
+    {
+     "instance": "55349E9229B55E29",
+     "slot": "sights",
+     "type": "AttachmentOpticsARMST_DovetailRU",
+     "pivot": null,
+     "cpivot": null,
+     "enabled": "1",
+     "show": null,
+     "default": null,
+     "origin": "LOCAL_OVERRIDE",
+     "descendants": []
+    }
+   ],
+   "optic_contexts": []
+  },
+  "Prefabs/Weapons/Russian/Rifle/Groza/armst_Groza_base.et": {
+   "guid": "903C7920F00AB654",
+   "optic_slots": [],
+   "optic_contexts": []
+  },
+  "Prefabs/Weapons/Russian/Rifle/SOC94/armst_Rifle_SOC94_base.et": {
+   "guid": "E394112ABBC198D8",
+   "optic_slots": [
+    {
+     "instance": "65AE4CB5E23C0F63",
+     "slot": null,
+     "type": "AttachmentOpticsDovetailSVD",
+     "pivot": null,
+     "cpivot": null,
+     "enabled": "1",
+     "show": null,
+     "default": null,
+     "origin": "LOCAL_OVERRIDE",
+     "descendants": []
+    },
+    {
+     "instance": "65AE4CB5E23C0F65",
+     "slot": "Stock",
+     "type": null,
+     "pivot": "slot_optic",
+     "cpivot": "slot_optic",
+     "enabled": "1",
+     "show": null,
+     "default": null,
+     "origin": "LOCAL_OVERRIDE",
+     "descendants": []
+    }
+   ],
+   "optic_contexts": [
+    {
+     "instance": "69F2A461E52826BA",
+     "name": null,
+     "pivot": "slot_optics"
+    }
+   ]
+  },
+  "Prefabs/Weapons/Russian/Rifle/SVD/armst_Rifle_SVD_base.et": {
+   "guid": "3EB02CDAD5F23C82",
+   "optic_slots": [
+    {
+     "instance": "5472D211BFD78F81",
+     "slot": null,
+     "type": "AttachmentOpticsDovetailAK",
+     "pivot": null,
+     "cpivot": null,
+     "enabled": "1",
+     "show": null,
+     "default": null,
+     "origin": "LOCAL_OVERRIDE",
+     "descendants": []
+    }
+   ],
+   "optic_contexts": []
+  },
+  "Prefabs/Weapons/Russian/Rifle/VAL/armst_Rifle_val_base.et": {
+   "guid": "F25D16BD5F748372",
+   "optic_slots": [
+    {
+     "instance": "5F189C826D592450",
+     "slot": "BayonetSlot",
+     "type": "AttachmentOpticsDovetailAK",
+     "pivot": "slot_optics",
+     "cpivot": null,
+     "enabled": "1",
+     "show": null,
+     "default": null,
+     "origin": "LOCAL_OVERRIDE",
+     "descendants": []
+    }
+   ],
+   "optic_contexts": [
+    {
+     "instance": "69EE615D4B97703C",
+     "name": "Optic",
+     "pivot": "slot_optics"
+    }
+   ]
+  },
+  "Prefabs/Weapons/Russian/Rifle/VSK94/armst_Rifle_VSK94_base.et": {
+   "guid": "6005623D3AA5F5C2",
+   "optic_slots": [
+    {
+     "instance": "5F189C826D592450",
+     "slot": "BayonetSlot",
+     "type": "AttachmentOpticsDovetailAK",
+     "pivot": "slot_optics",
+     "cpivot": null,
+     "enabled": "1",
+     "show": null,
+     "default": null,
+     "origin": "LOCAL_OVERRIDE",
+     "descendants": []
+    }
+   ],
+   "optic_contexts": [
+    {
+     "instance": "69EE615C65C7D397",
+     "name": "optic",
+     "pivot": "slot_optics"
+    }
+   ]
+  },
+  "Prefabs/Weapons/Russian/Rifle/VSS/armst_Rifle_vss_base.et": {
+   "guid": "902A79E4B2A66E63",
+   "optic_slots": [
+    {
+     "instance": "5F189C826D592450",
+     "slot": "BayonetSlot",
+     "type": "AttachmentOpticsDovetailAK",
+     "pivot": "slot_optics",
+     "cpivot": null,
+     "enabled": "1",
+     "show": null,
+     "default": null,
+     "origin": "LOCAL_OVERRIDE",
+     "descendants": []
+    }
+   ],
+   "optic_contexts": []
+  }
+ },
+ "optic_prefabs": [
+  {
+   "path": "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et",
+   "guid": "C850A33226B8F9C1",
+   "outer_type": "AttachmentOpticsDovetailAK",
+   "model": null,
+   "parent": "{AB71C533945104AE}Prefabs/Weapons/Attachments/Optics/Optic_PSO1/Optic_PSO1_base.et",
+   "child_slots": [],
+   "used_by": [
+    "Prefabs/Weapons/Russian/Rifle/9a91/armst_Rifle_9a91_base.et",
+    "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_base.et",
+    "Prefabs/Weapons/Russian/Rifle/SVD/armst_Rifle_SVD_base.et",
+    "Prefabs/Weapons/Russian/Rifle/VAL/armst_Rifle_val_base.et",
+    "Prefabs/Weapons/Russian/Rifle/VSK94/armst_Rifle_VSK94_base.et",
+    "Prefabs/Weapons/Russian/Rifle/VSS/armst_Rifle_vss_base.et"
+   ],
+   "default_on": []
+  },
+  {
+   "path": "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1_ak.et",
+   "guid": "F325FE2E3DDCDDAD",
+   "outer_type": "AttachmentOpticsDovetailAKSVD",
+   "model": null,
+   "parent": "{C850A33226B8F9C1}Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et",
+   "child_slots": [],
+   "used_by": [],
+   "default_on": []
+  },
+  {
+   "path": "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Optic.et",
+   "guid": null,
+   "outer_type": "AttachmentOpticsG36",
+   "model": "{9CF0737D5CB7F17D}Assets/Weapons_NATO/HKG36/HKG36_Plank.xob",
+   "parent": "{966B4E5523D2F166}Prefabs/Weapons/Attachments/Optics/WeaponOptic_Base.et",
+   "child_slots": [],
+   "used_by": [],
+   "default_on": []
+  },
+  {
+   "path": "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Picatinny.et",
+   "guid": "8965EFD9F6CC9B95",
+   "outer_type": "AttachmentOpticsG36",
+   "model": "{3F231402B4C00493}Assets/Weapons_NATO/HKG36/Plank_Pika.xob",
+   "parent": "{C3DAB8D1B6068170}Prefabs/Weapons/Core/WeaponPart_Base.et",
+   "child_slots": [
+    {
+     "instance": "A92E9A7AB757674E",
+     "slot": "optics",
+     "type": "AttachmentOpticsRIS1913",
+     "pivot": "slot_optics",
+     "cpivot": "snap_weapon",
+     "enabled": "1",
+     "show": "1",
+     "default": null
+    }
+   ],
+   "used_by": [],
+   "default_on": []
+  },
+  {
+   "path": "armst_Optic_PSO1_DovetailRU.et",
+   "guid": "5B318FB72398CB0A",
+   "outer_type": "AttachmentOpticsARMST_DovetailRU",
+   "model": null,
+   "parent": "{C850A33226B8F9C1}Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et",
+   "child_slots": [],
+   "used_by": [],
+   "default_on": []
+  }
+ ]
+}

@@ -1,0 +1,77 @@
+{
+ "AKM_STOCK_SLOT": {
+  "INSTANCE_ID": "65AE4CB5E23C0F63",
+  "SLOT_NAME": null,
+  "INVENTORY_SLOT_ID": "610874056E7424A6",
+  "ATTACHMENT_TYPE": "AttachmentStockVz58",
+  "PIVOT_ID": "slot_barrel_muzzle",
+  "CHILD_PIVOT_ID": "snap_weapon",
+  "ENABLED": "1",
+  "SHOW_IN_INSPECTION": null,
+  "DEFAULT_PREFAB_AT_BASE": null,
+  "ORIGIN": "LOCAL_ADDITION",
+  "IS_OVERRIDE": false
+ },
+ "MATCHING_ATTACHMENT_PREFABS": [
+  {
+   "path": "Prefabs/Weapons/Attachments/Stocks/armst_Stock_akm.et",
+   "guid": "B0E764B069F6A153",
+   "outer_type": "AttachmentStockVz58",
+   "inherits": "Prefabs/Weapons/Attachments/Stocks/Stock_VZ58/Stock_VZ58_base.et"
+  }
+ ],
+ "CHILD_VARIANT_USAGE": [
+  {
+   "child": "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM.et",
+   "usage": "overrides instance; default Prefab {B0E764B069F6A153}.../armst_Stock_akm.et"
+  },
+  {
+   "child": "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKMS.et",
+   "usage": "overrides instance; default Prefab {AD045AFAFFC1AB6E}.../Stock_VZ58/Stock_VZ58_folding.et"
+  },
+  {
+   "child": "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_VPO136.et",
+   "usage": "overrides instance; default Prefab {B0E764B069F6A153}.../Stock_VZ58/Stock_akm.et"
+  },
+  {
+   "child": "Prefabs/Weapons/Russian/Rifle/SOC94/armst_Rifle_SOC94_base.et",
+   "usage": "overrides instance (KEEP_OVERRIDE, frozen)"
+  }
+ ],
+ "ACTION_CONTEXT_USAGE": [],
+ "ACTION_CONTEXTS_PRESENT": [
+  {
+   "instance": "5086F9ADF588DCA4",
+   "name": null
+  },
+  {
+   "instance": "5956E32BAAADE657",
+   "name": null
+  },
+  {
+   "instance": "5A1E58F7B04F9BE5",
+   "name": null,
+   "pivot": "slot_magazine"
+  },
+  {
+   "instance": "5A1E58F7AED270D4",
+   "name": null,
+   "pivot": "w_fire_mode"
+  },
+  {
+   "instance": "65AE4CB5E23C0CE9",
+   "name": "bayonet",
+   "pivot": "slot_barrel_muzzle"
+  }
+ ],
+ "PHYSICAL_ROLE": "VALID_AKM_STOCK_INTERFACE",
+ "SLOT_CLASSIFICATION": "KEEP (KEEP_VARIANT_HOOK)",
+ "ANOMALIES": [
+  "PivotID is 'slot_barrel_muzzle' (looks mis-assigned for a stock slot)",
+  "AttachmentType/prefab borrowed from VZ58 family (intentional in project: AKM/AKMS/VPO136 defaults reference VZ58 stock prefabs)",
+  "Sibling slot 65AE4CB5E23C0F65 named 'Stock' actually carries AttachmentOpticsDovetailAK (dovetail optic interface), informational only"
+ ],
+ "SOC94": "FROZEN / UNCHANGED (KEEP_OVERRIDE)",
+ "STATIC_STATUS": "PASS",
+ "LIVE_FILES_CHANGED": "NONE"
+}

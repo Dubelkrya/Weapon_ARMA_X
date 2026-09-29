@@ -1,0 +1,1043 @@
+{
+ "rifles": [
+  {
+   "path": "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK105.et",
+   "chain": [
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Russian\\Rifle\\AK74\\armst_AK105.et",
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Russian\\Rifle\\AK74\\armst_AK74.et"
+   ],
+   "local": {
+    "has_comp": false,
+    "comp_guid": null,
+    "has_child": false,
+    "child_guid": null,
+    "has_item": false,
+    "item_type": null,
+    "item_guid": null,
+    "has_wcomp": true,
+    "wcomp_guid": "CFBAA4B706BA66E8"
+   }
+  },
+  {
+   "path": "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74M_full.et",
+   "chain": [
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Russian\\Rifle\\AK74\\armst_AK74M_full.et",
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Russian\\Rifle\\AK74\\armst_AK74M.et",
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Russian\\Rifle\\AK74\\armst_AK74N.et"
+   ],
+   "local": {
+    "has_comp": false,
+    "comp_guid": null,
+    "has_child": false,
+    "child_guid": null,
+    "has_item": false,
+    "item_type": null,
+    "item_guid": null,
+    "has_wcomp": true,
+    "wcomp_guid": "CFBAA4B706BA66E8"
+   }
+  },
+  {
+   "path": "Prefabs/Weapons/Russian/Rifle/AK74/armst_AKS.et",
+   "chain": [
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Russian\\Rifle\\AK74\\armst_AKS.et",
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Russian\\Rifle\\AK74\\armst_AK74N.et"
+   ],
+   "local": {
+    "has_comp": true,
+    "comp_guid": "51F080D5CE45A1A2",
+    "has_child": true,
+    "child_guid": "51F080D5C64F12C5",
+    "has_item": true,
+    "item_type": "WeaponUIInfo",
+    "item_guid": "5222CB07CFF6712A",
+    "has_wcomp": true,
+    "wcomp_guid": "CFBAA4B706BA66E8"
+   }
+  },
+  {
+   "path": "Prefabs/Weapons/Russian/Rifle/AK74/armst_AKS74U.et",
+   "chain": [
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Russian\\Rifle\\AK74\\armst_AKS74U.et"
+   ],
+   "local": {
+    "has_comp": false,
+    "comp_guid": null,
+    "has_child": false,
+    "child_guid": null,
+    "has_item": false,
+    "item_type": null,
+    "item_guid": null,
+    "has_wcomp": false,
+    "wcomp_guid": null
+   }
+  },
+  {
+   "path": "Prefabs/Weapons/Russian/Rifle/AK74/armst_AKS74UN.et",
+   "chain": [
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Russian\\Rifle\\AK74\\armst_AKS74UN.et"
+   ],
+   "local": {
+    "has_comp": false,
+    "comp_guid": null,
+    "has_child": false,
+    "child_guid": null,
+    "has_item": false,
+    "item_type": null,
+    "item_guid": null,
+    "has_wcomp": false,
+    "wcomp_guid": null
+   }
+  },
+  {
+   "path": "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKMS.et",
+   "chain": [
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Russian\\Rifle\\AKM\\armst_Rifle_AKMS.et",
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Russian\\Rifle\\AKM\\armst_Rifle_AKM_base.et",
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Core\\Rifle_Base.et",
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Core\\Weapon_Base.et"
+   ],
+   "local": {
+    "has_comp": true,
+    "comp_guid": "51F080D5CE45A1A2",
+    "has_child": true,
+    "child_guid": "51F080D5C64F12C5",
+    "has_item": true,
+    "item_type": "WeaponUIInfo",
+    "item_guid": "5222CB07CFF6712A",
+    "has_wcomp": true,
+    "wcomp_guid": "CFBAA4B706BA66E8"
+   }
+  },
+  {
+   "path": "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_full.et",
+   "chain": [
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Russian\\Rifle\\AKM\\armst_Rifle_AKM_full.et",
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Russian\\Rifle\\AKM\\armst_Rifle_AKM.et",
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Russian\\Rifle\\AKM\\armst_Rifle_AKM_base.et",
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Core\\Rifle_Base.et",
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Core\\Weapon_Base.et"
+   ],
+   "local": {
+    "has_comp": false,
+    "comp_guid": null,
+    "has_child": false,
+    "child_guid": null,
+    "has_item": false,
+    "item_type": null,
+    "item_guid": null,
+    "has_wcomp": true,
+    "wcomp_guid": "CFBAA4B706BA66E8"
+   }
+  },
+  {
+   "path": "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_SOC94.et",
+   "chain": [
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Russian\\Rifle\\AKM\\armst_Rifle_SOC94.et",
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Russian\\Rifle\\AKM\\armst_Rifle_AKM_base.et",
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Core\\Rifle_Base.et",
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Core\\Weapon_Base.et"
+   ],
+   "local": {
+    "has_comp": true,
+    "comp_guid": "51F080D5CE45A1A2",
+    "has_child": true,
+    "child_guid": "51F080D5C64F12C5",
+    "has_item": true,
+    "item_type": "WeaponUIInfo",
+    "item_guid": "5222CB07CFF6712A",
+    "has_wcomp": true,
+    "wcomp_guid": "CFBAA4B706BA66E8"
+   }
+  },
+  {
+   "path": "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_VPO136.et",
+   "chain": [
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Russian\\Rifle\\AKM\\armst_Rifle_VPO136.et",
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Russian\\Rifle\\AKM\\armst_Rifle_AKM_base.et",
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Core\\Rifle_Base.et",
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Core\\Weapon_Base.et"
+   ],
+   "local": {
+    "has_comp": true,
+    "comp_guid": "51F080D5CE45A1A2",
+    "has_child": true,
+    "child_guid": "51F080D5C64F12C5",
+    "has_item": true,
+    "item_type": "WeaponUIInfo",
+    "item_guid": "5222CB07CFF6712A",
+    "has_wcomp": true,
+    "wcomp_guid": "CFBAA4B706BA66E8"
+   }
+  },
+  {
+   "path": "Prefabs/Weapons/Russian/Rifle/Aek971/armst_AEK971_test_v11.et",
+   "chain": [
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Russian\\Rifle\\Aek971\\armst_AEK971_test_v11.et"
+   ],
+   "local": {
+    "has_comp": true,
+    "comp_guid": "51F080D5CE45A1A2",
+    "has_child": true,
+    "child_guid": "51F080D5C64F12C5",
+    "has_item": false,
+    "item_type": null,
+    "item_guid": null,
+    "has_wcomp": true,
+    "wcomp_guid": "CFBAA4B706BA66E8"
+   }
+  },
+  {
+   "path": "Prefabs/Weapons/Western/Rifle/HKG33/armst_Rifle_HKG33.et",
+   "chain": [
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Western\\Rifle\\HKG33\\armst_Rifle_HKG33.et",
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Western\\Rifle\\armst_Rifle_M16A2.et"
+   ],
+   "local": {
+    "has_comp": true,
+    "comp_guid": "51F080D5CE45A1A2",
+    "has_child": true,
+    "child_guid": "51F080D5C64F12C5",
+    "has_item": false,
+    "item_type": null,
+    "item_guid": null,
+    "has_wcomp": true,
+    "wcomp_guid": "CFBAA4B706BA66E8"
+   }
+  },
+  {
+   "path": "Prefabs/Weapons/Western/Rifle/L85/armst_Rifle_L85.et",
+   "chain": [
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Western\\Rifle\\L85\\armst_Rifle_L85.et",
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Western\\Rifle\\armst_Rifle_M16A2.et"
+   ],
+   "local": {
+    "has_comp": true,
+    "comp_guid": "51F080D5CE45A1A2",
+    "has_child": true,
+    "child_guid": "51F080D5C64F12C5",
+    "has_item": false,
+    "item_type": null,
+    "item_guid": null,
+    "has_wcomp": true,
+    "wcomp_guid": "CFBAA4B706BA66E8"
+   }
+  },
+  {
+   "path": "Prefabs/Weapons/Western/Rifle/armst_Rifle_M16A2_carbine.et",
+   "chain": [
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Western\\Rifle\\armst_Rifle_M16A2_carbine.et"
+   ],
+   "local": {
+    "has_comp": false,
+    "comp_guid": null,
+    "has_child": false,
+    "child_guid": null,
+    "has_item": false,
+    "item_type": null,
+    "item_guid": null,
+    "has_wcomp": false,
+    "wcomp_guid": null
+   }
+  },
+  {
+   "path": "Prefabs/Weapons/Western/Rifle/Sig550/armst_Rifle_Sig550.et",
+   "chain": [
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Western\\Rifle\\Sig550\\armst_Rifle_Sig550.et",
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Western\\Rifle\\armst_Rifle_M16A2.et"
+   ],
+   "local": {
+    "has_comp": true,
+    "comp_guid": "51F080D5CE45A1A2",
+    "has_child": true,
+    "child_guid": "51F080D5C64F12C5",
+    "has_item": false,
+    "item_type": null,
+    "item_guid": null,
+    "has_wcomp": true,
+    "wcomp_guid": "CFBAA4B706BA66E8"
+   }
+  },
+  {
+   "path": "Prefabs/Weapons/Western/Rifle/HKG36/armst_Rifle_hk_g36.et",
+   "chain": [
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Western\\Rifle\\HKG36\\armst_Rifle_hk_g36.et",
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Core\\Rifle_Base.et",
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Core\\Weapon_Base.et"
+   ],
+   "local": {
+    "has_comp": true,
+    "comp_guid": "51F080D5CE45A1A2",
+    "has_child": true,
+    "child_guid": "51F080D5C64F12C5",
+    "has_item": true,
+    "item_type": "WeaponUIInfo",
+    "item_guid": "5222CB07CFF6712A",
+    "has_wcomp": true,
+    "wcomp_guid": "CFBAA4B706BA66E8"
+   }
+  },
+  {
+   "path": "Prefabs/Weapons/Western/Rifle/SLR/armst_SLR.et",
+   "chain": [
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Western\\Rifle\\SLR\\armst_SLR.et",
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Western\\Rifle\\armst_Rifle_M16A2.et"
+   ],
+   "local": {
+    "has_comp": true,
+    "comp_guid": "51F080D5CE45A1A2",
+    "has_child": true,
+    "child_guid": "51F080D5C64F12C5",
+    "has_item": false,
+    "item_type": null,
+    "item_guid": null,
+    "has_wcomp": true,
+    "wcomp_guid": "CFBAA4B706BA66E8"
+   }
+  },
+  {
+   "path": "Prefabs/Weapons/Russian/Rifle/SVD/armst_SVD.et",
+   "chain": [
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Russian\\Rifle\\SVD\\armst_SVD.et"
+   ],
+   "local": {
+    "has_comp": true,
+    "comp_guid": "51F080D5CE45A1A2",
+    "has_child": true,
+    "child_guid": "51F080D5C64F12C5",
+    "has_item": false,
+    "item_type": null,
+    "item_guid": null,
+    "has_wcomp": true,
+    "wcomp_guid": "CFBAA4B706BA66E8"
+   }
+  },
+  {
+   "path": "Prefabs/Weapons/Western/Rifle/armst_VZ58P.et",
+   "chain": [
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Western\\Rifle\\armst_VZ58P.et"
+   ],
+   "local": {
+    "has_comp": false,
+    "comp_guid": null,
+    "has_child": false,
+    "child_guid": null,
+    "has_item": false,
+    "item_type": null,
+    "item_guid": null,
+    "has_wcomp": false,
+    "wcomp_guid": null
+   }
+  },
+  {
+   "path": "Prefabs/Weapons/Western/Rifle/armst_VZ58V.et",
+   "chain": [
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Western\\Rifle\\armst_VZ58V.et"
+   ],
+   "local": {
+    "has_comp": false,
+    "comp_guid": null,
+    "has_child": false,
+    "child_guid": null,
+    "has_item": false,
+    "item_type": null,
+    "item_guid": null,
+    "has_wcomp": true,
+    "wcomp_guid": "CFBAA4B706BA66E8"
+   }
+  }
+ ],
+ "magazines": [
+  {
+   "path": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_AK_30rnd_Ball.et",
+   "chain": [
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Magazines\\Russian\\5x45\\AK74\\armst_Magazine_545x39_AK_30rnd_Ball.et",
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Magazines\\Russian\\5x45\\AK74\\Magazine_545x39_AK_30rnd_Base.et",
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Core\\Magazine_Base.et"
+   ],
+   "local": {
+    "has_comp": false,
+    "comp_guid": null,
+    "has_child": false,
+    "child_guid": null,
+    "has_item": false,
+    "item_type": null,
+    "item_guid": null,
+    "has_wcomp": false,
+    "wcomp_guid": null
+   }
+  },
+  {
+   "path": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_AK_30rnd_Tracer.et",
+   "chain": [
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Magazines\\Russian\\5x45\\AK74\\armst_Magazine_545x39_AK_30rnd_Tracer.et",
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Magazines\\Russian\\5x45\\AK74\\Magazine_545x39_AK_30rnd_Base.et",
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Core\\Magazine_Base.et"
+   ],
+   "local": {
+    "has_comp": false,
+    "comp_guid": null,
+    "has_child": false,
+    "child_guid": null,
+    "has_item": false,
+    "item_type": null,
+    "item_guid": null,
+    "has_wcomp": false,
+    "wcomp_guid": null
+   }
+  },
+  {
+   "path": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_RPK_45rnd_Ball.et",
+   "chain": [
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Magazines\\Russian\\5x45\\AK74\\armst_Magazine_545x39_RPK_45rnd_Ball.et"
+   ],
+   "local": {
+    "has_comp": false,
+    "comp_guid": null,
+    "has_child": false,
+    "child_guid": null,
+    "has_item": false,
+    "item_type": null,
+    "item_guid": null,
+    "has_wcomp": false,
+    "wcomp_guid": null
+   }
+  },
+  {
+   "path": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_RPK_45rnd_Tracer.et",
+   "chain": [
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Magazines\\Russian\\5x45\\AK74\\armst_Magazine_545x39_RPK_45rnd_Tracer.et"
+   ],
+   "local": {
+    "has_comp": false,
+    "comp_guid": null,
+    "has_child": false,
+    "child_guid": null,
+    "has_item": false,
+    "item_type": null,
+    "item_guid": null,
+    "has_wcomp": false,
+    "wcomp_guid": null
+   }
+  },
+  {
+   "path": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/Magazine_545x39_AK_30rnd_Base.et",
+   "chain": [
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Magazines\\Russian\\5x45\\AK74\\Magazine_545x39_AK_30rnd_Base.et",
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Core\\Magazine_Base.et"
+   ],
+   "local": {
+    "has_comp": true,
+    "comp_guid": "51EED12B803954CC",
+    "has_child": true,
+    "child_guid": "51EED12B86960275",
+    "has_item": false,
+    "item_type": null,
+    "item_guid": null,
+    "has_wcomp": false,
+    "wcomp_guid": null
+   }
+  },
+  {
+   "path": "Prefabs/Weapons/Magazines/Russian/762x54/SVD/armst_Box_762x54_PK_250rnd_Ball.et",
+   "chain": [
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Magazines\\Russian\\762x54\\SVD\\armst_Box_762x54_PK_250rnd_Ball.et"
+   ],
+   "local": {
+    "has_comp": true,
+    "comp_guid": "51EED12B803954CC",
+    "has_child": true,
+    "child_guid": "51EED12B86960275",
+    "has_item": false,
+    "item_type": null,
+    "item_guid": null,
+    "has_wcomp": false,
+    "wcomp_guid": null
+   }
+  },
+  {
+   "path": "Prefabs/Weapons/Magazines/Russian/762x54/SVD/armst_Magazine_762x54_SVD_10rnd_7BZ3API.et",
+   "chain": [
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Magazines\\Russian\\762x54\\SVD\\armst_Magazine_762x54_SVD_10rnd_7BZ3API.et"
+   ],
+   "local": {
+    "has_comp": true,
+    "comp_guid": "51EED12B803954CC",
+    "has_child": true,
+    "child_guid": "51EED12B86960275",
+    "has_item": false,
+    "item_type": null,
+    "item_guid": null,
+    "has_wcomp": false,
+    "wcomp_guid": null
+   }
+  },
+  {
+   "path": "Prefabs/Weapons/Magazines/Russian/763x25/TT/armst_Magazine_763x25_TT_8rnd_Ball.et",
+   "chain": [
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Magazines\\Russian\\763x25\\TT\\armst_Magazine_763x25_TT_8rnd_Ball.et",
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Magazines\\Russian\\9x18\\PM\\9x18\\armst_Magazine_9x18_PM_8rnd_Ball.et"
+   ],
+   "local": {
+    "has_comp": true,
+    "comp_guid": "51EED12B803954CC",
+    "has_child": true,
+    "child_guid": "51EED12B86960275",
+    "has_item": true,
+    "item_type": "UIInfo",
+    "item_guid": "51FEE38527BFEA5B",
+    "has_wcomp": true,
+    "wcomp_guid": "CA6BE4D6B4DAFD69"
+   }
+  },
+  {
+   "path": "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_10rnd_Ball.et",
+   "chain": [
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Magazines\\Russian\\7x62\\AKM\\armst_Magazine_762x39_AKM_10rnd_Ball.et",
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Magazines\\Russian\\7x62\\AKM\\armst_Magazine_762x39_AKM_30rnd_Ball.et"
+   ],
+   "local": {
+    "has_comp": true,
+    "comp_guid": "51EED12B803954CC",
+    "has_child": true,
+    "child_guid": "51EED12B86960275",
+    "has_item": true,
+    "item_type": "UIInfo",
+    "item_guid": "51FEE38527BFEA5B",
+    "has_wcomp": true,
+    "wcomp_guid": "CA6BE4D6B4DAFD69"
+   }
+  },
+  {
+   "path": "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_10rnd_Ball_BP.et",
+   "chain": [
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Magazines\\Russian\\7x62\\AKM\\armst_Magazine_762x39_AKM_10rnd_Ball_BP.et",
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Magazines\\Russian\\7x62\\AKM\\armst_Magazine_762x39_AKM_30rnd_Ball.et"
+   ],
+   "local": {
+    "has_comp": true,
+    "comp_guid": "51EED12B803954CC",
+    "has_child": true,
+    "child_guid": "51EED12B86960275",
+    "has_item": true,
+    "item_type": "UIInfo",
+    "item_guid": "51FEE38527BFEA5B",
+    "has_wcomp": true,
+    "wcomp_guid": "CA6BE4D6B4DAFD69"
+   }
+  },
+  {
+   "path": "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_30rnd_Ball.et",
+   "chain": [
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Magazines\\Russian\\7x62\\AKM\\armst_Magazine_762x39_AKM_30rnd_Ball.et"
+   ],
+   "local": {
+    "has_comp": true,
+    "comp_guid": "51EED12B803954CC",
+    "has_child": true,
+    "child_guid": "51EED12B86960275",
+    "has_item": true,
+    "item_type": "UIInfo",
+    "item_guid": "51FEE38527BFEA5B",
+    "has_wcomp": true,
+    "wcomp_guid": "CA6BE4D6B4DAFD69"
+   }
+  },
+  {
+   "path": "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_30rnd_Ball_BP.et",
+   "chain": [
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Magazines\\Russian\\7x62\\AKM\\armst_Magazine_762x39_AKM_30rnd_Ball_BP.et"
+   ],
+   "local": {
+    "has_comp": true,
+    "comp_guid": "51EED12B803954CC",
+    "has_child": true,
+    "child_guid": "51EED12B86960275",
+    "has_item": true,
+    "item_type": "UIInfo",
+    "item_guid": "51FEE38527BFEA5B",
+    "has_wcomp": true,
+    "wcomp_guid": "CA6BE4D6B4DAFD69"
+   }
+  },
+  {
+   "path": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_APB_20rnd_Ball.et",
+   "chain": [
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Magazines\\Russian\\9x18\\PM\\9x18\\armst_Magazine_9x18_APB_20rnd_Ball.et",
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Magazines\\Russian\\9x18\\PM\\9x18\\armst_Magazine_9x18_PM_8rnd_Ball.et"
+   ],
+   "local": {
+    "has_comp": true,
+    "comp_guid": "51EED12B803954CC",
+    "has_child": true,
+    "child_guid": "51EED12B86960275",
+    "has_item": true,
+    "item_type": "UIInfo",
+    "item_guid": "51FEE38527BFEA5B",
+    "has_wcomp": true,
+    "wcomp_guid": "CA6BE4D6B4DAFD69"
+   }
+  },
+  {
+   "path": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball.et",
+   "chain": [
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Magazines\\Russian\\9x18\\PM\\9x18\\armst_Magazine_9x18_PM_8rnd_Ball.et"
+   ],
+   "local": {
+    "has_comp": true,
+    "comp_guid": "51EED12B803954CC",
+    "has_child": true,
+    "child_guid": "51EED12B86960275",
+    "has_item": false,
+    "item_type": null,
+    "item_guid": null,
+    "has_wcomp": false,
+    "wcomp_guid": null
+   }
+  },
+  {
+   "path": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PP91_30rnd_Ball.et",
+   "chain": [
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Magazines\\Russian\\9x18\\PM\\9x18\\armst_Magazine_9x18_PP91_30rnd_Ball.et",
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Magazines\\Russian\\9x18\\PM\\9x18\\armst_Magazine_9x18_PM_8rnd_Ball.et"
+   ],
+   "local": {
+    "has_comp": true,
+    "comp_guid": "51EED12B803954CC",
+    "has_child": true,
+    "child_guid": "51EED12B86960275",
+    "has_item": true,
+    "item_type": "UIInfo",
+    "item_guid": "51FEE38527BFEA5B",
+    "has_wcomp": true,
+    "wcomp_guid": "CA6BE4D6B4DAFD69"
+   }
+  },
+  {
+   "path": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_SR2_30rnd_Ball.et",
+   "chain": [
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Magazines\\Russian\\9x18\\PM\\9x18\\armst_Magazine_9x18_SR2_30rnd_Ball.et",
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Magazines\\Russian\\9x18\\PM\\9x18\\armst_Magazine_9x18_PM_8rnd_Ball.et"
+   ],
+   "local": {
+    "has_comp": true,
+    "comp_guid": "51EED12B803954CC",
+    "has_child": true,
+    "child_guid": "51EED12B86960275",
+    "has_item": true,
+    "item_type": "UIInfo",
+    "item_guid": "51FEE38527BFEA5B",
+    "has_wcomp": true,
+    "wcomp_guid": "CA6BE4D6B4DAFD69"
+   }
+  },
+  {
+   "path": "Prefabs/Weapons/Magazines/Russian/9x39/9a91/armst_Magazine_9x39_20rnd_9a91_SP5.et",
+   "chain": [
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Magazines\\Russian\\9x39\\9a91\\armst_Magazine_9x39_20rnd_9a91_SP5.et",
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Core\\Magazine_Base.et"
+   ],
+   "local": {
+    "has_comp": true,
+    "comp_guid": "51EED12B803954CC",
+    "has_child": true,
+    "child_guid": "51EED12B86960275",
+    "has_item": true,
+    "item_type": "UIInfo",
+    "item_guid": "51FEE38527BFEA5B",
+    "has_wcomp": true,
+    "wcomp_guid": "CA6BE4D6B4DAFD69"
+   }
+  },
+  {
+   "path": "Prefabs/Weapons/Magazines/Russian/9x39/9a91/armst_Magazine_9x39_20rnd_9a91_SP6.et",
+   "chain": [
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Magazines\\Russian\\9x39\\9a91\\armst_Magazine_9x39_20rnd_9a91_SP6.et",
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Core\\Magazine_Base.et"
+   ],
+   "local": {
+    "has_comp": true,
+    "comp_guid": "51EED12B803954CC",
+    "has_child": true,
+    "child_guid": "51EED12B86960275",
+    "has_item": true,
+    "item_type": "UIInfo",
+    "item_guid": "51FEE38527BFEA5B",
+    "has_wcomp": true,
+    "wcomp_guid": "CA6BE4D6B4DAFD69"
+   }
+  },
+  {
+   "path": "Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_20rnd_vss_SP5.et",
+   "chain": [
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Magazines\\Russian\\9x39\\VSS\\armst_Magazine_9x39_20rnd_vss_SP5.et",
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Core\\Magazine_Base.et"
+   ],
+   "local": {
+    "has_comp": true,
+    "comp_guid": "51EED12B803954CC",
+    "has_child": true,
+    "child_guid": "51EED12B86960275",
+    "has_item": true,
+    "item_type": "UIInfo",
+    "item_guid": "51FEE38527BFEA5B",
+    "has_wcomp": true,
+    "wcomp_guid": "CA6BE4D6B4DAFD69"
+   }
+  },
+  {
+   "path": "Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_20rnd_vss_SP6.et",
+   "chain": [
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Magazines\\Russian\\9x39\\VSS\\armst_Magazine_9x39_20rnd_vss_SP6.et",
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Core\\Magazine_Base.et"
+   ],
+   "local": {
+    "has_comp": true,
+    "comp_guid": "51EED12B803954CC",
+    "has_child": true,
+    "child_guid": "51EED12B86960275",
+    "has_item": true,
+    "item_type": "UIInfo",
+    "item_guid": "51FEE38527BFEA5B",
+    "has_wcomp": true,
+    "wcomp_guid": "CA6BE4D6B4DAFD69"
+   }
+  },
+  {
+   "path": "Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_30rnd_val_SP5.et",
+   "chain": [
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Magazines\\Russian\\9x39\\VSS\\armst_Magazine_9x39_30rnd_val_SP5.et",
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Core\\Magazine_Base.et"
+   ],
+   "local": {
+    "has_comp": true,
+    "comp_guid": "51EED12B803954CC",
+    "has_child": true,
+    "child_guid": "51EED12B86960275",
+    "has_item": true,
+    "item_type": "UIInfo",
+    "item_guid": "51FEE38527BFEA5B",
+    "has_wcomp": true,
+    "wcomp_guid": "CA6BE4D6B4DAFD69"
+   }
+  },
+  {
+   "path": "Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_30rnd_val_SP6.et",
+   "chain": [
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Magazines\\Russian\\9x39\\VSS\\armst_Magazine_9x39_30rnd_val_SP6.et",
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Core\\Magazine_Base.et"
+   ],
+   "local": {
+    "has_comp": true,
+    "comp_guid": "51EED12B803954CC",
+    "has_child": true,
+    "child_guid": "51EED12B86960275",
+    "has_item": true,
+    "item_type": "UIInfo",
+    "item_guid": "51FEE38527BFEA5B",
+    "has_wcomp": true,
+    "wcomp_guid": "CA6BE4D6B4DAFD69"
+   }
+  },
+  {
+   "path": "Prefabs/Weapons/Magazines/Western/5x56/HKG36/armst_Magazine_556x45_HKG36.et",
+   "chain": [
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Magazines\\Western\\5x56\\HKG36\\armst_Magazine_556x45_HKG36.et",
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Magazines\\Western\\5x56\\STANAG\\armst_Magazine_556x45_STANAG_30rnd_M193_Ball.et"
+   ],
+   "local": {
+    "has_comp": true,
+    "comp_guid": "51EED12B803954CC",
+    "has_child": true,
+    "child_guid": "51EED12B86960275",
+    "has_item": true,
+    "item_type": "UIInfo",
+    "item_guid": "51FEE38527BFEA5B",
+    "has_wcomp": true,
+    "wcomp_guid": "CA6BE4D6B4DAFD69"
+   }
+  },
+  {
+   "path": "Prefabs/Weapons/Magazines/Western/5x56/HKG36/armst_Magazine_556x45_HKG36_BP.et",
+   "chain": [
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Magazines\\Western\\5x56\\HKG36\\armst_Magazine_556x45_HKG36_BP.et",
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Magazines\\Western\\5x56\\STANAG\\armst_Magazine_556x45_STANAG_30rnd_M193_Ball.et"
+   ],
+   "local": {
+    "has_comp": true,
+    "comp_guid": "51EED12B803954CC",
+    "has_child": true,
+    "child_guid": "51EED12B86960275",
+    "has_item": true,
+    "item_type": "UIInfo",
+    "item_guid": "51FEE38527BFEA5B",
+    "has_wcomp": true,
+    "wcomp_guid": "CA6BE4D6B4DAFD69"
+   }
+  },
+  {
+   "path": "Prefabs/Weapons/Magazines/Western/5x56/SIG550/armst_Magazine_556x45_SIG_550.et",
+   "chain": [
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Magazines\\Western\\5x56\\SIG550\\armst_Magazine_556x45_SIG_550.et",
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Magazines\\Western\\5x56\\STANAG\\armst_Magazine_556x45_STANAG_30rnd_M193_Ball.et"
+   ],
+   "local": {
+    "has_comp": true,
+    "comp_guid": "51EED12B803954CC",
+    "has_child": true,
+    "child_guid": "51EED12B86960275",
+    "has_item": true,
+    "item_type": "UIInfo",
+    "item_guid": "51FEE38527BFEA5B",
+    "has_wcomp": true,
+    "wcomp_guid": "CA6BE4D6B4DAFD69"
+   }
+  },
+  {
+   "path": "Prefabs/Weapons/Magazines/Western/5x56/SIG550/armst_Magazine_556x45_SIG_550_BP.et",
+   "chain": [
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Magazines\\Western\\5x56\\SIG550\\armst_Magazine_556x45_SIG_550_BP.et",
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Magazines\\Western\\5x56\\STANAG\\armst_Magazine_556x45_STANAG_30rnd_M193_Ball.et"
+   ],
+   "local": {
+    "has_comp": true,
+    "comp_guid": "51EED12B803954CC",
+    "has_child": true,
+    "child_guid": "51EED12B86960275",
+    "has_item": true,
+    "item_type": "UIInfo",
+    "item_guid": "51FEE38527BFEA5B",
+    "has_wcomp": true,
+    "wcomp_guid": "CA6BE4D6B4DAFD69"
+   }
+  },
+  {
+   "path": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M193_Ball.et",
+   "chain": [
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Magazines\\Western\\5x56\\STANAG\\armst_Magazine_556x45_STANAG_30rnd_M193_Ball.et"
+   ],
+   "local": {
+    "has_comp": true,
+    "comp_guid": "51EED12B803954CC",
+    "has_child": true,
+    "child_guid": "51EED12B86960275",
+    "has_item": true,
+    "item_type": "UIInfo",
+    "item_guid": "51FEE38527BFEA5B",
+    "has_wcomp": true,
+    "wcomp_guid": "CA6BE4D6B4DAFD69"
+   }
+  },
+  {
+   "path": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M193_Ball_BP.et",
+   "chain": [
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Magazines\\Western\\5x56\\STANAG\\armst_Magazine_556x45_STANAG_30rnd_M193_Ball_BP.et"
+   ],
+   "local": {
+    "has_comp": true,
+    "comp_guid": "51EED12B803954CC",
+    "has_child": true,
+    "child_guid": "51EED12B86960275",
+    "has_item": true,
+    "item_type": "UIInfo",
+    "item_guid": "51FEE38527BFEA5B",
+    "has_wcomp": true,
+    "wcomp_guid": "CA6BE4D6B4DAFD69"
+   }
+  },
+  {
+   "path": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M855_Ball.et",
+   "chain": [
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Magazines\\Western\\5x56\\STANAG\\armst_Magazine_556x45_STANAG_30rnd_M855_Ball.et",
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Magazines\\Western\\5x56\\STANAG\\Magazine_556x45_STANAG_30rnd_Base.et",
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Core\\Magazine_Base.et"
+   ],
+   "local": {
+    "has_comp": false,
+    "comp_guid": null,
+    "has_child": false,
+    "child_guid": null,
+    "has_item": false,
+    "item_type": null,
+    "item_guid": null,
+    "has_wcomp": true,
+    "wcomp_guid": "CA6BE4D6B4DAFD69"
+   }
+  },
+  {
+   "path": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M855_Ball_BP.et",
+   "chain": [
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Magazines\\Western\\5x56\\STANAG\\armst_Magazine_556x45_STANAG_30rnd_M855_Ball_BP.et",
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Magazines\\Western\\5x56\\STANAG\\Magazine_556x45_STANAG_30rnd_Base.et",
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Core\\Magazine_Base.et"
+   ],
+   "local": {
+    "has_comp": false,
+    "comp_guid": null,
+    "has_child": false,
+    "child_guid": null,
+    "has_item": false,
+    "item_type": null,
+    "item_guid": null,
+    "has_wcomp": true,
+    "wcomp_guid": "CA6BE4D6B4DAFD69"
+   }
+  },
+  {
+   "path": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/Magazine_556x45_STANAG_30rnd_Base.et",
+   "chain": [
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Magazines\\Western\\5x56\\STANAG\\Magazine_556x45_STANAG_30rnd_Base.et",
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Core\\Magazine_Base.et"
+   ],
+   "local": {
+    "has_comp": true,
+    "comp_guid": "51EED12B803954CC",
+    "has_child": true,
+    "child_guid": "51EED12B86960275",
+    "has_item": false,
+    "item_type": null,
+    "item_guid": null,
+    "has_wcomp": true,
+    "wcomp_guid": "CA6BE4D6B4DAFD69"
+   }
+  },
+  {
+   "path": "Prefabs/Weapons/Magazines/Western/762x51/HK3/armst_Magazine_762x51_HK3_20_M80_Ball.et",
+   "chain": [
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Magazines\\Western\\762x51\\HK3\\armst_Magazine_762x51_HK3_20_M80_Ball.et"
+   ],
+   "local": {
+    "has_comp": true,
+    "comp_guid": "51EED12B803954CC",
+    "has_child": true,
+    "child_guid": "51EED12B86960275",
+    "has_item": true,
+    "item_type": "UIInfo",
+    "item_guid": "51FEE38527BFEA5B",
+    "has_wcomp": true,
+    "wcomp_guid": "CA6BE4D6B4DAFD69"
+   }
+  },
+  {
+   "path": "Prefabs/Weapons/Magazines/Western/762x51/HK3/armst_Magazine_762x51_HK3_20_M80_Ball_BP.et",
+   "chain": [
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Magazines\\Western\\762x51\\HK3\\armst_Magazine_762x51_HK3_20_M80_Ball_BP.et"
+   ],
+   "local": {
+    "has_comp": true,
+    "comp_guid": "51EED12B803954CC",
+    "has_child": true,
+    "child_guid": "51EED12B86960275",
+    "has_item": true,
+    "item_type": "UIInfo",
+    "item_guid": "51FEE38527BFEA5B",
+    "has_wcomp": true,
+    "wcomp_guid": "CA6BE4D6B4DAFD69"
+   }
+  },
+  {
+   "path": "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_20_M80_Ball.et",
+   "chain": [
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Magazines\\Western\\762x51\\L1A1\\armst_Magazine_762x51_L1A1_20_M80_Ball.et"
+   ],
+   "local": {
+    "has_comp": true,
+    "comp_guid": "51EED12B803954CC",
+    "has_child": true,
+    "child_guid": "51EED12B86960275",
+    "has_item": true,
+    "item_type": "UIInfo",
+    "item_guid": "51FEE38527BFEA5B",
+    "has_wcomp": true,
+    "wcomp_guid": "CA6BE4D6B4DAFD69"
+   }
+  },
+  {
+   "path": "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_20_M80_Ball_BP.et",
+   "chain": [
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Magazines\\Western\\762x51\\L1A1\\armst_Magazine_762x51_L1A1_20_M80_Ball_BP.et"
+   ],
+   "local": {
+    "has_comp": true,
+    "comp_guid": "51EED12B803954CC",
+    "has_child": true,
+    "child_guid": "51EED12B86960275",
+    "has_item": true,
+    "item_type": "UIInfo",
+    "item_guid": "51FEE38527BFEA5B",
+    "has_wcomp": true,
+    "wcomp_guid": "CA6BE4D6B4DAFD69"
+   }
+  },
+  {
+   "path": "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_30_M80_Ball.et",
+   "chain": [
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Magazines\\Western\\762x51\\L1A1\\armst_Magazine_762x51_L1A1_30_M80_Ball.et",
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Magazines\\Western\\762x51\\L1A1\\armst_Magazine_762x51_L1A1_20_M80_Ball.et"
+   ],
+   "local": {
+    "has_comp": false,
+    "comp_guid": null,
+    "has_child": false,
+    "child_guid": null,
+    "has_item": false,
+    "item_type": null,
+    "item_guid": null,
+    "has_wcomp": true,
+    "wcomp_guid": "CA6BE4D6B4DAFD69"
+   }
+  },
+  {
+   "path": "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_30_M80_Ball_BP.et",
+   "chain": [
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Magazines\\Western\\762x51\\L1A1\\armst_Magazine_762x51_L1A1_30_M80_Ball_BP.et",
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Magazines\\Western\\762x51\\L1A1\\armst_Magazine_762x51_L1A1_20_M80_Ball.et"
+   ],
+   "local": {
+    "has_comp": false,
+    "comp_guid": null,
+    "has_child": false,
+    "child_guid": null,
+    "has_item": false,
+    "item_type": null,
+    "item_guid": null,
+    "has_wcomp": true,
+    "wcomp_guid": "CA6BE4D6B4DAFD69"
+   }
+  },
+  {
+   "path": "Prefabs/Weapons/Magazines/Western/9x19/M9/armst_Magazine_9x19_M9_15rnd_Ball.et",
+   "chain": [
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Magazines\\Western\\9x19\\M9\\armst_Magazine_9x19_M9_15rnd_Ball.et"
+   ],
+   "local": {
+    "has_comp": true,
+    "comp_guid": "51EED12B803954CC",
+    "has_child": true,
+    "child_guid": "51EED12B86960275",
+    "has_item": false,
+    "item_type": null,
+    "item_guid": null,
+    "has_wcomp": true,
+    "wcomp_guid": "CA6BE4D6B4DAFD69"
+   }
+  },
+  {
+   "path": "Prefabs/Weapons/Magazines/Western/9x19/M9/armst_Magazine_9x19_M9_15rnd_Ball_BP.et",
+   "chain": [
+    "ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Magazines\\Western\\9x19\\M9\\armst_Magazine_9x19_M9_15rnd_Ball_BP.et"
+   ],
+   "local": {
+    "has_comp": true,
+    "comp_guid": "51EED12B803954CC",
+    "has_child": true,
+    "child_guid": "51EED12B86960275",
+    "has_item": false,
+    "item_type": null,
+    "item_guid": null,
+    "has_wcomp": true,
+    "wcomp_guid": "CA6BE4D6B4DAFD69"
+   }
+  }
+ ]
+}

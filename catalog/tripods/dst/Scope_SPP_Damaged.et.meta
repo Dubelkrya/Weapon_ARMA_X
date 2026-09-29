@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{A8C924AF59A43351}Imported/VanillaSources/Prefabs/Weapons/Tripods/dst/Scope_SPP_Damaged.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

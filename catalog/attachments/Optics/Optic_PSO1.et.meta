@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{B813C5F3FF5B64B4}Imported/VanillaSources/Prefabs/Weapons/Attachments/Optics/Optic_PSO1.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

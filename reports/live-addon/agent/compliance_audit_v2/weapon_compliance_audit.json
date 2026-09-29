@@ -1,0 +1,275 @@
+{
+    "Architecture":  "main playable weapon is its own *_base; no technical_base -\u003e duplicate normal weapon required",
+    "Bases":  [
+                  {
+                      "WEAPON":  "HKG33",
+                      "PATH":  "Prefabs/Weapons/Western/Rifle/HKG33/armst_Rifle_HKG33_base.et",
+                      "GUID":  "035CFC7DD44455D0",
+                      "BASE_NAMING_OK":  true,
+                      "PARENT":  "{C63227C0E70EA62E}Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et",
+                      "FULL_PARENT_CHAIN":  "Prefabs/Weapons/Western/Rifle/HKG33/armst_Rifle_HKG33_base.et",
+                      "STATUS":  "PASS"
+                  },
+                  {
+                      "WEAPON":  "HKG36",
+                      "PATH":  "Prefabs/Weapons/Western/Rifle/HKG36/armst_Rifle_HKG36_base.et",
+                      "GUID":  "A802C718201D72DF",
+                      "BASE_NAMING_OK":  true,
+                      "PARENT":  "{911D6C8DC7BA2D63}Prefabs/Weapons/Core/Rifle_Base.et",
+                      "FULL_PARENT_CHAIN":  [
+                                                "Prefabs/Weapons/Western/Rifle/HKG36/armst_Rifle_HKG36_base.et",
+                                                "Prefabs/Weapons/Core/Rifle_Base.et",
+                                                "Prefabs/Weapons/Core/Weapon_Base.et"
+                                            ],
+                      "STATUS":  "PASS"
+                  },
+                  {
+                      "WEAPON":  "L85",
+                      "PATH":  "Prefabs/Weapons/Western/Rifle/L85/armst_Rifle_L85_base.et",
+                      "GUID":  "45D3FCA77AF1709B",
+                      "BASE_NAMING_OK":  true,
+                      "PARENT":  "{C63227C0E70EA62E}Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et",
+                      "FULL_PARENT_CHAIN":  "Prefabs/Weapons/Western/Rifle/L85/armst_Rifle_L85_base.et",
+                      "STATUS":  "PASS"
+                  },
+                  {
+                      "WEAPON":  "SLR",
+                      "PATH":  "Prefabs/Weapons/Western/Rifle/SLR/armst_SLR_base.et",
+                      "GUID":  "C11ED52EAAF856A8",
+                      "BASE_NAMING_OK":  true,
+                      "PARENT":  "{C63227C0E70EA62E}Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et",
+                      "FULL_PARENT_CHAIN":  "Prefabs/Weapons/Western/Rifle/SLR/armst_SLR_base.et",
+                      "STATUS":  "PASS"
+                  },
+                  {
+                      "WEAPON":  "Sig550",
+                      "PATH":  "Prefabs/Weapons/Western/Rifle/Sig550/armst_Rifle_Sig550_base.et",
+                      "GUID":  "CA3BEBAADDFAF1DE",
+                      "BASE_NAMING_OK":  true,
+                      "PARENT":  "{3E413771E1834D2F}Prefabs/Weapons/Western/Rifle/armst_Rifle_M16A2_base.et",
+                      "FULL_PARENT_CHAIN":  [
+                                                "Prefabs/Weapons/Western/Rifle/Sig550/armst_Rifle_Sig550_base.et",
+                                                "Prefabs/Weapons/Western/Rifle/armst_Rifle_M16A2_base.et"
+                                            ],
+                      "STATUS":  "PASS"
+                  },
+                  {
+                      "WEAPON":  "AEK971",
+                      "PATH":  "Prefabs/Weapons/Russian/Rifle/Aek971/armst_Rifle_AEK971_base.et",
+                      "GUID":  "",
+                      "BASE_NAMING_OK":  true,
+                      "PARENT":  "{EAE9A298979C4721}Prefabs/Weapons/Rifles/AK74/Rifle_AK74N_base.et",
+                      "FULL_PARENT_CHAIN":  "Prefabs/Weapons/Russian/Rifle/Aek971/armst_Rifle_AEK971_base.et",
+                      "STATUS":  "PASS"
+                  },
+                  {
+                      "WEAPON":  "SVD",
+                      "PATH":  "Prefabs/Weapons/Russian/Rifle/SVD/armst_Rifle_SVD_base.et",
+                      "GUID":  "3EB02CDAD5F23C82",
+                      "BASE_NAMING_OK":  true,
+                      "PARENT":  "{A3E183EB5A2F3A38}Prefabs/Weapons/Rifles/SVD/Rifle_SVD_base.et",
+                      "FULL_PARENT_CHAIN":  "Prefabs/Weapons/Russian/Rifle/SVD/armst_Rifle_SVD_base.et",
+                      "STATUS":  "PASS"
+                  },
+                  {
+                      "WEAPON":  "PM",
+                      "PATH":  "Prefabs/Weapons/Russian/Handguns/Pm/armst_PM_base.et",
+                      "GUID":  "C0F7DD85A86B2900",
+                      "BASE_NAMING_OK":  true,
+                      "PARENT":  "{B7132459C07777CA}Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et",
+                      "FULL_PARENT_CHAIN":  "Prefabs/Weapons/Russian/Handguns/Pm/armst_PM_base.et",
+                      "STATUS":  "PASS"
+                  },
+                  {
+                      "WEAPON":  "PP91",
+                      "PATH":  "Prefabs/Weapons/Russian/Handguns/PP_19/armst_PP91_base.et",
+                      "GUID":  "3968B2A856852CBD",
+                      "BASE_NAMING_OK":  true,
+                      "PARENT":  "{B7132459C07777CA}Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et",
+                      "FULL_PARENT_CHAIN":  "Prefabs/Weapons/Russian/Handguns/PP_19/armst_PP91_base.et",
+                      "STATUS":  "PASS"
+                  },
+                  {
+                      "WEAPON":  "SR_2",
+                      "PATH":  "Prefabs/Weapons/Russian/Handguns/Sr_2/armst_SR_2_base.et",
+                      "GUID":  "31FB2EC4F4AFFC05",
+                      "BASE_NAMING_OK":  true,
+                      "PARENT":  "{B7132459C07777CA}Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et",
+                      "FULL_PARENT_CHAIN":  "Prefabs/Weapons/Russian/Handguns/Sr_2/armst_SR_2_base.et",
+                      "STATUS":  "PASS"
+                  },
+                  {
+                      "WEAPON":  "APB",
+                      "PATH":  "Prefabs/Weapons/Russian/Handguns/armst_APB/armst_APB_base.et",
+                      "GUID":  "5D3DA7E84135B278",
+                      "BASE_NAMING_OK":  true,
+                      "PARENT":  "{B7132459C07777CA}Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et",
+                      "FULL_PARENT_CHAIN":  "Prefabs/Weapons/Russian/Handguns/armst_APB/armst_APB_base.et",
+                      "STATUS":  "PASS"
+                  },
+                  {
+                      "WEAPON":  "TT",
+                      "PATH":  "Prefabs/Weapons/Russian/Handguns/TT/armst_TT_base.et",
+                      "GUID":  "0D469F42B65E350E",
+                      "BASE_NAMING_OK":  true,
+                      "PARENT":  "{B7132459C07777CA}Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et",
+                      "FULL_PARENT_CHAIN":  "Prefabs/Weapons/Russian/Handguns/TT/armst_TT_base.et",
+                      "STATUS":  "PASS"
+                  },
+                  {
+                      "WEAPON":  "M9",
+                      "PATH":  "Prefabs/Weapons/Western/Handguns/armst_M9_base.et",
+                      "GUID":  "1353C6EAD1DCFE43",
+                      "BASE_NAMING_OK":  true,
+                      "PARENT":  "{809488C4984AC087}Prefabs/Weapons/Handguns/M9/Handgun_M9_base.et",
+                      "FULL_PARENT_CHAIN":  "Prefabs/Weapons/Western/Handguns/armst_M9_base.et",
+                      "STATUS":  "PASS"
+                  },
+                  {
+                      "WEAPON":  "AK74",
+                      "PATH":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74_base.et",
+                      "GUID":  "FA5C25BF66A53DCF",
+                      "BASE_NAMING_OK":  true,
+                      "PARENT":  "{923D948AB0D57A50}Prefabs/Weapons/Rifles/AK74/Rifle_AK74_long_base.et",
+                      "FULL_PARENT_CHAIN":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74_base.et",
+                      "STATUS":  "PASS"
+                  },
+                  {
+                      "WEAPON":  "M16A2",
+                      "PATH":  "Prefabs/Weapons/Western/Rifle/armst_Rifle_M16A2_base.et",
+                      "GUID":  "3E413771E1834D2F",
+                      "BASE_NAMING_OK":  true,
+                      "PARENT":  "{C63227C0E70EA62E}Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et",
+                      "FULL_PARENT_CHAIN":  "Prefabs/Weapons/Western/Rifle/armst_Rifle_M16A2_base.et",
+                      "STATUS":  "PASS"
+                  },
+                  {
+                      "WEAPON":  "VZ58P",
+                      "PATH":  "Prefabs/Weapons/Western/Rifle/armst_VZ58P_base.et",
+                      "GUID":  "9C948630078D154D",
+                      "BASE_NAMING_OK":  true,
+                      "PARENT":  "{C19BFAF8A6334FD5}Prefabs/Weapons/Rifles/VZ58/Rifle_VZ58_base.et",
+                      "FULL_PARENT_CHAIN":  "Prefabs/Weapons/Western/Rifle/armst_VZ58P_base.et",
+                      "STATUS":  "PASS"
+                  },
+                  {
+                      "WEAPON":  "VZ58V",
+                      "PATH":  "Prefabs/Weapons/Western/Rifle/armst_VZ58V_base.et",
+                      "GUID":  "443CEFF17E040B11",
+                      "BASE_NAMING_OK":  true,
+                      "PARENT":  "{C19BFAF8A6334FD5}Prefabs/Weapons/Rifles/VZ58/Rifle_VZ58_base.et",
+                      "FULL_PARENT_CHAIN":  "Prefabs/Weapons/Western/Rifle/armst_VZ58V_base.et",
+                      "STATUS":  "PASS"
+                  },
+                  {
+                      "WEAPON":  "PKM",
+                      "PATH":  "Prefabs/Weapons/Russian/MachineGuns/armst_PKM_base.et",
+                      "GUID":  "A89BC9D55FFB4CD8",
+                      "BASE_NAMING_OK":  true,
+                      "PARENT":  "{76C400582D3C4AF9}Prefabs/Weapons/MachineGuns/PKM/MG_PKM_base.et",
+                      "FULL_PARENT_CHAIN":  "Prefabs/Weapons/Russian/MachineGuns/armst_PKM_base.et",
+                      "STATUS":  "PASS"
+                  },
+                  {
+                      "WEAPON":  "RPK74",
+                      "PATH":  "Prefabs/Weapons/Russian/MachineGuns/armst_RPK74_base.et",
+                      "GUID":  "A7AF84C6C58BA3E8",
+                      "BASE_NAMING_OK":  true,
+                      "PARENT":  "{3BFBE9145E9C40B9}Prefabs/Weapons/MachineGuns/RPK74/MG_RPK74_base.et",
+                      "FULL_PARENT_CHAIN":  "Prefabs/Weapons/Russian/MachineGuns/armst_RPK74_base.et",
+                      "STATUS":  "PASS"
+                  },
+                  {
+                      "WEAPON":  "Groza",
+                      "PATH":  "Prefabs/Weapons/Russian/Rifle/Groza/armst_Groza_base.et",
+                      "GUID":  "",
+                      "BASE_NAMING_OK":  true,
+                      "PARENT":  "{911D6C8DC7BA2D63}Prefabs/Weapons/Core/Rifle_Base.et",
+                      "FULL_PARENT_CHAIN":  [
+                                                "Prefabs/Weapons/Russian/Rifle/Groza/armst_Groza_base.et",
+                                                "Prefabs/Weapons/Core/Rifle_Base.et",
+                                                "Prefabs/Weapons/Core/Weapon_Base.et"
+                                            ],
+                      "STATUS":  "PASS"
+                  },
+                  {
+                      "WEAPON":  "9A91",
+                      "PATH":  "Prefabs/Weapons/Russian/Rifle/9a91/armst_Rifle_9a91_base.et",
+                      "GUID":  "",
+                      "BASE_NAMING_OK":  true,
+                      "PARENT":  "{1FA22B1F5E7BC80B}Prefabs/Weapons/Rifles/AK74/Rifle_AK74_short_base.et",
+                      "FULL_PARENT_CHAIN":  "Prefabs/Weapons/Russian/Rifle/9a91/armst_Rifle_9a91_base.et",
+                      "STATUS":  "PASS"
+                  },
+                  {
+                      "WEAPON":  "VAL",
+                      "PATH":  "Prefabs/Weapons/Russian/Rifle/VAL/armst_Rifle_val_base.et",
+                      "GUID":  "",
+                      "BASE_NAMING_OK":  true,
+                      "PARENT":  "{1FA22B1F5E7BC80B}Prefabs/Weapons/Rifles/AK74/Rifle_AK74_short_base.et",
+                      "FULL_PARENT_CHAIN":  "Prefabs/Weapons/Russian/Rifle/VAL/armst_Rifle_val_base.et",
+                      "STATUS":  "PASS"
+                  },
+                  {
+                      "WEAPON":  "VSS",
+                      "PATH":  "Prefabs/Weapons/Russian/Rifle/VSS/armst_Rifle_vss_base.et",
+                      "GUID":  "",
+                      "BASE_NAMING_OK":  true,
+                      "PARENT":  "{1FA22B1F5E7BC80B}Prefabs/Weapons/Rifles/AK74/Rifle_AK74_short_base.et",
+                      "FULL_PARENT_CHAIN":  "Prefabs/Weapons/Russian/Rifle/VSS/armst_Rifle_vss_base.et",
+                      "STATUS":  "PASS"
+                  },
+                  {
+                      "WEAPON":  "VSK94",
+                      "PATH":  "Prefabs/Weapons/Russian/Rifle/VSK94/armst_Rifle_VSK94_base.et",
+                      "GUID":  "",
+                      "BASE_NAMING_OK":  true,
+                      "PARENT":  "{1FA22B1F5E7BC80B}Prefabs/Weapons/Rifles/AK74/Rifle_AK74_short_base.et",
+                      "FULL_PARENT_CHAIN":  "Prefabs/Weapons/Russian/Rifle/VSK94/armst_Rifle_VSK94_base.et",
+                      "STATUS":  "PASS"
+                  },
+                  {
+                      "WEAPON":  "AKM",
+                      "PATH":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_base.et",
+                      "GUID":  "140E94F473B60FE3",
+                      "BASE_NAMING_OK":  true,
+                      "PARENT":  "{911D6C8DC7BA2D63}Prefabs/Weapons/Core/Rifle_Base.et",
+                      "FULL_PARENT_CHAIN":  [
+                                                "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_base.et",
+                                                "Prefabs/Weapons/Core/Rifle_Base.et",
+                                                "Prefabs/Weapons/Core/Weapon_Base.et"
+                                            ],
+                      "STATUS":  "PASS"
+                  },
+                  {
+                      "WEAPON":  "SOC94",
+                      "PATH":  "Prefabs/Weapons/Russian/Rifle/SOC94/armst_Rifle_SOC94_base.et",
+                      "GUID":  "",
+                      "BASE_NAMING_OK":  true,
+                      "PARENT":  "{140E94F473B60FE3}Rifles/AKM/armst_Rifle_AKM_base.et",
+                      "FULL_PARENT_CHAIN":  "Prefabs/Weapons/Russian/Rifle/SOC94/armst_Rifle_SOC94_base.et",
+                      "STATUS":  "PASS"
+                  },
+                  {
+                      "WEAPON":  "Knife",
+                      "PATH":  "Prefabs/Weapons/Handguns/armst_Handgun_Knife_base.et",
+                      "GUID":  "",
+                      "BASE_NAMING_OK":  true,
+                      "PARENT":  "{EE7028E9DF49763A}Prefabs/Weapons/Core/Handgun_Base.et",
+                      "FULL_PARENT_CHAIN":  "Prefabs/Weapons/Handguns/armst_Handgun_Knife_base.et",
+                      "STATUS":  "PASS"
+                  },
+                  {
+                      "WEAPON":  "Shotgun",
+                      "PATH":  "Prefabs/Weapons/Western/Shotgun/armst_shotgun_base.et",
+                      "GUID":  "",
+                      "BASE_NAMING_OK":  true,
+                      "PARENT":  "{B31929F65F0D0279}Prefabs/Weapons/Rifles/M14/Rifle_M21.et",
+                      "FULL_PARENT_CHAIN":  "Prefabs/Weapons/Western/Shotgun/armst_shotgun_base.et",
+                      "STATUS":  "PASS"
+                  }
+              ],
+    "VPO136":  "AKM variant, child of armst_Rifle_AKM_base - no separate base (OK)",
+    "SOC94":  "distinct weapon with own base armst_Rifle_SOC94_base.et (OK)",
+    "MainPlayableNonBaseCount":  20
+}

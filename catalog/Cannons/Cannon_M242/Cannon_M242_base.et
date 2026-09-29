@@ -1,0 +1,102 @@
+GenericEntity : "{EFC76BFD1984F44D}Prefabs/Weapons/Core/Cannon_base.et" {
+ ID "CFBAA4B725411E45"
+ components {
+  WeaponSoundComponent "{5A8685198A9AEEDD}" {
+   Filenames {
+    "{FDBAF947936E1744}Sounds/Weapons/HeavyWeapons/M242/Weapons_HeavyWeapons_M242_Shot.acp" "{310B4870AE881477}Sounds/Weapons/HeavyWeapons/M242/Weapons_HeavyWeapons_M242_Handling.acp"
+   }
+  }
+  MeshObject "{CFBAA4B701F95D69}" {
+   Object "{D5D94455841353FF}Assets/Vehicles/Wheeled/LAV25/VehParts/Weapons/M242_LAV25_cannon.xob"
+  }
+  RigidBody "{62BADD215007119F}" {
+   SimState Collision
+   ModelGeometry 1
+  }
+  SCR_WeaponAttachmentsStorageComponent "{51F080D5CE45A1A2}" {
+   Attributes SCR_ItemAttributeCollection "{51F080D5C64F12C5}" {
+    ItemDisplayName WeaponUIInfo "{5D667A653DFFE3CB}" {
+     m_MagIndicator SCR_MagazineIndicatorConfiguration "{62BAF08091E9CD87}" {
+     }
+    }
+   }
+  }
+  WeaponComponent "{CFBAA4B706BA66E8}" {
+   components {
+    MuzzleComponent "{50F64C4591CD7AA6}" {
+     components {
+      CaseEjectingEffectComponent "{5122AAD190FCA21D}" {
+       ParticleEffect "{0102B71CE880771A}Particles/Weapon/Casing_25x137.ptc"
+      }
+      SCR_MuzzleEffectComponent "{C9B3271BB22CDB68}" {
+       ParticleEffect "{CB259340B7C9C3E2}Particles/Weapon/Muzzle_M72LAW_01.ptc"
+       EffectPosition EntitySlotInfo "{C9B3271BB85B5D32}" {
+       }
+       ResetOnFire 0
+      }
+     }
+     MuzzleEndPositions {
+      PointInfo "{B80A64F4B6CFB9BF}" {
+      }
+     }
+     ProjectileSpawnPositions {
+      PointInfo "{50F64C476EC435CA}" {
+       PivotID ""
+      }
+     }
+     FireModes {
+      BaseFireMode "{B80A64F4A8EF8333}" : "{A512F292D96BCB9F}Prefabs/Weapons/Core/Configs/FireModes/FireMode_Auto.conf" {
+       RoundsPerMinute 200
+       UIName "200RPM"
+      }
+      BaseFireMode "{6070CED05455F25C}" : "{A512F292D96BCB9F}Prefabs/Weapons/Core/Configs/FireModes/FireMode_Auto.conf" {
+       RoundsPerMinute 100
+       UIName "100RPM"
+      }
+      BaseFireMode "{6070CED1A5CECC66}" : "{D5D52E848DBCAA53}Prefabs/Weapons/Core/Configs/FireModes/FireMode_Single.conf" {
+       RoundsPerMinute 200
+      }
+     }
+     MagazineWell MagazineWell_Cannon_M242_HEIT "{62C8A9A859AEEFE1}" {
+     }
+     WeaponAimModifiers {
+      RecoilWeaponAimModifier "{6314D9A4FD3075D3}" {
+       LinearData RecoilData "{5902CABACF883276}" {
+        "Curve X" {
+         0 0.5 1 0.5
+        }
+        "Curve Y" {
+         0 0.5 0.032 0.55 0.045 0.75 0.065 0.7 0.071 0.65 0.095 0.5 0.25 0.45 0.45 0.52 0.7 0.495 1 0.5
+        }
+        "Curve Z" {
+         0 0.5 0.032 0.65 0.045 0.95 0.065 0.95 0.071 0.85 0.095 0.7 0.25 0.35 0.45 0.55 0.7 0.485 1 0.5
+        }
+        "Curve Time Scale" 1
+        "Curve Magnitudes" 1 1 1
+        "Curve Mins" -0.001 -0.006 -0.022
+        "Curve Maxs" 0 -0.005 -0.018
+        "Base Recoil Scale" 3
+        "OneHand Scale" 2
+       }
+      }
+      SCR_RecoilForceAimModifier "{692AB650471B50E3}" : "{B05D124957770D89}Prefabs/Weapons/Core/Configs/AimModifiers/RecoilForceAimModifier_M242.conf" {
+      }
+     }
+     UIInfo MuzzleUIInfo "{2FBBA72C906C627E}" {
+      m_bShowCaliber 1
+     }
+     ReloadDuration 35
+     AllowWeaponDeployment 0
+    }
+    WeaponAnimationComponent "{60B4EA76EB15F6E0}" {
+     Enabled 0
+    }
+   }
+   UIInfo WeaponUIInfo "{CC3BA6A2C42F09F4}" {
+    Name "#AR-Weapon_M242_Name"
+    Description "#AR-Weapon_M242_Description"
+    m_bShowWeaponName 1
+   }
+  }
+ }
+}

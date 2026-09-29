@@ -7,6 +7,13 @@ This repository is intentionally focused on **weapons and weapon systems in Arma
 It combines a local scanner, generated weapon catalogs/indexes, JSON schemas, Workbench-validated authoring rules, and research notes. The live addon remains the source of truth for current implementation.
 
 > [!IMPORTANT]
+> **Working in this repository? Read [`AGENTS.md`](AGENTS.md) first.**
+> It holds the 14 startup rules, including where the live addon is, how to
+> resolve its path, and the rule that no agent output is ever written into it.
+>
+> [`docs/sync/CURRENT_AI_SYNC.md`](docs/sync/CURRENT_AI_SYNC.md) records the
+> current session handoff state.
+>
 > Start with [`reports/KNOWLEDGE_STATUS.md`](reports/KNOWLEDGE_STATUS.md). It defines what is current, generated, experimental, or historical.
 >
 > Browse the current generated weapon catalog through [`WEAPON_INDEX.md`](WEAPON_INDEX.md).
@@ -88,8 +95,15 @@ For local-agent edits, follow [`agent/SAFE_PREFAB_EDITOR.md`](agent/SAFE_PREFAB_
 
 | Path | Purpose |
 |---|---|
+| [`AGENTS.md`](AGENTS.md) | **Startup rules for agents working in this repository** |
 | [`WEAPON_INDEX.md`](WEAPON_INDEX.md) | Human-readable weapon catalog grouped by type, caliber and evidence status |
 | `agent/` | Local-agent policies, scanner state, parser and scanner tools |
+| [`agent/scripts/addon_path.py`](agent/scripts/addon_path.py) | Resolves and validates the live addon path (`ARMST_WEAPONS_ADDON_PATH`) |
+| [`artifacts/`](artifacts/README.md) | Git-ignored scratch output — default destination for tool output |
+| [`docs/guides/`](docs/guides/) | Authoring guides (RU) |
+| [`docs/sync/CURRENT_AI_SYNC.md`](docs/sync/CURRENT_AI_SYNC.md) | Current session handoff state |
+| [`reports/live-addon/`](reports/live-addon/README.md) | Audit output imported verbatim from the live addon's former `agent/` directory |
+| [`tools/live-addon/`](tools/live-addon/README.md) | Dev tooling imported verbatim from the live addon's former `agent/` directory |
 | `catalog/` | Generated per-entity weapon-system facts |
 | `indexes/` | Generated and curated lookup/index data for authoring |
 | [`reports/families/`](reports/families/README.md) | Generated AK/RPK, 9×39 and shotgun comparison pages |

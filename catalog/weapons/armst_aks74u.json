@@ -1,0 +1,43 @@
+{
+  "id": "armst_aks74u",
+  "role": "leaf",
+  "source": {
+    "resource": "Prefabs/Weapons/Rifles/AK74/armst_AKS74U.et",
+    "resource_guid": "BFEA719491610A45",
+    "meta_name": null,
+    "class": "GenericEntity",
+    "defined_in": "Prefabs/Weapons/Rifles/AK74/armst_AKS74U.et"
+  },
+  "identity": {
+    "name": "armst_AKS74U",
+    "resource": "Prefabs/Weapons/Rifles/AK74/armst_AKS74U.et"
+  },
+  "classification": {
+    "kind": "weapon",
+    "confidence": "folder"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Weapons/Rifles/AK74/armst_AKS74U.et",
+        "status": "local",
+        "class": "GenericEntity"
+      }
+    ],
+    "external_parents": [
+      {
+        "guid": "8BA0D0DE316D1B44",
+        "path": "Prefabs/Weapons/Rifles/AKS74U/Rifle_AKS74U_base.et",
+        "raw": "{8BA0D0DE316D1B44}Prefabs/Weapons/Rifles/AKS74U/Rifle_AKS74U_base.et"
+      }
+    ],
+    "used_as_base_by": [],
+    "chain_depth_local": 1
+  },
+  "references": [],
+  "warnings": [],
+  "data": {
+    "error": "no WeaponComponent found"
+  },
+  "derived": {}
+}

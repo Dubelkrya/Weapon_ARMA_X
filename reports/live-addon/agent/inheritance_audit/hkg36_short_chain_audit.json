@@ -1,0 +1,108 @@
+{
+ "inheritance_chain": [
+  {
+   "path": "Prefabs/Weapons/Western/Rifle/HKG36/armst_Rifle_hk_g36.et",
+   "role": "G36 gameplay weapon (self-contained)",
+   "contributes": "all visible gameplay: sound, mesh, rigidbody, melee, storage override, stats manager, WeaponComponent (sights/muzzle/magwell/firemodes/aim), animation, actions"
+  },
+  {
+   "path": "Prefabs/Weapons/Core/Rifle_Base.et",
+   "role": "core rifle base",
+   "contributes": "EPF_PersistenceComponent, SCR_WeaponAttachmentsStorageComponent {51F080D5CE45A1A2} (overridden locally by G36)"
+  },
+  {
+   "path": "Prefabs/Weapons/Core/Weapon_Base.et",
+   "role": "core weapon base",
+   "contributes": "ARMST_ITEMS_STATS_COMPONENTS {657ABA0547189DD7}, EPF_PersistenceComponent {5A28749C602565F8}, ActionsManagerComponent {A29AE67FF4D82B0F}"
+  },
+  {
+   "path": "(unavailable) parent above Weapon_Base",
+   "role": "game/base weapon root",
+   "contributes": "UNKNOWN - not present in local evidence (packed); not required for this audit"
+  }
+ ],
+ "inheritance_depth": "3 resolvable levels in local evidence (G36 -> Rifle_Base -> Weapon_Base); one further parent unavailable (packed). Depth is NOT an error.",
+ "functional_areas": {
+  "VISUAL_PHYSICS": {
+   "status": "PRESENT_AND_VALID",
+   "detail": "MeshObject (local, HKG36.xob), RigidBody (local {6A0470709BAE05BC})"
+  },
+  "INVENTORY": {
+   "status": "PRESENT_AND_VALID",
+   "detail": "SCR_WeaponAttachmentsStorageComponent {51F080D5CE45A1A2} local override; ItemDisplayName/ItemPhysAttributes/ItemAnimationAttributes"
+  },
+  "CORE_WEAPON": {
+   "status": "PRESENT_AND_VALID",
+   "detail": "WeaponComponent {CFBAA4B706BA66E8}: MuzzleComponent {CA6BE4D6B867541F}, MagazineWell MagazineWellHKG36, default template armst_Magazine_556x45_HKG36.et, FireModes, dispersion, aim modifiers"
+  },
+  "ANIMATION": {
+   "status": "PRESENT_AND_VALID",
+   "detail": "WeaponAnimationComponent {60B4EA76EB15F6E0} HKg36.agr + HKg36_weapon.asi + HKg36_player.asi injection. IK uses AK74 workaround (intentional)"
+  },
+  "ATTACHMENTS": {
+   "status": "PRESENT_AND_VALID",
+   "detail": "Bayonet/Muzzle slots + unique top-module slot {6A0470709BAE058E} type AttachmentOpticsG36 with factory default; no RIS1913 on weapon"
+  },
+  "SIGHTS": {
+   "status": "INTENTIONALLY_DISABLED",
+   "detail": "weapon local SightsComponent {BB23A637957CFFF8} Enabled 0; active optic owned by attached handle"
+  },
+  "SOUND": {
+   "status": "PRESENT_AND_VALID",
+   "detail": "local WeaponSoundComponent {5A8685198A9AEEDD} referencing M16A2 sound configs (pre-existing/legacy)"
+  },
+  "ACTIONS": {
+   "status": "PRESENT_AND_VALID",
+   "detail": "ActionsManagerComponent {A29AE67FF4D82B0F} (same instance as Weapon_Base), attachment action contexts"
+  },
+  "STATS": {
+   "status": "PRESENT_AND_VALID",
+   "detail": "local SCR_WeaponStatsManagerComponent {6A0470709BAE0581}; inherited ARMST_ITEMS_STATS_COMPONENTS {657ABA0547189DD7}; SCR_MeleeWeaponProperties"
+  }
+ },
+ "local_components_required_by_short_chain": [
+  "MeshObject",
+  "RigidBody",
+  "SCR_WeaponAttachmentsStorageComponent override",
+  "WeaponComponent (Muzzle/MagWell/FireModes/Aim)",
+  "WeaponAnimationComponent",
+  "WeaponSoundComponent",
+  "ActionsManagerComponent",
+  "SCR_WeaponStatsManagerComponent"
+ ],
+ "missing_required_components": [],
+ "foreign_suspicious_components": [
+  {
+   "item": "Muzzle particle {DDF8E6F5BCEABCCC}Particles/Weapon/Muzzle_M16A2_Open.ptc",
+   "class": "FOREIGN_SUSPICIOUS",
+   "note": "M16A2 muzzle effect on G36 (pre-existing)"
+  },
+  {
+   "item": "WeaponSoundComponent filenames Weapons_Rifles_M16A2_*",
+   "class": "FOREIGN_SUSPICIOUS",
+   "note": "M16A2 sound set on G36 (pre-existing/legacy shared)"
+  },
+  {
+   "item": "AttachmentType AttachmentBayonetM9",
+   "class": "VALID_SHARED",
+   "note": "M9 bayonet compatibility (pre-existing)"
+  }
+ ],
+ "intentional_exceptions": [
+  "AK74 AnimationIKPose {B7869ABD0EEE379D}Assets/Weapons/Rifles/AK74/anims/anm/p_ak74_ik.anm (user-approved workaround, not flagged)"
+ ],
+ "top_module_hierarchy": {
+  "unique_top_slot_count": 1,
+  "slot_instance": "{6A0470709BAE058E}",
+  "slot_type": "AttachmentOpticsG36",
+  "default_prefab": "{EDBDAAE1FC7F4723}Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Optic.et",
+  "factory_handle_exists": true,
+  "picatinny_handle_exists": true,
+  "direct_RIS1913_on_weapon": false
+ },
+ "g36_family_base_needed_now": "NO (single G36 variant; configuration is self-contained; no duplicated config to share)",
+ "classification": "SHORT_CHAIN_COMPLETE_WITH_LOCAL_IMPLEMENTATION",
+ "inheritance_count_itself": "NOT_AN_ERROR",
+ "LIVE_FILES_CHANGED": "NONE",
+ "STATUS": "PASS"
+}

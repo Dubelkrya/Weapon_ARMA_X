@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{80730356CC3D9BE7}Imported/VanillaSources/Prefabs/Weapons/Ammo/Ammo_Rocket_PG7VR_Spall.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

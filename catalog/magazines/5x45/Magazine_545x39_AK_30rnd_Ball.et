@@ -1,0 +1,18 @@
+GenericEntity : "{63C1E699345B24F9}Prefabs/Weapons/Magazines/5x45/Magazine_545x39_AK_30rnd_Base.et" {
+ ID "55DAD3EB4EE7802D"
+ components {
+  SCR_EditableEntityComponent "{65B265057DB4A0C0}" {
+   Enabled 0
+   m_UIInfo SCR_EditableEntityUIInfo "{65B2650502B5A341}" {
+    Name "#AR-Magazine_AK74_Name"
+    m_aAuthoredLabels +{
+    }
+    m_aAutoLabels +{
+    }
+   }
+   m_bAutoRegister NEVER
+   m_bVisible 0
+  }
+ }
+ coords 4163.293 306.523 721.592
+}

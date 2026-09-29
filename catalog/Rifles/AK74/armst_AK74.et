@@ -1,0 +1,19 @@
+GenericEntity : "{923D948AB0D57A50}Prefabs/Weapons/Rifles/AK74/Rifle_AK74_long_base.et" {
+ ID "CFBAA4B725411E45"
+ components {
+  SCR_EditableEntityComponent "{65B265034B23979A}" {
+   Enabled 0
+   m_UIInfo SCR_EditableEntityUIInfo "{65B265034C4E74AA}" {
+    Name "#AR-Weapon_AK74_Name"
+    m_aAuthoredLabels {
+     CONTENT_MODDED 4141368
+    }
+    m_aAutoLabels {
+     4141368
+    }
+   }
+   m_bAutoRegister NEVER
+  }
+ }
+ coords 0.228 -0.02 0.354
+}

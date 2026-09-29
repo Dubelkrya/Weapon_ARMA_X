@@ -1,0 +1,222 @@
+{
+ "runtime_tables": 13,
+ "valid_runtime_resources": 13,
+ "resources": [
+  {
+   "locale": "cs_cz",
+   "path": "Language/localization.cs_cz.conf",
+   "guid": "0AD4179A60AC8C65",
+   "header_guid": "0AD4179A60AC8C65",
+   "header_path": "Language/localization.cs_cz.conf",
+   "meta_exists": true,
+   "header_matches_meta": true,
+   "guid_duplicates": 1
+  },
+  {
+   "locale": "de_de",
+   "path": "Language/localization.de_de.conf",
+   "guid": "155B8785B40320A5",
+   "header_guid": "155B8785B40320A5",
+   "header_path": "Language/localization.de_de.conf",
+   "meta_exists": true,
+   "header_matches_meta": true,
+   "guid_duplicates": 1
+  },
+  {
+   "locale": "en_us",
+   "path": "Language/localization.en_us.conf",
+   "guid": "FD056F6A77D94BBD",
+   "header_guid": "FD056F6A77D94BBD",
+   "header_path": "Language/localization.en_us.conf",
+   "meta_exists": true,
+   "header_matches_meta": true,
+   "guid_duplicates": 1
+  },
+  {
+   "locale": "es_es",
+   "path": "Language/localization.es_es.conf",
+   "guid": "A50D9D243F2214B2",
+   "header_guid": "A50D9D243F2214B2",
+   "header_path": "Language/localization.es_es.conf",
+   "meta_exists": true,
+   "header_matches_meta": true,
+   "guid_duplicates": 1
+  },
+  {
+   "locale": "fr_fr",
+   "path": "Language/localization.fr_fr.conf",
+   "guid": "00B2AA18FD609EAD",
+   "header_guid": "00B2AA18FD609EAD",
+   "header_path": "Language/localization.fr_fr.conf",
+   "meta_exists": true,
+   "header_matches_meta": true,
+   "guid_duplicates": 1
+  },
+  {
+   "locale": "it_it",
+   "path": "Language/localization.it_it.conf",
+   "guid": "E9B0EFA7BD0DC122",
+   "header_guid": "E9B0EFA7BD0DC122",
+   "header_path": "Language/localization.it_it.conf",
+   "meta_exists": true,
+   "header_matches_meta": true,
+   "guid_duplicates": 1
+  },
+  {
+   "locale": "ja_jp",
+   "path": "Language/localization.ja_jp.conf",
+   "guid": "B4B3E630945BFFFB",
+   "header_guid": "B4B3E630945BFFFB",
+   "header_path": "Language/localization.ja_jp.conf",
+   "meta_exists": true,
+   "header_matches_meta": true,
+   "guid_duplicates": 1
+  },
+  {
+   "locale": "ko_kr",
+   "path": "Language/localization.ko_kr.conf",
+   "guid": "F1A2533581AB710A",
+   "header_guid": "F1A2533581AB710A",
+   "header_path": "Language/localization.ko_kr.conf",
+   "meta_exists": true,
+   "header_matches_meta": true,
+   "guid_duplicates": 1
+  },
+  {
+   "locale": "pl_pl",
+   "path": "Language/localization.pl_pl.conf",
+   "guid": "0910A9463A6EA8B7",
+   "header_guid": "0910A9463A6EA8B7",
+   "header_path": "Language/localization.pl_pl.conf",
+   "meta_exists": true,
+   "header_matches_meta": true,
+   "guid_duplicates": 1
+  },
+  {
+   "locale": "pt_br",
+   "path": "Language/localization.pt_br.conf",
+   "guid": "3AB1CE9E74578E52",
+   "header_guid": "3AB1CE9E74578E52",
+   "header_path": "Language/localization.pt_br.conf",
+   "meta_exists": true,
+   "header_matches_meta": true,
+   "guid_duplicates": 1
+  },
+  {
+   "locale": "ru_ru",
+   "path": "Language/localization.ru_ru.conf",
+   "guid": "294CC9C152D6A424",
+   "header_guid": "294CC9C152D6A424",
+   "header_path": "Language/localization.ru_ru.conf",
+   "meta_exists": true,
+   "header_matches_meta": true,
+   "guid_duplicates": 1
+  },
+  {
+   "locale": "uk_ua",
+   "path": "Language/localization.uk_ua.conf",
+   "guid": "937D00DDAA2B1EF4",
+   "header_guid": "937D00DDAA2B1EF4",
+   "header_path": "Language/localization.uk_ua.conf",
+   "meta_exists": true,
+   "header_matches_meta": true,
+   "guid_duplicates": 1
+  },
+  {
+   "locale": "zh_cn",
+   "path": "Language/localization.zh_cn.conf",
+   "guid": "B62E0E6E79D5A688",
+   "header_guid": "B62E0E6E79D5A688",
+   "header_path": "Language/localization.zh_cn.conf",
+   "meta_exists": true,
+   "header_matches_meta": true,
+   "guid_duplicates": 1
+  }
+ ],
+ "duplicate_guids": [
+  "6D18CC33708EE713",
+  "8221593DFA48E4B3",
+  "5AE7AF31B9D7EB6C",
+  "2CB8EAD4A52F3290",
+  "FB468B29C75FE46A",
+  "262F0D09C4130826",
+  "AA9A48AAEE6E4F1B",
+  "531AA7DB88D84184",
+  "1C260E65B7F290BA",
+  "969F6FFF810D2145",
+  "E3DC6C2FBBE4F825",
+  "19600CCA33279D20",
+  "AA99F5E678010DB3",
+  "389EB226473CD590",
+  "8B853CDD11BA916E",
+  "4488C415F3CA1890",
+  "2610CA8D8632DEF4",
+  "9C05543A503DB80E",
+  "BBB50A815A2F916B",
+  "63C1E699345B24F9",
+  "E5912E45754CD421",
+  "BC74DAC891D48540",
+  "5897D01F41DB5D2D",
+  "11B9CC1FB4AEE740",
+  "FB5EB0F6D447E859",
+  "2EBF60EF24B108FC",
+  "07805AE177F52646",
+  "48720FC416263FC1",
+  "B7EC6D4222AE12BE",
+  "3F47C33B88171646",
+  "70D023F899C9C226",
+  "51E9CE2EB27B3DBD",
+  "6C22F58BBF5D6AED",
+  "6CBF1E50EB22F09B"
+ ],
+ "missing_metas": [],
+ "localization_st": {
+  "path": "Language/localization.st",
+  "exists": false,
+  "meta_exists": false
+ },
+ "gproj": {
+  "path": "addon.gproj",
+  "bytes": 378,
+  "has_widget_manager_settings": false,
+  "has_stringtable_definition": false,
+  "has_stringtable_source": false,
+  "has_language_definition": false,
+  "has_language_reference": false,
+  "runtime_files_referenced": 0
+ },
+ "working_references": [
+  {
+   "project": "Arma Reforger / addons/data/ArmaReforger.gproj",
+   "enclosing": "GameProjectConfig PC > WidgetManagerSettings > StringTables",
+   "definition": "StringTableDefinition { StringTableSource \"{C014582791ECBF24}Language/localization.st\" Languages { LanguageDefinition { Code \"<loc>\" StringTableRuntime \"{GUID}Language/localization.<loc>.conf\" } x13 } }",
+   "locales_count": 13,
+   "st_exists": true,
+   "st_role": "StringTableSource (required source)",
+   "runtime_conf_style": "StringTableRuntime Ids/Texts"
+  },
+  {
+   "project": "Arma Reforger / addons/core/core.gproj",
+   "enclosing": "GameProjectConfig PC > WidgetManagerSettings > StringTables",
+   "definition": "StringTableDefinition { StringTableSource \"{43128050E6B29E14}ui/language/default.st\" Languages { LanguageDefinition { Code \"en_us\" StringTableRuntime \"{FA8FA4D179D12552}ui/language/default.en_us.conf\" } } }",
+   "locales_count": 1,
+   "st_exists": true,
+   "st_role": "StringTableSource (required source)",
+   "runtime_conf_style": "StringTableRuntime Ids/Texts"
+  }
+ ],
+ "stray_files": [
+  "localiztion.pl_pl.conf",
+  "localiztion.pl_pl.conf.meta"
+ ],
+ "load_chain": "CASE B: addon.gproj -> WidgetManagerSettings.StringTables -> StringTableDefinition -> StringTableSource(.st) + Languages/LanguageDefinition(Code + StringTableRuntime .conf)",
+ "localization_st_runtime_required": "YES",
+ "root_cause": "ARMST addon.gproj contains no WidgetManagerSettings/StringTables/StringTableDefinition registration. The 13 runtime .conf resources are valid but unregistered, so their Ids never enter the project StringTable and #AR-ARMST_* lookups fail.",
+ "repair_plan": [
+  "1. Create Language/localization.st (+ .meta) as the StringTableSource for the ARMST definition (source identity; required by StringTableDefinition).",
+  "2. In addon.gproj, under Configurations > GameProjectConfig PC, add WidgetManagerSettings WidgetManagerSettings \"{NEW_GUID}\" { StringTables { StringTableDefinition \"{NEW_GUID}\" { StringTableSource \"{ST_GUID}Language/localization.st\" Languages { LanguageDefinition \"{NEW_GUID}\" { Code \"<loc>\" StringTableRuntime \"{CONF_GUID}Language/localization.<loc>.conf\" } for all 13 locales } } } }.",
+  "3. Use each runtime conf .meta GUID exactly as the StringTableRuntime reference; locale codes exactly en_us, ru_ru, de_de, fr_fr, es_es, it_it, pl_pl, pt_br, cs_cz, ja_jp, ko_kr, zh_cn, uk_ua.",
+  "4. Do not duplicate the game StringTableDefinition; each addon registers its own.",
+  "5. Secondary cleanup (not the missing-string cause): remove/relocate the stray Language/localiztion.pl_pl.conf (malformed header) and the agent/ backup copies that produce ResourceDB duplicate-GUID warnings."
+ ]
+}

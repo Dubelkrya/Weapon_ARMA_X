@@ -1,0 +1,35 @@
+Projectile : "{E9E666CCF19FB22B}Prefabs/Weapons/Ammo/Ammo_Grenade_Smoke_US_base.et" {
+ ID "50C6F965BA00F9FA"
+ components {
+  CollisionTriggerComponent "{66BEC8FCB8DCCFD0}" {
+   PROJECTILE_EFFECTS {
+    ExplosionEffect "{693AB5DAF00EF49A}" {
+     EffectPrefab "{6EB2D9AB153A619A}Prefabs/Weapons/Warheads/Warhead_Shell_Smoke_M716_Yellow.et"
+    }
+   }
+  }
+  InventoryItemComponent "{52627A12350994B6}" {
+   Attributes SCR_ItemAttributeCollection "{52627A1234AD20A4}" {
+    ItemDisplayName UIInfo "{66BEC8FCB8DCCF39}" {
+     Name "#AR-Magazine_M716_Name"
+     Description "#AR-Magazine_M716_Description"
+    }
+   }
+  }
+  MagazineComponent "{66BEC8FCB8DCCF3C}" {
+   UIInfo MagazineUIInfo "{66BEC8FCB8DCCF31}" {
+    m_sAmmoType "#AR-AmmoType_M716"
+    m_MagIndicator SCR_MagazineIndicatorConfiguration "{5874FAA4FA86F538}" : "{BE317699690AD7C3}Configs/WeaponInfo/MagazineIndicators/ugl_m406.conf" {
+    }
+   }
+  }
+  MeshObject "{851AA4A2AE0A56BF}" {
+   Object "{DC408ABAC6481D0C}Assets/Weapons/Ammo/Grenades/Smoke_40mm_M716_Yellow/M716.xob"
+  }
+  ShellMoveComponent "{20FB66C5FA209A29}" {
+   BallisticTableConfig "{FA52BC08491E22DD}Configs/Weapons/AIBallisticTables/AIBT_Grenade_Smoke_M716.conf"
+  }
+ }
+ ProjectileModel "{419EE378375B029A}Assets/Weapons/Ammo/Grenades/Smoke_40mm_M716_Yellow/M716_projectile.xob"
+ CartridgeModel "{DC408ABAC6481D0C}Assets/Weapons/Ammo/Grenades/Smoke_40mm_M716_Yellow/M716.xob"
+}

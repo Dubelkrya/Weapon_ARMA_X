@@ -1,0 +1,13 @@
+Projectile : "{E21BEA0371574949}Prefabs/Weapons/Ammo/FlareEffect_40mm_M662_Red.et" {
+ ID "5A52CD9231D8AB66"
+ components {
+  FlareMoveComponent "{5A52CD9231D8AB6E}" {
+   DispersionMultiplier 0
+   MoveWithParent 1
+  }
+  SCR_EffectsModuleChildComponent "{61A49599584D54D6}" {
+  }
+  Hierarchy "{61A495993005CB00}" {
+  }
+ }
+}

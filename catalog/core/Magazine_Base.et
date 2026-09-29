@@ -1,0 +1,11 @@
+GenericEntity {
+ ID "CA6BE4D6BB2D1077"
+ components {
+  InventoryMagazineComponent "{51EED12B803954CC}" {
+   Attributes SCR_ItemAttributeCollection "{51EED12B86960275}" {
+    CommonItemType "AMMO"
+    m_iCustomGridHeight 2
+   }
+  }
+ }
+}

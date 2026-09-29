@@ -1,0 +1,22 @@
+{
+ "TARGET": "Prefabs/Weapons/Russian/Rifle/Groza/armst_Groza_base.et",
+ "SOURCE_GUID": "903C7920F00AB654",
+ "REMOVED_INSTANCE_IDS": [
+  "52D0FA201C0511E0",
+  "5848EDCA8A09E6F7",
+  "5D168E76CE7C176C",
+  "5D168E76F4E59294"
+ ],
+ "REMOVED_OK": true,
+ "DIRECT_RIS_BEFORE": 4,
+ "DIRECT_RIS_AFTER": 0,
+ "KEEP_SLOTS_PRESENT": true,
+ "OVERRIDES_CHANGED": 0,
+ "GUID_CHANGES": 0,
+ "PARENT_CHANGES": 0,
+ "PARENT_BEFORE": "GenericEntity : \"{911D6C8DC7BA2D63}Prefabs/Weapons/Core/Rifle_Base.et\"",
+ "PARENT_AFTER": "GenericEntity : \"{911D6C8DC7BA2D63}Prefabs/Weapons/Core/Rifle_Base.et\"",
+ "DANGLING_REFS": 0,
+ "UNRELATED_GAMEPLAY_CHANGES": 0,
+ "STATIC_STATUS": "PASS"
+}

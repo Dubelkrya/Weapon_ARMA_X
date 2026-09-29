@@ -1,0 +1,59 @@
+path,guid,type,display_name,description,display_name_key,description_key,description_source,real_world
+Prefabs/Weapons/Russian/Rifle/AK74/armst_AK105.et,6FC3151D0DED22A9,RIFLE,#AR-Weapon_AK74_Name,,#AR-Weapon_AK74_Name,,LOCAL_PREFAB,AK-105
+Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74M_full.et,63892659A632A0FD,RIFLE,,,,,EXTERNAL_PARENT,AK-74M
+Prefabs/Weapons/Russian/Rifle/AK74/armst_AKS.et,25A64724FD416989,RIFLE,AKS-74,,,,LOCAL_PREFAB,AK-74
+Prefabs/Weapons/Russian/Rifle/AK74/armst_AKS74U.et,BFEA719491610A45,RIFLE,#AR-Weapon_AKS74U_Name,,#AR-Weapon_AKS74U_Name,,LOCAL_PREFAB,AKS-74U
+Prefabs/Weapons/Russian/Rifle/AK74/armst_AKS74UN.et,FA0E25CE35EE945F,RIFLE,,,,,EXTERNAL_PARENT,AKS-74UN
+Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKMS.et,5712F6F88A014F0B,RIFLE,AKMS,,,,LOCAL_PREFAB,AKMS
+Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_full.et,33BEE1A93C920B26,RIFLE,,,,,EXTERNAL_PARENT,AKM
+Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_SOC94.et,E394112ABBC198D8,RIFLE,SOK-94,SOK-94,,,LOCAL_PREFAB,SOK-94
+Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_VPO136.et,90EADC5DD9AD35D5,RIFLE,VPO-136,VPO-136,,,LOCAL_PREFAB,VPO-136 Vepr
+Prefabs/Weapons/Russian/Rifle/Aek971/armst_AEK971_test_v11.et,AC198EAC9BDD9841,RIFLE,AEK-971 [V11 DOVETAIL RU TEST],,,,LOCAL_PREFAB,AEK-971
+Prefabs/Weapons/Western/Rifle/HKG33/armst_Rifle_HKG33.et,035CFC7DD44455D0,RIFLE,,,,,EXTERNAL_PARENT,HK G33
+Prefabs/Weapons/Western/Rifle/L85/armst_Rifle_L85.et,45D3FCA77AF1709B,RIFLE,,,,,EXTERNAL_PARENT,L85A1
+Prefabs/Weapons/Western/Rifle/armst_Rifle_M16A2_carbine.et,F97A4AC994231900,RIFLE,,,,,EXTERNAL_PARENT,M16A2
+Prefabs/Weapons/Western/Rifle/Sig550/armst_Rifle_Sig550.et,CA3BEBAADDFAF1DE,RIFLE,,,,,EXTERNAL_PARENT,SIG SG 550
+Prefabs/Weapons/Western/Rifle/HKG36/armst_Rifle_hk_g36.et,A802C718201D72DF,RIFLE,#AR-Weapon_M16A2_Name,#AR-Weapon_M16A2_Description,#AR-Weapon_M16A2_Name,#AR-Weapon_M16A2_Description,LOCAL_PREFAB,HK G36
+Prefabs/Weapons/Western/Rifle/SLR/armst_SLR.et,C11ED52EAAF856A8,RIFLE,,,,,EXTERNAL_PARENT,L1A1 SLR
+Prefabs/Weapons/Russian/Rifle/SVD/armst_SVD.et,3EB02CDAD5F23C82,RIFLE,#AR-Weapon_SVD_Name,,#AR-Weapon_SVD_Name,,LOCAL_PREFAB,SVD
+Prefabs/Weapons/Western/Rifle/armst_VZ58P.et,9C948630078D154D,RIFLE,,,,,EXTERNAL_PARENT,Vz.58
+Prefabs/Weapons/Western/Rifle/armst_VZ58V.et,443CEFF17E040B11,RIFLE,,,,,EXTERNAL_PARENT,Vz.58
+Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_AK_30rnd_Ball.et,BBB50A815A2F916B,MAGAZINE,#AR-Magazine_AK74_Name,,,,LOCAL_PREFAB,545x39
+Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_AK_30rnd_Tracer.et,E5912E45754CD421,MAGAZINE,,,,,EXTERNAL_PARENT,545x39
+Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_RPK_45rnd_Ball.et,BC74DAC891D48540,MAGAZINE,,,,,EXTERNAL_PARENT,545x39
+Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_RPK_45rnd_Tracer.et,5897D01F41DB5D2D,MAGAZINE,,,,,EXTERNAL_PARENT,545x39
+Prefabs/Weapons/Magazines/Russian/5x45/AK74/Magazine_545x39_AK_30rnd_Base.et,63C1E699345B24F9,MAGAZINE,,,,,EXTERNAL_PARENT,545x39
+Prefabs/Weapons/Magazines/Russian/762x54/SVD/armst_Box_762x54_PK_250rnd_Ball.et,1C260E65B7F290BA,MAGAZINE,#AR-Magazine_PKMT_Name,,,,LOCAL_PREFAB,UNKNOWN
+Prefabs/Weapons/Magazines/Russian/762x54/SVD/armst_Magazine_762x54_SVD_10rnd_7BZ3API.et,19600CCA33279D20,MAGAZINE,#AR-Magazine_SVDAPI_Name,,,,LOCAL_PREFAB,UNKNOWN
+Prefabs/Weapons/Magazines/Russian/763x25/TT/armst_Magazine_763x25_TT_8rnd_Ball.et,AA99F5E678010DB3,MAGAZINE,TT Magazine,,,,LOCAL_PREFAB,763x25
+Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_10rnd_Ball.et,07805AE177F52646,MAGAZINE,AKM magazine 10rnd,AKM magazine 10rnd,,,LOCAL_PREFAB,762x39
+Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_10rnd_Ball_BP.et,7882EC8AE9CD4CF3,MAGAZINE,AKM magazine 10rnd,AKM magazine 10rnd,,,LOCAL_PREFAB,762x39
+Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_30rnd_Ball.et,48720FC416263FC1,MAGAZINE,AKM magazine 30rnd,AKM magazine 30rnd,,,LOCAL_PREFAB,762x39
+Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_30rnd_Ball_BP.et,21BD2CA7421B4D5C,MAGAZINE,AKM magazine 30rnd,AKM magazine 30rnd,,,LOCAL_PREFAB,762x39
+Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_APB_20rnd_Ball.et,389EB226473CD590,MAGAZINE,APB Magazine,,,,LOCAL_PREFAB,9x18
+Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball.et,8B853CDD11BA916E,MAGAZINE,#AR-Magazine_PM_Name,,,,LOCAL_PREFAB,9x18
+Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PP91_30rnd_Ball.et,4488C415F3CA1890,MAGAZINE,PP-91 Magazine,,,,LOCAL_PREFAB,9x18
+Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_SR2_30rnd_Ball.et,2610CA8D8632DEF4,MAGAZINE,PP-91 Magazine,,,,LOCAL_PREFAB,9x18
+Prefabs/Weapons/Magazines/Russian/9x39/9a91/armst_Magazine_9x39_20rnd_9a91_SP5.et,B7EC6D4222AE12BE,MAGAZINE,9A91 magazine SP5,9A91 magazine SP5,,,LOCAL_PREFAB,9x39
+Prefabs/Weapons/Magazines/Russian/9x39/9a91/armst_Magazine_9x39_20rnd_9a91_SP6.et,3F47C33B88171646,MAGAZINE,9A91 magazine SP6,9A91 magazine SP6,,,LOCAL_PREFAB,9x39
+Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_20rnd_vss_SP5.et,70D023F899C9C226,MAGAZINE,VSS magazine 20rnd SP5,VSS magazine 20rnd SP5,,,LOCAL_PREFAB,9x39
+Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_20rnd_vss_SP6.et,51E9CE2EB27B3DBD,MAGAZINE,VSS magazine 20rnd SP6,VSS magazine 20rnd SP6,,,LOCAL_PREFAB,9x39
+Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_30rnd_val_SP5.et,6C22F58BBF5D6AED,MAGAZINE,VSS magazine 30rnd SP5,VSS magazine 30rnd SP6,,,LOCAL_PREFAB,9x39
+Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_30rnd_val_SP6.et,6CBF1E50EB22F09B,MAGAZINE,VSS magazine 30rnd SP6,VSS magazine 30rnd SP6,,,LOCAL_PREFAB,9x39
+Prefabs/Weapons/Magazines/Western/5x56/HKG36/armst_Magazine_556x45_HKG36.et,969F6FFF810D2145,MAGAZINE,HKG36 magazine 30rnd,HKG36 magazine 30rnd,,,LOCAL_PREFAB,556
+Prefabs/Weapons/Magazines/Western/5x56/HKG36/armst_Magazine_556x45_HKG36_BP.et,39C8796C070E44DD,MAGAZINE,HKG36 magazine 30rnd,HKG36 magazine 30rnd,,,LOCAL_PREFAB,556
+Prefabs/Weapons/Magazines/Western/5x56/SIG550/armst_Magazine_556x45_SIG_550.et,E3DC6C2FBBE4F825,MAGAZINE,SIG550 magazine 30rnd,SIG550 magazine 30rnd,,,LOCAL_PREFAB,556
+Prefabs/Weapons/Magazines/Western/5x56/SIG550/armst_Magazine_556x45_SIG_550_BP.et,70D7F0AE523E4FFF,MAGAZINE,SIG550 magazine 30rnd,SIG550 magazine 30rnd,,,LOCAL_PREFAB,556
+Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M193_Ball.et,FB5EB0F6D447E859,MAGAZINE,#AR-Magazine_STANAG_Name,#AR-Magazine_STANAG_M193_Description,,#AR-Magazine_STANAG_M193_Description,LOCAL_PREFAB,556
+Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M193_Ball_BP.et,A277B4BFA07E47CF,MAGAZINE,#AR-Magazine_STANAG_Name,#AR-Magazine_STANAG_M193_Description,,#AR-Magazine_STANAG_M193_Description,LOCAL_PREFAB,556
+Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M855_Ball.et,2EBF60EF24B108FC,MAGAZINE,,,,,EXTERNAL_PARENT,556
+Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M855_Ball_BP.et,DDF6F15392E84746,MAGAZINE,,,,,EXTERNAL_PARENT,556
+Prefabs/Weapons/Magazines/Western/5x56/STANAG/Magazine_556x45_STANAG_30rnd_Base.et,11B9CC1FB4AEE740,MAGAZINE,,,,,EXTERNAL_PARENT,556
+Prefabs/Weapons/Magazines/Western/762x51/HK3/armst_Magazine_762x51_HK3_20_M80_Ball.et,6D18CC33708EE713,MAGAZINE,HK3 magazine 20rnd,HK3 magazine 20rnd,,,LOCAL_PREFAB,762x51
+Prefabs/Weapons/Magazines/Western/762x51/HK3/armst_Magazine_762x51_HK3_20_M80_Ball_BP.et,263A4BF691DC4E33,MAGAZINE,HK3 magazine 20rnd,HK3 magazine 20rnd,,,LOCAL_PREFAB,762x51
+Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_20_M80_Ball.et,AA9A48AAEE6E4F1B,MAGAZINE,L1A1 magazine 20rnd,L1A1 magazine 20rnd,,,LOCAL_PREFAB,762x51
+Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_20_M80_Ball_BP.et,9EEBB92B6CEA45E0,MAGAZINE,L1A1 magazine 20rnd,L1A1 magazine 20rnd,,,LOCAL_PREFAB,762x51
+Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_30_M80_Ball.et,531AA7DB88D84184,MAGAZINE,,,,,EXTERNAL_PARENT,762x51
+Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_30_M80_Ball_BP.et,8046F3CFD92D43BA,MAGAZINE,,,,,EXTERNAL_PARENT,762x51
+Prefabs/Weapons/Magazines/Western/9x19/M9/armst_Magazine_9x19_M9_15rnd_Ball.et,9C05543A503DB80E,MAGAZINE,#AR-Magazine_BerettaM9_Name,,,,LOCAL_PREFAB,9x19
+Prefabs/Weapons/Magazines/Western/9x19/M9/armst_Magazine_9x19_M9_15rnd_Ball_BP.et,4BF437F81CEE4039,MAGAZINE,#AR-Magazine_BerettaM9_Name,,,,LOCAL_PREFAB,9x19

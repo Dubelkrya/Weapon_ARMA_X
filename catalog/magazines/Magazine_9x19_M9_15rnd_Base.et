@@ -1,0 +1,73 @@
+GenericEntity : "{F9E1A46E3ABA116F}Prefabs/Weapons/Core/Magazine_Base.et" {
+ ID "39D3A791BB854198"
+ components {
+  AICombatPropertiesComponent "{59CE86D96C332DDF}" {
+   Priority 10
+  }
+  InventoryMagazineComponent "{51EED12B803954CC}" {
+   Attributes SCR_ItemAttributeCollection "{51EED12B86960275}" {
+    ItemDisplayName UIInfo "{51FEE38527BFEA5B}" {
+     Name "#AR-Magazine_BerettaM9_Name"
+     Description "#AR-Magazine_BerettaM9_Description"
+    }
+    ItemPhysAttributes ItemPhysicalAttributes PhysicalAttributes {
+     Weight 0.05
+     SizeSetupStrategy Manual
+     ItemDimensions 5 5 5
+     ItemVolume 75
+     RestingUP Right
+    }
+    CustomAttributes {
+     PreviewRenderAttributes "{52D2D34361B24DD6}" {
+      CameraPreset Left
+      CameraOrbitAngles -25 25 0
+      CameraDistanceToItem 0.8
+      FOV 10
+     }
+    }
+   }
+   WeightPerAmmo 0.012
+  }
+  MagazineComponent "{CA6BE4D6B4DAFD69}" {
+   MagazineWell MagazineWellM9Beretta "{39D3A791ABFFFA3C}" {
+   }
+   UIInfo MagazineUIInfo "{57126733AA401586}" {
+    Name "#AR-Magazine_BerettaM9_Name"
+    Description "#AR-Magazine_BerettaM9_Description"
+    m_sAmmoCaliber "#AR-AmmunitionID_9x19mm"
+    m_MagIndicator SCR_MagazineIndicatorConfiguration "{5866951DE2665916}" : "{E7E6149FBC9B3675}Configs/WeaponInfo/MagazineIndicators/beretta_15.conf" {
+    }
+   }
+   MaxAmmo 15
+   AmmoConfig "{BC69F995CEEF2196}Configs/Weapons/Ammo/Ammo_9x19.conf"
+   AmmoMapping {
+    0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+   }
+  }
+  MeshObject "{CA6BE4D6A23F8EF0}" {
+   Object "{317726F73A3CA775}Assets/Weapons/Magazines/M9/Magazine_15rnd_M9.xob"
+  }
+  RigidBody "{571B0382401B1385}" {
+   ModelGeometry 1
+  }
+  SCR_SoundDataComponent "{5B18D200EBB5EA25}" {
+   m_aAudioSourceConfiguration {
+    SCR_AudioSourceConfiguration "{5B18D209080A5D15}" {
+     m_sSoundProject "{9245B067CB850C80}Sounds/Weapons/_SharedData/PickUp/Weapons_PickUp_Handgun_Magazine.acp"
+    }
+    SCR_AudioSourceConfiguration "{5B18D2091B885AE6}" {
+     m_sSoundProject "{9245B067CB850C80}Sounds/Weapons/_SharedData/PickUp/Weapons_PickUp_Handgun_Magazine.acp"
+    }
+   }
+  }
+  ActionsManagerComponent "{F092E6B0537754FD}" {
+   ActionContexts {
+    UserActionContext "{5086F9AB010868CE}" {
+     Position PointInfo "{5086F9AC96DB9752}" {
+      Offset 0 0.0662 0.0366
+     }
+    }
+   }
+  }
+ }
+}

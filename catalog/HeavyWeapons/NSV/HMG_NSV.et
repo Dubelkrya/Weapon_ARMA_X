@@ -1,0 +1,28 @@
+GenericEntity : "{842D220FF4EFF2A8}Prefabs/Weapons/HeavyWeapons/NSV/HMG_NSV_base.et" {
+ ID "CFBAA4B725411E45"
+ components {
+  SlotManagerComponent "{6044A1932A368344}" {
+   Slots {
+    EntitySlotInfo Dovetail {
+     PivotID "slot_dovetail"
+     ChildPivotID "snap_weapon"
+     Prefab "{A97F179B2DA6DE33}Prefabs/Weapons/Attachments/Mounts/Dovetail_NSV/Dovetail_NSV.et"
+    }
+   }
+  }
+  WeaponComponent "{CFBAA4B706BA66E8}" {
+   components {
+    AttachmentSlotComponent "{5AF070F55031A54D}" {
+     AttachmentSlot InventoryStorageSlot optics {
+      PivotID ""
+      Offset -0.027 0.0997 -0.0486
+     }
+    }
+    WeaponAnimationComponent "{60B4EA76EB15F6E0}" {
+     AnimInstance "{BA0CF76FB37A8638}Assets/Weapons/HeavyWeapons/workspaces/NSV_Weapon_tripod.asi"
+     StartNode "WeaponMasterControl"
+    }
+   }
+  }
+ }
+}

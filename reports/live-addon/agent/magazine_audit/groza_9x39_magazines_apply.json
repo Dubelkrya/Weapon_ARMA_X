@@ -1,0 +1,50 @@
+{
+ "mags": {
+  "SP5": {
+   "path": "Prefabs/Weapons/Magazines/Russian/9x39/Groza/armst_Magazine_9x39_Groza_20rnd_SP5.et",
+   "guid": "77215B3A185D1EFD",
+   "capacity": 20,
+   "well": "MagazineWell9x39",
+   "ammoconfig": true,
+   "mapping_len": 20,
+   "mapping_val": [
+    "0"
+   ],
+   "model": "Groza_mag.xob",
+   "name": "Groza 20rnd SP5 Magazine",
+   "len_eq_cap": true
+  },
+  "SP6": {
+   "path": "Prefabs/Weapons/Magazines/Russian/9x39/Groza/armst_Magazine_9x39_Groza_20rnd_SP6.et",
+   "guid": "168348351F5C3F54",
+   "capacity": 20,
+   "well": "MagazineWell9x39",
+   "ammoconfig": true,
+   "mapping_len": 20,
+   "mapping_val": [
+    "1"
+   ],
+   "model": "Groza_mag.xob",
+   "name": "Groza 20rnd SP6 Magazine",
+   "len_eq_cap": true
+  }
+ },
+ "LIVE_FILES_CHANGED": "2 new Groza magazines (+metas); Groza well + default template changed",
+ "GROZA": {
+  "well": "MagazineWell9x39 {55349E9229B55D96}",
+  "default": "Prefabs/Weapons/Magazines/Russian/9x39/Groza/armst_Magazine_9x39_Groza_20rnd_SP5.et",
+  "OLD_762x39_MAG_REFS_REMAINING": 0,
+  "MAGAZINEWELL_VZ58_REFS_REMAINING": 0,
+  "casing_unchanged": true,
+  "muzzle_unchanged": true
+ },
+ "NEW_GUID_OWNER_COUNTS": {
+  "77215B3A185D1EFD": 1,
+  "168348351F5C3F54": 1
+ },
+ "GUID_COLLISIONS": 0,
+ "DANGLING_REFS": 0,
+ "OTHER_WEAPONS_CHANGED": 0,
+ "CASING_EFFECT": "OPEN_TECHNICAL_DEBT / Casing_762x39_PS.ptc (unchanged)",
+ "MUZZLE_EFFECT": "KEEP / Muzzle_AK74.ptc (unchanged)"
+}

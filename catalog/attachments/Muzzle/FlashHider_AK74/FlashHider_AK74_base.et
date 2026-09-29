@@ -1,0 +1,52 @@
+GameEntity : "{5E3F62F66878C9B8}Prefabs/Weapons/Core/FlashHider_base.et" {
+ ID "4BA426CBAED42A14"
+ components {
+  InventoryItemComponent "{52627A1F45CD4EB6}" {
+   Attributes SCR_ItemAttributeCollection "{52627A1EBB0698FD}" {
+    ItemDisplayName UIInfo "{618C719F4EDC2A42}" {
+     Name "#AR-Item_6P20MuzzleBrake_Name"
+     Description "#AR-Item_6P20MuzzleBrake_Description"
+    }
+    ItemPhysAttributes ItemPhysicalAttributes "{618A8428E1E08833}" {
+     Weight 0.103
+     SizeSetupStrategy Manual
+     ItemDimensions 5 5 5
+     ItemVolume 10
+     DimensionScaler 1
+     RestingUP Right
+     RestingAdditiveRotationLS 0 0 0
+     RestingAdditiveOffsetLS 0 0 0
+     ActivePhysicalSimulation None
+    }
+    CustomAttributes {
+     SCR_WeaponAttachmentSuppressorAttributes "{5284D858FFF9BE66}" {
+      AttachmentType AttachmentFlashHider6P20 "{618A8420490F13B4}" {
+      }
+      m_fExtraObstructionLength 0.05
+      m_vLinearFactors 0.714 0.833 1
+      m_vAngularFactors 0.714 0.833 1
+      m_vTurnFactors 0.714 0.833 1
+     }
+     PreviewRenderAttributes "{52D69389645B4E4D}" {
+      CameraPreset Right
+      FOV 7.5
+     }
+     SCR_WeaponAttachmentObstructionAttributes "{61B08C8FB18ADF25}" {
+      AttachmentType AttachmentFlashHider6P20 "{61B08C8FB311F65A}" {
+      }
+     }
+    }
+   }
+  }
+  MeshObject "{5C46D45E03D7AD12}" {
+   Object "{F55570A38DE47871}Assets/Weapons/Attachments/Muzzle/FlashHider_AK74/FlashHider_AK74.xob"
+  }
+  SCR_MuzzleEffectComponent "{618AE28AFD0B049C}" {
+   ParticleEffect "{6FC79968CA7F6FD2}Particles/Weapon/Muzzle_AK74.ptc"
+   EffectPosition EntitySlotInfo position {
+    Offset 0 0 0.0631
+   }
+   ResetOnFire 0
+  }
+ }
+}

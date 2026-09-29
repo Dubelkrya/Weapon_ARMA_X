@@ -1,0 +1,49 @@
+GenericEntity : "{3BFBE9145E9C40B9}Prefabs/Weapons/MachineGuns/RPK74/MG_RPK74_base.et" {
+ ID "CFBAA4B725411E45"
+ components {
+  SCR_WeaponAttachmentsStorageComponent "{51F080D5CE45A1A2}" {
+   Attributes SCR_ItemAttributeCollection "{51F080D5C64F12C5}" {
+    ItemDisplayName WeaponUIInfo "{5222CB07E1D123E9}" {
+     Name "#AR-Weapon_RPK74N_Name"
+     Description "#AR-Weapon_RPK74N_Description"
+    }
+   }
+  }
+  SlotManagerComponent "{557E85EDCD1BCEE3}" {
+   Slots {
+    EntitySlotInfo Dovetail {
+     PivotID "slot_dovetail"
+     Prefab "{D92368B78263A9E0}Prefabs/Weapons/Attachments/Mounts/Dovetail_AK/Dovetail_AK.et"
+    }
+   }
+  }
+  WeaponComponent "{CFBAA4B706BA66E8}" {
+   components {
+    AttachmentSlotComponent "{6058A1FB679DB880}" {
+     AttachmentSlot InventoryStorageSlot dovetailRPK {
+      PivotID "slot_optics"
+      ChildPivotID "snap_weapon"
+      InspectionWidgetOffset -0.0227 0.0513 0.0136
+     }
+     AttachmentType AttachmentOpticsDovetailAK "{6058A1FB49ED51FA}" {
+     }
+     ShowInInspection 1
+    }
+    SightsComponent "{BB23A637957CFFF8}" {
+     SightsSwitchSkip 1
+    }
+   }
+  }
+  ActionsManagerComponent "{A29AE67FF4D82B0F}" {
+   ActionContexts {
+    UserActionContext "{61FECC67303860C1}" {
+     ContextName "optic"
+     Position PointInfo "{61FECC673583A04F}" {
+      Offset -0.0186 0.0496 0.0131
+     }
+     Radius 0.075
+    }
+   }
+  }
+ }
+}

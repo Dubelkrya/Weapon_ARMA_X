@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{6E88521ADFC046A0}Imported/VanillaSources/Prefabs/Weapons/Core/Configs/TriggerEffects/Fire/TriggerEffect_FireCannon.conf"
+ Configurations {
+  CONFResourceClass PC {
+  }
+  CONFResourceClass XBOX_ONE : PC {
+  }
+  CONFResourceClass XBOX_SERIES : PC {
+  }
+  CONFResourceClass PS4 : PC {
+  }
+  CONFResourceClass PS5 : PC {
+  }
+  CONFResourceClass HEADLESS : PC {
+  }
+ }
+}

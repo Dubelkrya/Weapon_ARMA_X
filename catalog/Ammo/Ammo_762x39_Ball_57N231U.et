@@ -1,0 +1,26 @@
+Projectile : "{67FED88E5085F63F}Prefabs/Weapons/Core/Ammo_Bullet_Base.et" {
+ ID "DA5C6308000CDEF2"
+ components {
+  ShellMoveComponent "{851AA4A2AE0A5691}" {
+   InitSpeed 310
+   InitSpeedVariation 10
+   DispersionMultiplier 1.4
+   Mass 0.01255
+   ProjectileEffects {
+    ProjectileDamage "{5168BBF3DBD79134}" {
+     DamageValue 62.82
+    }
+   }
+   BallisticTableConfig "{DAE524B2D2FF3C20}Configs/Weapons/AIBallisticTables/AIBT_762x39_Ball_57N231U.conf"
+   SonicCracks "{5412C65243EDE33F}Sounds/Weapons/_SharedData/BulletSonicCracks/762/Weapons_BulletSonicCracks_762.acp"
+   SubsonicFlybys "{F957FD54EA57C9F1}Sounds/Weapons/_SharedData/BulletFlybys/Rifle/Weapons_BulletFlybys_Rifle.acp"
+   AirDrag 0.0000071
+   Diameter 7.9
+   Length 33.5
+   TumblingDamageMultiplier 0.1
+   PenetrationDepth 2
+   PenetrationSpeed 246
+  }
+ }
+ CartridgeModel "{302D6997A9FEE8CD}Assets/Weapons/Ammo/Bullets/762x39/Cartridge_762x39_PS.xob"
+}

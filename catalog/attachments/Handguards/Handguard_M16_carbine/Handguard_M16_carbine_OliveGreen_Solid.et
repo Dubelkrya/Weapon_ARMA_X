@@ -1,0 +1,13 @@
+GenericEntity : "{5E36B9F5B54CDA2E}Prefabs/Weapons/Attachments/Handguards/Handguard_M16_carbine/Handguard_M16_carbine_base.et" {
+ ID "557E85EEE1B603F1"
+ components {
+  MeshObject "{557E85EE39CED921}" {
+   Materials {
+    MaterialAssignClass "{5E567EEC42BC3C7F}" {
+     SourceMaterial "M16A2_carbine_Handguard_01"
+     AssignedMaterial "{57C46CCBF8AF2DCF}Assets/Weapons/Attachments/Handguards/Handguard_M16/Data/M16A2_carbine_Handguard_01_OliveGreen_Solid.emat"
+    }
+   }
+  }
+ }
+}

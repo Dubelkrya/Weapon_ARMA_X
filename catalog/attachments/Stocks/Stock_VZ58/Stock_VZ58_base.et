@@ -1,0 +1,18 @@
+GenericEntity : "{0A9CD090EE3440E7}Prefabs/Weapons/Core/WeaponPart_Base.et" {
+ ID "557E85EEE1B603F1"
+ components {
+  InventoryItemComponent "{557E85EEE1B60313}" {
+   Attributes SCR_ItemAttributeCollection "{557E85EEE1B60310}" {
+    CustomAttributes {
+     WeaponAttachmentAttributes "{557E85EEE1B60316}" {
+      AttachmentType AttachmentStockVz58 "{5B289DD59C7D7404}" {
+      }
+     }
+    }
+   }
+  }
+  MeshObject "{557E85EE39CED921}" {
+   Object "{A4048C2AA75EF832}Common/Models/Default.xob"
+  }
+ }
+}

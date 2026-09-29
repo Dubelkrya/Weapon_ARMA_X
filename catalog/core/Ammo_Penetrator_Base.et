@@ -1,0 +1,40 @@
+Projectile : "{67FED88E5085F63F}Prefabs/Weapons/Core/Ammo_Bullet_Base.et" {
+ ID "DA5C6308000CDEF2"
+ components {
+  InventoryItemComponent "{52627A13050713F1}" {
+   Enabled 0
+  }
+  ShellMoveComponent "{851AA4A2AE0A5691}" {
+   InitSpeed 1000
+   ParentSpeedMultiplier 0.15
+   Mass 1
+   TimeToLive 0.1
+   ProjectileEffects {
+    HitSoundEffect "{2FC22748C7ABD466}" {
+     Enabled 0
+    }
+    ProjectileDamage "{5ED2C76A9D319759}" {
+     DamageValue 7
+     DamageType Incendiary
+     DamageEffects {
+      SCR_IncendiaryBulletDamageEffect "{6178E3D2BB0DA705}" {
+      }
+     }
+    }
+   }
+   BallisticTableConfig "{5EB67F0C72B1C106}Configs/Weapons/AIBallisticTables/AIBT_Penetrator_Base.conf"
+   SonicCracks ""
+   SubsonicFlybys ""
+   AirDrag 0.0000001
+   Diameter 30
+   DeflectionCriticalAngle 1
+   PenetratorType Chemical
+   PenetrationDirDistribution 0.1
+  }
+ }
+ editor EntityEditorProps "{66D8C5978F8CE1E8}" {
+  Style icon
+  Color 0 0.1255 0.502 1
+  Icon "{02FB5DFE4B40FF87}system/wbdata/WorldEditor/EntityIcons/Circle/Circle_ground.et"
+ }
+}

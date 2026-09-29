@@ -1,0 +1,20 @@
+GenericEntity : "{C1A2BB91E2E4A8D3}Prefabs/Weapons/Warheads/Warhead_Grenade.et" {
+ ID "9D9BE68EA2672F76"
+ components {
+  BaseTriggerComponent "{55129E81CBAA1390}" {
+   PROJECTILE_EFFECTS {
+    ExplosionDamageContainer "{567CB8E036FC1174}" : "{0CE1927888BD98BA}Prefabs/Weapons/Core/Damage/ExplosionContainer_HEF.conf" {
+     ExplosionEffects {
+      ExplosionFragmentationEffect "{567CBC1D7AB652C7}" : "{D865ECB9F1A819E9}Prefabs/Weapons/Core/Damage/FragmentationDamageEffect.conf" {
+       DamageFragmentCount 400
+       GurneyConstant 2700
+       CaseWeight 220
+      }
+     }
+     ChargeWeight 180
+     TntEquivalent 1.33
+    }
+   }
+  }
+ }
+}

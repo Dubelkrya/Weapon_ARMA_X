@@ -1,0 +1,102 @@
+GenericEntity : "{9C80A507960AA473}Prefabs/Weapons/Core/Mine_base.et" {
+ ID "5968D2B6A82C6019"
+ components {
+  SoundComponent "{5A6B57364EA203C7}" {
+   Filenames {
+    "{CEB036D3FA90F3C3}Sounds/Weapons/_SharedData/PickUp/Weapons_PickUp_ATMine_Generic.acp" "{A7B672B164032EE4}Sounds/Weapons/_SharedData/Drop/Weapons_Drop_ATMine_Generic.acp" "{E48C74B8F314BEB9}Sounds/Weapons/Explosives/Mine_M15AT/Weapons_Explosives_M15AT_Handling.acp" "{764506B0AF57183F}Sounds/Weapons/Explosives/_SharedData/Weapons_Explosives_ATMine_Generic_Placement.acp"
+   }
+  }
+  BaseTriggerComponent "{59E4E69D8E9B4323}" {
+   PROJECTILE_EFFECTS {
+    ExplosionEffect "{59E4E69D74AB3323}" {
+     EffectPrefab "{2EE77FA6C9097717}Prefabs/Weapons/Warheads/Warhead_Mine_M15AT.et"
+     SoundEvent "SOUND_EXPLOSION"
+    }
+   }
+   ArmingTime 0
+  }
+  MeshObject "{5968D9C73C08706E}" {
+   Object "{BC99FE8D3A006519}Assets/Weapons/Explosives/Mine_M15AT/Mine_M15AT.xob"
+  }
+  SCR_MineInventoryItemComponent "{59E4E694B93DC656}" {
+   Attributes SCR_ItemAttributeCollection "{5A10B8E3F1D55606}" {
+    ItemDisplayName WeaponUIInfo "{5A10B8E3F31D239B}" {
+     Name "#AR-Weapon_M15_Name"
+     Description "#AR-Weapon_M15_Description"
+    }
+    ItemPhysAttributes ItemPhysicalAttributes "{5A10B8E3E50A16D2}" {
+     Weight 14.2
+     ItemDimensions 20 20 20
+     ItemVolume 4000
+    }
+   }
+   WbPlacementFromAttributes 0
+  }
+  SCR_PressureTriggerComponent "{59E6BE151DCC9953}" {
+   m_fMinWeight 150
+  }
+  SCR_MineWeaponComponent "{59F2DC2C202D1AFB}" {
+   UIInfo GrenadeUIInfo "{5CDCD73FE938D67D}" {
+    Name "#AR-Weapon_M15_Name"
+    Description "#AR-Weapon_M15_Description"
+   }
+   WeaponSlotType "primary"
+  }
+  ActionsManagerComponent "{59E4E6938E65C2ED}" {
+   ActionContexts {
+    UserActionContext "{59E4E6938105F844}" {
+     ContextName "default"
+     Position PointInfo "{59E4E693875D0164}" {
+     }
+    }
+   }
+   additionalActions {
+    SCR_MinePickUpItemAction "{59E4E69368FB23DB}" {
+     ParentContextList +{
+     }
+     UIInfo SCR_ActionUIInfo "{59E4E69360601200}" {
+      Name "#AR-Inventory_Pickup"
+      m_sIconName "pick-up"
+     }
+    }
+    SCR_MineEquipWeaponAction "{59E4E69349194C2B}" {
+     ParentContextList +{
+     }
+     UIInfo SCR_ActionUIInfo "{59E4E6934E3F3C43}" {
+      Name "#AR-Inventory_Equip"
+      m_sIconName "pick-up"
+     }
+     "Sort Priority" 1
+    }
+    SCR_ActivateMineUserAction "{59F2823F52BEB01F}" {
+     ParentContextList +{
+     }
+     UIInfo UIInfo "{59F2823F54F43D25}" {
+     }
+    }
+    SCR_MineAddFlagAction "{5A08900C4003096E}" {
+     ParentContextList +{
+     }
+     UIInfo UIInfo "{5A08900C42B43B6C}" {
+     }
+    }
+    SCR_DisarmMineAction "{65146DC8FAD51D0E}" : "{7BD7363B3A75A5E1}Prefabs/Weapons/Core/Configs/Actions/DisarmMineAction.conf" {
+     m_fSpottingDistance 2
+    }
+   }
+  }
+  SCR_MineAnimationComponent "{5A20C367C4B111CC}" {
+   AnimGraph "{0292B12F97C52891}Assets/Weapons/Explosives/workspace/M15AT_mine.agr"
+   AnimInstance "{CD76B2501A263ED9}Assets/Weapons/Explosives/workspace/M15AT_weapon.asi"
+   AnimInjection AnimationAttachmentInfo "{5A20C367C3FC2F2D}" {
+    AnimGraph "{0292B12F97C52891}Assets/Weapons/Explosives/workspace/M15AT_mine.agr"
+    AnimInstance "{6B45479C2EB8C5AA}Assets/Weapons/Explosives/workspace/M15AT_player.asi"
+    BindingName "Heavy"
+   }
+   BindWithInjection 1
+   AutoVariablesBind 1
+   ResetOnDeactivation 1
+   DeactivationDelay 0
+  }
+ }
+}

@@ -1,0 +1,556 @@
+{
+ "weapons": [
+  {
+   "weapon": "Prefabs/Weapons/Russian/Handguns/PP_19/armst_PP91_base.et",
+   "guid": "3968B2A856852CBD",
+   "slots": [],
+   "contexts": []
+  },
+  {
+   "weapon": "Prefabs/Weapons/Russian/Handguns/Pm/armst_PM_base.et",
+   "guid": "C0F7DD85A86B2900",
+   "slots": [],
+   "contexts": []
+  },
+  {
+   "weapon": "Prefabs/Weapons/Russian/Handguns/Sr_2/armst_SR_2_base.et",
+   "guid": "31FB2EC4F4AFFC05",
+   "slots": [],
+   "contexts": []
+  },
+  {
+   "weapon": "Prefabs/Weapons/Russian/Handguns/TT/armst_TT_base.et",
+   "guid": "0D469F42B65E350E",
+   "slots": [],
+   "contexts": []
+  },
+  {
+   "weapon": "Prefabs/Weapons/Russian/Handguns/armst_APB/armst_APB_base.et",
+   "guid": "5D3DA7E84135B278",
+   "slots": [],
+   "contexts": []
+  },
+  {
+   "weapon": "Prefabs/Weapons/Russian/Rifle/9a91/armst_Rifle_9a91_base.et",
+   "guid": "E2D8F39AE1B9B8F1",
+   "slots": [
+    {
+     "instance": "5F189C826D592450",
+     "slot": "BayonetSlot",
+     "type": "AttachmentOpticsDovetailAK",
+     "pivot": "slot_optics",
+     "cpivot": null,
+     "enabled": "1",
+     "show": null,
+     "default": null,
+     "weapon": "Prefabs/Weapons/Russian/Rifle/9a91/armst_Rifle_9a91_base.et",
+     "origin": "LOCAL_ADDITION",
+     "descendants": [],
+     "classification": "KEEP_NATIVE_INTERFACE"
+    },
+    {
+     "instance": "4E2B66CBA589F625",
+     "slot": "Muzzle",
+     "type": "AttachmentMuzzle9_39_armst",
+     "pivot": "barrel_muzzle",
+     "cpivot": null,
+     "enabled": "1",
+     "show": null,
+     "default": null,
+     "weapon": "Prefabs/Weapons/Russian/Rifle/9a91/armst_Rifle_9a91_base.et",
+     "origin": "LOCAL_ADDITION",
+     "descendants": [],
+     "classification": "KEEP_NATIVE_INTERFACE"
+    }
+   ],
+   "contexts": []
+  },
+  {
+   "weapon": "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74_base.et",
+   "guid": "FA5C25BF66A53DCF",
+   "slots": [
+    {
+     "instance": "4E2B66CBA589F625",
+     "slot": null,
+     "type": null,
+     "pivot": null,
+     "cpivot": null,
+     "enabled": "0",
+     "show": null,
+     "default": null,
+     "weapon": "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74_base.et",
+     "origin": "LOCAL_ADDITION",
+     "descendants": [
+      "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK105.et"
+     ],
+     "classification": "KEEP_VARIANT_HOOK"
+    }
+   ],
+   "contexts": []
+  },
+  {
+   "weapon": "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_base.et",
+   "guid": "140E94F473B60FE3",
+   "slots": [
+    {
+     "instance": "65AE4CB5E23C0F63",
+     "slot": null,
+     "type": "AttachmentStockVz58",
+     "pivot": "slot_barrel_muzzle",
+     "cpivot": "snap_weapon",
+     "enabled": "1",
+     "show": null,
+     "default": null,
+     "weapon": "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_base.et",
+     "origin": "LOCAL_ADDITION",
+     "descendants": [
+      "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM.et",
+      "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKMS.et",
+      "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_VPO136.et",
+      "Prefabs/Weapons/Russian/Rifle/SOC94/armst_Rifle_SOC94_base.et"
+     ],
+     "classification": "KEEP_VARIANT_HOOK"
+    },
+    {
+     "instance": "65AE4CB5E23C0F65",
+     "slot": "Stock",
+     "type": "AttachmentOpticsDovetailAK",
+     "pivot": "slot_optics",
+     "cpivot": "slot_stock",
+     "enabled": "1",
+     "show": "1",
+     "default": null,
+     "weapon": "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_base.et",
+     "origin": "LOCAL_ADDITION",
+     "descendants": [
+      "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM.et",
+      "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_full.et",
+      "Prefabs/Weapons/Russian/Rifle/SOC94/armst_Rifle_SOC94_base.et"
+     ],
+     "classification": "KEEP_NATIVE_INTERFACE"
+    },
+    {
+     "instance": "673A7B215304A28B",
+     "slot": "GP",
+     "type": "AttachmentUnderBarrelGP25",
+     "pivot": "barrel_chamber",
+     "cpivot": null,
+     "enabled": "1",
+     "show": "1",
+     "default": null,
+     "weapon": "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_base.et",
+     "origin": "LOCAL_ADDITION",
+     "descendants": [
+      "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM.et",
+      "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_full.et",
+      "Prefabs/Weapons/Russian/Rifle/SOC94/armst_Rifle_SOC94_base.et"
+     ],
+     "classification": "KEEP_NATIVE_INTERFACE"
+    },
+    {
+     "instance": "65AE4CB5E23C0F2C",
+     "slot": "Muzzle",
+     "type": "AttachmentMuzzle762_39",
+     "pivot": "barrel_muzzle",
+     "cpivot": null,
+     "enabled": "1",
+     "show": null,
+     "default": null,
+     "weapon": "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_base.et",
+     "origin": "LOCAL_ADDITION",
+     "descendants": [
+      "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM.et",
+      "Prefabs/Weapons/Russian/Rifle/SOC94/armst_Rifle_SOC94_base.et"
+     ],
+     "classification": "KEEP_NATIVE_INTERFACE"
+    }
+   ],
+   "contexts": [
+    {
+     "instance": "5086F9ADF588DCA4",
+     "name": null,
+     "pivot": null,
+     "weapon": "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_base.et",
+     "origin": "LOCAL_ADDITION",
+     "owner": "core",
+     "descendants": [],
+     "classification": "KEEP_REQUIRED"
+    },
+    {
+     "instance": "5956E32BAAADE657",
+     "name": null,
+     "pivot": null,
+     "weapon": "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_base.et",
+     "origin": "LOCAL_ADDITION",
+     "owner": "core",
+     "descendants": [],
+     "classification": "KEEP_REQUIRED"
+    },
+    {
+     "instance": "5A1E58F7B04F9BE5",
+     "name": null,
+     "pivot": "slot_magazine",
+     "weapon": "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_base.et",
+     "origin": "LOCAL_ADDITION",
+     "owner": "core",
+     "descendants": [],
+     "classification": "KEEP_REQUIRED"
+    },
+    {
+     "instance": "5A1E58F7AED270D4",
+     "name": null,
+     "pivot": "w_fire_mode",
+     "weapon": "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_base.et",
+     "origin": "LOCAL_ADDITION",
+     "owner": "core",
+     "descendants": [],
+     "classification": "KEEP_REQUIRED"
+    },
+    {
+     "instance": "65AE4CB5E23C0CE9",
+     "name": "bayonet",
+     "pivot": "slot_barrel_muzzle",
+     "weapon": "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_base.et",
+     "origin": "LOCAL_ADDITION",
+     "owner": "slot",
+     "descendants": [],
+     "classification": "KEEP_REQUIRED"
+    }
+   ]
+  },
+  {
+   "weapon": "Prefabs/Weapons/Russian/Rifle/Aek971/armst_Rifle_AEK971_base.et",
+   "guid": "AC198EAC9BDD9841",
+   "slots": [
+    {
+     "instance": "55349E9229B55E29",
+     "slot": "sights",
+     "type": "AttachmentOpticsARMST_DovetailRU",
+     "pivot": null,
+     "cpivot": null,
+     "enabled": "1",
+     "show": null,
+     "default": null,
+     "weapon": "Prefabs/Weapons/Russian/Rifle/Aek971/armst_Rifle_AEK971_base.et",
+     "origin": "LOCAL_ADDITION",
+     "descendants": [],
+     "classification": "KEEP_NATIVE_INTERFACE"
+    },
+    {
+     "instance": "5F189C826D592450",
+     "slot": "BayonetSlot",
+     "type": null,
+     "pivot": null,
+     "cpivot": null,
+     "enabled": "1",
+     "show": null,
+     "default": null,
+     "weapon": "Prefabs/Weapons/Russian/Rifle/Aek971/armst_Rifle_AEK971_base.et",
+     "origin": "LOCAL_ADDITION",
+     "descendants": [],
+     "classification": "KEEP_NATIVE_INTERFACE"
+    },
+    {
+     "instance": "4E2B66CBA589F625",
+     "slot": null,
+     "type": null,
+     "pivot": null,
+     "cpivot": null,
+     "enabled": "0",
+     "show": null,
+     "default": null,
+     "weapon": "Prefabs/Weapons/Russian/Rifle/Aek971/armst_Rifle_AEK971_base.et",
+     "origin": "LOCAL_ADDITION",
+     "descendants": [],
+     "classification": "REVIEW_REQUIRED"
+    }
+   ],
+   "contexts": []
+  },
+  {
+   "weapon": "Prefabs/Weapons/Russian/Rifle/Groza/armst_Groza_base.et",
+   "guid": "903C7920F00AB654",
+   "slots": [
+    {
+     "instance": "4E2B66CBA589F625",
+     "slot": "suppressor",
+     "type": null,
+     "pivot": "slot_barrel_muzzle",
+     "cpivot": "snap_weapon",
+     "enabled": "1",
+     "show": "1",
+     "default": null,
+     "weapon": "Prefabs/Weapons/Russian/Rifle/Groza/armst_Groza_base.et",
+     "origin": "LOCAL_ADDITION",
+     "descendants": [],
+     "classification": "KEEP_NATIVE_INTERFACE"
+    }
+   ],
+   "contexts": [
+    {
+     "instance": "5086F9ADF588DCA4",
+     "name": null,
+     "pivot": null,
+     "weapon": "Prefabs/Weapons/Russian/Rifle/Groza/armst_Groza_base.et",
+     "origin": "LOCAL_ADDITION",
+     "owner": "core",
+     "descendants": [],
+     "classification": "KEEP_REQUIRED"
+    },
+    {
+     "instance": "5956E32BAAADE657",
+     "name": null,
+     "pivot": null,
+     "weapon": "Prefabs/Weapons/Russian/Rifle/Groza/armst_Groza_base.et",
+     "origin": "LOCAL_ADDITION",
+     "owner": "core",
+     "descendants": [],
+     "classification": "KEEP_REQUIRED"
+    },
+    {
+     "instance": "5A1E58F7B04F9BE5",
+     "name": null,
+     "pivot": "slot_magazine",
+     "weapon": "Prefabs/Weapons/Russian/Rifle/Groza/armst_Groza_base.et",
+     "origin": "LOCAL_ADDITION",
+     "owner": "core",
+     "descendants": [],
+     "classification": "KEEP_REQUIRED"
+    },
+    {
+     "instance": "5A1E58F7AED270D4",
+     "name": null,
+     "pivot": null,
+     "weapon": "Prefabs/Weapons/Russian/Rifle/Groza/armst_Groza_base.et",
+     "origin": "LOCAL_ADDITION",
+     "owner": "core",
+     "descendants": [],
+     "classification": "KEEP_REQUIRED"
+    }
+   ]
+  },
+  {
+   "weapon": "Prefabs/Weapons/Russian/Rifle/SOC94/armst_Rifle_SOC94_base.et",
+   "guid": "E394112ABBC198D8",
+   "slots": [
+    {
+     "instance": "65AE4CB5E23C0F63",
+     "slot": null,
+     "type": "AttachmentOpticsDovetailSVD",
+     "pivot": null,
+     "cpivot": null,
+     "enabled": "1",
+     "show": null,
+     "default": null,
+     "weapon": "Prefabs/Weapons/Russian/Rifle/SOC94/armst_Rifle_SOC94_base.et",
+     "origin": "LOCAL_OVERRIDE",
+     "descendants": [],
+     "classification": "KEEP_OVERRIDE"
+    },
+    {
+     "instance": "65AE4CB5E23C0F65",
+     "slot": "Stock",
+     "type": null,
+     "pivot": "slot_optic",
+     "cpivot": "slot_optic",
+     "enabled": "1",
+     "show": null,
+     "default": null,
+     "weapon": "Prefabs/Weapons/Russian/Rifle/SOC94/armst_Rifle_SOC94_base.et",
+     "origin": "LOCAL_OVERRIDE",
+     "descendants": [],
+     "classification": "KEEP_OVERRIDE"
+    },
+    {
+     "instance": "673A7B215304A28B",
+     "slot": null,
+     "type": null,
+     "pivot": null,
+     "cpivot": null,
+     "enabled": "0",
+     "show": null,
+     "default": null,
+     "weapon": "Prefabs/Weapons/Russian/Rifle/SOC94/armst_Rifle_SOC94_base.et",
+     "origin": "LOCAL_OVERRIDE",
+     "descendants": [],
+     "classification": "KEEP_OVERRIDE"
+    },
+    {
+     "instance": "65AE4CB5E23C0F2C",
+     "slot": null,
+     "type": null,
+     "pivot": null,
+     "cpivot": null,
+     "enabled": "0",
+     "show": null,
+     "default": null,
+     "weapon": "Prefabs/Weapons/Russian/Rifle/SOC94/armst_Rifle_SOC94_base.et",
+     "origin": "LOCAL_OVERRIDE",
+     "descendants": [],
+     "classification": "KEEP_OVERRIDE"
+    }
+   ],
+   "contexts": [
+    {
+     "instance": "69F2A461E52826BA",
+     "name": null,
+     "pivot": "slot_optics",
+     "weapon": "Prefabs/Weapons/Russian/Rifle/SOC94/armst_Rifle_SOC94_base.et",
+     "origin": "LOCAL_ADDITION",
+     "owner": "core",
+     "descendants": [],
+     "classification": "KEEP_REQUIRED"
+    }
+   ]
+  },
+  {
+   "weapon": "Prefabs/Weapons/Russian/Rifle/SVD/armst_Rifle_SVD_base.et",
+   "guid": "3EB02CDAD5F23C82",
+   "slots": [
+    {
+     "instance": "5472D211BFD78F81",
+     "slot": null,
+     "type": "AttachmentOpticsDovetailAK",
+     "pivot": null,
+     "cpivot": null,
+     "enabled": "1",
+     "show": null,
+     "default": null,
+     "weapon": "Prefabs/Weapons/Russian/Rifle/SVD/armst_Rifle_SVD_base.et",
+     "origin": "LOCAL_ADDITION",
+     "descendants": [],
+     "classification": "KEEP_NATIVE_INTERFACE"
+    }
+   ],
+   "contexts": []
+  },
+  {
+   "weapon": "Prefabs/Weapons/Russian/Rifle/VAL/armst_Rifle_val_base.et",
+   "guid": "F25D16BD5F748372",
+   "slots": [
+    {
+     "instance": "5F189C826D592450",
+     "slot": "BayonetSlot",
+     "type": "AttachmentOpticsDovetailAK",
+     "pivot": "slot_optics",
+     "cpivot": null,
+     "enabled": "1",
+     "show": null,
+     "default": null,
+     "weapon": "Prefabs/Weapons/Russian/Rifle/VAL/armst_Rifle_val_base.et",
+     "origin": "LOCAL_ADDITION",
+     "descendants": [],
+     "classification": "KEEP_NATIVE_INTERFACE"
+    },
+    {
+     "instance": "4E2B66CBA589F625",
+     "slot": "Muzzle",
+     "type": null,
+     "pivot": null,
+     "cpivot": null,
+     "enabled": "0",
+     "show": null,
+     "default": null,
+     "weapon": "Prefabs/Weapons/Russian/Rifle/VAL/armst_Rifle_val_base.et",
+     "origin": "LOCAL_ADDITION",
+     "descendants": [],
+     "classification": "KEEP_NATIVE_INTERFACE"
+    }
+   ],
+   "contexts": [
+    {
+     "instance": "69EE615D4B97703C",
+     "name": "Optic",
+     "pivot": "slot_optics",
+     "weapon": "Prefabs/Weapons/Russian/Rifle/VAL/armst_Rifle_val_base.et",
+     "origin": "LOCAL_ADDITION",
+     "owner": "slot",
+     "descendants": [],
+     "classification": "KEEP_REQUIRED"
+    }
+   ]
+  },
+  {
+   "weapon": "Prefabs/Weapons/Russian/Rifle/VSK94/armst_Rifle_VSK94_base.et",
+   "guid": "6005623D3AA5F5C2",
+   "slots": [
+    {
+     "instance": "5F189C826D592450",
+     "slot": "BayonetSlot",
+     "type": "AttachmentOpticsDovetailAK",
+     "pivot": "slot_optics",
+     "cpivot": null,
+     "enabled": "1",
+     "show": null,
+     "default": null,
+     "weapon": "Prefabs/Weapons/Russian/Rifle/VSK94/armst_Rifle_VSK94_base.et",
+     "origin": "LOCAL_ADDITION",
+     "descendants": [],
+     "classification": "KEEP_NATIVE_INTERFACE"
+    },
+    {
+     "instance": "4E2B66CBA589F625",
+     "slot": "Muzzle",
+     "type": "AttachmentMuzzle9_39_armst",
+     "pivot": "barrel_muzzle",
+     "cpivot": null,
+     "enabled": "1",
+     "show": null,
+     "default": "{E10F09941AF1E123}Prefabs/Weapons/Attachments/Muzzle/armst_Suppressor_9a91.et",
+     "weapon": "Prefabs/Weapons/Russian/Rifle/VSK94/armst_Rifle_VSK94_base.et",
+     "origin": "LOCAL_ADDITION",
+     "descendants": [],
+     "classification": "KEEP_NATIVE_INTERFACE"
+    }
+   ],
+   "contexts": [
+    {
+     "instance": "69EE615C65C7D397",
+     "name": "optic",
+     "pivot": "slot_optics",
+     "weapon": "Prefabs/Weapons/Russian/Rifle/VSK94/armst_Rifle_VSK94_base.et",
+     "origin": "LOCAL_ADDITION",
+     "owner": "slot",
+     "descendants": [],
+     "classification": "KEEP_REQUIRED"
+    }
+   ]
+  },
+  {
+   "weapon": "Prefabs/Weapons/Russian/Rifle/VSS/armst_Rifle_vss_base.et",
+   "guid": "902A79E4B2A66E63",
+   "slots": [
+    {
+     "instance": "5F189C826D592450",
+     "slot": "BayonetSlot",
+     "type": "AttachmentOpticsDovetailAK",
+     "pivot": "slot_optics",
+     "cpivot": null,
+     "enabled": "1",
+     "show": null,
+     "default": null,
+     "weapon": "Prefabs/Weapons/Russian/Rifle/VSS/armst_Rifle_vss_base.et",
+     "origin": "LOCAL_ADDITION",
+     "descendants": [],
+     "classification": "KEEP_NATIVE_INTERFACE"
+    },
+    {
+     "instance": "4E2B66CBA589F625",
+     "slot": "Muzzle",
+     "type": null,
+     "pivot": null,
+     "cpivot": null,
+     "enabled": "0",
+     "show": null,
+     "default": null,
+     "weapon": "Prefabs/Weapons/Russian/Rifle/VSS/armst_Rifle_vss_base.et",
+     "origin": "LOCAL_ADDITION",
+     "descendants": [],
+     "classification": "KEEP_NATIVE_INTERFACE"
+    }
+   ],
+   "contexts": []
+  }
+ ],
+ "safe_cleanup_queue": []
+}

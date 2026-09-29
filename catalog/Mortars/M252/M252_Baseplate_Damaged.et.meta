@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{DE5E51D9E5722D79}Imported/VanillaSources/Prefabs/Weapons/Mortars/M252/M252_Baseplate_Damaged.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

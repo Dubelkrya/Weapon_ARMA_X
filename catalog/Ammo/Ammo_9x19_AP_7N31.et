@@ -1,0 +1,14 @@
+Projectile : "{7687761020B01947}Prefabs/Weapons/Ammo/Ammo_9x19_AP_7N21.et" {
+ ID "DA5C6308000CDEF2"
+ components {
+  ShellMoveComponent "{851AA4A2AE0A5691}" {
+   InitSpeed 600
+   Mass 0.0042
+   BallisticTableConfig "{235D1AF05D9A339F}Configs/Weapons/AIBallisticTables/AIBT_9x19_AP_7N31.conf"
+   AirDrag 0.0000149
+   Diameter 9.2
+   PenetrationDepth 3.9
+   PenetrationSpeed 574
+  }
+ }
+}

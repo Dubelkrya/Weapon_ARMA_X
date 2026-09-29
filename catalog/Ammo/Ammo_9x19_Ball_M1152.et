@@ -1,0 +1,24 @@
+Projectile : "{67FED88E5085F63F}Prefabs/Weapons/Core/Ammo_Bullet_Base.et" {
+ ID "DA5C6308000CDEF2"
+ components {
+  ShellMoveComponent "{851AA4A2AE0A5691}" {
+   InitSpeed 402
+   InitSpeedVariation 7.5
+   DispersionMultiplier 0.8
+   Mass 0.00745
+   BallisticTableConfig "{D85127E277CEE705}Configs/Weapons/AIBallisticTables/AIBT_9x19_Ball_M1152.conf"
+   SonicCracks "{534A3A52CF7042A1}Sounds/Weapons/_SharedData/BulletSonicCracks/Pistol/Weapons_BulletSonicCracks_Pistol.acp"
+   SubsonicFlybys "{C3F69D82DBEF24E2}Sounds/Weapons/_SharedData/BulletFlybys/Pistol/Weapons_BulletFlybys_Pistol.acp"
+   AirDrag 0.000021
+   Diameter 9.1
+   Length 15.5
+   MushroomingDamageMultiplier 0.05
+   TumblingDamageMultiplier 0.1
+   PenetrationDepth 2.47
+   PenetrationDensity 7.86
+   PenetrationSpeed 379
+  }
+ }
+ ProjectileModel "{049EAC7C19E1B570}Assets/Weapons/Ammo/Bullets/9x19/Bullet_9x19.xob"
+ CartridgeModel "{FA0DBC222917FBD6}Assets/Weapons/Ammo/Bullets/9x19/Cartridge_9x19.xob"
+}

@@ -1,0 +1,16 @@
+GenericEntity : "{E4367156CB0D8ECE}Prefabs/Weapons/HeavyWeapons/NSV/HMG_NSV.et" {
+ ID "CFBAA4B725411E45"
+ components {
+  WeaponComponent "{CFBAA4B706BA66E8}" {
+   components {
+    AttachmentSlotComponent "{5AF070F55031A54D}" {
+     AttachmentSlot InventoryStorageSlot optics {
+      PivotID "slot_optic"
+      Offset 0 0 0
+      Prefab "{B623482E2704B69A}Prefabs/Weapons/Attachments/Optics/Optic_SPP/Optic_SPP.et"
+     }
+    }
+   }
+  }
+ }
+}

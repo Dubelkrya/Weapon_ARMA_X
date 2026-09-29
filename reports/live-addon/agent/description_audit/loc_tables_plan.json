@@ -1,0 +1,722 @@
+{
+ "locales": {
+  "en_us": {
+   "file": "Language/localization.en_us.conf",
+   "guid": "FD056F6A77D94BBD",
+   "keys": 59
+  },
+  "ru_ru": {
+   "file": "Language/localization.ru_ru.conf",
+   "guid": "294CC9C152D6A424",
+   "keys": 59
+  },
+  "de_de": {
+   "file": "Language/localization.de_de.conf",
+   "guid": "155B8785B40320A5",
+   "keys": 59
+  },
+  "fr_fr": {
+   "file": "Language/localization.fr_fr.conf",
+   "guid": "00B2AA18FD609EAD",
+   "keys": 59
+  },
+  "es_es": {
+   "file": "Language/localization.es_es.conf",
+   "guid": "A50D9D243F2214B2",
+   "keys": 59
+  },
+  "it_it": {
+   "file": "Language/localization.it_it.conf",
+   "guid": "E9B0EFA7BD0DC122",
+   "keys": 59
+  },
+  "pl_pl": {
+   "file": "Language/localization.pl_pl.conf",
+   "guid": "0910A9463A6EA8B7",
+   "keys": 59
+  },
+  "pt_br": {
+   "file": "Language/localization.pt_br.conf",
+   "guid": "3AB1CE9E74578E52",
+   "keys": 59
+  },
+  "cs_cz": {
+   "file": "Language/localization.cs_cz.conf",
+   "guid": "0AD4179A60AC8C65",
+   "keys": 59
+  },
+  "ja_jp": {
+   "file": "Language/localization.ja_jp.conf",
+   "guid": "B4B3E630945BFFFB",
+   "keys": 59
+  },
+  "ko_kr": {
+   "file": "Language/localization.ko_kr.conf",
+   "guid": "F1A2533581AB710A",
+   "keys": 59
+  },
+  "zh_cn": {
+   "file": "Language/localization.zh_cn.conf",
+   "guid": "B62E0E6E79D5A688",
+   "keys": 59
+  },
+  "uk_ua": {
+   "file": "Language/localization.uk_ua.conf",
+   "guid": "937D00DDAA2B1EF4",
+   "keys": 59
+  }
+ },
+ "keys": [
+  "#AR-ARMST_Weapon_AK105_Description",
+  "#AR-ARMST_Weapon_AK105_Name",
+  "#AR-ARMST_Weapon_AK74M_Description",
+  "#AR-ARMST_Weapon_AKS74_Description",
+  "#AR-ARMST_Weapon_AKS74U_Description",
+  "#AR-ARMST_Weapon_AKS74UN_Description",
+  "#AR-ARMST_Weapon_AKMS_Description",
+  "#AR-ARMST_Weapon_AKM_Description",
+  "#AR-ARMST_Weapon_SOC94_Description",
+  "#AR-ARMST_Weapon_VPO136_Description",
+  "#AR-ARMST_Weapon_AEK971_Description",
+  "#AR-ARMST_Weapon_L85_Description",
+  "#AR-ARMST_Weapon_M16A2carbine_Description",
+  "#AR-ARMST_Weapon_SIG550_Description",
+  "#AR-ARMST_Weapon_G36_Description",
+  "#AR-ARMST_Weapon_G36_Name",
+  "#AR-ARMST_Weapon_L1A1_Description",
+  "#AR-ARMST_Weapon_SVD_Description",
+  "#AR-ARMST_Weapon_VZ58P_Description",
+  "#AR-ARMST_Weapon_VZ58V_Description",
+  "#AR-ARMST_Magazine_armst_Magazine_545x39_AK_30rnd_Ball_Description",
+  "#AR-ARMST_Magazine_armst_Magazine_545x39_AK_30rnd_Tracer_Description",
+  "#AR-ARMST_Magazine_armst_Magazine_545x39_RPK_45rnd_Ball_Description",
+  "#AR-ARMST_Magazine_armst_Magazine_545x39_RPK_45rnd_Tracer_Description",
+  "#AR-ARMST_Magazine_Magazine_545x39_AK_30rnd_Base_Description",
+  "#AR-ARMST_Magazine_armst_Box_762x54_PK_250rnd_Ball_Description",
+  "#AR-ARMST_Magazine_armst_Magazine_762x54_SVD_10rnd_7BZ3API_Description",
+  "#AR-ARMST_Magazine_armst_Magazine_763x25_TT_8rnd_Ball_Description",
+  "#AR-ARMST_Magazine_armst_Magazine_762x39_AKM_10rnd_Ball_Description",
+  "#AR-ARMST_Magazine_armst_Magazine_762x39_AKM_30rnd_Ball_Description",
+  "#AR-ARMST_Magazine_armst_Magazine_9x18_APB_20rnd_Ball_Description",
+  "#AR-ARMST_Magazine_armst_Magazine_9x18_PM_8rnd_Ball_Description",
+  "#AR-ARMST_Magazine_armst_Magazine_9x18_PP91_30rnd_Ball_Description",
+  "#AR-ARMST_Magazine_armst_Magazine_9x18_SR2_30rnd_Ball_Description",
+  "#AR-ARMST_Magazine_armst_Magazine_9x39_20rnd_9a91_SP5_Description",
+  "#AR-ARMST_Magazine_armst_Magazine_9x39_20rnd_9a91_SP6_Description",
+  "#AR-ARMST_Magazine_armst_Magazine_9x39_20rnd_vss_SP5_Description",
+  "#AR-ARMST_Magazine_armst_Magazine_9x39_20rnd_vss_SP6_Description",
+  "#AR-ARMST_Magazine_armst_Magazine_9x39_30rnd_val_SP5_Description",
+  "#AR-ARMST_Magazine_armst_Magazine_9x39_30rnd_val_SP6_Description",
+  "#AR-ARMST_Magazine_armst_Magazine_556x45_HKG36_Description",
+  "#AR-ARMST_Magazine_armst_Magazine_556x45_SIG_550_Description",
+  "#AR-ARMST_Magazine_armst_Magazine_556x45_STANAG_30rnd_M193_Ball_Description",
+  "#AR-ARMST_Magazine_armst_Magazine_556x45_STANAG_30rnd_M855_Ball_Description",
+  "#AR-ARMST_Magazine_Magazine_556x45_STANAG_30rnd_Base_Description",
+  "#AR-ARMST_Magazine_armst_Magazine_762x51_HK3_20_M80_Ball_Description",
+  "#AR-ARMST_Magazine_armst_Magazine_762x51_L1A1_20_M80_Ball_Description",
+  "#AR-ARMST_Magazine_armst_Magazine_762x51_L1A1_30_M80_Ball_Description",
+  "#AR-ARMST_Magazine_armst_Magazine_9x19_M9_15rnd_Ball_Description",
+  "#AR-ARMST_Magazine_armst_Magazine_556x45_HKG36_BP_Description",
+  "#AR-ARMST_Magazine_armst_Magazine_556x45_SIG_550_BP_Description",
+  "#AR-ARMST_Magazine_armst_Magazine_556x45_STANAG_30rnd_M193_Ball_BP_Description",
+  "#AR-ARMST_Magazine_armst_Magazine_556x45_STANAG_30rnd_M855_Ball_BP_Description",
+  "#AR-ARMST_Magazine_armst_Magazine_762x51_HK3_20_M80_Ball_BP_Description",
+  "#AR-ARMST_Magazine_armst_Magazine_762x51_L1A1_20_M80_Ball_BP_Description",
+  "#AR-ARMST_Magazine_armst_Magazine_762x51_L1A1_30_M80_Ball_BP_Description",
+  "#AR-ARMST_Magazine_armst_Magazine_9x19_M9_15rnd_Ball_BP_Description",
+  "#AR-ARMST_Magazine_armst_Magazine_762x39_AKM_10rnd_Ball_BP_Description",
+  "#AR-ARMST_Magazine_armst_Magazine_762x39_AKM_30rnd_Ball_BP_Description"
+ ],
+ "key_text": {
+  "#AR-ARMST_Weapon_AK105_Description": {
+   "en": "Compact 5.45x39 mm member of the AK-100 family.",
+   "ru": "Укороченный автомат семейства АК-100 под патрон 5,45×39 мм."
+  },
+  "#AR-ARMST_Weapon_AK105_Name": {
+   "en": "AK-105",
+   "ru": "AK-105"
+  },
+  "#AR-ARMST_Weapon_AK74M_Description": {
+   "en": "Modernized full-size 5.45x39 mm AK-74 variant with a folding polymer stock.",
+   "ru": "Модернизированный полноразмерный вариант АК-74 под патрон 5,45×39 мм со складывающимся полимерным прикладом."
+  },
+  "#AR-ARMST_Weapon_AKS74_Description": {
+   "en": "Folding-stock variant of the 5.45x39 mm AK-74 assault rifle.",
+   "ru": "Вариант автомата АК-74 под патрон 5,45×39 мм со складывающимся прикладом."
+  },
+  "#AR-ARMST_Weapon_AKS74U_Description": {
+   "en": "Compact shortened 5.45x39 mm member of the AK-74 family with a folding stock.",
+   "ru": "Укороченный автомат семейства АК-74 под патрон 5,45×39 мм со складывающимся прикладом."
+  },
+  "#AR-ARMST_Weapon_AKS74UN_Description": {
+   "en": "AKS-74U variant with a receiver side mounting interface for compatible optics; 5.45x39 mm.",
+   "ru": "Вариант укороченного АКС-74У под патрон 5,45×39 мм. Оснащён боковым креплением для установки совместимых прицелов."
+  },
+  "#AR-ARMST_Weapon_AKMS_Description": {
+   "en": "AKM variant with a folding metal stock; 7.62x39 mm.",
+   "ru": "Вариант АКМ под патрон 7,62×39 мм со складывающимся металлическим прикладом."
+  },
+  "#AR-ARMST_Weapon_AKM_Description": {
+   "en": "Soviet modernized Kalashnikov rifle chambered for 7.62x39 mm.",
+   "ru": "Советский модернизированный автомат Калашникова под патрон 7,62×39 мм."
+  },
+  "#AR-ARMST_Weapon_SOC94_Description": {
+   "en": "Molot self-loading civilian hunting carbine chambered for 7.62x39 mm.",
+   "ru": "Гражданский самозарядный охотничий карабин «Молот» под патрон 7,62×39 мм."
+  },
+  "#AR-ARMST_Weapon_VPO136_Description": {
+   "en": "Civilian self-loading 7.62x39 mm carbine built on AKM-pattern hardware.",
+   "ru": "Гражданский самозарядный карабин под патрон 7,62×39 мм на базе автомата Калашникова."
+  },
+  "#AR-ARMST_Weapon_AEK971_Description": {
+   "en": "5.45x39 mm Kovrov assault rifle using a balanced recoil mechanism.",
+   "ru": "Автомат Ковровского завода под патрон 5,45×39 мм со сбалансированной автоматикой."
+  },
+  "#AR-ARMST_Weapon_L85_Description": {
+   "en": "British SA80-family 5.56x45 mm bullpup service rifle.",
+   "ru": "Британская служебная винтовка компоновки булл-пап семейства SA80 под патрон 5,56×45 мм."
+  },
+  "#AR-ARMST_Weapon_M16A2carbine_Description": {
+   "en": "Compact 5.56x45 mm carbine derived from the M16A2/AR-15 family.",
+   "ru": "Компактный карабин под патрон 5,56×45 мм семейства M16A2/AR-15."
+  },
+  "#AR-ARMST_Weapon_SIG550_Description": {
+   "en": "Swiss 5.56x45 mm SG 550 / Stgw 90-family service rifle.",
+   "ru": "Швейцарская служебная винтовка семейства SG 550 / Stgw 90 под патрон 5,56×45 мм."
+  },
+  "#AR-ARMST_Weapon_G36_Description": {
+   "en": "German 5.56x45 mm G36-family service rifle.",
+   "ru": "Немецкая служебная винтовка семейства G36 под патрон 5,56×45 мм."
+  },
+  "#AR-ARMST_Weapon_G36_Name": {
+   "en": "HK G36",
+   "ru": "HK G36"
+  },
+  "#AR-ARMST_Weapon_L1A1_Description": {
+   "en": "British/Commonwealth inch-pattern self-loading rifle derived from the FN FAL family; 7.62x51 mm.",
+   "ru": "Британская самозарядная винтовка калибра 7,62×51 мм, представляющая inch-pattern вариант семейства FN FAL."
+  },
+  "#AR-ARMST_Weapon_SVD_Description": {
+   "en": "Soviet semi-automatic designated-marksman rifle chambered for 7.62x54R.",
+   "ru": "Советская самозарядная снайперская винтовка под патрон 7,62×54R."
+  },
+  "#AR-ARMST_Weapon_VZ58P_Description": {
+   "en": "Czechoslovak 7.62x39 mm vz. 58 infantry variant with a fixed stock.",
+   "ru": "Чехословацкая автоматическая винтовка vz. 58 P под патрон 7,62×39 мм. Пехотный вариант с фиксированным прикладом."
+  },
+  "#AR-ARMST_Weapon_VZ58V_Description": {
+   "en": "Czechoslovak 7.62x39 mm vz. 58 variant with a side-folding metal stock.",
+   "ru": "Чехословацкая автоматическая винтовка vz. 58 V под патрон 7,62×39 мм. Вариант со складывающимся металлическим прикладом."
+  },
+  "#AR-ARMST_Magazine_armst_Magazine_545x39_AK_30rnd_Ball_Description": {
+   "en": "30-round magazine chambered for 5.45x39 mm.",
+   "ru": "Магазин на 30 патронов под 5,45×39 мм."
+  },
+  "#AR-ARMST_Magazine_armst_Magazine_545x39_AK_30rnd_Tracer_Description": {
+   "en": "30-round magazine chambered for 5.45x39 mm.",
+   "ru": "Магазин на 30 патронов под 5,45×39 мм."
+  },
+  "#AR-ARMST_Magazine_armst_Magazine_545x39_RPK_45rnd_Ball_Description": {
+   "en": "45-round magazine chambered for 5.45x39 mm.",
+   "ru": "Магазин на 45 патронов под 5,45×39 мм."
+  },
+  "#AR-ARMST_Magazine_armst_Magazine_545x39_RPK_45rnd_Tracer_Description": {
+   "en": "45-round magazine chambered for 5.45x39 mm.",
+   "ru": "Магазин на 45 патронов под 5,45×39 мм."
+  },
+  "#AR-ARMST_Magazine_Magazine_545x39_AK_30rnd_Base_Description": {
+   "en": "30-round magazine chambered for 5.45x39 mm.",
+   "ru": "Магазин на 30 патронов под 5,45×39 мм."
+  },
+  "#AR-ARMST_Magazine_armst_Box_762x54_PK_250rnd_Ball_Description": {
+   "en": "250-round belt box chambered for 7.62x54R mm.",
+   "ru": "Короб на 250 патронов под 7,62×54R мм."
+  },
+  "#AR-ARMST_Magazine_armst_Magazine_762x54_SVD_10rnd_7BZ3API_Description": {
+   "en": "10-round magazine for the SVD, chambered for 7.62x54R mm.",
+   "ru": "Магазин на 10 патронов для СВД под 7,62×54R мм."
+  },
+  "#AR-ARMST_Magazine_armst_Magazine_763x25_TT_8rnd_Ball_Description": {
+   "en": "8-round magazine chambered for 7.63x25 mm.",
+   "ru": "Магазин на 8 патронов под 7,63×25 мм."
+  },
+  "#AR-ARMST_Magazine_armst_Magazine_762x39_AKM_10rnd_Ball_Description": {
+   "en": "10-round magazine for the AKM, chambered for 7.62x39 mm. Loaded with ARMST PP ammunition.",
+   "ru": "Магазин на 10 патронов для АКМ под 7,62×39 мм. Снаряжён боеприпасами ARMST PP."
+  },
+  "#AR-ARMST_Magazine_armst_Magazine_762x39_AKM_30rnd_Ball_Description": {
+   "en": "30-round magazine for the AKM, chambered for 7.62x39 mm. Loaded with ARMST PP ammunition.",
+   "ru": "Магазин на 30 патронов для АКМ под 7,62×39 мм. Снаряжён боеприпасами ARMST PP."
+  },
+  "#AR-ARMST_Magazine_armst_Magazine_9x18_APB_20rnd_Ball_Description": {
+   "en": "20-round magazine for the APB, chambered for 9x18 mm.",
+   "ru": "Магазин на 20 патронов для АПБ под 9×18 мм."
+  },
+  "#AR-ARMST_Magazine_armst_Magazine_9x18_PM_8rnd_Ball_Description": {
+   "en": "8-round magazine for the Makarov pistol, chambered for 9x18 mm.",
+   "ru": "Магазин на 8 патронов для пистолета Макарова под 9×18 мм."
+  },
+  "#AR-ARMST_Magazine_armst_Magazine_9x18_PP91_30rnd_Ball_Description": {
+   "en": "30-round magazine for the PP-91, chambered for 9x18 mm.",
+   "ru": "Магазин на 30 патронов для ПП-91 под 9×18 мм."
+  },
+  "#AR-ARMST_Magazine_armst_Magazine_9x18_SR2_30rnd_Ball_Description": {
+   "en": "30-round magazine for the SR-2, chambered for 9x18 mm.",
+   "ru": "Магазин на 30 патронов для СР-2 под 9×18 мм."
+  },
+  "#AR-ARMST_Magazine_armst_Magazine_9x39_20rnd_9a91_SP5_Description": {
+   "en": "20-round magazine for the 9A-91, chambered for 9x39 mm SP-5.",
+   "ru": "Магазин на 20 патронов для 9А-91 под 9×39 мм СП-5."
+  },
+  "#AR-ARMST_Magazine_armst_Magazine_9x39_20rnd_9a91_SP6_Description": {
+   "en": "20-round magazine for the 9A-91, chambered for 9x39 mm SP-6.",
+   "ru": "Магазин на 20 патронов для 9А-91 под 9×39 мм СП-6."
+  },
+  "#AR-ARMST_Magazine_armst_Magazine_9x39_20rnd_vss_SP5_Description": {
+   "en": "20-round magazine for the VSS, chambered for 9x39 mm SP-5.",
+   "ru": "Магазин на 20 патронов для ВСС под 9×39 мм СП-5."
+  },
+  "#AR-ARMST_Magazine_armst_Magazine_9x39_20rnd_vss_SP6_Description": {
+   "en": "20-round magazine for the VSS, chambered for 9x39 mm SP-6.",
+   "ru": "Магазин на 20 патронов для ВСС под 9×39 мм СП-6."
+  },
+  "#AR-ARMST_Magazine_armst_Magazine_9x39_30rnd_val_SP5_Description": {
+   "en": "30-round magazine for the AS Val, chambered for 9x39 mm SP-5.",
+   "ru": "Магазин на 30 патронов для АС «Вал» под 9×39 мм СП-5."
+  },
+  "#AR-ARMST_Magazine_armst_Magazine_9x39_30rnd_val_SP6_Description": {
+   "en": "30-round magazine for the AS Val, chambered for 9x39 mm SP-6.",
+   "ru": "Магазин на 30 патронов для АС «Вал» под 9×39 мм СП-6."
+  },
+  "#AR-ARMST_Magazine_armst_Magazine_556x45_HKG36_Description": {
+   "en": "30-round magazine for the HK G36, chambered for 5.56x45 mm. Loaded with ARMST PP ammunition.",
+   "ru": "Магазин на 30 патронов для HK G36 под 5,56×45 мм. Снаряжён боеприпасами ARMST PP."
+  },
+  "#AR-ARMST_Magazine_armst_Magazine_556x45_SIG_550_Description": {
+   "en": "30-round magazine for the SIG SG 550, chambered for 5.56x45 mm. Loaded with ARMST PP ammunition.",
+   "ru": "Магазин на 30 патронов для SIG SG 550 под 5,56×45 мм. Снаряжён боеприпасами ARMST PP."
+  },
+  "#AR-ARMST_Magazine_armst_Magazine_556x45_STANAG_30rnd_M193_Ball_Description": {
+   "en": "30-round STANAG magazine chambered for 5.56x45 mm. Loaded with ARMST PP ammunition.",
+   "ru": "Магазин STANAG на 30 патронов под 5,56×45 мм. Снаряжён боеприпасами ARMST PP."
+  },
+  "#AR-ARMST_Magazine_armst_Magazine_556x45_STANAG_30rnd_M855_Ball_Description": {
+   "en": "30-round STANAG magazine chambered for 5.56x45 mm. Loaded with ARMST PP ammunition.",
+   "ru": "Магазин STANAG на 30 патронов под 5,56×45 мм. Снаряжён боеприпасами ARMST PP."
+  },
+  "#AR-ARMST_Magazine_Magazine_556x45_STANAG_30rnd_Base_Description": {
+   "en": "30-round STANAG magazine chambered for 5.56x45 mm. Loaded with ARMST PP ammunition.",
+   "ru": "Магазин STANAG на 30 патронов под 5,56×45 мм. Снаряжён боеприпасами ARMST PP."
+  },
+  "#AR-ARMST_Magazine_armst_Magazine_762x51_HK3_20_M80_Ball_Description": {
+   "en": "20-round magazine for the HK G3, chambered for 7.62x51 mm. Loaded with ARMST PP ammunition.",
+   "ru": "Магазин на 20 патронов для HK G3 под 7,62×51 мм. Снаряжён боеприпасами ARMST PP."
+  },
+  "#AR-ARMST_Magazine_armst_Magazine_762x51_L1A1_20_M80_Ball_Description": {
+   "en": "20-round magazine for the L1A1 SLR, chambered for 7.62x51 mm. Loaded with ARMST PP ammunition.",
+   "ru": "Магазин на 20 патронов для L1A1 SLR под 7,62×51 мм. Снаряжён боеприпасами ARMST PP."
+  },
+  "#AR-ARMST_Magazine_armst_Magazine_762x51_L1A1_30_M80_Ball_Description": {
+   "en": "30-round magazine for the L1A1 SLR, chambered for 7.62x51 mm. Loaded with ARMST PP ammunition.",
+   "ru": "Магазин на 30 патронов для L1A1 SLR под 7,62×51 мм. Снаряжён боеприпасами ARMST PP."
+  },
+  "#AR-ARMST_Magazine_armst_Magazine_9x19_M9_15rnd_Ball_Description": {
+   "en": "15-round magazine for the M9 pistol, chambered for 9x19 mm. Loaded with ARMST PP ammunition.",
+   "ru": "Магазин на 15 патронов для пистолета M9 под 9×19 мм. Снаряжён боеприпасами ARMST PP."
+  },
+  "#AR-ARMST_Magazine_armst_Magazine_556x45_HKG36_BP_Description": {
+   "en": "30-round magazine for the HK G36, chambered for 5.56x45 mm. Loaded with ARMST BP ammunition.",
+   "ru": "Магазин на 30 патронов для HK G36 под 5,56×45 мм. Снаряжён боеприпасами ARMST BP."
+  },
+  "#AR-ARMST_Magazine_armst_Magazine_556x45_SIG_550_BP_Description": {
+   "en": "30-round magazine for the SIG SG 550, chambered for 5.56x45 mm. Loaded with ARMST BP ammunition.",
+   "ru": "Магазин на 30 патронов для SIG SG 550 под 5,56×45 мм. Снаряжён боеприпасами ARMST BP."
+  },
+  "#AR-ARMST_Magazine_armst_Magazine_556x45_STANAG_30rnd_M193_Ball_BP_Description": {
+   "en": "30-round STANAG magazine chambered for 5.56x45 mm. Loaded with ARMST BP ammunition.",
+   "ru": "Магазин STANAG на 30 патронов под 5,56×45 мм. Снаряжён боеприпасами ARMST BP."
+  },
+  "#AR-ARMST_Magazine_armst_Magazine_556x45_STANAG_30rnd_M855_Ball_BP_Description": {
+   "en": "30-round STANAG magazine chambered for 5.56x45 mm. Loaded with ARMST BP ammunition.",
+   "ru": "Магазин STANAG на 30 патронов под 5,56×45 мм. Снаряжён боеприпасами ARMST BP."
+  },
+  "#AR-ARMST_Magazine_armst_Magazine_762x51_HK3_20_M80_Ball_BP_Description": {
+   "en": "20-round magazine for the HK G3, chambered for 7.62x51 mm. Loaded with ARMST BP ammunition.",
+   "ru": "Магазин на 20 патронов для HK G3 под 7,62×51 мм. Снаряжён боеприпасами ARMST BP."
+  },
+  "#AR-ARMST_Magazine_armst_Magazine_762x51_L1A1_20_M80_Ball_BP_Description": {
+   "en": "20-round magazine for the L1A1 SLR, chambered for 7.62x51 mm. Loaded with ARMST BP ammunition.",
+   "ru": "Магазин на 20 патронов для L1A1 SLR под 7,62×51 мм. Снаряжён боеприпасами ARMST BP."
+  },
+  "#AR-ARMST_Magazine_armst_Magazine_762x51_L1A1_30_M80_Ball_BP_Description": {
+   "en": "30-round magazine for the L1A1 SLR, chambered for 7.62x51 mm. Loaded with ARMST BP ammunition.",
+   "ru": "Магазин на 30 патронов для L1A1 SLR под 7,62×51 мм. Снаряжён боеприпасами ARMST BP."
+  },
+  "#AR-ARMST_Magazine_armst_Magazine_9x19_M9_15rnd_Ball_BP_Description": {
+   "en": "15-round magazine for the M9 pistol, chambered for 9x19 mm. Loaded with ARMST BP ammunition.",
+   "ru": "Магазин на 15 патронов для пистолета M9 под 9×19 мм. Снаряжён боеприпасами ARMST BP."
+  },
+  "#AR-ARMST_Magazine_armst_Magazine_762x39_AKM_10rnd_Ball_BP_Description": {
+   "en": "10-round magazine for the AKM, chambered for 7.62x39 mm. Loaded with ARMST BP ammunition.",
+   "ru": "Магазин на 10 патронов для АКМ под 7,62×39 мм. Снаряжён боеприпасами ARMST BP."
+  },
+  "#AR-ARMST_Magazine_armst_Magazine_762x39_AKM_30rnd_Ball_BP_Description": {
+   "en": "30-round magazine for the AKM, chambered for 7.62x39 mm. Loaded with ARMST BP ammunition.",
+   "ru": "Магазин на 30 патронов для АКМ под 7,62×39 мм. Снаряжён боеприпасами ARMST BP."
+  }
+ },
+ "manifest": {
+  "rifles": [
+   {
+    "file": "armst_AK105.et",
+    "id": "AK105",
+    "name_key": "#AR-ARMST_Weapon_AK105_Name",
+    "desc_key": "#AR-ARMST_Weapon_AK105_Description"
+   },
+   {
+    "file": "armst_AK74M_full.et",
+    "id": "AK74M",
+    "name_key": null,
+    "desc_key": "#AR-ARMST_Weapon_AK74M_Description"
+   },
+   {
+    "file": "armst_AKS.et",
+    "id": "AKS74",
+    "name_key": null,
+    "desc_key": "#AR-ARMST_Weapon_AKS74_Description"
+   },
+   {
+    "file": "armst_AKS74U.et",
+    "id": "AKS74U",
+    "name_key": null,
+    "desc_key": "#AR-ARMST_Weapon_AKS74U_Description"
+   },
+   {
+    "file": "armst_AKS74UN.et",
+    "id": "AKS74UN",
+    "name_key": null,
+    "desc_key": "#AR-ARMST_Weapon_AKS74UN_Description"
+   },
+   {
+    "file": "armst_Rifle_AKMS.et",
+    "id": "AKMS",
+    "name_key": null,
+    "desc_key": "#AR-ARMST_Weapon_AKMS_Description"
+   },
+   {
+    "file": "armst_Rifle_AKM_full.et",
+    "id": "AKM",
+    "name_key": null,
+    "desc_key": "#AR-ARMST_Weapon_AKM_Description"
+   },
+   {
+    "file": "armst_Rifle_SOC94.et",
+    "id": "SOC94",
+    "name_key": null,
+    "desc_key": "#AR-ARMST_Weapon_SOC94_Description"
+   },
+   {
+    "file": "armst_Rifle_VPO136.et",
+    "id": "VPO136",
+    "name_key": null,
+    "desc_key": "#AR-ARMST_Weapon_VPO136_Description"
+   },
+   {
+    "file": "armst_AEK971_test_v11.et",
+    "id": "AEK971",
+    "name_key": null,
+    "desc_key": "#AR-ARMST_Weapon_AEK971_Description"
+   },
+   {
+    "file": "armst_Rifle_L85.et",
+    "id": "L85",
+    "name_key": null,
+    "desc_key": "#AR-ARMST_Weapon_L85_Description"
+   },
+   {
+    "file": "armst_Rifle_M16A2_carbine.et",
+    "id": "M16A2carbine",
+    "name_key": null,
+    "desc_key": "#AR-ARMST_Weapon_M16A2carbine_Description"
+   },
+   {
+    "file": "armst_Rifle_Sig550.et",
+    "id": "SIG550",
+    "name_key": null,
+    "desc_key": "#AR-ARMST_Weapon_SIG550_Description"
+   },
+   {
+    "file": "armst_Rifle_hk_g36.et",
+    "id": "G36",
+    "name_key": "#AR-ARMST_Weapon_G36_Name",
+    "desc_key": "#AR-ARMST_Weapon_G36_Description"
+   },
+   {
+    "file": "armst_SLR.et",
+    "id": "L1A1",
+    "name_key": null,
+    "desc_key": "#AR-ARMST_Weapon_L1A1_Description"
+   },
+   {
+    "file": "armst_SVD.et",
+    "id": "SVD",
+    "name_key": null,
+    "desc_key": "#AR-ARMST_Weapon_SVD_Description"
+   },
+   {
+    "file": "armst_VZ58P.et",
+    "id": "VZ58P",
+    "name_key": null,
+    "desc_key": "#AR-ARMST_Weapon_VZ58P_Description"
+   },
+   {
+    "file": "armst_VZ58V.et",
+    "id": "VZ58V",
+    "name_key": null,
+    "desc_key": "#AR-ARMST_Weapon_VZ58V_Description"
+   }
+  ],
+  "magazines": [
+   {
+    "path": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_AK_30rnd_Ball.et",
+    "file": "armst_Magazine_545x39_AK_30rnd_Ball.et",
+    "desc_key": "#AR-ARMST_Magazine_armst_Magazine_545x39_AK_30rnd_Ball_Description",
+    "role": "PP/plain"
+   },
+   {
+    "path": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_AK_30rnd_Tracer.et",
+    "file": "armst_Magazine_545x39_AK_30rnd_Tracer.et",
+    "desc_key": "#AR-ARMST_Magazine_armst_Magazine_545x39_AK_30rnd_Tracer_Description",
+    "role": "PP/plain"
+   },
+   {
+    "path": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_RPK_45rnd_Ball.et",
+    "file": "armst_Magazine_545x39_RPK_45rnd_Ball.et",
+    "desc_key": "#AR-ARMST_Magazine_armst_Magazine_545x39_RPK_45rnd_Ball_Description",
+    "role": "PP/plain"
+   },
+   {
+    "path": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_RPK_45rnd_Tracer.et",
+    "file": "armst_Magazine_545x39_RPK_45rnd_Tracer.et",
+    "desc_key": "#AR-ARMST_Magazine_armst_Magazine_545x39_RPK_45rnd_Tracer_Description",
+    "role": "PP/plain"
+   },
+   {
+    "path": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/Magazine_545x39_AK_30rnd_Base.et",
+    "file": "Magazine_545x39_AK_30rnd_Base.et",
+    "desc_key": "#AR-ARMST_Magazine_Magazine_545x39_AK_30rnd_Base_Description",
+    "role": "PP/plain"
+   },
+   {
+    "path": "Prefabs/Weapons/Magazines/Russian/762x54/SVD/armst_Box_762x54_PK_250rnd_Ball.et",
+    "file": "armst_Box_762x54_PK_250rnd_Ball.et",
+    "desc_key": "#AR-ARMST_Magazine_armst_Box_762x54_PK_250rnd_Ball_Description",
+    "role": "PP/plain"
+   },
+   {
+    "path": "Prefabs/Weapons/Magazines/Russian/762x54/SVD/armst_Magazine_762x54_SVD_10rnd_7BZ3API.et",
+    "file": "armst_Magazine_762x54_SVD_10rnd_7BZ3API.et",
+    "desc_key": "#AR-ARMST_Magazine_armst_Magazine_762x54_SVD_10rnd_7BZ3API_Description",
+    "role": "PP/plain"
+   },
+   {
+    "path": "Prefabs/Weapons/Magazines/Russian/763x25/TT/armst_Magazine_763x25_TT_8rnd_Ball.et",
+    "file": "armst_Magazine_763x25_TT_8rnd_Ball.et",
+    "desc_key": "#AR-ARMST_Magazine_armst_Magazine_763x25_TT_8rnd_Ball_Description",
+    "role": "PP/plain"
+   },
+   {
+    "path": "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_10rnd_Ball.et",
+    "file": "armst_Magazine_762x39_AKM_10rnd_Ball.et",
+    "desc_key": "#AR-ARMST_Magazine_armst_Magazine_762x39_AKM_10rnd_Ball_Description",
+    "role": "PP"
+   },
+   {
+    "path": "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_30rnd_Ball.et",
+    "file": "armst_Magazine_762x39_AKM_30rnd_Ball.et",
+    "desc_key": "#AR-ARMST_Magazine_armst_Magazine_762x39_AKM_30rnd_Ball_Description",
+    "role": "PP"
+   },
+   {
+    "path": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_APB_20rnd_Ball.et",
+    "file": "armst_Magazine_9x18_APB_20rnd_Ball.et",
+    "desc_key": "#AR-ARMST_Magazine_armst_Magazine_9x18_APB_20rnd_Ball_Description",
+    "role": "PP/plain"
+   },
+   {
+    "path": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball.et",
+    "file": "armst_Magazine_9x18_PM_8rnd_Ball.et",
+    "desc_key": "#AR-ARMST_Magazine_armst_Magazine_9x18_PM_8rnd_Ball_Description",
+    "role": "PP/plain"
+   },
+   {
+    "path": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PP91_30rnd_Ball.et",
+    "file": "armst_Magazine_9x18_PP91_30rnd_Ball.et",
+    "desc_key": "#AR-ARMST_Magazine_armst_Magazine_9x18_PP91_30rnd_Ball_Description",
+    "role": "PP/plain"
+   },
+   {
+    "path": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_SR2_30rnd_Ball.et",
+    "file": "armst_Magazine_9x18_SR2_30rnd_Ball.et",
+    "desc_key": "#AR-ARMST_Magazine_armst_Magazine_9x18_SR2_30rnd_Ball_Description",
+    "role": "PP/plain"
+   },
+   {
+    "path": "Prefabs/Weapons/Magazines/Russian/9x39/9a91/armst_Magazine_9x39_20rnd_9a91_SP5.et",
+    "file": "armst_Magazine_9x39_20rnd_9a91_SP5.et",
+    "desc_key": "#AR-ARMST_Magazine_armst_Magazine_9x39_20rnd_9a91_SP5_Description",
+    "role": "PP/plain"
+   },
+   {
+    "path": "Prefabs/Weapons/Magazines/Russian/9x39/9a91/armst_Magazine_9x39_20rnd_9a91_SP6.et",
+    "file": "armst_Magazine_9x39_20rnd_9a91_SP6.et",
+    "desc_key": "#AR-ARMST_Magazine_armst_Magazine_9x39_20rnd_9a91_SP6_Description",
+    "role": "PP/plain"
+   },
+   {
+    "path": "Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_20rnd_vss_SP5.et",
+    "file": "armst_Magazine_9x39_20rnd_vss_SP5.et",
+    "desc_key": "#AR-ARMST_Magazine_armst_Magazine_9x39_20rnd_vss_SP5_Description",
+    "role": "PP/plain"
+   },
+   {
+    "path": "Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_20rnd_vss_SP6.et",
+    "file": "armst_Magazine_9x39_20rnd_vss_SP6.et",
+    "desc_key": "#AR-ARMST_Magazine_armst_Magazine_9x39_20rnd_vss_SP6_Description",
+    "role": "PP/plain"
+   },
+   {
+    "path": "Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_30rnd_val_SP5.et",
+    "file": "armst_Magazine_9x39_30rnd_val_SP5.et",
+    "desc_key": "#AR-ARMST_Magazine_armst_Magazine_9x39_30rnd_val_SP5_Description",
+    "role": "PP/plain"
+   },
+   {
+    "path": "Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_30rnd_val_SP6.et",
+    "file": "armst_Magazine_9x39_30rnd_val_SP6.et",
+    "desc_key": "#AR-ARMST_Magazine_armst_Magazine_9x39_30rnd_val_SP6_Description",
+    "role": "PP/plain"
+   },
+   {
+    "path": "Prefabs/Weapons/Magazines/Western/5x56/HKG36/armst_Magazine_556x45_HKG36.et",
+    "file": "armst_Magazine_556x45_HKG36.et",
+    "desc_key": "#AR-ARMST_Magazine_armst_Magazine_556x45_HKG36_Description",
+    "role": "PP"
+   },
+   {
+    "path": "Prefabs/Weapons/Magazines/Western/5x56/SIG550/armst_Magazine_556x45_SIG_550.et",
+    "file": "armst_Magazine_556x45_SIG_550.et",
+    "desc_key": "#AR-ARMST_Magazine_armst_Magazine_556x45_SIG_550_Description",
+    "role": "PP"
+   },
+   {
+    "path": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M193_Ball.et",
+    "file": "armst_Magazine_556x45_STANAG_30rnd_M193_Ball.et",
+    "desc_key": "#AR-ARMST_Magazine_armst_Magazine_556x45_STANAG_30rnd_M193_Ball_Description",
+    "role": "PP"
+   },
+   {
+    "path": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M855_Ball.et",
+    "file": "armst_Magazine_556x45_STANAG_30rnd_M855_Ball.et",
+    "desc_key": "#AR-ARMST_Magazine_armst_Magazine_556x45_STANAG_30rnd_M855_Ball_Description",
+    "role": "PP"
+   },
+   {
+    "path": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/Magazine_556x45_STANAG_30rnd_Base.et",
+    "file": "Magazine_556x45_STANAG_30rnd_Base.et",
+    "desc_key": "#AR-ARMST_Magazine_Magazine_556x45_STANAG_30rnd_Base_Description",
+    "role": "PP"
+   },
+   {
+    "path": "Prefabs/Weapons/Magazines/Western/762x51/HK3/armst_Magazine_762x51_HK3_20_M80_Ball.et",
+    "file": "armst_Magazine_762x51_HK3_20_M80_Ball.et",
+    "desc_key": "#AR-ARMST_Magazine_armst_Magazine_762x51_HK3_20_M80_Ball_Description",
+    "role": "PP"
+   },
+   {
+    "path": "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_20_M80_Ball.et",
+    "file": "armst_Magazine_762x51_L1A1_20_M80_Ball.et",
+    "desc_key": "#AR-ARMST_Magazine_armst_Magazine_762x51_L1A1_20_M80_Ball_Description",
+    "role": "PP"
+   },
+   {
+    "path": "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_30_M80_Ball.et",
+    "file": "armst_Magazine_762x51_L1A1_30_M80_Ball.et",
+    "desc_key": "#AR-ARMST_Magazine_armst_Magazine_762x51_L1A1_30_M80_Ball_Description",
+    "role": "PP"
+   },
+   {
+    "path": "Prefabs/Weapons/Magazines/Western/9x19/M9/armst_Magazine_9x19_M9_15rnd_Ball.et",
+    "file": "armst_Magazine_9x19_M9_15rnd_Ball.et",
+    "desc_key": "#AR-ARMST_Magazine_armst_Magazine_9x19_M9_15rnd_Ball_Description",
+    "role": "PP"
+   },
+   {
+    "path": "Prefabs/Weapons/Magazines/Western/5x56/HKG36/armst_Magazine_556x45_HKG36_BP.et",
+    "file": "armst_Magazine_556x45_HKG36_BP.et",
+    "desc_key": "#AR-ARMST_Magazine_armst_Magazine_556x45_HKG36_BP_Description",
+    "role": "BP"
+   },
+   {
+    "path": "Prefabs/Weapons/Magazines/Western/5x56/SIG550/armst_Magazine_556x45_SIG_550_BP.et",
+    "file": "armst_Magazine_556x45_SIG_550_BP.et",
+    "desc_key": "#AR-ARMST_Magazine_armst_Magazine_556x45_SIG_550_BP_Description",
+    "role": "BP"
+   },
+   {
+    "path": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M193_Ball_BP.et",
+    "file": "armst_Magazine_556x45_STANAG_30rnd_M193_Ball_BP.et",
+    "desc_key": "#AR-ARMST_Magazine_armst_Magazine_556x45_STANAG_30rnd_M193_Ball_BP_Description",
+    "role": "BP"
+   },
+   {
+    "path": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M855_Ball_BP.et",
+    "file": "armst_Magazine_556x45_STANAG_30rnd_M855_Ball_BP.et",
+    "desc_key": "#AR-ARMST_Magazine_armst_Magazine_556x45_STANAG_30rnd_M855_Ball_BP_Description",
+    "role": "BP"
+   },
+   {
+    "path": "Prefabs/Weapons/Magazines/Western/762x51/HK3/armst_Magazine_762x51_HK3_20_M80_Ball_BP.et",
+    "file": "armst_Magazine_762x51_HK3_20_M80_Ball_BP.et",
+    "desc_key": "#AR-ARMST_Magazine_armst_Magazine_762x51_HK3_20_M80_Ball_BP_Description",
+    "role": "BP"
+   },
+   {
+    "path": "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_20_M80_Ball_BP.et",
+    "file": "armst_Magazine_762x51_L1A1_20_M80_Ball_BP.et",
+    "desc_key": "#AR-ARMST_Magazine_armst_Magazine_762x51_L1A1_20_M80_Ball_BP_Description",
+    "role": "BP"
+   },
+   {
+    "path": "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_30_M80_Ball_BP.et",
+    "file": "armst_Magazine_762x51_L1A1_30_M80_Ball_BP.et",
+    "desc_key": "#AR-ARMST_Magazine_armst_Magazine_762x51_L1A1_30_M80_Ball_BP_Description",
+    "role": "BP"
+   },
+   {
+    "path": "Prefabs/Weapons/Magazines/Western/9x19/M9/armst_Magazine_9x19_M9_15rnd_Ball_BP.et",
+    "file": "armst_Magazine_9x19_M9_15rnd_Ball_BP.et",
+    "desc_key": "#AR-ARMST_Magazine_armst_Magazine_9x19_M9_15rnd_Ball_BP_Description",
+    "role": "BP"
+   },
+   {
+    "path": "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_10rnd_Ball_BP.et",
+    "file": "armst_Magazine_762x39_AKM_10rnd_Ball_BP.et",
+    "desc_key": "#AR-ARMST_Magazine_armst_Magazine_762x39_AKM_10rnd_Ball_BP_Description",
+    "role": "BP"
+   },
+   {
+    "path": "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_30rnd_Ball_BP.et",
+    "file": "armst_Magazine_762x39_AKM_30rnd_Ball_BP.et",
+    "desc_key": "#AR-ARMST_Magazine_armst_Magazine_762x39_AKM_30rnd_Ball_BP_Description",
+    "role": "BP"
+   }
+  ],
+  "skipped": [
+   {
+    "file": "armst_Rifle_HKG33.et",
+    "reason": "Model asset Hk3.xob indicates HK G3 (7.62x51), HK33 identity not proven"
+   }
+  ]
+ }
+}

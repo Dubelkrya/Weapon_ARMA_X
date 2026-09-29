@@ -1,5 +1,48 @@
+# ---------------------------------------------------------------------------
+# Weapon_ARMA_X .gitignore
+#
+# This repository is the TOOLS repo. It contains no gameplay resources, so no
+# ignore rule here may ever match an Enfusion resource extension. See the guard
+# section at the bottom.
+# ---------------------------------------------------------------------------
+
 # Temporary / generated files not part of the deliverable catalog
 agent/scripts/working_tables/
 agent/scripts/_inspect.py
 __pycache__/
 *.pyc
+
+# Agent scratch output. Default destination for anything a tool or agent
+# produces (audit dumps, diagnostics, scratch scripts, plans, traces).
+# See AGENTS.md rule 5 and artifacts/README.md.
+# The README is tracked so the directory is self-documenting.
+artifacts/*
+!artifacts/README.md
+
+# Local, machine-specific addon path override (addon_path.py candidate #3).
+# Never commit an absolute local path.
+addon_path.local.json
+
+# ---------------------------------------------------------------------------
+# GUARD: gameplay resource extensions must never be ignored here.
+#
+# If a future ignore rule would hide any of the following, that rule is wrong
+# for this repository and must be removed. The live addon is the source of
+# truth for these; this repo must never be used as a shadow copy of it.
+# ---------------------------------------------------------------------------
+# *.et
+# *.meta
+# *.conf
+# *.ct
+# *.layer
+# *.ent
+# *.xob
+# *.fbx
+# *.agr
+# *.asi
+# *.anm
+# *.emat
+# *.edds
+# *.ogg
+# *.wem
+# *.gproj

@@ -1,0 +1,17 @@
+GenericEntity : "{9483B197D72F2AE9}Prefabs/Weapons/HeavyWeapons/NSV/HMG_NSV_SPP.et" {
+ ID "CFBAA4B725411E45"
+ components {
+  WeaponComponent "{CFBAA4B706BA66E8}" {
+   components {
+    AttachmentSlotComponent "{5AF070F55031A54D}" {
+     AttachmentSlot InventoryStorageSlot optics {
+      Prefab "{849A70689F8DCE05}Prefabs/Weapons/Attachments/Optics/Optic_SPP/Optic_SPP_Disabled.et"
+     }
+    }
+    MuzzleComponent "{50F64C4591CD7AA6}" {
+     MagazineTemplate ""
+    }
+   }
+  }
+ }
+}

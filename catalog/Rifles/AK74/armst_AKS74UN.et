@@ -1,0 +1,9 @@
+GenericEntity : "{9AE416F8879DDA6D}Prefabs/Weapons/Rifles/AKS74U/Rifle_AKS74UN_base.et" {
+ ID "CFBAA4B725411E45"
+ components {
+  SCR_MeleeWeaponProperties "{55349E9229B55E31}" {
+   m_fDamage 2
+  }
+ }
+ coords 4163.312 306.523 721.524
+}

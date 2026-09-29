@@ -1,0 +1,84 @@
+GenericEntity : "{F9E1A46E3ABA116F}Prefabs/Weapons/Core/Magazine_Base.et" {
+ ID "CA6BE4D6BB2D1077"
+ components {
+  AICombatPropertiesComponent "{59CE86D96C332DDF}" {
+   Priority 30
+   UsedAgainst 0x17 0
+  }
+  InventoryMagazineComponent "{51EED12B803954CC}" {
+   Attributes SCR_ItemAttributeCollection "{51EED12B86960275}" {
+    ItemDisplayName UIInfo "{51FEE38527BFEA5B}" {
+     Name "#AR-Magazine_PKM_Name"
+     Description "#AR-Magazine_PKM_Description"
+    }
+    ItemPhysAttributes ItemPhysicalAttributes PhysicalAttributes {
+     Weight 1
+     SizeSetupStrategy Manual
+     ItemDimensions 15 15 15
+     ItemVolume 2000
+    }
+    CustomAttributes {
+     PreviewRenderAttributes "{52D6B596D23121E2}" {
+      CameraOrbitAngles -25 25 0
+      CameraDistanceToItem 1.75
+      FOV 10
+      PreviewModel "{843BF40278070328}Assets/Weapons/Magazines/PKM/Magazine_100rnd_PKM_item.xob"
+     }
+    }
+   }
+   WeightPerAmmo 0.029
+  }
+  MagazineComponent "{CA6BE4D6B4DAFD69}" {
+   MagazineWell MagazineWellPKM "{05B3A6C898CC88E4}" {
+   }
+   UIInfo MagazineUIInfo "{57126733AA401586}" {
+    m_sAmmoCaliber "#AR-AmmunitionID_762x54mm"
+    m_sAmmoType "#AR-AmmunitionType_FMJ"
+   }
+   ItemModel "{843BF40278070328}Assets/Weapons/Magazines/PKM/Magazine_100rnd_PKM_item.xob"
+   MaxAmmo 100
+   AmmoConfig "{B0020DFAF0D1E3C8}Configs/Weapons/Ammo/Ammo_762x54.conf"
+   AmmoMapping {
+    0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+   }
+  }
+  MeshObject "{CA6BE4D6A23F8EF0}" {
+   Object "{37EC41B84E546235}Assets/Weapons/Magazines/PKM/Magazine_100rnd_PKM.xob"
+  }
+  SCR_SoundDataComponent "{5B18D200EBB5EA25}" {
+   m_aAudioSourceConfiguration {
+    SCR_AudioSourceConfiguration "{5B18D209080A5D15}" {
+     m_sSoundProject "{BFCDAA99AC588B1E}Sounds/Weapons/_SharedData/PickUp/Weapons_PickUp_MGPKM_Magazine.acp"
+    }
+    SCR_AudioSourceConfiguration "{5B18D2091B885AE6}" {
+     m_sSoundProject "{BFCDAA99AC588B1E}Sounds/Weapons/_SharedData/PickUp/Weapons_PickUp_MGPKM_Magazine.acp"
+    }
+    SCR_AudioSourceConfiguration "{5B18D20930D9E274}" {
+     m_sSoundProject "{F04B9D36CA351E7A}Sounds/Weapons/_SharedData/Drop/Weapons_Drop_LMG_762_Magazine.acp"
+    }
+   }
+  }
+  ActionsManagerComponent "{F092E6B0537754FD}" {
+   ActionContexts {
+    UserActionContext "{5086F9AB010868CE}" {
+     Position PointInfo "{5086F9AC96DB9752}" {
+      Offset 0 0.08 0
+     }
+    }
+   }
+  }
+  MagazineAnimationComponent "{526A8918D608BBFC}" {
+   AnimGraph "{5680EE9C607C5E17}Assets/Weapons/Magazines/workspaces/pkm_Magazine_100.agr"
+   AnimInstance "{247BEE6036CFCD02}Assets/Weapons/Magazines/workspaces/pkm_Magazine_100rnd.asi"
+   AutoVariablesBind 1
+   AnimatedMesh "{37EC41B84E546235}Assets/Weapons/Magazines/PKM/Magazine_100rnd_PKM.xob"
+   BulletMeshesToHide {
+    "Bullet_low_01" "Bullet_low_02" "Bullet_low_03" "Bullet_low_04" "Bullet_low_05" "Bullet_low_06" "Bullet_low_07" "Bullet_low_08" "Bullet_low_09" "Bullet_low_10" "Bullet_low_11"
+   }
+   EmptyStateMeshesToHide {
+    "bullet_loe_exp_empty"
+   }
+  }
+ }
+ Flags 0x400003 0
+}

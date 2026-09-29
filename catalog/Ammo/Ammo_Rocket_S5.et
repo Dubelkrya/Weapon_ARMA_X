@@ -1,0 +1,87 @@
+EjectableProjectile : "{C0BDA86B5AA5648C}Prefabs/Weapons/Core/Ammo_Rocket_Base.et" {
+ ID "DA5C6308000CDEF2"
+ components {
+  SCR_ShellSoundComponent "{60C2960B45ABE97D}" {
+   Filenames {
+    "{F5DFD164933A6AA9}Sounds/Weapons/_SharedData/ProjectileTravelling/Weapons_ProjectileTravelling_HeliRocket_Generic.acp"
+   }
+  }
+  CollisionTriggerComponent "{549302EDFF95851E}" {
+   PROJECTILE_EFFECTS {
+    ExplosionEffect "{549302EDF30A9796}" {
+     EffectPrefab "{66DB53097F38DAE3}Prefabs/Weapons/Warheads/Warhead_S5_HEAT_S5KO.et"
+     ParticleEffect "{636C188C0D4E6074}Particles/Weapon/Explosion_S5KO.ptc"
+     SoundEvent "SOUND_EXPLOSION"
+    }
+   }
+   "Trigger Offset" 0 0 -0.05
+   SafetyDistance 110
+  }
+  InventoryItemComponent "{526E87778842822F}" {
+   Attributes SCR_ItemAttributeCollection "{526E87778ACB229F}" {
+    ItemDisplayName UIInfo "{526E8777859BAACF}" {
+     Name "#AR-Magazine_S5_KO_Name"
+     Description "#AR-Magazine_S5_KO_Description"
+    }
+    ItemPhysAttributes ItemPhysicalAttributes "{52CA8780DF5FBCFB}" {
+     Weight 4.43
+     SizeSetupStrategy Manual
+     ItemDimensions 35 35 35
+     ItemVolume 5000
+     DimensionScaler 1
+     RestingAdditiveRotationLS 0 0 0
+     RestingAdditiveOffsetLS 0 0 0
+    }
+    CustomAttributes {
+     PreviewRenderAttributes "{52D6F6A5FB82EE10}" {
+      CameraPreset Right
+      CameraOrbitAngles 0 0 0
+      CameraDistanceToItem 2
+      CameraOffset 0 0 0
+      ItemRenderRotation 0 0 -20
+      FOV 20
+      AspectRatio 1
+     }
+    }
+    m_SlotType SLOT_BACKPACK
+    m_bVisible 0
+   }
+  }
+  MagazineComponent "{50F6614BB5D5B0A8}" {
+   UIInfo MagazineUIInfo "{560AE4EBFA0176D4}" {
+    m_eAmmoTypeFlags HEAT
+   }
+  }
+  MeshObject "{851AA4A2AE0A56BF}" {
+   Object "{180CED78848A492B}Assets/Weapons/Ammo/Rockets/S5/S5KO_item.xob"
+  }
+  MissileMoveComponent "{0EF36690881261EF}" {
+   InitSpeed 44.5
+   InitSpeedVariation 6
+   Mass 4.7
+   TimeToLive 65
+   DeleteWhenStop 0
+   ProjectileEffects {
+    HitSoundEffect "{5ADCBBC4B2F96245}" {
+     Filename "{EBD4926A12EF4CBF}Sounds/Weapons/_SharedData/RocketHits/Weapons_HeliRocketHits.acp"
+    }
+   }
+   SonicCracks "{C3A0B35219284289}Sounds/Weapons/_SharedData/BulletSonicCracks/HeliRocket/Weapons_BulletSonicCracks_HeliRocket.acp"
+   ThrustInitTime 0.1
+   ThrustTime 0.92
+   ThrustForce 2200
+   DistanceEnableGravitation 0.7
+  }
+  RigidBody "{529E88841E9EDFB4}" {
+   Mass 4.7
+  }
+  RocketTraceEffectComponent "{61A69862FAAC1872}" {
+   ParticleEffect "{DE6E9481E0342723}Particles/Weapon/Trail_S5KO.ptc"
+  }
+ }
+ coords 4.138 2.907 3.456
+ ProjectileModel "{46B26D57E15C9033}Assets/Weapons/Ammo/Rockets/S5/S5KO.xob"
+ CartridgeModel "{180CED78848A492B}Assets/Weapons/Ammo/Rockets/S5/S5KO_item.xob"
+ EjectorInterface EjectorInterfaceS5 "{624CD2273CDDA644}" {
+ }
+}

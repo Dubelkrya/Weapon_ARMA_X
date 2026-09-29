@@ -1,0 +1,42 @@
+[
+    {
+        "Module":  "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et",
+        "ModuleGuid":  "D71FD2BD68AC4B31",
+        "WAA_GID":  "557E85EEE1B60316",
+        "AttachType":  "AttachmentOpticsDovetailAK",
+        "TypeGID":  "0CDB065C629144D0",
+        "Origin":  "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et"
+    },
+    {
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_Collimator.et",
+        "ModuleGuid":  "28DE12055E70E762",
+        "WAA_GID":  "5284D858FFF9BE66",
+        "AttachType":  "AttachmentOpticsRIS1913",
+        "TypeGID":  "4289872E53434277",
+        "Origin":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_Collimator.et"
+    },
+    {
+        "Module":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et",
+        "ModuleGuid":  "C850A33226B8F9C1",
+        "WAA_GID":  "5284D858FFF9BE66",
+        "AttachType":  "AttachmentOpticsDovetailAK",
+        "TypeGID":  "5D0CCDD0615C597D",
+        "Origin":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et"
+    },
+    {
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Optic.et",
+        "ModuleGuid":  null,
+        "WAA_GID":  "5284D858FFF9BE66",
+        "AttachType":  "AttachmentOpticsG36",
+        "TypeGID":  "F56C225D0E397818",
+        "Origin":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Optic.et"
+    },
+    {
+        "Module":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Picatinny.et",
+        "ModuleGuid":  "8965EFD9F6CC9B95",
+        "WAA_GID":  "557E85EEE1B60316",
+        "AttachType":  "AttachmentOpticsG36",
+        "TypeGID":  "13F247560306791B",
+        "Origin":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Picatinny.et"
+    }
+]

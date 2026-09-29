@@ -1,0 +1,68 @@
+GenericEntity : "{C95E11C60810F432}Prefabs/Items/Core/Item_Base.et" {
+ ID "508AB2013EEE1E00"
+ components {
+  SignalsManagerComponent "{612C495698F992A7}" {
+  }
+  SoundComponent "{612C49569E6362FC}" {
+   Filenames {
+    "{12A94705DF2BFD25}Sounds/Items/_SharedData/PickUp/Items_PickUp_Generic.acp" "{CC0E5A1324E761C1}Sounds/Items/_SharedData/Drop/Items_Drop_Generic.acp"
+   }
+   DistanceManagement 0
+  }
+  RigidBody "{68A101B9CE0E99EC}" {
+   ModelGeometry 1
+  }
+  SCR_BaseDeployableInventoryItemComponent "{5F26A42FA3F3D133}" {
+  }
+  SCR_DeployableInventoryItemInventoryComponent "{5222EB4D0C73006B}" {
+   Attributes SCR_ItemAttributeCollection "{5222EB4D0A2B466B}" {
+    CustomAttributes {
+     CharacterModifierAttributes "{611E635AE0097524}" {
+     }
+    }
+    m_bStackable 0
+   }
+  }
+  SCR_DetonatorGadgetComponent "{5F1A794D87CB704C}" {
+   m_eAnimVariable FLASHLIGHT_SOVIET_01
+   m_eUseMask 3
+  }
+  SCR_SoundDataComponent "{5B18D20ED0099A17}" {
+   Enabled 0
+  }
+  SlotManagerComponent "{5F1CBB25D9EFD771}" {
+   Slots {
+    EntitySlotInfo wire {
+    }
+   }
+  }
+  ActionsManagerComponent "{508AB5952B584B2E}" {
+   additionalActions {
+    SCR_DeployableInventoryItemPickUpAction "{51EC842E3A187379}" {
+     "Sort Priority" 2
+    }
+    SCR_EquipDeployableItemAction "{6324CBA48618F139}" {
+     ParentContextList {
+      "default"
+     }
+     UIInfo SCR_ActionUIInfo "{6324CBA4942A5420}" {
+      Name "#AR-Inventory_Equip"
+      m_sIconName "pick-up"
+     }
+     ActionTitle "Equip not deployed Item"
+     "Sort Priority" 3
+    }
+    SCR_DetonateChargesAction "{5F2693EABDE4FA5A}" : "{2EF8C6C9B479CFAF}Prefabs/Weapons/Core/Configs/Actions/DetonateChargesAction.conf" {
+    }
+    SCR_DisconnectChargesAction "{5F1CD778E594EC55}" : "{22B75D5243470072}Prefabs/Weapons/Core/Configs/Actions/DisconnectChargesAction.conf" {
+    }
+    SCR_DeployInventoryItemAction "{5F26A42CD89BA83F}" : "{63CB154EE4DEAF09}Prefabs/Weapons/Core/Configs/Actions/DeployDetonatorInventoryItem.conf" {
+    }
+    SCR_DismantleInventoryItemBaseAction "{5F2693EABA45864E}" : "{BB3FCE33C3A94F83}Prefabs/Weapons/Core/Configs/Actions/DismantleDeplyableDetonatorInventoryItemBase.conf" {
+    }
+   }
+  }
+  GadgetAnimationComponent "{6114E06D5FC71705}" {
+  }
+ }
+}

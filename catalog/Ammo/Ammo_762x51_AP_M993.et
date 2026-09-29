@@ -1,0 +1,19 @@
+Projectile : "{C14C5DE6F97F06F0}Prefabs/Weapons/Ammo/Ammo_762x51_Ball_M80.et" {
+ ID "70A3674123B4BC16"
+ components {
+  ShellMoveComponent "{851AA4A2AE0A5691}" {
+   InitSpeed 930
+   DispersionMultiplier 0.79
+   Mass 0.0082
+   BallisticTableConfig "{B8B49E45B27EB00A}Configs/Weapons/AIBallisticTables/AIBT_762x51_AP_M993.conf"
+   AirDrag 0.0000098
+   Length 30.1
+   MushroomingDamageMultiplier 0
+   TumblingDamageMultiplier 0
+   PenetrationDepth 7
+   PenetrationSpeed 418
+  }
+ }
+ ProjectileModel "{6182E4018BD7A36A}Assets/Weapons/Ammo/Bullets/762x51/Bullet_762x51_M61.xob"
+ CartridgeModel "{C8F0E2E9FFC84173}Assets/Weapons/Ammo/Bullets/762x51/Cartridge_762x51_M61.xob"
+}

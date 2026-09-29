@@ -1,0 +1,62 @@
+{
+ "optics": [
+  {
+   "PATH": "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et",
+   "GUID": "C850A33226B8F9C1",
+   "MODEL": "{4EF7C9325481A367}Assets/Weapons/Attachments/Optics/PSO1/Optic_PSO1.xob",
+   "PARENT": "{AB71C533945104AE}Prefabs/Weapons/Attachments/Optics/Optic_PSO1/Optic_PSO1_base.et",
+   "OUTER_ATTACHMENT_TYPE": "AttachmentOpticsDovetailAK",
+   "SIGHTS_COMPONENT_TYPE": "SCR_2DPIPSightsComponent (inherited)",
+   "ROLE": "AK_NATIVE_OPTIC",
+   "COMPATIBILITY": "AKM + 9A91/VAL/VSS/VSK94 (AttachmentOpticsDovetailAK)",
+   "DEFAULT_USAGE": [
+    "armst_Rifle_AKM_full.et",
+    "armst_AK74M_full.et"
+   ],
+   "LIVE_REFERENCES": [
+    "armst_Rifle_AKM_full.et",
+    "armst_AK74M_full.et",
+    "armst_Optic_PSO1_ak.et (parent)",
+    "armst_Optic_PSO1_DovetailRU.et (parent)"
+   ]
+  },
+  {
+   "PATH": "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1_ak.et",
+   "GUID": "F325FE2E3DDCDDAD",
+   "MODEL": "{4EF7C9325481A367}Assets/Weapons/Attachments/Optics/PSO1/Optic_PSO1.xob",
+   "PARENT": "{C850A33226B8F9C1}.../armst_Optic_PSO1.et",
+   "OUTER_ATTACHMENT_TYPE": "AttachmentOpticsDovetailAKSVD",
+   "SIGHTS_COMPONENT_TYPE": "SCR_2DPIPSightsComponent (inherited)",
+   "ROLE": "DUPLICATE_CANDIDATE / LEGACY_ORPHAN (same model as PSO1, only outer type differs)",
+   "COMPATIBILITY": "no weapon slot uses AttachmentOpticsDovetailAKSVD",
+   "DEFAULT_USAGE": [],
+   "LIVE_REFERENCES": []
+  },
+  {
+   "PATH": "armst_Optic_PSO1_DovetailRU.et",
+   "GUID": "5B318FB72398CB0A",
+   "MODEL": "{4EF7C9325481A367}Assets/Weapons/Attachments/Optics/PSO1/Optic_PSO1.xob",
+   "PARENT": "{C850A33226B8F9C1}.../armst_Optic_PSO1.et",
+   "OUTER_ATTACHMENT_TYPE": "AttachmentOpticsARMST_DovetailRU",
+   "SIGHTS_COMPONENT_TYPE": "SCR_2DPIPSightsComponent (inherited)",
+   "ROLE": "GENERIC_RUSSIAN_DOVETAIL_OPTIC (project custom dovetail)",
+   "COMPATIBILITY": "AEK971 (AttachmentOpticsARMST_DovetailRU)",
+   "DEFAULT_USAGE": [],
+   "LIVE_REFERENCES": []
+  },
+  {
+   "PATH": "Prefabs/Weapons/Attachments/Optics/WeaponOptic_Base.et",
+   "GUID": "966B4E5523D2F166",
+   "MODEL": null,
+   "PARENT": "{3E15C1C882DBB587}Prefabs/Weapons/Core/WeaponSight_Base.et",
+   "OUTER_ATTACHMENT_TYPE": null,
+   "SIGHTS_COMPONENT_TYPE": null,
+   "ROLE": "abstract base",
+   "COMPATIBILITY": "-",
+   "DEFAULT_USAGE": [],
+   "LIVE_REFERENCES": [
+    "HKG36 attachments"
+   ]
+  }
+ ]
+}

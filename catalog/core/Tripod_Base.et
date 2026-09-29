@@ -1,0 +1,176 @@
+Turret : "{4AD877DEA242E512}Prefabs/Weapons/Core/Turret_Base.et" {
+ ID "52D30EFBEBC74642"
+ components {
+  SoundComponent "{58E0961DB6C453D6}" {
+   Filenames {
+    "{CE8A9EE3A07FE9AC}Sounds/Weapons/Tripods/M122/Weapons_Tripod_M122.acp"
+   }
+   DistanceManagement 0
+   IncludeInactive 1
+  }
+  MeshObject "{51ACD09C4E0B7D16}" {
+   Object "{2A3CBDF8B5EAA051}Assets/Weapons/Tripods/M122/Tripod_M122.xob"
+  }
+  RigidBody "{51ACD09C423F175F}" {
+   ResponseIndex "HugeDestructible"
+   ModelGeometry 1
+   Static 1
+  }
+  SCR_AIVehicleUsageComponent "{60E4E37CD5B1C64B}" {
+   m_eVehicleType STATIC_WEAPON
+  }
+  SCR_BaseCompartmentManagerComponent "{51ACFBB07A14CFA6}" {
+   DoorInfoList {
+    CompartmentDoorInfo "{6084956E6D716EEF}" {
+     ContextName "default"
+     EntryPositionInfo PointInfo "{6084956E69304A14}" {
+      Offset 0 0 -1.5
+     }
+     ExitPositionInfo PointInfo "{6084956E6B8ADFE0}" {
+      Offset 0 0 -1.5
+     }
+     ExitTeleportPositionInfo PointInfo "{6718A6D379EEA7A5}" {
+      Offset 0.5 0 -1.5
+      Angles 0 -30 0
+     }
+     GetInTeleport 1
+     GetOutTeleport 1
+     FakeDoor 1
+     StanceChangeOnExit "Change from turret height"
+    }
+   }
+   CompartmentSlots {
+    TurretCompartmentSlot TurretCompartment {
+     CompartmentAction SCR_GetInUserAction "{5086CC2CFDD3A05A}" {
+      UIInfo SCR_ActionUIInfo "{5086CC2CF6E6E730}" {
+       Name "#AR-UserAction_TurretMount"
+       m_sIconName "veh_gunner"
+      }
+     }
+     GetOutAction SCR_GetOutAction "{509D56664FF79DDB}" {
+      UIInfo SCR_ActionUIInfo "{509D566643F0DEA8}" {
+       Name "#AR-UserAction_TurretDismount"
+       m_sIconName "veh_gunner"
+      }
+     }
+     PassengerPositionInfo EntitySlotInfo "{51ACFBB1D6C27024}" {
+      Offset 0 0 0
+     }
+     ForcedFreeLook 0
+     EjectUnconsciousAndDeadCharacters 1
+     DoorInfoList {
+      0
+     }
+     AllowAiming 1
+     ProceduralSidesteppingAndHeightAdjustment 1
+     HeightAdjustmentRayZOffset 0.15
+    }
+   }
+  }
+  SCR_DestructionMultiPhaseComponent "{51ACD09C524A7924}" {
+   "Additional hit zones" {
+    SCR_VehicleHitZone Turret {
+     IgnoreExplosions 0
+     BaseDamageMultiplier 1
+     DamageReduction 1
+     "Collision multiplier" 0.8
+     "Melee multiplier" 0.1
+     "Kinetic multiplier" 0.775
+     "Fragmentation multiplier" 0.187
+     "Explosive multiplier" 0.89
+     m_aDamagePassRules {
+      SCR_DamagePassRule "{60AAF83A13B1AFB5}" {
+      }
+     }
+     m_pDestructionHandler SCR_DestructionBaseHandler "{5584FE5A9F48BA15}" {
+      m_iWreckDelay 250
+      m_bDeleteAfterDestroyed 1
+     }
+     m_eHitZoneGroup HULL
+    }
+   }
+   m_fBaseHealth 1000
+   m_fDamageThresholdMaximum 50000
+   m_DestroySpawnObjects {
+    SCR_ParticleSpawnable "{660A8AE64337755A}" {
+     m_vOffsetPosition 0 0.5 0
+     m_Particle "{66DAEB775AA8CA4C}Particles/Props/Dest_Prop_Metal_Medium.ptc"
+     m_bDirectional 0
+    }
+    SCR_ParticleSpawnable "{660A8AE6582BCBE7}" {
+     m_vOffsetPosition 0 0.3 0
+     m_Particle "{66DAEB775AA8CA4C}Particles/Props/Dest_Prop_Metal_Medium.ptc"
+     m_bDirectional 0
+    }
+   }
+   m_eMaterialSoundType BREAK_METAL
+  }
+  SCR_EditableVehicleComponent "{58FE9E4F05DC95A3}" : "{DB0ABB728C324D7B}Prefabs/Editor/Components/Static_SCR_EditableEntityComponent.ct" {
+   m_UIInfo SCR_EditableVehicleUIInfo "{5298E609432D192D}" {
+    m_aOccupantFillCompartmentTypes {
+     TURRET
+    }
+   }
+  }
+  SCR_TurretControllerComponent "{51ACD09C61C183E4}" {
+   TurretReloadPosition 500 12
+   TurretUnconsciousPosition 500 60
+  }
+  SCR_UniversalInventoryStorageComponent "{570EACF4F2F94F1B}" {
+   m_fMaxWeight 100
+  }
+  SCR_VehicleFactionAffiliationComponent "{59107AF83E654ABA}" {
+  }
+  TagComponent "{607E88956EC145FD}" {
+   "Tag categories" 0x20 0
+  }
+  BaseFlattenGrassComponent "{60B8E26C5A4F5E63}" {
+   ParametersCollection {
+    FlattenGrassParametersObject "{60B8E26C5E7FE988}" {
+     SizeX 1
+     SizeZ 2
+     Shape "Rect"
+    }
+   }
+  }
+  WeaponSlotComponent "{51ACD09C6BFEEE6A}" {
+   AttachType InventoryStorageSlot "{0AACE7470E421D82}" {
+    UpdateReplicationParent 1
+   }
+  }
+  InventoryStorageManagerComponent "{570EB718136CC976}" {
+  }
+  ActionsManagerComponent "{51ACD09C7181BA0B}" {
+   ActionContexts {
+    UserActionContext "{51ACFBB064390C6E}" {
+     Position PointInfo "{51ACFBB061993925}" {
+      PivotID "w_weapon_holder_tripod"
+      Offset 0 0 0
+     }
+     Radius 0.5
+    }
+   }
+   additionalActions {
+    SCR_OpenTurretStorageAction "{570EACF46E2143AC}" {
+     ParentContextList {
+      "default"
+     }
+     UIInfo UIInfo "{570EACF479DB7276}" {
+      Name "#AR-Inventory_Open"
+     }
+     "Sort Priority" 2
+     m_bShowInside 0
+    }
+   }
+  }
+  CompartmentAnimationComponent "{5242E42C7B4B2CEE}" {
+   AnimInjection AnimationAttachmentInfo "{5242E42C74AC2BF7}" {
+    AnimGraph "{C727601154428730}Assets/Weapons/HeavyWeapons/workspaces/M2HB_tripod.agr"
+    AnimInstance "{90F5E30119FE8312}Assets/Weapons/HeavyWeapons/workspaces/M2HB_Player_tripod.asi"
+   }
+  }
+  RplComponent "{51ACD09DAD530767}" {
+   "Parent Node From Parent Entity" 0
+  }
+ }
+}

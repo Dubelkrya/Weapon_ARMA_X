@@ -1,0 +1,18 @@
+Projectile : "{43544DC90B3CB6B1}Prefabs/Weapons/Ammo/Ammo_9x39_Ball_SP5.et" {
+ ID "DA5C6308000CDEF2"
+ components {
+  ShellMoveComponent "{851AA4A2AE0A5691}" {
+   InitSpeed 290
+   InitSpeedVariation 7
+   DispersionMultiplier 1.1
+   Mass 0.0156
+   BallisticTableConfig "{077DDBA65FBFC147}Configs/Weapons/AIBallisticTables/AIBT_9x39_AP_SP6.conf"
+   AirDrag 0.0000079
+   TumblingDamageMultiplier 0.1
+   DeflectionCriticalAngle 45
+   PenetrationDepth 6
+   PenetrationDensity 7.86
+   PenetrationSpeed 270
+  }
+ }
+}

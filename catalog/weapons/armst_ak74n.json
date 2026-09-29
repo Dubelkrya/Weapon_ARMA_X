@@ -1,0 +1,83 @@
+{
+  "id": "armst_ak74n",
+  "role": "base",
+  "source": {
+    "resource": "Prefabs/Weapons/Rifles/AK74/armst_AK74N.et",
+    "resource_guid": "96DFD2E7E63B3386",
+    "meta_name": null,
+    "class": "GenericEntity",
+    "defined_in": "Prefabs/Weapons/Rifles/AK74/armst_AK74N.et"
+  },
+  "identity": {
+    "name": "armst_AK74N",
+    "resource": "Prefabs/Weapons/Rifles/AK74/armst_AK74N.et"
+  },
+  "classification": {
+    "kind": "weapon",
+    "confidence": "components"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Weapons/Rifles/AK74/armst_AK74N.et",
+        "status": "local",
+        "class": "GenericEntity"
+      }
+    ],
+    "external_parents": [
+      {
+        "guid": "EAE9A298979C4721",
+        "path": "Prefabs/Weapons/Rifles/AK74/Rifle_AK74N_base.et",
+        "raw": "{EAE9A298979C4721}Prefabs/Weapons/Rifles/AK74/Rifle_AK74N_base.et"
+      }
+    ],
+    "used_as_base_by": [
+      "Prefabs/Weapons/Rifles/AK74/armst_AK74M.et",
+      "Prefabs/Weapons/Rifles/AK74/armst_AK74M_full.et",
+      "Prefabs/Weapons/Rifles/AK74/armst_AKS.et"
+    ],
+    "chain_depth_local": 1
+  },
+  "references": [],
+  "warnings": [],
+  "data": {
+    "identity": {
+      "name": {
+        "value": "#AR-Weapon_AK74_Name",
+        "defined_in": "Prefabs/Weapons/Rifles/AK74/armst_AK74N.et",
+        "inherited": false
+      }
+    },
+    "fire_modes": [],
+    "physical": {},
+    "magazine": {
+      "magazine_well": null,
+      "magazine_template": null
+    },
+    "ballistics": {
+      "bullet_init_speed_coef": null,
+      "dispersion_diameter": null,
+      "dispersion_range": null
+    },
+    "aim": {
+      "recoil": null,
+      "sway": null
+    },
+    "sights": null,
+    "attachment_slots": [
+      {
+        "slot": null,
+        "pivot": null,
+        "enabled": null,
+        "attachment_types": [],
+        "defined_in": "Prefabs/Weapons/Rifles/AK74/armst_AK74N.et"
+      }
+    ],
+    "muzzle_attachment": null,
+    "animation": {
+      "anim_graph": null,
+      "anim_instance": null
+    }
+  },
+  "derived": {}
+}

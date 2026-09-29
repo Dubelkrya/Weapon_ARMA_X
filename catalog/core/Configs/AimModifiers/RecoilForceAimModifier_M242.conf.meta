@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{E584A459F13EC2DF}Imported/VanillaSources/Prefabs/Weapons/Core/Configs/AimModifiers/RecoilForceAimModifier_M242.conf"
+ Configurations {
+  CONFResourceClass PC {
+  }
+  CONFResourceClass XBOX_ONE : PC {
+  }
+  CONFResourceClass XBOX_SERIES : PC {
+  }
+  CONFResourceClass PS4 : PC {
+  }
+  CONFResourceClass PS5 : PC {
+  }
+  CONFResourceClass HEADLESS : PC {
+  }
+ }
+}

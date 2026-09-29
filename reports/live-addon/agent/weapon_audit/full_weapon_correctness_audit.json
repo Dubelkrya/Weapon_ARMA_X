@@ -1,0 +1,1812 @@
+{
+ "report": "Full ARMST Weapon Correctness Audit",
+ "TOTAL_WEAPONS_AUDITED": 34,
+ "RESULTS": {
+  "PASS": 29,
+  "PASS_WITH_KNOWN_DEBT": 4,
+  "REVIEW_REQUIRED": 1
+ },
+ "DANGLING_GUID_REFS": 0,
+ "GUID_COLLISIONS": 0,
+ "DUPLICATE_CRITICAL_COMPONENTS": 0,
+ "WRONG_PARENT": 0,
+ "WRONG_MAGAZINE_WELL": 0,
+ "WRONG_DEFAULT_MAGAZINE": 0,
+ "CALIBER_MISMATCH": 0,
+ "ANIMATION_MISMATCH": 1,
+ "ATTACHMENT_TYPE_MISMATCH": 0,
+ "MISSING_LOCALIZATION_KEYS": 0,
+ "INTENTIONAL_EXCEPTIONS_COUNT": 1,
+ "KNOWN_DEBT_COUNT": 1,
+ "SEVERITY": {
+  "KNOWN_DEBT": 1,
+  "INFO": 10,
+  "INTENTIONAL": 1,
+  "MEDIUM": 1,
+  "HIGH": 1
+ },
+ "weapons": [
+  {
+   "weapon": "armst_AK105.et",
+   "path": "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK105.et",
+   "guid": "6FC3151D0DED22A9",
+   "model": "{1045C3E76CDB57C1}Assets/SNG/Ak_105/Ak_105.xob",
+   "parent": "{FA5C25BF66A53DCF}Rifles/AK74/armst_AK74.et",
+   "well": null,
+   "default_magazine": null,
+   "animation_refs": [],
+   "ik": [],
+   "mesh_count": 1,
+   "weaponcomponent_count": 1,
+   "muzzle_count": 1,
+   "storage_count": 1,
+   "weaponanim_count": 0,
+   "actions_count": 0,
+   "stats_count": 0,
+   "sights_count": 0,
+   "sights_local_disabled": false,
+   "slots": [
+    {
+     "id": "5F189C826D592450",
+     "name": "BayonetSlot",
+     "type": null,
+     "default": null
+    },
+    {
+     "id": "4E2B66CBA589F625",
+     "name": "Muzzle",
+     "type": null,
+     "default": null
+    }
+   ],
+   "localization_keys": [
+    "#AR-ARMST_Weapon_AK105_Description",
+    "#AR-ARMST_Weapon_AK105_Name"
+   ],
+   "missing_keys": [],
+   "known_exceptions": null,
+   "known_debt": [],
+   "status": "ISSUE",
+   "issues": [
+    {
+     "severity": "CRITICAL",
+     "issue": "DANGLING_REFS ['{1045C3E76CDB57C1}Assets/SNG/Ak_105/Ak_105.xob']"
+    }
+   ],
+   "unresolved_refs": [],
+   "findings": [],
+   "static_result": "PASS"
+  },
+  {
+   "weapon": "armst_AK74.et",
+   "path": "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74.et",
+   "guid": "FA5C25BF66A53DCF",
+   "model": null,
+   "parent": "{923D948AB0D57A50}Prefabs/Weapons/Rifles/AK74/Rifle_AK74_long_base.et",
+   "well": null,
+   "default_magazine": null,
+   "animation_refs": [],
+   "ik": [],
+   "mesh_count": 0,
+   "weaponcomponent_count": 1,
+   "muzzle_count": 1,
+   "storage_count": 0,
+   "weaponanim_count": 1,
+   "actions_count": 0,
+   "stats_count": 0,
+   "sights_count": 0,
+   "sights_local_disabled": false,
+   "slots": [
+    {
+     "id": "4E2B66CBA589F625",
+     "name": null,
+     "type": null,
+     "default": null
+    }
+   ],
+   "localization_keys": [
+    "#AR-Weapon_AK74_Name"
+   ],
+   "missing_keys": [],
+   "known_exceptions": null,
+   "known_debt": [],
+   "status": "PASS",
+   "issues": [],
+   "unresolved_refs": [],
+   "findings": [],
+   "static_result": "PASS"
+  },
+  {
+   "weapon": "armst_AK74M_full.et",
+   "path": "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74M_full.et",
+   "guid": "63892659A632A0FD",
+   "model": null,
+   "parent": "{5B8E766C0E3C13EE}Prefabs/Weapons/Rifles/AK74/armst_AK74M.et",
+   "well": null,
+   "default_magazine": null,
+   "animation_refs": [],
+   "ik": [],
+   "mesh_count": 0,
+   "weaponcomponent_count": 1,
+   "muzzle_count": 1,
+   "storage_count": 1,
+   "weaponanim_count": 0,
+   "actions_count": 0,
+   "stats_count": 0,
+   "sights_count": 0,
+   "sights_local_disabled": false,
+   "slots": [
+    {
+     "id": "51F6738D2EC74BE1",
+     "name": "underbarrel",
+     "type": null,
+     "default": "{1ABABE3551512B0A}Prefabs/Weapons/Attachments/Underbarrel/armst_UGL_GP25.et"
+    },
+    {
+     "id": "55349E9229B55E29",
+     "name": "sights",
+     "type": null,
+     "default": "{C850A33226B8F9C1}Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et"
+    },
+    {
+     "id": "4E2B66CBA589F625",
+     "name": "Muzzle",
+     "type": null,
+     "default": "{5677861A692ED3EB}Prefabs/Weapons/Attachments/Muzzle/Suppressor_PBS4/Suppressor_PBS4_base.et"
+    }
+   ],
+   "localization_keys": [
+    "#AR-ARMST_Weapon_AK74M_Description"
+   ],
+   "missing_keys": [],
+   "known_exceptions": null,
+   "known_debt": [],
+   "status": "PASS",
+   "issues": [],
+   "unresolved_refs": [],
+   "findings": [],
+   "static_result": "PASS"
+  },
+  {
+   "weapon": "armst_AKS.et",
+   "path": "Prefabs/Weapons/Russian/Rifle/AK74/armst_AKS.et",
+   "guid": "25A64724FD416989",
+   "model": null,
+   "parent": "{96DFD2E7E63B3386}Prefabs/Weapons/Rifles/AK74/armst_AK74N.et",
+   "well": null,
+   "default_magazine": null,
+   "animation_refs": [],
+   "ik": [],
+   "mesh_count": 1,
+   "weaponcomponent_count": 1,
+   "muzzle_count": 0,
+   "storage_count": 1,
+   "weaponanim_count": 0,
+   "actions_count": 0,
+   "stats_count": 0,
+   "sights_count": 0,
+   "sights_local_disabled": false,
+   "slots": [
+    {
+     "id": "51F6738D2EC74BE1",
+     "name": "underbarrel",
+     "type": null,
+     "default": null
+    }
+   ],
+   "localization_keys": [
+    "#AR-ARMST_Weapon_AKS74_Description"
+   ],
+   "missing_keys": [],
+   "known_exceptions": null,
+   "known_debt": [],
+   "status": "PASS",
+   "issues": [],
+   "unresolved_refs": [],
+   "findings": [],
+   "static_result": "PASS"
+  },
+  {
+   "weapon": "armst_AKS74U.et",
+   "path": "Prefabs/Weapons/Russian/Rifle/AK74/armst_AKS74U.et",
+   "guid": "BFEA719491610A45",
+   "model": null,
+   "parent": "{8BA0D0DE316D1B44}Prefabs/Weapons/Rifles/AKS74U/Rifle_AKS74U_base.et",
+   "well": null,
+   "default_magazine": null,
+   "animation_refs": [],
+   "ik": [],
+   "mesh_count": 0,
+   "weaponcomponent_count": 1,
+   "muzzle_count": 0,
+   "storage_count": 1,
+   "weaponanim_count": 0,
+   "actions_count": 0,
+   "stats_count": 0,
+   "sights_count": 0,
+   "sights_local_disabled": false,
+   "slots": [],
+   "localization_keys": [
+    "#AR-ARMST_Weapon_AKS74U_Description",
+    "#AR-Weapon_AKS74U_Name"
+   ],
+   "missing_keys": [],
+   "known_exceptions": null,
+   "known_debt": [],
+   "status": "PASS",
+   "issues": [],
+   "unresolved_refs": [],
+   "findings": [],
+   "static_result": "PASS"
+  },
+  {
+   "weapon": "armst_AKS74UN.et",
+   "path": "Prefabs/Weapons/Russian/Rifle/AK74/armst_AKS74UN.et",
+   "guid": "FA0E25CE35EE945F",
+   "model": null,
+   "parent": "{9AE416F8879DDA6D}Prefabs/Weapons/Rifles/AKS74U/Rifle_AKS74UN_base.et",
+   "well": null,
+   "default_magazine": null,
+   "animation_refs": [],
+   "ik": [],
+   "mesh_count": 0,
+   "weaponcomponent_count": 1,
+   "muzzle_count": 0,
+   "storage_count": 1,
+   "weaponanim_count": 0,
+   "actions_count": 0,
+   "stats_count": 0,
+   "sights_count": 0,
+   "sights_local_disabled": false,
+   "slots": [],
+   "localization_keys": [
+    "#AR-ARMST_Weapon_AKS74UN_Description"
+   ],
+   "missing_keys": [],
+   "known_exceptions": null,
+   "known_debt": [],
+   "status": "PASS",
+   "issues": [],
+   "unresolved_refs": [],
+   "findings": [],
+   "static_result": "PASS"
+  },
+  {
+   "weapon": "armst_Rifle_AKMS.et",
+   "path": "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKMS.et",
+   "guid": "5712F6F88A014F0B",
+   "model": null,
+   "parent": "{140E94F473B60FE3}Prefabs/Weapons/Rifles/AKM/armst_Rifle_AKM_base.et",
+   "well": null,
+   "default_magazine": null,
+   "animation_refs": [],
+   "ik": [],
+   "mesh_count": 0,
+   "weaponcomponent_count": 1,
+   "muzzle_count": 1,
+   "storage_count": 1,
+   "weaponanim_count": 0,
+   "actions_count": 0,
+   "stats_count": 0,
+   "sights_count": 0,
+   "sights_local_disabled": false,
+   "slots": [
+    {
+     "id": "65AE4CB5E23C0F63",
+     "name": null,
+     "type": null,
+     "default": "{AD045AFAFFC1AB6E}Prefabs/Weapons/Attachments/Stocks/Stock_VZ58/Stock_VZ58_folding.et"
+    }
+   ],
+   "localization_keys": [
+    "#AR-ARMST_Weapon_AKMS_Description"
+   ],
+   "missing_keys": [],
+   "known_exceptions": null,
+   "known_debt": [],
+   "status": "PASS",
+   "issues": [],
+   "unresolved_refs": [],
+   "findings": [],
+   "static_result": "PASS"
+  },
+  {
+   "weapon": "armst_Rifle_AKM_full.et",
+   "path": "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_full.et",
+   "guid": "33BEE1A93C920B26",
+   "model": null,
+   "parent": "{5BFF97EFD0BF6D9F}Prefabs/Weapons/Rifles/AKM/armst_Rifle_AKM.et",
+   "well": null,
+   "default_magazine": null,
+   "animation_refs": [],
+   "ik": [],
+   "mesh_count": 0,
+   "weaponcomponent_count": 1,
+   "muzzle_count": 0,
+   "storage_count": 1,
+   "weaponanim_count": 0,
+   "actions_count": 0,
+   "stats_count": 0,
+   "sights_count": 0,
+   "sights_local_disabled": false,
+   "slots": [
+    {
+     "id": "65AE4CB5E23C0F65",
+     "name": "Stock",
+     "type": null,
+     "default": "{C850A33226B8F9C1}Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et"
+    },
+    {
+     "id": "673A7B215304A28B",
+     "name": "GP",
+     "type": null,
+     "default": "{1ABABE3551512B0A}Prefabs/Weapons/Attachments/Underbarrel/armst_UGL_GP25.et"
+    }
+   ],
+   "localization_keys": [
+    "#AR-ARMST_Weapon_AKM_Description"
+   ],
+   "missing_keys": [],
+   "known_exceptions": null,
+   "known_debt": [],
+   "status": "PASS",
+   "issues": [],
+   "unresolved_refs": [],
+   "findings": [],
+   "static_result": "PASS"
+  },
+  {
+   "weapon": "armst_Rifle_SOC94.et",
+   "path": "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_SOC94.et",
+   "guid": "E394112ABBC198D8",
+   "model": "{C252D716318F64CD}Assets/SNG/sok94/SOK_94_weapon.xob",
+   "parent": "{140E94F473B60FE3}Rifles/AKM/armst_Rifle_AKM_base.et",
+   "well": null,
+   "default_magazine": "{07805AE177F52646}Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_10rnd_Ball.et",
+   "animation_refs": [
+    "{D67F603F3DDB43EA}Assets/SNG/sok94/Amim/Soc_94.agr",
+    "{2362E5327C6AB1A7}Assets/SNG/sok94/Amim/Soc_94_weapon.asi"
+   ],
+   "ik": [],
+   "mesh_count": 1,
+   "weaponcomponent_count": 1,
+   "muzzle_count": 1,
+   "storage_count": 1,
+   "weaponanim_count": 1,
+   "actions_count": 1,
+   "stats_count": 0,
+   "sights_count": 1,
+   "sights_local_disabled": false,
+   "slots": [
+    {
+     "id": "65AE4CB5E23C0F63",
+     "name": null,
+     "type": null,
+     "default": null
+    },
+    {
+     "id": "65AE4CB5E23C0F65",
+     "name": "Stock",
+     "type": null,
+     "default": null
+    },
+    {
+     "id": "673A7B215304A28B",
+     "name": null,
+     "type": null,
+     "default": null
+    },
+    {
+     "id": "65AE4CB5E23C0F2C",
+     "name": null,
+     "type": null,
+     "default": null
+    }
+   ],
+   "localization_keys": [
+    "#AR-ARMST_Weapon_SOC94_Description"
+   ],
+   "missing_keys": [],
+   "known_exceptions": null,
+   "known_debt": [],
+   "status": "ISSUE",
+   "issues": [
+    {
+     "severity": "CRITICAL",
+     "issue": "DANGLING_REFS ['{C252D716318F64CD}Assets/SNG/sok94/SOK_94_weapon.xob', '{D67F603F3DDB43EA}Assets/SNG/sok94/Amim/Soc_94.agr', '{2362E5327C6AB1A7}Assets/SNG/sok94/Amim/Soc_94_weapon.asi']"
+    }
+   ],
+   "unresolved_refs": [],
+   "findings": [],
+   "static_result": "PASS"
+  },
+  {
+   "weapon": "armst_Rifle_VPO136.et",
+   "path": "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_VPO136.et",
+   "guid": "90EADC5DD9AD35D5",
+   "model": null,
+   "parent": "{140E94F473B60FE3}Prefabs/Weapons/Rifles/AKM/armst_Rifle_AKM_base.et",
+   "well": null,
+   "default_magazine": "{07805AE177F52646}Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_10rnd_Ball.et",
+   "animation_refs": [],
+   "ik": [],
+   "mesh_count": 0,
+   "weaponcomponent_count": 1,
+   "muzzle_count": 1,
+   "storage_count": 1,
+   "weaponanim_count": 0,
+   "actions_count": 0,
+   "stats_count": 0,
+   "sights_count": 0,
+   "sights_local_disabled": false,
+   "slots": [
+    {
+     "id": "65AE4CB5E23C0F63",
+     "name": null,
+     "type": null,
+     "default": "{B0E764B069F6A153}Prefabs/Weapons/Attachments/Stocks/Stock_VZ58/Stock_akm.et"
+    }
+   ],
+   "localization_keys": [
+    "#AR-ARMST_Weapon_VPO136_Description"
+   ],
+   "missing_keys": [],
+   "known_exceptions": null,
+   "known_debt": [],
+   "status": "PASS",
+   "issues": [],
+   "unresolved_refs": [],
+   "findings": [],
+   "static_result": "PASS"
+  },
+  {
+   "weapon": "armst_AEK971_test_v11.et",
+   "path": "Prefabs/Weapons/Russian/Rifle/Aek971/armst_AEK971_test_v11.et",
+   "guid": "AC198EAC9BDD9841",
+   "model": "{EFB2B25EFD3BD62E}Assets/Weapons_RUS/Aek_971/aek971.xob",
+   "parent": "{EAE9A298979C4721}Prefabs/Weapons/Rifles/AK74/Rifle_AK74N_base.et",
+   "well": null,
+   "default_magazine": null,
+   "animation_refs": [],
+   "ik": [],
+   "mesh_count": 1,
+   "weaponcomponent_count": 1,
+   "muzzle_count": 1,
+   "storage_count": 1,
+   "weaponanim_count": 1,
+   "actions_count": 0,
+   "stats_count": 0,
+   "sights_count": 1,
+   "sights_local_disabled": false,
+   "slots": [
+    {
+     "id": "51F6738D2EC74BE1",
+     "name": "underbarrel",
+     "type": null,
+     "default": null
+    },
+    {
+     "id": "55349E9229B55E29",
+     "name": "sights",
+     "type": null,
+     "default": null
+    },
+    {
+     "id": "5F189C826D592450",
+     "name": "BayonetSlot",
+     "type": null,
+     "default": null
+    },
+    {
+     "id": "4E2B66CBA589F625",
+     "name": null,
+     "type": null,
+     "default": null
+    }
+   ],
+   "localization_keys": [
+    "#AR-ARMST_Weapon_AEK971_Description"
+   ],
+   "missing_keys": [],
+   "known_exceptions": null,
+   "known_debt": [],
+   "status": "PASS",
+   "issues": [],
+   "unresolved_refs": [],
+   "findings": [],
+   "static_result": "PASS"
+  },
+  {
+   "weapon": "armst_Groza_base.et",
+   "path": "Prefabs/Weapons/Russian/Rifle/Groza/armst_Groza_base.et",
+   "guid": "903C7920F00AB654",
+   "model": "{277CC12370C4BCF0}Assets/Weapons_RUS/Groza/GROZA.xob",
+   "parent": "{911D6C8DC7BA2D63}Prefabs/Weapons/Core/Rifle_Base.et",
+   "well": [
+    "MagazineWell9x39",
+    "{55349E9229B55D96}"
+   ],
+   "default_magazine": "{77215B3A185D1EFD}Prefabs/Weapons/Magazines/Russian/9x39/Groza/armst_Magazine_9x39_Groza_20rnd_SP5.et",
+   "animation_refs": [
+    "{DB3B289A5EDE0051}Assets/Weapons_RUS/Groza/anim/Groza_Oc.agr",
+    "{22C1B974F01F1684}Assets/Weapons_RUS/Groza/anim/Groza_Oc_weapon.asi",
+    "{DB3B289A5EDE0051}Assets/Weapons_RUS/Groza/anim/Groza_Oc.agr",
+    "{D99F2845681E7268}Assets/Weapons_RUS/Groza/anim/Groza_Oc_player.asi"
+   ],
+   "ik": [
+    "{564FCD270D84AF8A}Assets/Weapons_RUS/Groza/anim/Anims_Player/P_Groza_IK.anm"
+   ],
+   "mesh_count": 1,
+   "weaponcomponent_count": 1,
+   "muzzle_count": 1,
+   "storage_count": 1,
+   "weaponanim_count": 1,
+   "actions_count": 1,
+   "stats_count": 0,
+   "sights_count": 1,
+   "sights_local_disabled": false,
+   "slots": [
+    {
+     "id": "52D0FA2008B57FF5",
+     "name": "ironsight_front",
+     "type": null,
+     "default": null
+    },
+    {
+     "id": "52D0FA201C0511E0",
+     "name": "underbarrel",
+     "type": null,
+     "default": null
+    },
+    {
+     "id": "52D0FA2068EBA22F",
+     "name": "ironsight",
+     "type": null,
+     "default": null
+    },
+    {
+     "id": "5848EDCA8A09E6F7",
+     "name": "optic",
+     "type": null,
+     "default": null
+    },
+    {
+     "id": "5D168E76CE7C176C",
+     "name": "RIS_Left",
+     "type": null,
+     "default": null
+    },
+    {
+     "id": "5D168E76F4E59294",
+     "name": "RIS_Right",
+     "type": null,
+     "default": null
+    },
+    {
+     "id": "4E2B66CBA589F625",
+     "name": "suppressor",
+     "type": null,
+     "default": null
+    }
+   ],
+   "localization_keys": [],
+   "missing_keys": [],
+   "known_exceptions": "Muzzle_AK74.ptc shared effect",
+   "known_debt": [
+    "Casing_762x39_PS.ptc WRONG_FOR_9x39 NO_PROVEN_REPLACEMENT"
+   ],
+   "status": "PASS",
+   "issues": [],
+   "unresolved_refs": [],
+   "findings": [
+    {
+     "severity": "KNOWN_DEBT",
+     "type": "CASING",
+     "detail": "Casing_762x39_PS.ptc WRONG_FOR_9x39 no proven replacement"
+    }
+   ],
+   "static_result": "PASS_WITH_KNOWN_DEBT"
+  },
+  {
+   "weapon": "armst_SVD.et",
+   "path": "Prefabs/Weapons/Russian/Rifle/SVD/armst_SVD.et",
+   "guid": "3EB02CDAD5F23C82",
+   "model": null,
+   "parent": "{A3E183EB5A2F3A38}Prefabs/Weapons/Rifles/SVD/Rifle_SVD_base.et",
+   "well": null,
+   "default_magazine": null,
+   "animation_refs": [],
+   "ik": [],
+   "mesh_count": 0,
+   "weaponcomponent_count": 1,
+   "muzzle_count": 0,
+   "storage_count": 1,
+   "weaponanim_count": 0,
+   "actions_count": 0,
+   "stats_count": 0,
+   "sights_count": 0,
+   "sights_local_disabled": false,
+   "slots": [
+    {
+     "id": "5472D211BFD78F81",
+     "name": null,
+     "type": "AttachmentOpticsDovetailAK",
+     "default": null
+    }
+   ],
+   "localization_keys": [
+    "#AR-ARMST_Weapon_SVD_Description",
+    "#AR-Weapon_SVD_Name"
+   ],
+   "missing_keys": [],
+   "known_exceptions": null,
+   "known_debt": [],
+   "status": "PASS",
+   "issues": [],
+   "unresolved_refs": [],
+   "findings": [],
+   "static_result": "PASS"
+  },
+  {
+   "weapon": "armst_Rifle_9a91_base.et",
+   "path": "Prefabs/Weapons/Russian/Rifle/9a91/armst_Rifle_9a91_base.et",
+   "guid": "E2D8F39AE1B9B8F1",
+   "model": "{D66B822CB3048284}Assets/Weapons_RUS/9a91/9a91_weapon.xob",
+   "parent": "{1FA22B1F5E7BC80B}Prefabs/Weapons/Rifles/AK74/Rifle_AK74_short_base.et",
+   "well": [
+    "MagazineWell9x39_9a91",
+    "{55349E9229B55D96}"
+   ],
+   "default_magazine": "{B7EC6D4222AE12BE}Prefabs/Weapons/Magazines/Russian/9x39/9a91/armst_Magazine_9x39_20rnd_9a91_SP5.et",
+   "animation_refs": [
+    "{C9460F3B3120FF31}Assets/Weapons_RUS/9a91/Anim/9A91.agr",
+    "{FC7E0448CB9F50B8}Assets/Weapons_RUS/9a91/Anim/9A91_weapon.asi",
+    "{C9460F3B3120FF31}Assets/Weapons_RUS/9a91/Anim/9A91.agr",
+    "{07209579539E3454}Assets/Weapons_RUS/9a91/Anim/9A91_player.asi"
+   ],
+   "ik": [
+    "{E21D6E48B6B98D1E}Assets/Weapons_RUS/9a91/Anim/p_rfl_9a91_01_ik.anm"
+   ],
+   "mesh_count": 1,
+   "weaponcomponent_count": 1,
+   "muzzle_count": 1,
+   "storage_count": 1,
+   "weaponanim_count": 1,
+   "actions_count": 0,
+   "stats_count": 0,
+   "sights_count": 1,
+   "sights_local_disabled": false,
+   "slots": [
+    {
+     "id": "51F6738D2EC74BE1",
+     "name": "underbarrel",
+     "type": null,
+     "default": null
+    },
+    {
+     "id": "5F189C826D592450",
+     "name": "BayonetSlot",
+     "type": null,
+     "default": null
+    },
+    {
+     "id": "4E2B66CBA589F625",
+     "name": "Muzzle",
+     "type": null,
+     "default": null
+    }
+   ],
+   "localization_keys": [],
+   "missing_keys": [],
+   "known_exceptions": null,
+   "known_debt": [],
+   "status": "PASS",
+   "issues": [],
+   "unresolved_refs": [],
+   "findings": [],
+   "static_result": "PASS"
+  },
+  {
+   "weapon": "armst_Rifle_val_base.et",
+   "path": "Prefabs/Weapons/Russian/Rifle/VAL/armst_Rifle_val_base.et",
+   "guid": "F25D16BD5F748372",
+   "model": "{D6B9129135E4F6FF}Assets/VAL/val_weapon.xob",
+   "parent": "{1FA22B1F5E7BC80B}Prefabs/Weapons/Rifles/AK74/Rifle_AK74_short_base.et",
+   "well": [
+    "MagazineWell9x39",
+    "{55349E9229B55D96}"
+   ],
+   "default_magazine": "{6C22F58BBF5D6AED}Prefabs/Weapons/Magazines/Russian/9x39/VAL/Magazine_9x39_30rnd_val_SP5.et",
+   "animation_refs": [
+    "{127F777AF7430A62}Assets/VSS/Anim/Vss.agr",
+    "{819D32D40F937C40}Assets/VSS/Anim/Vss_weapon.asi",
+    "{127F777AF7430A62}Assets/VSS/Anim/Vss.agr",
+    "{7AC3A3E5979218AC}Assets/VSS/Anim/Vss_player.asi"
+   ],
+   "ik": [
+    "{A3754338B3EE4F1E}Assets/VSS/Anim/Diff/p_rfl_VSS_01_ik.anm"
+   ],
+   "mesh_count": 1,
+   "weaponcomponent_count": 1,
+   "muzzle_count": 1,
+   "storage_count": 1,
+   "weaponanim_count": 1,
+   "actions_count": 1,
+   "stats_count": 0,
+   "sights_count": 1,
+   "sights_local_disabled": false,
+   "slots": [
+    {
+     "id": "51F6738D2EC74BE1",
+     "name": "underbarrel",
+     "type": null,
+     "default": null
+    },
+    {
+     "id": "5F189C826D592450",
+     "name": "BayonetSlot",
+     "type": null,
+     "default": null
+    },
+    {
+     "id": "4E2B66CBA589F625",
+     "name": "Muzzle",
+     "type": null,
+     "default": null
+    }
+   ],
+   "localization_keys": [],
+   "missing_keys": [],
+   "known_exceptions": null,
+   "known_debt": [],
+   "status": "ISSUE",
+   "issues": [
+    {
+     "severity": "CRITICAL",
+     "issue": "DANGLING_REFS ['{D6B9129135E4F6FF}Assets/VAL/val_weapon.xob', '{127F777AF7430A62}Assets/VSS/Anim/Vss.agr', '{819D32D40F937C40}Assets/VSS/Anim/Vss_weapon.asi']"
+    }
+   ],
+   "unresolved_refs": [],
+   "findings": [],
+   "static_result": "PASS"
+  },
+  {
+   "weapon": "armst_Rifle_vss_base.et",
+   "path": "Prefabs/Weapons/Russian/Rifle/VSS/armst_Rifle_vss_base.et",
+   "guid": "902A79E4B2A66E63",
+   "model": "{C4A692199548E245}Assets/Weapons_RUS/VSS/Vss.xob",
+   "parent": "{1FA22B1F5E7BC80B}Prefabs/Weapons/Rifles/AK74/Rifle_AK74_short_base.et",
+   "well": [
+    "MagazineWell9x39",
+    "{55349E9229B55D96}"
+   ],
+   "default_magazine": "{70D023F899C9C226}Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_20rnd_vss_SP5.et",
+   "animation_refs": [
+    "{127F777AF7430A62}Assets/Weapons_RUS/VSS/Anim/Vss.agr",
+    "{819D32D40F937C40}Assets/Weapons_RUS/VSS/Anim/Vss_weapon.asi",
+    "{127F777AF7430A62}Assets/Weapons_RUS/VSS/Anim/Vss.agr",
+    "{7AC3A3E5979218AC}Assets/Weapons_RUS/VSS/Anim/Vss_player.asi"
+   ],
+   "ik": [
+    "{A3754338B3EE4F1E}Assets/Weapons_RUS/VSS/Anim/Diff/p_rfl_VSS_01_ik.anm"
+   ],
+   "mesh_count": 1,
+   "weaponcomponent_count": 1,
+   "muzzle_count": 1,
+   "storage_count": 1,
+   "weaponanim_count": 1,
+   "actions_count": 0,
+   "stats_count": 0,
+   "sights_count": 1,
+   "sights_local_disabled": false,
+   "slots": [
+    {
+     "id": "51F6738D2EC74BE1",
+     "name": "underbarrel",
+     "type": null,
+     "default": null
+    },
+    {
+     "id": "5F189C826D592450",
+     "name": "BayonetSlot",
+     "type": null,
+     "default": null
+    },
+    {
+     "id": "4E2B66CBA589F625",
+     "name": "Muzzle",
+     "type": null,
+     "default": null
+    }
+   ],
+   "localization_keys": [],
+   "missing_keys": [],
+   "known_exceptions": null,
+   "known_debt": [],
+   "status": "PASS",
+   "issues": [],
+   "unresolved_refs": [],
+   "findings": [],
+   "static_result": "PASS"
+  },
+  {
+   "weapon": "armst_Rifle_VSK94_base.et",
+   "path": "Prefabs/Weapons/Russian/Rifle/VSK94/armst_Rifle_VSK94_base.et",
+   "guid": "6005623D3AA5F5C2",
+   "model": "{49285E7FE26AB9BA}Assets/Vsk94/VSK94_weapon.xob",
+   "parent": "{1FA22B1F5E7BC80B}Prefabs/Weapons/Rifles/AK74/Rifle_AK74_short_base.et",
+   "well": [
+    "MagazineWell9x39_9a91",
+    "{55349E9229B55D96}"
+   ],
+   "default_magazine": "{B7EC6D4222AE12BE}Prefabs/Weapons/Magazines/Russian/9x39/9a91/armst_Magazine_9x39_20rnd_9a91_SP5.et",
+   "animation_refs": [
+    "{C9460F3B3120FF31}Assets/9a91/Anim/9A91.agr",
+    "{FC7E0448CB9F50B8}Assets/9a91/Anim/9A91_weapon.asi",
+    "{C9460F3B3120FF31}Assets/9a91/Anim/9A91.agr",
+    "{07209579539E3454}Assets/9a91/Anim/9A91_player.asi"
+   ],
+   "ik": [
+    "{E21D6E48B6B98D1E}Assets/9a91/Anim/p_rfl_9a91_01_ik.anm"
+   ],
+   "mesh_count": 1,
+   "weaponcomponent_count": 1,
+   "muzzle_count": 1,
+   "storage_count": 1,
+   "weaponanim_count": 1,
+   "actions_count": 1,
+   "stats_count": 0,
+   "sights_count": 1,
+   "sights_local_disabled": false,
+   "slots": [
+    {
+     "id": "51F6738D2EC74BE1",
+     "name": "underbarrel",
+     "type": null,
+     "default": null
+    },
+    {
+     "id": "5F189C826D592450",
+     "name": "BayonetSlot",
+     "type": null,
+     "default": null
+    },
+    {
+     "id": "4E2B66CBA589F625",
+     "name": "Muzzle",
+     "type": null,
+     "default": "{E10F09941AF1E123}Prefabs/Weapons/Attachments/Muzzle/armst_Suppressor_9a91.et"
+    }
+   ],
+   "localization_keys": [],
+   "missing_keys": [],
+   "known_exceptions": null,
+   "known_debt": [],
+   "status": "ISSUE",
+   "issues": [
+    {
+     "severity": "CRITICAL",
+     "issue": "DANGLING_REFS ['{49285E7FE26AB9BA}Assets/Vsk94/VSK94_weapon.xob', '{C9460F3B3120FF31}Assets/9a91/Anim/9A91.agr', '{FC7E0448CB9F50B8}Assets/9a91/Anim/9A91_weapon.asi']"
+    }
+   ],
+   "unresolved_refs": [],
+   "findings": [],
+   "static_result": "PASS"
+  },
+  {
+   "weapon": "armst_Rifle_HKG33.et",
+   "path": "Prefabs/Weapons/Western/Rifle/HKG33/armst_Rifle_HKG33.et",
+   "guid": "035CFC7DD44455D0",
+   "model": "{572D73728DF974EC}Assets/NATO/HKG3/Hk3.xob",
+   "parent": "{C63227C0E70EA62E}Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et",
+   "well": [
+    "MagazineWellHK3",
+    "{24F41F1143114516}"
+   ],
+   "default_magazine": "{6D18CC33708EE713}Prefabs/Weapons/Magazines/Western/762x51/HK3/L1A1/armst_Magazine_762x51_HK3_20_M80_Ball.et",
+   "animation_refs": [
+    "{B01F8B98949C62AE}Assets/NATO/HKG3/Anim/HKG3.agr",
+    "{3F06AB9540D64568}Assets/NATO/HKG3/Anim/HKG3_weapon.asi",
+    "{B01F8B98949C62AE}Assets/NATO/HKG3/Anim/HKG3.agr",
+    "{C4583AA4D8D72184}Assets/NATO/HKG3/Anim/HKG3_player.asi"
+   ],
+   "ik": [
+    "{32130352F880E925}Assets/NATO/HKG3/Anim/Diff/p_rfl_HKG3_ik.anm"
+   ],
+   "mesh_count": 1,
+   "weaponcomponent_count": 1,
+   "muzzle_count": 1,
+   "storage_count": 1,
+   "weaponanim_count": 1,
+   "actions_count": 0,
+   "stats_count": 0,
+   "sights_count": 1,
+   "sights_local_disabled": false,
+   "slots": [
+    {
+     "id": "56DE9C900611C1AF",
+     "name": null,
+     "type": null,
+     "default": null
+    },
+    {
+     "id": "5F16E0B4B2D0D72C",
+     "name": null,
+     "type": null,
+     "default": null
+    },
+    {
+     "id": "5D527627CCB8F756",
+     "name": "Muzzle",
+     "type": null,
+     "default": null
+    }
+   ],
+   "localization_keys": [],
+   "missing_keys": [],
+   "known_exceptions": null,
+   "known_debt": [],
+   "status": "ISSUE",
+   "issues": [
+    {
+     "severity": "CRITICAL",
+     "issue": "DANGLING_REFS ['{572D73728DF974EC}Assets/NATO/HKG3/Hk3.xob', '{B01F8B98949C62AE}Assets/NATO/HKG3/Anim/HKG3.agr', '{3F06AB9540D64568}Assets/NATO/HKG3/Anim/HKG3_weapon.asi']"
+    }
+   ],
+   "unresolved_refs": [],
+   "findings": [],
+   "static_result": "PASS"
+  },
+  {
+   "weapon": "armst_Rifle_hk_g36.et",
+   "path": "Prefabs/Weapons/Western/Rifle/HKG36/armst_Rifle_hk_g36.et",
+   "guid": "A802C718201D72DF",
+   "model": "{9319B3B8F246C59B}Assets/Weapons_NATO/HKG36/HKG36.xob",
+   "parent": "{911D6C8DC7BA2D63}Prefabs/Weapons/Core/Rifle_Base.et",
+   "well": [
+    "MagazineWellHKG36",
+    "{6A0470709BAE052D}"
+   ],
+   "default_magazine": "{969F6FFF810D2145}Prefabs/Weapons/Magazines/Western/5x56/HKG36/armst_Magazine_556x45_HKG36.et",
+   "animation_refs": [
+    "{D20C08C61B86483F}Assets/Weapons_NATO/HKG36/Anim/HKg36.agr",
+    "{C25C4C620483ED2D}Assets/Weapons_NATO/HKG36/Anim/HKg36_weapon.asi",
+    "{D20C08C61B86483F}Assets/Weapons_NATO/HKG36/Anim/HKg36.agr",
+    "{3902DD539C8289C1}Assets/Weapons_NATO/HKG36/Anim/HKg36_player.asi"
+   ],
+   "ik": [
+    "{B7869ABD0EEE379D}Assets/Weapons/Rifles/AK74/anims/anm/p_ak74_ik.anm"
+   ],
+   "mesh_count": 1,
+   "weaponcomponent_count": 1,
+   "muzzle_count": 1,
+   "storage_count": 1,
+   "weaponanim_count": 1,
+   "actions_count": 1,
+   "stats_count": 1,
+   "sights_count": 1,
+   "sights_local_disabled": true,
+   "slots": [
+    {
+     "id": "6A0470709BAE0574",
+     "name": "BayonetSlot",
+     "type": null,
+     "default": null
+    },
+    {
+     "id": "6A0470709BAE058E",
+     "name": "optics",
+     "type": null,
+     "default": "{BBA202FF623A9807}Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Optic.et"
+    },
+    {
+     "id": "6A0470709BAE053A",
+     "name": "Muzzle",
+     "type": null,
+     "default": null
+    }
+   ],
+   "localization_keys": [
+    "#AR-ARMST_Weapon_G36_Description",
+    "#AR-ARMST_Weapon_G36_Name"
+   ],
+   "missing_keys": [],
+   "known_exceptions": "AK74 IK workaround",
+   "known_debt": [],
+   "status": "ISSUE",
+   "issues": [
+    {
+     "severity": "CRITICAL",
+     "issue": "DANGLING_REFS ['{B7869ABD0EEE379D}Assets/Weapons/Rifles/AK74/anims/anm/p_ak74_ik.anm']"
+    }
+   ],
+   "unresolved_refs": [
+    "{B7869ABD0EEE379D}Assets/Weapons/Rifles/AK74/anims/anm/p_ak74_ik.anm"
+   ],
+   "findings": [
+    {
+     "severity": "INFO",
+     "type": "UNRESOLVED_ASSET",
+     "detail": "{B7869ABD0EEE379D}Assets/Weapons/Rifles/AK74/anims/anm/p_ak74_ik.anm"
+    },
+    {
+     "severity": "INTENTIONAL",
+     "type": "APPROVED",
+     "detail": "AK74 IK workaround"
+    }
+   ],
+   "static_result": "PASS_WITH_KNOWN_DEBT"
+  },
+  {
+   "weapon": "armst_Rifle_L85.et",
+   "path": "Prefabs/Weapons/Western/Rifle/L85/armst_Rifle_L85.et",
+   "guid": "45D3FCA77AF1709B",
+   "model": "{0F26972BB6E3CA5F}Assets/Weapons_NATO/L86/L86.xob",
+   "parent": "{C63227C0E70EA62E}Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et",
+   "well": null,
+   "default_magazine": null,
+   "animation_refs": [
+    "{C43E8470702AEDE4}Assets/Weapons_NATO/L86/Anim/L86.agr",
+    "{B702ED8F6D2CACB7}Assets/Weapons_NATO/L86/Anim/L86_weapon.asi",
+    "{C43E8470702AEDE4}Assets/Weapons_NATO/L86/Anim/L86.agr",
+    "{4C5C7CBEF52DC85B}Assets/Weapons_NATO/L86/Anim/L86_player.asi"
+   ],
+   "ik": [
+    "{9B94312176361ECC}Assets/Weapons_NATO/L86/Anim/Diff/p_rfl_L86_ik.anm"
+   ],
+   "mesh_count": 1,
+   "weaponcomponent_count": 1,
+   "muzzle_count": 1,
+   "storage_count": 1,
+   "weaponanim_count": 1,
+   "actions_count": 0,
+   "stats_count": 0,
+   "sights_count": 1,
+   "sights_local_disabled": false,
+   "slots": [
+    {
+     "id": "5534745C44D1EF58",
+     "name": "optics",
+     "type": null,
+     "default": null
+    },
+    {
+     "id": "56DE9C900611C1AF",
+     "name": null,
+     "type": null,
+     "default": null
+    },
+    {
+     "id": "5F16E0B4B2D0D72C",
+     "name": null,
+     "type": null,
+     "default": null
+    },
+    {
+     "id": "5D527627CCB8F756",
+     "name": "Muzzle",
+     "type": null,
+     "default": null
+    }
+   ],
+   "localization_keys": [
+    "#AR-ARMST_Weapon_L85_Description"
+   ],
+   "missing_keys": [],
+   "known_exceptions": null,
+   "known_debt": [],
+   "status": "PASS",
+   "issues": [],
+   "unresolved_refs": [],
+   "findings": [],
+   "static_result": "PASS"
+  },
+  {
+   "weapon": "armst_SLR.et",
+   "path": "Prefabs/Weapons/Western/Rifle/SLR/armst_SLR.et",
+   "guid": "C11ED52EAAF856A8",
+   "model": "{A0A37569F2DBA5D0}Assets/NATO/L1A1/L1A1.xob",
+   "parent": "{C63227C0E70EA62E}Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et",
+   "well": [
+    "MagazineWellL1A1",
+    "{7BB9CFBDB7224657}"
+   ],
+   "default_magazine": "{AA9A48AAEE6E4F1B}Prefabs/Weapons/Magazines/Western/762x51/HK3/L1A1/armst_Magazine_762x51_L1A1_20_M80_Ball.et",
+   "animation_refs": [
+    "{0E3ECFC4E84386BC}Assets/NATO/L1A1/Anim/L1A1.agr",
+    "{3B86B943995121A3}Assets/NATO/L1A1/Anim/L1A1_weapon.asi",
+    "{0E3ECFC4E84386BC}Assets/NATO/L1A1/Anim/L1A1.agr",
+    "{C0D828720150454F}Assets/NATO/L1A1/Anim/L1A1_player.asi"
+   ],
+   "ik": [
+    "{B7869ABD0EEE379D}Assets/Weapons/Rifles/AK74/anims/anm/p_ak74_ik.anm"
+   ],
+   "mesh_count": 1,
+   "weaponcomponent_count": 1,
+   "muzzle_count": 1,
+   "storage_count": 1,
+   "weaponanim_count": 1,
+   "actions_count": 0,
+   "stats_count": 0,
+   "sights_count": 1,
+   "sights_local_disabled": false,
+   "slots": [
+    {
+     "id": "56DE9C900611C1AF",
+     "name": null,
+     "type": null,
+     "default": null
+    },
+    {
+     "id": "5F16E0B4B2D0D72C",
+     "name": null,
+     "type": null,
+     "default": null
+    }
+   ],
+   "localization_keys": [
+    "#AR-ARMST_Weapon_L1A1_Description"
+   ],
+   "missing_keys": [],
+   "known_exceptions": null,
+   "known_debt": [],
+   "status": "ISSUE",
+   "issues": [
+    {
+     "severity": "CRITICAL",
+     "issue": "DANGLING_REFS ['{A0A37569F2DBA5D0}Assets/NATO/L1A1/L1A1.xob', '{0E3ECFC4E84386BC}Assets/NATO/L1A1/Anim/L1A1.agr', '{3B86B943995121A3}Assets/NATO/L1A1/Anim/L1A1_weapon.asi']"
+    }
+   ],
+   "unresolved_refs": [
+    "{B7869ABD0EEE379D}Assets/Weapons/Rifles/AK74/anims/anm/p_ak74_ik.anm"
+   ],
+   "findings": [
+    {
+     "severity": "INFO",
+     "type": "UNRESOLVED_ASSET",
+     "detail": "{B7869ABD0EEE379D}Assets/Weapons/Rifles/AK74/anims/anm/p_ak74_ik.anm"
+    },
+    {
+     "severity": "MEDIUM",
+     "type": "KNOW_WORKAROUND_CANDIDATE",
+     "detail": "AK74 IK pose on L1A1 (pre-existing; earlier classified AMBIGUOUS)"
+    }
+   ],
+   "static_result": "PASS_WITH_KNOWN_DEBT"
+  },
+  {
+   "weapon": "armst_Rifle_Sig550.et",
+   "path": "Prefabs/Weapons/Western/Rifle/Sig550/armst_Rifle_Sig550.et",
+   "guid": "CA3BEBAADDFAF1DE",
+   "model": "{C49097527FAF33B1}Assets/Weapons_NATO/Sig SG 550/SG550.xob",
+   "parent": "{3E413771E1834D2F}Prefabs/Weapons/Rifles/armst_Rifle_M16A2.et",
+   "well": null,
+   "default_magazine": "{E3DC6C2FBBE4F825}Prefabs/Weapons/Magazines/Western/5x56/SIG550/armst_Magazine_556x45_SIG_550.et",
+   "animation_refs": [
+    "{E7E67E4426E24066}Assets/Weapons/Rifles/workspaces/VZ58.agr",
+    "{FFB391312D0E84C5}Assets/Weapons/Rifles/workspaces/VZ58_weapon.asi",
+    "{E7E67E4426E24066}Assets/Weapons/Rifles/workspaces/VZ58.agr",
+    "{04ED0000B50FE029}Assets/Weapons/Rifles/workspaces/VZ58_player.asi"
+   ],
+   "ik": [
+    "{A467945D1C570C24}Assets/Weapons_NATO/Sig SG 550/Anim/Diff/p_rfl_sg550_ik.anm"
+   ],
+   "mesh_count": 1,
+   "weaponcomponent_count": 1,
+   "muzzle_count": 1,
+   "storage_count": 1,
+   "weaponanim_count": 1,
+   "actions_count": 0,
+   "stats_count": 0,
+   "sights_count": 1,
+   "sights_local_disabled": false,
+   "slots": [
+    {
+     "id": "56DE9C900611C1AF",
+     "name": null,
+     "type": null,
+     "default": null
+    },
+    {
+     "id": "5F16E0B4B2D0D72C",
+     "name": null,
+     "type": null,
+     "default": null
+    },
+    {
+     "id": "5D527627CCB8F756",
+     "name": "Muzzle",
+     "type": null,
+     "default": null
+    }
+   ],
+   "localization_keys": [
+    "#AR-ARMST_Weapon_SIG550_Description"
+   ],
+   "missing_keys": [],
+   "known_exceptions": null,
+   "known_debt": [],
+   "status": "ISSUE",
+   "issues": [
+    {
+     "severity": "CRITICAL",
+     "issue": "DANGLING_REFS ['{E7E67E4426E24066}Assets/Weapons/Rifles/workspaces/VZ58.agr', '{FFB391312D0E84C5}Assets/Weapons/Rifles/workspaces/VZ58_weapon.asi', '{E7E67E4426E24066}Assets/Weapons/Rifles/workspaces/VZ58.agr']"
+    }
+   ],
+   "unresolved_refs": [
+    "{E7E67E4426E24066}Assets/Weapons/Rifles/workspaces/VZ58.agr",
+    "{FFB391312D0E84C5}Assets/Weapons/Rifles/workspaces/VZ58_weapon.asi",
+    "{E7E67E4426E24066}Assets/Weapons/Rifles/workspaces/VZ58.agr",
+    "{04ED0000B50FE029}Assets/Weapons/Rifles/workspaces/VZ58_player.asi"
+   ],
+   "findings": [
+    {
+     "severity": "INFO",
+     "type": "UNRESOLVED_ASSET",
+     "detail": "{E7E67E4426E24066}Assets/Weapons/Rifles/workspaces/VZ58.agr"
+    },
+    {
+     "severity": "INFO",
+     "type": "UNRESOLVED_ASSET",
+     "detail": "{FFB391312D0E84C5}Assets/Weapons/Rifles/workspaces/VZ58_weapon.asi"
+    },
+    {
+     "severity": "INFO",
+     "type": "UNRESOLVED_ASSET",
+     "detail": "{E7E67E4426E24066}Assets/Weapons/Rifles/workspaces/VZ58.agr"
+    },
+    {
+     "severity": "INFO",
+     "type": "UNRESOLVED_ASSET",
+     "detail": "{04ED0000B50FE029}Assets/Weapons/Rifles/workspaces/VZ58_player.asi"
+    },
+    {
+     "severity": "HIGH",
+     "type": "ANIMATION_MISMATCH",
+     "detail": "Sign550 animation refs point to VZ58 workspace assets (foreign family) - verify"
+    }
+   ],
+   "static_result": "REVIEW_REQUIRED"
+  },
+  {
+   "weapon": "armst_Rifle_M16A2.et",
+   "path": "Prefabs/Weapons/Western/Rifle/armst_Rifle_M16A2.et",
+   "guid": "3E413771E1834D2F",
+   "model": null,
+   "parent": "{C63227C0E70EA62E}Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et",
+   "well": null,
+   "default_magazine": null,
+   "animation_refs": [
+    "{C10E1E127E210526}Assets/Weapons/Rifles/workspaces/m16.agr",
+    "{278604E4583F2647}Assets/Weapons/Rifles/workspaces/m16_weapon.asi",
+    "{C10E1E127E210526}Assets/Weapons/Rifles/workspaces/m16.agr",
+    "{DCD895D5C03E42AB}Assets/Weapons/Rifles/workspaces/m16_player.asi"
+   ],
+   "ik": [],
+   "mesh_count": 0,
+   "weaponcomponent_count": 1,
+   "muzzle_count": 0,
+   "storage_count": 0,
+   "weaponanim_count": 1,
+   "actions_count": 0,
+   "stats_count": 0,
+   "sights_count": 0,
+   "sights_local_disabled": false,
+   "slots": [],
+   "localization_keys": [],
+   "missing_keys": [],
+   "known_exceptions": null,
+   "known_debt": [],
+   "status": "ISSUE",
+   "issues": [
+    {
+     "severity": "CRITICAL",
+     "issue": "DANGLING_REFS ['{C10E1E127E210526}Assets/Weapons/Rifles/workspaces/m16.agr', '{278604E4583F2647}Assets/Weapons/Rifles/workspaces/m16_weapon.asi', '{C10E1E127E210526}Assets/Weapons/Rifles/workspaces/m16.agr']"
+    }
+   ],
+   "unresolved_refs": [
+    "{C10E1E127E210526}Assets/Weapons/Rifles/workspaces/m16.agr",
+    "{278604E4583F2647}Assets/Weapons/Rifles/workspaces/m16_weapon.asi",
+    "{C10E1E127E210526}Assets/Weapons/Rifles/workspaces/m16.agr",
+    "{DCD895D5C03E42AB}Assets/Weapons/Rifles/workspaces/m16_player.asi"
+   ],
+   "findings": [
+    {
+     "severity": "INFO",
+     "type": "UNRESOLVED_ASSET",
+     "detail": "{C10E1E127E210526}Assets/Weapons/Rifles/workspaces/m16.agr"
+    },
+    {
+     "severity": "INFO",
+     "type": "UNRESOLVED_ASSET",
+     "detail": "{278604E4583F2647}Assets/Weapons/Rifles/workspaces/m16_weapon.asi"
+    },
+    {
+     "severity": "INFO",
+     "type": "UNRESOLVED_ASSET",
+     "detail": "{C10E1E127E210526}Assets/Weapons/Rifles/workspaces/m16.agr"
+    },
+    {
+     "severity": "INFO",
+     "type": "UNRESOLVED_ASSET",
+     "detail": "{DCD895D5C03E42AB}Assets/Weapons/Rifles/workspaces/m16_player.asi"
+    }
+   ],
+   "static_result": "PASS_WITH_KNOWN_DEBT"
+  },
+  {
+   "weapon": "armst_Rifle_M16A2_carbine.et",
+   "path": "Prefabs/Weapons/Western/Rifle/armst_Rifle_M16A2_carbine.et",
+   "guid": "F97A4AC994231900",
+   "model": null,
+   "parent": "{9207B5D36C3C8C94}Prefabs/Weapons/Rifles/M16/Rifle_M16A2_carbine_base.et",
+   "well": null,
+   "default_magazine": null,
+   "animation_refs": [],
+   "ik": [],
+   "mesh_count": 0,
+   "weaponcomponent_count": 1,
+   "muzzle_count": 0,
+   "storage_count": 1,
+   "weaponanim_count": 0,
+   "actions_count": 0,
+   "stats_count": 0,
+   "sights_count": 0,
+   "sights_local_disabled": false,
+   "slots": [],
+   "localization_keys": [
+    "#AR-ARMST_Weapon_M16A2carbine_Description"
+   ],
+   "missing_keys": [],
+   "known_exceptions": null,
+   "known_debt": [],
+   "status": "PASS",
+   "issues": [],
+   "unresolved_refs": [],
+   "findings": [],
+   "static_result": "PASS"
+  },
+  {
+   "weapon": "armst_VZ58P.et",
+   "path": "Prefabs/Weapons/Western/Rifle/armst_VZ58P.et",
+   "guid": "9C948630078D154D",
+   "model": null,
+   "parent": "{C19BFAF8A6334FD5}Prefabs/Weapons/Rifles/VZ58/Rifle_VZ58_base.et",
+   "well": null,
+   "default_magazine": null,
+   "animation_refs": [],
+   "ik": [],
+   "mesh_count": 0,
+   "weaponcomponent_count": 1,
+   "muzzle_count": 0,
+   "storage_count": 1,
+   "weaponanim_count": 0,
+   "actions_count": 0,
+   "stats_count": 0,
+   "sights_count": 0,
+   "sights_local_disabled": false,
+   "slots": [],
+   "localization_keys": [
+    "#AR-ARMST_Weapon_VZ58P_Description"
+   ],
+   "missing_keys": [],
+   "known_exceptions": null,
+   "known_debt": [],
+   "status": "PASS",
+   "issues": [],
+   "unresolved_refs": [],
+   "findings": [],
+   "static_result": "PASS"
+  },
+  {
+   "weapon": "armst_VZ58V.et",
+   "path": "Prefabs/Weapons/Western/Rifle/armst_VZ58V.et",
+   "guid": "443CEFF17E040B11",
+   "model": null,
+   "parent": "{C19BFAF8A6334FD5}Prefabs/Weapons/Rifles/VZ58/Rifle_VZ58_base.et",
+   "well": null,
+   "default_magazine": null,
+   "animation_refs": [],
+   "ik": [],
+   "mesh_count": 0,
+   "weaponcomponent_count": 1,
+   "muzzle_count": 1,
+   "storage_count": 1,
+   "weaponanim_count": 0,
+   "actions_count": 0,
+   "stats_count": 0,
+   "sights_count": 0,
+   "sights_local_disabled": false,
+   "slots": [],
+   "localization_keys": [
+    "#AR-ARMST_Weapon_VZ58V_Description"
+   ],
+   "missing_keys": [],
+   "known_exceptions": null,
+   "known_debt": [],
+   "status": "PASS",
+   "issues": [],
+   "unresolved_refs": [],
+   "findings": [],
+   "static_result": "PASS"
+  },
+  {
+   "weapon": "armst_PM.et",
+   "path": "Prefabs/Weapons/Russian/Handguns/Pm/armst_PM.et",
+   "guid": "C0F7DD85A86B2900",
+   "model": null,
+   "parent": "{B7132459C07777CA}Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et",
+   "well": null,
+   "default_magazine": "{75B5C65F2DA68A01}Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball_PP.et",
+   "animation_refs": [],
+   "ik": [],
+   "mesh_count": 0,
+   "weaponcomponent_count": 1,
+   "muzzle_count": 1,
+   "storage_count": 1,
+   "weaponanim_count": 0,
+   "actions_count": 0,
+   "stats_count": 0,
+   "sights_count": 0,
+   "sights_local_disabled": false,
+   "slots": [],
+   "localization_keys": [
+    "#AR-Weapon_PM_Name"
+   ],
+   "missing_keys": [],
+   "known_exceptions": null,
+   "known_debt": [],
+   "status": "PASS",
+   "issues": [],
+   "unresolved_refs": [],
+   "findings": [],
+   "static_result": "PASS"
+  },
+  {
+   "weapon": "armst_APB.et",
+   "path": "Prefabs/Weapons/Russian/Handguns/armst_APB/armst_APB.et",
+   "guid": "5D3DA7E84135B278",
+   "model": "{A72F391188860251}Assets/Apb/APB_weapon.xob",
+   "parent": "{B7132459C07777CA}Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et",
+   "well": [
+    "MagazineWellAPB",
+    "{26EA67622A1DA48B}"
+   ],
+   "default_magazine": "{389EB226473CD590}Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_APB_20rnd_Ball.et",
+   "animation_refs": [],
+   "ik": [],
+   "mesh_count": 1,
+   "weaponcomponent_count": 1,
+   "muzzle_count": 1,
+   "storage_count": 1,
+   "weaponanim_count": 0,
+   "actions_count": 0,
+   "stats_count": 0,
+   "sights_count": 1,
+   "sights_local_disabled": false,
+   "slots": [],
+   "localization_keys": [],
+   "missing_keys": [],
+   "known_exceptions": null,
+   "known_debt": [],
+   "status": "ISSUE",
+   "issues": [
+    {
+     "severity": "CRITICAL",
+     "issue": "DANGLING_REFS ['{A72F391188860251}Assets/Apb/APB_weapon.xob']"
+    }
+   ],
+   "unresolved_refs": [],
+   "findings": [],
+   "static_result": "PASS"
+  },
+  {
+   "weapon": "armst_PP91.et",
+   "path": "Prefabs/Weapons/Russian/Handguns/PP_19/armst_PP91.et",
+   "guid": "3968B2A856852CBD",
+   "model": "{C783576039056FE8}Assets/Kedr/Kedr_weapons.xob",
+   "parent": "{B7132459C07777CA}Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et",
+   "well": [
+    "MagazineWellPP91",
+    "{26EA67622A1DA48B}"
+   ],
+   "default_magazine": "{4488C415F3CA1890}Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PP91_30rnd_Ball.et",
+   "animation_refs": [
+    "{E26E54BD5548148B}Assets/Kedr/Anim/PP19.agr",
+    "{233B6CCFBFE736DB}Assets/Kedr/Anim/PP19_weapon.asi",
+    "{E26E54BD5548148B}Assets/Kedr/Anim/PP19.agr",
+    "{D865FDFE27E65237}Assets/Kedr/Anim/PP19_player.asi"
+   ],
+   "ik": [
+    "{424B6D42E06E08C3}Assets/Kedr/Anim/Diff/p_rfl_PP19_01_ik.anm"
+   ],
+   "mesh_count": 1,
+   "weaponcomponent_count": 1,
+   "muzzle_count": 1,
+   "storage_count": 1,
+   "weaponanim_count": 1,
+   "actions_count": 0,
+   "stats_count": 0,
+   "sights_count": 1,
+   "sights_local_disabled": false,
+   "slots": [],
+   "localization_keys": [],
+   "missing_keys": [],
+   "known_exceptions": null,
+   "known_debt": [],
+   "status": "ISSUE",
+   "issues": [
+    {
+     "severity": "CRITICAL",
+     "issue": "DANGLING_REFS ['{C783576039056FE8}Assets/Kedr/Kedr_weapons.xob', '{E26E54BD5548148B}Assets/Kedr/Anim/PP19.agr', '{233B6CCFBFE736DB}Assets/Kedr/Anim/PP19_weapon.asi']"
+    }
+   ],
+   "unresolved_refs": [],
+   "findings": [],
+   "static_result": "PASS"
+  },
+  {
+   "weapon": "armst_SR_2.et",
+   "path": "Prefabs/Weapons/Russian/Handguns/Sr_2/armst_SR_2.et",
+   "guid": "31FB2EC4F4AFFC05",
+   "model": "{DE11A7B572066CCA}Assets/sr2/SR2.xob",
+   "parent": "{B7132459C07777CA}Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et",
+   "well": [
+    "MagazineWellPP91",
+    "{26EA67622A1DA48B}"
+   ],
+   "default_magazine": "{2610CA8D8632DEF4}Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_SR2_30rnd_Ball.et",
+   "animation_refs": [
+    "{354CDF857D71DA57}Assets/sr2/Anim/SR_2.agr",
+    "{2FBC34698CBAFACE}Assets/sr2/Anim/SR_2_weapon.asi",
+    "{354CDF857D71DA57}Assets/sr2/Anim/SR_2.agr",
+    "{D4E2A55814BB9E22}Assets/sr2/Anim/SR_2_player.asi"
+   ],
+   "ik": [
+    "{68B6B9E2BCFAE845}Assets/sr2/Anim/Diff/p_rfl_Sr_2_veresk_ik.anm"
+   ],
+   "mesh_count": 1,
+   "weaponcomponent_count": 1,
+   "muzzle_count": 1,
+   "storage_count": 1,
+   "weaponanim_count": 1,
+   "actions_count": 0,
+   "stats_count": 0,
+   "sights_count": 1,
+   "sights_local_disabled": false,
+   "slots": [],
+   "localization_keys": [],
+   "missing_keys": [],
+   "known_exceptions": "MagazineWellPP91 shared compatibility",
+   "known_debt": [],
+   "status": "ISSUE",
+   "issues": [
+    {
+     "severity": "CRITICAL",
+     "issue": "DANGLING_REFS ['{DE11A7B572066CCA}Assets/sr2/SR2.xob', '{354CDF857D71DA57}Assets/sr2/Anim/SR_2.agr', '{2FBC34698CBAFACE}Assets/sr2/Anim/SR_2_weapon.asi']"
+    }
+   ],
+   "unresolved_refs": [],
+   "findings": [],
+   "static_result": "PASS"
+  },
+  {
+   "weapon": "armst_TT.et",
+   "path": "Prefabs/Weapons/Russian/Handguns/TT/armst_TT.et",
+   "guid": "0D469F42B65E350E",
+   "model": "{3142577B6CD35911}Assets/TT/TT_weapon.xob",
+   "parent": "{B7132459C07777CA}Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et",
+   "well": [
+    "MagazineWell763x25",
+    "{26EA67622A1DA48B}"
+   ],
+   "default_magazine": "{AA99F5E678010DB3}Prefabs/Weapons/Magazines/Russian/763x25/TT/armst_Magazine_763x25_TT_8rnd_Ball.et",
+   "animation_refs": [],
+   "ik": [],
+   "mesh_count": 1,
+   "weaponcomponent_count": 1,
+   "muzzle_count": 1,
+   "storage_count": 1,
+   "weaponanim_count": 0,
+   "actions_count": 0,
+   "stats_count": 0,
+   "sights_count": 1,
+   "sights_local_disabled": false,
+   "slots": [],
+   "localization_keys": [],
+   "missing_keys": [],
+   "known_exceptions": null,
+   "known_debt": [],
+   "status": "ISSUE",
+   "issues": [
+    {
+     "severity": "CRITICAL",
+     "issue": "DANGLING_REFS ['{3142577B6CD35911}Assets/TT/TT_weapon.xob']"
+    }
+   ],
+   "unresolved_refs": [],
+   "findings": [],
+   "static_result": "PASS"
+  },
+  {
+   "weapon": "armst_M9.et",
+   "path": "Prefabs/Weapons/Western/Handguns/armst_M9.et",
+   "guid": "1353C6EAD1DCFE43",
+   "model": null,
+   "parent": "{809488C4984AC087}Prefabs/Weapons/Handguns/M9/Handgun_M9_base.et",
+   "well": null,
+   "default_magazine": null,
+   "animation_refs": [],
+   "ik": [],
+   "mesh_count": 0,
+   "weaponcomponent_count": 0,
+   "muzzle_count": 0,
+   "storage_count": 1,
+   "weaponanim_count": 0,
+   "actions_count": 0,
+   "stats_count": 0,
+   "sights_count": 0,
+   "sights_local_disabled": false,
+   "slots": [],
+   "localization_keys": [
+    "#AR-Weapon_BerettaM9_Name"
+   ],
+   "missing_keys": [],
+   "known_exceptions": null,
+   "known_debt": [],
+   "status": "PASS",
+   "issues": [],
+   "unresolved_refs": [],
+   "findings": [],
+   "static_result": "PASS"
+  },
+  {
+   "weapon": "armst_PKM.et",
+   "path": "Prefabs/Weapons/Russian/MachineGuns/armst_PKM.et",
+   "guid": "A89BC9D55FFB4CD8",
+   "model": null,
+   "parent": "{76C400582D3C4AF9}Prefabs/Weapons/MachineGuns/PKM/MG_PKM_base.et",
+   "well": null,
+   "default_magazine": null,
+   "animation_refs": [],
+   "ik": [],
+   "mesh_count": 0,
+   "weaponcomponent_count": 0,
+   "muzzle_count": 0,
+   "storage_count": 1,
+   "weaponanim_count": 0,
+   "actions_count": 0,
+   "stats_count": 0,
+   "sights_count": 0,
+   "sights_local_disabled": false,
+   "slots": [],
+   "localization_keys": [],
+   "missing_keys": [],
+   "known_exceptions": null,
+   "known_debt": [],
+   "status": "PASS",
+   "issues": [],
+   "unresolved_refs": [],
+   "findings": [],
+   "static_result": "PASS"
+  },
+  {
+   "weapon": "armst_RPK74.et",
+   "path": "Prefabs/Weapons/Russian/MachineGuns/armst_RPK74.et",
+   "guid": "A7AF84C6C58BA3E8",
+   "model": null,
+   "parent": "{3BFBE9145E9C40B9}Prefabs/Weapons/MachineGuns/RPK74/MG_RPK74_base.et",
+   "well": null,
+   "default_magazine": null,
+   "animation_refs": [],
+   "ik": [],
+   "mesh_count": 0,
+   "weaponcomponent_count": 0,
+   "muzzle_count": 0,
+   "storage_count": 1,
+   "weaponanim_count": 0,
+   "actions_count": 0,
+   "stats_count": 0,
+   "sights_count": 0,
+   "sights_local_disabled": false,
+   "slots": [],
+   "localization_keys": [],
+   "missing_keys": [],
+   "known_exceptions": null,
+   "known_debt": [],
+   "status": "PASS",
+   "issues": [],
+   "unresolved_refs": [],
+   "findings": [],
+   "static_result": "PASS"
+  }
+ ],
+ "findings": [
+  {
+   "severity": "KNOWN_DEBT",
+   "type": "CASING",
+   "detail": "Casing_762x39_PS.ptc WRONG_FOR_9x39 no proven replacement",
+   "weapon": "armst_Groza_base.et"
+  },
+  {
+   "severity": "INFO",
+   "type": "UNRESOLVED_ASSET",
+   "detail": "{B7869ABD0EEE379D}Assets/Weapons/Rifles/AK74/anims/anm/p_ak74_ik.anm",
+   "weapon": "armst_Rifle_hk_g36.et"
+  },
+  {
+   "severity": "INTENTIONAL",
+   "type": "APPROVED",
+   "detail": "AK74 IK workaround",
+   "weapon": "armst_Rifle_hk_g36.et"
+  },
+  {
+   "severity": "INFO",
+   "type": "UNRESOLVED_ASSET",
+   "detail": "{B7869ABD0EEE379D}Assets/Weapons/Rifles/AK74/anims/anm/p_ak74_ik.anm",
+   "weapon": "armst_SLR.et"
+  },
+  {
+   "severity": "MEDIUM",
+   "type": "KNOW_WORKAROUND_CANDIDATE",
+   "detail": "AK74 IK pose on L1A1 (pre-existing; earlier classified AMBIGUOUS)",
+   "weapon": "armst_SLR.et"
+  },
+  {
+   "severity": "INFO",
+   "type": "UNRESOLVED_ASSET",
+   "detail": "{E7E67E4426E24066}Assets/Weapons/Rifles/workspaces/VZ58.agr",
+   "weapon": "armst_Rifle_Sig550.et"
+  },
+  {
+   "severity": "INFO",
+   "type": "UNRESOLVED_ASSET",
+   "detail": "{FFB391312D0E84C5}Assets/Weapons/Rifles/workspaces/VZ58_weapon.asi",
+   "weapon": "armst_Rifle_Sig550.et"
+  },
+  {
+   "severity": "INFO",
+   "type": "UNRESOLVED_ASSET",
+   "detail": "{E7E67E4426E24066}Assets/Weapons/Rifles/workspaces/VZ58.agr",
+   "weapon": "armst_Rifle_Sig550.et"
+  },
+  {
+   "severity": "INFO",
+   "type": "UNRESOLVED_ASSET",
+   "detail": "{04ED0000B50FE029}Assets/Weapons/Rifles/workspaces/VZ58_player.asi",
+   "weapon": "armst_Rifle_Sig550.et"
+  },
+  {
+   "severity": "HIGH",
+   "type": "ANIMATION_MISMATCH",
+   "detail": "Sign550 animation refs point to VZ58 workspace assets (foreign family) - verify",
+   "weapon": "armst_Rifle_Sig550.et"
+  },
+  {
+   "severity": "INFO",
+   "type": "UNRESOLVED_ASSET",
+   "detail": "{C10E1E127E210526}Assets/Weapons/Rifles/workspaces/m16.agr",
+   "weapon": "armst_Rifle_M16A2.et"
+  },
+  {
+   "severity": "INFO",
+   "type": "UNRESOLVED_ASSET",
+   "detail": "{278604E4583F2647}Assets/Weapons/Rifles/workspaces/m16_weapon.asi",
+   "weapon": "armst_Rifle_M16A2.et"
+  },
+  {
+   "severity": "INFO",
+   "type": "UNRESOLVED_ASSET",
+   "detail": "{C10E1E127E210526}Assets/Weapons/Rifles/workspaces/m16.agr",
+   "weapon": "armst_Rifle_M16A2.et"
+  },
+  {
+   "severity": "INFO",
+   "type": "UNRESOLVED_ASSET",
+   "detail": "{DCD895D5C03E42AB}Assets/Weapons/Rifles/workspaces/m16_player.asi",
+   "weapon": "armst_Rifle_M16A2.et"
+  }
+ ],
+ "LIVE_FILES_CHANGED": "NONE",
+ "STATIC_STATUS": "REVIEW_REQUIRED"
+}

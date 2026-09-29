@@ -1,0 +1,306 @@
+GenericEntity : "{F54F6C453A8CB478}Prefabs/Weapons/Core/MachineGun_Base.et" {
+ ID "CFBAA4B725411E45"
+ components {
+  WeaponSoundComponent "{5A8685198A9AEEDD}" {
+   Filenames {
+    "{B6942A3F864142C5}Sounds/Weapons/HeavyWeapons/NSV/Weapons_HeavyWeapons_NSV_Shot.acp" "{CA5F7FAB6856F317}Sounds/Weapons/HeavyWeapons/NSV/Weapons_HeavyWeapons_NSV_Handling.acp"
+   }
+   IncludeInactive 1
+  }
+  MeshObject "{CFBAA4B701F95D69}" {
+   Object "{1C372CC3C2897372}Assets/Weapons/HeavyWeapons/NSV/NSV_body.xob"
+  }
+  RigidBody "{5EB268B9C3816D1A}" {
+   ModelGeometry 1
+   Static 1
+  }
+  SCR_DamageManagerComponent "{660AB52DEF14CF95}" {
+   "Additional hit zones" {
+    SCR_DestructibleHitzone main : "{20D6C595AE450F55}Prefabs/Vehicles/Core/Configs/HitZones/VehiclePart_HZ.conf" {
+     IgnoreExplosions 1
+    }
+   }
+  }
+  SCR_WeaponAttachmentsStorageComponent "{51F080D5CE45A1A2}" {
+   Attributes SCR_ItemAttributeCollection "{51F080D5C64F12C5}" {
+    ItemDisplayName WeaponUIInfo "{5222CB07E1D123E9}" {
+     Name "#AR-Weapon_NSV_Name"
+     Description "#AR-Weapon_NSV_Description"
+    }
+    ItemPhysAttributes ItemPhysicalAttributes "{5AF070F55031A579}" {
+     Weight 52.5
+     SizeSetupStrategy Volume
+     ItemVolume 12000
+    }
+    CustomAttributes {
+     PreviewRenderAttributes "{5534BB9B9A3E369E}" {
+      CameraPreset Left
+      CameraDistanceToItem 1.9
+     }
+    }
+   }
+  }
+  SlotManagerComponent "{6044A1932A368344}" {
+   Slots {
+    EntitySlotInfo Dovetail {
+    }
+   }
+  }
+  WeaponComponent "{CFBAA4B706BA66E8}" {
+   components {
+    AttachmentSlotComponent "{5AF070F55031A54D}" {
+     AttachmentSlot InventoryStorageSlot optics {
+      ChildPivotID "snap_weapon"
+     }
+    }
+    SightsComponent "{BB23A637957CFFF8}" {
+     SightsPosition PointInfo "{BB23A63796688E69}" {
+      PivotID "eye"
+     }
+     SightsRanges {
+      SightRangeInfo "{68EE9059EF3C7641}" {
+       Range 0.105 400
+       WeaponPosition PointInfo "{68EE9059EF3C766D}" {
+        Offset 0 -0.0042 -0.00054
+        Angles 0.19483 0 0
+       }
+      }
+      SightRangeInfo "{68EE9059EF330A74}" {
+       Range 0.155 500
+       WeaponPosition PointInfo "{68EE9059EF330A79}" {
+        Offset 0 -0.00545 -0.0007
+        Angles 0.25256 0 0
+       }
+      }
+      SightRangeInfo "{68EE9059EF338466}" {
+       Range 0.205 600
+       WeaponPosition PointInfo "{68EE9059EF33846D}" {
+        Offset 0 -0.00679 -0.00088
+        Angles 0.31466 0 0
+       }
+      }
+      SightRangeInfo "{68EE9059EF320025}" {
+       Range 0.2525 700
+       WeaponPosition PointInfo "{68EE9059EF32002E}" {
+        Offset 0 -0.00826 -0.00107
+        Angles 0.38308 0 0
+       }
+      }
+      SightRangeInfo "{68EE9059EF329E06}" {
+       Range 0.31 800
+       WeaponPosition PointInfo "{68EE9059EF329E0E}" {
+        Offset 0 -0.00985 -0.00129
+        Angles 0.45671 0 0
+       }
+      }
+      SightRangeInfo "{68EE9059EF311A44}" {
+       Range 0.36 900
+       WeaponPosition PointInfo "{68EE9059EF311A7D}" {
+        Offset 0 -0.01158 -0.00152
+        Angles 0.53705 0 0
+       }
+      }
+      SightRangeInfo "{68EE9059EF319876}" {
+       Range 0.41 1000
+       WeaponPosition PointInfo "{68EE9059EF31987F}" {
+        Offset 0 -0.01345 -0.00178
+        Angles 0.62338 0 0
+       }
+      }
+      SightRangeInfo "{68EE9059EF3018A1}" {
+       Range 0.46 1100
+       WeaponPosition PointInfo "{68EE9059EF3018AF}" {
+        Offset 0 -0.01547 -0.00206
+        Angles 0.7171 0 0
+       }
+      }
+      SightRangeInfo "{68EE9059EF309668}" {
+       Range 0.515 1200
+       WeaponPosition PointInfo "{68EE9059EF309616}" {
+        Offset 0 -0.01765 -0.00236
+        Angles 0.81829 0 0
+       }
+      }
+      SightRangeInfo "{68EE9059EF3717E4}" {
+       Range 0.56 1300
+       WeaponPosition PointInfo "{68EE9059EF3717EE}" {
+        Offset 0 -0.02002 -0.0027
+        Angles 0.92873 0 0
+       }
+      }
+      SightRangeInfo "{68EE9059EF3792C4}" {
+       Range 0.615 1400
+       WeaponPosition PointInfo "{68EE9059EF3792C3}" {
+        Offset 0 -0.02259 -0.00307
+        Angles 1.04792 0 0
+       }
+      }
+      SightRangeInfo "{68EE9059EF3610E0}" {
+       Range 0.6675 1500
+       WeaponPosition PointInfo "{68EE9059EF3610EE}" {
+        Offset 0 -0.0254 -0.00348
+        Angles 1.17819 0 0
+       }
+      }
+      SightRangeInfo "{68EE9059EF36905D}" {
+       Range 0.725 1600
+       WeaponPosition PointInfo "{68EE9059EF36905B}" {
+        Offset 0 -0.02842 -0.00393
+        Angles 1.31893 0 0
+       }
+      }
+      SightRangeInfo "{68EE9059EF3511B6}" {
+       Range 0.7875 1700
+       WeaponPosition PointInfo "{68EE9059EF3511A2}" {
+        Offset 0 -0.03172 -0.00443
+        Angles 1.47206 0 0
+       }
+      }
+      SightRangeInfo "{68EE9059EF35AABB}" {
+       Range 0.8525 1800
+       WeaponPosition PointInfo "{68EE9059EF35AAAD}" {
+        Offset 0 -0.0353 -0.00498
+        Angles 1.63853 0 0
+       }
+      }
+      SightRangeInfo "{68EE9059EF342D03}" {
+       Range 0.925 1900
+       WeaponPosition PointInfo "{68EE9059EF342D09}" {
+        Offset 0 -0.03919 -0.0056
+        Angles 1.81951 0 0
+       }
+      }
+      SightRangeInfo "{68EE9059EF34AE25}" {
+       Range 1 2000
+       WeaponPosition PointInfo "{68EE9059EF34AE22}" {
+        Offset 0 -0.04342 -0.00628
+        Angles 2.01674 0 0
+       }
+      }
+     }
+     SightsPointFront PointInfo "{68E6C5FD131FEB5E}" {
+      PivotID "slot_barrel_muzzle"
+      Offset 0 0.0727 -0.2111
+     }
+     SightsPointRear PointInfo "{68E6C5FEB1E55E03}" {
+      PivotID "hw_sight"
+      Offset 0 -0.0083 -0.0137
+      Angles 80 180 180
+     }
+    }
+    MuzzleComponent "{50F64C4591CD7AA6}" {
+     components {
+      CaseEjectingEffectComponent "{5122AAD190FCA21D}" {
+       ParticleEffect "{DE51D0FA64AD8AA3}Particles/Weapon/Casing_127x108_NSV.ptc"
+       EffectPosition EntitySlotInfo "{513A938439231378}" {
+        PivotID "hw_bullet_chamber_door_L"
+        Offset 0 -0.0769 -0.0559
+        Angles 0 -90 -90
+       }
+       HasSound 0
+      }
+      CaseEjectingEffectComponent "{5EBE9EB3C771E45A}" {
+       ParticleEffect "{78F707EBECCD6F29}Particles/Weapon/Smoke_NSV.ptc"
+       EffectPosition EntitySlotInfo Smoke {
+        PivotID "slot_barrel_muzzle"
+        Offset 0 0 0.0747
+       }
+      }
+      CaseEjectingEffectComponent "{5EBE9EB3C948C9D3}" {
+       ParticleEffect "{E7ACDE0ACCBCB07A}Particles/Weapon/Casing_Holder.ptc"
+       EffectPosition EntitySlotInfo Hlder {
+        PivotID "hw_bullet_chamber_door_L"
+        Offset 0 0.0177 -0.0164
+        Angles 90 0 0
+       }
+      }
+      SCR_MuzzleEffectComponent "{C9B3271BB22CDB68}" {
+       EffectPosition EntitySlotInfo "{C9B3271BB85B5D32}" {
+        PivotID "slot_barrel_muzzle"
+        Offset 0 0 0.0757
+        AutoTransform 0
+       }
+      }
+     }
+     MuzzleEndPositions {
+      PointInfo "{B80A64F4B6CFB9BF}" {
+       PivotID "slot_barrel_muzzle"
+       Offset 0 0 0.0703
+      }
+     }
+     ProjectileSpawnPositions {
+      PointInfo "{50F64C476EC435CA}" {
+       Angles -0.25 0 0
+      }
+     }
+     FireModes {
+      BaseFireMode "{B80A64F4A8EF8333}" : "{A512F292D96BCB9F}Prefabs/Weapons/Core/Configs/FireModes/FireMode_Auto.conf" {
+      }
+     }
+     MagazineWell MagazineWellNSV "{5AF070F55031A55A}" {
+     }
+     DispersionDiameter 0.4
+     DispersionRange 270
+     WeaponAimModifiers {
+      RecoilWeaponAimModifier "{691496C4F22A8EBE}" : "{16045D61C1205DD3}Prefabs/Weapons/Core/Configs/AimModifiers/RecoilAimModifier_NSV.conf" {
+      }
+      ZeroingWeaponAimModifier "{68F72024BB54DEBA}" {
+      }
+      SCR_RecoilForceAimModifier "{691496C348C7B507}" : "{943C532551434D83}Prefabs/Weapons/Core/Configs/AimModifiers/RecoilForceAimModifier_NSV.conf" {
+      }
+     }
+     UIInfo MuzzleUIInfo "{2FBBA72C906C627E}" {
+      m_bShowCaliber 1
+      m_sCaliber "#AR-AmmunitionID_127x108mm"
+     }
+     ReloadDuration 15
+     MagazinePosition InventoryStorageSlot "{B80A64F4C834E9CB}" {
+     }
+     MagazineTemplate "{843D9B182BCD2765}Prefabs/Weapons/Magazines/NSV/Box_127x108_NSV_50rnd_4AP_1APIT.et"
+    }
+    WeaponAnimationComponent "{60B4EA76EB15F6E0}" {
+     AnimGraph "{DF29B8BA02C0C4FC}Assets/Weapons/HeavyWeapons/workspaces/NSV_tripod.agr"
+     AnimInstance "{3243ED611EC99612}Assets/Weapons/HeavyWeapons/workspaces/NSV_tripod.asi"
+     AnimInjection AnimationAttachmentInfo "{5F26990B240DBF6F}" {
+      AnimGraph "{DF29B8BA02C0C4FC}Assets/Weapons/HeavyWeapons/workspaces/NSV_tripod.agr"
+      AnimInstance "{0C8D83FD7D69EE47}Assets/Weapons/HeavyWeapons/workspaces/NSV_Player_tripod.asi"
+      BindingName "Weapon"
+     }
+     BindWithInjection 1
+     AutoVariablesBind 1
+    }
+   }
+   UIInfo WeaponUIInfo "{CC3BA6A2C42F09F4}" {
+    Name "#AR-Weapon_NSV_Name"
+    Description "#AR-Weapon_NSV_Description"
+    m_bShowWeaponName 1
+   }
+   WeaponSlotType "hmg"
+  }
+  ActionsManagerComponent "{A29AE67FF4D82B0F}" {
+   ActionContexts {
+    UserActionContext "{5086F9ADF588DCA4}" {
+     Position PointInfo "{5086F9ADE97650DF}" {
+      PivotID "hw_load_chamber"
+     }
+    }
+    UserActionContext "{5A1E58F7B04F9BE5}" {
+     Position PointInfo "{5EBE9EB50B9799E6}" {
+      PivotID "slot_magazine"
+     }
+    }
+    UserActionContext "{5A1E58F7AED270D4}" {
+     Position PointInfo "{5EBE9EB5111DB7E2}" {
+      PivotID "hw_safety_switcher"
+     }
+    }
+   }
+  }
+  WeaponGamepadEffectsManagerComponent "{61A2E5C3F4458F86}" {
+   "Default ADS Trigger effect" GamepadTriggerEffect "{61B129618F212411}" : "{0DE3E1891C66DCEB}Prefabs/Weapons/Core/Configs/TriggerEffects/ADS/TriggerEffect_ADSMedium.conf" {
+   }
+   "Default Firing Trigger effect" GamepadTriggerEffect "{61D30BF7F81F8C61}" : "{5A67879DEFFDBD73}Prefabs/Weapons/Core/Configs/TriggerEffects/Fire/TriggerEffect_FireHMG.conf" {
+   }
+  }
+ }
+}

@@ -1,0 +1,47 @@
+GenericEntity : "{9B5FF7EECAD376FA}Prefabs/Weapons/Warheads/Warhead_Base.et" {
+ ID "9D9BE68EA2672F76"
+ components {
+  SignalsManagerComponent "{C572A75F88B55309}" {
+   Enabled 0
+  }
+  SoundComponent "{D092A75ECEFAE456}" {
+   Enabled 0
+  }
+  TimerTriggerComponent "{55129E81CBAA1390}" {
+   PROJECTILE_EFFECTS {
+    ExplosionDamageContainer "{5D8D1EB2400CDFFE}" : "{A0C3E936D43FA9E3}Prefabs/Weapons/Core/Damage/ExplosionContainer_Fire.conf" {
+     ExplosionEffects {
+      BaseExplosionDamage "{5D8D1EB239A9465D}" {
+       DamageValue 20
+       DamageFalloffCurve {
+        0 1 0.125 1 0.799 0.623 1 0
+       }
+       DamageDistanceCurve {
+        0 1 0.7 0.645 1 0
+       }
+      }
+     }
+    }
+    SpawnDecalEffect "{5E24C6340FE0175F}" {
+     Enabled 0
+     Material "{BD7CE4118270F3F6}Assets/Decals/Logistics/Data/Logistics_Fire_Decal_Small.emat"
+    }
+    SpawnParticleEffect "{5E24C63471F26FAE}" {
+     Enabled 0
+     UseFrameEvent 1
+     ParticleEffect "{48E90427E75C84C7}Particles/Logistics/Fire/Tire/Fire_wheel_small.ptc"
+    }
+   }
+   TIMER 0.05
+  }
+  TimerTriggerComponent "{60DD0C27D8FD2CA4}" {
+   TRIGGER_ALIVE 1
+   TIMER 2
+  }
+  HitEffectComponent "{9D9BE68D6F65A10F}" {
+   Enabled 1
+  }
+  RplComponent "{5E6D69BA115648A7}" {
+  }
+ }
+}

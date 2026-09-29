@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{A8292CB2F27BAE14}Imported/VanillaSources/Prefabs/Weapons/Ammo/Ammo_Rocket_Hydra70_HEDP_M247_Penetrator.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

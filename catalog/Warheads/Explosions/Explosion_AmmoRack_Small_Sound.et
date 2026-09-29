@@ -1,0 +1,18 @@
+GenericEntity : "{6BB2F747B4896E02}Prefabs/Weapons/Warheads/Explosions/Explosion_AmmoRack_Small.et" {
+ ID "9D9BE68EA2672F76"
+ components {
+  SignalsManagerComponent "{C572A75F88B55309}" {
+   Enabled 1
+  }
+  SoundComponent "{D092A75ECEFAE456}" {
+   Enabled 1
+  }
+  TimerTriggerComponent "{55129E81CBAA1390}" {
+   PROJECTILE_EFFECTS {
+    SpawnParticleEffect "{5E24A9E49067B7F5}" {
+     SoundEvent "SOUND_EXPLOSION"
+    }
+   }
+  }
+ }
+}

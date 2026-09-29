@@ -1,0 +1,11 @@
+GenericEntity {
+ ID "5968D9C63AC52B94"
+ components {
+  MeshObject "{5968D9C63AC52BAE}" {
+   Object "{A4048C2AA75EF832}Common/Models/Default.xob"
+  }
+  RigidBody "{5968D9C63AC52BBC}" {
+  }
+ }
+ coords 2.736 3.824 3.193
+}

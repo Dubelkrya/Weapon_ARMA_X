@@ -1,0 +1,13 @@
+Projectile : "{5964C8C1CCB57D93}Prefabs/Weapons/Ammo/FlareEffect_82mm_S832S_White.et" {
+ ID "5A52CD9231D8AB66"
+ components {
+  FlareMoveComponent "{5A52CD9231D8AB6E}" {
+   DispersionMultiplier 0
+   MoveWithParent 1
+  }
+  SCR_EffectsModuleChildComponent "{61A4959B0D5B2FFC}" {
+  }
+  Hierarchy "{61A4959B0FFA88DB}" {
+  }
+ }
+}

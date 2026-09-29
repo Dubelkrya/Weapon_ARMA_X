@@ -1,0 +1,10 @@
+{
+    "HeavyPredicate":  "UNRESOLVED (vanilla pickup validate in paks)",
+    "ModulesWithoutPhys":  [
+                               "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et",
+                               "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et",
+                               "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Optic.et",
+                               "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Picatinny.et"
+                           ],
+    "CorrelationNote":  "Part-family items with NO effective ItemPhysicalAttributes observed \"Heavy\" (HKG36 handle; AKDovetail pre-fix). AKDovetail now Weight 0.5 (NOT_TESTED). Correlation only, not engine-proof."
+}

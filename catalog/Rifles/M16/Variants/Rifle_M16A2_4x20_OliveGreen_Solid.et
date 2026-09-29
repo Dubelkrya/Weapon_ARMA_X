@@ -1,0 +1,54 @@
+GenericEntity : "{B1482FB64E3D2D45}Prefabs/Weapons/Rifles/M16/Rifle_M16A2_4x20.et" {
+ ID "CFBAA4B725411E45"
+ components {
+  MeshObject "{CFBAA4B701F95D69}" {
+   Materials {
+    MaterialAssignClass "{5F24DA1FBBBEE1A7}" {
+     SourceMaterial "M16A2_Barrel_01"
+     AssignedMaterial "{4807EB901CAA4F71}Assets/Weapons/Rifles/M16A2/Data/M16A2_Barrel_01_OliveGreen_Solid.emat"
+    }
+    MaterialAssignClass "{5F24DA1FBBBEE1D3}" {
+     SourceMaterial "M16A2_FrontSight_01"
+     AssignedMaterial "{F8F10B804C1D827A}Assets/Weapons/Rifles/M16A2/Data/M16A2_FrontSight_OliveGreen_Solid.emat"
+    }
+    MaterialAssignClass "{5F24DA1FBBBEE1CC}" {
+     SourceMaterial "M16A2_Grip_01"
+     AssignedMaterial "{FD4C692542DAFA91}Assets/Weapons/Rifles/M16A2/Data/M16A2_Grip_01_OliveGreen_Solid.emat"
+    }
+    MaterialAssignClass "{5F24DA1FBBBEE1C4}" {
+     SourceMaterial "M16A2_Receiver1_01"
+     AssignedMaterial "{44C0BD4406041C25}Assets/Weapons/Rifles/M16A2/Data/M16A2_Receiver1_01_OliveGreen_Solid.emat"
+    }
+    MaterialAssignClass "{5F24DA1FBBBEE1FC}" {
+     SourceMaterial "M16A2_Receiver2_01"
+     AssignedMaterial "{3EDCE096161C55DB}Assets/Weapons/Rifles/M16A2/Data/M16A2_Receiver2_01_OliveGreen_Solid.emat"
+    }
+    MaterialAssignClass "{5F24DA1FBBBEE1F3}" {
+     SourceMaterial "M16A2_Stock_01"
+     AssignedMaterial "{F50E61197B924ADC}Assets/Weapons/Rifles/M16A2/Data/M16A2_Stock_01_OliveGreen_Solid.emat"
+    }
+   }
+  }
+  SCR_WeaponAttachmentsStorageComponent "{51F080D5CE45A1A2}" {
+   Attributes SCR_ItemAttributeCollection "{51F080D5C64F12C5}" {
+    ItemDisplayName WeaponUIInfo "{5222CB07CFF6712A}" {
+     Name "#AR-Weapon_M16A2_Olive_Name"
+    }
+   }
+  }
+  WeaponComponent "{CFBAA4B706BA66E8}" {
+   components {
+    AttachmentSlotComponent "{5534745C44D1EF58}" {
+     AttachmentSlot InventoryStorageSlot optics {
+      Prefab "{B9773AC7CCDAD633}Prefabs/Weapons/Attachments/Optics/Optic_4x20/Optic_4x20_OliveGreen_Solid.et"
+     }
+    }
+    AttachmentSlotComponent "{56DE9C900611C1AF}" {
+     AttachmentSlot InventoryStorageSlot Handguard {
+      Prefab "{51C19F66AAC90A29}Prefabs/Weapons/Attachments/Handguards/Handguard_M16A2/Handguard_M16_OliveGreen_Solid.et"
+     }
+    }
+   }
+  }
+ }
+}

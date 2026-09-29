@@ -1,0 +1,34 @@
+{
+ "SOC94": {
+  "old": "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_SOC94.et",
+  "new": "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_SOC94_base.et",
+  "guid": "E394112ABBC198D8",
+  "guid_preserved": true,
+  "content_identical": true,
+  "parent_before": "{140E94F473B60FE3}Rifles/AKM/armst_Rifle_AKM_base.et",
+  "parent_after": "{140E94F473B60FE3}Rifles/AKM/armst_Rifle_AKM_base.et",
+  "old_path_refs_remaining": [],
+  "new_exists": true,
+  "old_absent": true
+ },
+ "classification": {
+  "SOC94": "DISTINCT_MAIN_WEAPON (model SOK_94_weapon.xob, display SOK-94) -> renamed",
+  "VPO136": "AMBIGUOUS (display VPO-136 but no distinct local model; inherits AKM mesh) -> not renamed",
+  "AKMS": "AKM_VARIANT (real AKMS but AKM mesh inherited) -> not renamed",
+  "AKM_full": "LOADOUT_VARIANT -> not renamed",
+  "AKS74U": "AMBIGUOUS (distinct compact weapon inside AK74 folder; not normalized here)",
+  "AKS74UN": "LOADOUT_VARIANT (night variant of AKS74U)"
+ },
+ "OTHER_RENAMED": [],
+ "ALREADY_BASE": [
+  "armst_Rifle_AKM_base.et",
+  "armst_AK74_base.et",
+  "previously renamed * _base set"
+ ],
+ "OVERRIDES_CHANGED": 0,
+ "PARENTS_CHANGED": 0,
+ "GUID_CHANGES": 0,
+ "DANGLING_REFS": 0,
+ "LIVE_FILES_CHANGED": "1 renamed file (+meta); refs updated",
+ "STATUS": "PASS"
+}

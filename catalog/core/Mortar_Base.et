@@ -1,0 +1,404 @@
+Turret : "{4AD877DEA242E512}Prefabs/Weapons/Core/Turret_Base.et" {
+ ID "5CF87D15B3D0A976"
+ components {
+  WeaponSoundComponent "{5CF87D14CB58AACA}" {
+   Filenames {
+    "{79646E7BBF9AC37E}Sounds/Weapons/Mortars/2B14/Weapons_Mortars_2B14_Handling.acp" "{D8F675F3468362E2}Sounds/Weapons/_SharedData/Weapons_Sights_Actions.acp"
+   }
+   DistanceManagement 0
+   IncludeInactive 1
+  }
+  ClimbingDataComponent "{61A2A779DECDB23C}" {
+   CanClimbOver 0
+  }
+  LongRangeSoundComponent "{6188B6F21280DC32}" {
+  }
+  MeshObject "{51ACD09C4E0B7D16}" {
+   BoundingBox AABBBoundingVolume "{618CBA327C556D9B}" {
+    Mins -1.5 0 -1.5
+    Maxs 1.5 2 1.5
+   }
+  }
+  RigidBody "{51ACD09C423F175F}" {
+   Mass 100
+   SimState Collision
+   ResponseIndex "HugeDestructible"
+   ModelGeometry 1
+   Static 1
+  }
+  ProcAnimComponent "{51ACD09DB14C45C0}" {
+   Enabled 0
+  }
+  SCR_AIStaticArtilleryVehicleUsageComponent "{6198B1F775D79BED}" {
+   m_eVehicleType STATIC_ARTILLERY
+   m_bCanBePiloted 0
+  }
+  SCR_BaseCompartmentManagerComponent "{51ACFBB07A14CFA6}" {
+   DoorInfoList {
+    CompartmentDoorInfo "{6118810DA1BBEA8D}" {
+     EntryPositionInfo PointInfo "{6118810DA99E8636}" {
+      PivotID "operator_idle_01"
+      Offset 0 0 -0.3
+     }
+     ExitPositionInfo PointInfo "{6118810DAAFA7FB3}" {
+      PivotID "operator_idle_01"
+      Offset 0 0 -0.3
+     }
+     GetInTeleport 1
+     GetOutTeleport 1
+     GetInAligningTeleport 1
+     GetOutAligningTeleport 1
+     FakeDoor 1
+     StanceChangeOnExit Crouch
+    }
+   }
+   CompartmentSlots {
+    TurretCompartmentSlot TurretCompartment {
+     CompartmentAction SCR_GetInUserAction "{5086CC2CFDD3A05A}" {
+      ParentContextList {
+       "sight"
+      }
+      UIInfo SCR_ActionUIInfo "{5086CC2CF6E6E730}" {
+       Name "#AR-UserAction_MortarAim"
+       m_sIconName "veh_gunner"
+      }
+     }
+     AdditionalActions {
+      SCR_RemoveCasualtyUserAction "{5D56867A46DBE769}" {
+       ParentContextList {
+        "default" "sight"
+       }
+      }
+     }
+     PassengerPositionInfo EntitySlotInfo "{B1CB25848A3D93A8}" {
+      PivotID "operator_idle_01"
+     }
+     EjectUnconsciousAndDeadCharacters 1
+     DoorInfoList {
+      0 0
+     }
+     UIInfo SCR_ActionUIInfo "{50870A10DCCDED83}" {
+      Name ""
+     }
+     RestrictedItemTypes + {
+      "AMMO_MORTAR" "COMPASS"
+     }
+     AllowAiming 1
+     SidestepRayZOffset -0.2
+     m_fFreelookAimLimitOverrideDown -60
+     m_fFreelookAimLimitOverrideLeft -95
+     m_fFreelookAimLimitOverrideRight 60
+     m_vFreelookCameraNeckOffsetScale 0.5 0 0
+     m_fFreelookCameraNeckFollowTraverse 0
+    }
+   }
+  }
+  SCR_BaseHUDComponent "{51ACD09C5E194510}" {
+   InfoDisplays {
+    SCR_WeaponInfoVehicle "{5194B831C2F89FB5}" {
+     m_bIsEnabled 0
+    }
+    SCR_MortarInfo "{60C2FC7821C6E18B}" {
+     InfoDisplays {
+      SCR_MortarAzimuthDisplay "{60DEAB9C0F58EA52}" : "{9B10E7F9AFB2BB03}Configs/UI/BaseWeaponAzimuthDisplay.conf" {
+       m_sParentSlot "m_Azimuth"
+      }
+      SCR_MortarElevationDisplay "{60DEAB9DDA1BC0E8}" : "{B75B44C782E3602C}Configs/UI/BaseWeaponElevationDisplay.conf" {
+       m_sParentSlot "m_Elevation"
+      }
+      SCR_BallisticTableDisplay "{60F2FA4DBC3CE379}" : "{C74D6803B1E79FF0}Configs/UI/BaseWeaponBallisticTableDisplay.conf" {
+      }
+     }
+     m_LayoutPath "{A4E55F8F1768865F}UI/layouts/HUD/MortarInfo/MortarInfo.layout"
+     m_aHandlers {
+      SCR_InfoDisplayLayerHandler "{64DAB54AFD7EA2C5}" {
+       m_sLayerName "Slot_2DOpticsInfo"
+      }
+     }
+     m_eShow IN_ADS
+    }
+   }
+  }
+  SCR_DestructionMultiPhaseComponent "{51ACD09C524A7924}" {
+   "Additional hit zones" {
+    SCR_VehicleHitZone Turret {
+     HZDefault 1
+     IgnoreExplosions 0
+     BaseDamageMultiplier 1
+     DamageReduction 1
+     DamageThreshold 1
+     "Collision multiplier" 0.8
+     "Melee multiplier" 0.1
+     "Kinetic multiplier" 0.875
+     "Fragmentation multiplier" 0.187
+     "Explosive multiplier" 0.89
+     m_pDestructionHandler SCR_DestructionBaseHandler "{5584FE5A9F48BA15}" {
+      m_iWreckDelay 250
+      m_bDeleteAfterDestroyed 1
+     }
+     m_eHitZoneGroup HULL
+    }
+   }
+   m_fBaseHealth 800
+   m_fDamageThresholdMaximum 50000
+   m_DestroySpawnObjects {
+    SCR_ParticleSpawnable "{62389B75370663C2}" {
+     m_vOffsetPosition 0 0.5 0
+     m_Particle "{66DAEB775AA8CA4C}Particles/Props/Dest_Prop_Metal_Medium.ptc"
+     m_bDirectional 0
+    }
+    SCR_ParticleSpawnable "{6318DDB4C961C92B}" {
+     m_vOffsetPosition 0 0.3 0
+     m_Particle "{66DAEB775AA8CA4C}Particles/Props/Dest_Prop_Metal_Medium.ptc"
+     m_bDirectional 0
+    }
+    SCR_DebrisSpawnable "{62389B7FB3A10867}" : "{C2BD61C5E05B8971}Configs/Destruction/MultiphaseDestruction/FX_Debris/FX_Debris_Metal_Light.conf" {
+     m_vOffsetPosition 0 0 -0.1
+     m_ModelPrefabs {
+     }
+     m_fMass 20
+     m_eMaterialSoundType METAL_HEAVY
+    }
+    SCR_DebrisSpawnable "{6318DDB62738B5C9}" : "{C2BD61C5E05B8971}Configs/Destruction/MultiphaseDestruction/FX_Debris/FX_Debris_Metal_Light.conf" {
+     m_vOffsetPosition 0 0.1 0
+     m_vOffsetRotation 45 0 0
+     m_ModelPrefabs {
+     }
+     m_fMass 15
+    }
+    SCR_DebrisSpawnable "{6318DDB625239667}" : "{C2BD61C5E05B8971}Configs/Destruction/MultiphaseDestruction/FX_Debris/FX_Debris_Metal_Light.conf" {
+     m_vOffsetPosition 0 0 0.1
+     m_ModelPrefabs {
+     }
+     m_fMass 15
+    }
+   }
+   m_eMaterialSoundType BREAK_METAL
+  }
+  SCR_TurretControllerComponent "{51ACD09C61C183E4}" {
+   components {
+    AITurretAimingComponent "{5549077A3C06B25E}" {
+     AimingPID 2 0 0
+     AimingBasePID 2 0 0
+    }
+   }
+   CanAimOnlyInADS 1
+   HasMoveableBase 1
+   LimitsHoriz -180 180
+   LimitsVert 45 85
+   ReturnToPositionBeforeReload 0
+   GetUpdateEventsWhenEmpty 1
+   EnableGyroAiming 0
+  }
+  SCR_UniversalInventoryStorageComponent "{5CF87D1B836398E3}" {
+   Attributes SCR_ItemAttributeCollection "{60D0E9D9A001FEF6}" {
+    ItemDisplayName WeaponUIInfo "{5D16730CE134417D}" {
+     Name "#AR-EditableEntity_Mortar_Name"
+    }
+    ItemPhysAttributes ItemPhysicalAttributes "{5D16730CEE743F83}" {
+     Weight 0
+     ItemDimensions 10 10 10
+     ItemVolume 100
+     DimensionScaler 1
+     RestingAdditiveRotationLS 0 0 0
+     RestingAdditiveOffsetLS 0 0 0
+    }
+    CustomAttributes {
+     PreviewRenderAttributes "{5D16730C02CFEB5F}" {
+      CameraPreset Left
+      FOV 60
+      AspectRatio 1
+      PreviewPrefab "{D1FFE458E8AC4BDB}Prefabs/Weapons/Mortars/2B14/Mortar_2B14.et"
+     }
+    }
+    m_SlotType SLOT_WEAPONS_STORAGE
+    m_bDraggable 0
+    m_bVisible 0
+   }
+   UseCapacityCoefficient 0
+   MaxCumulativeVolume 15000
+   MaxItemSize 15 15 15
+  }
+  SCR_VehicleCameraDataComponent "{51AE850D79DDB1F5}" {
+   m_fRollFactor 1
+   m_fPitchFactor 1
+   m_fAngleFirstPerson 0
+   m_fAngleThirdPerson 0
+  }
+  SCR_VehicleFactionAffiliationComponent "{5CF87D14630BD7E0}" {
+  }
+  SCR_WeaponAttachmentsStorageComponent "{5D9CCCF200B90084}" {
+   Attributes SCR_ItemAttributeCollection "{60D0E9D9B9C21035}" {
+    CommonItemType "AMMO"
+    m_SlotType SLOT_ANY
+    m_bDraggable 0
+   }
+   CapacityCoefficient 3
+  }
+  SCR_WeaponBlastComponent "{6262C5CDEA485E69}" {
+   m_aBlastEffects {
+    SCR_WeaponBlastEffect "{6262C5CD1594A1A1}" : "{32657999002110ED}Prefabs/Weapons/Core/Damage/WeaponBlast/WeaponBlastEffect_Concussion.conf" {
+     m_DamageEffect SCR_MuzzleBlastDamageEffect "{6262C5CDA676872D}" {
+     }
+     m_aAngleDamageFalloff {
+      0 0 0.01 0.88 1 1
+     }
+    }
+   }
+   m_fBlastConeAngle 80
+   m_bCanBlastRicochet 0
+   m_BlastOrigin PointInfo "{6262C5CDE9890356}" {
+   }
+  }
+  TagComponent "{6124671047E09B64}" {
+   "Tag categories" 0x20 0
+  }
+  BaseFlattenGrassComponent "{5E48930C12E53B02}" {
+   ParametersCollection {
+    FlattenGrassParametersObject "{6124671087131336}" {
+     SizeX 1
+     SizeZ 2
+     Shape "Rect"
+    }
+   }
+  }
+  TurretComponent "{5CF87D146CDE4A81}" {
+   components {
+    SightsComponent "{5CF87D1B9209EB97}" {
+     SoundInt 10005
+    }
+   }
+   SignalsSourceAccess SignalsSourceAccessClass "{60D0E9DE130B3561}" {
+    signalsSuffix "Turret"
+   }
+   ProvideAimingType MainTurret
+   TurretSpeed 7 7
+   TurretAcceleration 15 15
+   TurretDeceleration 45 45
+  }
+  WeaponComponent "{5D56B131A6921887}" {
+   components {
+    SCR_MortarMuzzleComponent "{5D56B131AD7ED6AB}" {
+     components {
+      SCR_MuzzleEffectComponent "{5D56BC114BFAB75F}" {
+       ParticleEffect "{C0C3C093C334F10D}Particles/Weapon/Muzzle_Mortar.ptc"
+       EnabledOnDedicatedServer 1
+      }
+     }
+     FireModes {
+      BaseFireMode "{60D112A9D67FB1AB}" {
+       MaxBurst -1
+      }
+     }
+     MagazineWell MagazineWellMortar "{60D0E9DEE6580B9D}" {
+     }
+     DispersionRange 48
+     WeaponAimModifiers {
+      SCR_RecoilForceAimModifier "{621CF1FA5D1D43C8}" {
+       m_vRotationOffset 0.11 0.22 0
+       m_vDirectionBias 0 0.1 0
+       m_bCheckRestingSurfaceDensity 1
+      }
+     }
+     ReloadDuration 0
+     OutOfADSWhileReloading 0
+     ProjectilePosition InventoryStorageSlot "{60D0E9DF5890F38D}" {
+      PivotID "w_cannon_orient"
+      Angles 0 90 0
+      Enabled 0
+      DisablePhysicsInteraction 1
+     }
+     InitialAmmo 0
+     "Fire Delay" 1
+     m_sFirePowerSignalName "ChargeStrength"
+     m_LoaderPosition PointInfo "{616E899C7D83AF11}" {
+     }
+     m_LoaderPositionLeft PointInfo "{624C797308DACC95}" {
+     }
+    }
+   }
+   SignalsSourceAccess SignalsSourceAccessClass "{60D0E9DEA6D8E24A}" {
+    signalsSuffix "Turret"
+   }
+   useAimingType MainTurret
+   WeaponType MachineGun
+   UIInfo WeaponUIInfo "{60D0E9DED7959389}" {
+    m_MagIndicator SCR_MagazineIndicatorConfiguration "{5D56C8CAEF19B107}" {
+    }
+   }
+   BeActiveWhenInitWithoutParent 1
+  }
+  WeaponSlotComponent "{51ACD09C6BFEEE6A}" {
+   Enabled 0
+  }
+  InventoryStorageManagerComponent "{5CF87D1BB631C9D4}" {
+  }
+  ActionsManagerComponent "{51ACD09C7181BA0B}" {
+   ActionContexts {
+    UserActionContext "{51ACFBB064390C6E}" {
+     ContextName "default"
+     Position PointInfo "{51ACFBB061993925}" {
+      Offset 0 0 0
+     }
+    }
+    UserActionContext "{60D0E9DB069E3C1C}" {
+     ContextName "muzzle_right"
+     Position PointInfo "{5D16732A2C5AB707}" {
+      Angles 0 -90 0
+     }
+     Radius 0.5
+     Height 0
+     Omnidirectional 0
+    }
+    UserActionContext "{623CD3E2012B7078}" {
+     ContextName "muzzle_left"
+     Position PointInfo "{5D16732A2C5AB707}" {
+      Angles 0 90 0
+     }
+     Radius 0.5
+     Height 0
+     Omnidirectional 0
+    }
+    UserActionContext "{60D0E9DB74356E76}" {
+     ContextName "sight"
+     Position PointInfo "{5D5727EBCC92A590}" {
+      PivotID "w_sight"
+     }
+     Height 0
+    }
+   }
+   additionalActions {
+    SCR_MortarShootAction "{615EB7A3990B2074}" : "{69746046EAA83519}Prefabs/Weapons/Core/Configs/Actions/FireMortarAction.conf" {
+    }
+    SCR_MortarShootAction "{623CD3E9A6FD2A50}" : "{69746046EAA83519}Prefabs/Weapons/Core/Configs/Actions/FireMortarAction.conf" {
+     ParentContextList {
+      "muzzle_left"
+     }
+     ActionTitle "Fire mortar - left side"
+     m_bPerformFromTheLeftSide 1
+     m_bCheckIfTurretIsEmpty 1
+    }
+   }
+   AllowCrossHierarchy 1
+  }
+  MortarAnimationComponent "{5242E42C7B4B2CEE}" {
+   AnimGraph "{BECDF85543E83856}Assets/Weapons/Mortars/workspaces/2B14.agr"
+   AnimInstance "{1BBD957C232C6A14}Assets/Weapons/Mortars/workspaces/2B14_weapon.asi"
+   StartNode "WeaponMasterControl"
+   AnimVariables {
+    AnimationVariable "{615CC5CF0B23BE6E}" {
+     VariableName "AimX"
+     SignalName "AimTurnTurret"
+    }
+   }
+   AlwaysActive 1
+   AnimInjection AnimationAttachmentInfo "{5242E42C74AC2BF7}" {
+    AnimGraph "{BECDF85543E83856}Assets/Weapons/Mortars/workspaces/2B14.agr"
+    AnimInstance "{E0E3044DBB2D0EF8}Assets/Weapons/Mortars/workspaces/2B14_player.asi"
+   }
+   BindWithInjection 1
+   AutoCommandBind 1
+   AutoVariablesBind 1
+  }
+ }
+}

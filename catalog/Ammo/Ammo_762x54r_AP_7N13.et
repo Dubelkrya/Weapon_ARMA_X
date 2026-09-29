@@ -1,0 +1,12 @@
+Projectile : "{AC29AE3D5ECD6390}Prefabs/Weapons/Ammo/Ammo_762x54r_Ball_57N323S.et" {
+ ID "DA5C6308000CDEF2"
+ components {
+  ShellMoveComponent "{851AA4A2AE0A5691}" {
+   BallisticTableConfig "{DC773D71692569F4}Configs/Weapons/AIBallisticTables/AIBT_762x54r_AP_7N13.conf"
+   PenetrationDepth 10
+   PenetrationSpeed 671
+  }
+ }
+ ProjectileModel "{BC030E9364FD46A1}Assets/Weapons/Ammo/Bullets/762x54/Bullet_762x54_7BZ3.xob"
+ CartridgeModel "{F752DD1456EAFAF4}Assets/Weapons/Ammo/Bullets/762x54/Cartridge_762x54_7BZ3.xob"
+}

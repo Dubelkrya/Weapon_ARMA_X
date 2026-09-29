@@ -1,0 +1,24 @@
+GenericEntity : "{96DFD2E7E63B3386}Prefabs/Weapons/Rifles/AK74/armst_AK74N.et" {
+ ID "CFBAA4B725411E45"
+ components {
+  WeaponComponent "{CFBAA4B706BA66E8}" {
+   components {
+    AttachmentSlotComponent "{51F6738D2EC74BE1}" {
+     AttachmentSlot InventoryStorageSlot underbarrel {
+      Prefab "{1ABABE3551512B0A}Prefabs/Weapons/Attachments/Underbarrel/UGL_GP25.et"
+     }
+    }
+    MuzzleComponent "{CA6BE4D6B867541F}" {
+     components {
+      AttachmentSlotComponent "{4E2B66CBA589F625}" {
+       AttachmentSlot InventoryStorageSlot Muzzle {
+        Prefab "{3B96FAC169E27037}Prefabs/Weapons/Attachments/Muzzle/Suppressor_PBS4/Suppressor_PBS4.et"
+       }
+      }
+     }
+     MagazineTemplate "{BBB50A815A2F916B}Prefabs/Weapons/Magazines/5x45/Magazine_545x39_AK_30rnd_Ball.et"
+    }
+   }
+  }
+ }
+}

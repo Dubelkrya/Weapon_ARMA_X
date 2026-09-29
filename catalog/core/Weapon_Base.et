@@ -1,0 +1,23 @@
+GenericEntity {
+ ID "CFBAA4B725411E45"
+ components {
+  EPF_PersistenceComponent "{5A28749C602565F8}" {
+   m_pSaveData EPF_ItemSaveDataClass "{5A28749F9ED6F91D}" {
+    m_aComponents {
+     EPF_ARMST_ITEMS_STATS_COMPONENTS_SaveDataClass "{670F5CD3F92AE759}" {
+     }
+    }
+   }
+  }
+  ActionsManagerComponent "{A29AE67FF4D82B0F}" {
+   additionalActions {
+    ARMST_USER_CHECK_COND "{66AD4181F51BBAB1}" {
+     ParentContextList +{
+     }
+     Duration 9999
+     "Sort Priority" 7
+    }
+   }
+  }
+ }
+}

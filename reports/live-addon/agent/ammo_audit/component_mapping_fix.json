@@ -1,0 +1,165 @@
+{
+  "schema_version": 1,
+  "repaired": [
+    {
+      "path": "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_10rnd_Ball.et",
+      "caliber": "762x39",
+      "role": "PP",
+      "mapping": "0",
+      "count": 10,
+      "config": "Configs/Weapons/Ammo/ARMST/armst_Ammo_762x39_ARMST.conf"
+    },
+    {
+      "path": "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_10rnd_Ball_BP.et",
+      "caliber": "762x39",
+      "role": "BP",
+      "mapping": "1",
+      "count": 10,
+      "config": "Configs/Weapons/Ammo/ARMST/armst_Ammo_762x39_ARMST.conf"
+    },
+    {
+      "path": "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_30rnd_Ball.et",
+      "caliber": "762x39",
+      "role": "PP",
+      "mapping": "0",
+      "count": 30,
+      "config": "Configs/Weapons/Ammo/ARMST/armst_Ammo_762x39_ARMST.conf"
+    },
+    {
+      "path": "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_30rnd_Ball_BP.et",
+      "caliber": "762x39",
+      "role": "BP",
+      "mapping": "1",
+      "count": 30,
+      "config": "Configs/Weapons/Ammo/ARMST/armst_Ammo_762x39_ARMST.conf"
+    },
+    {
+      "path": "Prefabs/Weapons/Magazines/Western/5x56/HKG36/armst_Magazine_556x45_HKG36.et",
+      "caliber": "5.56",
+      "role": "PP",
+      "mapping": "0",
+      "count": 30,
+      "config": "Configs/Weapons/Ammo/ARMST/armst_Ammo_556x45_ARMST.conf"
+    },
+    {
+      "path": "Prefabs/Weapons/Magazines/Western/5x56/HKG36/armst_Magazine_556x45_HKG36_BP.et",
+      "caliber": "5.56",
+      "role": "BP",
+      "mapping": "1",
+      "count": 30,
+      "config": "Configs/Weapons/Ammo/ARMST/armst_Ammo_556x45_ARMST.conf"
+    },
+    {
+      "path": "Prefabs/Weapons/Magazines/Western/5x56/SIG550/armst_Magazine_556x45_SIG_550.et",
+      "caliber": "5.56",
+      "role": "PP",
+      "mapping": "0",
+      "count": 30,
+      "config": "Configs/Weapons/Ammo/ARMST/armst_Ammo_556x45_ARMST.conf"
+    },
+    {
+      "path": "Prefabs/Weapons/Magazines/Western/5x56/SIG550/armst_Magazine_556x45_SIG_550_BP.et",
+      "caliber": "5.56",
+      "role": "BP",
+      "mapping": "1",
+      "count": 30,
+      "config": "Configs/Weapons/Ammo/ARMST/armst_Ammo_556x45_ARMST.conf"
+    },
+    {
+      "path": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M193_Ball.et",
+      "caliber": "5.56",
+      "role": "PP",
+      "mapping": "0",
+      "count": 30,
+      "config": "Configs/Weapons/Ammo/ARMST/armst_Ammo_556x45_ARMST.conf"
+    },
+    {
+      "path": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M193_Ball_BP.et",
+      "caliber": "5.56",
+      "role": "BP",
+      "mapping": "1",
+      "count": 30,
+      "config": "Configs/Weapons/Ammo/ARMST/armst_Ammo_556x45_ARMST.conf"
+    },
+    {
+      "path": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M855_Ball.et",
+      "caliber": "5.56",
+      "role": "PP",
+      "mapping": "0",
+      "count": 30,
+      "config": "Configs/Weapons/Ammo/ARMST/armst_Ammo_556x45_ARMST.conf"
+    },
+    {
+      "path": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M855_Ball_BP.et",
+      "caliber": "5.56",
+      "role": "BP",
+      "mapping": "1",
+      "count": 30,
+      "config": "Configs/Weapons/Ammo/ARMST/armst_Ammo_556x45_ARMST.conf"
+    },
+    {
+      "path": "Prefabs/Weapons/Magazines/Western/762x51/HK3/armst_Magazine_762x51_HK3_20_M80_Ball.et",
+      "caliber": "762x51",
+      "role": "PP",
+      "mapping": "0",
+      "count": 20,
+      "config": "Configs/Weapons/Ammo/ARMST/armst_Ammo_762x51_ARMST.conf"
+    },
+    {
+      "path": "Prefabs/Weapons/Magazines/Western/762x51/HK3/armst_Magazine_762x51_HK3_20_M80_Ball_BP.et",
+      "caliber": "762x51",
+      "role": "BP",
+      "mapping": "1",
+      "count": 20,
+      "config": "Configs/Weapons/Ammo/ARMST/armst_Ammo_762x51_ARMST.conf"
+    },
+    {
+      "path": "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_20_M80_Ball.et",
+      "caliber": "762x51",
+      "role": "PP",
+      "mapping": "0",
+      "count": 20,
+      "config": "Configs/Weapons/Ammo/ARMST/armst_Ammo_762x51_ARMST.conf"
+    },
+    {
+      "path": "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_20_M80_Ball_BP.et",
+      "caliber": "762x51",
+      "role": "BP",
+      "mapping": "1",
+      "count": 20,
+      "config": "Configs/Weapons/Ammo/ARMST/armst_Ammo_762x51_ARMST.conf"
+    },
+    {
+      "path": "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_30_M80_Ball.et",
+      "caliber": "762x51",
+      "role": "PP",
+      "mapping": "0",
+      "count": 30,
+      "config": "Configs/Weapons/Ammo/ARMST/armst_Ammo_762x51_ARMST.conf"
+    },
+    {
+      "path": "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_30_M80_Ball_BP.et",
+      "caliber": "762x51",
+      "role": "BP",
+      "mapping": "1",
+      "count": 30,
+      "config": "Configs/Weapons/Ammo/ARMST/armst_Ammo_762x51_ARMST.conf"
+    },
+    {
+      "path": "Prefabs/Weapons/Magazines/Western/9x19/M9/armst_Magazine_9x19_M9_15rnd_Ball.et",
+      "caliber": "9x19",
+      "role": "PP",
+      "mapping": "0",
+      "count": 15,
+      "config": "Configs/Weapons/Ammo/ARMST/armst_Ammo_9x19_ARMST.conf"
+    },
+    {
+      "path": "Prefabs/Weapons/Magazines/Western/9x19/M9/armst_Magazine_9x19_M9_15rnd_Ball_BP.et",
+      "caliber": "9x19",
+      "role": "BP",
+      "mapping": "1",
+      "count": 15,
+      "config": "Configs/Weapons/Ammo/ARMST/armst_Ammo_9x19_ARMST.conf"
+    }
+  ]
+}

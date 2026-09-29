@@ -1,0 +1,75 @@
+{
+ "handle_prefab": "NONE - no G36/HKG36 carry-handle or integrated-optic attachment prefab exists in live addon or exported resources",
+ "handle_guid": null,
+ "handle_model": "NONE dedicated; G36 assets are HKG36.xob (weapon), HKG36_mag.xob, HKG36_Plank.xob, Plank_Pika.xob; no carry-handle/optic mesh",
+ "current_g36_slots": [
+  {
+   "slot": "BayonetSlot",
+   "component": "AttachmentSlotComponent {6A0470709BAE0574}",
+   "enabled": false,
+   "attachment_type": "AttachmentBayonetM9 {6A0470709BAE0571}",
+   "default_prefab": null
+  },
+  {
+   "slot": "Handguard",
+   "component": "AttachmentSlotComponent {6A0470709BAE0589}",
+   "enabled": true,
+   "attachment_type": "AttachmentHandGuardM16 {6A0470709BAE0575}",
+   "default_prefab": null
+  },
+  {
+   "slot": "optics",
+   "component": "AttachmentSlotComponent {6A0470709BAE058E}",
+   "enabled": true,
+   "attachment_type": "AttachmentOpticsG36 {6A0470709BAE058B}",
+   "default_prefab": null,
+   "pivot": "slot_optics",
+   "show_in_inspection": 1
+  }
+ ],
+ "g36_sights_component": {
+  "component": "SightsComponent {BB23A637957CFFF8}",
+  "enabled": 0,
+  "note": "weapon-side sights disabled; sight functionality intended to come from an attachment"
+ },
+ "default_attachment_pattern": {
+  "mechanism": "Default-installed attachment = `Prefab \"{GUID}path\"` inside `AttachmentSlot InventoryStorageSlot <slot>` of an AttachmentSlotComponent",
+  "examples": [
+   "armst_AK74M.et optics/handguard default Prefab",
+   "armst_AK74M_full.et default Prefab PSO1/UGL/Suppressor",
+   "armst_Rifle_AKMS.et default Prefab stock"
+  ],
+  "attachment_matching": "attachment provides `InventoryItemComponent > WeaponAttachmentAttributes > AttachmentType <class>` matching the weapon slot class"
+ },
+ "default_attachment_field": "Prefab",
+ "target_slot": "AttachmentSlotComponent {6A0470709BAE058E} > AttachmentSlot InventoryStorageSlot optics",
+ "target_attachment_type": "AttachmentOpticsG36",
+ "sight_ownership": "OWNED_BY_ATTACHMENT (G36 local SightsComponent {BB23A637957CFFF8} is Enabled 0; the carry-handle/optic prefab must supply the active SightsComponent)",
+ "sight_conflicts": "None active: weapon SightsComponent is disabled, so adding an attachment SightsComponent will not create duplicate active sight systems. Weapon retains dormant SightsRanges data {BB23A637957CFFF8} (KEEP_ON_WEAPON / DISABLE_WHEN_ATTACHMENT_USED).",
+ "m16_derived_components_pre_existing": [
+  "AttachmentType AttachmentHandGuardM16 {6A0470709BAE0575}",
+  "AttachmentSlotComponent Handguard {6A0470709BAE0589}",
+  "AttachmentType AttachmentBayonetM9 {6A0470709BAE0571}",
+  "uses M16 sound set / particles (pre-existing)"
+ ],
+ "removability": {
+  "default_removable": "SUPPORTED pattern (default attachments via `Prefab` are normal attachments and removable)",
+  "default_locked": "NO proven locking field found in local resources (only unrelated vehicle `Type Locked`)",
+  "recommendation": "DEFAULT_REMOVABLE"
+ },
+ "g36_changes_required": [
+  "Set `Prefab \"{<new handle GUID>}Prefabs/Weapons/Attachments/.../armst_G36_CarryHandle_Optic.et\"` inside AttachmentSlotComponent {6A0470709BAE058E} > optics slot (default install). No other G36 change."
+ ],
+ "handle_changes_required": [
+  "Create a carry-handle+optic attachment prefab providing: MeshObject (handle/optic mesh), InventoryItemComponent>WeaponAttachmentAttributes>AttachmentType AttachmentOpticsG36, and an active SightsComponent with the G36 optic reticle/ranges."
+ ],
+ "new_resources_required": "YES (attachment prefab; possibly a dedicated carry-handle/optic mesh asset)",
+ "out_of_scope_confirmed": {
+  "G36_reparent": "NO",
+  "G36_AK74_IK": "INTENTIONAL_WORKAROUND (untouched)",
+  "groza": "NONE",
+  "12ga": "NONE"
+ },
+ "LIVE_FILES_CHANGED": "NONE",
+ "STATUS": "REVIEW_REQUIRED"
+}

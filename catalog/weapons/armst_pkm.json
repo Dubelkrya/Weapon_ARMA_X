@@ -1,0 +1,43 @@
+{
+  "id": "armst_pkm",
+  "role": "leaf",
+  "source": {
+    "resource": "Prefabs/Weapons/MachineGuns/armst_PKM.et",
+    "resource_guid": "A89BC9D55FFB4CD8",
+    "meta_name": null,
+    "class": "GenericEntity",
+    "defined_in": "Prefabs/Weapons/MachineGuns/armst_PKM.et"
+  },
+  "identity": {
+    "name": "armst_PKM",
+    "resource": "Prefabs/Weapons/MachineGuns/armst_PKM.et"
+  },
+  "classification": {
+    "kind": "weapon",
+    "confidence": "folder"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Weapons/MachineGuns/armst_PKM.et",
+        "status": "local",
+        "class": "GenericEntity"
+      }
+    ],
+    "external_parents": [
+      {
+        "guid": "76C400582D3C4AF9",
+        "path": "Prefabs/Weapons/MachineGuns/PKM/MG_PKM_base.et",
+        "raw": "{76C400582D3C4AF9}Prefabs/Weapons/MachineGuns/PKM/MG_PKM_base.et"
+      }
+    ],
+    "used_as_base_by": [],
+    "chain_depth_local": 1
+  },
+  "references": [],
+  "warnings": [],
+  "data": {
+    "error": "no WeaponComponent found"
+  },
+  "derived": {}
+}

@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{9DE58727AC68938F}Imported/VanillaSources/Prefabs/Weapons/Ammo/Ammo_127x108_API_BS.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

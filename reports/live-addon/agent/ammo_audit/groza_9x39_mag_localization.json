@@ -1,0 +1,138 @@
+{
+ "SP5_NAME": "Магазин ОЦ-14 «Гроза» SP-5",
+ "SP6_NAME": "Магазин ОЦ-14 «Гроза» SP-6",
+ "SP5_DESCRIPTION_KEY": "#AR-ARMST_Magazine_armst_Magazine_9x39_Groza_20rnd_SP5_Description",
+ "SP6_DESCRIPTION_KEY": "#AR-ARMST_Magazine_armst_Magazine_9x39_Groza_20rnd_SP6_Description",
+ "CALIBER_METADATA": "#AR-ARMST_AmmunitionID_9x39mm",
+ "SOURCE_KEY_COUNT_BEFORE": 63,
+ "SOURCE_KEY_COUNT_AFTER": 65,
+ "st_items": 65,
+ "runtime_key_counts": {
+  "en_us": {
+   "ids": 65,
+   "texts": 65,
+   "match": true,
+   "empty": 0,
+   "same_order": true
+  },
+  "ru_ru": {
+   "ids": 65,
+   "texts": 65,
+   "match": true,
+   "empty": 0,
+   "same_order": true
+  },
+  "de_de": {
+   "ids": 65,
+   "texts": 65,
+   "match": true,
+   "empty": 0,
+   "same_order": true
+  },
+  "fr_fr": {
+   "ids": 65,
+   "texts": 65,
+   "match": true,
+   "empty": 0,
+   "same_order": true
+  },
+  "es_es": {
+   "ids": 65,
+   "texts": 65,
+   "match": true,
+   "empty": 0,
+   "same_order": true
+  },
+  "it_it": {
+   "ids": 65,
+   "texts": 65,
+   "match": true,
+   "empty": 0,
+   "same_order": true
+  },
+  "pl_pl": {
+   "ids": 65,
+   "texts": 65,
+   "match": true,
+   "empty": 0,
+   "same_order": true
+  },
+  "pt_br": {
+   "ids": 65,
+   "texts": 65,
+   "match": true,
+   "empty": 0,
+   "same_order": true
+  },
+  "cs_cz": {
+   "ids": 65,
+   "texts": 65,
+   "match": true,
+   "empty": 0,
+   "same_order": true
+  },
+  "ja_jp": {
+   "ids": 65,
+   "texts": 65,
+   "match": true,
+   "empty": 0,
+   "same_order": true
+  },
+  "ko_kr": {
+   "ids": 65,
+   "texts": 65,
+   "match": true,
+   "empty": 0,
+   "same_order": true
+  },
+  "zh_cn": {
+   "ids": 65,
+   "texts": 65,
+   "match": true,
+   "empty": 0,
+   "same_order": true
+  },
+  "uk_ua": {
+   "ids": 65,
+   "texts": 65,
+   "match": true,
+   "empty": 0,
+   "same_order": true
+  }
+ },
+ "mags": {
+  "SP5": {
+   "name_ok": true,
+   "desc_key_ok": true,
+   "caliber_ok": true,
+   "capacity": 20,
+   "well": true,
+   "model": true,
+   "mapping_len": 20,
+   "mapping_val": [
+    "0"
+   ]
+  },
+  "SP6": {
+   "name_ok": true,
+   "desc_key_ok": true,
+   "caliber_ok": true,
+   "capacity": 20,
+   "well": true,
+   "model": true,
+   "mapping_len": 20,
+   "mapping_val": [
+    "1"
+   ]
+  }
+ },
+ "all_locales_match": true,
+ "all_same_order": true,
+ "no_dupes": true,
+ "MISSING_KEYS": 0,
+ "GAMEPLAY_DIFF": 0,
+ "GUID_CHANGES": 0,
+ "GROZA_CASING": "OPEN_TECHNICAL_DEBT / WRONG_FOR_9x39 / NO_PROVEN_REPLACEMENT (unchanged)",
+ "MUZZLE_AK74": "KEEP / INTENTIONAL_SHARED_EFFECT",
+ "LIVE_FILES_CHANGED": "localization.st + 13 confs + 2 Groza magazines"
+}

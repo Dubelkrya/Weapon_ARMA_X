@@ -1,0 +1,83 @@
+{
+ "types": {
+  "AttachmentOpticsDovetailAK": {
+   "WEAPON_SLOTS": [
+    "AKM 65AE4CB5E23C0F65",
+    "9A91/VAL/VSS/VSK94 5F189C826D592450"
+   ],
+   "OPTIC_PREFABS": [
+    "armst_Optic_PSO1.et"
+   ],
+   "ADAPTERS": [],
+   "STATUS": "LIVE",
+   "DEFAULTS": [
+    "AKM_full",
+    "AK74M_full"
+   ]
+  },
+  "AttachmentOpticsDovetailSVD": {
+   "WEAPON_SLOTS": [
+    "SVD 5472D211BFD78F81 (override)",
+    "SOC94 65AE4CB5E23C0F63 (override)"
+   ],
+   "OPTIC_PREFABS": [],
+   "ADAPTERS": [],
+   "STATUS": "TYPE_WITHOUT_OPTIC",
+   "DEFAULTS": []
+  },
+  "AttachmentOpticsARMST_DovetailRU": {
+   "WEAPON_SLOTS": [
+    "AEK971 55349E9229B55E29 (override)"
+   ],
+   "OPTIC_PREFABS": [
+    "armst_Optic_PSO1_DovetailRU.et"
+   ],
+   "ADAPTERS": [],
+   "STATUS": "LIVE",
+   "DEFAULTS": []
+  },
+  "AttachmentOpticsDovetailAKSVD": {
+   "WEAPON_SLOTS": [],
+   "OPTIC_PREFABS": [
+    "armst_Optic_PSO1_ak.et"
+   ],
+   "ADAPTERS": [],
+   "STATUS": "ORPHAN",
+   "DEFAULTS": []
+  },
+  "AttachmentOpticsRIS1913": {
+   "WEAPON_SLOTS": [],
+   "OPTIC_PREFABS": [],
+   "ADAPTERS": [],
+   "STATUS": "UNUSED",
+   "DEFAULTS": []
+  }
+ },
+ "matrix": {
+  "SVD_NATIVE_OPTIC_EXISTS": "UNRESOLVED — no optic prefab exposes AttachmentOpticsDovetailSVD; `armst_Optic_PSO1_ak.et` (type AttachmentOpticsDovetailAKSVD) is the only AK/SVD-named candidate but its type does not match the SVD slot type",
+  "9X39_OPTIC_COMPATIBILITY": {
+   "9A91": "AttachmentOpticsDovetailAK -> armst_Optic_PSO1.et",
+   "VAL": "AttachmentOpticsDovetailAK -> armst_Optic_PSO1.et",
+   "VSS": "AttachmentOpticsDovetailAK -> armst_Optic_PSO1.et",
+   "VSK94": "AttachmentOpticsDovetailAK -> armst_Optic_PSO1.et",
+   "verdict": "INTENTIONAL_SHARED (same AK dovetail type as AKM; frozen overrides)"
+  },
+  "AEK971_OPTIC_COMPATIBILITY": {
+   "slot": "55349E9229B55E29",
+   "slot_type": "AttachmentOpticsARMST_DovetailRU",
+   "matching_optic": "armst_Optic_PSO1_DovetailRU.et",
+   "optic_guid": "5B318FB72398CB0A",
+   "optic_outer_type": "AttachmentOpticsARMST_DovetailRU",
+   "match": "EXACT_TYPE_MATCH"
+  },
+  "ORPHAN_TYPES": [
+   "AttachmentOpticsDovetailAKSVD (only armst_Optic_PSO1_ak.et)",
+   "AttachmentOpticsRIS1913 (unused)"
+  ],
+  "FUTURE_ADAPTER_CANDIDATES": [
+   "AKM native dovetail (AttachmentOpticsDovetailAK) -> adapter -> AttachmentOpticsRIS1913",
+   "AEK971 (AttachmentOpticsARMST_DovetailRU) -> adapter -> AttachmentOpticsRIS1913",
+   "SVD (AttachmentOpticsDovetailSVD) -> adapter -> AttachmentOpticsRIS1913"
+  ]
+ }
+}

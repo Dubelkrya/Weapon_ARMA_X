@@ -1,0 +1,11 @@
+GenericEntity {
+ ID "629C6AA41B528A8C"
+ components {
+  MeshObject "{629C6AA408ED5BD6}" {
+   Object "{8ED668212DAF2D2F}Assets/Weapons/Ammo/Shells/82mm_Mortar_2B14/Shell_82mm_Charge.xob"
+  }
+  Hierarchy "{629C6AA40E5578FB}" {
+  }
+ }
+ coords 2425.587 51 2161.672
+}

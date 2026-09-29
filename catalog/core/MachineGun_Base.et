@@ -1,0 +1,134 @@
+GenericEntity : "{E1F14DB52DBFBC57}Prefabs/Weapons/Core/Weapon_Base.et" {
+ ID "CFBAA4B725411E45"
+ components {
+  MeshObject "{CFBAA4B701F95D69}" {
+   Object "{6225F32E5CAC127C}Assets/Weapons/MachineGuns/PKM/PKM_body.xob"
+  }
+  SCR_WeaponAttachmentsStorageComponent "{51F080D5CE45A1A2}" {
+   Attributes SCR_ItemAttributeCollection "{51F080D5C64F12C5}" {
+    ItemDisplayName WeaponUIInfo "{5222CB07E1D123E9}" {
+     Name "#AR-Weapon_MachineGun_Name"
+     Description "#AR-Weapon_MachineGun_Name"
+    }
+    ItemAnimationAttributes ItemAnimationAttributes "{5284960E60421307}" {
+     IkSettings {
+      ItemIKSettings "{5284960E66704286}" {
+       MovementSpeedRange 0 1
+       IkSettingsStand 0x7 0
+       IkSettingsCrouch 0x7 0
+       IkSettingsProne 0x7 0
+      }
+      ItemIKSettings "{5284960E668F2FFA}" {
+       MovementSpeedRange 1 2.5
+       IkSettingsStand 0x7 0
+       IkSettingsCrouch 0x7 0
+       IkSettingsProne 0x7 0
+      }
+      ItemIKSettings "{5284960E645F6FBA}" {
+       MovementSpeedRange 2.5 3
+       IkSettingsStand 0x6 0
+       IkSettingsCrouch 0x6 0
+       IkSettingsProne 0x6 0
+      }
+     }
+     AllowInspection 1
+    }
+    CustomAttributes {
+     CharacterModifierAttributes "{561C0C2DF9ABA9A5}" {
+      ADSSpeedLimit 1.5
+      SpeedLimitHighready 1.8
+     }
+     PreviewRenderAttributes "{5534BB9B9A3E369E}" {
+      CameraDistanceToItem 1.1
+      FOV 30
+      AnimationInstance "{C79EA6F6F4EFE7CC}anims/workspaces/player/player_inventory_LMG.asi"
+     }
+    }
+   }
+  }
+  WeaponComponent "{CFBAA4B706BA66E8}" {
+   components {
+    SightsComponent "{BB23A637957CFFF8}" {
+     SightsPosition PointInfo "{BB23A63796688E69}" {
+      PivotID "eye"
+     }
+     ADSTime 0.6
+    }
+    MuzzleComponent "{50F64C4591CD7AA6}" : "{4FC83D9226751C42}Prefabs/Weapons/Core/Components/MuzzleComponent_Base.ct" {
+     components {
+      CaseEjectingEffectComponent "{5122AAD190FCA21D}" {
+       ParticleEffect "{577C71725A592D8D}Particles/Weapon/Casing_MachineGun.ptc"
+       EffectPosition EntitySlotInfo "{513A938439231378}" {
+        PivotID "w_dustcover"
+        Angles 0 90 0
+       }
+      }
+     }
+     FireModes {
+      BaseFireMode "{506B20D1476BA99E}" : "{687B3DA431730CFA}Prefabs/Weapons/Core/Configs/FireModes/FireMode_Safe.conf" {
+       "Gamepad Trigger effect" GamepadTriggerEffect "{619AA72C28DF32C1}" : "{98679E6527D54714}Prefabs/Weapons/Core/Configs/TriggerEffects/Safety/TriggerEffect_SafetyHeavy.conf" {
+       }
+       "Empty Trigger effect" GamepadTriggerEffect "{61C354AD4F73FF39}" : "{98679E6527D54714}Prefabs/Weapons/Core/Configs/TriggerEffects/Safety/TriggerEffect_SafetyHeavy.conf" {
+       }
+      }
+      BaseFireMode "{B80A64F4A8EF8333}" : "{A512F292D96BCB9F}Prefabs/Weapons/Core/Configs/FireModes/FireMode_Auto.conf" {
+      }
+     }
+     WeaponAimModifiers {
+      SwayWeaponAimModifier "{521AE9A27BDC1E6F}" {
+       "Lower Translation" 0.1 -0.005 -0.013
+      }
+      OnHitAimModifier "{58728D419A3103B1}" {
+       IsEnabled 0
+      }
+     }
+     UIInfo MuzzleUIInfo "{2FBBA72C906C627E}" {
+      m_MagIndicator SCR_MagazineIndicatorConfiguration "{565EE54A6B3FF619}" : "{7C114BA7C59E198D}Configs/WeaponInfo/MagazineIndicators/box.conf" {
+      }
+     }
+     MagazineTemplate ""
+    }
+    WeaponAnimationComponent "{60B4EA76EB15F6E0}" {
+     SleepAfterInactivity 1
+     SleepTimeout 10
+    }
+   }
+   SignalsSourceAccess SignalsSourceAccessClass "{CC7B64C6B99546FB}" {
+   }
+   WeaponType MachineGun
+   obstructionTestCharacterOffset 0 -0.08 0
+   obstructionTestAddedLength 0.05
+   signObstrWeaponConstantOffset 0.1 -0.15 -0.1
+   slightObstrWeaponMaxZOffset 0.05
+   signiObstrWeaponMaxZOffset 0.15
+   SoundInt 1030000
+   UIInfo WeaponUIInfo "{CC3BA6A2C42F09F4}" {
+    Name "#AR-Weapon_MachineGun_Name"
+    Description "#AR-Weapon_MachineGun_Name"
+   }
+   CanBeOnSling 1
+  }
+  ActionsManagerComponent "{A29AE67FF4D82B0F}" {
+   ActionContexts {
+    UserActionContext "{5086F9ADF588DCA4}" {
+     Position PointInfo "{5086F9ADE97650DF}" {
+      PivotID "barrel_chamber"
+     }
+    }
+    UserActionContext "{5956E32BAAADE657}" {
+     Position PointInfo "{5956E329E6B11261}" {
+      PivotID "w_bipodleg_left"
+     }
+    }
+   }
+  }
+  WeaponGamepadEffectsManagerComponent "{61A2E5C3F4458F86}" {
+   "Default Chambered Trigger effect" GamepadTriggerEffect "{61D30BF7F0381163}" : "{7F109B4319DFAFFE}Prefabs/Weapons/Core/Configs/TriggerEffects/Charged/TriggerEffect_ChargedHeavy.conf" {
+   }
+   "Default ADS Trigger effect" GamepadTriggerEffect "{61B129618F212411}" : "{FD6D307018F1F3C9}Prefabs/Weapons/Core/Configs/TriggerEffects/ADS/TriggerEffect_ADSHeavy.conf" {
+   }
+   "Default Firing Trigger effect" GamepadTriggerEffect "{61D30BF7F81F8C61}" : "{F1C8849555C5B13D}Prefabs/Weapons/Core/Configs/TriggerEffects/Fire/TriggerEffect_FireHeavy.conf" {
+   }
+  }
+ }
+}

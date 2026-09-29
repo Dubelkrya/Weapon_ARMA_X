@@ -1,0 +1,27 @@
+GameEntity : "{28866E98F3970DFE}Prefabs/Weapons/Core/MuzzleDevice_base.et" {
+ ID "4BA426CBAED42A14"
+ components {
+  InventoryItemComponent "{52627A1F45CD4EB6}" {
+   Attributes SCR_ItemAttributeCollection "{52627A1EBB0698FD}" {
+    CustomAttributes {
+     SCR_WeaponAttachmentSuppressorAttributes "{5284D858FFF9BE66}" {
+      AttachmentType AttachmentFlashHider "{618A8420490F13B4}" {
+      }
+      m_bOverrideShot 0
+     }
+     SCR_WeaponAttachmentObstructionAttributes "{61B08C8FB18ADF25}" {
+      AttachmentType AttachmentFlashHider "{61B08C8FB311F65A}" {
+      }
+     }
+    }
+    m_Size SLOT_1x1
+   }
+  }
+  SCR_MuzzleEffectComponent "{618AE28AFD0B049C}" {
+   ParticleEffect "{C6B7146011BDE3BB}Particles/Weapon/Attachments/Muzzle_Open_Rifle.ptc"
+   EffectPosition EntitySlotInfo position {
+    Offset 0 0 0.047
+   }
+  }
+ }
+}

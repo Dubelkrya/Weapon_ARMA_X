@@ -1,0 +1,210 @@
+{
+  "id": "armst_toz_66",
+  "role": "base",
+  "source": {
+    "resource": "Prefabs/Weapons/Rifles/Shotgun/armst_toz_66.et",
+    "resource_guid": "923B067A74826419",
+    "meta_name": null,
+    "class": "GenericEntity",
+    "defined_in": "Prefabs/Weapons/Rifles/Shotgun/armst_toz_66.et"
+  },
+  "identity": {
+    "name": "armst_toz_66",
+    "resource": "Prefabs/Weapons/Rifles/Shotgun/armst_toz_66.et"
+  },
+  "classification": {
+    "kind": "weapon",
+    "confidence": "components"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Weapons/Rifles/Shotgun/armst_toz_66.et",
+        "status": "local",
+        "class": "GenericEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Rifles/Shotgun/shotgun_base.et",
+        "status": "local",
+        "class": "GenericEntity"
+      }
+    ],
+    "external_parents": [
+      {
+        "guid": "B31929F65F0D0279",
+        "path": "Prefabs/Weapons/Rifles/M14/Rifle_M21.et",
+        "raw": "{B31929F65F0D0279}Prefabs/Weapons/Rifles/M14/Rifle_M21.et"
+      }
+    ],
+    "used_as_base_by": [
+      "Prefabs/Weapons/Rifles/Shotgun/armst_toz_66_pantera.et",
+      "Prefabs/Weapons/Rifles/Shotgun/armst_toz_66_saw.et"
+    ],
+    "chain_depth_local": 2
+  },
+  "references": [
+    {
+      "guid": "A84D9F22F2C0D9CE",
+      "path": "Sounds/Weapons/_SharedData/PickUp/Weapons_PickUp_Rifle_WoodMetal.acp",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "Prefabs/Weapons/Rifles/Shotgun/armst_toz_66.et"
+    },
+    {
+      "guid": "A41E17F80F1C98D0",
+      "path": "Assets/Toz/Toz.xob",
+      "resolved": "local",
+      "target": "Assets/Toz/Toz.xob",
+      "defined_in": "Prefabs/Weapons/Rifles/Shotgun/armst_toz_66.et"
+    },
+    {
+      "guid": "FD7F889227B02576",
+      "path": "Assets/Toz/Anim/Workbanch/Dif.Pose/P_Toz_Ik.anm",
+      "resolved": "local",
+      "target": "Assets/Toz/Anim/Workbanch/Dif.Pose/P_Toz_Ik.anm",
+      "defined_in": "Prefabs/Weapons/Rifles/Shotgun/armst_toz_66.et"
+    },
+    {
+      "guid": "3E62CF528279BC22",
+      "path": "Particles/Weapon/Casing_12ga.ptc",
+      "resolved": "local",
+      "target": "Particles/Weapon/Casing_12ga.ptc",
+      "defined_in": "Prefabs/Weapons/Rifles/Shotgun/shotgun_base.et"
+    },
+    {
+      "guid": "7D4D61DB49505CB7",
+      "path": "Particles/Weapon/Shotgun_Muzzle_NSV.ptc",
+      "resolved": "local",
+      "target": "Particles/Weapon/Shotgun_Muzzle_NSV.ptc",
+      "defined_in": "Prefabs/Weapons/Rifles/Shotgun/shotgun_base.et"
+    },
+    {
+      "guid": "B0DFDF7AAA9C5D39",
+      "path": "Prefabs/Weapons/Magazines/12ga/12ga_Buckshot.et",
+      "resolved": "local",
+      "target": "Prefabs/Weapons/Magazines/12ga/12ga_Buckshot.et",
+      "defined_in": "Prefabs/Weapons/Rifles/Shotgun/shotgun_base.et"
+    },
+    {
+      "guid": "0D2FD22F469CF9AE",
+      "path": "Assets/Toz/Anim/Workbanch/Toz.agr",
+      "resolved": "local",
+      "target": "Assets/Toz/Anim/Workbanch/Toz.agr",
+      "defined_in": "Prefabs/Weapons/Rifles/Shotgun/armst_toz_66.et"
+    },
+    {
+      "guid": "ED8D80043AE6FE27",
+      "path": "Assets/Toz/Anim/Workbanch/Toz_weapon.asi",
+      "resolved": "local",
+      "target": "Assets/Toz/Anim/Workbanch/Toz_weapon.asi",
+      "defined_in": "Prefabs/Weapons/Rifles/Shotgun/armst_toz_66.et"
+    },
+    {
+      "guid": "16D31135A2E79ACB",
+      "path": "Assets/Toz/Anim/Workbanch/Toz_player.asi",
+      "resolved": "local",
+      "target": "Assets/Toz/Anim/Workbanch/Toz_player.asi",
+      "defined_in": "Prefabs/Weapons/Rifles/Shotgun/armst_toz_66.et"
+    }
+  ],
+  "warnings": [],
+  "data": {
+    "identity": {
+      "name": null
+    },
+    "fire_modes": [
+      {
+        "mode_id": "{B80A64F4A8EF8333}",
+        "ui_name": null,
+        "rounds_per_minute": {
+          "value": 1600,
+          "defined_in": "Prefabs/Weapons/Rifles/Shotgun/armst_toz_66.et",
+          "inherited": false
+        },
+        "max_burst": null,
+        "defined_in": "Prefabs/Weapons/Rifles/Shotgun/armst_toz_66.et",
+        "rounds_per_second": {
+          "value": 26.667,
+          "derived": true
+        }
+      }
+    ],
+    "physical": {
+      "Weight": null,
+      "SizeSetupStrategy": null,
+      "ItemDimensions": null,
+      "ItemVolume": null,
+      "DimensionScaler": null,
+      "_defined_in": "Prefabs/Weapons/Rifles/Shotgun/armst_toz_66.et",
+      "MeleeDamage": {
+        "value": 2,
+        "defined_in": "Prefabs/Weapons/Rifles/Shotgun/shotgun_base.et",
+        "inherited": true
+      },
+      "Model": {
+        "guid": "A41E17F80F1C98D0",
+        "path": "Assets/Toz/Toz.xob",
+        "defined_in": "Prefabs/Weapons/Rifles/Shotgun/armst_toz_66.et"
+      }
+    },
+    "magazine": {
+      "magazine_well": {
+        "name": "MagazineWell",
+        "class": "MagazineWell12g",
+        "defined_in": "Prefabs/Weapons/Rifles/Shotgun/shotgun_base.et"
+      },
+      "magazine_template": {
+        "guid": "B0DFDF7AAA9C5D39",
+        "path": "Prefabs/Weapons/Magazines/12ga/12ga_Buckshot.et",
+        "defined_in": "Prefabs/Weapons/Rifles/Shotgun/shotgun_base.et"
+      }
+    },
+    "ballistics": {
+      "bullet_init_speed_coef": null,
+      "dispersion_diameter": null,
+      "dispersion_range": {
+        "value": 701,
+        "defined_in": "Prefabs/Weapons/Rifles/Shotgun/shotgun_base.et",
+        "inherited": true
+      }
+    },
+    "aim": {
+      "recoil": null,
+      "sway": null
+    },
+    "sights": {
+      "switch_skip": null,
+      "ranges": [],
+      "defined_in": "Prefabs/Weapons/Rifles/Shotgun/armst_toz_66.et"
+    },
+    "attachment_slots": [
+      {
+        "slot": null,
+        "pivot": null,
+        "enabled": {
+          "value": 0,
+          "defined_in": "Prefabs/Weapons/Rifles/Shotgun/shotgun_base.et",
+          "inherited": true
+        },
+        "attachment_types": [],
+        "defined_in": "Prefabs/Weapons/Rifles/Shotgun/shotgun_base.et"
+      }
+    ],
+    "muzzle_attachment": null,
+    "animation": {
+      "anim_graph": {
+        "guid": "0D2FD22F469CF9AE",
+        "path": "Assets/Toz/Anim/Workbanch/Toz.agr",
+        "defined_in": "Prefabs/Weapons/Rifles/Shotgun/armst_toz_66.et"
+      },
+      "anim_instance": {
+        "guid": "ED8D80043AE6FE27",
+        "path": "Assets/Toz/Anim/Workbanch/Toz_weapon.asi",
+        "defined_in": "Prefabs/Weapons/Rifles/Shotgun/armst_toz_66.et"
+      }
+    }
+  },
+  "derived": {
+    "max_rounds_per_second": 26.667
+  }
+}

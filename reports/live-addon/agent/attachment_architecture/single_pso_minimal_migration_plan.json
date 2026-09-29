@@ -1,0 +1,150 @@
+{
+ "CANONICAL_PSO": {
+  "path": "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et",
+  "guid": "C850A33226B8F9C1",
+  "type": "AttachmentOpticsDovetailAK",
+  "defaults": [
+   "armst_Rifle_AKM_full.et",
+   "armst_AK74M_full.et"
+  ]
+ },
+ "RECOMMENDED_CANONICAL_TYPE": "AttachmentOpticsDovetailAK",
+ "WHY": "Canonical PSO already uses it; it is already the live default type (AKM_full, AK74M_full); AKM, SVD and 9A91/VAL/VSS/VSK94 slots already use it. Only 2 slots differ (AEK971 RU, SOC94 SVD) => fewest changes, zero default breakage.",
+ "NUMBER_OF_SLOT_FIELDS_REQUIRING_CHANGE": 2,
+ "ALL_AFFECTED_WEAPON_SLOTS": [
+  {
+   "weapon": "9A91/VAL/VSS/VSK94",
+   "path": ".../{9a91,VAL,VSS,VSK94}/...",
+   "instance": "5F189C826D592450",
+   "origin": "LOCAL_OVERRIDE",
+   "current": "AttachmentOpticsDovetailAK",
+   "target": "AttachmentOpticsDovetailAK",
+   "is_override": true,
+   "default": null,
+   "change": "NONE"
+  },
+  {
+   "weapon": "AKM",
+   "path": "AKM/armst_Rifle_AKM_base.et",
+   "instance": "65AE4CB5E23C0F65",
+   "origin": "LOCAL_ADDITION",
+   "current": "AttachmentOpticsDovetailAK",
+   "target": "AttachmentOpticsDovetailAK",
+   "is_override": false,
+   "default": null,
+   "change": "NONE"
+  },
+  {
+   "weapon": "SVD",
+   "path": "SVD/armst_Rifle_SVD_base.et",
+   "instance": "5472D211BFD78F81",
+   "origin": "LOCAL_OVERRIDE",
+   "current": "AttachmentOpticsDovetailAK",
+   "target": "AttachmentOpticsDovetailAK",
+   "is_override": true,
+   "default": null,
+   "change": "NONE"
+  },
+  {
+   "weapon": "AEK971",
+   "path": "Aek971/armst_Rifle_AEK971_base.et",
+   "instance": "55349E9229B55E29",
+   "origin": "LOCAL_OVERRIDE",
+   "current": "AttachmentOpticsARMST_DovetailRU",
+   "target": "AttachmentOpticsDovetailAK",
+   "is_override": true,
+   "default": null,
+   "change": "AttachmentType"
+  },
+  {
+   "weapon": "SOC94",
+   "path": "SOC94/armst_Rifle_SOC94_base.et",
+   "instance": "65AE4CB5E23C0F63",
+   "origin": "LOCAL_OVERRIDE",
+   "current": "AttachmentOpticsDovetailSVD",
+   "target": "AttachmentOpticsDovetailAK",
+   "is_override": true,
+   "default": null,
+   "change": "AttachmentType"
+  }
+ ],
+ "EXACT_OVERRIDE_EXCEPTION_SET": [
+  {
+   "weapon": "AEK971",
+   "instance": "55349E9229B55E29",
+   "current_type": "AttachmentOpticsARMST_DovetailRU",
+   "target_type": "AttachmentOpticsDovetailAK",
+   "other_fields_unchanged": [
+    "PivotID",
+    "ChildPivotID",
+    "Enabled",
+    "Default Prefab",
+    "slot instance ID",
+    "component identity",
+    "parent",
+    "GUID"
+   ]
+  },
+  {
+   "weapon": "SOC94",
+   "instance": "65AE4CB5E23C0F63",
+   "current_type": "AttachmentOpticsDovetailSVD",
+   "target_type": "AttachmentOpticsDovetailAK",
+   "other_fields_unchanged": [
+    "PivotID",
+    "ChildPivotID",
+    "Enabled",
+    "Default Prefab",
+    "slot instance ID",
+    "component identity",
+    "parent",
+    "GUID"
+   ]
+  }
+ ],
+ "NON_OVERRIDE_SLOT_CHANGES": "NONE (AKM base slot is LOCAL_ADDITION but already AttachmentOpticsDovetailAK)",
+ "DEFAULTS_BROKEN_BY_MIGRATION": 0,
+ "DEFAULTS_CHECK": {
+  "C850A33226B8F9C1": [
+   "armst_Rifle_AKM_full.et",
+   "armst_AK74M_full.et"
+  ],
+  "type_after": "AttachmentOpticsDovetailAK (unchanged)",
+  "valid": true
+ },
+ "PSO1_AK_AFTER_MIGRATION": {
+  "guid": "F325FE2E3DDCDDAD",
+  "path": "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1_ak.et",
+  "live_references_after": 0,
+  "classification": "SAFE_TO_RETIRE_AFTER_MIGRATION"
+ },
+ "PSO1_DOVETAIL_RU_AFTER_MIGRATION": {
+  "guid": "5B318FB72398CB0A",
+  "path": "armst_Optic_PSO1_DovetailRU.et",
+  "live_references_after": 0,
+  "classification": "SAFE_TO_RETIRE_AFTER_MIGRATION"
+ },
+ "TYPE_STATUS_AFTER": {
+  "AttachmentOpticsDovetailSVD": "ORPHAN_AFTER_MIGRATION (still used by vanilla external SVD/PSO1; do not delete)",
+  "AttachmentOpticsARMST_DovetailRU": "ORPHAN_AFTER_MIGRATION (addon-defined; keep definition)",
+  "AttachmentOpticsDovetailAKSVD": "ALREADY_ORPHAN"
+ },
+ "EXPECTED_WEAPON_FILES_CHANGED": [
+  "Prefabs/Weapons/Russian/Rifle/Aek971/armst_Rifle_AEK971_base.et",
+  "Prefabs/Weapons/Russian/Rifle/SOC94/armst_Rifle_SOC94_base.et"
+ ],
+ "EXPECTED_OPTIC_FILES_CHANGED": [
+  "(retirement step) armst_Optic_PSO1_ak.et (+.meta)",
+  "(retirement step) armst_Optic_PSO1_DovetailRU.et (+.meta)"
+ ],
+ "MIGRATION_ORDER": [
+  "STEP 1: change AEK971 slot 55349E9229B55E29 AttachmentType AttachmentOpticsARMST_DovetailRU -> AttachmentOpticsDovetailAK (canonical already compatible; no default; not broken).",
+  "STEP 2: change SOC94 slot 65AE4CB5E23C0F63 AttachmentType AttachmentOpticsDovetailSVD -> AttachmentOpticsDovetailAK.",
+  "STEP 3: verify 0 live references remain to F325FE2E3DDCDDAD and 5B318FB72398CB0A; verify canonical defaults on AKM_full/AK74M_full.",
+  "STEP 4: retire duplicate optics armst_Optic_PSO1_ak.et and armst_Optic_PSO1_DovetailRU.et (+ .meta) after external backup.",
+  "STEP 5: (optional, later) leave type class AttachmentOpticsARMST_DovetailRU definition in place as orphan."
+ ],
+ "PHYSICAL_VS_COMPATIBILITY_NOTE": "This is attachment compatibility architecture only. It unifies the accepted attachment TYPE so ONE PSO gameplay prefab fits all configured slots. It does NOT assert that AK/SVD/SOC94 physically share an identical rail, nor does it change models/pivots/mount geometry.",
+ "CLASSIFICATION": "READY_IF_OVERRIDE_EXCEPTION_APPROVED",
+ "LIVE_FILES_CHANGED": "NONE"
+}

@@ -1,0 +1,3171 @@
+[
+    {
+        "PATH":  "Prefabs/Particles/Bullet_Case/Bullet_Case_12ga.et",
+        "GUID":  "BE7D3DF00BBB2D6F",
+        "EFFECTIVE_COMPONENT_COUNT":  1,
+        "ROLE_COUNTS":  {
+                            "MeshObject":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+                                       {
+                                           "GID":  "5AC2D35718C1EEDD",
+                                           "Origin":  "LOCAL_ADDITION",
+                                           "At":  "Prefabs/Particles/Bullet_Case/Bullet_Case_12ga.et",
+                                           "Enabled":  null
+                                       }
+                                   ],
+        "ENABLED_MESH_COUNT":  1,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Particles/Bullet_Case/Bullet_Case_12ga_blue.et",
+        "GUID":  "8705B7674FB2F927",
+        "EFFECTIVE_COMPONENT_COUNT":  1,
+        "ROLE_COUNTS":  {
+                            "MeshObject":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+                                       {
+                                           "GID":  "5AC2D35718C1EEDD",
+                                           "Origin":  "LOCAL_ADDITION",
+                                           "At":  "Prefabs/Particles/Bullet_Case/Bullet_Case_12ga_blue.et",
+                                           "Enabled":  null
+                                       }
+                                   ],
+        "ENABLED_MESH_COUNT":  1,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Ammo/armst_Ammo_9x18_BP.et",
+        "GUID":  "64F210837ACBAF9E",
+        "EFFECTIVE_COMPONENT_COUNT":  0,
+        "ROLE_COUNTS":  {
+
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+
+                                   ],
+        "ENABLED_MESH_COUNT":  0,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Ammo/armst_Ammo_9x18_PP.et",
+        "GUID":  "2EECBE22BC8BE0BA",
+        "EFFECTIVE_COMPONENT_COUNT":  0,
+        "ROLE_COUNTS":  {
+
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+
+                                   ],
+        "ENABLED_MESH_COUNT":  0,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Ammo/12g/armst_Ammo_12ga.et",
+        "GUID":  "862E8EB633CED07D",
+        "EFFECTIVE_COMPONENT_COUNT":  2,
+        "ROLE_COUNTS":  {
+                            "ShellMoveComponent":  1,
+                            "TimerTriggerComponent":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+
+                                   ],
+        "ENABLED_MESH_COUNT":  0,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Ammo/12g/armst_Ammo_12ga_shell.et",
+        "GUID":  "9F7537128778361F",
+        "EFFECTIVE_COMPONENT_COUNT":  2,
+        "ROLE_COUNTS":  {
+                            "ShellMoveComponent":  1,
+                            "TimerTriggerComponent":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+
+                                   ],
+        "ENABLED_MESH_COUNT":  0,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Ammo/12g/armst_Ammo_12ga_shell_test.et",
+        "GUID":  "9A2EC4D810705428",
+        "EFFECTIVE_COMPONENT_COUNT":  2,
+        "ROLE_COUNTS":  {
+                            "ShellMoveComponent":  1,
+                            "TimerTriggerComponent":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+
+                                   ],
+        "ENABLED_MESH_COUNT":  0,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Ammo/12g/armst_Ammo_Buckshot_pellet.et",
+        "GUID":  "8A45841AC9BA3AE7",
+        "EFFECTIVE_COMPONENT_COUNT":  1,
+        "ROLE_COUNTS":  {
+                            "ShellMoveComponent":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+
+                                   ],
+        "ENABLED_MESH_COUNT":  0,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Ammo/Eastern/762x39/armst_Ammo_762x39_BP.et",
+        "GUID":  "1785D92E5A104937",
+        "EFFECTIVE_COMPONENT_COUNT":  1,
+        "ROLE_COUNTS":  {
+                            "ShellMoveComponent":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+
+                                   ],
+        "ENABLED_MESH_COUNT":  0,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Ammo/Eastern/762x39/armst_Ammo_762x39_PP.et",
+        "GUID":  "3E395A4A4B0C4F0E",
+        "EFFECTIVE_COMPONENT_COUNT":  1,
+        "ROLE_COUNTS":  {
+                            "ShellMoveComponent":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+
+                                   ],
+        "ENABLED_MESH_COUNT":  0,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Ammo/Russian/763x25/armst_Ammo_763x25.et",
+        "GUID":  "8221593DFA48E4B3",
+        "EFFECTIVE_COMPONENT_COUNT":  1,
+        "ROLE_COUNTS":  {
+                            "ShellMoveComponent":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+
+                                   ],
+        "ENABLED_MESH_COUNT":  0,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Ammo/Russian/763x25/armst_Ammo_763x25_Ball.et",
+        "GUID":  "5AE7AF31B9D7EB6C",
+        "EFFECTIVE_COMPONENT_COUNT":  1,
+        "ROLE_COUNTS":  {
+                            "ShellMoveComponent":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+
+                                   ],
+        "ENABLED_MESH_COUNT":  0,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Ammo/Russian/9x39/armst_Ammo_9x39_SP5_Ball.et",
+        "GUID":  "2CB8EAD4A52F3290",
+        "EFFECTIVE_COMPONENT_COUNT":  1,
+        "ROLE_COUNTS":  {
+                            "ShellMoveComponent":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+
+                                   ],
+        "ENABLED_MESH_COUNT":  0,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Ammo/Russian/9x39/armst_Ammo_9x39_SP6_Ball.et",
+        "GUID":  "FB468B29C75FE46A",
+        "EFFECTIVE_COMPONENT_COUNT":  1,
+        "ROLE_COUNTS":  {
+                            "ShellMoveComponent":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+
+                                   ],
+        "ENABLED_MESH_COUNT":  0,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Ammo/Russian/grenade/armst_Ammo_Grenade_HE_VOG25.et",
+        "GUID":  "262F0D09C4130826",
+        "EFFECTIVE_COMPONENT_COUNT":  1,
+        "ROLE_COUNTS":  {
+                            "ARMST_ITEMS_STATS_COMPONENTS":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+
+                                   ],
+        "ENABLED_MESH_COUNT":  0,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Ammo/Western/5x56/armst_Ammo_556x45_BP.et",
+        "GUID":  "716F41EFBBB14F9C",
+        "EFFECTIVE_COMPONENT_COUNT":  1,
+        "ROLE_COUNTS":  {
+                            "ShellMoveComponent":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+
+                                   ],
+        "ENABLED_MESH_COUNT":  0,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Ammo/Western/5x56/armst_Ammo_556x45_PP.et",
+        "GUID":  "62FA6A6363394955",
+        "EFFECTIVE_COMPONENT_COUNT":  0,
+        "ROLE_COUNTS":  {
+
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+
+                                   ],
+        "ENABLED_MESH_COUNT":  0,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Ammo/Western/762x51/armst_Ammo_762x51_BP.et",
+        "GUID":  "647D4F418F9F4655",
+        "EFFECTIVE_COMPONENT_COUNT":  0,
+        "ROLE_COUNTS":  {
+
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+
+                                   ],
+        "ENABLED_MESH_COUNT":  0,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Ammo/Western/762x51/armst_Ammo_762x51_PP.et",
+        "GUID":  "8FAC2EB7CA474E5E",
+        "EFFECTIVE_COMPONENT_COUNT":  0,
+        "ROLE_COUNTS":  {
+
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+
+                                   ],
+        "ENABLED_MESH_COUNT":  0,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Ammo/Western/9x19/armst_Ammo_9x19_BP.et",
+        "GUID":  "9F5580C950084760",
+        "EFFECTIVE_COMPONENT_COUNT":  1,
+        "ROLE_COUNTS":  {
+                            "ShellMoveComponent":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+
+                                   ],
+        "ENABLED_MESH_COUNT":  0,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Ammo/Western/9x19/armst_Ammo_9x19_PP.et",
+        "GUID":  "DFADF7628FAC4A05",
+        "EFFECTIVE_COMPONENT_COUNT":  0,
+        "ROLE_COUNTS":  {
+
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+
+                                   ],
+        "ENABLED_MESH_COUNT":  0,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Attachments/Handguards/armst_Handguard_AK74M2.et",
+        "GUID":  "7851F29BDAAAD7DB",
+        "EFFECTIVE_COMPONENT_COUNT":  2,
+        "ROLE_COUNTS":  {
+                            "MeshObject":  1,
+                            "RigidBody":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+                                       {
+                                           "GID":  "557E85EE39CED921",
+                                           "Origin":  "LOCAL_ADDITION",
+                                           "At":  "Prefabs/Weapons/Attachments/Handguards/armst_Handguard_AK74M2.et",
+                                           "Enabled":  null
+                                       }
+                                   ],
+        "ENABLED_MESH_COUNT":  1,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Attachments/Muzzle/armst_Suppressor_9a91.et",
+        "GUID":  "E10F09941AF1E123",
+        "EFFECTIVE_COMPONENT_COUNT":  4,
+        "ROLE_COUNTS":  {
+                            "InventoryItemComponent":  1,
+                            "MeshObject":  1,
+                            "ARMST_ITEMS_STATS_COMPONENTS":  1,
+                            "SCR_MuzzleEffectComponent":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+                                       {
+                                           "GID":  "5C46D45E03D7AD12",
+                                           "Origin":  "LOCAL_ADDITION",
+                                           "At":  "Prefabs/Weapons/Attachments/Muzzle/armst_Suppressor_9a91.et",
+                                           "Enabled":  null
+                                       }
+                                   ],
+        "ENABLED_MESH_COUNT":  1,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Attachments/Muzzle/Suppressor_PBS4/Suppressor_PBS4_base.et",
+        "GUID":  "5677861A692ED3EB",
+        "EFFECTIVE_COMPONENT_COUNT":  2,
+        "ROLE_COUNTS":  {
+                            "InventoryItemComponent":  1,
+                            "ARMST_ITEMS_STATS_COMPONENTS":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+
+                                   ],
+        "ENABLED_MESH_COUNT":  0,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et",
+        "GUID":  "C850A33226B8F9C1",
+        "EFFECTIVE_COMPONENT_COUNT":  2,
+        "ROLE_COUNTS":  {
+                            "InventoryItemComponent":  1,
+                            "ARMST_ITEMS_STATS_COMPONENTS":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+
+                                   ],
+        "ENABLED_MESH_COUNT":  0,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Attachments/Optics/WeaponOptic_Base.et",
+        "GUID":  "966B4E5523D2F166",
+        "EFFECTIVE_COMPONENT_COUNT":  1,
+        "ROLE_COUNTS":  {
+                            "ARMST_ITEMS_STATS_COMPONENTS":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+
+                                   ],
+        "ENABLED_MESH_COUNT":  0,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et",
+        "GUID":  "D71FD2BD68AC4B31",
+        "EFFECTIVE_COMPONENT_COUNT":  4,
+        "ROLE_COUNTS":  {
+                            "InventoryItemComponent":  1,
+                            "MeshObject":  2,
+                            "AttachmentSlotComponent":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+                                    {
+                                        "Class":  "MeshObject",
+                                        "Count":  2
+                                    }
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+                                       {
+                                           "GID":  "49AFA165E672432D",
+                                           "Origin":  "LOCAL_ADDITION",
+                                           "At":  "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et",
+                                           "Enabled":  "1"
+                                       },
+                                       {
+                                           "GID":  "557E85EE39CED921",
+                                           "Origin":  "LOCAL_ADDITION",
+                                           "At":  "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et",
+                                           "Enabled":  "0"
+                                       }
+                                   ],
+        "ENABLED_MESH_COUNT":  1,
+        "NOTE":  "CURRENTLY_VALID - 2 effective MeshObject declarations, 1 explicitly Enabled 0 (inert); effective render role = 1"
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Optic.et",
+        "GUID":  null,
+        "EFFECTIVE_COMPONENT_COUNT":  4,
+        "ROLE_COUNTS":  {
+                            "InventoryItemComponent":  1,
+                            "MeshObject":  1,
+                            "ARMST_ITEMS_STATS_COMPONENTS":  1,
+                            "SightsComponent":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+                                       {
+                                           "GID":  "5D0CC83435B55858",
+                                           "Origin":  "LOCAL_ADDITION",
+                                           "At":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Optic.et",
+                                           "Enabled":  null
+                                       }
+                                   ],
+        "ENABLED_MESH_COUNT":  1,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Picatinny.et",
+        "GUID":  null,
+        "EFFECTIVE_COMPONENT_COUNT":  3,
+        "ROLE_COUNTS":  {
+                            "InventoryItemComponent":  1,
+                            "MeshObject":  1,
+                            "AttachmentSlotComponent":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+                                       {
+                                           "GID":  "557E85EE39CED921",
+                                           "Origin":  "LOCAL_ADDITION",
+                                           "At":  "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Picatinny.et",
+                                           "Enabled":  null
+                                       }
+                                   ],
+        "ENABLED_MESH_COUNT":  1,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Attachments/Optics/Optic_1P29/armst_Optic_1P29.et",
+        "GUID":  "952D9BD7B6F8F591",
+        "EFFECTIVE_COMPONENT_COUNT":  0,
+        "ROLE_COUNTS":  {
+
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+
+                                   ],
+        "ENABLED_MESH_COUNT":  0,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Attachments/Stocks/armst_Handguard_AK74M.et",
+        "GUID":  "FCE52BA4B5789E65",
+        "EFFECTIVE_COMPONENT_COUNT":  2,
+        "ROLE_COUNTS":  {
+                            "MeshObject":  1,
+                            "RigidBody":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+                                       {
+                                           "GID":  "557E85EE39CED921",
+                                           "Origin":  "LOCAL_ADDITION",
+                                           "At":  "Prefabs/Weapons/Attachments/Stocks/armst_Handguard_AK74M.et",
+                                           "Enabled":  null
+                                       }
+                                   ],
+        "ENABLED_MESH_COUNT":  1,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Attachments/Stocks/armst_Handguard_AKS.et",
+        "GUID":  "31E8EF2214161A25",
+        "EFFECTIVE_COMPONENT_COUNT":  2,
+        "ROLE_COUNTS":  {
+                            "MeshObject":  1,
+                            "RigidBody":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+                                       {
+                                           "GID":  "557E85EE39CED921",
+                                           "Origin":  "LOCAL_ADDITION",
+                                           "At":  "Prefabs/Weapons/Attachments/Stocks/armst_Handguard_AKS.et",
+                                           "Enabled":  null
+                                       }
+                                   ],
+        "ENABLED_MESH_COUNT":  1,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Attachments/Stocks/armst_Stock_akm.et",
+        "GUID":  "B0E764B069F6A153",
+        "EFFECTIVE_COMPONENT_COUNT":  2,
+        "ROLE_COUNTS":  {
+                            "MeshObject":  1,
+                            "RigidBody":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+                                       {
+                                           "GID":  "557E85EE39CED921",
+                                           "Origin":  "LOCAL_ADDITION",
+                                           "At":  "Prefabs/Weapons/Attachments/Stocks/armst_Stock_akm.et",
+                                           "Enabled":  null
+                                       }
+                                   ],
+        "ENABLED_MESH_COUNT":  1,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Attachments/Underbarrel/armst_UGL_GP25.et",
+        "GUID":  "1ABABE3551512B0A",
+        "EFFECTIVE_COMPONENT_COUNT":  2,
+        "ROLE_COUNTS":  {
+                            "ARMST_ITEMS_STATS_COMPONENTS":  1,
+                            "SCR_WeaponAttachmentsStorageComponent":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+
+                                   ],
+        "ENABLED_MESH_COUNT":  0,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Core/Grenade_Base.et",
+        "GUID":  "D7EB24176E5CEAA6",
+        "EFFECTIVE_COMPONENT_COUNT":  1,
+        "ROLE_COUNTS":  {
+                            "ARMST_ITEMS_STATS_COMPONENTS":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+
+                                   ],
+        "ENABLED_MESH_COUNT":  0,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Core/Magazine_Base.et",
+        "GUID":  "F9E1A46E3ABA116F",
+        "EFFECTIVE_COMPONENT_COUNT":  2,
+        "ROLE_COUNTS":  {
+                            "ARMST_ITEMS_STATS_COMPONENTS":  1,
+                            "InventoryMagazineComponent":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+
+                                   ],
+        "ENABLED_MESH_COUNT":  0,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Core/Rifle_Base.et",
+        "GUID":  "911D6C8DC7BA2D63",
+        "EFFECTIVE_COMPONENT_COUNT":  4,
+        "ROLE_COUNTS":  {
+                            "EPF_PersistenceComponent":  1,
+                            "SCR_WeaponAttachmentsStorageComponent":  1,
+                            "ARMST_ITEMS_STATS_COMPONENTS":  1,
+                            "ActionsManagerComponent":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+
+                                   ],
+        "ENABLED_MESH_COUNT":  0,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Core/Weapon_Base.et",
+        "GUID":  "E1F14DB52DBFBC57",
+        "EFFECTIVE_COMPONENT_COUNT":  3,
+        "ROLE_COUNTS":  {
+                            "EPF_PersistenceComponent":  1,
+                            "ARMST_ITEMS_STATS_COMPONENTS":  1,
+                            "ActionsManagerComponent":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+
+                                   ],
+        "ENABLED_MESH_COUNT":  0,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Grenades/armst_Grenade_M67.et",
+        "GUID":  "E8F00BF730225B00",
+        "EFFECTIVE_COMPONENT_COUNT":  1,
+        "ROLE_COUNTS":  {
+                            "InventoryItemComponent":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+
+                                   ],
+        "ENABLED_MESH_COUNT":  0,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Grenades/armst_Grenade_RGD5.et",
+        "GUID":  "645C73791ECA1698",
+        "EFFECTIVE_COMPONENT_COUNT":  1,
+        "ROLE_COUNTS":  {
+                            "InventoryItemComponent":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+
+                                   ],
+        "ENABLED_MESH_COUNT":  0,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Grenades/armst_Smoke_ANM8HC.et",
+        "GUID":  "9DB69176CEF0EE97",
+        "EFFECTIVE_COMPONENT_COUNT":  1,
+        "ROLE_COUNTS":  {
+                            "InventoryItemComponent":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+
+                                   ],
+        "ENABLED_MESH_COUNT":  0,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Grenades/armst_Smoke_RDG2.et",
+        "GUID":  "77EAE5E07DC4678A",
+        "EFFECTIVE_COMPONENT_COUNT":  1,
+        "ROLE_COUNTS":  {
+                            "InventoryItemComponent":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+
+                                   ],
+        "ENABLED_MESH_COUNT":  0,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Handguns/armst_Handgun_Knife_base.et",
+        "GUID":  "26ADE11C416B3840",
+        "EFFECTIVE_COMPONENT_COUNT":  11,
+        "ROLE_COUNTS":  {
+                            "SightsComponent":  1,
+                            "WeaponComponent":  1,
+                            "WeaponSoundComponent":  1,
+                            "SCR_WeaponAttachmentsStorageComponent":  1,
+                            "SCR_MeleeWeaponProperties":  1,
+                            "AttachmentSlotComponent":  1,
+                            "MeshObject":  1,
+                            "MuzzleComponent":  1,
+                            "ActionsManagerComponent":  1,
+                            "WeaponAnimationComponent":  1,
+                            "RigidBody":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+                                       {
+                                           "GID":  "CFBAA4B701F95D69",
+                                           "Origin":  "LOCAL_ADDITION",
+                                           "At":  "Prefabs/Weapons/Handguns/armst_Handgun_Knife_base.et",
+                                           "Enabled":  null
+                                       }
+                                   ],
+        "ENABLED_MESH_COUNT":  1,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/12ga/12ga_Buckshot_base.et",
+        "GUID":  "9F9380F5E2ECAF59",
+        "EFFECTIVE_COMPONENT_COUNT":  4,
+        "ROLE_COUNTS":  {
+                            "MeshObject":  1,
+                            "InventoryMagazineComponent":  1,
+                            "MagazineComponent":  1,
+                            "RigidBody":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+                                       {
+                                           "GID":  "CA6BE4D6A23F8EF0",
+                                           "Origin":  "LOCAL_ADDITION",
+                                           "At":  "Prefabs/Weapons/Magazines/12ga/12ga_Buckshot_base.et",
+                                           "Enabled":  null
+                                       }
+                                   ],
+        "ENABLED_MESH_COUNT":  1,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/12ga/armst_12ga_Buckshot.et",
+        "GUID":  "B0DFDF7AAA9C5D39",
+        "EFFECTIVE_COMPONENT_COUNT":  4,
+        "ROLE_COUNTS":  {
+                            "MeshObject":  1,
+                            "InventoryMagazineComponent":  1,
+                            "MagazineComponent":  1,
+                            "RigidBody":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+                                       {
+                                           "GID":  "CA6BE4D6A23F8EF0",
+                                           "Origin":  "LOCAL_OVERRIDE",
+                                           "At":  "Prefabs/Weapons/Magazines/12ga/armst_12ga_Buckshot.et",
+                                           "Enabled":  null
+                                       }
+                                   ],
+        "ENABLED_MESH_COUNT":  1,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/12ga/armst_12ga_Shell.et",
+        "GUID":  "0346C78F29531C70",
+        "EFFECTIVE_COMPONENT_COUNT":  5,
+        "ROLE_COUNTS":  {
+                            "SCR_EditableEntityComponent":  1,
+                            "MagazineComponent":  1,
+                            "MeshObject":  1,
+                            "InventoryMagazineComponent":  1,
+                            "RigidBody":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+                                       {
+                                           "GID":  "CA6BE4D6A23F8EF0",
+                                           "Origin":  "LOCAL_ADDITION",
+                                           "At":  "Prefabs/Weapons/Magazines/12ga/armst_12ga_Shell.et",
+                                           "Enabled":  null
+                                       }
+                                   ],
+        "ENABLED_MESH_COUNT":  1,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/12ga/armst_12ga_Shell_test.et",
+        "GUID":  "5220A773A621C2BB",
+        "EFFECTIVE_COMPONENT_COUNT":  5,
+        "ROLE_COUNTS":  {
+                            "SCR_EditableEntityComponent":  1,
+                            "ARMST_ITEMS_STATS_COMPONENTS":  1,
+                            "MagazineComponent":  1,
+                            "InventoryMagazineComponent":  1,
+                            "MeshObject":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+                                       {
+                                           "GID":  "CA6BE4D6A23F8EF0",
+                                           "Origin":  "LOCAL_ADDITION",
+                                           "At":  "Prefabs/Weapons/Magazines/12ga/armst_12ga_Shell_test.et",
+                                           "Enabled":  null
+                                       }
+                                   ],
+        "ENABLED_MESH_COUNT":  1,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_AK_30rnd_Ball.et",
+        "GUID":  "BBB50A815A2F916B",
+        "EFFECTIVE_COMPONENT_COUNT":  4,
+        "ROLE_COUNTS":  {
+                            "SCR_EditableEntityComponent":  1,
+                            "ARMST_ITEMS_STATS_COMPONENTS":  1,
+                            "SCR_WeaponAttachmentsStorageComponent":  1,
+                            "MagazineComponent":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+
+                                   ],
+        "ENABLED_MESH_COUNT":  0,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_AK_30rnd_Tracer.et",
+        "GUID":  "E5912E45754CD421",
+        "EFFECTIVE_COMPONENT_COUNT":  3,
+        "ROLE_COUNTS":  {
+                            "ARMST_ITEMS_STATS_COMPONENTS":  1,
+                            "SCR_WeaponAttachmentsStorageComponent":  1,
+                            "MagazineComponent":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+
+                                   ],
+        "ENABLED_MESH_COUNT":  0,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_RPK_45rnd_Ball.et",
+        "GUID":  "BC74DAC891D48540",
+        "EFFECTIVE_COMPONENT_COUNT":  3,
+        "ROLE_COUNTS":  {
+                            "ARMST_ITEMS_STATS_COMPONENTS":  1,
+                            "SCR_WeaponAttachmentsStorageComponent":  1,
+                            "MagazineComponent":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+
+                                   ],
+        "ENABLED_MESH_COUNT":  0,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_RPK_45rnd_Tracer.et",
+        "GUID":  "5897D01F41DB5D2D",
+        "EFFECTIVE_COMPONENT_COUNT":  3,
+        "ROLE_COUNTS":  {
+                            "ARMST_ITEMS_STATS_COMPONENTS":  1,
+                            "SCR_WeaponAttachmentsStorageComponent":  1,
+                            "MagazineComponent":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+
+                                   ],
+        "ENABLED_MESH_COUNT":  0,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Russian/5x45/AK74/Magazine_545x39_AK_30rnd_Base.et",
+        "GUID":  "63C1E699345B24F9",
+        "EFFECTIVE_COMPONENT_COUNT":  3,
+        "ROLE_COUNTS":  {
+                            "ARMST_ITEMS_STATS_COMPONENTS":  1,
+                            "InventoryMagazineComponent":  1,
+                            "MagazineComponent":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+
+                                   ],
+        "ENABLED_MESH_COUNT":  0,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Russian/762x54/SVD/armst_Box_762x54_PK_250rnd_Ball.et",
+        "GUID":  "1C260E65B7F290BA",
+        "EFFECTIVE_COMPONENT_COUNT":  3,
+        "ROLE_COUNTS":  {
+                            "SCR_EditableEntityComponent":  1,
+                            "InventoryMagazineComponent":  1,
+                            "MagazineComponent":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+
+                                   ],
+        "ENABLED_MESH_COUNT":  0,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Russian/762x54/SVD/armst_Magazine_762x54_SVD_10rnd_7BZ3API.et",
+        "GUID":  "19600CCA33279D20",
+        "EFFECTIVE_COMPONENT_COUNT":  3,
+        "ROLE_COUNTS":  {
+                            "SCR_EditableEntityComponent":  1,
+                            "InventoryMagazineComponent":  1,
+                            "MagazineComponent":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+
+                                   ],
+        "ENABLED_MESH_COUNT":  0,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Russian/763x25/TT/armst_Magazine_763x25_TT_8rnd_Ball.et",
+        "GUID":  "AA99F5E678010DB3",
+        "EFFECTIVE_COMPONENT_COUNT":  5,
+        "ROLE_COUNTS":  {
+                            "SCR_EditableEntityComponent":  1,
+                            "ARMST_ITEMS_STATS_COMPONENTS":  1,
+                            "MagazineComponent":  1,
+                            "InventoryMagazineComponent":  1,
+                            "MeshObject":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+                                       {
+                                           "GID":  "CA6BE4D6A23F8EF0",
+                                           "Origin":  "LOCAL_ADDITION",
+                                           "At":  "Prefabs/Weapons/Magazines/Russian/763x25/TT/armst_Magazine_763x25_TT_8rnd_Ball.et",
+                                           "Enabled":  null
+                                       }
+                                   ],
+        "ENABLED_MESH_COUNT":  1,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_10rnd_Ball.et",
+        "GUID":  "07805AE177F52646",
+        "EFFECTIVE_COMPONENT_COUNT":  4,
+        "ROLE_COUNTS":  {
+                            "MeshObject":  1,
+                            "SCR_EditableEntityComponent":  1,
+                            "InventoryMagazineComponent":  1,
+                            "MagazineComponent":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+                                       {
+                                           "GID":  "CA6BE4D6A23F8EF0",
+                                           "Origin":  "LOCAL_OVERRIDE",
+                                           "At":  "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_10rnd_Ball.et",
+                                           "Enabled":  null
+                                       }
+                                   ],
+        "ENABLED_MESH_COUNT":  1,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_10rnd_Ball_BP.et",
+        "GUID":  "7882EC8AE9CD4CF3",
+        "EFFECTIVE_COMPONENT_COUNT":  4,
+        "ROLE_COUNTS":  {
+                            "MeshObject":  1,
+                            "SCR_EditableEntityComponent":  1,
+                            "InventoryMagazineComponent":  1,
+                            "MagazineComponent":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+                                       {
+                                           "GID":  "CA6BE4D6A23F8EF0",
+                                           "Origin":  "LOCAL_OVERRIDE",
+                                           "At":  "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_10rnd_Ball_BP.et",
+                                           "Enabled":  null
+                                       }
+                                   ],
+        "ENABLED_MESH_COUNT":  1,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_30rnd_Ball.et",
+        "GUID":  "48720FC416263FC1",
+        "EFFECTIVE_COMPONENT_COUNT":  4,
+        "ROLE_COUNTS":  {
+                            "MeshObject":  1,
+                            "SCR_EditableEntityComponent":  1,
+                            "InventoryMagazineComponent":  1,
+                            "MagazineComponent":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+                                       {
+                                           "GID":  "CA6BE4D6A23F8EF0",
+                                           "Origin":  "LOCAL_ADDITION",
+                                           "At":  "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_30rnd_Ball.et",
+                                           "Enabled":  null
+                                       }
+                                   ],
+        "ENABLED_MESH_COUNT":  1,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_30rnd_Ball_BP.et",
+        "GUID":  "21BD2CA7421B4D5C",
+        "EFFECTIVE_COMPONENT_COUNT":  4,
+        "ROLE_COUNTS":  {
+                            "MeshObject":  1,
+                            "SCR_EditableEntityComponent":  1,
+                            "InventoryMagazineComponent":  1,
+                            "MagazineComponent":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+                                       {
+                                           "GID":  "CA6BE4D6A23F8EF0",
+                                           "Origin":  "LOCAL_ADDITION",
+                                           "At":  "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_30rnd_Ball_BP.et",
+                                           "Enabled":  null
+                                       }
+                                   ],
+        "ENABLED_MESH_COUNT":  1,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_APB_20rnd_Ball.et",
+        "GUID":  "389EB226473CD590",
+        "EFFECTIVE_COMPONENT_COUNT":  5,
+        "ROLE_COUNTS":  {
+                            "SCR_EditableEntityComponent":  1,
+                            "ARMST_ITEMS_STATS_COMPONENTS":  1,
+                            "MagazineComponent":  1,
+                            "InventoryMagazineComponent":  1,
+                            "MeshObject":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+                                       {
+                                           "GID":  "CA6BE4D6A23F8EF0",
+                                           "Origin":  "LOCAL_ADDITION",
+                                           "At":  "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_APB_20rnd_Ball.et",
+                                           "Enabled":  null
+                                       }
+                                   ],
+        "ENABLED_MESH_COUNT":  1,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_APB_20rnd_Ball_BP.et",
+        "GUID":  "A67F38168B64541A",
+        "EFFECTIVE_COMPONENT_COUNT":  5,
+        "ROLE_COUNTS":  {
+                            "SCR_EditableEntityComponent":  1,
+                            "ARMST_ITEMS_STATS_COMPONENTS":  1,
+                            "MagazineComponent":  1,
+                            "InventoryMagazineComponent":  1,
+                            "MeshObject":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+                                       {
+                                           "GID":  "CA6BE4D6A23F8EF0",
+                                           "Origin":  "LOCAL_ADDITION",
+                                           "At":  "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_APB_20rnd_Ball_BP.et",
+                                           "Enabled":  null
+                                       }
+                                   ],
+        "ENABLED_MESH_COUNT":  1,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball.et",
+        "GUID":  "8B853CDD11BA916E",
+        "EFFECTIVE_COMPONENT_COUNT":  3,
+        "ROLE_COUNTS":  {
+                            "SCR_EditableEntityComponent":  1,
+                            "InventoryMagazineComponent":  1,
+                            "MagazineComponent":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+
+                                   ],
+        "ENABLED_MESH_COUNT":  0,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball_BP.et",
+        "GUID":  "44EF59B51DB21EA9",
+        "EFFECTIVE_COMPONENT_COUNT":  3,
+        "ROLE_COUNTS":  {
+                            "SCR_EditableEntityComponent":  1,
+                            "InventoryMagazineComponent":  1,
+                            "MagazineComponent":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+
+                                   ],
+        "ENABLED_MESH_COUNT":  0,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball_PP.et",
+        "GUID":  "75B5C65F2DA68A01",
+        "EFFECTIVE_COMPONENT_COUNT":  3,
+        "ROLE_COUNTS":  {
+                            "SCR_EditableEntityComponent":  1,
+                            "InventoryMagazineComponent":  1,
+                            "MagazineComponent":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+
+                                   ],
+        "ENABLED_MESH_COUNT":  0,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PP91_30rnd_Ball.et",
+        "GUID":  "4488C415F3CA1890",
+        "EFFECTIVE_COMPONENT_COUNT":  4,
+        "ROLE_COUNTS":  {
+                            "MeshObject":  1,
+                            "SCR_EditableEntityComponent":  1,
+                            "InventoryMagazineComponent":  1,
+                            "MagazineComponent":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+                                       {
+                                           "GID":  "CA6BE4D6A23F8EF0",
+                                           "Origin":  "LOCAL_ADDITION",
+                                           "At":  "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PP91_30rnd_Ball.et",
+                                           "Enabled":  null
+                                       }
+                                   ],
+        "ENABLED_MESH_COUNT":  1,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PP91_30rnd_Ball_BP.et",
+        "GUID":  "318796D9FD213751",
+        "EFFECTIVE_COMPONENT_COUNT":  4,
+        "ROLE_COUNTS":  {
+                            "MeshObject":  1,
+                            "SCR_EditableEntityComponent":  1,
+                            "InventoryMagazineComponent":  1,
+                            "MagazineComponent":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+                                       {
+                                           "GID":  "CA6BE4D6A23F8EF0",
+                                           "Origin":  "LOCAL_ADDITION",
+                                           "At":  "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PP91_30rnd_Ball_BP.et",
+                                           "Enabled":  null
+                                       }
+                                   ],
+        "ENABLED_MESH_COUNT":  1,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_SR2_30rnd_Ball.et",
+        "GUID":  "2610CA8D8632DEF4",
+        "EFFECTIVE_COMPONENT_COUNT":  4,
+        "ROLE_COUNTS":  {
+                            "MeshObject":  1,
+                            "SCR_EditableEntityComponent":  1,
+                            "InventoryMagazineComponent":  1,
+                            "MagazineComponent":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+                                       {
+                                           "GID":  "CA6BE4D6A23F8EF0",
+                                           "Origin":  "LOCAL_ADDITION",
+                                           "At":  "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_SR2_30rnd_Ball.et",
+                                           "Enabled":  null
+                                       }
+                                   ],
+        "ENABLED_MESH_COUNT":  1,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Russian/9x39/9a91/armst_Magazine_9x39_20rnd_9a91_SP5.et",
+        "GUID":  "B7EC6D4222AE12BE",
+        "EFFECTIVE_COMPONENT_COUNT":  6,
+        "ROLE_COUNTS":  {
+                            "SCR_EditableEntityComponent":  1,
+                            "ActionsManagerComponent":  1,
+                            "ARMST_ITEMS_STATS_COMPONENTS":  1,
+                            "MagazineComponent":  1,
+                            "InventoryMagazineComponent":  1,
+                            "MeshObject":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+                                       {
+                                           "GID":  "CA6BE4D6A23F8EF0",
+                                           "Origin":  "LOCAL_ADDITION",
+                                           "At":  "Prefabs/Weapons/Magazines/Russian/9x39/9a91/armst_Magazine_9x39_20rnd_9a91_SP5.et",
+                                           "Enabled":  null
+                                       }
+                                   ],
+        "ENABLED_MESH_COUNT":  1,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Russian/9x39/9a91/armst_Magazine_9x39_20rnd_9a91_SP6.et",
+        "GUID":  "3F47C33B88171646",
+        "EFFECTIVE_COMPONENT_COUNT":  6,
+        "ROLE_COUNTS":  {
+                            "SCR_EditableEntityComponent":  1,
+                            "ActionsManagerComponent":  1,
+                            "ARMST_ITEMS_STATS_COMPONENTS":  1,
+                            "MagazineComponent":  1,
+                            "InventoryMagazineComponent":  1,
+                            "MeshObject":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+                                       {
+                                           "GID":  "CA6BE4D6A23F8EF0",
+                                           "Origin":  "LOCAL_ADDITION",
+                                           "At":  "Prefabs/Weapons/Magazines/Russian/9x39/9a91/armst_Magazine_9x39_20rnd_9a91_SP6.et",
+                                           "Enabled":  null
+                                       }
+                                   ],
+        "ENABLED_MESH_COUNT":  1,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Russian/9x39/Groza/armst_Magazine_9x39_Groza_20rnd_SP5.et",
+        "GUID":  null,
+        "EFFECTIVE_COMPONENT_COUNT":  5,
+        "ROLE_COUNTS":  {
+                            "SCR_EditableEntityComponent":  1,
+                            "ARMST_ITEMS_STATS_COMPONENTS":  1,
+                            "MagazineComponent":  1,
+                            "InventoryMagazineComponent":  1,
+                            "MeshObject":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+                                       {
+                                           "GID":  "CA6BE4D6A23F8EF0",
+                                           "Origin":  "LOCAL_ADDITION",
+                                           "At":  "Prefabs/Weapons/Magazines/Russian/9x39/Groza/armst_Magazine_9x39_Groza_20rnd_SP5.et",
+                                           "Enabled":  null
+                                       }
+                                   ],
+        "ENABLED_MESH_COUNT":  1,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Russian/9x39/Groza/armst_Magazine_9x39_Groza_20rnd_SP6.et",
+        "GUID":  null,
+        "EFFECTIVE_COMPONENT_COUNT":  5,
+        "ROLE_COUNTS":  {
+                            "SCR_EditableEntityComponent":  1,
+                            "ARMST_ITEMS_STATS_COMPONENTS":  1,
+                            "MagazineComponent":  1,
+                            "InventoryMagazineComponent":  1,
+                            "MeshObject":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+                                       {
+                                           "GID":  "CA6BE4D6A23F8EF0",
+                                           "Origin":  "LOCAL_ADDITION",
+                                           "At":  "Prefabs/Weapons/Magazines/Russian/9x39/Groza/armst_Magazine_9x39_Groza_20rnd_SP6.et",
+                                           "Enabled":  null
+                                       }
+                                   ],
+        "ENABLED_MESH_COUNT":  1,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_20rnd_vss_SP5.et",
+        "GUID":  "70D023F899C9C226",
+        "EFFECTIVE_COMPONENT_COUNT":  6,
+        "ROLE_COUNTS":  {
+                            "SCR_EditableEntityComponent":  1,
+                            "ActionsManagerComponent":  1,
+                            "ARMST_ITEMS_STATS_COMPONENTS":  1,
+                            "MagazineComponent":  1,
+                            "InventoryMagazineComponent":  1,
+                            "MeshObject":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+                                       {
+                                           "GID":  "CA6BE4D6A23F8EF0",
+                                           "Origin":  "LOCAL_ADDITION",
+                                           "At":  "Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_20rnd_vss_SP5.et",
+                                           "Enabled":  null
+                                       }
+                                   ],
+        "ENABLED_MESH_COUNT":  1,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_20rnd_vss_SP6.et",
+        "GUID":  "51E9CE2EB27B3DBD",
+        "EFFECTIVE_COMPONENT_COUNT":  6,
+        "ROLE_COUNTS":  {
+                            "SCR_EditableEntityComponent":  1,
+                            "ActionsManagerComponent":  1,
+                            "ARMST_ITEMS_STATS_COMPONENTS":  1,
+                            "MagazineComponent":  1,
+                            "InventoryMagazineComponent":  1,
+                            "MeshObject":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+                                       {
+                                           "GID":  "CA6BE4D6A23F8EF0",
+                                           "Origin":  "LOCAL_ADDITION",
+                                           "At":  "Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_20rnd_vss_SP6.et",
+                                           "Enabled":  null
+                                       }
+                                   ],
+        "ENABLED_MESH_COUNT":  1,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_30rnd_val_SP5.et",
+        "GUID":  "6C22F58BBF5D6AED",
+        "EFFECTIVE_COMPONENT_COUNT":  6,
+        "ROLE_COUNTS":  {
+                            "SCR_EditableEntityComponent":  1,
+                            "ActionsManagerComponent":  1,
+                            "ARMST_ITEMS_STATS_COMPONENTS":  1,
+                            "MagazineComponent":  1,
+                            "InventoryMagazineComponent":  1,
+                            "MeshObject":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+                                       {
+                                           "GID":  "CA6BE4D6A23F8EF0",
+                                           "Origin":  "LOCAL_ADDITION",
+                                           "At":  "Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_30rnd_val_SP5.et",
+                                           "Enabled":  null
+                                       }
+                                   ],
+        "ENABLED_MESH_COUNT":  1,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_30rnd_val_SP6.et",
+        "GUID":  "6CBF1E50EB22F09B",
+        "EFFECTIVE_COMPONENT_COUNT":  6,
+        "ROLE_COUNTS":  {
+                            "SCR_EditableEntityComponent":  1,
+                            "ActionsManagerComponent":  1,
+                            "ARMST_ITEMS_STATS_COMPONENTS":  1,
+                            "MagazineComponent":  1,
+                            "InventoryMagazineComponent":  1,
+                            "MeshObject":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+                                       {
+                                           "GID":  "CA6BE4D6A23F8EF0",
+                                           "Origin":  "LOCAL_ADDITION",
+                                           "At":  "Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_30rnd_val_SP6.et",
+                                           "Enabled":  null
+                                       }
+                                   ],
+        "ENABLED_MESH_COUNT":  1,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Western/5x56/HKG36/armst_Magazine_556x45_HKG36.et",
+        "GUID":  "969F6FFF810D2145",
+        "EFFECTIVE_COMPONENT_COUNT":  5,
+        "ROLE_COUNTS":  {
+                            "SCR_EditableEntityComponent":  1,
+                            "ARMST_ITEMS_STATS_COMPONENTS":  1,
+                            "MagazineComponent":  1,
+                            "InventoryMagazineComponent":  1,
+                            "MeshObject":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+                                       {
+                                           "GID":  "CA6BE4D6A23F8EF0",
+                                           "Origin":  "LOCAL_ADDITION",
+                                           "At":  "Prefabs/Weapons/Magazines/Western/5x56/HKG36/armst_Magazine_556x45_HKG36.et",
+                                           "Enabled":  null
+                                       }
+                                   ],
+        "ENABLED_MESH_COUNT":  1,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Western/5x56/HKG36/armst_Magazine_556x45_HKG36_BP.et",
+        "GUID":  "39C8796C070E44DD",
+        "EFFECTIVE_COMPONENT_COUNT":  5,
+        "ROLE_COUNTS":  {
+                            "SCR_EditableEntityComponent":  1,
+                            "ARMST_ITEMS_STATS_COMPONENTS":  1,
+                            "MagazineComponent":  1,
+                            "InventoryMagazineComponent":  1,
+                            "MeshObject":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+                                       {
+                                           "GID":  "CA6BE4D6A23F8EF0",
+                                           "Origin":  "LOCAL_ADDITION",
+                                           "At":  "Prefabs/Weapons/Magazines/Western/5x56/HKG36/armst_Magazine_556x45_HKG36_BP.et",
+                                           "Enabled":  null
+                                       }
+                                   ],
+        "ENABLED_MESH_COUNT":  1,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Western/5x56/SIG550/armst_Magazine_556x45_SIG_550.et",
+        "GUID":  "E3DC6C2FBBE4F825",
+        "EFFECTIVE_COMPONENT_COUNT":  5,
+        "ROLE_COUNTS":  {
+                            "SCR_EditableEntityComponent":  1,
+                            "ARMST_ITEMS_STATS_COMPONENTS":  1,
+                            "MagazineComponent":  1,
+                            "InventoryMagazineComponent":  1,
+                            "MeshObject":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+                                       {
+                                           "GID":  "CA6BE4D6A23F8EF0",
+                                           "Origin":  "LOCAL_ADDITION",
+                                           "At":  "Prefabs/Weapons/Magazines/Western/5x56/SIG550/armst_Magazine_556x45_SIG_550.et",
+                                           "Enabled":  null
+                                       }
+                                   ],
+        "ENABLED_MESH_COUNT":  1,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Western/5x56/SIG550/armst_Magazine_556x45_SIG_550_BP.et",
+        "GUID":  "70D7F0AE523E4FFF",
+        "EFFECTIVE_COMPONENT_COUNT":  5,
+        "ROLE_COUNTS":  {
+                            "SCR_EditableEntityComponent":  1,
+                            "ARMST_ITEMS_STATS_COMPONENTS":  1,
+                            "MagazineComponent":  1,
+                            "InventoryMagazineComponent":  1,
+                            "MeshObject":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+                                       {
+                                           "GID":  "CA6BE4D6A23F8EF0",
+                                           "Origin":  "LOCAL_ADDITION",
+                                           "At":  "Prefabs/Weapons/Magazines/Western/5x56/SIG550/armst_Magazine_556x45_SIG_550_BP.et",
+                                           "Enabled":  null
+                                       }
+                                   ],
+        "ENABLED_MESH_COUNT":  1,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M193_Ball.et",
+        "GUID":  "FB5EB0F6D447E859",
+        "EFFECTIVE_COMPONENT_COUNT":  4,
+        "ROLE_COUNTS":  {
+                            "SCR_EditableEntityComponent":  1,
+                            "ARMST_ITEMS_STATS_COMPONENTS":  1,
+                            "InventoryMagazineComponent":  1,
+                            "MagazineComponent":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+
+                                   ],
+        "ENABLED_MESH_COUNT":  0,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M193_Ball_BP.et",
+        "GUID":  "A277B4BFA07E47CF",
+        "EFFECTIVE_COMPONENT_COUNT":  4,
+        "ROLE_COUNTS":  {
+                            "SCR_EditableEntityComponent":  1,
+                            "ARMST_ITEMS_STATS_COMPONENTS":  1,
+                            "InventoryMagazineComponent":  1,
+                            "MagazineComponent":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+
+                                   ],
+        "ENABLED_MESH_COUNT":  0,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M855_Ball.et",
+        "GUID":  "2EBF60EF24B108FC",
+        "EFFECTIVE_COMPONENT_COUNT":  3,
+        "ROLE_COUNTS":  {
+                            "ARMST_ITEMS_STATS_COMPONENTS":  1,
+                            "SCR_WeaponAttachmentsStorageComponent":  1,
+                            "MagazineComponent":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+
+                                   ],
+        "ENABLED_MESH_COUNT":  0,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M855_Ball_BP.et",
+        "GUID":  "DDF6F15392E84746",
+        "EFFECTIVE_COMPONENT_COUNT":  3,
+        "ROLE_COUNTS":  {
+                            "ARMST_ITEMS_STATS_COMPONENTS":  1,
+                            "SCR_WeaponAttachmentsStorageComponent":  1,
+                            "MagazineComponent":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+
+                                   ],
+        "ENABLED_MESH_COUNT":  0,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Western/5x56/STANAG/Magazine_556x45_STANAG_30rnd_Base.et",
+        "GUID":  "11B9CC1FB4AEE740",
+        "EFFECTIVE_COMPONENT_COUNT":  3,
+        "ROLE_COUNTS":  {
+                            "ARMST_ITEMS_STATS_COMPONENTS":  1,
+                            "InventoryMagazineComponent":  1,
+                            "MagazineComponent":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+
+                                   ],
+        "ENABLED_MESH_COUNT":  0,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Western/762x51/HK3/armst_Magazine_762x51_HK3_20_M80_Ball.et",
+        "GUID":  "6D18CC33708EE713",
+        "EFFECTIVE_COMPONENT_COUNT":  5,
+        "ROLE_COUNTS":  {
+                            "SCR_EditableEntityComponent":  1,
+                            "ARMST_ITEMS_STATS_COMPONENTS":  1,
+                            "MagazineComponent":  1,
+                            "InventoryMagazineComponent":  1,
+                            "MeshObject":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+                                       {
+                                           "GID":  "CA6BE4D6A23F8EF0",
+                                           "Origin":  "LOCAL_ADDITION",
+                                           "At":  "Prefabs/Weapons/Magazines/Western/762x51/HK3/armst_Magazine_762x51_HK3_20_M80_Ball.et",
+                                           "Enabled":  null
+                                       }
+                                   ],
+        "ENABLED_MESH_COUNT":  1,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Western/762x51/HK3/armst_Magazine_762x51_HK3_20_M80_Ball_BP.et",
+        "GUID":  "263A4BF691DC4E33",
+        "EFFECTIVE_COMPONENT_COUNT":  5,
+        "ROLE_COUNTS":  {
+                            "SCR_EditableEntityComponent":  1,
+                            "ARMST_ITEMS_STATS_COMPONENTS":  1,
+                            "MagazineComponent":  1,
+                            "InventoryMagazineComponent":  1,
+                            "MeshObject":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+                                       {
+                                           "GID":  "CA6BE4D6A23F8EF0",
+                                           "Origin":  "LOCAL_ADDITION",
+                                           "At":  "Prefabs/Weapons/Magazines/Western/762x51/HK3/armst_Magazine_762x51_HK3_20_M80_Ball_BP.et",
+                                           "Enabled":  null
+                                       }
+                                   ],
+        "ENABLED_MESH_COUNT":  1,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_20_M80_Ball.et",
+        "GUID":  "AA9A48AAEE6E4F1B",
+        "EFFECTIVE_COMPONENT_COUNT":  5,
+        "ROLE_COUNTS":  {
+                            "SCR_EditableEntityComponent":  1,
+                            "ARMST_ITEMS_STATS_COMPONENTS":  1,
+                            "MagazineComponent":  1,
+                            "InventoryMagazineComponent":  1,
+                            "MeshObject":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+                                       {
+                                           "GID":  "CA6BE4D6A23F8EF0",
+                                           "Origin":  "LOCAL_ADDITION",
+                                           "At":  "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_20_M80_Ball.et",
+                                           "Enabled":  null
+                                       }
+                                   ],
+        "ENABLED_MESH_COUNT":  1,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_20_M80_Ball_BP.et",
+        "GUID":  "9EEBB92B6CEA45E0",
+        "EFFECTIVE_COMPONENT_COUNT":  5,
+        "ROLE_COUNTS":  {
+                            "SCR_EditableEntityComponent":  1,
+                            "ARMST_ITEMS_STATS_COMPONENTS":  1,
+                            "MagazineComponent":  1,
+                            "InventoryMagazineComponent":  1,
+                            "MeshObject":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+                                       {
+                                           "GID":  "CA6BE4D6A23F8EF0",
+                                           "Origin":  "LOCAL_ADDITION",
+                                           "At":  "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_20_M80_Ball_BP.et",
+                                           "Enabled":  null
+                                       }
+                                   ],
+        "ENABLED_MESH_COUNT":  1,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_30_M80_Ball.et",
+        "GUID":  "531AA7DB88D84184",
+        "EFFECTIVE_COMPONENT_COUNT":  3,
+        "ROLE_COUNTS":  {
+                            "MeshObject":  1,
+                            "SCR_WeaponAttachmentsStorageComponent":  1,
+                            "MagazineComponent":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+                                       {
+                                           "GID":  "CA6BE4D6A23F8EF0",
+                                           "Origin":  "LOCAL_ADDITION",
+                                           "At":  "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_30_M80_Ball.et",
+                                           "Enabled":  null
+                                       }
+                                   ],
+        "ENABLED_MESH_COUNT":  1,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_30_M80_Ball_BP.et",
+        "GUID":  "8046F3CFD92D43BA",
+        "EFFECTIVE_COMPONENT_COUNT":  3,
+        "ROLE_COUNTS":  {
+                            "MeshObject":  1,
+                            "SCR_WeaponAttachmentsStorageComponent":  1,
+                            "MagazineComponent":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+                                       {
+                                           "GID":  "CA6BE4D6A23F8EF0",
+                                           "Origin":  "LOCAL_ADDITION",
+                                           "At":  "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_30_M80_Ball_BP.et",
+                                           "Enabled":  null
+                                       }
+                                   ],
+        "ENABLED_MESH_COUNT":  1,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Western/9x19/M9/armst_Magazine_9x19_M9_15rnd_Ball.et",
+        "GUID":  "9C05543A503DB80E",
+        "EFFECTIVE_COMPONENT_COUNT":  3,
+        "ROLE_COUNTS":  {
+                            "SCR_EditableEntityComponent":  1,
+                            "InventoryMagazineComponent":  1,
+                            "MagazineComponent":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+
+                                   ],
+        "ENABLED_MESH_COUNT":  0,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Magazines/Western/9x19/M9/armst_Magazine_9x19_M9_15rnd_Ball_BP.et",
+        "GUID":  "4BF437F81CEE4039",
+        "EFFECTIVE_COMPONENT_COUNT":  3,
+        "ROLE_COUNTS":  {
+                            "SCR_EditableEntityComponent":  1,
+                            "InventoryMagazineComponent":  1,
+                            "MagazineComponent":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+
+                                   ],
+        "ENABLED_MESH_COUNT":  0,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Russian/Handguns/armst_APB/armst_APB_base.et",
+        "GUID":  "5D3DA7E84135B278",
+        "EFFECTIVE_COMPONENT_COUNT":  12,
+        "ROLE_COUNTS":  {
+                            "SightsComponent":  1,
+                            "SCR_EditableEntityComponent":  1,
+                            "SCR_MuzzleEffectComponent":  1,
+                            "WeaponSoundComponent":  1,
+                            "SCR_WeaponAttachmentsStorageComponent":  1,
+                            "SCR_MeleeWeaponProperties":  1,
+                            "ARMST_ITEMS_STATS_COMPONENTS":  1,
+                            "MuzzleComponent":  1,
+                            "WeaponComponent":  1,
+                            "CaseEjectingEffectComponent":  2,
+                            "MeshObject":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+                                       {
+                                           "GID":  "CFBAA4B701F95D69",
+                                           "Origin":  "LOCAL_ADDITION",
+                                           "At":  "Prefabs/Weapons/Russian/Handguns/armst_APB/armst_APB_base.et",
+                                           "Enabled":  null
+                                       }
+                                   ],
+        "ENABLED_MESH_COUNT":  1,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Russian/Handguns/Pm/armst_PM_base.et",
+        "GUID":  "C0F7DD85A86B2900",
+        "EFFECTIVE_COMPONENT_COUNT":  5,
+        "ROLE_COUNTS":  {
+                            "SCR_EditableEntityComponent":  1,
+                            "SCR_WeaponAttachmentsStorageComponent":  1,
+                            "MuzzleComponent":  1,
+                            "ARMST_ITEMS_STATS_COMPONENTS":  1,
+                            "WeaponComponent":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+
+                                   ],
+        "ENABLED_MESH_COUNT":  0,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Russian/Handguns/PP_19/armst_PP91_base.et",
+        "GUID":  "3968B2A856852CBD",
+        "EFFECTIVE_COMPONENT_COUNT":  13,
+        "ROLE_COUNTS":  {
+                            "SCR_EditableEntityComponent":  1,
+                            "MuzzleComponent":  1,
+                            "SCR_MeleeWeaponProperties":  1,
+                            "CaseEjectingEffectComponent":  2,
+                            "SCR_MuzzleEffectComponent":  1,
+                            "SightsComponent":  1,
+                            "WeaponAnimationComponent":  1,
+                            "WeaponSoundComponent":  1,
+                            "ARMST_ITEMS_STATS_COMPONENTS":  1,
+                            "MeshObject":  1,
+                            "SCR_WeaponAttachmentsStorageComponent":  1,
+                            "WeaponComponent":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+                                       {
+                                           "GID":  "CFBAA4B701F95D69",
+                                           "Origin":  "LOCAL_ADDITION",
+                                           "At":  "Prefabs/Weapons/Russian/Handguns/PP_19/armst_PP91_base.et",
+                                           "Enabled":  null
+                                       }
+                                   ],
+        "ENABLED_MESH_COUNT":  1,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Russian/Handguns/Sr_2/armst_SR_2_base.et",
+        "GUID":  "31FB2EC4F4AFFC05",
+        "EFFECTIVE_COMPONENT_COUNT":  13,
+        "ROLE_COUNTS":  {
+                            "SCR_EditableEntityComponent":  1,
+                            "MuzzleComponent":  1,
+                            "SCR_MeleeWeaponProperties":  1,
+                            "CaseEjectingEffectComponent":  2,
+                            "SCR_MuzzleEffectComponent":  1,
+                            "SightsComponent":  1,
+                            "WeaponAnimationComponent":  1,
+                            "WeaponSoundComponent":  1,
+                            "ARMST_ITEMS_STATS_COMPONENTS":  1,
+                            "MeshObject":  1,
+                            "SCR_WeaponAttachmentsStorageComponent":  1,
+                            "WeaponComponent":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+                                       {
+                                           "GID":  "CFBAA4B701F95D69",
+                                           "Origin":  "LOCAL_ADDITION",
+                                           "At":  "Prefabs/Weapons/Russian/Handguns/Sr_2/armst_SR_2_base.et",
+                                           "Enabled":  null
+                                       }
+                                   ],
+        "ENABLED_MESH_COUNT":  1,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Russian/Handguns/TT/armst_TT_base.et",
+        "GUID":  "0D469F42B65E350E",
+        "EFFECTIVE_COMPONENT_COUNT":  11,
+        "ROLE_COUNTS":  {
+                            "SightsComponent":  1,
+                            "SCR_EditableEntityComponent":  1,
+                            "SCR_MuzzleEffectComponent":  1,
+                            "CaseEjectingEffectComponent":  2,
+                            "SCR_WeaponAttachmentsStorageComponent":  1,
+                            "SCR_MeleeWeaponProperties":  1,
+                            "ARMST_ITEMS_STATS_COMPONENTS":  1,
+                            "MuzzleComponent":  1,
+                            "WeaponComponent":  1,
+                            "MeshObject":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+                                       {
+                                           "GID":  "CFBAA4B701F95D69",
+                                           "Origin":  "LOCAL_ADDITION",
+                                           "At":  "Prefabs/Weapons/Russian/Handguns/TT/armst_TT_base.et",
+                                           "Enabled":  null
+                                       }
+                                   ],
+        "ENABLED_MESH_COUNT":  1,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Russian/MachineGuns/armst_PKM_base.et",
+        "GUID":  "A89BC9D55FFB4CD8",
+        "EFFECTIVE_COMPONENT_COUNT":  3,
+        "ROLE_COUNTS":  {
+                            "SCR_WeaponAttachmentsStorageComponent":  1,
+                            "ARMST_ITEMS_STATS_COMPONENTS":  1,
+                            "SCR_MeleeWeaponProperties":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+
+                                   ],
+        "ENABLED_MESH_COUNT":  0,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Russian/MachineGuns/armst_RPK74_base.et",
+        "GUID":  "A7AF84C6C58BA3E8",
+        "EFFECTIVE_COMPONENT_COUNT":  2,
+        "ROLE_COUNTS":  {
+                            "SCR_WeaponAttachmentsStorageComponent":  1,
+                            "SCR_MeleeWeaponProperties":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+
+                                   ],
+        "ENABLED_MESH_COUNT":  0,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Russian/Rifle/9a91/armst_Rifle_9a91_base.et",
+        "GUID":  "E2D8F39AE1B9B8F1",
+        "EFFECTIVE_COMPONENT_COUNT":  13,
+        "ROLE_COUNTS":  {
+                            "MuzzleComponent":  1,
+                            "SlotManagerComponent":  1,
+                            "SCR_MeleeWeaponProperties":  1,
+                            "CaseEjectingEffectComponent":  1,
+                            "SCR_MuzzleEffectComponent":  1,
+                            "SightsComponent":  1,
+                            "WeaponAnimationComponent":  1,
+                            "WeaponSoundComponent":  1,
+                            "AttachmentSlotComponent":  2,
+                            "MeshObject":  1,
+                            "SCR_WeaponAttachmentsStorageComponent":  1,
+                            "WeaponComponent":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+                                    {
+                                        "Class":  "AttachmentSlotComponent",
+                                        "Count":  2
+                                    }
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+                                       {
+                                           "GID":  "CFBAA4B701F95D69",
+                                           "Origin":  "LOCAL_ADDITION",
+                                           "At":  "Prefabs/Weapons/Russian/Rifle/9a91/armst_Rifle_9a91_base.et",
+                                           "Enabled":  null
+                                       }
+                                   ],
+        "ENABLED_MESH_COUNT":  1,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Russian/Rifle/Aek971/armst_Rifle_AEK971_base.et",
+        "GUID":  "AC198EAC9BDD9841",
+        "EFFECTIVE_COMPONENT_COUNT":  10,
+        "ROLE_COUNTS":  {
+                            "SightsComponent":  1,
+                            "SlotManagerComponent":  1,
+                            "SCR_EditableEntityComponent":  1,
+                            "WeaponComponent":  1,
+                            "MuzzleComponent":  1,
+                            "AttachmentSlotComponent":  2,
+                            "MeshObject":  1,
+                            "WeaponAnimationComponent":  1,
+                            "SCR_WeaponAttachmentsStorageComponent":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+                                    {
+                                        "Class":  "AttachmentSlotComponent",
+                                        "Count":  2
+                                    }
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+                                       {
+                                           "GID":  "CFBAA4B701F95D69",
+                                           "Origin":  "LOCAL_ADDITION",
+                                           "At":  "Prefabs/Weapons/Russian/Rifle/Aek971/armst_Rifle_AEK971_base.et",
+                                           "Enabled":  null
+                                       }
+                                   ],
+        "ENABLED_MESH_COUNT":  1,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK105.et",
+        "GUID":  "6FC3151D0DED22A9",
+        "EFFECTIVE_COMPONENT_COUNT":  8,
+        "ROLE_COUNTS":  {
+                            "SCR_EditableEntityComponent":  1,
+                            "WeaponComponent":  1,
+                            "MuzzleComponent":  1,
+                            "AttachmentSlotComponent":  2,
+                            "MeshObject":  1,
+                            "WeaponAnimationComponent":  1,
+                            "SCR_WeaponAttachmentsStorageComponent":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+                                    {
+                                        "Class":  "AttachmentSlotComponent",
+                                        "Count":  2
+                                    }
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+                                       {
+                                           "GID":  "CFBAA4B701F95D69",
+                                           "Origin":  "LOCAL_ADDITION",
+                                           "At":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK105.et",
+                                           "Enabled":  null
+                                       }
+                                   ],
+        "ENABLED_MESH_COUNT":  1,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74M.et",
+        "GUID":  "5B8E766C0E3C13EE",
+        "EFFECTIVE_COMPONENT_COUNT":  8,
+        "ROLE_COUNTS":  {
+                            "SCR_EditableEntityComponent":  1,
+                            "SlotManagerComponent":  1,
+                            "SCR_WeaponAttachmentsStorageComponent":  1,
+                            "SCR_MeleeWeaponProperties":  1,
+                            "ARMST_ITEMS_STATS_COMPONENTS":  1,
+                            "AttachmentSlotComponent":  1,
+                            "WeaponComponent":  1,
+                            "MeshObject":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+                                       {
+                                           "GID":  "CFBAA4B701F95D69",
+                                           "Origin":  "LOCAL_ADDITION",
+                                           "At":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74M.et",
+                                           "Enabled":  null
+                                       }
+                                   ],
+        "ENABLED_MESH_COUNT":  1,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74M_full.et",
+        "GUID":  "63892659A632A0FD",
+        "EFFECTIVE_COMPONENT_COUNT":  6,
+        "ROLE_COUNTS":  {
+                            "SCR_WeaponAttachmentsStorageComponent":  1,
+                            "WeaponComponent":  1,
+                            "MuzzleComponent":  1,
+                            "AttachmentSlotComponent":  3
+                        },
+        "DUPLICATE_ATTENTION":  [
+                                    {
+                                        "Class":  "AttachmentSlotComponent",
+                                        "Count":  3
+                                    }
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+
+                                   ],
+        "ENABLED_MESH_COUNT":  0,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74N.et",
+        "GUID":  "96DFD2E7E63B3386",
+        "EFFECTIVE_COMPONENT_COUNT":  4,
+        "ROLE_COUNTS":  {
+                            "SCR_EditableEntityComponent":  1,
+                            "WeaponComponent":  1,
+                            "ARMST_ITEMS_STATS_COMPONENTS":  1,
+                            "AttachmentSlotComponent":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+
+                                   ],
+        "ENABLED_MESH_COUNT":  0,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AK74_base.et",
+        "GUID":  "FA5C25BF66A53DCF",
+        "EFFECTIVE_COMPONENT_COUNT":  5,
+        "ROLE_COUNTS":  {
+                            "SCR_EditableEntityComponent":  1,
+                            "WeaponComponent":  1,
+                            "MuzzleComponent":  1,
+                            "AttachmentSlotComponent":  1,
+                            "WeaponAnimationComponent":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+
+                                   ],
+        "ENABLED_MESH_COUNT":  0,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AKS.et",
+        "GUID":  "25A64724FD416989",
+        "EFFECTIVE_COMPONENT_COUNT":  7,
+        "ROLE_COUNTS":  {
+                            "SlotManagerComponent":  1,
+                            "SCR_EditableEntityComponent":  1,
+                            "SCR_WeaponAttachmentsStorageComponent":  1,
+                            "SCR_MeleeWeaponProperties":  1,
+                            "AttachmentSlotComponent":  1,
+                            "WeaponComponent":  1,
+                            "MeshObject":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+                                       {
+                                           "GID":  "CFBAA4B701F95D69",
+                                           "Origin":  "LOCAL_ADDITION",
+                                           "At":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AKS.et",
+                                           "Enabled":  null
+                                       }
+                                   ],
+        "ENABLED_MESH_COUNT":  1,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AKS74U.et",
+        "GUID":  "BFEA719491610A45",
+        "EFFECTIVE_COMPONENT_COUNT":  5,
+        "ROLE_COUNTS":  {
+                            "SCR_EditableEntityComponent":  1,
+                            "WeaponComponent":  1,
+                            "SCR_MeleeWeaponProperties":  1,
+                            "ARMST_ITEMS_STATS_COMPONENTS":  1,
+                            "SCR_WeaponAttachmentsStorageComponent":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+
+                                   ],
+        "ENABLED_MESH_COUNT":  0,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Russian/Rifle/AK74/armst_AKS74UN.et",
+        "GUID":  "FA0E25CE35EE945F",
+        "EFFECTIVE_COMPONENT_COUNT":  4,
+        "ROLE_COUNTS":  {
+                            "SCR_WeaponAttachmentsStorageComponent":  1,
+                            "SCR_MeleeWeaponProperties":  1,
+                            "ARMST_ITEMS_STATS_COMPONENTS":  1,
+                            "WeaponComponent":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+
+                                   ],
+        "ENABLED_MESH_COUNT":  0,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM.et",
+        "GUID":  "5BFF97EFD0BF6D9F",
+        "EFFECTIVE_COMPONENT_COUNT":  8,
+        "ROLE_COUNTS":  {
+                            "SCR_EditableEntityComponent":  1,
+                            "WeaponComponent":  1,
+                            "MuzzleComponent":  1,
+                            "AttachmentSlotComponent":  4,
+                            "WeaponAnimationComponent":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+                                    {
+                                        "Class":  "AttachmentSlotComponent",
+                                        "Count":  4
+                                    }
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+
+                                   ],
+        "ENABLED_MESH_COUNT":  0,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKMS.et",
+        "GUID":  "5712F6F88A014F0B",
+        "EFFECTIVE_COMPONENT_COUNT":  5,
+        "ROLE_COUNTS":  {
+                            "SCR_EditableEntityComponent":  1,
+                            "WeaponComponent":  1,
+                            "MuzzleComponent":  1,
+                            "AttachmentSlotComponent":  1,
+                            "SCR_WeaponAttachmentsStorageComponent":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+
+                                   ],
+        "ENABLED_MESH_COUNT":  0,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_base.et",
+        "GUID":  "140E94F473B60FE3",
+        "EFFECTIVE_COMPONENT_COUNT":  21,
+        "ROLE_COUNTS":  {
+                            "MuzzleComponent":  1,
+                            "SlotManagerComponent":  1,
+                            "SCR_MeleeWeaponProperties":  1,
+                            "CaseEjectingEffectComponent":  2,
+                            "EPF_PersistenceComponent":  1,
+                            "SCR_MuzzleEffectComponent":  1,
+                            "SightsComponent":  1,
+                            "WeaponAnimationComponent":  1,
+                            "WeaponSoundComponent":  1,
+                            "AttachmentSlotComponent":  4,
+                            "ARMST_ITEMS_STATS_COMPONENTS":  1,
+                            "MeshObject":  1,
+                            "ActionsManagerComponent":  1,
+                            "RigidBody":  1,
+                            "SCR_WeaponAttachmentsStorageComponent":  1,
+                            "SCR_WeaponStatsManagerComponent":  1,
+                            "WeaponComponent":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+                                    {
+                                        "Class":  "AttachmentSlotComponent",
+                                        "Count":  4
+                                    }
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+                                       {
+                                           "GID":  "CFBAA4B701F95D69",
+                                           "Origin":  "LOCAL_ADDITION",
+                                           "At":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_base.et",
+                                           "Enabled":  null
+                                       }
+                                   ],
+        "ENABLED_MESH_COUNT":  1,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_full.et",
+        "GUID":  "33BEE1A93C920B26",
+        "EFFECTIVE_COMPONENT_COUNT":  4,
+        "ROLE_COUNTS":  {
+                            "SCR_WeaponAttachmentsStorageComponent":  1,
+                            "WeaponComponent":  1,
+                            "AttachmentSlotComponent":  2
+                        },
+        "DUPLICATE_ATTENTION":  [
+                                    {
+                                        "Class":  "AttachmentSlotComponent",
+                                        "Count":  2
+                                    }
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+
+                                   ],
+        "ENABLED_MESH_COUNT":  0,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_VPO136.et",
+        "GUID":  "90EADC5DD9AD35D5",
+        "EFFECTIVE_COMPONENT_COUNT":  6,
+        "ROLE_COUNTS":  {
+                            "SlotManagerComponent":  1,
+                            "SCR_EditableEntityComponent":  1,
+                            "WeaponComponent":  1,
+                            "MuzzleComponent":  1,
+                            "AttachmentSlotComponent":  1,
+                            "SCR_WeaponAttachmentsStorageComponent":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+
+                                   ],
+        "ENABLED_MESH_COUNT":  0,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Russian/Rifle/Groza/armst_Groza_base.et",
+        "GUID":  "903C7920F00AB654",
+        "EFFECTIVE_COMPONENT_COUNT":  15,
+        "ROLE_COUNTS":  {
+                            "MuzzleComponent":  1,
+                            "SCR_MeleeWeaponProperties":  1,
+                            "CaseEjectingEffectComponent":  1,
+                            "EPF_PersistenceComponent":  1,
+                            "SCR_MuzzleEffectComponent":  1,
+                            "SightsComponent":  1,
+                            "WeaponAnimationComponent":  1,
+                            "WeaponSoundComponent":  1,
+                            "AttachmentSlotComponent":  1,
+                            "ARMST_ITEMS_STATS_COMPONENTS":  1,
+                            "MeshObject":  1,
+                            "ActionsManagerComponent":  1,
+                            "RigidBody":  1,
+                            "SCR_WeaponAttachmentsStorageComponent":  1,
+                            "WeaponComponent":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+                                       {
+                                           "GID":  "CFBAA4B701F95D69",
+                                           "Origin":  "LOCAL_ADDITION",
+                                           "At":  "Prefabs/Weapons/Russian/Rifle/Groza/armst_Groza_base.et",
+                                           "Enabled":  null
+                                       }
+                                   ],
+        "ENABLED_MESH_COUNT":  1,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Russian/Rifle/SOC94/armst_Rifle_SOC94_base.et",
+        "GUID":  "E394112ABBC198D8",
+        "EFFECTIVE_COMPONENT_COUNT":  13,
+        "ROLE_COUNTS":  {
+                            "SightsComponent":  1,
+                            "SlotManagerComponent":  1,
+                            "SCR_EditableEntityComponent":  1,
+                            "WeaponComponent":  1,
+                            "MuzzleComponent":  1,
+                            "AttachmentSlotComponent":  4,
+                            "MeshObject":  1,
+                            "ActionsManagerComponent":  1,
+                            "WeaponAnimationComponent":  1,
+                            "SCR_WeaponAttachmentsStorageComponent":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+                                    {
+                                        "Class":  "AttachmentSlotComponent",
+                                        "Count":  4
+                                    }
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+                                       {
+                                           "GID":  "CFBAA4B701F95D69",
+                                           "Origin":  "LOCAL_ADDITION",
+                                           "At":  "Prefabs/Weapons/Russian/Rifle/SOC94/armst_Rifle_SOC94_base.et",
+                                           "Enabled":  null
+                                       }
+                                   ],
+        "ENABLED_MESH_COUNT":  1,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Russian/Rifle/SVD/armst_Rifle_SVD_base.et",
+        "GUID":  "3EB02CDAD5F23C82",
+        "EFFECTIVE_COMPONENT_COUNT":  5,
+        "ROLE_COUNTS":  {
+                            "SCR_EditableEntityComponent":  1,
+                            "WeaponComponent":  1,
+                            "SCR_MeleeWeaponProperties":  1,
+                            "AttachmentSlotComponent":  1,
+                            "SCR_WeaponAttachmentsStorageComponent":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+
+                                   ],
+        "ENABLED_MESH_COUNT":  0,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Russian/Rifle/VAL/armst_Rifle_val_base.et",
+        "GUID":  "F25D16BD5F748372",
+        "EFFECTIVE_COMPONENT_COUNT":  13,
+        "ROLE_COUNTS":  {
+                            "MuzzleComponent":  1,
+                            "SCR_MeleeWeaponProperties":  1,
+                            "CaseEjectingEffectComponent":  1,
+                            "SCR_MuzzleEffectComponent":  1,
+                            "SightsComponent":  1,
+                            "WeaponAnimationComponent":  1,
+                            "WeaponSoundComponent":  1,
+                            "AttachmentSlotComponent":  2,
+                            "MeshObject":  1,
+                            "ActionsManagerComponent":  1,
+                            "SCR_WeaponAttachmentsStorageComponent":  1,
+                            "WeaponComponent":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+                                    {
+                                        "Class":  "AttachmentSlotComponent",
+                                        "Count":  2
+                                    }
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+                                       {
+                                           "GID":  "CFBAA4B701F95D69",
+                                           "Origin":  "LOCAL_ADDITION",
+                                           "At":  "Prefabs/Weapons/Russian/Rifle/VAL/armst_Rifle_val_base.et",
+                                           "Enabled":  null
+                                       }
+                                   ],
+        "ENABLED_MESH_COUNT":  1,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Russian/Rifle/VSK94/armst_Rifle_VSK94_base.et",
+        "GUID":  "6005623D3AA5F5C2",
+        "EFFECTIVE_COMPONENT_COUNT":  14,
+        "ROLE_COUNTS":  {
+                            "MuzzleComponent":  1,
+                            "SlotManagerComponent":  1,
+                            "SCR_MeleeWeaponProperties":  1,
+                            "CaseEjectingEffectComponent":  1,
+                            "SCR_MuzzleEffectComponent":  1,
+                            "SightsComponent":  1,
+                            "WeaponAnimationComponent":  1,
+                            "WeaponSoundComponent":  1,
+                            "AttachmentSlotComponent":  2,
+                            "MeshObject":  1,
+                            "ActionsManagerComponent":  1,
+                            "SCR_WeaponAttachmentsStorageComponent":  1,
+                            "WeaponComponent":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+                                    {
+                                        "Class":  "AttachmentSlotComponent",
+                                        "Count":  2
+                                    }
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+                                       {
+                                           "GID":  "CFBAA4B701F95D69",
+                                           "Origin":  "LOCAL_ADDITION",
+                                           "At":  "Prefabs/Weapons/Russian/Rifle/VSK94/armst_Rifle_VSK94_base.et",
+                                           "Enabled":  null
+                                       }
+                                   ],
+        "ENABLED_MESH_COUNT":  1,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Russian/Rifle/VSS/armst_Rifle_vss_base.et",
+        "GUID":  "902A79E4B2A66E63",
+        "EFFECTIVE_COMPONENT_COUNT":  12,
+        "ROLE_COUNTS":  {
+                            "SightsComponent":  1,
+                            "CaseEjectingEffectComponent":  1,
+                            "SCR_MuzzleEffectComponent":  1,
+                            "WeaponSoundComponent":  1,
+                            "WeaponComponent":  1,
+                            "SCR_MeleeWeaponProperties":  1,
+                            "AttachmentSlotComponent":  2,
+                            "MeshObject":  1,
+                            "MuzzleComponent":  1,
+                            "WeaponAnimationComponent":  1,
+                            "SCR_WeaponAttachmentsStorageComponent":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+                                    {
+                                        "Class":  "AttachmentSlotComponent",
+                                        "Count":  2
+                                    }
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+                                       {
+                                           "GID":  "CFBAA4B701F95D69",
+                                           "Origin":  "LOCAL_ADDITION",
+                                           "At":  "Prefabs/Weapons/Russian/Rifle/VSS/armst_Rifle_vss_base.et",
+                                           "Enabled":  null
+                                       }
+                                   ],
+        "ENABLED_MESH_COUNT":  1,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Russian/Shotgun/armst_izh_27.et",
+        "GUID":  "57F153EFAD34E1CA",
+        "EFFECTIVE_COMPONENT_COUNT":  7,
+        "ROLE_COUNTS":  {
+                            "WeaponSoundComponent":  1,
+                            "WeaponComponent":  1,
+                            "CaseEjectingEffectComponent":  2,
+                            "MuzzleComponent":  1,
+                            "WeaponAnimationComponent":  1,
+                            "SCR_WeaponAttachmentsStorageComponent":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+
+                                   ],
+        "ENABLED_MESH_COUNT":  0,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Russian/Shotgun/armst_mp_133.et",
+        "GUID":  "63FF6FDCA4E7E735",
+        "EFFECTIVE_COMPONENT_COUNT":  7,
+        "ROLE_COUNTS":  {
+                            "WeaponSoundComponent":  1,
+                            "WeaponComponent":  1,
+                            "MuzzleComponent":  1,
+                            "MeshObject":  1,
+                            "CaseEjectingEffectComponent":  1,
+                            "WeaponAnimationComponent":  1,
+                            "SCR_WeaponAttachmentsStorageComponent":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+                                       {
+                                           "GID":  "CFBAA4B701F95D69",
+                                           "Origin":  "LOCAL_ADDITION",
+                                           "At":  "Prefabs/Weapons/Russian/Shotgun/armst_mp_133.et",
+                                           "Enabled":  null
+                                       }
+                                   ],
+        "ENABLED_MESH_COUNT":  1,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Russian/Shotgun/armst_mp_153.et",
+        "GUID":  "92DB80A098AABF1C",
+        "EFFECTIVE_COMPONENT_COUNT":  8,
+        "ROLE_COUNTS":  {
+                            "WeaponAnimationComponent":  1,
+                            "WeaponSoundComponent":  1,
+                            "WeaponComponent":  1,
+                            "MuzzleComponent":  1,
+                            "MeshObject":  1,
+                            "CaseEjectingEffectComponent":  1,
+                            "ARMST_SHOTGUN_COMPONENTS":  1,
+                            "SCR_WeaponAttachmentsStorageComponent":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+                                       {
+                                           "GID":  "CFBAA4B701F95D69",
+                                           "Origin":  "LOCAL_ADDITION",
+                                           "At":  "Prefabs/Weapons/Russian/Shotgun/armst_mp_153.et",
+                                           "Enabled":  null
+                                       }
+                                   ],
+        "ENABLED_MESH_COUNT":  1,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Russian/Shotgun/armst_toz_66.et",
+        "GUID":  "923B067A74826419",
+        "EFFECTIVE_COMPONENT_COUNT":  8,
+        "ROLE_COUNTS":  {
+                            "SightsComponent":  1,
+                            "WeaponSoundComponent":  1,
+                            "WeaponComponent":  1,
+                            "MuzzleComponent":  1,
+                            "MeshObject":  1,
+                            "CaseEjectingEffectComponent":  1,
+                            "WeaponAnimationComponent":  1,
+                            "SCR_WeaponAttachmentsStorageComponent":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+                                       {
+                                           "GID":  "CFBAA4B701F95D69",
+                                           "Origin":  "LOCAL_ADDITION",
+                                           "At":  "Prefabs/Weapons/Russian/Shotgun/armst_toz_66.et",
+                                           "Enabled":  null
+                                       }
+                                   ],
+        "ENABLED_MESH_COUNT":  1,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Russian/Shotgun/armst_toz_66_pantera.et",
+        "GUID":  "A9B143751CB07F45",
+        "EFFECTIVE_COMPONENT_COUNT":  1,
+        "ROLE_COUNTS":  {
+                            "MeshObject":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+                                       {
+                                           "GID":  "CFBAA4B701F95D69",
+                                           "Origin":  "LOCAL_ADDITION",
+                                           "At":  "Prefabs/Weapons/Russian/Shotgun/armst_toz_66_pantera.et",
+                                           "Enabled":  null
+                                       }
+                                   ],
+        "ENABLED_MESH_COUNT":  1,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Russian/Shotgun/armst_toz_66_saw.et",
+        "GUID":  "9C7C3BE87956383A",
+        "EFFECTIVE_COMPONENT_COUNT":  5,
+        "ROLE_COUNTS":  {
+                            "SightsComponent":  1,
+                            "WeaponComponent":  1,
+                            "MuzzleComponent":  1,
+                            "MeshObject":  1,
+                            "SCR_WeaponAttachmentsStorageComponent":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+                                       {
+                                           "GID":  "CFBAA4B701F95D69",
+                                           "Origin":  "LOCAL_ADDITION",
+                                           "At":  "Prefabs/Weapons/Russian/Shotgun/armst_toz_66_saw.et",
+                                           "Enabled":  null
+                                       }
+                                   ],
+        "ENABLED_MESH_COUNT":  1,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Tripods/armst_Tripod_6T5.et",
+        "GUID":  "7C4D1A64D60F2C92",
+        "EFFECTIVE_COMPONENT_COUNT":  2,
+        "ROLE_COUNTS":  {
+                            "EPF_PersistenceComponent":  1,
+                            "SCR_UniversalInventoryStorageComponent":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+
+                                   ],
+        "ENABLED_MESH_COUNT":  0,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Tripods/armst_Tripod_6T5_PKM.et",
+        "GUID":  "723870DBB19D30B0",
+        "EFFECTIVE_COMPONENT_COUNT":  3,
+        "ROLE_COUNTS":  {
+                            "EPF_PersistenceComponent":  1,
+                            "SCR_EditableVehicleComponent":  1,
+                            "SCR_UniversalInventoryStorageComponent":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+
+                                   ],
+        "ENABLED_MESH_COUNT":  0,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Western/Handguns/armst_M9_base.et",
+        "GUID":  "1353C6EAD1DCFE43",
+        "EFFECTIVE_COMPONENT_COUNT":  4,
+        "ROLE_COUNTS":  {
+                            "SCR_WeaponAttachmentsStorageComponent":  1,
+                            "SCR_EditableEntityComponent":  1,
+                            "SCR_MeleeWeaponProperties":  1,
+                            "ARMST_ITEMS_STATS_COMPONENTS":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+
+                                   ],
+        "ENABLED_MESH_COUNT":  0,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Western/Rifle/armst_Rifle_M16A2_base.et",
+        "GUID":  "3E413771E1834D2F",
+        "EFFECTIVE_COMPONENT_COUNT":  3,
+        "ROLE_COUNTS":  {
+                            "WeaponAnimationComponent":  1,
+                            "SCR_MeleeWeaponProperties":  1,
+                            "WeaponComponent":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+
+                                   ],
+        "ENABLED_MESH_COUNT":  0,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Western/Rifle/armst_Rifle_M16A2_carbine.et",
+        "GUID":  "F97A4AC994231900",
+        "EFFECTIVE_COMPONENT_COUNT":  4,
+        "ROLE_COUNTS":  {
+                            "SCR_WeaponAttachmentsStorageComponent":  1,
+                            "SCR_MeleeWeaponProperties":  1,
+                            "ARMST_ITEMS_STATS_COMPONENTS":  1,
+                            "WeaponComponent":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+
+                                   ],
+        "ENABLED_MESH_COUNT":  0,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Western/Rifle/armst_VZ58P_base.et",
+        "GUID":  "9C948630078D154D",
+        "EFFECTIVE_COMPONENT_COUNT":  4,
+        "ROLE_COUNTS":  {
+                            "SCR_WeaponAttachmentsStorageComponent":  1,
+                            "SCR_MeleeWeaponProperties":  1,
+                            "ARMST_ITEMS_STATS_COMPONENTS":  1,
+                            "WeaponComponent":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+
+                                   ],
+        "ENABLED_MESH_COUNT":  0,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Western/Rifle/armst_VZ58V_base.et",
+        "GUID":  "443CEFF17E040B11",
+        "EFFECTIVE_COMPONENT_COUNT":  5,
+        "ROLE_COUNTS":  {
+                            "WeaponComponent":  1,
+                            "SCR_MeleeWeaponProperties":  1,
+                            "ARMST_ITEMS_STATS_COMPONENTS":  1,
+                            "MuzzleComponent":  1,
+                            "SCR_WeaponAttachmentsStorageComponent":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+
+                                   ],
+        "ENABLED_MESH_COUNT":  0,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Western/Rifle/HKG33/armst_Rifle_HKG33_base.et",
+        "GUID":  "035CFC7DD44455D0",
+        "EFFECTIVE_COMPONENT_COUNT":  11,
+        "ROLE_COUNTS":  {
+                            "SightsComponent":  1,
+                            "SCR_MuzzleEffectComponent":  1,
+                            "SCR_WeaponAttachmentsStorageComponent":  1,
+                            "WeaponComponent":  1,
+                            "SCR_MeleeWeaponProperties":  1,
+                            "AttachmentSlotComponent":  3,
+                            "MuzzleComponent":  1,
+                            "WeaponAnimationComponent":  1,
+                            "MeshObject":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+                                    {
+                                        "Class":  "AttachmentSlotComponent",
+                                        "Count":  3
+                                    }
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+                                       {
+                                           "GID":  "CFBAA4B701F95D69",
+                                           "Origin":  "LOCAL_ADDITION",
+                                           "At":  "Prefabs/Weapons/Western/Rifle/HKG33/armst_Rifle_HKG33_base.et",
+                                           "Enabled":  null
+                                       }
+                                   ],
+        "ENABLED_MESH_COUNT":  1,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Western/Rifle/HKG36/armst_Rifle_HKG36_base.et",
+        "GUID":  "A802C718201D72DF",
+        "EFFECTIVE_COMPONENT_COUNT":  18,
+        "ROLE_COUNTS":  {
+                            "MuzzleComponent":  1,
+                            "SCR_MeleeWeaponProperties":  1,
+                            "CaseEjectingEffectComponent":  1,
+                            "EPF_PersistenceComponent":  1,
+                            "SCR_MuzzleEffectComponent":  1,
+                            "SightsComponent":  1,
+                            "WeaponAnimationComponent":  1,
+                            "WeaponSoundComponent":  1,
+                            "AttachmentSlotComponent":  3,
+                            "ARMST_ITEMS_STATS_COMPONENTS":  1,
+                            "MeshObject":  1,
+                            "ActionsManagerComponent":  1,
+                            "RigidBody":  1,
+                            "SCR_WeaponAttachmentsStorageComponent":  1,
+                            "SCR_WeaponStatsManagerComponent":  1,
+                            "WeaponComponent":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+                                    {
+                                        "Class":  "AttachmentSlotComponent",
+                                        "Count":  3
+                                    }
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+                                       {
+                                           "GID":  "CFBAA4B701F95D69",
+                                           "Origin":  "LOCAL_ADDITION",
+                                           "At":  "Prefabs/Weapons/Western/Rifle/HKG36/armst_Rifle_HKG36_base.et",
+                                           "Enabled":  null
+                                       }
+                                   ],
+        "ENABLED_MESH_COUNT":  1,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Western/Rifle/L85/armst_Rifle_L85_base.et",
+        "GUID":  "45D3FCA77AF1709B",
+        "EFFECTIVE_COMPONENT_COUNT":  11,
+        "ROLE_COUNTS":  {
+                            "SightsComponent":  1,
+                            "SCR_WeaponAttachmentsStorageComponent":  1,
+                            "WeaponComponent":  1,
+                            "SCR_MeleeWeaponProperties":  1,
+                            "AttachmentSlotComponent":  4,
+                            "MuzzleComponent":  1,
+                            "WeaponAnimationComponent":  1,
+                            "MeshObject":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+                                    {
+                                        "Class":  "AttachmentSlotComponent",
+                                        "Count":  4
+                                    }
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+                                       {
+                                           "GID":  "CFBAA4B701F95D69",
+                                           "Origin":  "LOCAL_ADDITION",
+                                           "At":  "Prefabs/Weapons/Western/Rifle/L85/armst_Rifle_L85_base.et",
+                                           "Enabled":  null
+                                       }
+                                   ],
+        "ENABLED_MESH_COUNT":  1,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Western/Rifle/Sig550/armst_Rifle_Sig550_base.et",
+        "GUID":  "CA3BEBAADDFAF1DE",
+        "EFFECTIVE_COMPONENT_COUNT":  10,
+        "ROLE_COUNTS":  {
+                            "SightsComponent":  1,
+                            "SCR_WeaponAttachmentsStorageComponent":  1,
+                            "WeaponComponent":  1,
+                            "SCR_MeleeWeaponProperties":  1,
+                            "AttachmentSlotComponent":  3,
+                            "MuzzleComponent":  1,
+                            "WeaponAnimationComponent":  1,
+                            "MeshObject":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+                                    {
+                                        "Class":  "AttachmentSlotComponent",
+                                        "Count":  3
+                                    }
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+                                       {
+                                           "GID":  "CFBAA4B701F95D69",
+                                           "Origin":  "LOCAL_ADDITION",
+                                           "At":  "Prefabs/Weapons/Western/Rifle/Sig550/armst_Rifle_Sig550_base.et",
+                                           "Enabled":  null
+                                       }
+                                   ],
+        "ENABLED_MESH_COUNT":  1,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Western/Rifle/SLR/armst_SLR_base.et",
+        "GUID":  "C11ED52EAAF856A8",
+        "EFFECTIVE_COMPONENT_COUNT":  9,
+        "ROLE_COUNTS":  {
+                            "SightsComponent":  1,
+                            "SCR_WeaponAttachmentsStorageComponent":  1,
+                            "WeaponComponent":  1,
+                            "SCR_MeleeWeaponProperties":  1,
+                            "AttachmentSlotComponent":  2,
+                            "MuzzleComponent":  1,
+                            "WeaponAnimationComponent":  1,
+                            "MeshObject":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+                                    {
+                                        "Class":  "AttachmentSlotComponent",
+                                        "Count":  2
+                                    }
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+                                       {
+                                           "GID":  "CFBAA4B701F95D69",
+                                           "Origin":  "LOCAL_ADDITION",
+                                           "At":  "Prefabs/Weapons/Western/Rifle/SLR/armst_SLR_base.et",
+                                           "Enabled":  null
+                                       }
+                                   ],
+        "ENABLED_MESH_COUNT":  1,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Western/Shotgun/armst_Remington_870.et",
+        "GUID":  "6DBEF115AA35E404",
+        "EFFECTIVE_COMPONENT_COUNT":  8,
+        "ROLE_COUNTS":  {
+                            "WeaponAnimationComponent":  1,
+                            "WeaponSoundComponent":  1,
+                            "WeaponComponent":  1,
+                            "MuzzleComponent":  1,
+                            "MeshObject":  1,
+                            "CaseEjectingEffectComponent":  1,
+                            "ARMST_SHOTGUN_COMPONENTS":  1,
+                            "SCR_WeaponAttachmentsStorageComponent":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+                                       {
+                                           "GID":  "CFBAA4B701F95D69",
+                                           "Origin":  "LOCAL_ADDITION",
+                                           "At":  "Prefabs/Weapons/Western/Shotgun/armst_Remington_870.et",
+                                           "Enabled":  null
+                                       }
+                                   ],
+        "ENABLED_MESH_COUNT":  1,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Western/Shotgun/armst_shotgun_base.et",
+        "GUID":  "6C5E2009CDCD0BD3",
+        "EFFECTIVE_COMPONENT_COUNT":  10,
+        "ROLE_COUNTS":  {
+                            "CaseEjectingEffectComponent":  2,
+                            "WeaponSoundComponent":  1,
+                            "SCR_WeaponAttachmentsStorageComponent":  1,
+                            "SCR_MeleeWeaponProperties":  1,
+                            "AttachmentSlotComponent":  1,
+                            "WeaponComponent":  1,
+                            "MuzzleComponent":  1,
+                            "ARMST_SHOTGUN_COMPONENTS":  1,
+                            "MeshObject":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+                                       {
+                                           "GID":  "CFBAA4B701F95D69",
+                                           "Origin":  "LOCAL_ADDITION",
+                                           "At":  "Prefabs/Weapons/Western/Shotgun/armst_shotgun_base.et",
+                                           "Enabled":  null
+                                       }
+                                   ],
+        "ENABLED_MESH_COUNT":  1,
+        "NOTE":  null
+    },
+    {
+        "PATH":  "Prefabs/Weapons/Western/Shotgun/armst_spas_12.et",
+        "GUID":  "221AED80163B7C60",
+        "EFFECTIVE_COMPONENT_COUNT":  8,
+        "ROLE_COUNTS":  {
+                            "WeaponAnimationComponent":  1,
+                            "WeaponSoundComponent":  1,
+                            "WeaponComponent":  1,
+                            "MuzzleComponent":  1,
+                            "MeshObject":  1,
+                            "CaseEjectingEffectComponent":  1,
+                            "ARMST_SHOTGUN_COMPONENTS":  1,
+                            "SCR_WeaponAttachmentsStorageComponent":  1
+                        },
+        "DUPLICATE_ATTENTION":  [
+
+                                ],
+        "MESH_OBJECTS_EFFECTIVE":  [
+                                       {
+                                           "GID":  "CFBAA4B701F95D69",
+                                           "Origin":  "LOCAL_ADDITION",
+                                           "At":  "Prefabs/Weapons/Western/Shotgun/armst_spas_12.et",
+                                           "Enabled":  null
+                                       }
+                                   ],
+        "ENABLED_MESH_COUNT":  1,
+        "NOTE":  null
+    }
+]

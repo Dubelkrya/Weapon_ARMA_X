@@ -1,0 +1,10 @@
+GenericEntity : "{8E9682666CB56092}Prefabs/Weapons/Magazines/Box_556x45_M249_200rnd_base.et" {
+ ID "CA6BE4D6BB2D1077"
+ components {
+  InventoryMagazineComponent "{51EED12B803954CC}" {
+   Attributes SCR_ItemAttributeCollection "{51EED12B86960275}" {
+    m_Size SLOT_1x1
+   }
+  }
+ }
+}

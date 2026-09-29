@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{5F6C64C538A57B84}Imported/VanillaSources/Prefabs/Weapons/Attachments/Bayonets/Bayonet_VZ58/Bayonet_VZ58_base.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

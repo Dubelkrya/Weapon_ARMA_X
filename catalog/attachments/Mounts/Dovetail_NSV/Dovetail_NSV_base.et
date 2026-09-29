@@ -1,0 +1,8 @@
+GenericEntity : "{0A9CD090EE3440E7}Prefabs/Weapons/Core/WeaponPart_Base.et" {
+ ID "557E85EEE1B603F1"
+ components {
+  RigidBody "{557E85EE3F17E453}" {
+   Static 1
+  }
+ }
+}

@@ -1,0 +1,14 @@
+GenericEntity {
+ ID "6226BCD7125EDB70"
+ components {
+  MeshObject "{6226BCD763A2219F}" {
+   Object "{03C23B16DE054D5A}Assets/Weapons/Mortars/M252/M252_Cannon.xob"
+   Materials {
+    MaterialAssignClass "{6226BCD91C34B494}" {
+     SourceMaterial "Cannon1"
+     AssignedMaterial "{FA10C289F75AC9D7}Assets/Weapons/Mortars/M252/Data/Cannon_dmg.emat"
+    }
+   }
+  }
+ }
+}

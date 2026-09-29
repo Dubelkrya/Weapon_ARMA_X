@@ -1,0 +1,52 @@
+GameEntity : "{28866E98F3970DFE}Prefabs/Weapons/Core/MuzzleDevice_base.et" {
+ ID "4BA426CBAED42A14"
+ components {
+  InventoryItemComponent "{52627A1F45CD4EB6}" {
+   Attributes SCR_ItemAttributeCollection "{52627A1EBB0698FD}" {
+    ItemDisplayName UIInfo "{5CB8A09828130AD1}" {
+    }
+    ItemPhysAttributes ItemPhysicalAttributes "{5CB8A0982952AAE5}" {
+    }
+    CustomAttributes {
+     SCR_WeaponAttachmentSuppressorAttributes "{5284D858FFF9BE66}" {
+      AttachmentType AttachmentSuppressor "{618A843CE28C7529}" {
+      }
+     }
+     PreviewRenderAttributes "{52D69389645B4E4D}" {
+      CameraPreset Right
+      ItemRenderRotation 0 0 45
+      FOV 15
+      AspectRatio 1
+     }
+     SCR_WeaponAttachmentObstructionAttributes "{61B08C885494492B}" {
+      AttachmentType AttachmentSuppressor "{61B08C8FA3FA3ADE}" {
+      }
+      m_aObstructedAttachmentTypes {
+       AttachmentBayonet "{61B485C90019DB63}" {
+       }
+      }
+     }
+    }
+    m_Size SLOT_1x1
+   }
+  }
+  SCR_MuzzleEffectComponent "{618AE28914F3CB8B}" {
+  }
+  SCR_SoundDataComponent "{5B18D200265FA2CB}" {
+   m_aAudioSourceConfiguration {
+    SCR_AudioSourceConfiguration "{5B18D2091B885AE6}" {
+     m_sSoundProject "{5BDBACC1D71C41AB}Sounds/Weapons/_SharedData/PickUp/Weapons_PickUp_Attachments_Suppressor.acp"
+    }
+    SCR_AudioSourceConfiguration "{61A28279C00E0A2D}" {
+     m_sSoundProject "{5BDBACC1D71C41AB}Sounds/Weapons/_SharedData/PickUp/Weapons_PickUp_Attachments_Suppressor.acp"
+    }
+   }
+  }
+  ActionsManagerComponent "{5284E0EFF569AD07}" {
+   additionalActions {
+    SCR_EquipWeaponAttachment "{5284E0EFDA00C63B}" {
+    }
+   }
+  }
+ }
+}
