@@ -11,6 +11,10 @@
 
 ## 0.000 Snapshot investigation (issue #27 follow-up) — нет готовых анимаций в снапшотах
 
+> **Готовый план импорта + подключения + R:** см. отдельный документ
+> `reports/MP133_ANIMATION_LAB_V23_IMPORT_AND_R.md` (инструкция Animation Editor,
+> точный ASI-diff с placeholder-GUID, отдельный R-блокер).
+
 Проверено фактически (read-only):
 - `agent/scripts/base_game_snapshot.py` — **read-only** индексатор; явно обрабатывает
   только `ext in (".et", ".conf")` (строка 115). Анимации по дизайну не индексируются.

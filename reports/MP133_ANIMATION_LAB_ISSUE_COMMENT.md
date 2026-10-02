@@ -20,6 +20,26 @@ Workbench launch (owner override).
   аддон. **Готовых per-shell анимаций в снапшотах нет** → импорт анимации
   действительно необходим (или нужен хук подавления ванильной перезарядки).
 
+## Готовый план (импорт → подключение → R)
+
+Детали: `reports/MP133_ANIMATION_LAB_V23_IMPORT_AND_R.md`.
+
+1. **Импорт (единственная операция владельца):** скомпилировать
+   `Assets/Weapons_RUS/Mp_133/Workspace/LabClips/W_MP133_Lab_Inject.txa` и
+   `P_MP133_Lab_Inject.txa` в `.anm` (Animation Editor). Прислать GUID-ы двух
+   `.anm.meta` и список событий (`ARMST_Lab_Shell_*` + `BlendIn/BlendOut`, без
+   `Weapon_*Magazine`).
+2. **Подключение (агент, без Workbench):** заменить 4 строки в
+   `MP133_Lab_weapon.asi`/`MP133_Lab_player.asi` на санитизированные ANM. Граф и
+   контроллер уже готовы (`InsertSingleProjectile` self-loop по `BlendOut`,
+   commit только по `ARMST_Lab_Shell_Commit`).
+3. **R (отдельный блокер):** реализуется через существующий механизм `modded`
+   (`HandleWeaponReloading`, lab-gated) + лабораторный триггер. Точное ванильное
+   action-имя неизвестно, и не подтверждено без игры, что этот хук подавляет
+   нативный mag-swap. Авто-триггер остаётся выключенным до импорта клипов, чтобы
+   не вернуть регрессию. Критерий снятия — после импорта R не порождает
+   `Weapon_MagRelease/Detach/Despawn` и труба растёт 2/3→3/3 с `SERVER COMMIT`.
+
 ## Что показал лог владельца (после V2.2) и что исправлено
 
 Лог (comment #5956970464): Gate A и физическая труба 3 работают
