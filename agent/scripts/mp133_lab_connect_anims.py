@@ -144,6 +144,17 @@ def _extract_braced_block(text: str, marker: str) -> tuple[int, int] | None:
     return None
 
 
+def _validate_transitions(seg: str) -> list:
+    """Every non-empty transition endpoint must be a state defined in the STM."""
+    problems = []
+    states = set(m.group(2) for m in re.finditer(r'AnimSrcNodeState\s+("?)([\w]+)\1\s*\{', seg))
+    for m in re.finditer(r'(FromState|ToState)\s+"([^"]*)"', seg):
+        endpoint = m.group(2)
+        if endpoint and endpoint not in states:
+            problems.append(f"transition {m.group(1)} {endpoint!r} references an unknown state")
+    return problems
+
+
 def plan_graph_hardening(text: str) -> dict:
     """Structured, scoped redirect inside WeaponReloadSTM only."""
     problems = []
@@ -152,6 +163,10 @@ def plan_graph_hardening(text: str) -> dict:
         return {"ok": False, "problems": ["WeaponReloadSTM block not found"], "new_text": text, "states": []}
     start, end = block
     seg = text[start:end]
+
+    problems += _validate_transitions(seg)
+    if problems:
+        return {"ok": False, "problems": problems, "new_text": text, "states": []}
 
     n_mag = seg.count('Child "MagReloadSTM"')
     n_rem = seg.count('Child "RemoveMagAnim"')

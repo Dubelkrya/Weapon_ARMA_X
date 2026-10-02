@@ -137,7 +137,35 @@ AnimSetInstanceSource_Line "Reload.Pne.Reload_InsertMag" {
 
 ---
 
-## Часть 3. Обработка R через существующие механизмы модов
+## Статус после импорта (выполнено агентом, issue #27)
+
+- **ANM проверены:** `W_MP133_Lab_Inject.anm` = `{1F9884C8701DAE1B}`,
+  `P_MP133_Lab_Inject.anm` = `{FE510A1EC49563F1}`; `.meta` содержат корректные
+  GUID и пути; события (`BlendIn`, `ARMST_Lab_Shell_Spawn/Commit/Release`,
+  `BlendOut`) подтверждены владельцем визуально.
+- **Оба `.asi` уже подключены** к лабораторным ANM (Erc+Pne) — коннектор в
+  `--dry-run` сообщает `already connected` и **не переписывает** их.
+- **Переходы графа проверены перед правкой:** все `FromState`/`ToState` внутри
+  `WeaponReloadSTM` указывают на существующие состояния (integrity ok).
+- **`--harden-graph` применён** (lab-only): состояния `MagReload`,
+  `MagNoBulletReload`, `RemoveMag` переведены на `InsertMagAnim`. Вложенный
+  `MagReloadSTM` и `RackBoltAnim` (помпа) не затронуты. В `WeaponReloadSTM`
+  больше нет пути, отыгрывающего `RemoveMag`/`MagReloadSTM` (носители штатных
+  `Weapon_MagRelease/Detach/Despawn`). Валидатор PASSED; тесты 12/12.
+- **Гейт `m_bLabInsertEnabled` остаётся OFF.**
+
+### 7 предупреждений редактора — НЕ лаборатория
+
+Источник — живой `ARMST-PLATFORM---Weapons` (битые ссылки на старый путь
+`Shootgun/Mp_133/Anim/...`):
+- `Assets/Mp_153/Anim/MP_153_player.asi` (`P_MP_133_Reload_Bolt`, `P_MP_133_safety`);
+- `Assets/Spas_12/Anim/Spas_12_weapon.asi`, `Spas_12_player.asi` (`MP_133_Reload_Remove/Bolt`);
+- `Assets/Remington_870/Anim/Remington_870_weapon.asi` (`W_MP_133_Reload_Bolt`).
+
+Они не относятся к `ARMST_MP133_AnimationLab` и не правятся здесь (вне области
+задачи, не трогаем боевой мод). Отдельная issue.
+
+## Часть 3. Обработка R (подготовка; НЕ включена)
 
 Существующий механизм (как в Core): `modded`-класс + действие ввода и
 `CharacterInputContext.SetReloadWeapon(type)`.

@@ -155,6 +155,12 @@ class GraphPlanTests(unittest.TestCase):
         r = c.plan_graph_hardening(broken)
         self.assertFalse(r["ok"])
 
+    def test_broken_transition_endpoint_rejected(self):
+        broken = AGF_FIXTURE.replace('ToState "ReloadActionBolt"', 'ToState "DoesNotExist"')
+        r = c.plan_graph_hardening(broken)
+        self.assertFalse(r["ok"])
+        self.assertTrue(any("unknown state" in p for p in r["problems"]))
+
 
 class RunTests(unittest.TestCase):
     def test_run_without_harden_changes_only_asi(self):
