@@ -50,7 +50,13 @@ EntityPool «unregistered prefab armst_Ammo_12ga.et» — runtime-регистр
   Наблюдает и нетронутый прод-MP-133 пассивно.
 - **Гейты OFF**, graph/ASI/ANM/префабы/прод/Core не менялись. Валидатор +
   `check_v27_trace` PASSED; тесты 14/14, 15/15, 17/17. Бэкап скриптов:
-  `artifacts/MP133_Lab/v27_backups/` (ха `37D0…2A34` → `4A20…5EA0`).
+  `artifacts/MP133_Lab/v27_backups/` (baseline `37D0…2A34`).
+- **Compile-fix (comment 5959746653):** первый прогон дал lab-owned
+  `SCRIPT (E) ...433: Formula too complex / Incompatible parameter '|'` —
+  длинная inline-подпись. Исправлено инкрементальной сборкой (`sig = sig + ...`)
+  и типизированными локалами; хэши `4A20…5EA0` → `7737…8C6A`. Статус
+  `COMPILE_BLOCKED` снят → `OWNER RETEST REQUIRED`. Регрессия в
+  `check_v27_trace`: инкрементальные needles + запрет строк с ≥12 `+`.
 - **Read-only Core-изоляция:** lab-only отключение `TAO_DecrementAmmoOnRack`/
   `TAO_ClearChamberIfNoMagOrEmpty` прямой правкой Core запрещено; косвенно —
   возможно через разделяемое `m_ServerManualRackPending` (merged `modded`-класс)

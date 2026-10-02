@@ -408,6 +408,18 @@ def check_v27_trace(lab: Path) -> list:
                    "m_iTracePrevMagId"):
         if needle not in text:
             problems.append(f"V2.7 C2 trace missing: {needle}")
+    # V2.7 compile fix: the long inline string signature exceeded the
+    # EnforceScript formula limit ("Formula too complex"). It must stay built
+    # from short incremental statements (no giant inline concatenation).
+    for needle in ("int weId = LabTraceIdI(we);",
+                   "string sig = weId.ToString();",
+                   "sig = sig + \"|\" + magId.ToString();"):
+        if needle not in text:
+            problems.append(f"V2.7 C2 signature not incremental: {needle}")
+    for ln in text.splitlines():
+        if ln.count("+") >= 12:
+            problems.append("V2.7 formula-too-complex risk: line with >=12 '+' "
+                            f"operators: {ln.strip()[:80]}")
     for rel in ("Prefabs/Weapons/MP133_Lab/armst_Shotgun_mp_133_Lab.et",
                 "Prefabs/Weapons/MP133_Lab/armst_Shotgun_mp_133_Ris_Lab.et"):
         p = lab / rel

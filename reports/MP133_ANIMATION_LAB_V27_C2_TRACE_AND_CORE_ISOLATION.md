@@ -1,8 +1,10 @@
 # MP-133 Lab — V2.7: C2-диагностика патронника + read-only разбор изоляции Core
 
-**Статус:** C2 реализована lab-only; гейт досылки **OFF** на обоих префабах;
-прод/Core/миры/граф/ASI/ANM **не менялись**; Workbench/игра не запускались.
-Рантайм — `OWNER TEST REQUIRED`.
+**Статус:** C2 реализована lab-only; первый прогон компиляции владельца дал
+lab-owned `SCRIPT (E)` на строке 433 → **исправлено** (см. §1b); после правки
+`COMPILE_BLOCKED` снят, статус `OWNER RETEST REQUIRED`. Гейт досылки **OFF** на
+обоих префабах; прод/Core/миры/граф/ASI/ANM **не менялись**; Workbench/игру агент
+не запускал.
 
 Источник: Issue #27, comment 5959385576 (START AUTHORIZED: V2.7 C2 instrumentation
 + read-only Core-isolation feasibility).
@@ -53,6 +55,55 @@
 Недоступное честно помечено (`?`/`null`); фрейм-спам исключён подписью.
 
 Отдельная lab-конфигурация не потребовалась.
+
+---
+
+## 1b. Compile-fix по ошибке владельца (line 433)
+
+Первый прогон Workbench владельца (`comment 5959746653`) дал **lab-owned**:
+
+```
+SCRIPT (E): .../ARMST_MP133_Lab_Character.c,433: Formula too complex
+SCRIPT (E): .../ARMST_MP133_Lab_Character.c,433: Incompatible parameter '|'
+```
+
+Строка 433 — сборка подписи одним длинным inline-выражением (~20 операторов `+`):
+
+```
+string sig = LabTraceIdI(we).ToString() + "|" + magId.ToString()
+    + "|" + tubeA.ToString() + "/" + tubeM.ToString()
+    + "|" + LabB(chambered) + "|" + barrel.ToString()
+    + "|" + rtype.ToString() + LabB(start) + LabB(raised) + LabB(isRel)
+    + "|" + LabB(m_bLabPumpLatch) + LabB(m_bLabClientInsertActive)
+    + LabB(m_bLabServerInsertActive);
+```
+
+Причина — предел сложности формулы EnforceScript на одно выражение; вторичная
+ошибка `Incompatible parameter '|'` — следствие разбора того же выражения.
+
+**Правка (lab-only, синтаксис):** сборка подписи — короткими инкрементальными
+присваиваниями `sig = sig + ...;` (≤3 оператора на строку), имена префабов и
+`.ToString()` — через типизированные локальные переменные (`int weId`,
+`string weName/meName`, `int tubeA/tubeM/bi/bc/ma/mm`). Аналогично разбиты длинные
+конкатенации в `LabTraceSnapshot` и блоки `reason` (с фигурными скобками).
+Поведение не изменилось: те же поля, 100 мс сэмплинг, 150 мс settle, физические
+`wep_id`/`mag_id`.
+
+**Хэши файла:**
+```
+до V2.7 (baseline):      37D07A1EC676AD586587790A44D8D000B8B0FD93B228B60B813A75063DA52A34
+V2.7 C2 (ошибка 433):    4A20782505D8FB53853923740C49692E2924057BCD0B8F7A31AF26FF8C275EA0
+V2.7 C2 fix (текущий):   7737D8AB2525B15183D5013099FB9D6075BB8E190119E7707019965056218C6A
+```
+
+**Регрессионная проверка:** `check_v27_trace` теперь требует инкрементальную
+сборку (`int weId = LabTraceIdI(we);`, `string sig = weId.ToString();`,
+`sig = sig + "|" + magId.ToString();`) и отвергает строку с ≥12 операторами `+`
+(эвристика «formula too complex»). Python-валидатор не доказывает компиляцию
+EnforceScript; компиляцию проверяет владелец.
+
+Разбор именно lab-owned ошибок. Прочие ошибки base-game UI/persistence из того же
+лога **не** приписываются лабе и не правятся без отдельного разрешения.
 
 ---
 
