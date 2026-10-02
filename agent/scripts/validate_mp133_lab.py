@@ -348,11 +348,11 @@ def check_r_hook(lab: Path) -> list:
 
 
 def check_v24_entry_gate(lab: Path) -> list:
-    """V2.4 entry-gate invariants (source-level):
-    - one attempt per input hold (latch);
-    - begin only for a raised lab weapon, never on rack/pump;
-    - abort is terminal for the input attempt (latch until release) and the
-      pulse no longer aborts on a residual type-1 value."""
+    """V2.5 entry-gate invariants (source-level):
+    - one attempt per input hold (latch) with a safety re-arm;
+    - pump is identified by the existing Core pump action (ARMST_LIGHT_RELOAD_ACTION),
+      NOT by a reload type value (an ordinary R may transiently report type 1);
+    - genuine release predicate; begin only for a raised lab weapon."""
     problems = []
     h = lab / "Scripts/Game/ARMST_MP133_Lab/ARMST_MP133_Lab_CommandHandler.c"
     c = lab / "Scripts/Game/ARMST_MP133_Lab/ARMST_MP133_Lab_Character.c"
@@ -363,18 +363,23 @@ def check_v24_entry_gate(lab: Path) -> list:
     if "LabRequestInsertFromHandler(pInputCtx)" not in htext:
         problems.append("handler does not pass the input context to the entry gate")
     for needle in ("m_bLabInputLatched",
+                   "m_bLabPumpLatch",
+                   'LAB_PUMP_ACTION = "ARMST_LIGHT_RELOAD_ACTION"',
+                   "AddActionListener(LAB_PUMP_ACTION",
                    "LabCanBeginFromHandler(CharacterInputContext",
                    "LabRequestInsertFromHandler(CharacterInputContext",
                    "LabInputReleased(CharacterInputContext",
-                   "input re-armed (released)"):
+                   "input re-armed (released)",
+                   "input re-armed (safety timeout)"):
         if needle not in ctext:
-            problems.append(f"V2.4 entry gate missing: {needle}")
+            problems.append(f"V2.5 entry gate missing: {needle}")
+    if "if (m_bLabPumpLatch)" not in ctext:
+        problems.append("entry gate does not reject pump via the Core action latch")
     if "inputCtx && !inputCtx.WeaponIsRaised()" not in ctext:
-        problems.append("V2.4 entry gate does not reject a lowered weapon")
-    if "inputCtx.GetWeaponReloadType() == LAB_RACK_CMD" not in ctext:
-        problems.append("V2.4 entry gate does not distinguish rack/pump")
-    if "ACTION_ABORT (pump/rack type 1)" in ctext:
-        problems.append("pulse still aborts a valid insert on a residual type-1 value")
+        problems.append("entry gate does not reject a lowered weapon")
+    # The old, ambiguous type-1 rejection must be gone.
+    if "GetWeaponReloadType() == LAB_RACK_CMD" in ctext:
+        problems.append("entry gate still rejects all type-1 requests (ambiguous R/pump)")
     return problems
 
 

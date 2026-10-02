@@ -37,6 +37,25 @@
 EntityPool «unregistered prefab armst_Ammo_12ga.et» — runtime-регистрация/загрузка
 вне лаборатории и вне снапшотов (отдельная issue).
 
+## 0.000000 V2.5 — различение помпы через Core-действие; предикат отпускания; модель
+
+По review #27 (hold перед повторным тестом):
+- **Помпа больше не определяется по `type==1`.** Входной гейт отклоняет помпу по
+  срабатыванию **существующего Core-действия** `ARMST_LIGHT_RELOAD_ACTION`
+  (listener на то же действие, что использует Core для rack). Обычный R с любым
+  типом (включая транзитный 1) — попытка вставки. Это устраняет риск, что
+  отклонение `type==1` заблокирует штатный R.
+- **`LabInputReleased`**: `!insertActive && !IsReloading && !pumpLatch &&
+  !WeaponIsStartReloading && GetWeaponReloadType()==0`, плюс страховочный
+  re-arm через 2 с. Abort/cease/lowered/full/held не ре-армят latch.
+- **Модель состояния** `agent/scripts/mp133_lab_r_gate_model.py` +
+  `agent/tests/test_mp133_lab_r_gate_model.py` — 15/15 (последовательности
+  press→begin→hold→abort→release→press, lowered, pump vs R, full, release,
+  safety-timeout). Явно **model-only**, не рантайм.
+- Preflight-отчёт: `reports/MP133_ANIMATION_LAB_V25_INPUT_PREFLIGHT.md`
+  (вердикт: кандидат тестируем; остаточные неизвестности перечислены).
+- Гейт `m_bLabInsertEnabled` — **OFF** на обоих префабах.
+
 ## 0.00000 V2.4 — controlled R test failed; входной гейт реализован, гейт возвращён OFF
 
 **Итог контролируемого теста (owner log, comment):** 61 `ACTION_BEGIN` /
