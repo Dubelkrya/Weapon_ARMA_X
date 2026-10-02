@@ -348,11 +348,11 @@ def check_r_hook(lab: Path) -> list:
 
 
 def check_gate_phase(lab: Path) -> list:
-    """Phase-aware gate check (issue #27 review):
-    - clips NOT connected: the lab insert gate must be OFF;
-    - clips connected: verify the referenced .anm + .anm.meta resolve to the
-      declared GUID/path (phase-2 guard). The gate may be on only together with
-      the lab-only commit guard and the R hook (checked elsewhere)."""
+    """Phase-aware gate check (issue #27 review + owner authorization):
+    - PRE-TEST (clips not connected): the lab insert gate must be OFF;
+    - CONTROLLED TEST (clips connected): the gate may be ON only on the non-RIS
+      `MP-133 [LAB]` prefab; the RIS lab prefab must stay OFF; both referenced
+      ANM resources must resolve (GUID/path in .anm.meta)."""
     problems = []
     ws = lab / "Assets/Weapons_RUS/Mp_133/Workspace"
     wasi = ws / "MP133_Lab_weapon.asi"
@@ -372,7 +372,11 @@ def check_gate_phase(lab: Path) -> list:
                 problems.append(f"{rel}: gate enabled before clips are connected")
         return problems
 
-    # Phase 2: clips referenced -> verify resource resolution for both instances.
+    # CONTROLLED TEST phase: non-RIS may be ON, RIS must be OFF.
+    ris = lab / "Prefabs/Weapons/MP133_Lab/armst_Shotgun_mp_133_Ris_Lab.et"
+    if ris.is_file() and "m_bLabInsertEnabled 1" in ris.read_text(encoding="utf-8", errors="ignore"):
+        problems.append("RIS lab prefab gate must stay OFF during the controlled test")
+
     for text, rel_anm in ((wtext, W_ANM_REL), (ptext, P_ANM_REL)):
         m = re.search(r'Resource "\{([0-9A-Fa-f]{16})\}' + re.escape(rel_anm) + r'"', text)
         if not m:

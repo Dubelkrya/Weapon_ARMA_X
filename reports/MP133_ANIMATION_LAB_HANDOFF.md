@@ -37,6 +37,18 @@
 EntityPool «unregistered prefab armst_Ammo_12ga.et» — runtime-регистрация/загрузка
 вне лаборатории и вне снапшотов (отдельная issue).
 
+## 0.0000 Контролируемый тест R (owner authorization, issue #27)
+
+- Гейт `ARMST_MP133_Lab_Component.m_bLabInsertEnabled = 1` включён **только** у
+  `Prefabs/Weapons/MP133_Lab/armst_Shotgun_mp_133_Lab.et`; RIS — OFF.
+- Клипы подключены (`W {1F9884C8701DAE1B}`, `P {FE510A1EC49563F1}`), граф
+  «закалён» (`MagReload`/`MagNoBulletReload`/`RemoveMag` → `InsertMagAnim`).
+- Бэкап префаба и хэши: `Weapon_ARMA_X/artifacts/MP133_Lab/prefab_backups/`
+  (OFF-хэш `3A0749E5…F8766D`, ON-хэш `67E3D0FC…1099`). Откат: убрать/поставить 0
+  строку `m_bLabInsertEnabled 1`.
+- Порядок игрового теста и STOP-условия: `reports/MP133_ANIMATION_LAB_V23_R_TEST_RU.md`.
+- Runtime — **OWNER TEST REQUIRED**, не PASS.
+
 ## 0.00 V2.3 (issue #27 owner regression) — регрессия остановлена; per-shell insert BLOCKED
 
 **Игровой лог владельца после V2.2 (comment #5956970464):**
