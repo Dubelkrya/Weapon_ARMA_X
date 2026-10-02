@@ -42,6 +42,9 @@ class MP133LabValidationTests(unittest.TestCase):
     def test_prefab_wiring(self):
         self.assert_clean(v.check_prefab_wiring(self.lab), "prefab wiring")
 
+    def test_capacity_is_3(self):
+        self.assert_clean(v.check_capacity3(self.lab), "capacity 3")
+
     def test_graph_insert_loop(self):
         self.assert_clean(v.check_graph_loop(self.lab), "graph loop")
 

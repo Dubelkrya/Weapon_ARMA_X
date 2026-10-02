@@ -5,8 +5,9 @@ the repo files is done via the installed Git (see commit SHA in the reply).
 
 ---
 
-**Статус V2: READY_FOR_OWNER_GAME_TEST при условии чистой компиляции;
-игровые критерии — UNVERIFIED.**
+**Статус V2: READY_FOR_OWNER_TEST.** Реализация, конфиг префабов, граф/ASI и
+static/unit-проверки закрыты; компиляция и игровые критерии — **NOT RUN /
+OWNER TEST REQUIRED** (агенту запрещено запускать игру/Workbench Play).
 
 Продолжение V1 без пересоздания аддона. Соблюдён OWNER OVERRIDE: только
 префабы + изолированные скрипты/анимации; мир/`.ent`/`.layer`/сценарий/спавн
@@ -14,6 +15,15 @@ the repo files is done via the installed Git (see commit SHA in the reply).
 
 ## Что изменено в V2
 
+- **Ёмкость трубы = 3 (owner override).** Оба лаб-префаба задают
+  `ARMST_MP133_Lab_Component.m_iTubeCapacityOverride 3` и **переопределяют
+  унаследованный** `ARMST_SHOTGUN_COMPONENTS "{69E4C57F6C1EE3A6}" { m_MaxMagazineAmmo 3 }`.
+  Это снимает конфликт с Core `WeaponHandler` (иначе он режет трубу обратно до 2
+  и спавнит лишний магазин): Core согласован на 3 **строго для этих префабов**,
+  без правок Core/Weapons/vanilla и без влияния на обычные дробовики.
+  Рантайм-энфорсмент (загрузка 3, третий insert, отклонение четвёртого,
+  отсутствие лишних магазинов/потерь, независимость ствола, отсутствие
+  двойного списания) — **OWNER TEST REQUIRED**.
 - **Gate A — идентичность экипированного оружия.** Добавлен безусловный
   rate-limited (1 Гц) лог текущего оружия, даже если lab-компонент не найден:
   `WEAPON wm=… wpn=… ent=… prefab=… labComp=… tube=… reloadType=… startReloading=… raised=… isReloading=…`.

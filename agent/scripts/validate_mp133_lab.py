@@ -214,6 +214,26 @@ def check_prefab_wiring(lab: Path) -> list:
     return problems
 
 
+def check_capacity3(lab: Path) -> list:
+    """Owner override (issue #26): both lab prefabs must request tube capacity 3
+    and must override the inherited ARMST_SHOTGUN_COMPONENTS.m_MaxMagazineAmmo
+    to 3 so the Core WeaponHandler does not truncate the tube back to 2."""
+    problems = []
+    for rel in ("Prefabs/Weapons/MP133_Lab/armst_Shotgun_mp_133_Lab.et",
+                "Prefabs/Weapons/MP133_Lab/armst_Shotgun_mp_133_Ris_Lab.et"):
+        p = lab / rel
+        if not p.is_file():
+            continue
+        text = p.read_text(encoding="utf-8", errors="ignore")
+        if "m_iTubeCapacityOverride 3" not in text:
+            problems.append(f"{rel}: m_iTubeCapacityOverride is not 3")
+        if 'ARMST_SHOTGUN_COMPONENTS "{69E4C57F6C1EE3A6}"' not in text:
+            problems.append(f"{rel}: missing lab override of ARMST_SHOTGUN_COMPONENTS")
+        if "m_MaxMagazineAmmo 3" not in text:
+            problems.append(f"{rel}: ARMST_SHOTGUN_COMPONENTS.m_MaxMagazineAmmo is not 3")
+    return problems
+
+
 def check_graph_loop(lab: Path) -> list:
     problems = []
     agf = lab / "Assets/Weapons_RUS/Mp_133/Workspace/MP133_Lab.agf"
@@ -278,6 +298,7 @@ def run_all(lab: Path | None = None, orig: Path | None = None) -> list:
     problems += check_text_hygiene(lab)
     problems += check_guid_references(lab, original_guid_union(orig))
     problems += check_prefab_wiring(lab)
+    problems += check_capacity3(lab)
     problems += check_graph_loop(lab)
     problems += check_asi_rows(lab)
     return problems
