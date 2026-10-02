@@ -364,13 +364,15 @@ def check_v24_entry_gate(lab: Path) -> list:
         problems.append("handler does not pass the input context to the entry gate")
     for needle in ("m_bLabInputLatched",
                    "m_bLabPumpLatch",
+                   "m_bLabPendingBegin",
+                   "LAB_BEGIN_DEFER_MS",
+                   "LabDeferredBegin",
                    'LAB_PUMP_ACTION = "ARMST_LIGHT_RELOAD_ACTION"',
                    "AddActionListener(LAB_PUMP_ACTION",
                    "LabCanBeginFromHandler(CharacterInputContext",
                    "LabRequestInsertFromHandler(CharacterInputContext",
                    "LabInputReleased(CharacterInputContext",
-                   "input re-armed (released)",
-                   "input re-armed (safety timeout)"):
+                   "input re-armed (released)"):
         if needle not in ctext:
             problems.append(f"V2.5 entry gate missing: {needle}")
     if "if (m_bLabPumpLatch)" not in ctext:
@@ -380,6 +382,9 @@ def check_v24_entry_gate(lab: Path) -> list:
     # The old, ambiguous type-1 rejection must be gone.
     if "GetWeaponReloadType() == LAB_RACK_CMD" in ctext:
         problems.append("entry gate still rejects all type-1 requests (ambiguous R/pump)")
+    # A timer must never simulate a release.
+    if "input re-armed (safety timeout)" in ctext or "LAB_LATCH_SAFETY_MS" in ctext:
+        problems.append("input latch still uses a timer-based re-arm (unsafe while held)")
     return problems
 
 

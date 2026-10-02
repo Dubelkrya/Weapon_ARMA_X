@@ -26,45 +26,55 @@ def call(m, **kw):
 class EntryGateSequenceTests(unittest.TestCase):
     def test_press_begin_hold_abort_release_fresh_press(self):
         m = LabRGateModel()
-        # press -> exactly one begin
-        self.assertEqual(call(m), "begin")
-        # held frames while active -> ignored
+        self.assertEqual(call(m), "begin_deferred")
+        self.assertEqual(m.resolve_deferred_begin(pump=False, insert_active=False), "begin")
         self.assertEqual(call(m, insert_active=True), "ignore")
-        self.assertEqual(call(m, insert_active=True), "ignore")
-        # abort happened (insert no longer active) but the key is still held -> still latched
         self.assertEqual(call(m, insert_active=False), "ignore")
         # genuine release
         self.assertEqual(m.on_watch_tick(start=False, reload_type=0, is_reloading=False,
                                          pump=False, insert_active=False), "rearmed_release")
-        # fresh press -> begin again
-        self.assertEqual(call(m, insert_active=False), "begin")
+        self.assertEqual(call(m, insert_active=False), "begin_deferred")
+
+    def test_hold_longer_than_timeout_never_rearms(self):
+        # The old timer re-armed after 2s even while R was held; that must not happen.
+        m = LabRGateModel()
+        self.assertEqual(call(m), "begin_deferred")
+        m.resolve_deferred_begin(pump=False, insert_active=False)
+        for _ in range(100):  # > 2 s of held-request ticks
+            self.assertEqual(
+                m.on_watch_tick(start=True, reload_type=7, is_reloading=False,
+                                pump=False, insert_active=False), "none")
+            self.assertEqual(call(m, insert_active=False), "ignore")
+        self.assertTrue(m.latched)
 
     def test_no_repeated_begin_while_held(self):
         m = LabRGateModel()
-        self.assertEqual(call(m), "begin")
+        call(m)
+        m.resolve_deferred_begin(pump=False, insert_active=False)
         for _ in range(20):
             self.assertEqual(call(m, insert_active=False), "ignore")
 
     def test_ordinary_r_with_type1_is_not_blocked(self):
-        # The prior log showed type 1 on the ordinary R path. Since pump is
-        # identified by the Core action, a non-pump request must still begin.
         m = LabRGateModel()
-        self.assertEqual(call(m, pump=False, request_active=True), "begin")
+        self.assertEqual(call(m, pump=False, request_active=True), "begin_deferred")
 
-    def test_pump_is_not_an_insert(self):
+    # --- handler ordering for LSHIFT+R -----------------------------------
+    def test_order_a_pump_action_before_handler(self):
         m = LabRGateModel()
-        self.assertEqual(call(m, pump=True, request_active=True), "pump")
-        # and it does not re-enter while held
-        self.assertEqual(call(m, pump=True, request_active=True), "ignore")
+        self.assertEqual(call(m, pump=True), "pump")
+
+    def test_order_b_handler_before_pump_action(self):
+        m = LabRGateModel()
+        self.assertEqual(call(m, pump=False), "begin_deferred")
+        # pump action fires only after the handler call:
+        self.assertEqual(m.resolve_deferred_begin(pump=True, insert_active=False), "pump_abort")
 
     def test_lowered_weapon_blocks_then_latch_terminal(self):
         m = LabRGateModel()
         self.assertEqual(call(m, raised=False), "blocked")
-        # still latched while held lowered -> no repeated attempts
         self.assertEqual(call(m, raised=False), "ignore")
-        # release + new fresh press on a raised weapon -> begin
         m.on_watch_tick(start=False, reload_type=0, is_reloading=False, pump=False, insert_active=False)
-        self.assertEqual(call(m, raised=True), "begin")
+        self.assertEqual(call(m, raised=True), "begin_deferred")
 
     def test_full_tube_blocks(self):
         m = LabRGateModel()
@@ -107,6 +117,13 @@ class ReleaseTests(unittest.TestCase):
         self.assertEqual(m.on_watch_tick(start=True, reload_type=7, is_reloading=True,
                                          pump=False, insert_active=True), "none")
 
+    def test_missing_input_context_is_not_a_release(self):
+        m = LabRGateModel()
+        call(m)
+        self.assertEqual(m.on_watch_tick(start=False, reload_type=0, is_reloading=False,
+                                         pump=False, insert_active=False, input_ctx=False), "none")
+        self.assertTrue(m.latched)
+
     def test_release_requires_zero_type_and_no_start(self):
         m = LabRGateModel()
         call(m)
@@ -116,19 +133,6 @@ class ReleaseTests(unittest.TestCase):
                                          pump=False, insert_active=False), "none")
         self.assertEqual(m.on_watch_tick(start=False, reload_type=0, is_reloading=False,
                                          pump=False, insert_active=False), "rearmed_release")
-
-    def test_safety_timeout_recovers_from_stuck_latch(self):
-        m = LabRGateModel()
-        call(m)
-        # Input never clears (start stays true) and nothing is active: after the
-        # safety window the latch re-arms so the player is not permanently stuck.
-        saw_timeout = False
-        for _ in range(30):
-            if m.on_watch_tick(start=True, reload_type=7, is_reloading=False,
-                               pump=False, insert_active=False) == "rearmed_timeout":
-                saw_timeout = True
-        self.assertTrue(saw_timeout)
-        self.assertFalse(m.latched)
 
 
 if __name__ == "__main__":
