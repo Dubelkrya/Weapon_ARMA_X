@@ -37,6 +37,29 @@
 EntityPool «unregistered prefab armst_Ammo_12ga.et» — runtime-регистрация/загрузка
 вне лаборатории и вне снапшотов (отдельная issue).
 
+## 0.000000000 V2.8 — read-only сравнение с рабочим дробовиком (BC/Ithaca)
+
+Владелец дал reference рабочего дробовика (Issue #27, comment 5960748663).
+Отчёт: `reports/MP133_ANIMATION_LAB_V28_REFERENCE_COMPARISON.md`. **Код не
+менялся**, оба гейта OFF.
+
+- Разведены 4 пути: (a) native post-shot R (`reloadType=1` → `ReloadActionBolt`),
+  (b) reference BC `TryRackBolt` по краю курка: `weaponAnim.CallCommand` +
+  `charAnim.CallCommand` + **`controller.ReloadWeapon()`** + `BC_PumpActionForward`,
+  (c) Core LSHIFT+R (`SetReloadWeapon(1)` + `TAO_DecrementAmmoOnRack`),
+  (d) lab cmd 7 (санитизированный клип + коммит в трубу).
+- В MP133 **нет** `CMD_BC_Weapon_Rack_Bolt`, pump/shell graph-source'ов и
+  `BC_PumpActionForward`; **есть** `ReloadWeapon()`, `HandleWeaponFire`,
+  `WeaponIsPullingTrigger`, `CallCommand` (SDK). Lab `ReloadWeapon()` не зовёт.
+- `chamber 0→1` наблюдался только на экипировке; пост-выстрельная досылка —
+  нативная гипотеза, причина не доказана. `Weapon_Rack_Bolt` в reference лишь
+  обновляет HUD.
+- Ranked-план: **E0** (baseline read-only: оригинал vs non-RIS lab, один выстрел
+  + один обычный R), затем E1 (`ARMST_SHOTGUN_COMPONENTS` обратно ON), E2 (один
+  вызов `ReloadWeapon()`), E3 (оригинальный клип/состояния), E4 (новые клипы).
+  По одному изменению за раз; нужно одобрение и откат.
+- Reference workarounds (dummy-патрон, авто-магазин) **не переносим**.
+
 ## 0.00000000 V2.7 — C2-диагностика патронника + read-only разбор изоляции Core
 
 Владелец разрешил C2 (Issue #27, comment 5959385576). Отчёт:
