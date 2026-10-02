@@ -9,6 +9,30 @@
 
 ---
 
+## 0.000 Snapshot investigation (issue #27 follow-up) — нет готовых анимаций в снапшотах
+
+Проверено фактически (read-only):
+- `agent/scripts/base_game_snapshot.py` — **read-only** индексатор; явно обрабатывает
+  только `ext in (".et", ".conf")` (строка 115). Анимации по дизайну не индексируются.
+- `catalog/` и `indexes/`: **0** файлов `.anm/.asi/.ast/.agf/.agr/.aw/.txa`.
+  Содержимое — `.et`/`.conf` (оружие, магазины, патроны, конфиги) и JSON-индексы
+  (`weapons.json`, `magazines.json`, `ammunition.json`, `reference_graph.json`,
+  authoring/script references).
+- Сопоставление с лабораторией: снапшоты подтверждают MP-133
+  (`Prefabs/Weapons/Russian/Shotgun/armst_Shotgun_mp_133.et`), цепочку 12ga
+  (`12ga_Buckshot_base` → `armst_12ga_Buckshot` → `armst_12ga_Shell`), патрон
+  `armst_Ammo_12ga` — всё это лаб уже использует через живой аддон. **Готовых
+  per-shell анимаций (клипов без mag-swap событий) в снапшотах нет.**
+
+Вывод: BLOCKED из V2.3 остаётся и теперь **подтверждён фактами** — знаниевый
+репозиторий не может предоставить анимацию поштучной досылки. Нужны либо
+(a) lab-only санитизированные `.anm` (импорт TXA в Workbench Animation Editor —
+действие владельца), либо (b) проверенный хук подавления ванильной перезарядки.
+
+Внешняя находка: живой `armst_Ammo_12ga.et` **имеет** `.meta`; предупреждение
+EntityPool «unregistered prefab armst_Ammo_12ga.et» — runtime-регистрация/загрузка
+вне лаборатории и вне снапшотов (отдельная issue).
+
 ## 0.00 V2.3 (issue #27 owner regression) — регрессия остановлена; per-shell insert BLOCKED
 
 **Игровой лог владельца после V2.2 (comment #5956970464):**
