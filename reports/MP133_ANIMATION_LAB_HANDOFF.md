@@ -58,8 +58,13 @@ EntityPool «unregistered prefab armst_Ammo_12ga.et» — runtime-регистр
   ветки уведомляют владельца через `RpcDo_LabCeaseInsert` → нет «залипшего»
   `clientInsert=1`.
 - **Watchdog** `LAB_CLIENT_MAX_TICKS` (~18 с) → нет бесконечного цикла.
-- Lookup-фикс V2.2 (через сущность) сохранён. Тесты: **11/11 PASS**
-  (добавлена `check_v23_safety`).
+- Lookup-фикс V2.2 (через сущность) сохранён. Тесты: **12/12 PASS**
+  (добавлены `check_v23_safety`, `check_r_hook`).
+- **Подготовлен R-хук** (существующий механизм модов):
+  `Scripts/Game/ARMST_MP133_Lab/ARMST_MP133_Lab_CommandHandler.c` —
+  lab-gated `modded HandleWeaponReloading`, `return true` для лаб-оружия, иначе
+  `super`; включается гейтом `ARMST_MP133_Lab_Component.m_bLabInsertEnabled`
+  (off до подключения санитизированных ANM).
 
 **BLOCKED (точно, по #27 §2/§6):**
 - Настоящая per-shell досылка **невозможна с оригинальными inject-клипами**: они

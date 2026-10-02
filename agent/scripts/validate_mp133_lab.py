@@ -80,6 +80,7 @@ REQUIRED_FILES = (
     "addon.gproj",
     "Scripts/Game/ARMST_MP133_Lab/ARMST_MP133_Lab_Component.c",
     "Scripts/Game/ARMST_MP133_Lab/ARMST_MP133_Lab_Character.c",
+    "Scripts/Game/ARMST_MP133_Lab/ARMST_MP133_Lab_CommandHandler.c",
     "Assets/Weapons_RUS/Mp_133/Workspace/MP133_Lab.agr.meta",
     "Assets/Weapons_RUS/Mp_133/Workspace/MP133_Lab.agf.meta",
     "Assets/Weapons_RUS/Mp_133/Workspace/MP133_Lab.ast.meta",
@@ -291,6 +292,30 @@ def check_v23_safety(lab: Path) -> list:
     return problems
 
 
+def check_r_hook(lab: Path) -> list:
+    """V2.3 R handling: lab-gated modded command-handler hook exists, is gated
+    (does not run for non-lab weapons) and passes through to super."""
+    problems = []
+    p = lab / "Scripts/Game/ARMST_MP133_Lab/ARMST_MP133_Lab_CommandHandler.c"
+    if not p.is_file():
+        problems.append("missing lab command handler hook")
+        return problems
+    text = p.read_text(encoding="utf-8", errors="ignore")
+    for needle in ("override bool HandleWeaponReloading(",
+                   "LabInsertEnabledOnCurrentWeapon()",
+                   "LabRequestInsertFromHandler()",
+                   "return super.HandleWeaponReloading(",
+                   "return true;"):
+        if needle not in text:
+            problems.append(f"R hook missing: {needle}")
+    comp = lab / "Scripts/Game/ARMST_MP133_Lab/ARMST_MP133_Lab_Component.c"
+    if comp.is_file():
+        ctext = comp.read_text(encoding="utf-8", errors="ignore")
+        if "m_bLabInsertEnabled" not in ctext:
+            problems.append("lab component missing m_bLabInsertEnabled gate")
+    return problems
+
+
 def check_graph_loop(lab: Path) -> list:
     problems = []
     agf = lab / "Assets/Weapons_RUS/Mp_133/Workspace/MP133_Lab.agf"
@@ -358,6 +383,7 @@ def run_all(lab: Path | None = None, orig: Path | None = None) -> list:
     problems += check_capacity3(lab)
     problems += check_lab_magazine(lab)
     problems += check_v23_safety(lab)
+    problems += check_r_hook(lab)
     problems += check_graph_loop(lab)
     problems += check_asi_rows(lab)
     return problems

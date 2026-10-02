@@ -51,6 +51,9 @@ class MP133LabValidationTests(unittest.TestCase):
     def test_v23_safety(self):
         self.assert_clean(v.check_v23_safety(self.lab), "v2.3 safety")
 
+    def test_r_hook(self):
+        self.assert_clean(v.check_r_hook(self.lab), "r hook")
+
     def test_graph_insert_loop(self):
         self.assert_clean(v.check_graph_loop(self.lab), "graph loop")
 
