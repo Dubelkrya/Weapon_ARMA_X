@@ -5,9 +5,23 @@ Status: IMPLEMENTED (addon built) / COMPILATION + RUNTIME NOT VERIFIED (no Workb
 Date: 2026-10-02. Issue: #25. Supersedes the read-only boundary of #24 for the
 isolated experiment only.
 
+> **V2 (2026-10-02, same session):** reload trigger moved from a custom input
+> action (H, config-merged — did not fire) to the vanilla RELOAD key **R**,
+> intercepted lab-only in `OnApplyControls` and driven with the same
+> `inputCtx.SetReloadWeapon(7)` mechanism the Core proves for its rack action.
+> The input config files were removed (no config merging involved at all).
+> Description below reflects V2.
+
 ---
 
 ## 1. Scope and isolation
+
+> **OWNER OVERRIDE (issue #25, 2026-10-02):** the deliverable is ONLY fully
+> configured prefabs plus their isolated scripts/animation resources. No world,
+> `.ent`, `.layer`, scenario, spawn point or placed entity may be created,
+> modified, saved or removed. The owner places the prefab in their own world.
+> A lab world/layer was created earlier in this session and has been **removed**
+> to comply; it is not a deliverable.
 
 Everything game-loadable lives in ONE new addon:
 
@@ -48,11 +62,12 @@ NOT left running and was not used for validation per owner instruction.
 | `Assets/Weapons_RUS/Mp_133/Workspace/MP133_Lab_player.asi` | `{B51A94B5A27E09B4}` | player instance rows -> original clips |
 | `Prefabs/Weapons/MP133_Lab/armst_Shotgun_mp_133_Lab.et` | `{FC1935AF936F63E5}` | lab MP-133 test prefab |
 | `Prefabs/Weapons/MP133_Lab/armst_Shotgun_mp_133_Ris_Lab.et` | `{4B288C21B7125D50}` | lab MP-133 RIS test prefab |
-| `Worlds/MP133_Lab/MP133_Lab.ent` (+ Layer) | `{423396FF72C33C45}` | test world entry |
-| `Configs/System/chimeraInputCommon.conf` | `{4839B8D36948C9E8}` | lab insert action (keyboard H) |
 | `Scripts/Game/ARMST_MP133_Lab/ARMST_MP133_Lab_Component.c` | - | weapon component |
 | `Scripts/Game/ARMST_MP133_Lab/ARMST_MP133_Lab_Character.c` | - | character flow component |
 | `Assets/Weapons_RUS/Mp_133/Workspace/LabClips/*_Lab_Inject.txa` | - | sanitized clip SOURCES (see section 7) |
+
+No input/actions config is shipped (V2): the lab reload triggers on the vanilla
+R reload request, converted lab-only in the character controller.
 
 Component instance IDs inside the lab prefabs are new
 (`{21B3393B3149815A}`), entity IDs `{77AB6DD3F7C4DF4D}` / `{4293C409C16270F8}`.
@@ -91,12 +106,21 @@ Single source of truth:
 | Insert/graph state | shared anim graph (CMD_Weapon_Reload) | lab client pulsing |
 
 Flow:
-1. Client (owner) presses H with a lab weapon equipped -> `m_bLabClientInsertActive`
-   + `Rpc(RpcAsk_LabBeginInsert)`; a 60 ms callqueue job keeps
-   `CallCommand(CMD_Weapon_Reload, 7, 0)` alive so the graph loops the insert clip.
-2. Server (same character's `SCR_CharacterControllerComponent`), upon the
-   commit animation event (`ARMST_Lab_Shell_Commit` OR `Weapon_AttachMagazine`),
-   runs `LabServerCommitInsert` which commits exactly one shell only when:
+1. Owner client, when the vanilla reload request appears for a lab weapon
+   (`WeaponIsStartReloading()` / `GetWeaponReloadType() != 0` inside
+   `OnApplyControls`, V2 — no config action involved), calls `LabBeginInsert()`.
+   A local pre-check (`LabClientCanInsert`, tube present + not already full)
+   prevents starting a pointless loop. `Rpc(RpcAsk_LabBeginInsert)` is sent and
+   a 60 ms pulse keeps `inputCtx.SetReloadWeapon(7)` alive so the graph runs one
+   insert clip per cycle (the same input-context mechanism the Core uses for its
+   rack action; `CMD_Weapon_Reload == 7` matches the lab graph's
+   `InsertSingleProjectile`).
+2. Server (`RpcAsk_LabBeginInsert`) re-validates with `LabServerCanInsert`
+   (tube present, under capacity, reserve > 0) BEFORE opening the insert window;
+   a failing request is answered with `RpcDo_LabCeaseInsert` and no window opens.
+3. Server, upon the commit animation event (`ARMST_Lab_Shell_Commit` OR
+   `Weapon_AttachMagazine`), runs `LabServerCommitInsert` which commits exactly
+   one shell only when:
    - the server insert window is active AND commit cooldown is clear AND
    - weapon/tube still valid AND effective capacity resolved AND
    - `currentAmmo < cap` AND `reserve > 0`.
@@ -162,8 +186,14 @@ Verification performed (static, no Workbench launch):
 - All lab files: ASCII, balanced braces.
 - All referenced GUIDs resolve to a lab resource, a vanilla/AK74 asset, or
   original MP-133 assets with the exact GUIDs read from the originals.
-- Lab prefab parents and the world/layer reference the exact GUID paths used by
+- Lab prefab parents reference the exact GUID paths used by
   the live Weapons test layer (proven to load in the live project).
+- Every `.asi` row (Group.Column.Row) used by the lab resolves against the lab
+  `.ast` template; the insert-loop graph transition is present.
+- AUTOMATED: these checks are reproducible via
+  `agent/scripts/validate_mp133_lab.py` and pinned as 7 unit tests in
+  `agent/tests/test_mp133_lab_validation.py` (all PASS, run with Rizom/Blender
+  embedded Python since no standalone Python is installed on this station).
 - Enfusion API names/signatures used were confirmed against:
   - the local official API reference installed with Arma Reforger Tools
     (`Workbench\docs\ArmaReforgerScriptAPIPublic`): BaseWeaponComponent,
@@ -185,33 +215,50 @@ once and run the in-game test:
 - Any runtime behavior claim (pump sync, loop cadence, event delivery to the
   server, tube/chamber interaction). These are reported as UNVERIFIED, not PASS.
 
+### Compile feedback log (owner runs)
+
+| Run | Result |
+|---|---|
+| 2026-10-02 (owner) | `ARMST_MP133_Lab_Component.c,42`: `Can't find variable 'Toggle'` -> fixed: `UIWidgets.Toggle` does not exist in this engine revision; project-wide precedent is `UIWidgets.CheckBox` for booleans. Also removed `static const` members from the ScriptComponent (no project precedent) and the defensive `OnDelete` override; command values now live as instance consts in the character file (`LAB_INSERT_CMD=7`, `LAB_RELOAD_DONE=-2`), matching the Core `protected const` pattern. Recompile expected to surface any remaining issues, if any.
+
 ## 9. Known assumptions and risks
 
-1. `CMD_Weapon_Reload == 7` entry + constant command pulsing is assumed to work
-   with Enfusion command semantics (command int latched ; `IsCommand` on event
-   frame). The graph entry condition and the -2 exit path are the original
-   graph's own conditions, which lowers risk. If pulsing each 60 ms causes
-   thrash, pulse-once-at-down is the documented fallback (single line change).
-2. Animation events (`Weapon_AttachMagazine`, `ARMST_Lab_Shell_Commit`) must
+1. R interception (V2): the lab converts the vanilla reload request inside
+   `OnApplyControls` and re-drives `SetReloadWeapon(7)` continuously. If the
+   native starts its own reload handling on the same frame as R, the native's
+   magazine-swap ops could still briefly run. Expected outcome: the graph plays
+   the insert clip (not the remove/insert swap) because the final command value
+   for the frame is 7, and the tube-manager never performs a swap because the
+   detach/attach anim (RemoveMag rows + `Weapon_DetachMagazine` events) is not
+   played. This is the single most important runtime item to observe
+   (checklist D4); if vanilla still swaps the tube, the follow-up is to disable
+   the native reload action for lab weapons (needs the vanilla action name from
+   the player-visible input config).
+2. `CMD_Weapon_Reload == 7` entry semantics and the 60 ms pulse are assumed to
+   work with Enfusion command semantics (the Core already relies on
+   `SetReloadWeapon(1)` for its rack, so type-7 through the same API is the
+   same class of risk). The graph entry condition and exit path are the
+   original graph's own conditions, which lowers risk.
+3. Animation events (`Weapon_AttachMagazine`, `ARMST_Lab_Shell_Commit`) must
    reach the SERVER character. The Core rack handler already relies on this for
    `Weapon_Rack_Bolt`, so the mechanism is presumed present for the same graph;
    this still needs a runtime check (single player counts as server+client).
-3. Forced capacity is the existing ARMST rule: `ARMST_SHOTGUN_COMPONENTS
+4. Forced capacity is the existing ARMST rule: `ARMST_SHOTGUN_COMPONENTS
    .m_MaxMagazineAmmo` default 2 (no override on the MP-133 chain), despite the
    tube `MaxAmmo 10` + 10 AmmoMapping. The lab reads that rule via
    `GetEffectiveTubeCapacity()`; set `m_iTubeCapacityOverride > 0` on the lab
    prefab to test other capacities.
-4. Reserve is a virtual counter (30 by default), not inventory loose shells
+5. Reserve is a virtual counter (30 by default), not inventory loose shells
    (no inventory shell-item source exists yet in the addon). A future
    `m_aReserveShellPrefabs` inventory source can replace it without touching
    the commit path.
-5. `Weapon_SpawnMagazine/_MagRelease` on the original inject clips still fire
+6. `Weapon_SpawnMagazine/_MagRelease` on the original inject clips still fire
    during lab insert loops. They are expected to be inert in this context (the
    weapon does not spawn/attach magazine entities on this command path), but
    that is exactly the runtime item to observe; the sanitized clips remove it.
-6. `RpcDo_LabCeaseInsert` uses RplRcver.Owner; players = server+owner in the
+7. `RpcDo_LabCeaseInsert` uses RplRcver.Owner; players = server+owner in the
    supplied solo test, so the replication identity must be confirmed in-game.
-7. No git executable is installed on this machine, so no commits/pushes were
+8. No git executable is installed on this machine, so no commits/pushes were
    made; the lab addon is delivered as files. Remote/branch state is unchanged.
 
 ## 10. Acceptance matrix (planned)
@@ -230,3 +277,38 @@ once and run the in-game test:
 | Networking | runtime solo/MP test |
 | Recovery | runtime interrupt/re-equip tests |
 | Production untouched | sha manifest + no writes outside lab addon |
+
+## 11. Critique of the current production ammo hack and the target model
+
+The current production shotgun ammo logic (Core `ARMST_WEAPONS_HANDLER.c`,
+reviewed 2026-10-02) works but is a band-aid:
+
+- **Several writers on the same counter.** Tube ammo is written by: engine fire,
+  the Core rack handler (`TAO_DecrementAmmoOnRack`, event-driven), the vanilla
+  mag-swap, and `WeaponHandler` (called on EVERY ammo-count change), which trims
+  the tube to `ARMST_SHOTGUN_COMPONENTS.m_MaxMagazineAmmo` (2) and SPAWNS a new
+  magazine entity with the excess into the world/inventory. Five different
+  moments/owners -> races, duplicates and inventory pollution.
+- **Capacity enforced by splitting, not by logic.** The tube is declared
+  `MaxAmmo 10` but the design wants 2; the "fix" is to physically cut the
+  magazine and drop the rest, instead of limiting insertion.
+- **No per-shell reload.** Reload is a wholesale tube-magazine swap; the
+  `== 7` insert state exists only as a prototype in `MP133.agf` and was never
+  driven by gameplay.
+- **Rack needs a client "pending" flag**; if the rack event fires without a
+  pending request (auto-rack paths) the decrement is skipped -> drift.
+
+Target model (implemented in the lab; see section 4):
+
+| State | Single owner | Written by |
+|---|---|---|
+| Tube | `BaseMagazineComponent` (engine) | lab insert commit + engine fire (master only) |
+| Reserve | `ARMST_MP133_Lab_Component` (lab, server-only field) | lab commit |
+| Chamber | `BaseMuzzleComponent` (engine) | engine |
+| Rack transfer | existing Core handler (kept for production semantics) | 1 tube->chamber per rack event |
+
+The key production takeaway: capacity must be enforced where insertion happens
+(one place, with validation + debounce), not by trimming/spawning magazines
+after the fact. That is exactly the isolated experiment Issue #25 asked to
+prove; a production PR would move this component (plus an inventory shell
+source for reserve) into the Weapons/Core addons - out of scope for this lab.
