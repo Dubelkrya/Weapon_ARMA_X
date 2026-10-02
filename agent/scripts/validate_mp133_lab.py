@@ -334,7 +334,7 @@ def check_r_hook(lab: Path) -> list:
     text = p.read_text(encoding="utf-8", errors="ignore")
     for needle in ("override bool HandleWeaponReloading(",
                    "LabInsertEnabledOnCurrentWeapon()",
-                   "LabRequestInsertFromHandler()",
+                   "LabRequestInsertFromHandler(",
                    "return super.HandleWeaponReloading(",
                    "return true;"):
         if needle not in text:
@@ -344,6 +344,37 @@ def check_r_hook(lab: Path) -> list:
         ctext = comp.read_text(encoding="utf-8", errors="ignore")
         if "m_bLabInsertEnabled" not in ctext:
             problems.append("lab component missing m_bLabInsertEnabled gate")
+    return problems
+
+
+def check_v24_entry_gate(lab: Path) -> list:
+    """V2.4 entry-gate invariants (source-level):
+    - one attempt per input hold (latch);
+    - begin only for a raised lab weapon, never on rack/pump;
+    - abort is terminal for the input attempt (latch until release) and the
+      pulse no longer aborts on a residual type-1 value."""
+    problems = []
+    h = lab / "Scripts/Game/ARMST_MP133_Lab/ARMST_MP133_Lab_CommandHandler.c"
+    c = lab / "Scripts/Game/ARMST_MP133_Lab/ARMST_MP133_Lab_Character.c"
+    if not h.is_file() or not c.is_file():
+        return ["lab R files missing"]
+    htext = h.read_text(encoding="utf-8", errors="ignore")
+    ctext = c.read_text(encoding="utf-8", errors="ignore")
+    if "LabRequestInsertFromHandler(pInputCtx)" not in htext:
+        problems.append("handler does not pass the input context to the entry gate")
+    for needle in ("m_bLabInputLatched",
+                   "LabCanBeginFromHandler(CharacterInputContext",
+                   "LabRequestInsertFromHandler(CharacterInputContext",
+                   "LabInputReleased(CharacterInputContext",
+                   "input re-armed (released)"):
+        if needle not in ctext:
+            problems.append(f"V2.4 entry gate missing: {needle}")
+    if "inputCtx && !inputCtx.WeaponIsRaised()" not in ctext:
+        problems.append("V2.4 entry gate does not reject a lowered weapon")
+    if "inputCtx.GetWeaponReloadType() == LAB_RACK_CMD" not in ctext:
+        problems.append("V2.4 entry gate does not distinguish rack/pump")
+    if "ACTION_ABORT (pump/rack type 1)" in ctext:
+        problems.append("pulse still aborts a valid insert on a residual type-1 value")
     return problems
 
 
@@ -454,6 +485,7 @@ def run_all(lab: Path | None = None, orig: Path | None = None) -> list:
     problems += check_lab_magazine(lab)
     problems += check_v23_safety(lab)
     problems += check_r_hook(lab)
+    problems += check_v24_entry_gate(lab)
     problems += check_gate_phase(lab)
     problems += check_graph_loop(lab)
     problems += check_asi_rows(lab)
