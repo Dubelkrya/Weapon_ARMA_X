@@ -48,6 +48,9 @@ class MP133LabValidationTests(unittest.TestCase):
     def test_lab_magazine(self):
         self.assert_clean(v.check_lab_magazine(self.lab), "lab magazine")
 
+    def test_v23_safety(self):
+        self.assert_clean(v.check_v23_safety(self.lab), "v2.3 safety")
+
     def test_graph_insert_loop(self):
         self.assert_clean(v.check_graph_loop(self.lab), "graph loop")
 

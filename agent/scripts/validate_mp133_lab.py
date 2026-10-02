@@ -264,6 +264,33 @@ def check_lab_magazine(lab: Path) -> list:
     return problems
 
 
+def check_v23_safety(lab: Path) -> list:
+    """V2.3 regression guards (source invariants, not runtime proof):
+    - the only commit trigger is the lab-only event (never Weapon_AttachMagazine);
+    - server window closure notifies the owner client (cease RPC) and is used
+      from terminal branches with notifyOwner=true;
+    - a client watchdog exists;
+    - the vanilla reload types do not auto-open a lab window."""
+    problems = []
+    p = lab / "Scripts/Game/ARMST_MP133_Lab/ARMST_MP133_Lab_Character.c"
+    if not p.is_file():
+        return [f"missing lab script: {p.name}"]
+    text = p.read_text(encoding="utf-8", errors="ignore")
+    if "if (animEventType == m_evtLabShellCommit)" not in text:
+        problems.append("commit is not gated on the lab-only event")
+    if "animEventType == m_evtLabShellCommit || animEventType == m_evtWeaponAttachMag" in text:
+        problems.append("commit still triggers on Weapon_AttachMagazine (vanilla swap)")
+    if "LabServerEndInsert(true)" not in text:
+        problems.append("server terminal branches do not notify the owner")
+    if "RpcDo_LabCeaseInsert();" not in text:
+        problems.append("cease RPC missing")
+    if "LAB_CLIENT_MAX_TICKS" not in text:
+        problems.append("client watchdog missing")
+    if "auto-trigger disabled" not in text:
+        problems.append("vanilla reload types still auto-open a lab window")
+    return problems
+
+
 def check_graph_loop(lab: Path) -> list:
     problems = []
     agf = lab / "Assets/Weapons_RUS/Mp_133/Workspace/MP133_Lab.agf"
@@ -330,6 +357,7 @@ def run_all(lab: Path | None = None, orig: Path | None = None) -> list:
     problems += check_prefab_wiring(lab)
     problems += check_capacity3(lab)
     problems += check_lab_magazine(lab)
+    problems += check_v23_safety(lab)
     problems += check_graph_loop(lab)
     problems += check_asi_rows(lab)
     return problems
