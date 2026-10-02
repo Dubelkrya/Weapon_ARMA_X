@@ -79,16 +79,26 @@
 детерминированный коннектор (в `Weapon_ARMA_X`, без Workbench):
 
 ```
-python agent/scripts/mp133_lab_connect_anims.py --w-guid <WGUID> --p-guid <PGUID>
+python agent/scripts/mp133_lab_connect_anims.py --w-guid <WGUID> --p-guid <PGUID> [--harden-graph] [--dry-run]
 ```
 
-Он строго внутри лаборатории:
-1. Перепривязывает 4 строки `Reload.Erc/Pne.Reload_InsertMag` в обоих `.asi`
-   на `{GUID}Assets/Weapons_RUS/Mp_133/Workspace/LabClips/{W,P}_MP133_Lab_Inject.anm`.
-2. В `MP133_Lab.agf` перенаправляет ВСЕ не-помповые reload-состояния на
-   `InsertMagAnim` (убирает `MagReloadSTM`/`RemoveMagAnim`, несущие штатные
-   события `Weapon_MagRelease/Detach/Despawn`) — защита от подмены магазина.
-3. Идемпотентен, поддерживает `--dry-run`, оригиналы/миры/скрипты не трогает.
+Поведение (учтены замечания ревью #27):
+- **Preflight до записи:** для каждого `.anm` проверяется наличие самого файла и
+  `.anm.meta` с **тем же GUID и тем же путём**; в каждом `.asi` должно быть ровно
+  по одной строке `Reload.Erc.Reload_InsertMag` и `Reload.Pne.Reload_InsertMag`;
+  проверяется структура `WeaponReloadSTM`. При любом несоответствии — отказ, **ничего не пишется**.
+- **ASI:** перепривязываются ровно две строки на инстанс (Erc+Pne); частичная
+  правка считается ошибкой; идемпотентно.
+- **Граф — опционально** (`--harden-graph`, по умолчанию **выключено**):
+  структурно, только внутри `WeaponReloadSTM`, состояния с `Child "MagReloadSTM"`/
+  `Child "RemoveMagAnim"` (сейчас ровно `MagReload`, `MagNoBulletReload`, `RemoveMag`)
+  переводятся на `InsertMagAnim`; вложенный `MagReloadSTM`, переходы, `RackBoltAnim`
+  и прочие узлы не трогаются; неожиданная структура — отказ.
+- **Атомарность:** все файлы валидируются до записи; запись через temp+replace с
+  откатом уже записанных при сбое.
+- `--dry-run` печатает точный diff (строки/состояния), ничего не пишет.
+
+`--no-harden-graph` — рабочий явный выключатель (эквивалентен умолчанию).
 
 Пример ручного diff (если нужно без скрипта):
 

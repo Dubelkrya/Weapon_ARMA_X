@@ -31,6 +31,37 @@ ENV_ORIG = "MP133_ORIGINAL_ADDON_PATH"
 
 GUID_RE = re.compile(r"\{([0-9A-Fa-f]{16})\}")
 
+# Referenced lab ANM resources (issue #27 clip connection).
+W_ANM_REL = "Assets/Weapons_RUS/Mp_133/Workspace/LabClips/W_MP133_Lab_Inject.anm"
+P_ANM_REL = "Assets/Weapons_RUS/Mp_133/Workspace/LabClips/P_MP133_Lab_Inject.anm"
+_NAME_GUID_RE = re.compile(r'Name\s+"\{([0-9A-Fa-f]{16})\}([^"]+)"')
+
+
+def _norm_path(p: str) -> str:
+    return p.replace("\\", "/").lstrip("./").casefold()
+
+
+def _verify_anm(lab: Path, rel_anm: str, expected_guid: str) -> list:
+    problems = []
+    anm = lab / rel_anm
+    meta = lab / (rel_anm + ".meta")
+    if not anm.is_file():
+        problems.append(f"missing ANM: {rel_anm}")
+    if not meta.is_file():
+        problems.append(f"missing ANM meta: {rel_anm}.meta")
+        return problems
+    text = meta.read_text(encoding="utf-8", errors="ignore")
+    m = _NAME_GUID_RE.search(text)
+    if not m:
+        problems.append(f"{rel_anm}.meta: no Name GUID")
+        return problems
+    guid, declared = m.group(1).upper(), m.group(2)
+    if guid != expected_guid.upper():
+        problems.append(f"{rel_anm}.meta: GUID {guid} != referenced {expected_guid.upper()}")
+    if _norm_path(declared) != _norm_path(rel_anm):
+        problems.append(f"{rel_anm}.meta: declared path {declared!r} != {rel_anm!r}")
+    return problems
+
 
 class LabValidationError(AssertionError):
     pass
@@ -316,18 +347,38 @@ def check_r_hook(lab: Path) -> list:
     return problems
 
 
-def check_r_gate_off(lab: Path) -> list:
-    """V2.3: the lab insert gate must stay OFF until sanitized lab clips are
-    connected (owner requirement #3/#4)."""
+def check_gate_phase(lab: Path) -> list:
+    """Phase-aware gate check (issue #27 review):
+    - clips NOT connected: the lab insert gate must be OFF;
+    - clips connected: verify the referenced .anm + .anm.meta resolve to the
+      declared GUID/path (phase-2 guard). The gate may be on only together with
+      the lab-only commit guard and the R hook (checked elsewhere)."""
     problems = []
-    for rel in ("Prefabs/Weapons/MP133_Lab/armst_Shotgun_mp_133_Lab.et",
-                "Prefabs/Weapons/MP133_Lab/armst_Shotgun_mp_133_Ris_Lab.et"):
-        p = lab / rel
-        if not p.is_file():
+    ws = lab / "Assets/Weapons_RUS/Mp_133/Workspace"
+    wasi = ws / "MP133_Lab_weapon.asi"
+    pasi = ws / "MP133_Lab_player.asi"
+    if not wasi.is_file() or not pasi.is_file():
+        return ["lab ASI files missing"]
+
+    wtext = wasi.read_text(encoding="utf-8", errors="ignore")
+    ptext = pasi.read_text(encoding="utf-8", errors="ignore")
+    connected = (W_ANM_REL in wtext) and (P_ANM_REL in ptext)
+
+    if not connected:
+        for rel in ("Prefabs/Weapons/MP133_Lab/armst_Shotgun_mp_133_Lab.et",
+                    "Prefabs/Weapons/MP133_Lab/armst_Shotgun_mp_133_Ris_Lab.et"):
+            p = lab / rel
+            if p.is_file() and "m_bLabInsertEnabled 1" in p.read_text(encoding="utf-8", errors="ignore"):
+                problems.append(f"{rel}: gate enabled before clips are connected")
+        return problems
+
+    # Phase 2: clips referenced -> verify resource resolution for both instances.
+    for text, rel_anm in ((wtext, W_ANM_REL), (ptext, P_ANM_REL)):
+        m = re.search(r'Resource "\{([0-9A-Fa-f]{16})\}' + re.escape(rel_anm) + r'"', text)
+        if not m:
+            problems.append(f"connected reference without GUID: {rel_anm}")
             continue
-        text = p.read_text(encoding="utf-8", errors="ignore")
-        if "m_bLabInsertEnabled 1" in text:
-            problems.append(f"{rel}: lab insert gate is enabled before clips are connected")
+        problems += _verify_anm(lab, rel_anm, m.group(1))
     return problems
 
 
@@ -399,7 +450,7 @@ def run_all(lab: Path | None = None, orig: Path | None = None) -> list:
     problems += check_lab_magazine(lab)
     problems += check_v23_safety(lab)
     problems += check_r_hook(lab)
-    problems += check_r_gate_off(lab)
+    problems += check_gate_phase(lab)
     problems += check_graph_loop(lab)
     problems += check_asi_rows(lab)
     return problems
