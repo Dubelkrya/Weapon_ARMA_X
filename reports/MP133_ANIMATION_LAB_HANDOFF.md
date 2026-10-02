@@ -37,6 +37,27 @@
 EntityPool «unregistered prefab armst_Ammo_12ga.et» — runtime-регистрация/загрузка
 вне лаборатории и вне снапшотов (отдельная issue).
 
+## 0.00000000 V2.7 — C2-диагностика патронника + read-only разбор изоляции Core
+
+Владелец разрешил C2 (Issue #27, comment 5959385576). Отчёт:
+`reports/MP133_ANIMATION_LAB_V27_C2_TRACE_AND_CORE_ISOLATION.md`.
+
+- **C2 реализована lab-only** в `ARMST_MP133_Lab_Character.c` (маркер
+  `[ARMST_MP133_LAB-C2]`): сэмплер каждые 100 мс на смену подписи, значимые
+  `Weapon_*`-события, `SETTLE:` через 150 мс, действие LSHIFT+R. Пишет
+  физические `wep_id`/`mag_id` (Entity.GetID), tube, chambered, barrel,
+  `IsChamberingNecessary/Possible/IsReloadPossible`, reloadType/start/raised.
+  Наблюдает и нетронутый прод-MP-133 пассивно.
+- **Гейты OFF**, graph/ASI/ANM/префабы/прод/Core не менялись. Валидатор +
+  `check_v27_trace` PASSED; тесты 14/14, 15/15, 17/17. Бэкап скриптов:
+  `artifacts/MP133_Lab/v27_backups/` (ха `37D0…2A34` → `4A20…5EA0`).
+- **Read-only Core-изоляция:** lab-only отключение `TAO_DecrementAmmoOnRack`/
+  `TAO_ClearChamberIfNoMagOrEmpty` прямой правкой Core запрещено; косвенно —
+  возможно через разделяемое `m_ServerManualRackPending` (merged `modded`-класс)
+  + снятие фолбэка, но timing-fragile и **патронник не заполняет**. Флаги:
+  риск `tube=0, chamber=1`, фолбэк-таймер Core. Не реализовано.
+- Следующая точка: один контролируемый тест gate-OFF (см. отчёт §5).
+
 ## 0.0000000 V2.6 — разбор «помпа списывает трубу, но не заполняет патронник» (read-only)
 
 Приоритет сменён (Issue #27, comment 5958821529/5958846527): сначала вернуть

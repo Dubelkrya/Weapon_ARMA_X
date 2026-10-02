@@ -57,6 +57,9 @@ class MP133LabValidationTests(unittest.TestCase):
     def test_v24_entry_gate(self):
         self.assert_clean(v.check_v24_entry_gate(self.lab), "v2.4 entry gate")
 
+    def test_v27_trace(self):
+        self.assert_clean(v.check_v27_trace(self.lab), "v2.7 C2 trace + gates off")
+
     def test_graph_insert_loop(self):
         self.assert_clean(v.check_graph_loop(self.lab), "graph loop")
 

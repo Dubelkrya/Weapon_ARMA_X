@@ -388,6 +388,34 @@ def check_v24_entry_gate(lab: Path) -> list:
     return problems
 
 
+def check_v27_trace(lab: Path) -> list:
+    """V2.7 C2 phase: the lab-only chronological pump/chamber trace exists and
+    both lab insert gates are OFF (issue #27 comment 5959385576)."""
+    problems = []
+    c = lab / "Scripts/Game/ARMST_MP133_Lab/ARMST_MP133_Lab_Character.c"
+    if not c.is_file():
+        return ["missing lab character script"]
+    text = c.read_text(encoding="utf-8", errors="ignore")
+    for needle in ("[ARMST_MP133_LAB-C2]",
+                   "LabTraceSample(",
+                   "LabTraceEvent(",
+                   "LabTraceSnapshot(",
+                   "LabTraceSignificant(",
+                   "LabTraceSettle()",
+                   "IsChamberingNecessary()",
+                   "IsChamberingPossible()",
+                   "IsReloadPossible()",
+                   "m_iTracePrevMagId"):
+        if needle not in text:
+            problems.append(f"V2.7 C2 trace missing: {needle}")
+    for rel in ("Prefabs/Weapons/MP133_Lab/armst_Shotgun_mp_133_Lab.et",
+                "Prefabs/Weapons/MP133_Lab/armst_Shotgun_mp_133_Ris_Lab.et"):
+        p = lab / rel
+        if p.is_file() and "m_bLabInsertEnabled 1" in p.read_text(encoding="utf-8", errors="ignore"):
+            problems.append(f"V2.7: insert gate must stay OFF on {rel}")
+    return problems
+
+
 def check_gate_phase(lab: Path) -> list:
     """Phase-aware gate check (issue #27 review + owner authorization):
     - PRE-TEST (clips not connected): the lab insert gate must be OFF;
@@ -496,6 +524,7 @@ def run_all(lab: Path | None = None, orig: Path | None = None) -> list:
     problems += check_v23_safety(lab)
     problems += check_r_hook(lab)
     problems += check_v24_entry_gate(lab)
+    problems += check_v27_trace(lab)
     problems += check_gate_phase(lab)
     problems += check_graph_loop(lab)
     problems += check_asi_rows(lab)
