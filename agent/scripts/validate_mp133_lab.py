@@ -316,6 +316,21 @@ def check_r_hook(lab: Path) -> list:
     return problems
 
 
+def check_r_gate_off(lab: Path) -> list:
+    """V2.3: the lab insert gate must stay OFF until sanitized lab clips are
+    connected (owner requirement #3/#4)."""
+    problems = []
+    for rel in ("Prefabs/Weapons/MP133_Lab/armst_Shotgun_mp_133_Lab.et",
+                "Prefabs/Weapons/MP133_Lab/armst_Shotgun_mp_133_Ris_Lab.et"):
+        p = lab / rel
+        if not p.is_file():
+            continue
+        text = p.read_text(encoding="utf-8", errors="ignore")
+        if "m_bLabInsertEnabled 1" in text:
+            problems.append(f"{rel}: lab insert gate is enabled before clips are connected")
+    return problems
+
+
 def check_graph_loop(lab: Path) -> list:
     problems = []
     agf = lab / "Assets/Weapons_RUS/Mp_133/Workspace/MP133_Lab.agf"
@@ -384,6 +399,7 @@ def run_all(lab: Path | None = None, orig: Path | None = None) -> list:
     problems += check_lab_magazine(lab)
     problems += check_v23_safety(lab)
     problems += check_r_hook(lab)
+    problems += check_r_gate_off(lab)
     problems += check_graph_loop(lab)
     problems += check_asi_rows(lab)
     return problems

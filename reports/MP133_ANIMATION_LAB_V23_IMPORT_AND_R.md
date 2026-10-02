@@ -73,9 +73,24 @@
 
 ---
 
-## Часть 2. Подключение после импорта (делает агент, без Workbench)
+## Часть 2. Подключение после импорта (делает агент — одной командой)
 
-Затрагиваются **только** 4 строки в двух лабораторных `.asi`.
+После импорта достаточно сообщить два GUID; подключение выполняет
+детерминированный коннектор (в `Weapon_ARMA_X`, без Workbench):
+
+```
+python agent/scripts/mp133_lab_connect_anims.py --w-guid <WGUID> --p-guid <PGUID>
+```
+
+Он строго внутри лаборатории:
+1. Перепривязывает 4 строки `Reload.Erc/Pne.Reload_InsertMag` в обоих `.asi`
+   на `{GUID}Assets/Weapons_RUS/Mp_133/Workspace/LabClips/{W,P}_MP133_Lab_Inject.anm`.
+2. В `MP133_Lab.agf` перенаправляет ВСЕ не-помповые reload-состояния на
+   `InsertMagAnim` (убирает `MagReloadSTM`/`RemoveMagAnim`, несущие штатные
+   события `Weapon_MagRelease/Detach/Despawn`) — защита от подмены магазина.
+3. Идемпотентен, поддерживает `--dry-run`, оригиналы/миры/скрипты не трогает.
+
+Пример ручного diff (если нужно без скрипта):
 
 `Assets/Weapons_RUS/Mp_133/Workspace/MP133_Lab_weapon.asi` — заменить:
 ```
