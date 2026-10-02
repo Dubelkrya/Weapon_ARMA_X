@@ -57,6 +57,14 @@ EntityPool «unregistered prefab armst_Ammo_12ga.et» — runtime-регистр
   и типизированными локалами; хэши `4A20…5EA0` → `7737…8C6A`. Статус
   `COMPILE_BLOCKED` снят → `OWNER RETEST REQUIRED`. Регрессия в
   `check_v27_trace`: инкрементальные needles + запрет строк с ≥12 `+`.
+- **V2.7b (comment 5960042056):** `Single.ManualAction` — штатный цикл; **обычный
+  R = ручной цикл** (сохраняем, настройку не трогаем), **LSHIFT+R = отдельная
+  Core-помпа**, **J — под будущую загрузку**. C1/Core-подавление заморожены до
+  измерения обычного R. `IEntity.GetID` в справочнике нет и в логе дал 0 →
+  идентичность на **тегах по ссылке** (`wep_tag`/`mag_tag`, смена = смена
+  физического объекта). Добавлен лог команды `[ARMST_MP133_LAB-C2] CMDCHG id=…`
+  в lab-хуке. Хэши: Character `524E…14E3`, CommandHandler `CD77…2268A`.
+  Эксперимент: один выстрел + один обычный R (см. отчёт §7.4).
 - **Read-only Core-изоляция:** lab-only отключение `TAO_DecrementAmmoOnRack`/
   `TAO_ClearChamberIfNoMagOrEmpty` прямой правкой Core запрещено; косвенно —
   возможно через разделяемое `m_ServerManualRackPending` (merged `modded`-класс)
