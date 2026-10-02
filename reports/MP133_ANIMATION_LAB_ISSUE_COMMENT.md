@@ -1,76 +1,61 @@
-# Issue #25 — status comment (ready to paste)
+# Issue #26 (V2) — status comment (ready to paste)
 
-Copied here because this environment has no `gh`/`git`/token to post it.
+Copied here because this environment has no `gh`/token to post; publication of
+the repo files is done via the installed Git (see commit SHA in the reply).
 
 ---
 
-**Статус: реализация в изолированном аддоне выполнена; компиляция/ресурсы —
-подтверждены; игровой поток досылки — НЕ подтверждён (требует прогона).**
+**Статус V2: READY_FOR_OWNER_GAME_TEST при условии чистой компиляции;
+игровые критерии — UNVERIFIED.**
 
-Соблюдён **OWNER OVERRIDE**: поставка содержит только полностью настроенные
-префабы + их изолированные скрипты/анимации. Мир, `.ent`, `.layer`, сценарий,
-спавн или размещённые сущности **отсутствуют** (ранее созданный в сессии
-lab-мир `Worlds/MP133_Lab` удалён, не является поставкой).
+Продолжение V1 без пересоздания аддона. Соблюдён OWNER OVERRIDE: только
+префабы + изолированные скрипты/анимации; мир/`.ent`/`.layer`/сценарий/спавн
+отсутствуют (проверяется валидатором `check_no_world`).
 
-## Префабы для размещения владельцем в своём мире (ResourceName / GUID)
+## Что изменено в V2
+
+- **Gate A — идентичность экипированного оружия.** Добавлен безусловный
+  rate-limited (1 Гц) лог текущего оружия, даже если lab-компонент не найден:
+  `WEAPON wm=… wpn=… ent=… prefab=… labComp=… tube=… reloadType=… startReloading=… raised=… isReloading=…`.
+  Это однозначно решает «lab-оружие не экипировано» vs «lookup не находит
+  компонент». `FindComponent` на компоненте валиден (Core: `item.FindComponent(…)`),
+  поэтому наиболее вероятная причина прошлых нулей — оружие не было в руках.
+- **Gate C — идемпотентность вместо таймера.** Введено состояние цикла:
+  окно `armed` при открытии и повторно после завершения клипа (`BlendOut`);
+  успешный коммит снимает `armed`. Дубликат кадра 43 без завершения клипа не
+  коммитит (`SERVER commit ignored: cycle not armed`). Cooldown 500 мс —
+  вторичная защита.
+- **Gate B — трассировка R.** Сохранены `watcher` (100 мс) и `OnApplyControls`;
+  новые логи `WEAPON`/`reload request detected` покажут, отражают ли
+  `WeaponIsStartReloading()/GetWeaponReloadType()` нажатие R на этой ревизии.
+- **Метки:** `MP-133 [LAB]` / `MP-133 RIS [LAB]`.
+- **Валидатор/тесты:** добавлена проверка отсутствия world/layer; **8/8 PASS**.
+
+## Префабы (ResourceName / GUID) — владелец ставит в свой мир
 
 - `{FC1935AF936F63E5}Prefabs/Weapons/MP133_Lab/armst_Shotgun_mp_133_Lab.et`
 - `{4B288C21B7125D50}Prefabs/Weapons/MP133_Lab/armst_Shotgun_mp_133_Ris_Lab.et`
 
-Аддон: `ARMST_MP133_AnimationLab` (ID `ARMSTMP133AnimationLab`, GUID
-`{1187677F04E33069}`; зависимости `58D0FB3206B6F859` vanilla,
-`69E4C3542B6CDC19` Core, `6A70E400C54051DC` Weapons).
+## Acceptance (кратко)
 
-## Acceptance checks
+| Проверка | Статус |
+|---|---|
+| Isolation | PASS (SHA-256; оригиналы не тронуты) |
+| Dependencies | PASS (static) |
+| Resource wiring | PASS (static) |
+| Compile | требует перекомпиляции владельцем (не запускал Workbench по его запрету); ранее компилировалось |
+| No world/layer | PASS (валидатор) |
+| One-shell / Pump / Interrupt / Networking / Recovery | UNVERIFIED (нужен игровой прогон) |
 
-| Проверка | Статус | Доказательство |
-|---|---|---|
-| Isolation | **PASS** | SHA-256 16 исходных файлов; оригиналы не изменены (`artifacts/MP133_Lab/original_consumed_hashes.txt`) |
-| Dependencies | **PASS (static)** | ID сверены с живыми `addon.gproj`; Workbench загрузил модуль лаборатории |
-| Resource wiring | **PASS (static) / частично** | GUID/строки `.asi`↔`.ast`/проводка префабов — валидатор PASS; компонент виден в редакторе; preview графа не выполнен |
-| Compile | **PASS** | `logs\<ts>\script.log`: чистая компиляция после фикса |
-| Preview | **N/A** | Animation Editor preview не выполнялся |
-| One-shell transaction | **UNVERIFIED** | поток досылки не запускался (см. ниже) |
-| Negative tests | **UNVERIFIED** | — |
-| Pump | **UNVERIFIED** | Core-путь не менялся |
-| Dual instances | **UNVERIFIED** | — |
-| Networking | **UNVERIFIED** | — |
-| Recovery | **UNVERIFIED** | — |
-| Production | **PASS** | оригиналы и пользовательские правки не тронуты |
+## Точный следующий шаг владельца
 
-## Факт из Workbench-логов
+1. Пересобрать скрипты; убедиться, что нет `SCRIPT (E)`.
+2. Поставить один из префабов выше в **свой** мир, взять оружие
+   (**имя `MP-133 [LAB]`**).
+3. В логе проверить `WEAPON … labComp=1` (подтверждение экипировки).
+4. Нажать R → прислать `console.log` (маркеры `reload request detected`,
+   `begin insert loop`, `SERVER Insert COMMIT`).
 
-Код компилируется и выполняется:
-```
-[ARMST_MP133_LAB] component attached; capacity=2 reserve=30
-[ARMST_MP133_LAB-DIAG] character component init: anim=1 cmdBound=1 isServer=1
-[ARMST_MP133_LAB-DIAG] OnControlledByPlayer controlled=1 local=1
-[ARMST_MP133_LAB-DIAG] watcher started
-```
-Но во **всех** логах за день: `STATE labWeapon` = 0, `reload request detected`
-= 0, `Insert COMMIT` = 0. Строка `STATE` пишется раз в секунду только когда
-`GetCurrentWeaponLab()` != null, т.е. когда в руках лабораторное оружие. ⇒
-цепочка досылки ни разу не запускалась; во время тестов лабораторное оружие
-текущим не было (вероятно, тестировалось обычное оружие: симптом «магазин на
-30 / 30 выстрелов» = обычный автомат; у лаб-MP-133 ёмкость трубы = 2).
-
-## Главные неопределённости (для следующего шага)
-
-1. Почему не запускается: не экипировано лаб-оружие **или**
-   `GetCurrentWeaponLab()` не находит компонент — различается безусловным логом
-   текущего оружия.
-2. Корректный перехват ванильной перезарядки по **R** (флаги
-   `WeaponIsStartReloading()`/`GetWeaponReloadType()` не подтверждены).
-3. Доставка анимационных событий на сервер и семантика `CMD_Weapon_Reload==7`.
-4. Санитизация `LabClips/*.txa` (реимпорт в Animation Editor) — опционально.
-
-## Артефакты
-
-`Weapon_ARMA_X/reports/`:
-- `MP133_ANIMATION_LAB_HANDOFF.md` — полный хендовер с исходниками в приложениях;
-- `MP133_ANIMATION_LAB_V1.md` — дизайн, GUID-карта, риски, критика прод-костыля;
-- `MP133_ANIMATION_LAB_V1_TEST_CHECKLIST_RU.md` — RU-чек-лист + диагностика;
-- `agent/scripts/validate_mp133_lab.py` + `agent/tests/test_mp133_lab_validation.py` — 7 тестов, PASS.
-
-Git: `git`/`gh` в среде отсутствуют — **ничего не закоммичено и не запушено**;
-файлы переданы локально. Ветки/римоуты не менялись.
+Если `WEAPON … labComp=0` при видимом lab-оружии — это точная цель для
+исправления lookup. Если `labComp=1`, но при R нет `reload request detected` —
+цель для Gate B (перехват R).

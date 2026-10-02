@@ -149,6 +149,19 @@ def check_file_set(lab: Path) -> list:
     return problems
 
 
+def check_no_world(lab: Path) -> list:
+    """Issue #26/owner override: the lab addon must contain no world/layer/
+    scenario/spawn resources. Do not create or keep any .ent/.layer/Worlds."""
+    problems = []
+    for p in sorted(lab.rglob("*")):
+        if not p.is_file():
+            continue
+        rel = p.relative_to(lab).as_posix()
+        if p.suffix.lower() in (".layer", ".ent") or rel.startswith("Worlds/") or rel.startswith("worlds/"):
+            problems.append(f"forbidden world/layer resource present: {rel}")
+    return problems
+
+
 def check_text_hygiene(lab: Path) -> list:
     problems = []
     for p in iter_resources(lab):
@@ -261,6 +274,7 @@ def run_all(lab: Path | None = None, orig: Path | None = None) -> list:
     orig = orig or resolve_original_root()
     problems = []
     problems += check_file_set(lab)
+    problems += check_no_world(lab)
     problems += check_text_hygiene(lab)
     problems += check_guid_references(lab, original_guid_union(orig))
     problems += check_prefab_wiring(lab)

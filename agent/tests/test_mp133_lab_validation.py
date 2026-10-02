@@ -29,6 +29,9 @@ class MP133LabValidationTests(unittest.TestCase):
     def test_file_set(self):
         self.assert_clean(v.check_file_set(self.lab), "file set")
 
+    def test_no_world_or_layer(self):
+        self.assert_clean(v.check_no_world(self.lab), "no world/layer")
+
     def test_text_hygiene(self):
         self.assert_clean(v.check_text_hygiene(self.lab), "hygiene")
 
