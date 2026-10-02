@@ -37,6 +37,29 @@
 EntityPool «unregistered prefab armst_Ammo_12ga.et» — runtime-регистрация/загрузка
 вне лаборатории и вне снапшотов (отдельная issue).
 
+## 0.0000000000 E0 — регрессия ручного цикла общая для оригинала и лабы (read-only)
+
+Результат E0 (Issue #27, comment 5961221260): обычный R после выстрела **не
+наполняет патронник и на оригинальном MP-133, и на lab** (`reloadType=1`, нет
+`Weapon_Rack_Bolt`/mag-событий), при этом на **экипировке** патронник
+наполняется у обоих. Отчёт: `reports/MP133_ANIMATION_LAB_E0_ISOLATION_PLAN.md`.
+Статус `SHARED_ENVIRONMENT_MANUAL_R_REGRESSION; root cause UNKNOWN`.
+
+Read-only факты:
+- `HandleWeaponReloading` переопределяет **только** lab; для не-lab/гейта OFF —
+  прямой `super` (мутаций команды нет). Core/прочие не переопределяют.
+- Core мутирует reload-команду только в `OnRackBoltMDown` (LSHIFT+R); обычный R
+  команду задаёт движок.
+- `ReloadActionBolt` → `W_MP133_Reload_Bolt.anm` (`{45B1772B8AFEAE46}`) идентичен
+  оригинал/lab, события `Weapon_EnableFire`(10)/`Weapon_Rack_Bolt`(14). Для cmd 1
+  графы идентичны.
+- Версия игры **1.8.0.13** (подтверждено exe). Core handler не менялся с
+  2026-06-30; Weapons 2026-09-22 менял у MP-133 только `.meta`.
+
+План изоляции (owner-only, обратимо): **I1** — оригинал при **выключенной лабе**
+(прод/Core включены) в отдельной безопасной сцене; **I2** — ванильное
+manual-action оружие. E1–E4 приостановлены, оба гейта OFF, код не менялся.
+
 ## 0.000000000 V2.8 — read-only сравнение с рабочим дробовиком (BC/Ithaca)
 
 Владелец дал reference рабочего дробовика (Issue #27, comment 5960748663).
