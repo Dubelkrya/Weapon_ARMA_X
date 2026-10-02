@@ -35,7 +35,8 @@
 6. Поставь один из префабов в свой мир (World Editor или тот способ, которым ты
    обычно размещаешь оружие) и запусти сцену.
 7. Возьми оружие и **проверь название в UI: «MP-133 [LAB]»** / «MP-133 RIS [LAB]».
-   Вложи трубчатый магазин `12g 10rnd` стандартным способом (инвентарь).
+   Труба по умолчанию — лабораторный магазин `12g 3rnd [LAB]` (3 патрона). Если
+   магазин пуст — вложи `12g 3rnd [LAB]` (а не боевой `12g 10rnd`).
 
 ## 2. Управление в тесте
 
@@ -107,7 +108,7 @@
   - `character component init: anim=… cmdReload=… isServer=…` — скрипт жив;
   - `OnControlledByPlayer controlled=… local=…`, `watcher started`;
   - `WEAPON wm=… wpn=… ent=… prefab=… labComp=… tube=…/… reloadType=… startReloading=… raised=… isReloading=…` — **безусловный лог текущего оружия (любого) раз в секунду** (V2): сразу видно, что в руках и найден ли lab-компонент;
-  - `STATE labWeapon=1 cap=… tube=…/… chambered=…/… reserve=… clientInsert=… serverInsert=… armed=… isReloading=…` — снимок лаб-оружия;
+  - `STATE labWeapon=1 cap=3 tube=…/3 chambered=…/… reserve=… clientInsert=… serverInsert=… armed=… isReloading=…` — снимок лаб-оружия (V2.2: должен появиться после фикса lookup);
     (раз в секунду, пока в руках лабораторное оружие — это главный снимок);
   - `anim event '<Name>' int=… t=… isServer=…` — **каждое** известное анимационное
     событие (`BlendIn/Out`, `Weapon_Rack_Bolt`, `Weapon_EnableFire`,

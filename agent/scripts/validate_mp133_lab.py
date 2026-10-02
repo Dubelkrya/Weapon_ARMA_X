@@ -88,6 +88,8 @@ REQUIRED_FILES = (
     "Assets/Weapons_RUS/Mp_133/Workspace/MP133_Lab_player.asi.meta",
     "Prefabs/Weapons/MP133_Lab/armst_Shotgun_mp_133_Lab.et",
     "Prefabs/Weapons/MP133_Lab/armst_Shotgun_mp_133_Ris_Lab.et",
+    "Prefabs/Weapons/MP133_Lab/armst_12ga_Lab_3rnd.et",
+    "Prefabs/Weapons/MP133_Lab/armst_12ga_Lab_3rnd.et.meta",
 )
 
 # GUIDs the lab may legitimately reference (v2: no input config, no world/layer).
@@ -101,6 +103,8 @@ EXPECTED_LAB_METAS = {
     "B51A94B5A27E09B4",  # player asi
     "FC1935AF936F63E5",  # prefab 133
     "4B288C21B7125D50",  # prefab 133 ris
+    "CC71464F7CA58F57",  # lab 3-round magazine prefab
+    "9B7D26EC5F8CFF40",  # lab 3-round magazine entity id
     "21B3393B3149815A",  # lab component instance
     "77AB6DD3F7C4DF4D",  # entity id 133 lab
     "4293C409C16270F8",  # entity id ris lab
@@ -119,8 +123,10 @@ ORIGINAL_ANCHOR_FILES = (
     "Assets/Weapons_RUS/Mp_133/Workspace/MP133_player.asi",
     "Prefabs/Weapons/Russian/Shotgun/armst_Shotgun_mp_133.et",
     "Prefabs/Weapons/Russian/Shotgun/armst_Shotgun_mp_133_Ris.et",
+    "Prefabs/Weapons/Western/Shotgun/core/armst_shotgun_base.et",
     "Prefabs/Weapons/Magazines/12ga/armst_12ga_Buckshot.et",
     "Prefabs/Weapons/Magazines/12ga/armst_12ga_Shell.et",
+    "Prefabs/Weapons/Magazines/12ga/12ga_Buckshot_base.et",
     "worlds/Weapon_test/weapon_test.ent",
     "worlds/Weapon_test/weapon_test_Layers/default.layer",
     # .meta files carry each resource's own identity GUID:
@@ -234,6 +240,30 @@ def check_capacity3(lab: Path) -> list:
     return problems
 
 
+def check_lab_magazine(lab: Path) -> list:
+    """V2.2: the lab must ship a real 3-round magazine and both lab prefabs must
+    use it as their MagazineTemplate (physical tube capacity 3, not 10)."""
+    problems = []
+    mag_rel = "Prefabs/Weapons/MP133_Lab/armst_12ga_Lab_3rnd.et"
+    mag = lab / mag_rel
+    if not mag.is_file():
+        problems.append(f"missing lab magazine: {mag_rel}")
+    else:
+        text = mag.read_text(encoding="utf-8", errors="ignore")
+        if "MaxAmmo 3" not in text:
+            problems.append(f"{mag_rel}: physical MaxAmmo is not 3")
+    expected = 'MagazineTemplate "{CC71464F7CA58F57}Prefabs/Weapons/MP133_Lab/armst_12ga_Lab_3rnd.et"'
+    for rel in ("Prefabs/Weapons/MP133_Lab/armst_Shotgun_mp_133_Lab.et",
+                "Prefabs/Weapons/MP133_Lab/armst_Shotgun_mp_133_Ris_Lab.et"):
+        p = lab / rel
+        if not p.is_file():
+            continue
+        text = p.read_text(encoding="utf-8", errors="ignore")
+        if expected not in text:
+            problems.append(f"{rel}: MagazineTemplate is not the lab 3-round magazine")
+    return problems
+
+
 def check_graph_loop(lab: Path) -> list:
     problems = []
     agf = lab / "Assets/Weapons_RUS/Mp_133/Workspace/MP133_Lab.agf"
@@ -299,6 +329,7 @@ def run_all(lab: Path | None = None, orig: Path | None = None) -> list:
     problems += check_guid_references(lab, original_guid_union(orig))
     problems += check_prefab_wiring(lab)
     problems += check_capacity3(lab)
+    problems += check_lab_magazine(lab)
     problems += check_graph_loop(lab)
     problems += check_asi_rows(lab)
     return problems
