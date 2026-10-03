@@ -215,3 +215,25 @@ current scripts (`%TEMP%\opencode\mp133_head2`).
 - T2a preparation is authorized to start only **after** the #28 promotion is published
   and its fresh hosted CI is inspected; if CI is red, pause T2 until #28/#29 are
   dispositioned.
+
+---
+
+## I. Publication result (2026-10-03) — PUBLISHED, CI GREEN
+
+Owner approved the two remaining items (test update; `jsonschema` gate deferred to
+hosted CI). The reviewed **generated-only** promotion was published as **one commit**:
+
+- **`5c443a94ff0f53b839e7a1909c4f11e382825e47`** (push `8070340..5c443a9`, no force).
+- Staged exactly the manifest: **177 modified / 119 deleted / 30 added**
+  generated+derived files, plus the approved `test_balance_report_regressions.py` 9x39
+  SP6 update (`InitSpeed=305→290`, `PenetrationDepth=5.55→6`), asserted against the
+  specific SP6 line. No corpus/authored/live-addon files staged.
+- **Local:** 82 tests OK; index/family/balance `--check` = 0; data-quality = 0;
+  `git diff --check` clean; corpus **1,404** files SHA `15380703…` preserved;
+  `check_repository_integrity.py` **NOT RUN** locally (jsonschema) — deferred to CI.
+- **Hosted CI run [37119940835](https://github.com/Dubelkrya/Weapon_ARMA_X/actions/runs/37119940835):**
+  `validate` job = **success**, every step green (scanner/parser regressions, repository
+  integrity, weapon index/family/balance freshness, catalog data-quality) ⇒
+  **`CI_ALL_CHECKS_PASS`**.
+- Frozen input `b88bc53` unchanged; `Assets/Toz/1.et` unchanged (issue #30). T2a is now
+  unblocked.

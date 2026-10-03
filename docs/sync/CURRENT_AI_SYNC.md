@@ -270,9 +270,9 @@ historical material**; the owner approved **V3** (Issue #27 comment 5966570978,
   base-game inheritance; 52 genuine value changes in ammo/mag `AmmoMapping`; flagged odd
   `Assets/Toz/1.et` → `weapons/1.json`. Final isolated candidate: **181 entities** (68
   weapons / 4 grenades), `--check`/data-quality all exit 0, dirty==HEAD. Promotion set
-  ready; canonical publication awaiting the explicit publish go-ahead (then fresh CI).
-  **Publication PAUSED (pre-push gates):** `test_balance_report_regressions` 9x39
-  narrative hard-codes old values (InitSpeed=305 / PenetrationDepth=5.55) vs the promoted
-  source-truth (290 / 6) → needs a minimal test update; and
-  `check_repository_integrity.py` is NOT RUN locally (no python with `jsonschema`; pip
-  unavailable). Decisions requested; no canonical generated content published.
+  ready; **published** to `main` as generated-only commit `5c443a94ff0f53b839e7a1909c4f11e382825e47`
+  (177 M / 119 D / 30 A; + the approved 9x39 test update). Fresh hosted CI run
+  `37119940835`: **`validate` job = success — all steps green** (scanner/parser
+  regressions, repository integrity, weapon index/family/balance freshness,
+  data-quality). `CI_ALL_CHECKS_PASS`. Frozen input `b88bc53` unchanged; corpus 1404
+  SHA `15380703…` preserved. T2a is now unblocked.
