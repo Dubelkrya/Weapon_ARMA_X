@@ -396,3 +396,62 @@ ASTRA: INDEPENDENT (not touched)
 STATUS: G3B1_PASS / G3B2_DESIGN_CORRECTIONS_REQUIRED / IMPLEMENTATION_NOT_AUTHORIZED
 NEXT_GATE: STOP_FOR_INDEPENDENT_DESIGN_REVIEW (rev 2)
 ```
+
+---
+
+## 11. Implementation (bounded source preparation; write gate OFF) — 2026-10-04
+
+Authorized by Issue #34 comment `5973770796` after rev-2 design approval (comment `5973766922`).
+Additive lab-only source + production-child prefab published; **write OFF by default**; **no**
+Workbench/game run performed by the agent.
+
+**New files** (local lab + published copy, local==published):
+
+- `Scripts/Game/ARMST_T4B/ARMST_T4B_G3B2_Transfer.c` — new `ScriptedUserAction`
+  `ARMST_T4B_G3B2_TransferAction`; SHA256 `4ED71240775F9FEE4DDAB93C876E65FE49209082294BEF216FA6C2867A1F5C17`.
+- `Prefabs/Test/ARMST_T4B_G3B2_TestWeapon.et` — SHA256 `68F67CAB0C17201882FCB9D587E3F3F196231B46E4FCB3951DD8BDC185873E04`.
+- `Prefabs/Test/ARMST_T4B_G3B2_TestWeapon.et.meta` — SHA256 `315C7AB6983B68C63C0AEC1D30625C5CA4B7477D72C1C75DF5291AC7438F9287`.
+
+**Prefab:** thin child of the actual production parent
+`{63FF6FDCA4E7E735}Prefabs/Weapons/Russian/Shotgun/armst_Shotgun_mp_133.et`, containing the T4b
+probe `ARMST_T4B_WeaponProbe "0A1B2C3D4E5F6071" { m_iT4BStartAmmo 2 }` and exactly **one** new action
+`ARMST_T4B_G3B2_TransferAction "1B2C3D4E5F607182"` (UIInfo `2C3D4E5F60718293`) with
+`m_bG3B2WriteEnabled 0`.
+
+**Action-inheritance proof (static):** the child references the production MP-133 parent and declares
+only the B2 action — `ARMST_T4B_AddRoundWeaponAction = 0`, `ARMST_T4B_G3B1_ConsumeAction = 0`,
+`ARMST_T4B_G3B2_TransferAction = 1` in the child. The T4b `+1` and G3B1 actions exist only in the
+T4b/G3B1 child prefabs (not in the production parent chain), so they cannot be present or invoked in
+the B2 fixture. A Workbench preflight by the owner should still confirm the visible action list.
+
+**Write gate:** `[Attribute("false", UIWidgets.CheckBox, …)] bool m_bG3b2WriteEnabled = false;` in
+source **and** `m_bG3B2WriteEnabled 0` in the published child prefab.
+
+**Donor whitelist (fail-closed):** `m_sG3b2AllowedStorageOwner` default `""` and
+`m_iG3b2AllowedStorageSlot` default `-1`; an empty owner rejects **every** donor.
+
+**Setup mutation, separate from B2:** the unchanged T4b probe runs one
+`SetAmmoCount(m_iT4BStartAmmo)` at init; the child sets `m_iT4BStartAmmo 2` (documented expendable
+target count). This is setup, **not** the B2 action, and the fixture is **not** globally zero-write.
+`B2_SETTER_CALLS_IN_DRY_RUN = 0`: both B2 `SetAmmoCount` calls sit **after** the dry-run guard
+`if (!m_bG3b2WriteEnabled) { … return; }` (guard line 649; setters lines 716 and 758).
+
+**New unique GUIDs** (0 occurrences across the addons tree): meta `{E7F809A1B2C3D4E5}`, instance
+`F809A1B2C3D4E5F6`, probe `0A1B2C3D4E5F6071`, action `1B2C3D4E5F607182`, UIInfo `2C3D4E5F60718293`.
+
+**Static checks:** braces 78/78, parens 530/530, ASCII, 885 lines; no
+`modded`/`OnAnimationEvent`/`OnCharacterCommand`/`CMD_Weapon_Reload`/`SpawnMagazine`/`AttachMagazine`/
+`DetachMagazine`/`ClearChamber`/`TryDeleteItem`/`GetLocalControlledEntity`/`SyncWithCharacter` in code
+(only comment mentions). No Python interpreter in PATH (WindowsApps stub) →
+`check_repository_integrity.py` **not run / not claimed**.
+
+**Preserved:** T4b script `D581B9C9…`, T4b prefab `29C70A78…`, G3B1 script `A7CE4FE3…`, G3B1 child
+`0C03C366…`, donor mag `437D75E3…`, `addon.gproj 200E3156…`, all `.meta`/GUID.
+`GAMEPLAY_FILES_CHANGED_BY_DESIGN = 0` outside the two new lab files.
+
+**Suggested first owner read-only preflight** (later, after independent source review — not
+authorized yet): spawn/equip `ARMST_T4B_G3B2_TestWeapon.et`; confirm the action name; invoke once with
+the write gate OFF; expect `[ARMST_T4B-G3B2]` `phase=classify-start` → `phase=classify-done` →
+`phase=readonly` and **no `SetAmmoCount` from the B2 action**.
+
+**STATUS:** `G3B2_DESIGN_APPROVED / G3B2_BOUNDED_SOURCE_PREPARATION_AUTHORIZED / B2_WRITE_ENABLED_RUN_NOT_AUTHORIZED / STOP_FOR_SOURCE_REVIEW`.
