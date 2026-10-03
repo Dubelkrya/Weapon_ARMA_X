@@ -344,6 +344,17 @@ historical material**; the owner approved **V3** (Issue #27 comment 5966570978,
   can be tested. No transfer/donor/inventory/weapon/chamber; production/Core/T2A/V2/Astra
   untouched (Weapons 29, Core 4; T2A `E978EDAF…`). Static-only by agent (no compile/run).
   Status `T4A_LAB_PREPARED_OWNER_RUN_REQUIRED`.
+- **T4b (isolated lab, 2026-10-03, branch `t4b/installed-mag-probe`):**
+  `MP133_V3_T4B_INSTALLED_MAG_PROBE.md`. New addon `ARMSTMP133T4B_InstalledMagProbe`
+  (`ARMSTMP133T4BInstalledMag`, GUID `B1C2D3E4F5061728`): a lab MP-133 copy (inherits
+  `{63FF6FDCA4E7E735}armst_Shotgun_mp_133.et`) carrying a probe (baseline `m_iT4BStartAmmo`) and
+  a weapon-local context action `ARMST_T4B_AddRoundWeaponAction` added to the inherited
+  `ActionsManagerComponent {A29AE67FF4D82B0F}` via `additionalActions +{ … ParentContextList {
+  "default" } UIInfo … }`. On invocation: guarded one-shot `GetCurrentMagazine().SetAmmoCount(old+1)`
+  with `[ARMST_T4B-INSTALLED]` pre/post/reject logs + `sameMagazine/sameOwner/chamberUnchanged`;
+  rejects full/already-used/not-lab-weapon; no detach/replace/spawn/donor/inventory/chamber/pump.
+  Static PASS; script SHA `C2E37135…`; production/Core/T4a/T2A/V2/Astra untouched; agent cannot
+  compile. Status `T4B_LAB_PREPARED_OWNER_RUN_REQUIRED`.
 
 ---
 
