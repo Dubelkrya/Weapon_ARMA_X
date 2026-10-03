@@ -85,6 +85,7 @@ class ARMST_T4B_G3B2_TransferAction : ScriptedUserAction
 	protected int m_opSupply = -1;
 	protected int m_opSupplyMax = -1;
 	protected string m_opRejectReason = "";
+	protected bool m_opExactOwnerMatch = false;
 
 	// ---- donor boundary snapshot (captured immediately before the first setter) ----
 	protected IEntity m_opDonorItem;
@@ -382,6 +383,32 @@ class ARMST_T4B_G3B2_TransferAction : ScriptedUserAction
 		return s.Substring(close + 1, s.Length() - close - 1);
 	}
 
+	// STRICT write-path identity: the whitelist value MUST be the full "{GUID}path" form and MUST
+	// equal the engine's actual storage-owner resource string EXACTLY (GUID and path). Fail closed
+	// on empty/bare/malformed value, missing resource, or uncertain API. Not used for OFF read-only
+	// diagnostics (which keep the lenient normalized match in T4B2StorageAllowed).
+	bool T4B2OwnerExactName(IEntity item)
+	{
+		if (item == null)
+			return false;
+		if (m_sG3B2AllowedStorageOwner == "")
+			return false;
+		if (!m_sG3B2AllowedStorageOwner.StartsWith("{"))
+			return false;
+		if (m_sG3B2AllowedStorageOwner.IndexOf("}") < 0)
+			return false;
+		BaseInventoryStorageComponent st = T4B2StorageOf(item);
+		if (!st)
+			return false;
+		IEntity se = st.GetOwner();
+		if (!se || !se.GetPrefabData())
+			return false;
+		string ownerRaw = se.GetPrefabData().GetPrefabName();
+		if (ownerRaw != m_sG3B2AllowedStorageOwner)
+			return false;
+		return true;
+	}
+
 	// Whitelist check (fail-closed): exact storage-owner prefab path, optional exact slot id.
 	bool T4B2StorageAllowed(IEntity item, out int outSlotId, out string outOwnerPrefab)
 	{
@@ -585,6 +612,7 @@ class ARMST_T4B_G3B2_TransferAction : ScriptedUserAction
 	bool T4B2Preflight()
 	{
 		m_opRejectReason = "";
+		m_opExactOwnerMatch = false;
 		ARMST_T4B_WeaponProbe probe = null;
 		if (m_opActionOwner)
 			probe = ARMST_T4B_WeaponProbe.Cast(m_opActionOwner.FindComponent(ARMST_T4B_WeaponProbe));
@@ -627,6 +655,8 @@ class ARMST_T4B_G3B2_TransferAction : ScriptedUserAction
 			m_opRejectReason = "donor-is-target";
 			return false;
 		}
+		// Strict write-path evidence (logged in OFF diagnostics too): full {GUID}path exact match.
+		m_opExactOwnerMatch = T4B2OwnerExactName(donorItem);
 		int dMax = donorMag.GetMaxAmmoCount();
 		int dAmmo = donorMag.GetAmmoCount();
 		if (dMax <= 0 || dAmmo <= 0)
@@ -752,6 +782,13 @@ class ARMST_T4B_G3B2_TransferAction : ScriptedUserAction
 		if (!allowed || slot == null || storage == null || storageOwner == null)
 		{
 			m_opRejectReason = "prewrite-storage";
+			return false;
+		}
+
+		// STRICT write-path identity: require the full {GUID}path exact match (fail closed).
+		if (!T4B2OwnerExactName(m_opDonorItem))
+		{
+			m_opRejectReason = "prewrite-storage-exact";
 			return false;
 		}
 
@@ -1187,6 +1224,7 @@ class ARMST_T4B_G3B2_TransferAction : ScriptedUserAction
 		Print("[ARMST_T4B-G3B2] " + opTag
 			+ " phase=preflight ev=checked preflightEligible=" + T4BB(pfEligible)
 			+ " reason=" + m_opRejectReason
+			+ " exactOwnerMatch=" + T4BB(m_opExactOwnerMatch)
 			+ " compat=" + m_cCompat.ToString()
 			+ " targetSkipped=" + m_cTargetSkipped.ToString()
 			+ " installedExcluded=" + m_cInstalledExcluded.ToString()
@@ -1199,6 +1237,7 @@ class ARMST_T4B_G3B2_TransferAction : ScriptedUserAction
 				+ " phase=readonly ev=preflight-only writeEnabled=0"
 				+ " preflightEligible=" + T4BB(pfEligible)
 				+ " reason=" + m_opRejectReason
+				+ " exactOwnerMatch=" + T4BB(m_opExactOwnerMatch)
 				+ " refAmmoType=" + m_opRefType
 				+ " srv=" + T4B2Srv(), LogLevel.NORMAL);
 			return;

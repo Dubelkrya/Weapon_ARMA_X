@@ -613,6 +613,21 @@ historical material**; the owner approved **V3** (Issue #27 comment 5966570978,
   `compat=1 preflightEligible=1 phase=readonly writeEnabled=0`, donor `10/10→10/10`, weapon `2/10→2/10`.
   Status `G3B2_POSITIVE_PREFLIGHT_VARIANT_PUBLISHED / B2_WRITE_OFF`;
   `COMPILER_UNVERIFIED / WAITING_OWNER_RECOMPILE`; STOP for owner read-only dry-run.
+- **G3-B2 write-test preparation V1 (comment 5974232017, 2026-10-04):** preparation only — adds one
+  isolated expendable write-test fixture and a strict write-path donor-identity gate; **all published
+  gates stay OFF**. New `Prefabs/Test/ARMST_T4B_G3B2_WriteTestWeapon.et` (+unique `.meta`): direct
+  child of production MP-133 with T4b probe + one B2 action — `m_iT4BStartAmmo 2`,
+  `m_bG3B2WriteEnabled 0`, whitelist `{02DF51DB063ABD36}…Vest_ALICE_firstaid.et` slot 0. New GUIDs
+  unique; canonical (`68F67CAB...`) and preflight (`DAD5B732...`) fixtures and T4b/G3B1 unchanged.
+  Strict `T4B2OwnerExactName` requires the full `{GUID}path` exact match for WRITE-ON (boundary gate
+  `prewrite-storage-exact`); OFF preflight keeps the lenient normalized match and now logs
+  `exactOwnerMatch=0/1` in `phase=preflight`/`phase=readonly`. Write-test prefab `BBED7C0E...`, meta
+  `F0326D0D...`, script `7D340699...`; braces 130/130, parens 713/713, ASCII; local==published.
+  Safety matrix: canonical = empty whitelist/off; preflight = ALICE/off; write-test = ALICE/off (would
+  additionally require `exactOwnerMatch`). Proposed but NOT authorized: fresh WriteTest fixture, donor
+  `10/10`, target `2/10`, one action → donor `9/10`/target `3/10`, sum 12, immediate/+250ms/+1s.
+  Status `G3B2_WRITE_TEST_SOURCE_PREPARED / ALL_PUBLISHED_GATES_OFF / OWNER_WRITE_NOT_AUTHORIZED /
+  WRITE_TEST_PREPARED_WRITE_OFF / WAITING_INDEPENDENT_REVIEW`; STOP after push.
 
 ---
 

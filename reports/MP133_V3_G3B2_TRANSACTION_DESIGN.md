@@ -408,7 +408,7 @@ Workbench/game run performed by the agent.
 **New files** (local lab + published copy, local==published):
 
 - `Scripts/Game/ARMST_T4B/ARMST_T4B_G3B2_Transfer.c` — new `ScriptedUserAction`
-  `ARMST_T4B_G3B2_TransferAction`; SHA256 `7389AEED01C5329D9935513BBF7EF9254E45023A5CE7091E3865F2A20D74A4EE` (rev 5).
+  `ARMST_T4B_G3B2_TransferAction`; SHA256 `7D34069957A81BFCB188448409478E18F91CC3D4740ACD47097284D3346E96CF` (rev 6).
 - `Prefabs/Test/ARMST_T4B_G3B2_TestWeapon.et` — SHA256 `68F67CAB0C17201882FCB9D587E3F3F196231B46E4FCB3951DD8BDC185873E04`.
 - `Prefabs/Test/ARMST_T4B_G3B2_TestWeapon.et.meta` — SHA256 `315C7AB6983B68C63C0AEC1D30625C5CA4B7477D72C1C75DF5291AC7438F9287`.
 
@@ -592,3 +592,53 @@ put one 12ga donor `10/10` into the allowed `Vest_ALICE_firstaid` slot 0, invoke
 
 `COMPILER_UNVERIFIED / WAITING_OWNER_RECOMPILE`. **STATUS:** `G3B2_POSITIVE_PREFLIGHT_VARIANT_PUBLISHED /
 B2_WRITE_OFF`; **STOP for independent source review and owner read-only dry-run**.
+
+### 11.5 G3-B2 write-test preparation V1 (Issue #34 comment 5974232017) — rev 6
+
+Preparation only. Owner offline evidence `5974181772` confirmed the positive whitelist preflight
+(`compat=1 preflightEligible=1 phase=readonly writeEnabled=0`). This revision adds **one new isolated
+expendable** write-test fixture and a strict write-path donor-identity gate; **all published gates
+stay OFF** and no transfer is run.
+
+**New fixture** `Prefabs/Test/ARMST_T4B_G3B2_WriteTestWeapon.et` (+ new unique `.meta`), a fresh thin
+**direct child of the production** `{63FF6FDCA4E7E735}…armst_Shotgun_mp_133.et` (not of the B1/T4b
+child, not of the positive-preflight child) with only the T4b probe and one experimental action:
+- `m_iT4BStartAmmo 2`, `m_bG3B2WriteEnabled 0`, `m_sG3B2AllowedStorageOwner
+  "{02DF51DB063ABD36}Prefabs/Characters/Vests/Vest_ALICE/Vest_ALICE_firstaid.et"`,
+  `m_iG3B2AllowedStorageSlot 0`.
+- New GUIDs (unique): meta `{8293A4B5C6D7E8F9}`, instance `93A4B5C6D7E8F901`, probe `A4B5C6D7E8F90112`,
+  action `B5C6D7E8F9011223`, UIInfo `C6D7E8F901122334`. Inheritance proof: T4b `+1`=0, G3B1=0, B2=1.
+
+**Strict write-path donor identity (fail-closed).** `T4B2OwnerExactName` requires the whitelist value
+to be the full `{GUID}path` form and to equal the engine's actual storage-owner resource string
+**exactly (GUID and path)**; empty/bare/malformed value, missing storage/owner/prefab, or mismatch →
+false. `T4B2Boundary` gate 1 keeps the lenient `T4B2StorageAllowed` (path+slot) and adds this exact
+gate with reason `prewrite-storage-exact`, so a WRITE-ON operation cannot proceed on a bare path. The
+read-only preflight still uses the lenient match and now logs `exactOwnerMatch=0/1` in **both** the
+`phase=preflight` and `phase=readonly` lines as evidence for later activation. Line refs (rev 6):
+`T4B2OwnerExactName` L390–411, preflight diagnostic L659, boundary exact gate L789–792, log L1227/L1240.
+
+**Safety matrix (all OFF):**
+
+| Fixture | whitelist | `m_bG3B2WriteEnabled` | B2 setters reachable |
+|---|---|---|---|
+| `ARMST_T4B_G3B2_TestWeapon.et` (canonical) | empty | 0 | no |
+| `ARMST_T4B_G3B2_Preflight_TestWeapon.et` | ALICE slot 0 | 0 | no |
+| `ARMST_T4B_G3B2_WriteTestWeapon.et` (new) | ALICE slot 0 | 0 | no (would additionally require `exactOwnerMatch`) |
+
+Setters exist only inside `T4B2Execute`, which `PerformAction` calls only after the gate is ON; with
+the published `0` the whole transaction is unreachable.
+
+**Proposed owner-only LATER clean test protocol (NOT authorized now):** fresh `WriteTest` fixture,
+await `baselineDone=1`; one 12ga donor in `Vest_ALICE_firstaid` slot 0 at `10/10`; target `2/10`;
+known chamber; **one** B2 invocation; expected donor `10→9`, target `2→3`, immediate/+250 ms/+1 s
+reads identical, `donorBefore+targetBefore == donorAfter+targetAfter == 12`, chamber/barrel unchanged;
+then STOP (no retry). Enabling requires a **separate** approval after independent review and a
+write-ON recompile.
+
+Script SHA `7389AEED…` → `7D34069957A81BFCB188448409478E18F91CC3D4740ACD47097284D3346E96CF`;
+write-test prefab `BBED7C0E6179451DEF295AAA0506AB0964259DE5B672B643B1DCC926B21A661B`, meta
+`F0326D0D9420D9895E71865D901A2AD37B0905DA29F745FC5B45BDA4664535DA`; canonical `68F67CAB…` and
+preflight `DAD5B732…` prefabs unchanged; static braces 130/130, parens 713/713, ASCII.
+`COMPILER_UNVERIFIED / WAITING_OWNER_RECOMPILE`.
+**STATUS:** `G3B2_WRITE_TEST_SOURCE_PREPARED / ALL_PUBLISHED_GATES_OFF / OWNER_WRITE_NOT_AUTHORIZED / WRITE_TEST_PREPARED_WRITE_OFF / WAITING_INDEPENDENT_REVIEW`.
