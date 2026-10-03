@@ -122,7 +122,7 @@ and published copy are byte-identical.
 | [`…/Scripts/Game/ARMST_T4B/ARMST_T4B_G3B1_DonorConsume.c`](../labs/ARMSTMP133T4B_InstalledMagProbe/Scripts/Game/ARMST_T4B/ARMST_T4B_G3B1_DonorConsume.c) | `A7CE4FE399A9789CFCDA475D477EC9E1BB4AE942C3DF040AE0F3B04B264620DA` |
 | [`…/Prefabs/Test/ARMST_T4B_G3B1_DonorMag.et`](../labs/ARMSTMP133T4B_InstalledMagProbe/Prefabs/Test/ARMST_T4B_G3B1_DonorMag.et) | `437D75E3545400A31663F78DBD08E7898BEDE69BA758FC76935ABAA8D1FE0761` |
 | [`…/Prefabs/Test/ARMST_T4B_G3B1_DonorMag.et.meta`](../labs/ARMSTMP133T4B_InstalledMagProbe/Prefabs/Test/ARMST_T4B_G3B1_DonorMag.et.meta) | `A1DB893F790DB72E73789F3C33BE334004F3E8325B4C9C6952A2D9E767FF02CF` |
-| [`…/Prefabs/Test/ARMST_T4B_G3B1_TestWeapon.et`](../labs/ARMSTMP133T4B_InstalledMagProbe/Prefabs/Test/ARMST_T4B_G3B1_TestWeapon.et) | `61F3FCAEE494963ADF1FF82B351A61C1D295618B7DE2786490BAC13325620BAA` |
+| [`…/Prefabs/Test/ARMST_T4B_G3B1_TestWeapon.et`](../labs/ARMSTMP133T4B_InstalledMagProbe/Prefabs/Test/ARMST_T4B_G3B1_TestWeapon.et) | `0C03C3662F567E342B0BEAD059151B1299BDE48BC6C37C22D18FB7A010F7733B` (write enabled) |
 | [`…/Prefabs/Test/ARMST_T4B_G3B1_TestWeapon.et.meta`](../labs/ARMSTMP133T4B_InstalledMagProbe/Prefabs/Test/ARMST_T4B_G3B1_TestWeapon.et.meta) | `E7BAA2A85CD3E2CAB05E2C6669DA37471A1D95D0D68EB1FE6BB334BD34809F03` |
 | [`…/Prefabs/Test/ARMST_T4B_G3B1_DonorDevice.et`](../labs/ARMSTMP133T4B_InstalledMagProbe/Prefabs/Test/ARMST_T4B_G3B1_DonorDevice.et) | `12B073DD60318491752888DED79CD3807E8B25AFB171694CB796054C86CB8502` |
 | [`…/Prefabs/Test/ARMST_T4B_G3B1_DonorDevice.et.meta`](../labs/ARMSTMP133T4B_InstalledMagProbe/Prefabs/Test/ARMST_T4B_G3B1_DonorDevice.et.meta) | `AAE07E095434B9078508EAA81EB7E52F2E535434052D32C10616F8016D8F3F9F` |
@@ -534,3 +534,28 @@ generic-mag run must use an explicit matching reference ResourceName and is labe
 
 **STATUS:** `G3B1_REAL_DONOR_FIXTURE_ADDED / NESTED_DISCOVERY_APPLIED / READONLY_CLASSIFICATION_DEFAULT / OWNER_CLASSIFY_RUN_REQUIRED`.
 G3-B2 not authorized.
+
+## 19. G3-B1 write enabled in the child test weapon (owner instruction, 2026-10-04)
+
+Classification passed, so the decrement write is now enabled **only in the experimental child
+prefab** `Prefabs/Test/ARMST_T4B_G3B1_TestWeapon.et` by setting `m_bG3b1WriteEnabled 1` on the
+G3B1 action instance. Nothing else changed: the original T4b weapon prefab/script, the G3B1 script,
+the donor magazine prefab, the historical device and `addon.gproj` are untouched.
+
+Child prefab SHA `61F3FCAE…` → **`0C03C3662F567E342B0BEAD059151B1299BDE48BC6C37C22D18FB7A010F7733B`**;
+local==published; T4b script `D581B9C9…`, T4b prefab `29C70A78…`, G3B1 script `A7CE4FE3…` unchanged.
+
+**Owner clean experiment (one run):**
+1. Equip the child MP-133 `ARMST_T4B_G3B1_TestWeapon.et` (with its installed magazine).
+2. Put ONE compatible donor magazine in the vest (`ARMST_T4B_G3B1_DonorMag.et`, or the production
+   `Prefabs/Weapons/Magazines/12ga/armst_12ga_Buckshot.et`).
+3. Record donor and installed ammo + chamber.
+4. Invoke the G3B1 action once → expect donor `n → n-1` (e.g. `7/10 → 6/10`), installed magazine and
+   chamber unchanged, `+250 ms`/`+1 s` `persistAmmo=1`.
+5. Wait 1 s, invoke again → `already-used` (no second write).
+Do **not** use pump, native reload, firing, or the T4b `+1` action during this run.
+
+**Expected:** donor `7/10 → 6/10`, installed mag unchanged, chamber unchanged, donor `6/10` at +1 s,
+repeat `already-used`.
+
+**STATUS:** `G3B1_WRITE_ENABLED_OWNER_RUN_REQUIRED`. G3-B2 not authorized.

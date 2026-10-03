@@ -505,6 +505,14 @@ historical material**; the owner approved **V3** (Issue #27 comment 5966570978,
   prefab `29C70A78...`, child prefab `61F3FCAE...` unchanged; local==published. Status
   `G3B1_REAL_DONOR_FIXTURE_ADDED / NESTED_DISCOVERY_APPLIED / READONLY_CLASSIFICATION_DEFAULT /
   OWNER_CLASSIFY_RUN_REQUIRED`; G3-B2 not authorized.
+- **G3-B1 write enabled (owner instruction, 2026-10-04):** classification passed, so the decrement is
+  enabled **only** in the child prefab `Prefabs/Test/ARMST_T4B_G3B1_TestWeapon.et` via
+  `m_bG3b1WriteEnabled 1`; nothing else changed. Child prefab SHA `61F3FCAE...` ->
+  `0C03C3662F567E342B0BEAD059151B1299BDE48BC6C37C22D18FB7A010F7733B`; T4b script `D581B9C9...`,
+  T4b prefab `29C70A78...`, G3B1 script `A7CE4FE3...`, donor mag `437D75E3...`, addon.gproj
+  unchanged; local==published. Owner clean run: donor `7/10 -> 6/10`, installed mag + chamber
+  unchanged, +250ms/+1s `persistAmmo=1`, repeat `already-used`; no pump/reload/fire/T4b `+1`. Status
+  `G3B1_WRITE_ENABLED_OWNER_RUN_REQUIRED`; G3-B2 not authorized.
 
 ---
 

@@ -10,6 +10,7 @@ GenericEntity : "{C2D3E4F506172839}Prefabs/Test/ARMST_T4B_TestWeapon.et" {
      UIInfo UIInfo "6A5B4C3D2E1F0F04" {
       Name "G3B1: consume 1 from inventory donor"
      }
+     m_bG3b1WriteEnabled 1
     }
    }
   }
