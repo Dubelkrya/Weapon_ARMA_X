@@ -553,6 +553,23 @@ historical material**; the owner approved **V3** (Issue #27 comment 5966570978,
   **No Workbench/game run; B2 write-enabled/two-sided, animation/R/input, MP and production NOT
   authorised.** Status `G3B2_DESIGN_APPROVED / G3B2_BOUNDED_SOURCE_PREPARATION_AUTHORIZED /
   B2_WRITE_ENABLED_RUN_NOT_AUTHORIZED`; STOP for independent source review.
+- **G3-B2 source-review corrections (comment 5973836821, 2026-10-04):** `b1e8226` reviewed; fixed only
+  the new B2 script + manifest + docs. P0: canonical attribute spelling `m_bG3B2WriteEnabled` /
+  `m_sG3B2AllowedStorageOwner` / `m_iG3B2AllowedStorageSlot` identical in script and prefab (no
+  `G3b2`-cased leftovers). P1: shared read-only `T4B2Preflight` runs for gate-off **and** gate-on
+  (gate-off logs `preflightEligible`/`reason` then `phase=readonly`, no setter/latch); actual donor
+  storage **component+owner** identity captured/compared (not only prefab path); delayed checks now
+  fail closed on donor membership/storage/slot, same donor component and target-still-installed
+  (`m_dWeapon.GetCurrentMagazine()==m_dTargetMag`); numeric/chamber guards (`tMax>0 && 0<=tAmmo<tMax`,
+  `dMax>0 && 0<dAmmo<=dMax`, non-null muzzle + valid barrel) and second-stage re-checks of ammo type,
+  equipped weapon/action owner, installed set/storage-not-weapon and actual donor storage/slot.
+  Secondary: counters computed before the whitelist filter so the reason is
+  `no-permitted-storage` (not `zero-ammo`); action label reflects the live gate; strict action-owner
+  binding. `B2_SETTER_CALLS_IN_DRY_RUN=0` (setters 789/848 after gate-off return 750); braces 88/88,
+  parens 613/613, ASCII; new script SHA `0D0FD4B2…`, prefab `68F67CAB…` unchanged; local==published;
+  T4b/G3B1 untouched. Status `G3B2_SOURCE_REVIEW_CHANGES_REQUIRED / B2_WRITE_OFF /
+  OWNER_RUNTIME_NOT_AUTHORIZED`; STOP for independent source re-review. `wm.GetWeapons(ws)` remains an
+  installed-SDK API claim pending real Workbench compile.
 
 ---
 

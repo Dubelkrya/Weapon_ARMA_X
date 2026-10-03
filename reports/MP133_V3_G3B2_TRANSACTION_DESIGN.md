@@ -408,7 +408,7 @@ Workbench/game run performed by the agent.
 **New files** (local lab + published copy, local==published):
 
 - `Scripts/Game/ARMST_T4B/ARMST_T4B_G3B2_Transfer.c` — new `ScriptedUserAction`
-  `ARMST_T4B_G3B2_TransferAction`; SHA256 `4ED71240775F9FEE4DDAB93C876E65FE49209082294BEF216FA6C2867A1F5C17`.
+  `ARMST_T4B_G3B2_TransferAction`; SHA256 `0D0FD4B2E75B30F3EF1D9183252222B96890E26E5F9C08C38F940A61352C2922` (rev 2).
 - `Prefabs/Test/ARMST_T4B_G3B2_TestWeapon.et` — SHA256 `68F67CAB0C17201882FCB9D587E3F3F196231B46E4FCB3951DD8BDC185873E04`.
 - `Prefabs/Test/ARMST_T4B_G3B2_TestWeapon.et.meta` — SHA256 `315C7AB6983B68C63C0AEC1D30625C5CA4B7477D72C1C75DF5291AC7438F9287`.
 
@@ -455,3 +455,42 @@ the write gate OFF; expect `[ARMST_T4B-G3B2]` `phase=classify-start` → `phase=
 `phase=readonly` and **no `SetAmmoCount` from the B2 action**.
 
 **STATUS:** `G3B2_DESIGN_APPROVED / G3B2_BOUNDED_SOURCE_PREPARATION_AUTHORIZED / B2_WRITE_ENABLED_RUN_NOT_AUTHORIZED / STOP_FOR_SOURCE_REVIEW`.
+
+### 11.1 Source-review corrections (Issue #34 comment 5973836821) — P0/P1
+
+Reviewed at `b1e8226`; the following were fixed **only** in the new B2 script (prefab unchanged,
+still `68F67CAB…`, `m_bG3B2WriteEnabled 0`), manifest and this documentation. No T4b/G3B1 resource
+touched.
+
+- **P0 — serialized attribute spelling.** Canonical spellings now identical in script and prefab:
+  `m_bG3B2WriteEnabled` (`[Attribute("false"…)]` + C initializer `false`), `m_sG3B2AllowedStorageOwner`
+  (empty), `m_iG3B2AllowedStorageSlot` (`-1`). No `G3b2`-cased leftovers (case-sensitive check = 0).
+- **P1 — dry-run runs the full preflight.** `T4B2Preflight(...)` is now a shared read-only method used
+  by both gate-off and gate-on paths; gate-off logs `phase=preflight ev=checked preflightEligible=0/1
+  reason=<…>` then `phase=readonly`, with **no** setter/latch. Empty whitelist yields
+  `no-permitted-storage` (correct), not a misleading reason.
+- **P1 — same storage INSTANCE proven.** The transaction captures the actual
+  `BaseInventoryStorageComponent` reference **and** its owner entity **and** slot id before the first
+  setter and requires their equality after (plus same donor item/mag component, `inv.Contains`,
+  whitelist) at donor-post, between setters, at commit and in delayed checks — not only the prefab path.
+- **P1 — delayed checks fail closed.** Delayed samples now also require donor inventory membership,
+  the same donor magazine component, the same donor storage component/owner/slot, and that the
+  **equipped weapon's current magazine is still the target component** (not merely that the old
+  component still exists); plus chamber/barrel/muzzle-component identity. Any mismatch →
+  `late-quarantine`.
+- **P1 — numeric/chamber and second-stage guards.** Prewrite now requires `tMax > 0 && 0 <= tAmmo <
+  tMax` and donor `dMax > 0 && 0 < dAmmo <= dMax`, a **non-null captured muzzle** with valid barrel
+  index/count, and re-verifies donor `GetAmmoType(0)` vs reference type, the equipped weapon/action
+  owner, the installed set and storage-not-weapon, and the actual donor storage/slot. After the first
+  setter any such uncertainty → quarantine (never REJECTED).
+- **Secondary.** Classification counters (`withAmmo`, `typeOk`, `storageRejected`) are computed
+  **before** the whitelist filter so `T4B2CompatReason()` reports the true reason
+  (`no-permitted-storage` vs `zero-ammo` vs `incompatible-ammo`). The action label reflects the live
+  gate (`… (WRITE ENABLED)` vs `… (dry-run; write off)`). Added a strict action-owner binding check
+  (`pOwnerEntity` must equal the action's `GetOwner()`). `wm.GetWeapons(ws)` remains an installed-SDK
+  API claim pending real Workbench compile.
+
+`B2_SETTER_CALLS_IN_DRY_RUN = 0` (both B2 `SetAmmoCount` calls — rev-2 source lines 789 and 848 —
+are after the gate-off `return` at 750). Static: braces 88/88, parens 613/613, ASCII.
+**STATUS:** `G3B2_SOURCE_REVIEW_CHANGES_REQUIRED / B2_WRITE_OFF / OWNER_RUNTIME_NOT_AUTHORIZED` →
+corrections published; **STOP for independent source re-review**.
