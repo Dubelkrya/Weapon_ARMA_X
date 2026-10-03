@@ -118,7 +118,7 @@ and published copy are byte-identical.
 | Published path | SHA-256 |
 |---|---|
 | [`labs/ARMSTMP133T4B_InstalledMagProbe/addon.gproj`](../labs/ARMSTMP133T4B_InstalledMagProbe/addon.gproj) | `200E3156DED0C793CFA6FCF94767A4DC265FF28760307A158BCD4DF9696608A6` |
-| [`…/Scripts/Game/ARMST_T4B/ARMST_T4B_InstalledMagProbe.c`](../labs/ARMSTMP133T4B_InstalledMagProbe/Scripts/Game/ARMST_T4B/ARMST_T4B_InstalledMagProbe.c) | `F893F8D22065B7931ECF7783D450F943C1694424020AA6EBDD8140102EF09FF4` |
+| [`…/Scripts/Game/ARMST_T4B/ARMST_T4B_InstalledMagProbe.c`](../labs/ARMSTMP133T4B_InstalledMagProbe/Scripts/Game/ARMST_T4B/ARMST_T4B_InstalledMagProbe.c) | `EB3C548B36A77DABB399509951ACDE0B618009749B033BD2048234FD1FC48CCC` |
 | [`…/Prefabs/Test/ARMST_T4B_TestWeapon.et`](../labs/ARMSTMP133T4B_InstalledMagProbe/Prefabs/Test/ARMST_T4B_TestWeapon.et) | `5F5AF777617F6C82C2DD86A888F0C23023004414E008DB9EE7C193B3DFB7947F` |
 | [`…/Prefabs/Test/ARMST_T4B_TestWeapon.et.meta`](../labs/ARMSTMP133T4B_InstalledMagProbe/Prefabs/Test/ARMST_T4B_TestWeapon.et.meta) | `8EBCBED43046664A0A0669C2D8B03616B690422BC4A0F7E778B3972F7FF6733E` |
 
@@ -202,3 +202,34 @@ Baseline `0/10`; one action `0→1` same physical mag; repeat `already-used`; se
 `10/10` reject `full`. Compare event/command snapshots during one controlled **native pump** and
 one **magazine swap** only in separate, clearly labelled runs after the `+1` test. STOP on an
 unexpected magazine-identity/chamber change or a lab `SCRIPT(E)`.
+
+## 11. Diagnostics revision after independent review (@ `838fe08`)
+
+Review (Issue #34 comment 5972318337) required three diagnostic corrections; the `+1` mechanism
+itself is unchanged and only the lab `.c` was edited on the same branch.
+
+1. **Delayed persistence sampling after the +1 (blocker).** The action now calls
+   `probe.T4BSchedulePostWrite(opId, mag, magEnt, want)` immediately after `SetAmmoCount`, which
+   schedules passive samples at **~250 ms and ~1 s** relative to that one invocation. Each sample
+   reads the *current installed* magazine and compares the same magazine component + owning
+   entity + expected value, logging `persistAmmo / stillInstalled / sameOwner / replaced /
+   missing` explicitly. The callback never re-issues `SetAmmoCount`; no polling. This makes a
+   value that reverts to `0/10` after a moment **visible**. The post-BlendOut sampler is retained
+   and labelled `final-blendout-250ms` for native animation tests.
+2. **No overclaiming (blocker).** The immediate result is renamed to
+   **`setter_readback_ok` / `immediate_consistency`**; delayed persistence is logged separately;
+   `gameplay_effect=UNVERIFIED` is emitted. A single shared probe **operation id** (`op=`) links
+   pre / post / delayed samples / owner observation (one `T4BBeginOp()` per invocation). Neither
+   immediate nor delayed readback is called a real round / donor transfer / authority / MP
+   success.
+3. **Event cap fixed.** `m_iSigEvt` is incremented **inside the significant branch**, so the cap
+   counts only logged significant events and unrelated callbacks can no longer silence later
+   `Weapon_*Magazine` / rack / `BlendOut` events. `super` always runs.
+
+**Coverage note:** the unified lab logs selective animation events, commands and magazine/ammo
+state, but does **not** implement a per-shot fire trace or an actual shot callback — guaranteed
+per-shot ammo accounting is **not** claimed.
+
+**Files:** script SHA `F893F8D2…` → **`EB3C548B36A77DABB399509951ACDE0B618009749B033BD2048234FD1FC48CCC`**;
+prefab/`addon.gproj`/`.meta` unchanged; local==published. Status
+`T4B_UNIFIED_SOURCE_REVIEW_CHANGES_REQUIRED` → `T4B_UNIFIED_DIAGNOSTIC_SOURCE_PUBLISHED_OWNER_RUN_REQUIRED`.

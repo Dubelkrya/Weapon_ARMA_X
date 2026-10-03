@@ -8,26 +8,29 @@
 // Ported capabilities (from T2a/T2c/T3), combined into the T4b probe as the snapshot hub:
 //   * weapon-side OnAnimationEvent (selective, pre/post super)  -> [ARMST_T4B-EVT]
 //   * OnCharacterCommand                                       -> [ARMST_T4B-CMD]
-//   * T3-style snapshots: weapon/mag entity reference tags, ammo/max, muzzle supply,
-//     barrel index, chamber-specific flag, chNeed/chPoss     -> [ARMST_T4B-INSTALLED]
+//   * T3-style snapshots (identity tags, ammo, muzzle supply, barrel, chamber flag)
+//                                                              -> [ARMST_T4B-INSTALLED]
 // NOT ported on purpose: the global `modded SCR_CharacterControllerComponent` (player
-// marker route + 1 Hz tick) and the player-authored marker route (owner: weapon does not
-// auto-receive the player marker). The lab-only WeaponAnimationComponent subclass replaces
-// the EXISTING inherited {60B4EA76EB15F6E0} instance (no second component added).
+// marker route + 1 Hz tick) and the player-authored marker route. The lab-only
+// WeaponAnimationComponent subclass replaces the EXISTING inherited {60B4EA76EB15F6E0}
+// instance (no second component added).
 //
 // The only write is the explicit owner-invoked action's SetAmmoCount(old+1) on the
 // installed lab magazine. Everything else is getter-only. No detach/replace/spawn, no
 // donor, no inventory, no chamber/pump, no R/fire/Shift, no global modded hook, no input
 // listener. Synthetic +1 only: not a gameplay reload, not authority/replication proof.
 //
-// Revision after owner review (Issue #34 comment 5972157499) and the merge task
-// (comment 5972248499):
-//   * probe lookup on the weapon ENTITY + owner cross-check (was `not-lab-weapon` x36);
-//   * bounded baseline gate retries until the installed magazine exists; strict read-back
-//     (baselineDone only if got==start && sameMagazine && non-null same owner); failed
-//     read-back -> `baseline-readback-mismatch` and +1 blocked, no retry;
-//   * one-shot latch BEFORE SetAmmoCount; post-write verdict; `null==null` never counts
-//     as sameOwner; muzzle supply and chamber flag reported separately.
+// Revision after independent review (Issue #34 comment 5972318337):
+//   1. DELAYED PERSISTENCE SAMPLES after the +1: ~250 ms and ~1 s relative to THIS setter
+//      invocation, comparing the same intended magazine component + owning entity and the
+//      expected value; distinguishes still-installed / replaced / missing. No re-issue, no
+//      polling. (The separate post-BlendOut sampler is retained for native animation tests.)
+//   2. Immediate result no longer claimed as a real round: `setter_readback_ok` /
+//      `immediate_consistency` are logged, persistence is logged separately, and
+//      `gameplay_effect=UNVERIFIED`. A single shared probe operation id (`op=`) links
+//      pre / post / delayed / owner observation.
+//   3. Event cap counts only SIGNIFICANT logged events, so unrelated callbacks can no
+//      longer silence later Weapon_*Magazine / rack / BlendOut events. `super` always runs.
 // ============================================================================
 
 // ----------------------------------------------------------------------------
@@ -49,7 +52,7 @@ class ARMST_T4B_WeaponAnimationComponent : WeaponAnimationComponent
 	protected AnimationEventID m_evtRelease = -1;
 	protected AnimationEventID m_evtDetach = -1;
 	protected AnimationEventID m_evtDespawn = -1;
-	protected int m_iEvt = 0;
+	protected int m_iSigEvt = 0;
 	protected int m_iCmd = 0;
 	protected const int T4B_EVT_CAP = 400;
 
@@ -97,18 +100,22 @@ class ARMST_T4B_WeaponAnimationComponent : WeaponAnimationComponent
 
 	override void OnAnimationEvent(AnimationEventID animEventType, AnimationEventID animUserString, int intParam, float timeFromStart, float timeToEnd)
 	{
-		m_iEvt++;
-		bool allow = (m_iEvt <= T4B_EVT_CAP);
 		string name = T4BEventName(animEventType);
 		bool significant = (name != "");
-		ARMST_T4B_WeaponProbe probe = T4BProbe();
+		bool allow = false;
+		if (significant && m_iSigEvt < T4B_EVT_CAP)
+		{
+			m_iSigEvt++;
+			allow = true;
+		}
 
-		if (allow && significant && probe)
+		ARMST_T4B_WeaponProbe probe = T4BProbe();
+		if (allow && probe)
 			probe.T4BLog("EVT", "pre-super", name);
 
 		super.OnAnimationEvent(animEventType, animUserString, intParam, timeFromStart, timeToEnd);
 
-		if (allow && significant && probe)
+		if (allow && probe)
 		{
 			probe.T4BLog("EVT", "post-super", name);
 			if (animEventType == m_evtBlendOut)
@@ -130,7 +137,7 @@ class ARMST_T4B_WeaponAnimationComponent : WeaponAnimationComponent
 }
 
 // ----------------------------------------------------------------------------
-// Snapshot hub + installed-magazine baseline probe (lab weapon entity).
+// Snapshot hub + installed-magazine baseline probe + delayed persistence sampler.
 // ----------------------------------------------------------------------------
 class ARMST_T4B_WeaponProbeClass : ScriptComponentClass
 {
@@ -144,12 +151,19 @@ class ARMST_T4B_WeaponProbe : ScriptComponent
 	protected bool m_bBaselineFailed = false;
 	protected int m_iRetries = 0;
 	protected int m_iSeq = 0;
+	protected int m_iOpId = 0;
 	protected IEntity m_t4bWpnEntity;
 	protected int m_t4bWpnTag = 0;
 	protected int m_t4bNextWpnTag = 0;
 	protected IEntity m_t4bMagEntity;
 	protected int m_t4bMagTag = 0;
 	protected int m_t4bNextMagTag = 0;
+
+	// Delayed persistence sample state (captured at the +1 invocation).
+	protected int m_delayedOp = 0;
+	protected BaseMagazineComponent m_delayedMag;
+	protected IEntity m_delayedMagEnt;
+	protected int m_delayedWant = -1;
 
 	// Baseline ammo for the ALREADY INSTALLED lab magazine (0..max). Default 0 so the
 	// +1 test starts from 0/10; set to max to test the full-rejection case.
@@ -159,6 +173,13 @@ class ARMST_T4B_WeaponProbe : ScriptComponent
 	bool IsBaselineDone()
 	{
 		return m_bBaselineDone;
+	}
+
+	// Shared test/operation id correlating pre / post / delayed samples / owner observation.
+	int T4BBeginOp()
+	{
+		m_iOpId++;
+		return m_iOpId;
 	}
 
 	override void OnPostInit(IEntity owner)
@@ -325,13 +346,14 @@ class ARMST_T4B_WeaponProbe : ScriptComponent
 		return s;
 	}
 
-	void T4BLog(string channel, string phase, string evName)
+	void T4BLog(string channel, string phase, string evName, int opId = 0)
 	{
 		m_iSeq++;
 		int srv = 0;
 		if (Replication.IsServer())
 			srv = 1;
 		Print("[ARMST_T4B-" + channel + "] #" + m_iSeq.ToString()
+			+ " op=" + opId.ToString()
 			+ " phase=" + phase
 			+ " ev=" + evName
 			+ " srv=" + srv.ToString()
@@ -353,6 +375,7 @@ class ARMST_T4B_WeaponProbe : ScriptComponent
 			+ " " + T4BState(), LogLevel.NORMAL);
 	}
 
+	// Passive post-BlendOut sampler (native animation tests), retained separately.
 	void T4BScheduleFinal()
 	{
 		GetGame().GetCallqueue().CallLater(T4BFinal, 250, false);
@@ -360,7 +383,71 @@ class ARMST_T4B_WeaponProbe : ScriptComponent
 
 	void T4BFinal()
 	{
-		T4BLog("INSTALLED", "final-250ms", "post-blendout");
+		T4BLog("INSTALLED", "final-blendout-250ms", "post-blendout");
+	}
+
+	// ---- delayed persistence sampling after the synthetic +1 ------------------
+	void T4BSchedulePostWrite(int opId, BaseMagazineComponent mag, IEntity magEnt, int want)
+	{
+		m_delayedOp = opId;
+		m_delayedMag = mag;
+		m_delayedMagEnt = magEnt;
+		m_delayedWant = want;
+		GetGame().GetCallqueue().CallLater(T4BDelayed250, 250, false);
+		GetGame().GetCallqueue().CallLater(T4BDelayed1000, 1000, false);
+	}
+
+	void T4BDelayed250()
+	{
+		T4BDelayedSample(250);
+	}
+
+	void T4BDelayed1000()
+	{
+		T4BDelayedSample(1000);
+	}
+
+	// Reads the CURRENT installed magazine and compares to the captured intent.
+	// Never re-issues SetAmmoCount; never polls.
+	void T4BDelayedSample(int ms)
+	{
+		if (m_delayedOp <= 0)
+			return;
+
+		BaseWeaponComponent wpn = T4BWeapon();
+		BaseMagazineComponent magNow = null;
+		if (wpn)
+			magNow = wpn.GetCurrentMagazine();
+		IEntity ownerNow = null;
+		int ammoNow = -1;
+		if (magNow)
+		{
+			ownerNow = magNow.GetOwner();
+			ammoNow = magNow.GetAmmoCount();
+		}
+
+		bool stillInstalled = (magNow == m_delayedMag);
+		bool sameOwner = (m_delayedMagEnt != null && ownerNow == m_delayedMagEnt);
+		bool replaced = (magNow != null && magNow != m_delayedMag);
+		bool missing = (magNow == null);
+		bool persistAmmo = (ammoNow == m_delayedWant);
+
+		int srv = 0;
+		if (Replication.IsServer())
+			srv = 1;
+
+		Print("[ARMST_T4B-INSTALLED] op=" + m_delayedOp.ToString()
+			+ " phase=delayed+" + ms.ToString() + "ms"
+			+ " ev=post-write"
+			+ " expected=" + m_delayedWant.ToString()
+			+ " got=" + ammoNow.ToString()
+			+ " persistAmmo=" + T4BB(persistAmmo)
+			+ " stillInstalled=" + T4BB(stillInstalled)
+			+ " sameOwner=" + T4BB(sameOwner)
+			+ " replaced=" + T4BB(replaced)
+			+ " missing=" + T4BB(missing)
+			+ " srv=" + srv.ToString()
+			+ " " + T4BState(), LogLevel.NORMAL);
 	}
 }
 
@@ -379,7 +466,7 @@ class ARMST_T4B_AddRoundWeaponAction : ScriptedUserAction
 		int srv = 0;
 		if (Replication.IsServer())
 			srv = 1;
-		Print("[ARMST_T4B-INSTALLED] #0 phase=action-init ev=useraction reason=register srv=" + srv.ToString(), LogLevel.NORMAL);
+		Print("[ARMST_T4B-INSTALLED] #0 op=0 phase=action-init ev=useraction reason=register srv=" + srv.ToString(), LogLevel.NORMAL);
 	}
 
 	override bool GetActionNameScript(out string outName)
@@ -424,8 +511,7 @@ class ARMST_T4B_AddRoundWeaponAction : ScriptedUserAction
 		BaseWeaponComponent wpn = T4BActionWeapon();
 		if (!wpn)
 		{
-			Print("[ARMST_T4B-INSTALLED] #" + m_iSeq.ToString()
-				+ " phase=reject ev=no-weapon srv=" + srv.ToString(), LogLevel.NORMAL);
+			Print("[ARMST_T4B-INSTALLED] phase=reject ev=no-weapon srv=" + srv.ToString(), LogLevel.NORMAL);
 			return;
 		}
 
@@ -433,22 +519,19 @@ class ARMST_T4B_AddRoundWeaponAction : ScriptedUserAction
 		IEntity weaponEnt = wpn.GetOwner();
 		if (!weaponEnt)
 		{
-			Print("[ARMST_T4B-INSTALLED] #" + m_iSeq.ToString()
-				+ " phase=reject ev=no-weapon-entity srv=" + srv.ToString(), LogLevel.NORMAL);
+			Print("[ARMST_T4B-INSTALLED] phase=reject ev=no-weapon-entity srv=" + srv.ToString(), LogLevel.NORMAL);
 			return;
 		}
 		if (m_t4bWeaponEntity == null || weaponEnt != m_t4bWeaponEntity)
 		{
-			Print("[ARMST_T4B-INSTALLED] #" + m_iSeq.ToString()
-				+ " phase=reject ev=wrong-weapon-owner srv=" + srv.ToString(), LogLevel.NORMAL);
+			Print("[ARMST_T4B-INSTALLED] phase=reject ev=wrong-weapon-owner srv=" + srv.ToString(), LogLevel.NORMAL);
 			return;
 		}
 
 		ARMST_T4B_WeaponProbe probe = ARMST_T4B_WeaponProbe.Cast(weaponEnt.FindComponent(ARMST_T4B_WeaponProbe));
 		if (!probe)
 		{
-			Print("[ARMST_T4B-INSTALLED] #" + m_iSeq.ToString()
-				+ " phase=reject ev=not-lab-weapon srv=" + srv.ToString(), LogLevel.NORMAL);
+			Print("[ARMST_T4B-INSTALLED] phase=reject ev=not-lab-weapon srv=" + srv.ToString(), LogLevel.NORMAL);
 			return;
 		}
 		if (!probe.IsBaselineDone())
@@ -464,6 +547,8 @@ class ARMST_T4B_AddRoundWeaponAction : ScriptedUserAction
 			return;
 		}
 
+		int opId = probe.T4BBeginOp();
+
 		IEntity magEntPre = magPre.GetOwner();
 		int a = magPre.GetAmmoCount();
 		int mx = magPre.GetMaxAmmoCount();
@@ -478,21 +563,21 @@ class ARMST_T4B_AddRoundWeaponAction : ScriptedUserAction
 			chamberedPre = muzzle.IsCurrentBarrelChambered();
 		}
 
-		probe.T4BLog("INSTALLED", "pre", "invoked");
+		probe.T4BLog("INSTALLED", "pre", "invoked", opId);
 
 		if (m_bUsed)
 		{
-			probe.T4BLog("INSTALLED", "reject", "already-used");
+			probe.T4BLog("INSTALLED", "reject", "already-used", opId);
 			return;
 		}
 		if (a >= mx)
 		{
-			probe.T4BLog("INSTALLED", "reject", "full");
+			probe.T4BLog("INSTALLED", "reject", "full", opId);
 			return;
 		}
 		if (a < 0)
 		{
-			probe.T4BLog("INSTALLED", "reject", "bad-ammo");
+			probe.T4BLog("INSTALLED", "reject", "bad-ammo", opId);
 			return;
 		}
 
@@ -527,20 +612,24 @@ class ARMST_T4B_AddRoundWeaponAction : ScriptedUserAction
 		bool gotOk = (a2 == want);
 		bool chamberUnchanged = (chamberedPre == chamberedPost);
 		bool muzzleSupplySame = (mzSupplyPre == mzSupplyPost);
-		bool verdictOk = gotOk && sameMagazine && sameOwner && chamberUnchanged;
 
-		string verdict = "mismatch";
-		if (verdictOk)
-			verdict = "ok";
+		// Immediate consistency ONLY (not proof of a real round).
+		bool setterReadbackOk = gotOk && sameMagazine && sameOwner && chamberUnchanged;
+		string imm = "mismatch";
+		if (setterReadbackOk)
+			imm = "ok";
 
-		probe.T4BLog("INSTALLED", "post", "write");
-		Print("[ARMST_T4B-INSTALLED] #" + m_iSeq.ToString()
-			+ " verdict=" + verdict
-			+ " want=" + want.ToString()
-			+ " got=" + a2.ToString()
+		probe.T4BLog("INSTALLED", "post", "write", opId);
+		Print("[ARMST_T4B-INSTALLED] op=" + opId.ToString()
+			+ " phase=post-detail ev=write"
+			+ " setter_call=1"
+			+ " setter_readback_ok=" + T4BB(setterReadbackOk)
+			+ " immediate_consistency=" + imm
+			+ " gotOk=" + T4BB(gotOk)
 			+ " sameMagazine=" + T4BB(sameMagazine)
 			+ " sameOwner=" + T4BB(sameOwner)
-			+ " gotOk=" + T4BB(gotOk)
+			+ " want=" + want.ToString()
+			+ " got=" + a2.ToString()
 			+ " chamberedBefore=" + T4BB(chamberedPre)
 			+ " chamberedAfter=" + T4BB(chamberedPost)
 			+ " chamberUnchanged=" + T4BB(chamberUnchanged)
@@ -549,7 +638,11 @@ class ARMST_T4B_AddRoundWeaponAction : ScriptedUserAction
 			+ " muzzleSupplySame=" + T4BB(muzzleSupplySame)
 			+ " barrelBefore=" + barrelPre.ToString()
 			+ " barrelAfter=" + barrelPost.ToString()
+			+ " gameplay_effect=UNVERIFIED"
 			+ " srv=" + srv.ToString(), LogLevel.NORMAL);
+
+		// Passive delayed persistence samples relative to THIS setter invocation.
+		probe.T4BSchedulePostWrite(opId, magPre, magEntPre, want);
 	}
 
 	string T4BB(bool v)

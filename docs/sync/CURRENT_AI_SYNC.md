@@ -381,6 +381,16 @@ historical material**; the owner approved **V3** (Issue #27 comment 5966570978,
   read-back, latch-before-write, muzzle supply vs chamber separated). Script SHA `CD424663…` →
   `F893F8D2…`; prefab `0F4CF3EC…` → `5F5AF777…`; local==published. Status
   `T4B_UNIFIED_DIAGNOSTIC_SOURCE_PUBLISHED_OWNER_RUN_REQUIRED`.
+- **T4b unified diagnostics revision (Issue #34 comment 5972318337):** review set
+  `T4B_UNIFIED_SOURCE_REVIEW_CHANGES_REQUIRED`. Fixed in the same lab/branch: (1) **delayed
+  persistence samples** at ~250 ms and ~1 s after `SetAmmoCount` (same mag component + owner +
+  expected value; `persistAmmo/stillInstalled/sameOwner/replaced/missing`; no re-issue, no
+  polling); (2) immediate result renamed to `setter_readback_ok`/`immediate_consistency`, delayed
+  persistence logged separately, `gameplay_effect=UNVERIFIED`, shared probe operation id `op=`;
+  (3) event cap counts only significant logged events (`m_iSigEvt`), `super` always runs. Script
+  SHA `F893F8D2…` → `EB3C548B36A77DABB399509951ACDE0B618009749B033BD2048234FD1FC48CCC`;
+  prefab/`addon.gproj`/`.meta` unchanged; local==published. Per-shot accounting not claimed.
+  Status `T4B_UNIFIED_DIAGNOSTIC_SOURCE_PUBLISHED_OWNER_RUN_REQUIRED`.
 
 ---
 
