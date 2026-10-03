@@ -187,10 +187,17 @@ historical material**; the owner approved **V3** (Issue #27 comment 5966570978,
   — full `lab_addon\` (30 files) + git-ignored `artifacts\MP133_Lab` + copies of lab
   knowledge files; `MANIFEST.sha256` (54 files) verified 0 mismatches.
   Restore guide: `reports/MP133_LAB_RESTORE_INSTRUCTIONS.md`.
-- **Critical known state:** neither the original MP-133 nor the lab MP-133 performs a
-  correct post-shot manual cycle; **cause unknown**. On equip the chamber fills for
-  both; after a shot + ordinary R the chamber stays empty and no `Weapon_Rack_Bolt`
-  is observed. Details: `reports/MP133_ANIMATION_LAB_E0_ISOLATION_PLAN.md`.
+- **Critical known state:** neither the original MP-133 nor the lab MP-133 performed a
+  correct post-shot manual cycle while the **old lab addon was enabled**; on equip the
+  chamber fills for both, after a shot + ordinary R the chamber stays empty and no
+  `Weapon_Rack_Bolt` is observed. **I1 (owner A/B) CONFIRMED:** all pump-action shotguns
+  fail ordinary R with the old lab enabled, and disabling the lab restores R →
+  `I1_LAB_INTERFERENCE_CONFIRMED; EXACT_CAUSE_UNKNOWN`. Leading hypothesis: the lab's
+  global `modded HandleWeaponReloading` override suppresses the native
+  `HandleWeaponReloadingDefault` for all weapons (the BC reference calls both
+  `super.HandleWeaponFire` and `HandleWeaponFireDefault`). Details:
+  `reports/MP133_V3_1_I1_LAB_INTERFERENCE_INVENTORY.md`,
+  `reports/MP133_ANIMATION_LAB_E0_ISOLATION_PLAN.md`.
 - **Git state at freeze:** knowledge `main` at `4be4d42`; Weapons `main` `b88bc53`
   (dirty anim `.meta`/SPAS-12 per restore); Core `main` `08cb1f38` (dirty weather/rdb).
 - **Controls decided:** ordinary R = native manual cycle (keep); hold R = native
@@ -200,5 +207,8 @@ historical material**; the owner approved **V3** (Issue #27 comment 5966570978,
   insert gate. Both `m_bLabInsertEnabled` gates are OFF.
 - **Next:** V3 Stage 1 requires the owner to prove the clean native baseline
   (`shot → short R pump → shot` ×3, hold-R inspection, tube/chamber baseline). Until
-  proven, report `BASELINE_RUNTIME_REQUIRED` and do **not** implement.
+  proven, report `BASELINE_RUNTIME_REQUIRED` and do **not** implement. Owner reports
+  pumps work with lab OFF but has not yet stated the exact 3-shot/hold-R result →
+  `V3_CLEAN_BASELINE_PARTIALLY_CONFIRMED`. Optional owner diagnostics P1–P5
+  (see V3.1 report) localize the cause.
 
