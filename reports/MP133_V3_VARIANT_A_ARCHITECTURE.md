@@ -1,6 +1,8 @@
 # MP-133 V3 — Variant A architecture (owner decision) + gates G0–G5
 
-**Status:** `V3_VARIANT_A_ARCHITECTURE_SELECTED / T4B_COMPILE_RECOVERY_OWNER_RECOMPILE_REQUIRED / REAL_DONOR_TRANSACTION_NOT_IMPLEMENTED`.
+**CURRENT CHECKPOINT (2026-10-03):** G0/G2 have owner-runtime offline evidence: synthetic `+1` in same installed M1 persists; native short-R chambers it; the owner reports a shot. G3 Phase A has been published (`eb2b323`). **G3-B1 donor-only source has been published in the EXISTING T4b addon** at [`a165e80`](https://github.com/Dubelkrya/Weapon_ARMA_X/commit/a165e804df1e571c58806bb39ea74e5eee993191), pending independent source review and owner Workbench/game test. G3-B2 actual transfer / G4 animation / G5 integration remain NOT authorised. Original T4b script remains SHA256 `D581B9C9…`; original weapon prefab was re-saved by the **owner** (SHA256 `29C70A78…`) and must not be silently rolled back. No separate T4c addon. Core SHIFT+R reload is not functional per owner (Issue #33), so prior G4 text about preserving a *working* Core SHIFT+R is historical, not a dependency. All earlier G0/G1/G2 pending wording below is historical. Astra, production Weapons/Core, worlds and owner files are unchanged under this task.
+
+**Historical design status:** `V3_VARIANT_A_ARCHITECTURE_SELECTED / T4B_COMPILE_RECOVERY_OWNER_RECOMPILE_REQUIRED / REAL_DONOR_TRANSACTION_NOT_IMPLEMENTED`.
 Documentation only — this file records the owner's architecture decision and execution gates
 (Issue #34 comment 5972748555). It is **not** authorization to implement G2–G5 or any transfer.
 
@@ -67,8 +69,8 @@ Choosing Variant A does not prove transfer, usability, or an eventual 1.9 path.
   with an explicit stop/partial-failure policy and review before implementation.
 - **G4 — integrate staged reload animation.** After G3: an isolated lab graph/ASI (not prod) following
   Chungus prepare/grab/insert/continue/stop; a reliable weapon-side or explicitly bridged event,
-  per-cycle token and exactly-once commit, safe interruption. Keep short-R manual pump, hold-R
-  inspection and frozen Core LSHIFT+R. Stock `CMD_Weapon_Reload=7` is excluded by the current MP-133
+  per-cycle token and exactly-once commit, safe interruption. Keep short-R manual pump and hold-R
+  inspection; Core SHIFT+R reload is not a verified working feature. Stock `CMD_Weapon_Reload=7` is excluded by the current MP-133
   graph; no blind command 7 or global `modded SCR_CharacterCommandHandlerComponent`.
 - **G5 — integration / MP / optional backend change.** Only after gated owner tests: independent real
   donor→installed target, chamber/shot/stop, network authority/replication, low FPS, Core compatibility,
@@ -82,4 +84,4 @@ original T2a/T4a, frozen V2/P2, Astra, ARMST Core, production Weapons, worlds/la
 user-owned untracked `reports/CORE_ARMST_READONLY_AUDIT.md`. No destructive git commands; preserve
 `.meta`/GUIDs. Agent cannot claim owner Workbench/test results.
 
-**Immediate next action:** G0 owner compile confirmation only. G1 passive code waits for review.
+**Current next action:** independent review of G3-B1 source at `a165e80`, then owner-only Workbench/game test. G3-B2 requires separate authorization.

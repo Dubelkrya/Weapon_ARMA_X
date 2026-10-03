@@ -8,6 +8,8 @@ one-shot `SetAmmoCount(+1)` → same installed M1 `1/10` stable +250 ms/+1 s; na
 then firing empties the chamber. Keep the lab byte-identical (script SHA
 `D581B9C9EE270725FFEC94C7685CBBCB2AB41DBA717F2B4FBCF8C4AC8DDCBEB1`).
 
+**CURRENT UPDATE (2026-10-03):** this report is the completed G3-A read-only design (published at `eb2b323`). A G3-B1 **donor-only** fixture has since been published at [`a165e80`](https://github.com/Dubelkrya/Weapon_ARMA_X/commit/a165e804df1e571c58806bb39ea74e5eee993191) in the SAME existing T4b addon; independent code review and owner Workbench/game test are pending. **No separate T4c addon**: this replaces the packaging proposal in §5, without altering that section's historical design record. G3-B2 real donor→installed-magazine transfer is NOT authorised. Historical result `BRANCH_HEAD: 996360f` describes the pre-publication base, not report commit `eb2b323`. Owner reports Core SHIFT+R reload is nonfunctional; possible Core RPC repacking is unverified for the installed MP-133 magazine.
+
 Labels: **SOURCE** (installed SDK 1.8.0.13 / project), **INFERENCE**, **UNRESOLVED**.
 
 ---
