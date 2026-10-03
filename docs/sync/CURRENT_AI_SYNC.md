@@ -391,6 +391,14 @@ historical material**; the owner approved **V3** (Issue #27 comment 5966570978,
   SHA `F893F8D2…` → `EB3C548B36A77DABB399509951ACDE0B618009749B033BD2048234FD1FC48CCC`;
   prefab/`addon.gproj`/`.meta` unchanged; local==published. Per-shot accounting not claimed.
   Status `T4B_UNIFIED_DIAGNOSTIC_SOURCE_PUBLISHED_OWNER_RUN_REQUIRED`.
+- **T4b prefab nesting fix (Issue #34 comment 5972404195):** the runtime block was a **duplicate
+  animation component** — `ARMST_T4B_WeaponAnimationComponent` was declared at **root level**
+  while the inherited `WeaponComponent > WeaponAnimationComponent` remained. Fixed by porting the
+  proven T2a nested form: `WeaponComponent "{CFBAA4B706BA66E8}" { components {
+  ARMST_T4B_WeaponAnimationComponent "{60B4EA76EB15F6E0}" { } } }` (real production instance GUIDs,
+  not guessed). No T2a graph/ASI/markers; script unchanged. Prefab SHA `5F5AF777…` →
+  `D522B0B338DC672AF4C55D6EEFF97C6473A81E94D8905846EE92DD31E882EA9A`; script `EB3C548B…`;
+  local==published. Status `T4B_PREFAB_NESTED_OWNER_RUN_REQUIRED`.
 
 ---
 

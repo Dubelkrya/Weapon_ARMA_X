@@ -119,7 +119,7 @@ and published copy are byte-identical.
 |---|---|
 | [`labs/ARMSTMP133T4B_InstalledMagProbe/addon.gproj`](../labs/ARMSTMP133T4B_InstalledMagProbe/addon.gproj) | `200E3156DED0C793CFA6FCF94767A4DC265FF28760307A158BCD4DF9696608A6` |
 | [`…/Scripts/Game/ARMST_T4B/ARMST_T4B_InstalledMagProbe.c`](../labs/ARMSTMP133T4B_InstalledMagProbe/Scripts/Game/ARMST_T4B/ARMST_T4B_InstalledMagProbe.c) | `EB3C548B36A77DABB399509951ACDE0B618009749B033BD2048234FD1FC48CCC` |
-| [`…/Prefabs/Test/ARMST_T4B_TestWeapon.et`](../labs/ARMSTMP133T4B_InstalledMagProbe/Prefabs/Test/ARMST_T4B_TestWeapon.et) | `5F5AF777617F6C82C2DD86A888F0C23023004414E008DB9EE7C193B3DFB7947F` |
+| [`…/Prefabs/Test/ARMST_T4B_TestWeapon.et`](../labs/ARMSTMP133T4B_InstalledMagProbe/Prefabs/Test/ARMST_T4B_TestWeapon.et) | `D522B0B338DC672AF4C55D6EEFF97C6473A81E94D8905846EE92DD31E882EA9A` |
 | [`…/Prefabs/Test/ARMST_T4B_TestWeapon.et.meta`](../labs/ARMSTMP133T4B_InstalledMagProbe/Prefabs/Test/ARMST_T4B_TestWeapon.et.meta) | `8EBCBED43046664A0A0669C2D8B03616B690422BC4A0F7E778B3972F7FF6733E` |
 
 Manifest: [`labs/ARMSTMP133T4B_InstalledMagProbe/MANIFEST.sha256`](../labs/ARMSTMP133T4B_InstalledMagProbe/MANIFEST.sha256).
@@ -233,3 +233,51 @@ per-shot ammo accounting is **not** claimed.
 **Files:** script SHA `F893F8D2…` → **`EB3C548B36A77DABB399509951ACDE0B618009749B033BD2048234FD1FC48CCC`**;
 prefab/`addon.gproj`/`.meta` unchanged; local==published. Status
 `T4B_UNIFIED_SOURCE_REVIEW_CHANGES_REQUIRED` → `T4B_UNIFIED_DIAGNOSTIC_SOURCE_PUBLISHED_OWNER_RUN_REQUIRED`.
+
+## 12. Prefab fix: nest the animation component inside `WeaponComponent` (grounded in the working T2a)
+
+Owner Workbench evidence (Issue #34 comment 5972404195, T2a runtime log) identified the root
+cause of the T4b runtime block: the T4b prefab declared
+`ARMST_T4B_WeaponAnimationComponent "{60B4EA76EB15F6E0}"` as a separate **root-level**
+`GenericEntity.components` element, while the inherited `WeaponComponent > WeaponAnimationComponent`
+remained in place → a duplicate/incompatible animation component (`cannot be combined`). The
+working T2a prefab (`armst_Shotgun_mp_133_T2A.et`) instead **nests** its subclass **inside**
+`WeaponComponent > components`.
+
+Fix (prefab only; the T4b script, the `+1` and the delayed samplers are unchanged):
+
+```
+GenericEntity : "{63FF6FDCA4E7E735}Prefabs/Weapons/Russian/Shotgun/armst_Shotgun_mp_133.et" {
+ ID "D3E4F5061728394A"
+ components {
+  ARMST_T4B_WeaponProbe "{E4F5061728394B5C}" {
+  }
+  WeaponComponent "{CFBAA4B706BA66E8}" {
+   components {
+    ARMST_T4B_WeaponAnimationComponent "{60B4EA76EB15F6E0}" {
+    }
+   }
+  }
+  ActionsManagerComponent "{A29AE67FF4D82B0F}" {
+   additionalActions +{
+    ARMST_T4B_AddRoundWeaponAction "{F5061728394B5C6D}" {
+     ParentContextList { "default" }
+     UIInfo UIInfo "{061728394B5C6D7E}" { Name "T4b: +1 into installed mag" }
+    }
+   }
+  }
+ }
+}
+```
+
+The parent `WeaponComponent "{CFBAA4B706BA66E8}"` and nested `WeaponAnimationComponent
+"{60B4EA76EB15F6E0}"` GUIDs are the **actual production MP-133** instance GUIDs (verified against
+`armst_Shotgun_mp_133.et`), never guessed. Only the nested placement was ported — **no** T2a
+graph/ASI/ANM, player-marker or global character hook. Exactly one `WeaponAnimationComponent` and
+one `ActionsManagerComponent` remain.
+
+Prefab SHA `5F5AF777…` → **`D522B0B338DC672AF4C55D6EEFF97C6473A81E94D8905846EE92DD31E882EA9A`**;
+script SHA unchanged `EB3C548B…`; local==published. Owner first gate: a fresh T4b instance must
+show exactly one nested lab subclass, no second `WeaponAnimationComponent`, no `cannot be
+combined`; then `[ARMST_T4B-EVT]` / `[ARMST_T4B-CMD]` and `baseline 0/10`; only then the
+synthetic `+1`.

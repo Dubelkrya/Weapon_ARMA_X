@@ -1,9 +1,13 @@
 GenericEntity : "{63FF6FDCA4E7E735}Prefabs/Weapons/Russian/Shotgun/armst_Shotgun_mp_133.et" {
  ID "D3E4F5061728394A"
  components {
-  ARMST_T4B_WeaponAnimationComponent "{60B4EA76EB15F6E0}" {
-  }
   ARMST_T4B_WeaponProbe "{E4F5061728394B5C}" {
+  }
+  WeaponComponent "{CFBAA4B706BA66E8}" {
+   components {
+    ARMST_T4B_WeaponAnimationComponent "{60B4EA76EB15F6E0}" {
+    }
+   }
   }
   ActionsManagerComponent "{A29AE67FF4D82B0F}" {
    additionalActions +{
