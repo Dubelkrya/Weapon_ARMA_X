@@ -103,3 +103,24 @@ The two ResourceDB warnings (`Collimator_dot_A.edds.meta`,
 task; untouched.
 
 Status: `T2A_COMPILE_FIX_APPLIED; OWNER WORKBENCH RECOMPILE REQUIRED`.
+
+### Class-helper fix (owner Workbench, latest)
+
+Next owner compile reported `Missing Component Class for
+'ARMST_T2A_WeaponAnimationComponentClass'`. Enfusion requires a companion `_Class`
+declaration for the script component. Added, per the official component docs and the
+project's `[ComponentEditorProps]` precedent:
+
+```
+[ComponentEditorProps(category: "ARMST/T2A", description: "T2a diagnostic weapon animation listener")]
+class ARMST_T2A_WeaponAnimationComponentClass : WeaponAnimationComponentClass
+{
+}
+```
+
+Base verified in the local SDK: `WeaponAnimationComponentClass` exists
+(`interfaceWeaponAnimationComponentClass.html`). The component, prefab assignment and the
+character-side `modded` handler are unchanged; `resourceDatabase.rdb` removed again for a
+clean rescan.
+
+Status: `T2A_CLASS_HELPER_ADDED; OWNER WORKBENCH RECOMPILE REQUIRED`.
