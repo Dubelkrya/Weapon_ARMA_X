@@ -1,8 +1,9 @@
 # MP-133 — V3.1: I1 lab-interference inventory + hypotheses (read-only)
 
-**Status:** `I1_LAB_INTERFERENCE_CONFIRMED; EXACT_CAUSE_UNKNOWN;
-V3_CLEAN_BASELINE_PARTIALLY_CONFIRMED`. Read-only. Old V2.x lab archived & disabled;
-no code migration, no Workbench/game by agent; production/Core/graph/ASI/ANM untouched.
+**Status:** `LEGACY_ADDON_INTERFERENCE_CONFIRMED / LEGACY_ROOT_CAUSE_UNRESOLVED /
+V3_STAGE1_PENDING` (owner review, comment 5966728301). Read-only. Old V2.x lab
+archived & disabled; no code migration, no Workbench/game by agent;
+production/Core/graph/ASI/ANM untouched.
 Source: Issue #27 comment 5966704171.
 
 Owner A/B: **all pump-action shotguns fail ordinary R while the old lab addon is
@@ -44,36 +45,54 @@ mutates the reload command inside `OnRackBoltMDown` (LSHIFT+R).
 
 | # | Hypothesis | Evidence | Likelihood |
 |---|---|---|---|
-| **H1** | The global `modded HandleWeaponReloading` override prevents the native `HandleWeaponReloadingDefault` from executing for **all** weapons (calling only `super` is insufficient). | The supplied BC reference overrides `HandleWeaponFire` and explicitly calls **both** `super.HandleWeaponFire` and `HandleWeaponFireDefault` — implying `super` alone does not reach the native default in this build. The lab is the **only** addon overriding `HandleWeaponReloading`. I1 is weapon-agnostic (all pumps). | **HIGH** |
+| **H1** | The global `modded HandleWeaponReloading` override prevents the native reload path from executing for all weapons. | **UNCONFIRMED.** The BC reference calls both `super.HandleWeaponFire` and `HandleWeaponFireDefault`, but that does **not** prove `super.HandleWeaponReloading` bypasses the native default. Bohemia Enforce docs state `super` calls the prior implementation in the modded-class chain. Adding `...Default()` unverified risks a **double run**. | **UNCONFIRMED** (candidate, not leading) |
 | H2 | The global `modded SCR_CharacterControllerComponent` overrides (`OnInit`/`OnControlledByPlayer`/`OnApplyControls`) interfere. | They run for every character; but they call `super` and never mutate the reload command. | MEDIUM |
 | H3 | Re-registering 12 animation events in `OnInit` changes event handling. | Should be idempotent; the handler is passive. | LOW–MEDIUM |
-| H4 | Lab↔production resource GUID/sub-object collisions. | Concrete: lab `MP133_Lab.agr` shares `AnimSrcGCT {6906E742614591FE}` and `Debug {6906E7426145918F}` with production `MP133.agr`; `.ast` group GUIDs `{6906E742614BA07E}/{6906E742614BA070}` and `.asi` RBF `{6906E74261498C00}` are shared; `.agf` node GUIDs copied. | LOW — `6906E742614591FE` occurs **only** in `MP133.agr` in production (checked), so it cannot explain other shotguns. |
+| H4 | Lab↔production resource GUID/sub-object collisions. | Concrete: lab `MP133_Lab.agr` shares `AnimSrcGCT {6906E742614591FE}` and `Debug {6906E7426145918F}` with production `MP133.agr`; `.ast` group GUIDs `{6906E742614BA07E}/{6906E742614BA070}` and `.asi` RBF `{6906E74261498C00}` are shared; `.agf` node GUIDs copied. | UNPROVEN — `6906E742614591FE` occurs only in `MP133.agr` in a scoped code-search, which hints but does not prove MP-133-scope; other interactions elsewhere cannot be categorically ruled out. |
 | H5 | Input action collision on `ARMST_LIGHT_RELOAD_ACTION`. | Core + lab both listen; affects LSHIFT+R, not ordinary R. | LOW |
 
-**Leading:** H1. The only lab code on the ordinary-R path is the global
-`HandleWeaponReloading` override; removing the lab makes R work.
+**No hypothesis is confirmed.** The owner A/B proves the legacy addon *contributes*
+(addon ON → all pumps fail; OFF → work), not the offending method. The only authorized
+follow-up to localize it is **P2** (below).
 
 ---
 
-## 3. One-variable owner-only diagnostics (proposed; not implemented)
+## 3. Diagnostics (corrected per owner review) — P2 only
 
-Each uses a **copy** of the archived lab, changes exactly one variable, is reversible,
-and is run by the owner only (agent never launches Workbench/game). Test ordinary R on
-an **original** shotgun (ideally 3× `shot → short R → shot`) with one copy enabled.
+Owner corrections: **P1** (removing all `Scripts/`) can orphan component classes
+referenced by lab prefabs → not an interpretable scripts-vs-resources A/B; **P4**
+(removing the Character file) can remove methods invoked by the retained handler →
+compile failure; **P5** must be specified as a buildable standalone minimal test, not
+assumed safe; **P3** (`HandleWeaponReloadingDefault`) **NOT APPROVED** — Enforce `super`
+already chains the prior implementation, so an extra `Default` call may double-run reload.
 
-- **P1 — scripts vs resources:** copy with `Scripts/` removed (keep prefab/graph/ASI/ANM).
-  If R works → culprit is scripts; if broken → resources.
-- **P2 — isolate the handler:** copy with `ARMST_MP133_Lab_CommandHandler.c` removed
-  (keep Character/Component). If R works → the `HandleWeaponReloading` override is the cause (H1).
-- **P3 — super vs default:** if P2 is positive, a copy whose non-lab pass-through calls
-  `HandleWeaponReloadingDefault` explicitly (mirroring the BC pattern). If R works →
-  confirms H1's mechanism.
-- **P4 — isolate the controller:** copy with `ARMST_MP133_Lab_Character.c` removed
-  (keep handler). Isolates H2.
-- **P5 — minimal presence:** copy with only a minimal, non-lab pass-through
-  `HandleWeaponReloading` (no fields/logging). Isolates the mere presence of the override.
+**Only authorized optional follow-up — P2** (owner-run; agent never launches the game):
+1. Make a separately labeled, reversible **copy** of the archived V2 lab (do not edit the
+   frozen archive).
+2. Exclude only `Scripts/Game/ARMST_MP133_Lab/ARMST_MP133_Lab_CommandHandler.c`.
+3. Static dependency/compilation review (done here, §3.1).
+4. Owner: enable the P2 copy, verify startup compiled cleanly and that the old handler is
+   genuinely absent, test an **original** pump shotgun ordinary R (3× `shot → R → shot`),
+   then restore lab OFF.
+5. If R recovers → handler involvement is supported (exact reason still unknown). If
+   startup fails → P2 **BLOCKED**, no causal diagnosis.
 
-Do NOT patch the archived lab in place; always work on a labelled copy.
+### 3.1 P2 static dependency / compilation review (read-only, this session)
+
+- `ARMST_MP133_Lab_CommandHandler.c` defines only the `modded
+  SCR_CharacterCommandHandlerComponent` override plus its own fields
+  (`m_iLabDbgLastCmdId`, `m_fLabDbgAccum`) and a private helper (`LabDiagReloadCmd`).
+  Nothing outside this file references them.
+- It **calls** `ctrl.LabInsertEnabledOnCurrentWeapon()` and
+  `ctrl.LabRequestInsertFromHandler(...)`, both defined in
+  `ARMST_MP133_Lab_Character.c`; removing the handler leaves those Character methods
+  simply unused (no dangling reference).
+- No prefab/`.et`/`.meta`/graph/ASI references the handler file or its symbols.
+- Conclusion: excluding the handler file should compile cleanly and leave the Character
+  and Component files valid. Static assessment only — real compilation is `OWNER TEST`.
+
+Do NOT patch the archived lab in place; always work on a labelled copy. No other
+diagnostic (P1/P3/P4/P5) is authorized.
 
 ---
 
@@ -91,13 +110,24 @@ Do NOT patch the archived lab in place; always work on a labelled copy.
 
 ---
 
-## 5. Stage 1 status
+## 5. Stage 1 status and V3 priority
 
-Owner reports all pumps work with lab OFF, but the **exact** acceptance details
-(3× `shot→short R→shot`, hold-R inspection, tube/chamber baseline) are **not yet
-explicitly confirmed** → `V3_CLEAN_BASELINE_PARTIALLY_CONFIRMED`. Mark Stage 1 **PASS**
-only when the owner reports those precise results.
+**Stage 1 = PENDING.** Owner reports all pumps work with lab OFF, but the exact
+acceptance details (3× `shot → ordinary short R → shot`, hold-R inspection, tube/chamber
+baseline, no magazine replacement) are **not yet reported** →
+`V3_STAGE1_PENDING`. Mark Stage 1 PASS only on the owner's precise result.
 
-**Next:** owner reports the exact Stage 1 result and, optionally, P1/P2 to localize the
-cause. Agent performs no implementation until Stage 1 is PASS and the cause approach is
-reviewed.
+**V3 priority (no V2 salvage cycles):** keep the old addon OFF; capture the clean
+original baseline; after Stage 1 PASS, research (read-only) and propose:
+1. **Safe R input arbitration** — a weapon-scoped way to get R DOWN/UP edges without a
+   global `HandleWeaponReloading` override (resolve the vanilla reload action name, or a
+   guarded input listener / weapon component). Must keep tap=native pump, hold=native
+   inspection, and never run native R in parallel with scripting.
+2. **Native pump-completion signal** — prove a reliable completion signal
+   (`Weapon_Rack_Bolt`/`Weapon_EnableFire`/reload type clearing/`IsReloading`) before any
+   insert scheduling; `reloadType=1` alone is not proof.
+3. Then a **new isolated weapon-scoped V3 lab** (distinct GUIDs, backup + SHA manifest),
+   changing one variable at a time.
+
+**Nothing in I1 authorizes V3 code changes or a global `HandleWeaponReloading` override.**
+No implementation by the agent until Stage 1 is PASS and the approach is reviewed.

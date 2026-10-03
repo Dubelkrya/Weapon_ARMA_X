@@ -130,15 +130,16 @@ tube/chamber). Если не подтверждено — `BASELINE_RUNTIME_REQU
 наполняется у обоих. Отчёт: `reports/MP133_ANIMATION_LAB_E0_ISOLATION_PLAN.md`.
 Статус `SHARED_ENVIRONMENT_MANUAL_R_REGRESSION; root cause UNKNOWN`.
 
-**I1 (Issue #27, comment 5966704171) — `I1_LAB_INTERFERENCE_CONFIRMED; EXACT_CAUSE_UNKNOWN`:**
+**I1 (Issue #27, comment 5966704171; corrected by 5966728301) —
+`LEGACY_ADDON_INTERFERENCE_CONFIRMED / LEGACY_ROOT_CAUSE_UNRESOLVED / V3_STAGE1_PENDING`:**
 владелец A/B подтвердил, что **все помповые дробовики** не реагируют на обычный R при
-включённом старом lab-аддоне, а при его отключении R/pump работают. Ведущая гипотеза:
-глобальный `modded HandleWeaponReloading` лабы подавляет нативный
-`HandleWeaponReloadingDefault` для всех оружий (BC-reference зовёт и
-`super.HandleWeaponFire`, и `HandleWeaponFireDefault`). Разбор и one-variable
-диагностики P1–P5: `reports/MP133_V3_1_I1_LAB_INTERFERENCE_INVENTORY.md`. V2.x-лаба
-остаётся отключённой/архивной; глобальное перехватывание запрещено; V3 Stage 1
-частично подтверждён (`V3_CLEAN_BASELINE_PARTIALLY_CONFIRMED`).
+включённом старом lab-аддоне, а при его отключении R/pump работают. **Ни одна гипотеза
+не подтверждена**; глобальный `modded HandleWeaponReloading` — лишь кандидат (Enforce
+`super` вызывает предыдущую реализацию в цепочке modded-классов, поэтому прежняя H1
+снята, P3 отозван). Разрешён только опциональный **P2** (убрать лишь файл handler на
+отдельной обратимой копии, после статического review). V2.x-лаба остаётся
+отключённой/архивной; глобальное перехватывание запрещено. Разбор:
+`reports/MP133_V3_1_I1_LAB_INTERFERENCE_INVENTORY.md`.
 
 Read-only факты:
 - `HandleWeaponReloading` переопределяет **только** lab; для не-lab/гейта OFF —

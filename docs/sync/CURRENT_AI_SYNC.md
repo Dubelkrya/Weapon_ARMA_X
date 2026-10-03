@@ -192,10 +192,11 @@ historical material**; the owner approved **V3** (Issue #27 comment 5966570978,
   chamber fills for both, after a shot + ordinary R the chamber stays empty and no
   `Weapon_Rack_Bolt` is observed. **I1 (owner A/B) CONFIRMED:** all pump-action shotguns
   fail ordinary R with the old lab enabled, and disabling the lab restores R →
-  `I1_LAB_INTERFERENCE_CONFIRMED; EXACT_CAUSE_UNKNOWN`. Leading hypothesis: the lab's
-  global `modded HandleWeaponReloading` override suppresses the native
-  `HandleWeaponReloadingDefault` for all weapons (the BC reference calls both
-  `super.HandleWeaponFire` and `HandleWeaponFireDefault`). Details:
+  `LEGACY_ADDON_INTERFERENCE_CONFIRMED / LEGACY_ROOT_CAUSE_UNRESOLVED / V3_STAGE1_PENDING`.
+  **No hypothesis is confirmed**; the global `HandleWeaponReloading` override is only a
+  candidate (Enforce `super` chains, so the earlier H1 is unconfirmed and P3 is
+  withdrawn). Only optional follow-up: **P2** (remove only the handler file on a labelled
+  reversible copy, after static review). Details:
   `reports/MP133_V3_1_I1_LAB_INTERFERENCE_INVENTORY.md`,
   `reports/MP133_ANIMATION_LAB_E0_ISOLATION_PLAN.md`.
 - **Git state at freeze:** knowledge `main` at `4be4d42`; Weapons `main` `b88bc53`
