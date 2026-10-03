@@ -361,6 +361,15 @@ historical material**; the owner approved **V3** (Issue #27 comment 5966570978,
   manager remains; prefab identity retained; script SHA unchanged `BE8EF1AF…`. Owner must verify
   the resolved Workbench tree (one manager, 3 actions) before the +1 test. Status
   `T4A_SINGLE_MANAGER_PATCH_PREPARED_OWNER_RUN_REQUIRED`.
+- **T4a parent-context fix (2026-10-03, branch `t4a/interaction-patch`):** owner screenshot
+  (commit `81304d1`) confirmed one manager + preserved stock actions, but
+  `ARMST_T4A_AddRoundUserAction` had **`Parent Context List (0)`** and label `pick-up` → not
+  visible in game. Fix: added `ParentContextList { "default" }` and an explicit
+  `UIInfo UIInfo { Name "T4a: add 1 test round" }` to the action in the T4a prefab
+  (property names/syntax taken from the base-game snapshot `catalog/core/MuzzleDevice_base.et`);
+  single inherited manager `{F092E6B0537754FD}` and stock pickup/attach preserved; new UIInfo
+  GUID `{7E91DCCDA07F1635}`. Owner verifies `Parent Context List (1): default` + label before
+  the +1 test. Status `T4A_CONTEXT_PATCH_PREPARED_OWNER_RUN_REQUIRED`.
 
 ---
 

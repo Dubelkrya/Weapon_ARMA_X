@@ -1,6 +1,6 @@
 # MP-133 V3 — T4a: disposable `SetAmmoCount` semantics probe
 
-**Status:** `T4A_SINGLE_MANAGER_PATCH_PREPARED_OWNER_RUN_REQUIRED`.
+**Status:** `T4A_CONTEXT_PATCH_PREPARED_OWNER_RUN_REQUIRED`.
 Isolated lab only. Production Weapons/Core, frozen V2/P2, the T2A diagnostic and Astra's
 graph lab are byte-identical. Source: Issue #27 comments 5970853781, 5971080837, 5971156650.
 Knowledge-repo changes are on branch `t4a/interaction-patch` (PR #31 concurrent; main untouched).
@@ -17,6 +17,10 @@ Labels: **SOURCE** (installed SDK / project+snapshot files), **INFERENCE**, **UN
   (`3A5D97896C4BD2F1`), because the magazine chain already inherits one. Two managers conflict;
   the new action sat on the wrong manager. **This patch removes the duplicate and adds the
   action to the inherited manager.**
+- Run 3 (owner screenshot, commit `81304d1`): single manager fixed, stock actions preserved, but
+  `ARMST_T4A_AddRoundUserAction` had **`Parent Context List (0)`** (empty) and a wrong UI name
+  (`pick-up`), so the action did not appear in game. **This patch binds it to the inherited
+  `default` context and sets an explicit label.**
 
 ## 2. Inherited manager identified (evidence)
 
@@ -45,6 +49,12 @@ GenericEntity : "{B0DFDF7AAA9C5D39}Prefabs/Weapons/Magazines/12ga/armst_12ga_Buc
   ActionsManagerComponent "{F092E6B0537754FD}" {
    additionalActions +{
     ARMST_T4A_AddRoundUserAction "{6D80CBBC9F7E0524}" {
+     ParentContextList {
+      "default"
+     }
+     UIInfo UIInfo "{7E91DCCDA07F1635}" {
+      Name "T4a: add 1 test round"
+     }
     }
    }
   }
@@ -58,7 +68,13 @@ GenericEntity : "{B0DFDF7AAA9C5D39}Prefabs/Weapons/Magazines/12ga/armst_12ga_Buc
 - The T4a action is added with the array-merge operator `+{` (project-proven syntax, e.g.
   `m_aAuthoredLabels +{`, `ClassesFilter +{`), so the inherited `additionalActions` list is
   extended, not replaced.
-- No new `ActionContexts`; the action uses the inherited default context.
+- **`ParentContextList { "default" }`** binds the action to the inherited `default` context
+  (the exact property name/syntax is taken from the base-game snapshot
+  `catalog/core/MuzzleDevice_base.et`, which serializes `ParentContextList { "muzzle" }` for
+  its stock actions). No new context is introduced.
+- **`UIInfo UIInfo "{7E91DCCDA07F1635}" { Name "T4a: add 1 test round" }`** sets the action label
+  (same structure as stock `SCR_AttachItemFromInventoryAction → UIInfo … Name "#AR-UserAction_Attach"`),
+  replacing the fallback `pick-up` shown in Workbench.
 - Removed the duplicate manager GUID `3A5D97896C4BD2F1` and the lab context GUIDs
   `4B6EA89A7D5CE302` / `5C7FBAAB8E6DF413`.
 
@@ -75,9 +91,10 @@ the disposable baseline (`m_iT4AStartAmmo`, 0…max) on init. Logs `[ARMST_T4A-S
 
 - Retained: prefab resource `{B8D52F01E4C35A79}`, `.et` entity ID `C9E63012F5D46B8A`; probe
   `{DAF7412306E57C9B}`; new action `{6D80CBBC9F7E0524}`; lab project `ARMSTMP133T4ASetProbe`
-  `{A7C41E90D3B24F68}`.
-- Prefab has exactly **1** `ActionsManagerComponent`. New GUIDs unique; `{F092E6B0537754FD}` is
-  the inherited GUID (appears in snapshot corpus + this prefab).
+  `{A7C41E90D3B24F68}`. New `UIInfo` child GUID `{7E91DCCDA07F1635}`.
+- Prefab has exactly **1** `ActionsManagerComponent`; `ParentContextList { "default" }` present
+  once; new GUIDs unique; `{F092E6B0537754FD}` is the inherited GUID (appears in snapshot corpus
+  + this prefab).
 - Script unchanged: SHA-256 `BE8EF1AF0869385F2C55E764A53F3E15C67524A93E3D89D9212D9A8B4FF8700A`;
   braces 22/22, ASCII clean; no `modded`/input/spawn/inventory/RPC/fire calls.
 - Unchanged: Weapons dirty 29, Core dirty 4; T2A `E978EDAF…`; V2 `654B2437C5689D4D`.
@@ -86,9 +103,11 @@ the disposable baseline (`m_iT4AStartAmmo`, 0…max) on init. Logs `[ARMST_T4A-S
 ## 6. Owner steps (inspect tree FIRST, then run)
 
 1. Loadout: base + `ARMST-PLATFORM---Weapons` + `ARMSTMP133T4A_SetProbe`; Core/V2/P2 OFF.
-2. **Workbench tree check first:** the resolved `ARMST_T4A_TestMagazine.et` must show **exactly
-   one** `ActionsManagerComponent` with the stock pickup/attach actions **and** the T4a action.
-   STOP if a second manager or missing stock actions appear.
+2. **Workbench check first (one properties screenshot):** the resolved
+   `ARMST_T4A_AddRoundUserAction` must show **`Parent Context List (1): default`** and a
+   recognisable label (not `pick-up`); the manager must be Enabled with **one**
+   `ActionsManagerComponent` and **3** actions (stock pickup/attach + T4a). STOP if the context
+   is empty, the label is wrong, a second manager appears, or a stock action is missing.
 3. Compile `Game` (STOP on own SCRIPT(E)); place **one** disposable magazine; confirm
    `phase=init` / `phase=baseline` (0/10).
 4. Invoke the contextual action **"T4a: add 1 test round"** → `pre ammo=0/10` → `post ammo=1/10
