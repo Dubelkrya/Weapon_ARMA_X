@@ -253,6 +253,12 @@ historical material**; the owner approved **V3** (Issue #27 comment 5966570978,
   Report: `reports/CI_29_SEPARATE_OFFLINE_AND_LOCAL_TESTS.md`.
 - **#28:** Phase A preflight **PASS**; isolated candidate scan **completed** (deterministic,
   corpus preserved byte-identically). Candidate diverges substantially (generated files
-  292→203; NEW 32 / DELETED 121 / CHANGED 169; entities 270→181) → **PUBLICATION NOT
-  READY**, needs owner diff review. Report:
-  `reports/CATALOG_28_RESCAN_PREFLIGHT.md`.
+  292→203; NEW 32 / DELETED 121 / CHANGED 169; entities 270→181) → **PUBLICATION BLOCKED**.
+  **GUID crosswalk done:** of 121 deleted, **91 `RELOCATED_OR_RENAMED`** (same source GUID
+  present in candidate), **30 `SOURCE_INTENTIONALLY_ABSENT`** (all 30 also absent at
+  committed HEAD); 0 `SCANNER_COVERAGE_OR_BUG`; 0 internal stale scanner refs (all
+  `Prefabs/Weapons/Rifles/` are `base_game_snapshot:`/supplied); MP-133 preserved by GUID
+  (`63FF6FDCA4E7E735` old `armst_mp_133.json` → `armst_shotgun_mp_133.json`). Candidate
+  passes `check_data_quality` (exit 0) but derived pages are out of date and must be
+  regenerated for a promotion set. Reports:
+  `reports/CATALOG_28_RESCAN_PREFLIGHT.md`, `reports/CATALOG_28_GUID_RECONCILIATION.md`.
