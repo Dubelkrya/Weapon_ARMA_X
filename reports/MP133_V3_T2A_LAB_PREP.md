@@ -152,3 +152,36 @@ Status: `T2A_LAB_READY_FOR_OWNER_RUN`.
 **Unrelated log findings (NOT lab-owned; not fixed):** Remington 870 / MP-153 unresolved
 `.anm`; unknown `ARMST_ITEMS_STATS_COMPONENTS` (a Core class — Core is disabled in this
 loadout); repeated EntityPool `armst_Ammo_12ga.et`. Separate task.
+
+---
+
+## T2a run 1 — results + v2 diagnostic (2026-10-03)
+
+Owner run with the diagnostic prefab: the character handler fired (`[ARMST_T2A-CHR]` ×6;
+t≈0 ×2, t≈0.0333 ×4; `isServer=1`); **no** `[ARMST_T2A-WPN]`; the diagnostic prefab load
+was not confirmed in the log.
+
+Interpretation: the player marker **does** reach the character-side invoker, but by this
+log alone we cannot tell whether the weapon component (a) was not active, (b) receives no
+player events, or (c) receives weapon events but not the player marker.
+
+**v2 diagnostic changes (lab-only):**
+- weapon-side: generic weapon-event trace (first ~30 events) + explicit `MARKER` line —
+  proves whether the component receives events at all;
+- character-side: one-shot subscription guard (`m_bT2ASubscribed`) + `init #n` counter;
+- 1 Hz `[ARMST_T2A-CHR] weapon prefab=… hasT2AWpnComp=0|1` — confirms the diagnostic
+  prefab is equipped and its entity actually carries `ARMST_T2A_WeaponAnimationComponent`
+  (i.e. the subclass assignment took effect);
+- char handler now logs `MARKER #n … ctrl=0|1 isServer=…`.
+
+**Next run maps the cause:** if `hasT2AWpnComp=1` and `[ARMST_T2A-WPN] event …` appears but
+no `MARKER`, the player event does **not** reach the weapon component; if
+`hasT2AWpnComp=0`, the subclass assignment was not applied to the equipped prefab; if no
+`[ARMST_T2A-WPN]` at all, the weapon-side callback is not being invoked.
+
+**Unrelated log findings (NOT lab; not fixed):** `ARMST_12g_SpreadEffect` (a Core class —
+Core is off in this loadout; affects 12ga ammo), `ARMST_ITEMS_STATS_COMPONENTS` /
+`m_iCustomGridHeight`, Remington 870 / MP-153 unresolved `.anm`, EntityPool
+`armst_Ammo_12ga.et`. Separate task.
+
+Status: `T2A_RUN1_DONE_PLAYER_CONFIRMED; WEAPON_SIDE_PENDING; V2_DIAGNOSTIC_READY`.

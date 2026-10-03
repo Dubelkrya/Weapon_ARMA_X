@@ -234,10 +234,13 @@ historical material**; the owner approved **V3** (Issue #27 comment 5966570978,
   12 of `T2AClips/P_MP133_T2A_Bolt.txa`; logging-only script (weapon
   `WeaponAnimationComponent.OnAnimationEvent` + character `GetOnAnimationEvent`; no
   R/reload/ammo). Static checks PASS; marker absent from `MP133_T2A_weapon.asi`.
-  Status `T2A_LAB_READY_FOR_OWNER_RUN`: the owner imported the marker ANM
-  (`{3581B839F53FC345}`) and the agent repointed both `ReloadActionBolt` rows in
-  `MP133_T2A_player.asi`; weapon ASI marker-free; generated rdb removed for a clean
-  rescan. Report: `reports/MP133_V3_T2A_LAB_PREP.md`.
+  Status `T2A_RUN1_DONE_PLAYER_CONFIRMED; WEAPON_SIDE_PENDING; V2_DIAGNOSTIC_READY`.
+  Run 1 (marker ANM `{3581B839F53FC345}` wired): `[ARMST_T2A-CHR]` fired ×6
+  (t≈0/0.0333, `isServer=1`); **no** `[ARMST_T2A-WPN]`; diagnostic prefab load not
+  confirmed. v2 lab-only diagnostic added: weapon-side generic event trace + MARKER,
+  one-shot subscription guard + `init #n`, and a 1 Hz
+  `weapon prefab=… hasT2AWpnComp=0|1` confirmation (subclass assignment check). Report:
+  `reports/MP133_V3_T2A_LAB_PREP.md`.
 - **Next:** owner confirms the isolated T2a loadout, imports the marker clip, and runs
   T2a (ordinary short R on `MP-133 [T2A-DIAG]`); the agent inspects which receiver logs
   `[ARMST_T2A-CHR]` vs `[ARMST_T2A-WPN]`. Preserve the existing native pump and
