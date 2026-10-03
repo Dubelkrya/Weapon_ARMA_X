@@ -344,6 +344,14 @@ historical material**; the owner approved **V3** (Issue #27 comment 5966570978,
   can be tested. No transfer/donor/inventory/weapon/chamber; production/Core/T2A/V2/Astra
   untouched (Weapons 29, Core 4; T2A `E978EDAF…`). Static-only by agent (no compile/run).
   Status `T4A_LAB_PREPARED_OWNER_RUN_REQUIRED`.
+- **T4a interaction fix (2026-10-03, branch `t4a/interaction-patch`):** the key-P approach was
+  unusable (owner run 1: only `phase=init/baseline`; no context interaction; a global listener
+  could mutate multiple instances). Replaced with a **standard per-entity context interaction**:
+  the disposable magazine now carries `ActionsManagerComponent` + a `ScriptedUserAction`
+  (`ARMST_T4A_AddRoundUserAction`, label "T4a: add 1 test round") that runs on `GetOwner()`
+  only; input configs removed. Baseline component retained (`m_iT4AStartAmmo`). Static PASS;
+  script SHA `BE8EF1AF…`; no transfer/donor/inventory/weapon; Production/Core/T2A/V2/Astra
+  untouched. Status `T4A_INTERACTION_PATCH_PREPARED_OWNER_RUN_REQUIRED`.
 
 ---
 

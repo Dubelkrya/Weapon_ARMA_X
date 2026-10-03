@@ -1,114 +1,106 @@
 # MP-133 V3 — T4a: disposable `SetAmmoCount` semantics probe
 
-**Status:** `T4A_LAB_PREPARED_OWNER_RUN_REQUIRED`.
-New isolated lab only. Production Weapons/Core, frozen V2/P2, the T2A diagnostic and Astra's
-graph lab are byte-identical. Source: Issue #27 comment 5970853781.
+**Status:** `T4A_INTERACTION_PATCH_PREPARED_OWNER_RUN_REQUIRED`.
+Isolated lab only. Production Weapons/Core, frozen V2/P2, the T2A diagnostic and Astra's
+graph lab are byte-identical. Source: Issue #27 comments 5970853781 (T4a) and 5971080837
+(interaction fix). Knowledge-repo changes are on branch `t4a/interaction-patch` (PR #31 is
+concurrent; main untouched).
 
 Labels: **SOURCE** (installed SDK / project file), **INFERENCE**, **UNRESOLVED**.
 
 ---
 
-## 1. Goal & isolation
+## 1. Why this patch
 
-Prove **only** whether `BaseMagazineComponent.SetAmmoCount(int)` is a usable write primitive on
-a **disposable, non-production, unattached** test magazine — no transfer, no donor, no player
-inventory, no weapon/chamber mutation, no production edits. This does **not** validate an
-installed magazine or engine replication (explicitly out of T4a scope).
+The first T4a lab exposed only a custom input action (key **P**) registered by a global
+`AddActionListener` on each placed magazine. Owner run 1 proved only `phase=init` /
+`phase=baseline`; no `phase=pre/post/reject`, and the owner could not interact with the
+magazine. Two defects: (a) no **standard, discoverable interaction**, and (b) a **global**
+listener per placed magazine would let one keypress mutate several instances. This patch
+replaces the input-key approach with a **per-entity context interaction** and removes the
+input config entirely.
 
-New lab addon: `ARMSTMP133T4A_SetProbe` (**SOURCE** `addon.gproj`): `ID ARMSTMP133T4ASetProbe`,
-`GUID A7C41E90D3B24F68`, dependencies `58D0FB3206B6F859` (base) + `6A70E400C54051DC` (Weapons).
+## 2. New design (context interaction)
 
----
+The disposable test magazine now carries an `ActionsManagerComponent` whose
+`additionalActions` contains a `ScriptedUserAction` child — the standard Reforger pattern
+(**SOURCE** Core loot prefab `Prefabs/LOOT_BOX/3_TIER/3_TIER_hidden_Loot_army.et`:
+`ActionsManagerComponent { ActionContexts { UserActionContext … } additionalActions { ARMST_OpenStorageAction … } }`).
 
-## 2. Installed-SDK evidence (**SOURCE**)
+- Action label (**SOURCE** `GetActionNameScript`): **"T4a: add 1 test round"**.
+- It appears in the normal interaction menu when the player is near / looks at the magazine
+  (the `UserActionContext` + `Position` define the interaction point).
+- `PerformAction(IEntity pOwnerEntity, IEntity pUserEntity)` operates on `GetOwner()` — the
+  **specific magazine the player interacted with**, so only that instance is affected.
+- One-shot guarded write: reject (`no-magazine` / `already-used` / `full`) without writing;
+  otherwise `SetAmmoCount(current+1)` once, then re-read and compare identity.
+- `CanBeShownScript`/`CanBePerformedScript` return true so the guards run and the reject
+  reason is logged (a disabled action would be silent).
+- Server-authoritative broadcast (`HasLocalEffectOnlyScript=false`, `CanBroadcastScript=true`),
+  matching the project-proven user-action pattern.
+- Baseline ammo (0…max) is still applied once by `ARMST_T4A_SetterProbe` on init from the
+  owner attribute `m_iT4AStartAmmo` (disposable object only), so the full case is testable.
 
-| Item | Signature / location |
-|---|---|
-| Ammo read | `proto external int BaseMagazineComponent.GetAmmoCount()`, `GetMaxAmmoCount()` |
-| Ammo write | `proto external void BaseMagazineComponent.SetAmmoCount(int ammoCount)` |
-| Owning entity | `proto external IEntity BaseMagazineComponent.GetOwner()` |
-| Component init | `ScriptComponent.OnPostInit(IEntity owner)` / `OnDelete(IEntity owner)` |
-| Input listener | `Game.GetInputManager()` → `ActionManager.AddActionListener(string, EActionTrigger, ActionListenerCallback)` / `RemoveActionListener` |
-| Custom action | project pattern `Configs/System/chimeraInputCommon.conf` (`Action …` + `ActionContext … ActionRefs +{ … }`) and `Configs/System/keyBindingMenu.conf` (Core: `ARMST_LIGHT_RELOAD_ACTION`) |
+**Removed:** `Configs/System/chimeraInputCommon.conf` and `Configs/System/keyBindingMenu.conf`
+(the key P approach) — no global input action/listener remains.
 
-Setters are **not** assumed authoritative/persistent/replicated — this run is the test.
+## 3. Installed-SDK evidence (**SOURCE**)
 
----
+`ScriptedUserAction`: `void PerformAction(IEntity pOwnerEntity, IEntity pUserEntity)`;
+`bool GetActionNameScript(out string outName)`; `bool GetActionDescriptionScript(out string outName)`;
+`bool CanBeShownScript(IEntity user)`; `bool CanBePerformedScript(IEntity user)`;
+`void Init(IEntity pOwnerEntity, GenericComponent pManagerComponent)`. `ActionsManagerComponent`
+manages `ActionContexts` + `additionalActions`. Project example: `class ARMST_OpenStorageAction :
+ScriptedUserAction` (no companion `Class`).
 
-## 3. New lab files (allowlist) and GUIDs
+## 4. Files & GUIDs
 
 | File | Purpose |
 |---|---|
-| `ARMSTMP133T4A_SetProbe/addon.gproj` | new lab project (`ARMSTMP133T4ASetProbe`, GUID `A7C41E90D3B24F68`) |
-| `Scripts/Game/ARMST_T4A/ARMST_T4A_SetterProbe.c` | `ScriptComponent` probe (`[BaseContainerProps()]`, `OnPostInit`/`OnDelete`) |
-| `Prefabs/Test/ARMST_T4A_TestMagazine.et` + `.et.meta` | disposable magazine; inherits `{B0DFDF7AAA9C5D39}…armst_12ga_Buckshot.et`; carries the probe |
-| `Configs/System/chimeraInputCommon.conf` | action `ARMST_T4A_SETTER_ACTION` (default key **P**) added to `CharacterGeneralContext` |
-| `Configs/System/keyBindingMenu.conf` | keybinding entry ("ARMST T4A" category) |
+| `ARMSTMP133T4A_SetProbe/addon.gproj` | new lab project `ARMSTMP133T4ASetProbe`, GUID `A7C41E90D3B24F68`, deps base + Weapons |
+| `Scripts/Game/ARMST_T4A/ARMST_T4A_SetterProbe.c` | `ARMST_T4A_SetterProbe` (baseline) + `ARMST_T4A_AddRoundUserAction` (context action) |
+| `Prefabs/Test/ARMST_T4A_TestMagazine.et` + `.et.meta` | disposable magazine (inherits `{B0DFDF7AAA9C5D39}armst_12ga_Buckshot.et`) + `ActionsManagerComponent` + action + baseline component |
 
-New GUIDs: test-mag meta `B8D52F01E4C35A79`, `.et` ID `C9E63012F5D46B8A`, probe component
-`DAF7412306E57C9B`, action `EB08423417F68DAC`, source `FC19534528079EBD`, click-filter
-`0D2A64563918AFCE`, keybind category `1E3B75674A29B0DF`, entry `2F4C86785B3AC1E0`.
-All verified unique across the addon set (0 pre-existing collisions); new resources only.
-
----
-
-## 4. Behaviour
-
-- On component init: subscribe to `ARMST_T4A_SETTER_ACTION`; apply a **baseline** ammo to the
-  disposable magazine from an owner-set attribute `m_iT4AStartAmmo` (0…max, default 0) — this is
-  a setup write on the **disposable object only**, so the full case can be tested.
-- On the action (default **P**): one guarded write, one-shot latch:
-  - `# phase=pre` — logs identity tag + prefab + `ammo/max` + `used` + `srv`;
-  - reject **without writing** if the magazine is missing, `already-used`, or `full`;
-  - otherwise `SetAmmoCount(a+1)`, then `# phase=post` logs `want`, resulting `ammo/max`,
-    `sameIdentity` (owner-entity reference unchanged) and `srv`.
-- One write per component instance. Logs: `[ARMST_T4A-SETTER] #n phase=init|baseline|pre|post|reject …`.
-
-No `modded`, no spawn/delete, no inventory, no donor, no chamber/weapon mutation, no RPC,
-no auto-trigger.
-
----
+Prefab resource identity retained: meta `B8D52F01E4C35A79`, `.et` ID `C9E63012F5D46B8A`.
+New GUIDs: probe `DAF7412306E57C9B`, ActionsManager `3A5D97896C4BD2F1`, context
+`4B6EA89A7D5CE302`, point `5C7FBAAB8E6DF413`, action `6D80CBBC9F7E0524`. All verified unique
+across the addon set (each 1 occurrence); new resources only.
 
 ## 5. Static checks
 
-- Braces 16/16, parens 100/100, ASCII clean; no line with >9 `+`.
-- Forbidden-call scan clean (`modded class`, `SpawnEntity`, `TryRemoveItem`, `TryInsertItem`,
-  `Launch(`, `Rpc(`, `HandleWeaponFire`, `SetReloadWeapon`, `GetInventory` all 0).
-- Script SHA-256 `7761C5EC70D863D118FB637F77260AAF9918A49A1136FD698982053B52AE22AF`.
+- Script: braces 22/22, parens 124/124, ASCII clean, no line with >9 `+`.
+- Forbidden scan clean: `modded class`, `AddActionListener`, `SpawnEntity`, `TryRemoveItem`,
+  `TryInsertItem`, `Launch(`, `Rpc(`, `HandleWeaponFire`, `SetReloadWeapon` all 0.
+- Script SHA-256 `BE8EF1AF0869385F2C55E764A53F3E15C67524A93E3D89D9212D9A8B4FF8700A`.
 - Unchanged: Weapons dirty 29, Core dirty 4; T2A script `E978EDAF…`; V2 `MP133_Lab.agf`
-  `654B2437C5689D4D`. Agent cannot compile — **compilation is NOT verified**.
-
----
+  `654B2437C5689D4D`. Agent cannot compile — **compilation/interaction NOT verified**.
 
 ## 6. Owner run steps (owner-only)
 
-1. Loadout: base engine + `ARMST-PLATFORM---Weapons` + **`ARMSTMP133T4A_SetProbe`**. Core and
-   V2/P2 OFF. Recompile `Game` in Workbench; **STOP on any SCRIPT(E)** not in the base game.
-2. In a test world, **place** `Prefabs/Test/ARMST_T4A_TestMagazine.et` (do not put it in the
-   player inventory; do not attach it to any weapon). Confirm the `[ARMST_T4A-SETTER] #0
-   phase=init … phase=baseline …` lines in the log.
-3. Stand near the placed magazine; press the lab key (default **P**; rebind under
-   Settings → Controls → "ARMST T4A" if needed).
-4. **+1 case** (attribute `m_iT4AStartAmmo = 0`): expect `phase=pre ammo=0/10` →
-   `phase=post … ammo=1/10 sameIdentity=1`. Press again → `phase=reject reason=already-used`.
-5. **Full case**: set the placed component's `m_iT4AStartAmmo` to `10` (Workbench Properties),
-   re-enter, press P → `phase=reject reason=full` (no write).
-6. Inspect the item visibly and the log; send the full `[ARMST_T4A-SETTER]` excerpt, the exact
-   loadout, and the observed ammo before/after.
-
-Expected if `SetAmmoCount` works locally: `ammo` changes to `want`, `sameIdentity=1`, no third
-entity, no SCRIPT(E). If the write has unexpected effects (identity change, wrong value, errors),
-**STOP** and report — no retry.
+1. Loadout: base engine + `ARMST-PLATFORM---Weapons` + **`ARMSTMP133T4A_SetProbe`**; Core and
+   V2/P2 OFF. Recompile `Game`; **STOP on any own/resource SCRIPT(E)**.
+2. Place **one** `Prefabs/Test/ARMST_T4A_TestMagazine.et` in a test world (not inventory, not
+   on a weapon). Confirm `[ARMST_T4A-SETTER] #0 phase=init … phase=baseline …`.
+3. Walk up to the magazine and select the contextual action **"T4a: add 1 test round"** in the
+   standard interaction menu.
+4. **+1 case** (`m_iT4AStartAmmo=0`): expect `phase=pre ammo=0/10` → `phase=post … ammo=1/10
+   sameIdentity=1`. Invoke again → `phase=reject reason=already-used`.
+5. **Full case**: set the placed component's `m_iT4AStartAmmo=10` in Workbench Properties,
+   re-enter, invoke the action → `phase=reject reason=full` (no write).
+6. If several magazines are placed, confirm the log records **only the interacted instance**
+   (one `entTag` per invocation).
+7. Send the full `[ARMST_T4A-SETTER]` excerpt, loadout, and the visible ammo before/after.
 
 ## 7. Risks / UNRESOLVED
 
-- Config merge of the lab `chimeraInputCommon.conf` with the base/Core one and keybind
-  registration are **UNRESOLVED** until the owner compiles and the action fires.
-- `SetAmmoCount` authority/persistence/replication are **UNRESOLVED**; a local disposable-mag
-  result does **not** validate an installed magazine or multiplayer.
+- Whether the `ActionsManagerComponent` + `additionalActions` action is **visible and
+  invocable** in the running game is **UNRESOLVED** until the owner run (the loot prefab proves
+  the pattern, not this entity).
+- `SetAmmoCount` authority/persistence/replication are **UNRESOLVED**; a disposable-mag result
+  does not validate an installed magazine or multiplayer.
 - Agent cannot compile/run: all runtime behaviour is **OWNER-RUNTIME** only.
 
 ## 8. Stop
 
-`T4A_LAB_PREPARED_OWNER_RUN_REQUIRED`. STOP for owner Workbench/game evidence. Installed-mag
-test, donor depletion, real transfer and MP authority remain separately authorised.
+`T4A_INTERACTION_PATCH_PREPARED_OWNER_RUN_REQUIRED`. STOP for owner Workbench/game evidence.
+Installed-mag test, donor depletion, real transfer and MP authority remain separately authorised.
