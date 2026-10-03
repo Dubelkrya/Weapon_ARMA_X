@@ -1,0 +1,28 @@
+GenericEntity {
+ ID "2B3C4D5E6F708192"
+ components {
+  MeshObject "3C4D5E6F708192A3" {
+   Object "{72DCDBE34DA53AB1}Assets/Mag_12g/MagazineWell12ga.xob"
+  }
+  ActionsManagerComponent "4D5E6F708192A3B4" {
+   ActionContexts {
+    UserActionContext "5E6F708192A3B4C5" {
+     Position PointInfo "6F708192A3B4C5D6" {
+      Offset 0 0.1 0
+     }
+    }
+   }
+   additionalActions {
+    ARMST_T4B_G3B1_ConsumeAction "708192A3B4C5D6E7" {
+     ParentContextList {
+      "default"
+     }
+     UIInfo UIInfo "8192A3B4C5D6E7F8" {
+      Name "G3B1: consume 1 from donor mag"
+     }
+    }
+   }
+  }
+ }
+ coords 0 0 0
+}

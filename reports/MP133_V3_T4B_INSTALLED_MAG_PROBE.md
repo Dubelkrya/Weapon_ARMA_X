@@ -119,7 +119,10 @@ and published copy are byte-identical.
 |---|---|
 | [`labs/ARMSTMP133T4B_InstalledMagProbe/addon.gproj`](../labs/ARMSTMP133T4B_InstalledMagProbe/addon.gproj) | `200E3156DED0C793CFA6FCF94767A4DC265FF28760307A158BCD4DF9696608A6` |
 | [`…/Scripts/Game/ARMST_T4B/ARMST_T4B_InstalledMagProbe.c`](../labs/ARMSTMP133T4B_InstalledMagProbe/Scripts/Game/ARMST_T4B/ARMST_T4B_InstalledMagProbe.c) | `D581B9C9EE270725FFEC94C7685CBBCB2AB41DBA717F2B4FBCF8C4AC8DDCBEB1` |
-| [`…/Prefabs/Test/ARMST_T4B_TestWeapon.et`](../labs/ARMSTMP133T4B_InstalledMagProbe/Prefabs/Test/ARMST_T4B_TestWeapon.et) | `D522B0B338DC672AF4C55D6EEFF97C6473A81E94D8905846EE92DD31E882EA9A` |
+| [`…/Scripts/Game/ARMST_T4B/ARMST_T4B_G3B1_DonorConsume.c`](../labs/ARMSTMP133T4B_InstalledMagProbe/Scripts/Game/ARMST_T4B/ARMST_T4B_G3B1_DonorConsume.c) | `AA32AEC171A3BB25E6C64958551866DC446EE566F0AE072C45A3E57DDF4C8633` |
+| [`…/Prefabs/Test/ARMST_T4B_G3B1_DonorDevice.et`](../labs/ARMSTMP133T4B_InstalledMagProbe/Prefabs/Test/ARMST_T4B_G3B1_DonorDevice.et) | `12B073DD60318491752888DED79CD3807E8B25AFB171694CB796054C86CB8502` |
+| [`…/Prefabs/Test/ARMST_T4B_G3B1_DonorDevice.et.meta`](../labs/ARMSTMP133T4B_InstalledMagProbe/Prefabs/Test/ARMST_T4B_G3B1_DonorDevice.et.meta) | `AAE07E095434B9078508EAA81EB7E52F2E535434052D32C10616F8016D8F3F9F` |
+| [`…/Prefabs/Test/ARMST_T4B_TestWeapon.et`](../labs/ARMSTMP133T4B_InstalledMagProbe/Prefabs/Test/ARMST_T4B_TestWeapon.et) | `29C70A78B7CBA7678B84A57A29EBF32127A1ED2575742270D9CFACAB78F2AE83` (owner Workbench re-save; local==published) |
 | [`…/Prefabs/Test/ARMST_T4B_TestWeapon.et.meta`](../labs/ARMSTMP133T4B_InstalledMagProbe/Prefabs/Test/ARMST_T4B_TestWeapon.et.meta) | `8EBCBED43046664A0A0669C2D8B03616B690422BC4A0F7E778B3972F7FF6733E` |
 
 Manifest: [`labs/ARMSTMP133T4B_InstalledMagProbe/MANIFEST.sha256`](../labs/ARMSTMP133T4B_InstalledMagProbe/MANIFEST.sha256).
@@ -379,3 +382,39 @@ observable:**
 `[ARMST_T4B-CMD]`, baseline, `+1` + delayed `250 ms`/`1 s`). Resume the ammo-loss tests A/B/C only
 after a compiling build **and** review of the Phase 2 slot-change method. Agent static checks are
 not compile proof.
+
+## 15. G3-B1 — isolated inventory-donor consume test (owner approved)
+
+G3-B1 (Issue #34 comment 5973033517) tests **one-round consumption from a disposable inventory
+donor**, separate from any weapon transfer. Implemented inside the existing addon as a separate,
+clearly named fixture; the verified T4b weapon prefab / script / probe / action are unchanged.
+
+- **New files:** `Scripts/Game/ARMST_T4B/ARMST_T4B_G3B1_DonorConsume.c` and
+  `Prefabs/Test/ARMST_T4B_G3B1_DonorDevice.et` (+ `.meta`).
+- **Device:** placeable `GenericEntity` (12ga magazine mesh) with an `ActionsManagerComponent` and
+  one context action **"G3B1: consume 1 from donor mag"** (`ParentContextList { "default" }`).
+- **Logic:** on invoke (server-authoritative; one-shot latch set BEFORE the write),
+  `SCR_InventoryStorageManagerComponent.GetAllRootItems` → the first **root** inventory item with a
+  `BaseMagazineComponent` and `ammo>=1` whose `GetAmmoType(0)` matches the equipped weapon
+  magazine's ammo type (when known); prechecks ownership (`Contains`), slot
+  (`InventoryItemComponent.GetParentSlot().GetID()`) and membership; then `SetAmmoCount(a-1)`.
+  Logs `[ARMST_T4B-G3B1]` pre/post with donor item/mag reference tags, ammo/max, ammoType, member,
+  slotId, `setter_readback_ok`, `gameplay_effect=UNVERIFIED`, `srv`; passive `+250 ms` and `+1 s`
+  samples with `persistAmmo / stillSame / member`.
+- **Rejects without writes:** `no-user`, `no-inventory`, `already-used`, `no-donor-magazine`,
+  `zero-ammo`, `incompatible-ammo`.
+- **Not implemented:** donor→weapon transfer (G3-B2); installed magazine/chamber untouched.
+
+**Owner test (only after compile):** place the G3B1 device; hold one disposable 12ga donor magazine
+**directly** in inventory (e.g. `10/10`) with the lab weapon equipped; invoke the action once →
+expect a single round deduction (`10/10 → 9/10`) with the same donor item/mag identity and
+inventory membership intact, `+250 ms`/`+1 s` `persistAmmo=1`; check the visible inventory count.
+Repeat → `already-used`. Empty donor → `zero-ammo`; mismatched ammo → `incompatible-ammo`; do not
+delete an emptied donor item.
+
+**Note:** the local T4b prefab was re-saved by the owner's Workbench (added `m_iT4BStartAmmo 0`,
+`coords`, and normalized `additionalActions {`); the nested
+`WeaponComponent > ARMST_T4B_WeaponAnimationComponent` is preserved and the lab is otherwise
+unchanged. It was re-published byte-identically (`29C70A78…`) so local==remote.
+
+**STATUS:** `G3B1_LAB_SOURCE_PUBLISHED_OWNER_RUN_REQUIRED`; G3-B2 not authorized.

@@ -439,6 +439,18 @@ historical material**; the owner approved **V3** (Issue #27 comment 5966570978,
   owner-only G3-B test proposed (separate T4c fixture recommended). No code/lab change;
   `GAMEPLAY_FILES_CHANGED=0`. Status `G3_PHASE_A_READONLY_AUTHORIZED /
   G3_REAL_DONOR_TRANSACTION_NOT_IMPLEMENTED`; NEXT_GATE `STOP_FOR_OWNER_REVIEW`.
+- **G3-B1 (owner approved, Issue #34 comment 5973033517):** added a SEPARATE, clearly named
+  inventory-donor consume fixture inside the existing `ARMSTMP133T4B_InstalledMagProbe` (verified
+  T4b untouched): `Scripts/Game/ARMST_T4B/ARMST_T4B_G3B1_DonorConsume.c` +
+  `Prefabs/Test/ARMST_T4B_G3B1_DonorDevice.et`(+`.meta`). Context action
+  "G3B1: consume 1 from donor mag" -> one-shot, server-authoritative; finds a root inventory
+  magazine (`GetAllRootItems`, ammo>=1, `GetAmmoType(0)` matching the equipped mag), prechecks
+  ownership/slot/membership, `SetAmmoCount(a-1)`, logs `[ARMST_T4B-G3B1]` pre/post/+250ms/+1s
+  (`persistAmmo/stillSame/member`); rejects no-donor/zero-ammo/incompatible/already-used without
+  writes. No donor->weapon transfer (G3-B2 not authorized). T4b prefab re-saved by Workbench
+  (added `m_iT4BStartAmmo`/`coords`) - republished byte-identically (`29C70A78...`),
+  local==published. Script SHA `AA32AEC1...`; new GUIDs unique. Status
+  `G3B1_LAB_SOURCE_PUBLISHED_OWNER_RUN_REQUIRED`.
 
 ---
 
