@@ -628,6 +628,21 @@ historical material**; the owner approved **V3** (Issue #27 comment 5966570978,
   `10/10`, target `2/10`, one action → donor `9/10`/target `3/10`, sum 12, immediate/+250ms/+1s.
   Status `G3B2_WRITE_TEST_SOURCE_PREPARED / ALL_PUBLISHED_GATES_OFF / OWNER_WRITE_NOT_AUTHORIZED /
   WRITE_TEST_PREPARED_WRITE_OFF / WAITING_INDEPENDENT_REVIEW`; STOP after push.
+- **G3-B2 write-OFF exact-owner dry-run PASS + WRITE-ON fixture (comment 5974314749, 2026-10-04):**
+  owner runtime on `WriteTest` confirmed `preflightEligible=1 exactOwnerMatch=1` 12× with zero B2
+  setters (`writeEnabled=0`), after 4 `no-permitted-storage` rejects; log did not establish a clean
+  10/10 donor + 2/10 target baseline (target had drifted to 9/10 then ~6/10 via wider gameplay).
+  Two bounded changes: (1) `T4B2OwnerExactName` now also requires a syntactically valid 16-hex
+  `{GUID}` (new `T4B2IsHexGuid`) before the full raw `{GUID}path` exact equality — minimal
+  validation without weakening identity; OFF path unchanged. (2) New disposable **WRITE-ON** fixture
+  `ARMST_T4B_G3B2_WriteOn_TestWeapon.et` (`A9282110...`, meta `59463FC1...`, GUIDs
+  `{D7E8F90112233445}`/`E8F9011223344556`/`F901122334455667`/`0112233445566778`/`1223344556677889`):
+  direct child of production MP-133, T4b probe, one B2 action with `m_bG3B2WriteEnabled 1`, ALICE
+  firstaid slot 0, `m_iT4BStartAmmo 2`. The 3 existing OFF fixtures stay `m_bG3B2WriteEnabled 0`.
+  Script SHA `4578310B...`; braces 132/132, parens 726/726, ASCII; local==published; T4b/G3B1/Core/
+  production untouched. Single transfer NOT authorized. Status `EXACT_OWNER_OFF_PASS /
+  G3B2_WRITE_ON_SOURCE_PREPARED / WRITE_ON_NOT_AUTHORIZED / FIRST_TRANSFER_PENDING`; STOP for
+  independent review + owner recompile, then a *separate* transfer authorization.
 
 ---
 

@@ -408,7 +408,7 @@ Workbench/game run performed by the agent.
 **New files** (local lab + published copy, local==published):
 
 - `Scripts/Game/ARMST_T4B/ARMST_T4B_G3B2_Transfer.c` — new `ScriptedUserAction`
-  `ARMST_T4B_G3B2_TransferAction`; SHA256 `7D34069957A81BFCB188448409478E18F91CC3D4740ACD47097284D3346E96CF` (rev 6).
+  `ARMST_T4B_G3B2_TransferAction`; SHA256 `4578310B1B65B8597D16FCE799C2D0B97BB3D2896C8FBA9CFCD7F1FE452AC131` (rev 7).
 - `Prefabs/Test/ARMST_T4B_G3B2_TestWeapon.et` — SHA256 `68F67CAB0C17201882FCB9D587E3F3F196231B46E4FCB3951DD8BDC185873E04`.
 - `Prefabs/Test/ARMST_T4B_G3B2_TestWeapon.et.meta` — SHA256 `315C7AB6983B68C63C0AEC1D30625C5CA4B7477D72C1C75DF5291AC7438F9287`.
 
@@ -642,3 +642,46 @@ write-test prefab `BBED7C0E6179451DEF295AAA0506AB0964259DE5B672B643B1DCC926B21A6
 preflight `DAD5B732…` prefabs unchanged; static braces 130/130, parens 713/713, ASCII.
 `COMPILER_UNVERIFIED / WAITING_OWNER_RECOMPILE`.
 **STATUS:** `G3B2_WRITE_TEST_SOURCE_PREPARED / ALL_PUBLISHED_GATES_OFF / OWNER_WRITE_NOT_AUTHORIZED / WRITE_TEST_PREPARED_WRITE_OFF / WAITING_INDEPENDENT_REVIEW`.
+
+### 11.6 WRITE-ON disposable fixture + formal GUID validation (Issue #34 comment 5974314749) — rev 7
+
+Owner runtime evidence `5974314749` confirmed the write-OFF exact-owner dry-run PASS
+(12× `preflightEligible=1` + `exactOwnerMatch=1`, zero B2 setters, `writeEnabled=0`). Two bounded
+changes:
+
+**1. Formal GUID syntax in the strict write-path check.** `T4B2OwnerExactName` previously only
+required braces; it now also requires a **16-hex-digit** GUID and a non-empty path, then keeps the
+**full raw `{GUID}path` exact equality** with the engine string — minimal syntactic validation
+**without** weakening identity. New helper `T4B2IsHexGuid` (L387–398); the tightened gate is
+L400–426 (rejects: empty, non-`{`, `}` at ≤1, no path after `}`, non-hex/!16 GUID, missing
+storage/owner/prefab, raw mismatch). The OFF read-only path is unchanged (lenient normalized match +
+`exactOwnerMatch` diagnostic).
+
+**2. New disposable WRITE-ON fixture.** `Prefabs/Test/ARMST_T4B_G3B2_WriteOn_TestWeapon.et`
+(+ new unique `.meta`), a direct child of the production MP-133 with the T4b probe and one B2 action:
+`m_iT4BStartAmmo 2`, **`m_bG3B2WriteEnabled 1`**, whitelist
+`{02DF51DB063ABD36}…Vest_ALICE_firstaid.et`, slot 0. New GUIDs (unique): meta
+`{D7E8F90112233445}`, instance `E8F9011223344556`, probe `F901122334455667`, action
+`0112233445566778`, UIInfo `1223344556677889`. The prefab UI name says `WRITE ENABLED`. The three
+existing OFF fixtures are **unchanged** (still `m_bG3B2WriteEnabled 0`).
+
+**Gate matrix:**
+
+| Fixture | whitelist | `m_bG3B2WriteEnabled` |
+|---|---|---|
+| canonical `…_TestWeapon.et` | empty | 0 |
+| `…_Preflight_TestWeapon.et` | ALICE slot 0 | 0 |
+| `…_WriteTestWeapon.et` | ALICE slot 0 | 0 |
+| `…_WriteOn_TestWeapon.et` (new) | ALICE slot 0 | **1** |
+
+Only the new fixture is write-capable; it is **not** added to any world/layer and is **not** invoked
+by the agent. Invoking its action once performs the single donor-first transfer (§3–§4) and then
+latches/quarantines. This publication is **source preparation only** — the transfer requires
+independent review, an owner recompile, and a *separate* explicit authorization.
+
+Script SHA `7D340699…` → `4578310B1B65B8597D16FCE799C2D0B97BB3D2896C8FBA9CFCD7F1FE452AC131`;
+WriteOn prefab `A92821108FBC351F53CF1690FB8557CC2FBFC289BDAF9DC2CBC16ED644EE0A2D`, meta
+`59463FC13F1D72D616CF021E64E4ABFBC23F51CC6DC2B6565DE07B39E72CB34B`; canonical `68F67CAB…`,
+preflight `DAD5B732…`, write-test `BBED7C0E…` unchanged; static braces 132/132, parens 726/726, ASCII.
+`COMPILER_UNVERIFIED / WAITING_OWNER_RECOMPILE`.
+**STATUS:** `G3B2_WRITE_ON_SOURCE_PREPARED / WRITE_ON_NOT_AUTHORIZED / WAITING_INDEPENDENT_REVIEW`.

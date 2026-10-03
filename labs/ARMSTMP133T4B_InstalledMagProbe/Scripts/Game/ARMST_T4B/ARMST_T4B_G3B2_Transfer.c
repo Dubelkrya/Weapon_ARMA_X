@@ -383,10 +383,25 @@ class ARMST_T4B_G3B2_TransferAction : ScriptedUserAction
 		return s.Substring(close + 1, s.Length() - close - 1);
 	}
 
-	// STRICT write-path identity: the whitelist value MUST be the full "{GUID}path" form and MUST
-	// equal the engine's actual storage-owner resource string EXACTLY (GUID and path). Fail closed
-	// on empty/bare/malformed value, missing resource, or uncertain API. Not used for OFF read-only
-	// diagnostics (which keep the lenient normalized match in T4B2StorageAllowed).
+	// Minimal syntactic GUID check: exactly 16 hex digits (both cases).
+	bool T4B2IsHexGuid(string s)
+	{
+		if (s.Length() != 16)
+			return false;
+		string hex = "0123456789ABCDEFabcdef";
+		for (int i = 0; i < 16; i++)
+		{
+			if (hex.IndexOf(s.Substring(i, 1)) < 0)
+				return false;
+		}
+		return true;
+	}
+
+	// STRICT write-path identity: the whitelist value MUST be the full "{GUID}path" form with a
+	// syntactically valid 16-hex-digit GUID and MUST equal the engine's actual storage-owner resource
+	// string EXACTLY (GUID and path). Fail closed on empty/bare/malformed value, missing resource, or
+	// uncertain API. Not used for OFF read-only diagnostics (which keep the lenient normalized match
+	// in T4B2StorageAllowed).
 	bool T4B2OwnerExactName(IEntity item)
 	{
 		if (item == null)
@@ -395,7 +410,12 @@ class ARMST_T4B_G3B2_TransferAction : ScriptedUserAction
 			return false;
 		if (!m_sG3B2AllowedStorageOwner.StartsWith("{"))
 			return false;
-		if (m_sG3B2AllowedStorageOwner.IndexOf("}") < 0)
+		int close = m_sG3B2AllowedStorageOwner.IndexOf("}");
+		if (close <= 1)
+			return false;
+		if (close + 1 >= m_sG3B2AllowedStorageOwner.Length())
+			return false;
+		if (!T4B2IsHexGuid(m_sG3B2AllowedStorageOwner.Substring(1, close - 1)))
 			return false;
 		BaseInventoryStorageComponent st = T4B2StorageOf(item);
 		if (!st)
