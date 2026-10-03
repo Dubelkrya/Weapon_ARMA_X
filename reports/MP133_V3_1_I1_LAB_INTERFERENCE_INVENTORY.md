@@ -77,6 +77,17 @@ already chains the prior implementation, so an extra `Default` call may double-r
 5. If R recovers → handler involvement is supported (exact reason still unknown). If
    startup fails → P2 **BLOCKED**, no causal diagnosis.
 
+### 3.0 P2 copy prepared (this session)
+
+- Path: `C:\Users\yshky\Documents\MP133_Lab_Backups\P2_no_handler\ARMST_MP133_AnimationLab`
+- Removed exactly one file: `Scripts/Game/ARMST_MP133_Lab/ARMST_MP133_Lab_CommandHandler.c`.
+  Everything else byte-identical to the archive (same GUIDs).
+- `MANIFEST_P2.sha256` (30 entries) verified 0 mismatches; `P2_README.md` has the test steps.
+- Static verification: 0 remaining `.c` references to the removed handler symbols; the
+  filename survives only in the generated `resourceDatabase.rdb`.
+- The archive and the live addon were **not** modified. Only one lab addon (same addon
+  ID/GUID) may be enabled at a time.
+
 ### 3.1 P2 static dependency / compilation review (read-only, this session)
 
 - `ARMST_MP133_Lab_CommandHandler.c` defines only the `modded
