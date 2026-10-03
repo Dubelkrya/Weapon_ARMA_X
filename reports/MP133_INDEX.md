@@ -38,6 +38,7 @@
 | [`MP133_V3_T2C_COMMAND_TRACE.md`](MP133_V3_T2C_COMMAND_TRACE.md) | T2c lab-only passive `OnCharacterCommand(commandID,intValue,floatValue)` trace in `ARMST_T2A_WeaponAnimationComponent`; installed-SDK (not 1.13.2) compatibility verified. Owner run required; no input/graph/ammo change. |
 | [`MP133_V3_T3_MAG_IDENTITY_TRACE.md`](MP133_V3_T3_MAG_IDENTITY_TRACE.md) | T3 lab-only passive `[ARMST_T3-MAG]` physical-magazine identity trace (mag entity reference tags, ammo/max, chamber) around the native magazine lifecycle; getter-only, installed-SDK verified, one owner native-R swap to run. |
 | [`MP133_V3_T3F_FIRE_EVENT_AUDIT.md`](MP133_V3_T3F_FIRE_EVENT_AUDIT.md) | T3F fire-event audit (Phase A): no weapon-level actual-shot callback in the installed SDK (real-shot signals are muzzle-effect `OnFired`/`OnWeaponFired`); limited Phase B `[ARMST_T3F-FIRE]` passive trace (animation events + ammo/chamber sample; no `gameplay_shot`, delta-evidenced). |
+| [`MP133_V3_T4_ONE_SHELL_TRANSFER.md`](MP133_V3_T4_ONE_SHELL_TRANSFER.md) | T4 Phase A (read-only): installed SDK exposes only `BaseMagazineComponent.SetAmmoCount(int)` as a magazine-ammo writer; no atomic transfer / legitimate donor consumption / authority / rollback → `T4_API_OR_TRANSACTION_BLOCKED`; minimal next experiment proposed. |
 | [Issue #27](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/27) | **Current approval and decision record**. Read newer comments before acting on its original V2.2 body. |
 
 ## Frozen historical V1/V2 evidence (retain; not V3 instructions)

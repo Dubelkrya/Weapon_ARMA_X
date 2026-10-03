@@ -327,6 +327,13 @@ historical material**; the owner approved **V3** (Issue #27 comment 5966570978,
   draft failed compile — split formatter + dropped the unsupported `AnimationEventID.ToString`); no
   clip/graph/ASI edits; 23-file asset set unchanged; static PASS. Owner run required (3 scenarios).
   Status `T3F_PHASE_A_AUDIT_DONE / PHASE_B_LIMITED_IMPLEMENTED; OWNER_RUN_REQUIRED`.
+- **T4 Phase A (read-only, 2026-10-03):** `MP133_V3_T4_ONE_SHELL_TRANSFER.md`. Installed SDK:
+  the only magazine-ammo writer is `BaseMagazineComponent.SetAmmoCount(int)`; **no** atomic
+  transfer, no legitimate donor-consumption API, inventory APIs are item-level, muzzle has only
+  `ClearChamber`; `SetAmmoCount` authority/replication/rollback UNRESOLVED. Per the Phase A HARD
+  STOP no isolated T4 lab was created → **`T4_API_OR_TRANSACTION_BLOCKED`**; one minimal next
+  experiment (throwaway-mag `SetAmmoCount` runtime probe, or explicit owner authorisation of a
+  local setter-based PoC) proposed. Production/Core/T2A/V2/Astra untouched. STOP for owner review.
 
 ---
 
