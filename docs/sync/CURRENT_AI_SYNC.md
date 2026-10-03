@@ -570,6 +570,21 @@ historical material**; the owner approved **V3** (Issue #27 comment 5966570978,
   T4b/G3B1 untouched. Status `G3B2_SOURCE_REVIEW_CHANGES_REQUIRED / B2_WRITE_OFF /
   OWNER_RUNTIME_NOT_AUTHORIZED`; STOP for independent source re-review. `wm.GetWeapons(ws)` remains an
   installed-SDK API claim pending real Workbench compile.
+- **G3-B2 source re-review corrections (comment 5973901925, 2026-10-04):** `2db5ac0` re-reviewed;
+  prior P0/P1 verified; write-path corrections fixed only in the new B2 script + manifest + docs.
+  P0: after the donor is decremented, `wpnMid`/`muzzleMid` (between setters) and `wpnEnd`/`muzzleEnd`
+  (after target) are non-null-guarded before any member call → loss = `INDETERMINATE→QUARANTINED`;
+  all commit/log getters use the guarded muzzle; commit also requires `muzzleEnd == muzzle`. P1:
+  shared `T4B2Preflight` now requires `IsBaselineDone()` from the action-owner probe
+  (`baseline-not-ready` otherwise) and `0 <= barrel < GetBarrelsCount()`; final pre-setter boundary
+  re-checks actual donor storage/owner/slot, muzzle == captured, donor/target ammo types, current
+  weapon and target → `REJECTED prewrite-boundary-failed` on any uncertainty (no write, repeatable).
+  P1: delayed samples re-resolve `T4B2CurrentWeapon(m_dActor)` and compare to the captured weapon
+  (`wpnSame` in `allOk`/log) plus donor/target ammo-type invariance (`typesSame`). Script SHA
+  `088E6250...`; prefab `68F67CAB...` unchanged; setters at 818/887 after gate-off return 757;
+  braces 92/92, parens 680/680, ASCII; local==published; T4b/G3B1 untouched; no Python integrity
+  run. Status `G3B2_SOURCE_CORRECTIONS_PUBLISHED / B2_WRITE_OFF / OWNER_RUNTIME_NOT_AUTHORIZED`;
+  STOP for independent source re-review.
 
 ---
 

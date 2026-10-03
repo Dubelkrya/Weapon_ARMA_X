@@ -408,7 +408,7 @@ Workbench/game run performed by the agent.
 **New files** (local lab + published copy, local==published):
 
 - `Scripts/Game/ARMST_T4B/ARMST_T4B_G3B2_Transfer.c` — new `ScriptedUserAction`
-  `ARMST_T4B_G3B2_TransferAction`; SHA256 `0D0FD4B2E75B30F3EF1D9183252222B96890E26E5F9C08C38F940A61352C2922` (rev 2).
+  `ARMST_T4B_G3B2_TransferAction`; SHA256 `088E6250A80A4C90CA9A5E7DFCE354972EEC3092E7EE10E297A89245A07F9106` (rev 3).
 - `Prefabs/Test/ARMST_T4B_G3B2_TestWeapon.et` — SHA256 `68F67CAB0C17201882FCB9D587E3F3F196231B46E4FCB3951DD8BDC185873E04`.
 - `Prefabs/Test/ARMST_T4B_G3B2_TestWeapon.et.meta` — SHA256 `315C7AB6983B68C63C0AEC1D30625C5CA4B7477D72C1C75DF5291AC7438F9287`.
 
@@ -494,3 +494,34 @@ touched.
 are after the gate-off `return` at 750). Static: braces 88/88, parens 613/613, ASCII.
 **STATUS:** `G3B2_SOURCE_REVIEW_CHANGES_REQUIRED / B2_WRITE_OFF / OWNER_RUNTIME_NOT_AUTHORIZED` →
 corrections published; **STOP for independent source re-review**.
+
+### 11.2 Source re-review corrections (Issue #34 comment 5973901925) — write-path P0/P1
+
+Verified at `2db5ac0`; fixed **only** the new B2 script, manifest and this documentation. No
+T4b/G3B1/prefab change (B2 prefab still `68F67CAB…`, gate `m_bG3B2WriteEnabled 0`).
+
+- **P0 — null dereference after the donor was already decremented.** Between setters the script now
+  captures `wpnMid = T4B2CurrentWeapon(user)` and `muzzleMid` **with explicit non-null checks** before
+  any member call; absence → `INDETERMINATE → QUARANTINED` (no target setter/rollback/retry). After
+  the target setter, `wpnEnd` and `muzzleEnd` are guarded before every chamber/commit/diagnostic
+  getter; loss → quarantine. All commit/log getters use the guarded `muzzleEnd` (no `wpnEnd.GetCurrentMuzzle()`
+  deref, no false/-1 sentinel as proof of a stable missing muzzle). The commit predicate also requires
+  `muzzleEnd == muzzle`.
+- **P1 — baseline readiness in the shared preflight.** `T4B2Preflight` resolves the probe from the
+  **action-owner entity** (`actionOwner.FindComponent(ARMST_T4B_WeaponProbe)`) and requires
+  `IsBaselineDone()==true`, else fails closed with `baseline-not-ready`. Barrel gate hardened to
+  `0 <= barrel < GetBarrelsCount()`; the final pre-setter boundary also requires the same captured
+  muzzle (`muzzleBefore == muzzle`).
+- **P1 — delayed equipped-weapon check.** Delayed samples now re-resolve
+  `T4B2CurrentWeapon(m_dActor)` and compare it to the captured `m_dWeapon`; `wpnSame` is included in
+  `allOk` and the log, so a weapon swap cannot leave the old target attached to the old weapon and
+  still pass. Delayed scope is full invariance: donor member/storage/slot/component, target installed,
+  muzzle/chamber/barrel and **donor/target ammo-type equality** (`typesSame`).
+- **P1 — final prewrite boundary.** Before the latch the script captures the actual storage component
+  + owner entity + slot, muzzle, donor/target ammo types and re-resolves the current weapon; any
+  missing/uncertain element → `REJECTED prewrite-boundary-failed` (no write, repeatable). After the
+  first setter, all uncertainty is quarantine. Single op id; no automatic repair.
+
+`B2_SETTER_CALLS_IN_DRY_RUN = 0` (setters now at source lines 818/887, gate-off `return` at 757).
+Static: braces 92/92, parens 680/680, ASCII. **STATUS:** `G3B2_SOURCE_CORRECTIONS_PUBLISHED / B2_WRITE_OFF /
+OWNER_RUNTIME_NOT_AUTHORIZED`; **STOP for independent source re-review** (rev 3).

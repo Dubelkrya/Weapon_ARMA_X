@@ -80,6 +80,7 @@ class ARMST_T4B_G3B2_TransferAction : ScriptedUserAction
 	protected bool m_dChambered = false;
 	protected int m_dBarrel = -1;
 	protected int m_dBarrels = -1;
+	protected ResourceName m_dRefType;
 
 	// ========================================================================
 	// Attributes (canonical spelling shared with the prefab)
@@ -537,6 +538,12 @@ class ARMST_T4B_G3B2_TransferAction : ScriptedUserAction
 	bool T4B2Preflight(IEntity user, IEntity actionOwner, BaseWeaponComponent wpn, SCR_InventoryStorageManagerComponent inv, BaseMagazineComponent targetMag, IEntity targetEnt, ResourceName refType, int tAmmo, int tMax, BaseMuzzleComponent muzzle, int barrel, int barrels, out string outReason)
 	{
 		outReason = "";
+		ARMST_T4B_WeaponProbe probe = ARMST_T4B_WeaponProbe.Cast(actionOwner.FindComponent(ARMST_T4B_WeaponProbe));
+		if (!probe || !probe.IsBaselineDone())
+		{
+			outReason = "baseline-not-ready";
+			return false;
+		}
 		if (refType.IsEmpty())
 		{
 			outReason = "unknown-ammo-type";
@@ -604,7 +611,7 @@ class ARMST_T4B_G3B2_TransferAction : ScriptedUserAction
 			outReason = "ammo-type-mismatch";
 			return false;
 		}
-		if (!muzzle || barrel < 0 || barrels <= 0)
+		if (!muzzle || barrel < 0 || barrels <= 0 || barrel >= barrels)
 		{
 			outReason = "no-barrel-component";
 			return false;
@@ -771,15 +778,37 @@ class ARMST_T4B_G3B2_TransferAction : ScriptedUserAction
 		BaseMagazineComponent donorMag = m_selMag;
 		int dAmmo = donorMag.GetAmmoCount();
 
-		// Capture ACTUAL storage/slot/muzzle references immediately before the first setter.
+		// Final fail-closed boundary immediately before the first setter: re-validate the ACTUAL
+		// donor storage/slot/muzzle/ammo type and weapon context. Any uncertainty -> REJECTED
+		// (no write, repeatable), never a partial transaction.
 		int sidBefore = -1;
 		string ownerPrefBefore = "";
-		T4B2StorageAllowed(donorItem, sidBefore, ownerPrefBefore);
+		bool dAllowedBefore = T4B2StorageAllowed(donorItem, sidBefore, ownerPrefBefore);
 		InventoryStorageSlot slotBefore = T4B2SlotOf(donorItem);
 		BaseInventoryStorageComponent storageBefore = T4B2StorageOf(donorItem);
 		IEntity storageOwnerBefore = null;
 		if (storageBefore)
 			storageOwnerBefore = storageBefore.GetOwner();
+		BaseMuzzleComponent muzzleBefore = currentWpn.GetCurrentMuzzle();
+		ResourceName donorTypeBefore = donorMag.GetAmmoType(0);
+		ResourceName targetTypeBefore = targetMag.GetAmmoType(0);
+		BaseWeaponComponent wpnBefore = T4B2CurrentWeapon(user);
+		bool boundaryOk = dAllowedBefore && (slotBefore != null) && (storageBefore != null) && (storageOwnerBefore != null)
+			&& (donorMag.GetOwner() == donorItem) && inv.Contains(donorItem) && (T4B2MagOf(donorItem) == donorMag)
+			&& (!T4B2StorageIsWeapon(donorItem))
+			&& (!donorTypeBefore.IsEmpty()) && (donorTypeBefore == refType)
+			&& (!targetTypeBefore.IsEmpty()) && (targetTypeBefore == refType)
+			&& (muzzleBefore != null) && (muzzleBefore == muzzle)
+			&& (wpnBefore == currentWpn) && (currentWpn.GetCurrentMagazine() == targetMag)
+			&& (targetMag.GetOwner() == targetEnt) && (targetMag.GetAmmoCount() == tAmmo)
+			&& (dAmmo > 0);
+		if (!boundaryOk)
+		{
+			Print("[ARMST_T4B-G3B2] " + seq + " op=" + opId.ToString()
+				+ " phase=reject ev=prewrite-boundary-failed"
+				+ " srv=" + srv.ToString(), LogLevel.NORMAL);
+			return;
+		}
 
 		// ------------------------------------------------------------------
 		// TRANSACTION (donor-first). Latch BEFORE the first setter.
@@ -822,10 +851,20 @@ class ARMST_T4B_G3B2_TransferAction : ScriptedUserAction
 
 		// Between setters: still-equipped weapon, same target/chamber/muzzle, donor storage.
 		BaseWeaponComponent wpnMid = T4B2CurrentWeapon(user);
+		BaseMuzzleComponent muzzleMid = null;
+		if (wpnMid)
+			muzzleMid = wpnMid.GetCurrentMuzzle();
+		if (!wpnMid || !muzzleMid)
+		{
+			m_b2Quarantined = true;
+			Print("[ARMST_T4B-G3B2] " + seq + " op=" + opId.ToString() + " phase=indeterminate ev=mid-weapon-or-muzzle-lost srv=" + srv.ToString(), LogLevel.NORMAL);
+			Print("[ARMST_T4B-G3B2] " + seq + " op=" + opId.ToString() + " phase=quarantine ev=stop-no-retry srv=" + srv.ToString(), LogLevel.NORMAL);
+			return;
+		}
 		bool wpnSameMid = (wpnMid == currentWpn);
 		bool targetStill = (wpnMid.GetCurrentMagazine() == targetMag) && (targetMag.GetOwner() == targetEnt);
-		bool muzzleSameMid = (wpnMid.GetCurrentMuzzle() == muzzle);
-		bool chamberSameMid = (T4B2ChamberedOf(wpnMid.GetCurrentMuzzle()) == chBefore) && (wpnMid.GetCurrentMuzzle().GetCurrentBarrelIndex() == barrelBefore) && (wpnMid.GetCurrentMuzzle().GetBarrelsCount() == barrelsBefore);
+		bool muzzleSameMid = (muzzleMid == muzzle);
+		bool chamberSameMid = (muzzleMid.IsCurrentBarrelChambered() == chBefore) && (muzzleMid.GetCurrentBarrelIndex() == barrelBefore) && (muzzleMid.GetBarrelsCount() == barrelsBefore);
 		bool tCountSame = (targetMag.GetAmmoCount() == tAmmo);
 		BaseInventoryStorageComponent storageMid = T4B2StorageOf(donorItem);
 		bool storageSameMid = (storageMid != null) && (storageMid == storageBefore);
@@ -849,14 +888,20 @@ class ARMST_T4B_G3B2_TransferAction : ScriptedUserAction
 
 		int tAfter = targetMag.GetAmmoCount();
 		BaseWeaponComponent wpnEnd = T4B2CurrentWeapon(user);
+		BaseMuzzleComponent muzzleEnd = null;
+		if (wpnEnd)
+			muzzleEnd = wpnEnd.GetCurrentMuzzle();
+		bool wpnEndOk = (wpnEnd != null) && (wpnEnd == currentWpn);
+		bool installedEnd = wpnEndOk && (wpnEnd.GetCurrentMagazine() == targetMag);
 		bool targetOk = (tAfter == tAmmo + 1)
-			&& (wpnEnd == currentWpn)
-			&& (wpnEnd.GetCurrentMagazine() == targetMag)
+			&& wpnEndOk
+			&& installedEnd
 			&& (targetMag.GetOwner() == targetEnt);
 		Print("[ARMST_T4B-G3B2] " + seq + " op=" + opId.ToString()
 			+ " phase=target-post ev=set want=" + (tAmmo + 1).ToString()
 			+ " got=" + tAfter.ToString()
 			+ " targetOk=" + T4BB(targetOk)
+			+ " wpnEndOk=" + T4BB(wpnEndOk)
 			+ " srv=" + srv.ToString()
 			+ " target=" + T4B2DonorState(inv, targetEnt, targetMag), LogLevel.NORMAL);
 		if (!targetOk)
@@ -866,17 +911,23 @@ class ARMST_T4B_G3B2_TransferAction : ScriptedUserAction
 			Print("[ARMST_T4B-G3B2] " + seq + " op=" + opId.ToString() + " phase=quarantine ev=stop-no-retry srv=" + srv.ToString(), LogLevel.NORMAL);
 			return;
 		}
+		// Guard the muzzle before any chamber/commit/diagnostic getter.
+		if (!muzzleEnd)
+		{
+			m_b2Quarantined = true;
+			Print("[ARMST_T4B-G3B2] " + seq + " op=" + opId.ToString() + " phase=indeterminate ev=muzzle-lost-after-target srv=" + srv.ToString(), LogLevel.NORMAL);
+			Print("[ARMST_T4B-G3B2] " + seq + " op=" + opId.ToString() + " phase=quarantine ev=stop-no-retry srv=" + srv.ToString(), LogLevel.NORMAL);
+			return;
+		}
 
-		// Commit checks.
+		// Commit checks (all getters use the guarded muzzleEnd).
 		bool conserv = ((dAmmo + tAmmo) == (dAfter + tAfter));
 		ResourceName targetTypeAfter = targetMag.GetAmmoType(0);
 		bool typesOk = (!targetTypeAfter.IsEmpty()) && (targetTypeAfter == refType) && donorTypeSame;
-		bool chamberAfterOk = (T4B2ChamberedOf(wpnEnd.GetCurrentMuzzle()) == chBefore) && (wpnEnd.GetCurrentMuzzle().GetCurrentBarrelIndex() == barrelBefore) && (wpnEnd.GetCurrentMuzzle().GetBarrelsCount() == barrelsBefore);
-		int supplyAfter = -1;
-		if (wpnEnd.GetCurrentMuzzle())
-			supplyAfter = wpnEnd.GetCurrentMuzzle().GetAmmoCount();
+		bool chamberAfterOk = (muzzleEnd.IsCurrentBarrelChambered() == chBefore) && (muzzleEnd.GetCurrentBarrelIndex() == barrelBefore) && (muzzleEnd.GetBarrelsCount() == barrelsBefore);
+		int supplyAfter = muzzleEnd.GetAmmoCount();
 		bool committed = donorOk && targetOk && conserv && typesOk && chamberAfterOk
-			&& (wpnEnd == currentWpn)
+			&& (wpnEnd == currentWpn) && (muzzleEnd == muzzle)
 			&& (wpnEnd.GetCurrentMagazine() == targetMag) && (targetMag.GetOwner() == targetEnt)
 			&& (donorMag.GetOwner() == donorItem) && inv.Contains(donorItem)
 			&& (T4B2MagOf(donorItem) == donorMag) && (T4B2StorageOf(donorItem) == storageBefore);
@@ -899,8 +950,8 @@ class ARMST_T4B_G3B2_TransferAction : ScriptedUserAction
 			+ " donorBefore=" + dAmmo.ToString() + " donorAfter=" + dAfter.ToString()
 			+ " targetBefore=" + tAmmo.ToString() + " targetAfter=" + tAfter.ToString()
 			+ " conserved=" + T4BB(conserv)
-			+ " chamberedBefore=" + T4BB(chBefore) + " chamberedAfter=" + T4BB(T4B2ChamberedOf(wpnEnd.GetCurrentMuzzle()))
-			+ " barrelBefore=" + barrelBefore.ToString() + " barrelAfter=" + wpnEnd.GetCurrentMuzzle().GetCurrentBarrelIndex().ToString()
+			+ " chamberedBefore=" + T4BB(chBefore) + " chamberedAfter=" + T4BB(T4B2ChamberedOf(muzzleEnd))
+			+ " barrelBefore=" + barrelBefore.ToString() + " barrelAfter=" + muzzleEnd.GetCurrentBarrelIndex().ToString()
 			+ " supplyBefore=" + supplyBefore.ToString() + " supplyAfter=" + supplyAfter.ToString()
 			+ " supplyTelemetry=1"
 			+ " gameplay_effect=UNVERIFIED"
@@ -923,6 +974,7 @@ class ARMST_T4B_G3B2_TransferAction : ScriptedUserAction
 		m_dChambered = chBefore;
 		m_dBarrel = barrelBefore;
 		m_dBarrels = barrelsBefore;
+		m_dRefType = refType;
 		GetGame().GetCallqueue().CallLater(T4B2Delayed250, 250, false);
 		GetGame().GetCallqueue().CallLater(T4B2Delayed1000, 1000, false);
 	}
@@ -979,24 +1031,36 @@ class ARMST_T4B_G3B2_TransferAction : ScriptedUserAction
 		}
 		bool dStorageSame = (dStorageNow != null) && (dStorageNow == m_dDonorStorage) && (dStorageOwnerNow == m_dDonorStorageOwner) && (dSlotIdNow == m_dDonorSlotId);
 
-		// Target must STILL be the equipped weapon's installed magazine.
+		// The actor's CURRENTLY equipped weapon must still be the captured one, and the target must
+		// still be its installed magazine (re-resolve from the actor, not only the captured ref).
+		BaseWeaponComponent wpnNow = null;
+		if (m_dActor)
+			wpnNow = T4B2CurrentWeapon(m_dActor);
+		bool wpnSame = (wpnNow != null) && (wpnNow == m_dWeapon);
 		BaseMagazineComponent installedNow = null;
 		BaseMuzzleComponent muzzleNow = null;
-		bool wpnSame = false;
-		if (m_dWeapon)
+		if (wpnNow)
 		{
-			installedNow = m_dWeapon.GetCurrentMagazine();
-			muzzleNow = m_dWeapon.GetCurrentMuzzle();
-			wpnSame = true;
+			installedNow = wpnNow.GetCurrentMagazine();
+			muzzleNow = wpnNow.GetCurrentMuzzle();
 		}
-		bool targetInstalled = (installedNow != null) && (installedNow == m_dTargetMag) && (tOwnerNow == m_dTargetEnt);
+		bool targetInstalled = wpnSame && (installedNow != null) && (installedNow == m_dTargetMag) && (tOwnerNow == m_dTargetEnt);
 		bool muzzleSame = (muzzleNow != null) && (muzzleNow == m_dMuzzle);
 		bool chamberSame = (T4B2ChamberedOf(muzzleNow) == m_dChambered);
 		bool barrelSame = false;
 		if (muzzleNow)
 			barrelSame = (muzzleNow.GetCurrentBarrelIndex() == m_dBarrel) && (muzzleNow.GetBarrelsCount() == m_dBarrels);
 
-		bool allOk = dPersist && tPersist && dSameEnt && dSameComp && member && dStorageSame && targetInstalled && muzzleSame && chamberSame && barrelSame;
+		// Ammo-type invariance (full delayed scope, not only count/location).
+		ResourceName dTypeNow = ResourceName.Empty;
+		ResourceName tTypeNow = ResourceName.Empty;
+		if (m_dDonorMag)
+			dTypeNow = m_dDonorMag.GetAmmoType(0);
+		if (m_dTargetMag)
+			tTypeNow = m_dTargetMag.GetAmmoType(0);
+		bool typesSame = (!dTypeNow.IsEmpty()) && (dTypeNow == m_dRefType) && (!tTypeNow.IsEmpty()) && (tTypeNow == m_dRefType);
+
+		bool allOk = dPersist && tPersist && dSameEnt && dSameComp && member && dStorageSame && wpnSame && targetInstalled && muzzleSame && chamberSame && barrelSame && typesSame;
 
 		int srv = 0;
 		if (Replication.IsServer())
@@ -1011,10 +1075,12 @@ class ARMST_T4B_G3B2_TransferAction : ScriptedUserAction
 			+ " donorSameComp=" + T4BB(dSameComp)
 			+ " member=" + T4BB(member)
 			+ " donorStorageSame=" + T4BB(dStorageSame)
+			+ " wpnSame=" + T4BB(wpnSame)
 			+ " targetInstalled=" + T4BB(targetInstalled)
 			+ " muzzleSame=" + T4BB(muzzleSame)
 			+ " chamberSame=" + T4BB(chamberSame)
 			+ " barrelSame=" + T4BB(barrelSame)
+			+ " typesSame=" + T4BB(typesSame)
 			+ " srv=" + srv.ToString(), LogLevel.NORMAL);
 
 		if (!allOk)
