@@ -1,11 +1,14 @@
 # CI #29 — separate offline tests from local Weapons/lab integration tests (read-only diagnosis + proposed diff)
 
-**Status:** `CI_ROOT_CAUSE_VERIFIED; DIFF VERIFIED IN ISOLATED COPY; NOT APPLIED`.
-Read-only on the working repo. No gameplay/Core/lab/world/GUID/catalog changes; no
-Workbench/game. Source: Issue #29 + comment 5968125229.
+**Status:** `CI_ROOT_CAUSE_VERIFIED; CORRECTED DIFF IMPLEMENTED LOCALLY; HOSTED CI PENDING`.
+Implemented in the working repo (task-scoped: 3 files + 1 new test). No
+gameplay/Core/lab/world/GUID/catalog changes; no Workbench/game. Source: Issue #29 +
+comments 5968125229 / 5968347715.
 
-Working repo was **not modified** (diff applied only to an isolated copy under
-`%TEMP%\opencode\mp133_ci_fix`).
+Locally verified (this station, live addon present): `python -m unittest discover -s
+agent/tests -p "test_*.py"` → **80 tests, OK**. Isolated hosted-CI simulation (default
+addon paths absent, env unset) → **80 tests, 0 failures, 14 skipped, exit 0**. Direct
+scanner CLI without a valid addon → non-zero, no catalog written (regression test).
 
 ---
 
@@ -153,3 +156,37 @@ promising CI PASS. Action-version warnings are out of scope.
 - If the diff makes offline tests require the live addon, weakens assertions, or makes
   `scan_build.main()` stop failing hard without the addon → **STOP, revise**.
 - No catalog rescan, no gameplay files, no workflow broadening without separate approval.
+
+---
+
+## IMPLEMENTATION (approved correction, 2026-10-03)
+
+Applied to the working repo (task-scoped; the unconditional `except … skipTest` was
+rejected and replaced):
+
+1. `agent/scripts/scan_build.py` — lazy `resolve_mod_root()`; `MOD_ROOT = None` at
+   import; `main()` resolves first and exits non-zero before any write.
+2. `agent/scripts/validate_mp133_lab.py` — `resolve_lab_root`/`resolve_original_root`
+   now accept `strict`/`env`/`default` (injectable, offline-testable); new
+   `local_dependency_decision(lab, orig, lab_env, orig_env)` → `run` / `skip` / `fail`.
+3. `agent/tests/test_mp133_lab_validation.py` — `setUp` uses the decision:
+   - both roots resolved → **run** with all strict assertions unchanged;
+   - root implicitly absent (env unset) → **SKIP** `LOCAL_ONLY`;
+   - env **explicitly set but invalid** → **FAIL** (`self.fail(...)`), never skip.
+4. New `agent/tests/test_mp133_lab_dependency_gate.py` (offline, 7 tests): implicit
+   absence → skip; explicit-invalid lab → fail; explicit-invalid original → fail;
+   partial implicit absence → skip; valid roots → run; strict resolver raises; scanner
+   CLI without addon exits non-zero and writes **no** catalog.
+
+**Env correction:** the original-addon root is selected by **`MP133_ORIGINAL_ADDON_PATH`**
+(read by `validate_mp133_lab.resolve_original_root`), **not** `ARMST_WEAPONS_ADDON_PATH`
+(read by `addon_path.py`). Run local integration with
+`MP133_LAB_ADDON_PATH` + `MP133_ORIGINAL_ADDON_PATH` set.
+
+**Local evidence:** live addon present → **80 tests OK**; isolated hosted-CI simulation
+(default addon paths absent, env unset) → **80 tests, 0 failures, 14 skipped, exit 0**;
+explicit-invalid env → the 14 integration tests **FAIL** (not skipped) with an explicit
+message; direct scanner CLI without a valid addon → non-zero and no generated files.
+
+`CI_FIXED` is claimed **only after fresh hosted CI actually succeeds** (owner observes
+Actions), not from isolated tests.

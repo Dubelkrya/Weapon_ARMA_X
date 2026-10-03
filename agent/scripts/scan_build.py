@@ -53,13 +53,17 @@ from addon_path import resolve_addon_root, AddonPathError
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 DEFAULT_REPO_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, "..", ".."))
 
-# Resolved, never assumed. A wrong or missing addon root is a hard error rather
-# than a silently empty catalog written into this repository.
-try:
-    MOD_ROOT = str(resolve_addon_root())
-except AddonPathError as exc:
-    print(f"ERROR: {exc}", file=sys.stderr)
-    raise SystemExit(1)
+# Resolved lazily, never at import time: importing this module (e.g. from an
+# offline unit test) must not require the live addon to be present. A wrong or
+# missing addon root is still a hard error when a scan actually runs.
+def resolve_mod_root() -> str:
+    try:
+        return str(resolve_addon_root())
+    except AddonPathError as exc:
+        print(f"ERROR: {exc}", file=sys.stderr)
+        raise SystemExit(1)
+
+MOD_ROOT = None
 REPO_ROOT = os.path.abspath(os.environ.get("REPO_ROOT", DEFAULT_REPO_ROOT))
 
 CATALOG_DIR = os.path.join(REPO_ROOT, "catalog")
@@ -1014,8 +1018,9 @@ def build_ref_graph(entities, resources, all_files, guid_index):
 
 
 def main():
-    global BASE_GAME_SNAPSHOT
+    global BASE_GAME_SNAPSHOT, MOD_ROOT
 
+    MOD_ROOT = resolve_mod_root()
     print(f"MOD_ROOT   = {MOD_ROOT}")
     print(f"REPO_ROOT  = {REPO_ROOT}")
     print(f"BASE_GAME_SNAPSHOT_ROOT = {BASE_GAME_SNAPSHOT_ROOT}")

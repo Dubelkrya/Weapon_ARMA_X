@@ -243,11 +243,14 @@ historical material**; the owner approved **V3** (Issue #27 comment 5966570978,
 
 - **#29 (priority):** root cause = `agent/scripts/scan_build.py` resolves the live addon
   at **import** (SystemExit) + `test_mp133_lab_validation.py` needs the local lab/original
-  addon in `setUp`. Proposed minimal diff (lazy `resolve_mod_root()` + a clear
-  `LOCAL_ONLY` skip) was **verified in an isolated copy**: 73 tests, 0 failures, 14
-  skipped, exit 0 with the addon unavailable; the scanner still hard-fails without the
-  addon. Locally (addon present) 73/73 OK. **Diff NOT applied.** Report:
-  `reports/CI_29_SEPARATE_OFFLINE_AND_LOCAL_TESTS.md`.
+  addon in `setUp`. **Implemented (approved correction):** lazy `resolve_mod_root()` in
+  `scan_build.py`; `validate_mp133_lab` gained injectable `resolve_*` + a
+  `local_dependency_decision` (`run`/`skip`/`fail`) so an **explicitly configured but
+  invalid** path **FAILS** and only implicit absence skips `LOCAL_ONLY`; new offline
+  `test_mp133_lab_dependency_gate.py` (7 tests incl. scanner-CLI exit/no-write). Env: use
+  `MP133_LAB_ADDON_PATH` + `MP133_ORIGINAL_ADDON_PATH`. Local: 80 OK; isolated hosted
+  simulation: 80, 0 failures, 14 skipped. `CI_FIXED` only after fresh hosted CI passes.
+  Report: `reports/CI_29_SEPARATE_OFFLINE_AND_LOCAL_TESTS.md`.
 - **#28:** Phase A preflight **PASS**; isolated candidate scan **completed** (deterministic,
   corpus preserved byte-identically). Candidate diverges substantially (generated files
   292→203; NEW 32 / DELETED 121 / CHANGED 169; entities 270→181) → **PUBLICATION NOT

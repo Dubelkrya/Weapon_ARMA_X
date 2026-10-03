@@ -20,8 +20,23 @@ import validate_mp133_lab as v  # noqa: E402
 
 class MP133LabValidationTests(unittest.TestCase):
     def setUp(self):
-        self.lab = v.resolve_lab_root()
-        self.orig = v.resolve_original_root()
+        lab = v.resolve_lab_root(strict=False)
+        orig = v.resolve_original_root(strict=False)
+        decision = v.local_dependency_decision(
+            lab, orig, os.environ.get(v.ENV_LAB), os.environ.get(v.ENV_ORIG))
+        if decision == "fail":
+            self.fail(
+                "explicitly configured local addon path is invalid; fix "
+                f"${v.ENV_LAB} / ${v.ENV_ORIG} or unset it to skip"
+            )
+        if decision == "skip":
+            self.skipTest(
+                "LOCAL_ONLY: local Weapons addon / frozen lab not available and "
+                "not explicitly configured; set MP133_LAB_ADDON_PATH and "
+                "MP133_ORIGINAL_ADDON_PATH to run these integration tests"
+            )
+        self.lab = lab
+        self.orig = orig
 
     def assert_clean(self, problems, ctx):
         self.assertEqual(problems, [], f"{ctx}: {problems}")

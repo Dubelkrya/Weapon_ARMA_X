@@ -67,20 +67,61 @@ class LabValidationError(AssertionError):
     pass
 
 
-def resolve_lab_root() -> Path:
-    p = os.environ.get(ENV_LAB)
-    root = Path(p) if p else DEFAULT_ADDONS / "ARMST_MP133_AnimationLab"
+def resolve_lab_root(strict: bool = True, env: str | None = None,
+                     default: Path | None = None) -> Path | None:
+    """Resolve the lab addon root.
+
+    ``env``/``default`` are injectable for offline tests. With ``strict=True``
+    (default) a missing root raises :class:`LabValidationError`; with
+    ``strict=False`` ``None`` is returned so a caller can distinguish an
+    implicitly absent (``skip``) from an explicitly configured (``fail``)
+    dependency.
+    """
+    p = env if env is not None else os.environ.get(ENV_LAB)
+    base = default if default is not None else DEFAULT_ADDONS
+    root = Path(p) if p else base / "ARMST_MP133_AnimationLab"
     if not (root / "addon.gproj").is_file():
-        raise LabValidationError(f"lab addon not found at {root}")
+        if strict:
+            raise LabValidationError(f"lab addon not found at {root}")
+        return None
     return root
 
 
-def resolve_original_root() -> Path:
-    p = os.environ.get(ENV_ORIG)
-    root = Path(p) if p else DEFAULT_ADDONS / "ARMST-PLATFORM---Weapons"
+def resolve_original_root(strict: bool = True, env: str | None = None,
+                          default: Path | None = None) -> Path | None:
+    """Resolve the original Weapons addon root (see :func:`resolve_lab_root`)."""
+    p = env if env is not None else os.environ.get(ENV_ORIG)
+    base = default if default is not None else DEFAULT_ADDONS
+    root = Path(p) if p else base / "ARMST-PLATFORM---Weapons"
     if not (root / "addon.gproj").is_file():
-        raise LabValidationError(f"original addon not found at {root}")
+        if strict:
+            raise LabValidationError(f"original addon not found at {root}")
+        return None
     return root
+
+
+def local_dependency_decision(lab_root, orig_root,
+                              lab_env: str | None, orig_env: str | None) -> str:
+    """Decide how a local-integration test should behave.
+
+    Returns one of:
+
+    * ``"run"``  - both roots resolved;
+    * ``"skip"`` - one/both roots are implicitly absent (no env configured);
+    * ``"fail"`` - a root that was **explicitly configured** via its env var
+      could not be resolved. An explicit request with an invalid path must fail,
+      not silently skip.
+    """
+    explicitly_missing = []
+    if lab_root is None and lab_env and lab_env.strip():
+        explicitly_missing.append(ENV_LAB)
+    if orig_root is None and orig_env and orig_env.strip():
+        explicitly_missing.append(ENV_ORIG)
+    if explicitly_missing:
+        return "fail"
+    if lab_root is None or orig_root is None:
+        return "skip"
+    return "run"
 
 
 def iter_resources(root: Path):
