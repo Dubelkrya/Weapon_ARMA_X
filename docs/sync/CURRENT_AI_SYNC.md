@@ -480,6 +480,18 @@ historical material**; the owner approved **V3** (Issue #27 comment 5966570978,
   `95A48B74...`; child prefab `61F3FCAE...`; local==published. Status
   `G3B1_SOURCE_PUBLISHED / PRE_RUNTIME_SOURCE_CORRECTIONS_APPLIED / OWNER_GAME_NOT_RUN`; G3-B2 not
   authorized.
+- **G3-B1 revision 2 (Issue #34 comment 5973265721):** added the installed-magazine **identity
+  exclusion** + weapon-context binding to `ARMST_T4B_G3B1_DonorConsume.c`: resolve the action-owning
+  equipped child weapon and the user's current weapon and require they match
+  (`not-action-weapon`/`wrong-weapon-context`); resolve `installedMag = GetCurrentMagazine()` and
+  its owner item; the donor scan skips `mag == installedMag` OR `item == installedMag owner`
+  (`targetSkipped`), rechecked immediately before `SetAmmoCount(donor-1)`
+  (`installed-magazine-excluded`); logs add `installedMagExcluded/targetSkipped/notInstalled`.
+  Script SHA `95A48B74...` -> `E416BEFB...`; T4b script `D581B9C9...`, owner-saved T4b prefab
+  `29C70A78...`, child prefab `61F3FCAE...`, addon.gproj unchanged; local==published. Owner Workbench
+  preflight: both actions visible on the child; G3B1 produces `phase=pre`. Status
+  `G3B1_REDESIGN_SOURCE_REVIEWED / PREWRITE_TARGET_EXCLUSION_APPLIED / OWNER_GAME_NOT_RUN`; G3-B2 not
+  authorized.
 
 ---
 

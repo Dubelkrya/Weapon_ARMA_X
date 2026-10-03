@@ -119,7 +119,7 @@ and published copy are byte-identical.
 |---|---|
 | [`labs/ARMSTMP133T4B_InstalledMagProbe/addon.gproj`](../labs/ARMSTMP133T4B_InstalledMagProbe/addon.gproj) | `200E3156DED0C793CFA6FCF94767A4DC265FF28760307A158BCD4DF9696608A6` |
 | [`…/Scripts/Game/ARMST_T4B/ARMST_T4B_InstalledMagProbe.c`](../labs/ARMSTMP133T4B_InstalledMagProbe/Scripts/Game/ARMST_T4B/ARMST_T4B_InstalledMagProbe.c) | `D581B9C9EE270725FFEC94C7685CBBCB2AB41DBA717F2B4FBCF8C4AC8DDCBEB1` |
-| [`…/Scripts/Game/ARMST_T4B/ARMST_T4B_G3B1_DonorConsume.c`](../labs/ARMSTMP133T4B_InstalledMagProbe/Scripts/Game/ARMST_T4B/ARMST_T4B_G3B1_DonorConsume.c) | `95A48B74E1DB0DE432E0B382CBA23DA8CAD0A6AA25879BBA4756E50DBBF9C0BD` |
+| [`…/Scripts/Game/ARMST_T4B/ARMST_T4B_G3B1_DonorConsume.c`](../labs/ARMSTMP133T4B_InstalledMagProbe/Scripts/Game/ARMST_T4B/ARMST_T4B_G3B1_DonorConsume.c) | `E416BEFBEF02C773EE3A15FF5299D8C82A7E82441EB73631B4A08B6C21B48BC6` |
 | [`…/Prefabs/Test/ARMST_T4B_G3B1_TestWeapon.et`](../labs/ARMSTMP133T4B_InstalledMagProbe/Prefabs/Test/ARMST_T4B_G3B1_TestWeapon.et) | `61F3FCAEE494963ADF1FF82B351A61C1D295618B7DE2786490BAC13325620BAA` |
 | [`…/Prefabs/Test/ARMST_T4B_G3B1_TestWeapon.et.meta`](../labs/ARMSTMP133T4B_InstalledMagProbe/Prefabs/Test/ARMST_T4B_G3B1_TestWeapon.et.meta) | `E7BAA2A85CD3E2CAB05E2C6669DA37471A1D95D0D68EB1FE6BB334BD34809F03` |
 | [`…/Prefabs/Test/ARMST_T4B_G3B1_DonorDevice.et`](../labs/ARMSTMP133T4B_InstalledMagProbe/Prefabs/Test/ARMST_T4B_G3B1_DonorDevice.et) | `12B073DD60318491752888DED79CD3807E8B25AFB171694CB796054C86CB8502` |
@@ -455,4 +455,33 @@ incompatible / ambiguous → no-write rejects. STOP on `SCRIPT(E)`, identity/mem
 unknown type, target/chamber change or lost donor.
 
 **STATUS:** `G3B1_SOURCE_PUBLISHED / PRE_RUNTIME_SOURCE_CORRECTIONS_APPLIED / OWNER_GAME_NOT_RUN`.
+G3-B2 not authorized.
+
+## 17. G3-B1 revision 2 — installed-magazine identity exclusion + weapon-context binding (review 5973265721)
+
+The review at `e708dbb` required one more prewrite gate: the donor path must **explicitly exclude
+the magazine installed in the equipped weapon, by identity**. Added to
+`ARMST_T4B_G3B1_DonorConsume.c`:
+
+- Resolve the action-owning equipped child weapon (`pOwnerEntity`/`GetOwner`) and the acting user's
+  current weapon (`…GetWeaponManagerComponent().GetCurrentWeapon()`); require they are the **same**
+  weapon component (`not-action-weapon` / `wrong-weapon-context` rejects).
+- Resolve `installedMag = currentWeapon.GetCurrentMagazine()` and its owner item; the donor scan now
+  **skips** any candidate where `mag == installedMag` OR `item == installedMag owner`
+  (`targetSkipped` counted), and the exclusion is **rechecked immediately before**
+  `SetAmmoCount(donor-1)` (`installed-magazine-excluded` reject).
+- Logs now include `installedMagExcluded`, `targetSkipped`, `notInstalled`.
+
+Script SHA `95A48B74…` → **`E416BEFBEF02C773EE3A15FF5299D8C82A7E82441EB73631B4A08B6C21B48BC6`**;
+T4b script `D581B9C9…`, owner-saved T4b prefab `29C70A78…`, child prefab `61F3FCAE…`, `addon.gproj`
+unchanged; local==published.
+
+**Owner Workbench preflight (required):** confirm the child weapon exposes **both** the inherited
+`T4b: +1 into installed mag` and the child `G3B1: consume 1 from inventory donor`, and that G3B1
+produces `phase=pre` (not just `action-init`). If `additionalActions +{` did not append to the
+owner-resaved parent `additionalActions {`, STOP as an interaction/prefab issue. G3B1 logs the donor
+only; compare the installed MP-133 magazine/chamber before/after via the existing T4b probe / owner
+observation (not claimed as G3B1-instrumented).
+
+**STATUS:** `G3B1_REDESIGN_SOURCE_REVIEWED / PREWRITE_TARGET_EXCLUSION_APPLIED / OWNER_GAME_NOT_RUN`.
 G3-B2 not authorized.

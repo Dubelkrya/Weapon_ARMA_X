@@ -6,19 +6,18 @@
 // + inventory display. NO transfer into the weapon, NO installed-mag/chamber change,
 // NO donor deletion, NO automatic retry/rollback. G3-B2 is not authorized.
 //
-// Activation: the action is intended to be mounted on the G3B1 CHILD test weapon prefab
+// Activation: the action is mounted on the G3B1 CHILD test weapon prefab
 // (Prefabs/Test/ARMST_T4B_G3B1_TestWeapon.et), which inherits the verified T4b lab weapon
 // and adds only this action; the decorative DonorDevice prefab is historical/unused.
 //
-// Review corrections (Issue #34 comment 5973159457, incorporated):
-//   * server-only mutation: !Replication.IsServer() -> REJECT, no write;
-//   * actor context (pUserEntity + inventory) retained for the delayed samples;
-//   * immediate prewrite gates: donor component entity == item, inv.Contains(item),
-//     valid parent slot, ammo>0 -> else REJECT (no write);
-//   * strict ammo-type contract: empty/unknown reference -> REJECT; donor GetAmmoType(0)
-//     must be non-empty and equal to the reference;
-//   * exactly ONE compatible root donor required; >1 -> `ambiguous-donor` (no write);
-//   * one-shot latch set BEFORE the setter.
+// Corrections incorporated:
+//   (review 5973159457) server-only write; retained actor context; immediate prewrite
+//     ownership/slot/identity gates; strict ammo-type; exactly one compatible donor;
+//     one-shot latch before setter.
+//   (review 5973265721) explicit exclusion of the magazine installed in the equipped
+//     weapon by IDENTITY (donorMag != installedMag AND donorItem != installedMag owner),
+//     rechecked immediately before the write; invocation bound to the G3B1 action-owning
+//     equipped child lab weapon (pOwnerEntity/GetOwner vs the acting user's current weapon).
 //
 // Installed-SDK API only: SCR_InventoryStorageManagerComponent.GetAllRootItems / Contains,
 // BaseMagazineComponent.Get/SetAmmoCount/GetMaxAmmoCount/GetOwner/GetAmmoType,
@@ -130,20 +129,33 @@ class ARMST_T4B_G3B1_ConsumeAction : ScriptedUserAction
 		return m;
 	}
 
+	BaseWeaponComponent T4BWeaponOf(IEntity e)
+	{
+		if (!e)
+			return null;
+		return BaseWeaponComponent.Cast(e.FindComponent(WeaponComponent));
+	}
+
+	// The acting user's currently equipped weapon component (may be null).
+	BaseWeaponComponent T4BCurrentWeapon(IEntity user)
+	{
+		if (!user)
+			return null;
+		SCR_CharacterControllerComponent ctrl = SCR_CharacterControllerComponent.Cast(user.FindComponent(SCR_CharacterControllerComponent));
+		if (!ctrl)
+			return null;
+		BaseWeaponManagerComponent wm = ctrl.GetWeaponManagerComponent();
+		if (!wm)
+			return null;
+		return wm.GetCurrentWeapon();
+	}
+
 	// Reference ammo type: explicit attribute first, else the equipped weapon's magazine.
 	ResourceName T4BRefAmmoType(IEntity user)
 	{
 		if (m_sG3b1ExpectedAmmoType != "")
 			return m_sG3b1ExpectedAmmoType;
-		if (!user)
-			return ResourceName.Empty;
-		SCR_CharacterControllerComponent ctrl = SCR_CharacterControllerComponent.Cast(user.FindComponent(SCR_CharacterControllerComponent));
-		if (!ctrl)
-			return ResourceName.Empty;
-		BaseWeaponManagerComponent wm = ctrl.GetWeaponManagerComponent();
-		if (!wm)
-			return ResourceName.Empty;
-		BaseWeaponComponent wpn = wm.GetCurrentWeapon();
+		BaseWeaponComponent wpn = T4BCurrentWeapon(user);
 		if (!wpn)
 			return ResourceName.Empty;
 		BaseMagazineComponent mag = wpn.GetCurrentMagazine();
@@ -189,15 +201,16 @@ class ARMST_T4B_G3B1_ConsumeAction : ScriptedUserAction
 		return s;
 	}
 
-	// Counts root magazines and returns the exactly-one compatible donor, if any.
-	// outCompat: number of compatible donors; outWithMag / outWithAmmo for reject reasons.
-	int T4BFindDonor(SCR_InventoryStorageManagerComponent inv, ResourceName refType, out IEntity outItem, out BaseMagazineComponent outMag, out int outWithMag, out int outWithAmmo, out int outCompat)
+	// Counts root magazines, EXCLUDES the installed weapon magazine by identity, and
+	// returns the exactly-one compatible donor, if any.
+	int T4BFindDonor(SCR_InventoryStorageManagerComponent inv, ResourceName refType, BaseMagazineComponent installedMag, IEntity installedItem, out IEntity outItem, out BaseMagazineComponent outMag, out int outWithMag, out int outWithAmmo, out int outCompat, out int outTargetSkipped)
 	{
 		outItem = null;
 		outMag = null;
 		outWithMag = 0;
 		outWithAmmo = 0;
 		outCompat = 0;
+		outTargetSkipped = 0;
 		if (!inv)
 			return 0;
 
@@ -213,6 +226,12 @@ class ARMST_T4B_G3B1_ConsumeAction : ScriptedUserAction
 			BaseMagazineComponent mag = T4BMagOf(it);
 			if (!mag)
 				continue;
+			// Explicit installed-magazine exclusion by identity.
+			if (mag == installedMag || (installedItem != null && it == installedItem))
+			{
+				outTargetSkipped++;
+				continue;
+			}
 			outWithMag++;
 			int a = mag.GetAmmoCount();
 			if (a <= 0)
@@ -264,6 +283,23 @@ class ARMST_T4B_G3B1_ConsumeAction : ScriptedUserAction
 			return;
 		}
 
+		// Bind the invocation to the G3B1 action-owning EQUIPPED child lab weapon.
+		IEntity actionOwner = pOwnerEntity;
+		if (!actionOwner)
+			actionOwner = GetOwner();
+		BaseWeaponComponent actionWpn = T4BWeaponOf(actionOwner);
+		if (!actionWpn)
+		{
+			T4BReject(seq, opId, "not-action-weapon", srv);
+			return;
+		}
+		BaseWeaponComponent currentWpn = T4BCurrentWeapon(user);
+		if (!currentWpn || currentWpn != actionWpn)
+		{
+			T4BReject(seq, opId, "wrong-weapon-context", srv);
+			return;
+		}
+
 		SCR_InventoryStorageManagerComponent inv = SCR_InventoryStorageManagerComponent.Cast(user.FindComponent(SCR_InventoryStorageManagerComponent));
 		if (!inv)
 		{
@@ -277,6 +313,12 @@ class ARMST_T4B_G3B1_ConsumeAction : ScriptedUserAction
 			return;
 		}
 
+		// Installed weapon magazine (must never be a donor).
+		BaseMagazineComponent installedMag = currentWpn.GetCurrentMagazine();
+		IEntity installedItem = null;
+		if (installedMag)
+			installedItem = installedMag.GetOwner();
+
 		ResourceName refType = T4BRefAmmoType(user);
 		if (refType.IsEmpty())
 		{
@@ -289,7 +331,8 @@ class ARMST_T4B_G3B1_ConsumeAction : ScriptedUserAction
 		int withMag = 0;
 		int withAmmo = 0;
 		int compat = 0;
-		compat = T4BFindDonor(inv, refType, donorItem, donorMag, withMag, withAmmo, compat);
+		int targetSkipped = 0;
+		compat = T4BFindDonor(inv, refType, installedMag, installedItem, donorItem, donorMag, withMag, withAmmo, compat, targetSkipped);
 
 		if (compat != 1)
 		{
@@ -306,12 +349,18 @@ class ARMST_T4B_G3B1_ConsumeAction : ScriptedUserAction
 				+ " phase=reject ev=" + reason
 				+ " withMag=" + withMag.ToString() + " withAmmo=" + withAmmo.ToString()
 				+ " compat=" + compat.ToString()
+				+ " targetSkipped=" + targetSkipped.ToString()
 				+ " refAmmoType=" + refType
 				+ " srv=" + srv.ToString(), LogLevel.NORMAL);
 			return;
 		}
 
-		// Immediate prewrite gates.
+		// Immediate prewrite gates, INCLUDING the installed-magazine identity exclusion.
+		if (donorMag == installedMag || (installedItem != null && donorItem == installedItem))
+		{
+			T4BReject(seq, opId, "installed-magazine-excluded", srv);
+			return;
+		}
 		IEntity donorOwner = donorMag.GetOwner();
 		if (donorOwner != donorItem || !inv.Contains(donorItem))
 		{
@@ -337,6 +386,8 @@ class ARMST_T4B_G3B1_ConsumeAction : ScriptedUserAction
 
 		Print("[ARMST_T4B-G3B1] " + seq + " op=" + opId.ToString()
 			+ " phase=pre ev=invoked refAmmoType=" + refType
+			+ " installedMagExcluded=" + T4BB(installedMag != null)
+			+ " targetSkipped=" + targetSkipped.ToString()
 			+ " srv=" + srv.ToString()
 			+ " " + T4BDonorState(inv, donorItem, donorMag), LogLevel.NORMAL);
 
@@ -350,7 +401,8 @@ class ARMST_T4B_G3B1_ConsumeAction : ScriptedUserAction
 		bool ownerSame = (donorMag.GetOwner() == donorItem);
 		bool member = inv.Contains(donorItem);
 		bool gotOk = (a2 == a - 1);
-		bool setterReadbackOk = gotOk && sameMag && ownerSame;
+		bool notInstalled = (donorMag != installedMag) && (installedItem == null || donorItem != installedItem);
+		bool setterReadbackOk = gotOk && sameMag && ownerSame && notInstalled;
 
 		Print("[ARMST_T4B-G3B1] " + seq + " op=" + opId.ToString()
 			+ " phase=post ev=consume want=" + (a - 1).ToString()
@@ -359,6 +411,7 @@ class ARMST_T4B_G3B1_ConsumeAction : ScriptedUserAction
 			+ " gotOk=" + T4BB(gotOk)
 			+ " sameMag=" + T4BB(sameMag)
 			+ " ownerSame=" + T4BB(ownerSame)
+			+ " notInstalled=" + T4BB(notInstalled)
 			+ " member=" + T4BB(member)
 			+ " gameplay_effect=UNVERIFIED"
 			+ " srv=" + srv.ToString()
