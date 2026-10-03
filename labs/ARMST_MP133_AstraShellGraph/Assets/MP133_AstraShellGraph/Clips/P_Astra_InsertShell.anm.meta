@@ -1,0 +1,19 @@
+MetaFileClass {
+ Name "{D3868FB32BF75DEE}Assets/MP133_AstraShellGraph/Clips/P_Astra_InsertShell.anm"
+ Configurations {
+  TXAResourceClass PC {
+   SourcePath "P_Astra_InsertShell.txa"
+   SourceProfile "A_UpperbodyADD_AllUp"
+  }
+  TXAResourceClass XBOX_ONE : PC {
+  }
+  TXAResourceClass XBOX_SERIES : PC {
+  }
+  TXAResourceClass PS4 : PC {
+  }
+  TXAResourceClass PS5 : PC {
+  }
+  TXAResourceClass HEADLESS : PC {
+  }
+ }
+}
