@@ -257,11 +257,15 @@ historical material**; the owner approved **V3** (Issue #27 comment 5966570978,
   repoints the cloned `MP133_T2A_weapon.asi` `ReloadActionBolt` rows. Report:
   `reports/MP133_V3_T2B_WEAPON_MARKER_PREP.md`. **Owner imported the weapon clip**
   (`W_MP133_T2B_Bolt.anm` = `{0C775A2108B6D5AD}Assets/Weapons_RUS/Mp_133/T2A/T2AClips/W_MP133_T2B_Bolt.anm`)
-  and the agent repointed only `Reload.Erc/Pne.ReloadActionBolt` in the cloned weapon ASI
-  (new ANM 2×, production bolt 0×, other rows unchanged, `.meta` GUID consistent, stale rdb
-  removed). Status `BRIDGE_PAUSED / T2B_LAB_WIRED; AWAITING_OWNER_RUN`.
-- **Next:** owner equips `MP-133 [T2A-DIAG]` and runs several short-R racks; the agent then
-  compares marker order/count/time on both receivers. Preserve the native pump and
+  but the import was **empty (44 B)** because the first lab `.txa` carried a UTF-8 BOM;
+  the agent rebuilt the `.txa` byte-identically to production (no BOM, CRLF) with only the
+  marker line added, removed the empty `.anm`, kept the `.anm.meta` (GUID preserved), and
+  repointed only `Reload.Erc/Pne.ReloadActionBolt` in the cloned weapon ASI (new ANM 2×,
+  production bolt 0×, other rows unchanged, `.meta` GUID consistent, stale rdb removed).
+  Status `BRIDGE_PAUSED / T2B_TXA_REBUILT_NO_BOM; AWAITING_OWNER_REIMPORT`.
+- **Next:** owner re-imports `W_MP133_T2B_Bolt.txa` (confirm non-trivial `.anm` +
+  `ReloadActionBolt` green), then equips `MP-133 [T2A-DIAG]` and runs several short-R racks;
+  the agent compares marker order/count/time on both receivers. Preserve the native pump and
   owner-authored assets. No bridge, T2c, or per-shell implementation until T2b results.
 
 ---
