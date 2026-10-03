@@ -271,3 +271,8 @@ historical material**; the owner approved **V3** (Issue #27 comment 5966570978,
   `Assets/Toz/1.et` → `weapons/1.json`. Final isolated candidate: **181 entities** (68
   weapons / 4 grenades), `--check`/data-quality all exit 0, dirty==HEAD. Promotion set
   ready; canonical publication awaiting the explicit publish go-ahead (then fresh CI).
+  **Publication PAUSED (pre-push gates):** `test_balance_report_regressions` 9x39
+  narrative hard-codes old values (InitSpeed=305 / PenetrationDepth=5.55) vs the promoted
+  source-truth (290 / 6) → needs a minimal test update; and
+  `check_repository_integrity.py` is NOT RUN locally (no python with `jsonschema`; pip
+  unavailable). Decisions requested; no canonical generated content published.

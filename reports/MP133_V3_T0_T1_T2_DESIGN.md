@@ -169,3 +169,40 @@ weapon-scoped V3 design → staged implementation (each separately approved).
   artificial mag +1/dummy ammo are NOT safe per-shell transport. Do not touch ammo.
 - Restored MP-133 excludes `CMD_Weapon_Reload=7`; do not propose command 7 without a
   separately authorized graph change. `reloadType=1` is not proof of pump completion.
+
+---
+
+## 8. Bohemia documentation source note for T2a (owner-supplied, comment 5968662213)
+
+Source: official `Arma_Reforger:Weapon_Animation` wiki (+ Setup, Animation Editor,
+Custom Properties/Events, Nodes, `WeaponAnimationComponent` API).
+
+**Supported by the docs (SOURCE)**
+- A weapon uses **two distinct animation instances**: `_player.asi` (holding character)
+  and `_weapon.asi` (weapon); they run simultaneously and corresponding clips normally
+  need compatible lengths.
+- Distinct roles: `.aw` workspace, `.ast` template, `.agr` graph, `.agf` graph logic, both
+  `.asi` instances, `.anm` clip (per-frame events). On the weapon prefab,
+  `WeaponAnimationComponent` assigns the graph + weapon AnimInstance; `Anim Injection`
+  assigns the same graph + the **player** AnimInstance with root binding `Weapon`.
+- Event keys are authored per `.anm`/`.txa` in Animation Editor (fire at a frame); graph
+  **Event nodes** also emit events; `MainPathOnly` restricts sampling to the main path.
+- Copied weapon `.asi` clips need skeleton/bone compatibility; use unique test-clone
+  resources, never edit production/archived V2 clips.
+
+**NOT proven by these pages (UNRESOLVED; T2a must establish)**
+- that a marker authored in `_player.asi` reaches
+  `WeaponAnimationComponent.OnAnimationEvent`;
+- whether `SyncWithCharacter` forwards arbitrary events; callback event provenance;
+  duplication across paired player/weapon/graph events; `MainPathOnly` exactly-once;
+  server/proxy authority; safe ammo commit from animation callbacks.
+- Public docs may be version-shifted vs installed **Enfusion SDK 1.8.0.13** — verify the
+  actual class methods/signatures locally.
+
+**T2a guidance (only after the #28 publication/CI gate):** one unique frame event on a
+**player-only copied clip**, bound via cloned `player.asi`/Anim Injection; log both the
+character-side invoker and the weapon-side `WeaponAnimationComponent.OnAnimationEvent` if
+the installed SDK supports it; keep `weapon.asi` marker-free in T2a; record
+receiver/marker/time/count/network side. Static/preview wiring does **not** prove
+player→weapon delivery. No native reload event, no ammo change, no global R hook, no
+T2b/T2c without the next approval.
