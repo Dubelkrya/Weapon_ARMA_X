@@ -2,6 +2,14 @@
 
 > **CURRENT NAVIGATION / DESIGN STATUS (2026-10-03).** This is a map of evidence, not proof of a finished V3. For any disagreement use current live-addon/owner Workbench evidence first, then [KNOWLEDGE_STATUS.md](KNOWLEDGE_STATUS.md). The [tracking Issue #27](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/27) records approvals, owner observations and STOP conditions.
 
+## CURRENT HANDOFF / NEXT TASK (overrides historical statuses below)
+
+- **G2 offline owner-run:** original T4b synthetic +1 → same physical installed magazine → manual short-R and native chamber → owner-reported single shot. No hit/damage or MP proof.
+- **G3-A:** [read-only donor/transaction audit](MP133_V3_G3_REAL_DONOR_PHASE_A.md) published at `eb2b323`. Two setters remain non-atomic.
+- **G3-B1:** source is now [published at `a165e80`](https://github.com/Dubelkrya/Weapon_ARMA_X/commit/a165e804df1e571c58806bb39ea74e5eee993191) in the **same existing T4b addon**, donor-only one-shot decrement. Next: independently review source and owner Workbench/game log; source publication does not imply a successful experiment. The T4b diagnostic script is unchanged; owner re-saved the original test-weapon prefab in Workbench. No new T4c addon.
+- **G3-B2 actual two-sided transfer, G4 and G5:** not authorised. Owner says Core SHIFT+R reload is NOT working; do not require it as a current feature. A Core RPC-repacking candidate from an unpublished local report remains unverified ([#33](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/33)).
+- **Coordination:** experimental branch `t4b/installed-mag-probe` owns active G3 work. Documentation PR [#31](https://github.com/Dubelkrya/Weapon_ARMA_X/pull/31) must reconcile overlapping index/sync changes before any merge. Catalog #28 and CI #29 are done. Astra remains paused; historical T4a/T2a/V2/P2 are not current active MP-133 labs.
+
 ## Start here in a new agent session
 
 1. Read [`AGENTS.md`](../AGENTS.md) and [`docs/sync/CURRENT_AI_SYNC.md`](../docs/sync/CURRENT_AI_SYNC.md) **before taking action**.
@@ -15,7 +23,7 @@
 | --- | --- |
 | Clean native MP-133 (T0) | **OWNER-RUNTIME FUNCTIONAL PASS**: only Weapons addon loaded; three actual successive shots with ordinary short-R manual pumping; 10-round tube supply depleted; hold R inspection works. [Owner result](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/27#issuecomment-5967911774) |
 | Strict physical-mag identity | **NOT INSTRUMENTED**: no before/after physical magazine entity identity or complete last-round chamber trace. Do not claim no silent replacement solely from the functional T0. |
-| Core interaction | **NOT TESTED IN T0**: Core was not loaded; frozen LSHIFT+R must be considered separately in a safe controlled test. |
+| Core interaction | **NOT TESTED IN T0**: Core was not loaded; owner states Core SHIFT+R reload is nonfunctional; legacy references are not an active integration requirement. |
 | Legacy V2 global R regression | **P2 OWNER-RUNTIME**: excluding the old global `modded SCR_CharacterCommandHandlerComponent` restored ordinary R on other pumps. The exact `super`/native failure mechanism is unknown. |
 | Owner's native-event edit | Visible chamber-insert behavior reportedly recovered after restoring `Weapon_SpawnMagazine/AttachMagazine/MagRelease` in a lab clip. This is **not** proof of magazine continuity, chamber correctness or ammo conservation. |
 | Chung's animation reference | Provided AGF/AGR/AST, player/weapon ASI, code and selected player-event screenshots support separate pump, grab, insert and safe stop/continue paths. Actual player→weapon event routing and possible duplicate commit are **UNRESOLVED**. |
@@ -23,7 +31,7 @@
 | T2 event routing | **READ-ONLY DESIGN PUBLISHED**; diagnostic player-only, weapon-only and paired-marker experiments proposed; no test code or asset edit authorized. |
 | V3 actual code | **NOT AUTHORIZED / NOT IMPLEMENTED**. Real one-shell server transaction, once-only commit, safe stop, network and low-FPS tests are future gates. |
 
-**Intended V3 controls, not current T0 behavior:** short R performs the necessary verified native pump (if required) and then per-shell tube loading; a second short R or trigger requests safe stop; hold R preserves native inspection; LSHIFT+R is the unchanged Core action. If standard R cannot be intercepted without affecting native behavior, a separate load action is a possible fallback **only after the owner's decision**.
+**Intended V3 controls, not current T0 behavior:** short R performs the necessary verified native pump (if required) and then per-shell tube loading; a second short R or trigger requests safe stop; hold R preserves native inspection; legacy Core SHIFT+R reload is not a functioning dependency. If standard R cannot be intercepted without affecting native behavior, a separate load action is a possible fallback **only after the owner's decision**.
 
 ## Current design / evidence reports
 
@@ -41,8 +49,8 @@
 | [`MP133_V3_T4_ONE_SHELL_TRANSFER.md`](MP133_V3_T4_ONE_SHELL_TRANSFER.md) | T4 Phase A (read-only): installed SDK exposes only `BaseMagazineComponent.SetAmmoCount(int)` as a magazine-ammo writer; no atomic transfer / legitimate donor consumption / authority / rollback → `T4_API_OR_TRANSACTION_BLOCKED`; minimal next experiment proposed. |
 | [`MP133_V3_T4A_SETAMMOCOUNT_SEMANTICS.md`](MP133_V3_T4A_SETAMMOCOUNT_SEMANTICS.md) | T4a isolated lab (`ARMSTMP133T4A_SetProbe`) testing `SetAmmoCount` on a **disposable** magazine via a dedicated action (`ARMST_T4A_SETTER_ACTION`, key P): one-shot guarded +1 with pre/post/reject logs and identity check; no transfer/donor/inventory. `T4A_LAB_PREPARED_OWNER_RUN_REQUIRED`. |
 | [`MP133_V3_T4B_INSTALLED_MAG_PROBE.md`](MP133_V3_T4B_INSTALLED_MAG_PROBE.md) | T4b isolated lab (`ARMSTMP133T4B_InstalledMagProbe`): synthetic `+1` into the **already-installed** lab-magazine via `GetCurrentMagazine().SetAmmoCount(old+1)`; weapon-local context action (`ActionsManagerComponent {A29AE67FF4D82B0F}` + `additionalActions +{ … ParentContextList { "default" } … }`), baseline probe, `sameMagazine/sameOwner/chamberUnchanged` logs; no detach/replace/donor/inventory. `T4B_LAB_PREPARED_OWNER_RUN_REQUIRED`. §15/§16 add G3-B1: inventory-donor consume via the child lab weapon `ARMST_T4B_G3B1_TestWeapon.et` (action "G3B1: consume 1 from inventory donor", `[ARMST_T4B-G3B1]`); server-only, strict ammo-type, single-donor; `G3B1_SOURCE_PUBLISHED / PRE_RUNTIME_SOURCE_CORRECTIONS_APPLIED / OWNER_GAME_NOT_RUN`. |
-| [`MP133_V3_VARIANT_A_ARCHITECTURE.md`](MP133_V3_VARIANT_A_ARCHITECTURE.md) | Owner decision (Variant A: custom per-shell reload preserving the physical magazine; replaceable transfer backend) + the three independent parts and gates `G0–G5`, with strict stop-after-each-gate review. Documentation only. `V3_VARIANT_A_ARCHITECTURE_SELECTED / T4B_COMPILE_RECOVERY_OWNER_RECOMPILE_REQUIRED`. |
-| [`MP133_V3_G3_REAL_DONOR_PHASE_A.md`](MP133_V3_G3_REAL_DONOR_PHASE_A.md) | G3 Phase A read-only audit: donor discovery/ownership/ammo-compat via installed SDK inventory APIs, setter/observer and transaction feasibility, failure/concurrency matrix (`REJECTED/COMMITTED/INDETERMINATE`), adapter boundary and one proposed owner-only G3-B test. `G3_PHASE_A_READONLY_AUTHORIZED / G3_REAL_DONOR_TRANSACTION_NOT_IMPLEMENTED`. |
+| [`MP133_V3_VARIANT_A_ARCHITECTURE.md`](MP133_V3_VARIANT_A_ARCHITECTURE.md) | Owner decision (Variant A: custom per-shell reload preserving the physical magazine; replaceable transfer backend) + the three independent parts and gates `G0–G5`, with strict stop-after-each-gate review. Documentation only. historical design checkpoint; G2 owner runtime and G3-B1 source publication supersede its pending status. |
+| [`MP133_V3_G3_REAL_DONOR_PHASE_A.md`](MP133_V3_G3_REAL_DONOR_PHASE_A.md) | G3 Phase A read-only audit: donor discovery/ownership/ammo-compat via installed SDK inventory APIs, setter/observer and transaction feasibility, failure/concurrency matrix (`REJECTED/COMMITTED/INDETERMINATE`), adapter boundary and one proposed owner-only G3-B test. G3-A report published, G3-B1 donor-only fixture published; owner runtime is pending, real two-sided transfer unimplemented. |
 | [Issue #27](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/27) | **Current approval and decision record**. Read newer comments before acting on its original V2.2 body. |
 
 ## Frozen historical V1/V2 evidence (retain; not V3 instructions)
@@ -66,8 +74,7 @@
 
 ## Next safe work
 
-- T1/T2 design is already committed in [`MP133_V3_T0_T1_T2_DESIGN.md`](MP133_V3_T0_T1_T2_DESIGN.md). **Do not task another agent to repeat the same report.**
-- Separately approve an isolated **logging-only** T2 event-routing experiment and T1 input observation, if and when the owner elects to run them. No per-shell ammo changes in these diagnostics.
-- Verify physical magazine entity stability when instrumentation becomes available; do not redo the completed functional three-shot T0 without a reason.
-- Later, independently review the real one-shell transfer (same tube entity, compatible homogeneous ammo source, server-authoritative once-only commit) and Core integration before implementing V3.
-- The **canonical catalog rescan is separate work**: the 2026-09-29 sync records approximately 1,455 stale `Prefabs/Weapons/Rifles/` references. Preserve imported vanilla corpus; review generated diffs. Do not mix rescan changes into MP-133 research.
+1. **G3-B1 code reviewer:** inspect `a165e80` lab-only donor fixture, exact SDK signatures, single non-R action, one-shot guard, inventory-owner/slot/identity checks, source manifest and effects on the owner-saved T4b prefab. Do not alter code without a specific reviewed defect.
+2. **Owner:** after source review, compile and test G3-B1 in Workbench/game; provide pre/post/+250 ms/+1 s donor ammo and identity, inventory/slot/UI, unchanged weapon magazine/chamber and any script errors. Do not begin two-sided transfer until evidence reviewed.
+3. **G3-B2:** separately propose a bounded single donor→installed-magazine trial after B1; `REJECTED / COMMITTED / INDETERMINATE` and no automatic retry for partial transfer.
+4. **Docs/Core agents:** reconcile PR #31 against this active branch and verify the unpublished local Core report in its own read-only direction; do not assume Core SHIFT+R or RPC repacking already solves the installed-magazine case. Astra paused and protected.

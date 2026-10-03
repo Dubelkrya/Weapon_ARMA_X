@@ -9,6 +9,20 @@ now, what was just done, and what must not be repeated or assumed. It is a
 
 ---
 
+## 0. CURRENT MP-133 EXECUTION STATE — 2026-10-03
+
+**G2 owner-runtime passed (offline):** one synthetic `+1` persists in the SAME installed M1 magazine; manual short-R / native `Weapon_Rack_Bolt` chambers it; owner reports firing. The original T4b script SHA256 remains `D581B9C9EE270725FFEC94C7685CBBCB2AB41DBA717F2B4FBCF8C4AC8DDCBEB1`. Projectile hit/damage and multiplayer are unverified. The original T4b weapon prefab was **re-saved by the owner in Workbench** and published at `a165e80` (manifest SHA256 `29C70A78B7CBA7678B84A57A29EBF32127A1ED2575742270D9CFACAB78F2AE83`); do not silently restore an older prefab.
+
+**G3 Phase A** read-only SDK/transaction report was published at `eb2b323`. **G3-B1** one-shot donor-inventory `SetAmmoCount(d-1)` fixture was published at [`a165e80`](https://github.com/Dubelkrya/Weapon_ARMA_X/commit/a165e804df1e571c58806bb39ea74e5eee993191) INSIDE the EXISTING `ARMSTMP133T4B_InstalledMagProbe` addon. It needs independent code review, then **owner-only Workbench compile/gameplay proof** (donor identity, ammo, direct-inventory ownership/slot/UI, immediate / +250 ms / +1 s). This source publication is NOT an owner runtime PASS. The installed weapon magazine/chamber must not change in G3-B1; **G3-B2 two-sided transfer, G4 animation and G5 production/MP are not authorised**. Do not create a separate T4c addon/branch/PR per experiment.
+
+**Core correction:** owner states Core SHIFT+R reload is NOT working; legacy `ARMST_LIGHT_RELOAD_ACTION` / `OnRackBoltMDown` references are not a functioning dependency. A locally reported Core `ARMST_SCR_PlayerMagRepacks.c` RPC donor-transfer candidate has not been independently checked for installed MP-133 transfer. Core audit [#33](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/33) remains unpublished; Core is read-only.
+
+**Agent allocation:** active MP-133 agent owns G3-B1 source on this branch; independent reviewer checks code and later owner logs (read-only); documentation maintainer owns PR [#31](https://github.com/Dubelkrya/Weapon_ARMA_X/pull/31), to be reconciled before merging; Core audit remains read-only; owner alone tests Workbench/game. Astra is paused, prior T4a/T2a/V2/P2 are historical, and production Weapons/Core/worlds/layers and owner worktree are protected. Catalog #28/CI #29 are completed, with [green hosted workflow](https://github.com/Dubelkrya/Weapon_ARMA_X/actions/runs/37135291162).
+
+**Historical caution:** older `G0 current/recompile pending`, `G1 required`, `T4b prepared owner run required`, `frozen Core LSHIFT+R` and `separate T4c addon` entries below are superseded wherever they contradict this section. Start each session with `AGENTS.md`, current Git status, this section, Issue #34 and current G3-B1 sources, rather than redoing G0/G2.
+
+---
+
 ## 1. Layout
 
 | Role | Location |
