@@ -91,6 +91,15 @@ Active gameplay design for ammunition roles is documented in `reports/AMMO_AP_BP
 
 The first Workbench validation targets are 9×39 and 5.56×45 because current source snapshots already contain suitable two-resource families. The policy must be tested one caliber family at a time before wider rollout.
 
+## Current MP-133 V3 research (2026-10-03)
+
+[`MP133_INDEX.md`](MP133_INDEX.md) is the navigation and current-status entry point; [Issue #27](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/27) is the decision log.
+
+- **T0 clean functional baseline — OWNER-RUNTIME PASS:** owner tested the original MP-133 with only the Weapons addon loaded. Three consecutive shots with manual short-R pumping worked, the 10-round tube supply depleted, and hold R performed inspection. Physical magazine **entity identity**, full last-round telemetry and Core-on integration were not instrumented; do not claim a strict full-system validation.
+- **T1/T2 READ-ONLY DESIGN PUBLISHED:** [`MP133_V3_T0_T1_T2_DESIGN.md`](MP133_V3_T0_T1_T2_DESIGN.md) contains input-routing and player/weapon/graph event-routing diagnostic designs. Actual diagnostic code, new lab and ANM/ASI/AGF changes require separate owner approval. Workbench/game runs remain owner-only.
+- The old V2/P2 laboratory is frozen and must not be re-enabled as the V3 implementation. P2 implicated its global command handler in the R regression, but the exact underlying call-path failure is unknown. The owner's native-event edit restored visible behavior in one configuration; ammo conservation and mag identity were not proved by that observation.
+- Preserve native pump, chamber and fire behavior. Do not copy Chung's dummy ammo, global reload handler or magazine replacement. Core LSHIFT+R interaction requires its own later test because Core was not loaded in T0.
+
 ## Current Workbench-validated AEK-971 control point
 
 The current validated prototype is newer than the historical V8 checkpoint.
@@ -121,7 +130,7 @@ Historical `reports/AEK971_TEST_CHECKPOINT_V8.md` remains as debugging history o
 
 ## Data freshness / known debt
 
-- Generated catalogs/indexes are snapshots of the primary addon and should be refreshed after material edits to `ARMST-PLATFORM---Weapons`.
+- Generated catalogs/indexes are snapshots of the primary addon and should be refreshed after material edits to `ARMST-PLATFORM---Weapons`. The 2026-09-29 sync report identifies approximately 1,455 obsolete `Prefabs/Weapons/Rifles/` references after prefab-path reorganization; a reviewed canonical rescan is still pending. Never hand-edit generated paths or delete the imported vanilla source corpus.
 - `indexes/script_reference/manifest.json` is a supplied-snapshot inventory and may still list old built-in dovetail types for source assets; active authoring policy is v2 `DovetailRU`.
 - The native technical/balance Sheets have had the known TT `ARRAYFORMULA` spill blockers removed; manual values must not be written into those formula spill ranges again.
 - Raw `.xlsx` copies on Drive are archived snapshots; the native Google Sheets are the active tabular working views.

@@ -29,14 +29,16 @@ deliberately and say so in the summary:
 The live addon is a real mod project. It contains only what the game,
 Workbench, or the modder's runtime needs. Reports, audits, plans, scratch
 scripts and diagnostics do not belong in it, and this repository is where they
-go instead. See [`../../AGENTS.md`](../../AGENTS.md) rules 4 and 5.
+go instead. See [`../AGENTS.md`](../AGENTS.md) rules 4, 5 and 10.
 
 ## Housekeeping
 
-Safe to delete at any time:
+`artifacts/` is git-ignored, but local untracked files may be the owner's only copies of logs or test evidence. **Inspect first; do not delete all files automatically.** The tracked `artifacts/README.md` must remain in place.
+
+To list contents before a separately approved cleanup, run from the repository root:
 
 ```powershell
-Remove-Item -Recurse -Force artifacts/*
+Get-ChildItem -Force artifacts | Where-Object { $_.Name -ne 'README.md' }
 ```
 
-There is nothing here that cannot be regenerated, and nothing tracked by git.
+Promote durable evidence to an explicitly reviewed destination. Delete individual confirmed-disposable paths only after classifying them in accordance with [`AGENTS.md`](../AGENTS.md).

@@ -23,6 +23,8 @@ It combines a local scanner, generated weapon catalogs/indexes, JSON schemas, Wo
 > Inspect generated balance comparisons in [`reports/balance/`](reports/balance/README.md).
 >
 > Review catalog inconsistencies in [`reports/DATA_QUALITY.md`](reports/DATA_QUALITY.md).
+>
+> Current MP-133 V3 development and archived V1/V2 references: [`reports/MP133_INDEX.md`](reports/MP133_INDEX.md).
 
 ## Scope
 
@@ -109,6 +111,7 @@ For local-agent edits, follow [`agent/SAFE_PREFAB_EDITOR.md`](agent/SAFE_PREFAB_
 | [`reports/families/`](reports/families/README.md) | Generated AK/RPK, 9×39 and shotgun comparison pages |
 | [`reports/balance/`](reports/balance/README.md) | Generated weapon / magazine / projectile balance comparisons |
 | [`reports/DATA_QUALITY.md`](reports/DATA_QUALITY.md) | Catalog contradictions, unresolved relationships and automated quality checks |
+| [`reports/MP133_INDEX.md`](reports/MP133_INDEX.md) | Current MP-133 V3 status, next tests and historical V1/V2 navigation |
 | `reports/` | Authoring guides, active policies, research and generated reports |
 | `schema/` | JSON schemas for weapon, magazine, ammunition and compatibility data |
 

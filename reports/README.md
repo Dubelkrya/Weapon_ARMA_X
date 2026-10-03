@@ -43,6 +43,12 @@ Use [`DATA_QUALITY.md`](DATA_QUALITY.md) for catalog contradictions, unresolved 
 
 Research files may describe experiments, blockers, or unvalidated paths. They are not automatically production authoring rules.
 
+## MP-133: current V3 research and historical laboratory
+
+Start with [`MP133_INDEX.md`](MP133_INDEX.md) for the current owner-tested baseline, approved scope, open T1/T2 questions, and a categorized index of V1/V2 history. The [tracking issue #27](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/27) records decisions and owner runtime results.
+
+The [T0/T1/T2 diagnostic design](MP133_V3_T0_T1_T2_DESIGN.md) is **research/design only**, not permission to modify animation assets or build V3. Older MP-133 reports and the V2-specific scripts remain historical evidence, not current implementation instructions.
+
 ## Workbench-backed samples
 
 The [`samples/`](samples/) directory contains weapon-specific examples and control artifacts used by the authoring documentation.

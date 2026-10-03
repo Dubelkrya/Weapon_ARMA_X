@@ -48,7 +48,7 @@ Set `ARMST_WEAPONS_ALLOW_ANY_ADDON=1` only for a genuine fork.
 | Live addon | `main` | `6ec5015f572720223789cd82c4e3232097f11b99` |
 | Tools repo | `main` | see `git log` |
 
-The live addon is on `main` and its working tree is **clean**. `test_weapon`
+At the recorded 2026-09-29 checkpoint the live addon was on `main` with a **clean** working tree. Its current local worktree has **not** been rechecked by this documentation update. `test_weapon`
 was fully promoted to `main` and then deleted, locally and remotely; it must not
 be recreated automatically. Normal addon development happens directly on
 `main`. Do not create feature branches unless the user explicitly asks.
@@ -164,6 +164,7 @@ unchanged.
   corpus (`catalog/**/*.et|.conf|.meta`). The corpus is intentional reference
   material and must survive any rescan; `clean_generated_outputs()` exists to
   guarantee exactly that.
+- `reports/MP133_INDEX.md` — current MP-133 V3 status and categorized V1/V2 history.
 
 ## 9. Session start checklist
 
@@ -214,17 +215,23 @@ historical material**; the owner approved **V3** (Issue #27 comment 5966570978,
   longer fires; mag identity / ammo conservation are unverified. Current lab ASI maps
   InsertMag to the lab clip, while the owner described the production clip — confirm.
   See `reports/MP133_V3_2_ANIM_EVENT_FINDING.md`.
-- **T0/T1/T2 (V3, comment 5967836589):** T0 owner baseline checklist + T1 input-routing
-  and T2 animation-event-routing read-only designs are in
-  `reports/MP133_V3_T0_T1_T2_DESIGN.md`. Status
-  `V3_STAGE1_T0_OWNER_TEST_PENDING / T1_T2_READONLY_DESIGN_APPROVED /
-  T1_T2_CODE_NOT_AUTHORIZED`. No code/Workbench/game. Key unresolved: stock R/inspection
-  action names, key-edge delivery/suppression, `ResetAction`, player↔weapon event
-  routing, `Main Path Only`, reliable native pump-completion signal.
-- **Next:** V3 Stage 1 requires the owner to prove the clean native baseline
-  (`shot → short R pump → shot` ×3, hold-R inspection, tube/chamber baseline). Until
-  proven, report `BASELINE_RUNTIME_REQUIRED` and do **not** implement. Owner reports
-  pumps work with lab OFF but has not yet stated the exact 3-shot/hold-R result →
-  `V3_CLEAN_BASELINE_PARTIALLY_CONFIRMED`. Optional owner diagnostics P1–P5
-  (see V3.1 report) localize the cause.
-
+- **T0 owner clean functional result (comments 5967858916 / 5967911774):** the
+  owner tested the original MP-133 with only the Weapons addon loaded, no V2/P2
+  laboratory or Core. Three consecutive actual shots with short-R manual pumps
+  succeeded; 10-round magazine ammunition depleted; hold R performed inspection.
+  Status: `T0_CLEAN_FUNCTIONAL_PASS / PHYSICAL_MAG_ENTITY_IDENTITY_NOT_INSTRUMENTED`.
+  Detailed final-round telemetry and stable physical magazine *entity* identity were
+  not measured, so do not claim full system-level proof. Do not needlessly repeat
+  the completed three-shot functional test.
+- **T1/T2 READ-ONLY DESIGN PUBLISHED (commit 7d645f3, Issue #27):**
+  `reports/MP133_V3_T0_T1_T2_DESIGN.md` provides input-routing and
+  animation-event-routing experiments and STOP criteria.
+  `T1_T2_CODE_NOT_AUTHORIZED`: no new diagnostic addon, logging code,
+  animation/graph edits, input hook or Workbench/game run is approved yet.
+  Native reload action names, safe interception, player/weapon event delivery,
+  reliable pump-completion signal and authoritative shell transfer remain open.
+- **Next:** use `reports/MP133_INDEX.md` and Issue #27 to coordinate a separately
+  approved minimal T2 event-routing diagnostic and T1 input diagnostic. Preserve
+  the existing native pump and owner-authored assets. Test Core interaction
+  separately; Core was absent from the clean T0 test. No implementation of V3
+  until the diagnostic and transaction gates are resolved.

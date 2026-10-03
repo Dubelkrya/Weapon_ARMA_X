@@ -1,8 +1,8 @@
 # MP-133 V3 — T0 checklist + T1/T2 read-only designs
 
-**Status:** `V3_STAGE1_T0_OWNER_TEST_PENDING / T1_T2_READONLY_DESIGN_APPROVED /
-T1_T2_CODE_NOT_AUTHORIZED`. Read-only. **No gameplay file changed, no Workbench/game
-run, no new addons created, no implementation.** Source: Issue #27 comment 5967836589.
+**Original design status:** `V3_STAGE1_T0_OWNER_TEST_PENDING / T1_T2_READONLY_DESIGN_APPROVED / T1_T2_CODE_NOT_AUTHORIZED`. Read-only. **No gameplay file changed, no Workbench/game run, no new addons created, no implementation.** Source: Issue #27 comment 5967836589.
+
+**Subsequent owner update, 2026-10-03:** `T0_CLEAN_FUNCTIONAL_PASS / PHYSICAL_MAG_ENTITY_IDENTITY_NOT_INSTRUMENTED`. The three-shot native-pump baseline and hold-R inspection were confirmed with only the Weapons addon loaded. The T1/T2 designs below are complete as documents, but implementing diagnostics remains **NOT AUTHORIZED**. See [`MP133_INDEX.md`](MP133_INDEX.md) and Issue #27 comments 5967858916 / 5967911774.
 
 **Engine target:** installed Enfusion **1.8.0.13** (`ArmaReforgerSteam.exe` FileVersion),
 Tools build 24870687. SDK reference used: local
