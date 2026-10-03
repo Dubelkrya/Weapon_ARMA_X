@@ -255,12 +255,14 @@ historical material**; the owner approved **V3** (Issue #27 comment 5966570978,
   `Assets/Weapons_RUS/Mp_133/T2A/T2AClips/W_MP133_T2B_Bolt.txa`; script logs both markers
   on both sides. Awaiting owner import (`W_MP133_T2B_Bolt.anm` GUID), then the agent
   repoints the cloned `MP133_T2A_weapon.asi` `ReloadActionBolt` rows. Report:
-  `reports/MP133_V3_T2B_WEAPON_MARKER_PREP.md`. Status
-  `BRIDGE_PAUSED / T2B_LAB_TXA_PREPARED; AWAITING_OWNER_WEAPON_CLIP_IMPORT`.
-- **Next:** owner imports the weapon marker clip and returns its GUID; the agent repoints
-  the cloned weapon ASI, then the owner runs several short-R racks and the agent compares
-  marker order/count/time. Preserve the native pump and owner-authored assets. No bridge,
-  T2c, or per-shell implementation until T2b results.
+  `reports/MP133_V3_T2B_WEAPON_MARKER_PREP.md`. **Owner imported the weapon clip**
+  (`W_MP133_T2B_Bolt.anm` = `{0C775A2108B6D5AD}Assets/Weapons_RUS/Mp_133/T2A/T2AClips/W_MP133_T2B_Bolt.anm`)
+  and the agent repointed only `Reload.Erc/Pne.ReloadActionBolt` in the cloned weapon ASI
+  (new ANM 2×, production bolt 0×, other rows unchanged, `.meta` GUID consistent, stale rdb
+  removed). Status `BRIDGE_PAUSED / T2B_LAB_WIRED; AWAITING_OWNER_RUN`.
+- **Next:** owner equips `MP-133 [T2A-DIAG]` and runs several short-R racks; the agent then
+  compares marker order/count/time on both receivers. Preserve the native pump and
+  owner-authored assets. No bridge, T2c, or per-shell implementation until T2b results.
 
 ---
 

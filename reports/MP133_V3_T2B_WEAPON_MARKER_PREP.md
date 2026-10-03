@@ -1,6 +1,6 @@
 # MP-133 V3 — T2b weapon-only marker (prepared lab `.txa`)
 
-**Status:** `T2B_LAB_TXA_PREPARED; AWAITING_OWNER_WEAPON_CLIP_IMPORT`.
+**Status:** `T2B_LAB_WIRED; AWAITING_OWNER_RUN`.
 Lab-only; production Weapons/Core/frozen V2 untouched; Workbench/game NOT RUN by the
 agent. Source: Issue #27 comment 5969580576. Bridge implementation is **PAUSED**;
 `reports/MP133_V3_EVENT_BRIDGE_DESIGN.md` is retained only as a fallback.
@@ -43,13 +43,18 @@ without touching ammo/R/pump.
 ## Owner steps (import + repoint)
 
 1. Loadout unchanged: `ARMST-PLATFORM---Weapons` + `ARMSTMP133T2A_Diag`; Core and V2/P2 OFF.
-2. Import `W_MP133_T2B_Bolt.txa` in the Animation Editor to `W_MP133_T2B_Bolt.anm`; return
-   its ANM ResourceName/GUID (the agent does **not** invent the binary/GUID).
-3. The agent then repoints **only** `Reload.Erc/Pne.ReloadActionBolt` in the cloned
-   `MP133_T2A_weapon.asi` to the imported ANM and re-validates GUID/`.meta`/ASI/graph and
-   native-event preservation.
-4. Owner run: equip `MP-133 [T2A-DIAG]`, several deliberate **short-R** racks; capture
-   `console.log`/`script.log`.
+2. **DONE (owner):** imported `W_MP133_T2B_Bolt.txa` → `W_MP133_T2B_Bolt.anm`;
+   ANM ResourceName/GUID returned: `{0C775A2108B6D5AD}Assets/Weapons_RUS/Mp_133/T2A/T2AClips/W_MP133_T2B_Bolt.anm`
+   (`.meta` Name matches).
+3. **DONE (agent):** repointed **only** `Reload.Erc.ReloadActionBolt` and
+   `Reload.Pne.ReloadActionBolt` in the cloned `MP133_T2A_weapon.asi` to the imported ANM.
+   Validated: new ANM appears exactly 2× in the ASI, production bolt resource 0×, other
+   reload rows unchanged (`Reload_Inject` `{45B1772B8AFEAE47}`, `Reload_Rem`
+   `{FBC8FA7934FA4394}`), `.meta` GUID consistent; stale `resourceDatabase.rdb` removed.
+   The `.anm` is binary/compressed, so native-event preservation is asserted from the
+   `.txa` source and will be confirmed by the runtime log.
+4. **TODO (owner run):** equip `MP-133 [T2A-DIAG]`, several deliberate **short-R** racks;
+   capture `console.log`/`script.log`.
 
 ## Result assessment (after the owner run)
 
