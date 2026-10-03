@@ -334,6 +334,16 @@ historical material**; the owner approved **V3** (Issue #27 comment 5966570978,
   STOP no isolated T4 lab was created → **`T4_API_OR_TRANSACTION_BLOCKED`**; one minimal next
   experiment (throwaway-mag `SetAmmoCount` runtime probe, or explicit owner authorisation of a
   local setter-based PoC) proposed. Production/Core/T2A/V2/Astra untouched. STOP for owner review.
+- **T4a (isolated lab, 2026-10-03):** `MP133_V3_T4A_SETAMMOCOUNT_SEMANTICS.md`. New addon
+  `ARMSTMP133T4A_SetProbe` (`ARMSTMP133T4ASetProbe`, GUID `A7C41E90D3B24F68`): a disposable
+  test magazine prefab (inherits `{B0DFDF7AAA9C5D39}armst_12ga_Buckshot.et`) carrying a
+  `ScriptComponent` probe + a dedicated action `ARMST_T4A_SETTER_ACTION` (default key P) via
+  `Configs/System/chimeraInputCommon.conf` + `keyBindingMenu.conf`. On the action: one-shot
+  guarded `SetAmmoCount(+1)` with `[ARMST_T4A-SETTER]` pre/post/reject logs + identity tag;
+  attribute `m_iT4AStartAmmo` sets the disposable baseline (0…max) so both +1 and full-rejection
+  can be tested. No transfer/donor/inventory/weapon/chamber; production/Core/T2A/V2/Astra
+  untouched (Weapons 29, Core 4; T2A `E978EDAF…`). Static-only by agent (no compile/run).
+  Status `T4A_LAB_PREPARED_OWNER_RUN_REQUIRED`.
 
 ---
 
