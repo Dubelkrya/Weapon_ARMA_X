@@ -299,6 +299,18 @@ historical material**; the owner approved **V3** (Issue #27 comment 5966570978,
 - **Owner correction (comment 5970274540):** `CMD_Weapon_Reload` **10** is not vetoed by the
   `IdleReloadSTM` entry (`inRange(…,7,9)` excludes 7–9 only); 10 passes entry but
   `WeaponReloadSTM` defines no state for it. `MP133_V3_RELOAD_GRAPH_AUDIT.md` amended.
+- **T2c OWNER-PASS / native mag exchange confirmed:** `commandID=0,intValue=1` on rack,
+  `commandID=0,intValue=5` on the stock remove+insert+bolt path; owner's 3-round test showed a
+  **separate full magazine** installed (HUD 10) and the old **partly depleted** magazine
+  returned to inventory still partial → real whole-magazine exchange, not a refill. V3
+  per-shell loading must operate on the **already-installed** magazine.
+- **T3 passive identity trace (lab-only, 2026-10-03):** `MP133_V3_T3_MAG_IDENTITY_TRACE.md`.
+  Added `[ARMST_T3-MAG]` getter-only snapshots (magazine/weapon entity **reference tags**,
+  `GetAmmoCount/GetMaxAmmoCount`, muzzle/barrel/chamber) at baseline/pre-super/post-super and a
+  delayed final after `BlendOut`, in the existing `OnAnimationEvent`; targeted logging uncapped.
+  Only one file changed; production/Core/V2/graph/ASI/clip/prefab unchanged; static PASS.
+  Owner run required: one native R magazine swap with 7/10 old + known 10/10 inventory mag.
+  Status `T2C_OWNER_PASS / NATIVE_MAG_EXCHANGE_OWNER_CONFIRMED / T3_LOGGING_ADDED; OWNER_RUN_REQUIRED`.
 
 ---
 
