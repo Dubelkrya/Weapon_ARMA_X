@@ -465,15 +465,18 @@ def classify(resource, resolved):
     if resource.et_class == "Projectile":
         cats["kind"] = "ammunition"
         cats["confidence"] = "class"
+    elif "/grenades/" in rel:
+        # Grenades (including thrown smoke) can carry a WeaponComponent for the
+        # throw action; the folder is the authoritative classification, so this
+        # must be checked before the generic WeaponComponent heuristic.
+        cats["kind"] = "grenade"
+        cats["confidence"] = "folder"
     elif has_w:
         cats["kind"] = "weapon"
         cats["confidence"] = "components"
     elif has_m:
         cats["kind"] = "magazine"
         cats["confidence"] = "components"
-    elif "/grenades/" in rel:
-        cats["kind"] = "grenade"
-        cats["confidence"] = "folder"
     elif "/tripods/" in rel:
         cats["kind"] = "tripod"
         cats["confidence"] = "folder"

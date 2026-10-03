@@ -8,7 +8,7 @@ SCRIPTS = ROOT / "agent" / "scripts"
 sys.path.insert(0, str(SCRIPTS))
 
 from et_parser import parse_file, parse_text  # noqa: E402
-from scan_build import array_values, functional_magazine_component  # noqa: E402
+from scan_build import array_values, classify, functional_magazine_component  # noqa: E402
 from check_data_quality import (  # noqa: E402
     weapon_magazine_is_cataloged,
     weapon_magazine_is_external,
@@ -70,6 +70,40 @@ class ParserRegressionTests(unittest.TestCase):
         )
         self.assertEqual(array_values(root.children[0]), [0, 1, 0, 1])
 
+
+    def test_grenade_folder_classification_beats_weapon_component(self):
+        _, root = parse_text(
+            '''components {
+ WeaponComponent "{W}" {
+ }
+}
+''',
+            source_name="smoke.et",
+            is_et=True,
+        )
+
+        class _Res:
+            relpath = "Prefabs/Weapons/Grenades/armst_Smoke_ANM8HC.et"
+            et_class = "GenericEntity"
+
+        self.assertEqual(classify(_Res(), root)["kind"], "grenade")
+
+    def test_weapon_component_still_classifies_weapons(self):
+        _, root = parse_text(
+            '''components {
+ WeaponComponent "{W}" {
+ }
+}
+''',
+            source_name="rifle.et",
+            is_et=True,
+        )
+
+        class _Res:
+            relpath = "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM.et"
+            et_class = "GenericEntity"
+
+        self.assertEqual(classify(_Res(), root)["kind"], "weapon")
 
     def test_functional_magazine_component_can_be_nested(self):
         _, root = parse_text(
