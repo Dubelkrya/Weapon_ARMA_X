@@ -248,10 +248,19 @@ historical material**; the owner approved **V3** (Issue #27 comment 5966570978,
   one-shot subscription guard + `init #n`, and a 1 Hz
   `weapon prefab=… hasT2AWpnComp=0|1` confirmation (subclass assignment check). Report:
   `reports/MP133_V3_T2A_LAB_PREP.md`.
-- **Next:** owner confirms the isolated T2a loadout, imports the marker clip, and runs
-  T2a (ordinary short R on `MP-133 [T2A-DIAG]`); the agent inspects which receiver logs
-  `[ARMST_T2A-CHR]` vs `[ARMST_T2A-WPN]`. Preserve the existing native pump and
-  owner-authored assets. No T2b/T2c/V3 shell implementation until T2a results.
+- **T2b (owner change of direction; BRIDGE PAUSED):** add a weapon-only marker
+  `ARMST_T2B_WM_6E28B9A4` to a lab copy of the weapon `ReloadActionBolt` clip (native
+  events preserved; frame 12 = equivalent phase), keep the player marker, and compare
+  both on both receivers during short-R racks. Lab `.txa` prepared:
+  `Assets/Weapons_RUS/Mp_133/T2A/T2AClips/W_MP133_T2B_Bolt.txa`; script logs both markers
+  on both sides. Awaiting owner import (`W_MP133_T2B_Bolt.anm` GUID), then the agent
+  repoints the cloned `MP133_T2A_weapon.asi` `ReloadActionBolt` rows. Report:
+  `reports/MP133_V3_T2B_WEAPON_MARKER_PREP.md`. Status
+  `BRIDGE_PAUSED / T2B_LAB_TXA_PREPARED; AWAITING_OWNER_WEAPON_CLIP_IMPORT`.
+- **Next:** owner imports the weapon marker clip and returns its GUID; the agent repoints
+  the cloned weapon ASI, then the owner runs several short-R racks and the agent compares
+  marker order/count/time. Preserve the native pump and owner-authored assets. No bridge,
+  T2c, or per-shell implementation until T2b results.
 
 ---
 
