@@ -234,7 +234,14 @@ historical material**; the owner approved **V3** (Issue #27 comment 5966570978,
   12 of `T2AClips/P_MP133_T2A_Bolt.txa`; logging-only script (weapon
   `WeaponAnimationComponent.OnAnimationEvent` + character `GetOnAnimationEvent`; no
   R/reload/ammo). Static checks PASS; marker absent from `MP133_T2A_weapon.asi`.
-  Status `T2A_RUN1_DONE_PLAYER_CONFIRMED; WEAPON_SIDE_PENDING; V2_DIAGNOSTIC_READY`.
+  Status `T2A_ROUTE_OBSERVED / BRIDGE_DESIGN_AUTHORIZED_ONLY`. **Run 2 (owner):**
+  diagnostic prefab `{5FB844730BED8BD1}` equipped, `hasT2AWpnComp=1`; weapon callback
+  received `BlendIn`/`Weapon_EnableFire`/`Weapon_Rack_Bolt`; character invoker received 4
+  markers (`isServer=1`) but **no weapon-side marker** → the player event is not
+  auto-forwarded to the weapon component. Bridge design (owner review before
+  implementation): `reports/MP133_V3_EVENT_BRIDGE_DESIGN.md` (explicit char observer →
+  resolve equipped lab MP-133 → call a dedicated weapon method; token dedupe;
+  weapon-switch/interrupt/MP handling; weapon-side-marker alternative; dependency check).
   Run 1 (marker ANM `{3581B839F53FC345}` wired): `[ARMST_T2A-CHR]` fired ×6
   (t≈0/0.0333, `isServer=1`); **no** `[ARMST_T2A-WPN]`; diagnostic prefab load not
   confirmed. v2 lab-only diagnostic added: weapon-side generic event trace + MARKER,

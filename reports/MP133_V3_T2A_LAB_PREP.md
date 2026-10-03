@@ -185,3 +185,19 @@ Core is off in this loadout; affects 12ga ammo), `ARMST_ITEMS_STATS_COMPONENTS` 
 `armst_Ammo_12ga.et`. Separate task.
 
 Status: `T2A_RUN1_DONE_PLAYER_CONFIRMED; WEAPON_SIDE_PENDING; V2_DIAGNOSTIC_READY`.
+
+---
+
+## T2a run 2 — weapon side confirmed active; player marker NOT forwarded (owner)
+
+- Diagnostic MP-133 prefab `{5FB844730BED8BD1}` equipped; `hasT2AWpnComp=1`.
+- Weapon callback received `BlendIn`, `Weapon_EnableFire`, `Weapon_Rack_Bolt` → the
+  subclass is live and `OnAnimationEvent` is the weapon-side receiver.
+- Character invoker received 4 × `ARMST_T2A_PM_C41F7A29` (`isServer=1`); **no** weapon-side
+  marker line.
+- Conclusion (tested configuration): the player-authored event is **not** automatically
+  forwarded to the weapon component → an explicit bridge or a weapon-side event is required.
+- The 4 events / `isServer=1` are not proof of exactly-once or authority.
+- Next (owner review required before implementation): `reports/MP133_V3_EVENT_BRIDGE_DESIGN.md`.
+
+Status: `T2A_ROUTE_OBSERVED / BRIDGE_DESIGN_AUTHORIZED_ONLY`.
