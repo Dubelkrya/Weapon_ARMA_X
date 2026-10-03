@@ -287,6 +287,18 @@ historical material**; the owner approved **V3** (Issue #27 comment 5966570978,
   passive lab-only `OnCharacterCommand` trace to establish the actual command ids.
   `GAMEPLAY_FILES_CHANGED_BY_AUDIT=0`; status
   `RELOAD_GRAPH_READONLY_AUDIT_DONE / T3_RUNTIME_NOT_RUN`.
+- **T2c command trace (lab-only, 2026-10-03):** `MP133_V3_T2C_COMMAND_TRACE.md`. Added a
+  passive `OnCharacterCommand(int commandID, int intValue, float floatValue)` override
+  (super always called) to `ARMST_T2A_WeaponAnimationComponent`, logging
+  `[ARMST_T2C-CMD] #n commandID=.. intValue=.. floatValue=.. srv=.. wep=..`. Compatibility
+  verified against the **installed** SDK docs
+  (`…\Arma Reforger Tools\Workbench\docs\ArmaReforgerScriptAPIPublic`, 2026-09-19), not the
+  online 1.13.2 pages. No input/graph/ASI/clip/ammo change; static PASS; rdb removed. Owner
+  run required (one ordinary short R + one stock magazine reload). Status
+  `T2C_LOGGING_ADDED; OWNER_RUN_REQUIRED`.
+- **Owner correction (comment 5970274540):** `CMD_Weapon_Reload` **10** is not vetoed by the
+  `IdleReloadSTM` entry (`inRange(…,7,9)` excludes 7–9 only); 10 passes entry but
+  `WeaponReloadSTM` defines no state for it. `MP133_V3_RELOAD_GRAPH_AUDIT.md` amended.
 
 ---
 

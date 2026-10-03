@@ -123,8 +123,11 @@ Transitions:
 | NoMagNoBulletReload → ReloadActionBolt | 0.3 | `RemainingTimeLess(0.1)` | PostEval 1, MotionVecBlend 0x33 0 |
 | MagNoBulletReload → ReloadActionBolt | 0.3 | `RemainingTimeLess(0.1)` | PostEval 1, MotionVecBlend 0x33 0 |
 
-**There is no state for `CMD_Weapon_Reload` 7, 8, 9, 10** — they are excluded at the
-`IdleReloadSTM` entry and have no target state.
+**Commands 7/8/9 are vetoed at the `IdleReloadSTM` entry** (`!inRange(GetCommandI(...), 7, 9)`)
+and have no state in `WeaponReloadSTM`. **Command 10 is NOT excluded by that entry
+condition** — `inRange(7,9)` is exclusive, so 10 passes the entry test and can enter
+`Reload`; but `WeaponReloadSTM` also defines **no state for 10**, so no reload clip is
+selected for it. (Owner correction, comment 5970274540.)
 
 ### 2.4 `MagReloadSTM` (line 158)
 | State | Child | StartCondition | IsExit |
@@ -156,7 +159,8 @@ but ammo-neutral: `SafetySTM`, `FingerOnTrigger`, `ModesSTM`, `WeaponInspectionS
 | 2 / 3 | NoMagReload / NoMagNoBulletReload | `Reload.Reload_InsertMag` | `{2E4A565E1D442CEA}P_MP133_Reload_Inject.anm` | `{45B1772B8AFEAE47}W_MP133_Reload_Inject.anm` |
 | 4 / 5 | MagReload / MagNoBulletReload → `MagReloadSTM` | `Reload_RemoveMag` then `Reload_InsertMag` | `{1A0174AF80728E7E}P_MP133_Reload_Rem.anm` + Inject | `{FBC8FA7934FA4394}W_MP133_Reload_Rem.anm` + Inject |
 | 6 | RemoveMag → `RemoveMagAnim` | `Reload.Reload_RemoveMag` | `{1A0174AF80728E7E}P_MP133_Reload_Rem.anm` | `{FBC8FA7934FA4394}W_MP133_Reload_Rem.anm` |
-| 7–9 | — (no state) | — | — | — |
+| 7–9 | — (vetoed at `IdleReloadSTM` entry; no state) | — | — | — |
+| 10 | — (passes entry, but `WeaponReloadSTM` defines no state) | — | — | — |
 
 **T2A lab override (**SOURCE**):** `ReloadActionBolt` → player
 `{3581B839F53FC345}P_MP133_T2A_Bolt.anm`, weapon `{0C775A2108B6D5AD}W_MP133_T2B_Bolt.anm`;
@@ -260,7 +264,7 @@ idea), sanitized-ANM A/B, T1/T2c, event bridge, RPC, per-shell implementation.
 
 | Statement | Label |
 |---|---|
-| Active production and T2A graphs: `Reload_InsertMag` only for cmd 2/3/4/5; cmd 1 → bolt; 7–9 excluded | **SOURCE** |
+| Active production and T2A graphs: `Reload_InsertMag` only for cmd 2/3/4/5; cmd 1 → bolt; 7–9 vetoed at entry; 10 passes entry but has no state | **SOURCE** |
 | T2A `.agf` logic == production `.agf` (1066 lines, GUID-normalized); `.ast` identical; ASIs differ only in `ReloadActionBolt` | **SOURCE** |
 | V2 lab added `InsertSingleProjectile` (cmd 7) with a `BlendOut` self-loop (historical) | **SOURCE** |
 | Engine performs whole-magazine attach on the native events; `reloadType=5 → 3/3→10/10` | **OWNER-RUNTIME** |
