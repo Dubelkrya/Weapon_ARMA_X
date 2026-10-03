@@ -451,6 +451,21 @@ historical material**; the owner approved **V3** (Issue #27 comment 5966570978,
   (added `m_iT4BStartAmmo`/`coords`) - republished byte-identically (`29C70A78...`),
   local==published. Script SHA `AA32AEC1...`; new GUIDs unique. Status
   `G3B1_LAB_SOURCE_PUBLISHED_OWNER_RUN_REQUIRED`.
+- **G3-B1 revision (Issue #34 comments 5973159457 + 5973206200):** decorative
+  `G3B1_DonorDevice` route **abandoned** (kept historical/unused). G3B1 action now on a **child
+  lab weapon** `Prefabs/Test/ARMST_T4B_G3B1_TestWeapon.et`(+`.meta`) inheriting the verified T4b
+  weapon and adding only `ARMST_T4B_G3B1_ConsumeAction` to `ActionsManagerComponent
+  {A29AE67FF4D82B0F}`. `ARMST_T4B_G3B1_DonorConsume.c` revised: server-only write
+  (`reject not-server`), retained actor context `pUserEntity`+inventory for delayed samples,
+  immediate prewrite gates (`GetOwner()==item`, `Contains`, valid `GetParentSlot`, `ammo>0`),
+  strict ammo-type (`unknown-ammo-type` on empty ref; donor type must equal), exactly one
+  compatible root donor (`ambiguous-donor`), one-shot latch before setter; logs
+  pre/post/delayed+250ms/+1000ms. Fallback via `m_sG3b1ExpectedAmmoType` for a non-12ga real
+  magazine (`GENERIC_DONOR_SETTER_ONLY / MP133_COMPATIBILITY_UNVERIFIED`). T4b script
+  `D581B9C9...` + owner-saved prefab `29C70A78...` + addon.gproj unchanged; G3B1 script SHA
+  `95A48B74...`; child prefab `61F3FCAE...`; local==published. Status
+  `G3B1_SOURCE_PUBLISHED / PRE_RUNTIME_SOURCE_CORRECTIONS_APPLIED / OWNER_GAME_NOT_RUN`; G3-B2 not
+  authorized.
 
 ---
 

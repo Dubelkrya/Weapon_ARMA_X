@@ -119,7 +119,9 @@ and published copy are byte-identical.
 |---|---|
 | [`labs/ARMSTMP133T4B_InstalledMagProbe/addon.gproj`](../labs/ARMSTMP133T4B_InstalledMagProbe/addon.gproj) | `200E3156DED0C793CFA6FCF94767A4DC265FF28760307A158BCD4DF9696608A6` |
 | [`…/Scripts/Game/ARMST_T4B/ARMST_T4B_InstalledMagProbe.c`](../labs/ARMSTMP133T4B_InstalledMagProbe/Scripts/Game/ARMST_T4B/ARMST_T4B_InstalledMagProbe.c) | `D581B9C9EE270725FFEC94C7685CBBCB2AB41DBA717F2B4FBCF8C4AC8DDCBEB1` |
-| [`…/Scripts/Game/ARMST_T4B/ARMST_T4B_G3B1_DonorConsume.c`](../labs/ARMSTMP133T4B_InstalledMagProbe/Scripts/Game/ARMST_T4B/ARMST_T4B_G3B1_DonorConsume.c) | `AA32AEC171A3BB25E6C64958551866DC446EE566F0AE072C45A3E57DDF4C8633` |
+| [`…/Scripts/Game/ARMST_T4B/ARMST_T4B_G3B1_DonorConsume.c`](../labs/ARMSTMP133T4B_InstalledMagProbe/Scripts/Game/ARMST_T4B/ARMST_T4B_G3B1_DonorConsume.c) | `95A48B74E1DB0DE432E0B382CBA23DA8CAD0A6AA25879BBA4756E50DBBF9C0BD` |
+| [`…/Prefabs/Test/ARMST_T4B_G3B1_TestWeapon.et`](../labs/ARMSTMP133T4B_InstalledMagProbe/Prefabs/Test/ARMST_T4B_G3B1_TestWeapon.et) | `61F3FCAEE494963ADF1FF82B351A61C1D295618B7DE2786490BAC13325620BAA` |
+| [`…/Prefabs/Test/ARMST_T4B_G3B1_TestWeapon.et.meta`](../labs/ARMSTMP133T4B_InstalledMagProbe/Prefabs/Test/ARMST_T4B_G3B1_TestWeapon.et.meta) | `E7BAA2A85CD3E2CAB05E2C6669DA37471A1D95D0D68EB1FE6BB334BD34809F03` |
 | [`…/Prefabs/Test/ARMST_T4B_G3B1_DonorDevice.et`](../labs/ARMSTMP133T4B_InstalledMagProbe/Prefabs/Test/ARMST_T4B_G3B1_DonorDevice.et) | `12B073DD60318491752888DED79CD3807E8B25AFB171694CB796054C86CB8502` |
 | [`…/Prefabs/Test/ARMST_T4B_G3B1_DonorDevice.et.meta`](../labs/ARMSTMP133T4B_InstalledMagProbe/Prefabs/Test/ARMST_T4B_G3B1_DonorDevice.et.meta) | `AAE07E095434B9078508EAA81EB7E52F2E535434052D32C10616F8016D8F3F9F` |
 | [`…/Prefabs/Test/ARMST_T4B_TestWeapon.et`](../labs/ARMSTMP133T4B_InstalledMagProbe/Prefabs/Test/ARMST_T4B_TestWeapon.et) | `29C70A78B7CBA7678B84A57A29EBF32127A1ED2575742270D9CFACAB78F2AE83` (owner Workbench re-save; local==published) |
@@ -418,3 +420,39 @@ delete an emptied donor item.
 unchanged. It was re-published byte-identically (`29C70A78…`) so local==remote.
 
 **STATUS:** `G3B1_LAB_SOURCE_PUBLISHED_OWNER_RUN_REQUIRED`; G3-B2 not authorized.
+
+## 16. G3-B1 revision — real inventory magazine, weapon-mounted action (supersedes §15 activation)
+
+Per Issue #34 comments 5973159457 (review) and 5973206200 (owner decision), the decorative
+`G3B1_DonorDevice` route is **abandoned** (kept as historical, unused) and the G3-B1 action is now
+mounted on a **child lab weapon** inside the same addon.
+
+- New `Prefabs/Test/ARMST_T4B_G3B1_TestWeapon.et` (+`.meta`) inherits the verified T4b lab weapon
+  `{C2D3E4F506172839}Prefabs/Test/ARMST_T4B_TestWeapon.et` and adds **only**
+  `ARMST_T4B_G3B1_ConsumeAction` to the inherited `ActionsManagerComponent {A29AE67FF4D82B0F}`
+  (`additionalActions +{ … ParentContextList { "default" } UIInfo … }`). All inherited components,
+  the original T4b script (`D581B9C9…`), the nested animation component and the owner-saved T4b
+  prefab (`29C70A78…`) are preserved.
+- `ARMST_T4B_G3B1_DonorConsume.c` revised with the review corrections: **server-only** write
+  (`!Replication.IsServer()` → `reject not-server`); actor context `pUserEntity` + inventory
+  **retained** for the delayed samples; immediate prewrite gates (`GetOwner()==item`,
+  `Contains(item)`, valid `GetParentSlot()`, `ammo>0` → else `not-owned`/`no-slot`/`zero-ammo`, no
+  write); **strict** ammo-type contract (explicit `m_sG3b1ExpectedAmmoType` or the equipped weapon
+  mag; empty/unknown → `reject unknown-ammo-type`; donor type must be non-empty and equal);
+  **exactly one** compatible root donor (`ambiguous-donor` reject otherwise); one-shot latch before
+  the setter. `phase=pre/post/delayed+250ms/delayed+1000ms` logs carry item+mag identity, prefab,
+  `n/max`, member/slot, `stillSame`, `actorValid`, `srv`.
+- **Fallback** (only if no carryable 12ga magazine exists): set `m_sG3b1ExpectedAmmoType` to the
+  ResourceName of one approved real detachable magazine type and test that donor; label the result
+  `GENERIC_DONOR_SETTER_ONLY / MP133_COMPATIBILITY_UNVERIFIED`.
+
+**Owner setup:** place/equip the **G3B1 child test weapon** (`ARMST_T4B_G3B1_TestWeapon.et`), hold
+exactly one compatible donor magazine **directly** in inventory (root, not in a container), invoke
+**"G3B1: consume 1 from inventory donor"** once → expect `n → n-1` on the SAME donor item/mag,
+membership/slot preserved, `+250 ms`/`+1 s` `persistAmmo=1`, inventory UI shows `n-1`, installed
+MP-133 mag/chamber unchanged; repeat → `already-used`. Separate clean runs for no-donor /
+incompatible / ambiguous → no-write rejects. STOP on `SCRIPT(E)`, identity/member/slot gate failure,
+unknown type, target/chamber change or lost donor.
+
+**STATUS:** `G3B1_SOURCE_PUBLISHED / PRE_RUNTIME_SOURCE_CORRECTIONS_APPLIED / OWNER_GAME_NOT_RUN`.
+G3-B2 not authorized.
