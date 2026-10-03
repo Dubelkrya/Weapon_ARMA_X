@@ -600,6 +600,19 @@ historical material**; the owner approved **V3** (Issue #27 comment 5966570978,
   ASCII; local==published; T4b/G3B1 untouched. `COMPILER_UNVERIFIED / WAITING_OWNER_RECOMPILE`.
   Status `G3B2_OWNER_COMPILE_FAIL / B2_COMPILER_FIX_PUBLISHED / B2_WRITE_OFF`; STOP for independent
   source review and owner recompilation.
+- **G3-B2 positive-preflight lab variant (owner instruction, 2026-10-04):** compile now passes and
+  the B2 action runs, so a **separate** lab variant was added to prove donor selection + eligibility
+  with **no transfer**. New `Prefabs/Test/ARMST_T4B_G3B2_Preflight_TestWeapon.et` (+unique `.meta`) —
+  fresh child of production MP-133 with the T4b probe and one B2 action: `m_bG3B2WriteEnabled 0`,
+  `m_sG3B2AllowedStorageOwner "{02DF51DB063ABD36}Prefabs/Characters/Vests/Vest_ALICE/Vest_ALICE_firstaid.et"`,
+  `m_iG3B2AllowedStorageSlot 0`; new GUIDs unique; original B2 prefab and T4b/G3B1 unchanged; action
+  inheritance T4b`+1`=0/G3B1=0/B2=1. Whitelist matching hardened with `T4B2NormalizePrefab` (strips a
+  leading `{GUID}` so `{GUID}path` and `path` both match). Script SHA `7389AEED...`; variant prefab
+  `DAD5B732...`, meta `08A684FA...`; original B2 prefab `68F67CAB...` unchanged; braces 124/124,
+  parens 689/689, ASCII; local==published; T4b/G3B1 untouched. Owner read-only preflight expected:
+  `compat=1 preflightEligible=1 phase=readonly writeEnabled=0`, donor `10/10→10/10`, weapon `2/10→2/10`.
+  Status `G3B2_POSITIVE_PREFLIGHT_VARIANT_PUBLISHED / B2_WRITE_OFF`;
+  `COMPILER_UNVERIFIED / WAITING_OWNER_RECOMPILE`; STOP for owner read-only dry-run.
 
 ---
 

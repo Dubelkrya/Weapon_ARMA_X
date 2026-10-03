@@ -1,0 +1,23 @@
+GenericEntity : "{63FF6FDCA4E7E735}Prefabs/Weapons/Russian/Shotgun/armst_Shotgun_mp_133.et" {
+ ID "4E5F60718293A4B5"
+ components {
+  ARMST_T4B_WeaponProbe "5F60718293A4B5C6" {
+   m_iT4BStartAmmo 2
+  }
+  ActionsManagerComponent "{A29AE67FF4D82B0F}" {
+   additionalActions +{
+    ARMST_T4B_G3B2_TransferAction "60718293A4B5C6D7" {
+     ParentContextList {
+      "default"
+     }
+     UIInfo UIInfo "718293A4B5C6D7E8" {
+      Name "G3B2: transfer 1 (dry-run; write off)"
+     }
+     m_bG3B2WriteEnabled 0
+     m_sG3B2AllowedStorageOwner "{02DF51DB063ABD36}Prefabs/Characters/Vests/Vest_ALICE/Vest_ALICE_firstaid.et"
+     m_iG3B2AllowedStorageSlot 0
+    }
+   }
+  }
+ }
+}

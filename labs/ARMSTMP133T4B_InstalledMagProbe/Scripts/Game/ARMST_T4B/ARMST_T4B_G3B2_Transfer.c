@@ -369,6 +369,19 @@ class ARMST_T4B_G3B2_TransferAction : ScriptedUserAction
 		return false;
 	}
 
+	// Strips a leading "{GUID}" token so a "{GUID}path" and a bare "path" compare equal.
+	string T4B2NormalizePrefab(string s)
+	{
+		if (s == "")
+			return s;
+		if (!s.StartsWith("{"))
+			return s;
+		int close = s.IndexOf("}");
+		if (close < 0)
+			return s;
+		return s.Substring(close + 1, s.Length() - close - 1);
+	}
+
 	// Whitelist check (fail-closed): exact storage-owner prefab path, optional exact slot id.
 	bool T4B2StorageAllowed(IEntity item, out int outSlotId, out string outOwnerPrefab)
 	{
@@ -389,7 +402,7 @@ class ARMST_T4B_G3B2_TransferAction : ScriptedUserAction
 		if (!se || !se.GetPrefabData())
 			return false;
 		outOwnerPrefab = se.GetPrefabData().GetPrefabName();
-		if (outOwnerPrefab != m_sG3B2AllowedStorageOwner)
+		if (T4B2NormalizePrefab(outOwnerPrefab) != T4B2NormalizePrefab(m_sG3B2AllowedStorageOwner))
 			return false;
 		if (m_iG3B2AllowedStorageSlot >= 0 && outSlotId != m_iG3B2AllowedStorageSlot)
 			return false;

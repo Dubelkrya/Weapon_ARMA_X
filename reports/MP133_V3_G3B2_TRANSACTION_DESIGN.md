@@ -408,7 +408,7 @@ Workbench/game run performed by the agent.
 **New files** (local lab + published copy, local==published):
 
 - `Scripts/Game/ARMST_T4B/ARMST_T4B_G3B2_Transfer.c` — new `ScriptedUserAction`
-  `ARMST_T4B_G3B2_TransferAction`; SHA256 `0BFCE0C86E10FDC83D490B3F5C974CD51A4924EABC8B3B4E21E509CD9983F09F` (rev 4).
+  `ARMST_T4B_G3B2_TransferAction`; SHA256 `7389AEED01C5329D9935513BBF7EF9254E45023A5CE7091E3865F2A20D74A4EE` (rev 5).
 - `Prefabs/Test/ARMST_T4B_G3B2_TestWeapon.et` — SHA256 `68F67CAB0C17201882FCB9D587E3F3F196231B46E4FCB3951DD8BDC185873E04`.
 - `Prefabs/Test/ARMST_T4B_G3B2_TestWeapon.et.meta` — SHA256 `315C7AB6983B68C63C0AEC1D30625C5CA4B7477D72C1C75DF5291AC7438F9287`.
 
@@ -559,3 +559,36 @@ prefab `68F67CAB…` unchanged; static braces 120/120, parens 679/679, ASCII (13
 **`COMPILER_UNVERIFIED / WAITING_OWNER_RECOMPILE`** — the agent has no Workbench/EnforceScript tool.
 **STATUS:** `G3B2_OWNER_COMPILE_FAIL / B2_COMPILER_FIX_PUBLISHED / B2_WRITE_OFF`; **STOP for
 independent source review and owner recompilation**.
+
+### 11.4 G3-B2 Positive Preflight lab variant (owner instruction, 2026-10-04) — rev 5
+
+Compile now passes and the B2 action runs; a **separate lab variant** is added to prove the algorithm
+selects a valid donor and reports `preflightEligible=1` **without transferring anything**. The
+original G3-B2 prefab and the T4b/G3-B1 fixtures are unchanged.
+
+- **New variant prefab** `Prefabs/Test/ARMST_T4B_G3B2_Preflight_TestWeapon.et` (+ new unique `.meta`),
+  a fresh thin child of the production `{63FF6FDCA4E7E735}…armst_Shotgun_mp_133.et` with the T4b probe
+  and one `ARMST_T4B_G3B2_TransferAction` configured:
+  - `m_bG3B2WriteEnabled 0`,
+  - `m_sG3B2AllowedStorageOwner "{02DF51DB063ABD36}Prefabs/Characters/Vests/Vest_ALICE/Vest_ALICE_firstaid.et"`,
+  - `m_iG3B2AllowedStorageSlot 0`.
+  New GUIDs (unique): meta `{3D4E5F60718293A4}`, instance `4E5F60718293A4B5`, probe `5F60718293A4B5C6`,
+  action `60718293A4B5C6D7`, UIInfo `718293A4B5C6D7E8`. Action-inheritance proof: T4b `+1`=0,
+  G3B1=0, B2=1.
+- **Whitelist matching hardened.** `T4B2StorageAllowed` now normalizes a leading `{GUID}` token
+  (`T4B2NormalizePrefab`: `StartsWith("{"` → `IndexOf("}")` → `Substring`) before comparing, so the
+  owner's Workbench-format value `{GUID}path` and a bare runtime `path` both match. Slot check
+  unchanged (`m_iG3B2AllowedStorageSlot`).
+
+Script SHA `0BFCE0C8…` → `7389AEED01C5329D9935513BBF7EF9254E45023A5CE7091E3865F2A20D74A4EE`;
+variant prefab `DAD5B732CAFD8A1B316392B2E04C2CF5BCBB597CE7DBB28A4250F4FB94224C3C`, meta
+`08A684FA67B56A665C8AD4A5B13E82CFA5282D7A91BDB8EBF57CEE66495B2638`; original B2 prefab `68F67CAB…`
+unchanged; static braces 124/124, parens 689/689, ASCII.
+
+**Owner read-only preflight (this run = no transfer):** spawn the variant, wait for `baselineDone=1`,
+put one 12ga donor `10/10` into the allowed `Vest_ALICE_firstaid` slot 0, invoke the B2 action **once**
+(no firing/reloading between measurements), capture the log. Expected: `compat=1 preflightEligible=1`
+`phase=readonly writeEnabled=0`, donor `10/10 → 10/10`, weapon mag `2/10 → 2/10`.
+
+`COMPILER_UNVERIFIED / WAITING_OWNER_RECOMPILE`. **STATUS:** `G3B2_POSITIVE_PREFLIGHT_VARIANT_PUBLISHED /
+B2_WRITE_OFF`; **STOP for independent source review and owner read-only dry-run**.
