@@ -13,15 +13,15 @@
 
 | Topic | Current evidence / status |
 | --- | --- |
-| Clean native MP-133 (T0) | **OWNER-RUNTIME FUNCTIONAL PASS**: only Weapons addon loaded; three actual successive shots with ordinary short-R manual pumping; 10-round tube supply depleted; hold R inspection works. [Owner result](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/27#issuecomment-5967911774) |
-| Strict physical-mag identity | **NOT INSTRUMENTED**: no before/after physical magazine entity identity or complete last-round chamber trace. Do not claim no silent replacement solely from the functional T0. |
-| Core interaction | **NOT TESTED IN T0**: Core was not loaded; frozen LSHIFT+R must be considered separately in a safe controlled test. |
-| Legacy V2 global R regression | **P2 OWNER-RUNTIME**: excluding the old global `modded SCR_CharacterCommandHandlerComponent` restored ordinary R on other pumps. The exact `super`/native failure mechanism is unknown. |
-| Owner's native-event edit | Visible chamber-insert behavior reportedly recovered after restoring `Weapon_SpawnMagazine/AttachMagazine/MagRelease` in a lab clip. This is **not** proof of magazine continuity, chamber correctness or ammo conservation. |
-| Chung's animation reference | Provided AGF/AGR/AST, player/weapon ASI, code and selected player-event screenshots support separate pump, grab, insert and safe stop/continue paths. Actual player→weapon event routing and possible duplicate commit are **UNRESOLVED**. |
-| T1 input routing | **READ-ONLY DESIGN PUBLISHED**; stock R action name, short/hold edge arbitration and whether a listener can suppress native reload remain unproven. |
-| T2 event routing | **READ-ONLY DESIGN PUBLISHED**; diagnostic player-only, weapon-only and paired-marker experiments proposed; no test code or asset edit authorized. |
-| V3 actual code | **NOT AUTHORIZED / NOT IMPLEMENTED**. Real one-shell server transaction, once-only commit, safe stop, network and low-FPS tests are future gates. |
+| T0 native MP-133 | **OWNER-RUNTIME FUNCTIONAL PASS:** three shots with manual short-R pumping and hold-R inspect with Weapons only; Core-on interaction not tested. |
+| T2b paired markers | Player/weapon markers were observed in paired owner cycles; delivery is not proof of ammunition authority or exact animation synchronisation. |
+| T2c native commands | Short-R manual rack: `commandID=0,intValue=1`. Native whole-mag reload observed as `intValue=5` (empty/chambering path) or `4` (partial magazine/chambered round). |
+| T3 physical-mag identity | **OWNER RUNTIME:** installed magazine `M1 → null → M3`, then `M3 → null → M5`. The `M2/M4` tags are null-state sentinels, not physical objects. The chamber may retain one round during partial-mag exchange. Exact native attach timing and old-mag inventory identity are unresolved. [Read-out](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/27#issuecomment-5970509383). |
+| T3F passive event trace | **CORRECTED-SCRIPT OWNER RUNTIME:** 100 T3F entries, 77 T3 entries, 18 T2c commands and no `SCRIPT (E)`. No independent `gameplay_shot` signal; isolated single-shot/rack/dry-trigger controls were not completed. `Weapon_EnableFire` means firing permission during bolt/reload animation, **not a shot**. [Read-out](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/27#issuecomment-5970720618). |
+| T4 actual one-shell transfer | **`T4_API_OR_TRANSACTION_BLOCKED`** after read-only SDK Phase A. `SetAmmoCount` exists; legitimate donor decrement, atomic transfer, authority, replication and rollback remain unverified. No real-transfer implementation authorised. |
+| T4a disposable-setter probe | **OWNER AUTHORISED; PREPARATION/RUNTIME NOT YET EVIDENCED** in this record. Isolated disposable test magazine only, no real donor or installed-mag mutation. [Scope](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/27#issuecomment-5970853781). Agent cannot run Workbench/game. |
+| Astra animation graph lab | **PAUSED BY OWNER.** Separate proposed `ARMST_MP133_AstraShellGraph`; local `astra_build.py` is incomplete/unverified WIP, not a functional or archived prototype. [Pause](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/27#issuecomment-5970888887). |
+| Production V3 / Core / MP | **NOT IMPLEMENTED / NOT VERIFIED.** Preserve native pump/fire, hold-R, LSHIFT+R and other weapons; no global input interception. |
 
 **Intended V3 controls, not current T0 behavior:** short R performs the necessary verified native pump (if required) and then per-shell tube loading; a second short R or trigger requests safe stop; hold R preserves native inspection; LSHIFT+R is the unchanged Core action. If standard R cannot be intercepted without affecting native behavior, a separate load action is a possible fallback **only after the owner's decision**.
 
@@ -35,10 +35,11 @@
 | [`MP133_V3_2_ANIM_EVENT_FINDING.md`](MP133_V3_2_ANIM_EVENT_FINDING.md) | Exact owner-edited native-event keyframes, stale TXA versus ANM and unknown active-clip/mag-identity boundaries. |
 | [`MP133_V3_INSERT_EVENT_AUDIT.md`](MP133_V3_INSERT_EVENT_AUDIT.md) | Read-only audit of the `Reload_InsertMag` events: `Weapon_SpawnMagazine(10)/AttachMagazine(43)/MagRelease(64)` are stock **whole-magazine** operations; there is no native per-shell insert (cmd 7 excluded by the MP-133 graph). One logging-only T3 probe proposed. |
 | [`MP133_V3_RELOAD_GRAPH_AUDIT.md`](MP133_V3_RELOAD_GRAPH_AUDIT.md) | Full read-only reload-graph audit: production vs T2A graph logic proven identical (GUID-normalized), complete `IdleReloadSTM`/`WeaponReloadSTM`/`MagReloadSTM` state/transition map with exact conditions, ASI/clip event mapping, lifecycle/interrupt, per-shell feasibility options and one minimal next gate. |
-| [`MP133_V3_T2C_COMMAND_TRACE.md`](MP133_V3_T2C_COMMAND_TRACE.md) | T2c lab-only passive `OnCharacterCommand(commandID,intValue,floatValue)` trace in `ARMST_T2A_WeaponAnimationComponent`; installed-SDK (not 1.13.2) compatibility verified. Owner run required; no input/graph/ammo change. |
-| [`MP133_V3_T3_MAG_IDENTITY_TRACE.md`](MP133_V3_T3_MAG_IDENTITY_TRACE.md) | T3 lab-only passive `[ARMST_T3-MAG]` physical-magazine identity trace (mag entity reference tags, ammo/max, chamber) around the native magazine lifecycle; getter-only, installed-SDK verified, one owner native-R swap to run. |
-| [`MP133_V3_T3F_FIRE_EVENT_AUDIT.md`](MP133_V3_T3F_FIRE_EVENT_AUDIT.md) | T3F fire-event audit (Phase A): no weapon-level actual-shot callback in the installed SDK (real-shot signals are muzzle-effect `OnFired`/`OnWeaponFired`); limited Phase B `[ARMST_T3F-FIRE]` passive trace (animation events + ammo/chamber sample; no `gameplay_shot`, delta-evidenced). |
-| [`MP133_V3_T4_ONE_SHELL_TRANSFER.md`](MP133_V3_T4_ONE_SHELL_TRANSFER.md) | T4 Phase A (read-only): installed SDK exposes only `BaseMagazineComponent.SetAmmoCount(int)` as a magazine-ammo writer; no atomic transfer / legitimate donor consumption / authority / rollback → `T4_API_OR_TRANSACTION_BLOCKED`; minimal next experiment proposed. |
+| [`MP133_V3_T2C_COMMAND_TRACE.md`](MP133_V3_T2C_COMMAND_TRACE.md) | Installed-SDK-verified passive native command trace; owner-runtime int 1/4/5 routing documented in Issue #27. |
+| [`MP133_V3_T3_MAG_IDENTITY_TRACE.md`](MP133_V3_T3_MAG_IDENTITY_TRACE.md) | Getter-only current-mag entity tags and chamber snapshots; owner runtime established the native whole-mag replacement. |
+| [`MP133_V3_T3F_FIRE_EVENT_AUDIT.md`](MP133_V3_T3F_FIRE_EVENT_AUDIT.md) | T3F Phase A + limited passive Phase B. Corrected script ran in owner's game; **independent shot signal unresolved**. |
+| [`MP133_V3_T4_ONE_SHELL_TRANSFER.md`](MP133_V3_T4_ONE_SHELL_TRANSFER.md) | T4 Phase A API audit; real transfer blocked; T4a disposable-setter experiment authorised separately in Issue #27. |
+| [`MP133_LAB_REGISTRY.md`](MP133_LAB_REGISTRY.md) | Local/frozen/paused laboratory ownership, source availability and archiving obligations. |
 | [Issue #27](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/27) | **Current approval and decision record**. Read newer comments before acting on its original V2.2 body. |
 
 ## Frozen historical V1/V2 evidence (retain; not V3 instructions)
@@ -62,8 +63,7 @@
 
 ## Next safe work
 
-- T1/T2 design is already committed in [`MP133_V3_T0_T1_T2_DESIGN.md`](MP133_V3_T0_T1_T2_DESIGN.md). **Do not task another agent to repeat the same report.**
-- Separately approve an isolated **logging-only** T2 event-routing experiment and T1 input observation, if and when the owner elects to run them. No per-shell ammo changes in these diagnostics.
-- Verify physical magazine entity stability when instrumentation becomes available; do not redo the completed functional three-shot T0 without a reason.
-- Later, independently review the real one-shell transfer (same tube entity, compatible homogeneous ammo source, server-authoritative once-only commit) and Core integration before implementing V3.
-- The **canonical catalog rescan is separate work**: the 2026-09-29 sync records approximately 1,455 stale `Prefabs/Weapons/Rifles/` references. Preserve imported vanilla corpus; review generated diffs. Do not mix rescan changes into MP-133 research.
+1. **Primary local agent:** prepare **T4a only** under [the disposable `SetAmmoCount` probe authorisation](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/27#issuecomment-5970853781); conduct static tests and stop at `T4A_LAB_PREPARED_OWNER_RUN_REQUIRED` or `T4A_STATIC_BLOCKED`. **Owner** performs Workbench/game testing. Actual T4 donor→installed-mag transfer remains blocked.
+2. **Astra:** keep the graph/animation lab and its partially authored local script **paused** until explicit owner resumption. Do not run, overwrite, or migrate unverified generator output.
+3. **Production/Core/V2/P2/T2A:** no new edits under these assignments. T3F passive logging already ran; independent `OnProjectileShot`/event-name follow-ups require separate scope, not an automatic T4a dependency.
+4. **Knowledge maintenance:** use [the phase handoff template](../docs/guides/EXPERIMENT_HANDOFF_TEMPLATE.md), update this index and [the lab registry](MP133_LAB_REGISTRY.md) when new owner evidence arrives, and check [Issue #27](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/27) for newer approvals. The catalog #28 rescan was published; any **future** rescan needs a fresh source/diff review and must stay separate from MP-133 experimental edits.
