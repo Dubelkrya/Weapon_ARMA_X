@@ -23,17 +23,22 @@
         "resource": "Prefabs/Weapons/Attachments/Underbarrel/armst_UGL_GP25.et",
         "status": "local",
         "class": "GameEntity"
-      }
-    ],
-    "external_parents": [
+      },
       {
-        "guid": "8A820ADCE8D05357",
-        "path": "Prefabs/Weapons/Core/UGL_Base.et",
-        "raw": "{8A820ADCE8D05357}Prefabs/Weapons/Core/UGL_Base.et"
+        "resource": "Prefabs/Weapons/Core/UGL_Base.et",
+        "status": "base_game_snapshot",
+        "class": "GameEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Core/Attachment_Base.et",
+        "status": "base_game_snapshot",
+        "class": "GameEntity"
       }
     ],
+    "external_parents": [],
     "used_as_base_by": [],
-    "chain_depth_local": 1
+    "chain_depth_local": 1,
+    "chain_depth_base_game_snapshot": 2
   },
   "references": [],
   "warnings": []

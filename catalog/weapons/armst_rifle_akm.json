@@ -43,7 +43,8 @@
     "used_as_base_by": [
       "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_full.et"
     ],
-    "chain_depth_local": 4
+    "chain_depth_local": 4,
+    "chain_depth_base_game_snapshot": 0
   },
   "references": [
     {
@@ -77,9 +78,11 @@
     {
       "guid": "A512F292D96BCB9F",
       "path": "Prefabs/Weapons/Core/Configs/FireModes/FireMode_Auto.conf",
-      "resolved": "external",
-      "target": null,
-      "defined_in": "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM.et"
+      "resolved": "base_game_snapshot",
+      "target": "Prefabs/Weapons/Core/Configs/FireModes/FireMode_Auto.conf",
+      "defined_in": "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM.et",
+      "snapshot_import_guid": "09B76AF4205785A9",
+      "snapshot_physical_rel": "core/Configs/FireModes/FireMode_Auto.conf"
     },
     {
       "guid": "48720FC416263FC1",
@@ -91,30 +94,38 @@
     {
       "guid": "687B3DA431730CFA",
       "path": "Prefabs/Weapons/Core/Configs/FireModes/FireMode_Safe.conf",
-      "resolved": "external",
-      "target": null,
-      "defined_in": "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_base.et"
+      "resolved": "base_game_snapshot",
+      "target": "Prefabs/Weapons/Core/Configs/FireModes/FireMode_Safe.conf",
+      "defined_in": "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_base.et",
+      "snapshot_import_guid": "60B0FC29181A99F4",
+      "snapshot_physical_rel": "core/Configs/FireModes/FireMode_Safe.conf"
     },
     {
       "guid": "6B6BD5767BCD00A9",
       "path": "Prefabs/Weapons/Core/Configs/TriggerEffects/Safety/TriggerEffect_SafetyLoose.conf",
-      "resolved": "external",
-      "target": null,
-      "defined_in": "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_base.et"
+      "resolved": "base_game_snapshot",
+      "target": "Prefabs/Weapons/Core/Configs/TriggerEffects/Safety/TriggerEffect_SafetyLoose.conf",
+      "defined_in": "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_base.et",
+      "snapshot_import_guid": "ACEA2D192600D65E",
+      "snapshot_physical_rel": "core/Configs/TriggerEffects/Safety/TriggerEffect_SafetyLoose.conf"
     },
     {
       "guid": "D5D52E848DBCAA53",
       "path": "Prefabs/Weapons/Core/Configs/FireModes/FireMode_Single.conf",
-      "resolved": "external",
-      "target": null,
-      "defined_in": "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_base.et"
+      "resolved": "base_game_snapshot",
+      "target": "Prefabs/Weapons/Core/Configs/FireModes/FireMode_Single.conf",
+      "defined_in": "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_base.et",
+      "snapshot_import_guid": "FAF4B3FB6DE91626",
+      "snapshot_physical_rel": "core/Configs/FireModes/FireMode_Single.conf"
     },
     {
       "guid": "A827B610B7CD4158",
       "path": "Prefabs/Weapons/Magazines/Vz58/Magazine_762x39_Vz58_30rnd_Last_5Tracer.et",
-      "resolved": "external",
-      "target": null,
-      "defined_in": "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_base.et"
+      "resolved": "base_game_snapshot",
+      "target": "Prefabs/Weapons/Magazines/Vz58/Magazine_762x39_Vz58_30rnd_Last_5Tracer.et",
+      "defined_in": "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_base.et",
+      "snapshot_import_guid": "562C59954D258F50",
+      "snapshot_physical_rel": "magazines/Vz58/Magazine_762x39_Vz58_30rnd_Last_5Tracer.et"
     },
     {
       "guid": "ADDF1CC42A489D84",
@@ -168,9 +179,11 @@
     {
       "guid": "D92368B78263A9E0",
       "path": "Prefabs/Weapons/Attachments/Mounts/Dovetail_AK/Dovetail_AK.et",
-      "resolved": "external",
-      "target": null,
-      "defined_in": "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_base.et"
+      "resolved": "base_game_snapshot",
+      "target": "Prefabs/Weapons/Attachments/Mounts/Dovetail_AK/Dovetail_AK.et",
+      "defined_in": "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_base.et",
+      "snapshot_import_guid": "BE6D0B158BE54EA0",
+      "snapshot_physical_rel": "attachments/Mounts/Dovetail_AK/Dovetail_AK.et"
     }
   ],
   "warnings": [],

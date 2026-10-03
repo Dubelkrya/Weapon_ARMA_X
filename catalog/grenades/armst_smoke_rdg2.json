@@ -22,18 +22,43 @@
         "resource": "Prefabs/Weapons/Grenades/armst_Smoke_RDG2.et",
         "status": "local",
         "class": "GenericEntity"
-      }
-    ],
-    "external_parents": [
+      },
       {
-        "guid": "0DCE9A9A4F31BE1C",
-        "path": "Prefabs/Weapons/Core/SmokeGrenade_Base.et",
-        "raw": "{0DCE9A9A4F31BE1C}Prefabs/Weapons/Core/SmokeGrenade_Base.et"
+        "resource": "Prefabs/Weapons/Core/SmokeGrenade_Base.et",
+        "status": "base_game_snapshot",
+        "class": "GenericEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Core/Grenade_Base.et",
+        "status": "base_game_snapshot",
+        "class": "GenericEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Core/Throw_Base.et",
+        "status": "base_game_snapshot",
+        "class": "GenericEntity"
       }
     ],
+    "external_parents": [],
     "used_as_base_by": [],
-    "chain_depth_local": 1
+    "chain_depth_local": 1,
+    "chain_depth_base_game_snapshot": 3
   },
-  "references": [],
+  "references": [
+    {
+      "guid": "D7E82511D6A9544A",
+      "path": "Configs/Weapons/AIBallisticTables/AIBT_SmokeGrenade_Base.conf",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Core/SmokeGrenade_Base.et"
+    },
+    {
+      "guid": "3D23DDD4A1D1DC30",
+      "path": "Assets/Weapons/Grenades/M18/Smoke_M18.xob",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Core/SmokeGrenade_Base.et"
+    }
+  ],
   "warnings": []
 }

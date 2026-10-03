@@ -22,36 +22,77 @@
         "resource": "Prefabs/Weapons/Magazines/Western/9x19/M9/armst_Magazine_9x19_M9_15rnd_Ball_BP.et",
         "status": "local",
         "class": "GenericEntity"
-      }
-    ],
-    "external_parents": [
+      },
       {
-        "guid": "DFFBF5F097FCF797",
-        "path": "Prefabs/Weapons/Magazines/Magazine_9x19_M9_15rnd_Base.et",
-        "raw": "{DFFBF5F097FCF797}Prefabs/Weapons/Magazines/Magazine_9x19_M9_15rnd_Base.et"
+        "resource": "Prefabs/Weapons/Magazines/Magazine_9x19_M9_15rnd_Base.et",
+        "status": "base_game_snapshot",
+        "class": "GenericEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Core/Magazine_Base.et",
+        "status": "base_game_snapshot",
+        "class": "GenericEntity"
       }
     ],
+    "external_parents": [],
     "used_as_base_by": [],
-    "chain_depth_local": 1
+    "chain_depth_local": 1,
+    "chain_depth_base_game_snapshot": 2
   },
   "references": [
+    {
+      "guid": "E7E6149FBC9B3675",
+      "path": "Configs/WeaponInfo/MagazineIndicators/beretta_15.conf",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_9x19_M9_15rnd_Base.et"
+    },
     {
       "guid": "48496091DE244325",
       "path": "Configs/Weapons/Ammo/ARMST/armst_Ammo_9x19_ARMST.conf",
       "resolved": "local",
       "target": "Configs/Weapons/Ammo/ARMST/armst_Ammo_9x19_ARMST.conf",
       "defined_in": "Prefabs/Weapons/Magazines/Western/9x19/M9/armst_Magazine_9x19_M9_15rnd_Ball_BP.et"
+    },
+    {
+      "guid": "BC69F995CEEF2196",
+      "path": "Configs/Weapons/Ammo/Ammo_9x19.conf",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_9x19_M9_15rnd_Base.et"
+    },
+    {
+      "guid": "317726F73A3CA775",
+      "path": "Assets/Weapons/Magazines/M9/Magazine_15rnd_M9.xob",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_9x19_M9_15rnd_Base.et"
+    },
+    {
+      "guid": "9245B067CB850C80",
+      "path": "Sounds/Weapons/_SharedData/PickUp/Weapons_PickUp_Handgun_Magazine.acp",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_9x19_M9_15rnd_Base.et"
     }
   ],
   "warnings": [],
   "data": {
-    "magazine_well": null,
+    "magazine_well": {
+      "name": "MagazineWell",
+      "class": "MagazineWellM9Beretta",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_9x19_M9_15rnd_Base.et"
+    },
     "ammo_config": {
       "guid": "48496091DE244325",
       "path": "Configs/Weapons/Ammo/ARMST/armst_Ammo_9x19_ARMST.conf",
       "defined_in": "Prefabs/Weapons/Magazines/Western/9x19/M9/armst_Magazine_9x19_M9_15rnd_Ball_BP.et"
     },
-    "max_ammo": null,
+    "max_ammo": {
+      "value": 15,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_9x19_M9_15rnd_Base.et",
+      "inherited": true
+    },
     "ammo_mapping": [
       1,
       1,
@@ -69,10 +110,19 @@
       1,
       1
     ],
-    "caliber_id": null,
-    "name": null,
-    "_defined_in": "Prefabs/Weapons/Magazines/Western/9x19/M9/armst_Magazine_9x19_M9_15rnd_Ball_BP.et",
+    "caliber_id": {
+      "value": "#AR-AmmunitionID_9x19mm",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_9x19_M9_15rnd_Base.et",
+      "inherited": true
+    },
+    "name": {
+      "value": "#AR-Magazine_BerettaM9_Name",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_9x19_M9_15rnd_Base.et",
+      "inherited": true
+    },
+    "_defined_in": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_9x19_M9_15rnd_Base.et",
     "display_name": null,
+    "weight": null,
     "grid": {
       "width": null,
       "height": {
@@ -81,15 +131,19 @@
         "inherited": false
       }
     },
-    "_inv_defined_in": "Prefabs/Weapons/Magazines/Western/9x19/M9/armst_Magazine_9x19_M9_15rnd_Ball_BP.et",
+    "_inv_defined_in": "base_game_snapshot:Prefabs/Weapons/Core/Magazine_Base.et",
     "editor_name": {
       "value": "#AR-Magazine_BerettaM9_Name",
       "defined_in": "Prefabs/Weapons/Magazines/Western/9x19/M9/armst_Magazine_9x19_M9_15rnd_Ball_BP.et",
       "inherited": false
+    },
+    "model": {
+      "guid": "317726F73A3CA775",
+      "path": "Assets/Weapons/Magazines/M9/Magazine_15rnd_M9.xob",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_9x19_M9_15rnd_Base.et"
     }
   },
   "derived": {
-    "capacity": 15,
-    "capacity_source": "AmmoMapping length"
+    "capacity": 15
   }
 }

@@ -1,7 +1,25 @@
 {
   "generated_from": "current primary addon scan",
-  "count": 8,
+  "count": 9,
   "data": {
+    "Configs/Weapons/Ammo/ARMST/armst_Ammo_545x39_ARMST.conf": {
+      "resource_guid": "BAD812761691C057",
+      "resources": [
+        {
+          "guid": "A6756977E148ABFC",
+          "path": "Prefabs/Weapons/Ammo/Russian/545x39/armst_Ammo_545x39_PP.et",
+          "resolved": "local",
+          "target": "Prefabs/Weapons/Ammo/Russian/545x39/armst_Ammo_545x39_PP.et"
+        },
+        {
+          "guid": "6804DD7F189D26F0",
+          "path": "Prefabs/Weapons/Ammo/Russian/545x39/armst_Ammo_545x39_BP.et",
+          "resolved": "local",
+          "target": "Prefabs/Weapons/Ammo/Russian/545x39/armst_Ammo_545x39_BP.et"
+        }
+      ],
+      "coverage": "local_array"
+    },
     "Configs/Weapons/Ammo/ARMST/armst_Ammo_556x45_ARMST.conf": {
       "resource_guid": "5513C2BA0B7B48F8",
       "resources": [

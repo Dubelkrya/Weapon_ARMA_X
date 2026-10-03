@@ -4,12 +4,15 @@
     "Assets/Toz/1.et",
     "Prefabs/Particles/Bullet_Case/Bullet_Case_12ga.et",
     "Prefabs/Particles/Bullet_Case/Bullet_Case_12ga_blue.et",
+    "Prefabs/Structures/Infrastructure/Pavements/AsphaltPavement_01/AsphaltPavement_Decal_base.et",
     "Prefabs/Weapons/Ammo/12g/armst_Ammo_12ga.et",
     "Prefabs/Weapons/Ammo/12g/armst_Ammo_12ga_shell.et",
     "Prefabs/Weapons/Ammo/12g/armst_Ammo_12ga_shell_test.et",
     "Prefabs/Weapons/Ammo/12g/armst_Ammo_Buckshot_pellet.et",
     "Prefabs/Weapons/Ammo/Eastern/762x39/armst_Ammo_762x39_BP.et",
     "Prefabs/Weapons/Ammo/Eastern/762x39/armst_Ammo_762x39_PP.et",
+    "Prefabs/Weapons/Ammo/Russian/545x39/armst_Ammo_545x39_BP.et",
+    "Prefabs/Weapons/Ammo/Russian/545x39/armst_Ammo_545x39_PP.et",
     "Prefabs/Weapons/Ammo/Russian/763x25/armst_Ammo_763x25.et",
     "Prefabs/Weapons/Ammo/Russian/763x25/armst_Ammo_763x25_Ball.et",
     "Prefabs/Weapons/Ammo/Russian/9x39/armst_Ammo_9x39_SP5_Ball.et",
@@ -23,15 +26,22 @@
     "Prefabs/Weapons/Ammo/Western/9x19/armst_Ammo_9x19_PP.et",
     "Prefabs/Weapons/Ammo/armst_Ammo_9x18_BP.et",
     "Prefabs/Weapons/Ammo/armst_Ammo_9x18_PP.et",
+    "Prefabs/Weapons/Ammo/armst_Ammo_Grenade_HEDP_M433.et",
+    "Prefabs/Weapons/Attachments/Bayonets/armst_Bayonet_6Kh4.et",
+    "Prefabs/Weapons/Attachments/Bayonets/armst_Bayonet_M9.et",
     "Prefabs/Weapons/Attachments/Handguards/armst_Handguard_AK74M2.et",
-    "Prefabs/Weapons/Attachments/Muzzle/Suppressor_PBS4/Suppressor_PBS4_base.et",
+    "Prefabs/Weapons/Attachments/Muzzle/Suppressor_M16/armst_Suppressor_M16.et",
+    "Prefabs/Weapons/Attachments/Muzzle/Suppressor_PBS4/armst_Suppressor_PBS4.et",
     "Prefabs/Weapons/Attachments/Muzzle/armst_Suppressor_9a91.et",
+    "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/Armst_OKP.et",
     "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et",
     "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Optic.et",
     "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Picatinny.et",
     "Prefabs/Weapons/Attachments/Optics/L85/armst_L85_CarryHandle.et",
     "Prefabs/Weapons/Attachments/Optics/Optic_1P29/armst_Optic_1P29.et",
-    "Prefabs/Weapons/Attachments/Optics/Optic_4x20/Optic_4x20.et",
+    "Prefabs/Weapons/Attachments/Optics/Optic_4x20/armst_Optic_4x20.et",
+    "Prefabs/Weapons/Attachments/Optics/Optic_AP2k/armst_Collim_AP2k.et",
+    "Prefabs/Weapons/Attachments/Optics/Optic_ARTII/armst_Optic_ARTII.et",
     "Prefabs/Weapons/Attachments/Optics/WeaponOptic_Base.et",
     "Prefabs/Weapons/Attachments/Optics/armst_Optic_Collimator.et",
     "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et",
@@ -39,6 +49,8 @@
     "Prefabs/Weapons/Attachments/Stocks/armst_Handguard_AKS.et",
     "Prefabs/Weapons/Attachments/Stocks/armst_Stock_akm.et",
     "Prefabs/Weapons/Attachments/Underbarrel/armst_UGL_GP25.et",
+    "Prefabs/Weapons/Attachments/Underbarrel/armst_UGL_M203_long.et",
+    "Prefabs/Weapons/Attachments/Underbarrel/armst_UGL_M203_short.et",
     "Prefabs/Weapons/Core/Grenade_Base.et",
     "Prefabs/Weapons/Core/Magazine_Base.et",
     "Prefabs/Weapons/Core/Rifle_Base.et",
@@ -52,12 +64,12 @@
     "Prefabs/Weapons/Magazines/12ga/armst_12ga_Buckshot.et",
     "Prefabs/Weapons/Magazines/12ga/armst_12ga_Shell.et",
     "Prefabs/Weapons/Magazines/12ga/armst_12ga_Shell_test.et",
-    "Prefabs/Weapons/Magazines/Russian/5x45/AK74/Magazine_545x39_AK_30rnd_Base.et",
-    "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_AK_30rnd_Ball.et",
-    "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_AK_30rnd_Tracer.et",
-    "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_RPK_45rnd_Ball.et",
-    "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_RPK_45rnd_Tracer.et",
+    "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_AK_30rnd_BP.et",
+    "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_AK_30rnd_PP.et",
+    "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_RPK_45rnd_BP.et",
+    "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_RPK_45rnd_PP.et",
     "Prefabs/Weapons/Magazines/Russian/762x54/SVD/armst_Magazine_762x54_SVD_10rnd_7BZ3API.et",
+    "Prefabs/Weapons/Magazines/Russian/762x54/armst_Box_762x54_PK_100rnd_4Ball_1Tracer.et",
     "Prefabs/Weapons/Magazines/Russian/763x25/TT/armst_Magazine_763x25_TT_8rnd_Ball.et",
     "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_10rnd_Ball.et",
     "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_10rnd_Ball_BP.et",
@@ -79,6 +91,7 @@
     "Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_20rnd_vss_SP6.et",
     "Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_30rnd_val_SP5.et",
     "Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_30rnd_val_SP6.et",
+    "Prefabs/Weapons/Magazines/Western/5x56/Box/armst_Box_556x45_M249_200rnd_4Ball_1Tracer.et",
     "Prefabs/Weapons/Magazines/Western/5x56/HKG36/armst_Magazine_556x45_HKG36.et",
     "Prefabs/Weapons/Magazines/Western/5x56/HKG36/armst_Magazine_556x45_HKG36_BP.et",
     "Prefabs/Weapons/Magazines/Western/5x56/SIG550/armst_Magazine_556x45_SIG_550.et",
@@ -88,12 +101,16 @@
     "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M193_Ball_BP.et",
     "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M855_Ball.et",
     "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M855_Ball_BP.et",
+    "Prefabs/Weapons/Magazines/Western/762x51/Box/armst_Box_762x51_M60_100rnd_4Ball_1Tracer.et",
     "Prefabs/Weapons/Magazines/Western/762x51/HK3/armst_Magazine_762x51_HK3_20_M80_Ball.et",
     "Prefabs/Weapons/Magazines/Western/762x51/HK3/armst_Magazine_762x51_HK3_20_M80_Ball_BP.et",
     "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_20_M80_Ball.et",
     "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_20_M80_Ball_BP.et",
     "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_30_M80_Ball.et",
     "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_30_M80_Ball_BP.et",
+    "Prefabs/Weapons/Magazines/Western/762x51/M14/armst_Magazine_762x51_M14_20rnd_BP.et",
+    "Prefabs/Weapons/Magazines/Western/762x51/M14/armst_Magazine_762x51_M14_20rnd_PP.et",
+    "Prefabs/Weapons/Magazines/Western/762x54/armst_Box_762x54_UK59_50rnd_4Ball_1Tracer.et",
     "Prefabs/Weapons/Magazines/Western/9x19/M9/armst_Magazine_9x19_M9_15rnd_Ball.et",
     "Prefabs/Weapons/Magazines/Western/9x19/M9/armst_Magazine_9x19_M9_15rnd_Ball_BP.et",
     "Prefabs/Weapons/Russian/Handguns/APB/armst_pistol_APB.et",
@@ -133,8 +150,10 @@
     "Prefabs/Weapons/Russian/Rifle/VSK94/armst_Rifle_VSK94_base.et",
     "Prefabs/Weapons/Russian/Rifle/VSS/armst_Rifle_vss.et",
     "Prefabs/Weapons/Russian/Rifle/VSS/armst_Rifle_vss_base.et",
+    "Prefabs/Weapons/Russian/Shotgun/armst_Shotgun_RIS_Mount.et",
     "Prefabs/Weapons/Russian/Shotgun/armst_Shotgun_izh_27.et",
     "Prefabs/Weapons/Russian/Shotgun/armst_Shotgun_mp_133.et",
+    "Prefabs/Weapons/Russian/Shotgun/armst_Shotgun_mp_133_Ris.et",
     "Prefabs/Weapons/Russian/Shotgun/armst_Shotgun_mp_153.et",
     "Prefabs/Weapons/Russian/Shotgun/armst_Shotgun_toz_66.et",
     "Prefabs/Weapons/Russian/Shotgun/armst_Shotgun_toz_66_pantera.et",
@@ -142,31 +161,35 @@
     "Prefabs/Weapons/Tripods/armst_Tripod_6T5.et",
     "Prefabs/Weapons/Tripods/armst_Tripod_6T5_PKM.et",
     "Prefabs/Weapons/Western/Handguns/armst_pistol_M9.et",
+    "Prefabs/Weapons/Western/MachineGuns/armst_mgun_M249.et",
+    "Prefabs/Weapons/Western/MachineGuns/armst_mgun_M60.et",
+    "Prefabs/Weapons/Western/MachineGuns/armst_mgun_UK59.et",
     "Prefabs/Weapons/Western/Rifle/HKG33/armst_Rifle_HKG33.et",
     "Prefabs/Weapons/Western/Rifle/HKG33/armst_Rifle_HKG33_base.et",
     "Prefabs/Weapons/Western/Rifle/HKG36/armst_Rifle_HKG36.et",
     "Prefabs/Weapons/Western/Rifle/HKG36/armst_Rifle_HKG36_base.et",
     "Prefabs/Weapons/Western/Rifle/L85/armst_Rifle_L85.et",
     "Prefabs/Weapons/Western/Rifle/L85/armst_Rifle_L85_base.et",
+    "Prefabs/Weapons/Western/Rifle/M14/armst_Rifle_M21.et",
     "Prefabs/Weapons/Western/Rifle/M16/armst_Rifle_M16A2.et",
     "Prefabs/Weapons/Western/Rifle/M4/armst_Rifle_M4_carbine.et",
     "Prefabs/Weapons/Western/Rifle/SLR/armst_SLR.et",
     "Prefabs/Weapons/Western/Rifle/SLR/armst_SLR_base.et",
     "Prefabs/Weapons/Western/Rifle/Sig550/armst_Rifle_Sig550.et",
     "Prefabs/Weapons/Western/Rifle/Sig550/armst_Rifle_Sig550_base.et",
-    "Prefabs/Weapons/Western/Rifle/armst_VZ58P_base.et",
-    "Prefabs/Weapons/Western/Rifle/armst_VZ58V_base.et",
+    "Prefabs/Weapons/Western/Rifle/VZ58/armst_VZ58P.et",
+    "Prefabs/Weapons/Western/Rifle/VZ58/armst_VZ58V.et",
     "Prefabs/Weapons/Western/Shotgun/armst_Shotgun_Remington_870.et",
     "Prefabs/Weapons/Western/Shotgun/armst_Shotgun_spas_12.et",
     "Prefabs/Weapons/Western/Shotgun/core/armst_shotgun_base.et"
   ],
-  "edge_count": 384,
+  "edge_count": 476,
   "edges": [
     {
       "from": "Assets/Toz/1.et",
-      "to": "Prefabs/Weapons/Rifles/M14/Rifle_M21_base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
+      "to": "base_game_snapshot:Prefabs/Weapons/Rifles/M14/Rifle_M21_base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
       "defined_in": "Assets/Toz/1.et"
     },
     {
@@ -191,31 +214,59 @@
       "defined_in": "Prefabs/Particles/Bullet_Case/Bullet_Case_12ga_blue.et"
     },
     {
-      "from": "Prefabs/Weapons/Ammo/12g/armst_Ammo_12ga.et",
-      "to": "Prefabs/Weapons/Ammo/Ammo_762x54r_Ball_57N323S.et",
+      "from": "Prefabs/Structures/Infrastructure/Pavements/AsphaltPavement_01/AsphaltPavement_Decal_base.et",
+      "to": "Prefabs/Decals/Core/Decal_StaticModel_base.et",
       "kind": "inherits_base_game",
       "status": "external",
+      "defined_in": "Prefabs/Structures/Infrastructure/Pavements/AsphaltPavement_01/AsphaltPavement_Decal_base.et"
+    },
+    {
+      "from": "Prefabs/Weapons/Ammo/12g/armst_Ammo_12ga.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Ammo/Ammo_762x54r_Ball_57N323S.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
       "defined_in": "Prefabs/Weapons/Ammo/12g/armst_Ammo_12ga.et"
     },
     {
-      "from": "Prefabs/Weapons/Ammo/12g/armst_Ammo_12ga_shell.et",
-      "to": "Prefabs/Weapons/Ammo/Ammo_762x54r_Ball_57N323S.et",
-      "kind": "inherits_base_game",
+      "from": "Prefabs/Weapons/Ammo/12g/armst_Ammo_12ga.et",
+      "to": "Configs/Weapons/AIBallisticTables/AIBT_762x54r_Ball_57N323S.conf",
+      "kind": "ballistic_table",
       "status": "external",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Ammo/Ammo_762x54r_Ball_57N323S.et"
+    },
+    {
+      "from": "Prefabs/Weapons/Ammo/12g/armst_Ammo_12ga_shell.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Ammo/Ammo_762x54r_Ball_57N323S.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
       "defined_in": "Prefabs/Weapons/Ammo/12g/armst_Ammo_12ga_shell.et"
     },
     {
-      "from": "Prefabs/Weapons/Ammo/12g/armst_Ammo_12ga_shell_test.et",
-      "to": "Prefabs/Weapons/Ammo/Ammo_762x54r_Ball_57N323S.et",
-      "kind": "inherits_base_game",
+      "from": "Prefabs/Weapons/Ammo/12g/armst_Ammo_12ga_shell.et",
+      "to": "Configs/Weapons/AIBallisticTables/AIBT_762x54r_Ball_57N323S.conf",
+      "kind": "ballistic_table",
       "status": "external",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Ammo/Ammo_762x54r_Ball_57N323S.et"
+    },
+    {
+      "from": "Prefabs/Weapons/Ammo/12g/armst_Ammo_12ga_shell_test.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Ammo/Ammo_762x54r_Ball_57N323S.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
       "defined_in": "Prefabs/Weapons/Ammo/12g/armst_Ammo_12ga_shell_test.et"
     },
     {
-      "from": "Prefabs/Weapons/Ammo/12g/armst_Ammo_Buckshot_pellet.et",
-      "to": "Prefabs/Weapons/Core/Ammo_Bullet_Base.et",
-      "kind": "inherits_base_game",
+      "from": "Prefabs/Weapons/Ammo/12g/armst_Ammo_12ga_shell_test.et",
+      "to": "Configs/Weapons/AIBallisticTables/AIBT_762x54r_Ball_57N323S.conf",
+      "kind": "ballistic_table",
       "status": "external",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Ammo/Ammo_762x54r_Ball_57N323S.et"
+    },
+    {
+      "from": "Prefabs/Weapons/Ammo/12g/armst_Ammo_Buckshot_pellet.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Core/Ammo_Bullet_Base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
       "defined_in": "Prefabs/Weapons/Ammo/12g/armst_Ammo_Buckshot_pellet.et"
     },
     {
@@ -227,9 +278,9 @@
     },
     {
       "from": "Prefabs/Weapons/Ammo/Eastern/762x39/armst_Ammo_762x39_BP.et",
-      "to": "Prefabs/Weapons/Core/Ammo_Bullet_Base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
+      "to": "base_game_snapshot:Prefabs/Weapons/Core/Ammo_Bullet_Base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
       "defined_in": "Prefabs/Weapons/Ammo/Eastern/762x39/armst_Ammo_762x39_BP.et"
     },
     {
@@ -241,9 +292,9 @@
     },
     {
       "from": "Prefabs/Weapons/Ammo/Eastern/762x39/armst_Ammo_762x39_PP.et",
-      "to": "Prefabs/Weapons/Core/Ammo_Bullet_Base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
+      "to": "base_game_snapshot:Prefabs/Weapons/Core/Ammo_Bullet_Base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
       "defined_in": "Prefabs/Weapons/Ammo/Eastern/762x39/armst_Ammo_762x39_PP.et"
     },
     {
@@ -254,10 +305,38 @@
       "defined_in": "Prefabs/Weapons/Ammo/Eastern/762x39/armst_Ammo_762x39_PP.et"
     },
     {
-      "from": "Prefabs/Weapons/Ammo/Russian/763x25/armst_Ammo_763x25.et",
-      "to": "Prefabs/Weapons/Ammo/Ammo_762x54r_Ball_57N323S.et",
-      "kind": "inherits_base_game",
+      "from": "Prefabs/Weapons/Ammo/Russian/545x39/armst_Ammo_545x39_BP.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Ammo/Ammo_545x39_AP_7N39.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
+      "defined_in": "Prefabs/Weapons/Ammo/Russian/545x39/armst_Ammo_545x39_BP.et"
+    },
+    {
+      "from": "Prefabs/Weapons/Ammo/Russian/545x39/armst_Ammo_545x39_BP.et",
+      "to": "Configs/Weapons/AIBallisticTables/AIBT_545x39_AP_7N39.conf",
+      "kind": "ballistic_table",
       "status": "external",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Ammo/Ammo_545x39_AP_7N39.et"
+    },
+    {
+      "from": "Prefabs/Weapons/Ammo/Russian/545x39/armst_Ammo_545x39_PP.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Ammo/Ammo_545x39_Ball_7N6.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
+      "defined_in": "Prefabs/Weapons/Ammo/Russian/545x39/armst_Ammo_545x39_PP.et"
+    },
+    {
+      "from": "Prefabs/Weapons/Ammo/Russian/545x39/armst_Ammo_545x39_PP.et",
+      "to": "Configs/Weapons/AIBallisticTables/AIBT_Bullet_Base.conf",
+      "kind": "ballistic_table",
+      "status": "external",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Core/Ammo_Bullet_Base.et"
+    },
+    {
+      "from": "Prefabs/Weapons/Ammo/Russian/763x25/armst_Ammo_763x25.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Ammo/Ammo_762x54r_Ball_57N323S.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
       "defined_in": "Prefabs/Weapons/Ammo/Russian/763x25/armst_Ammo_763x25.et"
     },
     {
@@ -269,58 +348,58 @@
     },
     {
       "from": "Prefabs/Weapons/Ammo/Russian/763x25/armst_Ammo_763x25_Ball.et",
-      "to": "Prefabs/Weapons/Core/Ammo_Bullet_Base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
+      "to": "base_game_snapshot:Prefabs/Weapons/Core/Ammo_Bullet_Base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
       "defined_in": "Prefabs/Weapons/Ammo/Russian/763x25/armst_Ammo_763x25_Ball.et"
     },
     {
       "from": "Prefabs/Weapons/Ammo/Russian/763x25/armst_Ammo_763x25_Ball.et",
-      "to": "Configs/Weapons/AIBallisticTables/AIBT_9x19_Ball_M882.conf",
+      "to": "Configs/Weapons/AIBallisticTables/ARMST_AIBT_762x25_TT.conf",
       "kind": "ballistic_table",
-      "status": "external",
+      "status": "local",
       "defined_in": "Prefabs/Weapons/Ammo/Russian/763x25/armst_Ammo_763x25_Ball.et"
     },
     {
       "from": "Prefabs/Weapons/Ammo/Russian/9x39/armst_Ammo_9x39_SP5_Ball.et",
-      "to": "Prefabs/Weapons/Ammo/Ammo_762x54r_Ball_57N323S.et",
-      "kind": "inherits_base_game",
-      "status": "external",
+      "to": "base_game_snapshot:Prefabs/Weapons/Core/Ammo_Bullet_Base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
       "defined_in": "Prefabs/Weapons/Ammo/Russian/9x39/armst_Ammo_9x39_SP5_Ball.et"
     },
     {
       "from": "Prefabs/Weapons/Ammo/Russian/9x39/armst_Ammo_9x39_SP5_Ball.et",
-      "to": "Configs/Weapons/AIBallisticTables/AIBT_762x54r_Ball_7N1.conf",
+      "to": "Configs/Weapons/AIBallisticTables/AIBT_9x39_Ball_SP5.conf",
       "kind": "ballistic_table",
       "status": "external",
       "defined_in": "Prefabs/Weapons/Ammo/Russian/9x39/armst_Ammo_9x39_SP5_Ball.et"
     },
     {
       "from": "Prefabs/Weapons/Ammo/Russian/9x39/armst_Ammo_9x39_SP6_Ball.et",
-      "to": "Prefabs/Weapons/Ammo/Ammo_762x54r_Ball_57N323S.et",
-      "kind": "inherits_base_game",
-      "status": "external",
+      "to": "base_game_snapshot:Prefabs/Weapons/Ammo/Ammo_9x39_Ball_SP5.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
       "defined_in": "Prefabs/Weapons/Ammo/Russian/9x39/armst_Ammo_9x39_SP6_Ball.et"
     },
     {
       "from": "Prefabs/Weapons/Ammo/Russian/9x39/armst_Ammo_9x39_SP6_Ball.et",
-      "to": "Configs/Weapons/AIBallisticTables/AIBT_762x54r_Ball_7N1.conf",
+      "to": "Configs/Weapons/AIBallisticTables/AIBT_9x39_AP_SP6.conf",
       "kind": "ballistic_table",
       "status": "external",
       "defined_in": "Prefabs/Weapons/Ammo/Russian/9x39/armst_Ammo_9x39_SP6_Ball.et"
     },
     {
       "from": "Prefabs/Weapons/Ammo/Russian/grenade/armst_Ammo_Grenade_HE_VOG25.et",
-      "to": "Prefabs/Weapons/Core/Ammo_GrenadeLauncher_Base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
+      "to": "base_game_snapshot:Prefabs/Weapons/Core/Ammo_GrenadeLauncher_Base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
       "defined_in": "Prefabs/Weapons/Ammo/Russian/grenade/armst_Ammo_Grenade_HE_VOG25.et"
     },
     {
       "from": "Prefabs/Weapons/Ammo/Western/5x56/armst_Ammo_556x45_BP.et",
-      "to": "Prefabs/Weapons/Ammo/Ammo_556x45_Ball_M855.et",
-      "kind": "inherits_base_game",
-      "status": "external",
+      "to": "base_game_snapshot:Prefabs/Weapons/Ammo/Ammo_556x45_Ball_M855.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
       "defined_in": "Prefabs/Weapons/Ammo/Western/5x56/armst_Ammo_556x45_BP.et"
     },
     {
@@ -332,30 +411,51 @@
     },
     {
       "from": "Prefabs/Weapons/Ammo/Western/5x56/armst_Ammo_556x45_PP.et",
-      "to": "Prefabs/Weapons/Ammo/Ammo_556x45_Ball_M855.et",
-      "kind": "inherits_base_game",
-      "status": "external",
+      "to": "base_game_snapshot:Prefabs/Weapons/Ammo/Ammo_556x45_Ball_M855.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
       "defined_in": "Prefabs/Weapons/Ammo/Western/5x56/armst_Ammo_556x45_PP.et"
     },
     {
-      "from": "Prefabs/Weapons/Ammo/Western/762x51/armst_Ammo_762x51_BP.et",
-      "to": "Prefabs/Weapons/Ammo/Ammo_762x51_AP_M61.et",
-      "kind": "inherits_base_game",
+      "from": "Prefabs/Weapons/Ammo/Western/5x56/armst_Ammo_556x45_PP.et",
+      "to": "Configs/Weapons/AIBallisticTables/AIBT_556x45_Ball_M855.conf",
+      "kind": "ballistic_table",
       "status": "external",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Ammo/Ammo_556x45_Ball_M855.et"
+    },
+    {
+      "from": "Prefabs/Weapons/Ammo/Western/762x51/armst_Ammo_762x51_BP.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Ammo/Ammo_762x51_AP_M61.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
       "defined_in": "Prefabs/Weapons/Ammo/Western/762x51/armst_Ammo_762x51_BP.et"
     },
     {
-      "from": "Prefabs/Weapons/Ammo/Western/762x51/armst_Ammo_762x51_PP.et",
-      "to": "Prefabs/Weapons/Ammo/Ammo_762x51_Ball_M80.et",
-      "kind": "inherits_base_game",
+      "from": "Prefabs/Weapons/Ammo/Western/762x51/armst_Ammo_762x51_BP.et",
+      "to": "Configs/Weapons/AIBallisticTables/AIBT_762x51_AP_M61.conf",
+      "kind": "ballistic_table",
       "status": "external",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Ammo/Ammo_762x51_AP_M61.et"
+    },
+    {
+      "from": "Prefabs/Weapons/Ammo/Western/762x51/armst_Ammo_762x51_PP.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Ammo/Ammo_762x51_Ball_M80.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
       "defined_in": "Prefabs/Weapons/Ammo/Western/762x51/armst_Ammo_762x51_PP.et"
     },
     {
-      "from": "Prefabs/Weapons/Ammo/Western/9x19/armst_Ammo_9x19_BP.et",
-      "to": "Prefabs/Weapons/Ammo/Ammo_9x19_AP_7N21.et",
-      "kind": "inherits_base_game",
+      "from": "Prefabs/Weapons/Ammo/Western/762x51/armst_Ammo_762x51_PP.et",
+      "to": "Configs/Weapons/AIBallisticTables/AIBT_762x51_Ball_M80.conf",
+      "kind": "ballistic_table",
       "status": "external",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Ammo/Ammo_762x51_Ball_M80.et"
+    },
+    {
+      "from": "Prefabs/Weapons/Ammo/Western/9x19/armst_Ammo_9x19_BP.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Ammo/Ammo_9x19_AP_7N21.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
       "defined_in": "Prefabs/Weapons/Ammo/Western/9x19/armst_Ammo_9x19_BP.et"
     },
     {
@@ -367,17 +467,31 @@
     },
     {
       "from": "Prefabs/Weapons/Ammo/Western/9x19/armst_Ammo_9x19_PP.et",
-      "to": "Prefabs/Weapons/Ammo/Ammo_9x19_HP_JHP.et",
-      "kind": "inherits_base_game",
-      "status": "external",
+      "to": "base_game_snapshot:Prefabs/Weapons/Ammo/Ammo_9x19_HP_JHP.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
       "defined_in": "Prefabs/Weapons/Ammo/Western/9x19/armst_Ammo_9x19_PP.et"
     },
     {
-      "from": "Prefabs/Weapons/Ammo/armst_Ammo_9x18_BP.et",
-      "to": "Prefabs/Weapons/Ammo/Ammo_9x18_AP_7N25.et",
-      "kind": "inherits_base_game",
+      "from": "Prefabs/Weapons/Ammo/Western/9x19/armst_Ammo_9x19_PP.et",
+      "to": "Configs/Weapons/AIBallisticTables/AIBT_9x19_JHP_JHP.conf",
+      "kind": "ballistic_table",
       "status": "external",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Ammo/Ammo_9x19_HP_JHP.et"
+    },
+    {
+      "from": "Prefabs/Weapons/Ammo/armst_Ammo_9x18_BP.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Ammo/Ammo_9x18_AP_7N25.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
       "defined_in": "Prefabs/Weapons/Ammo/armst_Ammo_9x18_BP.et"
+    },
+    {
+      "from": "Prefabs/Weapons/Ammo/armst_Ammo_9x18_BP.et",
+      "to": "Configs/Weapons/AIBallisticTables/AIBT_9x18_AP_7N25.conf",
+      "kind": "ballistic_table",
+      "status": "external",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Ammo/Ammo_9x18_AP_7N25.et"
     },
     {
       "from": "Prefabs/Weapons/Ammo/armst_Ammo_9x18_PP.et",
@@ -387,38 +501,73 @@
       "defined_in": "Prefabs/Weapons/Ammo/armst_Ammo_9x18_PP.et"
     },
     {
+      "from": "Prefabs/Weapons/Ammo/armst_Ammo_Grenade_HEDP_M433.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Core/Ammo_GrenadeLauncher_Base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
+      "defined_in": "Prefabs/Weapons/Ammo/armst_Ammo_Grenade_HEDP_M433.et"
+    },
+    {
+      "from": "Prefabs/Weapons/Attachments/Bayonets/armst_Bayonet_6Kh4.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Attachments/Bayonets/Bayonet_Base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
+      "defined_in": "Prefabs/Weapons/Attachments/Bayonets/armst_Bayonet_6Kh4.et"
+    },
+    {
+      "from": "Prefabs/Weapons/Attachments/Bayonets/armst_Bayonet_M9.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Attachments/Bayonets/Bayonet_Base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
+      "defined_in": "Prefabs/Weapons/Attachments/Bayonets/armst_Bayonet_M9.et"
+    },
+    {
       "from": "Prefabs/Weapons/Attachments/Handguards/armst_Handguard_AK74M2.et",
-      "to": "Prefabs/Weapons/Attachments/Handguards/Handguard_M16_carbine/Handguard_M16_carbine_base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
+      "to": "base_game_snapshot:Prefabs/Weapons/Attachments/Handguards/Handguard_M16_carbine/Handguard_M16_carbine_base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
       "defined_in": "Prefabs/Weapons/Attachments/Handguards/armst_Handguard_AK74M2.et"
     },
     {
-      "from": "Prefabs/Weapons/Attachments/Muzzle/Suppressor_PBS4/Suppressor_PBS4_base.et",
-      "to": "Prefabs/Weapons/Core/Suppressor_base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
-      "defined_in": "Prefabs/Weapons/Attachments/Muzzle/Suppressor_PBS4/Suppressor_PBS4_base.et"
+      "from": "Prefabs/Weapons/Attachments/Muzzle/Suppressor_M16/armst_Suppressor_M16.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Attachments/Muzzle/Suppressor_M16/Suppressor_M16_base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
+      "defined_in": "Prefabs/Weapons/Attachments/Muzzle/Suppressor_M16/armst_Suppressor_M16.et"
+    },
+    {
+      "from": "Prefabs/Weapons/Attachments/Muzzle/Suppressor_PBS4/armst_Suppressor_PBS4.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Core/Suppressor_base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
+      "defined_in": "Prefabs/Weapons/Attachments/Muzzle/Suppressor_PBS4/armst_Suppressor_PBS4.et"
     },
     {
       "from": "Prefabs/Weapons/Attachments/Muzzle/armst_Suppressor_9a91.et",
-      "to": "Prefabs/Weapons/Attachments/Muzzle/Suppressor_PBS4/Suppressor_PBS4_base.et",
+      "to": "Prefabs/Weapons/Attachments/Muzzle/Suppressor_PBS4/armst_Suppressor_PBS4.et",
       "kind": "inherits",
       "status": "local",
       "defined_in": "Prefabs/Weapons/Attachments/Muzzle/armst_Suppressor_9a91.et"
     },
     {
-      "from": "Prefabs/Weapons/Attachments/Muzzle/armst_Suppressor_9a91.et",
-      "to": "Prefabs/Weapons/Core/Suppressor_base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
-      "defined_in": "Prefabs/Weapons/Attachments/Muzzle/armst_Suppressor_9a91.et"
+      "from": "Prefabs/Weapons/Attachments/Muzzle/Suppressor_PBS4/armst_Suppressor_PBS4.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Core/Suppressor_base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
+      "defined_in": "Prefabs/Weapons/Attachments/Muzzle/Suppressor_PBS4/armst_Suppressor_PBS4.et"
+    },
+    {
+      "from": "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/Armst_OKP.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Attachments/Optics/WeaponCollimator_Base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
+      "defined_in": "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/Armst_OKP.et"
     },
     {
       "from": "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et",
-      "to": "Prefabs/Weapons/Core/WeaponPart_Base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
+      "to": "base_game_snapshot:Prefabs/Weapons/Core/WeaponPart_Base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
       "defined_in": "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et"
     },
     {
@@ -429,24 +578,24 @@
       "defined_in": "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Optic.et"
     },
     {
-      "from": "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Optic.et",
-      "to": "Prefabs/Weapons/Core/WeaponSight_Base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
-      "defined_in": "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Optic.et"
+      "from": "Prefabs/Weapons/Attachments/Optics/WeaponOptic_Base.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Core/WeaponSight_Base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
+      "defined_in": "Prefabs/Weapons/Attachments/Optics/WeaponOptic_Base.et"
     },
     {
       "from": "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Picatinny.et",
-      "to": "Prefabs/Weapons/Core/WeaponPart_Base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
+      "to": "base_game_snapshot:Prefabs/Weapons/Core/WeaponPart_Base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
       "defined_in": "Prefabs/Weapons/Attachments/Optics/HKG36/armst_HKG36_CarryHandle_Picatinny.et"
     },
     {
       "from": "Prefabs/Weapons/Attachments/Optics/L85/armst_L85_CarryHandle.et",
-      "to": "Prefabs/Weapons/Core/WeaponPart_Base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
+      "to": "base_game_snapshot:Prefabs/Weapons/Core/WeaponPart_Base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
       "defined_in": "Prefabs/Weapons/Attachments/Optics/L85/armst_L85_CarryHandle.et"
     },
     {
@@ -464,66 +613,94 @@
       "defined_in": "Prefabs/Weapons/Attachments/Optics/Optic_1P29/armst_Optic_1P29.et"
     },
     {
-      "from": "Prefabs/Weapons/Attachments/Optics/Optic_4x20/Optic_4x20.et",
-      "to": "Prefabs/Weapons/Attachments/Optics/Optic_4x20/Optic_4x20_base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
-      "defined_in": "Prefabs/Weapons/Attachments/Optics/Optic_4x20/Optic_4x20.et"
+      "from": "Prefabs/Weapons/Attachments/Optics/Optic_4x20/armst_Optic_4x20.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Attachments/Optics/Optic_4x20/Optic_4x20_base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
+      "defined_in": "Prefabs/Weapons/Attachments/Optics/Optic_4x20/armst_Optic_4x20.et"
+    },
+    {
+      "from": "Prefabs/Weapons/Attachments/Optics/Optic_AP2k/armst_Collim_AP2k.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Attachments/Optics/Optic_AP2k/Collim_AP2k_base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
+      "defined_in": "Prefabs/Weapons/Attachments/Optics/Optic_AP2k/armst_Collim_AP2k.et"
+    },
+    {
+      "from": "Prefabs/Weapons/Attachments/Optics/Optic_ARTII/armst_Optic_ARTII.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Attachments/Optics/Optic_ARTII/Optic_ARTII_base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
+      "defined_in": "Prefabs/Weapons/Attachments/Optics/Optic_ARTII/armst_Optic_ARTII.et"
     },
     {
       "from": "Prefabs/Weapons/Attachments/Optics/WeaponOptic_Base.et",
-      "to": "Prefabs/Weapons/Core/WeaponSight_Base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
+      "to": "base_game_snapshot:Prefabs/Weapons/Core/WeaponSight_Base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
       "defined_in": "Prefabs/Weapons/Attachments/Optics/WeaponOptic_Base.et"
     },
     {
       "from": "Prefabs/Weapons/Attachments/Optics/armst_Optic_Collimator.et",
-      "to": "Prefabs/Weapons/Attachments/Optics/WeaponCollimator_Base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
+      "to": "base_game_snapshot:Prefabs/Weapons/Attachments/Optics/WeaponCollimator_Base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
       "defined_in": "Prefabs/Weapons/Attachments/Optics/armst_Optic_Collimator.et"
     },
     {
       "from": "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et",
-      "to": "Prefabs/Weapons/Attachments/Optics/Optic_PSO1/Optic_PSO1_base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
+      "to": "base_game_snapshot:Prefabs/Weapons/Attachments/Optics/Optic_PSO1/Optic_PSO1_base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
       "defined_in": "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et"
     },
     {
       "from": "Prefabs/Weapons/Attachments/Stocks/armst_Handguard_AK74M.et",
-      "to": "Prefabs/Weapons/Attachments/Handguards/Handguard_M16_carbine/Handguard_M16_carbine_base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
+      "to": "base_game_snapshot:Prefabs/Weapons/Attachments/Handguards/Handguard_M16_carbine/Handguard_M16_carbine_base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
       "defined_in": "Prefabs/Weapons/Attachments/Stocks/armst_Handguard_AK74M.et"
     },
     {
       "from": "Prefabs/Weapons/Attachments/Stocks/armst_Handguard_AKS.et",
-      "to": "Prefabs/Weapons/Attachments/Handguards/Handguard_M16_carbine/Handguard_M16_carbine_base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
+      "to": "base_game_snapshot:Prefabs/Weapons/Attachments/Handguards/Handguard_M16_carbine/Handguard_M16_carbine_base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
       "defined_in": "Prefabs/Weapons/Attachments/Stocks/armst_Handguard_AKS.et"
     },
     {
       "from": "Prefabs/Weapons/Attachments/Stocks/armst_Stock_akm.et",
-      "to": "Prefabs/Weapons/Attachments/Stocks/Stock_VZ58/Stock_VZ58_base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
+      "to": "base_game_snapshot:Prefabs/Weapons/Attachments/Stocks/Stock_VZ58/Stock_VZ58_base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
       "defined_in": "Prefabs/Weapons/Attachments/Stocks/armst_Stock_akm.et"
     },
     {
       "from": "Prefabs/Weapons/Attachments/Underbarrel/armst_UGL_GP25.et",
-      "to": "Prefabs/Weapons/Core/UGL_Base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
+      "to": "base_game_snapshot:Prefabs/Weapons/Core/UGL_Base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
       "defined_in": "Prefabs/Weapons/Attachments/Underbarrel/armst_UGL_GP25.et"
     },
     {
+      "from": "Prefabs/Weapons/Attachments/Underbarrel/armst_UGL_M203_long.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Attachments/Underbarrel/UGL_M203_base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
+      "defined_in": "Prefabs/Weapons/Attachments/Underbarrel/armst_UGL_M203_long.et"
+    },
+    {
+      "from": "Prefabs/Weapons/Attachments/Underbarrel/armst_UGL_M203_short.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Attachments/Underbarrel/UGL_M203_base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
+      "defined_in": "Prefabs/Weapons/Attachments/Underbarrel/armst_UGL_M203_short.et"
+    },
+    {
       "from": "Prefabs/Weapons/Core/Grenade_Base.et",
-      "to": "Prefabs/Weapons/Core/Throw_Base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
+      "to": "base_game_snapshot:Prefabs/Weapons/Core/Throw_Base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
       "defined_in": "Prefabs/Weapons/Core/Grenade_Base.et"
     },
     {
@@ -535,37 +712,37 @@
     },
     {
       "from": "Prefabs/Weapons/Grenades/armst_Grenade_M67.et",
-      "to": "Prefabs/Weapons/Core/FragGrenade_Base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
+      "to": "base_game_snapshot:Prefabs/Weapons/Core/FragGrenade_Base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
       "defined_in": "Prefabs/Weapons/Grenades/armst_Grenade_M67.et"
     },
     {
       "from": "Prefabs/Weapons/Grenades/armst_Grenade_RGD5.et",
-      "to": "Prefabs/Weapons/Core/FragGrenade_Base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
+      "to": "base_game_snapshot:Prefabs/Weapons/Core/FragGrenade_Base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
       "defined_in": "Prefabs/Weapons/Grenades/armst_Grenade_RGD5.et"
     },
     {
       "from": "Prefabs/Weapons/Grenades/armst_Smoke_ANM8HC.et",
-      "to": "Prefabs/Weapons/Core/SmokeGrenade_Base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
+      "to": "base_game_snapshot:Prefabs/Weapons/Core/SmokeGrenade_Base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
       "defined_in": "Prefabs/Weapons/Grenades/armst_Smoke_ANM8HC.et"
     },
     {
       "from": "Prefabs/Weapons/Grenades/armst_Smoke_RDG2.et",
-      "to": "Prefabs/Weapons/Core/SmokeGrenade_Base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
+      "to": "base_game_snapshot:Prefabs/Weapons/Core/SmokeGrenade_Base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
       "defined_in": "Prefabs/Weapons/Grenades/armst_Smoke_RDG2.et"
     },
     {
       "from": "Prefabs/Weapons/Handguns/armst_Handgun_Knife_base.et",
-      "to": "Prefabs/Weapons/Core/Handgun_Base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
+      "to": "base_game_snapshot:Prefabs/Weapons/Core/Handgun_Base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
       "defined_in": "Prefabs/Weapons/Handguns/armst_Handgun_Knife_base.et"
     },
     {
@@ -577,9 +754,9 @@
     },
     {
       "from": "Prefabs/Weapons/Magazines/12ga/12ga_Buckshot_base.et",
-      "to": "Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
+      "to": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
       "defined_in": "Prefabs/Weapons/Magazines/12ga/12ga_Buckshot_base.et"
     },
     {
@@ -618,11 +795,11 @@
       "defined_in": "Prefabs/Weapons/Magazines/12ga/armst_12ga_Buckshot.et"
     },
     {
-      "from": "Prefabs/Weapons/Magazines/12ga/armst_12ga_Buckshot.et",
-      "to": "Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
-      "defined_in": "Prefabs/Weapons/Magazines/12ga/armst_12ga_Buckshot.et"
+      "from": "Prefabs/Weapons/Magazines/12ga/12ga_Buckshot_base.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
+      "defined_in": "Prefabs/Weapons/Magazines/12ga/12ga_Buckshot_base.et"
     },
     {
       "from": "Prefabs/Weapons/Magazines/12ga/armst_12ga_Buckshot.et",
@@ -654,9 +831,9 @@
     },
     {
       "from": "Prefabs/Weapons/Magazines/12ga/armst_12ga_Shell.et",
-      "to": "Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
+      "to": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
       "defined_in": "Prefabs/Weapons/Magazines/12ga/armst_12ga_Shell.et"
     },
     {
@@ -689,9 +866,9 @@
     },
     {
       "from": "Prefabs/Weapons/Magazines/12ga/armst_12ga_Shell_test.et",
-      "to": "Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
+      "to": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
       "defined_in": "Prefabs/Weapons/Magazines/12ga/armst_12ga_Shell_test.et"
     },
     {
@@ -723,60 +900,144 @@
       "defined_in": "Configs/Weapons/Ammo/Ammo_12g.conf"
     },
     {
-      "from": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/Magazine_545x39_AK_30rnd_Base.et",
-      "to": "Prefabs/Weapons/Core/Magazine_Base.et",
-      "kind": "inherits",
-      "status": "local",
-      "defined_in": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/Magazine_545x39_AK_30rnd_Base.et"
-    },
-    {
-      "from": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_AK_30rnd_Ball.et",
-      "to": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/Magazine_545x39_AK_30rnd_Base.et",
-      "kind": "inherits",
-      "status": "local",
-      "defined_in": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_AK_30rnd_Ball.et"
-    },
-    {
-      "from": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/Magazine_545x39_AK_30rnd_Base.et",
-      "to": "Prefabs/Weapons/Core/Magazine_Base.et",
-      "kind": "inherits",
-      "status": "local",
-      "defined_in": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/Magazine_545x39_AK_30rnd_Base.et"
-    },
-    {
-      "from": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_AK_30rnd_Tracer.et",
-      "to": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/Magazine_545x39_AK_30rnd_Base.et",
-      "kind": "inherits",
-      "status": "local",
-      "defined_in": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_AK_30rnd_Tracer.et"
-    },
-    {
-      "from": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/Magazine_545x39_AK_30rnd_Base.et",
-      "to": "Prefabs/Weapons/Core/Magazine_Base.et",
-      "kind": "inherits",
-      "status": "local",
-      "defined_in": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/Magazine_545x39_AK_30rnd_Base.et"
-    },
-    {
-      "from": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_RPK_45rnd_Ball.et",
-      "to": "Prefabs/Weapons/Magazines/Magazine_545x39_RPK_45rnd_Base.et",
+      "from": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_AK_30rnd_BP.et",
+      "to": "Prefabs/Weapons/Magazines/Magazine_545x39_AK_30rnd_Base.et",
       "kind": "inherits_base_game",
       "status": "external",
-      "defined_in": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_RPK_45rnd_Ball.et"
+      "defined_in": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_AK_30rnd_BP.et"
     },
     {
-      "from": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_RPK_45rnd_Tracer.et",
-      "to": "Prefabs/Weapons/Magazines/Magazine_545x39_RPK_45rnd_Base.et",
+      "from": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_AK_30rnd_BP.et",
+      "to": "Configs/Weapons/Ammo/ARMST/armst_Ammo_545x39_ARMST.conf",
+      "kind": "ammo_config",
+      "status": "local",
+      "defined_in": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_AK_30rnd_BP.et"
+    },
+    {
+      "from": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_AK_30rnd_BP.et",
+      "to": "Prefabs/Weapons/Ammo/Russian/545x39/armst_Ammo_545x39_PP.et",
+      "kind": "loaded_with",
+      "status": "local",
+      "defined_in": "Configs/Weapons/Ammo/ARMST/armst_Ammo_545x39_ARMST.conf"
+    },
+    {
+      "from": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_AK_30rnd_BP.et",
+      "to": "Prefabs/Weapons/Ammo/Russian/545x39/armst_Ammo_545x39_BP.et",
+      "kind": "loaded_with",
+      "status": "local",
+      "defined_in": "Configs/Weapons/Ammo/ARMST/armst_Ammo_545x39_ARMST.conf"
+    },
+    {
+      "from": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_AK_30rnd_PP.et",
+      "to": "Prefabs/Weapons/Magazines/Magazine_545x39_AK_30rnd_Base.et",
       "kind": "inherits_base_game",
       "status": "external",
-      "defined_in": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_RPK_45rnd_Tracer.et"
+      "defined_in": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_AK_30rnd_PP.et"
+    },
+    {
+      "from": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_AK_30rnd_PP.et",
+      "to": "Configs/Weapons/Ammo/ARMST/armst_Ammo_545x39_ARMST.conf",
+      "kind": "ammo_config",
+      "status": "local",
+      "defined_in": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_AK_30rnd_PP.et"
+    },
+    {
+      "from": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_AK_30rnd_PP.et",
+      "to": "Prefabs/Weapons/Ammo/Russian/545x39/armst_Ammo_545x39_PP.et",
+      "kind": "loaded_with",
+      "status": "local",
+      "defined_in": "Configs/Weapons/Ammo/ARMST/armst_Ammo_545x39_ARMST.conf"
+    },
+    {
+      "from": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_AK_30rnd_PP.et",
+      "to": "Prefabs/Weapons/Ammo/Russian/545x39/armst_Ammo_545x39_BP.et",
+      "kind": "loaded_with",
+      "status": "local",
+      "defined_in": "Configs/Weapons/Ammo/ARMST/armst_Ammo_545x39_ARMST.conf"
+    },
+    {
+      "from": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_RPK_45rnd_BP.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_545x39_RPK_45rnd_Base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
+      "defined_in": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_RPK_45rnd_BP.et"
+    },
+    {
+      "from": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_RPK_45rnd_BP.et",
+      "to": "Configs/Weapons/Ammo/ARMST/armst_Ammo_545x39_ARMST.conf",
+      "kind": "ammo_config",
+      "status": "local",
+      "defined_in": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_RPK_45rnd_BP.et"
+    },
+    {
+      "from": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_RPK_45rnd_BP.et",
+      "to": "Prefabs/Weapons/Ammo/Russian/545x39/armst_Ammo_545x39_PP.et",
+      "kind": "loaded_with",
+      "status": "local",
+      "defined_in": "Configs/Weapons/Ammo/ARMST/armst_Ammo_545x39_ARMST.conf"
+    },
+    {
+      "from": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_RPK_45rnd_BP.et",
+      "to": "Prefabs/Weapons/Ammo/Russian/545x39/armst_Ammo_545x39_BP.et",
+      "kind": "loaded_with",
+      "status": "local",
+      "defined_in": "Configs/Weapons/Ammo/ARMST/armst_Ammo_545x39_ARMST.conf"
+    },
+    {
+      "from": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_RPK_45rnd_PP.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_545x39_RPK_45rnd_Base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
+      "defined_in": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_RPK_45rnd_PP.et"
+    },
+    {
+      "from": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_RPK_45rnd_PP.et",
+      "to": "Configs/Weapons/Ammo/ARMST/armst_Ammo_545x39_ARMST.conf",
+      "kind": "ammo_config",
+      "status": "local",
+      "defined_in": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_RPK_45rnd_PP.et"
+    },
+    {
+      "from": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_RPK_45rnd_PP.et",
+      "to": "Prefabs/Weapons/Ammo/Russian/545x39/armst_Ammo_545x39_PP.et",
+      "kind": "loaded_with",
+      "status": "local",
+      "defined_in": "Configs/Weapons/Ammo/ARMST/armst_Ammo_545x39_ARMST.conf"
+    },
+    {
+      "from": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_RPK_45rnd_PP.et",
+      "to": "Prefabs/Weapons/Ammo/Russian/545x39/armst_Ammo_545x39_BP.et",
+      "kind": "loaded_with",
+      "status": "local",
+      "defined_in": "Configs/Weapons/Ammo/ARMST/armst_Ammo_545x39_ARMST.conf"
     },
     {
       "from": "Prefabs/Weapons/Magazines/Russian/762x54/SVD/armst_Magazine_762x54_SVD_10rnd_7BZ3API.et",
-      "to": "Prefabs/Weapons/Magazines/Magazine_762x54_SVD_10rnd_Base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
+      "to": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_762x54_SVD_10rnd_Base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
       "defined_in": "Prefabs/Weapons/Magazines/Russian/762x54/SVD/armst_Magazine_762x54_SVD_10rnd_7BZ3API.et"
+    },
+    {
+      "from": "Prefabs/Weapons/Magazines/Russian/762x54/SVD/armst_Magazine_762x54_SVD_10rnd_7BZ3API.et",
+      "to": "Configs/Weapons/Ammo/Ammo_762x54.conf",
+      "kind": "ammo_config",
+      "status": "external",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_762x54_SVD_10rnd_Base.et"
+    },
+    {
+      "from": "Prefabs/Weapons/Magazines/Russian/762x54/armst_Box_762x54_PK_100rnd_4Ball_1Tracer.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Magazines/Box_762x54_PK_100rnd_Base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
+      "defined_in": "Prefabs/Weapons/Magazines/Russian/762x54/armst_Box_762x54_PK_100rnd_4Ball_1Tracer.et"
+    },
+    {
+      "from": "Prefabs/Weapons/Magazines/Russian/762x54/armst_Box_762x54_PK_100rnd_4Ball_1Tracer.et",
+      "to": "Configs/Weapons/Ammo/Ammo_762x54.conf",
+      "kind": "ammo_config",
+      "status": "external",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Magazines/Box_762x54_PK_100rnd_Base.et"
     },
     {
       "from": "Prefabs/Weapons/Magazines/Russian/763x25/TT/armst_Magazine_763x25_TT_8rnd_Ball.et",
@@ -786,11 +1047,11 @@
       "defined_in": "Prefabs/Weapons/Magazines/Russian/763x25/TT/armst_Magazine_763x25_TT_8rnd_Ball.et"
     },
     {
-      "from": "Prefabs/Weapons/Magazines/Russian/763x25/TT/armst_Magazine_763x25_TT_8rnd_Ball.et",
-      "to": "Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
-      "defined_in": "Prefabs/Weapons/Magazines/Russian/763x25/TT/armst_Magazine_763x25_TT_8rnd_Ball.et"
+      "from": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
+      "defined_in": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball.et"
     },
     {
       "from": "Prefabs/Weapons/Magazines/Russian/763x25/TT/armst_Magazine_763x25_TT_8rnd_Ball.et",
@@ -814,11 +1075,11 @@
       "defined_in": "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_10rnd_Ball.et"
     },
     {
-      "from": "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_10rnd_Ball.et",
-      "to": "Prefabs/Weapons/Magazines/Vz58/Magazine_762x39_Vz58_30rnd_Base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
-      "defined_in": "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_10rnd_Ball.et"
+      "from": "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_30rnd_Ball.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Magazines/Vz58/Magazine_762x39_Vz58_30rnd_Base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
+      "defined_in": "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_30rnd_Ball.et"
     },
     {
       "from": "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_10rnd_Ball.et",
@@ -849,11 +1110,11 @@
       "defined_in": "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_10rnd_Ball_BP.et"
     },
     {
-      "from": "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_10rnd_Ball_BP.et",
-      "to": "Prefabs/Weapons/Magazines/Vz58/Magazine_762x39_Vz58_30rnd_Base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
-      "defined_in": "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_10rnd_Ball_BP.et"
+      "from": "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_30rnd_Ball.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Magazines/Vz58/Magazine_762x39_Vz58_30rnd_Base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
+      "defined_in": "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_30rnd_Ball.et"
     },
     {
       "from": "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_10rnd_Ball_BP.et",
@@ -878,9 +1139,9 @@
     },
     {
       "from": "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_30rnd_Ball.et",
-      "to": "Prefabs/Weapons/Magazines/Vz58/Magazine_762x39_Vz58_30rnd_Base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
+      "to": "base_game_snapshot:Prefabs/Weapons/Magazines/Vz58/Magazine_762x39_Vz58_30rnd_Base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
       "defined_in": "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_30rnd_Ball.et"
     },
     {
@@ -906,9 +1167,9 @@
     },
     {
       "from": "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_30rnd_Ball_BP.et",
-      "to": "Prefabs/Weapons/Magazines/Vz58/Magazine_762x39_Vz58_30rnd_Base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
+      "to": "base_game_snapshot:Prefabs/Weapons/Magazines/Vz58/Magazine_762x39_Vz58_30rnd_Base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
       "defined_in": "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_30rnd_Ball_BP.et"
     },
     {
@@ -940,11 +1201,11 @@
       "defined_in": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_APB_20rnd_Ball.et"
     },
     {
-      "from": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_APB_20rnd_Ball.et",
-      "to": "Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
-      "defined_in": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_APB_20rnd_Ball.et"
+      "from": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
+      "defined_in": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball.et"
     },
     {
       "from": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_APB_20rnd_Ball.et",
@@ -975,11 +1236,11 @@
       "defined_in": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_APB_20rnd_Ball_BP.et"
     },
     {
-      "from": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_APB_20rnd_Ball_BP.et",
-      "to": "Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
-      "defined_in": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_APB_20rnd_Ball_BP.et"
+      "from": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
+      "defined_in": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball.et"
     },
     {
       "from": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_APB_20rnd_Ball_BP.et",
@@ -1004,26 +1265,61 @@
     },
     {
       "from": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball.et",
-      "to": "Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
+      "to": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
       "defined_in": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball.et"
     },
     {
-      "from": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball_BP.et",
-      "to": "Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Base.et",
-      "kind": "inherits_base_game",
+      "from": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball.et",
+      "to": "Configs/Weapons/Ammo/Ammo_9x18Mak.conf",
+      "kind": "ammo_config",
       "status": "external",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Base.et"
+    },
+    {
+      "from": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball_BP.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
       "defined_in": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball_BP.et"
     },
     {
+      "from": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball_BP.et",
+      "to": "Configs/Weapons/Ammo/armst_Ammo_9x18_ARMST.conf",
+      "kind": "ammo_config",
+      "status": "local",
+      "defined_in": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball_BP.et"
+    },
+    {
+      "from": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball_BP.et",
+      "to": "Prefabs/Weapons/Ammo/armst_Ammo_9x18_PP.et",
+      "kind": "loaded_with",
+      "status": "local",
+      "defined_in": "Configs/Weapons/Ammo/armst_Ammo_9x18_ARMST.conf"
+    },
+    {
+      "from": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball_BP.et",
+      "to": "Prefabs/Weapons/Ammo/armst_Ammo_9x18_BP.et",
+      "kind": "loaded_with",
+      "status": "local",
+      "defined_in": "Configs/Weapons/Ammo/armst_Ammo_9x18_ARMST.conf"
+    },
+    {
       "from": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball_PP.et",
-      "to": "Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
+      "to": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
       "defined_in": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball_PP.et"
     },
     {
+      "from": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball_PP.et",
+      "to": "Configs/Weapons/Ammo/Ammo_9x18Mak.conf",
+      "kind": "ammo_config",
+      "status": "external",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Base.et"
+    },
+    {
       "from": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PP91_30rnd_Ball.et",
       "to": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball.et",
       "kind": "inherits",
@@ -1031,11 +1327,11 @@
       "defined_in": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PP91_30rnd_Ball.et"
     },
     {
-      "from": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PP91_30rnd_Ball.et",
-      "to": "Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
-      "defined_in": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PP91_30rnd_Ball.et"
+      "from": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
+      "defined_in": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball.et"
     },
     {
       "from": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PP91_30rnd_Ball.et",
@@ -1066,11 +1362,11 @@
       "defined_in": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PP91_30rnd_Ball_BP.et"
     },
     {
-      "from": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PP91_30rnd_Ball_BP.et",
-      "to": "Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
-      "defined_in": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PP91_30rnd_Ball_BP.et"
+      "from": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
+      "defined_in": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball.et"
     },
     {
       "from": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PP91_30rnd_Ball_BP.et",
@@ -1101,11 +1397,18 @@
       "defined_in": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_SR2_30rnd_Ball.et"
     },
     {
+      "from": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
+      "defined_in": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball.et"
+    },
+    {
       "from": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_SR2_30rnd_Ball.et",
-      "to": "Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Base.et",
-      "kind": "inherits_base_game",
+      "to": "Configs/Weapons/Ammo/Ammo_9x18Mak.conf",
+      "kind": "ammo_config",
       "status": "external",
-      "defined_in": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_SR2_30rnd_Ball.et"
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Base.et"
     },
     {
       "from": "Prefabs/Weapons/Magazines/Russian/9x39/9a91/armst_Magazine_9x39_20rnd_9a91_SP5.et",
@@ -1332,6 +1635,20 @@
       "defined_in": "Configs/Weapons/Ammo/armst_Ammo_9x39.conf"
     },
     {
+      "from": "Prefabs/Weapons/Magazines/Western/5x56/Box/armst_Box_556x45_M249_200rnd_4Ball_1Tracer.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Magazines/Box_556x45_M249_200rnd_base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
+      "defined_in": "Prefabs/Weapons/Magazines/Western/5x56/Box/armst_Box_556x45_M249_200rnd_4Ball_1Tracer.et"
+    },
+    {
+      "from": "Prefabs/Weapons/Magazines/Western/5x56/Box/armst_Box_556x45_M249_200rnd_4Ball_1Tracer.et",
+      "to": "Configs/Weapons/Ammo/Ammo_556x45.conf",
+      "kind": "ammo_config",
+      "status": "external",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Magazines/Box_556x45_M249_200rnd_base.et"
+    },
+    {
       "from": "Prefabs/Weapons/Magazines/Western/5x56/HKG36/armst_Magazine_556x45_HKG36.et",
       "to": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M193_Ball.et",
       "kind": "inherits",
@@ -1339,11 +1656,11 @@
       "defined_in": "Prefabs/Weapons/Magazines/Western/5x56/HKG36/armst_Magazine_556x45_HKG36.et"
     },
     {
-      "from": "Prefabs/Weapons/Magazines/Western/5x56/HKG36/armst_Magazine_556x45_HKG36.et",
-      "to": "Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M193_Ball.et",
-      "kind": "inherits_base_game",
-      "status": "external",
-      "defined_in": "Prefabs/Weapons/Magazines/Western/5x56/HKG36/armst_Magazine_556x45_HKG36.et"
+      "from": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M193_Ball.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M193_Ball.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
+      "defined_in": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M193_Ball.et"
     },
     {
       "from": "Prefabs/Weapons/Magazines/Western/5x56/HKG36/armst_Magazine_556x45_HKG36.et",
@@ -1374,11 +1691,11 @@
       "defined_in": "Prefabs/Weapons/Magazines/Western/5x56/HKG36/armst_Magazine_556x45_HKG36_BP.et"
     },
     {
-      "from": "Prefabs/Weapons/Magazines/Western/5x56/HKG36/armst_Magazine_556x45_HKG36_BP.et",
-      "to": "Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M193_Ball.et",
-      "kind": "inherits_base_game",
-      "status": "external",
-      "defined_in": "Prefabs/Weapons/Magazines/Western/5x56/HKG36/armst_Magazine_556x45_HKG36_BP.et"
+      "from": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M193_Ball.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M193_Ball.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
+      "defined_in": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M193_Ball.et"
     },
     {
       "from": "Prefabs/Weapons/Magazines/Western/5x56/HKG36/armst_Magazine_556x45_HKG36_BP.et",
@@ -1409,11 +1726,11 @@
       "defined_in": "Prefabs/Weapons/Magazines/Western/5x56/SIG550/armst_Magazine_556x45_SIG_550.et"
     },
     {
-      "from": "Prefabs/Weapons/Magazines/Western/5x56/SIG550/armst_Magazine_556x45_SIG_550.et",
-      "to": "Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M193_Ball.et",
-      "kind": "inherits_base_game",
-      "status": "external",
-      "defined_in": "Prefabs/Weapons/Magazines/Western/5x56/SIG550/armst_Magazine_556x45_SIG_550.et"
+      "from": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M193_Ball.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M193_Ball.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
+      "defined_in": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M193_Ball.et"
     },
     {
       "from": "Prefabs/Weapons/Magazines/Western/5x56/SIG550/armst_Magazine_556x45_SIG_550.et",
@@ -1444,11 +1761,11 @@
       "defined_in": "Prefabs/Weapons/Magazines/Western/5x56/SIG550/armst_Magazine_556x45_SIG_550_BP.et"
     },
     {
-      "from": "Prefabs/Weapons/Magazines/Western/5x56/SIG550/armst_Magazine_556x45_SIG_550_BP.et",
-      "to": "Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M193_Ball.et",
-      "kind": "inherits_base_game",
-      "status": "external",
-      "defined_in": "Prefabs/Weapons/Magazines/Western/5x56/SIG550/armst_Magazine_556x45_SIG_550_BP.et"
+      "from": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M193_Ball.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M193_Ball.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
+      "defined_in": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M193_Ball.et"
     },
     {
       "from": "Prefabs/Weapons/Magazines/Western/5x56/SIG550/armst_Magazine_556x45_SIG_550_BP.et",
@@ -1480,9 +1797,9 @@
     },
     {
       "from": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M193_Ball.et",
-      "to": "Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M193_Ball.et",
-      "kind": "inherits_base_game",
-      "status": "external",
+      "to": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M193_Ball.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
       "defined_in": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M193_Ball.et"
     },
     {
@@ -1508,9 +1825,9 @@
     },
     {
       "from": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M193_Ball_BP.et",
-      "to": "Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M193_Ball.et",
-      "kind": "inherits_base_game",
-      "status": "external",
+      "to": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M193_Ball.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
       "defined_in": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M193_Ball_BP.et"
     },
     {
@@ -1549,6 +1866,27 @@
       "defined_in": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/Magazine_556x45_STANAG_30rnd_Base.et"
     },
     {
+      "from": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M855_Ball.et",
+      "to": "Configs/Weapons/Ammo/ARMST/armst_Ammo_556x45_ARMST.conf",
+      "kind": "ammo_config",
+      "status": "local",
+      "defined_in": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M855_Ball.et"
+    },
+    {
+      "from": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M855_Ball.et",
+      "to": "Prefabs/Weapons/Ammo/Western/5x56/armst_Ammo_556x45_PP.et",
+      "kind": "loaded_with",
+      "status": "local",
+      "defined_in": "Configs/Weapons/Ammo/ARMST/armst_Ammo_556x45_ARMST.conf"
+    },
+    {
+      "from": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M855_Ball.et",
+      "to": "Prefabs/Weapons/Ammo/Western/5x56/armst_Ammo_556x45_BP.et",
+      "kind": "loaded_with",
+      "status": "local",
+      "defined_in": "Configs/Weapons/Ammo/ARMST/armst_Ammo_556x45_ARMST.conf"
+    },
+    {
       "from": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M855_Ball_BP.et",
       "to": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/Magazine_556x45_STANAG_30rnd_Base.et",
       "kind": "inherits",
@@ -1563,10 +1901,45 @@
       "defined_in": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/Magazine_556x45_STANAG_30rnd_Base.et"
     },
     {
-      "from": "Prefabs/Weapons/Magazines/Western/762x51/HK3/armst_Magazine_762x51_HK3_20_M80_Ball.et",
-      "to": "Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et",
-      "kind": "inherits_base_game",
+      "from": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M855_Ball_BP.et",
+      "to": "Configs/Weapons/Ammo/ARMST/armst_Ammo_556x45_ARMST.conf",
+      "kind": "ammo_config",
+      "status": "local",
+      "defined_in": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M855_Ball_BP.et"
+    },
+    {
+      "from": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M855_Ball_BP.et",
+      "to": "Prefabs/Weapons/Ammo/Western/5x56/armst_Ammo_556x45_PP.et",
+      "kind": "loaded_with",
+      "status": "local",
+      "defined_in": "Configs/Weapons/Ammo/ARMST/armst_Ammo_556x45_ARMST.conf"
+    },
+    {
+      "from": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M855_Ball_BP.et",
+      "to": "Prefabs/Weapons/Ammo/Western/5x56/armst_Ammo_556x45_BP.et",
+      "kind": "loaded_with",
+      "status": "local",
+      "defined_in": "Configs/Weapons/Ammo/ARMST/armst_Ammo_556x45_ARMST.conf"
+    },
+    {
+      "from": "Prefabs/Weapons/Magazines/Western/762x51/Box/armst_Box_762x51_M60_100rnd_4Ball_1Tracer.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Magazines/Box_762x51_M60_100rnd_Base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
+      "defined_in": "Prefabs/Weapons/Magazines/Western/762x51/Box/armst_Box_762x51_M60_100rnd_4Ball_1Tracer.et"
+    },
+    {
+      "from": "Prefabs/Weapons/Magazines/Western/762x51/Box/armst_Box_762x51_M60_100rnd_4Ball_1Tracer.et",
+      "to": "Configs/Weapons/Ammo/Ammo_762x51.conf",
+      "kind": "ammo_config",
       "status": "external",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Magazines/Box_762x51_M60_100rnd_Base.et"
+    },
+    {
+      "from": "Prefabs/Weapons/Magazines/Western/762x51/HK3/armst_Magazine_762x51_HK3_20_M80_Ball.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
       "defined_in": "Prefabs/Weapons/Magazines/Western/762x51/HK3/armst_Magazine_762x51_HK3_20_M80_Ball.et"
     },
     {
@@ -1592,9 +1965,9 @@
     },
     {
       "from": "Prefabs/Weapons/Magazines/Western/762x51/HK3/armst_Magazine_762x51_HK3_20_M80_Ball_BP.et",
-      "to": "Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
+      "to": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
       "defined_in": "Prefabs/Weapons/Magazines/Western/762x51/HK3/armst_Magazine_762x51_HK3_20_M80_Ball_BP.et"
     },
     {
@@ -1620,9 +1993,9 @@
     },
     {
       "from": "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_20_M80_Ball.et",
-      "to": "Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
+      "to": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
       "defined_in": "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_20_M80_Ball.et"
     },
     {
@@ -1648,9 +2021,9 @@
     },
     {
       "from": "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_20_M80_Ball_BP.et",
-      "to": "Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
+      "to": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
       "defined_in": "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_20_M80_Ball_BP.et"
     },
     {
@@ -1682,11 +2055,11 @@
       "defined_in": "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_30_M80_Ball.et"
     },
     {
-      "from": "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_30_M80_Ball.et",
-      "to": "Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
-      "defined_in": "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_30_M80_Ball.et"
+      "from": "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_20_M80_Ball.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
+      "defined_in": "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_20_M80_Ball.et"
     },
     {
       "from": "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_30_M80_Ball.et",
@@ -1717,18 +2090,18 @@
       "defined_in": "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_30_M80_Ball_BP.et"
     },
     {
-      "from": "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_30_M80_Ball_BP.et",
-      "to": "Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
-      "defined_in": "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_30_M80_Ball_BP.et"
+      "from": "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_20_M80_Ball.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
+      "defined_in": "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_20_M80_Ball.et"
     },
     {
       "from": "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_30_M80_Ball_BP.et",
       "to": "Configs/Weapons/Ammo/ARMST/armst_Ammo_762x51_ARMST.conf",
       "kind": "ammo_config",
       "status": "local",
-      "defined_in": "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_20_M80_Ball.et"
+      "defined_in": "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_30_M80_Ball_BP.et"
     },
     {
       "from": "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_30_M80_Ball_BP.et",
@@ -1743,12 +2116,54 @@
       "kind": "loaded_with",
       "status": "local",
       "defined_in": "Configs/Weapons/Ammo/ARMST/armst_Ammo_762x51_ARMST.conf"
+    },
+    {
+      "from": "Prefabs/Weapons/Magazines/Western/762x51/M14/armst_Magazine_762x51_M14_20rnd_BP.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
+      "defined_in": "Prefabs/Weapons/Magazines/Western/762x51/M14/armst_Magazine_762x51_M14_20rnd_BP.et"
+    },
+    {
+      "from": "Prefabs/Weapons/Magazines/Western/762x51/M14/armst_Magazine_762x51_M14_20rnd_BP.et",
+      "to": "Configs/Weapons/Ammo/Ammo_762x51.conf",
+      "kind": "ammo_config",
+      "status": "external",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et"
+    },
+    {
+      "from": "Prefabs/Weapons/Magazines/Western/762x51/M14/armst_Magazine_762x51_M14_20rnd_PP.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
+      "defined_in": "Prefabs/Weapons/Magazines/Western/762x51/M14/armst_Magazine_762x51_M14_20rnd_PP.et"
+    },
+    {
+      "from": "Prefabs/Weapons/Magazines/Western/762x51/M14/armst_Magazine_762x51_M14_20rnd_PP.et",
+      "to": "Configs/Weapons/Ammo/Ammo_762x51.conf",
+      "kind": "ammo_config",
+      "status": "external",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et"
+    },
+    {
+      "from": "Prefabs/Weapons/Magazines/Western/762x54/armst_Box_762x54_UK59_50rnd_4Ball_1Tracer.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Magazines/UK59/Box_762x54_UK59_50rnd_Base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
+      "defined_in": "Prefabs/Weapons/Magazines/Western/762x54/armst_Box_762x54_UK59_50rnd_4Ball_1Tracer.et"
+    },
+    {
+      "from": "Prefabs/Weapons/Magazines/Western/762x54/armst_Box_762x54_UK59_50rnd_4Ball_1Tracer.et",
+      "to": "Configs/Weapons/Ammo/Ammo_762x54.conf",
+      "kind": "ammo_config",
+      "status": "external",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Magazines/UK59/Box_762x54_UK59_50rnd_Base.et"
     },
     {
       "from": "Prefabs/Weapons/Magazines/Western/9x19/M9/armst_Magazine_9x19_M9_15rnd_Ball.et",
-      "to": "Prefabs/Weapons/Magazines/Magazine_9x19_M9_15rnd_Base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
+      "to": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_9x19_M9_15rnd_Base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
       "defined_in": "Prefabs/Weapons/Magazines/Western/9x19/M9/armst_Magazine_9x19_M9_15rnd_Ball.et"
     },
     {
@@ -1774,9 +2189,9 @@
     },
     {
       "from": "Prefabs/Weapons/Magazines/Western/9x19/M9/armst_Magazine_9x19_M9_15rnd_Ball_BP.et",
-      "to": "Prefabs/Weapons/Magazines/Magazine_9x19_M9_15rnd_Base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
+      "to": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_9x19_M9_15rnd_Base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
       "defined_in": "Prefabs/Weapons/Magazines/Western/9x19/M9/armst_Magazine_9x19_M9_15rnd_Ball_BP.et"
     },
     {
@@ -1808,11 +2223,11 @@
       "defined_in": "Prefabs/Weapons/Russian/Handguns/APB/armst_pistol_APB.et"
     },
     {
-      "from": "Prefabs/Weapons/Russian/Handguns/APB/armst_pistol_APB.et",
-      "to": "Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
-      "defined_in": "Prefabs/Weapons/Russian/Handguns/APB/armst_pistol_APB.et"
+      "from": "Prefabs/Weapons/Russian/Handguns/APB/armst_pistol_APB_base.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
+      "defined_in": "Prefabs/Weapons/Russian/Handguns/APB/armst_pistol_APB_base.et"
     },
     {
       "from": "Prefabs/Weapons/Russian/Handguns/APB/armst_pistol_APB.et",
@@ -1823,9 +2238,9 @@
     },
     {
       "from": "Prefabs/Weapons/Russian/Handguns/APB/armst_pistol_APB_base.et",
-      "to": "Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
+      "to": "base_game_snapshot:Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
       "defined_in": "Prefabs/Weapons/Russian/Handguns/APB/armst_pistol_APB_base.et"
     },
     {
@@ -1843,11 +2258,11 @@
       "defined_in": "Prefabs/Weapons/Russian/Handguns/PP91/armst_pistol_PP91.et"
     },
     {
-      "from": "Prefabs/Weapons/Russian/Handguns/PP91/armst_pistol_PP91.et",
-      "to": "Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
-      "defined_in": "Prefabs/Weapons/Russian/Handguns/PP91/armst_pistol_PP91.et"
+      "from": "Prefabs/Weapons/Russian/Handguns/PP91/armst_pistol_PP91_base.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
+      "defined_in": "Prefabs/Weapons/Russian/Handguns/PP91/armst_pistol_PP91_base.et"
     },
     {
       "from": "Prefabs/Weapons/Russian/Handguns/PP91/armst_pistol_PP91.et",
@@ -1858,9 +2273,9 @@
     },
     {
       "from": "Prefabs/Weapons/Russian/Handguns/PP91/armst_pistol_PP91_base.et",
-      "to": "Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
+      "to": "base_game_snapshot:Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
       "defined_in": "Prefabs/Weapons/Russian/Handguns/PP91/armst_pistol_PP91_base.et"
     },
     {
@@ -1872,9 +2287,9 @@
     },
     {
       "from": "Prefabs/Weapons/Russian/Handguns/Pm/armst_pistol_PM.et",
-      "to": "Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
+      "to": "base_game_snapshot:Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
       "defined_in": "Prefabs/Weapons/Russian/Handguns/Pm/armst_pistol_PM.et"
     },
     {
@@ -1892,11 +2307,11 @@
       "defined_in": "Prefabs/Weapons/Russian/Handguns/Sr_2/armst_pistol_SR_2.et"
     },
     {
-      "from": "Prefabs/Weapons/Russian/Handguns/Sr_2/armst_pistol_SR_2.et",
-      "to": "Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
-      "defined_in": "Prefabs/Weapons/Russian/Handguns/Sr_2/armst_pistol_SR_2.et"
+      "from": "Prefabs/Weapons/Russian/Handguns/Sr_2/armst_pistol_SR_2_base.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
+      "defined_in": "Prefabs/Weapons/Russian/Handguns/Sr_2/armst_pistol_SR_2_base.et"
     },
     {
       "from": "Prefabs/Weapons/Russian/Handguns/Sr_2/armst_pistol_SR_2.et",
@@ -1907,9 +2322,9 @@
     },
     {
       "from": "Prefabs/Weapons/Russian/Handguns/Sr_2/armst_pistol_SR_2_base.et",
-      "to": "Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
+      "to": "base_game_snapshot:Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
       "defined_in": "Prefabs/Weapons/Russian/Handguns/Sr_2/armst_pistol_SR_2_base.et"
     },
     {
@@ -1927,11 +2342,11 @@
       "defined_in": "Prefabs/Weapons/Russian/Handguns/TT/armst_pistol_TT.et"
     },
     {
-      "from": "Prefabs/Weapons/Russian/Handguns/TT/armst_pistol_TT.et",
-      "to": "Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
-      "defined_in": "Prefabs/Weapons/Russian/Handguns/TT/armst_pistol_TT.et"
+      "from": "Prefabs/Weapons/Russian/Handguns/TT/armst_pistol_TT_base.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
+      "defined_in": "Prefabs/Weapons/Russian/Handguns/TT/armst_pistol_TT_base.et"
     },
     {
       "from": "Prefabs/Weapons/Russian/Handguns/TT/armst_pistol_TT.et",
@@ -1942,9 +2357,9 @@
     },
     {
       "from": "Prefabs/Weapons/Russian/Handguns/TT/armst_pistol_TT_base.et",
-      "to": "Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
+      "to": "base_game_snapshot:Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
       "defined_in": "Prefabs/Weapons/Russian/Handguns/TT/armst_pistol_TT_base.et"
     },
     {
@@ -1956,17 +2371,31 @@
     },
     {
       "from": "Prefabs/Weapons/Russian/MachineGuns/armst_mgun_PKM.et",
-      "to": "Prefabs/Weapons/MachineGuns/PKM/MG_PKM_base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
+      "to": "base_game_snapshot:Prefabs/Weapons/MachineGuns/PKM/MG_PKM_base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
       "defined_in": "Prefabs/Weapons/Russian/MachineGuns/armst_mgun_PKM.et"
     },
     {
+      "from": "Prefabs/Weapons/Russian/MachineGuns/armst_mgun_PKM.et",
+      "to": "Prefabs/Weapons/Magazines/Russian/762x54/armst_Box_762x54_PK_100rnd_4Ball_1Tracer.et",
+      "kind": "uses_magazine",
+      "status": "local",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/MachineGuns/PKM/MG_PKM_base.et"
+    },
+    {
       "from": "Prefabs/Weapons/Russian/MachineGuns/armst_mgun_RPK74.et",
-      "to": "Prefabs/Weapons/MachineGuns/RPK74/MG_RPK74_base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
+      "to": "base_game_snapshot:Prefabs/Weapons/MachineGuns/RPK74/MG_RPK74_base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
       "defined_in": "Prefabs/Weapons/Russian/MachineGuns/armst_mgun_RPK74.et"
+    },
+    {
+      "from": "Prefabs/Weapons/Russian/MachineGuns/armst_mgun_RPK74.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_545x39_RPK_45rnd_4Ball_1Tracer.et",
+      "kind": "uses_magazine",
+      "status": "base_game_snapshot",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/MachineGuns/RPK74/MG_RPK74_base.et"
     },
     {
       "from": "Prefabs/Weapons/Russian/Rifle/9a91/armst_Rifle_9a91.et",
@@ -1976,11 +2405,11 @@
       "defined_in": "Prefabs/Weapons/Russian/Rifle/9a91/armst_Rifle_9a91.et"
     },
     {
-      "from": "Prefabs/Weapons/Russian/Rifle/9a91/armst_Rifle_9a91.et",
-      "to": "Prefabs/Weapons/Rifles/AK74/Rifle_AK74_short_base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
-      "defined_in": "Prefabs/Weapons/Russian/Rifle/9a91/armst_Rifle_9a91.et"
+      "from": "Prefabs/Weapons/Russian/Rifle/9a91/armst_Rifle_9a91_base.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Rifles/AK74/Rifle_AK74_short_base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
+      "defined_in": "Prefabs/Weapons/Russian/Rifle/9a91/armst_Rifle_9a91_base.et"
     },
     {
       "from": "Prefabs/Weapons/Russian/Rifle/9a91/armst_Rifle_9a91.et",
@@ -1991,9 +2420,9 @@
     },
     {
       "from": "Prefabs/Weapons/Russian/Rifle/9a91/armst_Rifle_9a91_base.et",
-      "to": "Prefabs/Weapons/Rifles/AK74/Rifle_AK74_short_base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
+      "to": "base_game_snapshot:Prefabs/Weapons/Rifles/AK74/Rifle_AK74_short_base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
       "defined_in": "Prefabs/Weapons/Russian/Rifle/9a91/armst_Rifle_9a91_base.et"
     },
     {
@@ -2011,18 +2440,32 @@
       "defined_in": "Prefabs/Weapons/Russian/Rifle/AK74/armst_Rifle_AK105.et"
     },
     {
+      "from": "Prefabs/Weapons/Russian/Rifle/AK74/armst_Rifle_AK74N.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Rifles/AK74/Rifle_AK74N_base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
+      "defined_in": "Prefabs/Weapons/Russian/Rifle/AK74/armst_Rifle_AK74N.et"
+    },
+    {
       "from": "Prefabs/Weapons/Russian/Rifle/AK74/armst_Rifle_AK105.et",
-      "to": "Prefabs/Weapons/Rifles/AK74/Rifle_AK74N_base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
-      "defined_in": "Prefabs/Weapons/Russian/Rifle/AK74/armst_Rifle_AK105.et"
+      "to": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_545x39_AK_30rnd_Last_5Tracer.et",
+      "kind": "uses_magazine",
+      "status": "base_game_snapshot",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/AK74/Rifle_AK74_base.et"
     },
     {
       "from": "Prefabs/Weapons/Russian/Rifle/AK74/armst_Rifle_AK74.et",
-      "to": "Prefabs/Weapons/Rifles/AK74/Rifle_AK74_long_base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
+      "to": "base_game_snapshot:Prefabs/Weapons/Rifles/AK74/Rifle_AK74_long_base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
       "defined_in": "Prefabs/Weapons/Russian/Rifle/AK74/armst_Rifle_AK74.et"
+    },
+    {
+      "from": "Prefabs/Weapons/Russian/Rifle/AK74/armst_Rifle_AK74.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_545x39_AK_30rnd_Last_5Tracer.et",
+      "kind": "uses_magazine",
+      "status": "base_game_snapshot",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/AK74/Rifle_AK74_base.et"
     },
     {
       "from": "Prefabs/Weapons/Russian/Rifle/AK74/armst_Rifle_AK74M.et",
@@ -2032,11 +2475,18 @@
       "defined_in": "Prefabs/Weapons/Russian/Rifle/AK74/armst_Rifle_AK74M.et"
     },
     {
+      "from": "Prefabs/Weapons/Russian/Rifle/AK74/armst_Rifle_AK74N.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Rifles/AK74/Rifle_AK74N_base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
+      "defined_in": "Prefabs/Weapons/Russian/Rifle/AK74/armst_Rifle_AK74N.et"
+    },
+    {
       "from": "Prefabs/Weapons/Russian/Rifle/AK74/armst_Rifle_AK74M.et",
-      "to": "Prefabs/Weapons/Rifles/AK74/Rifle_AK74N_base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
-      "defined_in": "Prefabs/Weapons/Russian/Rifle/AK74/armst_Rifle_AK74M.et"
+      "to": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_545x39_AK_30rnd_Last_5Tracer.et",
+      "kind": "uses_magazine",
+      "status": "base_game_snapshot",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/AK74/Rifle_AK74_base.et"
     },
     {
       "from": "Prefabs/Weapons/Russian/Rifle/AK74/armst_Rifle_AK74M_full.et",
@@ -2053,18 +2503,32 @@
       "defined_in": "Prefabs/Weapons/Russian/Rifle/AK74/armst_Rifle_AK74M.et"
     },
     {
+      "from": "Prefabs/Weapons/Russian/Rifle/AK74/armst_Rifle_AK74N.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Rifles/AK74/Rifle_AK74N_base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
+      "defined_in": "Prefabs/Weapons/Russian/Rifle/AK74/armst_Rifle_AK74N.et"
+    },
+    {
       "from": "Prefabs/Weapons/Russian/Rifle/AK74/armst_Rifle_AK74M_full.et",
-      "to": "Prefabs/Weapons/Rifles/AK74/Rifle_AK74N_base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
-      "defined_in": "Prefabs/Weapons/Russian/Rifle/AK74/armst_Rifle_AK74M_full.et"
+      "to": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_545x39_AK_30rnd_Last_5Tracer.et",
+      "kind": "uses_magazine",
+      "status": "base_game_snapshot",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/AK74/Rifle_AK74_base.et"
     },
     {
       "from": "Prefabs/Weapons/Russian/Rifle/AK74/armst_Rifle_AK74N.et",
-      "to": "Prefabs/Weapons/Rifles/AK74/Rifle_AK74N_base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
+      "to": "base_game_snapshot:Prefabs/Weapons/Rifles/AK74/Rifle_AK74N_base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
       "defined_in": "Prefabs/Weapons/Russian/Rifle/AK74/armst_Rifle_AK74N.et"
+    },
+    {
+      "from": "Prefabs/Weapons/Russian/Rifle/AK74/armst_Rifle_AK74N.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_545x39_AK_30rnd_Last_5Tracer.et",
+      "kind": "uses_magazine",
+      "status": "base_game_snapshot",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/AK74/Rifle_AK74_base.et"
     },
     {
       "from": "Prefabs/Weapons/Russian/Rifle/AK74/armst_Rifle_AKS.et",
@@ -2074,18 +2538,32 @@
       "defined_in": "Prefabs/Weapons/Russian/Rifle/AK74/armst_Rifle_AKS.et"
     },
     {
+      "from": "Prefabs/Weapons/Russian/Rifle/AK74/armst_Rifle_AK74N.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Rifles/AK74/Rifle_AK74N_base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
+      "defined_in": "Prefabs/Weapons/Russian/Rifle/AK74/armst_Rifle_AK74N.et"
+    },
+    {
       "from": "Prefabs/Weapons/Russian/Rifle/AK74/armst_Rifle_AKS.et",
-      "to": "Prefabs/Weapons/Rifles/AK74/Rifle_AK74N_base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
-      "defined_in": "Prefabs/Weapons/Russian/Rifle/AK74/armst_Rifle_AKS.et"
+      "to": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_545x39_AK_30rnd_Last_5Tracer.et",
+      "kind": "uses_magazine",
+      "status": "base_game_snapshot",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/AK74/Rifle_AK74_base.et"
     },
     {
       "from": "Prefabs/Weapons/Russian/Rifle/AK74/armst_Rifle_AKS74U.et",
-      "to": "Prefabs/Weapons/Rifles/AKS74U/Rifle_AKS74U_base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
+      "to": "base_game_snapshot:Prefabs/Weapons/Rifles/AKS74U/Rifle_AKS74U_base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
       "defined_in": "Prefabs/Weapons/Russian/Rifle/AK74/armst_Rifle_AKS74U.et"
+    },
+    {
+      "from": "Prefabs/Weapons/Russian/Rifle/AK74/armst_Rifle_AKS74U.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_545x39_AK_30rnd_Last_5Tracer.et",
+      "kind": "uses_magazine",
+      "status": "base_game_snapshot",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/AK74/Rifle_AK74_base.et"
     },
     {
       "from": "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM.et",
@@ -2138,9 +2616,9 @@
     },
     {
       "from": "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKMS.et",
-      "to": "Prefabs/Weapons/Magazines/Vz58/Magazine_762x39_Vz58_30rnd_Last_5Tracer.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Magazines/Vz58/Magazine_762x39_Vz58_30rnd_Last_5Tracer.et",
       "kind": "uses_magazine",
-      "status": "external",
+      "status": "base_game_snapshot",
       "defined_in": "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_base.et"
     },
     {
@@ -2159,9 +2637,9 @@
     },
     {
       "from": "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_base.et",
-      "to": "Prefabs/Weapons/Magazines/Vz58/Magazine_762x39_Vz58_30rnd_Last_5Tracer.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Magazines/Vz58/Magazine_762x39_Vz58_30rnd_Last_5Tracer.et",
       "kind": "uses_magazine",
-      "status": "external",
+      "status": "base_game_snapshot",
       "defined_in": "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_base.et"
     },
     {
@@ -2263,18 +2741,32 @@
       "defined_in": "Prefabs/Weapons/Russian/Rifle/Aek971/armst_Rifle_AEK971.et"
     },
     {
+      "from": "Prefabs/Weapons/Russian/Rifle/Aek971/armst_Rifle_AEK971_base.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Rifles/AK74/Rifle_AK74N_base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
+      "defined_in": "Prefabs/Weapons/Russian/Rifle/Aek971/armst_Rifle_AEK971_base.et"
+    },
+    {
       "from": "Prefabs/Weapons/Russian/Rifle/Aek971/armst_Rifle_AEK971.et",
-      "to": "Prefabs/Weapons/Rifles/AK74/Rifle_AK74N_base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
-      "defined_in": "Prefabs/Weapons/Russian/Rifle/Aek971/armst_Rifle_AEK971.et"
+      "to": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_545x39_AK_30rnd_Last_5Tracer.et",
+      "kind": "uses_magazine",
+      "status": "base_game_snapshot",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/AK74/Rifle_AK74_base.et"
     },
     {
       "from": "Prefabs/Weapons/Russian/Rifle/Aek971/armst_Rifle_AEK971_base.et",
-      "to": "Prefabs/Weapons/Rifles/AK74/Rifle_AK74N_base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
+      "to": "base_game_snapshot:Prefabs/Weapons/Rifles/AK74/Rifle_AK74N_base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
       "defined_in": "Prefabs/Weapons/Russian/Rifle/Aek971/armst_Rifle_AEK971_base.et"
+    },
+    {
+      "from": "Prefabs/Weapons/Russian/Rifle/Aek971/armst_Rifle_AEK971_base.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_545x39_AK_30rnd_Last_5Tracer.et",
+      "kind": "uses_magazine",
+      "status": "base_game_snapshot",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/AK74/Rifle_AK74_base.et"
     },
     {
       "from": "Prefabs/Weapons/Russian/Rifle/Groza/armst_Rifle_Groza.et",
@@ -2285,17 +2777,10 @@
     },
     {
       "from": "Prefabs/Weapons/Russian/Rifle/Groza/armst_Rifle_Groza_base.et",
-      "to": "Prefabs/Weapons/Core/Rifle_Base.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Rifles/AK74/Rifle_AK74_short_base.et",
       "kind": "inherits",
-      "status": "local",
+      "status": "base_game_snapshot",
       "defined_in": "Prefabs/Weapons/Russian/Rifle/Groza/armst_Rifle_Groza_base.et"
-    },
-    {
-      "from": "Prefabs/Weapons/Core/Rifle_Base.et",
-      "to": "Prefabs/Weapons/Core/Weapon_Base.et",
-      "kind": "inherits",
-      "status": "local",
-      "defined_in": "Prefabs/Weapons/Core/Rifle_Base.et"
     },
     {
       "from": "Prefabs/Weapons/Russian/Rifle/Groza/armst_Rifle_Groza.et",
@@ -2306,17 +2791,10 @@
     },
     {
       "from": "Prefabs/Weapons/Russian/Rifle/Groza/armst_Rifle_Groza_base.et",
-      "to": "Prefabs/Weapons/Core/Rifle_Base.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Rifles/AK74/Rifle_AK74_short_base.et",
       "kind": "inherits",
-      "status": "local",
+      "status": "base_game_snapshot",
       "defined_in": "Prefabs/Weapons/Russian/Rifle/Groza/armst_Rifle_Groza_base.et"
-    },
-    {
-      "from": "Prefabs/Weapons/Core/Rifle_Base.et",
-      "to": "Prefabs/Weapons/Core/Weapon_Base.et",
-      "kind": "inherits",
-      "status": "local",
-      "defined_in": "Prefabs/Weapons/Core/Rifle_Base.et"
     },
     {
       "from": "Prefabs/Weapons/Russian/Rifle/Groza/armst_Rifle_Groza_base.et",
@@ -2327,10 +2805,17 @@
     },
     {
       "from": "Prefabs/Weapons/Russian/Rifle/SVD/armst_Rifle_SVD.et",
-      "to": "Prefabs/Weapons/Rifles/SVD/Rifle_SVD_base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
+      "to": "base_game_snapshot:Prefabs/Weapons/Rifles/SVD/Rifle_SVD_base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
       "defined_in": "Prefabs/Weapons/Russian/Rifle/SVD/armst_Rifle_SVD.et"
+    },
+    {
+      "from": "Prefabs/Weapons/Russian/Rifle/SVD/armst_Rifle_SVD.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_762x54_SVD_10rnd_Sniper.et",
+      "kind": "uses_magazine",
+      "status": "base_game_snapshot",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/SVD/Rifle_SVD_base.et"
     },
     {
       "from": "Prefabs/Weapons/Russian/Rifle/VAL/armst_Rifle_val.et",
@@ -2340,11 +2825,11 @@
       "defined_in": "Prefabs/Weapons/Russian/Rifle/VAL/armst_Rifle_val.et"
     },
     {
-      "from": "Prefabs/Weapons/Russian/Rifle/VAL/armst_Rifle_val.et",
-      "to": "Prefabs/Weapons/Rifles/AK74/Rifle_AK74_short_base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
-      "defined_in": "Prefabs/Weapons/Russian/Rifle/VAL/armst_Rifle_val.et"
+      "from": "Prefabs/Weapons/Russian/Rifle/VAL/armst_Rifle_val_base.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Rifles/AK74/Rifle_AK74_short_base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
+      "defined_in": "Prefabs/Weapons/Russian/Rifle/VAL/armst_Rifle_val_base.et"
     },
     {
       "from": "Prefabs/Weapons/Russian/Rifle/VAL/armst_Rifle_val.et",
@@ -2355,9 +2840,9 @@
     },
     {
       "from": "Prefabs/Weapons/Russian/Rifle/VAL/armst_Rifle_val_base.et",
-      "to": "Prefabs/Weapons/Rifles/AK74/Rifle_AK74_short_base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
+      "to": "base_game_snapshot:Prefabs/Weapons/Rifles/AK74/Rifle_AK74_short_base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
       "defined_in": "Prefabs/Weapons/Russian/Rifle/VAL/armst_Rifle_val_base.et"
     },
     {
@@ -2375,11 +2860,11 @@
       "defined_in": "Prefabs/Weapons/Russian/Rifle/VSK94/armst_Rifle_VSK94.et"
     },
     {
-      "from": "Prefabs/Weapons/Russian/Rifle/VSK94/armst_Rifle_VSK94.et",
-      "to": "Prefabs/Weapons/Rifles/AK74/Rifle_AK74_short_base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
-      "defined_in": "Prefabs/Weapons/Russian/Rifle/VSK94/armst_Rifle_VSK94.et"
+      "from": "Prefabs/Weapons/Russian/Rifle/VSK94/armst_Rifle_VSK94_base.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Rifles/AK74/Rifle_AK74_short_base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
+      "defined_in": "Prefabs/Weapons/Russian/Rifle/VSK94/armst_Rifle_VSK94_base.et"
     },
     {
       "from": "Prefabs/Weapons/Russian/Rifle/VSK94/armst_Rifle_VSK94.et",
@@ -2390,9 +2875,9 @@
     },
     {
       "from": "Prefabs/Weapons/Russian/Rifle/VSK94/armst_Rifle_VSK94_base.et",
-      "to": "Prefabs/Weapons/Rifles/AK74/Rifle_AK74_short_base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
+      "to": "base_game_snapshot:Prefabs/Weapons/Rifles/AK74/Rifle_AK74_short_base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
       "defined_in": "Prefabs/Weapons/Russian/Rifle/VSK94/armst_Rifle_VSK94_base.et"
     },
     {
@@ -2410,11 +2895,11 @@
       "defined_in": "Prefabs/Weapons/Russian/Rifle/VSS/armst_Rifle_vss.et"
     },
     {
-      "from": "Prefabs/Weapons/Russian/Rifle/VSS/armst_Rifle_vss.et",
-      "to": "Prefabs/Weapons/Rifles/AK74/Rifle_AK74_short_base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
-      "defined_in": "Prefabs/Weapons/Russian/Rifle/VSS/armst_Rifle_vss.et"
+      "from": "Prefabs/Weapons/Russian/Rifle/VSS/armst_Rifle_vss_base.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Rifles/AK74/Rifle_AK74_short_base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
+      "defined_in": "Prefabs/Weapons/Russian/Rifle/VSS/armst_Rifle_vss_base.et"
     },
     {
       "from": "Prefabs/Weapons/Russian/Rifle/VSS/armst_Rifle_vss.et",
@@ -2425,9 +2910,9 @@
     },
     {
       "from": "Prefabs/Weapons/Russian/Rifle/VSS/armst_Rifle_vss_base.et",
-      "to": "Prefabs/Weapons/Rifles/AK74/Rifle_AK74_short_base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
+      "to": "base_game_snapshot:Prefabs/Weapons/Rifles/AK74/Rifle_AK74_short_base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
       "defined_in": "Prefabs/Weapons/Russian/Rifle/VSS/armst_Rifle_vss_base.et"
     },
     {
@@ -2436,6 +2921,13 @@
       "kind": "uses_magazine",
       "status": "local",
       "defined_in": "Prefabs/Weapons/Russian/Rifle/VSS/armst_Rifle_vss_base.et"
+    },
+    {
+      "from": "Prefabs/Weapons/Russian/Shotgun/armst_Shotgun_RIS_Mount.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Core/WeaponPart_Base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
+      "defined_in": "Prefabs/Weapons/Russian/Shotgun/armst_Shotgun_RIS_Mount.et"
     },
     {
       "from": "Prefabs/Weapons/Russian/Shotgun/armst_Shotgun_izh_27.et",
@@ -2445,11 +2937,18 @@
       "defined_in": "Prefabs/Weapons/Russian/Shotgun/armst_Shotgun_izh_27.et"
     },
     {
-      "from": "Prefabs/Weapons/Russian/Shotgun/armst_Shotgun_izh_27.et",
-      "to": "Prefabs/Weapons/Rifles/M14/Rifle_M21.et",
-      "kind": "inherits_base_game",
-      "status": "external",
-      "defined_in": "Prefabs/Weapons/Russian/Shotgun/armst_Shotgun_izh_27.et"
+      "from": "Prefabs/Weapons/Western/Shotgun/core/armst_shotgun_base.et",
+      "to": "Prefabs/Weapons/Western/Rifle/M14/armst_Rifle_M21.et",
+      "kind": "inherits",
+      "status": "local",
+      "defined_in": "Prefabs/Weapons/Western/Shotgun/core/armst_shotgun_base.et"
+    },
+    {
+      "from": "Prefabs/Weapons/Western/Rifle/M14/armst_Rifle_M21.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Rifles/M14/Rifle_M21_base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
+      "defined_in": "Prefabs/Weapons/Western/Rifle/M14/armst_Rifle_M21.et"
     },
     {
       "from": "Prefabs/Weapons/Russian/Shotgun/armst_Shotgun_izh_27.et",
@@ -2466,14 +2965,49 @@
       "defined_in": "Prefabs/Weapons/Russian/Shotgun/armst_Shotgun_mp_133.et"
     },
     {
-      "from": "Prefabs/Weapons/Russian/Shotgun/armst_Shotgun_mp_133.et",
-      "to": "Prefabs/Weapons/Rifles/M14/Rifle_M21.et",
-      "kind": "inherits_base_game",
-      "status": "external",
-      "defined_in": "Prefabs/Weapons/Russian/Shotgun/armst_Shotgun_mp_133.et"
+      "from": "Prefabs/Weapons/Western/Shotgun/core/armst_shotgun_base.et",
+      "to": "Prefabs/Weapons/Western/Rifle/M14/armst_Rifle_M21.et",
+      "kind": "inherits",
+      "status": "local",
+      "defined_in": "Prefabs/Weapons/Western/Shotgun/core/armst_shotgun_base.et"
+    },
+    {
+      "from": "Prefabs/Weapons/Western/Rifle/M14/armst_Rifle_M21.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Rifles/M14/Rifle_M21_base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
+      "defined_in": "Prefabs/Weapons/Western/Rifle/M14/armst_Rifle_M21.et"
     },
     {
       "from": "Prefabs/Weapons/Russian/Shotgun/armst_Shotgun_mp_133.et",
+      "to": "Prefabs/Weapons/Magazines/12ga/armst_12ga_Buckshot.et",
+      "kind": "uses_magazine",
+      "status": "local",
+      "defined_in": "Prefabs/Weapons/Western/Shotgun/core/armst_shotgun_base.et"
+    },
+    {
+      "from": "Prefabs/Weapons/Russian/Shotgun/armst_Shotgun_mp_133_Ris.et",
+      "to": "Prefabs/Weapons/Western/Shotgun/core/armst_shotgun_base.et",
+      "kind": "inherits",
+      "status": "local",
+      "defined_in": "Prefabs/Weapons/Russian/Shotgun/armst_Shotgun_mp_133_Ris.et"
+    },
+    {
+      "from": "Prefabs/Weapons/Western/Shotgun/core/armst_shotgun_base.et",
+      "to": "Prefabs/Weapons/Western/Rifle/M14/armst_Rifle_M21.et",
+      "kind": "inherits",
+      "status": "local",
+      "defined_in": "Prefabs/Weapons/Western/Shotgun/core/armst_shotgun_base.et"
+    },
+    {
+      "from": "Prefabs/Weapons/Western/Rifle/M14/armst_Rifle_M21.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Rifles/M14/Rifle_M21_base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
+      "defined_in": "Prefabs/Weapons/Western/Rifle/M14/armst_Rifle_M21.et"
+    },
+    {
+      "from": "Prefabs/Weapons/Russian/Shotgun/armst_Shotgun_mp_133_Ris.et",
       "to": "Prefabs/Weapons/Magazines/12ga/armst_12ga_Buckshot.et",
       "kind": "uses_magazine",
       "status": "local",
@@ -2487,11 +3021,18 @@
       "defined_in": "Prefabs/Weapons/Russian/Shotgun/armst_Shotgun_mp_153.et"
     },
     {
-      "from": "Prefabs/Weapons/Russian/Shotgun/armst_Shotgun_mp_153.et",
-      "to": "Prefabs/Weapons/Rifles/M14/Rifle_M21.et",
-      "kind": "inherits_base_game",
-      "status": "external",
-      "defined_in": "Prefabs/Weapons/Russian/Shotgun/armst_Shotgun_mp_153.et"
+      "from": "Prefabs/Weapons/Western/Shotgun/core/armst_shotgun_base.et",
+      "to": "Prefabs/Weapons/Western/Rifle/M14/armst_Rifle_M21.et",
+      "kind": "inherits",
+      "status": "local",
+      "defined_in": "Prefabs/Weapons/Western/Shotgun/core/armst_shotgun_base.et"
+    },
+    {
+      "from": "Prefabs/Weapons/Western/Rifle/M14/armst_Rifle_M21.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Rifles/M14/Rifle_M21_base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
+      "defined_in": "Prefabs/Weapons/Western/Rifle/M14/armst_Rifle_M21.et"
     },
     {
       "from": "Prefabs/Weapons/Russian/Shotgun/armst_Shotgun_mp_153.et",
@@ -2508,11 +3049,18 @@
       "defined_in": "Prefabs/Weapons/Russian/Shotgun/armst_Shotgun_toz_66.et"
     },
     {
-      "from": "Prefabs/Weapons/Russian/Shotgun/armst_Shotgun_toz_66.et",
-      "to": "Prefabs/Weapons/Rifles/M14/Rifle_M21.et",
-      "kind": "inherits_base_game",
-      "status": "external",
-      "defined_in": "Prefabs/Weapons/Russian/Shotgun/armst_Shotgun_toz_66.et"
+      "from": "Prefabs/Weapons/Western/Shotgun/core/armst_shotgun_base.et",
+      "to": "Prefabs/Weapons/Western/Rifle/M14/armst_Rifle_M21.et",
+      "kind": "inherits",
+      "status": "local",
+      "defined_in": "Prefabs/Weapons/Western/Shotgun/core/armst_shotgun_base.et"
+    },
+    {
+      "from": "Prefabs/Weapons/Western/Rifle/M14/armst_Rifle_M21.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Rifles/M14/Rifle_M21_base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
+      "defined_in": "Prefabs/Weapons/Western/Rifle/M14/armst_Rifle_M21.et"
     },
     {
       "from": "Prefabs/Weapons/Russian/Shotgun/armst_Shotgun_toz_66.et",
@@ -2536,11 +3084,18 @@
       "defined_in": "Prefabs/Weapons/Russian/Shotgun/armst_Shotgun_toz_66.et"
     },
     {
-      "from": "Prefabs/Weapons/Russian/Shotgun/armst_Shotgun_toz_66_pantera.et",
-      "to": "Prefabs/Weapons/Rifles/M14/Rifle_M21.et",
-      "kind": "inherits_base_game",
-      "status": "external",
-      "defined_in": "Prefabs/Weapons/Russian/Shotgun/armst_Shotgun_toz_66_pantera.et"
+      "from": "Prefabs/Weapons/Western/Shotgun/core/armst_shotgun_base.et",
+      "to": "Prefabs/Weapons/Western/Rifle/M14/armst_Rifle_M21.et",
+      "kind": "inherits",
+      "status": "local",
+      "defined_in": "Prefabs/Weapons/Western/Shotgun/core/armst_shotgun_base.et"
+    },
+    {
+      "from": "Prefabs/Weapons/Western/Rifle/M14/armst_Rifle_M21.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Rifles/M14/Rifle_M21_base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
+      "defined_in": "Prefabs/Weapons/Western/Rifle/M14/armst_Rifle_M21.et"
     },
     {
       "from": "Prefabs/Weapons/Russian/Shotgun/armst_Shotgun_toz_66_pantera.et",
@@ -2564,11 +3119,18 @@
       "defined_in": "Prefabs/Weapons/Russian/Shotgun/armst_Shotgun_toz_66.et"
     },
     {
-      "from": "Prefabs/Weapons/Russian/Shotgun/armst_Shotgun_toz_66_saw.et",
-      "to": "Prefabs/Weapons/Rifles/M14/Rifle_M21.et",
-      "kind": "inherits_base_game",
-      "status": "external",
-      "defined_in": "Prefabs/Weapons/Russian/Shotgun/armst_Shotgun_toz_66_saw.et"
+      "from": "Prefabs/Weapons/Western/Shotgun/core/armst_shotgun_base.et",
+      "to": "Prefabs/Weapons/Western/Rifle/M14/armst_Rifle_M21.et",
+      "kind": "inherits",
+      "status": "local",
+      "defined_in": "Prefabs/Weapons/Western/Shotgun/core/armst_shotgun_base.et"
+    },
+    {
+      "from": "Prefabs/Weapons/Western/Rifle/M14/armst_Rifle_M21.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Rifles/M14/Rifle_M21_base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
+      "defined_in": "Prefabs/Weapons/Western/Rifle/M14/armst_Rifle_M21.et"
     },
     {
       "from": "Prefabs/Weapons/Russian/Shotgun/armst_Shotgun_toz_66_saw.et",
@@ -2579,9 +3141,9 @@
     },
     {
       "from": "Prefabs/Weapons/Tripods/armst_Tripod_6T5.et",
-      "to": "Prefabs/Weapons/Core/Tripod_Base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
+      "to": "base_game_snapshot:Prefabs/Weapons/Core/Tripod_Base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
       "defined_in": "Prefabs/Weapons/Tripods/armst_Tripod_6T5.et"
     },
     {
@@ -2592,18 +3154,67 @@
       "defined_in": "Prefabs/Weapons/Tripods/armst_Tripod_6T5_PKM.et"
     },
     {
-      "from": "Prefabs/Weapons/Tripods/armst_Tripod_6T5_PKM.et",
-      "to": "Prefabs/Weapons/Core/Tripod_Base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
-      "defined_in": "Prefabs/Weapons/Tripods/armst_Tripod_6T5_PKM.et"
+      "from": "Prefabs/Weapons/Tripods/armst_Tripod_6T5.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Core/Tripod_Base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
+      "defined_in": "Prefabs/Weapons/Tripods/armst_Tripod_6T5.et"
     },
     {
       "from": "Prefabs/Weapons/Western/Handguns/armst_pistol_M9.et",
-      "to": "Prefabs/Weapons/Handguns/M9/Handgun_M9_base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
+      "to": "base_game_snapshot:Prefabs/Weapons/Handguns/M9/Handgun_M9_base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
       "defined_in": "Prefabs/Weapons/Western/Handguns/armst_pistol_M9.et"
+    },
+    {
+      "from": "Prefabs/Weapons/Western/Handguns/armst_pistol_M9.et",
+      "to": "Prefabs/Weapons/Magazines/Western/9x19/M9/armst_Magazine_9x19_M9_15rnd_Ball.et",
+      "kind": "uses_magazine",
+      "status": "local",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Handguns/M9/Handgun_M9_base.et"
+    },
+    {
+      "from": "Prefabs/Weapons/Western/MachineGuns/armst_mgun_M249.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/MachineGuns/M249/MG_M249_base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
+      "defined_in": "Prefabs/Weapons/Western/MachineGuns/armst_mgun_M249.et"
+    },
+    {
+      "from": "Prefabs/Weapons/Western/MachineGuns/armst_mgun_M249.et",
+      "to": "Prefabs/Weapons/Magazines/Western/5x56/Box/armst_Box_556x45_M249_200rnd_4Ball_1Tracer.et",
+      "kind": "uses_magazine",
+      "status": "local",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/MachineGuns/M249/MG_M249_base.et"
+    },
+    {
+      "from": "Prefabs/Weapons/Western/MachineGuns/armst_mgun_M60.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/MachineGuns/M60/MG_M60_base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
+      "defined_in": "Prefabs/Weapons/Western/MachineGuns/armst_mgun_M60.et"
+    },
+    {
+      "from": "Prefabs/Weapons/Western/MachineGuns/armst_mgun_M60.et",
+      "to": "Prefabs/Weapons/Magazines/Western/762x51/Box/armst_Box_762x51_M60_100rnd_4Ball_1Tracer.et",
+      "kind": "uses_magazine",
+      "status": "local",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/MachineGuns/M60/MG_M60_base.et"
+    },
+    {
+      "from": "Prefabs/Weapons/Western/MachineGuns/armst_mgun_UK59.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/MachineGuns/UK59/MG_UK59_base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
+      "defined_in": "Prefabs/Weapons/Western/MachineGuns/armst_mgun_UK59.et"
+    },
+    {
+      "from": "Prefabs/Weapons/Western/MachineGuns/armst_mgun_UK59.et",
+      "to": "Prefabs/Weapons/Magazines/Western/762x54/armst_Box_762x54_UK59_50rnd_4Ball_1Tracer.et",
+      "kind": "uses_magazine",
+      "status": "local",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/MachineGuns/UK59/MG_UK59_base.et"
     },
     {
       "from": "Prefabs/Weapons/Western/Rifle/HKG33/armst_Rifle_HKG33.et",
@@ -2613,17 +3224,17 @@
       "defined_in": "Prefabs/Weapons/Western/Rifle/HKG33/armst_Rifle_HKG33.et"
     },
     {
-      "from": "Prefabs/Weapons/Western/Rifle/HKG33/armst_Rifle_HKG33.et",
-      "to": "Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
-      "defined_in": "Prefabs/Weapons/Western/Rifle/HKG33/armst_Rifle_HKG33.et"
+      "from": "Prefabs/Weapons/Western/Rifle/HKG33/armst_Rifle_HKG33_base.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
+      "defined_in": "Prefabs/Weapons/Western/Rifle/HKG33/armst_Rifle_HKG33_base.et"
     },
     {
       "from": "Prefabs/Weapons/Western/Rifle/HKG33/armst_Rifle_HKG33_base.et",
-      "to": "Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
+      "to": "base_game_snapshot:Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
       "defined_in": "Prefabs/Weapons/Western/Rifle/HKG33/armst_Rifle_HKG33_base.et"
     },
     {
@@ -2683,32 +3294,53 @@
       "defined_in": "Prefabs/Weapons/Western/Rifle/L85/armst_Rifle_L85.et"
     },
     {
-      "from": "Prefabs/Weapons/Western/Rifle/L85/armst_Rifle_L85.et",
-      "to": "Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
-      "defined_in": "Prefabs/Weapons/Western/Rifle/L85/armst_Rifle_L85.et"
-    },
-    {
       "from": "Prefabs/Weapons/Western/Rifle/L85/armst_Rifle_L85_base.et",
-      "to": "Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
+      "to": "base_game_snapshot:Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
       "defined_in": "Prefabs/Weapons/Western/Rifle/L85/armst_Rifle_L85_base.et"
     },
     {
+      "from": "Prefabs/Weapons/Western/Rifle/L85/armst_Rifle_L85_base.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
+      "defined_in": "Prefabs/Weapons/Western/Rifle/L85/armst_Rifle_L85_base.et"
+    },
+    {
+      "from": "Prefabs/Weapons/Western/Rifle/M14/armst_Rifle_M21.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Rifles/M14/Rifle_M21_base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
+      "defined_in": "Prefabs/Weapons/Western/Rifle/M14/armst_Rifle_M21.et"
+    },
+    {
       "from": "Prefabs/Weapons/Western/Rifle/M16/armst_Rifle_M16A2.et",
-      "to": "Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
+      "to": "base_game_snapshot:Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
       "defined_in": "Prefabs/Weapons/Western/Rifle/M16/armst_Rifle_M16A2.et"
     },
     {
+      "from": "Prefabs/Weapons/Western/Rifle/M16/armst_Rifle_M16A2.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M855_M856_Last_5Tracer.et",
+      "kind": "uses_magazine",
+      "status": "base_game_snapshot",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et"
+    },
+    {
       "from": "Prefabs/Weapons/Western/Rifle/M4/armst_Rifle_M4_carbine.et",
-      "to": "Prefabs/Weapons/Rifles/M16/Rifle_M16A2_carbine_base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
+      "to": "base_game_snapshot:Prefabs/Weapons/Rifles/M16/Rifle_M16A2_carbine_base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
       "defined_in": "Prefabs/Weapons/Western/Rifle/M4/armst_Rifle_M4_carbine.et"
+    },
+    {
+      "from": "Prefabs/Weapons/Western/Rifle/M4/armst_Rifle_M4_carbine.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M855_M856_Last_5Tracer.et",
+      "kind": "uses_magazine",
+      "status": "base_game_snapshot",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et"
     },
     {
       "from": "Prefabs/Weapons/Western/Rifle/SLR/armst_SLR.et",
@@ -2718,17 +3350,17 @@
       "defined_in": "Prefabs/Weapons/Western/Rifle/SLR/armst_SLR.et"
     },
     {
-      "from": "Prefabs/Weapons/Western/Rifle/SLR/armst_SLR.et",
-      "to": "Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
-      "defined_in": "Prefabs/Weapons/Western/Rifle/SLR/armst_SLR.et"
+      "from": "Prefabs/Weapons/Western/Rifle/SLR/armst_SLR_base.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
+      "defined_in": "Prefabs/Weapons/Western/Rifle/SLR/armst_SLR_base.et"
     },
     {
       "from": "Prefabs/Weapons/Western/Rifle/SLR/armst_SLR_base.et",
-      "to": "Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
+      "to": "base_game_snapshot:Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
       "defined_in": "Prefabs/Weapons/Western/Rifle/SLR/armst_SLR_base.et"
     },
     {
@@ -2746,11 +3378,11 @@
       "defined_in": "Prefabs/Weapons/Western/Rifle/Sig550/armst_Rifle_Sig550_base.et"
     },
     {
-      "from": "Prefabs/Weapons/Western/Rifle/Sig550/armst_Rifle_Sig550.et",
-      "to": "Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
-      "defined_in": "Prefabs/Weapons/Western/Rifle/Sig550/armst_Rifle_Sig550.et"
+      "from": "Prefabs/Weapons/Western/Rifle/M16/armst_Rifle_M16A2.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
+      "defined_in": "Prefabs/Weapons/Western/Rifle/M16/armst_Rifle_M16A2.et"
     },
     {
       "from": "Prefabs/Weapons/Western/Rifle/Sig550/armst_Rifle_Sig550.et",
@@ -2767,11 +3399,11 @@
       "defined_in": "Prefabs/Weapons/Western/Rifle/Sig550/armst_Rifle_Sig550_base.et"
     },
     {
-      "from": "Prefabs/Weapons/Western/Rifle/Sig550/armst_Rifle_Sig550_base.et",
-      "to": "Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
-      "defined_in": "Prefabs/Weapons/Western/Rifle/Sig550/armst_Rifle_Sig550_base.et"
+      "from": "Prefabs/Weapons/Western/Rifle/M16/armst_Rifle_M16A2.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
+      "defined_in": "Prefabs/Weapons/Western/Rifle/M16/armst_Rifle_M16A2.et"
     },
     {
       "from": "Prefabs/Weapons/Western/Rifle/Sig550/armst_Rifle_Sig550_base.et",
@@ -2781,18 +3413,32 @@
       "defined_in": "Prefabs/Weapons/Western/Rifle/Sig550/armst_Rifle_Sig550_base.et"
     },
     {
-      "from": "Prefabs/Weapons/Western/Rifle/armst_VZ58P_base.et",
-      "to": "Prefabs/Weapons/Rifles/VZ58/Rifle_VZ58_base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
-      "defined_in": "Prefabs/Weapons/Western/Rifle/armst_VZ58P_base.et"
+      "from": "Prefabs/Weapons/Western/Rifle/VZ58/armst_VZ58P.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Rifles/VZ58/Rifle_VZ58_base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
+      "defined_in": "Prefabs/Weapons/Western/Rifle/VZ58/armst_VZ58P.et"
     },
     {
-      "from": "Prefabs/Weapons/Western/Rifle/armst_VZ58V_base.et",
-      "to": "Prefabs/Weapons/Rifles/VZ58/Rifle_VZ58_base.et",
-      "kind": "inherits_base_game",
-      "status": "external",
-      "defined_in": "Prefabs/Weapons/Western/Rifle/armst_VZ58V_base.et"
+      "from": "Prefabs/Weapons/Western/Rifle/VZ58/armst_VZ58P.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Magazines/Vz58/Magazine_762x39_Vz58_30rnd_Last_5Tracer.et",
+      "kind": "uses_magazine",
+      "status": "base_game_snapshot",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/VZ58/Rifle_VZ58_base.et"
+    },
+    {
+      "from": "Prefabs/Weapons/Western/Rifle/VZ58/armst_VZ58V.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Rifles/VZ58/Rifle_VZ58_base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
+      "defined_in": "Prefabs/Weapons/Western/Rifle/VZ58/armst_VZ58V.et"
+    },
+    {
+      "from": "Prefabs/Weapons/Western/Rifle/VZ58/armst_VZ58V.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Magazines/Vz58/Magazine_762x39_Vz58_30rnd_Last_5Tracer.et",
+      "kind": "uses_magazine",
+      "status": "base_game_snapshot",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/VZ58/Rifle_VZ58_base.et"
     },
     {
       "from": "Prefabs/Weapons/Western/Shotgun/armst_Shotgun_Remington_870.et",
@@ -2802,11 +3448,18 @@
       "defined_in": "Prefabs/Weapons/Western/Shotgun/armst_Shotgun_Remington_870.et"
     },
     {
-      "from": "Prefabs/Weapons/Western/Shotgun/armst_Shotgun_Remington_870.et",
-      "to": "Prefabs/Weapons/Rifles/M14/Rifle_M21.et",
-      "kind": "inherits_base_game",
-      "status": "external",
-      "defined_in": "Prefabs/Weapons/Western/Shotgun/armst_Shotgun_Remington_870.et"
+      "from": "Prefabs/Weapons/Western/Shotgun/core/armst_shotgun_base.et",
+      "to": "Prefabs/Weapons/Western/Rifle/M14/armst_Rifle_M21.et",
+      "kind": "inherits",
+      "status": "local",
+      "defined_in": "Prefabs/Weapons/Western/Shotgun/core/armst_shotgun_base.et"
+    },
+    {
+      "from": "Prefabs/Weapons/Western/Rifle/M14/armst_Rifle_M21.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Rifles/M14/Rifle_M21_base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
+      "defined_in": "Prefabs/Weapons/Western/Rifle/M14/armst_Rifle_M21.et"
     },
     {
       "from": "Prefabs/Weapons/Western/Shotgun/armst_Shotgun_Remington_870.et",
@@ -2823,11 +3476,18 @@
       "defined_in": "Prefabs/Weapons/Western/Shotgun/armst_Shotgun_spas_12.et"
     },
     {
-      "from": "Prefabs/Weapons/Western/Shotgun/armst_Shotgun_spas_12.et",
-      "to": "Prefabs/Weapons/Rifles/M14/Rifle_M21.et",
-      "kind": "inherits_base_game",
-      "status": "external",
-      "defined_in": "Prefabs/Weapons/Western/Shotgun/armst_Shotgun_spas_12.et"
+      "from": "Prefabs/Weapons/Western/Shotgun/core/armst_shotgun_base.et",
+      "to": "Prefabs/Weapons/Western/Rifle/M14/armst_Rifle_M21.et",
+      "kind": "inherits",
+      "status": "local",
+      "defined_in": "Prefabs/Weapons/Western/Shotgun/core/armst_shotgun_base.et"
+    },
+    {
+      "from": "Prefabs/Weapons/Western/Rifle/M14/armst_Rifle_M21.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Rifles/M14/Rifle_M21_base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
+      "defined_in": "Prefabs/Weapons/Western/Rifle/M14/armst_Rifle_M21.et"
     },
     {
       "from": "Prefabs/Weapons/Western/Shotgun/armst_Shotgun_spas_12.et",
@@ -2838,10 +3498,17 @@
     },
     {
       "from": "Prefabs/Weapons/Western/Shotgun/core/armst_shotgun_base.et",
-      "to": "Prefabs/Weapons/Rifles/M14/Rifle_M21.et",
-      "kind": "inherits_base_game",
-      "status": "external",
+      "to": "Prefabs/Weapons/Western/Rifle/M14/armst_Rifle_M21.et",
+      "kind": "inherits",
+      "status": "local",
       "defined_in": "Prefabs/Weapons/Western/Shotgun/core/armst_shotgun_base.et"
+    },
+    {
+      "from": "Prefabs/Weapons/Western/Rifle/M14/armst_Rifle_M21.et",
+      "to": "base_game_snapshot:Prefabs/Weapons/Rifles/M14/Rifle_M21_base.et",
+      "kind": "inherits",
+      "status": "base_game_snapshot",
+      "defined_in": "Prefabs/Weapons/Western/Rifle/M14/armst_Rifle_M21.et"
     },
     {
       "from": "Prefabs/Weapons/Western/Shotgun/core/armst_shotgun_base.et",
@@ -2861,20 +3528,36 @@
       "derived": true
     },
     {
+      "weapon": "Prefabs/Weapons/Russian/MachineGuns/armst_mgun_RPK74.et",
+      "bullet_init_speed_coef": 1.06,
+      "ammo": null,
+      "ammo_init_speed": null,
+      "effective_muzzle_velocity": null,
+      "derived": false
+    },
+    {
       "weapon": "Prefabs/Weapons/Russian/Rifle/9a91/armst_Rifle_9a91.et",
       "bullet_init_speed_coef": 0.835,
       "ammo": "Prefabs/Weapons/Ammo/Russian/9x39/armst_Ammo_9x39_SP5_Ball.et",
-      "ammo_init_speed": 290,
-      "effective_muzzle_velocity": 242.15,
+      "ammo_init_speed": 300,
+      "effective_muzzle_velocity": 250.5,
       "derived": true
     },
     {
       "weapon": "Prefabs/Weapons/Russian/Rifle/9a91/armst_Rifle_9a91_base.et",
       "bullet_init_speed_coef": 0.835,
       "ammo": "Prefabs/Weapons/Ammo/Russian/9x39/armst_Ammo_9x39_SP5_Ball.et",
-      "ammo_init_speed": 290,
-      "effective_muzzle_velocity": 242.15,
+      "ammo_init_speed": 300,
+      "effective_muzzle_velocity": 250.5,
       "derived": true
+    },
+    {
+      "weapon": "Prefabs/Weapons/Russian/Rifle/AK74/armst_Rifle_AKS74U.et",
+      "bullet_init_speed_coef": 0.835,
+      "ammo": null,
+      "ammo_init_speed": null,
+      "effective_muzzle_velocity": null,
+      "derived": false
     },
     {
       "weapon": "Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM.et",
@@ -2928,49 +3611,81 @@
       "weapon": "Prefabs/Weapons/Russian/Rifle/VAL/armst_Rifle_val.et",
       "bullet_init_speed_coef": 0.835,
       "ammo": "Prefabs/Weapons/Ammo/Russian/9x39/armst_Ammo_9x39_SP5_Ball.et",
-      "ammo_init_speed": 290,
-      "effective_muzzle_velocity": 242.15,
+      "ammo_init_speed": 300,
+      "effective_muzzle_velocity": 250.5,
       "derived": true
     },
     {
       "weapon": "Prefabs/Weapons/Russian/Rifle/VAL/armst_Rifle_val_base.et",
       "bullet_init_speed_coef": 0.835,
       "ammo": "Prefabs/Weapons/Ammo/Russian/9x39/armst_Ammo_9x39_SP5_Ball.et",
-      "ammo_init_speed": 290,
-      "effective_muzzle_velocity": 242.15,
+      "ammo_init_speed": 300,
+      "effective_muzzle_velocity": 250.5,
       "derived": true
     },
     {
       "weapon": "Prefabs/Weapons/Russian/Rifle/VSK94/armst_Rifle_VSK94.et",
       "bullet_init_speed_coef": 0.835,
       "ammo": "Prefabs/Weapons/Ammo/Russian/9x39/armst_Ammo_9x39_SP5_Ball.et",
-      "ammo_init_speed": 290,
-      "effective_muzzle_velocity": 242.15,
+      "ammo_init_speed": 300,
+      "effective_muzzle_velocity": 250.5,
       "derived": true
     },
     {
       "weapon": "Prefabs/Weapons/Russian/Rifle/VSK94/armst_Rifle_VSK94_base.et",
       "bullet_init_speed_coef": 0.835,
       "ammo": "Prefabs/Weapons/Ammo/Russian/9x39/armst_Ammo_9x39_SP5_Ball.et",
-      "ammo_init_speed": 290,
-      "effective_muzzle_velocity": 242.15,
+      "ammo_init_speed": 300,
+      "effective_muzzle_velocity": 250.5,
       "derived": true
     },
     {
       "weapon": "Prefabs/Weapons/Russian/Rifle/VSS/armst_Rifle_vss.et",
       "bullet_init_speed_coef": 0.835,
       "ammo": "Prefabs/Weapons/Ammo/Russian/9x39/armst_Ammo_9x39_SP5_Ball.et",
-      "ammo_init_speed": 290,
-      "effective_muzzle_velocity": 242.15,
+      "ammo_init_speed": 300,
+      "effective_muzzle_velocity": 250.5,
       "derived": true
     },
     {
       "weapon": "Prefabs/Weapons/Russian/Rifle/VSS/armst_Rifle_vss_base.et",
       "bullet_init_speed_coef": 0.835,
       "ammo": "Prefabs/Weapons/Ammo/Russian/9x39/armst_Ammo_9x39_SP5_Ball.et",
-      "ammo_init_speed": 290,
-      "effective_muzzle_velocity": 242.15,
+      "ammo_init_speed": 300,
+      "effective_muzzle_velocity": 250.5,
       "derived": true
+    },
+    {
+      "weapon": "Prefabs/Weapons/Western/MachineGuns/armst_mgun_M249.et",
+      "bullet_init_speed_coef": 0.983,
+      "ammo": null,
+      "ammo_init_speed": null,
+      "effective_muzzle_velocity": null,
+      "derived": false
+    },
+    {
+      "weapon": "Prefabs/Weapons/Western/Rifle/M4/armst_Rifle_M4_carbine.et",
+      "bullet_init_speed_coef": 0.93,
+      "ammo": null,
+      "ammo_init_speed": null,
+      "effective_muzzle_velocity": null,
+      "derived": false
+    },
+    {
+      "weapon": "Prefabs/Weapons/Western/Rifle/VZ58/armst_VZ58P.et",
+      "bullet_init_speed_coef": 0.986,
+      "ammo": null,
+      "ammo_init_speed": null,
+      "effective_muzzle_velocity": null,
+      "derived": false
+    },
+    {
+      "weapon": "Prefabs/Weapons/Western/Rifle/VZ58/armst_VZ58V.et",
+      "bullet_init_speed_coef": 0.986,
+      "ammo": null,
+      "ammo_init_speed": null,
+      "effective_muzzle_velocity": null,
+      "derived": false
     }
   ]
 }

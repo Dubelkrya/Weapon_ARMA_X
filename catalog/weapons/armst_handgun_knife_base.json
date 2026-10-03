@@ -22,17 +22,22 @@
         "resource": "Prefabs/Weapons/Handguns/armst_Handgun_Knife_base.et",
         "status": "local",
         "class": "GenericEntity"
-      }
-    ],
-    "external_parents": [
+      },
       {
-        "guid": "EE7028E9DF49763A",
-        "path": "Prefabs/Weapons/Core/Handgun_Base.et",
-        "raw": "{EE7028E9DF49763A}Prefabs/Weapons/Core/Handgun_Base.et"
+        "resource": "Prefabs/Weapons/Core/Handgun_Base.et",
+        "status": "base_game_snapshot",
+        "class": "GenericEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Core/Weapon_Base.et",
+        "status": "base_game_snapshot",
+        "class": "GenericEntity"
       }
     ],
+    "external_parents": [],
     "used_as_base_by": [],
-    "chain_depth_local": 1
+    "chain_depth_local": 1,
+    "chain_depth_base_game_snapshot": 2
   },
   "references": [
     {
@@ -55,6 +60,20 @@
       "resolved": "external",
       "target": null,
       "defined_in": "Prefabs/Weapons/Handguns/armst_Handgun_Knife_base.et"
+    },
+    {
+      "guid": "B2310BF09F78B065",
+      "path": "anims/workspaces/player/player_inventory_pistol.asi",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Core/Handgun_Base.et"
+    },
+    {
+      "guid": "4FC83D9226751C42",
+      "path": "Prefabs/Weapons/Core/Components/MuzzleComponent_Base.ct",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Core/Handgun_Base.et"
     },
     {
       "guid": "BFCAD887920029A2",
@@ -80,9 +99,11 @@
     {
       "guid": "7EE41322045592D4",
       "path": "Prefabs/Weapons/Core/Recoil/Handgun_9_recoil.conf",
-      "resolved": "external",
-      "target": null,
-      "defined_in": "Prefabs/Weapons/Handguns/armst_Handgun_Knife_base.et"
+      "resolved": "base_game_snapshot",
+      "target": "Prefabs/Weapons/Core/Recoil/Handgun_9_recoil.conf",
+      "defined_in": "Prefabs/Weapons/Handguns/armst_Handgun_Knife_base.et",
+      "snapshot_import_guid": "B2BC33397DB25EF7",
+      "snapshot_physical_rel": "core/Recoil/Handgun_9_recoil.conf"
     },
     {
       "guid": "8B853CDD11BA916E",
@@ -90,6 +111,38 @@
       "resolved": "local",
       "target": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball.et",
       "defined_in": "Prefabs/Weapons/Handguns/armst_Handgun_Knife_base.et"
+    },
+    {
+      "guid": "7F8DDBD6312F0B8B",
+      "path": "Particles/Weapon/Casing_Pistol.ptc",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Core/Handgun_Base.et"
+    },
+    {
+      "guid": "687B3DA431730CFA",
+      "path": "Prefabs/Weapons/Core/Configs/FireModes/FireMode_Safe.conf",
+      "resolved": "base_game_snapshot",
+      "target": "Prefabs/Weapons/Core/Configs/FireModes/FireMode_Safe.conf",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Core/Handgun_Base.et",
+      "snapshot_import_guid": "60B0FC29181A99F4",
+      "snapshot_physical_rel": "core/Configs/FireModes/FireMode_Safe.conf"
+    },
+    {
+      "guid": "D5D52E848DBCAA53",
+      "path": "Prefabs/Weapons/Core/Configs/FireModes/FireMode_Single.conf",
+      "resolved": "base_game_snapshot",
+      "target": "Prefabs/Weapons/Core/Configs/FireModes/FireMode_Single.conf",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Core/Handgun_Base.et",
+      "snapshot_import_guid": "FAF4B3FB6DE91626",
+      "snapshot_physical_rel": "core/Configs/FireModes/FireMode_Single.conf"
+    },
+    {
+      "guid": "E7E6149FBC9B3675",
+      "path": "Configs/WeaponInfo/MagazineIndicators/beretta_15.conf",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Core/Handgun_Base.et"
     },
     {
       "guid": "0A046C9C356F9198",
@@ -118,6 +171,33 @@
       "resolved": "external",
       "target": null,
       "defined_in": "Prefabs/Weapons/Handguns/armst_Handgun_Knife_base.et"
+    },
+    {
+      "guid": "4C187800824D6794",
+      "path": "Prefabs/Weapons/Core/Configs/TriggerEffects/Charged/TriggerEffect_ChargedMedium.conf",
+      "resolved": "base_game_snapshot",
+      "target": "Prefabs/Weapons/Core/Configs/TriggerEffects/Charged/TriggerEffect_ChargedMedium.conf",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Core/Handgun_Base.et",
+      "snapshot_import_guid": "560160CFADCE2863",
+      "snapshot_physical_rel": "core/Configs/TriggerEffects/Charged/TriggerEffect_ChargedMedium.conf"
+    },
+    {
+      "guid": "506247CD50536A6A",
+      "path": "Prefabs/Weapons/Core/Configs/TriggerEffects/ADS/TriggerEffect_ADSLight.conf",
+      "resolved": "base_game_snapshot",
+      "target": "Prefabs/Weapons/Core/Configs/TriggerEffects/ADS/TriggerEffect_ADSLight.conf",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Core/Handgun_Base.et",
+      "snapshot_import_guid": "104FAEAAE4BED191",
+      "snapshot_physical_rel": "core/Configs/TriggerEffects/ADS/TriggerEffect_ADSLight.conf"
+    },
+    {
+      "guid": "2C2359B69EE9C73B",
+      "path": "Prefabs/Weapons/Core/Configs/TriggerEffects/Fire/TriggerEffect_FireHandgun.conf",
+      "resolved": "base_game_snapshot",
+      "target": "Prefabs/Weapons/Core/Configs/TriggerEffects/Fire/TriggerEffect_FireHandgun.conf",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Core/Handgun_Base.et",
+      "snapshot_import_guid": "AC66CE48EB23ED40",
+      "snapshot_physical_rel": "core/Configs/TriggerEffects/Fire/TriggerEffect_FireHandgun.conf"
     }
   ],
   "warnings": [],
@@ -125,7 +205,30 @@
     "identity": {
       "name": null
     },
-    "fire_modes": [],
+    "fire_modes": [
+      {
+        "mode_id": "{506B20D1476BA99E}",
+        "ui_name": null,
+        "rounds_per_minute": null,
+        "max_burst": null,
+        "defined_in": "base_game_snapshot:Prefabs/Weapons/Core/Handgun_Base.et"
+      },
+      {
+        "mode_id": "{B80A64F4A8EF8333}",
+        "ui_name": null,
+        "rounds_per_minute": {
+          "value": 500,
+          "defined_in": "base_game_snapshot:Prefabs/Weapons/Core/Handgun_Base.et",
+          "inherited": true
+        },
+        "max_burst": null,
+        "defined_in": "base_game_snapshot:Prefabs/Weapons/Core/Handgun_Base.et",
+        "rounds_per_second": {
+          "value": 8.333,
+          "derived": true
+        }
+      }
+    ],
     "physical": {
       "Weight": null,
       "SizeSetupStrategy": null,
@@ -186,19 +289,23 @@
           0
         ]
       ],
-      "defined_in": "Prefabs/Weapons/Handguns/armst_Handgun_Knife_base.et"
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Core/Handgun_Base.et"
     },
     "attachment_slots": [
       {
         "slot": null,
-        "pivot": null,
+        "pivot": {
+          "value": "slot_optics",
+          "defined_in": "base_game_snapshot:Prefabs/Weapons/Core/Handgun_Base.et",
+          "inherited": true
+        },
         "enabled": {
           "value": 0,
           "defined_in": "Prefabs/Weapons/Handguns/armst_Handgun_Knife_base.et",
           "inherited": false
         },
         "attachment_types": [],
-        "defined_in": "Prefabs/Weapons/Handguns/armst_Handgun_Knife_base.et"
+        "defined_in": "base_game_snapshot:Prefabs/Weapons/Core/Handgun_Base.et"
       }
     ],
     "muzzle_attachment": null,
@@ -216,6 +323,7 @@
     }
   },
   "derived": {
+    "max_rounds_per_second": 8.333,
     "dispersion_m_per_m": {
       "value": 4.0,
       "formula": "DispersionDiameter / DispersionRange * 1000"

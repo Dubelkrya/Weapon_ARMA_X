@@ -1,0 +1,47 @@
+{
+  "id": "armst_shotgun_ris_mount",
+  "role": "leaf",
+  "source": {
+    "resource": "Prefabs/Weapons/Russian/Shotgun/armst_Shotgun_RIS_Mount.et",
+    "resource_guid": "035155F82E11CBFB",
+    "meta_name": null,
+    "class": "GenericEntity",
+    "defined_in": "Prefabs/Weapons/Russian/Shotgun/armst_Shotgun_RIS_Mount.et"
+  },
+  "identity": {
+    "name": "armst_Shotgun_RIS_Mount",
+    "resource": "Prefabs/Weapons/Russian/Shotgun/armst_Shotgun_RIS_Mount.et"
+  },
+  "classification": {
+    "kind": "misc",
+    "confidence": "unknown"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Weapons/Russian/Shotgun/armst_Shotgun_RIS_Mount.et",
+        "status": "local",
+        "class": "GenericEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Core/WeaponPart_Base.et",
+        "status": "base_game_snapshot",
+        "class": "GenericEntity"
+      }
+    ],
+    "external_parents": [],
+    "used_as_base_by": [],
+    "chain_depth_local": 1,
+    "chain_depth_base_game_snapshot": 1
+  },
+  "references": [
+    {
+      "guid": "FDE379B07485A265",
+      "path": "Assets/addons/Plank/Picatinny_Scope_Savage_340.xob",
+      "resolved": "local",
+      "target": "Assets/addons/Plank/Picatinny_Scope_Savage_340.xob",
+      "defined_in": "Prefabs/Weapons/Russian/Shotgun/armst_Shotgun_RIS_Mount.et"
+    }
+  ],
+  "warnings": []
+}

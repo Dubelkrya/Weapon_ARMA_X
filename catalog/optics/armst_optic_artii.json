@@ -1,0 +1,77 @@
+{
+  "id": "armst_optic_artii",
+  "role": "leaf",
+  "source": {
+    "resource": "Prefabs/Weapons/Attachments/Optics/Optic_ARTII/armst_Optic_ARTII.et",
+    "resource_guid": "D2018EDB1BBF4C88",
+    "meta_name": null,
+    "class": "GameEntity",
+    "defined_in": "Prefabs/Weapons/Attachments/Optics/Optic_ARTII/armst_Optic_ARTII.et"
+  },
+  "identity": {
+    "name": "armst_Optic_ARTII",
+    "resource": "Prefabs/Weapons/Attachments/Optics/Optic_ARTII/armst_Optic_ARTII.et"
+  },
+  "classification": {
+    "kind": "attachment",
+    "confidence": "folder",
+    "attachment_kind": "optic"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Weapons/Attachments/Optics/Optic_ARTII/armst_Optic_ARTII.et",
+        "status": "local",
+        "class": "GameEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Attachments/Optics/Optic_ARTII/Optic_ARTII_base.et",
+        "status": "base_game_snapshot",
+        "class": "GameEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Attachments/Optics/WeaponOptic_Base.et",
+        "status": "base_game_snapshot",
+        "class": "GameEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Core/WeaponSight_Base.et",
+        "status": "base_game_snapshot",
+        "class": "GameEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Core/Attachment_Base.et",
+        "status": "base_game_snapshot",
+        "class": "GameEntity"
+      }
+    ],
+    "external_parents": [],
+    "used_as_base_by": [],
+    "chain_depth_local": 1,
+    "chain_depth_base_game_snapshot": 4
+  },
+  "references": [
+    {
+      "guid": "2E43837CC7A79F69",
+      "path": "Assets/Weapons/Attachments/Optics/ARTII/Optic_ARTII.xob",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Attachments/Optics/Optic_ARTII/Optic_ARTII_base.et"
+    },
+    {
+      "guid": "AE1DBD2308EDFF54",
+      "path": "UI/Textures/Sights/ARTII/ARTII_UI.edds",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Attachments/Optics/Optic_ARTII/Optic_ARTII_base.et"
+    },
+    {
+      "guid": "63FF28F3F6BB1727",
+      "path": "Assets/Weapons/Attachments/Optics/ARTII/Data/Optic_ARTII_HDR.emat",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Attachments/Optics/Optic_ARTII/Optic_ARTII_base.et"
+    }
+  ],
+  "warnings": []
+}

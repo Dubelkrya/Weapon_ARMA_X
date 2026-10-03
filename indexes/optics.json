@@ -1,5 +1,12 @@
 [
   {
+    "id": "armst_okp",
+    "resource": "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/Armst_OKP.et",
+    "class": "GameEntity",
+    "name": "Armst_OKP",
+    "role": "leaf"
+  },
+  {
     "id": "armst_optic_akdovetailmount",
     "resource": "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et",
     "class": "GenericEntity",
@@ -35,10 +42,24 @@
     "role": "base"
   },
   {
-    "id": "optic_4x20",
-    "resource": "Prefabs/Weapons/Attachments/Optics/Optic_4x20/Optic_4x20.et",
+    "id": "armst_optic_4x20",
+    "resource": "Prefabs/Weapons/Attachments/Optics/Optic_4x20/armst_Optic_4x20.et",
     "class": "GameEntity",
-    "name": "Optic_4x20",
+    "name": "armst_Optic_4x20",
+    "role": "leaf"
+  },
+  {
+    "id": "armst_collim_ap2k",
+    "resource": "Prefabs/Weapons/Attachments/Optics/Optic_AP2k/armst_Collim_AP2k.et",
+    "class": "GameEntity",
+    "name": "armst_Collim_AP2k",
+    "role": "leaf"
+  },
+  {
+    "id": "armst_optic_artii",
+    "resource": "Prefabs/Weapons/Attachments/Optics/Optic_ARTII/armst_Optic_ARTII.et",
+    "class": "GameEntity",
+    "name": "armst_Optic_ARTII",
     "role": "leaf"
   },
   {

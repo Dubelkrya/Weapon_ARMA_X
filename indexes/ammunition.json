@@ -42,6 +42,20 @@
     "role": "leaf"
   },
   {
+    "id": "armst_ammo_545x39_bp",
+    "resource": "Prefabs/Weapons/Ammo/Russian/545x39/armst_Ammo_545x39_BP.et",
+    "class": "Projectile",
+    "name": "armst_Ammo_545x39_BP",
+    "role": "leaf"
+  },
+  {
+    "id": "armst_ammo_545x39_pp",
+    "resource": "Prefabs/Weapons/Ammo/Russian/545x39/armst_Ammo_545x39_PP.et",
+    "class": "Projectile",
+    "name": "armst_Ammo_545x39_PP",
+    "role": "leaf"
+  },
+  {
     "id": "armst_ammo_763x25",
     "resource": "Prefabs/Weapons/Ammo/Russian/763x25/armst_Ammo_763x25.et",
     "class": "Projectile",
@@ -130,6 +144,13 @@
     "resource": "Prefabs/Weapons/Ammo/armst_Ammo_9x18_PP.et",
     "class": "Projectile",
     "name": "armst_Ammo_9x18_PP",
+    "role": "leaf"
+  },
+  {
+    "id": "armst_ammo_grenade_hedp_m433",
+    "resource": "Prefabs/Weapons/Ammo/armst_Ammo_Grenade_HEDP_M433.et",
+    "class": "Projectile",
+    "name": "armst_Ammo_Grenade_HEDP_M433",
     "role": "leaf"
   }
 ]

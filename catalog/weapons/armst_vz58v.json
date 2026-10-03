@@ -2,15 +2,15 @@
   "id": "armst_vz58v",
   "role": "leaf",
   "source": {
-    "resource": "Prefabs/Weapons/Rifles/armst_VZ58V.et",
+    "resource": "Prefabs/Weapons/Western/Rifle/VZ58/armst_VZ58V.et",
     "resource_guid": "443CEFF17E040B11",
     "meta_name": null,
     "class": "GenericEntity",
-    "defined_in": "Prefabs/Weapons/Rifles/armst_VZ58V.et"
+    "defined_in": "Prefabs/Weapons/Western/Rifle/VZ58/armst_VZ58V.et"
   },
   "identity": {
     "name": "armst_VZ58V",
-    "resource": "Prefabs/Weapons/Rifles/armst_VZ58V.et"
+    "resource": "Prefabs/Weapons/Western/Rifle/VZ58/armst_VZ58V.et"
   },
   "classification": {
     "kind": "weapon",
@@ -19,55 +19,387 @@
   "inheritance": {
     "chain": [
       {
-        "resource": "Prefabs/Weapons/Rifles/armst_VZ58V.et",
+        "resource": "Prefabs/Weapons/Western/Rifle/VZ58/armst_VZ58V.et",
         "status": "local",
+        "class": "GenericEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Rifles/VZ58/Rifle_VZ58_base.et",
+        "status": "base_game_snapshot",
+        "class": "GenericEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Core/Rifle_Base.et",
+        "status": "base_game_snapshot",
+        "class": "GenericEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Core/Weapon_Base.et",
+        "status": "base_game_snapshot",
         "class": "GenericEntity"
       }
     ],
-    "external_parents": [
-      {
-        "guid": "C19BFAF8A6334FD5",
-        "path": "Prefabs/Weapons/Rifles/VZ58/Rifle_VZ58_base.et",
-        "raw": "{C19BFAF8A6334FD5}Prefabs/Weapons/Rifles/VZ58/Rifle_VZ58_base.et"
-      }
-    ],
+    "external_parents": [],
     "used_as_base_by": [],
-    "chain_depth_local": 1
+    "chain_depth_local": 1,
+    "chain_depth_base_game_snapshot": 3
   },
-  "references": [],
+  "references": [
+    {
+      "guid": "62BB0D533080AE8D",
+      "path": "Sounds/Weapons/Rifles/VZ-58/Weapons_Rifles_VZ-58_Shot.acp",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/VZ58/Rifle_VZ58_base.et"
+    },
+    {
+      "guid": "EB3FA38F920D4615",
+      "path": "Assets/Weapons/Rifles/VZ58/VZ58_body.xob",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/VZ58/Rifle_VZ58_base.et"
+    },
+    {
+      "guid": "0350283642830782",
+      "path": "anims/workspaces/player/player_main_rifle.asi",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/VZ58/Rifle_VZ58_base.et"
+    },
+    {
+      "guid": "F85D69227FAA3190",
+      "path": "Assets/Weapons/Rifles/VZ58/anims/anm/p_VZ58_ik.anm",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/VZ58/Rifle_VZ58_base.et"
+    },
+    {
+      "guid": "2F4BBE174AFAF5E0",
+      "path": "Prefabs/Weapons/Attachments/Stocks/Stock_VZ58/Stock_VZ58_fixed.et",
+      "resolved": "base_game_snapshot",
+      "target": "Prefabs/Weapons/Attachments/Stocks/Stock_VZ58/Stock_VZ58_fixed.et",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/VZ58/Rifle_VZ58_base.et",
+      "snapshot_import_guid": "2D62935064C86009",
+      "snapshot_physical_rel": "attachments/Stocks/Stock_VZ58/Stock_VZ58_fixed.et"
+    },
+    {
+      "guid": "A89D3276591C9F57",
+      "path": "Particles/Weapon/Casing_762x39_PS.ptc",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/VZ58/Rifle_VZ58_base.et"
+    },
+    {
+      "guid": "51553DBFB3D561B2",
+      "path": "Particles/Weapon/Smoke_VZ58.ptc",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/VZ58/Rifle_VZ58_base.et"
+    },
+    {
+      "guid": "0E66192FC96CDFB7",
+      "path": "Particles/Weapon/Muzzle_VZ58.ptc",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/VZ58/Rifle_VZ58_base.et"
+    },
+    {
+      "guid": "687B3DA431730CFA",
+      "path": "Prefabs/Weapons/Core/Configs/FireModes/FireMode_Safe.conf",
+      "resolved": "base_game_snapshot",
+      "target": "Prefabs/Weapons/Core/Configs/FireModes/FireMode_Safe.conf",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/VZ58/Rifle_VZ58_base.et",
+      "snapshot_import_guid": "60B0FC29181A99F4",
+      "snapshot_physical_rel": "core/Configs/FireModes/FireMode_Safe.conf"
+    },
+    {
+      "guid": "6B6BD5767BCD00A9",
+      "path": "Prefabs/Weapons/Core/Configs/TriggerEffects/Safety/TriggerEffect_SafetyLoose.conf",
+      "resolved": "base_game_snapshot",
+      "target": "Prefabs/Weapons/Core/Configs/TriggerEffects/Safety/TriggerEffect_SafetyLoose.conf",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/VZ58/Rifle_VZ58_base.et",
+      "snapshot_import_guid": "ACEA2D192600D65E",
+      "snapshot_physical_rel": "core/Configs/TriggerEffects/Safety/TriggerEffect_SafetyLoose.conf"
+    },
+    {
+      "guid": "D5D52E848DBCAA53",
+      "path": "Prefabs/Weapons/Core/Configs/FireModes/FireMode_Single.conf",
+      "resolved": "base_game_snapshot",
+      "target": "Prefabs/Weapons/Core/Configs/FireModes/FireMode_Single.conf",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/VZ58/Rifle_VZ58_base.et",
+      "snapshot_import_guid": "FAF4B3FB6DE91626",
+      "snapshot_physical_rel": "core/Configs/FireModes/FireMode_Single.conf"
+    },
+    {
+      "guid": "A512F292D96BCB9F",
+      "path": "Prefabs/Weapons/Core/Configs/FireModes/FireMode_Auto.conf",
+      "resolved": "base_game_snapshot",
+      "target": "Prefabs/Weapons/Core/Configs/FireModes/FireMode_Auto.conf",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/VZ58/Rifle_VZ58_base.et",
+      "snapshot_import_guid": "09B76AF4205785A9",
+      "snapshot_physical_rel": "core/Configs/FireModes/FireMode_Auto.conf"
+    },
+    {
+      "guid": "A827B610B7CD4158",
+      "path": "Prefabs/Weapons/Magazines/Vz58/Magazine_762x39_Vz58_30rnd_Last_5Tracer.et",
+      "resolved": "base_game_snapshot",
+      "target": "Prefabs/Weapons/Magazines/Vz58/Magazine_762x39_Vz58_30rnd_Last_5Tracer.et",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/VZ58/Rifle_VZ58_base.et",
+      "snapshot_import_guid": "562C59954D258F50",
+      "snapshot_physical_rel": "magazines/Vz58/Magazine_762x39_Vz58_30rnd_Last_5Tracer.et"
+    },
+    {
+      "guid": "E7E67E4426E24066",
+      "path": "Assets/Weapons/Rifles/workspaces/VZ58.agr",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/VZ58/Rifle_VZ58_base.et"
+    },
+    {
+      "guid": "FFB391312D0E84C5",
+      "path": "Assets/Weapons/Rifles/workspaces/VZ58_weapon.asi",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/VZ58/Rifle_VZ58_base.et"
+    },
+    {
+      "guid": "04ED0000B50FE029",
+      "path": "Assets/Weapons/Rifles/workspaces/VZ58_player.asi",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/VZ58/Rifle_VZ58_base.et"
+    }
+  ],
   "warnings": [],
   "data": {
     "identity": {
       "name": null
     },
-    "fire_modes": [],
+    "fire_modes": [
+      {
+        "mode_id": "{506B20D1476BA99E}",
+        "ui_name": null,
+        "rounds_per_minute": null,
+        "max_burst": null,
+        "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/VZ58/Rifle_VZ58_base.et"
+      },
+      {
+        "mode_id": "{B80A64F4A8EF8333}",
+        "ui_name": null,
+        "rounds_per_minute": {
+          "value": 800,
+          "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/VZ58/Rifle_VZ58_base.et",
+          "inherited": true
+        },
+        "max_burst": null,
+        "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/VZ58/Rifle_VZ58_base.et",
+        "rounds_per_second": {
+          "value": 13.333,
+          "derived": true
+        }
+      },
+      {
+        "mode_id": "{619AB45C4813D193}",
+        "ui_name": null,
+        "rounds_per_minute": {
+          "value": 800,
+          "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/VZ58/Rifle_VZ58_base.et",
+          "inherited": true
+        },
+        "max_burst": null,
+        "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/VZ58/Rifle_VZ58_base.et",
+        "rounds_per_second": {
+          "value": 13.333,
+          "derived": true
+        }
+      }
+    ],
     "physical": {
+      "Weight": null,
+      "SizeSetupStrategy": null,
+      "ItemDimensions": null,
+      "ItemVolume": null,
+      "DimensionScaler": null,
+      "_defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/VZ58/Rifle_VZ58_base.et",
+      "Mass": null,
       "MeleeDamage": {
-        "value": 2,
-        "defined_in": "Prefabs/Weapons/Rifles/armst_VZ58V.et",
-        "inherited": false
+        "value": 20,
+        "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/VZ58/Rifle_VZ58_base.et",
+        "inherited": true
+      },
+      "Model": {
+        "guid": "EB3FA38F920D4615",
+        "path": "Assets/Weapons/Rifles/VZ58/VZ58_body.xob",
+        "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/VZ58/Rifle_VZ58_base.et"
       }
     },
     "magazine": {
-      "magazine_well": null,
-      "magazine_template": null
+      "magazine_well": {
+        "name": "MagazineWell",
+        "class": "MagazineWellVZ58_762",
+        "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/VZ58/Rifle_VZ58_base.et"
+      },
+      "magazine_template": {
+        "guid": "A827B610B7CD4158",
+        "path": "Prefabs/Weapons/Magazines/Vz58/Magazine_762x39_Vz58_30rnd_Last_5Tracer.et",
+        "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/VZ58/Rifle_VZ58_base.et"
+      }
     },
     "ballistics": {
-      "bullet_init_speed_coef": null,
-      "dispersion_diameter": null,
-      "dispersion_range": null
+      "bullet_init_speed_coef": {
+        "value": 0.986,
+        "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/VZ58/Rifle_VZ58_base.et",
+        "inherited": true
+      },
+      "dispersion_diameter": {
+        "value": 0.4,
+        "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/VZ58/Rifle_VZ58_base.et",
+        "inherited": true
+      },
+      "dispersion_range": {
+        "value": 220,
+        "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/VZ58/Rifle_VZ58_base.et",
+        "inherited": true
+      }
     },
     "aim": {
-      "recoil": null,
-      "sway": null
+      "recoil": {
+        "LinearData": {
+          "values": {
+            "curve_magnitudes": null,
+            "curve_mins": null,
+            "curve_maxs": null,
+            "curve_time_scale": null,
+            "base_recoil_scale": null
+          },
+          "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/VZ58/Rifle_VZ58_base.et"
+        },
+        "AngularData": {
+          "values": {
+            "curve_magnitudes": null,
+            "curve_mins": null,
+            "curve_maxs": null,
+            "curve_time_scale": null,
+            "base_recoil_scale": null
+          },
+          "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/VZ58/Rifle_VZ58_base.et"
+        },
+        "TurnOffsetData": {
+          "values": {
+            "curve_magnitudes": null,
+            "curve_mins": null,
+            "curve_maxs": null,
+            "curve_time_scale": null,
+            "base_recoil_scale": null
+          },
+          "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/VZ58/Rifle_VZ58_base.et"
+        }
+      },
+      "sway": {
+        "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/VZ58/Rifle_VZ58_base.et",
+        "values": {
+          "lower_translation": null,
+          "lower_rotation": null
+        }
+      }
     },
-    "sights": null,
-    "attachment_slots": [],
-    "muzzle_attachment": null,
+    "sights": {
+      "switch_skip": null,
+      "ranges": [
+        [
+          0.434,
+          330
+        ],
+        [
+          0.277,
+          100
+        ],
+        [
+          0.343,
+          200
+        ],
+        [
+          0.409,
+          300
+        ],
+        [
+          0.495,
+          400
+        ],
+        [
+          0.57,
+          500
+        ],
+        [
+          0.66,
+          600
+        ],
+        [
+          0.755,
+          700
+        ],
+        [
+          0.877,
+          800
+        ]
+      ],
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/VZ58/Rifle_VZ58_base.et"
+    },
+    "attachment_slots": [
+      {
+        "slot": null,
+        "pivot": {
+          "value": "slot_stock",
+          "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/VZ58/Rifle_VZ58_base.et",
+          "inherited": true
+        },
+        "enabled": null,
+        "attachment_types": [
+          "{5B289DD5C995E297}"
+        ],
+        "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/VZ58/Rifle_VZ58_base.et"
+      },
+      {
+        "slot": null,
+        "pivot": {
+          "value": "slot_barrel_muzzle",
+          "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/VZ58/Rifle_VZ58_base.et",
+          "inherited": true
+        },
+        "enabled": null,
+        "attachment_types": [
+          "{610874057E37B172}"
+        ],
+        "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/VZ58/Rifle_VZ58_base.et"
+      }
+    ],
+    "muzzle_attachment": {
+      "slot": null,
+      "enabled": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/VZ58/Rifle_VZ58_base.et"
+    },
     "animation": {
-      "anim_graph": null,
-      "anim_instance": null
+      "anim_graph": {
+        "guid": "E7E67E4426E24066",
+        "path": "Assets/Weapons/Rifles/workspaces/VZ58.agr",
+        "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/VZ58/Rifle_VZ58_base.et"
+      },
+      "anim_instance": {
+        "guid": "FFB391312D0E84C5",
+        "path": "Assets/Weapons/Rifles/workspaces/VZ58_weapon.asi",
+        "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/VZ58/Rifle_VZ58_base.et"
+      }
     }
   },
-  "derived": {}
+  "derived": {
+    "max_rounds_per_second": 13.333,
+    "dispersion_m_per_m": {
+      "value": 1.8182,
+      "formula": "DispersionDiameter / DispersionRange * 1000"
+    },
+    "approx_moa": {
+      "value": 6.25,
+      "formula": "DispersionDiameter / DispersionRange * 3437.75"
+    }
+  }
 }

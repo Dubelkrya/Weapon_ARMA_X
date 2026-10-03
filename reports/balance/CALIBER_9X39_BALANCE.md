@@ -47,13 +47,13 @@ The handling rows above are generated from the current catalog. Capacity is show
 
 | Projectile | Init speed | Mass | Damage | Penetration depth | Penetration speed | Air drag | Dispersion mult | Ballistic table | Warnings |
 |---|---:|---:|---:|---:|---:|---:|---:|---|---:|
-| [`armst_Ammo_9x39_SP5_Ball.et`](../../catalog/ammunition/armst_ammo_9x39_sp5_ball.json) | 290 | 0.01959 | — | 3.7 | 615 | 9.4e-06 | 0.55 | `AIBT_762x54r_Ball_7N1.conf` | 0 |
-| [`armst_Ammo_9x39_SP6_Ball.et`](../../catalog/ammunition/armst_ammo_9x39_sp6_ball.json) | 305 | 0.02559 | 150 | 5.55 | 615 | 9.4e-06 | 0.55 | `AIBT_762x54r_Ball_7N1.conf` | 0 |
+| [`armst_Ammo_9x39_SP5_Ball.et`](../../catalog/ammunition/armst_ammo_9x39_sp5_ball.json) | 300 | 0.0166 | 50 | 2.6 | 270 | 5.9e-06 | — | `AIBT_9x39_Ball_SP5.conf` | 0 |
+| [`armst_Ammo_9x39_SP6_Ball.et`](../../catalog/ammunition/armst_ammo_9x39_sp6_ball.json) | 290 | 0.0156 | 50 | 6 | 270 | 7.9e-06 | 1.1 | `AIBT_9x39_AP_SP6.conf` | 0 |
 
 ### What the current projectile snapshot actually proves
 
-- `armst_Ammo_9x39_SP5_Ball.et`: InitSpeed=290, Mass=0.01959, Damage=—, PenetrationDepth=3.7, PenetrationSpeed=615, AirDrag=9.4e-06, BallisticTable=`AIBT_762x54r_Ball_7N1.conf`.
-- `armst_Ammo_9x39_SP6_Ball.et`: InitSpeed=305, Mass=0.02559, Damage=150, PenetrationDepth=5.55, PenetrationSpeed=615, AirDrag=9.4e-06, BallisticTable=`AIBT_762x54r_Ball_7N1.conf`.
+- `armst_Ammo_9x39_SP5_Ball.et`: InitSpeed=300, Mass=0.0166, Damage=50, PenetrationDepth=2.6, PenetrationSpeed=270, AirDrag=5.9e-06, BallisticTable=`AIBT_9x39_Ball_SP5.conf`.
+- `armst_Ammo_9x39_SP6_Ball.et`: InitSpeed=290, Mass=0.0156, Damage=50, PenetrationDepth=6, PenetrationSpeed=270, AirDrag=7.9e-06, BallisticTable=`AIBT_9x39_AP_SP6.conf`.
 
 ## Authority boundary
 

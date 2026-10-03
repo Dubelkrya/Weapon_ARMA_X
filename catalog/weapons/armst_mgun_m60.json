@@ -1,0 +1,366 @@
+{
+  "id": "armst_mgun_m60",
+  "role": "leaf",
+  "source": {
+    "resource": "Prefabs/Weapons/Western/MachineGuns/armst_mgun_M60.et",
+    "resource_guid": "D182DCDD72BF7E34",
+    "meta_name": null,
+    "class": "GenericEntity",
+    "defined_in": "Prefabs/Weapons/Western/MachineGuns/armst_mgun_M60.et"
+  },
+  "identity": {
+    "name": "armst_mgun_M60",
+    "resource": "Prefabs/Weapons/Western/MachineGuns/armst_mgun_M60.et"
+  },
+  "classification": {
+    "kind": "weapon",
+    "confidence": "components"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Weapons/Western/MachineGuns/armst_mgun_M60.et",
+        "status": "local",
+        "class": "GenericEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/MachineGuns/M60/MG_M60_base.et",
+        "status": "base_game_snapshot",
+        "class": "GenericEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Core/MachineGun_Base.et",
+        "status": "base_game_snapshot",
+        "class": "GenericEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Core/Weapon_Base.et",
+        "status": "base_game_snapshot",
+        "class": "GenericEntity"
+      }
+    ],
+    "external_parents": [],
+    "used_as_base_by": [],
+    "chain_depth_local": 1,
+    "chain_depth_base_game_snapshot": 3
+  },
+  "references": [
+    {
+      "guid": "FE8279CA292FC6EE",
+      "path": "Sounds/Weapons/Machineguns/M60/Weapons_Machineguns_M60_Shot.acp",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/MachineGuns/M60/MG_M60_base.et"
+    },
+    {
+      "guid": "7C7F521634ADBF9A",
+      "path": "Assets/Weapons/MachineGuns/M60/M60_Body.xob",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/MachineGuns/M60/MG_M60_base.et"
+    },
+    {
+      "guid": "60945F10BF15FC09",
+      "path": "anims/workspaces/player/player_main_machinegun.asi",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/MachineGuns/M60/MG_M60_base.et"
+    },
+    {
+      "guid": "BA25DD5CEFEE4198",
+      "path": "Assets/Weapons/MachineGuns/M60/anims/anm/p_M60_ik.anm",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/MachineGuns/M60/MG_M60_base.et"
+    },
+    {
+      "guid": "9059C37B92DFAB99",
+      "path": "Assets/Weapons/MachineGuns/M60/anims/anm/p_pne_M60_ik.anm",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/MachineGuns/M60/MG_M60_base.et"
+    },
+    {
+      "guid": "C79EA6F6F4EFE7CC",
+      "path": "anims/workspaces/player/player_inventory_LMG.asi",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Core/MachineGun_Base.et"
+    },
+    {
+      "guid": "4FC83D9226751C42",
+      "path": "Prefabs/Weapons/Core/Components/MuzzleComponent_Base.ct",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Core/MachineGun_Base.et"
+    },
+    {
+      "guid": "6A0F068A792EA37C",
+      "path": "Particles/Weapon/Casing_762x51.ptc",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/MachineGuns/M60/MG_M60_base.et"
+    },
+    {
+      "guid": "EB2E119AC95CF4BD",
+      "path": "Particles/Weapon/Smoke_M60.ptc",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/MachineGuns/M60/MG_M60_base.et"
+    },
+    {
+      "guid": "E7ACDE0ACCBCB07A",
+      "path": "Particles/Weapon/Casing_Holder.ptc",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/MachineGuns/M60/MG_M60_base.et"
+    },
+    {
+      "guid": "1991E0492F618D77",
+      "path": "Particles/Weapon/Muzzle_M60_flashHider.ptc",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/MachineGuns/M60/MG_M60_base.et"
+    },
+    {
+      "guid": "A512F292D96BCB9F",
+      "path": "Prefabs/Weapons/Core/Configs/FireModes/FireMode_Auto.conf",
+      "resolved": "base_game_snapshot",
+      "target": "Prefabs/Weapons/Core/Configs/FireModes/FireMode_Auto.conf",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/MachineGuns/M60/MG_M60_base.et",
+      "snapshot_import_guid": "09B76AF4205785A9",
+      "snapshot_physical_rel": "core/Configs/FireModes/FireMode_Auto.conf"
+    },
+    {
+      "guid": "98C4934747566344",
+      "path": "Prefabs/Weapons/Core/Configs/AimModifiers/RecoilAimModifier_M60.conf",
+      "resolved": "base_game_snapshot",
+      "target": "Prefabs/Weapons/Core/Configs/AimModifiers/RecoilAimModifier_M60.conf",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/MachineGuns/M60/MG_M60_base.et",
+      "snapshot_import_guid": "D7C04D271F6D8BC6",
+      "snapshot_physical_rel": "core/Configs/AimModifiers/RecoilAimModifier_M60.conf"
+    },
+    {
+      "guid": "4D2C1E8F3A81F894",
+      "path": "Prefabs/Weapons/Magazines/Box_762x51_M60_100rnd_4Ball_1Tracer.et",
+      "resolved": "local",
+      "target": "Prefabs/Weapons/Magazines/Western/762x51/Box/armst_Box_762x51_M60_100rnd_4Ball_1Tracer.et",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/MachineGuns/M60/MG_M60_base.et"
+    },
+    {
+      "guid": "687B3DA431730CFA",
+      "path": "Prefabs/Weapons/Core/Configs/FireModes/FireMode_Safe.conf",
+      "resolved": "base_game_snapshot",
+      "target": "Prefabs/Weapons/Core/Configs/FireModes/FireMode_Safe.conf",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Core/MachineGun_Base.et",
+      "snapshot_import_guid": "60B0FC29181A99F4",
+      "snapshot_physical_rel": "core/Configs/FireModes/FireMode_Safe.conf"
+    },
+    {
+      "guid": "98679E6527D54714",
+      "path": "Prefabs/Weapons/Core/Configs/TriggerEffects/Safety/TriggerEffect_SafetyHeavy.conf",
+      "resolved": "base_game_snapshot",
+      "target": "Prefabs/Weapons/Core/Configs/TriggerEffects/Safety/TriggerEffect_SafetyHeavy.conf",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Core/MachineGun_Base.et",
+      "snapshot_import_guid": "5FE6660A7A1891E3",
+      "snapshot_physical_rel": "core/Configs/TriggerEffects/Safety/TriggerEffect_SafetyHeavy.conf"
+    },
+    {
+      "guid": "7C114BA7C59E198D",
+      "path": "Configs/WeaponInfo/MagazineIndicators/box.conf",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Core/MachineGun_Base.et"
+    },
+    {
+      "guid": "2CEB8F15E51AA7F3",
+      "path": "Assets/Weapons/MachineGuns/workspaces/m60.agr",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/MachineGuns/M60/MG_M60_base.et"
+    },
+    {
+      "guid": "A21DB14BF0056E3A",
+      "path": "Assets/Weapons/MachineGuns/workspaces/m60_weapon.asi",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/MachineGuns/M60/MG_M60_base.et"
+    },
+    {
+      "guid": "47194A49CC8F699D",
+      "path": "Assets/Weapons/MachineGuns/workspaces/m60_player.asi",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/MachineGuns/M60/MG_M60_base.et"
+    },
+    {
+      "guid": "7F109B4319DFAFFE",
+      "path": "Prefabs/Weapons/Core/Configs/TriggerEffects/Charged/TriggerEffect_ChargedHeavy.conf",
+      "resolved": "base_game_snapshot",
+      "target": "Prefabs/Weapons/Core/Configs/TriggerEffects/Charged/TriggerEffect_ChargedHeavy.conf",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Core/MachineGun_Base.et",
+      "snapshot_import_guid": "3A940F52F22379DF",
+      "snapshot_physical_rel": "core/Configs/TriggerEffects/Charged/TriggerEffect_ChargedHeavy.conf"
+    },
+    {
+      "guid": "FD6D307018F1F3C9",
+      "path": "Prefabs/Weapons/Core/Configs/TriggerEffects/ADS/TriggerEffect_ADSHeavy.conf",
+      "resolved": "base_game_snapshot",
+      "target": "Prefabs/Weapons/Core/Configs/TriggerEffects/ADS/TriggerEffect_ADSHeavy.conf",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Core/MachineGun_Base.et",
+      "snapshot_import_guid": "BD40D917AC1C4832",
+      "snapshot_physical_rel": "core/Configs/TriggerEffects/ADS/TriggerEffect_ADSHeavy.conf"
+    },
+    {
+      "guid": "F1C8849555C5B13D",
+      "path": "Prefabs/Weapons/Core/Configs/TriggerEffects/Fire/TriggerEffect_FireHeavy.conf",
+      "resolved": "base_game_snapshot",
+      "target": "Prefabs/Weapons/Core/Configs/TriggerEffects/Fire/TriggerEffect_FireHeavy.conf",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Core/MachineGun_Base.et",
+      "snapshot_import_guid": "15B2AD693E4CDF32",
+      "snapshot_physical_rel": "core/Configs/TriggerEffects/Fire/TriggerEffect_FireHeavy.conf"
+    }
+  ],
+  "warnings": [],
+  "data": {
+    "identity": {
+      "name": null
+    },
+    "fire_modes": [
+      {
+        "mode_id": "{B80A64F4A8EF8333}",
+        "ui_name": null,
+        "rounds_per_minute": {
+          "value": 550,
+          "defined_in": "base_game_snapshot:Prefabs/Weapons/MachineGuns/M60/MG_M60_base.et",
+          "inherited": true
+        },
+        "max_burst": null,
+        "defined_in": "base_game_snapshot:Prefabs/Weapons/MachineGuns/M60/MG_M60_base.et",
+        "rounds_per_second": {
+          "value": 9.167,
+          "derived": true
+        }
+      }
+    ],
+    "physical": {
+      "Weight": null,
+      "SizeSetupStrategy": null,
+      "ItemDimensions": null,
+      "ItemVolume": null,
+      "DimensionScaler": null,
+      "_defined_in": "base_game_snapshot:Prefabs/Weapons/MachineGuns/M60/MG_M60_base.et",
+      "Mass": null,
+      "MeleeDamage": {
+        "value": 45,
+        "defined_in": "base_game_snapshot:Prefabs/Weapons/MachineGuns/M60/MG_M60_base.et",
+        "inherited": true
+      },
+      "Model": {
+        "guid": "7C7F521634ADBF9A",
+        "path": "Assets/Weapons/MachineGuns/M60/M60_Body.xob",
+        "defined_in": "base_game_snapshot:Prefabs/Weapons/MachineGuns/M60/MG_M60_base.et"
+      }
+    },
+    "magazine": {
+      "magazine_well": {
+        "name": "MagazineWell",
+        "class": "MagazineWellM60",
+        "defined_in": "base_game_snapshot:Prefabs/Weapons/MachineGuns/M60/MG_M60_base.et"
+      },
+      "magazine_template": {
+        "guid": "4D2C1E8F3A81F894",
+        "path": "Prefabs/Weapons/Magazines/Box_762x51_M60_100rnd_4Ball_1Tracer.et",
+        "defined_in": "base_game_snapshot:Prefabs/Weapons/MachineGuns/M60/MG_M60_base.et"
+      }
+    },
+    "ballistics": {
+      "bullet_init_speed_coef": null,
+      "dispersion_diameter": {
+        "value": 0.4,
+        "defined_in": "base_game_snapshot:Prefabs/Weapons/MachineGuns/M60/MG_M60_base.et",
+        "inherited": true
+      },
+      "dispersion_range": {
+        "value": 320,
+        "defined_in": "base_game_snapshot:Prefabs/Weapons/MachineGuns/M60/MG_M60_base.et",
+        "inherited": true
+      }
+    },
+    "aim": {
+      "recoil": {
+        "LinearData": null,
+        "AngularData": null,
+        "TurnOffsetData": null
+      },
+      "sway": null
+    },
+    "sights": {
+      "switch_skip": null,
+      "ranges": [
+        [
+          0.118,
+          300
+        ],
+        [
+          0.157,
+          400
+        ],
+        [
+          0.186,
+          500
+        ],
+        [
+          0.234,
+          600
+        ],
+        [
+          0.278,
+          700
+        ],
+        [
+          0.338,
+          800
+        ],
+        [
+          0.393,
+          900
+        ],
+        [
+          0.472,
+          1000
+        ],
+        [
+          0.553,
+          1100
+        ]
+      ],
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Core/MachineGun_Base.et"
+    },
+    "attachment_slots": [],
+    "muzzle_attachment": null,
+    "animation": {
+      "anim_graph": {
+        "guid": "2CEB8F15E51AA7F3",
+        "path": "Assets/Weapons/MachineGuns/workspaces/m60.agr",
+        "defined_in": "base_game_snapshot:Prefabs/Weapons/MachineGuns/M60/MG_M60_base.et"
+      },
+      "anim_instance": {
+        "guid": "A21DB14BF0056E3A",
+        "path": "Assets/Weapons/MachineGuns/workspaces/m60_weapon.asi",
+        "defined_in": "base_game_snapshot:Prefabs/Weapons/MachineGuns/M60/MG_M60_base.et"
+      }
+    }
+  },
+  "derived": {
+    "max_rounds_per_second": 9.167,
+    "dispersion_m_per_m": {
+      "value": 1.25,
+      "formula": "DispersionDiameter / DispersionRange * 1000"
+    },
+    "approx_moa": {
+      "value": 4.297,
+      "formula": "DispersionDiameter / DispersionRange * 3437.75"
+    }
+  }
+}

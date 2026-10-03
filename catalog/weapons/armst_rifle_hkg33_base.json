@@ -22,19 +22,29 @@
         "resource": "Prefabs/Weapons/Western/Rifle/HKG33/armst_Rifle_HKG33_base.et",
         "status": "local",
         "class": "GenericEntity"
-      }
-    ],
-    "external_parents": [
+      },
       {
-        "guid": "C63227C0E70EA62E",
-        "path": "Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et",
-        "raw": "{C63227C0E70EA62E}Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et"
+        "resource": "Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et",
+        "status": "base_game_snapshot",
+        "class": "GenericEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Core/Rifle_Base.et",
+        "status": "base_game_snapshot",
+        "class": "GenericEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Core/Weapon_Base.et",
+        "status": "base_game_snapshot",
+        "class": "GenericEntity"
       }
     ],
+    "external_parents": [],
     "used_as_base_by": [
       "Prefabs/Weapons/Western/Rifle/HKG33/armst_Rifle_HKG33.et"
     ],
-    "chain_depth_local": 1
+    "chain_depth_local": 1,
+    "chain_depth_base_game_snapshot": 3
   },
   "references": [
     {
@@ -50,6 +60,103 @@
       "resolved": "local",
       "target": "Assets/Weapons_NATO/HKG3/Anim/Diff/p_rfl_HKG3_ik.anm",
       "defined_in": "Prefabs/Weapons/Western/Rifle/HKG33/armst_Rifle_HKG33_base.et"
+    },
+    {
+      "guid": "0350283642830782",
+      "path": "anims/workspaces/player/player_main_rifle.asi",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et"
+    },
+    {
+      "guid": "90219595CD0EB51D",
+      "path": "Assets/Weapons/Rifles/M16A2/anims/anm/p_m16_ik.anm",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et"
+    },
+    {
+      "guid": "4BF43F7D0D462D39",
+      "path": "Particles/Weapon/Casing_556x45.ptc",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et"
+    },
+    {
+      "guid": "DDF8E6F5BCEABCCC",
+      "path": "Particles/Weapon/Muzzle_M16A2_Open.ptc",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et"
+    },
+    {
+      "guid": "D5D52E848DBCAA53",
+      "path": "Prefabs/Weapons/Core/Configs/FireModes/FireMode_Single.conf",
+      "resolved": "base_game_snapshot",
+      "target": "Prefabs/Weapons/Core/Configs/FireModes/FireMode_Single.conf",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et",
+      "snapshot_import_guid": "FAF4B3FB6DE91626",
+      "snapshot_physical_rel": "core/Configs/FireModes/FireMode_Single.conf"
+    },
+    {
+      "guid": "B5D823125A678D73",
+      "path": "Prefabs/Weapons/Core/Configs/FireModes/FireMode_Burst.conf",
+      "resolved": "base_game_snapshot",
+      "target": "Prefabs/Weapons/Core/Configs/FireModes/FireMode_Burst.conf",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et",
+      "snapshot_import_guid": "E68C2BD7F3076B30",
+      "snapshot_physical_rel": "core/Configs/FireModes/FireMode_Burst.conf"
+    },
+    {
+      "guid": "1AA788302FE3C53A",
+      "path": "Configs/WeaponInfo/MagazineIndicators/ak74_30.conf",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et"
+    },
+    {
+      "guid": "D8F2CA92583B23D3",
+      "path": "Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M855_M856_Last_5Tracer.et",
+      "resolved": "base_game_snapshot",
+      "target": "Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M855_M856_Last_5Tracer.et",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et",
+      "snapshot_import_guid": "3538DC28E8D45DA1",
+      "snapshot_physical_rel": "magazines/Magazine_556x45_STANAG_30rnd_M855_M856_Last_5Tracer.et"
+    },
+    {
+      "guid": "C10E1E127E210526",
+      "path": "Assets/Weapons/Rifles/workspaces/m16.agr",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et"
+    },
+    {
+      "guid": "278604E4583F2647",
+      "path": "Assets/Weapons/Rifles/workspaces/m16_weapon.asi",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et"
+    },
+    {
+      "guid": "DCD895D5C03E42AB",
+      "path": "Assets/Weapons/Rifles/workspaces/m16_player.asi",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et"
+    },
+    {
+      "guid": "DB92C647E05B2512",
+      "path": "Sounds/Weapons/Rifles/M16A2/Weapons_Rifles_M16A2_Shot.acp",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et"
+    },
+    {
+      "guid": "970293F8561231D4",
+      "path": "Configs/UI/NearbyInteractionContext/NearbyContextWeapons.conf",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et"
     },
     {
       "guid": "6D18CC33708EE713",
@@ -87,6 +194,13 @@
     },
     "fire_modes": [],
     "physical": {
+      "Weight": null,
+      "SizeSetupStrategy": null,
+      "ItemDimensions": null,
+      "ItemVolume": null,
+      "DimensionScaler": null,
+      "_defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/M16/Rifle_M16A2_base.et",
+      "Mass": null,
       "MeleeDamage": {
         "value": 2,
         "defined_in": "Prefabs/Weapons/Western/Rifle/HKG33/armst_Rifle_HKG33_base.et",

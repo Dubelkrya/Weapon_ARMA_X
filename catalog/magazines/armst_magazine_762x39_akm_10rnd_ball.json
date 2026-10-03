@@ -27,17 +27,22 @@
         "resource": "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_30rnd_Ball.et",
         "status": "local",
         "class": "GenericEntity"
-      }
-    ],
-    "external_parents": [
+      },
       {
-        "guid": "892F30500E6E7E04",
-        "path": "Prefabs/Weapons/Magazines/Vz58/Magazine_762x39_Vz58_30rnd_Base.et",
-        "raw": "{892F30500E6E7E04}Prefabs/Weapons/Magazines/Vz58/Magazine_762x39_Vz58_30rnd_Base.et"
+        "resource": "Prefabs/Weapons/Magazines/Vz58/Magazine_762x39_Vz58_30rnd_Base.et",
+        "status": "base_game_snapshot",
+        "class": "GenericEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Core/Magazine_Base.et",
+        "status": "base_game_snapshot",
+        "class": "GenericEntity"
       }
     ],
+    "external_parents": [],
     "used_as_base_by": [],
-    "chain_depth_local": 2
+    "chain_depth_local": 2,
+    "chain_depth_base_game_snapshot": 2
   },
   "references": [
     {
@@ -46,6 +51,13 @@
       "resolved": "local",
       "target": "Configs/Weapons/Ammo/ARMST/armst_Ammo_762x39_ARMST.conf",
       "defined_in": "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_10rnd_Ball.et"
+    },
+    {
+      "guid": "6810AE1CC6F1621D",
+      "path": "Configs/Weapons/Ammo/Ammo_762x39.conf",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Magazines/Vz58/Magazine_762x39_Vz58_30rnd_Base.et"
     },
     {
       "guid": "BBC309082F524767",
@@ -57,7 +69,11 @@
   ],
   "warnings": [],
   "data": {
-    "magazine_well": null,
+    "magazine_well": {
+      "name": "MagazineWell",
+      "class": "MagazineWellVZ58_762",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Magazines/Vz58/Magazine_762x39_Vz58_30rnd_Base.et"
+    },
     "ammo_config": {
       "guid": "EA0E25BAF3BD459F",
       "path": "Configs/Weapons/Ammo/ARMST/armst_Ammo_762x39_ARMST.conf",
@@ -82,8 +98,9 @@
     ],
     "caliber_id": null,
     "name": null,
-    "_defined_in": "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_30rnd_Ball.et",
+    "_defined_in": "base_game_snapshot:Prefabs/Weapons/Magazines/Vz58/Magazine_762x39_Vz58_30rnd_Base.et",
     "display_name": null,
+    "weight": null,
     "grid": {
       "width": null,
       "height": {
@@ -92,7 +109,7 @@
         "inherited": false
       }
     },
-    "_inv_defined_in": "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_30rnd_Ball.et",
+    "_inv_defined_in": "base_game_snapshot:Prefabs/Weapons/Core/Magazine_Base.et",
     "editor_name": {
       "value": "AKM magazine 10rnd",
       "defined_in": "Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_10rnd_Ball.et",

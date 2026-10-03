@@ -22,62 +22,350 @@
         "resource": "Prefabs/Weapons/Russian/Rifle/SVD/armst_Rifle_SVD.et",
         "status": "local",
         "class": "GenericEntity"
-      }
-    ],
-    "external_parents": [
+      },
       {
-        "guid": "A3E183EB5A2F3A38",
-        "path": "Prefabs/Weapons/Rifles/SVD/Rifle_SVD_base.et",
-        "raw": "{A3E183EB5A2F3A38}Prefabs/Weapons/Rifles/SVD/Rifle_SVD_base.et"
+        "resource": "Prefabs/Weapons/Rifles/SVD/Rifle_SVD_base.et",
+        "status": "base_game_snapshot",
+        "class": "GenericEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Core/LongRangeRifle_Base.et",
+        "status": "base_game_snapshot",
+        "class": "GenericEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Core/Rifle_Base.et",
+        "status": "base_game_snapshot",
+        "class": "GenericEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Core/Weapon_Base.et",
+        "status": "base_game_snapshot",
+        "class": "GenericEntity"
       }
     ],
+    "external_parents": [],
     "used_as_base_by": [],
-    "chain_depth_local": 1
+    "chain_depth_local": 1,
+    "chain_depth_base_game_snapshot": 4
   },
-  "references": [],
+  "references": [
+    {
+      "guid": "A6D522CA179367B7",
+      "path": "Assets/Weapons/Rifles/SVD/anims/anm/p_SVD_ik.anm",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/SVD/Rifle_SVD_base.et"
+    },
+    {
+      "guid": "0350283642830782",
+      "path": "anims/workspaces/player/player_main_rifle.asi",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Core/LongRangeRifle_Base.et"
+    },
+    {
+      "guid": "B7869ABD0EEE379D",
+      "path": "Assets/Weapons/Rifles/AK74/anims/anm/p_ak74_ik.anm",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Core/LongRangeRifle_Base.et"
+    },
+    {
+      "guid": "83DC2DCAF6EDC75F",
+      "path": "Particles/Weapon/Casing_762x54.ptc",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/SVD/Rifle_SVD_base.et"
+    },
+    {
+      "guid": "C19A137311FAEB03",
+      "path": "Particles/Weapon/Smoke_SVD.ptc",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/SVD/Rifle_SVD_base.et"
+    },
+    {
+      "guid": "C4207543B467D89C",
+      "path": "Particles/Weapon/Muzzle_SVD.ptc",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/SVD/Rifle_SVD_base.et"
+    },
+    {
+      "guid": "0E6B74D9C265E140",
+      "path": "Prefabs/Weapons/Core/Recoil/Rifle_LongRange_762_recoil.conf",
+      "resolved": "base_game_snapshot",
+      "target": "Prefabs/Weapons/Core/Recoil/Rifle_LongRange_762_recoil.conf",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/SVD/Rifle_SVD_base.et",
+      "snapshot_import_guid": "1882D2A1960EC08D",
+      "snapshot_physical_rel": "core/Recoil/Rifle_LongRange_762_recoil.conf"
+    },
+    {
+      "guid": "6098E2D1A3DB2DA3",
+      "path": "Configs/WeaponInfo/MagazineIndicators/svd_10.conf",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/SVD/Rifle_SVD_base.et"
+    },
+    {
+      "guid": "9CCB46C6EE632C1A",
+      "path": "Prefabs/Weapons/Magazines/Magazine_762x54_SVD_10rnd_Sniper.et",
+      "resolved": "base_game_snapshot",
+      "target": "Prefabs/Weapons/Magazines/Magazine_762x54_SVD_10rnd_Sniper.et",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/SVD/Rifle_SVD_base.et",
+      "snapshot_import_guid": "FB852564E7E5CB5A",
+      "snapshot_physical_rel": "magazines/Magazine_762x54_SVD_10rnd_Sniper.et"
+    },
+    {
+      "guid": "687B3DA431730CFA",
+      "path": "Prefabs/Weapons/Core/Configs/FireModes/FireMode_Safe.conf",
+      "resolved": "base_game_snapshot",
+      "target": "Prefabs/Weapons/Core/Configs/FireModes/FireMode_Safe.conf",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Core/LongRangeRifle_Base.et",
+      "snapshot_import_guid": "60B0FC29181A99F4",
+      "snapshot_physical_rel": "core/Configs/FireModes/FireMode_Safe.conf"
+    },
+    {
+      "guid": "3568E9D86F77DEB7",
+      "path": "Prefabs/Weapons/Core/Configs/TriggerEffects/Safety/TriggerEffect_SafetyLight.conf",
+      "resolved": "base_game_snapshot",
+      "target": "Prefabs/Weapons/Core/Configs/TriggerEffects/Safety/TriggerEffect_SafetyLight.conf",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Core/LongRangeRifle_Base.et",
+      "snapshot_import_guid": "F2E911B732BA0840",
+      "snapshot_physical_rel": "core/Configs/TriggerEffects/Safety/TriggerEffect_SafetyLight.conf"
+    },
+    {
+      "guid": "D5D52E848DBCAA53",
+      "path": "Prefabs/Weapons/Core/Configs/FireModes/FireMode_Single.conf",
+      "resolved": "base_game_snapshot",
+      "target": "Prefabs/Weapons/Core/Configs/FireModes/FireMode_Single.conf",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Core/LongRangeRifle_Base.et",
+      "snapshot_import_guid": "FAF4B3FB6DE91626",
+      "snapshot_physical_rel": "core/Configs/FireModes/FireMode_Single.conf"
+    },
+    {
+      "guid": "D2AF9B3D46653B41",
+      "path": "Assets/Weapons/Rifles/workspaces/SVD.agr",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/SVD/Rifle_SVD_base.et"
+    },
+    {
+      "guid": "863724F659672B6A",
+      "path": "Assets/Weapons/Rifles/workspaces/SVD_weapon.asi",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/SVD/Rifle_SVD_base.et"
+    },
+    {
+      "guid": "7D69B5C7C1664F86",
+      "path": "Assets/Weapons/Rifles/workspaces/SVD_player.asi",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/SVD/Rifle_SVD_base.et"
+    },
+    {
+      "guid": "A84D9F22F2C0D9CE",
+      "path": "Sounds/Weapons/_SharedData/PickUp/Weapons_PickUp_Rifle_WoodMetal.acp",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/SVD/Rifle_SVD_base.et"
+    },
+    {
+      "guid": "DBB4CBF206BDFB3C",
+      "path": "Assets/Weapons/Rifles/SVD/SVD_body.xob",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/SVD/Rifle_SVD_base.et"
+    },
+    {
+      "guid": "FD6D307018F1F3C9",
+      "path": "Prefabs/Weapons/Core/Configs/TriggerEffects/ADS/TriggerEffect_ADSHeavy.conf",
+      "resolved": "base_game_snapshot",
+      "target": "Prefabs/Weapons/Core/Configs/TriggerEffects/ADS/TriggerEffect_ADSHeavy.conf",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Core/LongRangeRifle_Base.et",
+      "snapshot_import_guid": "BD40D917AC1C4832",
+      "snapshot_physical_rel": "core/Configs/TriggerEffects/ADS/TriggerEffect_ADSHeavy.conf"
+    }
+  ],
   "warnings": [],
   "data": {
     "identity": {
       "name": null
     },
-    "fire_modes": [],
+    "fire_modes": [
+      {
+        "mode_id": "{506B20D1476BA99E}",
+        "ui_name": null,
+        "rounds_per_minute": null,
+        "max_burst": null,
+        "defined_in": "base_game_snapshot:Prefabs/Weapons/Core/LongRangeRifle_Base.et"
+      },
+      {
+        "mode_id": "{B80A64F4A8EF8333}",
+        "ui_name": null,
+        "rounds_per_minute": null,
+        "max_burst": null,
+        "defined_in": "base_game_snapshot:Prefabs/Weapons/Core/LongRangeRifle_Base.et"
+      }
+    ],
     "physical": {
+      "Weight": null,
+      "SizeSetupStrategy": null,
+      "ItemDimensions": null,
+      "ItemVolume": null,
+      "DimensionScaler": null,
+      "_defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/SVD/Rifle_SVD_base.et",
+      "Mass": null,
       "MeleeDamage": {
         "value": 2,
         "defined_in": "Prefabs/Weapons/Russian/Rifle/SVD/armst_Rifle_SVD.et",
         "inherited": false
+      },
+      "Model": {
+        "guid": "DBB4CBF206BDFB3C",
+        "path": "Assets/Weapons/Rifles/SVD/SVD_body.xob",
+        "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/SVD/Rifle_SVD_base.et"
       }
     },
     "magazine": {
-      "magazine_well": null,
-      "magazine_template": null
+      "magazine_well": {
+        "name": "MagazineWell",
+        "class": "MagazineWellSVD",
+        "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/SVD/Rifle_SVD_base.et"
+      },
+      "magazine_template": {
+        "guid": "9CCB46C6EE632C1A",
+        "path": "Prefabs/Weapons/Magazines/Magazine_762x54_SVD_10rnd_Sniper.et",
+        "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/SVD/Rifle_SVD_base.et"
+      }
     },
     "ballistics": {
       "bullet_init_speed_coef": null,
-      "dispersion_diameter": null,
-      "dispersion_range": null
+      "dispersion_diameter": {
+        "value": 0.4,
+        "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/SVD/Rifle_SVD_base.et",
+        "inherited": true
+      },
+      "dispersion_range": {
+        "value": 680,
+        "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/SVD/Rifle_SVD_base.et",
+        "inherited": true
+      }
     },
     "aim": {
-      "recoil": null,
+      "recoil": {
+        "LinearData": null,
+        "AngularData": null,
+        "TurnOffsetData": null
+      },
       "sway": null
     },
-    "sights": null,
+    "sights": {
+      "switch_skip": null,
+      "ranges": [
+        [
+          0.465,
+          100
+        ],
+        [
+          0.555,
+          200
+        ],
+        [
+          0.619,
+          300
+        ],
+        [
+          0.731,
+          400
+        ],
+        [
+          0.802,
+          500
+        ],
+        [
+          0.903,
+          600
+        ],
+        [
+          0.984,
+          700
+        ],
+        [
+          1,
+          800
+        ],
+        [
+          1,
+          900
+        ],
+        [
+          1,
+          1000
+        ],
+        [
+          1,
+          1100
+        ],
+        [
+          1,
+          1200
+        ]
+      ],
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Core/LongRangeRifle_Base.et"
+    },
     "attachment_slots": [
       {
         "slot": null,
-        "pivot": null,
+        "pivot": {
+          "value": "slot_optics",
+          "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/SVD/Rifle_SVD_base.et",
+          "inherited": true
+        },
         "enabled": null,
         "attachment_types": [
           "{58E2BCF926D50DE5}"
         ],
-        "defined_in": "Prefabs/Weapons/Russian/Rifle/SVD/armst_Rifle_SVD.et"
+        "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/SVD/Rifle_SVD_base.et"
+      },
+      {
+        "slot": null,
+        "pivot": {
+          "value": "barrel_muzzle",
+          "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/SVD/Rifle_SVD_base.et",
+          "inherited": true
+        },
+        "enabled": null,
+        "attachment_types": [
+          "{68EED14E628EF379}"
+        ],
+        "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/SVD/Rifle_SVD_base.et"
       }
     ],
     "muzzle_attachment": null,
     "animation": {
-      "anim_graph": null,
-      "anim_instance": null
+      "anim_graph": {
+        "guid": "D2AF9B3D46653B41",
+        "path": "Assets/Weapons/Rifles/workspaces/SVD.agr",
+        "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/SVD/Rifle_SVD_base.et"
+      },
+      "anim_instance": {
+        "guid": "863724F659672B6A",
+        "path": "Assets/Weapons/Rifles/workspaces/SVD_weapon.asi",
+        "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/SVD/Rifle_SVD_base.et"
+      }
     }
   },
-  "derived": {}
+  "derived": {
+    "dispersion_m_per_m": {
+      "value": 0.5882,
+      "formula": "DispersionDiameter / DispersionRange * 1000"
+    },
+    "approx_moa": {
+      "value": 2.022,
+      "formula": "DispersionDiameter / DispersionRange * 3437.75"
+    }
+  }
 }

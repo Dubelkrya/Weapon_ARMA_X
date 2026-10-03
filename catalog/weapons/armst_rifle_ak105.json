@@ -27,17 +27,37 @@
         "resource": "Prefabs/Weapons/Russian/Rifle/AK74/armst_Rifle_AK74N.et",
         "status": "local",
         "class": "GenericEntity"
-      }
-    ],
-    "external_parents": [
+      },
       {
-        "guid": "EAE9A298979C4721",
-        "path": "Prefabs/Weapons/Rifles/AK74/Rifle_AK74N_base.et",
-        "raw": "{EAE9A298979C4721}Prefabs/Weapons/Rifles/AK74/Rifle_AK74N_base.et"
+        "resource": "Prefabs/Weapons/Rifles/AK74/Rifle_AK74N_base.et",
+        "status": "base_game_snapshot",
+        "class": "GenericEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Rifles/AK74/Rifle_AK74_long_base.et",
+        "status": "base_game_snapshot",
+        "class": "GenericEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Rifles/AK74/Rifle_AK74_base.et",
+        "status": "base_game_snapshot",
+        "class": "GenericEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Core/Rifle_Base.et",
+        "status": "base_game_snapshot",
+        "class": "GenericEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Core/Weapon_Base.et",
+        "status": "base_game_snapshot",
+        "class": "GenericEntity"
       }
     ],
+    "external_parents": [],
     "used_as_base_by": [],
-    "chain_depth_local": 2
+    "chain_depth_local": 2,
+    "chain_depth_base_game_snapshot": 5
   },
   "references": [
     {
@@ -48,18 +68,103 @@
       "defined_in": "Prefabs/Weapons/Russian/Rifle/AK74/armst_Rifle_AK105.et"
     },
     {
-      "guid": "28DE12055E70E762",
-      "path": "Prefabs/Weapons/Attachments/Optics/armst_Optic_Collimator.et",
-      "resolved": "local",
-      "target": "Prefabs/Weapons/Attachments/Optics/armst_Optic_Collimator.et",
-      "defined_in": "Prefabs/Weapons/Russian/Rifle/AK74/armst_Rifle_AK74N.et"
+      "guid": "0350283642830782",
+      "path": "anims/workspaces/player/player_main_rifle.asi",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/AK74/Rifle_AK74_base.et"
     },
     {
-      "guid": "D71FD2BD68AC4B31",
-      "path": "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et",
-      "resolved": "local",
-      "target": "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et",
-      "defined_in": "Prefabs/Weapons/Russian/Rifle/AK74/armst_Rifle_AK74N.et"
+      "guid": "B7869ABD0EEE379D",
+      "path": "Assets/Weapons/Rifles/AK74/anims/anm/p_ak74_ik.anm",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/AK74/Rifle_AK74_base.et"
+    },
+    {
+      "guid": "D92368B78263A9E0",
+      "path": "Prefabs/Weapons/Attachments/Mounts/Dovetail_AK/Dovetail_AK.et",
+      "resolved": "base_game_snapshot",
+      "target": "Prefabs/Weapons/Attachments/Mounts/Dovetail_AK/Dovetail_AK.et",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/AK74/Rifle_AK74N_base.et",
+      "snapshot_import_guid": "BE6D0B158BE54EA0",
+      "snapshot_physical_rel": "attachments/Mounts/Dovetail_AK/Dovetail_AK.et"
+    },
+    {
+      "guid": "D6F9CC979B1A5C89",
+      "path": "Particles/Weapon/Muzzle_AK74_Open.ptc",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/AK74/Rifle_AK74_base.et"
+    },
+    {
+      "guid": "54958EFDEF383B1B",
+      "path": "Particles/Weapon/Casing_545x39.ptc",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/AK74/Rifle_AK74_base.et"
+    },
+    {
+      "guid": "A512F292D96BCB9F",
+      "path": "Prefabs/Weapons/Core/Configs/FireModes/FireMode_Auto.conf",
+      "resolved": "base_game_snapshot",
+      "target": "Prefabs/Weapons/Core/Configs/FireModes/FireMode_Auto.conf",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/AK74/Rifle_AK74_base.et",
+      "snapshot_import_guid": "09B76AF4205785A9",
+      "snapshot_physical_rel": "core/Configs/FireModes/FireMode_Auto.conf"
+    },
+    {
+      "guid": "D5D52E848DBCAA53",
+      "path": "Prefabs/Weapons/Core/Configs/FireModes/FireMode_Single.conf",
+      "resolved": "base_game_snapshot",
+      "target": "Prefabs/Weapons/Core/Configs/FireModes/FireMode_Single.conf",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/AK74/Rifle_AK74_base.et",
+      "snapshot_import_guid": "FAF4B3FB6DE91626",
+      "snapshot_physical_rel": "core/Configs/FireModes/FireMode_Single.conf"
+    },
+    {
+      "guid": "0A84AA5A3884176F",
+      "path": "Prefabs/Weapons/Magazines/Magazine_545x39_AK_30rnd_Last_5Tracer.et",
+      "resolved": "base_game_snapshot",
+      "target": "Prefabs/Weapons/Magazines/Magazine_545x39_AK_30rnd_Last_5Tracer.et",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/AK74/Rifle_AK74_base.et",
+      "snapshot_import_guid": "73275B2E5ABC1127",
+      "snapshot_physical_rel": "magazines/Magazine_545x39_AK_30rnd_Last_5Tracer.et"
+    },
+    {
+      "guid": "ADDF1CC42A489D84",
+      "path": "Assets/Weapons/Rifles/workspaces/ak74.agr",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/AK74/Rifle_AK74_base.et"
+    },
+    {
+      "guid": "022310A34B9AF611",
+      "path": "Assets/Weapons/Rifles/workspaces/ak74_weapon.asi",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/AK74/Rifle_AK74_base.et"
+    },
+    {
+      "guid": "F97D8192D39B92FD",
+      "path": "Assets/Weapons/Rifles/workspaces/ak74_player.asi",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/AK74/Rifle_AK74_base.et"
+    },
+    {
+      "guid": "970293F8561231D4",
+      "path": "Configs/UI/NearbyInteractionContext/NearbyContextWeapons.conf",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/AK74/Rifle_AK74_base.et"
+    },
+    {
+      "guid": "2C3081D1EE023D68",
+      "path": "Sounds/Weapons/Rifles/AK-74/Weapons_Rifles_AK-74_Shot.acp",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/AK74/Rifle_AK74_base.et"
     }
   ],
   "warnings": [],
@@ -67,8 +172,51 @@
     "identity": {
       "name": null
     },
-    "fire_modes": [],
+    "fire_modes": [
+      {
+        "mode_id": "{B80A64F4A8EF8333}",
+        "ui_name": null,
+        "rounds_per_minute": {
+          "value": 650,
+          "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/AK74/Rifle_AK74_base.et",
+          "inherited": true
+        },
+        "max_burst": null,
+        "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/AK74/Rifle_AK74_base.et",
+        "rounds_per_second": {
+          "value": 10.833,
+          "derived": true
+        }
+      },
+      {
+        "mode_id": "{619AB45C30091E43}",
+        "ui_name": null,
+        "rounds_per_minute": {
+          "value": 650,
+          "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/AK74/Rifle_AK74_base.et",
+          "inherited": true
+        },
+        "max_burst": null,
+        "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/AK74/Rifle_AK74_base.et",
+        "rounds_per_second": {
+          "value": 10.833,
+          "derived": true
+        }
+      }
+    ],
     "physical": {
+      "Weight": null,
+      "SizeSetupStrategy": null,
+      "ItemDimensions": null,
+      "ItemVolume": null,
+      "DimensionScaler": null,
+      "_defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/AK74/Rifle_AK74_base.et",
+      "Mass": null,
+      "MeleeDamage": {
+        "value": 20,
+        "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/AK74/Rifle_AK74_base.et",
+        "inherited": true
+      },
       "Model": {
         "guid": "1045C3E76CDB57C1",
         "path": "Assets/Weapons_RUS/Ak_105/Ak_105.xob",
@@ -76,37 +224,116 @@
       }
     },
     "magazine": {
-      "magazine_well": null,
-      "magazine_template": null
+      "magazine_well": {
+        "name": "MagazineWell",
+        "class": "MagazineWellAK545",
+        "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/AK74/Rifle_AK74_base.et"
+      },
+      "magazine_template": {
+        "guid": "0A84AA5A3884176F",
+        "path": "Prefabs/Weapons/Magazines/Magazine_545x39_AK_30rnd_Last_5Tracer.et",
+        "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/AK74/Rifle_AK74_base.et"
+      }
     },
     "ballistics": {
       "bullet_init_speed_coef": null,
-      "dispersion_diameter": null,
-      "dispersion_range": null
+      "dispersion_diameter": {
+        "value": 0.4,
+        "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/AK74/Rifle_AK74_base.et",
+        "inherited": true
+      },
+      "dispersion_range": {
+        "value": 320,
+        "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/AK74/Rifle_AK74_base.et",
+        "inherited": true
+      }
     },
     "aim": {
-      "recoil": null,
+      "recoil": {
+        "LinearData": {
+          "values": {
+            "curve_magnitudes": null,
+            "curve_mins": null,
+            "curve_maxs": null,
+            "curve_time_scale": null,
+            "base_recoil_scale": null
+          },
+          "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/AK74/Rifle_AK74_long_base.et"
+        },
+        "AngularData": {
+          "values": {
+            "curve_magnitudes": null,
+            "curve_mins": null,
+            "curve_maxs": null,
+            "curve_time_scale": null,
+            "base_recoil_scale": null
+          },
+          "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/AK74/Rifle_AK74_long_base.et"
+        },
+        "TurnOffsetData": {
+          "values": {
+            "curve_magnitudes": null,
+            "curve_mins": null,
+            "curve_maxs": null,
+            "curve_time_scale": null,
+            "base_recoil_scale": null
+          },
+          "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/AK74/Rifle_AK74_long_base.et"
+        }
+      },
       "sway": null
     },
-    "sights": null,
-    "attachment_slots": [
-      {
-        "slot": null,
-        "pivot": {
-          "value": "slot_optics",
-          "defined_in": "Prefabs/Weapons/Russian/Rifle/AK74/armst_Rifle_AK105.et",
-          "inherited": false
-        },
-        "enabled": {
-          "value": 1,
-          "defined_in": "Prefabs/Weapons/Russian/Rifle/AK74/armst_Rifle_AK105.et",
-          "inherited": false
-        },
-        "attachment_types": [
-          "{5D0CCDD0615C597D}"
+    "sights": {
+      "switch_skip": null,
+      "ranges": [
+        [
+          0.323,
+          440
         ],
-        "defined_in": "Prefabs/Weapons/Russian/Rifle/AK74/armst_Rifle_AK105.et"
-      },
+        [
+          0.1,
+          100
+        ],
+        [
+          0.153,
+          200
+        ],
+        [
+          0.208,
+          300
+        ],
+        [
+          0.3,
+          400
+        ],
+        [
+          0.365,
+          500
+        ],
+        [
+          0.426,
+          600
+        ],
+        [
+          0.526,
+          700
+        ],
+        [
+          0.622,
+          800
+        ],
+        [
+          0.703,
+          900
+        ],
+        [
+          0.814,
+          1000
+        ]
+      ],
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/AK74/Rifle_AK74_long_base.et"
+    },
+    "attachment_slots": [
       {
         "slot": null,
         "pivot": {
@@ -115,8 +342,36 @@
           "inherited": false
         },
         "enabled": null,
-        "attachment_types": [],
-        "defined_in": "Prefabs/Weapons/Russian/Rifle/AK74/armst_Rifle_AK105.et"
+        "attachment_types": [
+          "{60AAE435165C80B8}"
+        ],
+        "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/AK74/Rifle_AK74_base.et"
+      },
+      {
+        "slot": null,
+        "pivot": {
+          "value": "slot_optics",
+          "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/AK74/Rifle_AK74N_base.et",
+          "inherited": true
+        },
+        "enabled": null,
+        "attachment_types": [
+          "{5A16F04B258689D6}"
+        ],
+        "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/AK74/Rifle_AK74N_base.et"
+      },
+      {
+        "slot": null,
+        "pivot": {
+          "value": "slot_underbarrel",
+          "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/AK74/Rifle_AK74_base.et",
+          "inherited": true
+        },
+        "enabled": null,
+        "attachment_types": [
+          "{58E2A37522A0E34B}"
+        ],
+        "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/AK74/Rifle_AK74_base.et"
       }
     ],
     "muzzle_attachment": {
@@ -126,12 +381,30 @@
         "defined_in": "Prefabs/Weapons/Russian/Rifle/AK74/armst_Rifle_AK105.et",
         "inherited": false
       },
-      "defined_in": "Prefabs/Weapons/Russian/Rifle/AK74/armst_Rifle_AK105.et"
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/AK74/Rifle_AK74_base.et"
     },
     "animation": {
-      "anim_graph": null,
-      "anim_instance": null
+      "anim_graph": {
+        "guid": "ADDF1CC42A489D84",
+        "path": "Assets/Weapons/Rifles/workspaces/ak74.agr",
+        "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/AK74/Rifle_AK74_base.et"
+      },
+      "anim_instance": {
+        "guid": "022310A34B9AF611",
+        "path": "Assets/Weapons/Rifles/workspaces/ak74_weapon.asi",
+        "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/AK74/Rifle_AK74_base.et"
+      }
     }
   },
-  "derived": {}
+  "derived": {
+    "max_rounds_per_second": 10.833,
+    "dispersion_m_per_m": {
+      "value": 1.25,
+      "formula": "DispersionDiameter / DispersionRange * 1000"
+    },
+    "approx_moa": {
+      "value": 4.297,
+      "formula": "DispersionDiameter / DispersionRange * 3437.75"
+    }
+  }
 }

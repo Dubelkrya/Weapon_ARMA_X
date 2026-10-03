@@ -1,21 +1,21 @@
 {
   "schema_version": "1.0",
-  "mod_root": "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons",
+  "mod_root": "C:\\Users\\yshky\\AppData\\Local\\Temp\\opencode\\mp133_head2\\wpn",
   "repo_root": ".",
-  "scan_date": "2026-09-25",
+  "scan_date": "2026-10-03",
   "tool": "agent/scripts/scan_build.py",
   "stats": {
-    "entities": 158,
-    "weapons": 63,
-    "magazines": 48,
-    "ammunition": 19,
-    "optics": 9,
-    "attachments": 7,
+    "entities": 181,
+    "weapons": 68,
+    "magazines": 53,
+    "ammunition": 22,
+    "optics": 12,
+    "attachments": 12,
     "grenades": 4,
     "tripods": 2,
     "core": 4,
     "particles": 2,
-    "misc": 0
+    "misc": 2
   },
   "warnings": 1,
   "steps": {

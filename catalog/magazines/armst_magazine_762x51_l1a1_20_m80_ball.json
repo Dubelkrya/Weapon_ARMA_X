@@ -22,20 +22,25 @@
         "resource": "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_20_M80_Ball.et",
         "status": "local",
         "class": "GenericEntity"
-      }
-    ],
-    "external_parents": [
+      },
       {
-        "guid": "6D18CC33708EE712",
-        "path": "Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et",
-        "raw": "{6D18CC33708EE712}Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et"
+        "resource": "Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et",
+        "status": "base_game_snapshot",
+        "class": "GenericEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Core/Magazine_Base.et",
+        "status": "base_game_snapshot",
+        "class": "GenericEntity"
       }
     ],
+    "external_parents": [],
     "used_as_base_by": [
       "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_30_M80_Ball.et",
       "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_30_M80_Ball_BP.et"
     ],
-    "chain_depth_local": 1
+    "chain_depth_local": 1,
+    "chain_depth_base_game_snapshot": 2
   },
   "references": [
     {
@@ -44,6 +49,20 @@
       "resolved": "local",
       "target": "Configs/Weapons/Ammo/ARMST/armst_Ammo_762x51_ARMST.conf",
       "defined_in": "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_20_M80_Ball.et"
+    },
+    {
+      "guid": "9FB96EBAC79195C6",
+      "path": "Assets/Weapons/Magazines/M14/Magazine_M14_20rnd.xob",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et"
+    },
+    {
+      "guid": "533A763E304771D9",
+      "path": "Configs/Weapons/Ammo/Ammo_762x51.conf",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et"
     },
     {
       "guid": "853DDDD16E788013",
@@ -55,13 +74,21 @@
   ],
   "warnings": [],
   "data": {
-    "magazine_well": null,
+    "magazine_well": {
+      "name": "MagazineWell",
+      "class": "MagazineWellM14",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et"
+    },
     "ammo_config": {
       "guid": "94FC75B17BBA4DB7",
       "path": "Configs/Weapons/Ammo/ARMST/armst_Ammo_762x51_ARMST.conf",
       "defined_in": "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_20_M80_Ball.et"
     },
-    "max_ammo": null,
+    "max_ammo": {
+      "value": 20,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et",
+      "inherited": true
+    },
     "ammo_mapping": [
       0,
       0,
@@ -84,22 +111,35 @@
       0,
       0
     ],
-    "caliber_id": null,
+    "caliber_id": {
+      "value": "#AR-AmmunitionID_762x51mm",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et",
+      "inherited": true
+    },
     "name": {
       "value": "L1A1 magazine 20rnd",
       "defined_in": "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_20_M80_Ball.et",
       "inherited": false
     },
-    "_defined_in": "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_20_M80_Ball.et",
+    "_defined_in": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et",
     "display_name": null,
+    "weight": null,
     "grid": {
       "width": null,
-      "height": null
+      "height": {
+        "value": 2,
+        "defined_in": "base_game_snapshot:Prefabs/Weapons/Core/Magazine_Base.et",
+        "inherited": true
+      }
     },
-    "_inv_defined_in": "Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_20_M80_Ball.et"
+    "_inv_defined_in": "base_game_snapshot:Prefabs/Weapons/Core/Magazine_Base.et",
+    "model": {
+      "guid": "9FB96EBAC79195C6",
+      "path": "Assets/Weapons/Magazines/M14/Magazine_M14_20rnd.xob",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et"
+    }
   },
   "derived": {
-    "capacity": 20,
-    "capacity_source": "AmmoMapping length"
+    "capacity": 20
   }
 }

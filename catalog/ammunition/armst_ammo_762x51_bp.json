@@ -22,23 +22,176 @@
         "resource": "Prefabs/Weapons/Ammo/Western/762x51/armst_Ammo_762x51_BP.et",
         "status": "local",
         "class": "Projectile"
-      }
-    ],
-    "external_parents": [
+      },
       {
-        "guid": "9F39DD07E2860466",
-        "path": "Prefabs/Weapons/Ammo/Ammo_762x51_AP_M61.et",
-        "raw": "{9F39DD07E2860466}Prefabs/Weapons/Ammo/Ammo_762x51_AP_M61.et"
+        "resource": "Prefabs/Weapons/Ammo/Ammo_762x51_AP_M61.et",
+        "status": "base_game_snapshot",
+        "class": "Projectile"
+      },
+      {
+        "resource": "Prefabs/Weapons/Ammo/Ammo_762x51_Ball_M80.et",
+        "status": "base_game_snapshot",
+        "class": "Projectile"
+      },
+      {
+        "resource": "Prefabs/Weapons/Core/Ammo_Bullet_Base.et",
+        "status": "base_game_snapshot",
+        "class": "Projectile"
       }
     ],
+    "external_parents": [],
     "used_as_base_by": [],
-    "chain_depth_local": 1
+    "chain_depth_local": 1,
+    "chain_depth_base_game_snapshot": 3
   },
-  "references": [],
+  "references": [
+    {
+      "guid": "141DB3A86006AE6F",
+      "path": "Configs/Weapons/AIBallisticTables/AIBT_762x51_AP_M61.conf",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Ammo/Ammo_762x51_AP_M61.et"
+    },
+    {
+      "guid": "703CDC4873C8CECC",
+      "path": "Configs/Weapons/AIBallisticTables/AIBT_762x51_Ball_M80.conf",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Ammo/Ammo_762x51_Ball_M80.et"
+    },
+    {
+      "guid": "5412C65243EDE33F",
+      "path": "Sounds/Weapons/_SharedData/BulletSonicCracks/762/Weapons_BulletSonicCracks_762.acp",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Ammo/Ammo_762x51_Ball_M80.et"
+    },
+    {
+      "guid": "F957FD54EA57C9F1",
+      "path": "Sounds/Weapons/_SharedData/BulletFlybys/Rifle/Weapons_BulletFlybys_Rifle.acp",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Ammo/Ammo_762x51_Ball_M80.et"
+    },
+    {
+      "guid": "9B5FF7EECAD376FA",
+      "path": "Prefabs/Weapons/Warheads/Warhead_Base.et",
+      "resolved": "base_game_snapshot",
+      "target": "Prefabs/Weapons/Warheads/Warhead_Base.et",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Core/Ammo_Bullet_Base.et",
+      "snapshot_import_guid": "DEDEA71C51E44820",
+      "snapshot_physical_rel": "Warheads/Warhead_Base.et"
+    },
+    {
+      "guid": "4E168888868FE6C7",
+      "path": "Prefabs/Weapons/Core/ExitEffect.et",
+      "resolved": "base_game_snapshot",
+      "target": "Prefabs/Weapons/Core/ExitEffect.et",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Core/Ammo_Bullet_Base.et",
+      "snapshot_import_guid": "6EE57C61C1EDB5AE",
+      "snapshot_physical_rel": "core/ExitEffect.et"
+    },
+    {
+      "guid": "E252C97A41BE786C",
+      "path": "Sounds/Weapons/_SharedData/BulletHits/Weapons_BulletHits.acp",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Core/Ammo_Bullet_Base.et"
+    },
+    {
+      "guid": "042AB57ADFE17DA6",
+      "path": "Configs/Weapons/AIBallisticTables/AIBT_Bullet_Base.conf",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Core/Ammo_Bullet_Base.et"
+    },
+    {
+      "guid": "ABAD8342FF1E1578",
+      "path": "Sounds/Weapons/_SharedData/BulletSonicCracks/Rifle/Weapons_BulletSonicCracks_Rifle.acp",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Core/Ammo_Bullet_Base.et"
+    },
+    {
+      "guid": "6182E4018BD7A36A",
+      "path": "Assets/Weapons/Ammo/Bullets/762x51/Bullet_762x51_M61.xob",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Ammo/Ammo_762x51_AP_M61.et"
+    },
+    {
+      "guid": "C8F0E2E9FFC84173",
+      "path": "Assets/Weapons/Ammo/Bullets/762x51/Cartridge_762x51_M61.xob",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Ammo/Ammo_762x51_AP_M61.et"
+    }
+  ],
   "warnings": [],
   "data": {
-    "effects": null,
-    "_defined_in": null
+    "shell": {
+      "InitSpeed": {
+        "value": 856,
+        "defined_in": "base_game_snapshot:Prefabs/Weapons/Ammo/Ammo_762x51_Ball_M80.et",
+        "inherited": true
+      },
+      "InitSpeedVariation": {
+        "value": 9.1,
+        "defined_in": "base_game_snapshot:Prefabs/Weapons/Ammo/Ammo_762x51_Ball_M80.et",
+        "inherited": true
+      },
+      "DispersionMultiplier": null,
+      "Mass": {
+        "value": 0.00975,
+        "defined_in": "base_game_snapshot:Prefabs/Weapons/Ammo/Ammo_762x51_AP_M61.et",
+        "inherited": true
+      },
+      "TumblingDamageMultiplier": {
+        "value": 0,
+        "defined_in": "base_game_snapshot:Prefabs/Weapons/Ammo/Ammo_762x51_AP_M61.et",
+        "inherited": true
+      },
+      "PenetrationDepth": {
+        "value": 10,
+        "defined_in": "base_game_snapshot:Prefabs/Weapons/Ammo/Ammo_762x51_AP_M61.et",
+        "inherited": true
+      },
+      "PenetrationSpeed": {
+        "value": 780,
+        "defined_in": "base_game_snapshot:Prefabs/Weapons/Ammo/Ammo_762x51_AP_M61.et",
+        "inherited": true
+      },
+      "PenetrationDensity": null,
+      "AirDrag": {
+        "value": 8.2e-06,
+        "defined_in": "base_game_snapshot:Prefabs/Weapons/Ammo/Ammo_762x51_AP_M61.et",
+        "inherited": true
+      },
+      "ballistic_table": {
+        "guid": "141DB3A86006AE6F",
+        "path": "Configs/Weapons/AIBallisticTables/AIBT_762x51_AP_M61.conf",
+        "defined_in": "base_game_snapshot:Prefabs/Weapons/Ammo/Ammo_762x51_AP_M61.et"
+      },
+      "_defined_in": "base_game_snapshot:Prefabs/Weapons/Core/Ammo_Bullet_Base.et"
+    },
+    "effects": [
+      {
+        "type": "ProjectileDamage",
+        "id": "{5168BBF3DBD79134}",
+        "defined_in": "base_game_snapshot:Prefabs/Weapons/Ammo/Ammo_762x51_Ball_M80.et",
+        "DamageValue": {
+          "value": 142,
+          "defined_in": "base_game_snapshot:Prefabs/Weapons/Ammo/Ammo_762x51_Ball_M80.et",
+          "inherited": true
+        },
+        "DamageType": null,
+        "MinimumDamage": null
+      }
+    ],
+    "_defined_in": "base_game_snapshot:Prefabs/Weapons/Core/Ammo_Bullet_Base.et"
   },
-  "derived": {}
+  "derived": {
+    "init_speed": 856,
+    "projectile_damage": 142
+  }
 }

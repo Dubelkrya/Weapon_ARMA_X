@@ -22,18 +22,36 @@
         "resource": "Prefabs/Weapons/Grenades/armst_Grenade_M67.et",
         "status": "local",
         "class": "GenericEntity"
-      }
-    ],
-    "external_parents": [
+      },
       {
-        "guid": "8B55F8686833B12B",
-        "path": "Prefabs/Weapons/Core/FragGrenade_Base.et",
-        "raw": "{8B55F8686833B12B}Prefabs/Weapons/Core/FragGrenade_Base.et"
+        "resource": "Prefabs/Weapons/Core/FragGrenade_Base.et",
+        "status": "base_game_snapshot",
+        "class": "GenericEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Core/Grenade_Base.et",
+        "status": "base_game_snapshot",
+        "class": "GenericEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Core/Throw_Base.et",
+        "status": "base_game_snapshot",
+        "class": "GenericEntity"
       }
     ],
+    "external_parents": [],
     "used_as_base_by": [],
-    "chain_depth_local": 1
+    "chain_depth_local": 1,
+    "chain_depth_base_game_snapshot": 3
   },
-  "references": [],
+  "references": [
+    {
+      "guid": "F4C76CC6740BD4A6",
+      "path": "Assets/Weapons/Grenades/RGD5/Grenade_Rgd5.xob",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Core/FragGrenade_Base.et"
+    }
+  ],
   "warnings": []
 }

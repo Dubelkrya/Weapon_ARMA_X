@@ -23,18 +23,62 @@
         "resource": "Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et",
         "status": "local",
         "class": "GameEntity"
-      }
-    ],
-    "external_parents": [
+      },
       {
-        "guid": "AB71C533945104AE",
-        "path": "Prefabs/Weapons/Attachments/Optics/Optic_PSO1/Optic_PSO1_base.et",
-        "raw": "{AB71C533945104AE}Prefabs/Weapons/Attachments/Optics/Optic_PSO1/Optic_PSO1_base.et"
+        "resource": "Prefabs/Weapons/Attachments/Optics/Optic_PSO1/Optic_PSO1_base.et",
+        "status": "base_game_snapshot",
+        "class": "GameEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Attachments/Optics/WeaponOptic_Base.et",
+        "status": "base_game_snapshot",
+        "class": "GameEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Core/WeaponSight_Base.et",
+        "status": "base_game_snapshot",
+        "class": "GameEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Core/Attachment_Base.et",
+        "status": "base_game_snapshot",
+        "class": "GameEntity"
       }
     ],
+    "external_parents": [],
     "used_as_base_by": [],
-    "chain_depth_local": 1
+    "chain_depth_local": 1,
+    "chain_depth_base_game_snapshot": 4
   },
-  "references": [],
+  "references": [
+    {
+      "guid": "4EF7C9325481A367",
+      "path": "Assets/Weapons/Attachments/Optics/PSO1/Optic_PSO1.xob",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Attachments/Optics/Optic_PSO1/Optic_PSO1_base.et"
+    },
+    {
+      "guid": "3A39997051EC7C5D",
+      "path": "UI/Textures/Sights/PSO1/PSO1_white_solid_UI.edds",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Attachments/Optics/Optic_PSO1/Optic_PSO1_base.et"
+    },
+    {
+      "guid": "1BE6C18D3145BB45",
+      "path": "UI/Textures/Sights/PSO1/PSO1-white_blur_UI.edds",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Attachments/Optics/Optic_PSO1/Optic_PSO1_base.et"
+    },
+    {
+      "guid": "958809B0DE47E9BF",
+      "path": "Assets/Weapons/Attachments/Optics/PSO1/Data/Optic_PSO1_HDR.emat",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Attachments/Optics/Optic_PSO1/Optic_PSO1_base.et"
+    }
+  ],
   "warnings": []
 }

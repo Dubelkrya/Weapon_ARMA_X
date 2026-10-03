@@ -23,17 +23,17 @@
         "resource": "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et",
         "status": "local",
         "class": "GenericEntity"
-      }
-    ],
-    "external_parents": [
+      },
       {
-        "guid": "0A9CD090EE3440E7",
-        "path": "Prefabs/Weapons/Core/WeaponPart_Base.et",
-        "raw": "{0A9CD090EE3440E7}Prefabs/Weapons/Core/WeaponPart_Base.et"
+        "resource": "Prefabs/Weapons/Core/WeaponPart_Base.et",
+        "status": "base_game_snapshot",
+        "class": "GenericEntity"
       }
     ],
+    "external_parents": [],
     "used_as_base_by": [],
-    "chain_depth_local": 1
+    "chain_depth_local": 1,
+    "chain_depth_base_game_snapshot": 1
   },
   "references": [
     {

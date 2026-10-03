@@ -23,17 +23,27 @@
         "resource": "Prefabs/Weapons/Attachments/Optics/armst_Optic_Collimator.et",
         "status": "local",
         "class": "GameEntity"
-      }
-    ],
-    "external_parents": [
+      },
       {
-        "guid": "78689FF321194268",
-        "path": "Prefabs/Weapons/Attachments/Optics/WeaponCollimator_Base.et",
-        "raw": "{78689FF321194268}Prefabs/Weapons/Attachments/Optics/WeaponCollimator_Base.et"
+        "resource": "Prefabs/Weapons/Attachments/Optics/WeaponCollimator_Base.et",
+        "status": "base_game_snapshot",
+        "class": "GameEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Core/WeaponSight_Base.et",
+        "status": "base_game_snapshot",
+        "class": "GameEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Core/Attachment_Base.et",
+        "status": "base_game_snapshot",
+        "class": "GameEntity"
       }
     ],
+    "external_parents": [],
     "used_as_base_by": [],
-    "chain_depth_local": 1
+    "chain_depth_local": 1,
+    "chain_depth_base_game_snapshot": 3
   },
   "references": [
     {
@@ -42,6 +52,13 @@
       "resolved": "local",
       "target": "Assets/addons/Dovetail/coll.xob",
       "defined_in": "Prefabs/Weapons/Attachments/Optics/armst_Optic_Collimator.et"
+    },
+    {
+      "guid": "92CB09CB84872CB4",
+      "path": "Sounds/Weapons/_SharedData/PickUp/Weapons_PickUp_Attachments_LongGeneric.acp",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Attachments/Optics/WeaponCollimator_Base.et"
     }
   ],
   "warnings": []

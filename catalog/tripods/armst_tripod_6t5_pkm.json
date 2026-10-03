@@ -27,18 +27,66 @@
         "resource": "Prefabs/Weapons/Tripods/armst_Tripod_6T5.et",
         "status": "local",
         "class": "Turret"
-      }
-    ],
-    "external_parents": [
+      },
       {
-        "guid": "16CAF1AAD82A3127",
-        "path": "Prefabs/Weapons/Core/Tripod_Base.et",
-        "raw": "{16CAF1AAD82A3127}Prefabs/Weapons/Core/Tripod_Base.et"
+        "resource": "Prefabs/Weapons/Core/Tripod_Base.et",
+        "status": "base_game_snapshot",
+        "class": "Turret"
+      },
+      {
+        "resource": "Prefabs/Weapons/Core/Turret_Base.et",
+        "status": "base_game_snapshot",
+        "class": "Turret"
       }
     ],
+    "external_parents": [],
     "used_as_base_by": [],
-    "chain_depth_local": 2
+    "chain_depth_local": 2,
+    "chain_depth_base_game_snapshot": 2
   },
-  "references": [],
+  "references": [
+    {
+      "guid": "DB0ABB728C324D7B",
+      "path": "Prefabs/Editor/Components/Static_SCR_EditableEntityComponent.ct",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Core/Tripod_Base.et"
+    },
+    {
+      "guid": "CE8A9EE3A07FE9AC",
+      "path": "Sounds/Weapons/Tripods/M122/Weapons_Tripod_M122.acp",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Core/Tripod_Base.et"
+    },
+    {
+      "guid": "2A3CBDF8B5EAA051",
+      "path": "Assets/Weapons/Tripods/M122/Tripod_M122.xob",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Core/Tripod_Base.et"
+    },
+    {
+      "guid": "66DAEB775AA8CA4C",
+      "path": "Particles/Props/Dest_Prop_Metal_Medium.ptc",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Core/Tripod_Base.et"
+    },
+    {
+      "guid": "C727601154428730",
+      "path": "Assets/Weapons/HeavyWeapons/workspaces/M2HB_tripod.agr",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Core/Tripod_Base.et"
+    },
+    {
+      "guid": "90F5E30119FE8312",
+      "path": "Assets/Weapons/HeavyWeapons/workspaces/M2HB_Player_tripod.asi",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Core/Tripod_Base.et"
+    }
+  ],
   "warnings": []
 }

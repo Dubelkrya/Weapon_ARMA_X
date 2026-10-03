@@ -14,7 +14,7 @@
   },
   "classification": {
     "kind": "weapon",
-    "confidence": "folder"
+    "confidence": "components"
   },
   "inheritance": {
     "chain": [
@@ -22,22 +22,372 @@
         "resource": "Prefabs/Weapons/Russian/MachineGuns/armst_mgun_RPK74.et",
         "status": "local",
         "class": "GenericEntity"
-      }
-    ],
-    "external_parents": [
+      },
       {
-        "guid": "3BFBE9145E9C40B9",
-        "path": "Prefabs/Weapons/MachineGuns/RPK74/MG_RPK74_base.et",
-        "raw": "{3BFBE9145E9C40B9}Prefabs/Weapons/MachineGuns/RPK74/MG_RPK74_base.et"
+        "resource": "Prefabs/Weapons/MachineGuns/RPK74/MG_RPK74_base.et",
+        "status": "base_game_snapshot",
+        "class": "GenericEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Core/MachineGun_Base.et",
+        "status": "base_game_snapshot",
+        "class": "GenericEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Core/Weapon_Base.et",
+        "status": "base_game_snapshot",
+        "class": "GenericEntity"
       }
     ],
+    "external_parents": [],
     "used_as_base_by": [],
-    "chain_depth_local": 1
+    "chain_depth_local": 1,
+    "chain_depth_base_game_snapshot": 3
   },
-  "references": [],
+  "references": [
+    {
+      "guid": "0350283642830782",
+      "path": "anims/workspaces/player/player_main_rifle.asi",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/MachineGuns/RPK74/MG_RPK74_base.et"
+    },
+    {
+      "guid": "429B9FD660E72265",
+      "path": "Assets/Weapons/MachineGuns/RPK74/anims/anm/p_rpk74_ik.anm",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/MachineGuns/RPK74/MG_RPK74_base.et"
+    },
+    {
+      "guid": "C79EA6F6F4EFE7CC",
+      "path": "anims/workspaces/player/player_inventory_LMG.asi",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Core/MachineGun_Base.et"
+    },
+    {
+      "guid": "C9A2183C36C7B567",
+      "path": "Sounds/Weapons/Machineguns/RPK74/Weapons_Machineguns_RPK74_Shot.acp",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/MachineGuns/RPK74/MG_RPK74_base.et"
+    },
+    {
+      "guid": "1E10E549B0646CE1",
+      "path": "Assets/Weapons/MachineGuns/RPK74/RPK74_body.xob",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/MachineGuns/RPK74/MG_RPK74_base.et"
+    },
+    {
+      "guid": "4FC83D9226751C42",
+      "path": "Prefabs/Weapons/Core/Components/MuzzleComponent_Base.ct",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Core/MachineGun_Base.et"
+    },
+    {
+      "guid": "54958EFDEF383B1B",
+      "path": "Particles/Weapon/Casing_545x39.ptc",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/MachineGuns/RPK74/MG_RPK74_base.et"
+    },
+    {
+      "guid": "40C8AD1204EC2629",
+      "path": "Particles/Weapon/Smoke_PKM.ptc",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/MachineGuns/RPK74/MG_RPK74_base.et"
+    },
+    {
+      "guid": "57A509D9293B172D",
+      "path": "Particles/Weapon/Muzzle_PKM_flashHider.ptc",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/MachineGuns/RPK74/MG_RPK74_base.et"
+    },
+    {
+      "guid": "687B3DA431730CFA",
+      "path": "Prefabs/Weapons/Core/Configs/FireModes/FireMode_Safe.conf",
+      "resolved": "base_game_snapshot",
+      "target": "Prefabs/Weapons/Core/Configs/FireModes/FireMode_Safe.conf",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Core/MachineGun_Base.et",
+      "snapshot_import_guid": "60B0FC29181A99F4",
+      "snapshot_physical_rel": "core/Configs/FireModes/FireMode_Safe.conf"
+    },
+    {
+      "guid": "E63ADC0ED1431B24",
+      "path": "Prefabs/Weapons/Core/Configs/TriggerEffects/Safety/TriggerEffect_SafetyMedium.conf",
+      "resolved": "base_game_snapshot",
+      "target": "Prefabs/Weapons/Core/Configs/TriggerEffects/Safety/TriggerEffect_SafetyMedium.conf",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Core/MachineGun_Base.et",
+      "snapshot_import_guid": "39D44C03FA21E4DE",
+      "snapshot_physical_rel": "core/Configs/TriggerEffects/Safety/TriggerEffect_SafetyMedium.conf"
+    },
+    {
+      "guid": "A512F292D96BCB9F",
+      "path": "Prefabs/Weapons/Core/Configs/FireModes/FireMode_Auto.conf",
+      "resolved": "base_game_snapshot",
+      "target": "Prefabs/Weapons/Core/Configs/FireModes/FireMode_Auto.conf",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Core/MachineGun_Base.et",
+      "snapshot_import_guid": "09B76AF4205785A9",
+      "snapshot_physical_rel": "core/Configs/FireModes/FireMode_Auto.conf"
+    },
+    {
+      "guid": "D5D52E848DBCAA53",
+      "path": "Prefabs/Weapons/Core/Configs/FireModes/FireMode_Single.conf",
+      "resolved": "base_game_snapshot",
+      "target": "Prefabs/Weapons/Core/Configs/FireModes/FireMode_Single.conf",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/MachineGuns/RPK74/MG_RPK74_base.et",
+      "snapshot_import_guid": "FAF4B3FB6DE91626",
+      "snapshot_physical_rel": "core/Configs/FireModes/FireMode_Single.conf"
+    },
+    {
+      "guid": "0611547AA340A003",
+      "path": "Prefabs/Weapons/Core/Configs/AimModifiers/RecoilAimModifier_RPK74.conf",
+      "resolved": "base_game_snapshot",
+      "target": "Prefabs/Weapons/Core/Configs/AimModifiers/RecoilAimModifier_RPK74.conf",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/MachineGuns/RPK74/MG_RPK74_base.et",
+      "snapshot_import_guid": "30E5CE411A0763C7",
+      "snapshot_physical_rel": "core/Configs/AimModifiers/RecoilAimModifier_RPK74.conf"
+    },
+    {
+      "guid": "1AA788302FE3C53A",
+      "path": "Configs/WeaponInfo/MagazineIndicators/ak74_30.conf",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Core/MachineGun_Base.et"
+    },
+    {
+      "guid": "D78C667F59829717",
+      "path": "Prefabs/Weapons/Magazines/Magazine_545x39_RPK_45rnd_4Ball_1Tracer.et",
+      "resolved": "base_game_snapshot",
+      "target": "Prefabs/Weapons/Magazines/Magazine_545x39_RPK_45rnd_4Ball_1Tracer.et",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/MachineGuns/RPK74/MG_RPK74_base.et",
+      "snapshot_import_guid": "D3144DAB7100ED3B",
+      "snapshot_physical_rel": "magazines/Magazine_545x39_RPK_45rnd_4Ball_1Tracer.et"
+    },
+    {
+      "guid": "989C679F462401EF",
+      "path": "Assets/Weapons/MachineGuns/workspaces/RPK74.agr",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/MachineGuns/RPK74/MG_RPK74_base.et"
+    },
+    {
+      "guid": "A61C3B9557BBE223",
+      "path": "Assets/Weapons/MachineGuns/workspaces/RPK74_weapon.asi",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/MachineGuns/RPK74/MG_RPK74_base.et"
+    },
+    {
+      "guid": "5D42AAA4CFBA86CF",
+      "path": "Assets/Weapons/MachineGuns/workspaces/RPK74_player.asi",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/MachineGuns/RPK74/MG_RPK74_base.et"
+    },
+    {
+      "guid": "4C187800824D6794",
+      "path": "Prefabs/Weapons/Core/Configs/TriggerEffects/Charged/TriggerEffect_ChargedMedium.conf",
+      "resolved": "base_game_snapshot",
+      "target": "Prefabs/Weapons/Core/Configs/TriggerEffects/Charged/TriggerEffect_ChargedMedium.conf",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Core/MachineGun_Base.et",
+      "snapshot_import_guid": "560160CFADCE2863",
+      "snapshot_physical_rel": "core/Configs/TriggerEffects/Charged/TriggerEffect_ChargedMedium.conf"
+    },
+    {
+      "guid": "5CC7F3281D67289E",
+      "path": "Prefabs/Weapons/Core/Configs/TriggerEffects/Fire/TriggerEffect_FireLight.conf",
+      "resolved": "base_game_snapshot",
+      "target": "Prefabs/Weapons/Core/Configs/TriggerEffects/Fire/TriggerEffect_FireLight.conf",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Core/MachineGun_Base.et",
+      "snapshot_import_guid": "B8BDDAD476EE4691",
+      "snapshot_physical_rel": "core/Configs/TriggerEffects/Fire/TriggerEffect_FireLight.conf"
+    },
+    {
+      "guid": "FD6D307018F1F3C9",
+      "path": "Prefabs/Weapons/Core/Configs/TriggerEffects/ADS/TriggerEffect_ADSHeavy.conf",
+      "resolved": "base_game_snapshot",
+      "target": "Prefabs/Weapons/Core/Configs/TriggerEffects/ADS/TriggerEffect_ADSHeavy.conf",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Core/MachineGun_Base.et",
+      "snapshot_import_guid": "BD40D917AC1C4832",
+      "snapshot_physical_rel": "core/Configs/TriggerEffects/ADS/TriggerEffect_ADSHeavy.conf"
+    }
+  ],
   "warnings": [],
   "data": {
-    "error": "no WeaponComponent found"
+    "identity": {
+      "name": null
+    },
+    "fire_modes": [
+      {
+        "mode_id": "{506B20D1476BA99E}",
+        "ui_name": null,
+        "rounds_per_minute": null,
+        "max_burst": null,
+        "defined_in": "base_game_snapshot:Prefabs/Weapons/Core/MachineGun_Base.et"
+      },
+      {
+        "mode_id": "{B80A64F4A8EF8333}",
+        "ui_name": null,
+        "rounds_per_minute": {
+          "value": 600,
+          "defined_in": "base_game_snapshot:Prefabs/Weapons/MachineGuns/RPK74/MG_RPK74_base.et",
+          "inherited": true
+        },
+        "max_burst": null,
+        "defined_in": "base_game_snapshot:Prefabs/Weapons/Core/MachineGun_Base.et",
+        "rounds_per_second": {
+          "value": 10.0,
+          "derived": true
+        }
+      },
+      {
+        "mode_id": "{619AB45CD680DAA7}",
+        "ui_name": null,
+        "rounds_per_minute": {
+          "value": 600,
+          "defined_in": "base_game_snapshot:Prefabs/Weapons/MachineGuns/RPK74/MG_RPK74_base.et",
+          "inherited": true
+        },
+        "max_burst": null,
+        "defined_in": "base_game_snapshot:Prefabs/Weapons/MachineGuns/RPK74/MG_RPK74_base.et",
+        "rounds_per_second": {
+          "value": 10.0,
+          "derived": true
+        }
+      }
+    ],
+    "physical": {
+      "Weight": null,
+      "SizeSetupStrategy": null,
+      "ItemDimensions": null,
+      "ItemVolume": null,
+      "DimensionScaler": null,
+      "_defined_in": "base_game_snapshot:Prefabs/Weapons/MachineGuns/RPK74/MG_RPK74_base.et",
+      "Mass": null,
+      "MeleeDamage": {
+        "value": 2,
+        "defined_in": "Prefabs/Weapons/Russian/MachineGuns/armst_mgun_RPK74.et",
+        "inherited": false
+      },
+      "Model": {
+        "guid": "1E10E549B0646CE1",
+        "path": "Assets/Weapons/MachineGuns/RPK74/RPK74_body.xob",
+        "defined_in": "base_game_snapshot:Prefabs/Weapons/MachineGuns/RPK74/MG_RPK74_base.et"
+      }
+    },
+    "magazine": {
+      "magazine_well": {
+        "name": "MagazineWell",
+        "class": "MagazineWellAK545",
+        "defined_in": "base_game_snapshot:Prefabs/Weapons/MachineGuns/RPK74/MG_RPK74_base.et"
+      },
+      "magazine_template": {
+        "guid": "D78C667F59829717",
+        "path": "Prefabs/Weapons/Magazines/Magazine_545x39_RPK_45rnd_4Ball_1Tracer.et",
+        "defined_in": "base_game_snapshot:Prefabs/Weapons/MachineGuns/RPK74/MG_RPK74_base.et"
+      }
+    },
+    "ballistics": {
+      "bullet_init_speed_coef": {
+        "value": 1.06,
+        "defined_in": "base_game_snapshot:Prefabs/Weapons/MachineGuns/RPK74/MG_RPK74_base.et",
+        "inherited": true
+      },
+      "dispersion_diameter": {
+        "value": 0.4,
+        "defined_in": "base_game_snapshot:Prefabs/Weapons/MachineGuns/RPK74/MG_RPK74_base.et",
+        "inherited": true
+      },
+      "dispersion_range": {
+        "value": 335,
+        "defined_in": "base_game_snapshot:Prefabs/Weapons/MachineGuns/RPK74/MG_RPK74_base.et",
+        "inherited": true
+      }
+    },
+    "aim": {
+      "recoil": {
+        "LinearData": null,
+        "AngularData": null,
+        "TurnOffsetData": null
+      },
+      "sway": null
+    },
+    "sights": {
+      "switch_skip": null,
+      "ranges": [
+        [
+          0.587,
+          100
+        ],
+        [
+          0.607,
+          200
+        ],
+        [
+          0.642,
+          300
+        ],
+        [
+          0.688,
+          400
+        ],
+        [
+          0.748,
+          500
+        ],
+        [
+          0.819,
+          600
+        ],
+        [
+          0.9,
+          700
+        ],
+        [
+          1,
+          800
+        ],
+        [
+          1,
+          900
+        ],
+        [
+          1,
+          1000
+        ]
+      ],
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Core/MachineGun_Base.et"
+    },
+    "attachment_slots": [],
+    "muzzle_attachment": null,
+    "animation": {
+      "anim_graph": {
+        "guid": "989C679F462401EF",
+        "path": "Assets/Weapons/MachineGuns/workspaces/RPK74.agr",
+        "defined_in": "base_game_snapshot:Prefabs/Weapons/MachineGuns/RPK74/MG_RPK74_base.et"
+      },
+      "anim_instance": {
+        "guid": "A61C3B9557BBE223",
+        "path": "Assets/Weapons/MachineGuns/workspaces/RPK74_weapon.asi",
+        "defined_in": "base_game_snapshot:Prefabs/Weapons/MachineGuns/RPK74/MG_RPK74_base.et"
+      }
+    }
   },
-  "derived": {}
+  "derived": {
+    "max_rounds_per_second": 10.0,
+    "dispersion_m_per_m": {
+      "value": 1.194,
+      "formula": "DispersionDiameter / DispersionRange * 1000"
+    },
+    "approx_moa": {
+      "value": 4.105,
+      "formula": "DispersionDiameter / DispersionRange * 3437.75"
+    }
+  }
 }

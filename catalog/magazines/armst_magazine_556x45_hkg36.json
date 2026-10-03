@@ -27,17 +27,27 @@
         "resource": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M193_Ball.et",
         "status": "local",
         "class": "GenericEntity"
-      }
-    ],
-    "external_parents": [
+      },
       {
-        "guid": "FB5EB0F6D447E858",
-        "path": "Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M193_Ball.et",
-        "raw": "{FB5EB0F6D447E858}Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M193_Ball.et"
+        "resource": "Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M193_Ball.et",
+        "status": "base_game_snapshot",
+        "class": "GenericEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Magazines/5x56/Magazine_556x45_STANAG_30rnd_Base.et",
+        "status": "base_game_snapshot",
+        "class": "GenericEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Core/Magazine_Base.et",
+        "status": "base_game_snapshot",
+        "class": "GenericEntity"
       }
     ],
+    "external_parents": [],
     "used_as_base_by": [],
-    "chain_depth_local": 2
+    "chain_depth_local": 2,
+    "chain_depth_base_game_snapshot": 3
   },
   "references": [
     {
@@ -102,13 +112,17 @@
       "defined_in": "Prefabs/Weapons/Magazines/Western/5x56/HKG36/armst_Magazine_556x45_HKG36.et",
       "inherited": false
     },
-    "_defined_in": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M193_Ball.et",
+    "_defined_in": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M193_Ball.et",
     "display_name": null,
     "grid": {
       "width": null,
-      "height": null
+      "height": {
+        "value": 2,
+        "defined_in": "base_game_snapshot:Prefabs/Weapons/Magazines/5x56/Magazine_556x45_STANAG_30rnd_Base.et",
+        "inherited": true
+      }
     },
-    "_inv_defined_in": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M193_Ball.et",
+    "_inv_defined_in": "base_game_snapshot:Prefabs/Weapons/Core/Magazine_Base.et",
     "editor_name": {
       "value": "#AR-Magazine_STANAG_Name",
       "defined_in": "Prefabs/Weapons/Magazines/Western/5x56/STANAG/armst_Magazine_556x45_STANAG_30rnd_M193_Ball.et",

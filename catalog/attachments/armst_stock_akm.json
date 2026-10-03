@@ -23,17 +23,22 @@
         "resource": "Prefabs/Weapons/Attachments/Stocks/armst_Stock_akm.et",
         "status": "local",
         "class": "GenericEntity"
-      }
-    ],
-    "external_parents": [
+      },
       {
-        "guid": "2DBBEA8AE9BD2C36",
-        "path": "Prefabs/Weapons/Attachments/Stocks/Stock_VZ58/Stock_VZ58_base.et",
-        "raw": "{2DBBEA8AE9BD2C36}Prefabs/Weapons/Attachments/Stocks/Stock_VZ58/Stock_VZ58_base.et"
+        "resource": "Prefabs/Weapons/Attachments/Stocks/Stock_VZ58/Stock_VZ58_base.et",
+        "status": "base_game_snapshot",
+        "class": "GenericEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Core/WeaponPart_Base.et",
+        "status": "base_game_snapshot",
+        "class": "GenericEntity"
       }
     ],
+    "external_parents": [],
     "used_as_base_by": [],
-    "chain_depth_local": 1
+    "chain_depth_local": 1,
+    "chain_depth_base_game_snapshot": 2
   },
   "references": [
     {

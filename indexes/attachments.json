@@ -1,5 +1,19 @@
 [
   {
+    "id": "armst_bayonet_6kh4",
+    "resource": "Prefabs/Weapons/Attachments/Bayonets/armst_Bayonet_6Kh4.et",
+    "class": "GameEntity",
+    "name": "armst_Bayonet_6Kh4",
+    "role": "leaf"
+  },
+  {
+    "id": "armst_bayonet_m9",
+    "resource": "Prefabs/Weapons/Attachments/Bayonets/armst_Bayonet_M9.et",
+    "class": "GameEntity",
+    "name": "armst_Bayonet_M9",
+    "role": "leaf"
+  },
+  {
     "id": "armst_handguard_ak74m2",
     "resource": "Prefabs/Weapons/Attachments/Handguards/armst_Handguard_AK74M2.et",
     "class": "GenericEntity",
@@ -7,10 +21,17 @@
     "role": "leaf"
   },
   {
-    "id": "suppressor_pbs4_base",
-    "resource": "Prefabs/Weapons/Attachments/Muzzle/Suppressor_PBS4/Suppressor_PBS4_base.et",
+    "id": "armst_suppressor_m16",
+    "resource": "Prefabs/Weapons/Attachments/Muzzle/Suppressor_M16/armst_Suppressor_M16.et",
     "class": "GameEntity",
-    "name": "Suppressor_PBS4_base",
+    "name": "armst_Suppressor_M16",
+    "role": "leaf"
+  },
+  {
+    "id": "armst_suppressor_pbs4",
+    "resource": "Prefabs/Weapons/Attachments/Muzzle/Suppressor_PBS4/armst_Suppressor_PBS4.et",
+    "class": "GameEntity",
+    "name": "armst_Suppressor_PBS4",
     "role": "base"
   },
   {
@@ -18,6 +39,13 @@
     "resource": "Prefabs/Weapons/Attachments/Muzzle/armst_Suppressor_9a91.et",
     "class": "GameEntity",
     "name": "armst_Suppressor_9a91",
+    "role": "leaf"
+  },
+  {
+    "id": "armst_okp",
+    "resource": "Prefabs/Weapons/Attachments/Optics/AKDovetailMount/Armst_OKP.et",
+    "class": "GameEntity",
+    "name": "Armst_OKP",
     "role": "leaf"
   },
   {
@@ -56,10 +84,24 @@
     "role": "base"
   },
   {
-    "id": "optic_4x20",
-    "resource": "Prefabs/Weapons/Attachments/Optics/Optic_4x20/Optic_4x20.et",
+    "id": "armst_optic_4x20",
+    "resource": "Prefabs/Weapons/Attachments/Optics/Optic_4x20/armst_Optic_4x20.et",
     "class": "GameEntity",
-    "name": "Optic_4x20",
+    "name": "armst_Optic_4x20",
+    "role": "leaf"
+  },
+  {
+    "id": "armst_collim_ap2k",
+    "resource": "Prefabs/Weapons/Attachments/Optics/Optic_AP2k/armst_Collim_AP2k.et",
+    "class": "GameEntity",
+    "name": "armst_Collim_AP2k",
+    "role": "leaf"
+  },
+  {
+    "id": "armst_optic_artii",
+    "resource": "Prefabs/Weapons/Attachments/Optics/Optic_ARTII/armst_Optic_ARTII.et",
+    "class": "GameEntity",
+    "name": "armst_Optic_ARTII",
     "role": "leaf"
   },
   {
@@ -109,6 +151,20 @@
     "resource": "Prefabs/Weapons/Attachments/Underbarrel/armst_UGL_GP25.et",
     "class": "GameEntity",
     "name": "armst_UGL_GP25",
+    "role": "leaf"
+  },
+  {
+    "id": "armst_ugl_m203_long",
+    "resource": "Prefabs/Weapons/Attachments/Underbarrel/armst_UGL_M203_long.et",
+    "class": "GameEntity",
+    "name": "armst_UGL_M203_long",
+    "role": "leaf"
+  },
+  {
+    "id": "armst_ugl_m203_short",
+    "resource": "Prefabs/Weapons/Attachments/Underbarrel/armst_UGL_M203_short.et",
+    "class": "GameEntity",
+    "name": "armst_UGL_M203_short",
     "role": "leaf"
   }
 ]

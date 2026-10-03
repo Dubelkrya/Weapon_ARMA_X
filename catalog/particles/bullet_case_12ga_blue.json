@@ -28,11 +28,14 @@
       {
         "guid": "BE79A6E700CF746A",
         "path": "Prefabs/Particles/Bullet_Case/Bullet_Case_Base.et",
-        "raw": "{BE79A6E700CF746A}Prefabs/Particles/Bullet_Case/Bullet_Case_Base.et"
+        "raw": "{BE79A6E700CF746A}Prefabs/Particles/Bullet_Case/Bullet_Case_Base.et",
+        "defined_in": "Prefabs/Particles/Bullet_Case/Bullet_Case_12ga_blue.et",
+        "from_status": "local"
       }
     ],
     "used_as_base_by": [],
-    "chain_depth_local": 1
+    "chain_depth_local": 1,
+    "chain_depth_base_game_snapshot": 0
   },
   "references": [
     {

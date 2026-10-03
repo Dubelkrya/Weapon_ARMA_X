@@ -287,6 +287,13 @@
     "role": "leaf"
   },
   {
+    "id": "armst_shotgun_mp_133_ris",
+    "resource": "Prefabs/Weapons/Russian/Shotgun/armst_Shotgun_mp_133_Ris.et",
+    "class": "GenericEntity",
+    "name": "armst_Shotgun_mp_133_Ris",
+    "role": "leaf"
+  },
+  {
     "id": "armst_shotgun_mp_153",
     "resource": "Prefabs/Weapons/Russian/Shotgun/armst_Shotgun_mp_153.et",
     "class": "GenericEntity",
@@ -319,6 +326,27 @@
     "resource": "Prefabs/Weapons/Western/Handguns/armst_pistol_M9.et",
     "class": "GenericEntity",
     "name": "armst_pistol_M9",
+    "role": "leaf"
+  },
+  {
+    "id": "armst_mgun_m249",
+    "resource": "Prefabs/Weapons/Western/MachineGuns/armst_mgun_M249.et",
+    "class": "GenericEntity",
+    "name": "armst_mgun_M249",
+    "role": "leaf"
+  },
+  {
+    "id": "armst_mgun_m60",
+    "resource": "Prefabs/Weapons/Western/MachineGuns/armst_mgun_M60.et",
+    "class": "GenericEntity",
+    "name": "armst_mgun_M60",
+    "role": "leaf"
+  },
+  {
+    "id": "armst_mgun_uk59",
+    "resource": "Prefabs/Weapons/Western/MachineGuns/armst_mgun_UK59.et",
+    "class": "GenericEntity",
+    "name": "armst_mgun_UK59",
     "role": "leaf"
   },
   {
@@ -364,6 +392,13 @@
     "role": "base"
   },
   {
+    "id": "armst_rifle_m21",
+    "resource": "Prefabs/Weapons/Western/Rifle/M14/armst_Rifle_M21.et",
+    "class": "GenericEntity",
+    "name": "armst_Rifle_M21",
+    "role": "base"
+  },
+  {
     "id": "armst_rifle_m16a2",
     "resource": "Prefabs/Weapons/Western/Rifle/M16/armst_Rifle_M16A2.et",
     "class": "GenericEntity",
@@ -406,17 +441,17 @@
     "role": "base"
   },
   {
-    "id": "armst_vz58p_base",
-    "resource": "Prefabs/Weapons/Western/Rifle/armst_VZ58P_base.et",
+    "id": "armst_vz58p",
+    "resource": "Prefabs/Weapons/Western/Rifle/VZ58/armst_VZ58P.et",
     "class": "GenericEntity",
-    "name": "armst_VZ58P_base",
+    "name": "armst_VZ58P",
     "role": "leaf"
   },
   {
-    "id": "armst_vz58v_base",
-    "resource": "Prefabs/Weapons/Western/Rifle/armst_VZ58V_base.et",
+    "id": "armst_vz58v",
+    "resource": "Prefabs/Weapons/Western/Rifle/VZ58/armst_VZ58V.et",
     "class": "GenericEntity",
-    "name": "armst_VZ58V_base",
+    "name": "armst_VZ58V",
     "role": "leaf"
   },
   {

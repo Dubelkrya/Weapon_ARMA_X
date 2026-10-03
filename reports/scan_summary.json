@@ -1,19 +1,20 @@
 {
-  "mod_root": "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons",
+  "mod_root": "C:\\Users\\yshky\\AppData\\Local\\Temp\\opencode\\mp133_head2\\wpn",
   "repo_root": ".",
-  "entities": 158,
-  "entities_with_local_chain": 158,
+  "entities": 181,
+  "entities_with_local_chain": 181,
   "counts_by_classification": {
-    "weapon": 63,
-    "magazine": 48,
-    "ammunition": 19,
-    "attachment": 16,
+    "weapon": 68,
+    "magazine": 53,
+    "attachment": 24,
+    "ammunition": 22,
     "core": 4,
     "grenade": 4,
     "particle": 2,
+    "misc": 2,
     "tripod": 2
   },
   "warnings": 1,
-  "graph_edges": 384,
+  "graph_edges": 476,
   "weapons_with_effective_velocity": 13
 }

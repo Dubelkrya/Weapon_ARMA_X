@@ -1,0 +1,156 @@
+{
+  "id": "armst_magazine_545x39_rpk_45rnd_bp",
+  "role": "leaf",
+  "source": {
+    "resource": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_RPK_45rnd_BP.et",
+    "resource_guid": "124F7D3880DA92C6",
+    "meta_name": null,
+    "class": "GenericEntity",
+    "defined_in": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_RPK_45rnd_BP.et"
+  },
+  "identity": {
+    "name": "armst_Magazine_545x39_RPK_45rnd_BP",
+    "resource": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_RPK_45rnd_BP.et"
+  },
+  "classification": {
+    "kind": "magazine",
+    "confidence": "components"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_RPK_45rnd_BP.et",
+        "status": "local",
+        "class": "GenericEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Magazines/Magazine_545x39_RPK_45rnd_Base.et",
+        "status": "base_game_snapshot",
+        "class": "GenericEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Core/Magazine_Base.et",
+        "status": "base_game_snapshot",
+        "class": "GenericEntity"
+      }
+    ],
+    "external_parents": [],
+    "used_as_base_by": [],
+    "chain_depth_local": 1,
+    "chain_depth_base_game_snapshot": 2
+  },
+  "references": [
+    {
+      "guid": "1AA788302FE3C53A",
+      "path": "Configs/WeaponInfo/MagazineIndicators/ak74_30.conf",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_545x39_RPK_45rnd_Base.et"
+    },
+    {
+      "guid": "BAD812761691C057",
+      "path": "Configs/Weapons/Ammo/ARMST/armst_Ammo_545x39_ARMST.conf",
+      "resolved": "local",
+      "target": "Configs/Weapons/Ammo/ARMST/armst_Ammo_545x39_ARMST.conf",
+      "defined_in": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_RPK_45rnd_BP.et"
+    },
+    {
+      "guid": "49EAB2EE6A0BBECA",
+      "path": "Assets/Weapons/Magazines/RPK74/Magazine_45rnd_RPK74.xob",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_545x39_RPK_45rnd_Base.et"
+    }
+  ],
+  "warnings": [],
+  "data": {
+    "magazine_well": {
+      "name": "MagazineWell",
+      "class": "MagazineWellAK545",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_545x39_RPK_45rnd_Base.et"
+    },
+    "ammo_config": {
+      "guid": "BAD812761691C057",
+      "path": "Configs/Weapons/Ammo/ARMST/armst_Ammo_545x39_ARMST.conf",
+      "defined_in": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_RPK_45rnd_BP.et"
+    },
+    "max_ammo": {
+      "value": 45,
+      "defined_in": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_RPK_45rnd_BP.et",
+      "inherited": false
+    },
+    "ammo_mapping": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "caliber_id": {
+      "value": "#AR-AmmunitionID_545x39mm",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_545x39_RPK_45rnd_Base.et",
+      "inherited": true
+    },
+    "name": null,
+    "_defined_in": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_545x39_RPK_45rnd_Base.et",
+    "display_name": null,
+    "weight": null,
+    "grid": {
+      "width": null,
+      "height": {
+        "value": 3,
+        "defined_in": "Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_RPK_45rnd_BP.et",
+        "inherited": false
+      }
+    },
+    "_inv_defined_in": "base_game_snapshot:Prefabs/Weapons/Core/Magazine_Base.et",
+    "model": {
+      "guid": "49EAB2EE6A0BBECA",
+      "path": "Assets/Weapons/Magazines/RPK74/Magazine_45rnd_RPK74.xob",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_545x39_RPK_45rnd_Base.et"
+    }
+  },
+  "derived": {
+    "capacity": 45
+  }
+}

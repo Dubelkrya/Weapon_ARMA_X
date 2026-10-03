@@ -1,0 +1,44 @@
+{
+  "id": "armst_ammo_grenade_hedp_m433",
+  "role": "leaf",
+  "source": {
+    "resource": "Prefabs/Weapons/Ammo/armst_Ammo_Grenade_HEDP_M433.et",
+    "resource_guid": "1663496AE5B9F10B",
+    "meta_name": null,
+    "class": "Projectile",
+    "defined_in": "Prefabs/Weapons/Ammo/armst_Ammo_Grenade_HEDP_M433.et"
+  },
+  "identity": {
+    "name": "armst_Ammo_Grenade_HEDP_M433",
+    "resource": "Prefabs/Weapons/Ammo/armst_Ammo_Grenade_HEDP_M433.et"
+  },
+  "classification": {
+    "kind": "ammunition",
+    "confidence": "class"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Weapons/Ammo/armst_Ammo_Grenade_HEDP_M433.et",
+        "status": "local",
+        "class": "Projectile"
+      },
+      {
+        "resource": "Prefabs/Weapons/Core/Ammo_GrenadeLauncher_Base.et",
+        "status": "base_game_snapshot",
+        "class": "Projectile"
+      }
+    ],
+    "external_parents": [],
+    "used_as_base_by": [],
+    "chain_depth_local": 1,
+    "chain_depth_base_game_snapshot": 1
+  },
+  "references": [],
+  "warnings": [],
+  "data": {
+    "effects": null,
+    "_defined_in": null
+  },
+  "derived": {}
+}

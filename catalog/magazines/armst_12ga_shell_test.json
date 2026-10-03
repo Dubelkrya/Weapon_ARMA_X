@@ -22,17 +22,22 @@
         "resource": "Prefabs/Weapons/Magazines/12ga/armst_12ga_Shell_test.et",
         "status": "local",
         "class": "GenericEntity"
-      }
-    ],
-    "external_parents": [
+      },
       {
-        "guid": "6D18CC33708EE712",
-        "path": "Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et",
-        "raw": "{6D18CC33708EE712}Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et"
+        "resource": "Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et",
+        "status": "base_game_snapshot",
+        "class": "GenericEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Core/Magazine_Base.et",
+        "status": "base_game_snapshot",
+        "class": "GenericEntity"
       }
     ],
+    "external_parents": [],
     "used_as_base_by": [],
-    "chain_depth_local": 1
+    "chain_depth_local": 1,
+    "chain_depth_base_game_snapshot": 2
   },
   "references": [
     {
@@ -69,7 +74,7 @@
     "magazine_well": {
       "name": "MagazineWell",
       "class": "MagazineWell12g",
-      "defined_in": "Prefabs/Weapons/Magazines/12ga/armst_12ga_Shell_test.et"
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et"
     },
     "ammo_config": {
       "guid": "3521D7BE87A3F391",
@@ -88,20 +93,28 @@
       2,
       2
     ],
-    "caliber_id": null,
+    "caliber_id": {
+      "value": "#AR-AmmunitionID_762x51mm",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et",
+      "inherited": true
+    },
     "name": {
       "value": "12g 5rnd Shell",
       "defined_in": "Prefabs/Weapons/Magazines/12ga/armst_12ga_Shell_test.et",
       "inherited": false
     },
-    "_defined_in": "Prefabs/Weapons/Magazines/12ga/armst_12ga_Shell_test.et",
+    "_defined_in": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et",
     "display_name": null,
     "weight": null,
     "grid": {
       "width": null,
-      "height": null
+      "height": {
+        "value": 2,
+        "defined_in": "base_game_snapshot:Prefabs/Weapons/Core/Magazine_Base.et",
+        "inherited": true
+      }
     },
-    "_inv_defined_in": "Prefabs/Weapons/Magazines/12ga/armst_12ga_Shell_test.et",
+    "_inv_defined_in": "base_game_snapshot:Prefabs/Weapons/Core/Magazine_Base.et",
     "editor_name": {
       "value": "12 Gauge 00 Buckshot",
       "defined_in": "Prefabs/Weapons/Magazines/12ga/armst_12ga_Shell_test.et",

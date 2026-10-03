@@ -1,0 +1,130 @@
+{
+  "id": "armst_ugl_m203_short",
+  "role": "leaf",
+  "source": {
+    "resource": "Prefabs/Weapons/Attachments/Underbarrel/armst_UGL_M203_short.et",
+    "resource_guid": "AB268D088F2D6291",
+    "meta_name": null,
+    "class": "GameEntity",
+    "defined_in": "Prefabs/Weapons/Attachments/Underbarrel/armst_UGL_M203_short.et"
+  },
+  "identity": {
+    "name": "armst_UGL_M203_short",
+    "resource": "Prefabs/Weapons/Attachments/Underbarrel/armst_UGL_M203_short.et"
+  },
+  "classification": {
+    "kind": "attachment",
+    "confidence": "folder",
+    "attachment_kind": "underbarrel"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Weapons/Attachments/Underbarrel/armst_UGL_M203_short.et",
+        "status": "local",
+        "class": "GameEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Attachments/Underbarrel/UGL_M203_base.et",
+        "status": "base_game_snapshot",
+        "class": "GameEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Core/UGL_Base.et",
+        "status": "base_game_snapshot",
+        "class": "GameEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Core/Attachment_Base.et",
+        "status": "base_game_snapshot",
+        "class": "GameEntity"
+      }
+    ],
+    "external_parents": [],
+    "used_as_base_by": [],
+    "chain_depth_local": 1,
+    "chain_depth_base_game_snapshot": 3
+  },
+  "references": [
+    {
+      "guid": "6DECA775666513C9",
+      "path": "Sounds/Weapons/Attachments/Underbarrel/M203/Weapons_Attch_Underbarrel_M203_Handling.acp",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Attachments/Underbarrel/UGL_M203_base.et"
+    },
+    {
+      "guid": "064CF78A5EB39F84",
+      "path": "Assets/Weapons/Attachments/Underbarrel/M203/M203.xob",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Attachments/Underbarrel/UGL_M203_base.et"
+    },
+    {
+      "guid": "2062FCAF09834699",
+      "path": "Particles/Weapon/Smoke_M203.ptc",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Attachments/Underbarrel/UGL_M203_base.et"
+    },
+    {
+      "guid": "16FC70F15C5507DD",
+      "path": "Assets/Weapons/Rifles/M16A2/anims/anmM203/p_m16_M203_UGL_ik.anm",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Attachments/Underbarrel/UGL_M203_base.et"
+    },
+    {
+      "guid": "1663496AE5B9F10B",
+      "path": "Prefabs/Weapons/Ammo/Ammo_Grenade_HEDP_M433.et",
+      "resolved": "local",
+      "target": "Prefabs/Weapons/Ammo/armst_Ammo_Grenade_HEDP_M433.et",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Attachments/Underbarrel/UGL_M203_base.et"
+    },
+    {
+      "guid": "9CA239925FE3C73A",
+      "path": "Assets/Weapons/Rifles/M16A2/anims/anmM203/p_m16_M203_ik.anm",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Attachments/Underbarrel/UGL_M203_base.et"
+    },
+    {
+      "guid": "288D8FF8F78E3DA0",
+      "path": "Assets/Weapons/Rifles/workspaces/m16_M203.agr",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Attachments/Underbarrel/UGL_M203_base.et"
+    },
+    {
+      "guid": "D23E2C738E4D3A65",
+      "path": "Assets/Weapons/Rifles/workspaces/m16_M203_player.asi",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Attachments/Underbarrel/UGL_M203_base.et"
+    },
+    {
+      "guid": "970293F8561231D4",
+      "path": "Configs/UI/NearbyInteractionContext/NearbyContextWeapons.conf",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Attachments/Underbarrel/UGL_M203_base.et"
+    },
+    {
+      "guid": "2960BD42164C5E89",
+      "path": "Assets/Weapons/Rifles/workspaces/m16_M203_weapon.asi",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Attachments/Underbarrel/UGL_M203_base.et"
+    },
+    {
+      "guid": "0F3D24E63B0AFAF7",
+      "path": "Prefabs/Weapons/Core/Configs/TriggerEffects/Empty/TriggerEffect_Empty.conf",
+      "resolved": "base_game_snapshot",
+      "target": "Prefabs/Weapons/Core/Configs/TriggerEffects/Empty/TriggerEffect_Empty.conf",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Attachments/Underbarrel/UGL_M203_base.et",
+      "snapshot_import_guid": "DCC60134C6044FB8",
+      "snapshot_physical_rel": "core/Configs/TriggerEffects/Empty/TriggerEffect_Empty.conf"
+    }
+  ],
+  "warnings": []
+}

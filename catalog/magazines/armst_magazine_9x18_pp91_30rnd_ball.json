@@ -27,17 +27,22 @@
         "resource": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PM_8rnd_Ball.et",
         "status": "local",
         "class": "GenericEntity"
-      }
-    ],
-    "external_parents": [
+      },
       {
-        "guid": "9B5AA2C731485ACA",
-        "path": "Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Base.et",
-        "raw": "{9B5AA2C731485ACA}Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Base.et"
+        "resource": "Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Base.et",
+        "status": "base_game_snapshot",
+        "class": "GenericEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Core/Magazine_Base.et",
+        "status": "base_game_snapshot",
+        "class": "GenericEntity"
       }
     ],
+    "external_parents": [],
     "used_as_base_by": [],
-    "chain_depth_local": 2
+    "chain_depth_local": 2,
+    "chain_depth_base_game_snapshot": 2
   },
   "references": [
     {
@@ -48,11 +53,32 @@
       "defined_in": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PP91_30rnd_Ball.et"
     },
     {
+      "guid": "E7E6149FBC9B3675",
+      "path": "Configs/WeaponInfo/MagazineIndicators/beretta_15.conf",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Base.et"
+    },
+    {
+      "guid": "4A7B5486D9167E2A",
+      "path": "Configs/Weapons/Ammo/Ammo_9x18Mak.conf",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Base.et"
+    },
+    {
       "guid": "616109F8BCB6B70E",
       "path": "Assets/Weapons_RUS/Kedr/Kedr_magazine.xob",
       "resolved": "local",
       "target": "Assets/Weapons_RUS/Kedr/Kedr_magazine.xob",
       "defined_in": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PP91_30rnd_Ball.et"
+    },
+    {
+      "guid": "9245B067CB850C80",
+      "path": "Sounds/Weapons/_SharedData/PickUp/Weapons_PickUp_Handgun_Magazine.acp",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Base.et"
     }
   ],
   "warnings": [],
@@ -60,7 +86,7 @@
     "magazine_well": {
       "name": "MagazineWell",
       "class": "MagazineWellPP91",
-      "defined_in": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PP91_30rnd_Ball.et"
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Base.et"
     },
     "ammo_config": {
       "guid": "F2D8D099211C2451",
@@ -94,11 +120,23 @@
       0,
       0,
       0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
       0
     ],
-    "caliber_id": null,
+    "caliber_id": {
+      "value": "#AR-AmmunitionID_9x18mm",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Base.et",
+      "inherited": true
+    },
     "name": null,
-    "_defined_in": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PP91_30rnd_Ball.et",
+    "_defined_in": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Base.et",
     "display_name": null,
     "weight": null,
     "grid": {
@@ -109,7 +147,7 @@
         "inherited": false
       }
     },
-    "_inv_defined_in": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PP91_30rnd_Ball.et",
+    "_inv_defined_in": "base_game_snapshot:Prefabs/Weapons/Core/Magazine_Base.et",
     "editor_name": {
       "value": "PP-91 Magazine",
       "defined_in": "Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_PP91_30rnd_Ball.et",

@@ -25,20 +25,30 @@
         "class": "GameEntity"
       },
       {
-        "resource": "Prefabs/Weapons/Attachments/Muzzle/Suppressor_PBS4/Suppressor_PBS4_base.et",
+        "resource": "Prefabs/Weapons/Attachments/Muzzle/Suppressor_PBS4/armst_Suppressor_PBS4.et",
         "status": "local",
+        "class": "GameEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Core/Suppressor_base.et",
+        "status": "base_game_snapshot",
+        "class": "GameEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Core/MuzzleDevice_base.et",
+        "status": "base_game_snapshot",
+        "class": "GameEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Core/Attachment_Base.et",
+        "status": "base_game_snapshot",
         "class": "GameEntity"
       }
     ],
-    "external_parents": [
-      {
-        "guid": "491CEF88656BE6C2",
-        "path": "Prefabs/Weapons/Core/Suppressor_base.et",
-        "raw": "{491CEF88656BE6C2}Prefabs/Weapons/Core/Suppressor_base.et"
-      }
-    ],
+    "external_parents": [],
     "used_as_base_by": [],
-    "chain_depth_local": 2
+    "chain_depth_local": 2,
+    "chain_depth_base_game_snapshot": 3
   },
   "references": [
     {
@@ -54,6 +64,13 @@
       "resolved": "external",
       "target": null,
       "defined_in": "Prefabs/Weapons/Attachments/Muzzle/armst_Suppressor_9a91.et"
+    },
+    {
+      "guid": "5BDBACC1D71C41AB",
+      "path": "Sounds/Weapons/_SharedData/PickUp/Weapons_PickUp_Attachments_Suppressor.acp",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Core/Suppressor_base.et"
     }
   ],
   "warnings": []

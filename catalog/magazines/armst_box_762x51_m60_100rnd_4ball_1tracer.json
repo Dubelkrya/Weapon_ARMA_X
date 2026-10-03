@@ -1,0 +1,243 @@
+{
+  "id": "armst_box_762x51_m60_100rnd_4ball_1tracer",
+  "role": "leaf",
+  "source": {
+    "resource": "Prefabs/Weapons/Magazines/Western/762x51/Box/armst_Box_762x51_M60_100rnd_4Ball_1Tracer.et",
+    "resource_guid": "4D2C1E8F3A81F894",
+    "meta_name": null,
+    "class": "GenericEntity",
+    "defined_in": "Prefabs/Weapons/Magazines/Western/762x51/Box/armst_Box_762x51_M60_100rnd_4Ball_1Tracer.et"
+  },
+  "identity": {
+    "name": "armst_Box_762x51_M60_100rnd_4Ball_1Tracer",
+    "resource": "Prefabs/Weapons/Magazines/Western/762x51/Box/armst_Box_762x51_M60_100rnd_4Ball_1Tracer.et"
+  },
+  "classification": {
+    "kind": "magazine",
+    "confidence": "components"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Weapons/Magazines/Western/762x51/Box/armst_Box_762x51_M60_100rnd_4Ball_1Tracer.et",
+        "status": "local",
+        "class": "GenericEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Magazines/Box_762x51_M60_100rnd_Base.et",
+        "status": "base_game_snapshot",
+        "class": "GenericEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Core/Magazine_Base.et",
+        "status": "base_game_snapshot",
+        "class": "GenericEntity"
+      }
+    ],
+    "external_parents": [],
+    "used_as_base_by": [],
+    "chain_depth_local": 1,
+    "chain_depth_base_game_snapshot": 2
+  },
+  "references": [
+    {
+      "guid": "8FEAFE13C74D0E5B",
+      "path": "Assets/Weapons/Magazines/M60/Magazine_100rnd_M60_item.xob",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Magazines/Box_762x51_M60_100rnd_Base.et"
+    },
+    {
+      "guid": "533A763E304771D9",
+      "path": "Configs/Weapons/Ammo/Ammo_762x51.conf",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Magazines/Box_762x51_M60_100rnd_Base.et"
+    },
+    {
+      "guid": "80CB5B8C2B044B1B",
+      "path": "Assets/Weapons/Magazines/M60/Magazine_100rnd_M60.xob",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Magazines/Box_762x51_M60_100rnd_Base.et"
+    },
+    {
+      "guid": "7E11250286B94F44",
+      "path": "Sounds/Weapons/_SharedData/PickUp/Weapons_PickUp_MGM60_Magazine.acp",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Magazines/Box_762x51_M60_100rnd_Base.et"
+    },
+    {
+      "guid": "1A98A88D1841C7A9",
+      "path": "Sounds/Weapons/_SharedData/Drop/Weapons_Drop_LMG_M60_Magazine.acp",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Magazines/Box_762x51_M60_100rnd_Base.et"
+    },
+    {
+      "guid": "25DBDA37A532214A",
+      "path": "Assets/Weapons/Magazines/workspaces/M60_magazine.agr",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Magazines/Box_762x51_M60_100rnd_Base.et"
+    },
+    {
+      "guid": "C8B18FECB93B73A4",
+      "path": "Assets/Weapons/Magazines/workspaces/M60_Magazine.asi",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Magazines/Box_762x51_M60_100rnd_Base.et"
+    }
+  ],
+  "warnings": [],
+  "data": {
+    "magazine_well": {
+      "name": "MagazineWell",
+      "class": "MagazineWellM60",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Magazines/Box_762x51_M60_100rnd_Base.et"
+    },
+    "ammo_config": {
+      "guid": "533A763E304771D9",
+      "path": "Configs/Weapons/Ammo/Ammo_762x51.conf",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Magazines/Box_762x51_M60_100rnd_Base.et"
+    },
+    "max_ammo": {
+      "value": 100,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Magazines/Box_762x51_M60_100rnd_Base.et",
+      "inherited": true
+    },
+    "ammo_mapping": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "caliber_id": {
+      "value": "#AR-AmmunitionID_762x51mm",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Magazines/Box_762x51_M60_100rnd_Base.et",
+      "inherited": true
+    },
+    "name": {
+      "value": "#AR-Magazine_M60_Name",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Magazines/Box_762x51_M60_100rnd_Base.et",
+      "inherited": true
+    },
+    "_defined_in": "base_game_snapshot:Prefabs/Weapons/Magazines/Box_762x51_M60_100rnd_Base.et",
+    "display_name": null,
+    "weight": null,
+    "grid": {
+      "width": null,
+      "height": {
+        "value": 2,
+        "defined_in": "base_game_snapshot:Prefabs/Weapons/Core/Magazine_Base.et",
+        "inherited": true
+      }
+    },
+    "_inv_defined_in": "base_game_snapshot:Prefabs/Weapons/Core/Magazine_Base.et",
+    "model": {
+      "guid": "80CB5B8C2B044B1B",
+      "path": "Assets/Weapons/Magazines/M60/Magazine_100rnd_M60.xob",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Magazines/Box_762x51_M60_100rnd_Base.et"
+    }
+  },
+  "derived": {
+    "capacity": 100
+  }
+}

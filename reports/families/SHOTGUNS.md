@@ -3,7 +3,7 @@
 > [!NOTE]
 > **Status: GENERATED SNAPSHOT.** The main family table uses the explicit `/Shotgun/` prefab path.
 
-Current matching catalog entries: **9**.
+Current matching catalog entries: **10**.
 
 All entries in the explicit shotgun branch currently resolve `MagazineWell12g` and the 12 ga buckshot template. A missing RPM or dispersion diameter remains unresolved rather than being treated as zero.
 
@@ -11,15 +11,16 @@ All entries in the explicit shotgun branch currently resolve `MagazineWell12g` a
 
 | Entry | Role | Parent | Magazine | RPM | Velocity coef | Dispersion | Slots | Warnings |
 |---|---|---|---|---:|---:|---|---:|---:|
-| [`armst_shotgun_base`](../../catalog/weapons/armst_shotgun_base.json) | base | `Rifle_M21.et` | `armst_12ga_Buckshot.et` | — | — | R=701 | 1 | 0 |
-| [`armst_shotgun_izh_27`](../../catalog/weapons/armst_shotgun_izh_27.json) | leaf | `armst_shotgun_base.et` | `armst_12ga_Buckshot.et` | 1500 | — | R=701 | 1 | 0 |
-| [`armst_shotgun_mp_133`](../../catalog/weapons/armst_shotgun_mp_133.json) | leaf | `armst_shotgun_base.et` | `armst_12ga_Buckshot.et` | 1400 | — | R=701 | 1 | 0 |
-| [`armst_shotgun_mp_153`](../../catalog/weapons/armst_shotgun_mp_153.json) | leaf | `armst_shotgun_base.et` | `armst_12ga_Buckshot.et` | 1400 | — | R=701 | 1 | 0 |
-| [`armst_shotgun_remington_870`](../../catalog/weapons/armst_shotgun_remington_870.json) | leaf | `armst_shotgun_base.et` | `armst_12ga_Buckshot.et` | — | — | R=701 | 1 | 0 |
-| [`armst_shotgun_spas_12`](../../catalog/weapons/armst_shotgun_spas_12.json) | leaf | `armst_shotgun_base.et` | `armst_12ga_Buckshot.et` | 1400 | — | R=701 | 1 | 0 |
-| [`armst_shotgun_toz_66`](../../catalog/weapons/armst_shotgun_toz_66.json) | base | `armst_shotgun_base.et` | `armst_12ga_Buckshot.et` | 1600 | — | R=701 | 1 | 0 |
-| [`armst_shotgun_toz_66_pantera`](../../catalog/weapons/armst_shotgun_toz_66_pantera.json) | leaf | `armst_Shotgun_toz_66.et` | `armst_12ga_Buckshot.et` | 1600 | — | R=701 | 1 | 0 |
-| [`armst_shotgun_toz_66_saw`](../../catalog/weapons/armst_shotgun_toz_66_saw.json) | leaf | `armst_Shotgun_toz_66.et` | `armst_12ga_Buckshot.et` | 1600 | — | R=701 | 1 | 0 |
+| [`armst_shotgun_base`](../../catalog/weapons/armst_shotgun_base.json) | base | `armst_Rifle_M21.et` | `armst_12ga_Buckshot.et` | — | — | D=0.4, R=701, 1.962 MOA | 1 | 0 |
+| [`armst_shotgun_izh_27`](../../catalog/weapons/armst_shotgun_izh_27.json) | leaf | `armst_shotgun_base.et` | `armst_12ga_Buckshot.et` | 1500 | — | D=0.4, R=701, 1.962 MOA | 1 | 0 |
+| [`armst_shotgun_mp_133`](../../catalog/weapons/armst_shotgun_mp_133.json) | leaf | `armst_shotgun_base.et` | `armst_12ga_Buckshot.et` | 1400 | — | D=0.4, R=701, 1.962 MOA | 1 | 0 |
+| [`armst_shotgun_mp_133_ris`](../../catalog/weapons/armst_shotgun_mp_133_ris.json) | leaf | `armst_shotgun_base.et` | `armst_12ga_Buckshot.et` | 1400 | — | D=0.4, R=701, 1.962 MOA | 1 | 0 |
+| [`armst_shotgun_mp_153`](../../catalog/weapons/armst_shotgun_mp_153.json) | leaf | `armst_shotgun_base.et` | `armst_12ga_Buckshot.et` | 1400 | — | D=0.4, R=701, 1.962 MOA | 1 | 0 |
+| [`armst_shotgun_remington_870`](../../catalog/weapons/armst_shotgun_remington_870.json) | leaf | `armst_shotgun_base.et` | `armst_12ga_Buckshot.et` | — | — | D=0.4, R=701, 1.962 MOA | 1 | 0 |
+| [`armst_shotgun_spas_12`](../../catalog/weapons/armst_shotgun_spas_12.json) | leaf | `armst_shotgun_base.et` | `armst_12ga_Buckshot.et` | 1400 | — | D=0.4, R=701, 1.962 MOA | 1 | 0 |
+| [`armst_shotgun_toz_66`](../../catalog/weapons/armst_shotgun_toz_66.json) | base | `armst_shotgun_base.et` | `armst_12ga_Buckshot.et` | 1600 | — | D=0.4, R=701, 1.962 MOA | 1 | 0 |
+| [`armst_shotgun_toz_66_pantera`](../../catalog/weapons/armst_shotgun_toz_66_pantera.json) | leaf | `armst_Shotgun_toz_66.et` | `armst_12ga_Buckshot.et` | 1600 | — | D=0.4, R=701, 1.962 MOA | 1 | 0 |
+| [`armst_shotgun_toz_66_saw`](../../catalog/weapons/armst_shotgun_toz_66_saw.json) | leaf | `armst_Shotgun_toz_66.et` | `armst_12ga_Buckshot.et` | 1600 | — | D=0.4, R=701, 1.962 MOA | 1 | 0 |
 
 ## Related 12 ga entries outside the shotgun prefab path
 
@@ -27,4 +28,4 @@ These are not automatically promoted into the shotgun family because their sourc
 
 | Entry | Role | Parent | Magazine | RPM | Velocity coef | Dispersion | Slots | Warnings |
 |---|---|---|---|---:|---:|---|---:|---:|
-| [`1`](../../catalog/weapons/1.json) | leaf | `Rifle_M21_base.et` | `armst_12ga_Buckshot.et` | 50 | 0.95 | D=0.1 | 1 | 0 |
+| [`1`](../../catalog/weapons/1.json) | leaf | `Rifle_M21_base.et` | `armst_12ga_Buckshot.et` | 50 | 0.95 | D=0.1, R=700, 0.491 MOA | 1 | 0 |

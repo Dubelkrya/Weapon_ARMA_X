@@ -32,17 +32,37 @@
         "resource": "Prefabs/Weapons/Western/Shotgun/core/armst_shotgun_base.et",
         "status": "local",
         "class": "GenericEntity"
-      }
-    ],
-    "external_parents": [
+      },
       {
-        "guid": "B31929F65F0D0279",
-        "path": "Prefabs/Weapons/Rifles/M14/Rifle_M21.et",
-        "raw": "{B31929F65F0D0279}Prefabs/Weapons/Rifles/M14/Rifle_M21.et"
+        "resource": "Prefabs/Weapons/Western/Rifle/M14/armst_Rifle_M21.et",
+        "status": "local",
+        "class": "GenericEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Rifles/M14/Rifle_M21_base.et",
+        "status": "base_game_snapshot",
+        "class": "GenericEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Core/LongRangeRifle_Base.et",
+        "status": "base_game_snapshot",
+        "class": "GenericEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Core/Rifle_Base.et",
+        "status": "base_game_snapshot",
+        "class": "GenericEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Core/Weapon_Base.et",
+        "status": "base_game_snapshot",
+        "class": "GenericEntity"
       }
     ],
+    "external_parents": [],
     "used_as_base_by": [],
-    "chain_depth_local": 3
+    "chain_depth_local": 4,
+    "chain_depth_base_game_snapshot": 4
   },
   "references": [
     {
@@ -60,6 +80,20 @@
       "defined_in": "Prefabs/Weapons/Russian/Shotgun/armst_Shotgun_toz_66.et"
     },
     {
+      "guid": "0350283642830782",
+      "path": "anims/workspaces/player/player_main_rifle.asi",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Core/LongRangeRifle_Base.et"
+    },
+    {
+      "guid": "B7869ABD0EEE379D",
+      "path": "Assets/Weapons/Rifles/AK74/anims/anm/p_ak74_ik.anm",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Core/LongRangeRifle_Base.et"
+    },
+    {
       "guid": "3E62CF528279BC22",
       "path": "Particles/Weapon/Casing_12ga.ptc",
       "resolved": "local",
@@ -74,11 +108,61 @@
       "defined_in": "Prefabs/Weapons/Western/Shotgun/core/armst_shotgun_base.et"
     },
     {
+      "guid": "8EAE237E5528D237",
+      "path": "Particles/Weapon/Muzzle_M21.ptc",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/M14/Rifle_M21_base.et"
+    },
+    {
       "guid": "B0DFDF7AAA9C5D39",
       "path": "Prefabs/Weapons/Magazines/12ga/armst_12ga_Buckshot.et",
       "resolved": "local",
       "target": "Prefabs/Weapons/Magazines/12ga/armst_12ga_Buckshot.et",
       "defined_in": "Prefabs/Weapons/Western/Shotgun/core/armst_shotgun_base.et"
+    },
+    {
+      "guid": "0E6B74D9C265E140",
+      "path": "Prefabs/Weapons/Core/Recoil/Rifle_LongRange_762_recoil.conf",
+      "resolved": "base_game_snapshot",
+      "target": "Prefabs/Weapons/Core/Recoil/Rifle_LongRange_762_recoil.conf",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/M14/Rifle_M21_base.et",
+      "snapshot_import_guid": "1882D2A1960EC08D",
+      "snapshot_physical_rel": "core/Recoil/Rifle_LongRange_762_recoil.conf"
+    },
+    {
+      "guid": "7C114BA7C59E198D",
+      "path": "Configs/WeaponInfo/MagazineIndicators/box.conf",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/M14/Rifle_M21_base.et"
+    },
+    {
+      "guid": "687B3DA431730CFA",
+      "path": "Prefabs/Weapons/Core/Configs/FireModes/FireMode_Safe.conf",
+      "resolved": "base_game_snapshot",
+      "target": "Prefabs/Weapons/Core/Configs/FireModes/FireMode_Safe.conf",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Core/LongRangeRifle_Base.et",
+      "snapshot_import_guid": "60B0FC29181A99F4",
+      "snapshot_physical_rel": "core/Configs/FireModes/FireMode_Safe.conf"
+    },
+    {
+      "guid": "3568E9D86F77DEB7",
+      "path": "Prefabs/Weapons/Core/Configs/TriggerEffects/Safety/TriggerEffect_SafetyLight.conf",
+      "resolved": "base_game_snapshot",
+      "target": "Prefabs/Weapons/Core/Configs/TriggerEffects/Safety/TriggerEffect_SafetyLight.conf",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Core/LongRangeRifle_Base.et",
+      "snapshot_import_guid": "F2E911B732BA0840",
+      "snapshot_physical_rel": "core/Configs/TriggerEffects/Safety/TriggerEffect_SafetyLight.conf"
+    },
+    {
+      "guid": "D5D52E848DBCAA53",
+      "path": "Prefabs/Weapons/Core/Configs/FireModes/FireMode_Single.conf",
+      "resolved": "base_game_snapshot",
+      "target": "Prefabs/Weapons/Core/Configs/FireModes/FireMode_Single.conf",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Core/LongRangeRifle_Base.et",
+      "snapshot_import_guid": "FAF4B3FB6DE91626",
+      "snapshot_physical_rel": "core/Configs/FireModes/FireMode_Single.conf"
     },
     {
       "guid": "0D2FD22F469CF9AE",
@@ -107,6 +191,15 @@
       "resolved": "external",
       "target": null,
       "defined_in": "Prefabs/Weapons/Russian/Shotgun/armst_Shotgun_toz_66.et"
+    },
+    {
+      "guid": "FD6D307018F1F3C9",
+      "path": "Prefabs/Weapons/Core/Configs/TriggerEffects/ADS/TriggerEffect_ADSHeavy.conf",
+      "resolved": "base_game_snapshot",
+      "target": "Prefabs/Weapons/Core/Configs/TriggerEffects/ADS/TriggerEffect_ADSHeavy.conf",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Core/LongRangeRifle_Base.et",
+      "snapshot_import_guid": "BD40D917AC1C4832",
+      "snapshot_physical_rel": "core/Configs/TriggerEffects/ADS/TriggerEffect_ADSHeavy.conf"
     }
   ],
   "warnings": [],
@@ -138,6 +231,11 @@
       "ItemVolume": null,
       "DimensionScaler": null,
       "_defined_in": "Prefabs/Weapons/Russian/Shotgun/armst_Shotgun_toz_66_saw.et",
+      "Mass": {
+        "value": 3,
+        "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/M14/Rifle_M21_base.et",
+        "inherited": true
+      },
       "MeleeDamage": {
         "value": 2,
         "defined_in": "Prefabs/Weapons/Western/Shotgun/core/armst_shotgun_base.et",
@@ -163,7 +261,11 @@
     },
     "ballistics": {
       "bullet_init_speed_coef": null,
-      "dispersion_diameter": null,
+      "dispersion_diameter": {
+        "value": 0.4,
+        "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/M14/Rifle_M21_base.et",
+        "inherited": true
+      },
       "dispersion_range": {
         "value": 701,
         "defined_in": "Prefabs/Weapons/Western/Shotgun/core/armst_shotgun_base.et",
@@ -171,25 +273,76 @@
       }
     },
     "aim": {
-      "recoil": null,
+      "recoil": {
+        "LinearData": null,
+        "AngularData": null,
+        "TurnOffsetData": null
+      },
       "sway": null
     },
     "sights": {
       "switch_skip": null,
-      "ranges": [],
-      "defined_in": "Prefabs/Weapons/Russian/Shotgun/armst_Shotgun_toz_66.et"
+      "ranges": [
+        [
+          0.267,
+          100
+        ],
+        [
+          0.3,
+          200
+        ],
+        [
+          0.364,
+          300
+        ],
+        [
+          0.435,
+          400
+        ],
+        [
+          0.505,
+          500
+        ],
+        [
+          0.605,
+          600
+        ],
+        [
+          0.712,
+          700
+        ],
+        [
+          0.822,
+          800
+        ],
+        [
+          0.956,
+          900
+        ],
+        [
+          1,
+          1000
+        ]
+      ],
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Core/LongRangeRifle_Base.et"
     },
     "attachment_slots": [
       {
         "slot": null,
-        "pivot": null,
+        "pivot": {
+          "value": "slot_optics",
+          "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/M14/Rifle_M21_base.et",
+          "inherited": true
+        },
         "enabled": {
           "value": 0,
           "defined_in": "Prefabs/Weapons/Western/Shotgun/core/armst_shotgun_base.et",
           "inherited": true
         },
-        "attachment_types": [],
-        "defined_in": "Prefabs/Weapons/Western/Shotgun/core/armst_shotgun_base.et"
+        "attachment_types": [
+          "{58E2BCF93BDCA8BA}"
+        ],
+        "defined_in": "base_game_snapshot:Prefabs/Weapons/Rifles/M14/Rifle_M21_base.et"
       }
     ],
     "muzzle_attachment": null,
@@ -207,6 +360,14 @@
     }
   },
   "derived": {
-    "max_rounds_per_second": 26.667
+    "max_rounds_per_second": 26.667,
+    "dispersion_m_per_m": {
+      "value": 0.5706,
+      "formula": "DispersionDiameter / DispersionRange * 1000"
+    },
+    "approx_moa": {
+      "value": 1.962,
+      "formula": "DispersionDiameter / DispersionRange * 3437.75"
+    }
   }
 }

@@ -1,0 +1,67 @@
+{
+  "id": "armst_bayonet_m9",
+  "role": "leaf",
+  "source": {
+    "resource": "Prefabs/Weapons/Attachments/Bayonets/armst_Bayonet_M9.et",
+    "resource_guid": "558117556F3880A8",
+    "meta_name": null,
+    "class": "GameEntity",
+    "defined_in": "Prefabs/Weapons/Attachments/Bayonets/armst_Bayonet_M9.et"
+  },
+  "identity": {
+    "name": "armst_Bayonet_M9",
+    "resource": "Prefabs/Weapons/Attachments/Bayonets/armst_Bayonet_M9.et"
+  },
+  "classification": {
+    "kind": "attachment",
+    "confidence": "folder",
+    "attachment_kind": "other"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Weapons/Attachments/Bayonets/armst_Bayonet_M9.et",
+        "status": "local",
+        "class": "GameEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Attachments/Bayonets/Bayonet_Base.et",
+        "status": "base_game_snapshot",
+        "class": "GameEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Core/Attachment_Base.et",
+        "status": "base_game_snapshot",
+        "class": "GameEntity"
+      }
+    ],
+    "external_parents": [],
+    "used_as_base_by": [],
+    "chain_depth_local": 1,
+    "chain_depth_base_game_snapshot": 2
+  },
+  "references": [
+    {
+      "guid": "CB4B410E5D99D4CF",
+      "path": "Assets/Weapons/Attachments/Bayonets/Bayonet_M9/Bayonet_M9.xob",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Attachments/Bayonets/Bayonet_Base.et"
+    },
+    {
+      "guid": "95FC4204F9B06FF7",
+      "path": "Particles/Enviroment/Impact_Tiny/Hit_default_enter_tiny_01.ptc",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Attachments/Bayonets/Bayonet_Base.et"
+    },
+    {
+      "guid": "92CB09CB84872CB4",
+      "path": "Sounds/Weapons/_SharedData/PickUp/Weapons_PickUp_Attachments_LongGeneric.acp",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Attachments/Bayonets/Bayonet_Base.et"
+    }
+  ],
+  "warnings": []
+}

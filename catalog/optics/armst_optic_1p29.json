@@ -39,7 +39,8 @@
     "used_as_base_by": [
       "Prefabs/Weapons/Attachments/Optics/Optic_1P29/armst_Optic_1P29.et"
     ],
-    "chain_depth_local": 2
+    "chain_depth_local": 2,
+    "chain_depth_base_game_snapshot": 0
   },
   "references": [],
   "warnings": [

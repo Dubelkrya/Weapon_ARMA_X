@@ -27,17 +27,22 @@
         "resource": "Prefabs/Weapons/Magazines/12ga/12ga_Buckshot_base.et",
         "status": "local",
         "class": "GenericEntity"
-      }
-    ],
-    "external_parents": [
+      },
       {
-        "guid": "6D18CC33708EE712",
-        "path": "Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et",
-        "raw": "{6D18CC33708EE712}Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et"
+        "resource": "Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et",
+        "status": "base_game_snapshot",
+        "class": "GenericEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Core/Magazine_Base.et",
+        "status": "base_game_snapshot",
+        "class": "GenericEntity"
       }
     ],
+    "external_parents": [],
     "used_as_base_by": [],
-    "chain_depth_local": 2
+    "chain_depth_local": 2,
+    "chain_depth_base_game_snapshot": 2
   },
   "references": [
     {
@@ -67,7 +72,7 @@
     "magazine_well": {
       "name": "MagazineWell",
       "class": "MagazineWell12g",
-      "defined_in": "Prefabs/Weapons/Magazines/12ga/12ga_Buckshot_base.et"
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et"
     },
     "ammo_config": {
       "guid": "3521D7BE87A3F391",
@@ -101,7 +106,7 @@
       "defined_in": "Prefabs/Weapons/Magazines/12ga/12ga_Buckshot_base.et",
       "inherited": true
     },
-    "_defined_in": "Prefabs/Weapons/Magazines/12ga/12ga_Buckshot_base.et",
+    "_defined_in": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et",
     "display_name": null,
     "weight": null,
     "grid": {
@@ -112,7 +117,7 @@
         "inherited": true
       }
     },
-    "_inv_defined_in": "Prefabs/Weapons/Magazines/12ga/12ga_Buckshot_base.et",
+    "_inv_defined_in": "base_game_snapshot:Prefabs/Weapons/Core/Magazine_Base.et",
     "model": {
       "guid": "72DCDBE34DA53AB1",
       "path": "Assets/Mag_12g/MagazineWell12ga.xob",

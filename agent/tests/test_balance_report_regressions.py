@@ -25,11 +25,13 @@ class BalanceReportRegressionTests(unittest.TestCase):
             "Both current catalog projectiles resolve `PenetrationDepth = 3.7`",
             report,
         )
-        self.assertIn(
-            "`armst_Ammo_9x39_SP6_Ball.et`: InitSpeed=305",
+        # Current source truth for 9x39 SP6, tied to the specific ammo line so a
+        # bare number elsewhere in the report cannot satisfy the assertion.
+        self.assertRegex(
             report,
+            r"`armst_Ammo_9x39_SP6_Ball\.et`: InitSpeed=290, Mass=0\.0156, "
+            r"Damage=50, PenetrationDepth=6,",
         )
-        self.assertIn("PenetrationDepth=5.55", report)
         self.assertIn(
             "RPM, velocity coefficient and dispersion remain per-entry evidence",
             report,

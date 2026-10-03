@@ -1,0 +1,239 @@
+{
+  "id": "armst_box_762x54_pk_100rnd_4ball_1tracer",
+  "role": "leaf",
+  "source": {
+    "resource": "Prefabs/Weapons/Magazines/Russian/762x54/armst_Box_762x54_PK_100rnd_4Ball_1Tracer.et",
+    "resource_guid": "E5E9C5897CF47F44",
+    "meta_name": null,
+    "class": "GenericEntity",
+    "defined_in": "Prefabs/Weapons/Magazines/Russian/762x54/armst_Box_762x54_PK_100rnd_4Ball_1Tracer.et"
+  },
+  "identity": {
+    "name": "armst_Box_762x54_PK_100rnd_4Ball_1Tracer",
+    "resource": "Prefabs/Weapons/Magazines/Russian/762x54/armst_Box_762x54_PK_100rnd_4Ball_1Tracer.et"
+  },
+  "classification": {
+    "kind": "magazine",
+    "confidence": "components"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Weapons/Magazines/Russian/762x54/armst_Box_762x54_PK_100rnd_4Ball_1Tracer.et",
+        "status": "local",
+        "class": "GenericEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Magazines/Box_762x54_PK_100rnd_Base.et",
+        "status": "base_game_snapshot",
+        "class": "GenericEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Core/Magazine_Base.et",
+        "status": "base_game_snapshot",
+        "class": "GenericEntity"
+      }
+    ],
+    "external_parents": [],
+    "used_as_base_by": [],
+    "chain_depth_local": 1,
+    "chain_depth_base_game_snapshot": 2
+  },
+  "references": [
+    {
+      "guid": "843BF40278070328",
+      "path": "Assets/Weapons/Magazines/PKM/Magazine_100rnd_PKM_item.xob",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Magazines/Box_762x54_PK_100rnd_Base.et"
+    },
+    {
+      "guid": "B0020DFAF0D1E3C8",
+      "path": "Configs/Weapons/Ammo/Ammo_762x54.conf",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Magazines/Box_762x54_PK_100rnd_Base.et"
+    },
+    {
+      "guid": "37EC41B84E546235",
+      "path": "Assets/Weapons/Magazines/PKM/Magazine_100rnd_PKM.xob",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Magazines/Box_762x54_PK_100rnd_Base.et"
+    },
+    {
+      "guid": "BFCDAA99AC588B1E",
+      "path": "Sounds/Weapons/_SharedData/PickUp/Weapons_PickUp_MGPKM_Magazine.acp",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Magazines/Box_762x54_PK_100rnd_Base.et"
+    },
+    {
+      "guid": "F04B9D36CA351E7A",
+      "path": "Sounds/Weapons/_SharedData/Drop/Weapons_Drop_LMG_762_Magazine.acp",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Magazines/Box_762x54_PK_100rnd_Base.et"
+    },
+    {
+      "guid": "5680EE9C607C5E17",
+      "path": "Assets/Weapons/Magazines/workspaces/pkm_Magazine_100.agr",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Magazines/Box_762x54_PK_100rnd_Base.et"
+    },
+    {
+      "guid": "247BEE6036CFCD02",
+      "path": "Assets/Weapons/Magazines/workspaces/pkm_Magazine_100rnd.asi",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Magazines/Box_762x54_PK_100rnd_Base.et"
+    }
+  ],
+  "warnings": [],
+  "data": {
+    "magazine_well": {
+      "name": "MagazineWell",
+      "class": "MagazineWellPKM",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Magazines/Box_762x54_PK_100rnd_Base.et"
+    },
+    "ammo_config": {
+      "guid": "B0020DFAF0D1E3C8",
+      "path": "Configs/Weapons/Ammo/Ammo_762x54.conf",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Magazines/Box_762x54_PK_100rnd_Base.et"
+    },
+    "max_ammo": {
+      "value": 100,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Magazines/Box_762x54_PK_100rnd_Base.et",
+      "inherited": true
+    },
+    "ammo_mapping": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "caliber_id": {
+      "value": "#AR-AmmunitionID_762x54mm",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Magazines/Box_762x54_PK_100rnd_Base.et",
+      "inherited": true
+    },
+    "name": null,
+    "_defined_in": "base_game_snapshot:Prefabs/Weapons/Magazines/Box_762x54_PK_100rnd_Base.et",
+    "display_name": null,
+    "weight": null,
+    "grid": {
+      "width": null,
+      "height": {
+        "value": 2,
+        "defined_in": "base_game_snapshot:Prefabs/Weapons/Core/Magazine_Base.et",
+        "inherited": true
+      }
+    },
+    "_inv_defined_in": "base_game_snapshot:Prefabs/Weapons/Core/Magazine_Base.et",
+    "model": {
+      "guid": "37EC41B84E546235",
+      "path": "Assets/Weapons/Magazines/PKM/Magazine_100rnd_PKM.xob",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Magazines/Box_762x54_PK_100rnd_Base.et"
+    }
+  },
+  "derived": {
+    "capacity": 100
+  }
+}

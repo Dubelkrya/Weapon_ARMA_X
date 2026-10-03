@@ -22,20 +22,104 @@
         "resource": "Prefabs/Weapons/Magazines/Russian/762x54/SVD/armst_Magazine_762x54_SVD_10rnd_7BZ3API.et",
         "status": "local",
         "class": "GenericEntity"
-      }
-    ],
-    "external_parents": [
+      },
       {
-        "guid": "761A03A9C5BA8D68",
-        "path": "Prefabs/Weapons/Magazines/Magazine_762x54_SVD_10rnd_Base.et",
-        "raw": "{761A03A9C5BA8D68}Prefabs/Weapons/Magazines/Magazine_762x54_SVD_10rnd_Base.et"
+        "resource": "Prefabs/Weapons/Magazines/Magazine_762x54_SVD_10rnd_Base.et",
+        "status": "base_game_snapshot",
+        "class": "GenericEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Core/Magazine_Base.et",
+        "status": "base_game_snapshot",
+        "class": "GenericEntity"
       }
     ],
+    "external_parents": [],
     "used_as_base_by": [],
-    "chain_depth_local": 1
+    "chain_depth_local": 1,
+    "chain_depth_base_game_snapshot": 2
   },
-  "references": [],
+  "references": [
+    {
+      "guid": "6098E2D1A3DB2DA3",
+      "path": "Configs/WeaponInfo/MagazineIndicators/svd_10.conf",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_762x54_SVD_10rnd_Base.et"
+    },
+    {
+      "guid": "10D7B743E0A06735",
+      "path": "Assets/Weapons/Magazines/SVD/Magazine_10rnd_SVD.xob",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_762x54_SVD_10rnd_Base.et"
+    },
+    {
+      "guid": "B0020DFAF0D1E3C8",
+      "path": "Configs/Weapons/Ammo/Ammo_762x54.conf",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_762x54_SVD_10rnd_Base.et"
+    }
+  ],
   "warnings": [],
-  "data": {},
-  "derived": {}
+  "data": {
+    "magazine_well": {
+      "name": "MagazineWell",
+      "class": "MagazineWellSVD",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_762x54_SVD_10rnd_Base.et"
+    },
+    "ammo_config": {
+      "guid": "B0020DFAF0D1E3C8",
+      "path": "Configs/Weapons/Ammo/Ammo_762x54.conf",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_762x54_SVD_10rnd_Base.et"
+    },
+    "max_ammo": {
+      "value": 10,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_762x54_SVD_10rnd_Base.et",
+      "inherited": true
+    },
+    "ammo_mapping": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "caliber_id": {
+      "value": "#AR-AmmunitionID_762x54mm",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_762x54_SVD_10rnd_Base.et",
+      "inherited": true
+    },
+    "name": {
+      "value": "#AR-Magazine_SVD_Name",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_762x54_SVD_10rnd_Base.et",
+      "inherited": true
+    },
+    "_defined_in": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_762x54_SVD_10rnd_Base.et",
+    "display_name": null,
+    "weight": null,
+    "grid": {
+      "width": null,
+      "height": {
+        "value": 2,
+        "defined_in": "base_game_snapshot:Prefabs/Weapons/Core/Magazine_Base.et",
+        "inherited": true
+      }
+    },
+    "_inv_defined_in": "base_game_snapshot:Prefabs/Weapons/Core/Magazine_Base.et",
+    "model": {
+      "guid": "10D7B743E0A06735",
+      "path": "Assets/Weapons/Magazines/SVD/Magazine_10rnd_SVD.xob",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Magazines/Magazine_762x54_SVD_10rnd_Base.et"
+    }
+  },
+  "derived": {
+    "capacity": 10
+  }
 }

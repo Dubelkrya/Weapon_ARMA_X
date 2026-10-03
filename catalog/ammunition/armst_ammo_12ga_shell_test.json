@@ -22,25 +22,104 @@
         "resource": "Prefabs/Weapons/Ammo/12g/armst_Ammo_12ga_shell_test.et",
         "status": "local",
         "class": "Projectile"
-      }
-    ],
-    "external_parents": [
+      },
       {
-        "guid": "AC29AE3D5ECD6390",
-        "path": "Prefabs/Weapons/Ammo/Ammo_762x54r_Ball_57N323S.et",
-        "raw": "{AC29AE3D5ECD6390}Prefabs/Weapons/Ammo/Ammo_762x54r_Ball_57N323S.et"
+        "resource": "Prefabs/Weapons/Ammo/Ammo_762x54r_Ball_57N323S.et",
+        "status": "base_game_snapshot",
+        "class": "Projectile"
+      },
+      {
+        "resource": "Prefabs/Weapons/Core/Ammo_Bullet_Base.et",
+        "status": "base_game_snapshot",
+        "class": "Projectile"
       }
     ],
+    "external_parents": [],
     "used_as_base_by": [],
-    "chain_depth_local": 1
+    "chain_depth_local": 1,
+    "chain_depth_base_game_snapshot": 2
   },
   "references": [
+    {
+      "guid": "D5335C421A63E9BB",
+      "path": "Configs/Weapons/AIBallisticTables/AIBT_762x54r_Ball_57N323S.conf",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Ammo/Ammo_762x54r_Ball_57N323S.et"
+    },
+    {
+      "guid": "5412C65243EDE33F",
+      "path": "Sounds/Weapons/_SharedData/BulletSonicCracks/762/Weapons_BulletSonicCracks_762.acp",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Ammo/Ammo_762x54r_Ball_57N323S.et"
+    },
+    {
+      "guid": "F957FD54EA57C9F1",
+      "path": "Sounds/Weapons/_SharedData/BulletFlybys/Rifle/Weapons_BulletFlybys_Rifle.acp",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Ammo/Ammo_762x54r_Ball_57N323S.et"
+    },
+    {
+      "guid": "9B5FF7EECAD376FA",
+      "path": "Prefabs/Weapons/Warheads/Warhead_Base.et",
+      "resolved": "base_game_snapshot",
+      "target": "Prefabs/Weapons/Warheads/Warhead_Base.et",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Core/Ammo_Bullet_Base.et",
+      "snapshot_import_guid": "DEDEA71C51E44820",
+      "snapshot_physical_rel": "Warheads/Warhead_Base.et"
+    },
+    {
+      "guid": "4E168888868FE6C7",
+      "path": "Prefabs/Weapons/Core/ExitEffect.et",
+      "resolved": "base_game_snapshot",
+      "target": "Prefabs/Weapons/Core/ExitEffect.et",
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Core/Ammo_Bullet_Base.et",
+      "snapshot_import_guid": "6EE57C61C1EDB5AE",
+      "snapshot_physical_rel": "core/ExitEffect.et"
+    },
+    {
+      "guid": "E252C97A41BE786C",
+      "path": "Sounds/Weapons/_SharedData/BulletHits/Weapons_BulletHits.acp",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Core/Ammo_Bullet_Base.et"
+    },
+    {
+      "guid": "042AB57ADFE17DA6",
+      "path": "Configs/Weapons/AIBallisticTables/AIBT_Bullet_Base.conf",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Core/Ammo_Bullet_Base.et"
+    },
+    {
+      "guid": "ABAD8342FF1E1578",
+      "path": "Sounds/Weapons/_SharedData/BulletSonicCracks/Rifle/Weapons_BulletSonicCracks_Rifle.acp",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Core/Ammo_Bullet_Base.et"
+    },
     {
       "guid": "6862F47CEC7E0E26",
       "path": "Assets/Props/Civilian/Birdhouse_01/Birdhouse_01.xob",
       "resolved": "external",
       "target": null,
       "defined_in": "Prefabs/Weapons/Ammo/12g/armst_Ammo_12ga_shell_test.et"
+    },
+    {
+      "guid": "40DD585431C2D120",
+      "path": "Assets/Weapons/Ammo/Bullets/762x54/Bullet_762x54_LPS.xob",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Ammo/Ammo_762x54r_Ball_57N323S.et"
+    },
+    {
+      "guid": "CA77746D2BC2A55C",
+      "path": "Assets/Weapons/Ammo/Bullets/762x54/Cartridge_762x54_LPS.xob",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Ammo/Ammo_762x54r_Ball_57N323S.et"
     }
   ],
   "warnings": [],
@@ -86,9 +165,17 @@
         "defined_in": "Prefabs/Weapons/Ammo/12g/armst_Ammo_12ga_shell_test.et",
         "inherited": false
       },
-      "AirDrag": null,
-      "ballistic_table": null,
-      "_defined_in": "Prefabs/Weapons/Ammo/12g/armst_Ammo_12ga_shell_test.et"
+      "AirDrag": {
+        "value": 9.4e-06,
+        "defined_in": "base_game_snapshot:Prefabs/Weapons/Ammo/Ammo_762x54r_Ball_57N323S.et",
+        "inherited": true
+      },
+      "ballistic_table": {
+        "guid": "D5335C421A63E9BB",
+        "path": "Configs/Weapons/AIBallisticTables/AIBT_762x54r_Ball_57N323S.conf",
+        "defined_in": "base_game_snapshot:Prefabs/Weapons/Ammo/Ammo_762x54r_Ball_57N323S.et"
+      },
+      "_defined_in": "base_game_snapshot:Prefabs/Weapons/Core/Ammo_Bullet_Base.et"
     },
     "timer": {
       "time": {
@@ -136,7 +223,7 @@
         "defined_in": "Prefabs/Weapons/Ammo/12g/armst_Ammo_12ga_shell_test.et"
       }
     ],
-    "_defined_in": "Prefabs/Weapons/Ammo/12g/armst_Ammo_12ga_shell_test.et"
+    "_defined_in": "base_game_snapshot:Prefabs/Weapons/Core/Ammo_Bullet_Base.et"
   },
   "derived": {
     "init_speed": 40,

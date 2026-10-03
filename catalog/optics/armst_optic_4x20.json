@@ -1,0 +1,77 @@
+{
+  "id": "armst_optic_4x20",
+  "role": "leaf",
+  "source": {
+    "resource": "Prefabs/Weapons/Attachments/Optics/Optic_4x20/armst_Optic_4x20.et",
+    "resource_guid": "BD496EE1B40DC510",
+    "meta_name": null,
+    "class": "GameEntity",
+    "defined_in": "Prefabs/Weapons/Attachments/Optics/Optic_4x20/armst_Optic_4x20.et"
+  },
+  "identity": {
+    "name": "armst_Optic_4x20",
+    "resource": "Prefabs/Weapons/Attachments/Optics/Optic_4x20/armst_Optic_4x20.et"
+  },
+  "classification": {
+    "kind": "attachment",
+    "confidence": "folder",
+    "attachment_kind": "optic"
+  },
+  "inheritance": {
+    "chain": [
+      {
+        "resource": "Prefabs/Weapons/Attachments/Optics/Optic_4x20/armst_Optic_4x20.et",
+        "status": "local",
+        "class": "GameEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Attachments/Optics/Optic_4x20/Optic_4x20_base.et",
+        "status": "base_game_snapshot",
+        "class": "GameEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Attachments/Optics/WeaponOptic_Base.et",
+        "status": "base_game_snapshot",
+        "class": "GameEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Core/WeaponSight_Base.et",
+        "status": "base_game_snapshot",
+        "class": "GameEntity"
+      },
+      {
+        "resource": "Prefabs/Weapons/Core/Attachment_Base.et",
+        "status": "base_game_snapshot",
+        "class": "GameEntity"
+      }
+    ],
+    "external_parents": [],
+    "used_as_base_by": [],
+    "chain_depth_local": 1,
+    "chain_depth_base_game_snapshot": 4
+  },
+  "references": [
+    {
+      "guid": "FB0E7050A887C7F5",
+      "path": "Assets/Weapons/Attachments/Optics/4x20/Optic_4x20.xob",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Attachments/Optics/Optic_4x20/Optic_4x20_base.et"
+    },
+    {
+      "guid": "80860D19EDECE837",
+      "path": "UI/Textures/Sights/4x20/4x202048_UI.edds",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Attachments/Optics/Optic_4x20/Optic_4x20_base.et"
+    },
+    {
+      "guid": "09B57B6EA6B5EE41",
+      "path": "Assets/Weapons/Attachments/Optics/4x20/Data/Optic_4x20_HDR.emat",
+      "resolved": "external",
+      "target": null,
+      "defined_in": "base_game_snapshot:Prefabs/Weapons/Attachments/Optics/Optic_4x20/Optic_4x20_base.et"
+    }
+  ],
+  "warnings": []
+}
