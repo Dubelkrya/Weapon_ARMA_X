@@ -354,7 +354,9 @@ historical material**; the owner approved **V3** (Issue #27 comment 5966570978,
   with `[ARMST_T4B-INSTALLED]` pre/post/reject logs + `sameMagazine/sameOwner/chamberUnchanged`;
   rejects full/already-used/not-lab-weapon; no detach/replace/spawn/donor/inventory/chamber/pump.
   Static PASS; script SHA `C2E37135…`; production/Core/T4a/T2A/V2/Astra untouched; agent cannot
-  compile. Status `T4B_LAB_PREPARED_OWNER_RUN_REQUIRED`.
+  compile. Status `T4B_LAB_PREPARED_OWNER_RUN_REQUIRED`. **Published lab sources** (byte-identical
+  to local) under `labs/ARMSTMP133T4B_InstalledMagProbe/` + `MANIFEST.sha256` on this branch, per
+  the owner's branch rule (one branch per direction; continue in `t4b/installed-mag-probe`).
 
 ---
 

@@ -1,0 +1,19 @@
+GenericEntity : "{63FF6FDCA4E7E735}Prefabs/Weapons/Russian/Shotgun/armst_Shotgun_mp_133.et" {
+ ID "D3E4F5061728394A"
+ components {
+  ARMST_T4B_WeaponProbe "{E4F5061728394B5C}" {
+  }
+  ActionsManagerComponent "{A29AE67FF4D82B0F}" {
+   additionalActions +{
+    ARMST_T4B_AddRoundWeaponAction "{F5061728394B5C6D}" {
+     ParentContextList {
+      "default"
+     }
+     UIInfo UIInfo "{061728394B5C6D7E}" {
+      Name "T4b: +1 into installed mag"
+     }
+    }
+   }
+  }
+ }
+}

@@ -108,3 +108,19 @@ during a reload/animation/weapon switch (no SDK guard exists).
 `T4B_LAB_PREPARED_OWNER_RUN_REQUIRED`. Real `donor -1 → installed mag +1`, server authority,
 replication, conservation and MP `exactly-once` still require separate, later authorization
 (T4 remains `T4_API_OR_TRANSACTION_BLOCKED`). Astra animation work remains paused.
+
+## 7. Published lab sources (GitHub, branch `t4b/installed-mag-probe`)
+
+Per the owner's branch rule (one branch per development direction), the lab sources/prefabs/
+metafiles are published in the knowledge repo so they can be reviewed before a run. Local copy
+and published copy are byte-identical.
+
+| Published path | SHA-256 |
+|---|---|
+| [`labs/ARMSTMP133T4B_InstalledMagProbe/addon.gproj`](../labs/ARMSTMP133T4B_InstalledMagProbe/addon.gproj) | `200E3156DED0C793CFA6FCF94767A4DC265FF28760307A158BCD4DF9696608A6` |
+| [`…/Scripts/Game/ARMST_T4B/ARMST_T4B_InstalledMagProbe.c`](../labs/ARMSTMP133T4B_InstalledMagProbe/Scripts/Game/ARMST_T4B/ARMST_T4B_InstalledMagProbe.c) | `C2E3713574D5F922AF90100446AD6C7D6DC7110BADD2FAC8F0C98C1E1ACEB2DD` |
+| [`…/Prefabs/Test/ARMST_T4B_TestWeapon.et`](../labs/ARMSTMP133T4B_InstalledMagProbe/Prefabs/Test/ARMST_T4B_TestWeapon.et) | `0F4CF3EC609BB711C53F8A266737BDF3A6694F14005E458084C281DD544EE120` |
+| [`…/Prefabs/Test/ARMST_T4B_TestWeapon.et.meta`](../labs/ARMSTMP133T4B_InstalledMagProbe/Prefabs/Test/ARMST_T4B_TestWeapon.et.meta) | `8EBCBED43046664A0A0669C2D8B03616B690422BC4A0F7E778B3972F7FF6733E` |
+
+Manifest: [`labs/ARMSTMP133T4B_InstalledMagProbe/MANIFEST.sha256`](../labs/ARMSTMP133T4B_InstalledMagProbe/MANIFEST.sha256).
+The local runtime folder remains `…\addons\ARMSTMP133T4B_InstalledMagProbe`.
