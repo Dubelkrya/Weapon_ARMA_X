@@ -168,3 +168,50 @@ from the active catalog (game resources are not deleted). Canonical generated fi
 still **not published** by the agent; the reviewed promotion set is ready and awaits the
 explicit publish go-ahead, followed by a fresh hosted CI run. The scanner fix is a
 separate committed source change (`ca4c870`).
+
+---
+
+## G.6 Pre-push gate results (2026-10-03) — PUBLICATION PAUSED
+
+Frozen input verified: Weapons committed HEAD `b88bc537b8fb0b14aeecda9856b7cce1e17448d8`
+(unchanged), ID `ARMSTPLATFORMWeapons`. Isolated HEAD-based candidate rebuilt with the
+current scripts (`%TEMP%\opencode\mp133_head2`).
+
+**PASS**
+- HEAD2 catalog == dirty-final catalog (0 diff); **181 entities** exactly
+  (68/53/22/12/12/4/2/4/2/2); 0 smoke under `weapons/`, grenades correct.
+- MP-133 GUID `63FF6FDCA4E7E735` present; template/animation consistent with source.
+- determinism: generated-set hash stable across a re-run.
+- `build_weapon_index/family_pages/balance_pages --check` = 0; `check_data_quality` = 0.
+- corpus **1,404** files aggregate SHA `153807035686AE3FEB9F9A55CA16986FFC61E33A033EABAB1420344A28789B4E`
+  identical (HEAD2 == working repo); authored docs unchanged.
+
+**BLOCKER 1 — new test failure once the catalog is promoted**
+- `agent/tests/test_balance_report_regressions.test_9x39_narrative_tracks_current_catalog`
+  asserts the OLD snapshot values `` `armst_Ammo_9x39_SP6_Ball.et`: InitSpeed=305 `` and
+  `PenetrationDepth=5.55`; the promoted catalog's source-truth narrative yields
+  `InitSpeed=290` and `PenetrationDepth=6` (the source changed between the 2026-09-25
+  snapshot and now). Publishing the catalog without a minimal test update makes CI fail.
+- **Proposed minimal update** (2 expected values: 305→290, 5.55→6) — requires owner
+  approval; it is a source/test change, not part of the generated-only manifest.
+
+**BLOCKER 2 — integrity gate NOT RUN locally**
+- `check_repository_integrity.py` requires `jsonschema`; no locally available Python has
+  it (Rizom / Blender 4.5 / Blender 5.2 / Adobe; `pip` unavailable). Reported **NOT RUN**,
+  not PASS. Hosted CI installs `jsonschema`, but the owner's pre-push gate asks for it
+  locally.
+
+**STATUS:** `#28_PUBLICATION_BLOCKED_PENDING_TEST_UPDATE_AND_JSONSCHEMA_DECISION`.
+**No canonical generated file was published**; the working repo catalog is unchanged.
+
+---
+
+## H. Addendum — owner decisions in flight
+
+- Owner authorized the catalog publication subject to the pre-push gates
+  (comment 5968616207). Gates are **not all satisfiable** (Blocker 1/2 above) ⇒ the
+  promotion is on hold pending the two decisions.
+- `Assets/Toz/1.et` left unchanged; tracked separately in issue #30.
+- T2a preparation is authorized to start only **after** the #28 promotion is published
+  and its fresh hosted CI is inspected; if CI is red, pause T2 until #28/#29 are
+  dispositioned.
