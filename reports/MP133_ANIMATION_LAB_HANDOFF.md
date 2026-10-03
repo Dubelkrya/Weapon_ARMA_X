@@ -37,6 +37,91 @@
 EntityPool «unregistered prefab armst_Ammo_12ga.et» — runtime-регистрация/загрузка
 вне лаборатории и вне снапшотов (отдельная issue).
 
+## 0. PRE-RESTORE FREEZE / BACKUP (2026-10-03)
+
+**Причина:** владелец восстанавливает рабочий бэкап основного мода ARMST. V2.x-лаба
+— **исторический материал**; утверждён путь **V3** (Issue #27, comment 5966570978;
+status `V3_DESIGN_APPROVED; CLEAN_BASELINE_RUNTIME_GATE_PENDING`).
+
+**Резервная копия лабы (вне восстанавливаемого дерева):**
+`C:\Users\yshky\Documents\MP133_Lab_Backups\MP133_Lab_Backup_20261003-002026\`
+- `lab_addon\` — полная побайтовая копия `ARMST_MP133_AnimationLab` (30 файлов);
+- `lab_related_outside\knowledge_artifacts\MP133_Lab\` — git-ignored бэкапы
+  (prefab_backups, v27_backups);
+- `lab_related_outside\knowledge_lab_files\` — копии lab-файлов knowledge-репо;
+- `MANIFEST.sha256` — 54 файла (`<sha256>\t<size>\t<relpath>`), проверено 0 ошибок;
+- `BACKUP_INFO.txt`, `RESTORE_INSTRUCTIONS.md`.
+
+**Что НЕ сохранено:** production-WIP в `ARMST-PLATFORM---Weapons`, который владелец
+заменил восстановлением (dirty `MP133.agf` `5E8476D0…46 8A` + untracked
+`133.aex`/`MP133_Test.agf` + `worlds/Weapon_test/.../default.layer`). Прототип
+`MP133.agf` опосредованно сохранён в `lab_addon\...\MP133_Lab.agf` (копия +
+задокументированный hardening) и в зафиксированном diff/hash. Восстановление lab:
+`reports/MP133_LAB_RESTORE_INSTRUCTIONS.md`.
+
+**Архитектура V2.x-лабы (историческая):**
+- `ARMST_MP133_Lab_Component.c` — маркер lab-оружия, `m_iTubeCapacityOverride 3`,
+  `m_iLabReserveShells 30`, `m_bLabInsertEnabled` (гейт).
+- `ARMST_MP133_Lab_Character.c` — C2-трасса (сэмплер 100 мс, значимые `Weapon_*`
+  события, `SETTLE:` 150 мс, теги физической идентичности `wep_tag`/`mag_tag`),
+  R-вход (латч/`LabInputReleased`/отложенный старт), серверный коммит по
+  `ARMST_Lab_Shell_Commit`, пульс `SetReloadWeapon(7)`.
+- `ARMST_MP133_Lab_CommandHandler.c` — `modded HandleWeaponReloading`
+  (pass-through для не-lab), лог `CMDCHG id=… reloadType=…`.
+
+**GUID/пути:** lab addon `{1187677F04E33069}`; `.agr {F23E6BC494967D16}`,
+`.agf {1EB8E2249801B1E3}`; weapon asm `{DE3BB4522642DDE0}`, player asm
+`{B51A94B5A27E09B4}`; prefab `{FC1935AF936F63E5}` / RIS `{4B288C21B7125D50}`;
+3-патронный магазин `{CC71464F7CA58F57}`; lab-клипы `{1F9884C8701DAE1B}`
+(W) / `{FE510A1EC49563F1}` (P); оригинальный rack-клип `{45B1772B8AFEAE46}`.
+
+**Граф/ASI/AST:** lab-граф = копия прод-графа (включая WIP-прототип владельца
+`InsertSingleProjectile` cmd 7) + hardening `MagReloadSTM`/`RemoveMagAnim` →
+`InsertMagAnim`. ASI `Reload.InsertMag` → санитизированный клип; rack-строка
+(`ReloadActionBolt`) не менялась. `MP133_Lab.ast` = копия прод-AST.
+
+**C2-диагностика:** пассивная для любого оружия; пишет `TRACE #… t=… SV|CL
+reason=… wep_tag/mag_tag tube=/ chambered barrel muzzleAmmo chNeed/chPoss/relPoss
+reloadType/start/raised isReloading pump/cIns/sIns`; события `Weapon_Rack_Bolt/
+EnableFire/Spawn/Attach/MagRelease/Detach/Despawn` + lab-события; `CMDCHG` в
+command-handler.
+
+**Результаты:**
+- V2.3: regression guard, коммит только по `ARMST_Lab_Shell_Commit`.
+- V2.5/V2.5b: помпа через Core-действие, отпускание без таймера, отложенный старт.
+- V2.6: read-only — патронник скриптами не пишется; Core-помпа только `tube−1`.
+- V2.7/V2.7b: C2-трасса; compile-fix строки 433; `GetID`→reference-теги;
+  `CMDCHG id=21 reloadType=1` после выстрела, но патронник не наполняется.
+- V2.8: read-only сравнение с рабочим BC/Ithaca; в MP133 нет его команд/sources;
+  есть `ReloadWeapon()/HandleWeaponFire/WeaponIsPullingTrigger/CallCommand`.
+- **E0:** обычный R после выстрела не наполняет патронник и на **оригинальном**
+  MP-133, и на lab; на экипировке патронник наполняется у обоих. Причина не
+  установлена.
+
+**Главное состояние (зафиксировать!):**
+**обычный MP-133 и лабораторный MP-133 НЕ выполняют корректный ручной цикл
+после выстрела. Причина не установлена.** Оба гейта `m_bLabInsertEnabled` — OFF.
+
+**Согласованное управление:** обычный R — штатное передёргивание после выстрела;
+удержание R — штатная инспекция; LSHIFT+R — существующее Core-действие (менять
+запрещено). J-held загрузка **отменена** V3 (заменена схемой «короткий R →
+native pump → авто-загрузка»).
+
+**Приостановлено:** E1–E4, изменения Core, возврат нативных mag-событий, J.
+**Локально (нет в GitHub):** сам lab-аддон (без git-remote) и его git-ignored
+артефакты; production-WIP владельца.
+
+**После восстановления проверить:** I1 (оригинал при выключенной лабе) был планом;
+V3 Stage 1 заменяет его — владелец должен подтвердить clean-runtime baseline
+(3 выстрела `shot → короткий R → shot`, удержание R инспекция, baseline
+tube/chamber). Если не подтверждено — `BASELINE_RUNTIME_REQUIRED`, без реализации.
+
+**Ссылки:** key-коммиты знания: `4be4d42` (E0), `7a147f3` (V2.8), `88e8691`
+(V2.7b), `f26b04a` (compile-fix), `6df6c25` (V2.7), `dcc34b8` (V2.6), `921cb99`
+(V2.5b), `2d68387` (V2.5). Issue #27 comments: 5958366140, 5958568706, 5958821529,
+5958846527, 5959385576, 5959746653, 5960042056, 5960748663, 5961221260, 5966570978
+(V3).
+
 ## 0.0000000000 E0 — регрессия ручного цикла общая для оригинала и лабы (read-only)
 
 Результат E0 (Issue #27, comment 5961221260): обычный R после выстрела **не

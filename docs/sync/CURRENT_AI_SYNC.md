@@ -5,7 +5,7 @@ now, what was just done, and what must not be repeated or assumed. It is a
 *state* file, not a policy file — policy lives in
 [`../../AGENTS.md`](../../AGENTS.md).
 
-**Last updated:** 2026-09-29
+**Last updated:** 2026-10-03
 
 ---
 
@@ -172,3 +172,33 @@ unchanged.
 3. `python agent/scripts/addon_path.py` — confirm the addon resolves.
 4. `git -C <addon> status --short` — confirm the user's dirt in §4 is still there.
 5. Confirm the branch you are on is the one you are authorised to change.
+
+---
+
+## 10. MP-133 AnimationLab — frozen, backup, and V3 direction (2026-10-03)
+
+`ARMST_MP133_AnimationLab` is a **separate local addon** under `addons\` with **no Git
+remote** (rules: do not push its sources to GitHub). Its V2.x state is **frozen
+historical material**; the owner approved **V3** (Issue #27 comment 5966570978,
+`V3_DESIGN_APPROVED; CLEAN_BASELINE_RUNTIME_GATE_PENDING`).
+
+- **Pre-restore backup (outside the restored tree):**
+  `C:\Users\yshky\Documents\MP133_Lab_Backups\MP133_Lab_Backup_20261003-002026\`
+  — full `lab_addon\` (30 files) + git-ignored `artifacts\MP133_Lab` + copies of lab
+  knowledge files; `MANIFEST.sha256` (54 files) verified 0 mismatches.
+  Restore guide: `reports/MP133_LAB_RESTORE_INSTRUCTIONS.md`.
+- **Critical known state:** neither the original MP-133 nor the lab MP-133 performs a
+  correct post-shot manual cycle; **cause unknown**. On equip the chamber fills for
+  both; after a shot + ordinary R the chamber stays empty and no `Weapon_Rack_Bolt`
+  is observed. Details: `reports/MP133_ANIMATION_LAB_E0_ISOLATION_PLAN.md`.
+- **Git state at freeze:** knowledge `main` at `4be4d42`; Weapons `main` `b88bc53`
+  (dirty anim `.meta`/SPAS-12 per restore); Core `main` `08cb1f38` (dirty weather/rdb).
+- **Controls decided:** ordinary R = native manual cycle (keep); hold R = native
+  inspection; LSHIFT+R = existing Core action (unchanged/frozen). J-held loading is
+  **cancelled** by V3.
+- **Discontinued:** E1–E4, Core suppression, native mag-swap reintroduction, V2.x
+  insert gate. Both `m_bLabInsertEnabled` gates are OFF.
+- **Next:** V3 Stage 1 requires the owner to prove the clean native baseline
+  (`shot → short R pump → shot` ×3, hold-R inspection, tube/chamber baseline). Until
+  proven, report `BASELINE_RUNTIME_REQUIRED` and do **not** implement.
+
