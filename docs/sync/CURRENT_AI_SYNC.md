@@ -214,6 +214,13 @@ historical material**; the owner approved **V3** (Issue #27 comment 5966570978,
   longer fires; mag identity / ammo conservation are unverified. Current lab ASI maps
   InsertMag to the lab clip, while the owner described the production clip — confirm.
   See `reports/MP133_V3_2_ANIM_EVENT_FINDING.md`.
+- **T0/T1/T2 (V3, comment 5967836589):** T0 owner baseline checklist + T1 input-routing
+  and T2 animation-event-routing read-only designs are in
+  `reports/MP133_V3_T0_T1_T2_DESIGN.md`. Status
+  `V3_STAGE1_T0_OWNER_TEST_PENDING / T1_T2_READONLY_DESIGN_APPROVED /
+  T1_T2_CODE_NOT_AUTHORIZED`. No code/Workbench/game. Key unresolved: stock R/inspection
+  action names, key-edge delivery/suppression, `ResetAction`, player↔weapon event
+  routing, `Main Path Only`, reliable native pump-completion signal.
 - **Next:** V3 Stage 1 requires the owner to prove the clean native baseline
   (`shot → short R pump → shot` ×3, hold-R inspection, tube/chamber baseline). Until
   proven, report `BASELINE_RUNTIME_REQUIRED` and do **not** implement. Owner reports
