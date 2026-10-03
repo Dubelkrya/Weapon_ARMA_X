@@ -267,6 +267,16 @@ historical material**; the owner approved **V3** (Issue #27 comment 5966570978,
   `ReloadActionBolt` green), then equips `MP-133 [T2A-DIAG]` and runs several short-R racks;
   the agent compares marker order/count/time on both receivers. Preserve the native pump and
   owner-authored assets. No bridge, T2c, or per-shell implementation until T2b results.
+- **T3 insert-event AUDIT (read-only, 2026-10-03):** `MP133_V3_INSERT_EVENT_AUDIT.md`.
+  `Reload_InsertMag` (107f@30) carries `Weapon_SpawnMagazine(10)/Weapon_AttachMagazine(43)/
+  Weapon_MagRelease(64)`; remove carries `MagRelease(6)/DetachMagazine(10)/DespawnMagazine(15)`.
+  These are all engine **whole-magazine** operations — there is **no native per-shell insert**
+  (the engine's single-projectile `CMD_Weapon_Reload=7` is excluded by `MP133.agf`, 7–9).
+  The MP-133 "tube" is a detachable 10-round `MagazineWell12g` (`armst_12ga_Buckshot`).
+  Restoring the native events "made the insert work" only by letting the engine attach a full
+  magazine (V2: `3/3 → 10/10`), so mag identity/ammo are not preserved. One **logging-only T3
+  probe** proposed (attribute the mag/ammo change to a specific event; measure physical mag
+  survival). Status `INSERT_EVENT_AUDIT_DONE; ONE_MINIMAL_TEST_PROPOSED; NOT_RUN`.
 
 ---
 
