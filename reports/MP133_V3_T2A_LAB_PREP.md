@@ -68,3 +68,38 @@ record duplication/order/authority. No ammo/reload/pump behavior is exercised or
 
 Workbench import/compile and the runtime T2a result are **OWNER TEST REQUIRED**; static
 wiring does **not** prove player→weapon event delivery.
+
+---
+
+## Compile fix (owner Workbench, 2026-10-03)
+
+Owner Workbench reported: `Engine class 'WeaponAnimationComponent' cannot be modded.`
+(`ARMST_MP133_T2A_Log.c` line 11, the forbidden `modded WeaponAnimationComponent`).
+
+Fix (lab-only):
+
+- Removed the forbidden `modded class WeaponAnimationComponent`.
+- Added a dedicated subclass
+  `class ARMST_T2A_WeaponAnimationComponent : WeaponAnimationComponent` overriding
+  `OnAnimationEvent` with `super.OnAnimationEvent(...)` preserved; it only registers the
+  marker `ARMST_T2A_PM_C41F7A29` and logs `[ARMST_T2A-WPN]`.
+- The test prefab now assigns `ARMST_T2A_WeaponAnimationComponent "{60B4EA76EB15F6E0}"`
+  **in place of** the inherited `WeaponAnimationComponent` (same instance GUID; no second
+  animation component).
+- Character-side stays `modded SCR_CharacterControllerComponent` (logging only; the same
+  modded pattern compiled in the V2 lab). Logging uses `int` server flags instead of
+  `bool.ToString()`.
+- Removed the stale generated `resourceDatabase.rdb` from the lab so Workbench rescans.
+- Static recheck: `modded WeaponAnimationComponent` = 0; subclass/override/super present;
+  prefab assigns the subclass; braces/ASCII clean (binary `rdb` ignored); R/reload hooks = 0.
+
+**Unverified → OWNER WORKBENCH:** whether the engine accepts replacing an inherited
+component's class in a child prefab, and whether the subclass/`override` compile. If
+Workbench rejects the class replacement or the prefab fails to load, **STOP** and report —
+do not bypass with global (`modded`) changes.
+
+The two ResourceDB warnings (`Collimator_dot_A.edds.meta`,
+`Prefabs/Weapons/Rifles.meta`) belong to the main Weapons addon and are a **separate**
+task; untouched.
+
+Status: `T2A_COMPILE_FIX_APPLIED; OWNER WORKBENCH RECOMPILE REQUIRED`.
