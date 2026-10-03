@@ -25,6 +25,10 @@ It combines a local scanner, generated weapon catalogs/indexes, JSON schemas, Wo
 > Review catalog inconsistencies in [`reports/DATA_QUALITY.md`](reports/DATA_QUALITY.md).
 >
 > Current MP-133 V3 development and archived V1/V2 references: [`reports/MP133_INDEX.md`](reports/MP133_INDEX.md).
+>
+> MP-133 laboratory ownership and archival status: [`reports/MP133_LAB_REGISTRY.md`](reports/MP133_LAB_REGISTRY.md).
+>
+> Use the [`experiment handoff template`](docs/guides/EXPERIMENT_HANDOFF_TEMPLATE.md) to distinguish static checks from owner Workbench/game evidence.
 
 ## Scope
 

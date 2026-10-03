@@ -91,14 +91,26 @@ Active gameplay design for ammunition roles is documented in `reports/AMMO_AP_BP
 
 The first Workbench validation targets are 9×39 and 5.56×45 because current source snapshots already contain suitable two-resource families. The policy must be tested one caliber family at a time before wider rollout.
 
-## Current MP-133 V3 research (2026-10-03)
+## CURRENT MP-133 execution update (2026-10-03)
 
-[`MP133_INDEX.md`](MP133_INDEX.md) is the navigation and current-status entry point; [Issue #27](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/27) is the decision log.
+- **G2 owner-runtime confirmed:** existing T4b installed magazine accepts one synthetic `+1`; manual short-R chambers it; owner fires. Offline only; projectile/damage/MP unverified.
+- **G3-A:** published source/API audit on `t4b/installed-mag-probe`. **G3-B1:** isolated *donor-only* source is now published in the same existing local T4b addon at [`a165e80`](https://github.com/Dubelkrya/Weapon_ARMA_X/commit/a165e804df1e571c58806bb39ea74e5eee993191). Source review and owner-only Workbench/game run are pending. **G3-B2/G4/G5:** not authorised.
+- **Core SHIFT+R reload:** does not work per owner, regardless of historical code references. Core donor-transfer RPC is a locally reported unverified candidate ([#33](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/33)).
+- **One local active MP-133 laboratory:** `ARMSTMP133T4B_InstalledMagProbe`; additional named fixtures stay inside it. No new T4c addon, no PR per small experiment. Documentation PR #31 must be reconciled with the active T4b branch before merging.
+- **#28/#29:** published catalog and green hosted CI ([run 37135291162](https://github.com/Dubelkrya/Weapon_ARMA_X/actions/runs/37135291162)). Historical statements below are preserved as checkpoints, not a current task list.
 
-- **T0 clean functional baseline — OWNER-RUNTIME PASS:** owner tested the original MP-133 with only the Weapons addon loaded. Three consecutive shots with manual short-R pumping worked, the 10-round tube supply depleted, and hold R performed inspection. Physical magazine **entity identity**, full last-round telemetry and Core-on integration were not instrumented; do not claim a strict full-system validation.
-- **T1/T2 READ-ONLY DESIGN PUBLISHED:** [`MP133_V3_T0_T1_T2_DESIGN.md`](MP133_V3_T0_T1_T2_DESIGN.md) contains input-routing and player/weapon/graph event-routing diagnostic designs. Actual diagnostic code, new lab and ANM/ASI/AGF changes require separate owner approval. Workbench/game runs remain owner-only.
-- The old V2/P2 laboratory is frozen and must not be re-enabled as the V3 implementation. P2 implicated its global command handler in the R regression, but the exact underlying call-path failure is unknown. The owner's native-event edit restored visible behavior in one configuration; ammo conservation and mag identity were not proved by that observation.
-- Preserve native pump, chamber and fire behavior. Do not copy Chung's dummy ammo, global reload handler or magazine replacement. Core LSHIFT+R interaction requires its own later test because Core was not loaded in T0.
+## Historical MP-133 V3 research (2026-10-03)
+
+[`MP133_INDEX.md`](MP133_INDEX.md) is the evidence/navigation index; [Issue #27](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/27) is the chronological approval and owner-observation log. [`MP133_LAB_REGISTRY.md`](MP133_LAB_REGISTRY.md) records lab ownership and archival state. Earlier reports retain historical wording; the following statuses supersede it:
+
+- **T0 owner-run native baseline: PASS.** Three shots with manual short-R pump and hold-R inspect were observed with Weapons only; no claim about Core-on compatibility or an instrumented physical magazine at T0.
+- **T2b/T2c: diagnostic findings.** Paired player/weapon markers were observed, and the native command trace identifies manual rack as `intValue=1` and whole-mag swap as `4/5` depending on chamber state. Paired markers alone do not establish ammo authority.
+- **T3 owner runtime: confirmed native whole-mag exchange.** Installed references changed `M1 → null → M3` and `M3 → null → M5`; the chambered round can remain when a partially loaded magazine is exchanged. The exact attach instant and old-mag inventory identity were not fully instrumented.
+- **T3F limited passive diagnostic: corrected script ran in the owner's game.** The 760-line owner log yielded 100 T3F, 77 T3 and 18 T2c records with no `SCRIPT (E)`; it is not an isolated one-shot/rack/dry-fire test and supplies **no independent `gameplay_shot` callback**. `Weapon_EnableFire` is permission to shoot during bolt/reload animation, not a shot; the +300-ms snapshot is not post-shot. Astra's separate read-only audit suggested `OnProjectileShot` and `GameAnimationUtils.GetEventString` as **unverified follow-ups**, not implemented functionality.
+- **T4 Phase A: `T4_API_OR_TRANSACTION_BLOCKED` for real shell transfer.** SDK 1.8.0.13 exposes `BaseMagazineComponent.SetAmmoCount(int)` but no verified atomic donor→installed-mag transfer, authoritative write, or recovery contract. No real transfer lab was implemented under Phase A.
+- **Historical T4a checkpoint: `T4A_LAB_PREPARED_OWNER_RUN_REQUIRED`** ([report](MP133_V3_T4A_SETAMMOCOUNT_SEMANTICS.md); [scope](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/27#issuecomment-5970853781)). The primary agent prepared an isolated disposable-magazine lab `ARMSTMP133T4A_SetProbe` (GUID `A7C41E90D3B24F68`) with one guarded `SetAmmoCount(+1)` action (default key P). Static checks were reported; **Workbench compile/gameplay not yet tested**. No real donor depletion, installed-mag mutation or multiplayer transfer is authorised.
+- **Astra animation/graph task: PAUSED by owner** ([checkpoint](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/27#issuecomment-5970888887)). The local `astra_build.py` draft is unfinished and unverified; do not run, overwrite, or hand it to another agent before explicit resumption.
+- **Owner alone runs Workbench and the game.** Agent static checks, GitHub CI and offline `srv=1` do not prove engine/runtime/multiplayer correctness. The frozen V2/P2 labs, production Weapons and Core remain outside these tasks.
 
 ## Current Workbench-validated AEK-971 control point
 
@@ -130,14 +142,14 @@ Historical `reports/AEK971_TEST_CHECKPOINT_V8.md` remains as debugging history o
 
 ## Data freshness / known debt
 
-- Generated catalogs/indexes are snapshots of the primary addon and should be refreshed after material edits to `ARMST-PLATFORM---Weapons`. The 2026-09-29 sync report identifies approximately 1,455 obsolete `Prefabs/Weapons/Rifles/` references after prefab-path reorganization; a reviewed canonical rescan is still pending. Never hand-edit generated paths or delete the imported vanilla source corpus.
+- **Catalog #28 was published** on 2026-10-03 (generated-only commit [`5c443a9`](https://github.com/Dubelkrya/Weapon_ARMA_X/commit/5c443a94ff0f53b839e7a1909c4f11e382825e47)): 181 cataloged entities, reviewed GUID reconciliation and corrected grenade classification. Hosted CI was successful, including the [latest checked run on `7101fd6`](https://github.com/Dubelkrya/Weapon_ARMA_X/actions/runs/37135291162). This is a reviewed **snapshot**, not proof that the local addon has had no later changes; rescan only after checking a fresh source diff. The older ~1,455-stale-path note describes historical pre-rescan debt. Never hand-edit generated paths or delete the imported vanilla source corpus.
 - `indexes/script_reference/manifest.json` is a supplied-snapshot inventory and may still list old built-in dovetail types for source assets; active authoring policy is v2 `DovetailRU`.
 - The native technical/balance Sheets have had the known TT `ARRAYFORMULA` spill blockers removed; manual values must not be written into those formula spill ranges again.
 - Raw `.xlsx` copies on Drive are archived snapshots; the native Google Sheets are the active tabular working views.
-- Experimental branches `agent/resolver-v2` and `agent/weapon-intelligence-v1` are divergent research branches; do not merge wholesale into `main` without selective review.
+- Older reports may mention `agent/resolver-v2` and `agent/weapon-intelligence-v1` as historical research refs. The accessible GitHub branch listing at this checkpoint showed only `main`; verify actual local and remote refs before reusing historical names.
 - AP/BP ammunition roles are design targets until each caliber family is locally authored and Workbench-tested; do not mark untested families as implemented.
 - The failed `Armst_Work` rescan is not canonical and must not be merged as a replacement for the main snapshot.
 
 ## Required next refresh
 
-When the primary addon changes enough to warrant a refresh, run the scanner against `ARMST-PLATFORM---Weapons` and review the generated diff before merge. Do not substitute `Armst_Work` or another partial addon as the canonical source root.
+When the primary addon changes after the published #28 snapshot, run the scanner against `ARMST-PLATFORM---Weapons` and review the generated diff before merge. Do not substitute `Armst_Work` or another partial addon as the canonical source root. Concurrent knowledge-repo documentation work should use an isolated branch/PR; the live addon's separate `main`-only branch policy is unchanged.

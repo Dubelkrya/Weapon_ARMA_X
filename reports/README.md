@@ -45,9 +45,9 @@ Research files may describe experiments, blockers, or unvalidated paths. They ar
 
 ## MP-133: current V3 research and historical laboratory
 
-Start with [`MP133_INDEX.md`](MP133_INDEX.md) for the current owner-tested baseline, approved scope, open T1/T2 questions, and a categorized index of V1/V2 history. The [tracking issue #27](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/27) records decisions and owner runtime results.
+Start with [`MP133_INDEX.md`](MP133_INDEX.md) for the latest T2–T4a evidence, paused Astra work, current owner-approved scope and categorized V1/V2 history. [`MP133_LAB_REGISTRY.md`](MP133_LAB_REGISTRY.md) records lab ownership, portability and the unverified Astra worktree. The [tracking issue #27](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/27) records later decisions and owner runtime results.
 
-The [T0/T1/T2 diagnostic design](MP133_V3_T0_T1_T2_DESIGN.md) is **research/design only**, not permission to modify animation assets or build V3. Older MP-133 reports and the V2-specific scripts remain historical evidence, not current implementation instructions.
+The [T0/T1/T2 diagnostic design](MP133_V3_T0_T1_T2_DESIGN.md) remains historical design evidence, not new authorisation. Current permission for **T4a only** and the Astra pause appear in Issue #27. Use the [experiment handoff template](../docs/guides/EXPERIMENT_HANDOFF_TEMPLATE.md) when publishing phase results. Frozen V2-specific scripts remain historical, not current implementation instructions.
 
 ## Workbench-backed samples
 
