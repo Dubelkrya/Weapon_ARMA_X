@@ -1,9 +1,8 @@
 # MP-133 — V3.1: I1 lab-interference inventory + hypotheses (read-only)
 
-**Status:** `LEGACY_ADDON_INTERFERENCE_CONFIRMED / LEGACY_ROOT_CAUSE_UNRESOLVED /
-V3_STAGE1_PENDING` (owner review, comment 5966728301). Read-only. Old V2.x lab
-archived & disabled; no code migration, no Workbench/game by agent;
-production/Core/graph/ASI/ANM untouched.
+**Status:** `P2_R_RESTORED / LEGACY_HANDLER_IMPLICATED / V3_STAGE1_PENDING`
+(owner P2 runtime, comment 5966964438). Read-only. Old V2.x lab archived & disabled;
+no code migration, no Workbench/game by agent; production/Core/graph/ASI/ANM untouched.
 Source: Issue #27 comment 5966704171.
 
 Owner A/B: **all pump-action shotguns fail ordinary R while the old lab addon is
@@ -55,6 +54,26 @@ mutates the reload command inside `OnRackBoltMDown` (LSHIFT+R).
 (addon ON → all pumps fail; OFF → work), not the offending method. The only authorized
 follow-up to localize it is **P2** (below).
 
+### 2.1 P2 owner runtime result (reported observation)
+
+`P2_R_RESTORED; GLOBAL_COMMAND_HANDLER_INVOLVEMENT_SUPPORTED`: with the P2 copy enabled
+(the ONLY source change from legacy V2 = excluding
+`Scripts/Game/ARMST_MP133_Lab/ARMST_MP133_Lab_CommandHandler.c`), the **original
+pump-action shotguns again respond to ordinary R**. Contrast: legacy V2 enabled → all
+pump R broken; lab OFF → R works.
+
+**Bounded to** the presence/behavior of the global `modded
+SCR_CharacterCommandHandlerComponent` / its interaction in the legacy lab. **Do NOT**
+assert `super.HandleWeaponReloading` vs `HandleWeaponReloadingDefault` as causal: P2 does
+not distinguish callback order, other modded-chain interactions, logging side effects, or
+a compile/load interaction. No P3/P4/P5 required; the legacy root mechanism may remain
+unresolved.
+
+**Evidence separation:** this is the owner's reported observation. The **Workbench script
+compilation / fresh resource-rebuild proof** and the **exact successful cases** (one cycle
+vs 3× `shot → short R → shot`, hold-R inspection) are not yet provided → strict Stage 1
+acceptance stays PENDING. Record them when the owner supplies them; do not invent tests.
+
 ---
 
 ## 3. Diagnostics (corrected per owner review) — P2 only
@@ -94,6 +113,9 @@ already chains the prior implementation, so an extra `Default` call may double-r
 - The archive and the live addon were **not** modified. Only one lab addon (same addon
   ID/GUID) may be enabled at a time. P2 is a **diagnostics-only, optional A/B** — not a
   V3 gate.
+- **Result (owner runtime):** `P2_R_RESTORED` — ordinary R works on original pump
+  shotguns with the handler excluded (see §2.1). P2 is complete; the owner turns P2 OFF
+  for the clean baseline. Further P3/P4/P5 are not required.
 
 ### 3.1 P2 static dependency / compilation review (read-only, this session)
 
@@ -132,10 +154,12 @@ diagnostic (P1/P3/P4/P5) is authorized.
 
 ## 5. Stage 1 status and V3 priority
 
-**Stage 1 = PENDING.** Owner reports all pumps work with lab OFF, but the exact
-acceptance details (3× `shot → ordinary short R → shot`, hold-R inspection, tube/chamber
-baseline, no magazine replacement) are **not yet reported** →
-`V3_STAGE1_PENDING`. Mark Stage 1 PASS only on the owner's precise result.
+**Stage 1 = PENDING.** P2 is complete and stays **OFF** for the clean baseline. Owner
+reports all pumps work with lab OFF, but the exact acceptance details
+(3× `shot → ordinary short R → shot`, hold-R inspection, tube/chamber baseline, no
+magazine replacement) are **not yet reported** → `V3_STAGE1_PENDING`. Mark Stage 1 PASS
+only on the owner's precise result (and, for the strict record, the Workbench
+compile/rebuild proof).
 
 **V3 priority (no V2 salvage cycles):** keep the old addon OFF; capture the clean
 original baseline; after Stage 1 PASS, research (read-only) and propose:

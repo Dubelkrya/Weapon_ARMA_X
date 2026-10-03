@@ -187,16 +187,15 @@ historical material**; the owner approved **V3** (Issue #27 comment 5966570978,
   — full `lab_addon\` (30 files) + git-ignored `artifacts\MP133_Lab` + copies of lab
   knowledge files; `MANIFEST.sha256` (54 files) verified 0 mismatches.
   Restore guide: `reports/MP133_LAB_RESTORE_INSTRUCTIONS.md`.
-- **Critical known state:** neither the original MP-133 nor the lab MP-133 performed a
-  correct post-shot manual cycle while the **old lab addon was enabled**; on equip the
-  chamber fills for both, after a shot + ordinary R the chamber stays empty and no
-  `Weapon_Rack_Bolt` is observed. **I1 (owner A/B) CONFIRMED:** all pump-action shotguns
-  fail ordinary R with the old lab enabled, and disabling the lab restores R →
-  `LEGACY_ADDON_INTERFERENCE_CONFIRMED / LEGACY_ROOT_CAUSE_UNRESOLVED / V3_STAGE1_PENDING`.
-  **No hypothesis is confirmed**; the global `HandleWeaponReloading` override is only a
-  candidate (Enforce `super` chains, so the earlier H1 is unconfirmed and P3 is
-  withdrawn). Only optional follow-up: **P2** (remove only the handler file on a labelled
-  reversible copy, after static review). Details:
+- **Critical known state:** the old lab addon globally broke ordinary R on **all**
+  pump-action shotguns. **I1 (owner A/B):** lab ON → all pumps fail; lab OFF → work.
+  **P2 (owner runtime, comment 5966964438):** with only
+  `Scripts/Game/ARMST_MP133_Lab/ARMST_MP133_Lab_CommandHandler.c` excluded, ordinary R
+  works again →
+  `P2_R_RESTORED / LEGACY_HANDLER_IMPLICATED / V3_STAGE1_PENDING`. The cause is bounded
+  to the presence/behavior of the global `modded SCR_CharacterCommandHandlerComponent`,
+  but the exact mechanism is **unknown** (do not assert `super` vs `...Default`; P3
+  withdrawn). P2 is OFF for the clean baseline; P3/P4/P5 not required. Details:
   `reports/MP133_V3_1_I1_LAB_INTERFERENCE_INVENTORY.md`,
   `reports/MP133_ANIMATION_LAB_E0_ISOLATION_PLAN.md`.
 - **Git state at freeze:** knowledge `main` at `4be4d42`; Weapons `main` `b88bc53`

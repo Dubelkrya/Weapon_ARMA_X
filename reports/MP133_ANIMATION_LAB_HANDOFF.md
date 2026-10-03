@@ -130,15 +130,15 @@ tube/chamber). Если не подтверждено — `BASELINE_RUNTIME_REQU
 наполняется у обоих. Отчёт: `reports/MP133_ANIMATION_LAB_E0_ISOLATION_PLAN.md`.
 Статус `SHARED_ENVIRONMENT_MANUAL_R_REGRESSION; root cause UNKNOWN`.
 
-**I1 (Issue #27, comment 5966704171; corrected by 5966728301) —
-`LEGACY_ADDON_INTERFERENCE_CONFIRMED / LEGACY_ROOT_CAUSE_UNRESOLVED / V3_STAGE1_PENDING`:**
-владелец A/B подтвердил, что **все помповые дробовики** не реагируют на обычный R при
-включённом старом lab-аддоне, а при его отключении R/pump работают. **Ни одна гипотеза
-не подтверждена**; глобальный `modded HandleWeaponReloading` — лишь кандидат (Enforce
-`super` вызывает предыдущую реализацию в цепочке modded-классов, поэтому прежняя H1
-снята, P3 отозван). Разрешён только опциональный **P2** (убрать лишь файл handler на
-отдельной обратимой копии, после статического review). V2.x-лаба остаётся
-отключённой/архивной; глобальное перехватывание запрещено. Разбор:
+**I1 (Issue #27, comment 5966704171; corrected by 5966728301; P2 result 5966964438) —
+`P2_R_RESTORED / LEGACY_HANDLER_IMPLICATED / V3_STAGE1_PENDING`:**
+владелец A/B: при включённом старом lab-аддоне **все помповые дробовики** не реагируют
+на обычный R; при отключённом — работают. **P2 (владелец, рантайм):** если из копии лабы
+исключить **только** `Scripts/Game/ARMST_MP133_Lab/ARMST_MP133_Lab_CommandHandler.c`,
+обычный R снова работает → причастность глобального `modded
+SCR_CharacterCommandHandlerComponent`/его присутствия **поддержана**, но точный механизм
+**неизвестен** (не утверждать `super` vs `...Default`; P3 отозван). P2 выключается перед
+чистым baseline; P3/P4/P5 не требуются. Разбор:
 `reports/MP133_V3_1_I1_LAB_INTERFERENCE_INVENTORY.md`.
 
 Read-only факты:
