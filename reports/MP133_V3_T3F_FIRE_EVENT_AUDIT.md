@@ -72,12 +72,13 @@ fire **animation marker is NOT treated as a shot**. Gathering animation events +
 `ARMST_T2A_WeaponAnimationComponent` (**no second gameplay file touched**):
 
 - On **every** delivered `OnAnimationEvent`: one line
-  `[ARMST_T3F-FIRE] #n kind=animation_event ev=<name|?> id=<raw> t=<s> srv=<0|1> wpnTag=Wn magTag=Mn ammo=a/m muzzle=a/m barrel=i chNeed=0|1 chPoss=0|1 mzChPoss=0|1`.
+  `[ARMST_T3F-FIRE] #n kind=animation_event ev=<name|?> t=<s> srv=<0|1> wpnTag=Wn magTag=Mn ammo=a/m muzzle=a/m barrel=i chNeed=0|1 chPoss=0|1 mzChPoss=0|1`.
 - One bounded deferred `kind=snapshot phase=post-enablefire+300ms …` 300 ms after the
   `Weapon_EnableFire` fire indicator (guarded; single pending).
 - Event-name resolution via the installed SDK for the known engine weapon events
   (`Weapon_EnableFire`, `BlendIn/Out`, `Weapon_Rack_Bolt`, `Weapon_Spawn/Attach/Detach/DespawnMagazine`,
-  `Weapon_MagRelease`); unknown events log `ev=? id=<raw>` (no filename inference).
+  `Weapon_MagRelease`); unknown events log `ev=?` (no filename inference; the installed script
+  API does not expose `AnimationEventID.ToString`, so the raw id is not printed).
 - Independent identity tags (`m_t3f*`) so the T3 trace/tags are not perturbed.
 - Bounded: `T3F_EVENT_CAP = 400`; no per-frame logging.
 - `kind=command` is **not** duplicated here — it is covered by the unchanged `[ARMST_T2C-CMD]`
@@ -96,7 +97,16 @@ fire **animation marker is NOT treated as a shot**. Gathering animation events +
   `CreateEntity`, `SetReloadWeapon`, `ReloadWeapon(`, `AddActionListener`,
   `HandleWeaponReloading`, `HandleWeaponFire`, `Rpc(`, `RpcDo_`, inventory access — all absent.
 - Lab script SHA-256: T2c `03AE04C6…`, T3 checkpoint `A66B4CCFABF6100F0B5168ACD42290D6B9E7C0C4E64619A8AEC139D7BE0CB00A`,
-  **T3F `4324ACDEA1799DAA25FA880E6AB89677E7A4827367D3C5EE0E80AC86EA97943C`**.
+  **T3F `E978EDAF373D882EE3F6798D5D0BF41DA264E638B1371E302AD164D982A3339B`**.
+- **Compile fix (owner Workbench log):** the first T3F draft failed EnforceScript:
+  `…Log.c,412: Formula too complex` + `Incompatible parameter 'wpnTag'`, and
+  `…Log.c,431: Undefined function 'AnimationEventID.ToString'`. Fixed by (a) building the state
+  string incrementally (`string s = …; s = s + …;`, <= 3 operators per line — the same fix used
+  for the V2 C2 trace) and (b) removing the raw-id print (the installed script API has no
+  `AnimationEventID.ToString`). The other `SCRIPT (E)` lines in that log
+  (`SCR_FactionManagerSerializer`, `SCR_SpawnLogic` Tuple1, `SCR_MapUIElementContainer`,
+  `SCR_PlayerArsenalLoadout`, `SCR_ScenarioFramework*`, `SCR_SpinningWidgetComponent`,
+  `SCR_ScenarioUICommon` Tuple2) are base-game/Core-off unrelated, not lab-owned.
 - Unchanged set: 23-file graph/ASI/clip/prefab set **pre == post**; frozen V2 graph/ASI hashes
   unchanged; Weapons dirty ≈ 29, Core dirty ≈ 4.
 

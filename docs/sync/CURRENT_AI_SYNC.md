@@ -323,7 +323,8 @@ historical material**; the owner approved **V3** (Issue #27 comment 5966570978,
   signals are muzzle-effect `OnFired`/`OnWeaponFired` (prefab subclass / global, out of scope).
   Phase B limited: `[ARMST_T3F-FIRE]` logs every `OnAnimationEvent` + inline mag/muzzle/chamber
   sample + one deferred snapshot after `Weapon_EnableFire`; `gameplay_shot` NOT emitted (shot
-  evidenced by ammo delta). Single lab file changed (SHA T3 `A66B4CCF…` → T3F `4324ACDE…`); no
+  evidenced by ammo delta). Single lab file changed (SHA T3 `A66B4CCF…` → T3F `E978EDAF…`; first
+  draft failed compile — split formatter + dropped the unsupported `AnimationEventID.ToString`); no
   clip/graph/ASI edits; 23-file asset set unchanged; static PASS. Owner run required (3 scenarios).
   Status `T3F_PHASE_A_AUDIT_DONE / PHASE_B_LIMITED_IMPLEMENTED; OWNER_RUN_REQUIRED`.
 
