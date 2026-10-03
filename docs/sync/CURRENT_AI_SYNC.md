@@ -215,6 +215,7 @@ historical material**; the owner approved **V3** (Issue #27 comment 5966570978,
   longer fires; mag identity / ammo conservation are unverified. Current lab ASI maps
   InsertMag to the lab clip, while the owner described the production clip — confirm.
   See `reports/MP133_V3_2_ANIM_EVENT_FINDING.md`.
+
 - **T0 owner clean functional result (comments 5967858916 / 5967911774):** the
   owner tested the original MP-133 with only the Weapons addon loaded, no V2/P2
   laboratory or Core. Three consecutive actual shots with short-R manual pumps
@@ -235,3 +236,20 @@ historical material**; the owner approved **V3** (Issue #27 comment 5966570978,
   the existing native pump and owner-authored assets. Test Core interaction
   separately; Core was absent from the clean T0 test. No implementation of V3
   until the diagnostic and transaction gates are resolved.
+
+---
+
+## 11. CI (#29) and catalog rescan (#28) — 2026-10-03
+
+- **#29 (priority):** root cause = `agent/scripts/scan_build.py` resolves the live addon
+  at **import** (SystemExit) + `test_mp133_lab_validation.py` needs the local lab/original
+  addon in `setUp`. Proposed minimal diff (lazy `resolve_mod_root()` + a clear
+  `LOCAL_ONLY` skip) was **verified in an isolated copy**: 73 tests, 0 failures, 14
+  skipped, exit 0 with the addon unavailable; the scanner still hard-fails without the
+  addon. Locally (addon present) 73/73 OK. **Diff NOT applied.** Report:
+  `reports/CI_29_SEPARATE_OFFLINE_AND_LOCAL_TESTS.md`.
+- **#28:** Phase A preflight **PASS**; isolated candidate scan **completed** (deterministic,
+  corpus preserved byte-identically). Candidate diverges substantially (generated files
+  292→203; NEW 32 / DELETED 121 / CHANGED 169; entities 270→181) → **PUBLICATION NOT
+  READY**, needs owner diff review. Report:
+  `reports/CATALOG_28_RESCAN_PREFLIGHT.md`.
