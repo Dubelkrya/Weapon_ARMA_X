@@ -118,8 +118,8 @@ and published copy are byte-identical.
 | Published path | SHA-256 |
 |---|---|
 | [`labs/ARMSTMP133T4B_InstalledMagProbe/addon.gproj`](../labs/ARMSTMP133T4B_InstalledMagProbe/addon.gproj) | `200E3156DED0C793CFA6FCF94767A4DC265FF28760307A158BCD4DF9696608A6` |
-| [`…/Scripts/Game/ARMST_T4B/ARMST_T4B_InstalledMagProbe.c`](../labs/ARMSTMP133T4B_InstalledMagProbe/Scripts/Game/ARMST_T4B/ARMST_T4B_InstalledMagProbe.c) | `CD4246636C157E16641A3168D7A83D0D54027F515DC43A1AF8292AAA4CE5B9F8` |
-| [`…/Prefabs/Test/ARMST_T4B_TestWeapon.et`](../labs/ARMSTMP133T4B_InstalledMagProbe/Prefabs/Test/ARMST_T4B_TestWeapon.et) | `0F4CF3EC609BB711C53F8A266737BDF3A6694F14005E458084C281DD544EE120` |
+| [`…/Scripts/Game/ARMST_T4B/ARMST_T4B_InstalledMagProbe.c`](../labs/ARMSTMP133T4B_InstalledMagProbe/Scripts/Game/ARMST_T4B/ARMST_T4B_InstalledMagProbe.c) | `F893F8D22065B7931ECF7783D450F943C1694424020AA6EBDD8140102EF09FF4` |
+| [`…/Prefabs/Test/ARMST_T4B_TestWeapon.et`](../labs/ARMSTMP133T4B_InstalledMagProbe/Prefabs/Test/ARMST_T4B_TestWeapon.et) | `5F5AF777617F6C82C2DD86A888F0C23023004414E008DB9EE7C193B3DFB7947F` |
 | [`…/Prefabs/Test/ARMST_T4B_TestWeapon.et.meta`](../labs/ARMSTMP133T4B_InstalledMagProbe/Prefabs/Test/ARMST_T4B_TestWeapon.et.meta) | `8EBCBED43046664A0A0669C2D8B03616B690422BC4A0F7E778B3972F7FF6733E` |
 
 Manifest: [`labs/ARMSTMP133T4B_InstalledMagProbe/MANIFEST.sha256`](../labs/ARMSTMP133T4B_InstalledMagProbe/MANIFEST.sha256).
@@ -154,4 +154,51 @@ The prefab is unchanged (single inherited `ActionsManagerComponent {A29AE67FF4D8
 `ParentContextList`/context edits without separate Workbench evidence). Local and published copies
 are byte-identical. Old lab commit `b00a9fa080256d17e842978007a60eff209e1344` is superseded by the
 new commit on `t4b/installed-mag-probe`; the only changed published file is
-`Scripts/Game/ARMST_T4B/ARMST_T4B_InstalledMagProbe.c` (`C2E37135…` → `CD424663…`).
+`Scripts/Game/ARMST_T4B/ARMST_T4B_InstalledMagProbe.c` (`C2E37135…` → `CD424663…`; superseded by §9).
+
+## 9. Unified diagnostics merge (T2a/T2c/T3 capabilities into T4b)
+
+Per Issue #34 comment 5972248499 / #27 comment 5972250626, T4b now carries the proven
+diagnostics of T2a/T2c/T3 in the **same** lab (T4b stays the base). The original local
+`ARMSTMP133T2A_Diag` and T4a are untouched; **no new branch** was created.
+
+**Phase A audit — reusable vs not:**
+- **Ported (lab-only, safe):** the weapon-side `WeaponAnimationComponent` subclass pattern
+  (`ARMST_T2A_WeaponAnimationComponent`, validated in T2a/T2c/T3) → `ARMST_T4B_WeaponAnimationComponent`
+  replacing the **existing inherited** instance `{60B4EA76EB15F6E0}` (no second component, no cloned
+  graph/ASI — the production graph/ASI are inherited); selective `OnAnimationEvent` (pre/post
+  `super`) → `[ARMST_T4B-EVT]`; `OnCharacterCommand` → `[ARMST_T4B-CMD]`; T3-style snapshots
+  (weapon/mag entity reference tags, ammo/max, muzzle supply, barrel, chamber flag,
+  chNeed/chPoss) via the probe as the snapshot hub → `[ARMST_T4B-INSTALLED]`.
+- **NOT ported:** the global `modded SCR_CharacterControllerComponent` (player-marker route +
+  1 Hz tick) and the player-authored marker (owner: the marker is not forwarded to the weapon).
+  No global hook, no input listener, no per-frame tick.
+
+**Schema:** `[ARMST_T4B-EVT]` / `[ARMST_T4B-CMD]` / `[ARMST_T4B-INSTALLED]`, each line carrying
+`wpnTag/wep/magTag/mag/ammo/muzzleSupply/barrel/chambered/chNeed/chPoss`. Emits `init`,
+`baseline`, `+1 pre/post`, explicit `reject`, and one 250 ms `final-250ms` sample; bounded
+(event cap 400).
+
+**Safety-review fixes carried in:** lab-weapon guard on the weapon ENTITY + owner cross-check;
+`m_bBaselineDone` only if `got==start && sameMagazine && non-null same owner`, else
+`baseline-readback-mismatch` and `+1` blocked (no retry); one-shot latch before `SetAmmoCount`;
+`null==null` never counts as `sameOwner`; `muzzleSupplyBefore/After` and `chamberedBefore/After`
+(`IsCurrentBarrelChambered`) reported separately — muzzle supply is not equated to a physical
+chamber change.
+
+**Files (this merge):** script SHA `CD424663…` → **`F893F8D2…`**; prefab `0F4CF3EC…` →
+**`5F5AF777…`** (added the animation-component override line); `addon.gproj`/`.meta` unchanged;
+local==published.
+
+**Historical T4a reconciliation:** the published `labs/ARMSTMP133T4A_SetProbe/` README was
+corrected to match the actual local (Workbench-resaved) prefab — which has
+`additionalActions { ARMST_T4A_AddRoundUserAction { UIInfo SCR_ActionUIInfo { } } }`, no
+`ParentContextList` and an empty UIInfo — without modifying the local T4a lab. `t4a/interaction-patch`
+is kept as history and is not merged.
+
+## 10. Owner run (after source review)
+
+Baseline `0/10`; one action `0→1` same physical mag; repeat `already-used`; separately fresh
+`10/10` reject `full`. Compare event/command snapshots during one controlled **native pump** and
+one **magazine swap** only in separate, clearly labelled runs after the `+1` test. STOP on an
+unexpected magazine-identity/chamber change or a lab `SCRIPT(E)`.

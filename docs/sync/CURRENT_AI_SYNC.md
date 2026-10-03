@@ -369,6 +369,18 @@ historical material**; the owner approved **V3** (Issue #27 comment 5966570978,
 - **T4a historical snapshot:** `labs/ARMSTMP133T4A_SetProbe/` (README "historical diagnostic" +
   `MANIFEST.sha256`) published on the same magazine branch; `t4a/interaction-patch` left as
   history; local T4a unchanged; not merged.
+- **T4b UNIFIED diagnostics merge (Issue #34 comment 5972248499):** T2a/T2c/T3 capabilities
+  merged into the T4b lab (T4b is the base; T2a/T4a originals untouched; no new branch). Added a
+  lab-only `ARMST_T4B_WeaponAnimationComponent : WeaponAnimationComponent` replacing the
+  **existing inherited** instance `{60B4EA76EB15F6E0}` (no second component, production
+  graph/ASI inherited) → `[ARMST_T4B-EVT]` (selective `OnAnimationEvent`, pre/post super) and
+  `[ARMST_T4B-CMD]` (`OnCharacterCommand`); the probe is the snapshot hub (`[ARMST_T4B-INSTALLED]`)
+  with entity reference tags, ammo/max, muzzle supply, barrel, chamber flag, plus `init/baseline/
+  +1 pre/post/reject/final-250ms`. **Not** ported: the global `modded SCR_CharacterControllerComponent`
+  / player-marker route. Safety fixes kept (entity probe lookup + owner check, strict baseline
+  read-back, latch-before-write, muzzle supply vs chamber separated). Script SHA `CD424663…` →
+  `F893F8D2…`; prefab `0F4CF3EC…` → `5F5AF777…`; local==published. Status
+  `T4B_UNIFIED_DIAGNOSTIC_SOURCE_PUBLISHED_OWNER_RUN_REQUIRED`.
 
 ---
 
