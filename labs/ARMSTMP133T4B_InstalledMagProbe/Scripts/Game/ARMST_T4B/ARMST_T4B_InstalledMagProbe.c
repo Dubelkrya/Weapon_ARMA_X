@@ -19,6 +19,13 @@
 //
 // Synthetic +1 only: this CREATES a test cartridge on a disposable lab weapon. It is
 // NOT a gameplay reload and does NOT prove multiplayer authority/replication.
+//
+// Fix b00a9fa -> this revision (owner review, comment 5972157499):
+//   1. lab-weapon guard now looks up the probe on the weapon ENTITY (sibling), not on
+//      the BaseWeaponComponent, and cross-checks the entity owner;
+//   2. baseline gate retries until the installed magazine exists (bounded 4 x 250 ms)
+//      and logs after read-back; the action rejects while baseline-not-ready;
+//   3. the one-shot latch is set BEFORE SetAmmoCount; post-write verdict added.
 // ============================================================================
 
 class ARMST_T4B_WeaponProbeClass : ScriptComponentClass
@@ -38,6 +45,11 @@ class ARMST_T4B_WeaponProbe : ScriptComponent
 	[Attribute("0", UIWidgets.Slider, "T4b installed magazine baseline ammo", "0 15 1")]
 	int m_iT4BStartAmmo;
 
+	bool IsBaselineDone()
+	{
+		return m_bBaselineDone;
+	}
+
 	override void OnPostInit(IEntity owner)
 	{
 		super.OnPostInit(owner);
@@ -47,7 +59,6 @@ class ARMST_T4B_WeaponProbe : ScriptComponent
 		if (m_t4bTag == 0)
 			m_t4bTag = 1;
 
-		BaseWeaponComponent wpn = T4BWeapon();
 		int srv = 0;
 		if (Replication.IsServer())
 			srv = 1;
@@ -55,37 +66,32 @@ class ARMST_T4B_WeaponProbe : ScriptComponent
 			+ " " + T4BState()
 			+ " srv=" + srv.ToString(), LogLevel.NORMAL);
 
-		if (wpn)
-			ApplyBaseline();
-		else
-			GetGame().GetCallqueue().CallLater(T4BDeferredRetry, 250, false);
+		T4BTryBaseline();
 	}
 
-	void T4BDeferredRetry()
+	// Bounded gate: retry until the weapon AND its installed magazine both exist.
+	void T4BTryBaseline()
 	{
 		if (m_bBaselineDone)
 			return;
-		m_iRetries++;
-		if (T4BWeapon())
-		{
-			ApplyBaseline();
-			return;
-		}
-		if (m_iRetries < 4)
-			GetGame().GetCallqueue().CallLater(T4BDeferredRetry, 250, false);
-		else
-			Print("[ARMST_T4B-INSTALLED] #0 phase=reject ev=component reason=no-weapon-at-init", LogLevel.WARNING);
-	}
 
-	void ApplyBaseline()
-	{
 		BaseWeaponComponent wpn = T4BWeapon();
-		if (!wpn)
-			return;
-		BaseMagazineComponent mag = wpn.GetCurrentMagazine();
-		if (!mag)
+		BaseMagazineComponent mag = null;
+		if (wpn)
+			mag = wpn.GetCurrentMagazine();
+
+		if (!wpn || !mag)
 		{
-			Print("[ARMST_T4B-INSTALLED] #0 phase=reject ev=component reason=no-installed-magazine-at-init", LogLevel.WARNING);
+			m_iRetries++;
+			if (m_iRetries <= 4)
+			{
+				GetGame().GetCallqueue().CallLater(T4BTryBaseline, 250, false);
+			}
+			else
+			{
+				Print("[ARMST_T4B-INSTALLED] #0 phase=reject ev=component reason=baseline-not-ready retries="
+					+ m_iRetries.ToString() + " " + T4BState(), LogLevel.WARNING);
+			}
 			return;
 		}
 
@@ -95,15 +101,36 @@ class ARMST_T4B_WeaponProbe : ScriptComponent
 		int mx = mag.GetMaxAmmoCount();
 		if (start > mx)
 			start = mx;
+
 		mag.SetAmmoCount(start);
+
+		// Read-back after the write; log only after read-back.
+		BaseWeaponComponent wpn2 = T4BWeapon();
+		BaseMagazineComponent mag2 = null;
+		int got = -1;
+		if (wpn2)
+			mag2 = wpn2.GetCurrentMagazine();
+		if (mag2)
+			got = mag2.GetAmmoCount();
+		bool sameMagazine = (mag2 == mag);
+
 		m_bBaselineDone = true;
 
 		int srv = 0;
 		if (Replication.IsServer())
 			srv = 1;
 		Print("[ARMST_T4B-INSTALLED] #0 phase=baseline ev=component reason=init start=" + start.ToString()
+			+ " got=" + got.ToString()
+			+ " sameMagazine=" + T4BB(sameMagazine)
 			+ " " + T4BState()
 			+ " srv=" + srv.ToString(), LogLevel.NORMAL);
+	}
+
+	string T4BB(bool v)
+	{
+		if (v)
+			return "1";
+		return "0";
 	}
 
 	BaseWeaponComponent T4BWeapon()
@@ -163,6 +190,7 @@ class ARMST_T4B_WeaponProbe : ScriptComponent
 		s = s + " ammo=" + ammo.ToString() + "/" + mx.ToString();
 		s = s + " muzzle=" + mzAmmo.ToString() + "/" + mzMax.ToString();
 		s = s + " chambered=" + chambered.ToString() + " barrel=" + barrel.ToString();
+		s = s + " baselineDone=" + T4BB(m_bBaselineDone);
 		return s;
 	}
 }
@@ -195,7 +223,7 @@ class ARMST_T4B_AddRoundWeaponAction : ScriptedUserAction
 
 	override bool GetActionDescriptionScript(out string outName)
 	{
-		outName = "Lab API test: SetAmmoCount(old+1) on the installed magazine; rejects when full or already used.";
+		outName = "Lab API test: SetAmmoCount(old+1) on the installed magazine; rejects when full, already used or baseline not ready.";
 		return true;
 	}
 
@@ -226,7 +254,6 @@ class ARMST_T4B_AddRoundWeaponAction : ScriptedUserAction
 		if (Replication.IsServer())
 			srv = 1;
 
-		// Guard: exact lab weapon only (the action's owner must be the probe-carrying weapon).
 		BaseWeaponComponent wpn = T4BActionWeapon();
 		if (!wpn)
 		{
@@ -234,10 +261,34 @@ class ARMST_T4B_AddRoundWeaponAction : ScriptedUserAction
 				+ " phase=reject ev=useraction reason=no-weapon srv=" + srv.ToString(), LogLevel.NORMAL);
 			return;
 		}
-		if (!wpn.FindComponent(ARMST_T4B_WeaponProbe))
+
+		// The probe is a SIBLING component on the weapon ENTITY (not on the weapon
+		// component). Look it up on the entity and cross-check the action owner.
+		IEntity weaponEnt = wpn.GetOwner();
+		if (!weaponEnt)
 		{
 			Print("[ARMST_T4B-INSTALLED] #" + m_iSeq.ToString()
-				+ " phase=reject ev=useraction reason=not-lab-weapon srv=" + srv.ToString(), LogLevel.NORMAL);
+				+ " phase=reject ev=useraction reason=no-weapon-entity srv=" + srv.ToString(), LogLevel.NORMAL);
+			return;
+		}
+
+		ARMST_T4B_WeaponProbe probe = ARMST_T4B_WeaponProbe.Cast(weaponEnt.FindComponent(ARMST_T4B_WeaponProbe));
+		if (!probe)
+		{
+			Print("[ARMST_T4B-INSTALLED] #" + m_iSeq.ToString()
+				+ " phase=reject ev=useraction reason=not-lab-weapon probe=null srv=" + srv.ToString(), LogLevel.NORMAL);
+			return;
+		}
+		if (m_t4bWeaponEntity != null && weaponEnt != m_t4bWeaponEntity)
+		{
+			Print("[ARMST_T4B-INSTALLED] #" + m_iSeq.ToString()
+				+ " phase=reject ev=useraction reason=wrong-weapon-owner srv=" + srv.ToString(), LogLevel.NORMAL);
+			return;
+		}
+		if (!probe.IsBaselineDone())
+		{
+			Print("[ARMST_T4B-INSTALLED] #" + m_iSeq.ToString()
+				+ " phase=reject ev=useraction reason=baseline-not-ready " + T4BActionState(), LogLevel.NORMAL);
 			return;
 		}
 
@@ -289,6 +340,9 @@ class ARMST_T4B_AddRoundWeaponAction : ScriptedUserAction
 		}
 
 		int want = a + 1;
+
+		// Strict one-shot: latch BEFORE the write.
+		m_bUsed = true;
 		magPre.SetAmmoCount(want);
 
 		// Immediate read-back / identity checks.
@@ -314,7 +368,12 @@ class ARMST_T4B_AddRoundWeaponAction : ScriptedUserAction
 		bool sameMagazine = (magPost == magPre);
 		bool sameOwner = (magEntPost == magEntPre);
 		bool chamberUnchanged = (mzPre == mzPost) && (barrelPre == barrelPost) && (chPre == chPost);
-		m_bUsed = true;
+		bool gotOk = (a2 == want);
+		bool verdictOk = gotOk && sameMagazine && sameOwner && chamberUnchanged;
+
+		string verdict = "mismatch";
+		if (verdictOk)
+			verdict = "ok";
 
 		Print("[ARMST_T4B-INSTALLED] #" + m_iSeq.ToString()
 			+ " phase=post ev=useraction reason=write want=" + want.ToString()
@@ -322,6 +381,8 @@ class ARMST_T4B_AddRoundWeaponAction : ScriptedUserAction
 			+ " sameMagazine=" + T4BB(sameMagazine)
 			+ " sameOwner=" + T4BB(sameOwner)
 			+ " chamberUnchanged=" + T4BB(chamberUnchanged)
+			+ " gotOk=" + T4BB(gotOk)
+			+ " verdict=" + verdict
 			+ " " + T4BActionState()
 			+ " srv=" + srv.ToString(), LogLevel.NORMAL);
 	}

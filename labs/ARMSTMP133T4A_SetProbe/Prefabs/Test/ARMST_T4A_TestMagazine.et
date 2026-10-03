@@ -1,0 +1,16 @@
+GenericEntity : "{B0DFDF7AAA9C5D39}Prefabs/Weapons/Magazines/12ga/armst_12ga_Buckshot.et" {
+ ID "C9E63012F5D46B8A"
+ components {
+  ARMST_T4A_SetterProbe "{DAF7412306E57C9B}" {
+  }
+  ActionsManagerComponent "{F092E6B0537754FD}" {
+   additionalActions {
+    ARMST_T4A_AddRoundUserAction "{6D80CBBC9F7E0524}" {
+     UIInfo SCR_ActionUIInfo "{6A8708B05CF3E69E}" {
+     }
+    }
+   }
+  }
+ }
+ coords 148.231 1.9 77.851
+}

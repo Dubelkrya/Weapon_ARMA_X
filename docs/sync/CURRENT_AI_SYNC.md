@@ -357,6 +357,18 @@ historical material**; the owner approved **V3** (Issue #27 comment 5966570978,
   compile. Status `T4B_LAB_PREPARED_OWNER_RUN_REQUIRED`. **Published lab sources** (byte-identical
   to local) under `labs/ARMSTMP133T4B_InstalledMagProbe/` + `MANIFEST.sha256` on this branch, per
   the owner's branch rule (one branch per direction; continue in `t4b/installed-mag-probe`).
+- **T4b revision (owner source review, Issue #34 comment 5972157499):** status was
+  `T4B_RUNTIME_BLOCKED_SOURCE_REVIEWED`. Fixed in the same branch/lab: (1) the lab-weapon guard
+  now looks up the probe on the weapon **entity** (sibling) + cross-checks the action owner
+  (previously `reason=not-lab-weapon` ×36); (2) a bounded baseline gate retries until the
+  **installed magazine** exists and logs after read-back; the action rejects
+  `baseline-not-ready` until `IsBaselineDone()`; (3) the one-shot latch is set **before**
+  `SetAmmoCount`, and a post-write `verdict=ok|mismatch` is logged. Prefab unchanged (single
+  inherited `ActionsManagerComponent {A29AE67FF4D82B0F}`). Script SHA `C2E37135…` → `CD424663…`;
+  local==published updated.
+- **T4a historical snapshot:** `labs/ARMSTMP133T4A_SetProbe/` (README "historical diagnostic" +
+  `MANIFEST.sha256`) published on the same magazine branch; `t4a/interaction-patch` left as
+  history; local T4a unchanged; not merged.
 
 ---
 

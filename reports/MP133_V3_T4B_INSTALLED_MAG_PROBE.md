@@ -118,9 +118,40 @@ and published copy are byte-identical.
 | Published path | SHA-256 |
 |---|---|
 | [`labs/ARMSTMP133T4B_InstalledMagProbe/addon.gproj`](../labs/ARMSTMP133T4B_InstalledMagProbe/addon.gproj) | `200E3156DED0C793CFA6FCF94767A4DC265FF28760307A158BCD4DF9696608A6` |
-| [`…/Scripts/Game/ARMST_T4B/ARMST_T4B_InstalledMagProbe.c`](../labs/ARMSTMP133T4B_InstalledMagProbe/Scripts/Game/ARMST_T4B/ARMST_T4B_InstalledMagProbe.c) | `C2E3713574D5F922AF90100446AD6C7D6DC7110BADD2FAC8F0C98C1E1ACEB2DD` |
+| [`…/Scripts/Game/ARMST_T4B/ARMST_T4B_InstalledMagProbe.c`](../labs/ARMSTMP133T4B_InstalledMagProbe/Scripts/Game/ARMST_T4B/ARMST_T4B_InstalledMagProbe.c) | `CD4246636C157E16641A3168D7A83D0D54027F515DC43A1AF8292AAA4CE5B9F8` |
 | [`…/Prefabs/Test/ARMST_T4B_TestWeapon.et`](../labs/ARMSTMP133T4B_InstalledMagProbe/Prefabs/Test/ARMST_T4B_TestWeapon.et) | `0F4CF3EC609BB711C53F8A266737BDF3A6694F14005E458084C281DD544EE120` |
 | [`…/Prefabs/Test/ARMST_T4B_TestWeapon.et.meta`](../labs/ARMSTMP133T4B_InstalledMagProbe/Prefabs/Test/ARMST_T4B_TestWeapon.et.meta) | `8EBCBED43046664A0A0669C2D8B03616B690422BC4A0F7E778B3972F7FF6733E` |
 
 Manifest: [`labs/ARMSTMP133T4B_InstalledMagProbe/MANIFEST.sha256`](../labs/ARMSTMP133T4B_InstalledMagProbe/MANIFEST.sha256).
 The local runtime folder remains `…\addons\ARMSTMP133T4B_InstalledMagProbe`.
+
+## 8. Revision after owner source review (supersedes `b00a9fa`)
+
+Owner review (Issue #34 comment 5972157499, against the owner runtime log) set
+`T4B_RUNTIME_BLOCKED_SOURCE_REVIEWED` with three concrete source defects, all fixed in the local
+lab and re-published on the same branch:
+
+1. **Lab-weapon guard looked on the wrong object.** `wpn.FindComponent(ARMST_T4B_WeaponProbe)`
+   was called on the `BaseWeaponComponent`, but the probe is a **sibling component on the weapon
+   entity**. The log showed `reason=not-lab-weapon` ×36. Fixed: `IEntity weaponEnt = wpn.GetOwner()`
+   → `weaponEnt.FindComponent(ARMST_T4B_WeaponProbe)` with a null check **and** a cross-check that
+   `weaponEnt == m_t4bWeaponEntity` (the action's `Init` owner).
+2. **Baseline gate stopped too early.** `OnPostInit` retried only when the weapon component was
+   null; if the weapon existed but `GetCurrentMagazine()` was null it logged
+   `no-installed-magazine-at-init` and returned without retry, so the baseline never applied
+   (log showed the magazine `10/10`, no `phase=baseline 0/10`). Fixed: a bounded gate retries
+   while the **installed magazine** is missing (≤ 4 × 250 ms), sets the baseline, then logs after
+   a read-back of `GetCurrentMagazine()` + `GetAmmoCount()` + `sameMagazine`. The action rejects
+   with `reason=baseline-not-ready` until the probe reports `IsBaselineDone()` — no late baseline
+   after a `+1`.
+3. **One-shot latch before the write + verdict.** `m_bUsed` is now set **before** `SetAmmoCount`
+   (strict one-shot); `full`/`bad-ammo` rejects do not set it. Post-write the code checks
+   `got == want`, `sameMagazine`, `sameOwner`, `chamberUnchanged` and logs `verdict=ok|mismatch`.
+   A setter call alone is not treated as PASS. `Replication.IsServer()/srv=1` in offline is
+   explicitly **not** MP authority proof.
+
+The prefab is unchanged (single inherited `ActionsManagerComponent {A29AE67FF4D82B0F}`, no
+`ParentContextList`/context edits without separate Workbench evidence). Local and published copies
+are byte-identical. Old lab commit `b00a9fa080256d17e842978007a60eff209e1344` is superseded by the
+new commit on `t4b/installed-mag-probe`; the only changed published file is
+`Scripts/Game/ARMST_T4B/ARMST_T4B_InstalledMagProbe.c` (`C2E37135…` → `CD424663…`).

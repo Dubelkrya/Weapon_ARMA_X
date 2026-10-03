@@ -1,0 +1,22 @@
+GameProject {
+	ID "ARMSTMP133T4ASetProbe"
+	GUID "A7C41E90D3B24F68"
+	TITLE "ARMST MP133 T4A SetAmmoCount Probe"
+	Dependencies {
+		"58D0FB3206B6F859" "6A70E400C54051DC"
+	}
+	Configurations {
+		GameProjectConfig PC {
+		}
+		GameProjectConfig XBOX_ONE {
+		}
+		GameProjectConfig XBOX_SERIES {
+		}
+		GameProjectConfig PS4 {
+		}
+		GameProjectConfig PS5 {
+		}
+		GameProjectConfig HEADLESS {
+		}
+	}
+}
