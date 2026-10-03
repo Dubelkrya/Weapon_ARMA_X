@@ -31,6 +31,11 @@
 //      pre / post / delayed / owner observation.
 //   3. Event cap counts only SIGNIFICANT logged events, so unrelated callbacks can no
 //      longer silence later Weapon_*Magazine / rack / BlendOut events. `super` always runs.
+//
+// Equip investigation (Issue #34, ammo-loss audit): the animation component also overrides
+// SyncWithCharacter / RemoveSyncReference (confirmed SDK) to log passive snapshots
+// equip-pre/post-sync and unequip-pre/post-sync, so the +1 value can be observed around
+// equipping/releasing THIS lab weapon. Getter-only, `super` always called.
 // ============================================================================
 
 // ----------------------------------------------------------------------------
@@ -133,6 +138,32 @@ class ARMST_T4B_WeaponAnimationComponent : WeaponAnimationComponent
 		ARMST_T4B_WeaponProbe probe = T4BProbe();
 		if (probe)
 			probe.T4BLogCmd(commandID, intValue, floatValue);
+	}
+
+	// Equip/unequip hooks (confirmed installed SDK: BaseItemAnimationComponent
+	// .SyncWithCharacter / .RemoveSyncReference). Passive snapshots around the animation
+	// sync, so the +1 value can be observed immediately before/after a character equips or
+	// releases THIS lab weapon. No new component, no global hook, super is always called.
+	override bool SyncWithCharacter(ChimeraCharacter pCharacter, bool isMainCharacter, string overrideStartNode)
+	{
+		ARMST_T4B_WeaponProbe probe = T4BProbe();
+		if (probe)
+			probe.T4BLog("INSTALLED", "equip-pre-sync", "sync-with-character");
+		bool r = super.SyncWithCharacter(pCharacter, isMainCharacter, overrideStartNode);
+		if (probe)
+			probe.T4BLog("INSTALLED", "equip-post-sync", "sync-with-character");
+		return r;
+	}
+
+	override bool RemoveSyncReference(ChimeraCharacter pCharacter)
+	{
+		ARMST_T4B_WeaponProbe probe = T4BProbe();
+		if (probe)
+			probe.T4BLog("INSTALLED", "unequip-pre-sync", "remove-sync-reference");
+		bool r = super.RemoveSyncReference(pCharacter);
+		if (probe)
+			probe.T4BLog("INSTALLED", "unequip-post-sync", "remove-sync-reference");
+		return r;
 	}
 }
 

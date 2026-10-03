@@ -399,6 +399,15 @@ historical material**; the owner approved **V3** (Issue #27 comment 5966570978,
   not guessed). No T2a graph/ASI/markers; script unchanged. Prefab SHA `5F5AF777…` →
   `D522B0B338DC672AF4C55D6EEFF97C6473A81E94D8905846EE92DD31E882EA9A`; script `EB3C548B…`;
   local==published. Status `T4B_PREFAB_NESTED_OWNER_RUN_REQUIRED`.
+- **T4b ammo-loss equip diagnostic (Issue #34, HIGH):** Phase A confirmed equip/release hooks
+  `BaseItemAnimationComponent.SyncWithCharacter` / `RemoveSyncReference` on the already nested
+  `ARMST_T4B_WeaponAnimationComponent`; existing diagnostics lacked an equip snapshot, so a
+  minimal lab-only extension was added: `equip-pre/post-sync` / `unequip-pre/post-sync`
+  `[ARMST_T4B-INSTALLED]` snapshots (`super` preserved; no new component/prefab/global hook/no
+  re-issued SetAmmoCount/polling). Script SHA `EB3C548B…` → `26B75890…`; prefab/`.meta`/`addon.gproj`
+  unchanged; local==published. Owner protocol: Test A idle persistence, Test B pickup+equip (no R),
+  Test C one native R (separate runs each on a fresh instance). Status
+  `T4B_EQUIP_DIAGNOSTIC_SOURCE_PUBLISHED_OWNER_RUN_REQUIRED`.
 
 ---
 

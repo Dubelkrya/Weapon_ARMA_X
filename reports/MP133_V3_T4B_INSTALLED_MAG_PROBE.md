@@ -118,7 +118,7 @@ and published copy are byte-identical.
 | Published path | SHA-256 |
 |---|---|
 | [`labs/ARMSTMP133T4B_InstalledMagProbe/addon.gproj`](../labs/ARMSTMP133T4B_InstalledMagProbe/addon.gproj) | `200E3156DED0C793CFA6FCF94767A4DC265FF28760307A158BCD4DF9696608A6` |
-| [`…/Scripts/Game/ARMST_T4B/ARMST_T4B_InstalledMagProbe.c`](../labs/ARMSTMP133T4B_InstalledMagProbe/Scripts/Game/ARMST_T4B/ARMST_T4B_InstalledMagProbe.c) | `EB3C548B36A77DABB399509951ACDE0B618009749B033BD2048234FD1FC48CCC` |
+| [`…/Scripts/Game/ARMST_T4B/ARMST_T4B_InstalledMagProbe.c`](../labs/ARMSTMP133T4B_InstalledMagProbe/Scripts/Game/ARMST_T4B/ARMST_T4B_InstalledMagProbe.c) | `26B758909DB4EA8BA89C2C1F5FAAF34FAD5650F6A0778D2F324ADAAEFA958CC0` |
 | [`…/Prefabs/Test/ARMST_T4B_TestWeapon.et`](../labs/ARMSTMP133T4B_InstalledMagProbe/Prefabs/Test/ARMST_T4B_TestWeapon.et) | `D522B0B338DC672AF4C55D6EEFF97C6473A81E94D8905846EE92DD31E882EA9A` |
 | [`…/Prefabs/Test/ARMST_T4B_TestWeapon.et.meta`](../labs/ARMSTMP133T4B_InstalledMagProbe/Prefabs/Test/ARMST_T4B_TestWeapon.et.meta) | `8EBCBED43046664A0A0669C2D8B03616B690422BC4A0F7E778B3972F7FF6733E` |
 
@@ -281,3 +281,60 @@ script SHA unchanged `EB3C548B…`; local==published. Owner first gate: a fresh 
 show exactly one nested lab subclass, no second `WeaponAnimationComponent`, no `cannot be
 combined`; then `[ARMST_T4B-EVT]` / `[ARMST_T4B-CMD]` and `baseline 0/10`; only then the
 synthetic `+1`.
+
+## 13. Ammo-loss audit (Issue #34, HIGH) — Phase A findings + minimal equip instrumentation
+
+**Context (owner-confirmed, op=1):** baseline M1 `0/10` → immediate/250 ms/1 s all M1 `1/10`
+(`persistAmmo=1, stillInstalled=1, sameOwner=1`) → by the next registered command (`commandID=0,
+intValue=5`) the ammo is M1 `0/10` (same physical M1); the stock reload then swaps
+`M1 → (none) → M3 10/10`. ARMST Core was **not** loaded, so Core is excluded as the cause.
+
+**PHASE_A_FINDINGS** (installed SDK 1.8.0.13, verified):
+- Equip/release of a weapon: `BaseItemAnimationComponent.SyncWithCharacter(ChimeraCharacter,
+  bool, string)` and `RemoveSyncReference(ChimeraCharacter)` — public, on our **already nested**
+  `ARMST_T4B_WeaponAnimationComponent`. `BaseWeaponComponent.OnWeaponActive()/OnWeaponInactive()`
+  are protected and would need a `WeaponComponent` subclass (not used).
+- Inventory slot / ground: `InventoryItemComponent.m_OnParentSlotChangedInvoker` (public invoker,
+  signature undocumented), `OnPlacedOnGround()` / `OnPostInit(IEntity)` (protected).
+  `InventoryStorageManagerComponent.OnItemAdded/OnItemRemoved` live on the storage manager
+  (character) → a global hook, not used.
+- Ammo writers / replacements: the synthetic `SetAmmoCount` (ours) and the native reload events
+  (`Weapon_Spawn/Attach/MagRelease`) that swap the physical magazine. No documented public
+  "ammo reset on equip" API.
+
+**DIAGNOSTIC_GAPS:** before this patch the lab logged baseline / +1 / delayed 250 ms–1 s, the
+selective animation events and the animation commands — but **no snapshot at equip/unequip**, so
+the `1/10 → 0/10` transition could not be localized to equip. (Pickup-from-world still has no
+lab-only hook in this component; the owner's manual steps + the equip samples bound the window.)
+
+**Minimal lab-only extension (implemented):** `ARMST_T4B_WeaponAnimationComponent` now overrides
+`SyncWithCharacter` / `RemoveSyncReference` (calling `super`) and emits
+`[ARMST_T4B-INSTALLED] phase=equip-pre-sync|equip-post-sync|unequip-pre-sync|unequip-post-sync`
+snapshots through the probe (same fields: weapon/mag entity tags, installed-state, ammo/max,
+`muzzleSupply`, barrel, `chambered`, plus `srv`). No new component, no prefab change, no global
+hook, no re-issued `SetAmmoCount`, no polling.
+
+**FILES_CHANGED:** `labs/ARMSTMP133T4B_InstalledMagProbe/Scripts/Game/ARMST_T4B/ARMST_T4B_InstalledMagProbe.c`
+(script SHA `EB3C548B…` → **`26B758909DB4EA8BA89C2C1F5FAAF34FAD5650F6A0778D2F324ADAAEFA958CC0`**);
+prefab / `.meta` / `addon.gproj` unchanged; local==published.
+**PROTECTED_FILES_CHANGED = 0** (production Weapons, Core, T2a, T4a, V2/P2, Astra, worlds/layers,
+`reports/CORE_ARMST_READONLY_AUDIT.md`).
+**COMMIT_SHA:** the commit that publishes this revision on `t4b/installed-mag-probe`.
+
+**OWNER_TEST_PROTOCOL** (fresh T4b instance per test; don't mix tests):
+- **Test A — idle persistence:** baseline `0/10` → one synthetic `+1` → do not touch the weapon
+  for 3–5 s → read the 250 ms / 1 s delayed samples. Expect M1 `1/10, persistAmmo=1`.
+- **Test B — pickup/equip:** fresh instance → `+1` → wait for the 1 s sample → pick up and equip
+  the weapon **without R** → read `equip-pre-sync` / `equip-post-sync`. Compare ammo and the
+  physical magazine tag (`magTag`) before/after. If it drops, note it is `AMMO_LOSS_PICKUP_OR_EQUIP`
+  (or `MAGAZINE_REPLACED` if the tag changes).
+- **Test C — native command:** confirm the installed-mag state, then one **ordinary R** only;
+  read the pre-command state and the `[ARMST_T4B-EVT]`/`[ARMST_T4B-CMD]` snapshots. Do not test
+  during a reload/animation/weapon switch.
+Conclude with one of `AMMO_LOSS_IDLE` / `AMMO_LOSS_PICKUP_OR_EQUIP` / `AMMO_LOSS_NATIVE_RELOAD` /
+`MAGAZINE_REPLACED` / `CAUSE_UNRESOLVED`, and never attribute a change to one event if several
+events occurred between two samples. Immediate/delayed `1/10` alone does not prove the round is
+usable in-game.
+
+**STATUS:** `T4B_EQUIP_DIAGNOSTIC_SOURCE_PUBLISHED_OWNER_RUN_REQUIRED`. Nothing was fixed; the
+goal is trustworthy measurement first. Runtime PASS is **not** claimed.
