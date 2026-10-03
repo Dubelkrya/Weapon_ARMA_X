@@ -9,11 +9,13 @@ now, what was just done, and what must not be repeated or assumed. It is a
 
 ---
 
-## 0. CURRENT MP-133 EXECUTION STATE — 2026-10-03
+## 0. CURRENT MP-133 EXECUTION STATE — 2026-10-04
 
 **G2 owner-runtime passed (offline):** one synthetic `+1` persists in the SAME installed M1 magazine; manual short-R / native `Weapon_Rack_Bolt` chambers it; owner reports firing. The original T4b script SHA256 remains `D581B9C9EE270725FFEC94C7685CBBCB2AB41DBA717F2B4FBCF8C4AC8DDCBEB1`. Projectile hit/damage and multiplayer are unverified. The original T4b weapon prefab was **re-saved by the owner in Workbench** and published at `a165e80` (manifest SHA256 `29C70A78B7CBA7678B84A57A29EBF32127A1ED2575742270D9CFACAB78F2AE83`); do not silently restore an older prefab.
 
-**G3 Phase A** read-only SDK/transaction report was published at `eb2b323`. **G3-B1** one-shot donor-inventory `SetAmmoCount(d-1)` fixture was published at [`a165e80`](https://github.com/Dubelkrya/Weapon_ARMA_X/commit/a165e804df1e571c58806bb39ea74e5eee993191) INSIDE the EXISTING `ARMSTMP133T4B_InstalledMagProbe` addon. It needs independent code review, then **owner-only Workbench compile/gameplay proof** (donor identity, ammo, direct-inventory ownership/slot/UI, immediate / +250 ms / +1 s). This source publication is NOT an owner runtime PASS. The installed weapon magazine/chamber must not change in G3-B1; **G3-B2 two-sided transfer, G4 animation and G5 production/MP are not authorised**. Do not create a separate T4c addon/branch/PR per experiment.
+**G3-B1 owner runtime PASS (offline):** one real carried 12ga donor magazine was decremented `n→n-1` through the child lab weapon `ARMST_T4B_G3B1_TestWeapon.et` (write enabled `m_bG3b1WriteEnabled 1`), persisted at +250 ms/+1 s with the same item/magazine identity and slot, the installed target excluded; a duplicate invocation returned `already-used`. This is **independent** of the T4b installed-mag `+1`; it is **not** an atomic two-sided transaction and **not** an MP guarantee. Source stays INSIDE the EXISTING `ARMSTMP133T4B_InstalledMagProbe` addon; the T4b script `D581B9C9…` and owner-saved prefab `29C70A78…` are unchanged. Do not create a separate T4c addon/branch/PR per experiment.
+
+**G3-B2 (one donor round → SAME installed magazine) — DESIGN ONLY, corrections required.** The design-only task (Issue #34 comment `5973625747`) produced `reports/MP133_V3_G3B2_TRANSACTION_DESIGN.md` at `0a4cc95`. Independent review (comment `5973710199`) requested three blockers; **revision 2** resolves them: (1) the chamber/barrel invariant uses `IsCurrentBarrelChambered`+`GetCurrentBarrelIndex` (muzzle `GetAmmoCount` is supply telemetry only — T4b showed `6→7` on a valid `+1`); (2) because child-local suppression of inherited actions is **not proven** (no per-action disable in `BaseActionsManagerComponent`, no `.et` array-removal operator), the B2 fixture is a **fresh thin child of production MP-133** carrying the T4b probe + only the B2 action (B1/T4b actions absent by construction); (3) donor discovery excludes weapon-installed magazines (weapon-manager `installedSet` + storage owner with `BaseWeaponComponent`) and uses a fail-closed donor-storage whitelist. **Executable G3-B2, writes, animation/R/input, MP and production are NOT authorised** until a separate code-level task after design review. Core SHIFT+R reload is not working; a Core `ARMST_SCR_PlayerMagRepacks.c` RPC candidate remains unverified ([#33](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/33)); **G4 animation and G5 production/MP are not authorised**.
 
 **Core correction:** owner states Core SHIFT+R reload is NOT working; legacy `ARMST_LIGHT_RELOAD_ACTION` / `OnRackBoltMDown` references are not a functioning dependency. A locally reported Core `ARMST_SCR_PlayerMagRepacks.c` RPC donor-transfer candidate has not been independently checked for installed MP-133 transfer. Core audit [#33](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/33) remains unpublished; Core is read-only.
 
@@ -523,6 +525,20 @@ historical material**; the owner approved **V3** (Issue #27 comment 5966570978,
   No executable G3-B2 code, Workbench item, animation/R/input, MP or production change. Status
   `G3B1_RUNTIME_PASS / G3B2_DESIGN_AUTHORIZED / G3B2_IMPLEMENTATION_NOT_YET_AUTHORIZED /
   ASTRA_INDEPENDENT`. Next gate: independent design review before a separate code-level task.
+- **G3-B2 design rev 2 (review 5973710199 corrections, 2026-10-04):** `reports/MP133_V3_G3B2_TRANSACTION_DESIGN.md`
+  revised (docs-only). Blocker 1: chamber invariant = `IsCurrentBarrelChambered`+`GetCurrentBarrelIndex`
+  (+`GetBarrelsCount`); muzzle `GetAmmoCount` = **supply telemetry only** (T4b showed `6→7` on a valid
+  `+1`). Blocker 2: child-local suppression of inherited actions is **not proven** (no per-action
+  disable in `BaseActionsManagerComponent`; no `.et` array-removal operator), so the B2 fixture is a
+  **fresh thin child of production MP-133** carrying the T4b probe + **only** the B2 action (B1/T4b
+  actions absent by construction); suppression stays an UNRESOLVED pre-implementation gate. Blocker 3:
+  donor discovery excludes weapon-installed mags (weapon-manager `installedSet` + storage owner with
+  `BaseWeaponComponent`) and uses a fail-closed donor-storage whitelist. Editorial: `REJECTED` is
+  repeatable/no-write while the latch (before the first setter) is terminal; quarantine reset only via
+  a newly spawned instance (re-equip UNRESOLVED); `donor-is-target` normally surfaces as `no-donor`;
+  "no atomic API" qualified to absence-in-inspected-scope; mocks call no setter. Sync §0 stale facts
+  rewritten. `GAMEPLAY_FILES_CHANGED_BY_DESIGN=0`. Status `G3B1_PASS / G3B2_DESIGN_CORRECTIONS_REQUIRED /
+  IMPLEMENTATION_NOT_AUTHORIZED`; STOP for independent design review (rev 2).
 
 ---
 

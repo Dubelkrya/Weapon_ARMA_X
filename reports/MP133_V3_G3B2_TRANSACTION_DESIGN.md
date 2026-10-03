@@ -1,66 +1,60 @@
 # MP-133 V3 — G3-B2: one donor round → SAME installed magazine — transaction design (DESIGN ONLY)
 
-**Status:** `G3B1_RUNTIME_PASS / G3B2_DESIGN_AUTHORIZED / G3B2_IMPLEMENTATION_NOT_YET_AUTHORIZED / ASTRA_INDEPENDENT`.
+**Revision 2 — corrections after independent design review**
+[Issue #34 comment 5973710199](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34#issuecomment-5973710199).
+
+**Status:** `G3B1_PASS / G3B2_DESIGN_CORRECTIONS_REQUIRED / IMPLEMENTATION_NOT_AUTHORIZED`.
 
 **This document is read-only design.** It authorizes nothing at runtime. No executable G3-B2
 source, Workbench item, gameplay/animation/R/input integration, MP replication or production
 change is included. Implementation starts only after a **separate code-level task** is approved
-following independent design review of this document.
+following independent design review of this revision.
 
 **Authority:** Issue #34 comment
 [5973625747](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34#issuecomment-5973625747)
-(G3-B2 design-only task). Baseline resolves fresh `origin/t4b/installed-mag-probe` at
+(G3-B2 design-only task) plus the review corrections in comment
+[5973710199](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34#issuecomment-5973710199).
+Reviewed baseline `0a4cc959c350b4b2a2f70ec5416a9d010cbf285d`; baseline task HEAD
 `d31df071d97ce5336f6794b6402e69e23a51e83c`.
 
-Labels used throughout: **SOURCE** (installed SDK / existing project source), **INFERENCE**
-(reasoned from SOURCE, not proven), **UNRESOLVED** (not established; do not assume).
+Labels: **SOURCE** (installed SDK / existing project source), **INFERENCE** (reasoned from SOURCE),
+**UNRESOLVED** (not established; never assumed).
 
 ---
 
-## 0. Scope, baseline and non-goals
+## 0. Revision-2 change log (how each blocker was resolved)
 
-**In scope (design):** one manual, lab-only, no-R, server-authoritative operation that moves exactly
-one round from one genuine carried donor magazine into the **same** already-installed MP-133 lab
-magazine, with a one-shot transaction state machine, quarantined partial-failure handling, correlated
-telemetry, and an acceptance/negative matrix.
+1. **Muzzle-count commit gate (blocker) — RESOLVED.** The chamber/barrel invariant no longer uses
+   `muzzle.GetAmmoCount()`. It now uses `muzzle.IsCurrentBarrelChambered()` + `muzzle.GetCurrentBarrelIndex()`
+   (+ stable `GetBarrelsCount()`); `muzzle.GetAmmoCount()`/`GetMaxAmmoCount()` are **supply telemetry**
+   only and are **not** required to stay equal. Verified evidence: during a correct T4b
+   same-installed-magazine `+1`, `[ARMST_T4B-INSTALLED] phase=post-detail` recorded
+   `muzzleSupplyBefore=6 muzzleSupplyAfter=7 muzzleSupplySame=0 ... chamberUnchanged=1`. Applied to
+   §§1.2, 4, 5, 6 and the result block.
+2. **Inherited live write actions (blocker) — RESOLVED BY ALTERNATIVE INHERITANCE PATH.** Child-local
+   suppression of inherited actions is **not proven** (see §1.4): the installed SDK exposes no
+   per-action disable/remove setter and the `.et` format shows only `{ }` (declare) and `+{ }` (append)
+   — no removal operator was found in the installed SDK or the project corpus. Therefore the B2
+   fixture does **not** descend from the G3B1 child / T4b weapon; it is a **fresh thin child of the
+   production MP-133** that carries the T4b probe and adds **only** the B2 action, so the B1/T4b
+   mutating actions do not exist in the B2 fixture at all (§7).
+3. **Donor scope includes other weapons' installed magazines (blocker) — RESOLVED.** Donor discovery
+   now rejects any candidate installed in a weapon: (a) the installed-magazine set of **all** weapons
+   reachable from the actor's weapon manager, and (b) any item whose storage owner carries a
+   `BaseWeaponComponent`. The first B2 run additionally uses a **fail-closed donor-storage whitelist**
+   so only a proven carry container is accepted (§1.3).
 
-**Out of scope (this document and the next task unless separately approved):**
-
-- Native reload / `CMD_Weapon_Reload` / short-R / `Weapon_Rack_Bolt` / pump / fire (G4).
-- Astra animation lab (#35), graph/ASI/ANM edits, input handling.
-- Production `ARMST-PLATFORM---Weapons`, Core, frozen V2/P2, original T2a/T4a, worlds/layers.
-- MP replication guarantees and dedicated-server testing (future; this first B2 experiment is one
-  isolated offline run).
-- Replacing the verified G3-B1 action/script or the original T4b fixture.
-- Rollback / compensation / auto-retry / speculative re-issue.
-
-**Baseline proven offline (owner runtime, cited as evidence, not re-derived here):**
-
-- T4b single installed-magazine `SetAmmoCount(t+1)` persists on the **same** installed component.
-- G3-B1 independent real 12ga donor `SetAmmoCount(d-1)` persisted at +250 ms/+1 s with the same
-  actor/inventory/component/slot, installed target excluded; duplicate invocation rejects.
-- These were **independent** operations in **different** tests. No atomic two-sided transaction and
-  no MP guarantee has been proved. (**SOURCE**: owner evidence
-  [5973576236](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34#issuecomment-5973576236).)
-
-**Owned reference (not to be changed by G3-B2):** owner-saved T4b prefab
-`29C70A78B7CBA7678B84A57A29EBF32127A1ED2575742270D9CFACAB78F2AE83`; T4b script
-`D581B9C9EE270725FFEC94C7685CBBCB2AB41DBA717F2B4FBCF8C4AC8DDCBEB1`; G3B1 script
-`A7CE4FE399A9789CFCDA475D477EC9E1BB4AE942C3DF040AE0F3B04B264620DA`; G3B1 child weapon
-`0C03C3662F567E342B0BEAD059151B1299BDE48BC6C37C22D18FB7A010F7733B`; donor mag
-`437D75E3545400A31663F78DBD08E7898BEDE69BA758FC76935ABAA8D1FE0761`; `addon.gproj`
-`200E3156DED0C793CFA6FCF94767A4DC265FF28760307A158BCD4DF9696608A6`.
-
-**Installed SDK inspected (**SOURCE**):** `Arma Reforger Tools` buildid `24870687`; script API HTML
-at `C:\Program Files (x86)\Steam\steamapps\common\Arma Reforger Tools\Workbench\docs\ArmaReforgerScriptAPIPublic\html`
-(version string previously recorded as Enfusion `1.8.0.13`; not re-derived here).
+**Editorial corrections also applied:** state-machine diagram/`REJECTED` lifetime and quarantine
+reset clarified (§2); `donor-is-target` vs `no-donor` clarified (§6); "no atomic API" qualified to
+absence-in-inspected-scope (§8/§10); mock tests are pure transition logic with **no setters** (§6);
+`CURRENT_AI_SYNC.md` top-of-file state rewritten (§ sync commit).
 
 ---
 
 ## 1. Eligibility / prewrite checks
 
-All checks run **server-side only** (`Replication.IsServer()`), on the **action-owner** child lab
-weapon and the **acting user**. Any failure here is a **no-write** `REJECTED`.
+All checks run **server-side only** (`Replication.IsServer()`) on the **action-owner** B2 lab weapon
+and the **acting user**. Any failure here is a **no-write** `REJECTED`.
 
 ### 1.1 Actor / weapon context
 
@@ -68,41 +62,59 @@ weapon and the **acting user**. Any failure here is a **no-write** `REJECTED`.
 |---|---|---|
 | 1 | `Replication.IsServer()` true; non-server call `REJECTED` | **SOURCE** `Replication.IsServer` (offline `true` is **not** MP proof — **UNRESOLVED**) |
 | 2 | Acting user entity present; `user.FindComponent(SCR_CharacterControllerComponent)` present | **SOURCE** (T4b/G3B1 pattern) |
-| 3 | Action owner == current equipped weapon: `CharacterControllerComponent.GetWeaponManagerComponent().GetCurrentWeapon()` returns the `BaseWeaponComponent` whose `GetOwner()` == action-owner entity | **SOURCE** `BaseWeaponManagerComponent.GetCurrentWeapon()`; T4b/G3B1 pattern |
-| 4 | `BaseWeaponComponent` is on the child lab weapon entity (action owner) | **SOURCE** pattern |
-| 5 | T4b baseline ready and the **same installed magazine** is present (`wpn.GetCurrentMagazine()` non-null) | **SOURCE** `BaseWeaponComponent.GetCurrentMagazine()`; T4b probe `IsBaselineDone()` |
+| 3 | Action owner == current equipped weapon: `CharacterControllerComponent.GetWeaponManagerComponent().GetCurrentWeapon()` returns the `BaseWeaponComponent` whose `GetOwner()` == action-owner entity | **SOURCE** `BaseWeaponManagerComponent.GetCurrentWeapon()` |
+| 4 | `BaseWeaponComponent` is on the B2 lab weapon entity (action owner) | **SOURCE** pattern |
+| 5 | Baseline ready and the **same installed magazine** present (`wpn.GetCurrentMagazine()` non-null); B2 baseline captured before the first setter | **SOURCE** `BaseWeaponComponent.GetCurrentMagazine()` |
 
 ### 1.2 Target (installed magazine) prewrite
 
 | # | Check | Source |
 |---|---|---|
-| 6 | Target magazine component captured (`targetMag`), its owning entity `targetEnt == targetMag.GetOwner()` | **SOURCE** `BaseMagazineComponent.GetOwner()` |
-| 7 | `0 <= targetCount <= targetMax-1` (must have room for exactly +1; full → `REJECTED`) | **SOURCE** `GetAmmoCount`/`GetMaxAmmoCount` |
+| 6 | Target magazine component captured (`targetMag`), owning entity `targetEnt == targetMag.GetOwner()` | **SOURCE** `BaseMagazineComponent.GetOwner()` |
+| 7 | `0 <= targetCount <= targetMax-1` (room for exactly +1; full → `REJECTED`) | **SOURCE** `GetAmmoCount`/`GetMaxAmmoCount` |
 | 8 | `targetAmmoType = targetMag.GetAmmoType(0)` non-empty | **SOURCE** `GetAmmoType(int idx=0)` |
-| 9 | Same installed target across pre→commit: captured `targetMag` reference **and** its `targetEnt` **and** `MP133-WeaponComponent` **and** owning weapon entity are re-read and must be identical | **SOURCE** getters; **INFERENCE** the getters are stable across the two synchronous setters in one frame |
-| 10 | Chamber/barrel snapshot captured: `muzzle.GetAmmoCount()`, `muzzle.IsCurrentBarrelChambered()`, `muzzle.GetCurrentBarrelIndex()`, `muzzle.GetBarrelsCount()` | **SOURCE** `BaseMuzzleComponent` |
-| 11 | The installed target must be **excluded** as a donor by **component and entity identity**, not by prefab GUID | **SOURCE** (G3-B1 pattern; identity ≠ resource) |
+| 9 | Same installed target across pre→commit: `targetMag` reference, `targetEnt`, owning weapon entity, and `wpn.GetCurrentMagazine()` all re-read and identical | **SOURCE** getters; **INFERENCE** stable across the two synchronous setters in one frame |
+| 10 | **Chamber/barrel invariant (not muzzle ammo):** `muzzle.IsCurrentBarrelChambered()` and `muzzle.GetCurrentBarrelIndex()` (and `GetBarrelsCount()` stable). `muzzle.GetAmmoCount()`/`GetMaxAmmoCount()` are captured **separately as supply telemetry** and are **not** an unchanged predicate | **SOURCE** `BaseMuzzleComponent`; T4b evidence `muzzleSupply 6→7`, `chamberUnchanged=1` |
+| 11 | Installed target excluded as donor by **component and entity identity** (not prefab GUID) | **SOURCE** (G3-B1 pattern) |
 
 ### 1.3 Donor discovery / eligibility
 
-Reuse the **tested** G3-B1 nested enumeration (**SOURCE**, owner-runtime PASS):
-`GetAllRootItems` **plus** `GetStorages(EStoragePurpose.PURPOSE_ANY)` and
+Enumeration (tested in G3-B1, owner-runtime PASS): `GetAllRootItems` **plus**
+`GetStorages(EStoragePurpose.PURPOSE_ANY)` and
 `SCR_InventoryStorageManagerComponent.GetAllItems(items, storage)` per storage, deduplicated by
 reference. Re-verify each gate immediately before the write.
 
 | # | Check | Source |
 |---|---|---|
-| 12 | Donor magazine resolver: `BaseMagazineComponent.Cast(item.FindComponent(MagazineComponent))` (fallback `BaseMagazineComponent`); `donorMag.GetOwner() == donorItem` | **SOURCE** |
-| 13 | Donor is genuinely carried: `SCR_InventoryStorageManagerComponent.Contains(donorItem)`; `InventoryItemComponent.GetParentSlot()` resolves; `slot.GetStorage()` recorded | **SOURCE** `Contains`, `GetParentSlot()`, `InventoryStorageSlot.GetStorage()` |
-| 14 | Exactly **one** independent compatible donor. `donorMag != targetMag` **and** `donorItem != targetEnt` (physical identity). `0` compatible → `no-donor`; `>1` → `ambiguous-donor` | **SOURCE** (G3-B1 pattern) |
+| 12 | Resolve `BaseMagazineComponent.Cast(item.FindComponent(MagazineComponent))` (fallback `BaseMagazineComponent`); `donorMag.GetOwner() == donorItem` | **SOURCE** |
+| 13 | Donor genuinely carried: `inv.Contains(donorItem)`; `InventoryItemComponent.GetParentSlot()` resolves; `slot.GetStorage()` recorded | **SOURCE** `Contains`, `GetParentSlot()`, `InventoryStorageSlot.GetStorage()` |
+| 13a | **Not installed in ANY weapon (new):** build `installedSet` from the actor's weapon manager — `ctrl.GetWeaponManagerComponent().GetWeapons(out array<BaseWeaponComponent>)`, and for each `w` add `w.GetCurrentMagazine()` and `w.GetCurrentMagazine().GetOwner()`. Reject a candidate whose magazine or entity is in `installedSet`. | **SOURCE** `GetWeapons`, `GetCurrentMagazine`, `GetOwner` |
+| 13b | **Not stored inside a weapon (new):** reject if `slot.GetStorage().GetOwner()` carries a `BaseWeaponComponent` (item inside a weapon/attachment storage, e.g. the M16 STANAG that B1 logs enumerated as `member=1, storage=M16/slot0`). | **SOURCE** `GetStorage().GetOwner()`, weapon component lookup |
+| 13c | **Fail-closed donor-storage whitelist (first B2 run, new):** accept a donor only if its storage-owner prefab path is in an explicit action attribute whitelist (default **empty** → reject everything). The owner supplies the exact permitted carry-container prefab (e.g. the vest used in the B1 log) and slot. Anything else → `REJECTED no-permitted-storage`. | **INFERENCE** (whitelist is intent-proven, not a guessed API); storage-owner *type* classification is **UNRESOLVED** |
+| 14 | Exactly **one** independent compatible donor. `donorMag != targetMag` **and** `donorItem != targetEnt`. `0` compatible → `no-donor`; `>1` → `ambiguous-donor` | **SOURCE** (G3-B1 pattern) |
 | 15 | Donor count `1 <= donorCount <= donorMax` (`0` → `zero-ammo`) | **SOURCE** |
-| 16 | Strict ammo compatibility: `donorMag.GetAmmoType(0)` non-empty **and** strictly equal to the target reference type. Identical prefab GUID is **not** treated as sufficient | **SOURCE** getter; **INFERENCE** strict equality is the safe first rule; cross-prefab 12ga interchangeability **UNRESOLVED** |
-| 17 | Donor slot/membership retained and re-verified between the two writes; donor item not moved/replaced/removed | **SOURCE** getters; invalidation semantics **UNRESOLVED** |
-| 18 | No native `CMD_Weapon_Reload` / `/full` / magazine swap / rack / fire was observed in the transaction window | **INFERENCE** (window is synchronous; native command observation is **UNRESOLVED** in-game) |
-| 19 | No B2 operation already in progress or quarantined (`state == IDLE`); no other B2 action instance is mid-transaction | **SOURCE** lab-controlled |
+| 16 | Strict ammo compatibility: `donorMag.GetAmmoType(0)` non-empty **and** strictly equal to the target reference type. Identical prefab GUID is **not** sufficient | **SOURCE** getter; **INFERENCE** strict equality is the safe first rule; cross-prefab 12ga interchangeability **UNRESOLVED** |
+| 17 | Donor slot/membership retained and re-verified between the two writes | **SOURCE** getters; invalidation semantics **UNRESOLVED** |
+| 18 | No native `CMD_Weapon_Reload` / `/full` / magazine swap / rack / fire observed in the window | **INFERENCE** (synchronous window); in-game native observation **UNRESOLVED** |
+| 19 | No B2 operation already in progress or quarantined (`state == IDLE`) | **SOURCE** lab-controlled |
 
-**Fail-closed rule:** any uncertainty in 1–19 → `REJECTED`, no writes. Once the first setter is
-called, the operation can no longer return `REJECTED` (§2).
+### 1.4 Child-local action suppression — investigated, UNRESOLVED
+
+**SOURCE (absence observed in inspected scope):** the installed SDK's `BaseActionsManagerComponent`
+(`ActionsManagerComponent` derived) exposes only `GetActionsList/FindAction/GetActionsCount/
+GetContext/GetContextList/IsEnabled/AddUserActionEventListener/RemoveUserActionEventListener` — **no
+per-action enable/disable/remove setter**. `BaseUserAction` has `WasDisabledByServer()` (read-only),
+`GetVisibilityRange()`, `SetSendActionDataFlag()` — **no public disable**. The `.et` format uses
+`property { }` (declare/override) and `property +{ }` (append); **no element-removal operator was
+found** in the installed corpus or the SDK docs. Prefab-level class replacement of an inherited action
+instance, or reparenting it to a non-existent `ParentContextList`, is **not proven**.
+
+**Resolution:** do not rely on suppression. Use the alternative inheritance path (§7) that **does not
+contain** the mutating actions. If a future task still requires suppression on a G3B1-child path, it
+is a **pre-implementation gate** and must be proven in Workbench first.
+
+**Fail-closed rule:** any uncertainty in 1–19 → `REJECTED`, no writes. Once the first setter is called,
+the operation can no longer return `REJECTED` (§2).
 
 ---
 
@@ -113,20 +125,20 @@ called, the operation can no longer return `REJECTED` (§2).
     IDLE ───────────────────────────────▶ PREFLIGHT
      ▲                                        │
      │ any prewrite check 1..19 fails         │ all pass
-     │ (no writes)                            ▼
-   REJECTED                               (latch set)  ── first setter called ──▶ never REJECTED again
-     ●  terminal                                │
-                                                │ donor.SetAmmoCount(d-1)
-                                                │ + immediate donor readback + target/chamber recheck
-                                                ▼
-                                          DONOR_WRITTEN
-                                                │ target.SetAmmoCount(t+1)
-                                                │ + immediate target readback + identity checks
-                                                ▼
-                                          TARGET_WRITTEN
-                                                │ commit criteria §4
-                                                ▼
-                                           COMMITTED ●  terminal
+     │ (no writes, latch NOT set,             ▼
+     │  REJECTED is repeatable)          (latch + opId set)
+     ●  REJECTED (repeatable)                 │
+                                              │ donor.SetAmmoCount(d-1)
+                                              │ + immediate donor readback + target/chamber recheck
+                                              ▼
+                                        DONOR_WRITTEN
+                                              │ target.SetAmmoCount(t+1)
+                                              │ + immediate target readback + identity checks
+                                              ▼
+                                        TARGET_WRITTEN
+                                              │ commit criteria §4
+                                              ▼
+                                         COMMITTED ●  terminal
 
     any identity mismatch / setter or readback failure / observation uncertainty
     at or after the first setter  ─────────▶  INDETERMINATE ──▶ QUARANTINED ●  terminal
@@ -134,26 +146,30 @@ called, the operation can no longer return `REJECTED` (§2).
 
 **Rules (binding on the future implementation):**
 
-- **Latch before first setter.** A per-action boolean (and an incrementing `opId`) is set/assigned
-  **before** `donor.SetAmmoCount(...)`. A second invocation during or after the operation must not
-  reach either setter. The latch is **not** released automatically.
+- **Latch before first setter.** A per-instance boolean `m_b2Latch` and an increasing `opId` are set
+  **immediately before** `donor.SetAmmoCount(...)`. A second invocation during/after the operation
+  can never reach either setter.
+- **`REJECTED` is repeatable and writes nothing.** Because the latch is set only at the setter
+  boundary, a prewrite rejection leaves `m_b2Latch == false`; the owner may fix the condition and
+  invoke again. **No `REJECTED→IDLE` "reset" arrow is implied** — the operation simply never left the
+  pre-latch phase.
+- **One shot once latched.** After the latch is set, the fixture performs **at most one** B2
+  operation; `COMMITTED` and `QUARANTINED` are terminal. No second call, no re-issue, no retry.
 - **No second call between the two writes.** The two setters execute in one synchronous
-  `PerformAction` body with no `CallLater`/await between them, so no other B2 invocation can
-  interleave. (**INFERENCE**: single-threaded script execution within the frame; verified by
-  construction during implementation.)
-- **`REJECTED` means nothing written.** It is only reachable from `PREFLIGHT`.
+  `PerformAction` body with no `CallLater`/await between them (**INFERENCE**: single-threaded script
+  within the frame; to be confirmed by construction during implementation).
 - **Any failure at/after the first setter → `INDETERMINATE` → `QUARANTINED`.** Never relabelled
   `REJECTED`; never auto-retried; never speculatively rolled back; no "success" claim.
-- **Permanent quarantine.** Once `QUARANTINED`, further B2 invocations log `quarantined` and do
-  nothing until the owner resets the lab weapon (re-equip / re-spawn) — no automated recovery.
-- **Do not reuse G3-B1's permanent one-shot guard as the final design.** G3-B1's `m_bUsed` is an
-  intentional lab one-shot; the eventual *repeated shell reload* needs a **per-insertion-cycle
-  token** advanced only when a validated cycle completes. **For this first B2 experiment one shot is
-  enough**; the per-insertion token is **documented here, not implemented**, and repeated
-  animation/input callbacks are strictly prevented (by not implementing the callback path at all).
+- **Quarantine reset (clarified):** only a **newly spawned instance** of the B2 lab weapon
+  (fresh component state) clears the latch/quarantine, and the owner does this by re-spawning the
+  fixture. **Re-equipping the same instance is UNRESOLVED** (the same action component/latch may be
+  retained) and must **not** be relied on. There is no automatic/quarantine-clearing path in code.
+- **Future per-insertion token.** The eventual repeated shell-reload needs a per-insertion-cycle
+  token advanced only on a validated cycle. **Documented here, not implemented**; repeated
+  animation/input callbacks are prevented by not implementing the callback path at all.
 
-**State/output mapping:** `REJECTED` (no write) / `COMMITTED` (both writes validated, §4) /
-`INDETERMINATE` then `QUARANTINED` (partial or uncertain → STOP/log, no repeat).
+**Result states:** `REJECTED` (no write, repeatable), `COMMITTED` (both writes validated, §4),
+`INDETERMINATE`→`QUARANTINED` (partial/uncertain → STOP/log, no repeat).
 
 ---
 
@@ -163,24 +179,21 @@ called, the operation can no longer return `REJECTED` (§2).
 
 1. `d → d-1` on the donor.
 2. **Immediate** readback of the **same** donor component/entity/location.
-3. Re-check the **same** still-installed target, its pre-count, and the chamber snapshot.
+3. Re-check the **same** still-installed target, its pre-count, and the chamber/barrel snapshot.
 4. `t → t+1` on the target.
 5. **Immediate** target readback.
 
 **Tradeoff (accepted, not hidden):**
 
-- **donor-first:** if the second write fails, one real round is **lost** (counts sum to
-  `d+t-1`). Chosen because a lost-but-accounted round is preferable to a duplicated round, and the
-  loss is fully observable in telemetry.
-- **target-first:** if the donor write fails, one round is **duplicated** (counts sum to `d+t+1`) and
-  the weapon is silently over-supplied.
+- **donor-first:** if the second write fails → one real round **lost** (sums `d+t-1`). Chosen because a
+  lost-but-accounted round is preferable to a duplicated round, and the loss is fully observable.
+- **target-first:** if the donor write fails → one round **duplicated** (sums `d+t+1`).
 
-**Neither order is safe under arbitrary failures** — there is **no proven atomic SDK one-round
-transfer API** (**SOURCE**: only `BaseMagazineComponent.SetAmmoCount(int)` exists as a magazine-ammo
-writer; no round-level consume/transfer API was found on the installed SDK). A post-first-write
-uncertainty must **STOP and quarantine**, never be relabelled `REJECTED` or auto-compensated.
-**Rollback is explicitly not guaranteed** and must not be claimed. Any proposal of another order must
-be substantiated with installed-SDK/engine evidence and submitted for review.
+**Neither order is safe under arbitrary failures** — there is **no proven atomic one-round transfer
+API on the installed SDK for this weapon-attached magazine target** (absence observed in the inspected
+`ArmaReforgerScriptAPIPublic` surface; not a claim that none exists anywhere in the engine). A
+post-first-write uncertainty must **STOP and quarantine**, never be relabelled `REJECTED` or
+auto-compensated. **Rollback is explicitly not guaranteed** and must not be claimed.
 
 ---
 
@@ -192,48 +205,49 @@ be substantiated with installed-SDK/engine evidence and submitted for review.
 |---|---|
 | Donor count | `donorAfter == donorBefore - 1` |
 | Target count | `targetAfter == targetBefore + 1` |
-| Donor identity | same `BaseMagazineComponent` reference, same owning entity, `donorMag.GetOwner()==donorItem` |
-| Target identity | same `BaseMagazineComponent` reference **and** same owning entity; target still installed on the equipped child (`wpn.GetCurrentMagazine()==targetMag`) |
+| Donor identity | same `BaseMagazineComponent` reference and same owning entity, `donorMag.GetOwner()==donorItem` |
+| Target identity | same `BaseMagazineComponent` reference **and** same owning entity; `wpn.GetCurrentMagazine()==targetMag` |
 | Donor storage | donor still `inv.Contains(donorItem)`; same `InventoryItemComponent.GetParentSlot()`/storage recorded |
 | Ammo type | donor and target `GetAmmoType(0)` unchanged |
-| Chamber/barrel | muzzle `GetAmmoCount()`, `IsCurrentBarrelChambered()`, `GetCurrentBarrelIndex()` unchanged |
+| **Chamber/barrel** | `muzzle.IsCurrentBarrelChambered()` and `muzzle.GetCurrentBarrelIndex()` **unchanged** (barrels count stable). **`muzzle.GetAmmoCount()` is NOT asserted equal** |
 | Conservation | `donorBefore + targetBefore == donorAfter + targetAfter` |
-| Ammo supply / muzzle | captured **separately** and allowed to change when the installed target increases (do **not** fold into the conservation assertion) |
+| **Supply telemetry (not a predicate)** | `muzzle.GetAmmoCount()`/`GetMaxAmmoCount()` captured and logged; **may change** when the installed target increases (T4b: 6→7) |
 
 - `COMMITTED` is declared **only** with all immediate checks passing.
-- At **+250 ms** and **+1 s** the operation re-reads both magazines **without re-issuing setters** and
-  reports persistence. **Any mismatch is `LATE_INDETERMINATE` → `QUARANTINE`**, never a retroactive
-  full proof.
-- The **donor is never deleted** when it reaches 0; no loose-shell spawn, no UI mutation, no eject.
+- At **+250 ms** and **+1 s** the operation re-reads both magazines **without re-issuing setters**;
+  any mismatch → `LATE_INDETERMINATE` → `QUARANTINE`, never a retroactive full proof.
+- The **donor is never deleted** at 0; no loose-shell spawn, no UI mutation, no eject.
 
 ---
 
 ## 5. Telemetry (log only)
 
-Single correlated `opId` per operation; JSON-like `key=value` lines, bounded. Each record carries:
+Single correlated `opId`; `key=value` lines; bounded. Each record carries:
 
-- `opId`, sequence stage: `validate` / `pre` / `donor-post` / `target-post` / `commit` /
+- `opId`; stage `validate` / `pre` / `donor-post` / `target-post` / `commit` /
   `delayed+250ms` / `delayed+1000ms` / `reject` / `indeterminate` / `quarantine`.
-- **Donor actual entity and component identity**: lab tag `I<n>` for the entity reference and `M<n>`
-  for the component reference (tags are correlation aids, **not** identity), plus prefab GUID/path,
-  source storage slot + storage owner, membership.
-- **Target actual entity and component identity**: same scheme; current installed target and the
-  equipped child weapon entity; action-owner.
-- Actor entity; `srv`; baseline donor/target/chamber/muzzle values; total before/after.
-- `state` and `reason` (`no-donor`, `zero-ammo`, `incompatible-ammo`, `ambiguous-donor`,
-  `target-full`, `donor-is-target`, `wrong-weapon-context`, `not-owned`, `no-slot`,
-  `donor-changed`, `target-changed`, `chamber-changed`, `donor-readback-mismatch`,
-  `target-readback-mismatch`, `late-persistence-mismatch`, `quarantined`, …).
-- Logging only: **no** donor presentation change, **no** exhausted-magazine deletion, **no** fake
-  loose shells, **no** auto-eject, **no** input injection.
+- **Donor actual entity and component identity** (lab tag `I<n>`/`M<n>` for correlation only, plus
+  prefab GUID/path), source storage slot + **storage-owner prefab path**, membership.
+- **Target actual entity and component identity**; installed target and equipped B2 weapon entity;
+  action-owner.
+- **Chamber/barrel** (`IsCurrentBarrelChambered`, `GetCurrentBarrelIndex`, `GetBarrelsCount`) and
+  **supply** (`muzzle.GetAmmoCount`/`GetMaxAmmoCount`) as **separate fields**.
+- Actor; `srv`; baseline donor/target; total before/after; `state` and `reason` (`no-donor`,
+  `no-permitted-storage`, `donor-installed-in-weapon`, `zero-ammo`, `incompatible-ammo`,
+  `ambiguous-donor`, `target-full`, `wrong-weapon-context`, `not-owned`, `no-slot`, `donor-changed`,
+  `target-changed`, `chamber-changed`, `donor-readback-mismatch`, `target-readback-mismatch`,
+  `late-persistence-mismatch`, `quarantined`, …).
+- Logging only: no donor presentation change, no exhausted-magazine deletion, no fake loose shells,
+  no auto-eject, no input injection.
 
 ---
 
 ## 6. Acceptance / negative matrix
 
-**Positive (one owner offline run):** one unique carried 12ga donor with count ∈ [1,max], target
-installed and not full, compatible type, chamber snapshot; one invocation → donor `d→d-1`, target
-`t→t+1`, identities/storage/chamber unchanged, `d+t` conserved, persistence at +250 ms/+1 s.
+**Positive (one owner offline run):** one unique carried 12ga donor in a **permitted** carry container
+(count ∈ [1,max]), target installed and not full, compatible type, chamber snapshot; one invocation →
+donor `d→d-1`, target `t→t+1`, identities/storage/chamber unchanged, `d+t` conserved, persistence at
++250 ms/+1 s.
 
 | Case | Trigger class | Expected | How tested |
 |---|---|---|---|
@@ -241,50 +255,76 @@ installed and not full, compatible type, chamber snapshot; one invocation → do
 | Target full (`== max`) | negative | `REJECTED target-full` | owner offline |
 | Incompatible ammo type | negative | `REJECTED incompatible-ammo` | owner offline |
 | Two compatible donors | negative | `REJECTED ambiguous-donor` | owner offline |
-| Donor is the installed target | negative | `REJECTED donor-is-target` (excluded by identity) | owner offline |
-| Missing / moved donor / slot | negative | `REJECTED donor-changed`/`not-owned` | owner offline (donor moved before call where safe) |
-| Missing donor magazine | negative | `REJECTED no-donor-magazine` | owner offline |
+| **Donor is the installed target** | negative | During enumeration the target is excluded → if it is the only compatible mag the real outcome is **`REJECTED no-donor`** (as B1 does), **not** `donor-is-target`. `donor-is-target` is a defensive **second-stage** reason reachable only via a synthetic/mock identity test | owner offline + mock |
+| Donor installed in another weapon | negative | `REJECTED donor-installed-in-weapon` | owner offline (equipped M16 in the actor inventory, as B1 logged) |
+| Donor in a non-permitted storage | negative | `REJECTED no-permitted-storage` (whitelist) | owner offline |
+| Missing / moved donor / slot | negative | `REJECTED donor-changed`/`not-owned` | owner offline |
 | Changed equipped weapon / installed target | negative | `REJECTED wrong-weapon-context`/`target-changed` | owner offline |
 | Client-authority call | negative | `REJECTED not-server` | static/log (offline `srv` != MP proof) |
-| Duplicate action / callback | negative | `already-used` / `quarantined` (no second write) | owner offline (second invocation) |
-| Chamber changed pre→post | commit | `INDETERMINATE`/`QUARANTINE` | **mock/read-only** (do not force) |
-| Donor readback mismatch after first setter | commit | `INDETERMINATE`/`QUARANTINE`, no retry | **mock/read-only test** (unit-style in lab script, no destructive forced failure) |
-| Target readback / identity failure after donor write | commit | `INDETERMINATE`/`QUARANTINE`, no rollback claim | **mock/read-only** |
-| Transient entity loss between setters | commit | `INDETERMINATE`/`QUARANTINE` | **mock/read-only** |
+| Duplicate action / callback | negative | `quarantined` (no second write) | owner offline (second invocation) |
+| Chamber/barrel changed pre→post | commit | `INDETERMINATE`/`QUARANTINE` | **mock (pure transition logic, no setter)** |
+| Donor readback mismatch after first setter | commit | `INDETERMINATE`/`QUARANTINE`, no retry | **mock (pure state-machine test, no setter)** |
+| Target readback / identity failure after donor write | commit | `INDETERMINATE`/`QUARANTINE`, no rollback claim | **mock (no setter)** |
+| Transient entity loss between setters | commit | `INDETERMINATE`/`QUARANTINE` | **mock (no setter)** |
 | Delayed persistence mismatch (+250 ms/+1 s) | commit | `LATE_INDETERMINATE`/`QUARANTINE` | owner offline observation; not forced |
-| Interruption / magazine swap mid-window | commit | fail-closed `REJECTED` (pre) or `INDETERMINATE` (post-first-write) | design; not forced |
+| Interruption / magazine swap mid-window | commit | `REJECTED` (pre) or `INDETERMINATE` (post-first-write) | design; not forced |
 
-Rules for the matrix:
+Rules:
 
-- **Do not destructively force failures in the owner Workbench.** Cases that cannot be triggered
-  safely use **mock/read-only** unit-style exercises (e.g. feed the state machine a synthetic
-  capture where the readback differs) or are recorded as reasoned design behaviour.
-- **STOP criteria:** any `INDETERMINATE`/`QUARANTINE`, any chamber change, any identity change, or
-  any non-conservation → the owner reports and the operation is quarantined; no retry.
-- **Validation classes:** (a) *SDK static tests* — API/AST/compile and mock state-machine tests;
-  (b) *single owner offline test* — the positive run and the safely triggerable negatives;
-  (c) *future dedicated server test* — MP authority/replication (out of scope here).
+- **No destructive forced failure in the owner Workbench.** Non-triggerable cases use **mock /
+  pure-transition-logic** tests that **must not call any setter** (`SetAmmoCount`, `ClearChamber`,
+  etc.); they exercise the state machine with synthetic captured values only.
+- **STOP criteria:** any `INDETERMINATE`/`QUARANTINE`, chamber change, identity change, or
+  non-conservation → report and quarantine; no retry.
+- **Validation classes:** (a) *SDK static tests* — API/AST/compile + mock state-machine; (b) *single
+  owner offline test* — positive run + safely triggerable negatives; (c) *future dedicated-server
+  test* — MP authority/replication (out of scope here).
 
 ---
 
 ## 7. Packaging and owner procedure (after **separate** approval)
 
-- **Fixture:** a new **B2-only child of the currently verified G3B1 child weapon**, i.e.
-  `Prefabs/Test/ARMST_T4B_G3B2_TestWeapon.et` inheriting
-  `{9A8B7C6D5E4F3021}Prefabs/Test/ARMST_T4B_G3B1_TestWeapon.et`, adding **only** a new B2 action to
-  the inherited `ActionsManagerComponent {A29AE67FF4D82B0F}`. It must **not** replace or edit the
-  G3B1 action instance, the G3B1 child, or the original T4b fixture.
-- **New source script (additive):** `Scripts/Game/ARMST_T4B/ARMST_T4B_G3B2_Transfer.c`, a new
-  `ScriptedUserAction` class; it must **not** modify or subclass-override the G3B1 script or T4b
-  probe beyond adding its own logic. New lab GUIDs (meta + instance + action + UIInfo) are assigned
-  at implementation time and recorded in the manifest; they must be unique and lab-scoped.
-- **Write disabled by default:** the B2 action carries an explicit gate attribute (e.g.
-  `m_bG3B2WriteEnabled`, default `false`). The first owner run is a **read-only dry-run** that
-  resolves the donor/target/chamber snapshot and logs the preflight verdict with **no setters**.
-- **Independent source review** is required before any write-enabled run.
-- **Owner alone** later compiles and runs: expendable target e.g. `2/10`, donor `10/10` in a known
-  vest slot, chamber snapshot recorded; read-only dry-run first, then the single isolated offline
-  transfer only if explicitly authorized.
+### 7.1 Fixture (corrected — avoids the mutating actions by construction)
+
+Because inherited-action suppression is **not proven** (§1.4), the B2 fixture is **not** a child of
+the G3B1 child. It is a **fresh thin child of the production MP-133** — the same proven pattern T4b
+itself uses — carrying the T4b probe (baseline/diagnostics) plus **only** the B2 action:
+
+- `Prefabs/Test/ARMST_T4B_G3B2_TestWeapon.et` (+`.meta`) inheriting
+  `{63FF6FDCA4E7E735}Prefabs/Weapons/Russian/Shotgun/armst_Shotgun_mp_133.et` (exact parent path as
+  referenced by the T4b prefab), containing:
+  - `ARMST_T4B_WeaponProbe "<new lab GUID>" { m_iT4BStartAmmo <initial> }` (required T4b probe; class
+    from the unchanged T4b script),
+  - `ActionsManagerComponent "{A29AE67FF4D82B0F}" { additionalActions +{ ARMST_T4B_G3B2_TransferAction
+    "<new lab GUID>" { ParentContextList { "default" } UIInfo UIInfo "<new lab GUID>" { … }
+    m_bG3B2WriteEnabled 0 } } }`.
+  - optional (not required for B2): the inherited `WeaponAnimationComponent {60B4EA76EB15F6E0}`
+    override used by T4b, if the owner wants identical animation diagnostics.
+- New lab GUIDs are assigned at implementation time and recorded in the manifest; they must be unique
+  and lab-scoped.
+- **The T4b `+1` action and the G3B1 action do not exist in this fixture** (production parent has
+  neither), so they cannot write during a B2 run. The T4b probe's init baseline
+  `SetAmmoCount(m_iT4BStartAmmo)` is the **existing verified pre-experiment setup write**, not a B2
+  transaction write; document it explicitly. (If a zero-init-write setup is preferred, the probe can
+  be omitted and the installed count set by the owner via gameplay — review decision.)
+- **Alternative retained for completeness:** a child of the G3B1 child with proven child-local
+  suppression would also satisfy the goal, but suppression is a **pre-implementation gate** (§1.4).
+
+### 7.2 New source (additive)
+
+- `Scripts/Game/ARMST_T4B/ARMST_T4B_G3B2_Transfer.c` — a new `ScriptedUserAction` implementing the
+  state machine and a B2 state host component. It must **not** modify the G3B1 script or the T4b
+  probe/action; the write gate attribute (e.g. `m_bG3B2WriteEnabled`) default **false**.
+
+### 7.3 Owner procedure (later, after approval)
+
+- **Write disabled by default.** First owner run is a **read-only dry-run**: resolve donor/target and
+  the chamber/supply snapshot, run preflight, log the verdict, **no setters**. Confirm a Workbench
+  preflight shows **B2 transfer uniquely invocable** and no mutating `+1`/G3B1 action present.
+- **Independent source review** before any write-enabled run.
+- **Owner alone** then compiles and runs: expendable target e.g. `2/10`, donor `10/10` in a
+  **whitelisted** carry container, chamber snapshot; then the single isolated offline transfer only if
+  explicitly authorized.
 - **No** R / `ShellReloadSTM` / TXA/ANM / Core hooks / production change; no Astra.
 
 ---
@@ -293,48 +333,45 @@ Rules for the matrix:
 
 | Item | Label | Note |
 |---|---|---|
-| `BaseMagazineComponent.GetAmmoCount/GetAmmoType/GetMaxAmmoCount/GetMagazineWell/GetOwner/IsUsed/SetAmmoCount` | **SOURCE** | installed SDK; only ammo writer is `SetAmmoCount` |
-| `BaseWeaponComponent.GetCurrentMagazine/GetCurrentMuzzle/GetMuzzlesList/GetOwner/IsChamberingNecessary/IsChamberingPossible` | **SOURCE** | installed SDK |
-| `BaseMuzzleComponent.GetAmmoCount/GetMaxAmmoCount/GetBarrelsCount/GetCurrentBarrelIndex/GetMagazine/GetMagazineWell/IsCurrentBarrelChambered/IsBarrelChambered` | **SOURCE** | chamber/barrel snapshot; `ClearChamber` exists but is a writer and is **not** used |
-| `BaseWeaponManagerComponent.GetCurrentWeapon/GetCurrent/GetCurrentSlot/GetWeapons/GetWeaponsList` | **SOURCE** | equipped-weapon context |
-| `SCR_InventoryStorageManagerComponent.GetAllRootItems/GetAllItems/Contains/GetStorages/GetCharacterStorage` | **SOURCE** | nested discovery (G3-B1 pattern) |
-| `InventoryStorageManagerComponent.GetItems/GetStorages/FindItemsWithComponents` | **SOURCE** | enumeration |
-| `BaseInventoryStorageComponent.GetAll/GetOwnedItems/Contains/FindItemSlot` | **SOURCE** | storage contents |
-| `InventoryItemComponent.GetParentSlot` → `InventoryStorageSlot.GetStorage/GetID/IsLocked` | **SOURCE** | ownership/slot provenance |
-| `SCR_InventoryStorageManagerComponent.ResupplyMagazines/GetValidResupplyItemsAndCount/CanResupplyItem/CanResupplyMuzzle/IsResupplyMagazinesAvailable/EndResupplyMagazines` | **SOURCE** API, **UNRESOLVED** semantics | may create/replace magazines (arsenal-style); **not** usable until proven to preserve target identity and deduct exactly one real source round |
-| No atomic one-round transfer / round-consume API | **SOURCE** (absence) | matches T4/G3-A audits |
-| Donor presentation / inventory-count update after setter | **INFERENCE** (owner-runtime PASS for decrement) | authorization/serialization **UNRESOLVED** |
-| `SetAmmoCount` authorization/replication; `Replication.IsServer()==true` offline == MP authority | **UNRESOLVED** | offline `srv` is not MP proof |
-| Exact invalidation semantics when a donor/target entity is moved/replaced mid-window | **UNRESOLVED** | mitigated by re-check + quarantine |
-| Cross-prefab 12ga `GetAmmoType(0)` equality | **UNRESOLVED** | first transfer requires strict non-empty equality |
-| Nested-container donor coverage | **SOURCE** API; **owner-runtime PASS** (G3-B1) | raw classification log not stored in-repo |
+| `BaseMagazineComponent` ammo getters + `SetAmmoCount` | **SOURCE** | only ammo writer; no atomic transfer |
+| `BaseWeaponComponent` current mag/muzzle/chambering getters | **SOURCE** | installed target + context |
+| `BaseMuzzleComponent.GetAmmoCount/GetMaxAmmoCount` | **SOURCE** | **supply telemetry**, may change; not a chamber predicate |
+| `BaseMuzzleComponent.IsCurrentBarrelChambered/GetCurrentBarrelIndex/GetBarrelsCount` | **SOURCE** | chamber/barrel invariant |
+| `BaseWeaponManagerComponent.GetWeapons/GetWeaponsList/GetCurrentWeapon` | **SOURCE** | build `installedSet` to exclude weapon-installed donors |
+| Inventory / storage / slot APIs (`Contains`, `GetStorages`, `GetAllItems`, `GetAllRootItems`, `GetParentSlot`, `GetStorage`, `GetOwner`) | **SOURCE** | nested discovery + provenance |
+| `BaseActionsManagerComponent` per-action disable/remove | **SOURCE (absence observed)** | only `FindAction/GetActionsList/IsEnabled/…`; no disable/remove setter |
+| `.et` array element removal operator | **SOURCE (absence observed)** | only `{ }` / `+{ }` found; no removal operator in inspected corpus/SDK |
+| Child-local suppression / class replacement / context reparent of inherited actions | **UNRESOLVED** | **pre-implementation gate**; avoided via alternative path §7 |
+| Donor storage-owner *type* classification ("carry container" vs weapon) via a generic SDK type | **UNRESOLVED** | use explicit fail-closed whitelist (§1.3-13c) |
+| `slot.GetStorage().GetOwner()` carries `BaseWeaponComponent` ⇒ donor inside a weapon | **SOURCE** getters, **INFERENCE** meaning | used as the weapon-installed exclusion |
+| Donor presentation/authorization/replication after setter | **INFERENCE** (owner PASS for decrement) | authorization/serialization **UNRESOLVED** |
+| `SetAmmoCount` MP authority; offline `srv` | **UNRESOLVED** | offline is not MP proof |
+| Cross-prefab 12ga `GetAmmoType(0)` equality | **UNRESOLVED** | strict non-empty equality required |
+| `ResupplyMagazines*` semantics | **UNRESOLVED** | not used |
 | Rollback / compensation guarantee | **UNRESOLVED** | must not be claimed |
-| MP authority / dedicated-server behaviour | **UNRESOLVED** | out of scope this task |
+| Exact raw G3-B1 classification log in-repo | **UNRESOLVED** | cited from owner-reported evidence only |
 
 ---
 
 ## 9. Proposed implementation allowlist (future, NOT done now)
 
-**Will be added (new files only; no edits to verified fixtures):**
+**Will be added (new files only):**
 
 - `labs/ARMSTMP133T4B_InstalledMagProbe/Scripts/Game/ARMST_T4B/ARMST_T4B_G3B2_Transfer.c` (new).
 - `labs/ARMSTMP133T4B_InstalledMagProbe/Prefabs/Test/ARMST_T4B_G3B2_TestWeapon.et` (+`.meta`, new;
-  child of the G3B1 child).
+  **child of the production MP-133**, carrying the T4b probe + B2 action).
 - `labs/ARMSTMP133T4B_InstalledMagProbe/MANIFEST.sha256` (append new files; existing hashes kept).
 
 **Will be edited (docs only):**
 
 - `reports/MP133_V3_G3B2_TRANSACTION_DESIGN.md` (this document).
-- `reports/MP133_V3_T4B_INSTALLED_MAG_PROBE.md` (evidence section, when runs exist).
-- `docs/sync/CURRENT_AI_SYNC.md`.
+- `reports/MP133_V3_T4B_INSTALLED_MAG_PROBE.md` (evidence, when runs exist).
+- `reports/MP133_INDEX.md`, `docs/sync/CURRENT_AI_SYNC.md`.
 
-**Explicitly preserved / untouched:**
-
-- T4b script `D581B9C9…`, T4b prefab `29C70A78…`, G3-B1 script `A7CE4FE3…`, G3-B1 child
-  `0C03C366…`, donor mag `437D75E3…`, historical `G3B1_DonorDevice`, `addon.gproj` `200E3156…`.
-- Production `ARMST-PLATFORM---Weapons`, Core, frozen V2/P2, original T2a/T4a, Astra/worlds/layers,
-  `.meta`/GUID identity.
-- Untracked owner file `reports/CORE_ARMST_READONLY_AUDIT.md`.
+**Explicitly preserved / untouched:** T4b script `D581B9C9…`, T4b prefab `29C70A78…`, G3-B1 script
+`A7CE4FE3…`, G3-B1 child `0C03C366…`, donor mag `437D75E3…`, historical `G3B1_DonorDevice`,
+`addon.gproj` `200E3156…`; production Weapons/Core, frozen V2/P2, T2a/T4a, Astra/worlds/layers,
+`.meta`/GUID identity; untracked owner file `reports/CORE_ARMST_READONLY_AUDIT.md`.
 
 `GAMEPLAY_FILES_CHANGED_BY_DESIGN = 0` (this task writes documentation only).
 
@@ -345,17 +382,17 @@ Rules for the matrix:
 ```
 G3B2_DESIGN_RESULT:
 BRANCH: t4b/installed-mag-probe
-BRANCH_HEAD_AT_TASK: d31df071d97ce5336f6794b6402e69e23a51e83c
-SDK: Arma Reforger Tools buildid 24870687; ArmaReforgerScriptAPIPublic html (version label 1.8.0.13 per prior record)
-VERIFIED_APIS: BaseMagazineComponent{GetAmmoCount,GetAmmoType,GetMaxAmmoCount,GetMagazineWell,GetOwner,IsUsed,SetAmmoCount}; BaseWeaponComponent{GetCurrentMagazine,GetCurrentMuzzle,GetMuzzlesList,GetOwner,IsChamberingNecessary,IsChamberingPossible}; BaseMuzzleComponent{GetAmmoCount,GetMaxAmmoCount,GetBarrelsCount,GetCurrentBarrelIndex,GetMagazine,GetMagazineWell,IsCurrentBarrelChambered,IsBarrelChambered}; BaseWeaponManagerComponent{GetCurrentWeapon,GetCurrent,GetCurrentSlot,GetWeapons,GetWeaponsList}; SCR_InventoryStorageManagerComponent{GetAllRootItems,GetAllItems,Contains,GetStorages,GetCharacterStorage,ResupplyMagazines*,GetValidResupplyItemsAndCount*,CanResupplyItem*,CanResupplyMuzzle*,IsResupplyMagazinesAvailable*,EndResupplyMagazines*}; InventoryStorageManagerComponent{GetItems,GetStorages,FindItemsWithComponents}; BaseInventoryStorageComponent{GetAll,GetOwnedItems,Contains,FindItemSlot}; InventoryItemComponent.GetParentSlot; InventoryStorageSlot{GetStorage,GetID,IsLocked}
-STATE_MACHINE: IDLE -> PREFLIGHT -> (REJECTED | DONOR_WRITTEN -> TARGET_WRITTEN -> COMMITTED) ; any uncertainty at/after first setter -> INDETERMINATE -> QUARANTINED
-ORDER: donor-first (d -> d-1, then t -> t+1); tradeoff = possible lost round if 2nd write fails (vs duplication if target-first)
+BASELINE: 0a4cc959c350b4b2a2f70ec5416a9d010cbf285d (reviewed) ; task HEAD d31df071d97ce5336f6794b6402e69e23a51e83c
+SDK: Arma Reforger Tools buildid 24870687; ArmaReforgerScriptAPIPublic html
+BLOCKER_1_MUZZLE: RESOLVED - chamber invariant uses IsCurrentBarrelChambered + GetCurrentBarrelIndex (+ GetBarrelsCount); GetAmmoCount = supply telemetry only (T4b evidence muzzleSupply 6->7, chamberUnchanged=1)
+BLOCKER_2_INHERITED_ACTIONS: RESOLVED BY ALTERNATIVE PATH - no child-local suppression proven (no per-action disable in BaseActionsManagerComponent; no array-removal operator found); B2 fixture = fresh thin child of production MP-133 with T4b probe + B2 action only; B1/T4b actions absent by construction; suppression remains UNRESOLVED pre-implementation gate
+BLOCKER_3_DONOR_SCOPE: RESOLVED - exclude any donor in the actor weapons' installedSet (GetWeapons->GetCurrentMagazine/GetOwner) and any donor whose storage owner has a BaseWeaponComponent; fail-closed donor-storage whitelist (default empty) for first B2 run
+STATE_MACHINE: IDLE -> PREFLIGHT -> (REJECTED repeatable no-write | DONOR_WRITTEN -> TARGET_WRITTEN -> COMMITTED) ; at/after first setter uncertainty -> INDETERMINATE -> QUARANTINED ; quarantine cleared only by a newly spawned instance (re-equip UNRESOLVED)
+ORDER: donor-first (d->d-1 then t->t+1); tradeoff = possible lost round vs duplication
 COMMIT: donor==d-1, target==t+1, same entity+component identities, donor storage/membership/slot retained, target still installed, ammo type unchanged, chamber/barrel unchanged, d+t conserved; +250ms/+1s persistence; mismatch -> LATE_INDETERMINATE/QUARANTINE
-IMPLEMENTATION_ALLOWLIST: new labs/.../ARMST_T4B_G3B2_Transfer.c ; new labs/.../Prefabs/Test/ARMST_T4B_G3B2_TestWeapon.et(+.meta) ; labs/.../MANIFEST.sha256 ; docs (this report, T4B report, sync)
+IMPLEMENTATION_ALLOWLIST: new labs/.../ARMST_T4B_G3B2_Transfer.c ; new labs/.../Prefabs/Test/ARMST_T4B_G3B2_TestWeapon.et(+.meta) inheriting production MP-133 ; labs/.../MANIFEST.sha256 ; docs
 GAMEPLAY_FILES_CHANGED_BY_DESIGN: 0
 ASTRA: INDEPENDENT (not touched)
-STATUS: G3B1_RUNTIME_PASS / G3B2_DESIGN_AUTHORIZED / G3B2_IMPLEMENTATION_NOT_YET_AUTHORIZED
-NEXT_GATE: STOP_FOR_INDEPENDENT_DESIGN_REVIEW
+STATUS: G3B1_PASS / G3B2_DESIGN_CORRECTIONS_REQUIRED / IMPLEMENTATION_NOT_AUTHORIZED
+NEXT_GATE: STOP_FOR_INDEPENDENT_DESIGN_REVIEW (rev 2)
 ```
-
-`*` = API confirmed to exist, semantics **UNRESOLVED** and not used by the proposed implementation.
