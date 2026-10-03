@@ -585,6 +585,21 @@ historical material**; the owner approved **V3** (Issue #27 comment 5966570978,
   braces 92/92, parens 680/680, ASCII; local==published; T4b/G3B1 untouched; no Python integrity
   run. Status `G3B2_SOURCE_CORRECTIONS_PUBLISHED / B2_WRITE_OFF / OWNER_RUNTIME_NOT_AUTHORIZED`;
   STOP for independent source re-review.
+- **G3-B2 compiler-fix refactor (comment 5973988068, 2026-10-04):** owner Workbench compile of
+  `020512b` failed: `ARMST_T4B_G3B2_Transfer.c(796): Formula too complex` and
+  `(924): Maximum of 64 local variables exceeded` (+ downstream `Can't create/find variable`). Fixed
+  only the new B2 script: operation context moved to member fields (`m_op*`) so `PerformAction` is
+  ~9 locals; transaction extracted into `T4B2Boundary` (7 sequential named gates with distinct
+  `prewrite-*` reasons), `T4B2AfterDonor`, `T4B2Between`, `T4B2AfterTarget`, `T4B2Commit`,
+  `T4B2ScheduleDelayed`; all conjunctions combined sequentially (no line with >=4 `&&`/`||`).
+  `T4B2Commit` now re-reads the LIVE donor after the second setter (component/owner/member/count/
+  type/storage-owner/slot + donor!=target) and conserves final live counts. Single synchronous
+  donor-first order, latch before first setter, null checks before member access preserved; gate OFF
+  and empty whitelist unchanged; B2 setters only inside `T4B2Execute` called after the gate-off
+  return. Script SHA `0BFCE0C8...`; prefab `68F67CAB...` unchanged; braces 120/120, parens 679/679,
+  ASCII; local==published; T4b/G3B1 untouched. `COMPILER_UNVERIFIED / WAITING_OWNER_RECOMPILE`.
+  Status `G3B2_OWNER_COMPILE_FAIL / B2_COMPILER_FIX_PUBLISHED / B2_WRITE_OFF`; STOP for independent
+  source review and owner recompilation.
 
 ---
 

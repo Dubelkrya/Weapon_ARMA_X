@@ -408,7 +408,7 @@ Workbench/game run performed by the agent.
 **New files** (local lab + published copy, local==published):
 
 - `Scripts/Game/ARMST_T4B/ARMST_T4B_G3B2_Transfer.c` — new `ScriptedUserAction`
-  `ARMST_T4B_G3B2_TransferAction`; SHA256 `088E6250A80A4C90CA9A5E7DFCE354972EEC3092E7EE10E297A89245A07F9106` (rev 3).
+  `ARMST_T4B_G3B2_TransferAction`; SHA256 `0BFCE0C86E10FDC83D490B3F5C974CD51A4924EABC8B3B4E21E509CD9983F09F` (rev 4).
 - `Prefabs/Test/ARMST_T4B_G3B2_TestWeapon.et` — SHA256 `68F67CAB0C17201882FCB9D587E3F3F196231B46E4FCB3951DD8BDC185873E04`.
 - `Prefabs/Test/ARMST_T4B_G3B2_TestWeapon.et.meta` — SHA256 `315C7AB6983B68C63C0AEC1D30625C5CA4B7477D72C1C75DF5291AC7438F9287`.
 
@@ -525,3 +525,37 @@ T4b/G3B1/prefab change (B2 prefab still `68F67CAB…`, gate `m_bG3B2WriteEnabled
 `B2_SETTER_CALLS_IN_DRY_RUN = 0` (setters now at source lines 818/887, gate-off `return` at 757).
 Static: braces 92/92, parens 680/680, ASCII. **STATUS:** `G3B2_SOURCE_CORRECTIONS_PUBLISHED / B2_WRITE_OFF /
 OWNER_RUNTIME_NOT_AUTHORIZED`; **STOP for independent source re-review** (rev 3).
+
+### 11.3 Compiler-fix refactor (Issue #34 comment 5973988068) — rev 4
+
+Owner Workbench compile of `020512b` failed:
+`ARMST_T4B_G3B2_Transfer.c(796): Formula too complex` and
+`(924): Maximum of 64 local variables exceeded` (with downstream `Can't create/find variable`).
+This was an EnforceScript compiler limit in the giant single `PerformAction`, not an algorithm
+fault. Fixed by restructuring **only** the new B2 script:
+
+- **Operation context in member fields.** All per-operation values (`m_op*`) and the delayed
+  capture (`m_d*`) are members, so `PerformAction` is now ~9 locals (previously >64). No guard was
+  moved after the first setter or weakened.
+- **Small named phases.** `T4B2Execute` orchestrates; `T4B2Boundary` (7 sequential named gates with
+  distinct `prewrite-storage/member/type/bounds/weapon/muzzle/target` reasons), `T4B2AfterDonor`,
+  `T4B2Between`, `T4B2AfterTarget`, `T4B2Commit`, `T4B2ScheduleDelayed`. Heuristic local counts: max
+  ~23 (`T4B2Commit`), all well under 64.
+- **No giant formulas.** Every conjunction is combined sequentially (`ok = ok && …`); no source line
+  has ≥4 `&&`/`||` operators. The old `boundaryOk` expression is gone.
+- **Single synchronous donor-first order preserved**, latch before the first setter, target re-check
+  between setters, no async boundary; null checks before every member access.
+- **Commit hardening.** `T4B2Commit` re-reads the **LIVE** donor after the second setter: same
+  component/owner, membership, live count `== m_opDonorAfter`, ammo type, real storage component +
+  owner entity + slot id, and donor≠target; conservation uses the final live counts; target
+  still-installed, target type, muzzle identity and chamber/barrel unchanged.
+- **Unchanged safety config:** `[Attribute("false"…)] m_bG3B2WriteEnabled=false`, prefab
+  `m_bG3B2WriteEnabled 0`, empty whitelist, B2 setters reachable only from `T4B2Execute` (called
+  after the gate-off return in `PerformAction`); T4b probe still does its separate setup
+  `SetAmmoCount(2)` at init.
+
+Script SHA `088E6250…` → `0BFCE0C86E10FDC83D490B3F5C974CD51A4924EABC8B3B4E21E509CD9983F09F`;
+prefab `68F67CAB…` unchanged; static braces 120/120, parens 679/679, ASCII (1332 lines).
+**`COMPILER_UNVERIFIED / WAITING_OWNER_RECOMPILE`** — the agent has no Workbench/EnforceScript tool.
+**STATUS:** `G3B2_OWNER_COMPILE_FAIL / B2_COMPILER_FIX_PUBLISHED / B2_WRITE_OFF`; **STOP for
+independent source review and owner recompilation**.
