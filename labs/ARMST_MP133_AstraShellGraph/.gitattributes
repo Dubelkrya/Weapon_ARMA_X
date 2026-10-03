@@ -1,0 +1,14 @@
+# Keep authored source hashes stable on Windows checkouts. Imported ANM is binary.
+*.txa text eol=lf
+*.meta text eol=lf
+*.agf text eol=lf
+*.agr text eol=lf
+*.ast text eol=lf
+*.aw text eol=lf
+*.asi text eol=lf
+*.et text eol=lf
+*.c text eol=lf
+*.gproj text eol=lf
+*.md text eol=lf
+.gitattributes text eol=lf
+*.anm -text

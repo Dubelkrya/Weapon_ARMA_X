@@ -1,0 +1,19 @@
+MetaFileClass {
+ Name "{090759CC560C55F2}Assets/MP133_AstraShellGraph/Clips/W_Astra_InsertShell.anm"
+ Configurations {
+  TXAResourceClass PC {
+   SourcePath "W_Astra_InsertShell.txa"
+   SourceProfile "A_Weapon_MagRelease_All"
+  }
+  TXAResourceClass XBOX_ONE : PC {
+  }
+  TXAResourceClass XBOX_SERIES : PC {
+  }
+  TXAResourceClass PS4 : PC {
+  }
+  TXAResourceClass PS5 : PC {
+  }
+  TXAResourceClass HEADLESS : PC {
+  }
+ }
+}
