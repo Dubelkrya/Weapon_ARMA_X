@@ -9,7 +9,15 @@
 3. Read the [V3 design and baseline assessment](MP133_V3_DESIGN_AND_BASELINE_ASSESSMENT.md), [P2 interference investigation](MP133_V3_1_I1_LAB_INTERFERENCE_INVENTORY.md), [native animation-event finding](MP133_V3_2_ANIM_EVENT_FINDING.md), and [T0/T1/T2 research and diagnostic design](MP133_V3_T0_T1_T2_DESIGN.md).
 4. Preserve all local uncommitted work. Only write knowledge reports to this repository. The legacy `ARMST_MP133_AnimationLab` has no Git remote, is frozen V2 history and is **not** the V3 implementation.
 
-## Verified versus still open
+## CURRENT STATUS (supersedes historical table and old Next safe work)
+
+- **G2:** owner-tested synthetic one-round addition in existing T4b M1 magazine, native manual pump/chamber and one owner-reported shot. Runtime evidence is offline only.
+- **G3-A:** published read-only SDK 1.8 donor/transaction audit on the [active T4b branch](https://github.com/Dubelkrya/Weapon_ARMA_X/blob/t4b/installed-mag-probe/reports/MP133_V3_G3_REAL_DONOR_PHASE_A.md).
+- **G3-B1:** one disposable inventory-donor decrement fixture published at [`a165e80`](https://github.com/Dubelkrya/Weapon_ARMA_X/commit/a165e804df1e571c58806bb39ea74e5eee993191) within the **same existing T4b addon**; source review and owner Workbench/game trial pending. **G3-B2 and G4/G5 NOT authorised.**
+- **Core SHIFT+R:** no working reload according to owner ([#33](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/33)); legacy code presence is not evidence of a functioning feature. Core RPC repacking candidate is unverified.
+- **Coordination:** documentation PR #31 is independent and cannot be merged over evolving T4b shared documents without reconciliation. Historical T4a/T2a/V2/P2 are not current work; Astra paused. Catalog #28 and CI #29 completed with [hosted green run](https://github.com/Dubelkrya/Weapon_ARMA_X/actions/runs/37135291162).
+
+## Historical verified versus still open (see current status above)
 
 | Topic | Current evidence / status |
 | --- | --- |
@@ -21,9 +29,9 @@
 | T4 actual one-shell transfer | **`T4_API_OR_TRANSACTION_BLOCKED`** after read-only SDK Phase A. `SetAmmoCount` exists; legitimate donor decrement, atomic transfer, authority, replication and rollback remain unverified. No real-transfer implementation authorised. |
 | T4a disposable-setter probe | **`T4A_LAB_PREPARED_OWNER_RUN_REQUIRED`:** primary agent prepared isolated `ARMSTMP133T4A_SetProbe` (GUID `A7C41E90D3B24F68`), one guarded action on a disposable, non-installed test magazine (default key P). Static checks reported; **Workbench/game NOT TESTED**. No real donor transfer or installed-mag mutation. [Report](MP133_V3_T4A_SETAMMOCOUNT_SEMANTICS.md). |
 | Astra animation graph lab | **PAUSED BY OWNER.** Separate proposed `ARMST_MP133_AstraShellGraph`; local `astra_build.py` is incomplete/unverified WIP, not a functional or archived prototype. [Pause](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/27#issuecomment-5970888887). |
-| Production V3 / Core / MP | **NOT IMPLEMENTED / NOT VERIFIED.** Preserve native pump/fire, hold-R, LSHIFT+R and other weapons; no global input interception. |
+| Production V3 / Core / MP | **NOT IMPLEMENTED / NOT VERIFIED.** Preserve native pump/fire, hold-R and other weapons; Core SHIFT+R reload is not functional according to the owner; no global input interception. |
 
-**Intended V3 controls, not current T0 behavior:** short R performs the necessary verified native pump (if required) and then per-shell tube loading; a second short R or trigger requests safe stop; hold R preserves native inspection; LSHIFT+R is the unchanged Core action. If standard R cannot be intercepted without affecting native behavior, a separate load action is a possible fallback **only after the owner's decision**.
+**Intended V3 controls, not current T0 behavior:** short R performs the necessary verified native pump (if required) and then per-shell tube loading; a second short R or trigger requests safe stop; hold R preserves native inspection; Core SHIFT+R reload is a historical, nonworking mechanism, not a current dependency. If standard R cannot be intercepted without affecting native behavior, a separate load action is a possible fallback **only after the owner's decision**.
 
 ## Current design / evidence reports
 
@@ -64,7 +72,7 @@
 
 ## Next safe work
 
-1. **Owner:** run the prepared [T4a disposable-magazine probe](MP133_V3_T4A_SETAMMOCOUNT_SEMANTICS.md) in Workbench and supply compile/game logs, +1/repeat/full controls and object identity. Primary agent has stopped at `T4A_LAB_PREPARED_OWNER_RUN_REQUIRED`; real T4 donor→installed-mag transfer remains blocked.
+1. **Current G3-B1:** independently review the newly published donor-only fixture on the active T4b branch; then the owner compiles/tests it in Workbench and reports inventory, identity, ammo and delayed snapshots. Real two-sided G3-B2 transfer remains gated.
 2. **Astra:** keep the graph/animation lab and its partially authored local script **paused** until explicit owner resumption. Do not run, overwrite, or migrate unverified generator output.
 3. **Production/Core/V2/P2/T2A:** no new edits under these assignments. T3F passive logging already ran; independent `OnProjectileShot`/event-name follow-ups require separate scope, not an automatic T4a dependency.
 4. **Knowledge maintenance:** use [the phase handoff template](../docs/guides/EXPERIMENT_HANDOFF_TEMPLATE.md), update this index and [the lab registry](MP133_LAB_REGISTRY.md) when new owner evidence arrives, and check [Issue #27](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/27) for newer approvals. The catalog #28 rescan was published; any **future** rescan needs a fresh source/diff review and must stay separate from MP-133 experimental edits.

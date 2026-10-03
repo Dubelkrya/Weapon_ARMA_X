@@ -91,7 +91,15 @@ Active gameplay design for ammunition roles is documented in `reports/AMMO_AP_BP
 
 The first Workbench validation targets are 9×39 and 5.56×45 because current source snapshots already contain suitable two-resource families. The policy must be tested one caliber family at a time before wider rollout.
 
-## Current MP-133 V3 research (2026-10-03)
+## CURRENT MP-133 execution update (2026-10-03)
+
+- **G2 owner-runtime confirmed:** existing T4b installed magazine accepts one synthetic `+1`; manual short-R chambers it; owner fires. Offline only; projectile/damage/MP unverified.
+- **G3-A:** published source/API audit on `t4b/installed-mag-probe`. **G3-B1:** isolated *donor-only* source is now published in the same existing local T4b addon at [`a165e80`](https://github.com/Dubelkrya/Weapon_ARMA_X/commit/a165e804df1e571c58806bb39ea74e5eee993191). Source review and owner-only Workbench/game run are pending. **G3-B2/G4/G5:** not authorised.
+- **Core SHIFT+R reload:** does not work per owner, regardless of historical code references. Core donor-transfer RPC is a locally reported unverified candidate ([#33](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/33)).
+- **One local active MP-133 laboratory:** `ARMSTMP133T4B_InstalledMagProbe`; additional named fixtures stay inside it. No new T4c addon, no PR per small experiment. Documentation PR #31 must be reconciled with the active T4b branch before merging.
+- **#28/#29:** published catalog and green hosted CI ([run 37135291162](https://github.com/Dubelkrya/Weapon_ARMA_X/actions/runs/37135291162)). Historical statements below are preserved as checkpoints, not a current task list.
+
+## Historical MP-133 V3 research (2026-10-03)
 
 [`MP133_INDEX.md`](MP133_INDEX.md) is the evidence/navigation index; [Issue #27](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/27) is the chronological approval and owner-observation log. [`MP133_LAB_REGISTRY.md`](MP133_LAB_REGISTRY.md) records lab ownership and archival state. Earlier reports retain historical wording; the following statuses supersede it:
 
@@ -100,7 +108,7 @@ The first Workbench validation targets are 9×39 and 5.56×45 because current so
 - **T3 owner runtime: confirmed native whole-mag exchange.** Installed references changed `M1 → null → M3` and `M3 → null → M5`; the chambered round can remain when a partially loaded magazine is exchanged. The exact attach instant and old-mag inventory identity were not fully instrumented.
 - **T3F limited passive diagnostic: corrected script ran in the owner's game.** The 760-line owner log yielded 100 T3F, 77 T3 and 18 T2c records with no `SCRIPT (E)`; it is not an isolated one-shot/rack/dry-fire test and supplies **no independent `gameplay_shot` callback**. `Weapon_EnableFire` is permission to shoot during bolt/reload animation, not a shot; the +300-ms snapshot is not post-shot. Astra's separate read-only audit suggested `OnProjectileShot` and `GameAnimationUtils.GetEventString` as **unverified follow-ups**, not implemented functionality.
 - **T4 Phase A: `T4_API_OR_TRANSACTION_BLOCKED` for real shell transfer.** SDK 1.8.0.13 exposes `BaseMagazineComponent.SetAmmoCount(int)` but no verified atomic donor→installed-mag transfer, authoritative write, or recovery contract. No real transfer lab was implemented under Phase A.
-- **T4a: `T4A_LAB_PREPARED_OWNER_RUN_REQUIRED`** ([report](MP133_V3_T4A_SETAMMOCOUNT_SEMANTICS.md); [scope](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/27#issuecomment-5970853781)). The primary agent prepared an isolated disposable-magazine lab `ARMSTMP133T4A_SetProbe` (GUID `A7C41E90D3B24F68`) with one guarded `SetAmmoCount(+1)` action (default key P). Static checks were reported; **Workbench compile/gameplay not yet tested**. No real donor depletion, installed-mag mutation or multiplayer transfer is authorised.
+- **Historical T4a checkpoint: `T4A_LAB_PREPARED_OWNER_RUN_REQUIRED`** ([report](MP133_V3_T4A_SETAMMOCOUNT_SEMANTICS.md); [scope](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/27#issuecomment-5970853781)). The primary agent prepared an isolated disposable-magazine lab `ARMSTMP133T4A_SetProbe` (GUID `A7C41E90D3B24F68`) with one guarded `SetAmmoCount(+1)` action (default key P). Static checks were reported; **Workbench compile/gameplay not yet tested**. No real donor depletion, installed-mag mutation or multiplayer transfer is authorised.
 - **Astra animation/graph task: PAUSED by owner** ([checkpoint](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/27#issuecomment-5970888887)). The local `astra_build.py` draft is unfinished and unverified; do not run, overwrite, or hand it to another agent before explicit resumption.
 - **Owner alone runs Workbench and the game.** Agent static checks, GitHub CI and offline `srv=1` do not prove engine/runtime/multiplayer correctness. The frozen V2/P2 labs, production Weapons and Core remain outside these tasks.
 

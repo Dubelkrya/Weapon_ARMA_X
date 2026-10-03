@@ -9,7 +9,19 @@ now, what was just done, and what must not be repeated or assumed. It is a
 
 ---
 
-## 0. Current checkpoint — read before historical sections
+## CURRENT BRANCH-RECONCILIATION NOTICE (2026-10-03, supersedes historical resume instructions)
+
+**Owner-confirmed MP-133 state:** G2 T4b offline trial succeeded: one synthetic `+1` remains in the SAME installed M1 magazine, native manual short-R chambers the round, and the owner reports firing once. The earlier `G0 recompile pending` / `T4a owner run required` statuses are historical and are **not** the current next task. No projectile damage or multiplayer claims.
+
+**Active G3 work:** G3-A read-only report is published on [`t4b/installed-mag-probe`](https://github.com/Dubelkrya/Weapon_ARMA_X/blob/t4b/installed-mag-probe/reports/MP133_V3_G3_REAL_DONOR_PHASE_A.md). G3-B1 **lab source is now published** on that SAME branch at [`a165e80`](https://github.com/Dubelkrya/Weapon_ARMA_X/commit/a165e804df1e571c58806bb39ea74e5eee993191), awaiting independent source review and **owner-only Workbench/game test**. B1 decrements ONE disposable inventory donor only; installed target/chamber untouched. G3-B2 two-sided transfer and G4/G5 are NOT authorised. Use the **existing single T4b local addon**, with separate named experiment fixtures inside it only as needed; no extra T4c addon or branch. The original T4b script SHA256 remains `D581B9C9EE270725FFEC94C7685CBBCB2AB41DBA717F2B4FBCF8C4AC8DDCBEB1`; its weapon prefab was re-saved by the **owner** at `a165e80` and must not be silently reverted.
+
+**Core correction:** per owner, the Core SHIFT+R reload does **not work**; its legacy input references must NOT be used as a functioning requirement. A local Core read-only audit/report remains unpublished ([#33](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/33)); a reported RPC repacking mechanism is a candidate requiring verification and does not prove an installed-magazine transfer.
+
+**Coordination:** PR [#31](https://github.com/Dubelkrya/Weapon_ARMA_X/pull/31) is documentation-only and must be reconciled against the active `t4b/installed-mag-probe` branch before any merge. Catalog #28 and CI #29 have completed source-backed publication and [green hosted CI](https://github.com/Dubelkrya/Weapon_ARMA_X/actions/runs/37135291162). Astra and original T2a/T4a/V2/P2 remain inactive; production Weapons/Core, owner worlds/layers and untracked files remain protected.
+
+---
+
+## 0. Historical checkpoint (superseded where different from notice above) — read before historical sections
 
 **Date:** 2026-10-03; last verified knowledge-repo `main` before reconciliation:
 [`bcf3ab4`](https://github.com/Dubelkrya/Weapon_ARMA_X/commit/bcf3ab41c5aec230ae3a5333ed1ca40678e51d30). Recheck current `origin/main` and local addon state at every new session. The history in §§10–11 includes older `OWNER_RUN_REQUIRED` and `PUBLICATION_BLOCKED` statements; the **later evidence below supersedes those historical checkpoints**.
@@ -21,7 +33,7 @@ now, what was just done, and what must not be repeated or assumed. It is a
 - **Catalog #28:** reviewed canonical 181-entity rescan **published** in commit `5c443a9` after classifying fixes; the earlier §11 `PUBLICATION_BLOCKED` stage is historical. **CI #29:** hosted validation succeeded; [latest run for `7101fd6`](https://github.com/Dubelkrya/Weapon_ARMA_X/actions/runs/37135291162) is successful. A successful CI does not validate local gameplay.
 - **Lab inventory and source archival:** [`MP133_LAB_REGISTRY.md`](../../reports/MP133_LAB_REGISTRY.md). Use [`EXPERIMENT_HANDOFF_TEMPLATE.md`](../guides/EXPERIMENT_HANDOFF_TEMPLATE.md) for future phase reports, clearly separating static, owner-runtime, MP-unverified and blocked status.
 
-**Resume point:** **T4a is prepared and awaits the owner's Workbench/game test**; the agent must STOP pending owner results. Astra remains paused. Neither stream has permission to alter production Weapons/Core, frozen V2/P2 or the T2A diagnostics. Check the newest issue comments and local worktree before acting.
+**Historical resume point (superseded):** T4a was prepared as a separate disposable-magazine probe. The current execution point is the G3-B1 source review and owner-run test in the existing T4b addon, as set out at the top of this document.
 
 ---
 
