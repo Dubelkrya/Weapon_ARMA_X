@@ -9,6 +9,22 @@ now, what was just done, and what must not be repeated or assumed. It is a
 
 ---
 
+## 0. Current checkpoint — read before historical sections
+
+**Date:** 2026-10-03; last verified knowledge-repo `main` before this documentation branch:
+[`7101fd6`](https://github.com/Dubelkrya/Weapon_ARMA_X/commit/7101fd623a0c4334f2002c36fcf50b355d5bd32f). Recheck current `origin/main` and local addon state at every new session. The history in §§10–11 includes older `OWNER_RUN_REQUIRED` and `PUBLICATION_BLOCKED` statements; the **later evidence below supersedes those historical checkpoints**.
+
+- **MP-133 T2b/T2c/T3:** paired markers and native command routing observed; T3 owner runtime proved physical **whole-magazine replacement** (`M1 → null → M3`, `M3 → null → M5`). See [`MP133_INDEX.md`](../../reports/MP133_INDEX.md) and [Issue #27](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/27).
+- **T3F:** owner ran the **corrected** T3F diagnostic after commit `99c1819`. Owner log: 100 `[ARMST_T3F-FIRE]`, 77 `[ARMST_T3-MAG]`, 18 `[ARMST_T2C-CMD]`, no `SCRIPT (E)`. Independent gameplay-shot callback and isolated controls **unresolved**. `Weapon_EnableFire` enables firing during bolt/reload animation; it is **not** a shot event. [Runtime read-out](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/27#issuecomment-5970720618). Do not ask for a rerun merely to prove the passive logger runs.
+- **T4:** installed-SDK Phase A is `T4_API_OR_TRANSACTION_BLOCKED` for a real one-shell donor→target transfer. **T4a only** is authorised: a *disposable, non-installed test-magazine* `SetAmmoCount` semantics probe; the primary agent prepares it statically, the **owner alone** runs Workbench/game. No evidence of T4a lab preparation/runtime here. [Authorisation](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/27#issuecomment-5970853781).
+- **Astra graph/animation lab:** `ASTRA_GRAPH_ANIM_PAUSED_OWNER_LIMIT` by owner's decision. The `astra_build.py` generator is unverified, locally WIP and **not archived as a working prototype**. Do not execute or modify its worktree until explicitly resumed. [Pause checkpoint](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/27#issuecomment-5970888887).
+- **Catalog #28:** reviewed canonical 181-entity rescan **published** in commit `5c443a9` after classifying fixes; the earlier §11 `PUBLICATION_BLOCKED` stage is historical. **CI #29:** hosted validation succeeded; [latest run for `7101fd6`](https://github.com/Dubelkrya/Weapon_ARMA_X/actions/runs/37135291162) is successful. A successful CI does not validate local gameplay.
+- **Lab inventory and source archival:** [`MP133_LAB_REGISTRY.md`](../../reports/MP133_LAB_REGISTRY.md). Use [`EXPERIMENT_HANDOFF_TEMPLATE.md`](../guides/EXPERIMENT_HANDOFF_TEMPLATE.md) for future phase reports, clearly separating static, owner-runtime, MP-unverified and blocked status.
+
+**Resume point:** the primary agent may continue **only T4a** under its existing allowlist; Astra remains paused. Neither stream has permission to alter production Weapons/Core, frozen V2/P2 or the T2A diagnostics. Check the newest issue comments and local worktree before acting.
+
+---
+
 ## 1. Layout
 
 | Role | Location |
@@ -326,14 +342,14 @@ historical material**; the owner approved **V3** (Issue #27 comment 5966570978,
   evidenced by ammo delta). Single lab file changed (SHA T3 `A66B4CCF…` → T3F `E978EDAF…`; first
   draft failed compile — split formatter + dropped the unsupported `AnimationEventID.ToString`); no
   clip/graph/ASI edits; 23-file asset set unchanged; static PASS. Owner run required (3 scenarios).
-  Status `T3F_PHASE_A_AUDIT_DONE / PHASE_B_LIMITED_IMPLEMENTED; OWNER_RUN_REQUIRED`.
+  Historical checkpoint; **superseded** by the corrected-script owner-runtime observation in §0.
 - **T4 Phase A (read-only, 2026-10-03):** `MP133_V3_T4_ONE_SHELL_TRANSFER.md`. Installed SDK:
   the only magazine-ammo writer is `BaseMagazineComponent.SetAmmoCount(int)`; **no** atomic
   transfer, no legitimate donor-consumption API, inventory APIs are item-level, muzzle has only
   `ClearChamber`; `SetAmmoCount` authority/replication/rollback UNRESOLVED. Per the Phase A HARD
   STOP no isolated T4 lab was created → **`T4_API_OR_TRANSACTION_BLOCKED`**; one minimal next
   experiment (throwaway-mag `SetAmmoCount` runtime probe, or explicit owner authorisation of a
-  local setter-based PoC) proposed. Production/Core/T2A/V2/Astra untouched. STOP for owner review.
+  local setter-based PoC) proposed. Production/Core/T2A/V2/Astra untouched. **Later owner decision:** only the separate disposable-magazine **T4a** experiment is authorised (see §0); the real T4 transfer remains blocked.
 
 ---
 
