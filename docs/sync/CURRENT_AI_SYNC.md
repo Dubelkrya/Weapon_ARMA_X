@@ -251,14 +251,16 @@ historical material**; the owner approved **V3** (Issue #27 comment 5966570978,
   `MP133_LAB_ADDON_PATH` + `MP133_ORIGINAL_ADDON_PATH`. Local: 80 OK; isolated hosted
   simulation: 80, 0 failures, 14 skipped. `CI_FIXED` only after fresh hosted CI passes.
   Report: `reports/CI_29_SEPARATE_OFFLINE_AND_LOCAL_TESTS.md`.
-- **#28:** Phase A preflight **PASS**; isolated candidate scan **completed** (deterministic,
-  corpus preserved byte-identically). Candidate diverges substantially (generated files
-  292→203; NEW 32 / DELETED 121 / CHANGED 169; entities 270→181) → **PUBLICATION BLOCKED**.
-  **GUID crosswalk done:** of 121 deleted, **91 `RELOCATED_OR_RENAMED`** (same source GUID
-  present in candidate), **30 `SOURCE_INTENTIONALLY_ABSENT`** (all 30 also absent at
-  committed HEAD); 0 `SCANNER_COVERAGE_OR_BUG`; 0 internal stale scanner refs (all
-  `Prefabs/Weapons/Rifles/` are `base_game_snapshot:`/supplied); MP-133 preserved by GUID
-  (`63FF6FDCA4E7E735` old `armst_mp_133.json` → `armst_shotgun_mp_133.json`). Candidate
-  passes `check_data_quality` (exit 0) but derived pages are out of date and must be
-  regenerated for a promotion set. Reports:
-  `reports/CATALOG_28_RESCAN_PREFLIGHT.md`, `reports/CATALOG_28_GUID_RECONCILIATION.md`.
+- **#28:** Phase A preflight **PASS**; **final candidate preparation done** (isolated).
+  GUID crosswalk: 121 deleted → **91 `RELOCATED_OR_RENAMED`** (same GUID), **30
+  `SOURCE_ABSENT_AT_HEAD`** (all absent at committed HEAD; 9 unreferenced, 21 only via
+  generated `ammo_configs.json` / preserved `reports/live-addon/**`, no live entities);
+  0 `SCANNER_COVERAGE_OR_BUG`; internal stale scanner refs 0. MP-133 preserved by GUID
+  (`63FF6FDCA4E7E735`); 18 additive leaf changes (deeper base-game resolution; core
+  magazine/animation fields unchanged). Dirty worktree vs **committed HEAD** →
+  **identical catalog** (181 entities, 0 diff). 149 catalog-changed (106 `data`).
+  Two smoke grenades `grenade→weapon` = **scanner `classify()` ordering defect**
+  (separate fix). Derived pages regenerated → `--check` exit 0. **Publication BLOCKED**
+  pending owner approval of the promotion manifest + the 30-deletion batch. Reports:
+  `reports/CATALOG_28_RESCAN_PREFLIGHT.md`, `CATALOG_28_GUID_RECONCILIATION.md`,
+  `CATALOG_28_FINAL_PROMOTION_MANIFEST.md`.
