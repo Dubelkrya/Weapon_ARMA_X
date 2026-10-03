@@ -141,6 +141,16 @@ SCR_CharacterCommandHandlerComponent`/его присутствия **подде
 чистым baseline; P3/P4/P5 не требуются. Разбор:
 `reports/MP133_V3_1_I1_LAB_INTERFERENCE_INVENTORY.md`.
 
+**V3.2 (Issue #27, comment 5967161341) — анимационное событие:** lab P/W insert-клипы
+переимпортированы (2026-10-02 20:34) с ванильными событиями
+`Weapon_SpawnMagazine(10)/Weapon_AttachMagazine(43)/Weapon_MagRelease(64)` вместо
+`ARMST_Lab_Shell_Spawn/Commit/Release`; `.txa` устарели. Владелец сообщает, что досылка
+в патронник «заработала» — это **независимая** от P2 находка. Ванильные события
+получает **движок**, а не lab-скрипт; lab-коммит больше не срабатывает. Тождество
+магазина и сохранность патронов не подтверждены. Текущий lab-ASI указывает InsertMag на
+lab-клип, а владелец описал прод-клип — нужно уточнить. Отчёт:
+`reports/MP133_V3_2_ANIM_EVENT_FINDING.md`.
+
 Read-only факты:
 - `HandleWeaponReloading` переопределяет **только** lab; для не-lab/гейта OFF —
   прямой `super` (мутаций команды нет). Core/прочие не переопределяют.

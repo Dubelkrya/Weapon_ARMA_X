@@ -205,6 +205,15 @@ historical material**; the owner approved **V3** (Issue #27 comment 5966570978,
   **cancelled** by V3.
 - **Discontinued:** E1–E4, Core suppression, native mag-swap reintroduction, V2.x
   insert gate. Both `m_bLabInsertEnabled` gates are OFF.
+- **Owner animation-event finding (V3.2, comment 5967161341):** the lab P/W insert
+  clips were re-imported (2026-10-02 20:34) with **vanilla** events
+  `Weapon_SpawnMagazine(10)/Weapon_AttachMagazine(43)/Weapon_MagRelease(64)` replacing
+  `ARMST_Lab_Shell_Spawn/Commit/Release`; the `.txa` sources are stale. Owner reports the
+  chamber insert "began working" — an independent finding from P2. With vanilla events
+  the **engine** (not the lab script) receives them, and the lab scripted commit no
+  longer fires; mag identity / ammo conservation are unverified. Current lab ASI maps
+  InsertMag to the lab clip, while the owner described the production clip — confirm.
+  See `reports/MP133_V3_2_ANIM_EVENT_FINDING.md`.
 - **Next:** V3 Stage 1 requires the owner to prove the clean native baseline
   (`shot → short R pump → shot` ×3, hold-R inspection, tube/chamber baseline). Until
   proven, report `BASELINE_RUNTIME_REQUIRED` and do **not** implement. Owner reports
