@@ -124,3 +124,31 @@ character-side `modded` handler are unchanged; `resourceDatabase.rdb` removed ag
 clean rescan.
 
 Status: `T2A_CLASS_HELPER_ADDED; OWNER WORKBENCH RECOMPILE REQUIRED`.
+
+---
+
+## Marker wired + ready for owner run (2026-10-03)
+
+- Imported marker ANM GUID: **`{3581B839F53FC345}`** at
+  `Assets/Weapons_RUS/Mp_133/T2A/T2AClips/P_MP133_T2A_Bolt.anm` (owner import; no
+  re-import needed).
+- Repointed both `Reload.Erc.ReloadActionBolt` and `Reload.Pne.ReloadActionBolt` in the
+  cloned `MP133_T2A_player.asi` to that ANM; the weapon ASI remains marker-free.
+- Verified: marker `ARMST_T2A_PM_C41F7A29` at **frame 12** in the source `.txa`; weapon
+  ASI marker = 0; the ANM `.meta` GUID matches the ASI reference; text files braces/ASCII
+  clean (the `.anm`/`.rdb` are binary). Removed the regenerated `resourceDatabase.rdb` so
+  Workbench rescans the changed ASI.
+- Compilation of the lab is confirmed by the owner (`cannot be modded` and
+  `Missing Component Class` are gone).
+
+**Owner run (T2a):** loadout = only `ARMST-PLATFORM---Weapons` + `ARMSTMP133T2A_Diag`
+(Core and V2/P2 off); equip `MP-133 [T2A-DIAG]`; perform one ordinary short R (native
+rack); capture `console.log`/`script.log` and report which receiver logs the marker —
+`[ARMST_T2A-CHR]`, `[ARMST_T2A-WPN]`, or both (count/order/`isServer`). STOP on any
+pump/hold-R/other-weapon regression.
+
+Status: `T2A_LAB_READY_FOR_OWNER_RUN`.
+
+**Unrelated log findings (NOT lab-owned; not fixed):** Remington 870 / MP-153 unresolved
+`.anm`; unknown `ARMST_ITEMS_STATS_COMPONENTS` (a Core class — Core is disabled in this
+loadout); repeated EntityPool `armst_Ammo_12ga.et`. Separate task.
