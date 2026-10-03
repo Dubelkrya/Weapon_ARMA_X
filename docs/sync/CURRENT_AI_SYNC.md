@@ -311,6 +311,21 @@ historical material**; the owner approved **V3** (Issue #27 comment 5966570978,
   Only one file changed; production/Core/V2/graph/ASI/clip/prefab unchanged; static PASS.
   Owner run required: one native R magazine swap with 7/10 old + known 10/10 inventory mag.
   Status `T2C_OWNER_PASS / NATIVE_MAG_EXCHANGE_OWNER_CONFIRMED / T3_LOGGING_ADDED; OWNER_RUN_REQUIRED`.
+- **T3 OWNER RUNTIME read-out (comment 5970509383):** 73 `[ARMST_T3-MAG]` snapshots; native
+  magazine lifecycle events **ARE delivered** weapon-side; installed owning-entity references
+  change `M1 → null → M3` (and `M3 → null → M5`); the new magazine appears **between** the
+  post-super `Weapon_AttachMagazine` snapshot and the next pre-super `Weapon_MagRelease`; old
+  mag stays partial until detach; `muzzle` is an aggregate (can read `11/10`). Status
+  `T3_RUNTIME_MAG_EXCHANGE_CONFIRMED; EVENT_DELIVERY_CONFIRMED; PRECISE_NATIVE_ATTACH_TIMING_UNRESOLVED`.
+- **T3F (lab-only, 2026-10-03):** `MP133_V3_T3F_FIRE_EVENT_AUDIT.md`. Phase A: fire path
+  (`Reload.Erc.Fire`/`Trigger` → base-game AK74 clips; graph `FireAnim`/`FireEmptyAnim` on `Firing`/`Empty`)
+  and installed-SDK callback audit → **no weapon-level actual-shot callback**; real-shot
+  signals are muzzle-effect `OnFired`/`OnWeaponFired` (prefab subclass / global, out of scope).
+  Phase B limited: `[ARMST_T3F-FIRE]` logs every `OnAnimationEvent` + inline mag/muzzle/chamber
+  sample + one deferred snapshot after `Weapon_EnableFire`; `gameplay_shot` NOT emitted (shot
+  evidenced by ammo delta). Single lab file changed (SHA T3 `A66B4CCF…` → T3F `4324ACDE…`); no
+  clip/graph/ASI edits; 23-file asset set unchanged; static PASS. Owner run required (3 scenarios).
+  Status `T3F_PHASE_A_AUDIT_DONE / PHASE_B_LIMITED_IMPLEMENTED; OWNER_RUN_REQUIRED`.
 
 ---
 
