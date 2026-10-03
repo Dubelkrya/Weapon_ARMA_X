@@ -352,6 +352,15 @@ historical material**; the owner approved **V3** (Issue #27 comment 5966570978,
   only; input configs removed. Baseline component retained (`m_iT4AStartAmmo`). Static PASS;
   script SHA `BE8EF1AF…`; no transfer/donor/inventory/weapon; Production/Core/T2A/V2/Astra
   untouched. Status `T4A_INTERACTION_PATCH_PREPARED_OWNER_RUN_REQUIRED`.
+- **T4a duplicate-manager fix (2026-10-03, branch `t4a/interaction-patch`):** owner screenshot
+  showed **two** `ActionsManagerComponent` on the placed magazine (lab-added + inherited). The
+  T4a prefab now **removes the duplicate** and adds the action to the **inherited** manager
+  `{F092E6B0537754FD}` via `additionalActions +{ ARMST_T4A_AddRoundUserAction }` (GUID identified
+  from base-game magazine snapshots `catalog/magazines/*` inheriting `Prefabs/Weapons/Core/Magazine_Base.et`),
+  preserving stock pickup/attach actions and reusing the inherited default context. Only one
+  manager remains; prefab identity retained; script SHA unchanged `BE8EF1AF…`. Owner must verify
+  the resolved Workbench tree (one manager, 3 actions) before the +1 test. Status
+  `T4A_SINGLE_MANAGER_PATCH_PREPARED_OWNER_RUN_REQUIRED`.
 
 ---
 
