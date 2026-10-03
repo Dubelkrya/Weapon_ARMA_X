@@ -419,6 +419,15 @@ historical material**; the owner approved **V3** (Issue #27 comment 5966570978,
   in the existing probe, but **not implemented** pending review; whether it fires on
   world→inventory/hand transitions is UNRESOLVED (needs owner runtime). Status
   `T4B_COMPILE_RECOVERY_PUBLISHED_OWNER_RECOMPILE_REQUIRED`.
+- **V3 Variant A architecture selected (Issue #34 comment 5972748555):**
+  `MP133_V3_VARIANT_A_ARCHITECTURE.md`. Owner chose a custom per-shell reload preserving the real
+  installed physical magazine, with the transfer mechanism as a replaceable separate backend
+  (future SDK 1.9 `SCR_MagazineRepackingSystem` only after audit). Three independent parts kept
+  separate: weapon (stock firing/chamber/pump), ammunition (source selection / consume one /
+  replenish installed magazine), animation+control (insert/repeat/safe stop). Gates `G0–G5`,
+  stop after each for review. **Immediate action = G0 only** (owner recompile of the fixed T4b);
+  G1 passive slot-change code waits for review; G2–G5 not authorized in a batch. Status
+  `V3_VARIANT_A_ARCHITECTURE_SELECTED / T4B_COMPILE_RECOVERY_OWNER_RECOMPILE_REQUIRED`.
 
 ---
 
