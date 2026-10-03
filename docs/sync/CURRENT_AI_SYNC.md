@@ -492,6 +492,19 @@ historical material**; the owner approved **V3** (Issue #27 comment 5966570978,
   preflight: both actions visible on the child; G3B1 produces `phase=pre`. Status
   `G3B1_REDESIGN_SOURCE_REVIEWED / PREWRITE_TARGET_EXCLUSION_APPLIED / OWNER_GAME_NOT_RUN`; G3-B2 not
   authorized.
+- **G3-B1 revision 3 (Issue #34 comment 5973339846):** real donor fixture + nested discovery +
+  read-only classification. Added genuine carryable donor `Prefabs/Test/ARMST_T4B_G3B1_DonorMag.et`
+  (+`.meta`, inherits `{B0DFDF7AAA9C5D39}armst_12ga_Buckshot.et` — `InventoryMagazineComponent` +
+  `MagazineComponent`, MaxAmmo 10, `Ammo_12g.conf`; not a fake). Donor scan now walks the actual
+  reachable inventory (`GetAllRootItems` + `GetStorages(PURPOSE_ANY)` +
+  `SCR_InventoryStorageManagerComponent.GetAllItems(items, storage)` per storage, dedup) instead of
+  root-only. The action logs bounded `phase=classify` (item/mag identity, prefab, ammo/max, type,
+  member, slotId, `storage=` provenance) + `phase=classify-done` + `phase=readonly`; the decrement is
+  gated by `m_bG3b1WriteEnabled` (default false) → no `SetAmmoCount` in the first run. Script SHA
+  `E416BEFB...` -> `A7CE4FE3...`; donor mag `437D75E3...`; T4b script `D581B9C9...`, owner-saved
+  prefab `29C70A78...`, child prefab `61F3FCAE...` unchanged; local==published. Status
+  `G3B1_REAL_DONOR_FIXTURE_ADDED / NESTED_DISCOVERY_APPLIED / READONLY_CLASSIFICATION_DEFAULT /
+  OWNER_CLASSIFY_RUN_REQUIRED`; G3-B2 not authorized.
 
 ---
 

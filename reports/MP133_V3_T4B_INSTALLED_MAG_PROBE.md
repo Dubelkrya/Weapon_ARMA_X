@@ -119,7 +119,9 @@ and published copy are byte-identical.
 |---|---|
 | [`labs/ARMSTMP133T4B_InstalledMagProbe/addon.gproj`](../labs/ARMSTMP133T4B_InstalledMagProbe/addon.gproj) | `200E3156DED0C793CFA6FCF94767A4DC265FF28760307A158BCD4DF9696608A6` |
 | [`…/Scripts/Game/ARMST_T4B/ARMST_T4B_InstalledMagProbe.c`](../labs/ARMSTMP133T4B_InstalledMagProbe/Scripts/Game/ARMST_T4B/ARMST_T4B_InstalledMagProbe.c) | `D581B9C9EE270725FFEC94C7685CBBCB2AB41DBA717F2B4FBCF8C4AC8DDCBEB1` |
-| [`…/Scripts/Game/ARMST_T4B/ARMST_T4B_G3B1_DonorConsume.c`](../labs/ARMSTMP133T4B_InstalledMagProbe/Scripts/Game/ARMST_T4B/ARMST_T4B_G3B1_DonorConsume.c) | `E416BEFBEF02C773EE3A15FF5299D8C82A7E82441EB73631B4A08B6C21B48BC6` |
+| [`…/Scripts/Game/ARMST_T4B/ARMST_T4B_G3B1_DonorConsume.c`](../labs/ARMSTMP133T4B_InstalledMagProbe/Scripts/Game/ARMST_T4B/ARMST_T4B_G3B1_DonorConsume.c) | `A7CE4FE399A9789CFCDA475D477EC9E1BB4AE942C3DF040AE0F3B04B264620DA` |
+| [`…/Prefabs/Test/ARMST_T4B_G3B1_DonorMag.et`](../labs/ARMSTMP133T4B_InstalledMagProbe/Prefabs/Test/ARMST_T4B_G3B1_DonorMag.et) | `437D75E3545400A31663F78DBD08E7898BEDE69BA758FC76935ABAA8D1FE0761` |
+| [`…/Prefabs/Test/ARMST_T4B_G3B1_DonorMag.et.meta`](../labs/ARMSTMP133T4B_InstalledMagProbe/Prefabs/Test/ARMST_T4B_G3B1_DonorMag.et.meta) | `A1DB893F790DB72E73789F3C33BE334004F3E8325B4C9C6952A2D9E767FF02CF` |
 | [`…/Prefabs/Test/ARMST_T4B_G3B1_TestWeapon.et`](../labs/ARMSTMP133T4B_InstalledMagProbe/Prefabs/Test/ARMST_T4B_G3B1_TestWeapon.et) | `61F3FCAEE494963ADF1FF82B351A61C1D295618B7DE2786490BAC13325620BAA` |
 | [`…/Prefabs/Test/ARMST_T4B_G3B1_TestWeapon.et.meta`](../labs/ARMSTMP133T4B_InstalledMagProbe/Prefabs/Test/ARMST_T4B_G3B1_TestWeapon.et.meta) | `E7BAA2A85CD3E2CAB05E2C6669DA37471A1D95D0D68EB1FE6BB334BD34809F03` |
 | [`…/Prefabs/Test/ARMST_T4B_G3B1_DonorDevice.et`](../labs/ARMSTMP133T4B_InstalledMagProbe/Prefabs/Test/ARMST_T4B_G3B1_DonorDevice.et) | `12B073DD60318491752888DED79CD3807E8B25AFB171694CB796054C86CB8502` |
@@ -484,4 +486,51 @@ only; compare the installed MP-133 magazine/chamber before/after via the existin
 observation (not claimed as G3B1-instrumented).
 
 **STATUS:** `G3B1_REDESIGN_SOURCE_REVIEWED / PREWRITE_TARGET_EXCLUSION_APPLIED / OWNER_GAME_NOT_RUN`.
+G3-B2 not authorized.
+
+## 18. G3-B1 revision 3 — real donor fixture + nested inventory discovery + read-only classification (review 5973339846)
+
+Root causes addressed: (1) no genuine donor fixture had been provided; (2) root-only enumeration
+(`GetAllRootItems`) missed magazines inside clothing/vest/bag storage, while the default reference
+type is 12ga.
+
+- **Real donor fixture (existing addon, not a fake):** `Prefabs/Test/ARMST_T4B_G3B1_DonorMag.et`
+  (+`.meta`) inherits the genuine carryable magazine
+  `{B0DFDF7AAA9C5D39}Prefabs/Weapons/Magazines/12ga/armst_12ga_Buckshot.et` (which carries
+  `InventoryMagazineComponent` + `MagazineComponent`, `MaxAmmo 10`, `Ammo_12g.conf`). It is a real
+  pickup/carry/inventory item with a visible count — not a `GenericEntity+MeshObject` fake. The
+  historical `G3B1_DonorDevice` stays unused.
+- **Nested discovery:** the donor scan now walks the player's actual reachable inventory —
+  `GetAllRootItems` **plus** `GetStorages(PURPOSE_ANY)` with
+  `SCR_InventoryStorageManagerComponent.GetAllItems(items, storage)` per storage (nested
+  clothing/vest/bag), deduplicated by reference.
+- **Read-only classification (default):** the action logs a bounded classification of every
+  magazine item (`phase=classify` with item/mag identity, prefab, ammo/max, `GetAmmoType(0)`,
+  `member`, `slotId`, `storage=` provenance), a summary
+  (`phase=classify-done withMag/withAmmo/compat/targetSkipped`) and the selection verdict. The
+  **decrement is gated by `m_bG3b1WriteEnabled` (default false)** → the first run is
+  `phase=readonly` and performs **no `SetAmmoCount`**. All prior gates (server-only,
+  weapon-context, installed-magazine exclusion, strict ammo-type, exactly-one donor, immediate
+  ownership/slot checks, latch-before-write) remain on the write path.
+
+Script SHA `E416BEFB…` → **`A7CE4FE399A9789CFCDA475D477EC9E1BB4AE942C3DF040AE0F3B04B264620DA`**;
+T4b script `D581B9C9…`, owner-saved T4b prefab `29C70A78…`, child prefab `61F3FCAE…`,
+`addon.gproj` unchanged; new donor GUIDs unique; local==published.
+
+**Owner Workbench setup (this run = classification only):**
+1. Place/equip the child weapon `ARMST_T4B_G3B1_TestWeapon.et`; confirm **both** actions visible.
+2. Spawn/pick up the real donor `ARMST_T4B_G3B1_DonorMag.et` (or the production
+   `Prefabs/Weapons/Magazines/12ga/armst_12ga_Buckshot.et`) and hold it (root or in vest/bag).
+3. Invoke **"G3B1: classify / consume 1 from inventory donor"** once (write gate OFF).
+4. Send the `[ARMST_T4B-G3B1]` classification lines (`phase=classify-start … total=N`, per-magazine
+   lines with `storage=`, `phase=classify-done …`, `phase=readonly`). If `compat=1` and the donor is
+   the donor mag, the item/type is confirmed; then set `m_bG3b1WriteEnabled=true` (after review) and
+   re-run for `n→n-1`.
+
+**UNRESOLVED (needs the classification run):** whether 12ga magazines are reachable in the owner's
+inventory and in which storage; if none is carryable → `12GA_CARRYABLE_DONOR_NOT_FOUND`; a
+generic-mag run must use an explicit matching reference ResourceName and is labelled
+`GENERIC_MAGAZINE_DONOR_SETTER_ONLY / MP133_COMPATIBILITY_UNVERIFIED`.
+
+**STATUS:** `G3B1_REAL_DONOR_FIXTURE_ADDED / NESTED_DISCOVERY_APPLIED / READONLY_CLASSIFICATION_DEFAULT / OWNER_CLASSIFY_RUN_REQUIRED`.
 G3-B2 not authorized.
