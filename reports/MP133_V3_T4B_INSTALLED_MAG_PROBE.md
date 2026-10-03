@@ -118,7 +118,7 @@ and published copy are byte-identical.
 | Published path | SHA-256 |
 |---|---|
 | [`labs/ARMSTMP133T4B_InstalledMagProbe/addon.gproj`](../labs/ARMSTMP133T4B_InstalledMagProbe/addon.gproj) | `200E3156DED0C793CFA6FCF94767A4DC265FF28760307A158BCD4DF9696608A6` |
-| [`…/Scripts/Game/ARMST_T4B/ARMST_T4B_InstalledMagProbe.c`](../labs/ARMSTMP133T4B_InstalledMagProbe/Scripts/Game/ARMST_T4B/ARMST_T4B_InstalledMagProbe.c) | `26B758909DB4EA8BA89C2C1F5FAAF34FAD5650F6A0778D2F324ADAAEFA958CC0` |
+| [`…/Scripts/Game/ARMST_T4B/ARMST_T4B_InstalledMagProbe.c`](../labs/ARMSTMP133T4B_InstalledMagProbe/Scripts/Game/ARMST_T4B/ARMST_T4B_InstalledMagProbe.c) | `D581B9C9EE270725FFEC94C7685CBBCB2AB41DBA717F2B4FBCF8C4AC8DDCBEB1` |
 | [`…/Prefabs/Test/ARMST_T4B_TestWeapon.et`](../labs/ARMSTMP133T4B_InstalledMagProbe/Prefabs/Test/ARMST_T4B_TestWeapon.et) | `D522B0B338DC672AF4C55D6EEFF97C6473A81E94D8905846EE92DD31E882EA9A` |
 | [`…/Prefabs/Test/ARMST_T4B_TestWeapon.et.meta`](../labs/ARMSTMP133T4B_InstalledMagProbe/Prefabs/Test/ARMST_T4B_TestWeapon.et.meta) | `8EBCBED43046664A0A0669C2D8B03616B690422BC4A0F7E778B3972F7FF6733E` |
 
@@ -338,3 +338,44 @@ usable in-game.
 
 **STATUS:** `T4B_EQUIP_DIAGNOSTIC_SOURCE_PUBLISHED_OWNER_RUN_REQUIRED`. Nothing was fixed; the
 goal is trustworthy measurement first. Runtime PASS is **not** claimed.
+
+## 14. Compile recovery + equip-observable research (Issue #34 comment 5972637450)
+
+**Compile failure (owner Workbench 1.8.0.13):** the §13 equip hooks did **not** compile:
+`ARMST_T4B_InstalledMagProbe.c(147): Multiple declaration of function 'SyncWithCharacter'` and
+`(158): ... 'RemoveSyncReference'`. `BaseItemAnimationComponent.SyncWithCharacter/RemoveSyncReference`
+are `proto external` (engine-implemented), **not** overridable script callbacks — a public SDK
+entry is not an override point. Status `T4B_EQUIP_HOOK_COMPILE_BLOCKED`.
+
+**Phase 1 (done) — minimal compile recovery:** removed only the two invalid overrides and the
+inaccurate header note; everything that worked in `afc87eb` is preserved (`OnAnimationEvent`,
+`OnCharacterCommand`, probe, nested prefab, baseline, one-shot `+1`, `+250 ms` / `+1000 ms`
+persistence samples, `setter_readback_ok`). Script SHA `26B75890…` → **`D581B9C9…`**;
+prefab/`.meta`/`addon.gproj` unchanged.
+
+**Phase 2 (read-only research, NOT implemented) — a valid weapon-scoped passive pickup/equip
+observable:**
+- `InventoryItemComponent.m_OnParentSlotChangedInvoker` is a **public field** of type
+  `ref ScriptInvoker<InventoryStorageSlot, InventoryStorageSlot>`; a script callback is
+  `void OnSlotChanged(InventoryStorageSlot oldSlot, InventoryStorageSlot newSlot)`; `GetParentSlot()`
+  returns `InventoryStorageSlot` (class exists in the SDK).
+- The weapon's inventory component is `SCR_WeaponAttachmentsStorageComponent "{51F080D5CE45A1A2}"`,
+  which **inherits** `InventoryItemComponent` (its member list carries `GetParentSlot()`), so the
+  invoker is available on the lab weapon entity.
+- Proposed minimal lab-only implementation (for **review before implementation**): in the existing
+  probe, once on init, `SCR_WeaponAttachmentsStorageComponent inv =
+  SCR_WeaponAttachmentsStorageComponent.Cast(weaponEnt.FindComponent(SCR_WeaponAttachmentsStorageComponent));`
+  then `inv.m_OnParentSlotChangedInvoker.Insert(OnT4BSlotChanged)` (guarded), remove it in
+  `OnDelete`, and in the callback log a passive `[ARMST_T4B-INSTALLED] phase=slot-changed` snapshot
+  (old/new slot + the usual state). No `proto external` override, no second animation component,
+  no global character hook, no re-issued `SetAmmoCount`.
+- **UNRESOLVED (needs owner runtime):** whether the invoker actually fires on the relevant
+  world→inventory / hand transitions rather than only on some slot moves — not assumed.
+- Alternative `BaseWeaponComponent.OnWeaponActive/OnWeaponInactive` (protected) would require an
+  entirely different, separately verified `WeaponComponent` subclass replacement — not implemented.
+
+**STATUS:** `T4B_COMPILE_RECOVERY_PUBLISHED_OWNER_RECOMPILE_REQUIRED`. OWNER: recompile Game
+(STOP on any T4b `SCRIPT(E)`), then confirm the `afc87eb` diagnostics still work (`[ARMST_T4B-EVT]`,
+`[ARMST_T4B-CMD]`, baseline, `+1` + delayed `250 ms`/`1 s`). Resume the ammo-loss tests A/B/C only
+after a compiling build **and** review of the Phase 2 slot-change method. Agent static checks are
+not compile proof.

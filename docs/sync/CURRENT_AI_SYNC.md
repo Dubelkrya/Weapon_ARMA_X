@@ -408,6 +408,17 @@ historical material**; the owner approved **V3** (Issue #27 comment 5966570978,
   unchanged; local==published. Owner protocol: Test A idle persistence, Test B pickup+equip (no R),
   Test C one native R (separate runs each on a fresh instance). Status
   `T4B_EQUIP_DIAGNOSTIC_SOURCE_PUBLISHED_OWNER_RUN_REQUIRED`.
+- **T4b compile recovery (Issue #34 comment 5972637450):** the §13 equip hooks failed to compile
+  (`Multiple declaration of function 'SyncWithCharacter'/'RemoveSyncReference'`) — those are
+  `proto external`, not overridable. **Phase 1 done:** removed only the two invalid overrides +
+  inaccurate comment; kept `afc87eb` diagnostics/prefab/`+1`/delayed samples. Script SHA `26B75890…`
+  → `D581B9C9…`; prefab/`.meta`/`addon.gproj` unchanged; local==published. **Phase 2 = read-only
+  research only:** viable candidate `InventoryItemComponent.m_OnParentSlotChangedInvoker`
+  (`ref ScriptInvoker<InventoryStorageSlot,InventoryStorageSlot>`), available via the weapon's
+  `SCR_WeaponAttachmentsStorageComponent` (inherits `InventoryItemComponent`); proposed subscription
+  in the existing probe, but **not implemented** pending review; whether it fires on
+  world→inventory/hand transitions is UNRESOLVED (needs owner runtime). Status
+  `T4B_COMPILE_RECOVERY_PUBLISHED_OWNER_RECOMPILE_REQUIRED`.
 
 ---
 
