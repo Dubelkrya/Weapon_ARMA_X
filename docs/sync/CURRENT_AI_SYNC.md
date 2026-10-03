@@ -513,6 +513,16 @@ historical material**; the owner approved **V3** (Issue #27 comment 5966570978,
   unchanged; local==published. Owner clean run: donor `7/10 -> 6/10`, installed mag + chamber
   unchanged, +250ms/+1s `persistAmmo=1`, repeat `already-used`; no pump/reload/fire/T4b `+1`. Status
   `G3B1_WRITE_ENABLED_OWNER_RUN_REQUIRED`; G3-B2 not authorized.
+- **G3-B1 PASS + G3-B2 design authorized (Issue #34 comment 5973625747, 2026-10-04):** owner confirms
+  G3-B1 real-donor decrement passed in-game (independent of T4b `+1`). **G3-B2 = design-only**:
+  published [`reports/MP133_V3_G3B2_TRANSACTION_DESIGN.md`](../../reports/MP133_V3_G3B2_TRANSACTION_DESIGN.md)
+  — one-shot state machine `IDLE→PREFLIGHT→DONOR_WRITTEN→TARGET_WRITTEN→COMMITTED` with
+  `REJECTED`/`INDETERMINATE→QUARANTINED`, donor-first order + tradeoff, commit criteria, telemetry,
+  acceptance/negative matrix, packaging (new **B2-only child of the G3B1 child**, write gate default
+  off), source/uncertainty matrix, implementation allowlist, `GAMEPLAY_FILES_CHANGED_BY_DESIGN=0`.
+  No executable G3-B2 code, Workbench item, animation/R/input, MP or production change. Status
+  `G3B1_RUNTIME_PASS / G3B2_DESIGN_AUTHORIZED / G3B2_IMPLEMENTATION_NOT_YET_AUTHORIZED /
+  ASTRA_INDEPENDENT`. Next gate: independent design review before a separate code-level task.
 
 ---
 
