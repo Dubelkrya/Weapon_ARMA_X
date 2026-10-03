@@ -277,6 +277,16 @@ historical material**; the owner approved **V3** (Issue #27 comment 5966570978,
   magazine (V2: `3/3 → 10/10`), so mag identity/ammo are not preserved. One **logging-only T3
   probe** proposed (attribute the mag/ammo change to a specific event; measure physical mag
   survival). Status `INSERT_EVENT_AUDIT_DONE; ONE_MINIMAL_TEST_PROPOSED; NOT_RUN`.
+- **Reload-graph READ-ONLY AUDIT (2026-10-03):** `MP133_V3_RELOAD_GRAPH_AUDIT.md`. Production
+  and T2A graph logic proven **identical** (`.agf` GUID-normalized line-identical 1066 lines;
+  `.ast` identical; ASIs differ only in `ReloadActionBolt` marker clips). Complete
+  `IdleReloadSTM`/`WeaponReloadStanceSTM`/`WeaponReloadSTM`/`MagReloadSTM` state map with exact
+  conditions: cmd 1→`ReloadActionBolt`, 2/3→`Reload_InsertMag`, 4/5→remove+insert,
+  6→`Reload_RemoveMag`, **7–9 excluded/no state**. Frozen V2 lab had a `InsertSingleProjectile`
+  (cmd 7) self-loop on `BlendOut` (historical pattern). One minimal next gate proposed: a
+  passive lab-only `OnCharacterCommand` trace to establish the actual command ids.
+  `GAMEPLAY_FILES_CHANGED_BY_AUDIT=0`; status
+  `RELOAD_GRAPH_READONLY_AUDIT_DONE / T3_RUNTIME_NOT_RUN`.
 
 ---
 

@@ -34,6 +34,7 @@
 | [`MP133_V3_1_I1_LAB_INTERFERENCE_INVENTORY.md`](MP133_V3_1_I1_LAB_INTERFERENCE_INVENTORY.md) | P2 A/B, global-handler implication and rejected speculation about double-calling native defaults. |
 | [`MP133_V3_2_ANIM_EVENT_FINDING.md`](MP133_V3_2_ANIM_EVENT_FINDING.md) | Exact owner-edited native-event keyframes, stale TXA versus ANM and unknown active-clip/mag-identity boundaries. |
 | [`MP133_V3_INSERT_EVENT_AUDIT.md`](MP133_V3_INSERT_EVENT_AUDIT.md) | Read-only audit of the `Reload_InsertMag` events: `Weapon_SpawnMagazine(10)/AttachMagazine(43)/MagRelease(64)` are stock **whole-magazine** operations; there is no native per-shell insert (cmd 7 excluded by the MP-133 graph). One logging-only T3 probe proposed. |
+| [`MP133_V3_RELOAD_GRAPH_AUDIT.md`](MP133_V3_RELOAD_GRAPH_AUDIT.md) | Full read-only reload-graph audit: production vs T2A graph logic proven identical (GUID-normalized), complete `IdleReloadSTM`/`WeaponReloadSTM`/`MagReloadSTM` state/transition map with exact conditions, ASI/clip event mapping, lifecycle/interrupt, per-shell feasibility options and one minimal next gate. |
 | [Issue #27](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/27) | **Current approval and decision record**. Read newer comments before acting on its original V2.2 body. |
 
 ## Frozen historical V1/V2 evidence (retain; not V3 instructions)
