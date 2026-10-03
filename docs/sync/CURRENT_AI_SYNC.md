@@ -227,15 +227,20 @@ historical material**; the owner approved **V3** (Issue #27 comment 5966570978,
 - **T1/T2 READ-ONLY DESIGN PUBLISHED (commit 7d645f3, Issue #27):**
   `reports/MP133_V3_T0_T1_T2_DESIGN.md` provides input-routing and
   animation-event-routing experiments and STOP criteria.
-  `T1_T2_CODE_NOT_AUTHORIZED`: no new diagnostic addon, logging code,
-  animation/graph edits, input hook or Workbench/game run is approved yet.
-  Native reload action names, safe interception, player/weapon event delivery,
-  reliable pump-completion signal and authoritative shell transfer remain open.
-- **Next:** use `reports/MP133_INDEX.md` and Issue #27 to coordinate a separately
-  approved minimal T2 event-routing diagnostic and T1 input diagnostic. Preserve
-  the existing native pump and owner-authored assets. Test Core interaction
-  separately; Core was absent from the clean T0 test. No implementation of V3
-  until the diagnostic and transaction gates are resolved.
+- **T2a lab PREPARED (local, isolated; commit for the plan/report under reports/):**
+  `addons\ARMSTMP133T2A_Diag` — ID `ARMSTMP133T2ADiag`, root GUID `AF1464F772CC998F`,
+  deps base `58D0FB3206B6F859` + Weapons `6A70E400C54051DC` (**no Core**). Cloned MP-133
+  graph/ASI with fresh GUIDs; unique player-only marker `ARMST_T2A_PM_C41F7A29` at frame
+  12 of `T2AClips/P_MP133_T2A_Bolt.txa`; logging-only script (weapon
+  `WeaponAnimationComponent.OnAnimationEvent` + character `GetOnAnimationEvent`; no
+  R/reload/ammo). Static checks PASS; marker absent from `MP133_T2A_weapon.asi`.
+  Status `T2A_LAB_PREPARED; AWAITING_OWNER_MARKER_IMPORT_AND_ASI_REPOINT`; owner imports
+  the marker `.txa`→`.anm` and returns the GUID, then the agent repoints the player ASI
+  `ReloadActionBolt` rows. Report: `reports/MP133_V3_T2A_LAB_PREP.md`.
+- **Next:** owner confirms the isolated T2a loadout, imports the marker clip, and runs
+  T2a (ordinary short R on `MP-133 [T2A-DIAG]`); the agent inspects which receiver logs
+  `[ARMST_T2A-CHR]` vs `[ARMST_T2A-WPN]`. Preserve the existing native pump and
+  owner-authored assets. No T2b/T2c/V3 shell implementation until T2a results.
 
 ---
 
