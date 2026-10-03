@@ -408,7 +408,7 @@ Workbench/game run performed by the agent.
 **New files** (local lab + published copy, local==published):
 
 - `Scripts/Game/ARMST_T4B/ARMST_T4B_G3B2_Transfer.c` — new `ScriptedUserAction`
-  `ARMST_T4B_G3B2_TransferAction`; SHA256 `4578310B1B65B8597D16FCE799C2D0B97BB3D2896C8FBA9CFCD7F1FE452AC131` (rev 7).
+  `ARMST_T4B_G3B2_TransferAction`; SHA256 `F6F7CB70ED6140521F2E2804A630C4543D69CFE540C618578E17FB63F66D15A3` (rev 8).
 - `Prefabs/Test/ARMST_T4B_G3B2_TestWeapon.et` — SHA256 `68F67CAB0C17201882FCB9D587E3F3F196231B46E4FCB3951DD8BDC185873E04`.
 - `Prefabs/Test/ARMST_T4B_G3B2_TestWeapon.et.meta` — SHA256 `315C7AB6983B68C63C0AEC1D30625C5CA4B7477D72C1C75DF5291AC7438F9287`.
 
@@ -685,3 +685,50 @@ WriteOn prefab `A92821108FBC351F53CF1690FB8557CC2FBFC289BDAF9DC2CBC16ED644EE0A2D
 preflight `DAD5B732…`, write-test `BBED7C0E…` unchanged; static braces 132/132, parens 726/726, ASCII.
 `COMPILER_UNVERIFIED / WAITING_OWNER_RECOMPILE`.
 **STATUS:** `G3B2_WRITE_ON_SOURCE_PREPARED / WRITE_ON_NOT_AUTHORIZED / WAITING_INDEPENDENT_REVIEW`.
+
+### 11.7 G3-B2 INVENTORY-WIDE V1 — whole-inventory donor search (Issue #34 comment 5974730107) — rev 8
+
+Off-only source preparation. Adds an **opt-in** inventory-wide donor mode and one disposable OFF
+fixture; the four legacy fixtures are byte-identical and keep strict whitelist behavior.
+
+**Mode.** New serialized attribute `m_bG3B2InventoryWide` (default **false**). `false` = legacy
+whitelist mode (unchanged: empty whitelist rejects all; `T4B2IsHexGuid` / `T4B2OwnerExactName` /
+slot checks intact). `true` = `T4B2StorageAllowed` accepts **any** item with a resolvable
+slot/storage/owner, and `T4B2OwnerExactName` is **not** a mandatory gate. In inventory-wide mode the
+write-boundary instead requires genuine actor-inventory ownership (`T4B2InventoryOwnerValid`:
+`inv.Contains` + slot/storage/owner) as gate `prewrite-storage-owner`; whitelist mode keeps
+`prewrite-storage-exact`. Weapon-installed magazines, installed sets and weapon-owned storage remain
+excluded in **both** modes (checked before `T4B2StorageAllowed`).
+
+**Ownership / fail-closed.** Discovery enumerates only the invoking actor's own
+`SCR_InventoryStorageManagerComponent` (`GetAllRootItems` + `GetStorages(PURPOSE_ANY)` +
+`GetAllItems` per storage → nested pouches/backpack). Ownership is proven with `Contains`; world/
+vicinity/ground items are not contained and are rejected. If ownership/slot/storage cannot be
+established the candidate is rejected (no permissive fallback). Multiplicity stays fail-closed:
+exactly one qualifying donor ⇒ eligible; ≥2 ⇒ `ambiguous-donor` with zero writes (no random/slot-0
+pick).
+
+**Telemetry.** `storagePolicy=inventory-wide|whitelist` in init/classify/preflight/readonly.
+`exactOwnerMatch` is emitted as `N/A` in inventory-wide mode (whitelist-only field), replaced by
+`inventoryOwnerValid=0/1` and `storageSnapshotValid=0/1`. Phases `phase=preflight` / `phase=readonly`
+retained. New reject reason `inventory-owner-unverified`.
+
+**New OFF fixture** `Prefabs/Test/ARMST_T4B_G3B2_InventoryWide_TestWeapon.et` (+ new unique `.meta`),
+direct child of the production MP-133, T4b probe `m_iT4BStartAmmo 2`, one B2 action with
+`m_bG3B2WriteEnabled 0` and `m_bG3B2InventoryWide 1`, UI `INVENTORY-WIDE DRY RUN - WRITE OFF`. New
+GUIDs (unique): meta `{233445566778899A}`, instance `3445566778899AAB`, probe `45566778899AABBC`,
+action `566778899AABBCDD`, UIInfo `6778899AABBCDDEE`. **No inventory-wide WRITE-ON fixture is
+published.**
+
+**Gate matrix (5 fixtures):** canonical 68F67CAB `writeEnabled 0`/whitelist; preflight DAD5B732
+`0`/whitelist; write-test BBED7C0E `0`/whitelist; write-ON A9282110 `1`/whitelist; inventory-wide
+4829F51B `0`/**inventory-wide**. Transaction safety unchanged (latch before first setter, donor-first,
+live post-checks, quarantine, read-only +250 ms/+1 s); in the new fixture the write path is
+unreachable.
+
+Script SHA `4578310B…` → `F6F7CB70ED6140521F2E2804A630C4543D69CFE540C618578E17FB63F66D15A3`;
+inventory-wide prefab `4829F51BC1E62BBC9330148087911EEAF61961BB1D3EA4F77115964E6696188D`, meta
+`D972C7FAF774C86B85BACF960F29F2CBF94C427337A9516CDF94564B9B59D364`; legacy fixtures
+`68F67CAB…`/`DAD5B732…`/`BBED7C0E…`/`A9282110…` byte-identical; static braces 139/139, parens
+765/765, ASCII. `COMPILER_UNVERIFIED / WAITING_OWNER_RECOMPILE`.
+**STATUS:** `INVENTORY_WIDE_OFF_SOURCE_PREPARED / LEGACY_FIXTURES_UNCHANGED / COMPILER_UNVERIFIED / NO_B2_WRITES / STOP_FOR_INDEPENDENT_REVIEW`.

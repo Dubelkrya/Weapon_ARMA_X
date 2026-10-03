@@ -643,6 +643,21 @@ historical material**; the owner approved **V3** (Issue #27 comment 5966570978,
   production untouched. Single transfer NOT authorized. Status `EXACT_OWNER_OFF_PASS /
   G3B2_WRITE_ON_SOURCE_PREPARED / WRITE_ON_NOT_AUTHORIZED / FIRST_TRANSFER_PENDING`; STOP for
   independent review + owner recompile, then a *separate* transfer authorization.
+- **G3-B2 INVENTORY-WIDE V1 (comment 5974730107, 2026-10-04):** off-only source prep. Adds opt-in
+  `m_bG3B2InventoryWide` (default false): `true` lets `T4B2StorageAllowed` accept any item with a
+  resolvable slot/storage/owner (whitelist/slot ignored) and makes `T4B2OwnerExactName` non-mandatory;
+  the write boundary requires genuine actor-inventory ownership (`prewrite-storage-owner`) instead of
+  `prewrite-storage-exact`. Ownership proven via the actor's own inventory manager + `Contains` (world/
+  ground excluded, fail-closed); weapon-installed/installed-set/weapon-storage exclusions unchanged;
+  exactly one donor (`≥2 ⇒ ambiguous-donor`). Telemetry adds `storagePolicy` / `inventoryOwnerValid` /
+  `storageSnapshotValid` (`exactOwnerMatch=N/A` in inventory-wide). New OFF fixture
+  `ARMST_T4B_G3B2_InventoryWide_TestWeapon.et` (`4829F51B...`, meta `D972C7FA...`, GUIDs
+  `{233445566778899A}`/`3445566778899AAB`/`45566778899AABBC`/`566778899AABBCDD`/`6778899AABBCDDEE`)
+  `writeEnabled 0` + `inventoryWide 1`. Four legacy fixtures byte-identical (`68F67CAB...`,
+  `DAD5B732...`, `BBED7C0E...`, `A9282110...`). Script `F6F7CB70...`; braces 139/139, parens 765/765,
+  ASCII; local==published; T4b/G3B1/Core/production untouched. No inventory-wide WRITE-ON fixture.
+  Status `INVENTORY_WIDE_OFF_SOURCE_PREPARED / LEGACY_FIXTURES_UNCHANGED / COMPILER_UNVERIFIED /
+  NO_B2_WRITES / STOP_FOR_INDEPENDENT_REVIEW`.
 
 ---
 

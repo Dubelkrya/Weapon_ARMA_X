@@ -86,6 +86,8 @@ class ARMST_T4B_G3B2_TransferAction : ScriptedUserAction
 	protected int m_opSupplyMax = -1;
 	protected string m_opRejectReason = "";
 	protected bool m_opExactOwnerMatch = false;
+	protected bool m_opInventoryOwnerValid = false;
+	protected bool m_opStorageSnapshotValid = false;
 
 	// ---- donor boundary snapshot (captured immediately before the first setter) ----
 	protected IEntity m_opDonorItem;
@@ -136,6 +138,14 @@ class ARMST_T4B_G3B2_TransferAction : ScriptedUserAction
 	[Attribute("-1", UIWidgets.Slider, "G3B2 allowed donor storage slot id inside that owner (-1 = any slot)", "-1 40 1")]
 	int m_iG3B2AllowedStorageSlot = -1;
 
+	// Opt-in inventory-wide donor search (default OFF = legacy whitelist behavior). When true, the
+	// whitelist/slot are ignored and any magazine that is GENUINELY owned by the invoking actor's
+	// inventory (nested pouches/backpack included), with a valid slot/storage/owner, is accepted;
+	// weapon-installed and weapon-storage magazines stay excluded. Write-ON for this mode is NOT
+	// authorized in this task.
+	[Attribute("false", UIWidgets.CheckBox, "G3B2INV search donors across the whole character inventory (ignores the whitelist/slot)")]
+	bool m_bG3B2InventoryWide = false;
+
 	// ========================================================================
 	// Init / UI
 	// ========================================================================
@@ -143,6 +153,8 @@ class ARMST_T4B_G3B2_TransferAction : ScriptedUserAction
 	override void Init(IEntity pOwnerEntity, GenericComponent pManagerComponent)
 	{
 		Print("[ARMST_T4B-G3B2] #0 op=0 phase=action-init ev=register writeEnabled=" + T4BB(m_bG3B2WriteEnabled)
+			+ " inventoryWide=" + T4BB(m_bG3B2InventoryWide)
+			+ " storagePolicy=" + T4B2StoragePolicy()
 			+ " whitelist=" + T4B2WL() + " allowedSlot=" + m_iG3B2AllowedStorageSlot.ToString()
 			+ " srv=" + T4B2Srv() + " note=t4b-probe-baseline-setammo-is-separate-setup", LogLevel.NORMAL);
 	}
@@ -429,14 +441,58 @@ class ARMST_T4B_G3B2_TransferAction : ScriptedUserAction
 		return true;
 	}
 
-	// Whitelist check (fail-closed): exact storage-owner prefab path, optional exact slot id.
+	string T4B2StoragePolicy()
+	{
+		if (m_bG3B2InventoryWide)
+			return "inventory-wide";
+		return "whitelist";
+	}
+
+	string T4B2ExactField()
+	{
+		if (m_bG3B2InventoryWide)
+			return "N/A";
+		return T4BB(m_opExactOwnerMatch);
+	}
+
+	// Inventory-wide ownership proof: the item is genuinely in THIS actor's inventory manager and
+	// its slot/storage/owner resolve. World/vicinity/ground items are not contained by the actor's
+	// inventory manager, so they fail closed here.
+	bool T4B2InventoryOwnerValid(IEntity item)
+	{
+		if (!m_opInv || !item)
+			return false;
+		if (!m_opInv.Contains(item))
+			return false;
+		return T4B2StorageSnapshotValid(item);
+	}
+
+	bool T4B2StorageSnapshotValid(IEntity item)
+	{
+		if (!item)
+			return false;
+		InventoryStorageSlot slot = T4B2SlotOf(item);
+		if (!slot)
+			return false;
+		BaseInventoryStorageComponent st = slot.GetStorage();
+		if (!st)
+			return false;
+		IEntity se = st.GetOwner();
+		if (!se)
+			return false;
+		return true;
+	}
+
+	// Storage gate. whitelist mode (default): exact storage-owner path + optional slot (fail-closed on
+	// empty whitelist). inventory-wide mode: any resolvable slot/storage/owner is accepted here; the
+	// actor-ownership and weapon-storage exclusions are enforced separately.
 	bool T4B2StorageAllowed(IEntity item, out int outSlotId, out string outOwnerPrefab)
 	{
 		outSlotId = -1;
 		outOwnerPrefab = "";
 		if (!item)
 			return false;
-		if (m_sG3B2AllowedStorageOwner == "")
+		if (!m_bG3B2InventoryWide && m_sG3B2AllowedStorageOwner == "")
 			return false;
 		InventoryStorageSlot slot = T4B2SlotOf(item);
 		if (!slot)
@@ -449,6 +505,8 @@ class ARMST_T4B_G3B2_TransferAction : ScriptedUserAction
 		if (!se || !se.GetPrefabData())
 			return false;
 		outOwnerPrefab = se.GetPrefabData().GetPrefabName();
+		if (m_bG3B2InventoryWide)
+			return true;
 		if (T4B2NormalizePrefab(outOwnerPrefab) != T4B2NormalizePrefab(m_sG3B2AllowedStorageOwner))
 			return false;
 		if (m_iG3B2AllowedStorageSlot >= 0 && outSlotId != m_iG3B2AllowedStorageSlot)
@@ -533,6 +591,7 @@ class ARMST_T4B_G3B2_TransferAction : ScriptedUserAction
 
 		Print("[ARMST_T4B-G3B2] phase=classify-start ev=items total=" + items.Count().ToString()
 			+ " refAmmoType=" + m_opRefType
+			+ " storagePolicy=" + T4B2StoragePolicy()
 			+ " whitelist=" + T4B2WL()
 			+ " allowedSlot=" + m_iG3B2AllowedStorageSlot.ToString(), LogLevel.NORMAL);
 
@@ -633,6 +692,8 @@ class ARMST_T4B_G3B2_TransferAction : ScriptedUserAction
 	{
 		m_opRejectReason = "";
 		m_opExactOwnerMatch = false;
+		m_opInventoryOwnerValid = false;
+		m_opStorageSnapshotValid = false;
 		ARMST_T4B_WeaponProbe probe = null;
 		if (m_opActionOwner)
 			probe = ARMST_T4B_WeaponProbe.Cast(m_opActionOwner.FindComponent(ARMST_T4B_WeaponProbe));
@@ -675,8 +736,16 @@ class ARMST_T4B_G3B2_TransferAction : ScriptedUserAction
 			m_opRejectReason = "donor-is-target";
 			return false;
 		}
-		// Strict write-path evidence (logged in OFF diagnostics too): full {GUID}path exact match.
+		// Diagnostics: strict whitelist identity + inventory-wide ownership/storage proof.
 		m_opExactOwnerMatch = T4B2OwnerExactName(donorItem);
+		m_opInventoryOwnerValid = T4B2InventoryOwnerValid(donorItem);
+		m_opStorageSnapshotValid = T4B2StorageSnapshotValid(donorItem);
+		// Inventory-wide mode requires genuine actor-inventory ownership (fail closed).
+		if (m_bG3B2InventoryWide && !m_opInventoryOwnerValid)
+		{
+			m_opRejectReason = "inventory-owner-unverified";
+			return false;
+		}
 		int dMax = donorMag.GetMaxAmmoCount();
 		int dAmmo = donorMag.GetAmmoCount();
 		if (dMax <= 0 || dAmmo <= 0)
@@ -805,11 +874,24 @@ class ARMST_T4B_G3B2_TransferAction : ScriptedUserAction
 			return false;
 		}
 
-		// STRICT write-path identity: require the full {GUID}path exact match (fail closed).
-		if (!T4B2OwnerExactName(m_opDonorItem))
+		// Mode-specific storage identity at the prewrite boundary.
+		if (m_bG3B2InventoryWide)
 		{
-			m_opRejectReason = "prewrite-storage-exact";
-			return false;
+			// Inventory-wide: require genuine actor-inventory ownership + captured snapshot.
+			if (!T4B2InventoryOwnerValid(m_opDonorItem))
+			{
+				m_opRejectReason = "prewrite-storage-owner";
+				return false;
+			}
+		}
+		else
+		{
+			// Whitelist mode: require the full {GUID}path exact match (fail closed).
+			if (!T4B2OwnerExactName(m_opDonorItem))
+			{
+				m_opRejectReason = "prewrite-storage-exact";
+				return false;
+			}
 		}
 
 		// Gate 2: donor identity + membership + not inside a weapon.
@@ -1244,7 +1326,10 @@ class ARMST_T4B_G3B2_TransferAction : ScriptedUserAction
 		Print("[ARMST_T4B-G3B2] " + opTag
 			+ " phase=preflight ev=checked preflightEligible=" + T4BB(pfEligible)
 			+ " reason=" + m_opRejectReason
-			+ " exactOwnerMatch=" + T4BB(m_opExactOwnerMatch)
+			+ " storagePolicy=" + T4B2StoragePolicy()
+			+ " exactOwnerMatch=" + T4B2ExactField()
+			+ " inventoryOwnerValid=" + T4BB(m_opInventoryOwnerValid)
+			+ " storageSnapshotValid=" + T4BB(m_opStorageSnapshotValid)
 			+ " compat=" + m_cCompat.ToString()
 			+ " targetSkipped=" + m_cTargetSkipped.ToString()
 			+ " installedExcluded=" + m_cInstalledExcluded.ToString()
@@ -1257,7 +1342,10 @@ class ARMST_T4B_G3B2_TransferAction : ScriptedUserAction
 				+ " phase=readonly ev=preflight-only writeEnabled=0"
 				+ " preflightEligible=" + T4BB(pfEligible)
 				+ " reason=" + m_opRejectReason
-				+ " exactOwnerMatch=" + T4BB(m_opExactOwnerMatch)
+				+ " storagePolicy=" + T4B2StoragePolicy()
+				+ " exactOwnerMatch=" + T4B2ExactField()
+				+ " inventoryOwnerValid=" + T4BB(m_opInventoryOwnerValid)
+				+ " storageSnapshotValid=" + T4BB(m_opStorageSnapshotValid)
 				+ " refAmmoType=" + m_opRefType
 				+ " srv=" + T4B2Srv(), LogLevel.NORMAL);
 			return;
