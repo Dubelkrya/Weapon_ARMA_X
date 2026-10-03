@@ -428,6 +428,17 @@ historical material**; the owner approved **V3** (Issue #27 comment 5966570978,
   stop after each for review. **Immediate action = G0 only** (owner recompile of the fixed T4b);
   G1 passive slot-change code waits for review; G2–G5 not authorized in a batch. Status
   `V3_VARIANT_A_ARCHITECTURE_SELECTED / T4B_COMPILE_RECOVERY_OWNER_RECOMPILE_REQUIRED`.
+- **G3 Phase A (read-only, Issue #34 comment 5972965844):** `MP133_V3_G3_REAL_DONOR_PHASE_A.md`.
+  Donor discovery via the user's `SCR_InventoryStorageManagerComponent`
+  (`GetItems`/`GetAllRootItems`/`FindItemsWithComponents`/`GetStorages` +
+  `BaseInventoryStorageComponent.GetAll/GetOwnedItems`), `BaseMagazineComponent` via
+  `FindComponent(MagazineComponent)`, exclude `GetCurrentMagazine()`, strict
+  `GetAmmoType(0)` equality; `SetAmmoCount(int)` is the only writer (no atomic transfer);
+  inventory-donor presentation/authority/replication and `ResupplyMagazines` semantics
+  UNRESOLVED; failure matrix `REJECTED/COMMITTED/INDETERMINATE` + per-insertion-cycle token; one
+  owner-only G3-B test proposed (separate T4c fixture recommended). No code/lab change;
+  `GAMEPLAY_FILES_CHANGED=0`. Status `G3_PHASE_A_READONLY_AUTHORIZED /
+  G3_REAL_DONOR_TRANSACTION_NOT_IMPLEMENTED`; NEXT_GATE `STOP_FOR_OWNER_REVIEW`.
 
 ---
 
