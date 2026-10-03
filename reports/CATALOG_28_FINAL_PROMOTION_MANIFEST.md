@@ -128,3 +128,43 @@ owner's review of the manifest and batch approval of the 30 deletions.
 - Not run by agent: Workbench/game. `check_repository_integrity.py` locally: NOT RUN
   (jsonschema missing) unless installed in the isolated env.
 - Publication requires a fresh hosted CI run after promotion.
+
+---
+
+## G. Final provisions (owner message 2026-10-03)
+
+**G.1 Scanner classification fixed (committed, `ca4c870`).** `classify()` now checks
+`/grenades/` **before** the `WeaponComponent` heuristic, so `armst_Smoke_ANM8HC/RDG2`
+(which inherit `SmokeGrenade_Base.et`) classify as **grenade**. Regression tests added
+(grenade-with-WeaponComponent → grenade; weapon-with-WeaponComponent → weapon). Final
+candidate: weapons **70 → 68**, grenades **2 → 4**, **0 smoke under `weapons/`**.
+
+**G.2 MP-133 ← M21 inheritance (checked, no action).** The chain is the **pre-existing
+ARMST design**: `armst_Shotgun_mp_133.et` → `armst_shotgun_base.et` →
+`{B31929F65F0D0279}Prefabs/Weapons/Rifles/M14/Rifle_M21.et` (vanilla base). The catalog
+resolves it correctly (and now deeper via `base_game_snapshot`). Not a scan artifact, not
+introduced by #28.
+
+**G.3 Review of the 106 `data`-changed entries (finished).**
+- Dominant class: newly **resolved base-game inheritance** — `attachment_slots`,
+  `fire_modes`, `sights`, `ballistic_table`, `effects`, inherited `Mass`/dispersion
+  previously empty, now populated from `base_game_snapshot`.
+- **Genuine value changes** (provenance excluded): **52 entries**, concentrated in
+  **ammunition** (`armst_ammo_9x39_sp5/sp6`, `763x25`, `12ga`, buckshot pellet:
+  `Mass`/`InitSpeed`/`PenetrationDepth`/`PenetrationSpeed`/`ballistic_table`) and
+  **magazines** (`ammo_mapping` length/content corrected to the source) — reflecting the
+  current restored addon vs the 2026-09-25 snapshot, not a scanner defect.
+- Flagged anomaly: **`Assets/Toz/1.et` → `catalog/weapons/1.json`** — an oddly-named
+  prefab in the addon; not a scanner bug, but worth renaming/reviewing.
+
+**G.4 Final candidate (isolated, rebuilt with the fix).** **181 entities** (68 weapons /
+53 magazines / 22 ammunition / 12 optics / 12 attachments / 4 grenades / 2 tripods /
+4 core / 2 particles / 2 misc), 1 warning. `build_weapon_index/family_pages/
+balance_pages --check` = **0**, `check_data_quality` = **0**. Dirty worktree == committed
+HEAD catalog (0 diff). Corpus 1,404 files preserved (aggregate SHA `15380703…`).
+
+**G.5 Publication.** The 30 `SOURCE_ABSENT_AT_HEAD` entries are approved for exclusion
+from the active catalog (game resources are not deleted). Canonical generated files are
+still **not published** by the agent; the reviewed promotion set is ready and awaits the
+explicit publish go-ahead, followed by a fresh hosted CI run. The scanner fix is a
+separate committed source change (`ca4c870`).

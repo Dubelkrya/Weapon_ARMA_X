@@ -264,3 +264,10 @@ historical material**; the owner approved **V3** (Issue #27 comment 5966570978,
   pending owner approval of the promotion manifest + the 30-deletion batch. Reports:
   `reports/CATALOG_28_RESCAN_PREFLIGHT.md`, `CATALOG_28_GUID_RECONCILIATION.md`,
   `CATALOG_28_FINAL_PROMOTION_MANIFEST.md`.
+- **#28 final (2026-10-03):** scanner `classify()` fixed (grenades before
+  WeaponComponent; commit `ca4c870`, tests 8/8, full 82 OK). MP-133←M21 inheritance is
+  the pre-existing ARMST chain (no action). 106 `data`-changed reviewed: chiefly resolved
+  base-game inheritance; 52 genuine value changes in ammo/mag `AmmoMapping`; flagged odd
+  `Assets/Toz/1.et` → `weapons/1.json`. Final isolated candidate: **181 entities** (68
+  weapons / 4 grenades), `--check`/data-quality all exit 0, dirty==HEAD. Promotion set
+  ready; canonical publication awaiting the explicit publish go-ahead (then fresh CI).
