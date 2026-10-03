@@ -77,16 +77,23 @@ already chains the prior implementation, so an extra `Default` call may double-r
 5. If R recovers → handler involvement is supported (exact reason still unknown). If
    startup fails → P2 **BLOCKED**, no causal diagnosis.
 
-### 3.0 P2 copy prepared (this session)
+### 3.0 P2 copy prepared (this session; owner review 5966846052)
 
 - Path: `C:\Users\yshky\Documents\MP133_Lab_Backups\P2_no_handler\ARMST_MP133_AnimationLab`
-- Removed exactly one file: `Scripts/Game/ARMST_MP133_Lab/ARMST_MP133_Lab_CommandHandler.c`.
-  Everything else byte-identical to the archive (same GUIDs).
-- `MANIFEST_P2.sha256` (30 entries) verified 0 mismatches; `P2_README.md` has the test steps.
-- Static verification: 0 remaining `.c` references to the removed handler symbols; the
-  filename survives only in the generated `resourceDatabase.rdb`.
+- **Source change (exactly one):** removed
+  `Scripts/Game/ARMST_MP133_Lab/ARMST_MP133_Lab_CommandHandler.c`. Everything else
+  byte-identical to the archive (same GUIDs).
+- **Generated-cache change (recorded separately, not a source mutation):** deleted the
+  stale generated `resourceDatabase.rdb` (it still listed the removed source) so
+  Workbench performs a clean rescan/regeneration.
+- `MANIFEST_P2.sha256` (29 entries) verified 0 mismatches; `P2_README.md` has the steps.
+- Static verification: 0 remaining `.c` references to the removed handler symbols.
+- **Owner precondition:** fresh Workbench resource scan / script compilation; verify the
+  old handler is not loaded/compiled. If unverifiable or compile fails → `P2_BLOCKED`, no
+  causal conclusion.
 - The archive and the live addon were **not** modified. Only one lab addon (same addon
-  ID/GUID) may be enabled at a time.
+  ID/GUID) may be enabled at a time. P2 is a **diagnostics-only, optional A/B** — not a
+  V3 gate.
 
 ### 3.1 P2 static dependency / compilation review (read-only, this session)
 
@@ -109,10 +116,12 @@ diagnostic (P1/P3/P4/P5) is authorized.
 
 ## 4. V3.1 binding constraints
 
-- **No global interception** of `HandleWeaponReloading` / `HandleWeaponFire`. Use a
-  weapon-scoped input adapter. If a global override is proven unavoidable, it must call
-  the native `...Default` appropriately and fully pass through for non-MP133, and be
-  reviewed before implementation.
+- **No global interception** of `HandleWeaponReloading` / `HandleWeaponFire` — **NOT
+  AUTHORIZED for V3**. Use a weapon-scoped input adapter. If a global override were ever
+  proven unavoidable, it must **preserve verified native semantics with a tested single
+  call path and pass-through, without assuming an extra `...Default` is required**, and
+  be reviewed before implementation. Do not call `...Default` speculatively (may
+  double-run native reload).
 - Preserve the owner's controls: **ordinary R = native manual cycle**, hold R =
   native inspection, LSHIFT+R = frozen Core action. No J handling, no V2 migration.
 - Never fake chamber fill, dummy ammo, tube-magazine replacement, or native
