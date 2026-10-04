@@ -1,21 +1,127 @@
 # MP-133 G4-A — native magazine swap route audit + lab-only design (READ-ONLY)
 
-**Status:** `G4A_AUDIT_STATUS: COMPLETE`. Read-only engineering audit and design. **No gameplay
-implementation in this task.** No game/animation/prefab/script/Core/production edit, no new
-branch/addon, no Workbench/game run by the agent.
+**Status:** `G4A_AUDIT_STATUS: COMPLETE / REV2_P0_CORRECTIONS_APPLIED`. Read-only engineering audit and
+design. **No gameplay implementation in this task.** No game/animation/prefab/script/Core/production
+edit, no new branch/addon, no Workbench/game run by the agent.
 
-**Authority:** Issue #34 comment `5975411582` (G4-A task). Checkpoint at task creation
-`4807dfd7244c27a263b83e10f8f5ade07f1f87ae`; resolved HEAD (this audit)
-`4807dfd7244c27a263b83e10f8f5ade07f1f87ae`, `origin/t4b/installed-mag-probe` identical, working tree
-clean except owner-untracked `reports/CORE_ARMST_READONLY_AUDIT.md`.
+**Authority:** Issue #34 comment `5975411582` (G4-A task) + REV2 comment `5979175085`; independent P0
+review `5979146603`. Checkpoint at task creation `4807dfd7244c27a263b83e10f8f5ade07f1f87ae`; audit
+published at `ad89a18195c669b060d0707750ef73615b15e8e0`; REV2 resolved HEAD
+`dd215e1545279bd3485bbd9daf24716250dc0673` (branch advanced with research-only docs `ea2fff7`,
+`23fb09a`, `dd215e1`; both incoming commits do not touch this report). Working tree clean except
+owner-untracked `reports/CORE_ARMST_READONLY_AUDIT.md`.
 
-Labels: **SOURCE** (file read), **OWNER-RUNTIME** (owner log/observation), **INFERENCE**,
-**UNRESOLVED**.
+_labels._ **REV2 note:** the earlier §1/§4/§5/§7/§8 wording that implied sanitizing the **inject** clip
+alone is sufficient was **over-confident and is corrected in §0 (REV2 / P0 correction) below**; the
+remove path (`Reload_RemoveMag`: `Weapon_MagRelease`/`Weapon_DetachMagazine`/`Weapon_DespawnMagazine`)
+must be accounted for too.
 
-`READONLY_GAMEPLAY_FILES_CHANGED=0` (this task writes one report + sync/index only).
+`READONLY_GAMEPLAY_FILES_CHANGED=0` (this task writes one report; REV2 touches this file only).
 
 ---
 
+## 0. REV2 / P0 correction (Issue #34 comment 5979175085; review 5979146603)
+
+The first revision proposed sanitizing only the **inject** clip. Independent review is correct: this
+is **UNSAFE**, because the removal path is a separate clip with its own native events. Both paths must
+be accounted for.
+
+### 0.1 Full command → state → source → clip route matrix (**SOURCE**, `MP133.agf`)
+
+Graph is line-identical in production and the T2A/lab clone (`MP133_V3_RELOAD_GRAPH_AUDIT.md` §1.4).
+`WeaponReloadStanceSTM` selects column `Erc`/`Cro` (`Stance == 0 || Stance == 1`) or `Pne`
+(`Stance == 2`); both columns resolve the same state names through the P and W ASIs. `IdleReloadSTM`
+entry gate rejects 7/8/9 (`!inRange(GetCommandI(CMD_Weapon_Reload), 7, 9)`).
+
+| `GetCommandI(CMD_Weapon_Reload)` | Graph state | Child source | Removal events | Insertion events |
+|---|---|---|---|---|
+| `1 && F==0.0` | `ReloadActionBolt` | `Reload.ReloadActionBolt` (bolt) | none | none (`Weapon_EnableFire` f10, `Weapon_Rack_Bolt` f14) |
+| `2` | `NoMagReload` | `Reload.Reload_InsertMag` (inject) | **none** (inject only) | `Weapon_SpawnMagazine` f10, `Weapon_AttachMagazine` f43, `Weapon_MagRelease` f64 |
+| `3 && F==0.0` | `NoMagNoBulletReload` → `ReloadActionBolt` on `RemainingTimeLess(0.1)` | inject, then bolt | none | inject events + bolt events |
+| `4` | `MagReload` → `MagReloadSTM` | `Reload_RemoveMag` **then** `Reload_InsertMag` | **`Weapon_MagRelease` f6, `Weapon_DetachMagazine` f10, `Weapon_DespawnMagazine` f15** | inject events |
+| `5 && F==0.0` | `MagNoBulletReload` → `MagReloadSTM` → `ReloadActionBolt` | remove, inject, bolt | **detach/despawn as cmd4** | inject events + bolt events |
+| `6` | `RemoveMag` | `Reload.Reload_RemoveMag` | **`Weapon_MagRelease` f6, `Weapon_DetachMagazine` f10, `Weapon_DespawnMagazine` f15** | none |
+| `7/8/9` | — (vetoed at `IdleReloadSTM` entry; no state) | — | — | — |
+| `10` | — (passes entry, no state in `WeaponReloadSTM`) | — | — | — |
+
+`MagReloadSTM` (`RemoveMag` IsExit 0 → `InsertMag` IsExit 1) transitions on `IsEvent("BlendOut")` with
+`StartTime GetEventTime(anim.Reload.Erc.Reload_InsertMag, "BlendIn")` — the graph **depends on the
+`BlendIn`/`BlendOut` markers**, so a sanitized clip must keep those markers.
+
+**P0 statement:** a sanitized **inject**-only design is insufficient. Commands **4/5/6** execute
+`Reload_RemoveMag` first (`Weapon_MagRelease`/`Weapon_DetachMagazine`/`Weapon_DespawnMagazine`), which
+can **detach/despawn the only installed physical `Tube3Mag` before** any inert inject clip, leaving
+G3-B2 with no target. Cmd 6 (remove-only) must likewise not destroy it. Removing *authored* events does
+**not** by itself prove the engine cannot detach/attach in every state (**UNVERIFIED** engine-internal
+side effects).
+
+**Double-R (INFERENCE, per review):** the exact per-press integer sequence is **UNRESOLVED**. A rapid
+second R re-enters the reload path while the first whole-mag route is in progress; whichever integer
+each press carries, it lands on a route in the matrix above, so covering **all** whole-mag routes
+(2–6, both columns, P/W clips) also covers double-R.
+
+### 0.2 Target-already-missing state (fail-closed)
+If the tube was already removed/swapped by an earlier native action or manual removal, the design must
+**STOP**, not create/fallback: **no** default-mag spawn, **no** invisible re-attach, **no** counterfeit
+tube, **no** capacity-guard bypass. A magazine already **detached mid-animation** has an
+**UNRESOLVED** engine state; treat it as missing and fail closed. This preserves G3-B2's existing
+`target-capacity-mismatch` / no-target rejections.
+
+### 0.3 Preserving the physical tube — corrected design options
+
+- **Option A (preferred, lab-only redirection/suppression of ALL whole-mag branches):** the lab-owned
+  graph routes commands **2/3/4/5/6** so they never enter the stock `RemoveMag`/`InsertMag` clips
+  (e.g. to the bolt-only `ReloadActionBolt` **only if** chamber/rack preservation is justified by
+  evidence, otherwise to an inert lab-only clip that keeps `BlendIn`/`BlendOut`), while **cmd 1** keeps
+  the native bolt/rack. This requires a **demonstrated graph transition and safe completion** and a
+  proof that the shell still racks/chambers/fires. Removing authored events in one clip is **not**
+  enough; the *route* must not select a clip carrying native magazine lifecycle events.
+- **Option B (preferred-equivalent, sanitized BOTH clips):** lab-only sanitized **`Reload_RemoveMag`**
+  **and** **`Reload_InsertMag`** clips (native `Weapon_Spawn/Attach/MagRelease/Detach/Despawn` →
+  inert events, **keeping** `BlendIn`/`BlendOut`), correctly mapped to **both** P and W ASIs
+  (`Reload.Erc.*` and `Reload.Pne.*`) and every reachable path. Engine-internal non-clip side effects
+  remain **UNVERIFIED**.
+- **Rejected:** "inject-only sanitization" (P0); blanket R disable / global `HandleWeaponReloading`
+  override (global-hook risk, other weapons); `MaxAmmo`/script-cap as a non-removability mechanism
+  (does not change native removal).
+
+### 0.4 Proposed EXACT future lab-only file allowlist (NOT created; G4-A implementation needs separate approval)
+- Lab-owned graph set: `…/ARMSTMP133T4B_InstalledMagProbe/Assets/…/MP133_G4A.agr` + `.agf` (copy of the
+  production graph with the whole-mag commands 2–6 routed off the stock remove/insert clips), `.ast`,
+  `.aw`.
+- Lab-owned ASIs: `MP133_G4A_weapon.asi`, `MP133_G4A_player.asi` with `Reload.Erc.Reload_RemoveMag` and
+  `Reload.Erc.Reload_InsertMag` (**and** the `Pne` columns) → sanitized clips; **cmd-1 bolt, chamber,
+  fire, inspection clips unchanged**.
+- Sanitized clips: `W_`/`P_MP133_G4A_Rem.anm`(+`.txa`) and `W_`/`P_MP133_G4A_Inject.anm`(+`.txa`) —
+  inert magazine events, `BlendIn`/`BlendOut` kept. **ANM must be owner-imported/compiled; text editing
+  cannot produce a compiled `.anm`** (do not guess GUIDs).
+- The **two** active G3-B2 weapon `.et` files (add a lab `WeaponAnimationComponent` override to the G4A
+  graph/ASIs; keep GUIDs/instances/actions/write settings).
+- Lab `MANIFEST.sha256`; this report; index/sync **only if separately authorized** (PR #31 overlap).
+- **Rollback:** revert the two `.et` `WeaponAnimationComponent` overrides and remove the new lab assets;
+  production graph/prefabs and `.meta`/instance IDs never touched; owner dirty files preserved.
+
+### 0.5 Passive two-trigger diagnostic (DESIGN ONLY — not implemented, not run)
+One narrowly bounded, **getter/log-only**, owner-run trace; implementation needs separate approval.
+
+- **Hooks (project-verified APIs only):** `ARMST_T2A_WeaponAnimationComponent.OnCharacterCommand(int
+  commandID, int intValue, float floatValue)` (proven in `MP133_V3_T2C_COMMAND_TRACE.md`) and the
+  existing passive `OnAnimationEvent(...)`. **No** global `HandleWeaponReloading` override, **no** input
+  binding change, **no** forced animation command.
+- **Per action record:** time + op correlation; `CharacterInputContext.GetWeaponReloadType` **if
+  accessible**; `OnCharacterCommand` int/float; active state/clip **only if an existing supported
+  observer exposes it**; P/W `Weapon_Spawn/Attach/MagRelease/Detach/Despawn` and `Weapon_Rack_Bolt`
+  markers; installed magazine **entity ref/tag + component ref/tag**, ResourceName/GUID, count/max;
+  chamber/barrel; donor identity/storage/count before/after each press. No persisted raw pointers beyond
+  safe scope.
+- **Scenarios:** (i) empty tube + single R; (ii) nonempty tube (1/3 or 2/3) + rapid double-R;
+  (iii) nonempty tube + empty chamber + one normal short R (bolt control). Separate first/second
+  double-R presses by correlation marker **if** the instrumentation supports it; otherwise mark
+  uncertainty. Optional one passive comparison with another pump **only if** no new global hook is
+  needed.
+- **Labels:** keep `OWNER-RUNTIME` (a swap occurs — fact), `PROJECT-SOURCE` (graph route/clip events),
+  `INFERENCE` (which command/clip ran per repro) strictly separate; no guessed integer or ordering in
+  conclusions. Absence of an observed clip event does **not** prove the engine cannot swap.
 ## 1. Trigger paths — empty-R and rapid double-R
 
 ### 1.1 What the graph receives (**SOURCE**, `MP133.agf`)
@@ -121,7 +227,7 @@ spawning, duplicate chamber/feed, `ReloadWeapon()` semantics are unproven for pr
 
 | Rank | Option | What it does | Pros | Cons / constraints |
 |---|---|---|---|---|
-| **1 (preferred)** | **Lab-owned animation graph + ASI with a sanitized inject clip** (the V2 lab pattern) | A lab-only `WeaponAnimationComponent` on the two active G3-B2 fixtures points at a lab-owned `MP133_G4A.agr`/`_weapon.asi`/`_player.asi` whose `Reload.*.Reload_InsertMag` resolves to a **sanitized clip** (native `Weapon_SpawnMagazine/AttachMagazine/MagRelease` replaced by inert custom events, same 107 frames) and whose whole-magazine states (cmd 2–5/6) are routed to that inert clip or a bolt-only clip | (a) Physically **never attaches/replaces** the tube; the installed entity stays the same; (b) short-R bolt (cmd 1), chambering, fire and hold-R inspection are untouched (they use other states/clips); (c) fully isolated to the two lab weapons, other shotguns/weapons unaffected; (d) reversible | Requires a lab animation graph/ASI + one sanitized clip; the native per-shell ammo still comes from **G3B2** (already proven). Removing the events means a stock full-mag seek would no longer visually "load" a magazine — acceptable for the lab |
+| **1 (preferred, see §0.3/§0.4)** | **Lab-owned animation graph + ASI that routes ALL whole-mag commands off the stock remove/insert clips** (V2 lab pattern extended to the remove path) | A lab-only `WeaponAnimationComponent` on the two active G3-B2 fixtures points at a lab-owned `MP133_G4A.agr`/`_weapon.asi`/`_player.asi` whose whole-magazine states (cmd 2–6) are routed to inert lab clips / a non-mag route so **neither** `Reload_RemoveMag` **nor** `Reload_InsertMag` native events (`Weapon_Spawn/Attach/MagRelease/Detach/Despawn`) can run; `BlendIn`/`BlendOut` are preserved for graph transitions | (a) The installed tube entity stays the same **only if all remove AND insert routes are covered** (§0.1); (b) short-R bolt (cmd 1), chambering, fire and hold-R inspection are untouched (they use other states/clips); (c) fully isolated to the two lab weapons, other shotguns/weapons unaffected; (d) reversible | Requires a lab animation graph/ASI + sanitized **remove and insert** clips (owner-imported ANM); native per-shell ammo still comes from **G3B2**; engine-internal non-clip side effects **UNVERIFIED**. Removing events from one clip is insufficient (§P0) |
 | 2 | **Magwell/config gate** (make the well accept only the 3-cap magazine) | Restrict accepted magazine resource per magwell | No graph change if the engine supports it | No proven prefab field was found that filters magazines by resource at the magwell for a `MagazineWell` in this project; risk of guessing a field (**UNRESOLVED**); magwell is inherited from the base, so this would touch the production chain unless overridden lab-locally. Not chosen |
 | 3 | **Weapon-gated input interception** (`HandleWeaponReloading`) | Suppress/remap whole-mag commands only for the lab weapon | No graph assets | `HandleWeaponReloading` is a global handler override; proving it cannot affect other weapons requires a per-weapon guard and a global hook — fails the "prove safe for all other weapons" bar in this bounded task; risks duplicating native routes. Not chosen |
 
@@ -206,25 +312,24 @@ production graph/prefab chain or other weapons ⇒ **STOP** and report `NO_SAFE_
 
 ## 8. Required response summary
 
-- `G4A_AUDIT_STATUS: COMPLETE`
-- `SOURCE_HEAD: 4807dfd7244c27a263b83e10f8f5ade07f1f87ae`
-- `READONLY_GAMEPLAY_FILES_CHANGED=0`
-- `TRIGGER_EMPTY_R`: OWNER-RUNTIME confirmed swap; route = whole-magazine reload → inject clip native
-  `Weapon_AttachMagazine`; exact integer UNRESOLVED.
-- `TRIGGER_DOUBLE_R`: OWNER-RUNTIME confirmed swap; same native inject-clip attach; exact integers
-  UNRESOLVED.
-- `STOCK_MAG_SWAP_ROOT`: PROVEN = engine whole-magazine attach on `Weapon_AttachMagazine` (not a
-  G3B2/donor/conservation issue).
-- `CORE_FINDING`: read-only; legacy SHIFT+R experiment non-functional; no magazine-preserving insert.
-- `CHUNGUS_FINDING`: reference only for G4-B; unsafe to copy (mag spawn/attach, dummy +1, duplicate
-  feed).
-- `OPTIONS_RANKED`: (1) lab-owned sanitized-clip graph/ASI [preferred]; (2) magwell/resource gate
-  [no proven field]; (3) input interception [global-hook risk].
-- `PREFERRED_LAB_ONLY_FIX` + allowlist: Option 1 (§5).
-- `OWNER_TEST_MATRIX`: §6.
-- `RISKS`: §5. `UNRESOLVED`: §7.
-- `STOP_FOR_OWNER_REVIEW`.
+- `G4A_REV2_STATUS: COMPLETE`
+- `SOURCE_HEAD: dd215e1545279bd3485bbd9daf24716250dc0673` (audit base `ad89a18`)
+- `READONLY_GAMEPLAY_FILES_CHANGED=0` (this report + prior docs only)
+- `REMOVE_PATH_ACCOUNTED_FOR: YES` — cmds 4/5/6 → `Reload_RemoveMag` (`Weapon_MagRelease` f6,
+  `Weapon_DetachMagazine` f10, `Weapon_DespawnMagazine` f15); inject-only sanitization rejected as
+  unsafe (§0.1).
+- `ALL_COMMAND_ROUTES_MAPPED_OR_UNRESOLVED`: 1/2/3/4/5/6 mapped (SOURCE); per-press integer for empty-R
+  and double-R **UNRESOLVED**; engine-internal non-clip side effects **UNVERIFIED**.
+- `R_DIAGNOSTIC_DESIGNED_NOT_RUN` (§0.5).
+- `PREFERRED_MINIMAL_LAB_FIX`: route **all** whole-mag commands (2–6, Erc/Pne, P/W) off the stock
+  remove/insert clips — Option A (graph redirection) or Option B (sanitized **both** remove+insert
+  clips, `BlendIn`/`BlendOut` kept); cmd 1 bolt/chamber/fire untouched (§0.3, §0.4 allowlist).
+- `UNRESOLVED`: exact command integers per repro; engine-internal magazine side effects outside clips;
+  behavior of a magazine detached mid-animation; `WeaponAnimationComponent`/both ASI binding for the
+  two fixtures at runtime; ANM compile/import validity.
+- `GAMEPLAY_FILES_CHANGED=0`
+- `STOP_FOR_INDEPENDENT_REVIEW`
 
 **Not authorized here:** any graph/ASI/ANM/TXA/prefab/script/Core/production change, input config,
-magazine donor/capacity relaxation, G4-B animation, G5/MP, or Workbench/game run. One new report plus
-sync/index pointers are the only published changes.
+magazine donor/capacity relaxation, the passive diagnostic implementation, G4-B animation, G5/MP, or
+Workbench/game run. This REV2 changes this report only.
