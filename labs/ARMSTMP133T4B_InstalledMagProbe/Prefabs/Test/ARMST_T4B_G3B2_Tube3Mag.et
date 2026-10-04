@@ -1,0 +1,14 @@
+GenericEntity : "{B0DFDF7AAA9C5D39}Prefabs/Weapons/Magazines/12ga/armst_12ga_Buckshot.et" {
+ ID "D48192A3B4C5D6E7"
+ components {
+  MagazineComponent "{CA6BE4D6B4DAFD69}" {
+   MaxAmmo 3
+   AmmoMapping {
+    0 0 0
+   }
+   UIInfo MagazineUIInfo "{57126733AA401586}" {
+    Name "12g 3rnd [LAB]"
+   }
+  }
+ }
+}

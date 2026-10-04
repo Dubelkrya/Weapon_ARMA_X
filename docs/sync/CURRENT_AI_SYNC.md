@@ -692,6 +692,19 @@ historical material**; the owner approved **V3** (Issue #27 comment 5966570978,
   `B4129C83...`, braces 144/144, parens 795/795, ASCII; local==published. Status
   `STALE_CALLBACK_GUARD_FIXED / OFF_AND_ON_FIXTURES_UNCHANGED / NO_NEW_RUNTIME_WRITES /
   STOP_FOR_INDEPENDENT_RE_REVIEW`.
+- **G3-B2 physical 3-round tube (comment 5975126711, 2026-10-04):** Phase A audit proved the default
+  installed tube is the native 10-round `armst_12ga_Buckshot` via the base `MagazineTemplate`; the
+  historical 3-round mag `{CC71464F7CA58F57}` exists but in a **different addon**
+  (`ARMST_MP133_AnimationLab`) => reuse NO (cross-addon). Phase B: new lab-only physical magazine
+  `Prefabs/Test/ARMST_T4B_G3B2_Tube3Mag.et` (+.meta `CD8091A2...`/`D48192A3...`) child of the native
+  Buckshot with `MagazineComponent MaxAmmo 3`; both active G3-B2 fixtures (OFF `{233445566778899A}`,
+  WRITE-ON `{78899AABBCDDEEFF}`) override `WeaponComponent→MuzzleComponent→MagazineTemplate` to it
+  (GUIDs/meta/action/write settings unchanged); lab script adds fail-closed
+  `m_iG3B2RequiredTargetMax=3` (`target-capacity-mismatch` / `prewrite-target-capacity`) so a 10-round
+  installed target is rejected (no bypass; donor-only 10-round still allowed). Expected `0→1→2→3` then
+  reject; chamber unchanged by B2. Script `FE4A1900...`; T4b/G3B1/production/Core/world untouched;
+  local==published. Status `PHYSICAL_3_TUBE_CAP_LAB_SOURCE_PREPARED / TWO_ACTIVE_G3B2_FIXTURES /
+  COMPILER_UNVERIFIED / NO_NEW_RUNTIME_WRITES / STOP_FOR_INDEPENDENT_REVIEW`.
 
 ---
 

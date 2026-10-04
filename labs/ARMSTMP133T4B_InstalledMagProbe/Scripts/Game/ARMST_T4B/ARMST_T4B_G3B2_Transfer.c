@@ -153,6 +153,12 @@ class ARMST_T4B_G3B2_TransferAction : ScriptedUserAction
 	[Attribute("false", UIWidgets.CheckBox, "G3B2INV search donors across the whole character inventory (ignores the whitelist/slot)")]
 	bool m_bG3B2InventoryWide = false;
 
+	// Required PHYSICAL capacity of the INSTALLED target tubular magazine. The lab uses a 3-round
+	// magazine (real BaseMagazineComponent.MaxAmmo=3), so the transfer must fail closed if the target
+	// installs a 10-round magazine instead (prevents B2 from bypassing the 3-round tube). 0 = disabled.
+	[Attribute("3", UIWidgets.Slider, "G3B2 required installed target physical capacity (0 = disabled)", "0 20 1")]
+	int m_iG3B2RequiredTargetMax = 3;
+
 	// ========================================================================
 	// Init / UI
 	// ========================================================================
@@ -724,6 +730,13 @@ class ARMST_T4B_G3B2_TransferAction : ScriptedUserAction
 			m_opRejectReason = "target-invalid-or-full";
 			return false;
 		}
+		// Fail closed if the INSTALLED target is not the required physical 3-round tube: a 10-round
+		// magazine must not be usable as the target (prevents bypassing the 3-round lab tube).
+		if (m_iG3B2RequiredTargetMax > 0 && m_opTMax != m_iG3B2RequiredTargetMax)
+		{
+			m_opRejectReason = "target-capacity-mismatch";
+			return false;
+		}
 		if (m_cCompat != 1)
 		{
 			m_opRejectReason = T4B2CompatReason();
@@ -967,6 +980,12 @@ class ARMST_T4B_G3B2_TransferAction : ScriptedUserAction
 		if (m_opTargetMag.GetAmmoCount() != m_opTAmmo)
 		{
 			m_opRejectReason = "prewrite-target";
+			return false;
+		}
+		// Gate 8: target physical capacity must still be the required 3-round tube.
+		if (m_iG3B2RequiredTargetMax > 0 && m_opTargetMag.GetMaxAmmoCount() != m_iG3B2RequiredTargetMax)
+		{
+			m_opRejectReason = "prewrite-target-capacity";
 			return false;
 		}
 

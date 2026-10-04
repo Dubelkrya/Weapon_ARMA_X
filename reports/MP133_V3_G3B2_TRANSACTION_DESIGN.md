@@ -408,7 +408,7 @@ Workbench/game run performed by the agent.
 **New files** (local lab + published copy, local==published):
 
 - `Scripts/Game/ARMST_T4B/ARMST_T4B_G3B2_Transfer.c` — new `ScriptedUserAction`
-  `ARMST_T4B_G3B2_TransferAction`; SHA256 `B4129C8316AA7A0C0528476237805DE1E1D42B5C2067EA6C5014B84FB2623256` (rev 10, repeatable).
+  `ARMST_T4B_G3B2_TransferAction`; SHA256 `FE4A19008EC290632378C0D3824C5AA7DD82018A761971BFCD920ED1E515FCCF` (rev 11).
 - `Prefabs/Test/ARMST_T4B_G3B2_TestWeapon.et` — SHA256 `68F67CAB0C17201882FCB9D587E3F3F196231B46E4FCB3951DD8BDC185873E04`.
 - `Prefabs/Test/ARMST_T4B_G3B2_TestWeapon.et.meta` — SHA256 `315C7AB6983B68C63C0AEC1D30625C5CA4B7477D72C1C75DF5291AC7438F9287`.
 
@@ -827,3 +827,65 @@ nothing about which operation invoked the callback.
 Script SHA `4EC0588B…` → `B4129C8316AA7A0C0528476237805DE1E1D42B5C2067EA6C5014B84FB2623256`; braces
 144/144, parens 795/795, ASCII. `COMPILER_UNVERIFIED / WAITING_OWNER_RECOMPILE`.
 **STATUS:** `STALE_CALLBACK_GUARD_FIXED / OFF_AND_ON_FIXTURES_UNCHANGED / NO_NEW_RUNTIME_WRITES / STOP_FOR_INDEPENDENT_RE_REVIEW`.
+
+### 12. Physical 3-round MP-133 tube capacity (Issue #34 comment 5975126711)
+
+#### 12.1 Phase A — root-cause audit (read-only, SOURCE)
+
+- **Default installed magazine chain:** the production MP-133
+  `{63FF6FDCA4E7E735}Prefabs/Weapons/Russian/Shotgun/armst_Shotgun_mp_133.et` inherits
+  `{6C5E2009CDCD0BD3}…/Western/Shotgun/core/armst_shotgun_base.et` → `{B31929F65F0D0279}Rifle_M21.et`.
+  The base `WeaponComponent {CFBAA4B706BA66E8}` → `MuzzleComponent {CA6BE4D6B867541F}` sets
+  **`MagazineTemplate "{B0DFDF7AAA9C5D39}Prefabs/Weapons/Magazines/12ga/armst_12ga_Buckshot.et"`**.
+  That Buckshot magazine (`…/12ga/12ga_Buckshot_base.et` → `Magazine_762x51_M14_20rnd_Base.et`) carries
+  `MagazineComponent {CA6BE4D6B4DAFD69}` with **`MaxAmmo 10`** — hence the default installed tube is a
+  10-round physical magazine. The lab `G3B1_DonorMag.et` is a `GenericEntity` child of that same
+  Buckshot, so when gameplay installs it into the MP-133 it is a genuine 10-round physical magazine.
+- **Why B2 accepted 10:** `T4B2Preflight`/`T4B2Boundary` only checked `0 <= tAmmo < tMax`, so a 10-cap
+  installed magazine was accepted and the `10/10` full case rejected — correct arithmetic, wrong
+  physical cap. `ARMST_SHOTGUN_COMPONENTS.m_MaxMagazineAmmo` / script clamps do **not** change
+  `BaseMagazineComponent.GetMaxAmmoCount()` (historical Issue #27 finding: a script cap of 3 left the
+  physical magazine at 10).
+- **Existing 3-round lab magazine:** `{CC71464F7CA58F57}Prefabs/Weapons/MP133_Lab/armst_12ga_Lab_3rnd.et`
+  exists in a **different addon**, `ARMST_MP133_AnimationLab` (GUID `1187677F04E33069`). It is a
+  `GenericEntity` child of the same Buckshot with `MagazineComponent {CA6BE4D6B4DAFD69} { MaxAmmo 3;
+  AmmoMapping { 0 0 0 } }` — i.e. a **genuine physical 3-round magazine** (correct ammo type, same
+  magwell, `InventoryMagazineComponent` inherited). It is referenced only by that addon's own
+  `armst_Shotgun_mp_133_Lab.et` / `…_Ris_Lab.et` via `MagazineTemplate`, together with the
+  `ARMST_MP133_Lab_Component` script cap (lab reserve/policy, not the physical cap).
+- **Reuse decision: NO (cross-addon).** The T4B lab addon `ARMSTMP133T4BInstalledMag` depends only on
+  `58D0FB3206B6F859` + `6A70E400C54051DC`; reaching `{CC71464F7CA58F57}` would require a new
+  dependency on the AnimationLab addon, which this bounded task does not authorize and which would
+  couple the two labs. => create **one** new lab-only 3-round magazine inside the T4B lab, using the
+  identical proven Enfusion pattern.
+
+#### 12.2 Phase B — bounded lab fix
+
+- **New physical magazine** `Prefabs/Test/ARMST_T4B_G3B2_Tube3Mag.et` (+ new unique `.meta`, meta GUID
+  `{CD8091A2B3C4D5E6}` / instance `D48192A3B4C5D6E7`): child of the native
+  `{B0DFDF7AAA9C5D39}armst_12ga_Buckshot.et` overriding `MagazineComponent {CA6BE4D6B4DAFD69}` with
+  `MaxAmmo 3` + `AmmoMapping { 0 0 0 }` + `UIInfo` name `12g 3rnd [LAB]`. Same proven pattern as the
+  existing AnimationLab 3-round magazine; production and the historical 10-round magazine untouched.
+- **Both active G3-B2 fixtures** (Inventory-Wide OFF `{233445566778899A}`, Inventory-Wide WRITE-ON
+  `{78899AABBCDDEEFF}`) now override
+  `WeaponComponent {CFBAA4B706BA66E8} → MuzzleComponent {CA6BE4D6B867541F} → MagazineTemplate` to the
+  new 3-round magazine — a real installed-tube binding, not a cosmetic UI change. Their resource GUIDs,
+  `.meta` (byte-identical), instance/action/UI GUIDs, action count and `writeEnabled`/`inventoryWide`
+  settings are unchanged.
+- **Fail-closed target-capacity guard (lab script, minimal):** new attribute
+  `m_iG3B2RequiredTargetMax` (default `3`); `T4B2Preflight` rejects `target-capacity-mismatch` when the
+  installed target's `GetMaxAmmoCount() != 3`, and `T4B2Boundary` gate 8 rejects
+  `prewrite-target-capacity`. This makes it impossible for B2 to use a 10-round magazine as the target
+  (no bypass via a compatible 10-round donor). Donor-only use of a 10-round magazine remains allowed
+  (it stays an eligible *donor* in the actor inventory). All existing transaction guards, the two
+  donor-first setters, latch, repeatable +250 ms/+1000 ms callback safety, conservation and quarantine
+  are unchanged.
+
+**Expected with the lab tube installed:** donor `10/0 → 9/1 → 8/2 → 7/3`, then the 4th transfer is
+rejected without donor decrement; chamber not changed by B2. **Remaining engine behavior to observe
+separately:** the vanilla `MagazineWell12g` may still allow a user to manually insert a 10-round
+magazine; B2 will then fail closed (`target-capacity-mismatch`), but the magwell itself is not changed
+(production magwell changes are not authorized).
+
+`GAMEPLAY_FILES_CHANGED_BY_DESIGN = 0` outside the lab. `COMPILER_UNVERIFIED / WAITING_OWNER_RECOMPILE`.
+**STATUS:** `PHYSICAL_3_TUBE_CAP_LAB_SOURCE_PREPARED / TWO_ACTIVE_G3B2_FIXTURES / COMPILER_UNVERIFIED / NO_NEW_RUNTIME_WRITES / STOP_FOR_INDEPENDENT_REVIEW`.

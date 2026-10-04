@@ -4,6 +4,13 @@ GenericEntity : "{63FF6FDCA4E7E735}Prefabs/Weapons/Russian/Shotgun/armst_Shotgun
   ARMST_T4B_WeaponProbe "45566778899AABBC" {
    m_iT4BStartAmmo 2
   }
+  WeaponComponent "{CFBAA4B706BA66E8}" {
+   components {
+    MuzzleComponent "{CA6BE4D6B867541F}" {
+     MagazineTemplate "{CD8091A2B3C4D5E6}Prefabs/Test/ARMST_T4B_G3B2_Tube3Mag.et"
+    }
+   }
+  }
   ActionsManagerComponent "{A29AE67FF4D82B0F}" {
    additionalActions +{
     ARMST_T4B_G3B2_TransferAction "566778899AABBCDD" {
