@@ -519,7 +519,7 @@ IMPLEMENTATION_AUTHORIZED: NO
 
 ---
 
-## 11. G4-A Option B — Stage B1 lab-only sanitized clip SOURCES (Issue #34 comment 5979678981)
+## 11. G4-A Option B — Stage B1/B1.1 lab-only sanitized clip SOURCES (Issue #34 comments 5979678981, 5979744393)
 
 **Dated 2026-10-04.** Source preparation only. Prepared isolated **lab-owned `.txa` source** for the
 remove and insert paths (player **P** and weapon **W**), with every native magazine-lifecycle event
@@ -558,19 +558,34 @@ reachable remove/insert routes (cmds 2–6). Cmds 7–9 remain vetoed by the gra
 New lab-owned copies under the existing T4b lab addon:
 `…/ARMSTMP133T4B_InstalledMagProbe/Assets/Weapons_RUS/Mp_133/Workspace/G4A/LabClips/`:
 
-| File (lab) | Native | Native mag events in source | Lab result | SHA-256 |
+| File (lab) | Native | Native mag events removed | Lab result | SHA-256 (published LF bytes) |
 |---|---|---|---|---|
-| `P_MP133_Reload_Rem.txa` | P remove | 3 | 0 mag events (→ `ARMST_G4A_Noop`) | `157F30932005B1ABF070F5CE02AFC4F0D88B0FE3B90D42646CC9A969C5A7AC67` |
-| `W_MP133_Reload_Rem.txa` | W remove | 3 | 0 mag events | `1CC3CD35F5E5669AC602C1EA442746C5DEA9D6BD458AE10F817C4A5F9FD092F8` |
-| `P_MP133_Reload_Inject.txa` | P insert | 3 | 0 mag events | `06BDCA440A8ABB2A7BE24A7E290DF9E79510CB9C85B0E033AFC03FC1A562EA1A` |
-| `W_MP133_Reload_Inject.txa` | W insert | 3 | 0 mag events | `945401C19555A7CD974D90411AEB3FC02BC0521213090F132707833992AC4321` |
+| `P_MP133_Reload_Rem.txa` | P remove | 3 (removed) | 0 mag events; only `BlendIn`/`BlendOut` | `2E4C3571AFA079CAFAB3071DC97CA1E0A28A9F71BCDB173FEACD56A137905538` |
+| `W_MP133_Reload_Rem.txa` | W remove | 3 (removed) | 0 mag events; only `BlendIn`/`BlendOut` | `54F29163E90E96A8BCC9ADE744D6744D1B070887E6AE39250A2876C796D2E10F` |
+| `P_MP133_Reload_Inject.txa` | P insert | 3 (removed) | 0 mag events; only `BlendIn`/`BlendOut` | `6106B03A2C33059D5ED04E058A8A0F0DC953420068A546D289A200EF147CDB2D` |
+| `W_MP133_Reload_Inject.txa` | W insert | 3 (removed) | 0 mag events; only `BlendIn`/`BlendOut` | `5D60AD0FFCFF9BDD207BD8B7B73561894F16E8E86FEE13E2B74E9A2A6FB327F0` |
 
-- All four keep identical frame/transform/duration content: line count and `{`/`}` balance are
-  unchanged vs the source (`P_Rem 821/821`, `W_Rem 172/172`, `P_Inject 2722/2722`, `W_Inject 136/136`);
-  only the `$events` names changed. `BlendIn`/`BlendOut` frames/timing are **preserved**.
-- Replaced events use `ARMST_G4A_Noop` (inert placeholder name). The `#custProp "profile"
-  "A_Weapon_MagRelease_All"` pose-profile line is **not** a mag event (it also exists in the untouched
-  Bolt clips) and is preserved.
+- **Events are removed, not replaced** (B1.1 fix, per review `5979744393`). The three unwanted
+  `Weapon_*Magazine` `#event` lines are deleted from each file; no arbitrary placeholder name remains.
+  The remaining `$events { … }` contains exactly the preserved `BlendIn`(remove f5 / insert f1) and
+  `BlendOut`(remove f19 / insert f100). Deleting `#event` lines is the format's own mechanism (the
+  untouched production `Reload_Bolt` clips already list only the events they need).
+- **Byte-level parity with the production source** (independent, reproducible): read the production
+  `.txa` from `…/ARMST-PLATFORM---Weapons/Assets/Weapons_RUS/Mp_133/Workspace/Reload/`, normalize
+  CRLF→LF, delete exactly the three mag `#event` lines, and the result is **character-identical** to the
+  lab file (`expected==lab: True` for all four). Only line endings and the removed event lines differ
+  from the source. `#custProp "profile" "A_Weapon_MagRelease_All"` is a pose profile (not a mag event,
+  also present in the Bolt clips) and is preserved.
+- The earlier §11 "line parity `821/821`, `172/172`, `2722/2722`, `136/136`" measured the `{`/`}`
+  brace counts (C-structure balance), **not** line counts; the actual LF line counts are
+  `P_Rem 2306`, `W_Rem 616`, `P_Inject 8098`, `W_Inject 424` (source minus the 3 removed event lines).
+  This is clarified to avoid ambiguity.
+- **Root cause of the B1 hash mismatch and its fix:** the repo has `core.autocrlf=true` and no
+  `.gitattributes`, so committing EOL-mixed working files normalized them to LF and the manifest
+  (computed from working-tree bytes) no longer matched the published blob. B1.1 adds a repo-root
+  `.gitattributes` with `*.txa -text` / `*.anm -text` (no EOL conversion) and recomputes the four
+  manifest lines from the **staged LF bytes**, which is what GitHub serves. Verified: staged blob
+  SHA-256 == manifest SHA-256 for all four.
 - Source production `.txa`/`.anm`, Bolt clips, AST/AGR/AGF/AW, ASIs, both G3-B2 fixtures and all
   scripts are **byte-unchanged**.
 
@@ -609,7 +624,7 @@ G3B2_SCRIPTS_GUARDS_UNCHANGED: YES
 WRITEON_OFF_FIXTURES_UNCHANGED: YES
 PRODUCTION_CORE_WORLD_CHANGED: NO
 MANIFEST_VERIFIED: YES (4 lines appended; 16 existing lines unchanged; local==published)
-STATIC_CHECKS: braces/line-count parity; 0 native mag events remain; INTEGRITY_UNVERIFIED (no python/Workbench)
+STATIC_CHECKS: source-parity TRUE (LF-normalized source minus 3 event lines == lab, char-identical); 0 native mag events remain; staged-blob SHA256 == manifest; INTEGRITY_UNVERIFIED (no python/Workbench)
 ANM_COMPILED: NO
 ASI_LIVE_BINDINGS_CHANGED: NO
 OWNER_WORKBENCH_RUN: NO

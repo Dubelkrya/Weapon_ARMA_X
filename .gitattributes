@@ -1,0 +1,5 @@
+# Animation / prefab source text assets must keep their authored line endings.
+# core.autocrlf=true would otherwise convert these files on checkout/commit and make
+# the recorded SHA-256 checksums unreproducible. Treat them as binary (no EOL conversion).
+*.txa -text
+*.anm -text

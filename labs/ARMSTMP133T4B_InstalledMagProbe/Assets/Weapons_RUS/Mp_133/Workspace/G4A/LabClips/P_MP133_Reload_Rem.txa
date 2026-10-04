@@ -2296,9 +2296,6 @@ $animation "" {
  }
  $events {
   #event 5 "BlendIn" "AnimSrcEventGeneric {  Name \"BlendIn\"  MainPathOnly 0  Frame 5  FrameCount 0  UserString \"\"  UserInt -1 }" -1 0 "" 0
-  #event 6 "ARMST_G4A_Noop" "AnimSrcEventGeneric {  Name \"ARMST_G4A_Noop\"  MainPathOnly 0  Frame 6  FrameCount 0  UserString \"\"  UserInt -1 }" -1 0 "" 0
-  #event 10 "ARMST_G4A_Noop" "AnimSrcEventGeneric {  Name \"ARMST_G4A_Noop\"  MainPathOnly 0  Frame 10  FrameCount 0  UserString \"\"  UserInt -1 }" -1 0 "" 0
-  #event 15 "ARMST_G4A_Noop" "AnimSrcEventGeneric {  Name \"ARMST_G4A_Noop\"  MainPathOnly 0  Frame 15  FrameCount 0  UserString \"\"  UserInt -1 }" -1 0 "" 0
   #event 19 "BlendOut" "AnimSrcEventGeneric {  Name \"BlendOut\"  MainPathOnly 0  Frame 19  FrameCount 0  UserString \"\"  UserInt -1 }" -1 0 "" 0
  }
  $custProps {

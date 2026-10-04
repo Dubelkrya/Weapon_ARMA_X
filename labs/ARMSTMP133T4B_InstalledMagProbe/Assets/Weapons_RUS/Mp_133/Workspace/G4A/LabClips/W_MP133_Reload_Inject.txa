@@ -414,9 +414,6 @@ $animation "" {
  }
  $events {
   #event 1 "BlendIn" "AnimSrcEventGeneric {  Name \"BlendIn\"  MainPathOnly 0  Frame 1  FrameCount 0  UserString \"\"  UserInt -1 }" -1 0 "" 0
-  #event 10 "ARMST_G4A_Noop" "AnimSrcEventGeneric {  Name \"ARMST_G4A_Noop\"  MainPathOnly 0  Frame 10  FrameCount 0  UserString \"\"  UserInt -1 }" -1 0 "" 0
-  #event 43 "ARMST_G4A_Noop" "AnimSrcEventGeneric {  Name \"ARMST_G4A_Noop\"  MainPathOnly 0  Frame 43  FrameCount 0  UserString \"\"  UserInt -1 }" -1 0 "" 0
-  #event 64 "ARMST_G4A_Noop" "AnimSrcEventGeneric {  Name \"ARMST_G4A_Noop\"  MainPathOnly 0  Frame 64  FrameCount 0  UserString \"\"  UserInt -1 }" -1 0 "" 0
   #event 100 "BlendOut" "AnimSrcEventGeneric {  Name \"BlendOut\"  MainPathOnly 0  Frame 100  FrameCount 0  UserString \"\"  UserInt -1 }" -1 0 "" 0
  }
  $custProps {
