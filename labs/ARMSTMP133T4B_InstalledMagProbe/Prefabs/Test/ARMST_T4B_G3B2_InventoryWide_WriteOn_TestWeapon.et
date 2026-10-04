@@ -9,6 +9,8 @@ GenericEntity : "{63FF6FDCA4E7E735}Prefabs/Weapons/Russian/Shotgun/armst_Shotgun
     MuzzleComponent "{CA6BE4D6B867541F}" {
      MagazineTemplate "{CD8091A2B3C4D5E6}Prefabs/Test/ARMST_T4B_G3B2_Tube3Mag.et"
     }
+    ARMST_T4B_WeaponAnimationComponent "{60B4EA76EB15F6E0}" {
+    }
    }
   }
   ActionsManagerComponent "{A29AE67FF4D82B0F}" {
