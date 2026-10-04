@@ -516,3 +516,104 @@ DOUBLE_R: NOT CONFIRMED (no provably-paired double press in this log; separate t
 G4A_PREFERRED_APPROACH: Option B (sanitized lab remove+insert clips), Option A fallback
 IMPLEMENTATION_AUTHORIZED: NO
 ```
+
+---
+
+## 11. G4-A Option B — Stage B1 lab-only sanitized clip SOURCES (Issue #34 comment 5979678981)
+
+**Dated 2026-10-04.** Source preparation only. Prepared isolated **lab-owned `.txa` source** for the
+remove and insert paths (player **P** and weapon **W**), with every native magazine-lifecycle event
+neutralized and `BlendIn`/`BlendOut` preserved. **No live ASI binding, no prefab wiring, no ANM import
+(owner), no gameplay change.** The two active G3-B2 fixtures and all scripts are untouched.
+
+### 11.1 Second owner log (`MP133_G4A_DOUBLE_R_TRACE_2026-10-04.log`, commit `5e6d856`)
+
+Confirmed command/event facts (OWNER-RUNTIME; input presses are **not** independently timestamped, so
+per-press attribution is **not** claimed):
+
+- `intValue=5` at empty tube (`0/3`, `chambered 0`): `BlendIn → Weapon_MagRelease → Detach → Despawn`
+  (`magTag M1→M2`, `mag=null`) `→ BlendOut → BlendIn → Spawn → Attach → MagRelease` (fresh
+  `Tube3Mag 3/3`). Same whole-mag replace as the first log.
+- `intValue=4` at `1/3` **with a chambered round** (`chambered=1`): `BlendIn → MagRelease → Detach →
+  Despawn` (`magTag M3→M4`, `mag=null`) `→ BlendOut → BlendIn → Spawn → Attach → MagRelease` (fresh
+  `Tube3Mag 3/3`, `muzzleSupply 4/3`). This runtime-confirms **cmd 4** as a whole-mag remove+insert
+  route too.
+- Cmd `1` remains the native bolt (`BlendIn → EnableFire → Rack_Bolt`, no mag events, `magTag`
+  constant) throughout.
+
+### 11.2 Event matrix (SOURCE, P/W ASIs, Erc/Pne)
+
+| Route slot | ASI source line (P and W) | Clip (compiled ANM) | Native events in source `.txa` |
+|---|---|---|---|
+| `Reload.Erc.Reload_RemoveMag`, `Reload.Pne.Reload_RemoveMag` | `Reload.Erc/Pne.Reload_RemoveMag` → `{FBC8FA7934FA4394}W_MP133_Reload_Rem.anm` (W), `{1A0174AF80728E7E}P_MP133_Reload_Rem.anm` (P) | `P_/W_MP133_Reload_Rem` (20f) | `Weapon_MagRelease`(6), `Weapon_DetachMagazine`(10), `Weapon_DespawnMagazine`(15) + `BlendIn`(5)/`BlendOut`(19) |
+| `Reload.Erc.Reload_InsertMag`, `Reload.Pne.Reload_InsertMag` | `{45B1772B8AFEAE47}W_MP133_Reload_Inject.anm` (W), `{2E4A565E1D442CEA}P_MP133_Reload_Inject.anm` (P) | `P_/W_MP133_Reload_Inject` (107f) | `Weapon_SpawnMagazine`(10), `Weapon_AttachMagazine`(43), `Weapon_MagRelease`(64) + `BlendIn`(1)/`BlendOut`(100) |
+| `Reload.Erc/Pne.ReloadActionBolt` (cmd 1) | unchanged | `P_/W_MP133_Reload_Bolt` | `Weapon_EnableFire`(10), `Weapon_Rack_Bolt`(14) — **must stay** |
+
+Both `Erc` and `Pne` columns resolve the same source in the production and T4b ISIs (verified in
+`MP133_weapon.asi` / `MP133_player.asi`), so sanitizing the four P/W source clips covers **all**
+reachable remove/insert routes (cmds 2–6). Cmds 7–9 remain vetoed by the graph; cmd 10 has no state.
+
+### 11.3 Prepared lab sources (new files, byte-identical except the events block)
+
+New lab-owned copies under the existing T4b lab addon:
+`…/ARMSTMP133T4B_InstalledMagProbe/Assets/Weapons_RUS/Mp_133/Workspace/G4A/LabClips/`:
+
+| File (lab) | Native | Native mag events in source | Lab result | SHA-256 |
+|---|---|---|---|---|
+| `P_MP133_Reload_Rem.txa` | P remove | 3 | 0 mag events (→ `ARMST_G4A_Noop`) | `157F30932005B1ABF070F5CE02AFC4F0D88B0FE3B90D42646CC9A969C5A7AC67` |
+| `W_MP133_Reload_Rem.txa` | W remove | 3 | 0 mag events | `1CC3CD35F5E5669AC602C1EA442746C5DEA9D6BD458AE10F817C4A5F9FD092F8` |
+| `P_MP133_Reload_Inject.txa` | P insert | 3 | 0 mag events | `06BDCA440A8ABB2A7BE24A7E290DF9E79510CB9C85B0E033AFC03FC1A562EA1A` |
+| `W_MP133_Reload_Inject.txa` | W insert | 3 | 0 mag events | `945401C19555A7CD974D90411AEB3FC02BC0521213090F132707833992AC4321` |
+
+- All four keep identical frame/transform/duration content: line count and `{`/`}` balance are
+  unchanged vs the source (`P_Rem 821/821`, `W_Rem 172/172`, `P_Inject 2722/2722`, `W_Inject 136/136`);
+  only the `$events` names changed. `BlendIn`/`BlendOut` frames/timing are **preserved**.
+- Replaced events use `ARMST_G4A_Noop` (inert placeholder name). The `#custProp "profile"
+  "A_Weapon_MagRelease_All"` pose-profile line is **not** a mag event (it also exists in the untouched
+  Bolt clips) and is preserved.
+- Source production `.txa`/`.anm`, Bolt clips, AST/AGR/AGF/AW, ASIs, both G3-B2 fixtures and all
+  scripts are **byte-unchanged**.
+
+### 11.4 ASI / ANM dependency plan (deferred, not published live)
+
+The ASI binds an **ANM** (compiled), and the ANM GUID lives in `*.anm.meta`; `.txa` files have **no
+`.meta`/GUID** in this project (only `.anm` do). Therefore the lab ASI copy must reference
+**owner-imported** `W_/P_MP133_G4A_Rem.anm` / `_Inject.anm`, whose GUIDs do **not** exist yet and must
+**not** be guessed. Plan for the next authorized stage:
+1. Owner imports the four lab `.txa` in Workbench → generates `W_/P_MP133_G4A_Rem.anm` +
+   `_Inject.anm` (+ their `.meta` with real GUIDs).
+2. Then a lab ASI copy maps `Reload.Erc/Pne.Reload_RemoveMag` and `Reload.Erc/Pne.Reload_InsertMag` to
+   those new ANMs; `ReloadActionBolt` lines stay identical.
+3. Only after ANMs exist and resolve may the G3-B2 lab fixtures be pointed at the lab ASI — a separate
+   authorization. **No unimported ANM is wired into WRITE-ON/OFF.**
+
+### 11.5 Rollback
+
+Delete the four new `.txa` under `…/Workspace/G4A/LabClips/`, revert their four manifest lines; nothing
+else references them (no ASI/prefab points at them). Production clips are untouched, so the lab and
+production immediately return to stock behaviour.
+
+### 11.6 Stage B1 result
+
+```
+G4A_OPTION_B_STAGE_B1_RESULT
+SOURCE_BRANCH: t4b/installed-mag-probe
+SOURCE_HEAD_BEFORE: 5e6d8564ebafd2b7e0b8b81ef82e8a587942885d
+COMMIT: (this commit; see report header)
+SOURCE_CLIPS_PREPARED_PW_REMOVE_INSERT: YES (4 x .txa: P/W remove + P/W insert)
+EVENT_MATRIX_PW_ERC_PNE: MAPPED (Erc/Pne resolve same source; cmds 2-6 covered; cmd 1 bolt separate)
+NATIVE_MAG_EVENTS_ELIMINATED_FROM_NEW_SOURCES: YES (MagRelease/Detach/Despawn on remove; Spawn/Attach/MagRelease on insert)
+BLEND_IN_OUT_PRESERVED: YES
+CMD1_BOLT_GRAPH_ASI_UNCHANGED: YES (ReloadActionBolt clips + EnableFire/Rack_Bolt untouched; no ASI edited)
+G3B2_SCRIPTS_GUARDS_UNCHANGED: YES
+WRITEON_OFF_FIXTURES_UNCHANGED: YES
+PRODUCTION_CORE_WORLD_CHANGED: NO
+MANIFEST_VERIFIED: YES (4 lines appended; 16 existing lines unchanged; local==published)
+STATIC_CHECKS: braces/line-count parity; 0 native mag events remain; INTEGRITY_UNVERIFIED (no python/Workbench)
+ANM_COMPILED: NO
+ASI_LIVE_BINDINGS_CHANGED: NO
+OWNER_WORKBENCH_RUN: NO
+BLOCKERS: none
+OWNER_IMPORT_PLAN: import the 4 lab .txa -> generate G4A Rem/Inject ANM + meta GUIDs; then lab ASI copy; then (separate auth) bind fixtures
+FINAL_STATUS: STOP_FOR_INDEPENDENT_SOURCE_REVIEW
+```
