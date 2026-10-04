@@ -2,21 +2,11 @@ AnimSrcGraph {
  AnimSetTemplate "{6CFA1ACC8873A4B6}Assets/MP133_AstraShellGraph_test/MP133_Astra.ast"
  ControlTemplate AnimSrcGCT "{6A8947ABB9A61434}" {
   Variables {
-   AnimSrcGCTVarBool ASTRA_ShellRequest {
-    DefaultValue 0
-   }
-   AnimSrcGCTVarBool ASTRA_ShellRepeat {
-    DefaultValue 0
-   }
-   AnimSrcGCTVarBool ASTRA_ShellStop {
-    DefaultValue 0
-   }
-   AnimSrcGCTVarBool ASTRA_FireStop {
-    DefaultValue 0
-   }
-   AnimSrcGCTVarBool ASTRA_ShellEligible {
-    DefaultValue 1
-   }
+
+
+
+
+
    AnimSrcGCTVarBool TriggerPulled {
     DefaultValue 0
    }

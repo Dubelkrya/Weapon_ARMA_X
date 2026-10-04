@@ -1,0 +1,44 @@
+{
+  "status": "WORKSPACE_REPAIRED_ANIMATION_GATE",
+  "base_commit": "8b472163202f738440d95aeef979d499faf34643",
+  "gameplay": "BLOCKED_NO_SAFE_INPUT_AND_GRAPH_TRANSPORT",
+  "protected_baseline_count": 712,
+  "protected_unchanged": 707,
+  "changes": [
+    {
+      "path": "Assets/MP133_AstraShellGraph_test/MP133_Astra_player.asi",
+      "before_sha256": "d94419cad3a37b3994329be80419881e23acce6ecce9458607e6cb343259d29e",
+      "after_sha256": "1e69fefaf1318d7ee37aaffdaa7e0fdff985d21582491b7512e772786efd790d"
+    },
+    {
+      "path": "Assets/MP133_AstraShellGraph_test/MP133_Astra.ast",
+      "before_sha256": "ecb5ab6d64f15534e7455947635d8002aa243b98ad2ad5b07a24b52a846b141c",
+      "after_sha256": "0b6ebd51126f39e131a4c5c7772aa9c156e7bb0236ef09a1c31b4c6a53c2d8b6"
+    },
+    {
+      "path": "Assets/MP133_AstraShellGraph_test/MP133_Astra.agr",
+      "before_sha256": "60a9a5a32083c7f235e6eb850ad14437092fd64cc897f573a681b253b50c8200",
+      "after_sha256": "4fce5ef918020ff3d3e89da5d81267661395e595ece6b3856d105895c5930baf"
+    },
+    {
+      "path": "Assets/MP133_AstraShellGraph_test/MP133_Astra_weapon.asi",
+      "before_sha256": "e51198d7c43bec75074cfbec1d98e7bb2359845d0a1a7a75e6b34215f2852e09",
+      "after_sha256": "4b752ac8ef21bd58e1414cf14d54161f833608bb4fd644a91d06e385ce0c9e8f"
+    },
+    {
+      "path": "Assets/MP133_AstraShellGraph_test/MP133_Astra.agf",
+      "before_sha256": "e1d249c44a83b14a6c11b0ca2305b21868df035351cded6f4994a8413aed75e7",
+      "after_sha256": "8e023494ce78d1781c2341c3f3144e7958bd3ad5028380c331329b7307fa307c"
+    }
+  ],
+  "fixture_registered": false,
+  "compile": "OWNER_REQUIRED",
+  "original_ANM_meta_unchanged": true,
+  "tests": {
+    "new_pass": 8,
+    "full_pass": 95,
+    "full_preexisting_failure": 1,
+    "total": 96
+  },
+  "repository_integrity": "3_PREEXISTING_BROKEN_LINKS"
+}

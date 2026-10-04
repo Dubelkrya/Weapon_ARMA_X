@@ -5,7 +5,7 @@ AnimSrcGraphFile {
     AnimSrcNodeGroupSelect AstraShellErcG {
      EditorPos 16.211 -2.737
      Child "ShellReloadSTM"
-     Group "Reload"
+     Group "AstraShell"
      Column "Erc"
     }
     AnimSrcNodeStateMachine ShellReloadSTM {
@@ -52,7 +52,7 @@ AnimSrcGraphFile {
        FromState "StartReload"
        ToState "EndReload"
        Duration "0.1"
-       Condition "RemainingTimeLess(0.01) && !(ASTRA_ShellEligible && !ASTRA_ShellStop && !ASTRA_FireStop && !Firing)"
+       Condition "RemainingTimeLess(0.01) && (Firing || TriggerPulled || IsCommand(CMD_Weapon_Action_Interrupt))"
        BlendFn "S"
        PostEval 1
       }
@@ -60,7 +60,7 @@ AnimSrcGraphFile {
        FromState "GrabShell"
        ToState "EndReload"
        Duration "0.1"
-       Condition "RemainingTimeLess(0.01) && !(ASTRA_ShellEligible && !ASTRA_ShellStop && !ASTRA_FireStop && !Firing)"
+       Condition "RemainingTimeLess(0.01) && (Firing || TriggerPulled || IsCommand(CMD_Weapon_Action_Interrupt))"
        BlendFn "S"
        PostEval 1
       }
@@ -68,7 +68,7 @@ AnimSrcGraphFile {
        FromState "StartReload"
        ToState "GrabShell"
        Duration "0.0"
-       Condition "RemainingTimeLess(0.01) && ASTRA_ShellEligible && !ASTRA_ShellStop && !ASTRA_FireStop && !Firing"
+       Condition "RemainingTimeLess(0.01) && !(Firing || TriggerPulled || IsCommand(CMD_Weapon_Action_Interrupt))"
        BlendFn "S"
        PostEval 1
       }
@@ -76,7 +76,7 @@ AnimSrcGraphFile {
        FromState "GrabShell"
        ToState "InsertShell"
        Duration "0.0"
-       Condition "RemainingTimeLess(0.01) && ASTRA_ShellEligible && !ASTRA_ShellStop && !ASTRA_FireStop && !Firing"
+       Condition "RemainingTimeLess(0.01) && !(Firing || TriggerPulled || IsCommand(CMD_Weapon_Action_Interrupt))"
        BlendFn "S"
        PostEval 1
       }
@@ -88,19 +88,12 @@ AnimSrcGraphFile {
        BlendFn "S"
        PostEval 1
       }
-      AnimSrcNodeTransition "{424D1F2B1A915C1A}" {
-       FromState "CheckContinue"
-       ToState "GrabShell"
-       Duration "0.05"
-       Condition "RemainingTimeLess(0.01) && ASTRA_ShellRepeat && ASTRA_ShellEligible && !ASTRA_ShellStop && !ASTRA_FireStop && !Firing"
-       BlendFn "S"
-       PostEval 1
-      }
+
       AnimSrcNodeTransition "{6988C9BC5F695C5A}" {
        FromState "CheckContinue"
        ToState "EndReload"
        Duration "0.0"
-       Condition "RemainingTimeLess(0.01) && !(ASTRA_ShellRepeat && ASTRA_ShellEligible && !ASTRA_ShellStop && !ASTRA_FireStop && !Firing)"
+       Condition "RemainingTimeLess(0.01)"
        BlendFn "S"
        PostEval 1
       }
@@ -108,27 +101,27 @@ AnimSrcGraphFile {
     }
     AnimSrcNodeSource AstraStartReload {
      EditorPos 12.632 2.105
-     Source "Reload.StartReload"
+     Source "AstraShell.StartReload"
      Looptype "No Loop"
     }
     AnimSrcNodeSource AstraGrabShell {
      EditorPos 16.632 2.105
-     Source "Reload.GrabShell"
+     Source "AstraShell.GrabShell"
      Looptype "No Loop"
     }
     AnimSrcNodeSource AstraInsertShell {
      EditorPos 20.632 2.105
-     Source "Reload.InsertShell"
+     Source "AstraShell.InsertShell"
      Looptype "No Loop"
     }
     AnimSrcNodeSource AstraCheckContinue {
      EditorPos 24.632 2.105
-     Source "Reload.CheckContinue"
+     Source "AstraShell.CheckContinue"
      Looptype "No Loop"
     }
     AnimSrcNodeSource AstraEndReload {
      EditorPos 28.632 2.105
-     Source "Reload.EndReload"
+     Source "AstraShell.EndReload"
      Looptype "No Loop"
     }
     AnimSrcNodePose SafetyPose {
@@ -219,7 +212,7 @@ AnimSrcGraphFile {
        FromState "Idle"
        ToState "Buffer3"
        Duration "0.3"
-       Condition "IsCommand(CMD_Weapon_Reload) && !inRange(GetCommandI(CMD_Weapon_Reload), 7, 9) && GetCommandI(CMD_Weapon_Reload) != -2"
+       Condition "IsCommand(CMD_Weapon_Reload) && GetCommandI(CMD_Weapon_Reload) == 1 && GetCommandF(CMD_Weapon_Reload) == 0.0"
        BlendFn "S"
       }
       AnimSrcNodeTransition "{E0C326DBF23A5AA1}" {
@@ -261,7 +254,7 @@ AnimSrcGraphFile {
        FromState "WeaponInspection"
        ToState "Buffer3"
        Duration "0.3"
-       Condition "IsCommand(CMD_Weapon_Reload) && !inRange(GetCommandI(CMD_Weapon_Reload), 7, 9) && GetCommandI(CMD_Weapon_Reload) != -2"
+       Condition "IsCommand(CMD_Weapon_Reload) && GetCommandI(CMD_Weapon_Reload) == 1 && GetCommandF(CMD_Weapon_Reload) == 0.0"
       }
       AnimSrcNodeTransition "{22FEB4674D6B5B64}" {
        FromState "Buffer4"
@@ -279,8 +272,34 @@ AnimSrcGraphFile {
       }
      }
     }
+    AnimSrcNodeStateMachine RackStanceSTM {
+     states {
+      AnimSrcNodeState ErcCro {
+       Child "RackErcG"
+       StartCondition "Stance != 2"
+       TimeStorage "Real Time"
+       IsExit 1
+      }
+      AnimSrcNodeState Pne {
+       Child "RackPneG"
+       StartCondition "Stance == 2"
+       TimeStorage "Real Time"
+       IsExit 1
+      }
+     }
+    }
+    AnimSrcNodeGroupSelect RackErcG {
+     Child "RackBoltAnim"
+     Group "Reload"
+     Column "Erc"
+    }
+    AnimSrcNodeGroupSelect RackPneG {
+     Child "RackBoltAnim"
+     Group "Reload"
+     Column "Pne"
+    }
     AnimSrcNodeSource RackBoltAnim {
-     EditorPos 18.1 18.7
+     EditorPos 7.158 -2.526
      Source "Reload.ReloadActionBolt"
      Looptype "No Loop"
      BonesInterpolatedInModelSpace {
@@ -288,23 +307,19 @@ AnimSrcGraphFile {
      }
     }
     AnimSrcNodeStateMachine ReloadRouteSTM {
-     EditorPos 4.9 4.2
+     EditorPos 13.263 -4.211
      states {
       AnimSrcNodeState Bolt {
        Tags {
         "TagRackBolt"
        }
-       Child "RackBoltAnim"
+       EditorPos 8.421 -8.421
+       Child "RackStanceSTM"
        StartCondition "GetCommandI(CMD_Weapon_Reload) == 1 && GetCommandF(CMD_Weapon_Reload) == 0.0"
        TimeStorage "Real Time"
        IsExit 1
       }
-      AnimSrcNodeState Shell {
-       Child "AstraShellErcG"
-       StartCondition "GetCommandI(CMD_Weapon_Reload) >= 2 && GetCommandI(CMD_Weapon_Reload) <= 6"
-       TimeStorage "Real Time"
-       IsExit 1
-      }
+
      }
     }
     AnimSrcNodeQueue "Queue 1" {

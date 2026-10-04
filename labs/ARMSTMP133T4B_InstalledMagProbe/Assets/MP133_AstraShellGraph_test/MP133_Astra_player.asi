@@ -7,22 +7,14 @@ AnimSetInstanceSource {
   AnimSetInstanceSource_Line "Reload.Pne.Safety" {
    Resource "{877B9A1CF838AD9A}Assets/Weapons/Rifles/AK74/anims/anm/p_rfl_ak74_erc_safety.anm"
   }
-  AnimSetInstanceSource_Line "Reload.Erc.Reload_InsertMag" {
-   Resource "{2E4A565E1D442CEA}Assets/Weapons_RUS/Mp_133/Workspace/Reload/P_MP133_Reload_Inject.anm"
-  }
-  AnimSetInstanceSource_Line "Reload.Pne.Reload_InsertMag" {
-   Resource "{2E4A565E1D442CEA}Assets/Weapons_RUS/Mp_133/Workspace/Reload/P_MP133_Reload_Inject.anm"
-  }
-  AnimSetInstanceSource_Line "Reload.Erc.Reload_RemoveMag" {
-   Resource "{1A0174AF80728E7E}Assets/Weapons_RUS/Mp_133/Workspace/Reload/P_MP133_Reload_Rem.anm"
-  }
-  AnimSetInstanceSource_Line "Reload.Pne.Reload_RemoveMag" {
-   Resource "{1A0174AF80728E7E}Assets/Weapons_RUS/Mp_133/Workspace/Reload/P_MP133_Reload_Rem.anm"
-  }
-  AnimSetInstanceSource_Line "Reload.Erc.CheckContinue" {
+
+
+
+
+  AnimSetInstanceSource_Line "AstraShell.Erc.CheckContinue" {
    Resource "{36BCB6296CAE5334}Assets/MP133_AstraShellGraph/Clips/P_Astra_CheckContinue.anm"
   }
-  AnimSetInstanceSource_Line "Reload.Erc.EndReload" {
+  AnimSetInstanceSource_Line "AstraShell.Erc.EndReload" {
    Resource "{D1B33891A663548D}Assets/MP133_AstraShellGraph/Clips/P_Astra_EndReload.anm"
   }
   AnimSetInstanceSource_Line "Reload.Erc.Fire" {
@@ -37,10 +29,10 @@ AnimSetInstanceSource {
   AnimSetInstanceSource_Line "Reload.Pne.Idle" {
    Resource "{322A9D84C198B443}Assets/Weapons_RUS/Mp_133/Workspace/Dif/P_MP133_Safety.anm"
   }
-  AnimSetInstanceSource_Line "Reload.Erc.InsertShell" {
+  AnimSetInstanceSource_Line "AstraShell.Erc.InsertShell" {
    Resource "{D3868FB32BF75DEE}Assets/MP133_AstraShellGraph/Clips/P_Astra_InsertShell.anm"
   }
-  AnimSetInstanceSource_Line "Reload.Erc.GrabShell" {
+  AnimSetInstanceSource_Line "AstraShell.Erc.GrabShell" {
    Resource "{1D4C14261EFC54DB}Assets/MP133_AstraShellGraph/Clips/P_Astra_GrabShell.anm"
   }
   AnimSetInstanceSource_Line "Reload.Erc.ReloadActionBolt" {
@@ -55,7 +47,7 @@ AnimSetInstanceSource {
   AnimSetInstanceSource_Line "Reload.Pne.Trigger" {
    Resource "{240822D89A9449F9}Assets/Weapons/Rifles/AK74/anims/anm/p_rfl_ak74_erc_fire.anm"
   }
-  AnimSetInstanceSource_Line "Reload.Erc.StartReload" {
+  AnimSetInstanceSource_Line "AstraShell.Erc.StartReload" {
    Resource "{FCB314232D355753}Assets/MP133_AstraShellGraph/Clips/P_Astra_StartReload.anm"
   }
   AnimSetInstanceSource_Line "Reload.Erc.Sight" {
