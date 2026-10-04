@@ -132,8 +132,8 @@ AnimSrcGraphFile {
      Looptype "No Loop"
     }
     AnimSrcNodePose SafetyPose {
-     EditorPos -19.8 14.6
-     Source "Reload.Safety"
+      EditorPos -19.8 14.6
+      Source "Reload.Safety"
      Time "0.0"
     }
     AnimSrcNodeSource FireAnim {
@@ -317,8 +317,8 @@ AnimSrcGraphFile {
      }
     }
     AnimSrcNodeSource InsertMagAnim {
-     EditorPos 7.158 20.421
-     Source "Reload.Reload_InsertMag"
+      EditorPos 7.158 20.421
+      Source "Reload.Reload_InsertMag"
      Looptype "No Loop"
     }
     AnimSrcNodeStateMachine MagReloadSTM {
@@ -373,8 +373,8 @@ AnimSrcGraphFile {
      Column "Pne"
     }
     AnimSrcNodeSource RemoveMagAnim {
-     EditorPos 16.9 24.3
-     Source "Reload.Reload_RemoveMag"
+      EditorPos 16.9 24.3
+      Source "Reload.Reload_RemoveMag"
      Looptype "No Loop"
     }
     AnimSrcNodeStateMachine WeaponReloadSTM {
@@ -500,13 +500,13 @@ AnimSrcGraphFile {
      }
     }
     AnimSrcNodePose SemiPose {
-     EditorPos -17 14.6
-     Source "Reload.Safety"
+      EditorPos -17 14.6
+      Source "Reload.Safety"
      Time "1.0"
     }
     AnimSrcNodePose AutoPose {
-     EditorPos -14.4 14.6
-     Source "Reload.Safety"
+      EditorPos -14.4 14.6
+      Source "Reload.Safety"
      Time "0.5"
     }
     AnimSrcNodeBlend MasterControl {
