@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{78899AABBCDDEEFF}Prefabs/Test/ARMST_T4B_G3B2_InventoryWide_WriteOn_TestWeapon.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

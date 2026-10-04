@@ -1,0 +1,22 @@
+GenericEntity : "{63FF6FDCA4E7E735}Prefabs/Weapons/Russian/Shotgun/armst_Shotgun_mp_133.et" {
+ ID "899AABBCDDEEFF00"
+ components {
+  ARMST_T4B_WeaponProbe "99AABBCDDEEFF011" {
+   m_iT4BStartAmmo 2
+  }
+  ActionsManagerComponent "{A29AE67FF4D82B0F}" {
+   additionalActions +{
+    ARMST_T4B_G3B2_TransferAction "AABBCDDEEFF01122" {
+     ParentContextList {
+      "default"
+     }
+     UIInfo UIInfo "ABBCDDEEFF011223" {
+      Name "G3B2: transfer 1 (INVENTORY-WIDE WRITE ENABLED)"
+     }
+     m_bG3B2WriteEnabled 1
+     m_bG3B2InventoryWide 1
+    }
+   }
+  }
+ }
+}
