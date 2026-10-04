@@ -34,6 +34,14 @@ GenericEntity : "{63FF6FDCA4E7E735}Prefabs/Weapons/Russian/Shotgun/armst_Shotgun
      m_bG3B2WriteEnabled 1
      m_bG3B2InventoryWide 1
     }
+    ARMST_T4B_AstraRequestProbeAction "7A1B2C3D4E5F6071" {
+     ParentContextList {
+      "default"
+     }
+     UIInfo UIInfo "7A1B2C3D4E5F6072" {
+      Name "ASTRA PROBE: ShellRequest ON/OFF"
+     }
+    }
    }
   }
  }
