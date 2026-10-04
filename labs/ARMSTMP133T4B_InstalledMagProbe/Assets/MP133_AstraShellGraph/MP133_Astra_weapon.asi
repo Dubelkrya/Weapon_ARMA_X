@@ -1,22 +1,21 @@
-AnimSetInstanceSource "{405D230A77C656D2}" {
+AnimSetInstanceSource {
  Template "{FD37F7091A235471}Assets/MP133_AstraShellGraph/MP133_Astra.ast"
  Lines {
-  AnimSetInstanceSource_Line "AstraShell.Erc.StartReload" {
+  AnimSetInstanceSource_Line "Reload.Erc.StartReload" {
    Resource "{979C9964AD7956F5}Assets/MP133_AstraShellGraph/Clips/W_Astra_StartReload.anm"
   }
-  AnimSetInstanceSource_Line "AstraShell.Erc.GrabShell" {
+  AnimSetInstanceSource_Line "Reload.Erc.GrabShell" {
    Resource "{E6534D7B659C59E5}Assets/MP133_AstraShellGraph/Clips/W_Astra_GrabShell.anm"
   }
-  AnimSetInstanceSource_Line "AstraShell.Erc.InsertShell" {
+  AnimSetInstanceSource_Line "Reload.Erc.InsertShell" {
    Resource "{090759CC560C55F2}Assets/MP133_AstraShellGraph/Clips/W_Astra_InsertShell.anm"
   }
-  AnimSetInstanceSource_Line "AstraShell.Erc.CheckContinue" {
+  AnimSetInstanceSource_Line "Reload.Erc.CheckContinue" {
    Resource "{5B6872625F3454A4}Assets/MP133_AstraShellGraph/Clips/W_Astra_CheckContinue.anm"
   }
-  AnimSetInstanceSource_Line "AstraShell.Erc.EndReload" {
+  AnimSetInstanceSource_Line "Reload.Erc.EndReload" {
    Resource "{008B42BF7C535275}Assets/MP133_AstraShellGraph/Clips/W_Astra_EndReload.anm"
   }
-
   AnimSetInstanceSource_Line "Reload.Erc.Fire" {
    Resource "{4644F33E2CADCF0A}Assets/Weapons/Rifles/AK74/anims/anm/w_rfl_ak74_erc_fire.anm"
   }
@@ -30,22 +29,22 @@ AnimSetInstanceSource "{405D230A77C656D2}" {
    Resource "{10F79006036E31C6}Assets/Weapons/Rifles/AK74/anims/anm/w_rfl_ak74_idle.anm"
   }
   AnimSetInstanceSource_Line "Reload.Erc.Reload_InsertMag" {
-   Resource "{45B1772B8AFEAE47}Mp_133/Workspace/Reload/W_MP133_Reload_Inject.anm"
+   Resource "{45B1772B8AFEAE47}Assets/Weapons_RUS/Mp_133/Workspace/Reload/W_MP133_Reload_Inject.anm"
   }
   AnimSetInstanceSource_Line "Reload.Pne.Reload_InsertMag" {
-   Resource "{45B1772B8AFEAE47}Mp_133/Workspace/Reload/W_MP133_Reload_Inject.anm"
+   Resource "{45B1772B8AFEAE47}Assets/Weapons_RUS/Mp_133/Workspace/Reload/W_MP133_Reload_Inject.anm"
   }
   AnimSetInstanceSource_Line "Reload.Erc.Reload_RemoveMag" {
-   Resource "{FBC8FA7934FA4394}Mp_133/Workspace/Reload/W_MP133_Reload_Rem.anm"
+   Resource "{FBC8FA7934FA4394}Assets/Weapons_RUS/Mp_133/Workspace/Reload/W_MP133_Reload_Rem.anm"
   }
   AnimSetInstanceSource_Line "Reload.Pne.Reload_RemoveMag" {
-   Resource "{FBC8FA7934FA4394}Mp_133/Workspace/Reload/W_MP133_Reload_Rem.anm"
+   Resource "{FBC8FA7934FA4394}Assets/Weapons_RUS/Mp_133/Workspace/Reload/W_MP133_Reload_Rem.anm"
   }
   AnimSetInstanceSource_Line "Reload.Erc.ReloadActionBolt" {
-   Resource "{45B1772B8AFEAE46}Mp_133/Workspace/Reload/W_MP133_Reload_Bolt.anm"
+   Resource "{45B1772B8AFEAE46}Assets/Weapons_RUS/Mp_133/Workspace/Reload/W_MP133_Reload_Bolt.anm"
   }
   AnimSetInstanceSource_Line "Reload.Pne.ReloadActionBolt" {
-   Resource "{45B1772B8AFEAE46}Mp_133/Workspace/Reload/W_MP133_Reload_Bolt.anm"
+   Resource "{45B1772B8AFEAE46}Assets/Weapons_RUS/Mp_133/Workspace/Reload/W_MP133_Reload_Bolt.anm"
   }
   AnimSetInstanceSource_Line "Reload.Erc.Trigger" {
    Resource "{01F1072211063BE5}Assets/Weapons/Rifles/AK74/anims/anm/w_rfl_ak74_erc_trigger.anm"

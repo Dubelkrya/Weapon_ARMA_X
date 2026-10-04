@@ -5,7 +5,7 @@ AnimSrcGraphFile {
     AnimSrcNodeGroupSelect AstraShellErcG {
      EditorPos 12 -4
      Child "ShellReloadSTM"
-     Group "AstraShell"
+     Group "Reload"
      Column "Erc"
     }
     AnimSrcNodeStateMachine ShellReloadSTM {
@@ -64,7 +64,6 @@ AnimSrcGraphFile {
        BlendFn "S"
        PostEval 1
       }
-
       AnimSrcNodeTransition "{E568483512F85509}" {
        FromState "StartReload"
        ToState "GrabShell"
@@ -109,30 +108,29 @@ AnimSrcGraphFile {
     }
     AnimSrcNodeSource AstraStartReload {
      EditorPos 16 -8
-     Source "AstraShell.StartReload"
+     Source "Reload.StartReload"
      Looptype "No Loop"
     }
     AnimSrcNodeSource AstraGrabShell {
      EditorPos 20 -8
-     Source "AstraShell.GrabShell"
+     Source "Reload.GrabShell"
      Looptype "No Loop"
     }
     AnimSrcNodeSource AstraInsertShell {
      EditorPos 24 -8
-     Source "AstraShell.InsertShell"
+     Source "Reload.InsertShell"
      Looptype "No Loop"
     }
     AnimSrcNodeSource AstraCheckContinue {
      EditorPos 28 -8
-     Source "AstraShell.CheckContinue"
+     Source "Reload.CheckContinue"
      Looptype "No Loop"
     }
     AnimSrcNodeSource AstraEndReload {
      EditorPos 32 -8
-     Source "AstraShell.EndReload"
+     Source "Reload.EndReload"
      Looptype "No Loop"
     }
-
     AnimSrcNodePose SafetyPose {
      EditorPos -19.8 14.6
      Source "Reload.Safety"
@@ -164,7 +162,6 @@ AnimSrcGraphFile {
        StartCondition "false"
        IsExit 0
       }
-
       AnimSrcNodeState Idle {
        EditorPos -2.4 0.8
        Child "Queue 1"
@@ -241,7 +238,6 @@ AnimSrcGraphFile {
        BlendFn "S"
        PostEval 1
       }
-
       AnimSrcNodeTransition "{DA4D3DEC7DA35D57}" {
        FromState "Buffer4"
        ToState "Idle"
@@ -1178,19 +1174,21 @@ AnimSrcGraphFile {
      Expression "lerp(-1, 1, ADSAdjust)"
      Bones {
       AnimSrcNodeProcTrBoneItem "{BD985CD6EAA354D1}" {
-       Bone "RightArm"
-       Space Model
-       Op Rotate
+       Operation Rotate
+       Axis X
        Amount "-0.35"
+       Space Model
+       Bone "RightArm"
       }
      }
      IkTargets {
       AnimSrcNodeProcTrIkTargetItem "{923466C35AC75540}" {
-       IkTarget "LeftArmTarget"
-       Space Model
-       Op "Rotate Around"
+       Operation "Rotate Around"
+       Axis X
        Amount "-0.35"
+       Space Model
        PivotBone "RightArm"
+       IkTarget "LeftArmTarget"
       }
      }
     }
@@ -1210,19 +1208,21 @@ AnimSrcGraphFile {
      Expression "lerp(1,0,ADSAdjust)"
      Bones {
       AnimSrcNodeProcTrBoneItem "{097C4DED3374578D}" {
-       Bone "RightArm"
-       Space Model
-       Op Rotate
+       Operation Rotate
+       Axis X
        Amount "0.3"
+       Space Model
+       Bone "RightArm"
       }
      }
      IkTargets {
       AnimSrcNodeProcTrIkTargetItem "{B4EF4D71AFA75E9F}" {
-       IkTarget "LeftArmTarget"
-       Space Model
-       Op "Rotate Around"
+       Operation "Rotate Around"
+       Axis X
        Amount "0.3"
+       Space Model
        PivotBone "RightArm"
+       IkTarget "LeftArmTarget"
       }
      }
     }

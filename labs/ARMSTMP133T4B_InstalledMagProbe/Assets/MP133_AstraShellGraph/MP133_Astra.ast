@@ -38,6 +38,11 @@ AnimSetTemplateSource {
    Name "Reload"
    Animations {
     "BoltPose"
+    "StartReload"
+    "GrabShell"
+    "InsertShell"
+    "CheckContinue"
+    "EndReload"
     "Finger_trigger_in"
     "Finger_trigger_out"
     "Fire"
