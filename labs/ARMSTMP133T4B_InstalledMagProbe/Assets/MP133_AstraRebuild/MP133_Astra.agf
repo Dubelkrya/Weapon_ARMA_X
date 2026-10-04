@@ -279,42 +279,6 @@ AnimSrcGraphFile {
       }
      }
     }
-    AnimSrcNodeSource InsertMagAnim {
-     EditorPos 7.158 20.421
-     Source "Reload.Reload_InsertMag"
-     Looptype "No Loop"
-    }
-    AnimSrcNodeStateMachine MagReloadSTM {
-     EditorPos 12.8 19.9
-     states {
-      AnimSrcNodeState InsertMag {
-       EditorPos 13.2 21.2
-       Child "InsertMagAnim"
-       StartCondition ""
-       TimeStorage "Real Time"
-       IsExit 1
-      }
-      AnimSrcNodeState RemoveMag {
-       EditorPos 17.1 21.2
-       Child "RemoveMagAnim"
-       StartCondition "True"
-       TimeStorage "Real Time"
-       IsExit 0
-      }
-     }
-     transitions {
-      AnimSrcNodeTransition "{BCBC23C0706C58A3}" {
-       FromState "RemoveMag"
-       ToState "InsertMag"
-       Duration "0.3"
-       StartTime "GetEventTime(anim.Reload.Erc.Reload_InsertMag, \"BlendIn\")"
-       Condition "IsEvent(\"BlendOut\")"
-       BlendFn "S"
-       PostEval 1
-       MotionVecBlend 0x33 0
-      }
-     }
-    }
     AnimSrcNodeSource RackBoltAnim {
      EditorPos 18.1 18.7
      Source "Reload.ReloadActionBolt"
@@ -339,116 +303,6 @@ AnimSrcGraphFile {
        Child "AstraShellErcG"
        StartCondition "GetCommandI(CMD_Weapon_Reload) >= 2 && GetCommandI(CMD_Weapon_Reload) <= 6"
        TimeStorage "Real Time"
-       IsExit 1
-      }
-     }
-    }
-    AnimSrcNodeGroupSelect ReloadErcCroG {
-     EditorPos 4.3 10.8
-     Child "WeaponReloadSTM"
-     Group "Reload"
-     Column "Erc"
-    }
-    AnimSrcNodeGroupSelect ReloadPneG {
-     EditorPos 7.6 10.8
-     Child "WeaponReloadSTM"
-     Group "Reload"
-     Column "Pne"
-    }
-    AnimSrcNodeSource RemoveMagAnim {
-     EditorPos 16.9 24.3
-     Source "Reload.Reload_RemoveMag"
-     Looptype "No Loop"
-    }
-    AnimSrcNodeStateMachine WeaponReloadSTM {
-     Tags {
-      "TagWeaponReload"
-     }
-     EditorPos 5.7 13.3
-     states {
-      AnimSrcNodeState NoMagReload {
-       EditorPos 4.4 16.2
-       Child "InsertMagAnim"
-       StartCondition "GetCommandI(CMD_Weapon_Reload) == 2"
-       TimeStorage "Real Time"
-       IsExit 1
-      }
-      AnimSrcNodeState NoMagNoBulletReload {
-       EditorPos 8.4 16.2
-       Child "InsertMagAnim"
-       StartCondition "GetCommandI(CMD_Weapon_Reload) == 3 && GetCommandF(CMD_Weapon_Reload) == 0.0"
-       TimeStorage "Real Time"
-       IsExit 0
-      }
-      AnimSrcNodeState MagReload {
-       EditorPos 11.2 17
-       Child "MagReloadSTM"
-       StartCondition "GetCommandI(CMD_Weapon_Reload) == 4"
-       TimeStorage Inherit
-       IsExit 1
-      }
-      AnimSrcNodeState MagNoBulletReload {
-       EditorPos 14.4 17.1
-       Child "MagReloadSTM"
-       StartCondition "GetCommandI(CMD_Weapon_Reload) == 5 && GetCommandF(CMD_Weapon_Reload) == 0.0"
-       TimeStorage Inherit
-       IsExit 0
-      }
-      AnimSrcNodeState ReloadActionBolt {
-       Tags {
-        "TagRackBolt"
-       }
-       EditorPos 18.1 16.2
-       Child "RackBoltAnim"
-       StartCondition "GetCommandI(CMD_Weapon_Reload) == 1 && GetCommandF(CMD_Weapon_Reload) == 0.0"
-       TimeStorage "Real Time"
-       IsExit 1
-      }
-      AnimSrcNodeState RemoveMag {
-       EditorPos 16.7 17.1
-       Child "RemoveMagAnim"
-       StartCondition "GetCommandI(CMD_Weapon_Reload) == 6"
-       IsExit 1
-      }
-     }
-     transitions {
-      AnimSrcNodeTransition "{5B674B9041B55A90}" {
-       FromState "NoMagNoBulletReload"
-       ToState "ReloadActionBolt"
-       Duration "0.3"
-       StartTime ""
-       Condition "RemainingTimeLess(0.1)"
-       BlendFn "S"
-       PostEval 1
-       MotionVecBlend 0x33 0
-      }
-      AnimSrcNodeTransition "{58A80B3B6BF3597E}" {
-       FromState "MagNoBulletReload"
-       ToState "ReloadActionBolt"
-       Duration "0.3"
-       StartTime ""
-       Condition "RemainingTimeLess(0.1)"
-       BlendFn "S"
-       PostEval 1
-       MotionVecBlend 0x33 0
-      }
-     }
-    }
-    AnimSrcNodeStateMachine WeaponReloadStanceSTM {
-     EditorPos 4.4 6.8
-     states {
-      AnimSrcNodeState Erc_Cro {
-       EditorPos 4.3 8.1
-       Child "ReloadErcCroG"
-       StartCondition "Stance == 0 || Stance == 1"
-       TimeStorage Inherit
-       IsExit 1
-      }
-      AnimSrcNodeState Pne {
-       EditorPos 7.6 8.1
-       Child "ReloadPneG"
-       StartCondition "Stance == 2"
-       TimeStorage Inherit
        IsExit 1
       }
      }
@@ -627,15 +481,6 @@ AnimSrcGraphFile {
     AnimSrcNodePose IdleFinger_1 {
      EditorPos 6.5 5.9
      Source "Reload.Idle_finger"
-    }
-    AnimSrcNodeBlendT "Blend T 1" {
-     EditorPos 4.7 4.8
-     BlendTime "0.2"
-     Condition "Low && !IsTag(\"TagRackBolt\")"
-     Child0 "WeaponReloadStanceSTM"
-     Child1 "IdleFinger_1"
-     Optimization "Always eval left"
-     PostEval 1
     }
     AnimSrcNodeIK2Target ModesIKTarget {
      EditorPos 12 4.6
