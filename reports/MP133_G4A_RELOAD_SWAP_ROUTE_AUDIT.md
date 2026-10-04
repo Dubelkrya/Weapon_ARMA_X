@@ -632,3 +632,99 @@ BLOCKERS: none
 OWNER_IMPORT_PLAN: import the 4 lab .txa -> generate G4A Rem/Inject ANM + meta GUIDs; then lab ASI copy; then (separate auth) bind fixtures
 FINAL_STATUS: STOP_FOR_INDEPENDENT_SOURCE_REVIEW
 ```
+
+---
+
+## 12. G4-A Option B — Stage B4 lab P/W ASI SOURCE PREPARATION (Issue #34 comment 5979919151)
+
+**Dated 2026-10-04.** Source preparation only: two new **lab-owned ASI source copies** that map the
+`Erc`/`Pne` remove+insert reload routes to the four owner-imported lab ANMs. No ASI imported/registered,
+no `.meta` created, no prefab binding, no Workbench/game, no production/Core/world change.
+
+### 12.1 Verified lab ANM targets (owner-imported, unchanged since B3)
+
+| Role | Lab ANM resource (real GUID + lab path) |
+|---|---|
+| P Remove | `{5B30A64982C3478B}Assets/Weapons_RUS/Mp_133/Workspace/G4A/LabClips/P_MP133_Reload_Rem.anm` |
+| W Remove | `{BAF9289F364B8A61}Assets/Weapons_RUS/Mp_133/Workspace/G4A/LabClips/W_MP133_Reload_Rem.anm` |
+| P Insert | `{A5ECB9156FF7EC27}Assets/Weapons_RUS/Mp_133/Workspace/G4A/LabClips/P_MP133_Reload_Inject.anm` |
+| W Insert | `{425FD2C829653565}Assets/Weapons_RUS/Mp_133/Workspace/G4A/LabClips/W_MP133_Reload_Inject.anm` |
+
+ANM/meta hashes re-verified equal to B3 (P_Rem anm `0E3AE715…`, W_Rem `88B94BB2…`, P_Inject
+`C462A5A2…`, W_Inject `22BD0297…`). (Report §11.4's proposed `*_G4A_*.anm` names are **superseded** by
+these actual Workbench-generated basenames.)
+
+### 12.2 New lab ASI sources
+
+- `…/labs/ARMSTMP133T4B_InstalledMagProbe/Assets/Weapons_RUS/Mp_133/Workspace/G4A/LabASI/MP133_G4A_weapon.asi`
+  SHA256 `A503733C158123F20A694DC729E2B77F55F9E2BBC22DFB8534F0AFF0F88E8B29`
+- `…/labs/…/G4A/LabASI/MP133_G4A_player.asi`
+  SHA256 `F50457F9B3CFB9646C02C65F382B2A889F06F33E0BB8222E2874711F0D79BB88`
+
+Copies of the production `MP133_weapon.asi` / `MP133_player.asi` with **only** the eight remove/insert
+binding cells changed (2 physical `Resource` lines per file × 2 Erc/Pne = 4 changed lines/file, covering
+the 8-cell matrix). Exactly 4 changed lines per file; all other lines byte-identical (LF-normalized).
+
+### 12.3 Eight-cell resolved matrix (before → after)
+
+| Cell | Original (stock) | New (lab) |
+|---|---|---|
+| `Reload.Erc.Reload_InsertMag` (W) | `{45B1772B8AFEAE47}…/Reload/W_MP133_Reload_Inject.anm` | `{425FD2C829653565}…/G4A/LabClips/W_MP133_Reload_Inject.anm` |
+| `Reload.Pne.Reload_InsertMag` (W) | `{45B1772B8AFEAE47}…/Reload/W_MP133_Reload_Inject.anm` | `{425FD2C829653565}…/G4A/LabClips/W_MP133_Reload_Inject.anm` |
+| `Reload.Erc.Reload_RemoveMag` (W) | `{FBC8FA7934FA4394}…/Reload/W_MP133_Reload_Rem.anm` | `{BAF9289F364B8A61}…/G4A/LabClips/W_MP133_Reload_Rem.anm` |
+| `Reload.Pne.Reload_RemoveMag` (W) | `{FBC8FA7934FA4394}…/Reload/W_MP133_Reload_Rem.anm` | `{BAF9289F364B8A61}…/G4A/LabClips/W_MP133_Reload_Rem.anm` |
+| `Reload.Erc.Reload_InsertMag` (P) | `{2E4A565E1D442CEA}…/Reload/P_MP133_Reload_Inject.anm` | `{A5ECB9156FF7EC27}…/G4A/LabClips/P_MP133_Reload_Inject.anm` |
+| `Reload.Pne.Reload_InsertMag` (P) | `{2E4A565E1D442CEA}…/Reload/P_MP133_Reload_Inject.anm` | `{A5ECB9156FF7EC27}…/G4A/LabClips/P_MP133_Reload_Inject.anm` |
+| `Reload.Erc.Reload_RemoveMag` (P) | `{1A0174AF80728E7E}…/Reload/P_MP133_Reload_Rem.anm` | `{5B30A64982C3478B}…/G4A/LabClips/P_MP133_Reload_Rem.anm` |
+| `Reload.Pne.Reload_RemoveMag` (P) | `{1A0174AF80728E7E}…/Reload/P_MP133_Reload_Rem.anm` | `{5B30A64982C3478B}…/G4A/LabClips/P_MP133_Reload_Rem.anm` |
+
+**Preserved byte-identically:** `Template` (`{23A8072FE1CDE614}Mp_133/Workspace/MP133.ast`), cmd-1
+`Reload.Erc/Pne.ReloadActionBolt` (W `{45B1772B8AFEAE46}…W_MP133_Reload_Bolt.anm`, P
+`{2E4A565E1D442CE9}…P_MP133_Reload_Bolt.anm`), `Weapon_EnableFire`/`Weapon_Rack_Bolt` are clip events
+(unchanged), and all fire/idle/safety/sight/trigger/inspection/switches/bolt-pose bindings. Weapon ASI
+contains only W lab GUIDs; Player ASI only P lab GUIDs (no P↔W or Rem↔Inject cross-wire). Zero stock
+remove/insert GUIDs remain in the four target roles.
+
+### 12.4 Verification / limitations
+
+- Diff allowlist proven: exactly 4 changed lines per file; source syntax/headers/structure preserved.
+- Manifest: two new lines appended (20 → 22); staged-blob SHA256 == manifest for both (with
+  `.gitattributes` `*.asi -text` added so EOL normalization cannot drift the checksum).
+- Production ASIs unchanged (`9A78CE05…` weapon, `D5676BA2…` player); G3-B2 scripts/guards and both
+  G3-B2 fixtures unchanged; no `.meta` created; no prefab binding.
+- **External local dependency:** the four lab ANMs are owner-imported and not Git-published; these ASIs
+  are source-prepared only and cannot be assumed resolvable in CI. The ASI `.meta` (resource instance) is
+  **not** created here — it must be produced by an authorized owner Workbench registration stage.
+- **`COMPILED_EVENT_SET: UNVERIFIED`** (source TXA sanitization does not prove the compiled ANM event
+  set, nor that the engine cannot perform magazine side effects at runtime).
+- **Rollback:** delete the two lab ASI files under `G4A/LabASI/`, revert their two manifest lines and the
+  `*.asi -text` `.gitattributes` line; nothing references them (no prefab/ASI binding).
+
+### 12.5 Stage B4 result
+
+```
+G4A_OPTION_B_STAGE_B4_SOURCE_PREPARATION_RESULT
+SOURCE_BRANCH: t4b/installed-mag-probe
+SOURCE_HEAD_BEFORE: cc926ef9df1f3ee9a4deb2a7df582a0c5f5a42b8
+LAB_PLAYER_ASI_PATH_AND_SHA256: labs/…/G4A/LabASI/MP133_G4A_player.asi  F50457F9B3CFB9646C02C65F382B2A889F06F33E0BB8222E2874711F0D79BB88
+LAB_WEAPON_ASI_PATH_AND_SHA256: labs/…/G4A/LabASI/MP133_G4A_weapon.asi  A503733C158123F20A694DC729E2B77F55F9E2BBC22DFB8534F0AFF0F88E8B29
+SOURCE_ASIS_VERIFIED: YES (production P/W ASIs read; identities ARMSTPLATFORMWeapons)
+LAB_ANM_GUIDS_AND_PATHS_REVERIFIED: YES (unchanged since B3)
+EIGHT_BINDING_CELLS_RESOLVED: YES (W: Insert 2 cells + Remove 2 cells; P: Insert 2 cells + Remove 2 cells)
+EXACT_TEXT_REFS_CHANGED: 4 lines per file (2 Resource lines x Erc+Pne)
+NON_TARGET_BINDINGS_UNCHANGED: YES
+CMD1_RELOAD_ACTION_BOLT_UNCHANGED: YES
+G3B2_SCRIPTS_GUARDS_FIXTURES_UNCHANGED: YES
+ORIGINAL_PRODUCTION_ASIS_UNCHANGED: YES
+MANIFEST_COMMITTED_BLOB_MATCH: YES (both)
+STATIC_CHECKS: diff allowlist OK; no stock Rem/Inject GUIDs remain; no P/W cross-wire
+INTEGRITY_CHECKS: INTEGRITY_UNVERIFIED (no python/Workbench)
+ANM_COMPILED_EVENT_SET: UNVERIFIED
+ASI_IMPORTED_OR_REGISTERED: NO
+LOCAL_LAB_DEPLOYMENT: NO
+ASI_PREFAB_BINDINGS_CHANGED: NO
+WORKBENCH_GAME_RUN: NO
+PRODUCTION_CORE_WORLD_CHANGED: NO
+BLOCKERS: none
+FINAL_STATUS: B4_SOURCE_PREPARED_STOP_FOR_INDEPENDENT_REVIEW
+```
