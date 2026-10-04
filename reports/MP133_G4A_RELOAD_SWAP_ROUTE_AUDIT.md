@@ -728,3 +728,79 @@ PRODUCTION_CORE_WORLD_CHANGED: NO
 BLOCKERS: none
 FINAL_STATUS: B4_SOURCE_PREPARED_STOP_FOR_INDEPENDENT_REVIEW
 ```
+
+---
+
+## 13. G4-A Option B — Stage B7 isolated G4A test-weapon prefab SOURCE (Issue #34 comment 5980162700)
+
+**Dated 2026-10-04.** Source preparation only: ONE new independent lab-owned MP-133 test prefab that
+binds the two validated lab ASIs. No deployment, no Workbench, no `.et.meta` fabrication, no binding of
+the active fixtures, no gameplay.
+
+### 13.1 New source prefab
+`labs/ARMSTMP133T4B_InstalledMagProbe/Prefabs/Test/ARMST_T4B_G4A_OptionB_TestWeapon.et`
+SHA256 (staged Git bytes) `DC3087577E30FABB035E701E7C2BE03D940BDAE79D3BD2028E1A494AE59EF41C`.
+
+Direct child of production `{63FF6FDCA4E7E735}Prefabs/Weapons/Russian/Shotgun/armst_Shotgun_mp_133.et`,
+modeled on the known-good WRITE-ON fixture `ARMST_T4B_G3B2_InventoryWide_WriteOn_TestWeapon.et`
+(sha `7DB287F6…`). New independent identity: entity root `C8D9E0F1A2B31425`, probe
+`D9E0F1A2B3C41526`, action `E0F1A2B3C4D51627`, action UIInfo `F1A2B3C4D5E61728` — each verified unique
+(1 match) across the addons tree. Inherited component instance IDs are reused only when overriding the
+same inherited components: `WeaponComponent {CFBAA4B706BA66E8}`, `MuzzleComponent {CA6BE4D6B867541F}`,
+nested animation component `{60B4EA76EB15F6E0}`, `ActionsManagerComponent {A29AE67FF4D82B0F}`.
+
+### 13.2 Scoped diff vs the WRITE-ON template
+Only the following differ: (1) new entity/probe/action/UI identifiers; (2) on the **single existing
+nested** `ARMST_T4B_WeaponAnimationComponent "{60B4EA76EB15F6E0}"` (still under
+`WeaponComponent→components`), the two ASI overrides:
+- `AnimInstance` → W `{08FF7D08A3A13DB0}Assets/Weapons_RUS/Mp_133/Workspace/G4A/LabASI/MP133_G4A_weapon.asi`;
+- `AnimInjection AnimationAttachmentInfo "{532F3A9CB912F2BA}" → AnimInstance` → P
+  `{F3A1EC393BA0595C}Assets/Weapons_RUS/Mp_133/Workspace/G4A/LabASI/MP133_G4A_player.asi`.
+`AnimGraph` (both) stays the production `{315A612FD60832E7}Assets/Weapons_RUS/Mp_133/Workspace/MP133.agr`;
+`AnimationAttachmentInfo` instance `{532F3A9CB912F2BA}`, Template, bolt and all other fields unchanged.
+Syntax independently confirmed against the production `armst_Shotgun_mp_133.et` block and the T2A-lab
+precedent (same `AnimGraph`/`AnimInstance`/`AnimInjection` shape).
+
+### 13.3 Preserved exactly
+Physical `Tube3Mag` template `{CD8091A2B3C4D5E6}` (3-round), `ARMST_T4B_WeaponProbe m_iT4BStartAmmo 2`,
+G3-B2 inventory-wide transfer action with `m_bG3B2WriteEnabled 1`/`m_bG3B2InventoryWide 1`, and the
+G3-B2 guards in `ARMST_T4B_G3B2_Transfer.c` (`m_iG3B2RequiredTargetMax=3`) — all unchanged. Exactly one
+nested animation component (no second root-level component — the previously observed
+"cannot be combined" failure avoided). No P/W cross-wire; W ASI only in `AnimInstance`, P ASI only in
+`AnimInjection.AnimInstance`.
+
+### 13.4 Dependencies / limitations
+- **`.et.meta` DEFERRED to owner Workbench** — no fake meta / guessed resource GUID is created; the new
+  prefab is source-only until an authorized owner registration stage.
+- `ENGINE_REFERENCE_RESOLUTION: UNVERIFIED`, `COMPILED_EVENT_SET: UNVERIFIED` (unchanged from B6-D).
+- Active G3-B2 OFF/WRITE-ON fixtures, T4b/G3-B2 scripts, Tube3Mag, production/Core/worlds untouched.
+- **Rollback:** delete the new `.et`, revert its one manifest line and this report section; nothing
+  references it (no layer/prefab binding).
+
+### 13.5 Stage B7 result
+
+```
+G4A_OPTION_B_STAGE_B7_SOURCE_PREPARATION_RESULT
+SOURCE_BRANCH: t4b/installed-mag-probe
+SOURCE_HEAD_BEFORE: 1c4704eb57e2cb62279fc11eedb44816bf780ebe
+NEW_LAB_PREFAB_SOURCE_PATH_AND_SHA: labs/…/Prefabs/Test/ARMST_T4B_G4A_OptionB_TestWeapon.et  DC3087577E30FABB035E701E7C2BE03D940BDAE79D3BD2028E1A494AE59EF41C
+PREFAB_META: DEFERRED_OWNER_WORKBENCH
+BASELINE_WRITEON_PREFAB_SHA: 7DB287F6F5B801500C796F1A46E4A3BB48FAF7F0F020EEF67AC7C22705439FDF
+NEW_ENTITY_AND_INSTANCE_IDS_AND_COLLISION_CHECK: entity C8D9E0F1A2B31425 / probe D9E0F1A2B3C41526 / action E0F1A2B3C4D51627 / UI F1A2B3C4D5E61728 — each unique (1 match)
+NESTED_WEAPON_ANIMATION_COMPONENT_EXACTLY_ONE: YES ({60B4EA76EB15F6E0} under WeaponComponent)
+W_ANIMINSTANCE_ASI_GUID_PATH: {08FF7D08A3A13DB0}…/G4A/LabASI/MP133_G4A_weapon.asi
+P_ANIMINJECTION_ASI_GUID_PATH: {F3A1EC393BA0595C}…/G4A/LabASI/MP133_G4A_player.asi
+GRAPH_AND_CMD1_BOLT_UNCHANGED: YES ({315A612FD60832E7}MP133.agr; cmd-1 bolt untouched)
+TUBE3MAG_CAPACITY_AND_G3B2_WRITEON_UNCHANGED: YES
+ACTIVE_G3B2_FIXTURES_AND_SCRIPTS_UNCHANGED: YES (WriteOn 7DB287F6…, OFF 64C5DD56…, transfer FE4A1900…, installedMag D581B9C9…, Tube3Mag A4CA7943…)
+MANIFEST_STAGED_BLOB_MATCH: YES
+STATIC_CHECKS: braces 24/24; one nested anim component; no cross-wire; new IDs unique; git diff --check clean
+INTEGRITY_CHECKS: INTEGRITY_UNVERIFIED (no python/Workbench)
+LOCAL_LAB_DEPLOYMENT: NO
+WORKBENCH_REGISTRATION_GAMEPLAY: NO
+ENGINE_REFERENCE_RESOLUTION: UNVERIFIED
+COMPILED_EVENT_SET: UNVERIFIED
+PRODUCTION_CORE_WORLD_CHANGED: NO
+BLOCKERS: none
+FINAL_STATUS: B7_SOURCE_PREPARED_STOP_FOR_INDEPENDENT_REVIEW
+```
