@@ -77,6 +77,14 @@ ARMST_T4B_AstraRequestProbeAction "7A1B2C3D4E5F6071" { ParentContextList { "defa
 
 ---
 
+## 7. Compile-fix (2026-10-04, owner log)
+
+`Game` module failed to compile with:
+`Scripts/Game/ARMST_T4B/ARMST_T4B_AstraRequestProbe.c(87): Undefined function 'TAnimGraphVariable.ToString'`.
+Причина — только диагностический вывод: `" idx=" + v.ToString()`. `TAnimGraphVariable` не имеет `.ToString()` в installed SDK.
+
+Исправление (одна строка, L87): удалён `+ " idx=" + v.ToString()`; остаётся `phase=write name=ASTRA_ShellRequest value=<true/false>`. `BindVariableBool`, `SetSharedVariableBool`, toggle, ветка `v < 0`, флаги действия, граф и prefab — без изменений. Прочие ошибки компиляции (`SCR_PlayerArsenalLoadout`, ScenarioFramework getters, `SCR_SpinningWidgetComponent`, `SCR_ScenarioUICommon`) **не** трогались — они переоцениваются следующим полным compile-логом. Compile PASS агентом не заявлен; повторный лог — за владельцем.
+
 ## 5. Допущения/ограничения
 
 - `TAnimGraphVariable` трактуется как int-like handle (по аналогии с `AnimationEventID` в этом же аддоне) — для `v < 0`. Если компилятор это отвергнет — исправить минимально по его логу.

@@ -84,6 +84,6 @@ class ARMST_T4B_AstraRequestProbeAction : ScriptedUserAction
 
 		m_bRequested = !m_bRequested;
 		anim.SetSharedVariableBool(v, m_bRequested, true);
-		Print("[ARMST-T4B-ASTRA-PROBE] phase=write name=ASTRA_ShellRequest value=" + m_bRequested.ToString() + " idx=" + v.ToString(), LogLevel.NORMAL);
+		Print("[ARMST-T4B-ASTRA-PROBE] phase=write name=ASTRA_ShellRequest value=" + m_bRequested.ToString(), LogLevel.NORMAL);
 	}
 }
