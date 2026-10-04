@@ -804,3 +804,68 @@ PRODUCTION_CORE_WORLD_CHANGED: NO
 BLOCKERS: none
 FINAL_STATUS: B7_SOURCE_PREPARED_STOP_FOR_INDEPENDENT_REVIEW
 ```
+
+---
+
+## 14. G4-A Option B — Stage W3 isolated COPIED-WORKSPACE test-weapon prefab SOURCE (Issue #34 comment 5981243993)
+
+**Dated 2026-10-04.** Source preparation only: ONE new additive lab-owned MP-133 test prefab that binds
+the **copied** Lab AGR + both copied W/P ASIs (the eight-row G4-A rebind verified in the Animation
+Editor). No deployment, no Workbench, no `.et.meta` fabrication, no gameplay.
+
+### 14.1 New source prefab
+`labs/ARMSTMP133T4B_InstalledMagProbe/Prefabs/Test/ARMST_T4B_W3_CopiedWorkspace_TestWeapon.et`
+SHA256 (staged Git bytes) `C25F97D14B60D4EC117615B9D82FA58C47FD6E386E0E4251D098378FB5E91444`.
+
+Chosen architecture: **direct child of the production MP-133**
+`{63FF6FDCA4E7E735}Prefabs/Weapons/Russian/Shotgun/armst_Shotgun_mp_133.et` — the same proven pattern
+the G4A Option-B fixture uses — because nested-component override semantics across a child were **not
+independently proven** (task allows this documented alternative). Non-animation fixture settings are
+byte-identical to `ARMST_T4B_G4A_OptionB_TestWeapon.et`, isolating the difference to workspace wiring.
+New unique identifiers: entity root `A4B5C6D7E8F90112`, probe `B5C6D7E8F9011223`, action
+`C6D7E8F901122334`, action UIInfo `F3A4B5C6D7E8F901` (each 1 match).
+
+### 14.2 Scoped diff vs the original G4A Option-B fixture
+Only: (1) new entity/probe/action/UI identifiers; (2) the four animation-reference fields on the **one
+existing nested** `ARMST_T4B_WeaponAnimationComponent "{60B4EA76EB15F6E0}"`:
+- `AnimGraph` (weapon) → `{853F037AC986F6C0}Assets/Weapons_RUS/Mp_133/Workspace/Lab_MP133.agr`;
+- `AnimInstance` (weapon) → `{8B23B56D7987D651}Assets/Weapons_RUS/Mp_133/Workspace/Lab_MP133_weapon.asi`;
+- `AnimInjection AnimationAttachmentInfo "{532F3A9CB912F2BA}" → AnimGraph` → same Lab_MP133.agr;
+- `AnimInjection.AnimInstance` (player) → `{707D245CE186B2BD}Assets/Weapons_RUS/Mp_133/Workspace/Lab_MP133_player.asi`.
+No production AGR `{315A612FD60832E7}` and no old G4A ASI references remain in the effective binding.
+
+### 14.3 Preserved exactly (A/B isolation)
+`MuzzleComponent.MagazineTemplate = {CD8091A2B3C4D5E6}Tube3Mag` (3-round), `ARMST_T4B_WeaponProbe
+m_iT4BStartAmmo 2`, G3-B2 inventory-wide transfer action `m_bG3B2WriteEnabled 1`/`m_bG3B2InventoryWide 1`,
+guard `m_iG3B2RequiredTargetMax=3`, one nested animation component (no root double / no
+"cannot be combined"). Original G4A Option-B fixture (`dc308757…`) kept untouched for strict comparison.
+
+### 14.4 Dependencies / limitations
+- **`.et.meta` DEFERRED to owner Workbench** — no fake meta / guessed GUID created.
+- `ENGINE_REFERENCE_RESOLUTION`/`COMPILED_EVENT_SET`: UNVERIFIED.
+- **Does not preclaim a fix:** prior G4A Option-B owner trace observed `GetCurrentMagazine()==null`
+  even without native-mag ANM events; this fixture only tests whether the copied graph/AST/ASI topology
+  changes that. Actual gameplay + physical mag continuity are a FUTURE separately scoped gate.
+- **Rollback:** delete the new `.et`, revert its one manifest line and this section; nothing references it.
+
+### 14.5 Stage W3 result
+
+```
+B9_W3_COPIED_WORKSPACE_PREFAB_SOURCE_PREP_RESULT
+RESEARCH_BRANCH_HEAD: t4b/installed-mag-probe @ 84b5d2343418a7bf8123eea624a2cb38606ceaf3
+LAB_ADDON_ID: ARMSTMP133T4BInstalledMag
+NEW_PREFAB_PATH_AND_SOURCE_SHA: labs/…/Prefabs/Test/ARMST_T4B_W3_CopiedWorkspace_TestWeapon.et  C25F97D14B60D4EC117615B9D82FA58C47FD6E386E0E4251D098378FB5E91444
+PARENT_GUID_PATH_AND_VERIFIED_CHILD_INHERITANCE: {63FF6FDCA4E7E735}Prefabs/Weapons/Russian/Shotgun/armst_Shotgun_mp_133.et (production)
+UNIQUE_NEW_ROOT_ID: A4B5C6D7E8F90112 (probe B5C6D7E8F9011223, action C6D7E8F901122334, UI F3A4B5C6D7E8F901) — each unique
+NESTED_W_P_COMPONENT_IDS_AND_EFFECTIVE_ANIM_BINDINGS: 1 nested ARMST_T4B_WeaponAnimationComponent {60B4EA76EB15F6E0}; W AnimGraph/AnimInstance = Lab_MP133.agr/{8B23B56D7987D651}Lab_MP133_weapon.asi; P AnimInjection.AnimGraph/AnimInstance = Lab_MP133.agr/{707D245CE186B2BD}Lab_MP133_player.asi
+W_P_CLONED_AGR_ASI_GUID_PATHS: AGR {853F037AC986F6C0}, W {8B23B56D7987D651} (sha 4de650d9..), P {707D245CE186B2BD} (sha f4215cde..)
+TUBE3MAG_3CAP_START2_G3B2_WRITEON_PARITY: YES (identical to G4A-B fixture)
+NO_OLD_G4A_ASIS_ACTIVE: YES (no 08FF7D08../F3A1EC39../G4A/LabASI; no 315A612FD60832E7)
+NEW_META_STATUS: OWNER_WORKBENCH_PENDING
+ORIGINAL_G4A_G3B2_CLONED_ASIS_PROD_CORE_WORLDS_UNCHANGED: YES (G4A et dc308757..; G3B2 W 7db287f6../OFF 64c5dd56..; clone agr 455c917c../ast 52ff811c../W 4de650d9../P f4215cde..; prod mp133 463efb0c..)
+OWNER_DIRTY_PRESERVED: YES
+AGENT_WORKBENCH_GAMEPLAY: NO
+GAMEPLAY_RUN: NO
+BLOCKERS: none
+FINAL_STATUS: W3_PREFAB_SOURCE_READY_WAIT_OWNER_IMPORT
+```

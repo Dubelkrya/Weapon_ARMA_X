@@ -1,0 +1,37 @@
+GenericEntity : "{63FF6FDCA4E7E735}Prefabs/Weapons/Russian/Shotgun/armst_Shotgun_mp_133.et" {
+ ID "A4B5C6D7E8F90112"
+ components {
+  ARMST_T4B_WeaponProbe "B5C6D7E8F9011223" {
+   m_iT4BStartAmmo 2
+  }
+  WeaponComponent "{CFBAA4B706BA66E8}" {
+   components {
+    MuzzleComponent "{CA6BE4D6B867541F}" {
+     MagazineTemplate "{CD8091A2B3C4D5E6}Prefabs/Test/ARMST_T4B_G3B2_Tube3Mag.et"
+    }
+    ARMST_T4B_WeaponAnimationComponent "{60B4EA76EB15F6E0}" {
+     AnimGraph "{853F037AC986F6C0}Assets/Weapons_RUS/Mp_133/Workspace/Lab_MP133.agr"
+     AnimInstance "{8B23B56D7987D651}Assets/Weapons_RUS/Mp_133/Workspace/Lab_MP133_weapon.asi"
+     AnimInjection AnimationAttachmentInfo "{532F3A9CB912F2BA}" {
+      AnimGraph "{853F037AC986F6C0}Assets/Weapons_RUS/Mp_133/Workspace/Lab_MP133.agr"
+      AnimInstance "{707D245CE186B2BD}Assets/Weapons_RUS/Mp_133/Workspace/Lab_MP133_player.asi"
+     }
+    }
+   }
+  }
+  ActionsManagerComponent "{A29AE67FF4D82B0F}" {
+   additionalActions +{
+    ARMST_T4B_G3B2_TransferAction "C6D7E8F901122334" {
+     ParentContextList {
+      "default"
+     }
+     UIInfo UIInfo "F3A4B5C6D7E8F901" {
+      Name "W3: transfer 1 (copied workspace; INVENTORY-WIDE WRITE ENABLED)"
+     }
+     m_bG3B2WriteEnabled 1
+     m_bG3B2InventoryWide 1
+    }
+   }
+  }
+ }
+}
