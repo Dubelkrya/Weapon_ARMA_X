@@ -658,6 +658,17 @@ historical material**; the owner approved **V3** (Issue #27 comment 5966570978,
   ASCII; local==published; T4b/G3B1/Core/production untouched. No inventory-wide WRITE-ON fixture.
   Status `INVENTORY_WIDE_OFF_SOURCE_PREPARED / LEGACY_FIXTURES_UNCHANGED / COMPILER_UNVERIFIED /
   NO_B2_WRITES / STOP_FOR_INDEPENDENT_REVIEW`.
+- **G3-B2 cleanup + Inventory-Wide WRITE-ON (comment 5974842072, 2026-10-04):** new disposable
+  `ARMST_T4B_G3B2_InventoryWide_WriteOn_TestWeapon.et` (`36640D9D...`, meta `6972BC1F...`) — direct
+  child of production MP-133, T4b probe start 2, one B2 action, `m_bG3B2InventoryWide 1` +
+  `m_bG3B2WriteEnabled 1` (UI `INVENTORY-WIDE WRITE ENABLED`); shared B2 script/algorithm unchanged.
+  Deleted unused pairs: `G3B1_TestWeapon`, `G3B2_TestWeapon`, `G3B2_Preflight_TestWeapon`,
+  `G3B2_WriteTestWeapon`, `G3B2_WriteOn_TestWeapon`; archived via Git history + tag
+  `archive/2026-10-04/g3b2-pre-cleanup` (`66c808f4`). Kept: `ARMST_T4B_TestWeapon.et` (shared baseline
+  parent), `G3B1_DonorMag.et` + `G3B2_InventoryWide_TestWeapon.et` (**hard refs in production world
+  `ARMST-PLATFORM---Weapons\worlds\Weapon_test\...\default.layer`**), `G3B1_DonorDevice.et` (owner
+  Workbench artefact). Manifest updated; local==published. `COMPILER_UNVERIFIED`. Status
+  `TWO_ACTIVE_G3B2_FIXTURES / LEGACY_FIXTURES_ARCHIVED / NO_B2_WRITES / STOP_FOR_INDEPENDENT_REVIEW`.
 
 ---
 

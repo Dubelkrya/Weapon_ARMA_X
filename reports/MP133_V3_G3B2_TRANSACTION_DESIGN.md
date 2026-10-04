@@ -732,3 +732,36 @@ inventory-wide prefab `4829F51BC1E62BBC9330148087911EEAF61961BB1D3EA4F77115964E6
 `68F67CAB…`/`DAD5B732…`/`BBED7C0E…`/`A9282110…` byte-identical; static braces 139/139, parens
 765/765, ASCII. `COMPILER_UNVERIFIED / WAITING_OWNER_RECOMPILE`.
 **STATUS:** `INVENTORY_WIDE_OFF_SOURCE_PREPARED / LEGACY_FIXTURES_UNCHANGED / COMPILER_UNVERIFIED / NO_B2_WRITES / STOP_FOR_INDEPENDENT_REVIEW`.
+
+### 11.8 Inventory-Wide WRITE-ON fixture + laboratory cleanup (Issue #34 comment 5974842072) — rev 8 follow-up
+
+Two bounded commits. **Stage 1** adds the disposable write-capable inventory-wide fixture; **stage 2**
+removes redundant test fixtures (archived by Git history + tag).
+
+**Stage 1 — WRITE-ON.** `Prefabs/Test/ARMST_T4B_G3B2_InventoryWide_WriteOn_TestWeapon.et` (+ new
+unique `.meta`), direct child of the production MP-133, T4b probe `m_iT4BStartAmmo 2`, exactly one B2
+action: `m_bG3B2InventoryWide 1`, `m_bG3B2WriteEnabled 1`, UI `INVENTORY-WIDE WRITE ENABLED`. New
+GUIDs (unique): meta `{78899AABBCDDEEFF}`, instance `899AABBCDDEEFF00`, probe `99AABBCDDEEFF011`,
+action `AABBCDDEEFF01122`, UIInfo `ABBCDDEEFF011223`. The shared B2 script/algorithm is **unchanged**;
+all guards (inventory ownership, weapon-installed/weapon-storage exclusion, ammo type, capacity,
+one-shot latch, quarantine, conservation) remain. This is source preparation only — the transfer
+requires a separate owner authorization and a recompile.
+
+**Stage 2 — cleanup.** `Prefabs/Test` now holds two active G3-B2 fixtures plus the shared/thirty
+artefacts. Removed unused `.et`+`.meta` pairs: `ARMST_T4B_G3B1_TestWeapon`,
+`ARMST_T4B_G3B2_TestWeapon`, `ARMST_T4B_G3B2_Preflight_TestWeapon`, `ARMST_T4B_G3B2_WriteTestWeapon`,
+`ARMST_T4B_G3B2_WriteOn_TestWeapon` (no layer/world/script hard reference). Preserved via Git history
+and annotated tag **`archive/2026-10-04/g3b2-pre-cleanup`** (`66c808f4`).
+
+**Kept with reason (not deleted):** `ARMST_T4B_TestWeapon.et` — shared baseline parent referenced by
+docs/README and the T4b/G3B1 script purpose text (removing it risks the remaining fixtures);
+`ARMST_T4B_G3B1_DonorMag.et` and `ARMST_T4B_G3B2_InventoryWide_TestWeapon.et` — **hard references in
+the production test world** `ARMST-PLATFORM---Weapons\worlds\Weapon_test\weapon_test_Layers\default.layer`;
+`ARMST_T4B_G3B1_DonorDevice.et` — owner Workbench artefact. Over-deletion was not forced: the goal is
+two active G3-B2 weapons in the lab, and the target set is met, while the world is not broken.
+
+Write-on prefab `36640D9D7A8A56D2079DD9DBFE31F581E1C6FE6EBC460AD3BDE83B922BBC134F`, meta
+`6972BC1FEC5BED6FC03E5F8559815F8602A156BEBFDBC1326EC92FC856EF6018`; Inventory-Wide OFF `4829F51B…`
+unchanged; script `F6F7CB70…` unchanged; local==published.
+`COMPILER_UNVERIFIED / WAITING_OWNER_RECOMPILE`.
+**STATUS:** `TWO_ACTIVE_G3B2_FIXTURES / LEGACY_FIXTURES_ARCHIVED / COMPILER_UNVERIFIED / NO_B2_WRITES / STOP_FOR_INDEPENDENT_REVIEW`.
