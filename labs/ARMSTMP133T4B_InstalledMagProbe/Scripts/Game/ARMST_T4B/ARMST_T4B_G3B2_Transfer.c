@@ -1159,8 +1159,8 @@ class ARMST_T4B_G3B2_TransferAction : ScriptedUserAction
 		m_dBarrel = m_opBarrel;
 		m_dBarrels = m_opBarrels;
 		m_dRefType = m_opRefType;
-		GetGame().GetCallqueue().CallLater(T4B2Delayed250, 250, false);
-		GetGame().GetCallqueue().CallLater(T4B2Delayed1000, 1000, false);
+		GetGame().GetCallqueue().CallLater(T4B2Delayed250, 250, false, m_i2OpId);
+		GetGame().GetCallqueue().CallLater(T4B2Delayed1000, 1000, false, m_i2OpId);
 	}
 
 	void T4B2Execute()
@@ -1373,25 +1373,29 @@ class ARMST_T4B_G3B2_TransferAction : ScriptedUserAction
 	// ========================================================================
 	// Delayed read-only samples (NEVER write)
 	// ========================================================================
-	void T4B2Delayed250()
+	void T4B2Delayed250(int cbOp)
 	{
-		T4B2DelayedSample(250);
+		T4B2DelayedSample(250, cbOp);
 	}
 
-	void T4B2Delayed1000()
+	void T4B2Delayed1000(int cbOp)
 	{
-		T4B2DelayedSample(1000);
+		T4B2DelayedSample(1000, cbOp);
 	}
 
-	void T4B2DelayedSample(int ms)
+	void T4B2DelayedSample(int ms, int cbOp)
 	{
+		// Immutable callback-correlation gate: BEFORE reading/updating any sample state, require that
+		// this callback belongs to the CURRENT scheduled operation and that the in-flight latch is
+		// still held. A stale/duplicate callback (old op id, or arriving after unlock) is dropped
+		// without mutating state, so it can never unlock or quarantine a newer operation.
 		if (m_dOp <= 0)
 			return;
-		// Stale/duplicate callback guard: only accept a sample for the current scheduled op whose
-		// latch is still held. After unlock a late duplicate must never touch state or quarantine.
-		if (ms == 1000 && m_dOp != m_dScheduledOp)
+		if (cbOp != m_dScheduledOp)
 			return;
 		if (!m_b2Latch)
+			return;
+		if (m_dOp != cbOp)
 			return;
 
 		int dNow = -1;
@@ -1506,40 +1510,51 @@ class ARMST_T4B_G3B2_TransferAction : ScriptedUserAction
 			return;
 		}
 
-		// Positive sample accepted (read-only). Track it; never write here.
-		m_dSamples++;
+		// Positive sample accepted (read-only). Track each stage separately so duplicates cannot
+		// satisfy the two-distinct-samples requirement. Never writes here.
 		if (ms == 250)
 		{
-			m_dSample250Ok = true;
+			if (!m_dSample250Ok)
+			{
+				m_dSample250Ok = true;
+				m_dSamples++;
+			}
+			return;
 		}
 
-		// Release the in-flight latch ONLY after BOTH samples passed for the SAME op, no quarantine,
-		// and only on the server. The +1000 ms sample releases only if its own +250 ms sample passed.
-		if (ms == 1000)
+		// ms == 1000: sample accepted; require its own +250 ms sample for the SAME op.
+		if (!m_dSample250Ok)
 		{
-			bool sameOp = (m_dOp == m_dScheduledOp);
-			bool twoSamples = (m_dSamples >= 2);
-			bool canUnlock = m_dSample250Ok;
-			canUnlock = canUnlock && sameOp;
-			canUnlock = canUnlock && twoSamples;
-			canUnlock = canUnlock && (!m_b2Quarantined);
-			canUnlock = canUnlock && Replication.IsServer();
-			if (canUnlock)
-			{
-				m_b2Latch = false;
-				m_dScheduledOp = 0;
-				Print("[ARMST_T4B-G3B2] op=" + m_dOp.ToString()
-					+ " phase=unlock ev=postcommit-verified samples=" + m_dSamples.ToString()
-					+ " srv=" + T4B2Srv(), LogLevel.NORMAL);
-			}
-			else
-			{
-				m_b2Quarantined = true;
-				Print("[ARMST_T4B-G3B2] op=" + m_dOp.ToString()
-					+ " phase=late-quarantine ev=unlock-not-verified sample250ok=" + T4BB(m_dSample250Ok)
-					+ " sameOp=" + T4BB(sameOp) + " samples=" + m_dSamples.ToString()
-					+ " srv=" + T4B2Srv(), LogLevel.NORMAL);
-			}
+			m_b2Quarantined = true;
+			Print("[ARMST_T4B-G3B2] op=" + m_dOp.ToString()
+				+ " phase=late-quarantine ev=unlock-not-verified missing250 srv=" + T4B2Srv(), LogLevel.NORMAL);
+			return;
+		}
+		m_dSamples = 2;
+
+		// Release the in-flight latch ONLY for the verified current op, no quarantine, server-side.
+		bool sameOp = (m_dOp == m_dScheduledOp) && (m_dOp == cbOp);
+		bool twoSamples = (m_dSamples >= 2);
+		bool canUnlock = m_dSample250Ok;
+		canUnlock = canUnlock && sameOp;
+		canUnlock = canUnlock && twoSamples;
+		canUnlock = canUnlock && (!m_b2Quarantined);
+		canUnlock = canUnlock && Replication.IsServer();
+		if (canUnlock)
+		{
+			m_b2Latch = false;
+			m_dScheduledOp = 0;
+			Print("[ARMST_T4B-G3B2] op=" + m_dOp.ToString()
+				+ " phase=unlock ev=postcommit-verified samples=" + m_dSamples.ToString()
+				+ " srv=" + T4B2Srv(), LogLevel.NORMAL);
+		}
+		else
+		{
+			m_b2Quarantined = true;
+			Print("[ARMST_T4B-G3B2] op=" + m_dOp.ToString()
+				+ " phase=late-quarantine ev=unlock-not-verified sample250ok=" + T4BB(m_dSample250Ok)
+				+ " sameOp=" + T4BB(sameOp) + " samples=" + m_dSamples.ToString()
+				+ " srv=" + T4B2Srv(), LogLevel.NORMAL);
 		}
 	}
 }

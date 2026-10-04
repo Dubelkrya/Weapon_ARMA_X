@@ -680,6 +680,18 @@ historical material**; the owner approved **V3** (Issue #27 comment 5966570978,
   byte-identical (`4829F51B...`/`36640D9D...`); braces 143/143, parens 788/788, ASCII; local==published.
   Status `REPEATABLE_G3B2_SOURCE_PREPARED / OFF_AND_ON_FIXTURES_UNCHANGED / NO_NEW_RUNTIME_WRITES /
   STOP_FOR_INDEPENDENT_REVIEW`; `COMPILER_UNVERIFIED`.
+- **G3-B2 stale-callback fix (comment 5975037031, 2026-10-04):** review of `b02614d` found the
+  stale-callback guard compared two co-assigned mutable fields. Fixed: each delayed callback now
+  receives an **immutable op id** (`CallLater(..., false, m_i2OpId)`, wrappers `T4B2Delayed250(int cbOp)`
+  / `T4B2Delayed1000(int cbOp)` → `T4B2DelayedSample(int ms, int cbOp)`; arg-passing form proven in
+  project). Gate before any state read/update: `cbOp != m_dScheduledOp`, `!m_b2Latch`, `m_dOp != cbOp`
+  → drop without mutating `m_dSample250Ok`/`m_dSamples`. +250 counted once (idempotent); +1000
+  requires its own +250 for the same op, else `late-quarantine missing250`; unlock only for verified
+  current op with >=2 distinct samples, no quarantine, server. Two setters/donor-first/latch/terminal
+  quarantine unchanged; OFF/WRITE-ON prefabs byte-identical (`4829F51B...`/`36640D9D...`); script
+  `B4129C83...`, braces 144/144, parens 795/795, ASCII; local==published. Status
+  `STALE_CALLBACK_GUARD_FIXED / OFF_AND_ON_FIXTURES_UNCHANGED / NO_NEW_RUNTIME_WRITES /
+  STOP_FOR_INDEPENDENT_RE_REVIEW`.
 
 ---
 

@@ -408,7 +408,7 @@ Workbench/game run performed by the agent.
 **New files** (local lab + published copy, local==published):
 
 - `Scripts/Game/ARMST_T4B/ARMST_T4B_G3B2_Transfer.c` — new `ScriptedUserAction`
-  `ARMST_T4B_G3B2_TransferAction`; SHA256 `4EC0588B23BEBB9236343C92F21F0968CE185E0B69403119DA75D778E4BED5E5` (rev 9, repeatable).
+  `ARMST_T4B_G3B2_TransferAction`; SHA256 `B4129C8316AA7A0C0528476237805DE1E1D42B5C2067EA6C5014B84FB2623256` (rev 10, repeatable).
 - `Prefabs/Test/ARMST_T4B_G3B2_TestWeapon.et` — SHA256 `68F67CAB0C17201882FCB9D587E3F3F196231B46E4FCB3951DD8BDC185873E04`.
 - `Prefabs/Test/ARMST_T4B_G3B2_TestWeapon.et.meta` — SHA256 `315C7AB6983B68C63C0AEC1D30625C5CA4B7477D72C1C75DF5291AC7438F9287`.
 
@@ -799,3 +799,31 @@ Script SHA `F6F7CB70…` → `4EC0588B23BEBB9236343C92F21F0968CE185E0B69403119DA
 two B2 `SetAmmoCount` calls; OFF/WRITE-ON prefabs unchanged (`4829F51B…`/`36640D9D…`); braces 143/143,
 parens 788/788, ASCII. `COMPILER_UNVERIFIED / WAITING_OWNER_RECOMPILE`.
 **STATUS:** `REPEATABLE_G3B2_SOURCE_PREPARED / OFF_AND_ON_FIXTURES_UNCHANGED / NO_NEW_RUNTIME_WRITES / STOP_FOR_INDEPENDENT_REVIEW`.
+
+### 11.10 Stale-callback correlation fix (Issue #34 comment 5975037031) — rev 10
+
+Review of `b02614d` found the stale-callback guard was not real: `CallLater` scheduled
+`T4B2Delayed250`/`T4B2Delayed1000` with **no immutable op id**, and the wrappers read the current
+mutable `m_dOp`/`m_dScheduledOp`, which are assigned together — so `m_dOp == m_dScheduledOp` proved
+nothing about which operation invoked the callback.
+
+- **Immutable op id passed to each callback.** `CallLater(T4B2Delayed250, 250, false, m_i2OpId)` and
+  `CallLater(T4B2Delayed1000, 1000, false, m_i2OpId)`; wrappers `T4B2Delayed250(int cbOp)` /
+  `T4B2Delayed1000(int cbOp)` forward it to `T4B2DelayedSample(int ms, int cbOp)`. The
+  argument-passing form is proven in the project (`CallLater(SetMarker, 3000, false, owner)`,
+  `CallLater(StartAnimations, 1000, false, s, b, b)`).
+- **Gate before any state read/update:** `cbOp != m_dScheduledOp` → drop; `!m_b2Latch` → drop;
+  `m_dOp != cbOp` → drop. A stale/duplicate callback is dropped without mutating `m_dSample250Ok` /
+  `m_dSamples`, so it can never unlock or quarantine a newer operation.
+- **Distinct-sample tracking:** the +250 ms sample sets `m_dSample250Ok` only once (idempotent, no
+  double count); the +1000 ms sample requires its own +250 ms sample for the same op, otherwise
+  terminal `late-quarantine ev=unlock-not-verified missing250`. Unlock only for the verified current
+  op (`m_dOp == m_dScheduledOp && m_dOp == cbOp`), ≥2 distinct samples, no quarantine, server →
+  `phase=unlock ev=postcommit-verified`.
+- No change to the transfer itself: still exactly two `SetAmmoCount` calls, donor-first, latch before
+  first setter, terminal quarantine. OFF/WRITE-ON prefabs byte-identical. (If the +1000 ms callback
+  never runs, the action stays `busy` indefinitely — documented, no watchdog added.)
+
+Script SHA `4EC0588B…` → `B4129C8316AA7A0C0528476237805DE1E1D42B5C2067EA6C5014B84FB2623256`; braces
+144/144, parens 795/795, ASCII. `COMPILER_UNVERIFIED / WAITING_OWNER_RECOMPILE`.
+**STATUS:** `STALE_CALLBACK_GUARD_FIXED / OFF_AND_ON_FIXTURES_UNCHANGED / NO_NEW_RUNTIME_WRITES / STOP_FOR_INDEPENDENT_RE_REVIEW`.
