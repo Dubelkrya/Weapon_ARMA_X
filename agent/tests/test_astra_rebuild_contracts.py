@@ -41,14 +41,20 @@ class AstraRebuildContracts(unittest.TestCase):
     def test_exact_five_paired_sources_and_template(self):
         phases=['StartReload','GrabShell','InsertShell','CheckContinue','EndReload']
         ast=(ASSETS/'MP133_Astra.ast').read_text()
-        group=body(ast,'AnimSetTemplateSource_AnimationGroup "{6A8947ABB9A94F55}"')
+        group=body(ast,'AnimSetTemplateSource_AnimationGroup "{6A8947ABB9A94F69}"')
         for phase in phases:self.assertIn('"'+phase+'"',group)
         for side,prefix in [('player','P'),('weapon','W')]:
             s=(ASSETS/f'MP133_Astra_{side}.asi').read_text()
             for phase in phases:
-                row=body(s,'AnimSetInstanceSource_Line "AstraShell.Erc.'+phase+'"')
+                row=body(s,'AnimSetInstanceSource_Line "Reload.Erc.'+phase+'"')
                 self.assertIn('/Clips/'+prefix+'_Astra_'+phase+'.anm',row)
-            self.assertEqual(s.count('AnimSetInstanceSource_Line "AstraShell.'),5)
+            self.assertEqual(s.count('AnimSetInstanceSource_Line "Reload.Erc.'),len(phases))
+            self.assertNotIn('AnimSetInstanceSource_Line "AstraShell.',s)
+        node=body(self.graph,'AnimSrcNodeGroupSelect AstraShellErcG')
+        self.assertIn('Group "Reload"',node)
+        self.assertIn('Column "Erc"',node)
+        for phase in phases:
+            self.assertIn('Source "Reload.'+phase+'"',self.graph)
     def test_finite_cycle_no_speculative_repeat(self):
         shell=body(self.graph,'AnimSrcNodeStateMachine ShellReloadSTM')
         transitions=re.findall(r'FromState "([^"]+)"\s+ToState "([^"]+)"',shell)

@@ -5,7 +5,7 @@ AnimSrcGraphFile {
     AnimSrcNodeGroupSelect AstraShellErcG {
      EditorPos 16.211 -2.737
      Child "ShellReloadSTM"
-     Group "AstraShell"
+     Group "Reload"
      Column "Erc"
     }
     AnimSrcNodeStateMachine ShellReloadSTM {
@@ -88,7 +88,6 @@ AnimSrcGraphFile {
        BlendFn "S"
        PostEval 1
       }
-
       AnimSrcNodeTransition "{6988C9BC5F695C5A}" {
        FromState "CheckContinue"
        ToState "EndReload"
@@ -101,27 +100,27 @@ AnimSrcGraphFile {
     }
     AnimSrcNodeSource AstraStartReload {
      EditorPos 12.632 2.105
-     Source "AstraShell.StartReload"
+     Source "Reload.StartReload"
      Looptype "No Loop"
     }
     AnimSrcNodeSource AstraGrabShell {
      EditorPos 16.632 2.105
-     Source "AstraShell.GrabShell"
+     Source "Reload.GrabShell"
      Looptype "No Loop"
     }
     AnimSrcNodeSource AstraInsertShell {
      EditorPos 20.632 2.105
-     Source "AstraShell.InsertShell"
+     Source "Reload.InsertShell"
      Looptype "No Loop"
     }
     AnimSrcNodeSource AstraCheckContinue {
      EditorPos 24.632 2.105
-     Source "AstraShell.CheckContinue"
+     Source "Reload.CheckContinue"
      Looptype "No Loop"
     }
     AnimSrcNodeSource AstraEndReload {
      EditorPos 28.632 2.105
-     Source "AstraShell.EndReload"
+     Source "Reload.EndReload"
      Looptype "No Loop"
     }
     AnimSrcNodePose SafetyPose {
@@ -166,7 +165,7 @@ AnimSrcGraphFile {
        PassThrough 1
       }
       AnimSrcNodeState Buffer3 {
-       EditorPos 0.7 -0.3
+       EditorPos 0.211 -0.632
        Child "Buffer Use 1"
        StartCondition "false"
        PassThrough 1
@@ -273,14 +272,17 @@ AnimSrcGraphFile {
      }
     }
     AnimSrcNodeStateMachine RackStanceSTM {
+     EditorPos 15.368 -3.789
      states {
       AnimSrcNodeState ErcCro {
+       EditorPos 15.158 -7.579
        Child "RackErcG"
        StartCondition "Stance != 2"
        TimeStorage "Real Time"
        IsExit 1
       }
       AnimSrcNodeState Pne {
+       EditorPos 18.105 -7.579
        Child "RackPneG"
        StartCondition "Stance == 2"
        TimeStorage "Real Time"
@@ -289,17 +291,19 @@ AnimSrcGraphFile {
      }
     }
     AnimSrcNodeGroupSelect RackErcG {
+     EditorPos 15.158 -6.526
      Child "RackBoltAnim"
      Group "Reload"
      Column "Erc"
     }
     AnimSrcNodeGroupSelect RackPneG {
+     EditorPos 18.105 -6.526
      Child "RackBoltAnim"
      Group "Reload"
      Column "Pne"
     }
     AnimSrcNodeSource RackBoltAnim {
-     EditorPos 7.158 -2.526
+     EditorPos 16.632 -5.263
      Source "Reload.ReloadActionBolt"
      Looptype "No Loop"
      BonesInterpolatedInModelSpace {
@@ -307,19 +311,18 @@ AnimSrcGraphFile {
      }
     }
     AnimSrcNodeStateMachine ReloadRouteSTM {
-     EditorPos 13.263 -4.211
+     EditorPos 8.842 -2.105
      states {
       AnimSrcNodeState Bolt {
        Tags {
         "TagRackBolt"
        }
-       EditorPos 8.421 -8.421
+       EditorPos 8.632 -3.368
        Child "RackStanceSTM"
        StartCondition "GetCommandI(CMD_Weapon_Reload) == 1 && GetCommandF(CMD_Weapon_Reload) == 0.0"
        TimeStorage "Real Time"
        IsExit 1
       }
-
      }
     }
     AnimSrcNodeQueue "Queue 1" {
@@ -494,7 +497,7 @@ AnimSrcGraphFile {
      Optimization "Always eval both"
     }
     AnimSrcNodePose IdleFinger_1 {
-     EditorPos 6.5 5.9
+     EditorPos 6.105 8
      Source "Reload.Idle_finger"
     }
     AnimSrcNodeIK2Target ModesIKTarget {
