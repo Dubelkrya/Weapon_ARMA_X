@@ -1,0 +1,344 @@
+orkbench Reload Game
+ ENGINE       : Game destroyed.
+ GUI          : Using default language (en_us)
+ GUI          : Loading 'en_us' localization file.
+  INIT         : INIT         : Loading StringTable
+ PROFILING    : Loading StringTable took: 9.981300 ms
+ INIT         : Creating game instance(ArmaReforgerScripted), version 1.8.0.13 built 2026-08-21 14:30:18 UTC.
+ SCRIPT       : Unable to register a script command due keyword duplicity: ban
+ SCRIPT       : Unable to register a script command due keyword duplicity: kick
+ ENGINE       : Game successfully created.
+ ENGINE       : Game successfully initialized.
+PROFILING    : Workbench Reload Game took: 24.411400 ms
+DEFAULT   (W): LogiLED: Cannot initialize! (service not running or no compatible device detected)
+PLATFORM     : Save data from container 'settings' have been loaded
+PLATFORM     : Save data from container 'sessions' have been loaded
+PLATFORM     : GameProject engine settings load from profile @"ReforgerEngineSettings.conf"
+ ENGINE       : Engine user settings config loaded
+PLATFORM     : GameProject user settings load from profile @"ReforgerGameSettings.conf"
+ ENGINE       : Game user settings config loaded
+DEFAULT      : [SaveGameManager] Starting new playthrough nr.0 '' for mission '{808A92F550F8B062}worlds/Weapon_test/weapon_test.ent'.
+ WORLD        : WORLD        : Game::LoadEntities
+  WORLD        : WORLD        : Initializing world systems @"{1C60D2EDA2B468B8}Configs/Systems/BaseGameModeSystems.conf"
+  NETWORK      : Enabled lag compensation, 29 frames with 100 FPS and 280 ms rewind limits.
+  WORLD        : WORLD        : CreateEntities
+   WORLD        : WORLD        : CreateEntities
+    WORLD        : WORLD        : NotifyBeforeEntitiesCreated
+    RESOURCES    : Loaded mission headers from 57 addon(s)!
+   PROFILING    : NotifyBeforeEntitiesCreated took: 1.074000 ms
+    WORLD        : WORLD        : Wait for preloading data
+   PROFILING    : Wait for preloading data took: 0.000500 ms
+WORLD        : Game::LoadEntities
+ WORLD        : CreateEntities
+  WORLD        : CreateEntities
+   ENTITY       : Create entity @"ENTITY:4611686018427387905" ('SCR_AIWorld') at <107.915001 1.000000 159.473999> @"{E0A05C76552E7F58}Prefabs/AI/SCR_AIWorld.et"
+    PATHFINDING   : Navmesh Init 'Soldiers'
+     PATHFINDING(W): No navmesh file specified! Will initialize empty navmesh world.
+    PATHFINDING   : Navmesh Init 'BTRlike'
+     PATHFINDING(W): No navmesh file specified! Will initialize empty navmesh world.
+    PATHFINDING   : Navmesh Init 'LowRes'
+     PATHFINDING(W): No navmesh file specified! Will initialize empty navmesh world.
+   ENTITY       : Create entity @"ENTITY:6917529027641081857" ('GenericEntity') at <131.324997 1.006000 74.332001>
+    ENTITY       : EntityPrefabUse
+     RESOURCES    : GetResourceObject @"{372FD85C844F8206}Test/Chemical_Ground_Anomaly.xob"
+      RESOURCES (E): Failed to open
+   ENTITY       : Create entity @"ENTITY:6917529027641081858" ('GenericEntity','Assets/addons/Plank/Picatinny_Scope_Savage_340.xob') at <133.001007 1.000000 76.739998> @"{035155F82E11CBFB}Prefabs/Weapons/Russian/Shotgun/armst_Shotgun_RIS_Mount.et"
+    INVENTORY (W): @"ENTITY:6917529027641081858" ('GenericEntity','Assets/addons/Plank/Picatinny_Scope_Savage_340.xob') at <133.001007 1.000000 76.739998> @"{035155F82E11CBFB}Prefabs/Weapons/Russian/Shotgun/armst_Shotgun_RIS_Mount.et" "Parent Node From Parent Entity" property on RplComponent of the item is set to true. It should be set to false.
+   ENTITY       : Create entity @"ENTITY:6917529027641081866" ('armst_AKS_6A6D20653A05823C', GenericEntity) at <133.779007 1.900000 77.894997> @"{25A64724FD416989}Prefabs/Weapons/Russian/Rifle/AK74/armst_Rifle_AKS.et"
+    SCRIPT    (E): WARNING: One or more override stats failed to set
+    SCRIPT    (E): Entity: GenericEntity<0x000001F837B775C0> @"ENTITY:6917529027641081866" ('armst_AKS_6A6D20653A05823C', GenericEntity) at <133.779007 1.900000 77.894997> @"{25A64724FD416989}Prefabs/Weapons/Russian/Rifle/AK74/armst_Rifle_AKS.et", Attachment Entity GameEntity<0x000001F837B75AF0> @"ENTITY:9223372036854775813" ('GameEntity','Assets/addons/stocks_ak/STOCK_SMALL.xob') at <133.779007 1.900000 77.894997> @"{31E8EF2214161A25}Prefabs/Weapons/Attachments/Stocks/AK74/armst_Handguard_AKS.et"
+    SCRIPT    (E): WARNING: One or more override stats failed to set
+    SCRIPT    (E): Entity: GenericEntity<0x000001F837B775C0> @"ENTITY:6917529027641081866" ('armst_AKS_6A6D20653A05823C', GenericEntity) at <133.779007 1.900000 77.894997> @"{25A64724FD416989}Prefabs/Weapons/Russian/Rifle/AK74/armst_Rifle_AKS.et", Attachment Entity GameEntity<0x000001F837B74E90> @"ENTITY:9223372036854775814" ('GameEntity','Assets/addons/hanguards_ak/akm_handguard.xob') at <133.779007 1.900000 77.894997> @"{55C3C1291273701A}Prefabs/Weapons/Attachments/Handguards/handguard_AKM.et"
+   ENTITY       : Create entity @"ENTITY:6917529027641081877" ('armst_Rifle_L85_base_6A6D20653A05A679', GenericEntity) at <142.714996 1.900000 78.063004>
+    ENTITY       : SpawnEntityPrefab @"{D0C2B304E954C9FD}Prefabs/Weapons/Attachments/Optics/L85/armst_L85_CarryHandle.et"
+     ENTITY       : Create entity @"ENTITY:9223372036854775826" ('GenericEntity','Assets/Weapons_NATO/L86/L86_chamber_plank.xob') at <142.714996 1.900000 78.063004> @"{D0C2B304E954C9FD}Prefabs/Weapons/Attachments/Optics/L85/armst_L85_CarryHandle.et"
+      INVENTORY (W): @"ENTITY:9223372036854775826" ('GenericEntity','Assets/Weapons_NATO/L86/L86_chamber_plank.xob') at <142.714996 1.900000 78.063004> @"{D0C2B304E954C9FD}Prefabs/Weapons/Attachments/Optics/L85/armst_L85_CarryHandle.et" "Parent Node From Parent Entity" property on RplComponent of the item is set to true. It should be set to false.
+   ENTITY       : Create entity @"ENTITY:6917529027641081880" ('armst_Rifle_AKMS_6A6D20653A05A68A', GenericEntity) at <134.789993 1.900000 77.952003> @"{5712F6F88A014F0B}Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKMS.et"
+    SCRIPT    (E): WARNING: One or more override stats failed to set
+    SCRIPT    (E): Entity: GenericEntity<0x000001F837B72028> @"ENTITY:6917529027641081880" ('armst_Rifle_AKMS_6A6D20653A05A68A', GenericEntity) at <134.789993 1.900000 77.952003> @"{5712F6F88A014F0B}Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKMS.et", Attachment Entity GameEntity<0x000001F837B71B00> @"ENTITY:9223372036854775829" ('GameEntity','Assets/addons/stocks_ak/STOCK_SMALL.xob') at <134.789993 1.900000 77.952003> @"{31E8EF2214161A25}Prefabs/Weapons/Attachments/Stocks/AK74/armst_Handguard_AKS.et"
+    SCRIPT    (E): WARNING: One or more override stats failed to set
+    SCRIPT    (E): Entity: GenericEntity<0x000001F837B72028> @"ENTITY:6917529027641081880" ('armst_Rifle_AKMS_6A6D20653A05A68A', GenericEntity) at <134.789993 1.900000 77.952003> @"{5712F6F88A014F0B}Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKMS.et", Attachment Entity GameEntity<0x000001F837B70D98> @"ENTITY:9223372036854775830" ('GameEntity','Assets/addons/hanguards_ak/akm_handguard.xob') at <134.789993 1.900000 77.952003> @"{55C3C1291273701A}Prefabs/Weapons/Attachments/Handguards/handguard_AKM.et"
+   ENTITY       : Create entity @"ENTITY:6917529027641081882" ('armst_AK74M_6A6D20653A055505', GenericEntity) at <133.464996 2.040000 77.969002> @"{5B8E766C0E3C13EE}Prefabs/Weapons/Russian/Rifle/AK74/armst_Rifle_AK74M.et"
+    SCRIPT    (E): WARNING: One or more override stats failed to set
+    SCRIPT    (E): Entity: GenericEntity<0x000001F837B72FA0> @"ENTITY:6917529027641081882" ('armst_AK74M_6A6D20653A055505', GenericEntity) at <133.464996 2.040000 77.969002> @"{5B8E766C0E3C13EE}Prefabs/Weapons/Russian/Rifle/AK74/armst_Rifle_AK74M.et", Attachment Entity GameEntity<0x000001F837B732B8> @"ENTITY:9223372036854775833" ('GameEntity','Assets/addons/stocks_ak/ak74m_acs2.xob') at <133.464996 2.040000 77.969002> @"{FCE52BA4B5789E65}Prefabs/Weapons/Attachments/Stocks/AK74/armst_Handguard_AK74M.et"
+    SCRIPT    (E): WARNING: One or more override stats failed to set
+    SCRIPT    (E): Entity: GenericEntity<0x000001F837B72FA0> @"ENTITY:6917529027641081882" ('armst_AK74M_6A6D20653A055505', GenericEntity) at <133.464996 2.040000 77.969002> @"{5B8E766C0E3C13EE}Prefabs/Weapons/Russian/Rifle/AK74/armst_Rifle_AK74M.et", Attachment Entity GameEntity<0x000001F837B70450> @"ENTITY:9223372036854775834" ('GameEntity','Assets/addons/hanguards_ak/ak74m_acs.xob') at <133.464996 2.040000 77.969002> @"{B801FF446F8C3C73}Prefabs/Weapons/Attachments/Handguards/handguard_AK74m.et"
+   ENTITY       : Create entity @"ENTITY:6917529027641081883" ('armst_Rifle_AKM_6A6D20653A0555CE', GenericEntity) at <135.009003 1.900000 77.976997> @"{5BFF97EFD0BF6D9F}Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM.et"
+    SCRIPT    (E): WARNING: One or more override stats failed to set
+    SCRIPT    (E): Entity: GenericEntity<0x000001F837B735D0> @"ENTITY:6917529027641081883" ('armst_Rifle_AKM_6A6D20653A0555CE', GenericEntity) at <135.009003 1.900000 77.976997> @"{5BFF97EFD0BF6D9F}Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM.et", Attachment Entity GameEntity<0x000001F837B73D08> @"ENTITY:9223372036854775838" ('GameEntity','Assets/addons/stocks_ak/akm_stock.xob') at <135.009003 1.900000 77.976997> @"{B0E764B069F6A153}Prefabs/Weapons/Attachments/Stocks/AK74/armst_Stock_akm.et"
+    SCRIPT    (E): WARNING: One or more override stats failed to set
+    SCRIPT    (E): Entity: GenericEntity<0x000001F837B735D0> @"ENTITY:6917529027641081883" ('armst_Rifle_AKM_6A6D20653A0555CE', GenericEntity) at <135.009003 1.900000 77.976997> @"{5BFF97EFD0BF6D9F}Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM.et", Attachment Entity GameEntity<0x000001F837B73E10> @"ENTITY:9223372036854775839" ('GameEntity','Assets/addons/hanguards_ak/akm_handguard.xob') at <135.009003 1.900000 77.976997> @"{55C3C1291273701A}Prefabs/Weapons/Attachments/Handguards/handguard_AKM.et"
+   ENTITY       : Create entity @"ENTITY:6917529027641081891" ('armst_Remington_870_6A6D20653A05460E', GenericEntity) at <146.005997 1.900000 77.705002>
+    ENTITY       : EntityPrefabUse @"{6DBEF115AA35E404}Prefabs/Weapons/Western/Shotgun/armst_Shotgun_Remington_870.et"
+     RESOURCES    : GetResourceObject @"{0E5488603A5EF99F}Assets/Remington_870/Anim/Remington_870_weapon.asi"
+      ANIMATION    : Load Anim Set Instance @"{0E5488603A5EF99F}Assets/Remington_870/Anim/Remington_870_weapon.asi"
+       RESOURCES (E): Wrong GUID/name for resource @"{60D6DD3841E3168E}Shootgun/Mp_133/Anim/Reload/W_MP_133_Reload_Bolt.anm" in property "Resource"
+       ANIMATION    : Filling animation sources... @"{0E5488603A5EF99F}Assets/Remington_870/Anim/Remington_870_weapon.asi"
+        RESOURCES    : GetResourceObject @"{60D6DD3841E3168E}Shootgun/Mp_133/Anim/Reload/W_MP_133_Reload_Bolt.anm"
+         RESOURCES (E): Failed to open
+        ANIMATION (E): Cannot load animation Shootgun/Mp_133/Anim/Reload/W_MP_133_Reload_Bolt.anm for source Reload.Pne.ReloadActionBolt, skipping...
+   ENTITY       : Create entity @"ENTITY:6917529027641081893" ('armst_AK105_6A6D20653A054ABA', GenericEntity) at <132.735992 2.069000 77.973000>
+    ENTITY       : EntityPrefabUse @"{6FC3151D0DED22A9}Prefabs/Weapons/Russian/Rifle/AK74/armst_Rifle_AK105.et"
+     RESOURCES (E): Can't remap 'Assets/Weapons_RUS/Ak_105/Ak_105.xob' material from 'AK74_HandGuard' to 'Assets/Weapons/Rifles/AK74/Data/AK74_Stock.emat'. Source material do not exist
+     RESOURCES (E): Can't remap 'Assets/Weapons_RUS/Ak_105/Ak_105.xob' material from 'AK74_Stock' to 'Assets/Weapons/Rifles/AK74/Data/AK74_Stock.emat'. Source material do not exist
+    SCRIPT    (E): WARNING: One or more override stats failed to set
+    SCRIPT    (E): Entity: GenericEntity<0x000001F837B76C78> @"ENTITY:6917529027641081893" ('armst_AK105_6A6D20653A054ABA', GenericEntity) at <132.735992 2.069000 77.973000>, Attachment Entity GameEntity<0x000001F837B76E88> @"ENTITY:9223372036854775845" ('GameEntity','Assets/addons/stocks_ak/ak74m_acs2.xob') at <132.735992 2.069000 77.973000> @"{FCE52BA4B5789E65}Prefabs/Weapons/Attachments/Stocks/AK74/armst_Handguard_AK74M.et"
+    SCRIPT    (E): WARNING: One or more override stats failed to set
+    SCRIPT    (E): Entity: GenericEntity<0x000001F837B76C78> @"ENTITY:6917529027641081893" ('armst_AK105_6A6D20653A054ABA', GenericEntity) at <132.735992 2.069000 77.973000>, Attachment Entity GameEntity<0x000001F837B75F10> @"ENTITY:9223372036854775846" ('GameEntity','Assets/addons/hanguards_ak/ak74m_acs.xob') at <132.735992 2.069000 77.973000> @"{B801FF446F8C3C73}Prefabs/Weapons/Attachments/Handguards/handguard_AK74m.et"
+   ENTITY       : Create entity @"ENTITY:6917529027641081900" ('armst_Rifle_VPO136_6A6D20653A05656E', GenericEntity) at <135.449997 1.900000 77.942001> @"{90EADC5DD9AD35D5}Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_VPO136.et"
+    SCRIPT    (E): WARNING: One or more override stats failed to set
+    SCRIPT    (E): Entity: GenericEntity<0x000001F837B78E80> @"ENTITY:6917529027641081900" ('armst_Rifle_VPO136_6A6D20653A05656E', GenericEntity) at <135.449997 1.900000 77.942001> @"{90EADC5DD9AD35D5}Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_VPO136.et", Attachment Entity GameEntity<0x000001F837B78640> @"ENTITY:9223372036854775851" ('GameEntity','Assets/addons/stocks_ak/akm_stock.xob') at <135.449997 1.900000 77.942001> @"{B0E764B069F6A153}Prefabs/Weapons/Attachments/Stocks/AK74/armst_Stock_akm.et"
+    SCRIPT    (E): WARNING: One or more override stats failed to set
+    SCRIPT    (E): Entity: GenericEntity<0x000001F837B78E80> @"ENTITY:6917529027641081900" ('armst_Rifle_VPO136_6A6D20653A05656E', GenericEntity) at <135.449997 1.900000 77.942001> @"{90EADC5DD9AD35D5}Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_VPO136.et", Attachment Entity GameEntity<0x000001F837B794B0> @"ENTITY:9223372036854775852" ('GameEntity','Assets/addons/hanguards_ak/akm_handguard.xob') at <135.449997 1.900000 77.942001> @"{55C3C1291273701A}Prefabs/Weapons/Attachments/Handguards/handguard_AKM.et"
+   ENTITY       : Create entity @"ENTITY:6917529027641081902" ('armst_mp_153_6A6D20653A056698', GenericEntity) at <147.216003 1.900000 77.732002>
+    ENTITY       : EntityPrefabUse @"{92DB80A098AABF1C}Prefabs/Weapons/Russian/Shotgun/armst_Shotgun_mp_153.et"
+     RESOURCES    : GetResourceObject @"{E459BFBB1FBAB92C}Assets/Mp_153/Anim/MP_153_player.asi"
+      ANIMATION    : Load Anim Set Instance @"{E459BFBB1FBAB92C}Assets/Mp_153/Anim/MP_153_player.asi"
+       RESOURCES (E): Wrong GUID/name for resource @"{D8FFB5F3D6751174}Shootgun/Mp_133/Anim/Reload/P_MP_133_Reload_Bolt.anm" in property "Resource"
+       RESOURCES (E): Wrong GUID/name for resource @"{AC8D13ABDAB8D8F8}Shootgun/Mp_133/Anim/DIff/P_MP_133_safety.anm" in property "Resource"
+       RESOURCES (E): Wrong GUID/name for resource @"{AC8D13ABDAB8D8F8}Shootgun/Mp_133/Anim/DIff/P_MP_133_safety.anm" in property "Resource"
+       ANIMATION    : Filling animation sources... @"{E459BFBB1FBAB92C}Assets/Mp_153/Anim/MP_153_player.asi"
+        RESOURCES    : GetResourceObject @"{D8FFB5F3D6751174}Shootgun/Mp_133/Anim/Reload/P_MP_133_Reload_Bolt.anm"
+         RESOURCES (E): Failed to open
+        ANIMATION (E): Cannot load animation Shootgun/Mp_133/Anim/Reload/P_MP_133_Reload_Bolt.anm for source Reload.Pne.ReloadActionBolt, skipping...
+        RESOURCES    : GetResourceObject @"{AC8D13ABDAB8D8F8}Shootgun/Mp_133/Anim/DIff/P_MP_133_safety.anm"
+         RESOURCES (E): Failed to open
+        ANIMATION (E): Cannot load animation Shootgun/Mp_133/Anim/DIff/P_MP_133_safety.anm for source Reload.Erc.Idle_finger, skipping...
+        RESOURCES    : GetResourceObject @"{AC8D13ABDAB8D8F8}Shootgun/Mp_133/Anim/DIff/P_MP_133_safety.anm"
+         RESOURCES (E): Failed to open
+        ANIMATION (E): Cannot load animation Shootgun/Mp_133/Anim/DIff/P_MP_133_safety.anm for source Reload.Pne.Idle_finger, skipping...
+   ENTITY       : Create entity @"ENTITY:6917529027641081904" ('armst_AK74N_6A6D20653A05144C', GenericEntity) at <133.630997 1.900000 77.945999>
+    SCRIPT    (E): WARNING: One or more override stats failed to set
+    SCRIPT    (E): Entity: GenericEntity<0x000001F837B7AD70> @"ENTITY:6917529027641081904" ('armst_AK74N_6A6D20653A05144C', GenericEntity) at <133.630997 1.900000 77.945999>, Attachment Entity GameEntity<0x000001F837B7B190> @"ENTITY:9223372036854775857" ('GameEntity','Assets/addons/stocks_ak/akm_stock.xob') at <133.630997 1.900000 77.945999> @"{B0E764B069F6A153}Prefabs/Weapons/Attachments/Stocks/AK74/armst_Stock_akm.et"
+    SCRIPT    (E): WARNING: One or more override stats failed to set
+    SCRIPT    (E): Entity: GenericEntity<0x000001F837B7AD70> @"ENTITY:6917529027641081904" ('armst_AK74N_6A6D20653A05144C', GenericEntity) at <133.630997 1.900000 77.945999>, Attachment Entity GameEntity<0x000001F837B7B8C8> @"ENTITY:9223372036854775858" ('GameEntity','Assets/addons/hanguards_ak/akm_handguard.xob') at <133.630997 1.900000 77.945999> @"{55C3C1291273701A}Prefabs/Weapons/Attachments/Handguards/handguard_AKM.et"
+   ENTITY       : Create entity @"ENTITY:6917529027641081908" ('armst_Rifle_HKG36_base_6A6D20653A051563', GenericEntity) at <144.080994 1.900000 77.975998> @"{A802C718201D72DF}Prefabs/Weapons/Western/Rifle/HKG36/armst_Rifle_HKG36_base.et"
+    DEFAULT   (W): The prefab "Prefabs/Weapons/Magazines/Western/5x56/HKG36/armst_Magazine_556x45_HKG36.et" should have a HierarchyComponent because it is spawned by an EntitySlotInfo in Prefabs/Weapons/Western/Rifle/HKG36/armst_Rifle_HKG36_base.et
+   ENTITY       : Create entity @"ENTITY:6917529027641081942" ('armst_Rifle_Sig550_base_6A6D20653A06E208', GenericEntity) at <141.884995 1.998000 77.920998> @"{CA3BEBAADDFAF1DE}Prefabs/Weapons/Western/Rifle/Sig550/armst_Rifle_Sig550_base.et"
+    DEFAULT   (W): The prefab "Prefabs/Weapons/Magazines/Western/5x56/SIG550/armst_Magazine_556x45_SIG_550.et" should have a HierarchyComponent because it is spawned by an EntitySlotInfo in Prefabs/Weapons/Western/Rifle/Sig550/armst_Rifle_Sig550_base.et
+   ENTITY       : Create entity @"ENTITY:6917529027641081943" ('GenericEntity','Assets/Weapons_NATO/L86/L86_chamber_plank.xob') at <142.520004 1.900000 78.092003>
+    INVENTORY (W): @"ENTITY:6917529027641081943" ('GenericEntity','Assets/Weapons_NATO/L86/L86_chamber_plank.xob') at <142.520004 1.900000 78.092003> "Parent Node From Parent Entity" property on RplComponent of the item is set to true. It should be set to false.
+   ENTITY       : Create entity @"ENTITY:6917529027641081944" ('GenericEntity','Assets/addons/Dovetail/AKDovetailMount.xob') at <133.153000 1.000000 76.081001> @"{D71FD2BD68AC4B31}Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et"
+    INVENTORY (W): @"ENTITY:6917529027641081944" ('GenericEntity','Assets/addons/Dovetail/AKDovetailMount.xob') at <133.153000 1.000000 76.081001> @"{D71FD2BD68AC4B31}Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et" "Parent Node From Parent Entity" property on RplComponent of the item is set to true. It should be set to false.
+   ENTITY       : Create entity @"ENTITY:6917529027641081950" ('armst_Rifle_SOC94_base_6A6D20653A06816B', GenericEntity) at <135.197006 1.900000 78.007004> @"{E394112ABBC198D8}Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_SOC94.et"
+    ENTITY       : CreateComponent 'ActionsManagerComponent'
+     RESOURCES (W): UserActionContext "optic" couldn't be registered in ActionsManager because a context with the name already exists!
+    SCRIPT    (E): WARNING: One or more override stats failed to set
+    SCRIPT    (E): Entity: GenericEntity<0x000001F837B82FA0> @"ENTITY:6917529027641081950" ('armst_Rifle_SOC94_base_6A6D20653A06816B', GenericEntity) at <135.197006 1.900000 78.007004> @"{E394112ABBC198D8}Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_SOC94.et", Attachment Entity GameEntity<0x000001F837B833C0> @"ENTITY:9223372036854775873" ('GameEntity','Assets/addons/hanguards_ak/akm_handguard.xob') at <135.197006 1.900000 78.007004> @"{55C3C1291273701A}Prefabs/Weapons/Attachments/Handguards/handguard_AKM.et"
+   ENTITY       : Create entity @"ENTITY:6917529027641081956" ('armst_AK74_base_6A6D20653A06A636', GenericEntity) at <133.259995 1.900000 77.955002> @"{FA5C25BF66A53DCF}Prefabs/Weapons/Russian/Rifle/AK74/armst_Rifle_AK74.et"
+    SCRIPT    (E): WARNING: One or more override stats failed to set
+    SCRIPT    (E): Entity: GenericEntity<0x000001F837B84968> @"ENTITY:6917529027641081956" ('armst_AK74_base_6A6D20653A06A636', GenericEntity) at <133.259995 1.900000 77.955002> @"{FA5C25BF66A53DCF}Prefabs/Weapons/Russian/Rifle/AK74/armst_Rifle_AK74.et", Attachment Entity GameEntity<0x000001F837B84D88> @"ENTITY:9223372036854775880" ('GameEntity','Assets/addons/stocks_ak/akm_stock.xob') at <133.259995 1.900000 77.955002> @"{B0E764B069F6A153}Prefabs/Weapons/Attachments/Stocks/AK74/armst_Stock_akm.et"
+    SCRIPT    (E): WARNING: One or more override stats failed to set
+    SCRIPT    (E): Entity: GenericEntity<0x000001F837B84968> @"ENTITY:6917529027641081956" ('armst_AK74_base_6A6D20653A06A636', GenericEntity) at <133.259995 1.900000 77.955002> @"{FA5C25BF66A53DCF}Prefabs/Weapons/Russian/Rifle/AK74/armst_Rifle_AK74.et", Attachment Entity GameEntity<0x000001F837B84E90> @"ENTITY:9223372036854775881" ('GameEntity','Assets/addons/hanguards_ak/akm_handguard.xob') at <133.259995 1.900000 77.955002> @"{55C3C1291273701A}Prefabs/Weapons/Attachments/Handguards/handguard_AKM.et"
+   ENTITY       : Create entity @"ENTITY:6917529027641081958" ('GenericEntity','Assets/Weapons_RUS/Mp_133/Mp_133.xob') at <148.265182 1.899911 77.879105> @"{78899AABBCDDEEFF}Prefabs/Test/ARMST_T4B_G3B2_InventoryWide_WriteOn_TestWeapon.et"
+    SCRIPT       : [ARMST_T4B-INSTALLED] #1 op=0 phase=init ev=attach srv=1 wpnTag=W1 wep={78899AABBCDDEEFF}Prefabs/Test/ARMST_T4B_G3B2_InventoryWide_WriteOn_TestWeapon.et magTag=M0 mag=- ammo=-1/-1 muzzleSupply=-1/-1 barrel=-1 chambered=-1 chNeed=0 chPoss=0 baselineDone=0
+    SCRIPT       : [ARMST_T4B-G3B2] #0 op=0 phase=action-init ev=register writeEnabled=1 inventoryWide=1 storagePolicy=inventory-wide whitelist=<empty> allowedSlot=-1 srv=1 note=t4b-probe-baseline-setammo-is-separate-setup
+    WORLD        : WORLD        : NotifyBeforeEntitiesInitialized
+   PROFILING    : NotifyBeforeEntitiesInitialized took: 0.015800 ms
+   WORLD        : InitEntities 'world'
+    ENTITY       : Init entity @"ENTITY:4611686018427387906" ('GameMode_Plain1', SCR_BaseGameMode) at <123.265999 1.000000 136.613998>
+     SCRIPT    (W): SCR_PerceivedFactionManagerComponent trying to set fall back faction 'CIV' but this faction could not be found so it is null instead.
+    WORLD        : WORLD        : NotifyEntitiesInitialized
+     TERRAIN      : TERRAIN      : Initializing road networks...
+    PROFILING    : Initializing road networks... took: 0.000400 ms
+     DEFAULT      : DEFAULT      : WorldVolumesCollection
+    PROFILING    : WorldVolumesCollection took: 0.005200 ms
+   PROFILING    : NotifyEntitiesInitialized took: 0.060300 ms
+  PROFILING    : CreateEntities took: 50.471200 ms
+ PROFILING    : CreateEntities took: 50.482000 ms
+  WORLD        : WORLD        : EOnActivate
+ PROFILING    : EOnActivate took: 0.063000 ms
+PROFILING    : Game::LoadEntities took: 51.325100 ms
+DEFAULT      : Entered offline game state.
+PROFILING    : Settings changed took: 0.138800 ms
+NETWORK      : Player connected: connectionID=2147483646
+NETWORK      : ### Connecting player: connectionID=2147483646, Name=
+NETWORK      : ### Creating player: PlayerId=1, Name=[REDACTED_PLAYER]
+ENTITY       : SpawnEntityPrefab @"{225E51284CC95CFA}Prefabs/Characters/Core/DefaultPlayerControllerMP.et"
+ ENTITY       : Create entity @"ENTITY:9223372036854775888" ('SCR_PlayerController') at <0.000000 0.000000 0.000000>
+  ENTITY       : EntityPrefabUse @"{225E51284CC95CFA}Prefabs/Characters/Core/DefaultPlayerControllerMP.et"
+   SCRIPT    (W): Notification data in 'SCR_NotificationsLogDisplay' has duplicate notification info key: 'EDITOR_PERCEIVED_FACTION_PUNISHMENT_KILLING_SET'. There should only be one of each key!
+   SCRIPT    (W): Notification data in 'SCR_NotificationsLogDisplay' has duplicate notification info key: 'EDITOR_PERCEIVED_FACTION_TYPE_DISABLED'. There should only be one of each key!
+  SCRIPT    (W): Can't open config file ""
+ WORLD        : InitEntities 'world'
+  ENTITY       : Init entity @"ENTITY:9223372036854775888" ('SCR_PlayerController') at <0.000000 0.000000 0.000000> @"{225E51284CC95CFA}Prefabs/Characters/Core/DefaultPlayerControllerMP.et"
+   DEFAULT   (W): Chat not available - missing ChatEntity. Only printing this message once. There're possibly more nodes with this requirement.
+   GUI          : WidgetManager: CrateWidgets @"{3C9DCDD76AB83157}UI/layouts/HUD/HUDLayouts/HUDManager_Root.layout"
+    SCRIPT    (W): Slot_WeaponInfo Has no Content!
+    SCRIPT    (W): Slot_Chat Has no Content!
+    SCRIPT    (W): Slot_VON Has no Content!
+    SCRIPT    (W): Slot_AvailableActions Has no Content!
+    SCRIPT    (W): Slot_Vehicle Has no Content!
+    SCRIPT    (W): Slot_GameVersion Has no Content!
+    SCRIPT    (W): Slot_Notifications Has no Content!
+    SCRIPT    (W): Slot_Hints Has no Content!
+ENTITY       : SpawnEntityPrefab @"{788933FFDC706A68}Prefabs/Editor/EditorManager.et"
+ ENTITY       : Create entity @"ENTITY:9223372036854775889" ('SCR_EditorManagerEntity') at <0.000000 0.000000 0.000000> @"{788933FFDC706A68}Prefabs/Editor/EditorManager.et"
+  ENTITY       : CreateComponent 'BaseRadioComponent'
+   DEFAULT   (W): World doesn't contain RadioManagerEntity to support any BaseRadioComponent.
+NETWORK      : ### Updating player: PlayerId=1, Name=[REDACTED_PLAYER], rplIdentity=0xFFFFFFFE, IdentityId=[REDACTED_PLAYER_ID]
+SCRIPT    (W): Maybe a problem: DataProgression is not ready but the analytics event was requested
+NETWORK      : Players connecting: 0
+NETWORK      : Players connected: 1 / 1
+ RENDER       : RENDER       : ObjectsHeightMap::Build
+  RENDER       : RENDER       : MeshOccupancyGridManager::GenerateAllForWorld
+ PROFILING    : MeshOccupancyGridManager::GenerateAllForWorld took: 0.021900 ms
+PROFILING    : ObjectsHeightMap::Build took: 6.168500 ms
+WORLD        : Frame start
+ SCRIPT       : ScenarioFramework: Available tasks are empty, no new tasks will be generated.
+WORLD        : UpdateEntities
+ WORLD        : Frame
+  SCRIPT       : SCR_BaseGameMode::OnGameStateChanged = GAME
+WORLD        : UpdateEntities
+ WORLD        : PostFrame
+  GUI          : WidgetManager: CrateWidgets @"{D89BBA18F99053D6}UI/layouts/HUD/Chat/ChatHud.layout"
+   SCRIPT    (W): EditBoxFilterComponent used on invalid widget type.
+SCRIPT       : [ARMST_T4B-INSTALLED] #2 op=0 phase=baseline ev=init srv=1 wpnTag=W1 wep={78899AABBCDDEEFF}Prefabs/Test/ARMST_T4B_G3B2_InventoryWide_WriteOn_TestWeapon.et magTag=M1 mag={CD8091A2B3C4D5E6}Prefabs/Test/ARMST_T4B_G3B2_Tube3Mag.et ammo=2/3 muzzleSupply=2/3 barrel=0 chambered=0 chNeed=1 chPoss=1 baselineDone=1
+WORLD        : UpdateEntities
+ WORLD        : FixedFrame
+  SCRIPT       : [ARMST_T4B-CMD] #3 phase=command commandID=0 intValue=1 floatValue=0 srv=1 wpnTag=W1 wep={78899AABBCDDEEFF}Prefabs/Test/ARMST_T4B_G3B2_InventoryWide_WriteOn_TestWeapon.et magTag=M1 mag={CD8091A2B3C4D5E6}Prefabs/Test/ARMST_T4B_G3B2_Tube3Mag.et ammo=1/3 muzzleSupply=1/3 barrel=0 chambered=0 chNeed=1 chPoss=1 baselineDone=1
+WORLD        : UpdateEntities
+ WORLD        : Frame
+  SCRIPT       : [ARMST_T4B-EVT] #4 op=0 phase=pre-super ev=BlendIn srv=1 wpnTag=W1 wep={78899AABBCDDEEFF}Prefabs/Test/ARMST_T4B_G3B2_InventoryWide_WriteOn_TestWeapon.et magTag=M1 mag={CD8091A2B3C4D5E6}Prefabs/Test/ARMST_T4B_G3B2_Tube3Mag.et ammo=1/3 muzzleSupply=1/3 barrel=0 chambered=0 chNeed=1 chPoss=1 baselineDone=1
+  SCRIPT       : [ARMST_T4B-EVT] #5 op=0 phase=post-super ev=BlendIn srv=1 wpnTag=W1 wep={78899AABBCDDEEFF}Prefabs/Test/ARMST_T4B_G3B2_InventoryWide_WriteOn_TestWeapon.et magTag=M1 mag={CD8091A2B3C4D5E6}Prefabs/Test/ARMST_T4B_G3B2_Tube3Mag.et ammo=1/3 muzzleSupply=1/3 barrel=0 chambered=0 chNeed=1 chPoss=1 baselineDone=1
+WORLD        : UpdateEntities
+ WORLD        : Frame
+  SCRIPT       : [ARMST_T4B-EVT] #6 op=0 phase=pre-super ev=Weapon_EnableFire srv=1 wpnTag=W1 wep={78899AABBCDDEEFF}Prefabs/Test/ARMST_T4B_G3B2_InventoryWide_WriteOn_TestWeapon.et magTag=M1 mag={CD8091A2B3C4D5E6}Prefabs/Test/ARMST_T4B_G3B2_Tube3Mag.et ammo=1/3 muzzleSupply=1/3 barrel=0 chambered=0 chNeed=1 chPoss=1 baselineDone=1
+  SCRIPT       : [ARMST_T4B-EVT] #7 op=0 phase=post-super ev=Weapon_EnableFire srv=1 wpnTag=W1 wep={78899AABBCDDEEFF}Prefabs/Test/ARMST_T4B_G3B2_InventoryWide_WriteOn_TestWeapon.et magTag=M1 mag={CD8091A2B3C4D5E6}Prefabs/Test/ARMST_T4B_G3B2_Tube3Mag.et ammo=1/3 muzzleSupply=1/3 barrel=0 chambered=0 chNeed=1 chPoss=1 baselineDone=1
+WORLD        : UpdateEntities
+ WORLD        : Frame
+  SCRIPT       : [ARMST_T4B-EVT] #8 op=0 phase=pre-super ev=Weapon_Rack_Bolt srv=1 wpnTag=W1 wep={78899AABBCDDEEFF}Prefabs/Test/ARMST_T4B_G3B2_InventoryWide_WriteOn_TestWeapon.et magTag=M1 mag={CD8091A2B3C4D5E6}Prefabs/Test/ARMST_T4B_G3B2_Tube3Mag.et ammo=0/3 muzzleSupply=1/3 barrel=0 chambered=1 chNeed=0 chPoss=1 baselineDone=1
+  SCRIPT       : [ARMST_T4B-EVT] #9 op=0 phase=post-super ev=Weapon_Rack_Bolt srv=1 wpnTag=W1 wep={78899AABBCDDEEFF}Prefabs/Test/ARMST_T4B_G3B2_InventoryWide_WriteOn_TestWeapon.et magTag=M1 mag={CD8091A2B3C4D5E6}Prefabs/Test/ARMST_T4B_G3B2_Tube3Mag.et ammo=0/3 muzzleSupply=1/3 barrel=0 chambered=1 chNeed=0 chPoss=1 baselineDone=1
+WORLD        : UpdateEntities
+ WORLD        : FixedFrame
+  SCRIPT       : [ARMST_T4B-CMD] #10 phase=command commandID=0 intValue=5 floatValue=0 srv=1 wpnTag=W1 wep={78899AABBCDDEEFF}Prefabs/Test/ARMST_T4B_G3B2_InventoryWide_WriteOn_TestWeapon.et magTag=M1 mag={CD8091A2B3C4D5E6}Prefabs/Test/ARMST_T4B_G3B2_Tube3Mag.et ammo=0/3 muzzleSupply=0/3 barrel=0 chambered=0 chNeed=1 chPoss=1 baselineDone=1
+WORLD        : UpdateEntities
+ WORLD        : Frame
+  SCRIPT       : [ARMST_T4B-EVT] #11 op=0 phase=pre-super ev=BlendIn srv=1 wpnTag=W1 wep={78899AABBCDDEEFF}Prefabs/Test/ARMST_T4B_G3B2_InventoryWide_WriteOn_TestWeapon.et magTag=M1 mag={CD8091A2B3C4D5E6}Prefabs/Test/ARMST_T4B_G3B2_Tube3Mag.et ammo=0/3 muzzleSupply=0/3 barrel=0 chambered=0 chNeed=1 chPoss=1 baselineDone=1
+  SCRIPT       : [ARMST_T4B-EVT] #12 op=0 phase=post-super ev=BlendIn srv=1 wpnTag=W1 wep={78899AABBCDDEEFF}Prefabs/Test/ARMST_T4B_G3B2_InventoryWide_WriteOn_TestWeapon.et magTag=M1 mag={CD8091A2B3C4D5E6}Prefabs/Test/ARMST_T4B_G3B2_Tube3Mag.et ammo=0/3 muzzleSupply=0/3 barrel=0 chambered=0 chNeed=1 chPoss=1 baselineDone=1
+WORLD        : UpdateEntities
+ WORLD        : Frame
+  SCRIPT       : [ARMST_T4B-EVT] #13 op=0 phase=pre-super ev=Weapon_MagRelease srv=1 wpnTag=W1 wep={78899AABBCDDEEFF}Prefabs/Test/ARMST_T4B_G3B2_InventoryWide_WriteOn_TestWeapon.et magTag=M1 mag={CD8091A2B3C4D5E6}Prefabs/Test/ARMST_T4B_G3B2_Tube3Mag.et ammo=0/3 muzzleSupply=0/3 barrel=0 chambered=0 chNeed=1 chPoss=1 baselineDone=1
+  SCRIPT       : [ARMST_T4B-EVT] #14 op=0 phase=post-super ev=Weapon_MagRelease srv=1 wpnTag=W1 wep={78899AABBCDDEEFF}Prefabs/Test/ARMST_T4B_G3B2_InventoryWide_WriteOn_TestWeapon.et magTag=M1 mag={CD8091A2B3C4D5E6}Prefabs/Test/ARMST_T4B_G3B2_Tube3Mag.et ammo=0/3 muzzleSupply=0/3 barrel=0 chambered=0 chNeed=1 chPoss=1 baselineDone=1
+WORLD        : UpdateEntities
+ WORLD        : Frame
+  SCRIPT       : [ARMST_T4B-EVT] #15 op=0 phase=pre-super ev=Weapon_DetachMagazine srv=1 wpnTag=W1 wep={78899AABBCDDEEFF}Prefabs/Test/ARMST_T4B_G3B2_InventoryWide_WriteOn_TestWeapon.et magTag=M1 mag={CD8091A2B3C4D5E6}Prefabs/Test/ARMST_T4B_G3B2_Tube3Mag.et ammo=0/3 muzzleSupply=0/3 barrel=0 chambered=0 chNeed=1 chPoss=1 baselineDone=1
+  SCRIPT       : [ARMST_T4B-EVT] #16 op=0 phase=post-super ev=Weapon_DetachMagazine srv=1 wpnTag=W1 wep={78899AABBCDDEEFF}Prefabs/Test/ARMST_T4B_G3B2_InventoryWide_WriteOn_TestWeapon.et magTag=M1 mag={CD8091A2B3C4D5E6}Prefabs/Test/ARMST_T4B_G3B2_Tube3Mag.et ammo=0/3 muzzleSupply=0/3 barrel=0 chambered=0 chNeed=1 chPoss=1 baselineDone=1
+WORLD        : UpdateEntities
+ WORLD        : Frame
+  SCRIPT       : [ARMST_T4B-EVT] #17 op=0 phase=pre-super ev=Weapon_DespawnMagazine srv=1 wpnTag=W1 wep={78899AABBCDDEEFF}Prefabs/Test/ARMST_T4B_G3B2_InventoryWide_WriteOn_TestWeapon.et magTag=M2 mag=- ammo=-1/-1 muzzleSupply=0/0 barrel=0 chambered=0 chNeed=1 chPoss=1 baselineDone=1
+  SCRIPT       : [ARMST_T4B-EVT] #18 op=0 phase=post-super ev=Weapon_DespawnMagazine srv=1 wpnTag=W1 wep={78899AABBCDDEEFF}Prefabs/Test/ARMST_T4B_G3B2_InventoryWide_WriteOn_TestWeapon.et magTag=M2 mag=- ammo=-1/-1 muzzleSupply=0/0 barrel=0 chambered=0 chNeed=1 chPoss=1 baselineDone=1
+WORLD        : UpdateEntities
+ WORLD        : Frame
+  SCRIPT       : [ARMST_T4B-EVT] #19 op=0 phase=pre-super ev=BlendOut srv=1 wpnTag=W1 wep={78899AABBCDDEEFF}Prefabs/Test/ARMST_T4B_G3B2_InventoryWide_WriteOn_TestWeapon.et magTag=M2 mag=- ammo=-1/-1 muzzleSupply=0/0 barrel=0 chambered=0 chNeed=1 chPoss=1 baselineDone=1
+  SCRIPT       : [ARMST_T4B-EVT] #20 op=0 phase=post-super ev=BlendOut srv=1 wpnTag=W1 wep={78899AABBCDDEEFF}Prefabs/Test/ARMST_T4B_G3B2_InventoryWide_WriteOn_TestWeapon.et magTag=M2 mag=- ammo=-1/-1 muzzleSupply=0/0 barrel=0 chambered=0 chNeed=1 chPoss=1 baselineDone=1
+  SCRIPT       : [ARMST_T4B-EVT] #21 op=0 phase=pre-super ev=BlendIn srv=1 wpnTag=W1 wep={78899AABBCDDEEFF}Prefabs/Test/ARMST_T4B_G3B2_InventoryWide_WriteOn_TestWeapon.et magTag=M2 mag=- ammo=-1/-1 muzzleSupply=0/0 barrel=0 chambered=0 chNeed=1 chPoss=1 baselineDone=1
+  SCRIPT       : [ARMST_T4B-EVT] #22 op=0 phase=post-super ev=BlendIn srv=1 wpnTag=W1 wep={78899AABBCDDEEFF}Prefabs/Test/ARMST_T4B_G3B2_InventoryWide_WriteOn_TestWeapon.et magTag=M2 mag=- ammo=-1/-1 muzzleSupply=0/0 barrel=0 chambered=0 chNeed=1 chPoss=1 baselineDone=1
+SCRIPT       : [ARMST_T4B-INSTALLED] #23 op=0 phase=final-blendout-250ms ev=post-blendout srv=1 wpnTag=W1 wep={78899AABBCDDEEFF}Prefabs/Test/ARMST_T4B_G3B2_InventoryWide_WriteOn_TestWeapon.et magTag=M2 mag=- ammo=-1/-1 muzzleSupply=0/0 barrel=0 chambered=0 chNeed=1 chPoss=1 baselineDone=1
+WORLD        : UpdateEntities
+ WORLD        : Frame
+  SCRIPT       : [ARMST_T4B-EVT] #24 op=0 phase=pre-super ev=Weapon_SpawnMagazine srv=1 wpnTag=W1 wep={78899AABBCDDEEFF}Prefabs/Test/ARMST_T4B_G3B2_InventoryWide_WriteOn_TestWeapon.et magTag=M2 mag=- ammo=-1/-1 muzzleSupply=0/0 barrel=0 chambered=0 chNeed=1 chPoss=1 baselineDone=1
+  SCRIPT       : [ARMST_T4B-EVT] #25 op=0 phase=post-super ev=Weapon_SpawnMagazine srv=1 wpnTag=W1 wep={78899AABBCDDEEFF}Prefabs/Test/ARMST_T4B_G3B2_InventoryWide_WriteOn_TestWeapon.et magTag=M2 mag=- ammo=-1/-1 muzzleSupply=0/0 barrel=0 chambered=0 chNeed=1 chPoss=1 baselineDone=1
+WORLD        : UpdateEntities
+ WORLD        : Frame
+  SCRIPT       : [ARMST_T4B-EVT] #26 op=0 phase=pre-super ev=Weapon_AttachMagazine srv=1 wpnTag=W1 wep={78899AABBCDDEEFF}Prefabs/Test/ARMST_T4B_G3B2_InventoryWide_WriteOn_TestWeapon.et magTag=M2 mag=- ammo=-1/-1 muzzleSupply=0/0 barrel=0 chambered=0 chNeed=1 chPoss=1 baselineDone=1
+  SCRIPT       : [ARMST_T4B-EVT] #27 op=0 phase=post-super ev=Weapon_AttachMagazine srv=1 wpnTag=W1 wep={78899AABBCDDEEFF}Prefabs/Test/ARMST_T4B_G3B2_InventoryWide_WriteOn_TestWeapon.et magTag=M2 mag=- ammo=-1/-1 muzzleSupply=0/0 barrel=0 chambered=0 chNeed=1 chPoss=1 baselineDone=1
+WORLD        : UpdateEntities
+ WORLD        : Frame
+  SCRIPT       : [ARMST_T4B-EVT] #28 op=0 phase=pre-super ev=Weapon_MagRelease srv=1 wpnTag=W1 wep={78899AABBCDDEEFF}Prefabs/Test/ARMST_T4B_G3B2_InventoryWide_WriteOn_TestWeapon.et magTag=M3 mag={CD8091A2B3C4D5E6}Prefabs/Test/ARMST_T4B_G3B2_Tube3Mag.et ammo=3/3 muzzleSupply=3/3 barrel=0 chambered=0 chNeed=1 chPoss=1 baselineDone=1
+  SCRIPT       : [ARMST_T4B-EVT] #29 op=0 phase=post-super ev=Weapon_MagRelease srv=1 wpnTag=W1 wep={78899AABBCDDEEFF}Prefabs/Test/ARMST_T4B_G3B2_InventoryWide_WriteOn_TestWeapon.et magTag=M3 mag={CD8091A2B3C4D5E6}Prefabs/Test/ARMST_T4B_G3B2_Tube3Mag.et ammo=3/3 muzzleSupply=3/3 barrel=0 chambered=0 chNeed=1 chPoss=1 baselineDone=1
+WORLD        : UpdateEntities
+ WORLD        : Frame
+  SCRIPT       : [ARMST_T4B-EVT] #30 op=0 phase=pre-super ev=BlendOut srv=1 wpnTag=W1 wep={78899AABBCDDEEFF}Prefabs/Test/ARMST_T4B_G3B2_InventoryWide_WriteOn_TestWeapon.et magTag=M3 mag={CD8091A2B3C4D5E6}Prefabs/Test/ARMST_T4B_G3B2_Tube3Mag.et ammo=3/3 muzzleSupply=3/3 barrel=0 chambered=0 chNeed=1 chPoss=1 baselineDone=1
+  SCRIPT       : [ARMST_T4B-EVT] #31 op=0 phase=post-super ev=BlendOut srv=1 wpnTag=W1 wep={78899AABBCDDEEFF}Prefabs/Test/ARMST_T4B_G3B2_InventoryWide_WriteOn_TestWeapon.et magTag=M3 mag={CD8091A2B3C4D5E6}Prefabs/Test/ARMST_T4B_G3B2_Tube3Mag.et ammo=3/3 muzzleSupply=3/3 barrel=0 chambered=0 chNeed=1 chPoss=1 baselineDone=1
+SCRIPT       : [ARMST_T4B-INSTALLED] #32 op=0 phase=final-blendout-250ms ev=post-blendout srv=1 wpnTag=W1 wep={78899AABBCDDEEFF}Prefabs/Test/ARMST_T4B_G3B2_InventoryWide_WriteOn_TestWeapon.et magTag=M3 mag={CD8091A2B3C4D5E6}Prefabs/Test/ARMST_T4B_G3B2_Tube3Mag.et ammo=3/3 muzzleSupply=3/3 barrel=0 chambered=0 chNeed=1 chPoss=1 baselineDone=1
+WORLD        : UpdateEntities
+ WORLD        : Frame
+  SCRIPT       : [ARMST_T4B-EVT] #33 op=0 phase=pre-super ev=BlendIn srv=1 wpnTag=W1 wep={78899AABBCDDEEFF}Prefabs/Test/ARMST_T4B_G3B2_InventoryWide_WriteOn_TestWeapon.et magTag=M3 mag={CD8091A2B3C4D5E6}Prefabs/Test/ARMST_T4B_G3B2_Tube3Mag.et ammo=3/3 muzzleSupply=3/3 barrel=0 chambered=0 chNeed=1 chPoss=1 baselineDone=1
+  SCRIPT       : [ARMST_T4B-EVT] #34 op=0 phase=post-super ev=BlendIn srv=1 wpnTag=W1 wep={78899AABBCDDEEFF}Prefabs/Test/ARMST_T4B_G3B2_InventoryWide_WriteOn_TestWeapon.et magTag=M3 mag={CD8091A2B3C4D5E6}Prefabs/Test/ARMST_T4B_G3B2_Tube3Mag.et ammo=3/3 muzzleSupply=3/3 barrel=0 chambered=0 chNeed=1 chPoss=1 baselineDone=1
+WORLD        : UpdateEntities
+ WORLD        : Frame
+  SCRIPT       : [ARMST_T4B-EVT] #35 op=0 phase=pre-super ev=Weapon_EnableFire srv=1 wpnTag=W1 wep={78899AABBCDDEEFF}Prefabs/Test/ARMST_T4B_G3B2_InventoryWide_WriteOn_TestWeapon.et magTag=M3 mag={CD8091A2B3C4D5E6}Prefabs/Test/ARMST_T4B_G3B2_Tube3Mag.et ammo=3/3 muzzleSupply=3/3 barrel=0 chambered=0 chNeed=1 chPoss=1 baselineDone=1
+  SCRIPT       : [ARMST_T4B-EVT] #36 op=0 phase=post-super ev=Weapon_EnableFire srv=1 wpnTag=W1 wep={78899AABBCDDEEFF}Prefabs/Test/ARMST_T4B_G3B2_InventoryWide_WriteOn_TestWeapon.et magTag=M3 mag={CD8091A2B3C4D5E6}Prefabs/Test/ARMST_T4B_G3B2_Tube3Mag.et ammo=3/3 muzzleSupply=3/3 barrel=0 chambered=0 chNeed=1 chPoss=1 baselineDone=1
+WORLD        : UpdateEntities
+ WORLD        : Frame
+  SCRIPT       : [ARMST_T4B-EVT] #37 op=0 phase=pre-super ev=Weapon_Rack_Bolt srv=1 wpnTag=W1 wep={78899AABBCDDEEFF}Prefabs/Test/ARMST_T4B_G3B2_InventoryWide_WriteOn_TestWeapon.et magTag=M3 mag={CD8091A2B3C4D5E6}Prefabs/Test/ARMST_T4B_G3B2_Tube3Mag.et ammo=2/3 muzzleSupply=3/3 barrel=0 chambered=1 chNeed=0 chPoss=1 baselineDone=1
+  SCRIPT       : [ARMST_T4B-EVT] #38 op=0 phase=post-super ev=Weapon_Rack_Bolt srv=1 wpnTag=W1 wep={78899AABBCDDEEFF}Prefabs/Test/ARMST_T4B_G3B2_InventoryWide_WriteOn_TestWeapon.et magTag=M3 mag={CD8091A2B3C4D5E6}Prefabs/Test/ARMST_T4B_G3B2_Tube3Mag.et ammo=2/3 muzzleSupply=3/3 barrel=0 chambered=1 chNeed=0 chPoss=1 baselineDone=1
+WORLD        : UpdateEntities
+ WORLD        : FixedFrame
+  SCRIPT       : [ARMST_T4B-CMD] #39 phase=command commandID=0 intValue=1 floatValue=0 srv=1 wpnTag=W1 wep={78899AABBCDDEEFF}Prefabs/Test/ARMST_T4B_G3B2_InventoryWide_WriteOn_TestWeapon.et magTag=M3 mag={CD8091A2B3C4D5E6}Prefabs/Test/ARMST_T4B_G3B2_Tube3Mag.et ammo=2/3 muzzleSupply=2/3 barrel=0 chambered=0 chNeed=1 chPoss=1 baselineDone=1
+WORLD        : UpdateEntities
+ WORLD        : Frame
+  SCRIPT       : [ARMST_T4B-EVT] #40 op=0 phase=pre-super ev=BlendIn srv=1 wpnTag=W1 wep={78899AABBCDDEEFF}Prefabs/Test/ARMST_T4B_G3B2_InventoryWide_WriteOn_TestWeapon.et magTag=M3 mag={CD8091A2B3C4D5E6}Prefabs/Test/ARMST_T4B_G3B2_Tube3Mag.et ammo=2/3 muzzleSupply=2/3 barrel=0 chambered=0 chNeed=1 chPoss=1 baselineDone=1
+  SCRIPT       : [ARMST_T4B-EVT] #41 op=0 phase=post-super ev=BlendIn srv=1 wpnTag=W1 wep={78899AABBCDDEEFF}Prefabs/Test/ARMST_T4B_G3B2_InventoryWide_WriteOn_TestWeapon.et magTag=M3 mag={CD8091A2B3C4D5E6}Prefabs/Test/ARMST_T4B_G3B2_Tube3Mag.et ammo=2/3 muzzleSupply=2/3 barrel=0 chambered=0 chNeed=1 chPoss=1 baselineDone=1
+WORLD        : UpdateEntities
+ WORLD        : Frame
+  SCRIPT       : [ARMST_T4B-EVT] #42 op=0 phase=pre-super ev=Weapon_EnableFire srv=1 wpnTag=W1 wep={78899AABBCDDEEFF}Prefabs/Test/ARMST_T4B_G3B2_InventoryWide_WriteOn_TestWeapon.et magTag=M3 mag={CD8091A2B3C4D5E6}Prefabs/Test/ARMST_T4B_G3B2_Tube3Mag.et ammo=2/3 muzzleSupply=2/3 barrel=0 chambered=0 chNeed=1 chPoss=1 baselineDone=1
+  SCRIPT       : [ARMST_T4B-EVT] #43 op=0 phase=post-super ev=Weapon_EnableFire srv=1 wpnTag=W1 wep={78899AABBCDDEEFF}Prefabs/Test/ARMST_T4B_G3B2_InventoryWide_WriteOn_TestWeapon.et magTag=M3 mag={CD8091A2B3C4D5E6}Prefabs/Test/ARMST_T4B_G3B2_Tube3Mag.et ammo=2/3 muzzleSupply=2/3 barrel=0 chambered=0 chNeed=1 chPoss=1 baselineDone=1
+WORLD        : UpdateEntities
+ WORLD        : Frame
+  SCRIPT       : [ARMST_T4B-EVT] #44 op=0 phase=pre-super ev=Weapon_Rack_Bolt srv=1 wpnTag=W1 wep={78899AABBCDDEEFF}Prefabs/Test/ARMST_T4B_G3B2_InventoryWide_WriteOn_TestWeapon.et magTag=M3 mag={CD8091A2B3C4D5E6}Prefabs/Test/ARMST_T4B_G3B2_Tube3Mag.et ammo=1/3 muzzleSupply=2/3 barrel=0 chambered=1 chNeed=0 chPoss=1 baselineDone=1
+  SCRIPT       : [ARMST_T4B-EVT] #45 op=0 phase=post-super ev=Weapon_Rack_Bolt srv=1 wpnTag=W1 wep={78899AABBCDDEEFF}Prefabs/Test/ARMST_T4B_G3B2_InventoryWide_WriteOn_TestWeapon.et magTag=M3 mag={CD8091A2B3C4D5E6}Prefabs/Test/ARMST_T4B_G3B2_Tube3Mag.et ammo=1/3 muzzleSupply=2/3 barrel=0 chambered=1 chNeed=0 chPoss=1 baselineDone=1
+WORLD        : UpdateEntities
+ WORLD        : FixedFrame
+  SCRIPT       : [ARMST_T4B-CMD] #46 phase=command commandID=0 intValue=4 floatValue=0 srv=1 wpnTag=W1 wep={78899AABBCDDEEFF}Prefabs/Test/ARMST_T4B_G3B2_InventoryWide_WriteOn_TestWeapon.et magTag=M3 mag={CD8091A2B3C4D5E6}Prefabs/Test/ARMST_T4B_G3B2_Tube3Mag.et ammo=1/3 muzzleSupply=2/3 barrel=0 chambered=1 chNeed=0 chPoss=1 baselineDone=1
+WORLD        : UpdateEntities
+ WORLD        : Frame
+  SCRIPT       : [ARMST_T4B-EVT] #47 op=0 phase=pre-super ev=BlendIn srv=1 wpnTag=W1 wep={78899AABBCDDEEFF}Prefabs/Test/ARMST_T4B_G3B2_InventoryWide_WriteOn_TestWeapon.et magTag=M3 mag={CD8091A2B3C4D5E6}Prefabs/Test/ARMST_T4B_G3B2_Tube3Mag.et ammo=1/3 muzzleSupply=2/3 barrel=0 chambered=1 chNeed=0 chPoss=1 baselineDone=1
+  SCRIPT       : [ARMST_T4B-EVT] #48 op=0 phase=post-super ev=BlendIn srv=1 wpnTag=W1 wep={78899AABBCDDEEFF}Prefabs/Test/ARMST_T4B_G3B2_InventoryWide_WriteOn_TestWeapon.et magTag=M3 mag={CD8091A2B3C4D5E6}Prefabs/Test/ARMST_T4B_G3B2_Tube3Mag.et ammo=1/3 muzzleSupply=2/3 barrel=0 chambered=1 chNeed=0 chPoss=1 baselineDone=1
+WORLD        : UpdateEntities
+ WORLD        : Frame
+  SCRIPT       : [ARMST_T4B-EVT] #49 op=0 phase=pre-super ev=Weapon_MagRelease srv=1 wpnTag=W1 wep={78899AABBCDDEEFF}Prefabs/Test/ARMST_T4B_G3B2_InventoryWide_WriteOn_TestWeapon.et magTag=M3 mag={CD8091A2B3C4D5E6}Prefabs/Test/ARMST_T4B_G3B2_Tube3Mag.et ammo=1/3 muzzleSupply=2/3 barrel=0 chambered=1 chNeed=0 chPoss=1 baselineDone=1
+  SCRIPT       : [ARMST_T4B-EVT] #50 op=0 phase=post-super ev=Weapon_MagRelease srv=1 wpnTag=W1 wep={78899AABBCDDEEFF}Prefabs/Test/ARMST_T4B_G3B2_InventoryWide_WriteOn_TestWeapon.et magTag=M3 mag={CD8091A2B3C4D5E6}Prefabs/Test/ARMST_T4B_G3B2_Tube3Mag.et ammo=1/3 muzzleSupply=2/3 barrel=0 chambered=1 chNeed=0 chPoss=1 baselineDone=1
+WORLD        : UpdateEntities
+ WORLD        : Frame
+  SCRIPT       : [ARMST_T4B-EVT] #51 op=0 phase=pre-super ev=Weapon_DetachMagazine srv=1 wpnTag=W1 wep={78899AABBCDDEEFF}Prefabs/Test/ARMST_T4B_G3B2_InventoryWide_WriteOn_TestWeapon.et magTag=M3 mag={CD8091A2B3C4D5E6}Prefabs/Test/ARMST_T4B_G3B2_Tube3Mag.et ammo=1/3 muzzleSupply=2/3 barrel=0 chambered=1 chNeed=0 chPoss=1 baselineDone=1
+  SCRIPT       : [ARMST_T4B-EVT] #52 op=0 phase=post-super ev=Weapon_DetachMagazine srv=1 wpnTag=W1 wep={78899AABBCDDEEFF}Prefabs/Test/ARMST_T4B_G3B2_InventoryWide_WriteOn_TestWeapon.et magTag=M3 mag={CD8091A2B3C4D5E6}Prefabs/Test/ARMST_T4B_G3B2_Tube3Mag.et ammo=1/3 muzzleSupply=2/3 barrel=0 chambered=1 chNeed=0 chPoss=1 baselineDone=1
+WORLD        : UpdateEntities
+ WORLD        : Frame
+  SCRIPT       : [ARMST_T4B-EVT] #53 op=0 phase=pre-super ev=Weapon_DespawnMagazine srv=1 wpnTag=W1 wep={78899AABBCDDEEFF}Prefabs/Test/ARMST_T4B_G3B2_InventoryWide_WriteOn_TestWeapon.et magTag=M4 mag=- ammo=-1/-1 muzzleSupply=1/0 barrel=0 chambered=1 chNeed=0 chPoss=1 baselineDone=1
+  SCRIPT       : [ARMST_T4B-EVT] #54 op=0 phase=post-super ev=Weapon_DespawnMagazine srv=1 wpnTag=W1 wep={78899AABBCDDEEFF}Prefabs/Test/ARMST_T4B_G3B2_InventoryWide_WriteOn_TestWeapon.et magTag=M4 mag=- ammo=-1/-1 muzzleSupply=1/0 barrel=0 chambered=1 chNeed=0 chPoss=1 baselineDone=1
+WORLD        : UpdateEntities
+ WORLD        : Frame
+  SCRIPT       : [ARMST_T4B-EVT] #55 op=0 phase=pre-super ev=BlendOut srv=1 wpnTag=W1 wep={78899AABBCDDEEFF}Prefabs/Test/ARMST_T4B_G3B2_InventoryWide_WriteOn_TestWeapon.et magTag=M4 mag=- ammo=-1/-1 muzzleSupply=1/0 barrel=0 chambered=1 chNeed=0 chPoss=1 baselineDone=1
+  SCRIPT       : [ARMST_T4B-EVT] #56 op=0 phase=post-super ev=BlendOut srv=1 wpnTag=W1 wep={78899AABBCDDEEFF}Prefabs/Test/ARMST_T4B_G3B2_InventoryWide_WriteOn_TestWeapon.et magTag=M4 mag=- ammo=-1/-1 muzzleSupply=1/0 barrel=0 chambered=1 chNeed=0 chPoss=1 baselineDone=1
+  SCRIPT       : [ARMST_T4B-EVT] #57 op=0 phase=pre-super ev=BlendIn srv=1 wpnTag=W1 wep={78899AABBCDDEEFF}Prefabs/Test/ARMST_T4B_G3B2_InventoryWide_WriteOn_TestWeapon.et magTag=M4 mag=- ammo=-1/-1 muzzleSupply=1/0 barrel=0 chambered=1 chNeed=0 chPoss=1 baselineDone=1
+  SCRIPT       : [ARMST_T4B-EVT] #58 op=0 phase=post-super ev=BlendIn srv=1 wpnTag=W1 wep={78899AABBCDDEEFF}Prefabs/Test/ARMST_T4B_G3B2_InventoryWide_WriteOn_TestWeapon.et magTag=M4 mag=- ammo=-1/-1 muzzleSupply=1/0 barrel=0 chambered=1 chNeed=0 chPoss=1 baselineDone=1
+SCRIPT       : [ARMST_T4B-INSTALLED] #59 op=0 phase=final-blendout-250ms ev=post-blendout srv=1 wpnTag=W1 wep={78899AABBCDDEEFF}Prefabs/Test/ARMST_T4B_G3B2_InventoryWide_WriteOn_TestWeapon.et magTag=M4 mag=- ammo=-1/-1 muzzleSupply=1/0 barrel=0 chambered=1 chNeed=0 chPoss=1 baselineDone=1
+WORLD        : UpdateEntities
+ WORLD        : Frame
+  SCRIPT       : [ARMST_T4B-EVT] #60 op=0 phase=pre-super ev=Weapon_SpawnMagazine srv=1 wpnTag=W1 wep={78899AABBCDDEEFF}Prefabs/Test/ARMST_T4B_G3B2_InventoryWide_WriteOn_TestWeapon.et magTag=M4 mag=- ammo=-1/-1 muzzleSupply=1/0 barrel=0 chambered=1 chNeed=0 chPoss=1 baselineDone=1
+  SCRIPT       : [ARMST_T4B-EVT] #61 op=0 phase=post-super ev=Weapon_SpawnMagazine srv=1 wpnTag=W1 wep={78899AABBCDDEEFF}Prefabs/Test/ARMST_T4B_G3B2_InventoryWide_WriteOn_TestWeapon.et magTag=M4 mag=- ammo=-1/-1 muzzleSupply=1/0 barrel=0 chambered=1 chNeed=0 chPoss=1 baselineDone=1
+WORLD        : UpdateEntities
+ WORLD        : Frame
+  SCRIPT       : [ARMST_T4B-EVT] #62 op=0 phase=pre-super ev=Weapon_AttachMagazine srv=1 wpnTag=W1 wep={78899AABBCDDEEFF}Prefabs/Test/ARMST_T4B_G3B2_InventoryWide_WriteOn_TestWeapon.et magTag=M4 mag=- ammo=-1/-1 muzzleSupply=1/0 barrel=0 chambered=1 chNeed=0 chPoss=1 baselineDone=1
+  SCRIPT       : [ARMST_T4B-EVT] #63 op=0 phase=post-super ev=Weapon_AttachMagazine srv=1 wpnTag=W1 wep={78899AABBCDDEEFF}Prefabs/Test/ARMST_T4B_G3B2_InventoryWide_WriteOn_TestWeapon.et magTag=M4 mag=- ammo=-1/-1 muzzleSupply=1/0 barrel=0 chambered=1 chNeed=0 chPoss=1 baselineDone=1
+WORLD        : UpdateEntities
+ WORLD        : Frame
+  SCRIPT       : [ARMST_T4B-EVT] #64 op=0 phase=pre-super ev=Weapon_MagRelease srv=1 wpnTag=W1 wep={78899AABBCDDEEFF}Prefabs/Test/ARMST_T4B_G3B2_InventoryWide_WriteOn_TestWeapon.et magTag=M5 mag={CD8091A2B3C4D5E6}Prefabs/Test/ARMST_T4B_G3B2_Tube3Mag.et ammo=3/3 muzzleSupply=4/3 barrel=0 chambered=1 chNeed=0 chPoss=1 baselineDone=1
+  SCRIPT       : [ARMST_T4B-EVT] #65 op=0 phase=post-super ev=Weapon_MagRelease srv=1 wpnTag=W1 wep={78899AABBCDDEEFF}Prefabs/Test/ARMST_T4B_G3B2_InventoryWide_WriteOn_TestWeapon.et magTag=M5 mag={CD8091A2B3C4D5E6}Prefabs/Test/ARMST_T4B_G3B2_Tube3Mag.et ammo=3/3 muzzleSupply=4/3 barrel=0 chambered=1 chNeed=0 chPoss=1 baselineDone=1
+WORLD        : UpdateEntities
+ WORLD        : Frame
+  SCRIPT       : [ARMST_T4B-EVT] #66 op=0 phase=pre-super ev=BlendOut srv=1 wpnTag=W1 wep={78899AABBCDDEEFF}Prefabs/Test/ARMST_T4B_G3B2_InventoryWide_WriteOn_TestWeapon.et magTag=M5 mag={CD8091A2B3C4D5E6}Prefabs/Test/ARMST_T4B_G3B2_Tube3Mag.et ammo=3/3 muzzleSupply=4/3 barrel=0 chambered=1 chNeed=0 chPoss=1 baselineDone=1
+  SCRIPT       : [ARMST_T4B-EVT] #67 op=0 phase=post-super ev=BlendOut srv=1 wpnTag=W1 wep={78899AABBCDDEEFF}Prefabs/Test/ARMST_T4B_G3B2_InventoryWide_WriteOn_TestWeapon.et magTag=M5 mag={CD8091A2B3C4D5E6}Prefabs/Test/ARMST_T4B_G3B2_Tube3Mag.et ammo=3/3 muzzleSupply=4/3 barrel=0 chambered=1 chNeed=0 chPoss=1 baselineDone=1
+SCRIPT       : [ARMST_T4B-INSTALLED] #68 op=0 phase=final-blendout-250ms ev=post-blendout srv=1 wpnTag=W1 wep={78899AABBCDDEEFF}Prefabs/Test/ARMST_T4B_G3B2_InventoryWide_WriteOn_TestWeapon.et magTag=M5 mag={CD8091A2B3C4D5E6}Prefabs/Test/ARMST_T4B_G3B2_Tube3Mag.et ammo=3/3 muzzleSupply=4/3 barrel=0 chambered=1 chNeed=0 chPoss=1 baselineDone=1
+WORLD        : UpdateEntities
+ WORLD        : FixedFrame
+  SCRIPT       : [ARMST_T4B-CMD] #69 phase=command commandID=0 intValue=1 floatValue=0 srv=1 wpnTag=W1 wep={78899AABBCDDEEFF}Prefabs/Test/ARMST_T4B_G3B2_InventoryWide_WriteOn_TestWeapon.et magTag=M5 mag={CD8091A2B3C4D5E6}Prefabs/Test/ARMST_T4B_G3B2_Tube3Mag.et ammo=3/3 muzzleSupply=3/3 barrel=0 chambered=0 chNeed=1 chPoss=1 baselineDone=1
+WORLD        : UpdateEntities
+ WORLD        : Frame
+  SCRIPT       : [ARMST_T4B-EVT] #70 op=0 phase=pre-super ev=BlendIn srv=1 wpnTag=W1 wep={78899AABBCDDEEFF}Prefabs/Test/ARMST_T4B_G3B2_InventoryWide_WriteOn_TestWeapon.et magTag=M5 mag={CD8091A2B3C4D5E6}Prefabs/Test/ARMST_T4B_G3B2_Tube3Mag.et ammo=3/3 muzzleSupply=3/3 barrel=0 chambered=0 chNeed=1 chPoss=1 baselineDone=1
+  SCRIPT       : [ARMST_T4B-EVT] #71 op=0 phase=post-super ev=BlendIn srv=1 wpnTag=W1 wep={78899AABBCDDEEFF}Prefabs/Test/ARMST_T4B_G3B2_InventoryWide_WriteOn_TestWeapon.et magTag=M5 mag={CD8091A2B3C4D5E6}Prefabs/Test/ARMST_T4B_G3B2_Tube3Mag.et ammo=3/3 muzzleSupply=3/3 barrel=0 chambered=0 chNeed=1 chPoss=1 baselineDone=1
+WORLD        : UpdateEntities
+ WORLD        : Frame
+  SCRIPT       : [ARMST_T4B-EVT] #72 op=0 phase=pre-super ev=Weapon_EnableFire srv=1 wpnTag=W1 wep={78899AABBCDDEEFF}Prefabs/Test/ARMST_T4B_G3B2_InventoryWide_WriteOn_TestWeapon.et magTag=M5 mag={CD8091A2B3C4D5E6}Prefabs/Test/ARMST_T4B_G3B2_Tube3Mag.et ammo=3/3 muzzleSupply=3/3 barrel=0 chambered=0 chNeed=1 chPoss=1 baselineDone=1
+  SCRIPT       : [ARMST_T4B-EVT] #73 op=0 phase=post-super ev=Weapon_EnableFire srv=1 wpnTag=W1 wep={78899AABBCDDEEFF}Prefabs/Test/ARMST_T4B_G3B2_InventoryWide_WriteOn_TestWeapon.et magTag=M5 mag={CD8091A2B3C4D5E6}Prefabs/Test/ARMST_T4B_G3B2_Tube3Mag.et ammo=3/3 muzzleSupply=3/3 barrel=0 chambered=0 chNeed=1 chPoss=1 baselineDone=1
+WORLD        : UpdateEntities
+ WORLD        : Frame
+  SCRIPT       : [ARMST_T4B-EVT] #74 op=0 phase=pre-super ev=Weapon_Rack_Bolt srv=1 wpnTag=W1 wep={78899AABBCDDEEFF}Prefabs/Test/ARMST_T4B_G3B2_InventoryWide_WriteOn_TestWeapon.et magTag=M5 mag={CD8091A2B3C4D5E6}Prefabs/Test/ARMST_T4B_G3B2_Tube3Mag.et ammo=2/3 muzzleSupply=3/3 barrel=0 chambered=1 chNeed=0 chPoss=1 baselineDone=1
+  SCRIPT       : [ARMST_T4B-EVT] #75 op=0 phase=post-super ev=Weapon_Rack_Bolt srv=1 wpnTag=W1 wep={78899AABBCDDEEFF}Prefabs/Test/ARMST_T4B_G3B2_InventoryWide_WriteOn_TestWeapon.et magTag=M5 mag={CD8091A2B3C4D5E6}Prefabs/Test/ARMST_T4B_G3B2_Tube3Mag.et ammo=2/3 muzzleSupply=3/3 barrel=0 chambered=1 chNeed=0 chPoss=1 baselineDone=1
+GUI          : Creating menu 'PauseMenu'
+ GUI          : WidgetManager: CrateWidgets @"{E81F33FD5F8C893B}UI/layouts/Menus/PauseMenu/pauseMenu.layout"
+  GUI       (W): Missing string ID = armst_project_info
+  GUI       (W): Missing string ID = armst_project_info_donate
+  SCRIPT    (W): Slot_GameVersion Has no Content!
