@@ -7,6 +7,7 @@ import re, json, hashlib, uuid, sys, argparse
 ROOT=Path(__file__).resolve().parents[2]
 sys.path.insert(0,str(ROOT/'agent/scripts'))
 from addon_path import resolve_addon_root
+from astra_node_foundation import refine_graph
 PRODUCTION=resolve_addon_root()
 ADDONS=PRODUCTION.parent
 P=PRODUCTION/'Assets/Weapons_RUS/Mp_133/Workspace'
@@ -27,6 +28,11 @@ def write(rel,s):
     p.write_bytes(data)
 def meta(rel,cls,extra=''):
     ident=guid(rel.removeprefix(BASE+'/'))
+    existing=LAB/(rel+'.meta')
+    if existing.exists():
+        if f'Name "{{{ident}}}{rel}"' not in existing.read_text():
+            raise RuntimeError('Existing resource identity differs: '+str(existing))
+        return # Preserve all importer-owned bytes, not just its GUID.
     write(rel+'.meta',f'MetaFileClass {{\n Name "{{{ident}}}{rel}"\n Configurations {{\n  {cls} PC {{\n{extra}  }}\n  {cls} XBOX_ONE : PC {{\n  }}\n  {cls} XBOX_SERIES : PC {{\n  }}\n  {cls} PS4 : PC {{\n  }}\n  {cls} PS5 : PC {{\n  }}\n  {cls} HEADLESS : PC {{\n  }}\n }}\n}}\n')
 def block(text,start):
     begin=text.index('{',start); depth=0; quoted=False; escape=False
@@ -88,7 +94,7 @@ nodes=route+stm('ShellReloadSTM',states,trans)
 for n in phases:
     nodes+=f'    AnimSrcNodeSource Astra{n} {{\n     Source "AstraShell.Erc.{n}"\n     Looptype "No Loop"\n    }}\n'
 agf=agf.replace('   Nodes {','   Nodes {\n'+nodes,1)
-write(BASE+'/MP133_Astra.agf',agf);meta(BASE+'/MP133_Astra.agf','AnimGraphFileResourceClass')
+write(BASE+'/MP133_Astra.agf',refine_graph(agf));meta(BASE+'/MP133_Astra.agf','AnimGraphFileResourceClass')
 
 agr=(P/'MP133.agr').read_text()
 agr=re.sub(r'AnimSetTemplate "[^"]+"',f'AnimSetTemplate "{ref("MP133_Astra.ast")}"',agr,count=1)

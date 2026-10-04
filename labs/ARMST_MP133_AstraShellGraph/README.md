@@ -1,4 +1,7 @@
-# MP-133 Astra: animation-only source prototype
+# MP-133 Astra: V2 node foundation
+
+Current report: [V2 foundation](../../reports/MP133_V3_ASTRA_NODE_FOUNDATION_V2.md).
+Ten owner-imported ANMs are present locally; their event tracks and playback remain unverified. They and their modified metadata are preserved, not published.
 
 Status: **SOURCE_PROTOTYPE / OWNER_IMPORT_AND_TEST_REQUIRED**.
 No compiled ANM is included. Script compilation, graph compilation, visual motion,
@@ -18,7 +21,7 @@ existing transitive UI dependency `6922BE16974B3AED`. Core is not required or al
 2. Compile scripts. The isolated prefab is
    `Prefabs/Weapons/MP133_AstraShellGraph.et`. Its inherited animator override
    must resolve to `ARMST_AstraShellAnimationComponent`. Stop on any script error.
-3. Import the ten `Assets/MP133_AstraShellGraph/Clips/*.txa` into ANM **beside
+3. If the existing local imports resolve correctly, keep them: TXA sources are unchanged. Otherwise import the ten `Assets/MP133_AstraShellGraph/Clips/*.txa` into ANM **beside
    those TXA files**. Use the Animation Editor/Resource Manager TXA importer.
    P profiles: `A_UpperbodyADD_AllUp`; W profiles: `A_Weapon_MagRelease_All`.
    Source and output stems must match. The accompanying `.anm.meta` files reserve
@@ -46,13 +49,12 @@ existing transitive UI dependency `6922BE16974B3AED`. Core is not required or al
 
 One insertion: Repeat=false, Eligible=true, Stop/FireStop=false; Request=true.
 Observe StartReload → GrabShell → InsertShell → CheckContinue → EndReload →
-NativeRearm (native behavior), then Request=false → Native. Holding Request=true
+AstraWaitRelease, then Request=false → native Idle. Holding Request=true
 must not start another session. Idle is confirmed by the graph state/pose, not
 by the `ReturnReady` clip marker.
 
-Repeat: Repeat=true before entry; observe at least three cycles. During Grab or
-Insert, set Stop=true and **keep it true**: the current insertion finishes,
-then CheckContinue chooses EndReload. Repeat for FireStop and Eligible=false.
+Repeat: Repeat=true before entry; observe at least three cycles. During Grab, set Stop=true and **keep it true**: exit without entering Insert.
+During Insert, the current insertion finishes, then CheckContinue chooses EndReload. Repeat for FireStop and Eligible=false.
 Requests are level parameters; a short pulse ending before CheckContinue is not
 latched by this prototype. No script listens to physical R or fire input.
 
@@ -99,3 +101,5 @@ R/inspection integration, death/swap cancellation or exactly-once transactions.
 
 Rollback: close/disable **only this lab**. No production files require restoration.
 Technical report: `reports/MP133_V3_ASTRA_ANIM_GRAPH_PROTOTYPE.md` in Weapon_ARMA_X.
+
+V2 routing: entry is from native Idle only. A request held during another native state may enter when Idle returns. Release Request after End before testing native command 1. WaitRelease does not dispatch pump/inspection. The native-command guard is a graph predicate, not engine-side suppression; do not issue native reload commands as shell-session input. Explicit AstraShell/Erc GroupSelect resolves the five source rows. No open-action loading branch is included.

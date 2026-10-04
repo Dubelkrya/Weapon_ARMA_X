@@ -53,8 +53,18 @@ class ARMST_AstraShellAnimationComponent : WeaponAnimationComponent
 		}
 		if (name == "ASTRA_Shell_CheckContinue_W" && m_iStage == 3)
 			m_iStage = 4;
-		if (name == "ASTRA_Shell_EndReload_W" && m_iStage == 4)
-			m_iStage = 5;
+		if (name == "ASTRA_Shell_EndReload_W")
+		{
+			if (m_iStage == 1 || m_iStage == 2)
+			{
+				result = "ended_before_insert_no_candidate";
+				m_iStage = 5;
+			}
+			else if (m_iStage == 4)
+				m_iStage = 5;
+			else
+				result = "rejected_end_out_of_order";
+		}
 		// ReturnReady is a clip marker, not proof of the enclosing graph's Idle.
 		if (name == "ASTRA_Shell_ReturnReady_W" && m_iStage == 5)
 			m_iStage = 0;
@@ -99,10 +109,18 @@ class ARMST_AstraShellAnimationComponent : WeaponAnimationComponent
 		}
 		string line = "[ARMST-ASTRA-SHELL] snapshot seq=" + m_iSequence.ToString();
 		line += " instance=" + m_iInstance.ToString();
+		bool magPresent = entity != null;
+		line += " magPresent=" + magPresent.ToString();
 		line += " magTag=" + m_iMagazineTag.ToString();
 		line += " ammo=" + ammo.ToString() + "/" + capacity.ToString();
 		line += " chamberNeeded=" + weapon.IsChamberingNecessary().ToString();
 		line += " chamberPossible=" + weapon.IsChamberingPossible().ToString();
+		BaseMuzzleComponent muzzle = weapon.GetCurrentMuzzle();
+		if (muzzle)
+		{
+			line += " chambered=" + muzzle.IsCurrentBarrelChambered().ToString();
+			line += " barrel=" + muzzle.GetCurrentBarrelIndex().ToString();
+		}
 		Print(line, LogLevel.NORMAL);
 	}
 }

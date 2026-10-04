@@ -44,7 +44,7 @@ def verify(root):
         checks.append(name)
 
     phases = ['StartReload', 'GrabShell', 'InsertShell', 'CheckContinue', 'EndReload']
-    check('Child0 "AstraRouteSTM"' in graph, 'MasterControl routes to isolated STM')
+    check('Child0 "IdleReloadSTM"' in graph and 'AstraRouteSTM' not in graph, 'Actual native Idle owns shell entry')
     check('DefaultRunNode "MasterControl"' in agr, 'Native entry retained')
     shell = block(graph, graph.index('AnimSrcNodeStateMachine ShellReloadSTM'))
     states = re.findall(r'AnimSrcNodeState (\w+)\s*{', shell)
@@ -57,7 +57,8 @@ def verify(root):
     check({(a,b) for a,b,_ in transitions} == {
         ('StartReload','GrabShell'), ('GrabShell','InsertShell'),
         ('InsertShell','CheckContinue'), ('CheckContinue','GrabShell'),
-        ('CheckContinue','EndReload')}, 'Closed shell transition topology')
+        ('CheckContinue','EndReload'), ('StartReload','EndReload'),
+        ('GrabShell','EndReload')}, 'Closed shell transition topology')
     for phase in phases:
         body = block(shell, shell.index('AnimSrcNodeState '+phase+' {'))
         check(f'IsExit {int(phase == "EndReload")}' in body, phase+' terminal flag')
@@ -74,10 +75,15 @@ def verify(root):
         end = evaluate(predicates['EndReload'], values)
         check(loop != end, 'Continuation unique '+str(bits))
         check(loop == (bits[0] and bits[1] and not any(bits[2:])), 'Stop eligibility '+str(bits))
-    route = block(graph, graph.index('AnimSrcNodeStateMachine AstraRouteSTM'))
-    check('ToState "NativeRearm"' in route and 'Condition "!ASTRA_ShellRequest"' in route,
+    route = block(graph, graph.index('AnimSrcNodeStateMachine IdleReloadSTM'))
+    check('ToState "AstraWaitRelease"' in route and 'Condition "!ASTRA_ShellRequest"' in route,
           'Request release re-arms entry; exit is not held hostage by request')
-    check('Source "AstraShell.Erc.' in graph, 'Standing-only diagnostic clips explicit')
+    group=block(graph,graph.index('AnimSrcNodeGroupSelect AstraShellErcG'))
+    check('Group "AstraShell"' in group and 'Column "Erc"' in group and
+          'Child "ShellReloadSTM"' in group and 'Child "AstraShellErcG"' in route,
+          'Explicit standing group context on shell path')
+    check(all('Source "AstraShell.'+p+'"' in graph for p in phases), 'Sources use selected group column')
+    check('Events {' not in shell and 'AnimSrcNodeEvent ' not in shell, 'No shell graph or transition events')
 
     resources = {}
     for meta in root.rglob('*.meta'):
@@ -99,7 +105,7 @@ def verify(root):
             check(sum(n == 'ASTRA_ShellInsertCommit_'+side for _,n in events) == int(phase=='InsertShell'),
                   'Exactly one commit track marker '+stem)
             check(all(int(f) <= duration for f in re.findall(r'\$frame (\d+)',text)), 'Frames bounded '+stem)
-            check('#fps 30' in text, '30fps '+stem)
+            check('#fps 30' in text and not (assets/(stem+'.txa')).read_bytes().startswith(b'\xef\xbb\xbf'), '30fps without BOM '+stem)
             paired.append((duration,[(f,n[:-2]) for f,n in events]))
             expected_events[stem] = events
             asi = (assets/f'MP133_Astra_{"player" if side=="P" else "weapon"}.asi').read_text()

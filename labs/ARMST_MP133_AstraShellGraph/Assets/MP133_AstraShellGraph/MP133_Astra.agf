@@ -2,81 +2,45 @@ AnimSrcGraphFile {
  Sheets {
   AnimSrcGraphSheet Master {
    Nodes {
-    AnimSrcNodeStateMachine AstraRouteSTM {
-     states {
-      AnimSrcNodeState Native {
-       Child "IdleReloadSTM"
-       StartCondition "true"
-       TimeStorage "Real Time"
-       IsExit 0
-      }
-      AnimSrcNodeState Shell {
-       Child "ShellReloadSTM"
-       StartCondition "false"
-       TimeStorage "Real Time"
-       IsExit 1
-      }
-      AnimSrcNodeState NativeRearm {
-       Child "IdleReloadSTM"
-       StartCondition "false"
-       TimeStorage "Real Time"
-       IsExit 0
-      }
-     }
-     transitions {
-      AnimSrcNodeTransition "{DF0D2D85179F55B3}" {
-       FromState "Native"
-       ToState "Shell"
-       Duration "0.1"
-       Condition "ASTRA_ShellRequest && ASTRA_ShellEligible && !ASTRA_ShellStop && !ASTRA_FireStop && !Firing && WeaponInspectionState == 0 && Stance == 0 && !IsCommand(CMD_Weapon_Reload)"
-       BlendFn "S"
-       PostEval 1
-      }
-      AnimSrcNodeTransition "{706A11458FC552B8}" {
-       FromState "Shell"
-       ToState "NativeRearm"
-       Duration "0.1"
-       Condition "RemainingTimeLess(0.01)"
-       BlendFn "S"
-       PostEval 1
-      }
-      AnimSrcNodeTransition "{9494430D245C55F3}" {
-       FromState "NativeRearm"
-       ToState "Native"
-       Duration "0.0"
-       Condition "!ASTRA_ShellRequest"
-       BlendFn "S"
-       PostEval 1
-      }
-     }
+    AnimSrcNodeGroupSelect AstraShellErcG {
+     EditorPos 12 -4
+     Child "ShellReloadSTM"
+     Group "AstraShell"
+     Column "Erc"
     }
     AnimSrcNodeStateMachine ShellReloadSTM {
+     EditorPos 16 -4
      states {
       AnimSrcNodeState StartReload {
+       EditorPos 0 0
        Child "AstraStartReload"
        StartCondition "true"
        TimeStorage "Real Time"
        IsExit 0
       }
       AnimSrcNodeState GrabShell {
+       EditorPos 4 0
        Child "AstraGrabShell"
        StartCondition "false"
        TimeStorage "Real Time"
        IsExit 0
       }
       AnimSrcNodeState InsertShell {
+       EditorPos 8 0
        Child "AstraInsertShell"
        StartCondition "false"
        TimeStorage "Real Time"
        IsExit 0
       }
       AnimSrcNodeState CheckContinue {
+       EditorPos 12 0
        Child "AstraCheckContinue"
        StartCondition "false"
        TimeStorage "Real Time"
        IsExit 0
       }
       AnimSrcNodeState EndReload {
+       EditorPos 16 0
        Child "AstraEndReload"
        StartCondition "false"
        TimeStorage "Real Time"
@@ -84,11 +48,28 @@ AnimSrcGraphFile {
       }
      }
      transitions {
+      AnimSrcNodeTransition "{B934246674F3571C}" {
+       FromState "StartReload"
+       ToState "EndReload"
+       Duration "0.1"
+       Condition "RemainingTimeLess(0.01) && !(ASTRA_ShellEligible && !ASTRA_ShellStop && !ASTRA_FireStop && !Firing)"
+       BlendFn "S"
+       PostEval 1
+      }
+      AnimSrcNodeTransition "{2580067403055BBB}" {
+       FromState "GrabShell"
+       ToState "EndReload"
+       Duration "0.1"
+       Condition "RemainingTimeLess(0.01) && !(ASTRA_ShellEligible && !ASTRA_ShellStop && !ASTRA_FireStop && !Firing)"
+       BlendFn "S"
+       PostEval 1
+      }
+
       AnimSrcNodeTransition "{E568483512F85509}" {
        FromState "StartReload"
        ToState "GrabShell"
        Duration "0.0"
-       Condition "RemainingTimeLess(0.01)"
+       Condition "RemainingTimeLess(0.01) && ASTRA_ShellEligible && !ASTRA_ShellStop && !ASTRA_FireStop && !Firing"
        BlendFn "S"
        PostEval 1
       }
@@ -96,7 +77,7 @@ AnimSrcGraphFile {
        FromState "GrabShell"
        ToState "InsertShell"
        Duration "0.0"
-       Condition "RemainingTimeLess(0.01)"
+       Condition "RemainingTimeLess(0.01) && ASTRA_ShellEligible && !ASTRA_ShellStop && !ASTRA_FireStop && !Firing"
        BlendFn "S"
        PostEval 1
       }
@@ -127,23 +108,28 @@ AnimSrcGraphFile {
      }
     }
     AnimSrcNodeSource AstraStartReload {
-     Source "AstraShell.Erc.StartReload"
+     EditorPos 16 -8
+     Source "AstraShell.StartReload"
      Looptype "No Loop"
     }
     AnimSrcNodeSource AstraGrabShell {
-     Source "AstraShell.Erc.GrabShell"
+     EditorPos 20 -8
+     Source "AstraShell.GrabShell"
      Looptype "No Loop"
     }
     AnimSrcNodeSource AstraInsertShell {
-     Source "AstraShell.Erc.InsertShell"
+     EditorPos 24 -8
+     Source "AstraShell.InsertShell"
      Looptype "No Loop"
     }
     AnimSrcNodeSource AstraCheckContinue {
-     Source "AstraShell.Erc.CheckContinue"
+     EditorPos 28 -8
+     Source "AstraShell.CheckContinue"
      Looptype "No Loop"
     }
     AnimSrcNodeSource AstraEndReload {
-     Source "AstraShell.Erc.EndReload"
+     EditorPos 32 -8
+     Source "AstraShell.EndReload"
      Looptype "No Loop"
     }
 
@@ -165,6 +151,20 @@ AnimSrcGraphFile {
     AnimSrcNodeStateMachine IdleReloadSTM {
      EditorPos 2.3 -1.1
      states {
+      AnimSrcNodeState AstraShell {
+       EditorPos 9 0
+       Child "AstraShellErcG"
+       StartCondition "false"
+       TimeStorage "Real Time"
+       IsExit 1
+      }
+      AnimSrcNodeState AstraWaitRelease {
+       EditorPos 9 3
+       Child "Queue 1"
+       StartCondition "false"
+       IsExit 0
+      }
+
       AnimSrcNodeState Idle {
        EditorPos -2.4 0.8
        Child "Queue 1"
@@ -217,6 +217,31 @@ AnimSrcGraphFile {
       }
      }
      transitions {
+      AnimSrcNodeTransition "{1E166C2DF4775169}" {
+       FromState "Idle"
+       ToState "AstraShell"
+       Duration "0.1"
+       Condition "ASTRA_ShellRequest && ASTRA_ShellEligible && !ASTRA_ShellStop && !ASTRA_FireStop && !Firing && WeaponInspectionState == 0 && Stance == 0 && !IsCommand(CMD_Weapon_Reload)"
+       BlendFn "S"
+       PostEval 1
+      }
+      AnimSrcNodeTransition "{2DF538BFC3C35E00}" {
+       FromState "AstraShell"
+       ToState "AstraWaitRelease"
+       Duration "0.1"
+       Condition "RemainingTimeLess(0.01)"
+       BlendFn "S"
+       PostEval 1
+      }
+      AnimSrcNodeTransition "{95427645051F53AB}" {
+       FromState "AstraWaitRelease"
+       ToState "Idle"
+       Duration "0.0"
+       Condition "!ASTRA_ShellRequest"
+       BlendFn "S"
+       PostEval 1
+      }
+
       AnimSrcNodeTransition "{DA4D3DEC7DA35D57}" {
        FromState "Buffer4"
        ToState "Idle"
@@ -235,7 +260,7 @@ AnimSrcGraphFile {
        FromState "Idle"
        ToState "Buffer3"
        Duration "0.3"
-       Condition "IsCommand(CMD_Weapon_Reload) && !inRange(GetCommandI(CMD_Weapon_Reload), 7, 9) && GetCommandI(CMD_Weapon_Reload) != -2"
+       Condition "(!ASTRA_ShellRequest || GetCommandI(CMD_Weapon_Reload) == 1) && IsCommand(CMD_Weapon_Reload) && !inRange(GetCommandI(CMD_Weapon_Reload), 7, 9) && GetCommandI(CMD_Weapon_Reload) != -2"
        BlendFn "S"
       }
       AnimSrcNodeTransition "{E0C326DBF23A5AA1}" {
@@ -491,7 +516,7 @@ AnimSrcGraphFile {
     AnimSrcNodeBlend MasterControl {
      EditorPos 2.3 -10.1
      BlendWeight "1.0"
-     Child0 "AstraRouteSTM"
+     Child0 "IdleReloadSTM"
      Child1 "SightPose"
      Optimization "Always eval both"
     }
