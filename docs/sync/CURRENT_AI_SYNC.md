@@ -705,6 +705,16 @@ historical material**; the owner approved **V3** (Issue #27 comment 5966570978,
   reject; chamber unchanged by B2. Script `FE4A1900...`; T4b/G3B1/production/Core/world untouched;
   local==published. Status `PHYSICAL_3_TUBE_CAP_LAB_SOURCE_PREPARED / TWO_ACTIVE_G3B2_FIXTURES /
   COMPILER_UNVERIFIED / NO_NEW_RUNTIME_WRITES / STOP_FOR_INDEPENDENT_REVIEW`.
+- **G4-A native magazine-swap route audit (comment 5975411582, 2026-10-04):** read-only audit +
+  lab-only design, [`MP133_G4A_RELOAD_SWAP_ROUTE_AUDIT.md`](MP133_G4A_RELOAD_SWAP_ROUTE_AUDIT.md).
+  Root cause PROVEN: the whole-magazine reload routes (cmd 2–5/6 → inject/remove clips) carry native
+  `Weapon_SpawnMagazine`/`Weapon_AttachMagazine`/`Weapon_MagRelease`, and the engine attaches a whole
+  carried magazine → the installed 3-round tube is replaced (empty-R and rapid double-R both reach it).
+  Not a G3B2/donor issue. Preferred lab-only fix: a lab-owned sanitized-clip graph/ASI
+  (V2-lab pattern) so the whole-mag routes cannot attach, keeping cmd 1 bolt/chamber/fire/inspection
+  intact; magwell/resource gate has no proven field; input interception is a global-hook risk.
+  `READONLY_GAMEPLAY_FILES_CHANGED=0`; no implementation authorized. Status
+  `G4A_AUDIT_STATUS_COMPLETE / STOP_FOR_OWNER_REVIEW`.
 
 ---
 
