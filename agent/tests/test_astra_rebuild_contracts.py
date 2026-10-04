@@ -48,7 +48,10 @@ class AstraRebuildContracts(unittest.TestCase):
             for phase in phases:
                 row=body(s,'AnimSetInstanceSource_Line "Reload.Erc.'+phase+'"')
                 self.assertIn('/Clips/'+prefix+'_Astra_'+phase+'.anm',row)
-            self.assertEqual(s.count('AnimSetInstanceSource_Line "Reload.Erc.'),len(phases))
+            phase_keys=re.findall(r'AnimSetInstanceSource_Line "(Reload\.Erc\.[^"]+)"',s)
+            astra_keys=[k for k in phase_keys if k.rsplit('.',1)[1] in phases]
+            self.assertEqual(sorted(astra_keys),sorted('Reload.Erc.'+p for p in phases))
+            self.assertEqual(len(phase_keys),len(set(phase_keys)))
             self.assertNotIn('AnimSetInstanceSource_Line "AstraShell.',s)
         node=body(self.graph,'AnimSrcNodeGroupSelect AstraShellErcG')
         self.assertIn('Group "Reload"',node)
