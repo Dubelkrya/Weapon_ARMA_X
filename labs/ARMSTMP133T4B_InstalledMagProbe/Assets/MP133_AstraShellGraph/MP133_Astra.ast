@@ -1,0 +1,64 @@
+AnimSetTemplateSource {
+ Groups {
+  AnimSetTemplateSource_AnimationGroup "{93F07436A42452E0}" {
+   Name "AstraShell"
+   Animations {
+    "StartReload"
+    "GrabShell"
+    "InsertShell"
+    "CheckContinue"
+    "EndReload"
+   }
+   Columns {
+    "Erc"
+   }
+  }
+  AnimSetTemplateSource_AnimationGroup "{27F7A8D297CF57B8}" {
+   Name "Inspection"
+   Animations {
+    "Left2Right"
+    "LeftInspectionIn"
+    "LeftInspectionLoop"
+    "LeftInspectionOut"
+    "Right2Left"
+    "RightInspectionIn"
+    "RightInspectionLoop"
+    "RightInspectionOut"
+   }
+   Columns {
+    "Cro"
+    "CroRas"
+    "Erc"
+    "ErcRas"
+    "Pne"
+    "PneRas"
+   }
+  }
+  AnimSetTemplateSource_AnimationGroup "{388D787315FE5E2F}" {
+   Name "Reload"
+   Animations {
+    "BoltPose"
+    "Finger_trigger_in"
+    "Finger_trigger_out"
+    "Fire"
+    "Idle"
+    "Idle_finger"
+    "IKOffset"
+    "Reload_InsertMag"
+    "Reload_RemoveMag"
+    "ReloadActionBolt"
+    "Safety"
+    "Sight"
+    "Switch_Mode_Dep_Off"
+    "Switch_Mode_Dep_On"
+    "Switch_Mode_Off"
+    "Switch_Mode_On"
+    "Trigger"
+   }
+   Columns {
+    "Erc"
+    "Pne"
+   }
+  }
+ }
+}

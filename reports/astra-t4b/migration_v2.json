@@ -1,0 +1,326 @@
+{
+  "status": "ASTRA_TO_T4B_SOURCE_MIGRATED_WAIT_OWNER_WORKBENCH",
+  "publication": "SOURCE_PUBLICATION_PARTIAL",
+  "source_head": "194472abb82354a58b3feca4a05e44cf98860d1a",
+  "target_base": "c416c1ef0ee6aa1b8ed48a81d11e23951f6a67f3",
+  "resources": [
+    {
+      "path": "Assets/MP133_AstraShellGraph/Clips/P_Astra_CheckContinue.anm",
+      "sha256": "3c3c3fbd0f877be17966ff1c182b67d60a7909855dd2e02792b399bc370603c7",
+      "bytes": 4441,
+      "guid": null,
+      "publish": false
+    },
+    {
+      "path": "Assets/MP133_AstraShellGraph/Clips/P_Astra_CheckContinue.anm.meta",
+      "sha256": "011422de5c442dbf140ed351d5fd915a41805d1db63c5173820d381548b6368c",
+      "bytes": 436,
+      "guid": "36BCB6296CAE5334",
+      "publish": false
+    },
+    {
+      "path": "Assets/MP133_AstraShellGraph/Clips/P_Astra_CheckContinue.txa",
+      "sha256": "cbb8dd1721377ee35037e6cf114314256d0bc826ba205d54e0d29e85d9139ef3",
+      "bytes": 45110,
+      "guid": null,
+      "publish": true
+    },
+    {
+      "path": "Assets/MP133_AstraShellGraph/Clips/P_Astra_EndReload.anm",
+      "sha256": "3d8b3bb14eaf54d3839e9d295f9871ebe8f362aa42c1aef73b62132d2474a42c",
+      "bytes": 4584,
+      "guid": null,
+      "publish": false
+    },
+    {
+      "path": "Assets/MP133_AstraShellGraph/Clips/P_Astra_EndReload.anm.meta",
+      "sha256": "311e4b1d5284b37f80379e497871810ad8fd1d87bf2a061bf13afe8dc4750bbf",
+      "bytes": 432,
+      "guid": "D1B33891A663548D",
+      "publish": false
+    },
+    {
+      "path": "Assets/MP133_AstraShellGraph/Clips/P_Astra_EndReload.txa",
+      "sha256": "211c6ad12f916471c5582e2e9fdf3328bc2258d4ab9c13f795e3abdc87ad73fc",
+      "bytes": 45446,
+      "guid": null,
+      "publish": true
+    },
+    {
+      "path": "Assets/MP133_AstraShellGraph/Clips/P_Astra_GrabShell.anm",
+      "sha256": "6bf1429cea8cc62c219c83a647d4758425029dffcc1d1318861bac638687e625",
+      "bytes": 7195,
+      "guid": null,
+      "publish": false
+    },
+    {
+      "path": "Assets/MP133_AstraShellGraph/Clips/P_Astra_GrabShell.anm.meta",
+      "sha256": "7f664752ae1566d6b578312247711e5f255ede98f2cae9c904315ce80488f4d3",
+      "bytes": 432,
+      "guid": "1D4C14261EFC54DB",
+      "publish": false
+    },
+    {
+      "path": "Assets/MP133_AstraShellGraph/Clips/P_Astra_GrabShell.txa",
+      "sha256": "dae8f9c8d133ce3aceb057c0ef49803862b4e8a0e68e80a2444cceb047cf0794",
+      "bytes": 192468,
+      "guid": null,
+      "publish": true
+    },
+    {
+      "path": "Assets/MP133_AstraShellGraph/Clips/P_Astra_InsertShell.anm",
+      "sha256": "875958267dcade9645f69dfda633c01a2a4bded1abee4745f86778f047012ea0",
+      "bytes": 8514,
+      "guid": null,
+      "publish": false
+    },
+    {
+      "path": "Assets/MP133_AstraShellGraph/Clips/P_Astra_InsertShell.anm.meta",
+      "sha256": "5e2d1f625d8926d0cd5d2f19a009a093c14052bafeca10a1e760763ced9da012",
+      "bytes": 434,
+      "guid": "D3868FB32BF75DEE",
+      "publish": false
+    },
+    {
+      "path": "Assets/MP133_AstraShellGraph/Clips/P_Astra_InsertShell.txa",
+      "sha256": "7b9c378d3f6990b35506a64dae676f3178220759e4d81c223b9a8071f3714d98",
+      "bytes": 436737,
+      "guid": null,
+      "publish": true
+    },
+    {
+      "path": "Assets/MP133_AstraShellGraph/Clips/P_Astra_StartReload.anm",
+      "sha256": "4b8b87d8f3aa80a2574d2f22d48eca2bb5134a6fece033fe8ee7b4d5bb675fa5",
+      "bytes": 4439,
+      "guid": null,
+      "publish": false
+    },
+    {
+      "path": "Assets/MP133_AstraShellGraph/Clips/P_Astra_StartReload.anm.meta",
+      "sha256": "2dd94299d36d7d5138fe6b2a5d2e6244bec2983420bc8605d5c852b01d75dccb",
+      "bytes": 434,
+      "guid": "FCB314232D355753",
+      "publish": false
+    },
+    {
+      "path": "Assets/MP133_AstraShellGraph/Clips/P_Astra_StartReload.txa",
+      "sha256": "9f79f02fbe8b767db0297f75f9c99f6f8b0e6a207d09c8d3684a5a859e3ed845",
+      "bytes": 45134,
+      "guid": null,
+      "publish": true
+    },
+    {
+      "path": "Assets/MP133_AstraShellGraph/Clips/W_Astra_CheckContinue.anm",
+      "sha256": "0d3e6c73c40c3cee795313c628ba8a682b96618864f4bfb58633dea5e9f2eafe",
+      "bytes": 773,
+      "guid": null,
+      "publish": false
+    },
+    {
+      "path": "Assets/MP133_AstraShellGraph/Clips/W_Astra_CheckContinue.anm.meta",
+      "sha256": "9740cce57adc4d1a17354efd2176cea984ff380f7c76979854325aa4bf1015d2",
+      "bytes": 439,
+      "guid": "5B6872625F3454A4",
+      "publish": false
+    },
+    {
+      "path": "Assets/MP133_AstraShellGraph/Clips/W_Astra_CheckContinue.txa",
+      "sha256": "d2ab722b6640842a1951cd6d0e5af738207c77b8cf25ccbbfcbbf57417b39c0e",
+      "bytes": 5213,
+      "guid": null,
+      "publish": true
+    },
+    {
+      "path": "Assets/MP133_AstraShellGraph/Clips/W_Astra_EndReload.anm",
+      "sha256": "d2a48ea5784f584c637c22f9b86d219465a94a28d3d26da6a5db93b79d25d885",
+      "bytes": 916,
+      "guid": null,
+      "publish": false
+    },
+    {
+      "path": "Assets/MP133_AstraShellGraph/Clips/W_Astra_EndReload.anm.meta",
+      "sha256": "1f99b8aee37ba8f72ea8e444d4fb68e979876de9c8a4554ad8457d9aaf7da862",
+      "bytes": 435,
+      "guid": "008B42BF7C535275",
+      "publish": false
+    },
+    {
+      "path": "Assets/MP133_AstraShellGraph/Clips/W_Astra_EndReload.txa",
+      "sha256": "007f022a20f161a50d4a08c8bc8c3a4bc862050d54b5e760fb0b979f34d3e6b2",
+      "bytes": 5549,
+      "guid": null,
+      "publish": true
+    },
+    {
+      "path": "Assets/MP133_AstraShellGraph/Clips/W_Astra_GrabShell.anm",
+      "sha256": "695d07748768aa2b759a994ba25024584c40bc360050ce966d5f0c7328bb92d9",
+      "bytes": 1031,
+      "guid": null,
+      "publish": false
+    },
+    {
+      "path": "Assets/MP133_AstraShellGraph/Clips/W_Astra_GrabShell.anm.meta",
+      "sha256": "b5754a82d6c702fd26e152c464fddf43a762fde49635c867d32f6e0639368207",
+      "bytes": 435,
+      "guid": "E6534D7B659C59E5",
+      "publish": false
+    },
+    {
+      "path": "Assets/MP133_AstraShellGraph/Clips/W_Astra_GrabShell.txa",
+      "sha256": "c4419af0612bf961eee41c390e3fb8609d79577844964007d3f044e690410f53",
+      "bytes": 22009,
+      "guid": null,
+      "publish": true
+    },
+    {
+      "path": "Assets/MP133_AstraShellGraph/Clips/W_Astra_InsertShell.anm",
+      "sha256": "96d1be725952251cec4401b21255153870987b872d49f573894d6faf7438cfa8",
+      "bytes": 1556,
+      "guid": null,
+      "publish": false
+    },
+    {
+      "path": "Assets/MP133_AstraShellGraph/Clips/W_Astra_InsertShell.anm.meta",
+      "sha256": "29d2d3a12dfef04e13884e5d2f23b07c9cc5bf74c4904310b7a21ceba7f33e67",
+      "bytes": 437,
+      "guid": "090759CC560C55F2",
+      "publish": false
+    },
+    {
+      "path": "Assets/MP133_AstraShellGraph/Clips/W_Astra_InsertShell.txa",
+      "sha256": "4c5a7f1dc1bfd53b7c5a211a6a7938287cbd2c22b68ce2e0579ac8077fc285ae",
+      "bytes": 49847,
+      "guid": null,
+      "publish": true
+    },
+    {
+      "path": "Assets/MP133_AstraShellGraph/Clips/W_Astra_StartReload.anm",
+      "sha256": "be1a6b3d1612570cd39e13d9b3a3d947c6f867330353fa493c868f0b9c7b420b",
+      "bytes": 771,
+      "guid": null,
+      "publish": false
+    },
+    {
+      "path": "Assets/MP133_AstraShellGraph/Clips/W_Astra_StartReload.anm.meta",
+      "sha256": "0e4b1d60e88d274e10f52fd33ca8e52e3f5625fedc4ed109a6ed17d867a143b4",
+      "bytes": 437,
+      "guid": "979C9964AD7956F5",
+      "publish": false
+    },
+    {
+      "path": "Assets/MP133_AstraShellGraph/Clips/W_Astra_StartReload.txa",
+      "sha256": "ffbafe2a4605f14d7f65d82071fd50ba2f527801e031d4d03e59d10a2ab0641b",
+      "bytes": 5230,
+      "guid": null,
+      "publish": true
+    },
+    {
+      "path": "Assets/MP133_AstraShellGraph/MP133_Astra.agf",
+      "sha256": "9867d553dd5cc4b55f6de84eee4ec6ca2c4eed06772d038a46e00666601e19ef",
+      "bytes": 33684,
+      "guid": null,
+      "publish": true
+    },
+    {
+      "path": "Assets/MP133_AstraShellGraph/MP133_Astra.agf.meta",
+      "sha256": "dc3dfcbf0e5a8603e107f5fb7c58d20dbc2af89e49c0df8552158b44ca8b8f06",
+      "bytes": 386,
+      "guid": "9ABFB44D704F57A9",
+      "publish": true
+    },
+    {
+      "path": "Assets/MP133_AstraShellGraph/MP133_Astra.agr",
+      "sha256": "6c08181ff2e5e846c68eaf0cd75bc34e12dde68b4bbaf469e1a014fc20f772ac",
+      "bytes": 2472,
+      "guid": null,
+      "publish": true
+    },
+    {
+      "path": "Assets/MP133_AstraShellGraph/MP133_Astra.agr.meta",
+      "sha256": "8884387c7aa50e8f8fb6781bbc82bf743e8b087c1d62441f73ab12aa8deaeed3",
+      "bytes": 362,
+      "guid": "9A5A46E2D8F8586F",
+      "publish": true
+    },
+    {
+      "path": "Assets/MP133_AstraShellGraph/MP133_Astra.ast",
+      "sha256": "fc4abf0720f960409a69df0578ee95997337afca881d54782326d23a9c4bed5e",
+      "bytes": 1101,
+      "guid": null,
+      "publish": true
+    },
+    {
+      "path": "Assets/MP133_AstraShellGraph/MP133_Astra.ast.meta",
+      "sha256": "8dd3f5742c9f58f05a1160cc11ec0220aaed2c79e7efbc1728ab6d862e6e817c",
+      "bytes": 398,
+      "guid": "FD37F7091A235471",
+      "publish": true
+    },
+    {
+      "path": "Assets/MP133_AstraShellGraph/MP133_Astra.aw",
+      "sha256": "4a4bf5a5e93ca5e1d08767a2d66104c5ab845daeadb8cd6177381cddd71b917e",
+      "bytes": 1022,
+      "guid": null,
+      "publish": true
+    },
+    {
+      "path": "Assets/MP133_AstraShellGraph/MP133_Astra.aw.meta",
+      "sha256": "42e9237a88b9b8580ab40f6c044c080c7cb9d9dfecb1e0867ffec2fb8add9f73",
+      "bytes": 385,
+      "guid": "3BB0BA3983BD5729",
+      "publish": true
+    },
+    {
+      "path": "Assets/MP133_AstraShellGraph/MP133_Astra_player.asi",
+      "sha256": "a3de8d923ce0fc6f1e9661a00354d31807045ecd916cbb4e953f6bd9eee949d9",
+      "bytes": 14680,
+      "guid": null,
+      "publish": true
+    },
+    {
+      "path": "Assets/MP133_AstraShellGraph/MP133_Astra_player.asi.meta",
+      "sha256": "640cb9e6093162313121b6a467f0f4307014ecdc17f891d6f2785a4299bd8443",
+      "bytes": 405,
+      "guid": "2629533DCE9A5811",
+      "publish": true
+    },
+    {
+      "path": "Assets/MP133_AstraShellGraph/MP133_Astra_weapon.asi",
+      "sha256": "c93d31b3a30099b068eda0d2330005ed458cbb83621a7d503b352975905f0737",
+      "bytes": 5228,
+      "guid": null,
+      "publish": true
+    },
+    {
+      "path": "Assets/MP133_AstraShellGraph/MP133_Astra_weapon.asi.meta",
+      "sha256": "6d629db4a0b096ba6d8b6f29aab499ebcd69cb832f16dbd69b4162761bccfb56",
+      "bytes": 405,
+      "guid": "AE8E3367177C57BD",
+      "publish": true
+    }
+  ],
+  "new": [
+    {
+      "path": "Scripts/Game/ARMST_T4B/ARMST_T4B_AstraV2_WeaponAnimationComponent.c",
+      "sha256": "4da7ede24e8eec4103a3ca9049b362ed2445acbe7b4b486d4091f451d0a002fe",
+      "guid": "OWNER_REGISTRATION_PENDING"
+    },
+    {
+      "path": "Prefabs/Test/ARMST_T4B_AstraV2_Bridge_TestWeapon.et",
+      "sha256": "d574c56500126b188b09082e68e63df73eba949030d788bf3675af15377ce1b5",
+      "guid": "OWNER_REGISTRATION_PENDING"
+    }
+  ],
+  "source_target_sha_equal": 44,
+  "published_files": 24,
+  "protected_unchanged": 653,
+  "meta_registration": "NEW_BRIDGE_PREFAB_PENDING",
+  "compile": "NOT_RUN",
+  "runtime": "NOT_RUN",
+  "live_w3_differs_from_published": true,
+  "offline_tests": {
+    "passed": 88,
+    "new": 6
+  },
+  "repository_integrity": "FAIL_3_PREEXISTING_LINKS"
+}
