@@ -1,4 +1,10 @@
 // Isolated animation-only prototype. No input hooks, subscriptions or ammo writes.
+// Compile fix (owner WB log 2026-10-04): the parameterless script constructor on the
+// derived component was rejected ("Overloaded function ... not compatible"). Enfusion
+// instantiates prefab components engine-side; the BaseItemAnimationComponent family
+// (complete inherited-member list, installed 1.8.0.13 API docs) exposes no script
+// constructor and no OnInit/OnPostInit, only animation/character callbacks. The former
+// constructor is replaced by a lazy once-only init driven by OnAnimationEvent.
 [ComponentEditorProps(category: "ARMST/Astra", description: "Shell animation diagnostic only")]
 class ARMST_T4B_AstraV2_WeaponAnimationComponentClass : ARMST_T4B_WeaponAnimationComponentClass
 {
@@ -14,16 +20,25 @@ class ARMST_T4B_AstraV2_WeaponAnimationComponent : ARMST_T4B_WeaponAnimationComp
 	protected bool m_bCandidate;
 	protected IEntity m_Magazine;
 	protected int m_iMagazineTag;
+	// Lazy once-only instance init. A scripted constructor is NOT supported on a
+	// component subclass (the engine instantiates prefab components), so the
+	// former `component_constructed` ctor is replaced by an engine-driven,
+	// event-triggered init that runs exactly once per created instance.
+	protected bool m_bInstanceInitLogged;
 
-	void ARMST_T4B_AstraV2_WeaponAnimationComponent()
+	protected void AstraEnsureInstanceInit()
 	{
+		if (m_bInstanceInitLogged)
+			return;
+		m_bInstanceInitLogged = true;
 		s_iNextInstance++;
 		m_iInstance = s_iNextInstance;
-		Print("[ARMST-T4B-ASTRA] component_constructed instance=" + m_iInstance.ToString(), LogLevel.NORMAL);
+		Print("[ARMST-T4B-ASTRA] component_init instance=" + m_iInstance.ToString() + " init=lazy_first_event", LogLevel.NORMAL);
 	}
 
 	override void OnAnimationEvent(AnimationEventID animEventType, AnimationEventID animUserString, int intParam, float timeFromStart, float timeToEnd)
 	{
+		AstraEnsureInstanceInit();
 		super.OnAnimationEvent(animEventType, animUserString, intParam, timeFromStart, timeToEnd);
 		string name = GameAnimationUtils.GetEventString(animEventType);
 		if (!name.StartsWith("ASTRA_Shell"))
