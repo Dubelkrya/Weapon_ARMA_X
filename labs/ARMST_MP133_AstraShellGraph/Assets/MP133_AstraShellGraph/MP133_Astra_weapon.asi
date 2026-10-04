@@ -1,0 +1,107 @@
+AnimSetInstanceSource "{405D230A77C656D2}" {
+ Template "{FD37F7091A235471}Assets/MP133_AstraShellGraph/MP133_Astra.ast"
+ Lines {
+  AnimSetInstanceSource_Line "AstraShell.Erc.StartReload" {
+   Resource "{979C9964AD7956F5}Assets/MP133_AstraShellGraph/Clips/W_Astra_StartReload.anm"
+  }
+  AnimSetInstanceSource_Line "AstraShell.Erc.GrabShell" {
+   Resource "{E6534D7B659C59E5}Assets/MP133_AstraShellGraph/Clips/W_Astra_GrabShell.anm"
+  }
+  AnimSetInstanceSource_Line "AstraShell.Erc.InsertShell" {
+   Resource "{090759CC560C55F2}Assets/MP133_AstraShellGraph/Clips/W_Astra_InsertShell.anm"
+  }
+  AnimSetInstanceSource_Line "AstraShell.Erc.CheckContinue" {
+   Resource "{5B6872625F3454A4}Assets/MP133_AstraShellGraph/Clips/W_Astra_CheckContinue.anm"
+  }
+  AnimSetInstanceSource_Line "AstraShell.Erc.EndReload" {
+   Resource "{008B42BF7C535275}Assets/MP133_AstraShellGraph/Clips/W_Astra_EndReload.anm"
+  }
+
+  AnimSetInstanceSource_Line "Reload.Erc.Fire" {
+   Resource "{4644F33E2CADCF0A}Assets/Weapons/Rifles/AK74/anims/anm/w_rfl_ak74_erc_fire.anm"
+  }
+  AnimSetInstanceSource_Line "Reload.Pne.Fire" {
+   Resource "{4644F33E2CADCF0A}Assets/Weapons/Rifles/AK74/anims/anm/w_rfl_ak74_erc_fire.anm"
+  }
+  AnimSetInstanceSource_Line "Reload.Erc.Idle" {
+   Resource "{10F79006036E31C6}Assets/Weapons/Rifles/AK74/anims/anm/w_rfl_ak74_idle.anm"
+  }
+  AnimSetInstanceSource_Line "Reload.Pne.Idle" {
+   Resource "{10F79006036E31C6}Assets/Weapons/Rifles/AK74/anims/anm/w_rfl_ak74_idle.anm"
+  }
+  AnimSetInstanceSource_Line "Reload.Erc.Reload_InsertMag" {
+   Resource "{45B1772B8AFEAE47}Mp_133/Workspace/Reload/W_MP133_Reload_Inject.anm"
+  }
+  AnimSetInstanceSource_Line "Reload.Pne.Reload_InsertMag" {
+   Resource "{45B1772B8AFEAE47}Mp_133/Workspace/Reload/W_MP133_Reload_Inject.anm"
+  }
+  AnimSetInstanceSource_Line "Reload.Erc.Reload_RemoveMag" {
+   Resource "{FBC8FA7934FA4394}Mp_133/Workspace/Reload/W_MP133_Reload_Rem.anm"
+  }
+  AnimSetInstanceSource_Line "Reload.Pne.Reload_RemoveMag" {
+   Resource "{FBC8FA7934FA4394}Mp_133/Workspace/Reload/W_MP133_Reload_Rem.anm"
+  }
+  AnimSetInstanceSource_Line "Reload.Erc.ReloadActionBolt" {
+   Resource "{45B1772B8AFEAE46}Mp_133/Workspace/Reload/W_MP133_Reload_Bolt.anm"
+  }
+  AnimSetInstanceSource_Line "Reload.Pne.ReloadActionBolt" {
+   Resource "{45B1772B8AFEAE46}Mp_133/Workspace/Reload/W_MP133_Reload_Bolt.anm"
+  }
+  AnimSetInstanceSource_Line "Reload.Erc.Trigger" {
+   Resource "{01F1072211063BE5}Assets/Weapons/Rifles/AK74/anims/anm/w_rfl_ak74_erc_trigger.anm"
+  }
+  AnimSetInstanceSource_Line "Reload.Pne.Trigger" {
+   Resource "{01F1072211063BE5}Assets/Weapons/Rifles/AK74/anims/anm/w_rfl_ak74_erc_trigger.anm"
+  }
+  AnimSetInstanceSource_Line "Reload.Erc.Safety" {
+   Resource "{60C8F1C1BEAA74D8}Assets/Weapons/Rifles/AK74/anims/anm/w_rfl_ak74_erc_safety.anm"
+  }
+  AnimSetInstanceSource_Line "Reload.Pne.Safety" {
+   Resource "{60C8F1C1BEAA74D8}Assets/Weapons/Rifles/AK74/anims/anm/w_rfl_ak74_erc_safety.anm"
+  }
+  AnimSetInstanceSource_Line "Reload.Erc.Sight" {
+   Resource "{D72351FE2CDD2DAA}Assets/Weapons/Rifles/AK74/anims/anm/w_rfl_ak74_erc_sight.anm"
+  }
+  AnimSetInstanceSource_Line "Reload.Pne.Sight" {
+   Resource "{D72351FE2CDD2DAA}Assets/Weapons/Rifles/AK74/anims/anm/w_rfl_ak74_erc_sight.anm"
+  }
+  AnimSetInstanceSource_Line "Reload.Erc.Switch_Mode_Off" {
+   Resource "{ACE9B0CD8C45EC8F}Assets/Weapons/Rifles/AK74/anims/anm/w_rfl_ak74_switch_mode_empty.anm"
+  }
+  AnimSetInstanceSource_Line "Reload.Erc.Switch_Mode_On" {
+   Resource "{ACE9B0CD8C45EC8F}Assets/Weapons/Rifles/AK74/anims/anm/w_rfl_ak74_switch_mode_empty.anm"
+  }
+  AnimSetInstanceSource_Line "Reload.Pne.Switch_Mode_Off" {
+   Resource "{ACE9B0CD8C45EC8F}Assets/Weapons/Rifles/AK74/anims/anm/w_rfl_ak74_switch_mode_empty.anm"
+  }
+  AnimSetInstanceSource_Line "Reload.Pne.Switch_Mode_On" {
+   Resource "{ACE9B0CD8C45EC8F}Assets/Weapons/Rifles/AK74/anims/anm/w_rfl_ak74_switch_mode_empty.anm"
+  }
+  AnimSetInstanceSource_Line "Reload.Erc.Idle_finger" {
+   Resource "{10F79006036E31C6}Assets/Weapons/Rifles/AK74/anims/anm/w_rfl_ak74_idle.anm"
+  }
+  AnimSetInstanceSource_Line "Reload.Pne.Idle_finger" {
+   Resource "{10F79006036E31C6}Assets/Weapons/Rifles/AK74/anims/anm/w_rfl_ak74_idle.anm"
+  }
+  AnimSetInstanceSource_Line "Reload.Erc.Finger_trigger_in" {
+   Resource "{CF4106B828293EF6}Assets/Weapons/Rifles/AK74/anims/anm/w_ak74_trigger_finger_in.anm"
+  }
+  AnimSetInstanceSource_Line "Reload.Pne.Finger_trigger_out" {
+   Resource "{F5EDBF5428C0F2E8}Assets/Weapons/Rifles/AK74/anims/anm/w_ak74_trigger_finger_out.anm"
+  }
+  AnimSetInstanceSource_Line "Reload.Pne.Finger_trigger_in" {
+   Resource "{CF4106B828293EF6}Assets/Weapons/Rifles/AK74/anims/anm/w_ak74_trigger_finger_in.anm"
+  }
+  AnimSetInstanceSource_Line "Reload.Erc.Finger_trigger_out" {
+   Resource "{F5EDBF5428C0F2E8}Assets/Weapons/Rifles/AK74/anims/anm/w_ak74_trigger_finger_out.anm"
+  }
+  AnimSetInstanceSource_Line "Reload.Erc.BoltPose" {
+   Resource "{D3AEA4E4A65B3F62}Assets/Weapons/Rifles/AK74/anims/anm/w_ak74_bolt_pose.anm"
+  }
+  AnimSetInstanceSource_Line "Reload.Pne.BoltPose" {
+   Resource "{D3AEA4E4A65B3F62}Assets/Weapons/Rifles/AK74/anims/anm/w_ak74_bolt_pose.anm"
+  }
+ }
+ RBF AnimSetInstanceSourceRBFArray "{8B2E58561B645120}" {
+ }
+}

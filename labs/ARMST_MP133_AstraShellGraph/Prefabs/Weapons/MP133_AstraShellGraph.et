@@ -1,0 +1,26 @@
+GenericEntity : "{63FF6FDCA4E7E735}Prefabs/Weapons/Russian/Shotgun/armst_Shotgun_mp_133.et" {
+ ID "6514864734815096"
+ components {
+  SCR_WeaponAttachmentsStorageComponent "{51F080D5CE45A1A2}" {
+   Attributes SCR_ItemAttributeCollection "{51F080D5C64F12C5}" {
+    ItemDisplayName WeaponUIInfo "{5222CB07CFF6712A}" {
+     Name "MP-133 [ASTRA ANIMATION ONLY]"
+    }
+   }
+  }
+  WeaponComponent "{CFBAA4B706BA66E8}" {
+   components {
+    ARMST_AstraShellAnimationComponent "{60B4EA76EB15F6E0}" {
+     AnimGraph "{9A5A46E2D8F8586F}Assets/MP133_AstraShellGraph/MP133_Astra.agr"
+     AnimInstance "{AE8E3367177C57BD}Assets/MP133_AstraShellGraph/MP133_Astra_weapon.asi"
+     AnimInjection AnimationAttachmentInfo "{532F3A9CB912F2BA}" {
+      AnimGraph "{9A5A46E2D8F8586F}Assets/MP133_AstraShellGraph/MP133_Astra.agr"
+      AnimInstance "{2629533DCE9A5811}Assets/MP133_AstraShellGraph/MP133_Astra_player.asi"
+      BindingName "Weapon"
+     }
+     BindWithInjection 1
+    }
+   }
+  }
+ }
+}
