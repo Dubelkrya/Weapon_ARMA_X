@@ -397,3 +397,122 @@ STOP each scenario on unexpected ammo loss, duplicate chamber manipulation, comp
 unrelated weapon reload.
 
 `PASSIVE_R_TRACE_V1_SOURCE_STATUS: PREPARED` (lab prefab + manifest + this report only).
+
+---
+
+## 10. Runtime trace analysis — owner log `MP133_G4A_PASSIVE_R_TRACE_2026-10-04.log`
+
+Source: owner-published log at commit `b296667` (branch `t4b/installed-mag-probe`), file
+`reports/runtime/MP133_G4A_PASSIVE_R_TRACE_2026-10-04.log` (431 lines). Fixture:
+`{78899AABBCDDEEFF}ARMST_T4B_G3B2_InventoryWide_WriteOn_TestWeapon.et`, installed target
+`{CD8091A2B3C4D5E6}Tube3Mag` at baseline `2/3`, `baselineDone=1`. Labels: **OWNER-RUNTIME** (log fact),
+**PROJECT-SOURCE** (graph/clip), **INFERENCE**.
+
+### 10.1 Command chronology (`OnCharacterCommand` — `commandID` and `intValue` are separate)
+
+The diagnostic logs `commandID=0` with the **route value in `intValue`** (`[ARMST_T4B-CMD] phase=command
+commandID=0 intValue=<n>`); `intValue` is the `CMD_Weapon_Reload` integer actually delivered:
+
+| Log line | `intValue` | Immediate state |
+|---|---|---|
+| #3 | **1** | `ammo 1/3`, `chambered 0` (before baseline had already moved 2→? see 10.3) |
+| #10 | **5** | `ammo 0/3`, `chambered 0` |
+| #39, #46 | **1** | `ammo 2/3`, then `1/3` |
+| #53 | **5** | `ammo 0/3`, `chambered 0` |
+| #82 | **1** | `ammo 2/3` |
+
+- **`R_CMD1_ROUTE: CONFIRMED` (OWNER-RUNTIME).** `intValue=1` is followed by `BlendIn` →
+  `Weapon_EnableFire` → `Weapon_Rack_Bolt`, `chambered 0→1`, **no** magazine events, and the
+  `magTag` stays constant. This is the native **bolt/rack** route (`ReloadActionBolt`), matching the
+  graph (`== 1 && F==0.0 → ReloadActionBolt`). It is the ordinary-R / post-shot R behaviour.
+- **`R_CMD5_REMOVE_INSERT: CONFIRMED` (OWNER-RUNTIME).** `intValue=5` is followed by the **full
+  whole-magazine** cycle: `BlendIn` → `Weapon_MagRelease` (#13) → `Weapon_DetachMagazine` (#15) →
+  `Weapon_DespawnMagazine` (#17, `magTag M1→M2`, `mag=-`) → `BlendOut` → `BlendIn` →
+  `Weapon_SpawnMagazine` (#24) → `Weapon_AttachMagazine` (#26) → `Weapon_MagRelease` (#28, `magTag M3`,
+  `mag=Tube3Mag 3/3`). This matches cms 4/5 (`MagReload`/`MagNoBulletReload → MagReloadSTM` =
+  remove→insert) in the graph; the log cannot distinguish cmd 4 vs 5 at the int alone, but the
+  **remove+insert** cycle is confirmed.
+
+### 10.2 Event ↔ tube-state mapping
+
+| Event (first occurrence) | Line | tube state around it |
+|---|---|---|
+| `Weapon_MagRelease` | #13 | `magTag M1`, `Tube3Mag 0/3` (still installed) |
+| `Weapon_DetachMagazine` | #15 | `magTag M1`, `Tube3Mag 0/3` |
+| `Weapon_DespawnMagazine` | #17 | **`magTag M2`, `mag=-`, `ammo -1/-1`** — target entity gone |
+| `Weapon_SpawnMagazine` | #24 | `mag=-` (new object being created) |
+| `Weapon_AttachMagazine` | #26 | `mag=-` |
+| `Weapon_MagRelease` (2nd) | #28 | **`magTag M3`, `Tube3Mag 3/3`** — a fresh full tube attached |
+
+**`PHYSICAL_TUBE_CONTINUITY: BROKEN` (OWNER-RUNTIME).** The installed object reference drops to null at
+`Weapon_DespawnMagazine` (`magTag M1→M2`, `mag=-`) and a **new** full `Tube3Mag 3/3` appears at
+`Weapon_Spawn/AttachMagazine` (`magTag M3`). Per the trace caveat (§9 / review 5979324888) a `magTag`
+change alone is **not** proof of a different physical object — **but here `mag` becomes `-` (no
+installed magazine) in between**, which is loss of continuous installed ownership. The engine performs a
+real **remove + insert** of the whole magazine; the tube entity is **not** preserved across the cycle.
+
+### 10.3 `AMMO_COUNT_ANOMALY` — explained by existing code (no extra test needed)
+
+Ordinary R at `intValue=1` shows `ammo 2/3 → 1/3` at the **pre-super** `Weapon_Rack_Bolt` (#37) with
+`chambered 0→1`, then the follow-up command snapshot at `1/3` with `chambered 0`. The transition
+`2/3 → 1/3 → 0/3 with a round chambered` is **not a lost round** — it is the **same round moving from
+the tube into the chamber**, consistent with the project's already-verified bullet-accounting:
+`MuzzleComponent.GetAmmoCount()` (muzzle supply) is derived from tube+chamber, and existing T4b logs
+(V2/V3) already recorded `muzzleSupply same`, `chambered` flipping while `ammo` drops by one. The T4b
+snapshot `T4BState()` reads `mag.GetAmmoCount()` and `muzzle.IsCurrentBarrelChambered()` live at each
+`T4BLog` call, and the **pre-super** `Weapon_Rack_Bolt` fires at a frame where the engine has already
+decremented the tube but not yet sampled the chamber as filled; the **post-super**/next snapshot shows
+the chamber filled. `AMMO_COUNT_ANOMALY: EXPLAINED` — the count change is the chamber-feeding step of
+the native bolt, not a defect and not a reason for extra diagnosis. (No known code path adds writers;
+the only pre-existing writer is the T4b baseline `SetAmmoCount(2)`.)
+
+### 10.4 G3-B2 call: `ambiguous-donor` (rejected before any transfer)
+
+Log lines #231–#249 (`op=1`): classify found `compat=4` (four eligible 12ga donors: the two vest-slot
+`Tube3Mag 3/3`, plus two pouch-slot `Tube3Mag 3/3`) → `phase=preflight ev=checked preflightEligible=0
+reason=ambiguous-donor` → `phase=reject ev=ambiguous-donor`. There are **zero**
+`phase=donor-post`/`phase=target-post`/`phase=commit` and **no** `SetAmmoCount` from B2 in the whole
+log. **`G3B2_TRANSFER: REJECTED` (OWNER-RUNTIME).** The later tube refill to `3/3` came from the
+**native cmd-5 remove+insert** (§10.1/§10.2), **not** from G3-B2 — the two are independent, and the
+auto-refill is unrelated to any successful B2 transfer.
+
+### 10.5 Double-R
+
+`DOUBLE_R: NOT CONFIRMED` — the log does not contain a provably-paired rapid double-R sequence. The
+observed `intValue=5` occurrences are single whole-magazine reloads (remove+insert), not a labelled
+double press. A separate fresh-instance double-R test remains outstanding.
+
+### 10.6 Approach comparison on confirmed data
+
+Both prior options are now grounded in **confirmed** routes:
+
+- **Option A — lab graph/ASI route redirection.** The graph selects the whole-mag states for
+  `intValue` 2–6 (confirmed for 5). A lab-owned graph could route 2–6 to a non-remove/non-insert clip
+  while keeping `intValue==1 → ReloadActionBolt` intact. Risk: touching the graph/ASI; must prove cmd 1
+  bolt/chamber/fire unchanged.
+- **Option B — sanitized lab clips (remove **and** insert).** Replace the native
+  `Weapon_MagRelease/Detach/Despawn` and `Spawn/Attach` events in the lab `Reload_RemoveMag` **and**
+  `Reload_InsertMag` clips with inert events (keep `BlendIn/BlendOut`). Risk: owner must re-import
+  compiled `.anm`; engine-internal non-clip side effects remain **UNVERIFIED**.
+
+**Preference (evidence-based): Option B is preferred for the first bounded lab experiment**, because
+it does **not** modify the graph/ASI or the cmd-1 bolt path (kept byte-identical), it addresses the
+**confirmed** remove+insert cycle directly, and its blast radius is two lab clips + two ASI lines.
+Option A is the fallback if Option B cannot be made to preserve the tube (engine-internal effects).
+`G4A_PREFERRED_APPROACH: Option B (sanitized remove+insert lab clips; Option A fallback)`.
+
+**`IMPLEMENTATION_AUTHORIZED: NO`** — implementation remains blocked pending: (1) the outstanding
+double-R test, and (2) a separately authorized G4-A implementation task with owner-imported ANM.
+
+### 10.7 Required statuses
+
+```
+R_CMD1_ROUTE: CONFIRMED (intValue=1 -> BlendIn/EnableFire/Rack_Bolt, no mag events, magTag constant)
+R_CMD5_REMOVE_INSERT: CONFIRMED (intValue=5 -> MagRelease/Detach/Despawn then Spawn/Attach/MagRelease)
+PHYSICAL_TUBE_CONTINUITY: BROKEN (mag-ref null between Detach/Despawn and Spawn/Attach; new Tube3Mag 3/3 attached)
+AMMO_COUNT_ANOMALY: EXPLAINED (native bolt chamber-feeding; tube-1 -> chamber+1; not a lost round)
+G3B2_TRANSFER: REJECTED (ambiguous-donor, before any setter; auto-refill was native cmd-5, not B2)
+DOUBLE_R: NOT CONFIRMED (no provably-paired double press in this log; separate test outstanding)
+G4A_PREFERRED_APPROACH: Option B (sanitized lab remove+insert clips), Option A fallback
+IMPLEMENTATION_AUTHORIZED: NO
+```
