@@ -10,11 +10,11 @@ GenericEntity : "{63FF6FDCA4E7E735}Prefabs/Weapons/Russian/Shotgun/armst_Shotgun
      MagazineTemplate "{CD8091A2B3C4D5E6}Prefabs/Test/ARMST_T4B_G3B2_Tube3Mag.et"
     }
     ARMST_T4B_AstraV2_WeaponAnimationComponent "{60B4EA76EB15F6E0}" {
-     AnimGraph "{9A5A46E2D8F8586F}Assets/MP133_AstraRebuild/MP133_Astra.agr"
-     AnimInstance "{AE8E3367177C57BD}Assets/MP133_AstraRebuild/MP133_Astra_weapon.asi"
+     AnimGraph "{7E087CCCBFB67045}Assets/MP133_AstraShellGraph_test/MP133_Astra.agr"
+     AnimInstance "{4CF7F797EC1FCA0E}Assets/MP133_AstraShellGraph_test/MP133_Astra_weapon.asi"
      AnimInjection AnimationAttachmentInfo "{532F3A9CB912F2BA}" {
-      AnimGraph "{9A5A46E2D8F8586F}Assets/MP133_AstraRebuild/MP133_Astra.agr"
-      AnimInstance "{2629533DCE9A5811}Assets/MP133_AstraRebuild/MP133_Astra_player.asi"
+      AnimGraph "{7E087CCCBFB67045}Assets/MP133_AstraShellGraph_test/MP133_Astra.agr"
+      AnimInstance "{B7A966A6741EAEE2}Assets/MP133_AstraShellGraph_test/MP133_Astra_player.asi"
       BindingName "Weapon"
      }
      BindWithInjection 1

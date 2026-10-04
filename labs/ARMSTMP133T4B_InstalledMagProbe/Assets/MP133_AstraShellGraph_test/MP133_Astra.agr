@@ -1,6 +1,6 @@
 AnimSrcGraph {
- AnimSetTemplate "{FD37F7091A235471}Assets/MP133_AstraRebuild/MP133_Astra.ast"
- ControlTemplate AnimSrcGCT "{CAEF6B646D4B5AF9}" {
+ AnimSetTemplate "{6CFA1ACC8873A4B6}Assets/MP133_AstraShellGraph_test/MP133_Astra.ast"
+ ControlTemplate AnimSrcGCT "{6A8947ABB9A61434}" {
   Variables {
    AnimSrcGCTVarBool ASTRA_ShellRequest {
     DefaultValue 0
@@ -117,10 +117,10 @@ AnimSrcGraph {
    "AK74"
   }
  }
- Debug AnimSrcGD "{DF39CC3E75085388}" {
+ Debug AnimSrcGD "{6A8947ABB9A617C7}" {
  }
  GraphFilesResourceNames {
-  "{9ABFB44D704F57A9}Assets/MP133_AstraRebuild/MP133_Astra.agf"
+  "{5106627621151975}Assets/MP133_AstraShellGraph_test/MP133_Astra.agf"
  }
  DefaultRunNode "MasterControl"
 }

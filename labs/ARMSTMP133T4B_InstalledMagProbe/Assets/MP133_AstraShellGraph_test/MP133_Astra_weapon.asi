@@ -1,5 +1,5 @@
 AnimSetInstanceSource {
- Template "{FD37F7091A235471}Assets/MP133_AstraRebuild/MP133_Astra.ast"
+ Template "{6CFA1ACC8873A4B6}Assets/MP133_AstraShellGraph_test/MP133_Astra.ast"
  Lines {
   AnimSetInstanceSource_Line "Reload.Erc.Safety" {
    Resource "{60C8F1C1BEAA74D8}Assets/Weapons/Rifles/AK74/anims/anm/w_rfl_ak74_erc_safety.anm"
@@ -101,6 +101,6 @@ AnimSetInstanceSource {
    Resource "{D3AEA4E4A65B3F62}Assets/Weapons/Rifles/AK74/anims/anm/w_ak74_bolt_pose.anm"
   }
  }
- RBF AnimSetInstanceSourceRBFArray "{8B2E58561B645120}" {
+ RBF AnimSetInstanceSourceRBFArray "{6A8947ABB9ABD4EB}" {
  }
 }

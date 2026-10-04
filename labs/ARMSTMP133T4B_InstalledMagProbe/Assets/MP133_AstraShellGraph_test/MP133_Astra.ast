@@ -1,6 +1,6 @@
 AnimSetTemplateSource {
  Groups {
-  AnimSetTemplateSource_AnimationGroup "{93F07436A42452E0}" {
+  AnimSetTemplateSource_AnimationGroup "{6A8947ABB9A94F55}" {
    Name "AstraShell"
    Animations {
     "StartReload"
@@ -13,7 +13,7 @@ AnimSetTemplateSource {
     "Erc"
    }
   }
-  AnimSetTemplateSource_AnimationGroup "{27F7A8D297CF57B8}" {
+  AnimSetTemplateSource_AnimationGroup "{6A8947ABB9A94F68}" {
    Name "Inspection"
    Animations {
     "Left2Right"
@@ -34,7 +34,7 @@ AnimSetTemplateSource {
     "PneRas"
    }
   }
-  AnimSetTemplateSource_AnimationGroup "{388D787315FE5E2F}" {
+  AnimSetTemplateSource_AnimationGroup "{6A8947ABB9A94F69}" {
    Name "Reload"
    Animations {
     "BoltPose"
