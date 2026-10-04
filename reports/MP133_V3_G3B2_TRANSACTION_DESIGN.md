@@ -408,7 +408,7 @@ Workbench/game run performed by the agent.
 **New files** (local lab + published copy, local==published):
 
 - `Scripts/Game/ARMST_T4B/ARMST_T4B_G3B2_Transfer.c` — new `ScriptedUserAction`
-  `ARMST_T4B_G3B2_TransferAction`; SHA256 `F6F7CB70ED6140521F2E2804A630C4543D69CFE540C618578E17FB63F66D15A3` (rev 8).
+  `ARMST_T4B_G3B2_TransferAction`; SHA256 `4EC0588B23BEBB9236343C92F21F0968CE185E0B69403119DA75D778E4BED5E5` (rev 9, repeatable).
 - `Prefabs/Test/ARMST_T4B_G3B2_TestWeapon.et` — SHA256 `68F67CAB0C17201882FCB9D587E3F3F196231B46E4FCB3951DD8BDC185873E04`.
 - `Prefabs/Test/ARMST_T4B_G3B2_TestWeapon.et.meta` — SHA256 `315C7AB6983B68C63C0AEC1D30625C5CA4B7477D72C1C75DF5291AC7438F9287`.
 
@@ -765,3 +765,37 @@ Write-on prefab `36640D9D7A8A56D2079DD9DBFE31F581E1C6FE6EBC460AD3BDE83B922BBC134
 unchanged; script `F6F7CB70…` unchanged; local==published.
 `COMPILER_UNVERIFIED / WAITING_OWNER_RECOMPILE`.
 **STATUS:** `TWO_ACTIVE_G3B2_FIXTURES / LEGACY_FIXTURES_ARCHIVED / COMPILER_UNVERIFIED / NO_B2_WRITES / STOP_FOR_INDEPENDENT_REVIEW`.
+
+### 11.9 G3-B2 Repeatable Transfer V1 (Issue #34 comment 5975003764) — rev 9
+
+Owner WRITE-ON log `…001941` showed op1 donor `10→9`, installed target `0→1`, `conserved=1`,
++250 ms/+1000 ms PASS; op2–op5 then rejected `already-latched`. Cause: `m_b2Latch` was set before the
+first donor setter and **never cleared**. Fixed in the lab script only; the OFF and WRITE-ON prefabs
+are byte-identical (no `.et`/`.meta` change).
+
+- `m_b2Latch` is now an **in-flight guard**: set before the first donor setter, held through the
+  donor/target setters and the +250 ms/+1000 ms samples.
+- **Unlock only on verified +1000 ms PASS**: the +1000 ms sample releases the latch only when its own
+  +250 ms sample passed, ≥2 samples were accepted, the captured op still matches (`m_dOp == m_dScheduledOp`),
+  no quarantine, and server-side. Log `phase=unlock ev=postcommit-verified`. Never cleared in
+  `T4B2Commit` or right after the target setter.
+- **+250 ms sample result is tracked** (`m_dSample250Ok`); if the +1000 ms sample cannot verify the
+  unlock it terminally quarantines (`late-quarantine ev=unlock-not-verified`).
+- **Stale/duplicate/reentrancy protection**: `m_dScheduledOp`, `m_dSamples`, `m_dSample250Ok` reset
+  per op in `T4B2ScheduleDelayed`; a late/duplicate callback is ignored once `m_b2Latch` is cleared or
+  the op id is stale, so an old callback can never unlock a newer operation. A second action while the
+  transaction/delays are pending is rejected with `phase=reject ev=busy` (was `already-latched`).
+  Terminal `m_b2Quarantined` is unchanged and never cleared in-session.
+- **Next invocation** re-runs scan → preflight → boundary against LIVE inventory/weapon, so each action
+  transfers exactly one more round if exactly one eligible donor remains (donor `5→4→3`, target
+  `0→1→2`), rejecting empty/full/ambiguous donors read-only without quarantine.
+- WRITE-OFF unchanged (`writeEnabled=0` → preflight only, zero B2 setters). All guards preserved
+  (server/action owner, one compatible donor, inventory ownership, storage/owner/slot identity,
+  installed/weapon-storage exclusion, ammo type/count/capacity, same target/muzzle, chamber/barrel
+  invariant, donor-first, conservation, quarantine without rollback/retry). Chamber is **not** changed
+  by G3-B2.
+
+Script SHA `F6F7CB70…` → `4EC0588B23BEBB9236343C92F21F0968CE185E0B69403119DA75D778E4BED5E5`; exactly
+two B2 `SetAmmoCount` calls; OFF/WRITE-ON prefabs unchanged (`4829F51B…`/`36640D9D…`); braces 143/143,
+parens 788/788, ASCII. `COMPILER_UNVERIFIED / WAITING_OWNER_RECOMPILE`.
+**STATUS:** `REPEATABLE_G3B2_SOURCE_PREPARED / OFF_AND_ON_FIXTURES_UNCHANGED / NO_NEW_RUNTIME_WRITES / STOP_FOR_INDEPENDENT_REVIEW`.

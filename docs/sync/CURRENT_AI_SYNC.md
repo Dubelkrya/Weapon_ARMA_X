@@ -669,6 +669,17 @@ historical material**; the owner approved **V3** (Issue #27 comment 5966570978,
   `ARMST-PLATFORM---Weapons\worlds\Weapon_test\...\default.layer`**), `G3B1_DonorDevice.et` (owner
   Workbench artefact). Manifest updated; local==published. `COMPILER_UNVERIFIED`. Status
   `TWO_ACTIVE_G3B2_FIXTURES / LEGACY_FIXTURES_ARCHIVED / NO_B2_WRITES / STOP_FOR_INDEPENDENT_REVIEW`.
+- **G3-B2 Repeatable Transfer V1 (comment 5975003764, 2026-10-04):** lab script only (rev 9, SHA
+  `4EC0588B...`). `m_b2Latch` is now an in-flight guard set before the first donor setter and released
+  **only** after a verified +1000 ms PASS (`m_dSample250Ok` + >=2 samples + same op + no quarantine +
+  server) -> `phase=unlock ev=postcommit-verified`; otherwise terminal `late-quarantine
+  ev=unlock-not-verified`. Stale/duplicate callbacks guarded by `m_dScheduledOp`/`m_dSamples` reset per
+  op; second action while pending -> `phase=reject ev=busy` (was `already-latched`); `m_b2Quarantined`
+  unchanged/terminal. Next invocation re-runs scan->preflight->boundary on LIVE inventory (one more round
+  per action). WRITE-OFF unchanged (zero setters); chamber not touched by B2. OFF/WRITE-ON prefabs
+  byte-identical (`4829F51B...`/`36640D9D...`); braces 143/143, parens 788/788, ASCII; local==published.
+  Status `REPEATABLE_G3B2_SOURCE_PREPARED / OFF_AND_ON_FIXTURES_UNCHANGED / NO_NEW_RUNTIME_WRITES /
+  STOP_FOR_INDEPENDENT_REVIEW`; `COMPILER_UNVERIFIED`.
 
 ---
 

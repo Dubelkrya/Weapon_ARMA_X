@@ -4,7 +4,8 @@
 // Existing addon ARMSTMP133T4B_InstalledMagProbe, branch t4b/installed-mag-probe.
 // G3-B2 scope: ONE manual, lab-only, no-R operation that moves exactly one round from ONE
 // genuine carried donor magazine into the SAME already-installed MP-133 magazine, with a
-// one-shot transaction state machine, quarantined partial failure and correlated telemetry.
+// one-act = one-round transaction state machine (repeatable per action; in-flight latch, quarantined
+// partial failure and correlated telemetry).
 //
 // Source of truth: reports/MP133_V3_G3B2_TRANSACTION_DESIGN.md (rev 2, approved) plus review
 // conditions in Issue #34 comments 5973770796, 5973836821, 5973901925 and 5973988068.
@@ -43,8 +44,9 @@
 
 class ARMST_T4B_G3B2_TransferAction : ScriptedUserAction
 {
-	// ---- per-instance one-shot state ----
-	protected bool m_b2Latch = false;        // set immediately BEFORE the first B2 setter
+	// ---- per-instance transaction state ----
+	protected bool m_b2Latch = false;        // in-flight guard: set BEFORE the first B2 setter; cleared
+	                                        // only after BOTH delayed samples pass for the same op
 	protected bool m_b2Quarantined = false;  // terminal; only a newly spawned instance clears it
 	protected int m_i2OpId = 0;
 	protected int m_i2Seq = 0;
@@ -122,6 +124,11 @@ class ARMST_T4B_G3B2_TransferAction : ScriptedUserAction
 	protected int m_dBarrel = -1;
 	protected int m_dBarrels = -1;
 	protected ResourceName m_dRefType;
+	// Repeatable-transfer state: the +250 ms sample result for the CURRENT captured op, the count of
+	// accepted delayed samples, and the op id currently scheduled (guards stale/duplicate callbacks).
+	protected bool m_dSample250Ok = false;
+	protected int m_dSamples = 0;
+	protected int m_dScheduledOp = 0;
 
 	// ========================================================================
 	// Attributes (canonical spelling shared with the prefab)
@@ -171,7 +178,7 @@ class ARMST_T4B_G3B2_TransferAction : ScriptedUserAction
 	override bool GetActionDescriptionScript(out string outName)
 	{
 		if (m_bG3B2WriteEnabled)
-			outName = "Lab G3B2: write ENABLED - performs the one-round donor->installed transfer with the one-shot transaction machine.";
+			outName = "Lab G3B2: write ENABLED - performs one one-round donor->installed transfer per action with the transaction machine (repeatable after +1s verified).";
 		else
 			outName = "Lab G3B2: read-only preflight only; performs the one-round donor->installed transfer only when the write gate is enabled.";
 		return true;
@@ -1132,6 +1139,9 @@ class ARMST_T4B_G3B2_TransferAction : ScriptedUserAction
 	void T4B2ScheduleDelayed()
 	{
 		m_dOp = m_i2OpId;
+		m_dScheduledOp = m_i2OpId;
+		m_dSamples = 0;
+		m_dSample250Ok = false;
 		m_dActor = m_opUser;
 		m_dInv = m_opInv;
 		m_dWeapon = m_opWeapon;
@@ -1225,7 +1235,7 @@ class ARMST_T4B_G3B2_TransferAction : ScriptedUserAction
 		}
 		if (m_b2Latch)
 		{
-			Print("[ARMST_T4B-G3B2] " + opTag + " phase=reject ev=already-latched srv=" + T4B2Srv(), LogLevel.NORMAL);
+			Print("[ARMST_T4B-G3B2] " + opTag + " phase=reject ev=busy srv=" + T4B2Srv(), LogLevel.NORMAL);
 			return;
 		}
 		if (!Replication.IsServer())
@@ -1377,6 +1387,12 @@ class ARMST_T4B_G3B2_TransferAction : ScriptedUserAction
 	{
 		if (m_dOp <= 0)
 			return;
+		// Stale/duplicate callback guard: only accept a sample for the current scheduled op whose
+		// latch is still held. After unlock a late duplicate must never touch state or quarantine.
+		if (ms == 1000 && m_dOp != m_dScheduledOp)
+			return;
+		if (!m_b2Latch)
+			return;
 
 		int dNow = -1;
 		IEntity dOwnerNow = null;
@@ -1487,6 +1503,43 @@ class ARMST_T4B_G3B2_TransferAction : ScriptedUserAction
 			m_b2Quarantined = true;
 			Print("[ARMST_T4B-G3B2] op=" + m_dOp.ToString()
 				+ " phase=late-quarantine ev=delayed-mismatch srv=" + T4B2Srv(), LogLevel.NORMAL);
+			return;
+		}
+
+		// Positive sample accepted (read-only). Track it; never write here.
+		m_dSamples++;
+		if (ms == 250)
+		{
+			m_dSample250Ok = true;
+		}
+
+		// Release the in-flight latch ONLY after BOTH samples passed for the SAME op, no quarantine,
+		// and only on the server. The +1000 ms sample releases only if its own +250 ms sample passed.
+		if (ms == 1000)
+		{
+			bool sameOp = (m_dOp == m_dScheduledOp);
+			bool twoSamples = (m_dSamples >= 2);
+			bool canUnlock = m_dSample250Ok;
+			canUnlock = canUnlock && sameOp;
+			canUnlock = canUnlock && twoSamples;
+			canUnlock = canUnlock && (!m_b2Quarantined);
+			canUnlock = canUnlock && Replication.IsServer();
+			if (canUnlock)
+			{
+				m_b2Latch = false;
+				m_dScheduledOp = 0;
+				Print("[ARMST_T4B-G3B2] op=" + m_dOp.ToString()
+					+ " phase=unlock ev=postcommit-verified samples=" + m_dSamples.ToString()
+					+ " srv=" + T4B2Srv(), LogLevel.NORMAL);
+			}
+			else
+			{
+				m_b2Quarantined = true;
+				Print("[ARMST_T4B-G3B2] op=" + m_dOp.ToString()
+					+ " phase=late-quarantine ev=unlock-not-verified sample250ok=" + T4BB(m_dSample250Ok)
+					+ " sameOp=" + T4BB(sameOp) + " samples=" + m_dSamples.ToString()
+					+ " srv=" + T4B2Srv(), LogLevel.NORMAL);
+			}
 		}
 	}
 }
