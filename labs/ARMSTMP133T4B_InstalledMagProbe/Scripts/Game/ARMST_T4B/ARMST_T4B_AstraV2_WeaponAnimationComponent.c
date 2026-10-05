@@ -5,6 +5,10 @@
 // (complete inherited-member list, installed 1.8.0.13 API docs) exposes no script
 // constructor and no OnInit/OnPostInit, only animation/character callbacks. The former
 // constructor is replaced by a lazy once-only init driven by OnAnimationEvent.
+//
+// STAGED ADDITION (source prep only): weapon-local observer of the handler-emitted
+// inert reload command via BaseItemAnimationComponent.OnCharacterCommand(int,int,float).
+// Observation only; no graph transition, no ammo/mag/chamber writer.
 [ComponentEditorProps(category: "ARMST/Astra", description: "Shell animation diagnostic only")]
 class ARMST_T4B_AstraV2_WeaponAnimationComponentClass : ARMST_T4B_WeaponAnimationComponentClass
 {
@@ -34,6 +38,22 @@ class ARMST_T4B_AstraV2_WeaponAnimationComponent : ARMST_T4B_WeaponAnimationComp
 		s_iNextInstance++;
 		m_iInstance = s_iNextInstance;
 		Print("[ARMST-T4B-ASTRA] component_init instance=" + m_iInstance.ToString() + " init=lazy_first_event", LogLevel.NORMAL);
+	}
+
+	// Weapon-local observer: does the handler-emitted inert reload command reach this
+	// equipped lab weapon receiver? Route is proven ONLY when BOTH the reload command
+	// type (commandID) AND intValue==ARMST_T4B_INERT_RELOAD_CMD match — never on intValue
+	// alone. Observation only.
+	override void OnCharacterCommand(int commandID, int intValue, float floatValue)
+	{
+		super.OnCharacterCommand(commandID, intValue, floatValue);
+		bool isReloadCommand = (commandID == ARMST_T4B_RELOAD_COMMAND_ID);
+		bool isInert = isReloadCommand && (intValue == ARMST_T4B_INERT_RELOAD_CMD);
+		Print("[ARMST-T4B-CMDROUTE] receiver=weapon commandID=" + commandID.ToString()
+			+ " intValue=" + intValue.ToString()
+			+ " floatValue=" + floatValue.ToString()
+			+ " isReloadCommand=" + isReloadCommand.ToString()
+			+ " inert=" + isInert.ToString(), LogLevel.NORMAL);
 	}
 
 	override void OnAnimationEvent(AnimationEventID animEventType, AnimationEventID animUserString, int intParam, float timeFromStart, float timeToEnd)

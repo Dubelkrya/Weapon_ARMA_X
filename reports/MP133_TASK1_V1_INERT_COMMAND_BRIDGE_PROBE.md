@@ -1,9 +1,9 @@
 # MP-133 Task #1 — V1 inert reload-command bridge probe (SOURCE PREP ONLY)
 
-Статус: **T4B_V1_INERT_COMMAND_BRIDGE_ONESHOT_SOURCE_PREPARED_OWNER_REVIEW**
+Статус: **T4B_V1_INERT_COMMAND_BRIDGE_LIVE_READY_OWNER_COLDSTART_TEST**
 Дата: 2026-10-05
-Задание: Issue #34 — «V1 inert reload-command bridge probe (SOURCE PREP ONLY)» ([#6001717566](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34)).
-Режим: **source preparation only**. Live **НЕ изменялся** (даже при закрытом Workbench). ASTRA2/AGR/AGF/ASI/AW/ANM/prefab/world/Core/grid/inventory — не тронуты.
+Задание: Issue #34 — «V1 inert reload-command bridge probe (SOURCE PREP ONLY)» ([#6001717566](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34)) + one-shot ревизия + review-pass + owner GO.
+Режим: **оба staged-файла установлены в live** (Workbench закрыт); ASTRA2/prefab/world/Core/grid/inventory — не тронуты.
 
 Вопрос probe: **может ли pickup-safe V1 handler потребить обычный `R` и выставить уже-доказанную инертную reload-команду, которая дойдёт до weapon-local animation receiver, не запустив native whole-mag reload и не изменив tube/ammo/chamber?**
 
@@ -110,4 +110,19 @@
 - Исходники подготовлены (2 файла), НЕ записаны в live.
 - Ничего из forbidden не использовано; `Update=0`, `HandleWeapons=0`; non-lab путь не изменён.
 
-Статус: **`T4B_V1_INERT_COMMAND_BRIDGE_ONESHOT_SOURCE_PREPARED_OWNER_REVIEW`**. STOP.
+Статус: **`T4B_V1_INERT_COMMAND_BRIDGE_LIVE_READY_OWNER_COLDSTART_TEST`**. STOP.
+
+---
+
+## LIVE INSTALL (owner GO, Workbench закрыт)
+
+Ровно два файла установлены в live + labs:
+
+| файл | SHA-256 | live overrides |
+|---|---|---|
+| `Scripts/Game/ARMST_T4B/ARMST_T4B_NormalRHandlerProbe.c` | `5CBB22C18B29D64E16E36DCABE85642BDB08951D0B4F3F46CFE3B7E4A5E7BE20` | `HandleWeaponReloading=1`, `SetReloadWeapon=1` (one-shot, `m_bInertCmdSet`), `Update=0`, `HandleWeapons=0` |
+| `Scripts/Game/ARMST_T4B/ARMST_T4B_AstraV2_WeaponAnimationComponent.c` | `B3D71CF57ACBF95C55D4B0098FDDACF86F00CF9B93AA88C287856D9914228D28` | `OnCharacterCommand=1` (`isReloadCommand && intValue==10` → `inert`) |
+
+Rollback: V1 `D16D3D436A030C86A61DDE3C98A88D3B9EB62BE761B83812DD82CC302E1FAF32` + AstraV2 base `DBBD9B49C376123A702BDF16C5F7EA16CCC147F1A67947E6C5AB07E0F1FDD00B`.
+
+**Cold-start тест (owner):** cold Workbench → equip canonical ASTRA2 lab MP-133 → snapshot tube/ammo/chamber → один обычный `R` → ожидание: `[ARMST-T4B-RPROBE] phase=inert-command-set inertCmd=10 once=1` **и** `[ARMST-T4B-CMDROUTE] receiver=weapon … isReloadCommand=1 inert=1`; без native CMD1/2–6, без замены magazine identity, ammo/chamber неизменны, pickup работает.
