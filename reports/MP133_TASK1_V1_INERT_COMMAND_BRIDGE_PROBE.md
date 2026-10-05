@@ -1,9 +1,9 @@
 # MP-133 Task #1 — V1 inert reload-command bridge probe (SOURCE PREP ONLY)
 
-Статус: **T4B_V1_INERT_BRIDGE_RACK_BYPASS_REVIEW_PASS_WAITING_WB_CLOSED**
+Статус: **T4B_V1_INERT_BRIDGE_RACK_BYPASS_LIVE_READY_OWNER_COLDSTART_TEST**
 Дата: 2026-10-05
 Задание: Issue #34 — «V1 inert reload-command bridge probe (SOURCE PREP ONLY)» ([#6001717566](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34)) + one-shot ревизия + review-pass + owner GO.
-Режим: **source prep only**. Live = предыдущий one-shot вариант (`5CBB22C1…`, установлен ранее); rack-bypass ревизия **НЕ в live**. ASTRA2/prefab/world/Core/grid/inventory — не тронуты.
+Режим: **rack-bypass handler установлен в live** (Workbench закрыт); observer без изменений. ASTRA2/prefab/world/Core/grid/inventory — не тронуты.
 
 Вопрос probe: **может ли pickup-safe V1 handler потребить обычный `R` и выставить уже-доказанную инертную reload-команду, которая дойдёт до weapon-local animation receiver, не запустив native whole-mag reload и не изменив tube/ammo/chamber?**
 
@@ -124,7 +124,28 @@ Outcome labels:
 - Исходники подготовлены (2 файла), НЕ записаны в live.
 - Ничего из forbidden не использовано; `Update=0`, `HandleWeapons=0`; non-lab путь не изменён.
 
-Статус: **`T4B_V1_INERT_BRIDGE_RACK_BYPASS_REVIEW_PASS_WAITING_WB_CLOSED`**. STOP.
+Статус: **`T4B_V1_INERT_BRIDGE_RACK_BYPASS_LIVE_READY_OWNER_COLDSTART_TEST`**. STOP.
+
+---
+
+## LIVE INSTALL — rack-bypass (owner GO, Workbench закрыт)
+
+Установлен **ровно один** изменённый файл; observer не трогался.
+
+| файл | SHA-256 | live проверки |
+|---|---|---|
+| `Scripts/Game/ARMST_T4B/ARMST_T4B_NormalRHandlerProbe.c` | `83DA1EC584B13D251359B776D2C05AEE41E07A42ACB3334389814C0501BA8B39` | `reloadType == 1 → super` (rack bypass), `SetReloadWeapon` = 1 callsite (non-rack), `HandleWeaponReloading=1`, `Update=0`, `HandleWeapons=0` |
+| `Scripts/Game/ARMST_T4B/ARMST_T4B_AstraV2_WeaponAnimationComponent.c` | `B3D71CF57ACBF95C55D4B0098FDDACF86F00CF9B93AA88C287856D9914228D28` | **не изменён** (observer уже правильный) |
+
+Labs: handler синхронизирован (`83DA1EC5…`); observer без изменений.
+Rollback: V1 `D16D3D436A030C86A61DDE3C98A88D3B9EB62BE761B83812DD82CC302E1FAF32`; AstraV2 base `DBBD9B49C376123A702BDF16C5F7EA16CCC147F1A67947E6C5AB07E0F1FDD00B`.
+
+**Cold-start тест (owner):**
+```
+выстрел   → chambered=0
+первый R  → reloadType=1 → native rack через super → chambered=1
+второй R  → raw reloadType
+```
 
 ---
 

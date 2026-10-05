@@ -1,20 +1,21 @@
 // ============================================================================
-// ARMST MP-133 T4b - Task #1, V1 + INERT RELOAD-COMMAND BRIDGE (STAGED, source prep only).
+// ARMST MP-133 T4b - Task #1, V1 + RACK BYPASS + INERT RELOAD-COMMAND BRIDGE
+// (STAGED, source prep only).
 //
-// Base = current pickup-safe V1 handler-only (57c7124),
-//        SHA-256 D16D3D436A030C86A61DDE3C98A88D3B9EB62BE761B83812DD82CC302E1FAF32.
+// Base = current live one-shot inert-bridge handler,
+//        SHA-256 5CBB22C18B29D64E16E36DCABE85642BDB08951D0B4F3F46CFE3B7E4A5E7BE20.
 //
-// Adds ONLY: on a normal lab reload request, set the selected inert reload command
-// (10) through the documented CharacterInputContext API, then consume the native
-// request exactly as V1 already does. No ammo/magazine/chamber writer, no graph route.
+// Change vs base: RACK BYPASS. reloadType == 1 is the native bolt/rack path and must be
+// left untouched -> always `super`, never SetReloadWeapon, never latch, never consume.
+// The one-shot inert cmd10 probe now runs ONLY for a non-rack lab reload request
+// (startReloading == true && reloadType != 1); it still consumes that (non-rack) request.
 //
 // Command selection (Phase A, re-verified against the CURRENT lab graph
 // Assets/MP133_AstraShellGraph_test/MP133_Astra2.agf): the active ASTRA2 graph
 // references CMD_Weapon_Reload only for value 1 (rack bolt); the old whole-mag
-// states (WeaponReloadSTM/MagReloadSTM/InsertMagAnim/RemoveMagAnim) were removed.
-// cmd10 therefore has NO graph state, NO bolt/rack path, NO clip path and no
-// production meaning in the lab graph. Native engine-level inertness is UNRESOLVED
-// and is exactly what this probe measures (no side effects expected).
+// states were removed. cmd10 therefore has NO graph state, NO bolt/rack path, NO clip
+// path and no production meaning in the lab graph. Native engine-level inertness of
+// cmd10 is UNRESOLVED and is exactly what the probe measures.
 //
 // HARD RULES: no global Update()/HandleWeapons(), no ReloadWeapon()/ReloadWeaponWith(),
 // no SetAmmoCount(), no magazine spawn/attach/detach/despawn/release, no chamber writer,
@@ -43,6 +44,9 @@ modded class SCR_CharacterCommandHandlerComponent
 	// one-shot latch for the inert-command bridge (one cold-start test only)
 	protected bool m_bInertCmdSet;
 	protected bool m_bInertCmdSkipLogged;
+
+	// one-shot log latch for the rack bypass (avoid per-frame spam)
+	protected bool m_bRackBypassLogged;
 
 	override bool HandleWeaponReloading(CharacterInputContext pInputCtx, float pDt, int pCurrentCommandID)
 	{
@@ -78,7 +82,19 @@ modded class SCR_CharacterCommandHandlerComponent
 			startReloading = pInputCtx.WeaponIsStartReloading();
 		}
 
-		// --- inert command bridge: ONE-SHOT per cold-start test (latch BEFORE the setter) ---
+		// --- RACK BYPASS: reloadType == 1 is the native bolt/rack path ---
+		// Never set cmd10, never latch, never consume: hand it straight to native super.
+		if (reloadType == 1)
+		{
+			if (!m_bRackBypassLogged)
+			{
+				m_bRackBypassLogged = true;
+				Print("[ARMST-T4B-RPROBE] phase=rack-bypass reloadType=1 consumed=0 setCmd10=0 -> super", LogLevel.NORMAL);
+			}
+			return super.HandleWeaponReloading(pInputCtx, pDt, pCurrentCommandID);
+		}
+
+		// --- non-rack lab request: ONE-SHOT inert cmd10 (latch BEFORE the setter) ---
 		if (startReloading && pInputCtx && !m_bInertCmdSet)
 		{
 			m_bInertCmdSet = true;
@@ -156,7 +172,7 @@ modded class SCR_CharacterCommandHandlerComponent
 			+ " chambered=" + chambered.ToString()
 			+ " consumed=1", LogLevel.NORMAL);
 
-		// consume the lab reload request; native whole-mag reload must not proceed
+		// consume the non-rack lab request; native whole-mag reload must not proceed
 		return true;
 	}
 }
