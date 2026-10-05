@@ -1,9 +1,9 @@
 # ARMST MP-133 T4b — pickup regression: SCOPE CORRECTED to lab-addon-only A/B
 
-Статус: **T4B_RPROBE_V1_PLUS_UPDATE_PREPARED_WB_OPEN_STOP**
+Статус: **T4B_RPROBE_V1_PLUS_UPDATE_READY_OWNER_TEST**
 Дата: 2026-10-05
 Задание: Issue #34 — HARD STOP [#6001136884](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34) + V1-результат [#6001411080](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34): `HANDLE_WEAPON_RELOADING_PICKUP_REGRESSION = EXONERATED`.
-Режим: V1 установлен в live; вариант **V1 + Update()** — **только подготовлен**, live не менялся.
+Режим: **V1 + Update() установлен в live** (Workbench закрыт); `HandleWeapons()` отсутствует.
 
 ---
 
@@ -108,26 +108,28 @@ Workbench закрыт. Применено:
 
 ---
 
-## 7. Контроль «V1 + Update() only» — ПОДГОТОВЛЕН (live не тронут)
+## 7. Контроль «V1 + Update() only» — ПРИМЕНЕНО
 
 Владелец подтвердил (Issue #34 [#6001411080](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34)):
 - с V1 предметы/оружие подбираются снова; `R` намеренно не перезаряжает (V1 `HandleWeaponReloading` возвращает `true`);
 - **`HANDLE_WEAPON_RELOADING_PICKUP_REGRESSION = EXONERATED`**;
 - fault domain: `V2 Update(...)` и/или `HandleWeapons(...)`.
 
-Staged (в live **не записан**): `artifacts/astra-rebuild/stageV1Update/ARMST_T4B_NormalRHandlerProbe.c`
-- SHA-256 `33CDFFCE0F28081AAFEC0DC29C12F4F4C0263D26B8ADD7CE8A73D2DD92D4CE3E` (8389 bytes).
-- Состав: base = **V1 handler-only (`57c7124`)**; добавлены **только** V2 `Update(...)` + строго необходимые helper/state (`RProbeResolve`, `RProbeTag`, `RProbeLog`, поля seq/last-state).
-- `override void Update` = **1**; `override bool HandleWeapons` = **0**; `override bool HandleWeaponReloading` = **1** (V1, без изменений).
+Workbench закрыт. Применено:
+- live `ARMST_T4B_NormalRHandlerProbe.c` = **V1 + Update()**, SHA-256 `33CDFFCE0F28081AAFEC0DC29C12F4F4C0263D26B8ADD7CE8A73D2DD92D4CE3E` (8389 bytes);
+- labs синхронизирован тем же файлом;
+- состав: base = **V1 handler-only (`57c7124`)**; добавлены **только** V2 `Update(...)` + helper/state (`RProbeResolve`, `RProbeTag`, `RProbeLog`, поля seq/last-state);
+- `override void Update` = **1**; `override bool HandleWeapons` = **0**; `override bool HandleWeaponReloading` = **1** (V1, без изменений);
 - braces 28/28, parens 123/123; **0** запрещённых writers.
 
-Точный diff vs текущий V1: `artifacts/astra-rebuild/stageV1Update/V1_to_V1PlusUpdate.diff`
-(added 177 / removed 19 — удаления только в шапке-комментарии; добавленные методы: `RProbeResolve`, `RProbeTag`, `RProbeLog`, `Update`; `HandleWeapons` отсутствует).
+Точный diff vs V1: `artifacts/astra-rebuild/stageV1Update/V1_to_V1PlusUpdate.diff` (added 177 / removed 19 — удаления только в шапке; добавленные методы: `RProbeResolve`, `RProbeTag`, `RProbeLog`, `Update`; `HandleWeapons` отсутствует).
+
+Тест владельца: cold start → свежий `weapon_test` → pickup (1) обычного предмета, (2) обычного оружия.
 
 Решение:
-- pickup ломается с V1+Update → источник регрессии `Update`;
-- pickup работает → остаётся `HandleWeapons`.
+- pickup ломается с V1+Update → источник регрессии **`Update`**;
+- pickup работает → остаётся **`HandleWeapons`**.
 
-Правила соблюдены: no Core/grid/inventory/world/ASTRA2/prefab changes; live не изменялся; применение — только после подтверждения владельцем, что Workbench закрыт.
+Правила соблюдены: no Core/grid/inventory/world/ASTRA2/prefab changes; прочие lab-файлы не менялись.
 
-Статус: **`T4B_RPROBE_V1_PLUS_UPDATE_PREPARED_WB_OPEN_STOP`**.
+Статус: **`T4B_RPROBE_V1_PLUS_UPDATE_READY_OWNER_TEST`**.
