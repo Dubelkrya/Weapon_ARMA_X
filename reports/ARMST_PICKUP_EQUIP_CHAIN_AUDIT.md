@@ -1,9 +1,9 @@
 # ARMST MP-133 T4b — pickup regression: SCOPE CORRECTED to lab-addon-only A/B
 
-Статус: **T4B_LAB_ONLY_PICKUP_BISECT_V1_READY_OWNER_TEST**
+Статус: **T4B_RPROBE_V1_PLUS_UPDATE_PREPARED_WB_OPEN_STOP**
 Дата: 2026-10-05
-Задание: Issue #34 — корректирующий **HARD STOP** [#6001136884](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34) + разрешение владельца на A/B + контроль V1 (`57c7124`).
-Режим: A/B применён (rename `.disabled`); **V1 установлен в live** (Workbench закрыт); прочие файлы не менялись.
+Задание: Issue #34 — HARD STOP [#6001136884](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34) + V1-результат [#6001411080](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34): `HANDLE_WEAPON_RELOADING_PICKUP_REGRESSION = EXONERATED`.
+Режим: V1 установлен в live; вариант **V1 + Update()** — **только подготовлен**, live не менялся.
 
 ---
 
@@ -105,3 +105,29 @@ Workbench закрыт. Применено:
 Откат к V2: `artifacts/astra-rebuild/stageBisect/ARMST_T4B_NormalRHandlerProbe.c.bak` (`C9D49A1B…EA6`).
 
 Статус: **`T4B_LAB_ONLY_PICKUP_BISECT_V1_READY_OWNER_TEST`**.
+
+---
+
+## 7. Контроль «V1 + Update() only» — ПОДГОТОВЛЕН (live не тронут)
+
+Владелец подтвердил (Issue #34 [#6001411080](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34)):
+- с V1 предметы/оружие подбираются снова; `R` намеренно не перезаряжает (V1 `HandleWeaponReloading` возвращает `true`);
+- **`HANDLE_WEAPON_RELOADING_PICKUP_REGRESSION = EXONERATED`**;
+- fault domain: `V2 Update(...)` и/или `HandleWeapons(...)`.
+
+Staged (в live **не записан**): `artifacts/astra-rebuild/stageV1Update/ARMST_T4B_NormalRHandlerProbe.c`
+- SHA-256 `33CDFFCE0F28081AAFEC0DC29C12F4F4C0263D26B8ADD7CE8A73D2DD92D4CE3E` (8389 bytes).
+- Состав: base = **V1 handler-only (`57c7124`)**; добавлены **только** V2 `Update(...)` + строго необходимые helper/state (`RProbeResolve`, `RProbeTag`, `RProbeLog`, поля seq/last-state).
+- `override void Update` = **1**; `override bool HandleWeapons` = **0**; `override bool HandleWeaponReloading` = **1** (V1, без изменений).
+- braces 28/28, parens 123/123; **0** запрещённых writers.
+
+Точный diff vs текущий V1: `artifacts/astra-rebuild/stageV1Update/V1_to_V1PlusUpdate.diff`
+(added 177 / removed 19 — удаления только в шапке-комментарии; добавленные методы: `RProbeResolve`, `RProbeTag`, `RProbeLog`, `Update`; `HandleWeapons` отсутствует).
+
+Решение:
+- pickup ломается с V1+Update → источник регрессии `Update`;
+- pickup работает → остаётся `HandleWeapons`.
+
+Правила соблюдены: no Core/grid/inventory/world/ASTRA2/prefab changes; live не изменялся; применение — только после подтверждения владельцем, что Workbench закрыт.
+
+Статус: **`T4B_RPROBE_V1_PLUS_UPDATE_PREPARED_WB_OPEN_STOP`**.
