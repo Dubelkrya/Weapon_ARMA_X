@@ -48,39 +48,39 @@ AnimSrcGraphFile {
       }
      }
      transitions {
-      AnimSrcNodeTransition "{B934246674F3571C}" {
+      AnimSrcNodeTransition "{6A8AFD4859C895A9}" {
        FromState "StartReload"
        ToState "EndReload"
        Duration "0.1"
-       Condition "RemainingTimeLess(0.01) && (Firing || TriggerPulled || IsCommand(CMD_Weapon_Action_Interrupt))"
+       Condition "RemainingTimeLess(0.01) && !(ASTRA_ShellEligible && !ASTRA_ShellStop && !ASTRA_FireStop && !Firing)"
        BlendFn "S"
        PostEval 1
       }
-      AnimSrcNodeTransition "{2580067403055BBB}" {
+      AnimSrcNodeTransition "{6A8AFD4859C895D9}" {
        FromState "GrabShell"
        ToState "EndReload"
        Duration "0.1"
-       Condition "RemainingTimeLess(0.01) && (Firing || TriggerPulled || IsCommand(CMD_Weapon_Action_Interrupt))"
+       Condition "RemainingTimeLess(0.01) && !(ASTRA_ShellEligible && !ASTRA_ShellStop && !ASTRA_FireStop && !Firing)"
        BlendFn "S"
        PostEval 1
       }
-      AnimSrcNodeTransition "{E568483512F85509}" {
+      AnimSrcNodeTransition "{6A8AFD4859C895D8}" {
        FromState "StartReload"
        ToState "GrabShell"
        Duration "0.0"
-       Condition "RemainingTimeLess(0.01) && !(Firing || TriggerPulled || IsCommand(CMD_Weapon_Action_Interrupt))"
+       Condition "RemainingTimeLess(0.01) && ASTRA_ShellEligible && !ASTRA_ShellStop && !ASTRA_FireStop && !Firing"
        BlendFn "S"
        PostEval 1
       }
-      AnimSrcNodeTransition "{1B90DF6182E4529E}" {
+      AnimSrcNodeTransition "{6A8AFD4859C895DB}" {
        FromState "GrabShell"
        ToState "InsertShell"
        Duration "0.0"
-       Condition "RemainingTimeLess(0.01) && !(Firing || TriggerPulled || IsCommand(CMD_Weapon_Action_Interrupt))"
+       Condition "RemainingTimeLess(0.01) && ASTRA_ShellEligible && !ASTRA_ShellStop && !ASTRA_FireStop && !Firing"
        BlendFn "S"
        PostEval 1
       }
-      AnimSrcNodeTransition "{5981523D3DE152AD}" {
+      AnimSrcNodeTransition "{6A8AFD4859C895DA}" {
        FromState "InsertShell"
        ToState "CheckContinue"
        Duration "0.0"
@@ -88,11 +88,19 @@ AnimSrcGraphFile {
        BlendFn "S"
        PostEval 1
       }
-      AnimSrcNodeTransition "{6988C9BC5F695C5A}" {
+      AnimSrcNodeTransition "{6A8AFD4859C895DD}" {
+       FromState "CheckContinue"
+       ToState "GrabShell"
+       Duration "0.05"
+       Condition "RemainingTimeLess(0.01) && ASTRA_ShellRepeat && ASTRA_ShellEligible && !ASTRA_ShellStop && !ASTRA_FireStop && !Firing"
+       BlendFn "S"
+       PostEval 1
+      }
+      AnimSrcNodeTransition "{6A8AFD4859C895DC}" {
        FromState "CheckContinue"
        ToState "EndReload"
        Duration "0.0"
-       Condition "RemainingTimeLess(0.01)"
+       Condition "RemainingTimeLess(0.01) && !(ASTRA_ShellRepeat && ASTRA_ShellEligible && !ASTRA_ShellStop && !ASTRA_FireStop && !Firing)"
        BlendFn "S"
        PostEval 1
       }
@@ -141,6 +149,19 @@ AnimSrcGraphFile {
     AnimSrcNodeStateMachine IdleReloadSTM {
      EditorPos 2.3 -1.1
      states {
+      AnimSrcNodeState AstraShell {
+       EditorPos 9 0
+       Child "AstraShellErcG"
+       StartCondition "false"
+       TimeStorage "Real Time"
+       IsExit 1
+      }
+      AnimSrcNodeState AstraWaitRelease {
+       EditorPos 9.053 2.947
+       Child "Queue 1"
+       StartCondition "false"
+       IsExit 0
+      }
       AnimSrcNodeState Idle {
        EditorPos -2.4 0.8
        Child "Queue 1"
@@ -165,7 +186,7 @@ AnimSrcGraphFile {
        PassThrough 1
       }
       AnimSrcNodeState Buffer3 {
-       EditorPos 0.211 -0.632
+       EditorPos 0.7 -0.3
        Child "Buffer Use 1"
        StartCondition "false"
        PassThrough 1
@@ -193,28 +214,52 @@ AnimSrcGraphFile {
       }
      }
      transitions {
-      AnimSrcNodeTransition "{DA4D3DEC7DA35D57}" {
+      AnimSrcNodeTransition "{6A8AFD4859C895E5}" {
+       FromState "Idle"
+       ToState "AstraShell"
+       Duration "0.1"
+       Condition "ASTRA_ShellRequest && ASTRA_ShellEligible && !ASTRA_ShellStop && !ASTRA_FireStop && !Firing && WeaponInspectionState == 0 && Stance == 0 && !IsCommand(CMD_Weapon_Reload)"
+       BlendFn "S"
+       PostEval 1
+      }
+      AnimSrcNodeTransition "{6A8AFD4859C895E4}" {
+       FromState "AstraShell"
+       ToState "AstraWaitRelease"
+       Duration "0.1"
+       Condition "RemainingTimeLess(0.01)"
+       BlendFn "S"
+       PostEval 1
+      }
+      AnimSrcNodeTransition "{6A8AFD4859C895E7}" {
+       FromState "AstraWaitRelease"
+       ToState "Idle"
+       Duration "0.0"
+       Condition "!ASTRA_ShellRequest"
+       BlendFn "S"
+       PostEval 1
+      }
+      AnimSrcNodeTransition "{6A8AFD4859C895E6}" {
        FromState "Buffer4"
        ToState "Idle"
        Duration "0.3"
        Condition "true"
        BlendFn "S"
       }
-      AnimSrcNodeTransition "{1BAA5F2FA32D5F74}" {
+      AnimSrcNodeTransition "{6A8AFD4859C895E9}" {
        FromState "Buffer3"
        ToState "Reload"
        Duration "0.3"
        Condition "true"
        BlendFn "S"
       }
-      AnimSrcNodeTransition "{398BA5133896591E}" {
+      AnimSrcNodeTransition "{6A8AFD4859C895E8}" {
        FromState "Idle"
        ToState "Buffer3"
        Duration "0.3"
        Condition "IsCommand(CMD_Weapon_Reload) && GetCommandI(CMD_Weapon_Reload) == 1 && GetCommandF(CMD_Weapon_Reload) == 0.0"
        BlendFn "S"
       }
-      AnimSrcNodeTransition "{E0C326DBF23A5AA1}" {
+      AnimSrcNodeTransition "{6A8AFD4859C895F0}" {
        FromState "Reload"
        ToState "Buffer4"
        Duration "0.3"
@@ -222,52 +267,111 @@ AnimSrcGraphFile {
        BlendFn "S"
        PostEval 1
       }
-      AnimSrcNodeTransition "{29B277EDF8425953}" {
+      AnimSrcNodeTransition "{6A8AFD4859C895F3}" {
        FromState "Buffer1"
        ToState "Idle"
        Duration "0.5"
        Condition "true"
        BlendFn "S"
       }
-      AnimSrcNodeTransition "{26C20DED62ED5CE6}" {
+      AnimSrcNodeTransition "{6A8AFD4859C895F2}" {
        FromState "Idle"
        ToState "Buffer2"
        Duration "0.3"
        Condition "WeaponInspectionState != 0 && WeaponInspectionState != -2"
       }
-      AnimSrcNodeTransition "{E29E2BA6D2E55515}" {
+      AnimSrcNodeTransition "{6A8AFD4859C895F5}" {
        FromState "Buffer2"
        ToState "WeaponInspection"
        Duration "0.5"
        Condition "true"
        BlendFn "S"
       }
-      AnimSrcNodeTransition "{D60D3457371F5617}" {
+      AnimSrcNodeTransition "{6A8AFD4859C895F4}" {
        FromState "WeaponInspection"
        ToState "Buffer1"
        Duration "0.8"
        Condition "RemainingTimeLess(0.5) || WeaponInspectionState == -3"
        PostEval 1
       }
-      AnimSrcNodeTransition "{53F3BF7C32DE5C24}" {
+      AnimSrcNodeTransition "{6A8AFD4859C895F7}" {
        FromState "WeaponInspection"
        ToState "Buffer3"
        Duration "0.3"
        Condition "IsCommand(CMD_Weapon_Reload) && GetCommandI(CMD_Weapon_Reload) == 1 && GetCommandF(CMD_Weapon_Reload) == 0.0"
       }
-      AnimSrcNodeTransition "{22FEB4674D6B5B64}" {
+      AnimSrcNodeTransition "{6A8AFD4859C895F6}" {
        FromState "Buffer4"
        ToState "WeaponInspection"
        Duration "0.3"
        Condition "WeaponInspectionState != 0 && WeaponInspectionState != -2"
       }
-      AnimSrcNodeTransition "{13C72AE55DF15974}" {
+      AnimSrcNodeTransition "{6A8AFD4859C895F9}" {
        FromState "Reload"
        ToState "Buffer4"
        Duration "0.3"
        Condition "(RemainingTimeLess(0.5) || GetCommandI(CMD_Weapon_Reload) == -2) && WeaponInspectionState != 0"
        BlendFn "S"
        PostEval 1
+      }
+     }
+    }
+    AnimSrcNodeSource InsertMagAnim {
+     EditorPos 7.158 20.421
+     Source "Reload.Reload_InsertMag"
+     Looptype "No Loop"
+    }
+    AnimSrcNodeStateMachine MagReloadSTM {
+     EditorPos 12.8 19.9
+     states {
+      AnimSrcNodeState InsertMag {
+       EditorPos 13.2 21.2
+       Child "InsertMagAnim"
+       StartCondition ""
+       TimeStorage "Real Time"
+       IsExit 1
+      }
+      AnimSrcNodeState RemoveMag {
+       EditorPos 17.1 21.2
+       Child "RemoveMagAnim"
+       StartCondition "True"
+       TimeStorage "Real Time"
+       IsExit 0
+      }
+     }
+     transitions {
+      AnimSrcNodeTransition "{6A8AFD4859C895FA}" {
+       FromState "RemoveMag"
+       ToState "InsertMag"
+       Duration "0.3"
+       StartTime "GetEventTime(anim.Reload.Erc.Reload_InsertMag, \"BlendIn\")"
+       Condition "IsEvent(\"BlendOut\")"
+       BlendFn "S"
+       PostEval 1
+       MotionVecBlend 0x33 0
+      }
+     }
+    }
+    AnimSrcNodeSource RackBoltAnim {
+     EditorPos 18.1 18.7
+     Source "Reload.ReloadActionBolt"
+     Looptype "No Loop"
+     BonesInterpolatedInModelSpace {
+      "RightHandProp"
+     }
+    }
+    AnimSrcNodeStateMachine ReloadRouteSTM {
+     EditorPos 8.842 -2.105
+     states {
+      AnimSrcNodeState Bolt {
+       Tags {
+        "TagRackBolt"
+       }
+       EditorPos 8.632 -3.368
+       Child "RackStanceSTM"
+       StartCondition "GetCommandI(CMD_Weapon_Reload) == 1 && GetCommandF(CMD_Weapon_Reload) == 0.0"
+       TimeStorage "Real Time"
+       IsExit 1
       }
      }
     }
@@ -302,25 +406,112 @@ AnimSrcGraphFile {
      Group "Reload"
      Column "Pne"
     }
-    AnimSrcNodeSource RackBoltAnim {
-     EditorPos 16.632 -5.263
-     Source "Reload.ReloadActionBolt"
-     Looptype "No Loop"
-     BonesInterpolatedInModelSpace {
-      "RightHandProp"
-     }
+    AnimSrcNodeGroupSelect ReloadErcCroG {
+     EditorPos 4.3 10.8
+     Child "WeaponReloadSTM"
+     Group "Reload"
+     Column "Erc"
     }
-    AnimSrcNodeStateMachine ReloadRouteSTM {
-     EditorPos 8.842 -2.105
+    AnimSrcNodeGroupSelect ReloadPneG {
+     EditorPos 7.6 10.8
+     Child "WeaponReloadSTM"
+     Group "Reload"
+     Column "Pne"
+    }
+    AnimSrcNodeSource RemoveMagAnim {
+     EditorPos 16.9 24.3
+     Source "Reload.Reload_RemoveMag"
+     Looptype "No Loop"
+    }
+    AnimSrcNodeStateMachine WeaponReloadSTM {
+     Tags {
+      "TagWeaponReload"
+     }
+     EditorPos 5.7 13.3
      states {
-      AnimSrcNodeState Bolt {
+      AnimSrcNodeState NoMagReload {
+       EditorPos 4.4 16.2
+       Child "InsertMagAnim"
+       StartCondition "GetCommandI(CMD_Weapon_Reload) == 2"
+       TimeStorage "Real Time"
+       IsExit 1
+      }
+      AnimSrcNodeState NoMagNoBulletReload {
+       EditorPos 8.4 16.2
+       Child "InsertMagAnim"
+       StartCondition "GetCommandI(CMD_Weapon_Reload) == 3 && GetCommandF(CMD_Weapon_Reload) == 0.0"
+       TimeStorage "Real Time"
+       IsExit 0
+      }
+      AnimSrcNodeState MagReload {
+       EditorPos 11.2 17
+       Child "MagReloadSTM"
+       StartCondition "GetCommandI(CMD_Weapon_Reload) == 4"
+       TimeStorage Inherit
+       IsExit 1
+      }
+      AnimSrcNodeState MagNoBulletReload {
+       EditorPos 14.4 17.1
+       Child "MagReloadSTM"
+       StartCondition "GetCommandI(CMD_Weapon_Reload) == 5 && GetCommandF(CMD_Weapon_Reload) == 0.0"
+       TimeStorage Inherit
+       IsExit 0
+      }
+      AnimSrcNodeState ReloadActionBolt {
        Tags {
         "TagRackBolt"
        }
-       EditorPos 8.632 -3.368
-       Child "RackStanceSTM"
+       EditorPos 18.1 16.2
+       Child "RackBoltAnim"
        StartCondition "GetCommandI(CMD_Weapon_Reload) == 1 && GetCommandF(CMD_Weapon_Reload) == 0.0"
        TimeStorage "Real Time"
+       IsExit 1
+      }
+      AnimSrcNodeState RemoveMag {
+       EditorPos 16.7 17.1
+       Child "RemoveMagAnim"
+       StartCondition "GetCommandI(CMD_Weapon_Reload) == 6"
+       IsExit 1
+      }
+     }
+     transitions {
+      AnimSrcNodeTransition "{6A8AFD4859C89A00}" {
+       FromState "NoMagNoBulletReload"
+       ToState "ReloadActionBolt"
+       Duration "0.3"
+       StartTime ""
+       Condition "RemainingTimeLess(0.1)"
+       BlendFn "S"
+       PostEval 1
+       MotionVecBlend 0x33 0
+      }
+      AnimSrcNodeTransition "{6A8AFD4859C89A03}" {
+       FromState "MagNoBulletReload"
+       ToState "ReloadActionBolt"
+       Duration "0.3"
+       StartTime ""
+       Condition "RemainingTimeLess(0.1)"
+       BlendFn "S"
+       PostEval 1
+       MotionVecBlend 0x33 0
+      }
+     }
+    }
+    AnimSrcNodeStateMachine WeaponReloadStanceSTM {
+     EditorPos 4.4 6.8
+     states {
+      AnimSrcNodeState Erc_Cro {
+       EditorPos 4.3 8.1
+       Child "ReloadErcCroG"
+       StartCondition "Stance == 0 || Stance == 1"
+       TimeStorage Inherit
+       IsExit 1
+      }
+      AnimSrcNodeState Pne {
+       EditorPos 7.6 8.1
+       Child "ReloadPneG"
+       StartCondition "Stance == 2"
+       TimeStorage Inherit
        IsExit 1
       }
      }
@@ -329,24 +520,24 @@ AnimSrcGraphFile {
      EditorPos -2.5 7.9
      Child "FingerOnTriggerB"
      QueueItems {
-      AnimSrcNodeQueueItem "{1A77CCF227F95376}" {
+      AnimSrcNodeQueueItem "{6A8AFD4859C89A0B}" {
        Child "FireAnim"
        StartExpr "Firing && HasVariableChanged(Firing) && !Empty"
        EnqueueMethod InterruptAll
       }
-      AnimSrcNodeQueueItem "{697C575D568153A9}" {
+      AnimSrcNodeQueueItem "{6A8AFD4859C89A0A}" {
        Child "FireEmptyAnim"
        StartExpr "Firing && HasVariableChanged(Firing) && Empty"
        EnqueueMethod InterruptAll
       }
-      AnimSrcNodeQueueItem "{E5557B21ADBA5EC2}" {
+      AnimSrcNodeQueueItem "{6A8AFD4859C89A0D}" {
        Child "ModeIK 2"
        StartExpr "HasVariableChanged(State)"
        BlendInTime 0
        BlendOutTime 0
        EnqueueMethod InterruptAll
       }
-      AnimSrcNodeQueueItem "{510A9E08C87D5E93}" {
+      AnimSrcNodeQueueItem "{6A8AFD4859C89A0F}" {
        Child "BoltClosed"
        StartExpr "true"
        InterruptExpr "Firing && HasVariableChanged(Firing) || HasVariableChanged(State)"
@@ -439,7 +630,7 @@ AnimSrcGraphFile {
       }
      }
      transitions {
-      AnimSrcNodeTransition "{3347BF6C2B095C05}" {
+      AnimSrcNodeTransition "{6A8AFD4859C89A15}" {
        FromState "Idle"
        ToState "State 1"
        Duration "0.1"
@@ -447,7 +638,7 @@ AnimSrcGraphFile {
        Condition " HasVariableChangedTo(Low, true)"
        BlendFn "S"
       }
-      AnimSrcNodeTransition "{EEDB8BBD6CEE5DAF}" {
+      AnimSrcNodeTransition "{6A8AFD4859C89A14}" {
        FromState "State 1"
        ToState "idleFinger"
        Duration "0.1"
@@ -455,7 +646,7 @@ AnimSrcGraphFile {
        BlendFn "S"
        PostEval 1
       }
-      AnimSrcNodeTransition "{7864D134B5245D44}" {
+      AnimSrcNodeTransition "{6A8AFD4859C89A16}" {
        FromState "idleFinger"
        ToState "State 3"
        Duration "0.1"
@@ -463,7 +654,7 @@ AnimSrcGraphFile {
        Condition " HasVariableChangedTo(Low, false)"
        BlendFn "S"
       }
-      AnimSrcNodeTransition "{A8776EF3D70E535F}" {
+      AnimSrcNodeTransition "{6A8AFD4859C89A19}" {
        FromState "State 3"
        ToState "Idle"
        Duration "0.1"
@@ -497,17 +688,26 @@ AnimSrcGraphFile {
      Optimization "Always eval both"
     }
     AnimSrcNodePose IdleFinger_1 {
-     EditorPos 6.105 8
+     EditorPos 6.5 5.9
      Source "Reload.Idle_finger"
+    }
+    AnimSrcNodeBlendT "Blend T 1" {
+     EditorPos 4.7 4.8
+     BlendTime "0.2"
+     Condition "Low && !IsTag(\"TagRackBolt\")"
+     Child0 "WeaponReloadStanceSTM"
+     Child1 "IdleFinger_1"
+     Optimization "Always eval left"
+     PostEval 1
     }
     AnimSrcNodeIK2Target ModesIKTarget {
      EditorPos 12 4.6
      Child "ModesBufferB"
      Chains {
-      AnimSrcIkTargetBinding "{A04C49092A0250E3}" {
+      AnimSrcIkTargetBinding "{6A8AFD4859C89A1D}" {
        IkTarget "RPropTarget"
        IkChain "RightArmProp"
-       LocalSpaceOffset AnimSrcTransformOffset "{ED07737FE276536D}" {
+       LocalSpaceOffset AnimSrcTransformOffset "{6A8AFD4859C89A1F}" {
         Position 0 0 0
         Rotation 0 0 0
         Pose "Reload.IKOffset"
@@ -524,12 +724,12 @@ AnimSrcGraphFile {
      EditorPos 12 3.6
      Child "ModesIKTarget"
      Chains {
-      AnimSrcIkBinding "{0CB8657703EC5CD5}" {
+      AnimSrcIkBinding "{6A8AFD4859C89A20}" {
        IkTarget "RPropTarget"
        IkChain "LeftArm"
       }
      }
-     Solver AnimSrcNodeIK2TwoBoneSolver "{4DE76FA08BDD5D50}" {
+     Solver AnimSrcNodeIK2TwoBoneSolver "{6A8AFD4859C89A22}" {
       SnapRotation 1
       AllowStretching 1
      }
@@ -580,54 +780,54 @@ AnimSrcGraphFile {
       }
      }
      transitions {
-      AnimSrcNodeTransition "{1D01654F46895EF2}" {
+      AnimSrcNodeTransition "{6A8AFD4859C89A26}" {
        FromState ""
        ToState "SafetyTimer"
        Condition "HasVariableChanged(State, -1)"
       }
-      AnimSrcNodeTransition "{E4822561D8C152F8}" {
+      AnimSrcNodeTransition "{6A8AFD4859C89A28}" {
        FromState "SafetyTimer"
        ToState "Semi"
        Duration "0.13"
        Condition "State == 0  && GetStateTime() > 0.2"
        PostEval 0
       }
-      AnimSrcNodeTransition "{9B612622330C5634}" {
+      AnimSrcNodeTransition "{6A8AFD4859C89A2B}" {
        FromState "SafetyTimer"
        ToState "Burst"
        Duration "0.13"
        Condition "State == 1  && GetStateTime() > 0.2"
       }
-      AnimSrcNodeTransition "{727BC93FE0145D39}" {
+      AnimSrcNodeTransition "{6A8AFD4859C89A2D}" {
        FromState "SemiTimer"
        ToState "Safety"
        Duration "0.13"
        Condition "State == -1  && GetStateTime() > 0.2"
       }
-      AnimSrcNodeTransition "{4EBAC162FEF75526}" {
+      AnimSrcNodeTransition "{6A8AFD4859C89A2C}" {
        FromState "SemiTimer"
        ToState "Burst"
        Duration "0.13"
        Condition "State == 1  && GetStateTime() > 0.2"
       }
-      AnimSrcNodeTransition "{D0779C46D0255936}" {
+      AnimSrcNodeTransition "{6A8AFD4859C89A2F}" {
        FromState "BurstTimer"
        ToState "Safety"
        Duration "0.13"
        Condition "State == -1  && GetStateTime() > 0.2"
       }
-      AnimSrcNodeTransition "{8B195972514D5352}" {
+      AnimSrcNodeTransition "{6A8AFD4859C89A2E}" {
        FromState "BurstTimer"
        ToState "Semi"
        Duration "0.13"
        Condition "State == 0  && GetStateTime() > 0.2"
       }
-      AnimSrcNodeTransition "{6EF44402684350E1}" {
+      AnimSrcNodeTransition "{6A8AFD4859C89A30}" {
        FromState ""
        ToState "SemiTimer"
        Condition "HasVariableChanged(State, 0)"
       }
-      AnimSrcNodeTransition "{EFAFD0D7CD7D5ACA}" {
+      AnimSrcNodeTransition "{6A8AFD4859C80CFA}" {
        FromState ""
        ToState "BurstTimer"
        Condition "HasVariableChanged(State, 1)"
@@ -784,7 +984,7 @@ AnimSrcGraphFile {
       }
      }
      transitions {
-      AnimSrcNodeTransition "{3A242A41DFD85449}" {
+      AnimSrcNodeTransition "{6A8AFD4859C80CF6}" {
        FromState "InspectionInLeft"
        ToState "InspectionLoopLeft"
        Duration "0.3"
@@ -792,7 +992,7 @@ AnimSrcGraphFile {
        BlendFn "S"
        PostEval 1
       }
-      AnimSrcNodeTransition "{E424A09051885FF6}" {
+      AnimSrcNodeTransition "{6A8AFD4859C80C9B}" {
        FromState "InspectionLoopLeft"
        ToState "InspectionOutLeft"
        Duration "0.3"
@@ -805,7 +1005,7 @@ AnimSrcGraphFile {
         }
        }
       }
-      AnimSrcNodeTransition "{225753008AB7597B}" {
+      AnimSrcNodeTransition "{6A8AFD4859C80C99}" {
        FromState "InspectionInLeft"
        ToState "InspectionOutLeft"
        Duration "0.3"
@@ -820,7 +1020,7 @@ AnimSrcGraphFile {
         }
        }
       }
-      AnimSrcNodeTransition "{AB98D718544C5AA8}" {
+      AnimSrcNodeTransition "{6A8AFD4859C80C9F}" {
        FromState "InspectionOutLeft"
        ToState "InspectionInLeft"
        Duration "0.3"
@@ -835,7 +1035,7 @@ AnimSrcGraphFile {
         }
        }
       }
-      AnimSrcNodeTransition "{9ABCB6B4946E59EF}" {
+      AnimSrcNodeTransition "{6A8AFD4859C80C9E}" {
        FromState "InspectionInRighty"
        ToState "InspectionLoopRight"
        Duration "0.3"
@@ -843,7 +1043,7 @@ AnimSrcGraphFile {
        BlendFn "S"
        PostEval 1
       }
-      AnimSrcNodeTransition "{7426BD60C6CE5A0C}" {
+      AnimSrcNodeTransition "{6A8AFD4859C80C9D}" {
        FromState "InspectionLoopRight"
        ToState "InspectionOutRight"
        Duration "0.3"
@@ -856,26 +1056,26 @@ AnimSrcGraphFile {
         }
        }
       }
-      AnimSrcNodeTransition "{C52558A951C15688}" {
+      AnimSrcNodeTransition "{6A8AFD4859C80C93}" {
        FromState "InspectionLoopLeft"
        ToState "LeftToRight"
        Duration "0.2"
        Condition "abs(WeaponInspectionState == 2)"
       }
-      AnimSrcNodeTransition "{2F959DF107E35784}" {
+      AnimSrcNodeTransition "{6A8AFD4859C80C92}" {
        FromState "InspectionLoopRight"
        ToState "RightToLeft"
        Duration "0.2"
        Condition "abs(WeaponInspectionState == 1)"
       }
-      AnimSrcNodeTransition "{E293C18501615B03}" {
+      AnimSrcNodeTransition "{6A8AFD4859C80C91}" {
        FromState "RightToLeft"
        ToState "InspectionLoopLeft"
        Duration "0.2"
        Condition "RemainingTimeLess(0.02)"
        PostEval 1
       }
-      AnimSrcNodeTransition "{F67C8CB5C9D75729}" {
+      AnimSrcNodeTransition "{6A8AFD4859C80C97}" {
        FromState "LeftToRight"
        ToState "InspectionLoopRight"
        Duration "0.2"
@@ -989,12 +1189,12 @@ AnimSrcGraphFile {
      EditorPos -20.974 -8.917
      Child "Blend T 28564"
      Chains {
-      AnimSrcIkBinding "{0209DF1B62A05712}" {
+      AnimSrcIkBinding "{6A8AFD4859C80CAF}" {
        IkTarget "LeftArmTarget"
        IkChain "LeftArm"
       }
      }
-     Solver AnimSrcNodeIK2TwoBoneSolver "{65F975B64D4757D9}" {
+     Solver AnimSrcNodeIK2TwoBoneSolver "{6A8AFD4859C80CAE}" {
      }
      Version 1
     }
@@ -1019,7 +1219,7 @@ AnimSrcGraphFile {
      Child "IK2 Target 32355"
      Expression "lerp(-1, 1, ADSAdjust)"
      Bones {
-      AnimSrcNodeProcTrBoneItem "{BD985CD6EAA354D1}" {
+      AnimSrcNodeProcTrBoneItem "{6A8AFD4859C80CA3}" {
        Operation Rotate
        Axis X
        Amount "-0.35"
@@ -1028,7 +1228,7 @@ AnimSrcGraphFile {
       }
      }
      IkTargets {
-      AnimSrcNodeProcTrIkTargetItem "{923466C35AC75540}" {
+      AnimSrcNodeProcTrIkTargetItem "{6A8AFD4859C80CA1}" {
        Operation "Rotate Around"
        Axis X
        Amount "-0.35"
@@ -1042,7 +1242,7 @@ AnimSrcGraphFile {
      EditorPos -20.774 -2.617
      Child "Blend 37113"
      Chains {
-      AnimSrcIkTargetBinding "{963E47C6EBC65B31}" {
+      AnimSrcIkTargetBinding "{6A8AFD4859C80CA7}" {
        IkTarget "LeftArmTarget"
        IkChain "LeftArm"
       }
@@ -1053,7 +1253,7 @@ AnimSrcGraphFile {
      Child "IK2 Target 32355"
      Expression "lerp(1,0,ADSAdjust)"
      Bones {
-      AnimSrcNodeProcTrBoneItem "{097C4DED3374578D}" {
+      AnimSrcNodeProcTrBoneItem "{6A8AFD4859C80CA5}" {
        Operation Rotate
        Axis X
        Amount "0.3"
@@ -1062,7 +1262,7 @@ AnimSrcGraphFile {
       }
      }
      IkTargets {
-      AnimSrcNodeProcTrIkTargetItem "{B4EF4D71AFA75E9F}" {
+      AnimSrcNodeProcTrIkTargetItem "{6A8AFD4859C80CA4}" {
        Operation "Rotate Around"
        Axis X
        Amount "0.3"

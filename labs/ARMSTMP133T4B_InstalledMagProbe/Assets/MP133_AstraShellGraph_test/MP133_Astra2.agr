@@ -1,12 +1,22 @@
 AnimSrcGraph {
- AnimSetTemplate "{6CFA1ACC8873A4B6}Assets/MP133_AstraShellGraph_test/MP133_Astra.ast"
- ControlTemplate AnimSrcGCT "{6A8947ABB9A61434}" {
+ AnimSetTemplate "{BDD6F7ED84814A1E}Assets/MP133_AstraShellGraph_test/MP133_Astra2.ast"
+ ControlTemplate AnimSrcGCT "{6A8AFD4859C879AB}" {
   Variables {
-
-
-
-
-
+   AnimSrcGCTVarBool ASTRA_ShellRequest {
+    DefaultValue 0
+   }
+   AnimSrcGCTVarBool ASTRA_ShellRepeat {
+    DefaultValue 0
+   }
+   AnimSrcGCTVarBool ASTRA_ShellStop {
+    DefaultValue 0
+   }
+   AnimSrcGCTVarBool ASTRA_FireStop {
+    DefaultValue 0
+   }
+   AnimSrcGCTVarBool ASTRA_ShellEligible {
+    DefaultValue 1
+   }
    AnimSrcGCTVarBool TriggerPulled {
     DefaultValue 0
    }
@@ -107,10 +117,10 @@ AnimSrcGraph {
    "AK74"
   }
  }
- Debug AnimSrcGD "{6A8947ABB9A617C7}" {
+ Debug AnimSrcGD "{6A8AFD4859C879BF}" {
  }
  GraphFilesResourceNames {
-  "{5106627621151975}Assets/MP133_AstraShellGraph_test/MP133_Astra.agf"
+  "{802A8F572DE7F7DD}Assets/MP133_AstraShellGraph_test/MP133_Astra2.agf"
  }
  DefaultRunNode "MasterControl"
 }

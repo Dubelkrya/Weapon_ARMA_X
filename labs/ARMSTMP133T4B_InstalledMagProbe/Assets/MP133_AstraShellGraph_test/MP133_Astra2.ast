@@ -1,19 +1,6 @@
 AnimSetTemplateSource {
  Groups {
-  AnimSetTemplateSource_AnimationGroup "{6A8947ABB9A94F55}" {
-   Name "AstraShell"
-   Animations {
-    "StartReload"
-    "GrabShell"
-    "InsertShell"
-    "CheckContinue"
-    "EndReload"
-   }
-   Columns {
-    "Erc"
-   }
-  }
-  AnimSetTemplateSource_AnimationGroup "{6A8947ABB9A94F68}" {
+  AnimSetTemplateSource_AnimationGroup "{6A8AFD4859CC19EE}" {
    Name "Inspection"
    Animations {
     "Left2Right"
@@ -34,24 +21,26 @@ AnimSetTemplateSource {
     "PneRas"
    }
   }
-  AnimSetTemplateSource_AnimationGroup "{6A8947ABB9A94F69}" {
+  AnimSetTemplateSource_AnimationGroup "{6A8AFD4859CC19F0}" {
    Name "Reload"
    Animations {
     "BoltPose"
-    "StartReload"
-    "GrabShell"
-    "InsertShell"
     "CheckContinue"
     "EndReload"
     "Finger_trigger_in"
     "Finger_trigger_out"
     "Fire"
+    "GrabShell"
     "Idle"
     "Idle_finger"
     "IKOffset"
+    "InsertShell"
+    "Reload_InsertMag"
+    "Reload_RemoveMag"
     "ReloadActionBolt"
     "Safety"
     "Sight"
+    "StartReload"
     "Switch_Mode_Dep_Off"
     "Switch_Mode_Dep_On"
     "Switch_Mode_Off"
