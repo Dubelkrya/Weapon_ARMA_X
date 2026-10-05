@@ -1,6 +1,6 @@
 # MP-133 Task #1 — V1 inert reload-command bridge probe (SOURCE PREP ONLY)
 
-Статус: **T4B_V1_INERT_COMMAND_BRIDGE_SOURCE_PREPARED_OWNER_REVIEW**
+Статус: **T4B_V1_INERT_COMMAND_BRIDGE_ONESHOT_SOURCE_PREPARED_OWNER_REVIEW**
 Дата: 2026-10-05
 Задание: Issue #34 — «V1 inert reload-command bridge probe (SOURCE PREP ONLY)» ([#6001717566](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34)).
 Режим: **source preparation only**. Live **НЕ изменялся** (даже при закрытом Workbench). ASTRA2/AGR/AGF/ASI/AW/ANM/prefab/world/Core/grid/inventory — не тронуты.
@@ -43,12 +43,15 @@
 
 Каталог: `Weapon_ARMA_X/artifacts/astra-rebuild/stageInertBridge/`
 
-### B1. `ARMST_T4B_NormalRHandlerProbe.c` (base = текущий V1)
-- SHA-256 staged: `250D5C07164A441868513D8DA7D5700F7A55C89549AB9945ED27212DACCF9A24`.
+### B1. `ARMST_T4B_NormalRHandlerProbe.c` (base = текущий V1) — **ONE-SHOT**
+- SHA-256 staged: `65AA48A386B4DD17D423058DECBAFEFF1B3636DF24D7ED9CEA9649EFE051635F`.
 - Base = pickup-safe V1 (`57c7124`), SHA-256 `D16D3D436A030C86A61DDE3C98A88D3B9EB62BE761B83812DD82CC302E1FAF32`.
 - Добавлено **только**:
   - файловый глобал `const int ARMST_T4B_INERT_RELOAD_CMD = 10;`
-  - в lab-ветке `HandleWeaponReloading`, при `startReloading && pInputCtx`: `pInputCtx.SetReloadWeapon(ARMST_T4B_INERT_RELOAD_CMD);` + лог `phase=inert-command-set`.
+  - латч-поля `m_bInertCmdSet` / `m_bInertCmdSkipLogged`;
+  - в lab-ветке `HandleWeaponReloading`, при `startReloading && pInputCtx && !m_bInertCmdSet`: `m_bInertCmdSet = true;` (латч **до** сеттера) → `pInputCtx.SetReloadWeapon(ARMST_T4B_INERT_RELOAD_CMD);` + лог `phase=inert-command-set once=1`;
+  - `else if (startReloading && pInputCtx && !m_bInertCmdSkipLogged)` → один раз лог `phase=inert-command-skip alreadySet=1` (подтверждение латча без спама).
+- **One-shot rationale:** V1 уже показал, что `HandleWeaponReloading()` вызывается много кадров подряд при `startReloading=true`; без латча это дало бы многократный `SetReloadWeapon(10)`, а engine-level поведение cmd10 не доказано. Латч гарантирует **ровно один** `SetReloadWeapon` на один cold-start тест; повторные вызовы только логируются (один раз).
 - Non-lab путь **не изменён**: `if (!probe) return super.HandleWeaponReloading(pInputCtx, pDt, pCurrentCommandID);`.
 - Consume сохранён: `return true`.
 
@@ -59,18 +62,19 @@
 - Observation only; no graph transition.
 
 ### Диффы (exact)
-- `stageInertBridge/diff_handler_V1_to_inert.diff` — added 29 / removed 15 (удаления только в шапке-комментарии; логика — только новый блок `SetReloadWeapon` + const).
+- `stageInertBridge/diff_handler_V1_to_inert.diff` — added 40 / removed 15 (удаления только в шапке-комментарии; логика — только `const` + one-shot блок `SetReloadWeapon`).
 - `stageInertBridge/diff_astraV2_to_observer.diff` — added 16 / removed 0.
 
 ### Static proofs
 | Проверка | handler | observer |
 |---|---|---|
-| braces | 11/11 | 15/15 |
-| parens | 53/53 | 71/71 |
+| braces | 12/12 | 15/15 |
+| parens | 57/57 | 71/71 |
 | `override void Update` | 0 | 0 |
 | `override bool HandleWeapons` | 0 | 0 |
 | forbidden writers (`SetAmmoCount`/`ReloadWeapon`/`ReloadWeaponWith`/mag spawn-attach-detach-despawn-release/`CallCommand`/`SetVariableBool`/`ASTRA_ShellRequest`/`ClearChamber`) | **0** | **0** |
-| `SetReloadWeapon` (разрешённый API) | 1 | 0 |
+| `SetReloadWeapon` (разрешённый API) | 1 (one-shot, латч) | 0 |
+| `m_bInertCmdSet` (латч) | 3 (decl/check/set) | 0 |
 | non-lab `super` path | сохранён | n/a |
 
 ### Rollback
