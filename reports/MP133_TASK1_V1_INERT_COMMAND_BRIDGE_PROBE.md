@@ -1,9 +1,9 @@
 # MP-133 Task #1 — V1 inert reload-command bridge probe (SOURCE PREP ONLY)
 
-Статус: **T4B_V1_INERT_COMMAND_BRIDGE_LIVE_READY_OWNER_COLDSTART_TEST**
+Статус: **T4B_V1_INERT_BRIDGE_RACK_BYPASS_SOURCE_PREPARED_OWNER_REVIEW**
 Дата: 2026-10-05
 Задание: Issue #34 — «V1 inert reload-command bridge probe (SOURCE PREP ONLY)» ([#6001717566](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34)) + one-shot ревизия + review-pass + owner GO.
-Режим: **оба staged-файла установлены в live** (Workbench закрыт); ASTRA2/prefab/world/Core/grid/inventory — не тронуты.
+Режим: **source prep only**. Live = предыдущий one-shot вариант (`5CBB22C1…`, установлен ранее); rack-bypass ревизия **НЕ в live**. ASTRA2/prefab/world/Core/grid/inventory — не тронуты.
 
 Вопрос probe: **может ли pickup-safe V1 handler потребить обычный `R` и выставить уже-доказанную инертную reload-команду, которая дойдёт до weapon-local animation receiver, не запустив native whole-mag reload и не изменив tube/ammo/chamber?**
 
@@ -43,17 +43,16 @@
 
 Каталог: `Weapon_ARMA_X/artifacts/astra-rebuild/stageInertBridge/`
 
-### B1. `ARMST_T4B_NormalRHandlerProbe.c` (base = текущий V1) — **ONE-SHOT**
-- SHA-256 staged: `5CBB22C18B29D64E16E36DCABE85642BDB08951D0B4F3F46CFE3B7E4A5E7BE20`.
-- Base = pickup-safe V1 (`57c7124`), SHA-256 `D16D3D436A030C86A61DDE3C98A88D3B9EB62BE761B83812DD82CC302E1FAF32`.
-- Добавлено **только**:
-  - файловые глобалы `const int ARMST_T4B_INERT_RELOAD_CMD = 10;` и `const int ARMST_T4B_RELOAD_COMMAND_ID = 0;` (см. ниже);
-  - латч-поля `m_bInertCmdSet` / `m_bInertCmdSkipLogged`;
-  - в lab-ветке `HandleWeaponReloading`, при `startReloading && pInputCtx && !m_bInertCmdSet`: `m_bInertCmdSet = true;` (латч **до** сеттера) → `pInputCtx.SetReloadWeapon(ARMST_T4B_INERT_RELOAD_CMD);` + лог `phase=inert-command-set once=1`;
-  - `else if (startReloading && pInputCtx && !m_bInertCmdSkipLogged)` → один раз лог `phase=inert-command-skip alreadySet=1` (подтверждение латча без спама).
-- **One-shot rationale:** V1 уже показал, что `HandleWeaponReloading()` вызывается много кадров подряд при `startReloading=true`; без латча это дало бы многократный `SetReloadWeapon(10)`, а engine-level поведение cmd10 не доказано. Латч гарантирует **ровно один** `SetReloadWeapon` на один cold-start тест; повторные вызовы только логируются (один раз).
-- Non-lab путь **не изменён**: `if (!probe) return super.HandleWeaponReloading(pInputCtx, pDt, pCurrentCommandID);`.
-- Consume сохранён: `return true`.
+### B1. `ARMST_T4B_NormalRHandlerProbe.c` — **RACK BYPASS ревизия**
+- SHA-256 staged: `83DA1EC584B13D251359B776D2C05AEE41E07A42ACB3334389814C0501BA8B39`.
+- Base = текущий live one-shot handler (`5CBB22C18B29D64E16E36DCABE85642BDB08951D0B4F3F46CFE3B7E4A5E7BE20`).
+- Изменение **только** rack-bypass + один лог-латч `m_bRackBypassLogged`:
+  - **LAB + `reloadType == 1`:** НЕ вызывать `SetReloadWeapon(10)`, НЕ ставить one-shot латч, НЕ consume'ить → `return super.HandleWeaponReloading(pInputCtx, pDt, pCurrentCommandID);` (штатный native bolt/rack не трогаем); один раз лог `phase=rack-bypass reloadType=1 consumed=0 setCmd10=0 -> super`.
+  - **LAB + `startReloading == true` + `reloadType != 1`:** one-shot латч (`m_bInertCmdSet`, латч **до** setter) → ровно один `pInputCtx.SetReloadWeapon(ARMST_T4B_INERT_RELOAD_CMD);` + лог `phase=inert-command-set once=1`; затем consume (`return true`).
+  - `else if (startReloading && reloadType != 1 && !m_bInertCmdSkipLogged)` → один раз лог `phase=inert-command-skip`.
+- **Порядок (code):** rack-bypass блок L87–95 (`return super` L94) **до** `SetReloadWeapon` L101 → rack path физически не достигает setter'а.
+- Non-lab путь **не изменён**: `if (!probe) return super.HandleWeaponReloading(...)`.
+- Consume сохранён **только** для non-rack lab-запроса.
 
 ### B2. `ARMST_T4B_AstraV2_WeaponAnimationComponent.c` (base = текущий live AstraV2)
 - SHA-256 staged: `B3D71CF57ACBF95C55D4B0098FDDACF86F00CF9B93AA88C287856D9914228D28` (base live `DBBD9B49C376123A702BDF16C5F7EA16CCC147F1A67947E6C5AB07E0F1FDD00B`).
@@ -66,18 +65,20 @@
 `const int ARMST_T4B_RELOAD_COMMAND_ID = 0;` — evidence: T2c owner runtime наблюдал `commandID=0` и для native rack (`intValue=1`), и для stock remove+insert (`intValue=5`). SDK **не** публикует именованной константы `CMD_Weapon_Reload` (анимационные команды биндятся строкой через `SCR_CharacterAnimationComponent.BindCommand`, см. `ARMST_Consumable.c`: `BindCommand("CMD_HealSelf")`). Поэтому тип reload-команды зафиксирован по наблюдаемому значению; **raw `commandID`/`intValue` логируются всегда**, чтобы владелец мог скорректировать константу по рантайм-факту.
 
 ### Диффы (exact)
-- `stageInertBridge/diff_handler_V1_to_inert.diff` — added 49 / removed 15 (удаления только в шапке-комментарии; логика — только `const`×2 + one-shot блок `SetReloadWeapon`).
-- `stageInertBridge/diff_astraV2_to_observer.diff` — added 20 / removed 0.
+- `stageInertBridge/diff_handler_live_to_rackbypass.diff` — added 28 / removed 12 (vs текущий live one-shot handler; логика — только rack-bypass блок + лог-латч `m_bRackBypassLogged`).
+- `stageInertBridge/diff_astraV2_to_observer.diff` — added 20 / removed 0 (observer без изменений).
 
 ### Static proofs
 | Проверка | handler | observer |
 |---|---|---|
-| braces | 12/12 | 15/15 |
-| parens | 57/57 | 73/73 |
+| braces | 14/14 | 15/15 |
+| parens | 61/61 | 73/73 |
 | `override void Update` | 0 | 0 |
 | `override bool HandleWeapons` | 0 | 0 |
 | forbidden writers (`SetAmmoCount`/`ReloadWeapon`/`ReloadWeaponWith`/mag spawn-attach-detach-despawn-release/`CallCommand`/`SetVariableBool`/`ASTRA_ShellRequest`/`ClearChamber`) | **0** | **0** |
-| `SetReloadWeapon` (разрешённый API) | 1 (one-shot, латч) | 0 |
+| `reloadType == 1` → `super` (rack bypass) | **1** | — |
+| `SetReloadWeapon` (разрешённый API) | 1 callsite, **только** после rack-bypass (non-rack) | 0 |
+| one-shot латч на rack path | **не ставится** (rack `return super` L94 < setter L101) | — |
 | `m_bInertCmdSet` (латч) | 3 (decl/check/set) | 0 |
 | `isReloadCommand && intValue==10` (доказательство) | — | 1 (`inert=`) |
 | non-lab `super` path | сохранён | n/a |
@@ -90,18 +91,20 @@
 
 ## Future owner runtime acceptance test (НЕ авторизован)
 
-После отдельного GO: cold Workbench → equip canonical ASTRA2 lab MP-133 → снять tube identity/ammo/chamber → один обычный `R` → требуется:
-- handler видит запрос и логирует `phase=inert-command-set inertCmd=10`;
-- weapon-local `[ARMST-T4B-CMDROUTE] receiver=weapon … inert=1` (та же инертная команда);
-- нет native CMD1/2–6 route;
-- magazine identity не заменена (`magEntity` tag стабилен);
-- ammo/chamber неизменны;
-- pickup работает.
+После отдельного GO:
+1. Cold-start Workbench → свежий `weapon_test`.
+2. Equip canonical ASTRA2 lab MP-133.
+3. Снять chamber.
+4. **Первый R должен быть rack:** штатный bolt/rack обязан отработать; `phase=inert-command-set` НЕ должен появиться (cmd10 не выставлен). → `NATIVE_RACK_BYPASS_PASS`.
+5. После того как chamber снова пуст — **второй R**.
+6. Проверить raw `reloadType` второго R:
+   - `reloadType != 1` → ожидается one-shot cmd10 probe + weapon-local `[ARMST-T4B-CMDROUTE] … isReloadCommand=1 inert=1` → `R_TO_INERT_COMMAND_TO_WEAPON_RECEIVER_PROVEN`;
+   - `reloadType` снова `1` → `POST_RACK_RELOADTYPE_STILL_1_STOP`, больше не экспериментировать.
 
-Исходы:
+Outcome labels:
+- `NATIVE_RACK_BYPASS_PASS`
 - `R_TO_INERT_COMMAND_TO_WEAPON_RECEIVER_PROVEN`
-- `HANDLER_SET_BUT_WEAPON_RECEIVER_NOT_REACHED`
-- `INERT_COMMAND_CAUSED_NATIVE_SIDE_EFFECT_STOP`
+- `POST_RACK_RELOADTYPE_STILL_1_STOP`
 
 ---
 
@@ -110,7 +113,7 @@
 - Исходники подготовлены (2 файла), НЕ записаны в live.
 - Ничего из forbidden не использовано; `Update=0`, `HandleWeapons=0`; non-lab путь не изменён.
 
-Статус: **`T4B_V1_INERT_COMMAND_BRIDGE_LIVE_READY_OWNER_COLDSTART_TEST`**. STOP.
+Статус: **`T4B_V1_INERT_BRIDGE_RACK_BYPASS_SOURCE_PREPARED_OWNER_REVIEW`**. STOP.
 
 ---
 
