@@ -1,9 +1,9 @@
 # ARMST MP-133 T4b — pickup regression: SCOPE CORRECTED to lab-addon-only A/B
 
-Статус: **T4B_LAB_ONLY_PICKUP_BISECT_READY_OWNER_TEST**
+Статус: **T4B_LAB_ONLY_PICKUP_BISECT_V1_PREPARED_WB_OPEN_STOP**
 Дата: 2026-10-05
-Задание: Issue #34 — корректирующий **HARD STOP** [#6001136884](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34) + разрешение владельца на A/B.
-Режим: **применён ровно один rename** (Workbench закрыт); больше ничего не менялось.
+Задание: Issue #34 — корректирующий **HARD STOP** [#6001136884](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34) + разрешение владельца на A/B + контроль V1 (`57c7124`).
+Режим: A/B применён (rename `.disabled`); контроль V1 **подготовлен**, live не менялся (Workbench открыт).
 
 ---
 
@@ -78,8 +78,26 @@ Backup: `artifacts/astra-rebuild/stageBisect/ARMST_T4B_NormalRHandlerProbe.c.bak
 
 ## 5. Статус
 
-Workbench закрыт, rename применён и синхронизирован в labs, узкий commit сделан.
+Workbench закрыт, rename применён и синхронизирован в labs, узкий commit сделан (`717d66a`).
 
-Статус: **`T4B_LAB_ONLY_PICKUP_BISECT_READY_OWNER_TEST`**.
+Статус A/B: **`T4B_LAB_ONLY_PICKUP_BISECT_READY_OWNER_TEST`**.
 
 **Не тронуто:** grid / `SCR_UniversalInventoryStorageComponent` / admission / item attributes / ARMST Core / production Weapons / ASTRA2 / world / spawn / reload / Tube3 / canonical prefab.
+
+---
+
+## 6. Контроль V1 (`57c7124`) — ПОДГОТОВЛЕН (live не тронут)
+
+Владелец подтвердил: причина локализована до `ARMST_T4B_NormalRHandlerProbe.c`; остальная lab работает (ASTRA2, pawn, T4B-события). Следующий контроль — **старый V1 из `57c7124`**, где был только `HandleWeaponReloading(...)`, без V2-override'ов `Update(...)` и `HandleWeapons(...)`.
+
+Staged (в live **не записан**): `artifacts/astra-rebuild/stageV1/ARMST_T4B_NormalRHandlerProbe.c`
+- SHA-256 `D16D3D436A030C86A61DDE3C98A88D3B9EB62BE761B83812DD82CC302E1FAF32` (4434 bytes).
+- Проверки: override'ов **ровно один** — `HandleWeaponReloading`; `override void Update` = **0**, `override bool HandleWeapons` = **0**; braces 10/10, parens 47/47; **0** запрещённых writers.
+
+Если V1 pickup работает → поломку внесли именно **новые V2-override'ы** (`Update` / `HandleWeapons`). Если V1 тоже ломает pickup → причина в самом `modded class SCR_CharacterCommandHandlerComponent` / `HandleWeaponReloading`.
+
+План применения (после закрытия Workbench + разрешения): заменить live `.disabled` на V1 как `.c` (т.е. `ARMST_T4B_NormalRHandlerProbe.c` = V1), синхронизировать labs, узкий commit → `T4B_LAB_ONLY_PICKUP_BISECT_V1_READY_OWNER_TEST`.
+
+Откат: V2-backup `artifacts/astra-rebuild/stageBisect/ARMST_T4B_NormalRHandlerProbe.c.bak` (`C9D49A1B…EA6`).
+
+Статус: **`T4B_LAB_ONLY_PICKUP_BISECT_V1_PREPARED_WB_OPEN_STOP`**.
