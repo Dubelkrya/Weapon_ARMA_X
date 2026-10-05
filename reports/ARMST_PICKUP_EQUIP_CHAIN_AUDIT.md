@@ -1,9 +1,9 @@
 # ARMST MP-133 T4b — pickup regression: SCOPE CORRECTED to lab-addon-only A/B
 
-Статус: **T4B_LAB_ONLY_PICKUP_BISECT_PREPARED_WB_OPEN_STOP**
+Статус: **T4B_LAB_ONLY_PICKUP_BISECT_READY_OWNER_TEST**
 Дата: 2026-10-05
-Задание: Issue #34 — корректирующий **HARD STOP** [#6001136884](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34).
-Режим: **read-only**; live не изменялся (Workbench открыт).
+Задание: Issue #34 — корректирующий **HARD STOP** [#6001136884](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34) + разрешение владельца на A/B.
+Режим: **применён ровно один rename** (Workbench закрыт); больше ничего не менялось.
 
 ---
 
@@ -53,31 +53,33 @@
 
 ---
 
-## 4. План A/B изоляции (подготовлен, не применён)
+## 4. A/B изоляции — ПРИМЕНЕНО
 
-1. Убедиться, что Workbench полностью закрыт.
-2. Backup уже снят: `artifacts/astra-rebuild/stageBisect/ARMST_T4B_NormalRHandlerProbe.c.bak`
-   (SHA-256 `C9D49A1B029E7A4CF39D5F31214666BE8B44F4D9881B170BDF839ED954B92EA6`).
-3. Временно **отключить только** `ARMST_T4B_NormalRHandlerProbe.c` в live lab-addon
-   (переименовать `→ ARMST_T4B_NormalRHandlerProbe.c.disabled`; Workbench не компилирует `.disabled`).
-   Ничего другого не менять.
-4. Cold-start Workbench → свежий `weapon_test` → проверить pickup обычного предмета и обычного оружия.
-5. Результат:
-   - pickup работает → регрессия локализована в `NormalRHandlerProbe.c`;
-   - pickup по-прежнему сломан → **восстановить файл байт-в-байт** (из backup) и бисектить остальные lab-скрипты (G3B2 → G3B1 → InstalledMagProbe → AstraV2 → AstraRequest).
+Workbench полностью закрыт (`Workbench/Reforger/Arma/Enfusion` = NONE). Выполнен **ровно один rename**:
 
-Откат: `Copy-Item artifacts/.../ARMST_T4B_NormalRHandlerProbe.c.bak <live>/.../ARMST_T4B_NormalRHandlerProbe.c` (hash совпадает → restore безопасен).
+| | |
+|---|---|
+| live | `ARMST_T4B_NormalRHandlerProbe.c` → `ARMST_T4B_NormalRHandlerProbe.c.disabled` |
+| labs | `ARMST_T4B_NormalRHandlerProbe.c` → `ARMST_T4B_NormalRHandlerProbe.c.disabled` |
+| содержимое | **не изменялось** — hash `.disabled` = `C9D49A1B029E7A4CF39D5F31214666BE8B44F4D9881B170BDF839ED954B92EA6` (совпадает с исходным) |
+| прочие файлы | **не тронуты** |
+
+Backup: `artifacts/astra-rebuild/stageBisect/ARMST_T4B_NormalRHandlerProbe.c.bak` (тот же hash).
+
+Тест владельца: cold-start Workbench → свежий `weapon_test` → pickup (1) обычного предмета, (2) обычного оружия.
+
+Результат:
+- pickup работает → регрессия локализована в `NormalRHandlerProbe.c`;
+- pickup по-прежнему сломан → восстановить файл байт-в-байт из backup и бисектить остальные lab-скрипты (G3B2 → G3B1 → InstalledMagProbe → AstraV2 → AstraRequest).
+
+Откат: `Rename-Item .../ARMST_T4B_NormalRHandlerProbe.c.disabled → .../ARMST_T4B_NormalRHandlerProbe.c` (hash совпадает → restore безопасен).
 
 ---
 
-## 5. Блокер и статус
+## 5. Статус
 
-```
-Workbench / Animation Editor / Game Mode: RUNNING (ArmaReforgerWorkbenchSteamDiag)
-→ live write запрещён; A/B (отключение файла) НЕ применён
-```
+Workbench закрыт, rename применён и синхронизирован в labs, узкий commit сделан.
 
-Статус: **`T4B_LAB_ONLY_PICKUP_BISECT_PREPARED_WB_OPEN_STOP`**.
-После полного закрытия Workbench: отключу только `ARMST_T4B_NormalRHandlerProbe.c`, синхронизирую labs, узкий commit → **`T4B_LAB_ONLY_PICKUP_BISECT_READY_OWNER_TEST`**.
+Статус: **`T4B_LAB_ONLY_PICKUP_BISECT_READY_OWNER_TEST`**.
 
-**Не трогаю:** grid / `SCR_UniversalInventoryStorageComponent` / admission / item attributes / ARMST Core / production Weapons / ASTRA2 / world / spawn / reload.
+**Не тронуто:** grid / `SCR_UniversalInventoryStorageComponent` / admission / item attributes / ARMST Core / production Weapons / ASTRA2 / world / spawn / reload / Tube3 / canonical prefab.
