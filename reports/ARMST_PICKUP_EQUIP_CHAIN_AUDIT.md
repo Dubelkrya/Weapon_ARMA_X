@@ -1,9 +1,9 @@
 # ARMST MP-133 T4b — pickup regression: SCOPE CORRECTED to lab-addon-only A/B
 
-Статус: **T4B_RPROBE_V1_PLUS_UPDATE_READY_OWNER_TEST**
+Статус: **T4B_RPROBE_V1_RESTORED_PICKUP_SAFE**
 Дата: 2026-10-05
-Задание: Issue #34 — HARD STOP [#6001136884](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34) + V1-результат [#6001411080](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34): `HANDLE_WEAPON_RELOADING_PICKUP_REGRESSION = EXONERATED`.
-Режим: **V1 + Update() установлен в live** (Workbench закрыт); `HandleWeapons()` отсутствует.
+Задание: Issue #34 — HARD STOP [#6001136884](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34) + результат V1 [#6001411080](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34) + root cause Update [#6001549471](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34).
+Режим: **V1 handler-only восстановлен в live** (Workbench закрыт); `Update()`/`HandleWeapons()` отсутствуют.
 
 ---
 
@@ -133,3 +133,37 @@ Workbench закрыт. Применено:
 Правила соблюдены: no Core/grid/inventory/world/ASTRA2/prefab changes; прочие lab-файлы не менялись.
 
 Статус: **`T4B_RPROBE_V1_PLUS_UPDATE_READY_OWNER_TEST`**.
+
+---
+
+## 8. ROOT CAUSE доказан; V1 восстановлен
+
+Владелец: Issue #34 [#6001549471](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34).
+
+### A/B proof
+
+| Конфигурация | pickup |
+|---|---|
+| V1 handler-only (`57c7124`) | **PASS** |
+| V1 + `Update()` (без `HandleWeapons`) | **FAIL** |
+| `HandleWeapons()` | отсутствовал в варианте |
+
+→ `ROOT_CAUSE = ARMST_T4B_NormalRHandlerProbe.c :: override Update(...)` (плюс его Update-only helper/state, которые вызываются только из `Update`). `HandleWeapons` больше не бисектим.
+
+### Rollback применён (Workbench закрыт)
+
+- live `ARMST_T4B_NormalRHandlerProbe.c` = **V1 handler-only (`57c7124`)**, SHA-256 `D16D3D436A030C86A61DDE3C98A88D3B9EB62BE761B83812DD82CC302E1FAF32` (4434 bytes);
+- labs синхронизирован;
+- `override void Update` = **0**, `override bool HandleWeapons` = **0**, `override bool HandleWeaponReloading` = **1**;
+- Update-only кандидат убран из активного live/labs состояния; staged-артефакты сохранены как evidence:
+  - `artifacts/astra-rebuild/stageV1Update/ARMST_T4B_NormalRHandlerProbe.c` (+ `.diff`)
+  - `artifacts/astra-rebuild/stageBisect/ARMST_T4B_NormalRHandlerProbe.c.bak` (V2)
+  - `artifacts/astra-rebuild/stageV1/ARMST_T4B_NormalRHandlerProbe.c` (V1)
+
+### Архитектурное правило Task #1
+
+- **никакого** глобального `SCR_CharacterCommandHandlerComponent.Update(...)` override в финальном решении;
+- V1 handler-only остаётся **временной** R-интерцепцией/probe до доказательства weapon-local/native маршрута;
+- Core/grid/inventory/world/ASTRA2/prefab/Tube3 и прочие lab-скрипты — не тронуты.
+
+Статус: **`T4B_RPROBE_V1_RESTORED_PICKUP_SAFE`**.
