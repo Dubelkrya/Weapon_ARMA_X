@@ -1,8 +1,9 @@
 # ARMST — глобальный отказ pickup/equip: аудит цепочки + staged probe
 
-Статус: **PICKUP_FAIL_INCONCLUSIVE** (статикой однозначный класс не доказан) — **probe подготовлен, live НЕ тронут**.
+Статус: **GLOBAL_ITEM_PICKUP_PROBE_PREPARED_WB_OPEN_STOP** — probe расширен на все предметы, live НЕ тронут (Workbench открыт).
 Дата: 2026-10-05
 Задание: Issue #34 — проверить цепочку `interaction → действие поднятия → inventory admission → hand/weapon slot → WeaponManager` для обычного оружия (AK) и ASTRA2 MP-133; классифицировать сбой; при невозможности — подготовить минимальный read-only probe и остановиться перед записью в live.
+Разрешения владельца: [#6000988889](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34) (install Pickup Chain Probe V1, статус `GLOBAL_WEAPON_PICKUP_PROBE_READY_OWNER_TEST`), [#6001046491](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34) (**обновление**: сбой на ВСЕХ предметах, не только оружии; probe логирует любой `InventoryItemComponent`; статус `GLOBAL_ITEM_PICKUP_PROBE_READY_OWNER_TEST`).
 Запрещено (соблюдено): ASTRA2, `default.layer`, spawn point, reload. Режим: **read-only**.
 
 ---
@@ -100,30 +101,31 @@ WORLD (E): Unknown keyword/data 'm_iCustomGridHeight' at offset ...
 
 ## 5. Подготовленный минимальный read-only probe
 
-Staged (в live **не записан**): `Weapon_ARMA_X/artifacts/astra-rebuild/stagePickup/ARMST_T4B_PickupChainProbe.c`
+Staged (в live **не записан** — Workbench открыт): `Weapon_ARMA_X/artifacts/astra-rebuild/stagePickup/ARMST_T4B_PickupChainProbe.c`
 - `modded class SCR_UniversalInventoryStorageComponent` → override `CanStoreItem`, вызывает `super`, затем **только логирует**:
-  `storage, item, hasAttrs, dim=WxH, grid=cols x rows, fit, CanStoreItem, slotID`.
-- Гейт: только предметы с `WeaponComponent` (AK, MP-133 и др.), жёсткий бюджет 200 строк.
-- **Никаких** мутаций/запрещённых API: проверено — 0 writers, braces 6/6, parens 21/21.
+  `storage(prefab), item(prefab), hasIIC, hasAttrs, dim=WxH, grid=cols x rows, fit, CanStoreItem, slotID`.
+- Гейт (по обновлению владельца): **любой предмет с `InventoryItemComponent`** (не только оружие), жёсткий бюджет 300 строк.
+- **Никаких** мутаций/запрещённых API: проверено — 0 writers, braces 6/6, parens 30/30, гейт `WeaponComponent` отсутствует.
 
-Как читать результат:
+Целевой live-путь: `ARMSTMP133T4B_InstalledMagProbe/Scripts/Game/ARMST_T4B/ARMST_T4B_PickupChainProbe.c` (+ sync в `labs/.../Scripts/Game/ARMST_T4B/`).
 
-| Наблюдение при нажатии F на оружии | Класс |
+Как читать результат (тест владельца: 3 попытки — не-оружейный предмет, обычное оружие, ASTRA2 MP-133):
+
+| Наблюдение | Класс |
 |---|---|
-| **нет** строк `[ARMST-T4B-PICKUP]` | сбой до admission → `NO_INTERACTION_ACTION` / `ACTION_NOT_PERFORMABLE` / `CONTROLLER_OR_INTERACTION_CONTEXT` |
-| есть строки, `fit=0` / `CanStoreItem=0` | `PICKUP_FAIL_STORAGE_ADMISSION_REJECTED` |
-| есть строки, `CanStoreItem=1`, но оружие не экипируется | `PICKUP_FAIL_HAND_OR_WEAPON_MANAGER_MISSING_OR_BROKEN` |
+| **нет** строк `[ARMST-T4B-PICKUP]` ни для одной из 3 попыток | сбой до `CanStoreItem` → `NO_INTERACTION_ACTION` / `ACTION_NOT_PERFORMABLE` / `CONTROLLER_OR_INTERACTION_CONTEXT` |
+| есть строки, `fit=0` / `CanStoreItem=0` по всем типам | `PICKUP_FAIL_STORAGE_ADMISSION_REJECTED` — **доказано** |
+| не-оружейный и оружие различаются | классифицировать exact storage/filter path отдельно |
 
-Отдельно probe покажет `hasAttrs=0` для оружия → подтверждение §3.
-
-**Не записываю probe в live.** Для установки нужно: (1) закрытый Workbench, (2) явное разрешение владельца, (3) узкая установка только этого файла в `ARMSTMP133T4B_InstalledMagProbe/Scripts/Game/ARMST_T4B/`.
+**Не записываю probe в live.** Workbench (`ArmaReforgerWorkbenchSteamDiag`) — RUNNING; по жёсткому gate запись запрещена. После полного закрытия Workbench: установить только этот файл в live, синхронизировать labs, узкий commit → статус `GLOBAL_ITEM_PICKUP_PROBE_READY_OWNER_TEST`. `CanStoreItem`/grid **не чинить** до доказательства рантайм-точки отказа.
 
 ---
 
 ## 6. Итог
 
 - Цепочка картирована; единственная существенная точка вмешательства мода на пути pickup — **grid admission** (`SCR_UniversalInventoryStorageComponent.CanStoreItem`), которая **fail-closed**.
-- Статикой класс не доказан → **`PICKUP_FAIL_INCONCLUSIVE`**, ведущий кандидат `PICKUP_FAIL_STORAGE_ADMISSION_REJECTED`.
-- Подготовлен минимальный read-only probe; live не изменялся; ASTRA2/`default.layer`/spawn/reload не тронуты.
+- Статикой класс не доказан → ведущий кандидат `PICKUP_FAIL_STORAGE_ADMISSION_REJECTED`; рантайм подтверждение даст probe.
+- Probe расширен на **все** предметы (`InventoryItemComponent`) и подготовлен; live не изменялся; ASTRA2/`default.layer`/spawn/reload не тронуты.
+- **Блокер записи:** Workbench RUNNING → live write запрещён (hard gate).
 
-Статус: **`PICKUP_FAIL_INCONCLUSIVE` — probe staged, live write pending owner go-ahead.**
+Статус: **`GLOBAL_ITEM_PICKUP_PROBE_PREPARED_WB_OPEN_STOP`** — после закрытия Workbench установлю probe → `GLOBAL_ITEM_PICKUP_PROBE_READY_OWNER_TEST`.
