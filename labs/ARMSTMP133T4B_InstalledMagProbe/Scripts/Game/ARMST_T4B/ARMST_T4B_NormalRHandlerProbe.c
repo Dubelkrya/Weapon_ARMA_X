@@ -19,6 +19,11 @@
 // ============================================================================
 modded class SCR_CharacterCommandHandlerComponent
 {
+	// read-only instance-identity tracking for the magazine entity (reference-change tag)
+	protected IEntity m_rprobeMagEnt;
+	protected int m_rprobeMagTag;
+	protected int m_rprobeMagNextTag;
+
 	override bool HandleWeaponReloading(CharacterInputContext pInputCtx, float pDt, int pCurrentCommandID)
 	{
 		// --- resolve current weapon via the character controller ---
@@ -76,6 +81,22 @@ modded class SCR_CharacterCommandHandlerComponent
 		if (magEnt && magEnt.GetPrefabData())
 			magName = magEnt.GetPrefabData().GetPrefabName();
 
+		// read-only instance identity: reference-change tag (SDK 1.8.0.13 exposes no raw
+		// entity-ID for IEntity; the proven lab pattern is reference comparison + tag).
+		// A different tag => the engine despawned/replaced the magazine entity instance,
+		// even if the prefab name is identical.
+		string magEntity = "-";
+		if (magEnt)
+		{
+			if (magEnt != m_rprobeMagEnt)
+			{
+				m_rprobeMagEnt = magEnt;
+				m_rprobeMagNextTag++;
+				m_rprobeMagTag = m_rprobeMagNextTag;
+			}
+			magEntity = "M" + m_rprobeMagTag.ToString();
+		}
+
 		int barrel = -1;
 		int chambered = -1;
 		if (weapon)
@@ -95,6 +116,7 @@ modded class SCR_CharacterCommandHandlerComponent
 			+ " startReloading=" + startReloading.ToString()
 			+ " wep=" + wep
 			+ " mag=" + magName
+			+ " magEntity=" + magEntity
 			+ " magAmmo=" + magAmmo.ToString() + "/" + magMax.ToString()
 			+ " barrel=" + barrel.ToString()
 			+ " chambered=" + chambered.ToString()

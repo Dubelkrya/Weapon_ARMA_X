@@ -21,7 +21,9 @@ modded class SCR_CharacterCommandHandlerComponent {
 - **Точная сигнатура (SDK 1.8.0.13, SOURCE):** `bool HandleWeaponReloading(CharacterInputContext pInputCtx, float pDt, int pCurrentCommandID)` на `CharacterCommandHandlerComponent` (скриптовый, переопределяемый). `HandleWeaponReloadingDefault(...)` — `proto external` (движковый).
 - **Точный lab-gate (сильный, компонентный):** текущее оружие через `GetControllerComponent() → BaseWeaponManagerComponent.GetCurrentWeapon() → BaseWeaponComponent.GetOwner()`; lab-идентификация — наличие компонента `ARMST_T4B_WeaponProbe` (проверенный lab-паттерн). Никаких substring/class-name гейтов.
 - **Non-lab:** немедленно `return super.HandleWeaponReloading(pInputCtx, pDt, pCurrentCommandID)` — оригинальное поведение не тронуто.
-- **Lab (phase 1):** только чтение + лог + `return true` (потребление запроса). Логируются: `cmd` (`pCurrentCommandID`), `reloadType` (`pInputCtx.GetWeaponReloadType()`), `startReloading` (`pInputCtx.WeaponIsStartReloading()`), префаб оружия, entity/префаб магазина, `magAmmo/magMax`, `barrel`, `chambered`.
+- **Lab (phase 1):** только чтение + лог + `return true` (потребление запроса). Логируются: `cmd` (`pCurrentCommandID`), `reloadType` (`pInputCtx.GetWeaponReloadType()`), `startReloading` (`pInputCtx.WeaponIsStartReloading()`), префаб оружия, entity/префаб магазина, **`magEntity=M<n>`**, `magAmmo/magMax`, `barrel`, `chambered`.
+
+**Instance identity (`magEntity`).** В SDK 1.8.0.13 нет документированного raw entity-ID для `IEntity`, поэтому применён проверенный lab-паттерн: сравнение ссылки на entity + счётчик-тег. `m_rprobeMagEnt/m_rprobeMagTag/m_rprobeMagNextTag` хранят последний наблюдённый `magEnt`; при смене ссылки тег инкрементируется. **Разный тег ⇒ движок уничтожил/заменил экземпляр магазина, даже если prefab-имя совпадает.** Read-only, поведение probe не изменено.
 
 ## 2. Запрещённые в phase 1 API — НЕ вызываются (проверено по коду)
 
