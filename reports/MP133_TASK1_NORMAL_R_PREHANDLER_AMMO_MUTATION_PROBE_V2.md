@@ -1,9 +1,9 @@
 # MP-133 Task #1 — NORMAL-R pre-handler ammo mutation probe V2
 
-Статус: **NORMAL_R_PREHANDLER_MUTATION_PROBE_PREPARED_WB_OPEN_STOP**
+Статус: **NORMAL_R_PREHANDLER_MUTATION_PROBE_READY_OWNER_TEST**
 Дата: 2026-10-05
 Задание: NORMAL R PRE-HANDLER AMMO MUTATION PROBE V2.
-Режим: static-audit + staged V2. **Workbench открыт → live script НЕ изменён** (жёсткий gate).
+Режим: static-audit + staged V2. **Workbench закрыт; staged V2 применён в live script.**
 
 ---
 
@@ -111,4 +111,4 @@ F. Снять лог до и после R; прислать строки `[ARMST
 
 V2 не подключает Astra, не решает физическую вставку, не трогает `MP133_Astra2.agf`/AST/ASI/AGR/AW/ANM/meta/G3B2, не восстанавливает CMD2-6, не компенсирует потерю патрона. Non-lab поведение — прежнее.
 
-**Статус: `NORMAL_R_PREHANDLER_MUTATION_PROBE_PREPARED_WB_OPEN_STOP`.** Нужно полностью закрыть Workbench; после этого применю staged V2 в live, синхронизирую labs, сделаю узкий commit и дам статус `NORMAL_R_PREHANDLER_MUTATION_PROBE_READY_OWNER_TEST`.
+**Статус: `NORMAL_R_PREHANDLER_MUTATION_PROBE_READY_OWNER_TEST`.** V2 применён в live (`Scripts/Game/ARMST_T4B/ARMST_T4B_NormalRHandlerProbe.c`, SHA-256 `C9D49A1B029E7A4CF39D5F31214666BE8B44F4D9881B170BDF839ED954B92EA6`), labs синхронизирован, узкий commit сделан. Ожидается один чистый прогон владельца: idle без R → одно короткое R → полная последовательность фаз `[ARMST-T4B-RPROBE]`.
