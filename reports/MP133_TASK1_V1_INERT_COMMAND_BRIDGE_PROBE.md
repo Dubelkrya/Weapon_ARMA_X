@@ -1,6 +1,6 @@
 # MP-133 Task #1 — V1 inert reload-command bridge probe (SOURCE PREP ONLY)
 
-Статус: **T4B_V1_INERT_BRIDGE_RACK_BYPASS_SOURCE_PREPARED_OWNER_REVIEW**
+Статус: **T4B_V1_INERT_BRIDGE_RACK_BYPASS_REVIEW_PASS_WAITING_WB_CLOSED**
 Дата: 2026-10-05
 Задание: Issue #34 — «V1 inert reload-command bridge probe (SOURCE PREP ONLY)» ([#6001717566](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34)) + one-shot ревизия + review-pass + owner GO.
 Режим: **source prep only**. Live = предыдущий one-shot вариант (`5CBB22C1…`, установлен ранее); rack-bypass ревизия **НЕ в live**. ASTRA2/prefab/world/Core/grid/inventory — не тронуты.
@@ -91,13 +91,24 @@
 
 ## Future owner runtime acceptance test (НЕ авторизован)
 
-После отдельного GO:
+После отдельного GO — правильная последовательность:
+```
+выстрел            → chambered=0
+первый R           → reloadType=1
+                   → native rack через super
+                   → chambered=1   (патронник снова заряжен)
+второй R           → смотрим raw reloadType
+```
 1. Cold-start Workbench → свежий `weapon_test`.
 2. Equip canonical ASTRA2 lab MP-133.
-3. Снять chamber.
-4. **Первый R должен быть rack:** штатный bolt/rack обязан отработать; `phase=inert-command-set` НЕ должен появиться (cmd10 не выставлен). → `NATIVE_RACK_BYPASS_PASS`.
-5. После того как chamber снова пуст — **второй R**.
-6. Проверить raw `reloadType` второго R:
+3. **Выстрел** → `chambered=0`.
+4. **Первый R** (патронник пуст):
+   - `reloadType=1`;
+   - native rack через `super`;
+   - после успешного передёргивания **`chambered=1`** (патронник снова заряжен, НЕ пуст);
+   - `phase=inert-command-set` **НЕ** появляется (cmd10 не выставлен).
+   → `NATIVE_RACK_BYPASS_PASS`.
+5. **Второй R** — уже при **заряженном** патроннике (`chambered=1`); именно он должен показать, что движок считает «обычной перезарядкой трубки». Смотреть raw `reloadType`:
    - `reloadType != 1` → ожидается one-shot cmd10 probe + weapon-local `[ARMST-T4B-CMDROUTE] … isReloadCommand=1 inert=1` → `R_TO_INERT_COMMAND_TO_WEAPON_RECEIVER_PROVEN`;
    - `reloadType` снова `1` → `POST_RACK_RELOADTYPE_STILL_1_STOP`, больше не экспериментировать.
 
@@ -113,7 +124,7 @@ Outcome labels:
 - Исходники подготовлены (2 файла), НЕ записаны в live.
 - Ничего из forbidden не использовано; `Update=0`, `HandleWeapons=0`; non-lab путь не изменён.
 
-Статус: **`T4B_V1_INERT_BRIDGE_RACK_BYPASS_SOURCE_PREPARED_OWNER_REVIEW`**. STOP.
+Статус: **`T4B_V1_INERT_BRIDGE_RACK_BYPASS_REVIEW_PASS_WAITING_WB_CLOSED`**. STOP.
 
 ---
 
