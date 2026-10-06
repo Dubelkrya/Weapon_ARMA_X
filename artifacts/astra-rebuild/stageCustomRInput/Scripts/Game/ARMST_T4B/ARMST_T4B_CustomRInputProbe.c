@@ -1,15 +1,17 @@
 // ============================================================================
 // ARMST MP-133 T4b - Phase B custom-R input probe (STAGED, lab-only, log-only).
 //
-// CONTEXT LIFECYCLE CORRECTION (owner compile result 6023499846):
-//   - `InputManager.DeactivateContext` does NOT exist in 1.8.0.13 -> removed.
-//   - Contexts use the engine's periodic activation model: call
-//     `ActivateContext(name)` every update frame while the condition holds, and
-//     simply STOP activating when it no longer holds. No explicit deactivation.
-//   - Per-frame hook: `SCR_PlayerController.OnUpdate(float timeSlice)` with
-//     `super.OnUpdate(timeSlice)` preserved (PROVEN local pattern in Core:
-//     ARMST_PLAYER_WEIGHT_SYSTEN.c `modded class SCR_PlayerController` +
-//     `override void OnUpdate` + `m_bIsLocalPlayerController`).
+// CONTEXT LIFECYCLE V2 (owner review 6023891764):
+//   - unsupported `override void OnDelete(IEntity owner)` on SCR_PlayerController
+//     REMOVED (PlayerController/SCR_PlayerController expose no OnDelete).
+//   - listener teardown now uses the PROVEN lifecycle hook
+//     `override void OnOwnershipChanged(bool changing, bool becameOwner)`
+//     (SDK 1.8.0.13: SCR_PlayerController.OnOwnershipChanged overrides
+//     PlayerController.OnOwnershipChanged(bool changing, bool becameOwner)); super kept.
+//   - periodic context activation unchanged: SCR_PlayerController.OnUpdate ->
+//     local gate -> controlled entity -> character controller -> weapon manager ->
+//     current weapon -> ARMST_T4B_WeaponProbe -> ActivateContext(...).
+//     `DeactivateContext` does NOT exist in 1.8.0.13 -> never called.
 //
 // Passive/log-only: NO HandleWeaponReloading, NO ReloadWeapon/ReloadWeaponWith/
 // SetReloadWeapon/SetCurrentCommand/CallCommand, NO SetAmmoCount/ClearChamber,
@@ -28,6 +30,7 @@ modded class SCR_PlayerController
 		if (!m_bIsLocalPlayerController)
 			return;
 
+		// registration-once; duplicate listeners prevented by m_bT4BRListenerActive
 		InputManager im = GetGame().GetInputManager();
 		if (im && !m_bT4BRListenerActive)
 		{
@@ -36,6 +39,20 @@ modded class SCR_PlayerController
 		}
 
 		T4BRMaintainContext();
+	}
+
+	// PROVEN lifecycle hook for loss of local ownership -> remove the listener.
+	override void OnOwnershipChanged(bool changing, bool becameOwner)
+	{
+		super.OnOwnershipChanged(changing, becameOwner);
+
+		if (!becameOwner && m_bT4BRListenerActive)
+		{
+			InputManager im = GetGame().GetInputManager();
+			if (im)
+				im.RemoveActionListener("ARMST_MP133_Reload", EActionTrigger.DOWN, T4BRInputDown);
+			m_bT4BRListenerActive = false;
+		}
 	}
 
 	// The ONLY per-frame gameplay-adjacent action: keep the lab context active while
@@ -68,17 +85,6 @@ modded class SCR_PlayerController
 		InputManager im = GetGame().GetInputManager();
 		if (im)
 			im.ActivateContext("ARMST_MP133_ReloadContext");
-	}
-
-	override void OnDelete(IEntity owner)
-	{
-		InputManager im = GetGame().GetInputManager();
-		if (im && m_bT4BRListenerActive)
-		{
-			im.RemoveActionListener("ARMST_MP133_Reload", EActionTrigger.DOWN, T4BRInputDown);
-			m_bT4BRListenerActive = false;
-		}
-		super.OnDelete(owner);
 	}
 
 	// Log-only: the custom action received physical R. No reload call, no writes.

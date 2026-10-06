@@ -1,9 +1,9 @@
 # MP-133 Task #1 — Custom-R input routing Phase B0 (source prep)
 
-Статус: **T4B_CUSTOM_R_PHASE_B_CONTEXT_LIFECYCLE_CORRECTED_OWNER_REVIEW**
+Статус: **T4B_CUSTOM_R_PHASE_B_CONTEXT_LIFECYCLE_CORRECTED_V2_OWNER_REVIEW**
 Дата: 2026-10-06
-Задание: Issue #34 — Phase B0 source prep + compile blocker / context lifecycle rework ([#6023499846](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34)).
-Режим: **staging only**. Live/labs/Core/gameplay **НЕ менялись** в этой правке; staged correction готов.
+Задание: Issue #34 — context lifecycle correction V2 ([#6023891764](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34)).
+Режим: **staging only**. Live/labs остаются на `9DBF75C4…`; staged correction V2 готов.
 
 ---
 
@@ -25,7 +25,7 @@
 |---|---|---|---|
 | `Configs/System/chimeraInputCommon.conf` | `71D4B2DD92B12BF93E76DEAF6B1B8CF763F2505D837981C7C469FF99D0DDCF4B` | 1661 | additive: `Action ARMST_MP133_Reload` (KC_R) + `ActionContext ARMST_MP133_ReloadContext` |
 | `Configs/System/keyBindingMenu.conf` | `368B51F7862B245C730E40CA1C226B369F845C7E0DC9B604E822F2078BCDC01D` | 791 | key-binding entry для `ARMST_MP133_Reload` |
-| `Scripts/Game/ARMST_T4B/ARMST_T4B_CustomRInputProbe.c` | `DE938A40249FEE0EE781E3C8D90A9F9AFFD19FEFD051B70ECD778DA30AB92D6A` | 4425 | listener + per-frame context activation + `[ARMST-T4B-RINPUT]` log |
+| `Scripts/Game/ARMST_T4B/ARMST_T4B_CustomRInputProbe.c` | `61F9671763889BBF933DDA33F4848A45FC3E08C1938597CF0250C599D71247AC` | 4807 | listener + per-frame context activation + `[ARMST-T4B-RINPUT]` log |
 
 **Целевые live-пути (при GO):** те же три пути в `ARMSTMP133T4B_InstalledMagProbe/`.
 
@@ -104,7 +104,45 @@ staged configs unchanged vs 50a1295 (diff empty)
 
 Live/labs/Core/world/grid/inventory/prefab/ASTRA2/Tube3/handler/observer — не тронуты. Глобальный `HandleWeaponReloading` не добавляется; global storage override не добавляется; cmd7 не используется; Chungus не копируется. Ничего в live не устанавливалось.
 
-Статус: **`T4B_CUSTOM_R_PHASE_B_CONTEXT_LIFECYCLE_CORRECTED_OWNER_REVIEW`**. STOP.
+Статус: **`T4B_CUSTOM_R_PHASE_B_CONTEXT_LIFECYCLE_CORRECTED_V2_OWNER_REVIEW`**. STOP.
+
+---
+
+## 8. PLAYERCONTROLLER LIFECYCLE V2 (owner #6023891764)
+
+**Blocker:** `override void OnDelete(IEntity owner)` на `SCR_PlayerController` — **не существует** (PlayerController/SCR_PlayerController не экспонируют `OnDelete`; есть `OnInit`/`OnUpdate`/`OnOwnershipChanged`/`OnControlledEntityChanged`/`OnDestroyed`). Удалён.
+
+**Исправление (staged):**
+- `override void OnDelete(...)` → **удалён** (`PlayerController OnDelete override = 0`).
+- Cleanup listener'а → **VERIFIED_LIFECYCLE**: `override void OnOwnershipChanged(bool changing, bool becameOwner)` + `super.OnOwnershipChanged(changing, becameOwner)`; при `!becameOwner && m_bT4BRListenerActive` → `RemoveActionListener("ARMST_MP133_Reload", DOWN, T4BRInputDown)` + `m_bT4BRListenerActive = false`.
+- Signature подтверждена SDK 1.8.0.13: `SCR_PlayerController.OnOwnershipChanged(bool changing, bool becameOwner)` переопределяет `PlayerController.OnOwnershipChanged(bool changing, bool becameOwner)` (void).
+- Periodic activation (`SCR_PlayerController.OnUpdate`) — **без изменений**.
+- Registration-once гарантирован флагом `m_bT4BRListenerActive` в `OnUpdate`.
+
+**Static verification (V2):**
+```
+PlayerController OnDelete override = 0
+DeactivateContext = 0
+ResetContext = 0
+ActivateContext = 1
+super.OnUpdate = 1
+local gate (m_bIsLocalPlayerController) = present
+controlled entity path (GetControlledEntity) = present
+ARMST_T4B_WeaponProbe gate = present
+listener registration = max once (m_bT4BRListenerActive)
+listener cleanup = VERIFIED_LIFECYCLE (OnOwnershipChanged, super present, RemoveActionListener path proven)
+unsupported lifecycle callbacks = 0
+reload APIs / ammo / mag / chamber / ASTRA / G3B2 = 0
+braces 11/11   parens 65/65
+```
+
+**ResourceDB:** `INPUT_CONFIG_NULL_GUID_WARNING = OBSERVED` — только observation; `.meta`/input configs **не менялись**.
+
+**Не менялось:** `Action = ARMST_MP133_Reload`, `Context = ARMST_MP133_ReloadContext`, `KC_R`, `Priority 20000`, `Flags 0x6 0`.
+
+**Live/labs остаются на `9DBF75C4C9721C23DB7663C6F0094C0678D9047711DACAA913145326E289BA69`.**
+
+**Следующий шаг (после re-review):** установить V2 source в live/labs и запустить Workbench **только ради compile PASS**; поведение `R` проверять лишь после чистой компиляции.
 
 ---
 
