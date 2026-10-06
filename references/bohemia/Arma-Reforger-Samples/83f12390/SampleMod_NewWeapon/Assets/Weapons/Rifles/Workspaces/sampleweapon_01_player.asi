@@ -1,0 +1,229 @@
+AnimSetInstanceSource "{61C8C0D9E319DD0E}" {
+ Template "{5CB30278D36EF298}Assets/Weapons/Rifles/Workspaces/sampleweapon_01.ast"
+ Lines {
+  AnimSetInstanceSource_Line "Reload.Erc.Fire" {
+   Resource "{240822D89A9449F9}Assets/Weapons/Rifles/AK74/anims/anm/p_rfl_ak74_erc_fire.anm"
+  }
+  AnimSetInstanceSource_Line "Reload.Pne.Fire" {
+   Resource "{240822D89A9449F9}Assets/Weapons/Rifles/AK74/anims/anm/p_rfl_ak74_erc_fire.anm"
+  }
+  AnimSetInstanceSource_Line "Reload.Erc.Idle" {
+   Resource "{7C7C94FAB2D52EC5}Assets/Weapons/Rifles/SampleWeapon_01/Anims/p_rfl_sampleweapon_01_safety.anm"
+  }
+  AnimSetInstanceSource_Line "Reload.Pne.Idle" {
+   Resource "{7C7C94FAB2D52EC5}Assets/Weapons/Rifles/SampleWeapon_01/Anims/p_rfl_sampleweapon_01_safety.anm"
+  }
+  AnimSetInstanceSource_Line "Reload.Erc.Reload_InsertMag" {
+   Resource "{2AD29A5F8EA325B3}Assets/Weapons/Rifles/SampleWeapon_01/Anims/p_rfl_sampleweapon_01_erc_mag_insert.anm"
+  }
+  AnimSetInstanceSource_Line "Reload.Pne.Reload_InsertMag" {
+   Resource "{E921C6A781329869}Assets/Weapons/Rifles/SampleWeapon_01/Anims/p_rfl_sampleweapon_01_pne_mag_insert.anm"
+  }
+  AnimSetInstanceSource_Line "Reload.Erc.Reload_RemoveMag" {
+   Resource "{54AC45E1586830CC}Assets/Weapons/Rifles/SampleWeapon_01/Anims/p_rfl_sampleweapon_01_erc_mag_remove.anm"
+  }
+  AnimSetInstanceSource_Line "Reload.Pne.Reload_RemoveMag" {
+   Resource "{323C934AEE7C2DFE}Assets/Weapons/Rifles/SampleWeapon_01/Anims/p_rfl_sampleweapon_01_pne_mag_remove.anm"
+  }
+  AnimSetInstanceSource_Line "Reload.Erc.ReloadActionBolt" {
+   Resource "{1051DEEDAEAFC4D2}Assets/Weapons/Rifles/SampleWeapon_01/Anims/p_rfl_sampleweapon_01_erc_bolt_rack.anm"
+  }
+  AnimSetInstanceSource_Line "Reload.Pne.ReloadActionBolt" {
+   Resource "{F051D3CE7F3404C8}Assets/Weapons/Rifles/SampleWeapon_01/Anims/p_rfl_sampleweapon_01_pne_bolt_rack.anm"
+  }
+  AnimSetInstanceSource_Line "Reload.Erc.Trigger" {
+   Resource "{240822D89A9449F9}Assets/Weapons/Rifles/AK74/anims/anm/p_rfl_ak74_erc_fire.anm"
+  }
+  AnimSetInstanceSource_Line "Reload.Pne.Trigger" {
+   Resource "{240822D89A9449F9}Assets/Weapons/Rifles/AK74/anims/anm/p_rfl_ak74_erc_fire.anm"
+  }
+  AnimSetInstanceSource_Line "Reload.Erc.Safety" {
+   Resource "{7C7C94FAB2D52EC5}Assets/Weapons/Rifles/SampleWeapon_01/Anims/p_rfl_sampleweapon_01_safety.anm"
+  }
+  AnimSetInstanceSource_Line "Reload.Pne.Safety" {
+   Resource "{7C7C94FAB2D52EC5}Assets/Weapons/Rifles/SampleWeapon_01/Anims/p_rfl_sampleweapon_01_safety.anm"
+  }
+  AnimSetInstanceSource_Line "Reload.Erc.Sight" {
+   Resource "{6F0A3935BB4B2A50}Assets/Weapons/Rifles/AK74/anims/anm/p_rfl_ak74_erc_sight.anm"
+  }
+  AnimSetInstanceSource_Line "Reload.Pne.Sight" {
+   Resource "{6F0A3935BB4B2A50}Assets/Weapons/Rifles/AK74/anims/anm/p_rfl_ak74_erc_sight.anm"
+  }
+  AnimSetInstanceSource_Line "Reload.Erc.Switch_Mode_Off" {
+   Resource "{8C38A62D81ACA24C}Assets/Weapons/Rifles/SampleWeapon_01/Anims/p_rfl_sampleweapon_01_modes_on.anm"
+  }
+  AnimSetInstanceSource_Line "Reload.Pne.IKOffset" {
+   Resource "{544ACE272DB47905}Assets/Weapons/Rifles/SampleWeapon_01/Anims/p_rfl_sampleweapon_01_offset.anm"
+  }
+  AnimSetInstanceSource_Line "Reload.Erc.Switch_Mode_On" {
+   Resource "{8C38A62D81ACA24C}Assets/Weapons/Rifles/SampleWeapon_01/Anims/p_rfl_sampleweapon_01_modes_on.anm"
+  }
+  AnimSetInstanceSource_Line "Reload.Erc.IKOffset" {
+   Resource "{544ACE272DB47905}Assets/Weapons/Rifles/SampleWeapon_01/Anims/p_rfl_sampleweapon_01_offset.anm"
+  }
+  AnimSetInstanceSource_Line "Reload.Erc.Finger_trigger_out" {
+   Resource "{58E569FD0BD355EC}Assets/Weapons/Rifles/AK74/anims/anm/p_ak74_trigger_finger_out.anm"
+  }
+  AnimSetInstanceSource_Line "Reload.Pne.Finger_trigger_out" {
+   Resource "{58E569FD0BD355EC}Assets/Weapons/Rifles/AK74/anims/anm/p_ak74_trigger_finger_out.anm"
+  }
+  AnimSetInstanceSource_Line "Reload.Erc.Idle_finger" {
+   Resource "{FA1A1A6F0591D49B}Assets/Weapons/Rifles/AK74/anims/anm/p_ak74_trigger_finger_pose.anm"
+  }
+  AnimSetInstanceSource_Line "Reload.Pne.Idle_finger" {
+   Resource "{FA1A1A6F0591D49B}Assets/Weapons/Rifles/AK74/anims/anm/p_ak74_trigger_finger_pose.anm"
+  }
+  AnimSetInstanceSource_Line "Reload.Erc.Finger_trigger_in" {
+   Resource "{5DF9283069B42ACD}Assets/Weapons/Rifles/AK74/anims/anm/p_ak74_trigger_finger_in.anm"
+  }
+  AnimSetInstanceSource_Line "Reload.Pne.Finger_trigger_in" {
+   Resource "{5DF9283069B42ACD}Assets/Weapons/Rifles/AK74/anims/anm/p_ak74_trigger_finger_in.anm"
+  }
+  AnimSetInstanceSource_Line "Inspection.Cro.LeftInspectionIn" {
+   Resource "{9433E4919CBBAB46}Assets/Weapons/Rifles/SampleWeapon_01/Anims/p_rfl_sampleweapon_wpn_insp_cro_left_in.anm"
+  }
+  AnimSetInstanceSource_Line "Inspection.CroRas.LeftInspectionIn" {
+   Resource "{9433E4919CBBAB46}Assets/Weapons/Rifles/SampleWeapon_01/Anims/p_rfl_sampleweapon_wpn_insp_cro_left_in.anm"
+  }
+  AnimSetInstanceSource_Line "Inspection.Cro.LeftInspectionLoop" {
+   Resource "{2D9EAD8B2CA21D1F}Assets/Weapons/Rifles/SampleWeapon_01/Anims/p_rfl_sampleweapon_wpn_insp_cro_left_loop.anm"
+  }
+  AnimSetInstanceSource_Line "Inspection.CroRas.LeftInspectionLoop" {
+   Resource "{2D9EAD8B2CA21D1F}Assets/Weapons/Rifles/SampleWeapon_01/Anims/p_rfl_sampleweapon_wpn_insp_cro_left_loop.anm"
+  }
+  AnimSetInstanceSource_Line "Inspection.Cro.LeftInspectionOut" {
+   Resource "{6E4002BC26636423}Assets/Weapons/Rifles/SampleWeapon_01/Anims/p_rfl_sampleweapon_wpn_insp_cro_left_out.anm"
+  }
+  AnimSetInstanceSource_Line "Inspection.CroRas.LeftInspectionOut" {
+   Resource "{6E4002BC26636423}Assets/Weapons/Rifles/SampleWeapon_01/Anims/p_rfl_sampleweapon_wpn_insp_cro_left_out.anm"
+  }
+  AnimSetInstanceSource_Line "Inspection.Cro.Left2Right" {
+   Resource "{733B03A8F67E7EA4}Assets/Weapons/Rifles/SampleWeapon_01/Anims/p_rfl_sampleweapon_wpn_insp_cro_left_to_right.anm"
+  }
+  AnimSetInstanceSource_Line "Inspection.CroRas.Left2Right" {
+   Resource "{733B03A8F67E7EA4}Assets/Weapons/Rifles/SampleWeapon_01/Anims/p_rfl_sampleweapon_wpn_insp_cro_left_to_right.anm"
+  }
+  AnimSetInstanceSource_Line "Inspection.Cro.Right2Left" {
+   Resource "{420BC861C13D53F1}Assets/Weapons/Rifles/SampleWeapon_01/Anims/p_rfl_sampleweapon_wpn_insp_cro_right_to_left.anm"
+  }
+  AnimSetInstanceSource_Line "Inspection.CroRas.Right2Left" {
+   Resource "{420BC861C13D53F1}Assets/Weapons/Rifles/SampleWeapon_01/Anims/p_rfl_sampleweapon_wpn_insp_cro_right_to_left.anm"
+  }
+  AnimSetInstanceSource_Line "Inspection.Erc.LeftInspectionIn" {
+   Resource "{6BE0C21A8CBA806F}Assets/Weapons/Rifles/SampleWeapon_01/Anims/p_rfl_sampleweapon_wpn_insp_erc_left_in_ras.anm"
+  }
+  AnimSetInstanceSource_Line "Inspection.ErcRas.LeftInspectionIn" {
+   Resource "{6BE0C21A8CBA806F}Assets/Weapons/Rifles/SampleWeapon_01/Anims/p_rfl_sampleweapon_wpn_insp_erc_left_in_ras.anm"
+  }
+  AnimSetInstanceSource_Line "Inspection.Erc.LeftInspectionLoop" {
+   Resource "{075C3517B02376DB}Assets/Weapons/Rifles/SampleWeapon_01/Anims/p_rfl_sampleweapon_wpn_insp_erc_left_loop.anm"
+  }
+  AnimSetInstanceSource_Line "Inspection.ErcRas.LeftInspectionLoop" {
+   Resource "{075C3517B02376DB}Assets/Weapons/Rifles/SampleWeapon_01/Anims/p_rfl_sampleweapon_wpn_insp_erc_left_loop.anm"
+  }
+  AnimSetInstanceSource_Line "Inspection.Erc.LeftInspectionOut" {
+   Resource "{884697970214EE97}Assets/Weapons/Rifles/SampleWeapon_01/Anims/p_rfl_sampleweapon_wpn_insp_erc_left_out.anm"
+  }
+  AnimSetInstanceSource_Line "Inspection.ErcRas.LeftInspectionOut" {
+   Resource "{884697970214EE97}Assets/Weapons/Rifles/SampleWeapon_01/Anims/p_rfl_sampleweapon_wpn_insp_erc_left_out.anm"
+  }
+  AnimSetInstanceSource_Line "Inspection.Erc.Left2Right" {
+   Resource "{58C1ADF1BF190B55}Assets/Weapons/Rifles/SampleWeapon_01/Anims/p_rfl_sampleweapon_wpn_insp_erc_left_to_right.anm"
+  }
+  AnimSetInstanceSource_Line "Inspection.ErcRas.Left2Right" {
+   Resource "{58C1ADF1BF190B55}Assets/Weapons/Rifles/SampleWeapon_01/Anims/p_rfl_sampleweapon_wpn_insp_erc_left_to_right.anm"
+  }
+  AnimSetInstanceSource_Line "Inspection.Erc.Right2Left" {
+   Resource "{69F16638885A2601}Assets/Weapons/Rifles/SampleWeapon_01/Anims/p_rfl_sampleweapon_wpn_insp_erc_right_to_left.anm"
+  }
+  AnimSetInstanceSource_Line "Inspection.ErcRas.Right2Left" {
+   Resource "{69F16638885A2601}Assets/Weapons/Rifles/SampleWeapon_01/Anims/p_rfl_sampleweapon_wpn_insp_erc_right_to_left.anm"
+  }
+  AnimSetInstanceSource_Line "Inspection.Pne.LeftInspectionIn" {
+   Resource "{EE5FB4E3378100D1}Assets/Weapons/Rifles/SampleWeapon_01/Anims/p_rfl_sampleweapon_wpn_insp_pne_left_in.anm"
+  }
+  AnimSetInstanceSource_Line "Inspection.PneRas.LeftInspectionIn" {
+   Resource "{EE5FB4E3378100D1}Assets/Weapons/Rifles/SampleWeapon_01/Anims/p_rfl_sampleweapon_wpn_insp_pne_left_in.anm"
+  }
+  AnimSetInstanceSource_Line "Inspection.Pne.LeftInspectionLoop" {
+   Resource "{ED1FA0137E951915}Assets/Weapons/Rifles/SampleWeapon_01/Anims/p_rfl_sampleweapon_wpn_insp_pne_left_loop.anm"
+  }
+  AnimSetInstanceSource_Line "Inspection.PneRas.LeftInspectionLoop" {
+   Resource "{ED1FA0137E951915}Assets/Weapons/Rifles/SampleWeapon_01/Anims/p_rfl_sampleweapon_wpn_insp_pne_left_loop.anm"
+  }
+  AnimSetInstanceSource_Line "Inspection.Pne.LeftInspectionOut" {
+   Resource "{65D5F45F08D7E8A5}Assets/Weapons/Rifles/SampleWeapon_01/Anims/p_rfl_sampleweapon_wpn_insp_pne_left_out.anm"
+  }
+  AnimSetInstanceSource_Line "Inspection.PneRas.LeftInspectionOut" {
+   Resource "{65D5F45F08D7E8A5}Assets/Weapons/Rifles/SampleWeapon_01/Anims/p_rfl_sampleweapon_wpn_insp_pne_left_out.anm"
+  }
+  AnimSetInstanceSource_Line "Inspection.Pne.Left2Right" {
+   Resource "{10A8CD835DBEBE68}Assets/Weapons/Rifles/SampleWeapon_01/Anims/p_rfl_sampleweapon_wpn_insp_pne_left_to_right.anm"
+  }
+  AnimSetInstanceSource_Line "Inspection.PneRas.Left2Right" {
+   Resource "{10A8CD835DBEBE68}Assets/Weapons/Rifles/SampleWeapon_01/Anims/p_rfl_sampleweapon_wpn_insp_pne_left_to_right.anm"
+  }
+  AnimSetInstanceSource_Line "Inspection.Pne.Right2Left" {
+   Resource "{2198064A6AFD933D}Assets/Weapons/Rifles/SampleWeapon_01/Anims/p_rfl_sampleweapon_wpn_insp_pne_right_to_left.anm"
+  }
+  AnimSetInstanceSource_Line "Inspection.PneRas.Right2Left" {
+   Resource "{2198064A6AFD933D}Assets/Weapons/Rifles/SampleWeapon_01/Anims/p_rfl_sampleweapon_wpn_insp_pne_right_to_left.anm"
+  }
+  AnimSetInstanceSource_Line "Inspection.Cro.RightInspectionIn" {
+   Resource "{3830FBB3325D67D6}Assets/Weapons/Rifles/SampleWeapon_01/Anims/p_rfl_sampleweapon_wpn_insp_cro_right_in.anm"
+  }
+  AnimSetInstanceSource_Line "Inspection.CroRas.RightInspectionIn" {
+   Resource "{3830FBB3325D67D6}Assets/Weapons/Rifles/SampleWeapon_01/Anims/p_rfl_sampleweapon_wpn_insp_cro_right_in.anm"
+  }
+  AnimSetInstanceSource_Line "Inspection.Cro.RightInspectionLoop" {
+   Resource "{826626DE33315C04}Assets/Weapons/Rifles/SampleWeapon_01/Anims/p_rfl_sampleweapon_wpn_insp_cro_right_loop.anm"
+  }
+  AnimSetInstanceSource_Line "Inspection.CroRas.RightInspectionLoop" {
+   Resource "{826626DE33315C04}Assets/Weapons/Rifles/SampleWeapon_01/Anims/p_rfl_sampleweapon_wpn_insp_cro_right_loop.anm"
+  }
+  AnimSetInstanceSource_Line "Inspection.Cro.RightInspectionOut" {
+   Resource "{8C8A9EE28E99BE51}Assets/Weapons/Rifles/SampleWeapon_01/Anims/p_rfl_sampleweapon_wpn_insp_cro_right_out.anm"
+  }
+  AnimSetInstanceSource_Line "Inspection.CroRas.RightInspectionOut" {
+   Resource "{8C8A9EE28E99BE51}Assets/Weapons/Rifles/SampleWeapon_01/Anims/p_rfl_sampleweapon_wpn_insp_cro_right_out.anm"
+  }
+  AnimSetInstanceSource_Line "Inspection.Erc.RightInspectionIn" {
+   Resource "{D479CA0FFD06311C}Assets/Weapons/Rifles/AK74/anims/anm/p_AK74_weapon_inspection_erc_right_in_ras.anm"
+  }
+  AnimSetInstanceSource_Line "Inspection.ErcRas.RightInspectionIn" {
+   Resource "{D479CA0FFD06311C}Assets/Weapons/Rifles/AK74/anims/anm/p_AK74_weapon_inspection_erc_right_in_ras.anm"
+  }
+  AnimSetInstanceSource_Line "Inspection.Erc.RightInspectionLoop" {
+   Resource "{9B0344E0DCC82642}Assets/Weapons/Rifles/SampleWeapon_01/Anims/p_rfl_sampleweapon_wpn_insp_erc_right_loop.anm"
+  }
+  AnimSetInstanceSource_Line "Inspection.ErcRas.RightInspectionLoop" {
+   Resource "{9B0344E0DCC82642}Assets/Weapons/Rifles/SampleWeapon_01/Anims/p_rfl_sampleweapon_wpn_insp_erc_right_loop.anm"
+  }
+  AnimSetInstanceSource_Line "Inspection.Erc.RightInspectionOut" {
+   Resource "{0C2E00B2DA668EFA}Assets/Weapons/Rifles/AK74/anims/anm/p_AK74_weapon_inspection_erc_right_out_ras.anm"
+  }
+  AnimSetInstanceSource_Line "Inspection.ErcRas.RightInspectionOut" {
+   Resource "{0C2E00B2DA668EFA}Assets/Weapons/Rifles/AK74/anims/anm/p_AK74_weapon_inspection_erc_right_out_ras.anm"
+  }
+  AnimSetInstanceSource_Line "Inspection.Pne.RightInspectionIn" {
+   Resource "{33A50D501CE9EB50}Assets/Weapons/Rifles/SampleWeapon_01/Anims/p_rfl_sampleweapon_wpn_insp_pne_right_in.anm"
+  }
+  AnimSetInstanceSource_Line "Inspection.PneRas.RightInspectionIn" {
+   Resource "{33A50D501CE9EB50}Assets/Weapons/Rifles/SampleWeapon_01/Anims/p_rfl_sampleweapon_wpn_insp_pne_right_in.anm"
+  }
+  AnimSetInstanceSource_Line "Inspection.Pne.RightInspectionLoop" {
+   Resource "{2F945959936B02E6}Assets/Weapons/Rifles/SampleWeapon_01/Anims/p_rfl_sampleweapon_wpn_insp_pne_right_loop.anm"
+  }
+  AnimSetInstanceSource_Line "Inspection.PneRas.RightInspectionLoop" {
+   Resource "{2F945959936B02E6}Assets/Weapons/Rifles/SampleWeapon_01/Anims/p_rfl_sampleweapon_wpn_insp_pne_right_loop.anm"
+  }
+  AnimSetInstanceSource_Line "Inspection.Pne.RightInspectionOut" {
+   Resource "{4C0B937ADCAEBA5A}Assets/Weapons/Rifles/SampleWeapon_01/Anims/p_rfl_sampleweapon_wpn_insp_pne_right_out.anm"
+  }
+  AnimSetInstanceSource_Line "Inspection.PneRas.RightInspectionOut" {
+   Resource "{4C0B937ADCAEBA5A}Assets/Weapons/Rifles/SampleWeapon_01/Anims/p_rfl_sampleweapon_wpn_insp_pne_right_out.anm"
+  }
+ }
+ RBF AnimSetInstanceSourceRBFArray "{5AD0A6B7CBB9A6BA}" {
+ }
+}
