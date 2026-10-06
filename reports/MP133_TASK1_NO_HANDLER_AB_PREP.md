@@ -1,9 +1,9 @@
 # MP-133 Task #1 — No-handler A/B (source prep)
 
-Статус: **T4B_NO_HANDLER_AB_REVIEW_PASS_WAITING_WB_CLOSED**
+Статус: **T4B_NO_HANDLER_AB_LIVE_READY_OWNER_RACK_TEST**
 Дата: 2026-10-06
-Задание: Issue #34 — «prepare clean A/B with NO T4B HandleWeaponReloading override» ([#6009194998](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34)).
-Режим: **source prep only**. Live **НЕ изменялся**.
+Задание: Issue #34 — «prepare clean A/B with NO T4B HandleWeaponReloading override» ([#6009194998](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34)) + owner GO на установку.
+Режим: **A/B установлен в live** (Workbench закрыт); observer без изменений.
 
 Предыдущий результат: `RACK_STILL_BROKEN_WITH_ONLY_T4B_HANDLER` — конкурирующий исторический `ARMST_MP133_AnimationLab` **не** был единственной причиной.
 
@@ -71,4 +71,19 @@ Outcomes:
 - A/B source подготовлен (override полностью отсутствует; только два инертных глобала для observer).
 - Live не менялся; ASTRA2/graph/prefab/observer/Tube3/Core/grid/inventory — не тронуты.
 
-Статус: **`T4B_NO_HANDLER_AB_REVIEW_PASS_WAITING_WB_CLOSED`**. STOP.
+Статус: **`T4B_NO_HANDLER_AB_LIVE_READY_OWNER_RACK_TEST`**. STOP.
+
+---
+
+## 7. LIVE INSTALL — no-handler A/B (owner GO, Workbench закрыт)
+
+| файл | SHA-256 | проверки (code-only) |
+|---|---|---|
+| `Scripts/Game/ARMST_T4B/ARMST_T4B_NormalRHandlerProbe.c` | `D5BA3052C07CD9B470F638AFF10DFB6C97ED835F08CF95D57E228A332F2658DE` | `modded class=0`, `HandleWeaponReloading=0`, `HandleWeaponReloadingDefault=0`, `override=0`, `Update=0`, `HandleWeapons=0`, writers=0; только два `const int` |
+| `Scripts/Game/ARMST_T4B/ARMST_T4B_AstraV2_WeaponAnimationComponent.c` | `B3D71CF57ACBF95C55D4B0098FDDACF86F00CF9B93AA88C287856D9914228D28` | **не изменён** |
+
+Labs: handler синхронизирован (`D5BA3052…`); observer без изменений.
+Rollback: live handler `83DA1EC584B13D251359B776D2C05AEE41E07A42ACB3334389814C0501BA8B39`; observer `B3D71CF5…`.
+
+**Owner rack test (единственный):** cold start → canonical MP-133 → выстрел → один `R` → вернулся ли native rack.
+Outcomes: `RACK_RECOVERED_WITH_T4B_HANDLER_REMOVED` / `RACK_STILL_BROKEN_WITH_T4B_HANDLER_REMOVED`.
