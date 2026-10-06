@@ -1,9 +1,65 @@
 # MP-133 Task #1 — Custom-R input routing Phase B0 (source prep)
 
-Статус: **T4B_CUSTOM_R_PHASE_B_GUID_REGISTRATION_PATH_AUDIT_COMPLETE**
+Статус: **T4B_CUSTOM_R_PHASE_B_FINAL_INPUT_CONFIG_STAGED_OWNER_REVIEW**
 Дата: 2026-10-07
-Задание: Issue #34 — read-only аудит корректного GUID/resource-registration пути для T4B `.meta` (owner-review `6025746594`). Fix НЕ выполняется; `.meta` не создаются.
-Режим: **READ-ONLY AUDIT** — live/labs/configs/script/Core не менялись; `.meta` не создавались.
+Задание: Issue #34 — staged структурная правка финального input-конфига перед Workbench-регистрацией ([#6025912911](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34)). Только staging; live/labs не тронуты.
+Режим: **STAGING ONLY** — изменён только staged `chimeraInputCommon.conf` (`ActionRefs +{` → `ActionRefs {`); `.meta`/GUID не создавались.
+
+---
+
+## FINAL INPUT CONFIG STRUCTURE PRE-REGISTRATION (owner task 6025912911)
+
+**Цель:** подготовить финальную структуру конфига, которую owner позже зарегистрирует через Workbench. Source-only / staging-only.
+
+**Ровно одна правка** — новый контекст переведён с аддитивного оператора на обычный массив:
+
+```diff
+   ActionContext ARMST_MP133_ReloadContext {
+    Priority 20000
+    Flags 0x6 0
+-   ActionRefs +{
++   ActionRefs {
+     "ARMST_MP133_Reload"
+    }
+   }
+```
+
+**Итоговый staged блок:**
+
+```text
+ActionContext ARMST_MP133_ReloadContext {
+ Priority 20000
+ Flags 0x6 0
+ ActionRefs {
+  "ARMST_MP133_Reload"
+ }
+}
+```
+
+**SHA:**
+
+| файл | old | new |
+|---|---|---|
+| staged `Configs/System/chimeraInputCommon.conf` | `71D4B2DD92B12BF93E76DEAF6B1B8CF763F2505D837981C7C469FF99D0DDCF4B` | `57778A1D2ED7EDCA8A321CCDF2D5A76A8092E8C0319D0D4ED9DDE07194F60993` |
+| staged `Configs/System/keyBindingMenu.conf` | `368B51F7862B245C730E40CA1C226B369F845C7E0DC9B604E822F2078BCDC01D` | same (не менялся) |
+
+**Не менялось:** Action `ARMST_MP133_Reload`, context `ARMST_MP133_ReloadContext`, `Priority 20000`, `Flags 0x6 0`, `keyboard:KC_R`, `InputSourceValue "{B1C2D3E4F5A60001}"`, `keyBindingMenu.conf`, скрипты, live/labs, Core.
+
+**Verification:**
+```
+chimeraInputCommon.conf structural delta = exactly 1 token/operator change (+{ -> {)
+keyBindingMenu.conf changed = NO
+.meta created = NO
+GUID invented = NO
+script changed = NO
+live changed = NO
+labs installed copy changed = NO
+Core changed = NO
+```
+
+**Next (owner):** review этого diff → отдельный install GO → owner вручную регистрирует оба `.conf` в Workbench (Workbench генерирует реальные `.meta` + уникальные GUID) → синк `.meta` в labs + commit → owner runtime (`context_state active=true`, `RINPUT = YES/NO`, vanilla cmd1..6 = YES/NO).
+
+Status: **`T4B_CUSTOM_R_PHASE_B_FINAL_INPUT_CONFIG_STAGED_OWNER_REVIEW`**. STOP.
 
 ---
 
