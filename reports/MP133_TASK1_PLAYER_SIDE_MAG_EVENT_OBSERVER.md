@@ -1,8 +1,8 @@
-# MP-133 Task #1 — Player/character-side mag-event observer (source prep)
+# MP-133 Task #1 — Player/character-side mag-event observer (LIVE)
 
-Статус: **T4B_PLAYER_SIDE_MAG_EVENT_OBSERVER_SOURCE_CORRECTED_OWNER_REREVIEW**
+Статус: **T4B_PLAYER_SIDE_MAG_EVENT_OBSERVER_LIVE_READY_OWNER_TEST**
 Дата: 2026-10-06
-Режим: **source prep only**. Live **НЕ изменялся**.
+Режим: **corrected observer установлен в live** (Workbench/editor/game закрыты); handler и weapon observer без изменений.
 
 ---
 
@@ -77,4 +77,21 @@ Rollback: удалить новый файл (ничего существующ�
 
 Live/граф/prefab/observer/Tube3/Core/grid/inventory не менялись; `GAMEPLAY_FILES_CHANGED=0`. cmd7 не предлагается; глобальный `HandleWeaponReloading` не восстанавливается; Chungus — reference-only.
 
-Статус: **`T4B_PLAYER_SIDE_MAG_EVENT_OBSERVER_SOURCE_CORRECTED_OWNER_REREVIEW`**. STOP.
+Статус: **`T4B_PLAYER_SIDE_MAG_EVENT_OBSERVER_LIVE_READY_OWNER_TEST`**. STOP.
+
+---
+
+## 7. LIVE INSTALL (owner GO #6021210972, Workbench/editor/game закрыты)
+
+| файл | SHA-256 |
+|---|---|
+| live `Scripts/Game/ARMST_T4B/ARMST_T4B_CharacterMagEventObserver.c` | `88BC52CB0FED611F8039EFD7C5754D1835BD348D9214825AC70AF1E69E181738` |
+| labs `labs/ARMSTMP133T4B_InstalledMagProbe/Scripts/Game/ARMST_T4B/ARMST_T4B_CharacterMagEventObserver.c` | `88BC52CB0FED611F8039EFD7C5754D1835BD348D9214825AC70AF1E69E181738` (byte-identical) |
+| handler `ARMST_T4B_NormalRHandlerProbe.c` | `D5BA3052C07CD9B470F638AFF10DFB6C97ED835F08CF95D57E228A332F2658DE` (**не изменён**) |
+| weapon observer `ARMST_T4B_AstraV2_WeaponAnimationComponent.c` | `7BE1D37513AF31E0C5BC3629BC3301DAFABEC966129AF83D04B688DD4D19BF8A` (**не изменён**) |
+
+Static (code-only): braces 6/6, parens 43/43; `modded class SCR_CharacterControllerComponent`=1, `GetOnAnimationEvent`=1, `StartsWith("Weapon_")`=1; writers=0, `Update`/`HandleWeapons`/`HandleWeaponReloading`/`SetReloadWeapon`=0, timers/input listeners=0.
+
+Rollback: удалить новый character observer из live и labs.
+
+**Owner runtime test (не запускаю сам):** cold start → canonical MP-133 → выстрел → один `R` → дождаться завершения reload. Снять `[ARMST-T4B-CMDROUTE]` + `[ARMST-T4B-MAGEVT]` + `[ARMST-T4B-CHAREVT]` (+ `[ARMST-T4B-ASTRA]`). Обязательная sanity: native `cmd1` rack обязан физически работать. Второй `R` не нажимать.
