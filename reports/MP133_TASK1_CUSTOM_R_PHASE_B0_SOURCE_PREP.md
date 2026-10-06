@@ -1,9 +1,9 @@
 # MP-133 Task #1 — Custom-R input routing Phase B0 (source prep)
 
-Статус: **T4B_CUSTOM_R_PHASE_B0_CORRECTED_OWNER_REREVIEW**
+Статус: **T4B_CUSTOM_R_PHASE_B_LIVE_READY_OWNER_TEST**
 Дата: 2026-10-06
-Задание: Issue #34 — Phase B0 source prep ([#6021866345](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34)) + owner review [#6022566622](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34) (BLOCKED: lifecycle/callback).
-Режим: **source-only**. Live/labs/Core/gameplay **не менялись**. Staged: `artifacts/astra-rebuild/stageCustomRInput/`.
+Задание: Issue #34 — Phase B0 source prep ([#6021866345](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34)) + owner review [#6022566622](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34) + source-review PASS [#6022732135](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34) + install GO [#6023003378](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34).
+Режим: **3 staged-файла установлены в live + labs** (Workbench/editor/game закрыты).
 
 ---
 
@@ -104,4 +104,21 @@ staged configs unchanged vs 50a1295 (diff empty)
 
 Live/labs/Core/world/grid/inventory/prefab/ASTRA2/Tube3/handler/observer — не тронуты. Глобальный `HandleWeaponReloading` не добавляется; global storage override не добавляется; cmd7 не используется; Chungus не копируется. Ничего в live не устанавливалось.
 
-Статус: **`T4B_CUSTOM_R_PHASE_B0_CORRECTED_OWNER_REREVIEW`**.
+Статус: **`T4B_CUSTOM_R_PHASE_B_LIVE_READY_OWNER_TEST`**. STOP.
+
+---
+
+## 6. LIVE INSTALL (owner GO #6023003378, Workbench/editor/game закрыты)
+
+Установлены ровно 3 staged-файла (byte-identical) в live + labs:
+
+| файл | live SHA-256 | labs SHA-256 |
+|---|---|---|
+| `Configs/System/chimeraInputCommon.conf` | `71D4B2DD92B12BF93E76DEAF6B1B8CF763F2505D837981C7C469FF99D0DDCF4B` | same |
+| `Configs/System/keyBindingMenu.conf` | `368B51F7862B245C730E40CA1C226B369F845C7E0DC9B604E822F2078BCDC01D` | same |
+| `Scripts/Game/ARMST_T4B/ARMST_T4B_CustomRInputProbe.c` | `9DBF75C4C9721C23DB7663C6F0094C0678D9047711DACAA913145326E289BA69` | same |
+
+Protected (unchanged): handler `D5BA3052…`, weapon observer `7BE1D375…`, character observer `88BC52CB…`.
+Live addon resolved manually (no real Python in env; `addon_path.py` = Windows Store stub) and validated: `ARMSTMP133T4B_InstalledMagProbe/addon.gproj` ID `ARMSTMP133T4BInstalledMag`, GUID `B1C2D3E4F5061728`, `Prefabs/`+`Scripts/` present. **Core untouched.**
+
+**Owner Phase-B test (не запускаю сам):** Test A (не-MP-133) → `R` → `[ARMST-T4B-RINPUT]` отсутствует, vanilla работает. Test B (canonical MP-133) → один `R` → смотреть `[ARMST-T4B-RINPUT]` + `[ARMST-T4B-CMDROUTE]`.
