@@ -1,9 +1,9 @@
 # MP-133 Task #1 — Custom-R input routing Phase B0 (source prep)
 
-Статус: **T4B_CUSTOM_R_PHASE_B_LIVE_READY_OWNER_TEST**
+Статус: **T4B_CUSTOM_R_PHASE_B_CONTEXT_LIFECYCLE_CORRECTED_OWNER_REVIEW**
 Дата: 2026-10-06
-Задание: Issue #34 — Phase B0 source prep ([#6021866345](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34)) + owner review [#6022566622](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34) + source-review PASS [#6022732135](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34) + install GO [#6023003378](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34).
-Режим: **3 staged-файла установлены в live + labs** (Workbench/editor/game закрыты).
+Задание: Issue #34 — Phase B0 source prep + compile blocker / context lifecycle rework ([#6023499846](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34)).
+Режим: **staging only**. Live/labs/Core/gameplay **НЕ менялись** в этой правке; staged correction готов.
 
 ---
 
@@ -25,7 +25,7 @@
 |---|---|---|---|
 | `Configs/System/chimeraInputCommon.conf` | `71D4B2DD92B12BF93E76DEAF6B1B8CF763F2505D837981C7C469FF99D0DDCF4B` | 1661 | additive: `Action ARMST_MP133_Reload` (KC_R) + `ActionContext ARMST_MP133_ReloadContext` |
 | `Configs/System/keyBindingMenu.conf` | `368B51F7862B245C730E40CA1C226B369F845C7E0DC9B604E822F2078BCDC01D` | 791 | key-binding entry для `ARMST_MP133_Reload` |
-| `Scripts/Game/ARMST_T4B/ARMST_T4B_CustomRInputProbe.c` | `9DBF75C4C9721C23DB7663C6F0094C0678D9047711DACAA913145326E289BA69` | 5682 | listener + event-driven context lifecycle + `[ARMST-T4B-RINPUT]` log |
+| `Scripts/Game/ARMST_T4B/ARMST_T4B_CustomRInputProbe.c` | `DE938A40249FEE0EE781E3C8D90A9F9AFFD19FEFD051B70ECD778DA30AB92D6A` | 4425 | listener + per-frame context activation + `[ARMST-T4B-RINPUT]` log |
 
 **Целевые live-пути (при GO):** те же три пути в `ARMSTMP133T4B_InstalledMagProbe/`.
 
@@ -104,7 +104,42 @@ staged configs unchanged vs 50a1295 (diff empty)
 
 Live/labs/Core/world/grid/inventory/prefab/ASTRA2/Tube3/handler/observer — не тронуты. Глобальный `HandleWeaponReloading` не добавляется; global storage override не добавляется; cmd7 не используется; Chungus не копируется. Ничего в live не устанавливалось.
 
-Статус: **`T4B_CUSTOM_R_PHASE_B_LIVE_READY_OWNER_TEST`**. STOP.
+Статус: **`T4B_CUSTOM_R_PHASE_B_CONTEXT_LIFECYCLE_CORRECTED_OWNER_REVIEW`**. STOP.
+
+---
+
+## 7. PHASE B COMPILE BLOCKER / CONTEXT LIFECYCLE CORRECTION (owner #6023499846)
+
+**Compile blocker:** `InputManager.DeactivateContext` — **Undefined** в 1.8.0.13 (строки 75/128) → Game module не собрался. Инсталляция `c069038` в live была **непригодна** для runtime.
+
+**Исправление (staged):**
+- `DeactivateContext` удалён полностью (`= 0`); `ResetContext` не используется (`= 0`).
+- Context lifecycle → **periodic activation**: `modded class SCR_PlayerController` + `override void OnUpdate(float timeSlice)` c `super.OnUpdate(timeSlice)` (PROVEN local pattern: Core `ARMST_PLAYER_WEIGHT_SYSTEN.c`). Каждый кадр: local gate (`m_bIsLocalPlayerController`) → controlled entity → character controller → weapon manager → current weapon → `ARMST_T4B_WeaponProbe` → `ActivateContext("ARMST_MP133_ReloadContext")`. Когда условие не выполняется — просто **не активируем** (без deactivate).
+- Action listener оставлен log-only, balanced (`AddActionListener=1`/`RemoveActionListener=1`), local-only.
+- Weapon-change invoker удалён полностью (не нужен при per-frame модели).
+- Per-frame тело — **только** local gate + weapon probe + `ActivateContext`; никаких ammo/donor/reload/mag/chamber/ASTRA/G3B2/Print-спама.
+
+**Static verification:**
+```
+DeactivateContext = 0
+ResetContext = 0
+ActivateContext = 1
+m_bIsLocalPlayerController (local gate) = 2
+ARMST_T4B_WeaponProbe gate = 2
+super.OnUpdate = 1
+AddActionListener = 1   RemoveActionListener = 1
+modded class SCR_PlayerController = 1
+braces 11/11   parens 64/64
+reload APIs / ammo / mag / chamber / ASTRA / G3B2 / HandleWeapons / CallLater = 0
+```
+
+**ResourceDB warning (observation, НЕ fatal):**
+`INPUT_CONFIG_NULL_GUID_WARNING = OBSERVED` для `Configs/System/chimeraInputCommon.conf` и `keyBindingMenu.conf`.
+Проверка конвенции: рабочие Core-конфиги **имеют `.meta`** (`ARMST-PLATFORM---Core/Configs/System/chimeraInputCommon.conf.meta`, `keyBindingMenu.conf.meta` — `exists=True`), а lab-копии — **нет** (`exists=False`). Вероятная причина null-GUID. **Конфиги не меняю** до доказательства (компиляция + регистрация input проверяются runtime).
+
+**Не менялось:** `Action = ARMST_MP133_Reload`, `Context = ARMST_MP133_ReloadContext`, `KC_R`, `Priority 20000`, `Flags 0x6 0` (suppression всё ещё UNRESOLVED до runtime).
+
+**НЕ устанавливалось в live/labs в этой правке** — только staged correction + отчёт.
 
 ---
 
