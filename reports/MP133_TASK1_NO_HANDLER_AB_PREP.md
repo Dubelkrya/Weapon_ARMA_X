@@ -1,6 +1,6 @@
 # MP-133 Task #1 — No-handler A/B (source prep)
 
-Статус: **T4B_NO_HANDLER_AB_SOURCE_PREPARED_OWNER_REVIEW**
+Статус: **T4B_NO_HANDLER_AB_REVIEW_PASS_WAITING_WB_CLOSED**
 Дата: 2026-10-06
 Задание: Issue #34 — «prepare clean A/B with NO T4B HandleWeaponReloading override» ([#6009194998](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34)).
 Режим: **source prep only**. Live **НЕ изменялся**.
@@ -61,7 +61,7 @@ Rollback: live handler `83DA1EC584B13D251359B776D2C05AEE41E07A42ACB3334389814C05
 Cold start → canonical MP-133 → выстрел → один `R` → наблюдать, вернулся ли native rack.
 
 Outcomes:
-- `RACK_RECOVERED_WITH_T4B_HANDLER_REMOVED` → глобальный handler-архитектура отвергается для Task #1; переходим к **Chungus-like weapon-local** решению.
+- `RACK_RECOVERED_WITH_T4B_HANDLER_REMOVED` → глобальный handler-архитектура отвергается для Task #1; переходим к **independently derived ARMST/MP-133 weapon-local candidate, informed only by general lessons from Chungus and validated against our own runtime/SDK evidence**.
 - `RACK_STILL_BROKEN_WITH_T4B_HANDLER_REMOVED` → следующий аудит ниже уровня handler: текущий ASTRA2 / native CMD1 wiring/runtime.
 
 ---
@@ -71,4 +71,4 @@ Outcomes:
 - A/B source подготовлен (override полностью отсутствует; только два инертных глобала для observer).
 - Live не менялся; ASTRA2/graph/prefab/observer/Tube3/Core/grid/inventory — не тронуты.
 
-Статус: **`T4B_NO_HANDLER_AB_SOURCE_PREPARED_OWNER_REVIEW`**. STOP.
+Статус: **`T4B_NO_HANDLER_AB_REVIEW_PASS_WAITING_WB_CLOSED`**. STOP.
