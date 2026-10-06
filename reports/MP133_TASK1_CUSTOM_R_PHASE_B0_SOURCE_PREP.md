@@ -1,9 +1,56 @@
 # MP-133 Task #1 — Custom-R input routing Phase B0 (source prep)
 
-Статус: **T4B_CUSTOM_R_PHASE_B_CONTEXT_REGISTRATION_AUDIT_COMPLETE**
+Статус: **T4B_CUSTOM_R_PHASE_B_GUID_REGISTRATION_PATH_AUDIT_COMPLETE**
 Дата: 2026-10-07
-Задание: Issue #34 — Phase B context-registration audit ([#6025639819](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34)); Core radiation detector — PRIMARY reference ([#6025438406](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34)). READ-ONLY; fix НЕ выполняется.
+Задание: Issue #34 — read-only аудит корректного GUID/resource-registration пути для T4B `.meta` (owner-review `6025746594`). Fix НЕ выполняется; `.meta` не создаются.
 Режим: **READ-ONLY AUDIT** — live/labs/configs/script/Core не менялись; `.meta` не создавались.
+
+---
+
+## GUID / RESOURCE-REGISTRATION PATH (read-only, owner-review 6025746594)
+
+**Scope:** определить корректный путь регистрации `.meta`/GUID (без ручного сочинения GUID, без создания `.meta`, без правок live/labs/Core).
+
+### Почему ручной `.meta` — неправильный путь (source proof)
+
+Регистрация в ResourceDB — это операция **Workbench**. Installed SDK (`…\Workbench\docs\EnfusionScriptAPI\html\`) экспонирует:
+
+| API | сигнатура | назначение |
+|---|---|---|
+| `ResourceManager` | `proto external MetaFile GetMetaFile(string absFilePath)` | получить `.meta` файла |
+| `ResourceManager` | `proto external bool RegisterResourceFile(string absFilePath, bool bBuildRuntimeResource)` | **зарегистрировать файл ресурса (создать `.meta`/GUID)** |
+| `ResourceManager` | `proto external void RebuildResourceFile(...)` / `RebuildResourceFiles(...)` | перестроить ресурс(ы) |
+| `GeneratedResources` | `proto bool RegisterResource(string absPath, out ResourceName resourceName)` | регистрация из absolute path |
+| `CheckGUID` | NetApiHandler | проверка уникальности GUID |
+| `ResaveMetaPlugin` | `Resave()`, `Run()`, `RunCommandline()`, `OnResourceContextMenu(...)` | Workbench-плагин записи/пересохранения `.meta` |
+| `ResourceProcessorPlugin` | `ForceResaveMetaFile`, `static FixMetaFile(...)` | форс-пересохранение/фикс `.meta` |
+
+Дополнительно: Workbench **не** создаёт `.meta` для loose-файла при простом скане проекта — оба T4B `.conf` остались незарегистрированными в двух подряд запусках (`Setting null GUID`, L166–167 в обоих логах).
+
+→ **`.meta` должен быть произведён Workbench** (resource registration / resave), а не написан вручную.
+
+### Корректная процедура (proven, выполняет owner)
+
+1. Owner открывает T4B addon в Workbench с обоими `.conf` на месте.
+2. Регистрирует ресурсы так, чтобы Workbench записал `.meta` — через Resource Browser/import (`RegisterResourceFile`) или Resave-Meta plugin (в т.ч. его `RunCommandline`). Workbench присваивает **уникальный** GUID и пишет `Name "{GUID}Configs/System/<file>"` с `CONFResourceClass`-конфигурациями.
+3. Проверка: в логе Workbench больше нет `resource not registered` для этих двух путей; запись в `resourceDatabase.rdb` несёт ненулевой GUID.
+4. Закоммитить сгенерированные `.meta` (live + labs byte-identical).
+
+### GUID handling
+
+- GUID — Workbench-generated, глобально уникальный; для валидации существует `CheckGUID`.
+- **Не** переиспользовать Core GUID: `{795184CF9AD764DB}` (`chimeraInputCommon`) и `{4EE7794C9A3F11EF}` (`keyBindingMenu`) — это ресурсы Core на тех же путях.
+- Live и labs — один и тот же addon content → одинаковые `.meta`/GUID (byte-identical mirror).
+
+### Same-path-with-Core: merge vs conflict
+
+- Layering по одному пути **поддерживается**: Core `Configs/System/chimeraInputCommon.conf` лежит на vanilla-пути и использует аддитивный `ActionRefs +{` на vanilla `CharacterGeneralContext`/`InventoryContext`; это работает только если движок **сливает** слои (иначе базового контекста не было бы).
+- **Не доказано из source:** точное взаимодействие двух *не-vanilla* слоёв (Core + T4B) на одном пути. Это и есть остаточный «скрытый конфликт»: после Workbench-регистрации подтвердить, что действия Core **и** контекст T4B присутствуют (`IsContextActive == true`).
+- Если конфликт проявится — альтернатива дать T4B-конфигу отдельный путь; но source не показывает, как `ActionContext` с отдельного пути попадает в ActionManager, поэтому общий путь — единственный пока подтверждённый маршрут.
+
+**`.meta` не создавались, `.conf`/script/live/labs/Core не менялись.**
+
+Status: **`T4B_CUSTOM_R_PHASE_B_GUID_REGISTRATION_PATH_AUDIT_COMPLETE`**. STOP.
 
 ---
 
