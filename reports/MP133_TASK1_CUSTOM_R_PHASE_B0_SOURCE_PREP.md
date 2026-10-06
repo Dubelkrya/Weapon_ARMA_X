@@ -1,9 +1,87 @@
 # MP-133 Task #1 — Custom-R input routing Phase B0 (source prep)
 
-Статус: **T4B_CUSTOM_R_PHASE_B_V2_INSTALLED_WAITING_OWNER_COMPILE**
+Статус: **T4B_CUSTOM_R_PHASE_B_ROUTING_DIAG_STAGED_OWNER_REVIEW**
 Дата: 2026-10-06
-Задание: Issue #34 — GO_COMPILE_ONLY ([#6024198564](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34)). Агент устанавливает только V2 source; compile test выполняет **владелец вручную**.
-Режим: **V2 script установлен в live + labs**; input `.conf` не тронуты.
+Задание: Issue #34 — Phase B routing diagnostics ([#6024714308](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34)). Только диагностика в staging; поведение `R`/reload не меняется.
+Режим: **STAGING ONLY** — live/labs не тронуты (live `61F96717…`).
+
+---
+
+## PHASE B INPUT ROUTING DIAGNOSTICS (owner result 6024714308)
+
+**Owner runtime:** `PHASE_B_COMPILE_PASS`; `[ARMST-T4B-RINPUT]` НЕ появился, тогда как vanilla `cmd1`/`cmd5`/`cmd3` продолжали приходить →
+`ARMST_R_RECEIVED = NO`, `VANILLA_RELOAD_RECEIVED = YES`, `CUSTOM_R_ROUTING_FAIL`.
+Это не double-fire: custom-ветка просто не сообщила о нажатии `R`.
+
+**Цель задачи:** только выяснить, на каком уровне теряется custom `R`. Reload/routing behaviour не меняется. **STAGING ONLY** — live/labs НЕ тронуты.
+
+**Staged diagnostic source:** `artifacts/astra-rebuild/stageCustomRInput/Scripts/Game/ARMST_T4B/ARMST_T4B_CustomRInputProbe.c`
+SHA-256 `C47569404920C9D8C70C331706FD164DC372A95C215FD0BCE3739E2F5633823F` (7259 B).
+
+### Три диагностические границы (one-shot / transition-only)
+
+| marker | где | ограничение повторов |
+|---|---|---|
+| `[ARMST-T4B-RCTX] phase=listener_registered action=ARMST_MP133_Reload` | сразу после `AddActionListener` | привязан к max-once регистрации (`m_bT4BRListenerActive`) |
+| `[ARMST-T4B-RCTX] phase=weapon_gate_pass` | первый раз, когда проходит весь путь local→controlled→character→weapon-manager→current weapon→`ARMST_T4B_WeaponProbe` | bool `m_bT4BRWeaponGateLogged`, сбрасывается, когда current weapon больше не T4B |
+| `[ARMST-T4B-RCTX] phase=context_state active=true\|false` | сразу после `ActivateContext(...)` | первое наблюдение + максимум одна смена на T4B-entry (`m_bT4BRContextStateKnown` + `m_bT4BRContextChangeLogged`) |
+
+`[ARMST-T4B-RINPUT]` callback сохранён без изменения поведения (финальное доказательство firing).
+
+### Context-state API — VERIFIED в installed SDK (Doxygen 1.8.0.13)
+
+Source proof: `…\Arma Reforger Tools\Workbench\docs\EnfusionScriptAPI\html\interfaceInputManager.html` (и `interfaceActionManager.html`):
+
+```
+proto external bool ActivateContext ( string contextName, int duration=0)
+proto external bool IsContextActive ( string contextName)
+proto external void ResetContext ( string contextName)
+```
+
+→ **`CONTEXT_ACTIVE_QUERY = VERIFIED_IS_CONTEXT_ACTIVE`** — используется `IsContextActive("ARMST_MP133_ReloadContext")` после активации.
+
+Нюанс поиска: `ArmaReforgerScriptAPIPublic` (публичный game API) **не** содержит `InputManager`/`IsContextActive`; движковый **EnfusionScriptAPI** содержит. `DeactivateContext` отсутствует в обоих; `ResetContext` существует, но запрещён → не вызывается.
+
+### Классификация, которую это включает
+
+```
+listener_registered = NO                                   -> listener lifecycle failure
+listener_registered = YES, weapon_gate_pass = NO           -> T4B weapon/current-weapon gate failure
+listener_registered = YES, weapon_gate_pass = YES, context active = NO
+                                                           -> context activation/config registration failure
+listener_registered = YES, weapon_gate_pass = YES, context active = YES, RINPUT = NO
+                                                           -> action/input-config registration или physical-key routing failure
+RINPUT = YES, vanilla cmd1..6 = YES                        -> CUSTOM_R_DOUBLE_FIRE_CONFIRMED
+RINPUT = YES, vanilla cmd1..6 = NONE                       -> CUSTOM_R_CONTEXT_FEASIBLE_WITH_VANILLA_SUPPRESSION
+```
+
+### Static verification (staged source)
+
+```
+existing RINPUT callback = unchanged
+listener_registered marker = present (code occurrences = 1)
+weapon_gate_pass marker    = present (code occurrences = 1)
+context state marker       = VERIFIED_IS_CONTEXT_ACTIVE
+per-frame Print spam       = 0 (все три маркера one-shot/transition-only)
+DeactivateContext = 0
+ResetContext = 0
+reload APIs = 0
+ammo writers = 0
+mag writers = 0
+chamber writers = 0
+ASTRA/G3B2 = 0
+input configs changed = NO
+.meta created = NO
+braces 21/21   parens 97/97
+```
+
+**Не менялось:** `Action ARMST_MP133_Reload`, `Context ARMST_MP133_ReloadContext`, `KC_R`, `Priority 20000`, `Flags 0x6 0`.
+`INPUT_CONFIG_NULL_GUID_WARNING = OBSERVED` — остаётся гипотезой.
+
+**Live/labs НЕ менялись** — `61F9671763889BBF933DDA33F4848A45FC3E08C1938597CF0250C599D71247AC`.
+**Workbench/Reforger/Game Mode/Animation Editor агентом не запускались; compile/runtime — owner-only.**
+
+Status: **`T4B_CUSTOM_R_PHASE_B_ROUTING_DIAG_STAGED_OWNER_REVIEW`**. STOP.
 
 ---
 
