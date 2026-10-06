@@ -1,9 +1,9 @@
 # MP-133 Task #1 — Custom-R input routing Phase B0 (source prep)
 
-Статус: **T4B_CUSTOM_R_PHASE_B_CONTEXT_LIFECYCLE_CORRECTED_V2_OWNER_REVIEW**
+Статус: **T4B_CUSTOM_R_PHASE_B_V2_INSTALLED_WAITING_OWNER_COMPILE**
 Дата: 2026-10-06
-Задание: Issue #34 — context lifecycle correction V2 ([#6023891764](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34)).
-Режим: **staging only**. Live/labs остаются на `9DBF75C4…`; staged correction V2 готов.
+Задание: Issue #34 — GO_COMPILE_ONLY ([#6024198564](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34)). Агент устанавливает только V2 source; compile test выполняет **владелец вручную**.
+Режим: **V2 script установлен в live + labs**; input `.conf` не тронуты.
 
 ---
 
@@ -104,7 +104,25 @@ staged configs unchanged vs 50a1295 (diff empty)
 
 Live/labs/Core/world/grid/inventory/prefab/ASTRA2/Tube3/handler/observer — не тронуты. Глобальный `HandleWeaponReloading` не добавляется; global storage override не добавляется; cmd7 не используется; Chungus не копируется. Ничего в live не устанавливалось.
 
-Статус: **`T4B_CUSTOM_R_PHASE_B_CONTEXT_LIFECYCLE_CORRECTED_V2_OWNER_REVIEW`**. STOP.
+Статус: **`T4B_CUSTOM_R_PHASE_B_V2_INSTALLED_WAITING_OWNER_COMPILE`**. STOP.
+
+---
+
+## 9. V2 INSTALL (owner GO_COMPILE_ONLY #6024198564)
+
+Установлен **только V2 script** (byte-identical) в live + labs:
+
+| файл | live SHA-256 | labs SHA-256 |
+|---|---|---|
+| `Scripts/Game/ARMST_T4B/ARMST_T4B_CustomRInputProbe.c` | `61F9671763889BBF933DDA33F4848A45FC3E08C1938597CF0250C599D71247AC` | same |
+
+Input configs **не менялись**: `chimeraInputCommon.conf` `71D4B2DD…`, `keyBindingMenu.conf` `368B51F7…`.
+Protected **не менялись**: handler `D5BA3052…`, weapon observer `7BE1D375…`, character observer `88BC52CB…`.
+
+**Compile test выполняет владелец вручную** (агент Workbench/игру не запускает). Ожидается: V2 source не даёт compile errors → `PHASE_B_COMPILE_PASS`; иначе `PHASE_B_COMPILE_FAIL` с точной ошибкой из `ARMST_T4B_CustomRInputProbe.c`.
+`INPUT_CONFIG_NULL_GUID_WARNING = OBSERVED` (наблюдение; `.meta` не создавались).
+
+**R не нажималась, Game Mode не запускался.**
 
 ---
 
