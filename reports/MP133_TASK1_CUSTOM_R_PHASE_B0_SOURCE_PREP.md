@@ -1,9 +1,9 @@
 # MP-133 Task #1 — Custom-R input routing Phase B0 (source prep)
 
-Статус: **T4B_CUSTOM_R_PHASE_B_ROUTING_DIAG_STAGED_OWNER_REVIEW**
+Статус: **T4B_CUSTOM_R_PHASE_B_ROUTING_DIAG_INSTALLED_WAITING_OWNER_RUNTIME**
 Дата: 2026-10-06
-Задание: Issue #34 — Phase B routing diagnostics ([#6024714308](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34)). Только диагностика в staging; поведение `R`/reload не меняется.
-Режим: **STAGING ONLY** — live/labs не тронуты (live `61F96717…`).
+Задание: Issue #34 — Phase B routing diagnostics ([#6024714308](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34)). Только диагностика; поведение `R`/reload не меняется.
+Режим: **диагностика установлена в live + labs** (source review PASS `6024969986`, install GO `6024974012`).
 
 ---
 
@@ -15,8 +15,8 @@
 
 **Цель задачи:** только выяснить, на каком уровне теряется custom `R`. Reload/routing behaviour не меняется. **STAGING ONLY** — live/labs НЕ тронуты.
 
-**Staged diagnostic source:** `artifacts/astra-rebuild/stageCustomRInput/Scripts/Game/ARMST_T4B/ARMST_T4B_CustomRInputProbe.c`
-SHA-256 `C47569404920C9D8C70C331706FD164DC372A95C215FD0BCE3739E2F5633823F` (7259 B).
+**Diagnostic source:** `Scripts/Game/ARMST_T4B/ARMST_T4B_CustomRInputProbe.c` (staged в `artifacts/astra-rebuild/stageCustomRInput/…`, byte-identical)
+SHA-256 `C47569404920C9D8C70C331706FD164DC372A95C215FD0BCE3739E2F5633823F` (7259 B) — **установлен в live + labs**.
 
 ### Три диагностические границы (one-shot / transition-only)
 
@@ -78,10 +78,19 @@ braces 21/21   parens 97/97
 **Не менялось:** `Action ARMST_MP133_Reload`, `Context ARMST_MP133_ReloadContext`, `KC_R`, `Priority 20000`, `Flags 0x6 0`.
 `INPUT_CONFIG_NULL_GUID_WARNING = OBSERVED` — остаётся гипотезой.
 
-**Live/labs НЕ менялись** — `61F9671763889BBF933DDA33F4848A45FC3E08C1938597CF0250C599D71247AC`.
+**Live/labs (установлено):** `Scripts/Game/ARMST_T4B/ARMST_T4B_CustomRInputProbe.c` = `C47569404920C9D8C70C331706FD164DC372A95C215FD0BCE3739E2F5633823F` (live = labs). Input configs не менялись.
 **Workbench/Reforger/Game Mode/Animation Editor агентом не запускались; compile/runtime — owner-only.**
 
-Status: **`T4B_CUSTOM_R_PHASE_B_ROUTING_DIAG_STAGED_OWNER_REVIEW`**. STOP.
+### Owner runtime — ожидаемые маркеры
+
+```
+[ARMST-T4B-RCTX] phase=listener_registered
+[ARMST-T4B-RCTX] phase=weapon_gate_pass
+[ARMST-T4B-RCTX] phase=context_state active=...
+[ARMST-T4B-RINPUT]
+```
+
+Status: **`T4B_CUSTOM_R_PHASE_B_ROUTING_DIAG_INSTALLED_WAITING_OWNER_RUNTIME`**. STOP.
 
 ---
 
