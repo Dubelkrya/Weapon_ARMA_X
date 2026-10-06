@@ -1,9 +1,117 @@
 # MP-133 Task #1 — Custom-R input routing Phase B0 (source prep)
 
-Статус: **T4B_CUSTOM_R_PHASE_B_ROUTING_DIAG_INSTALLED_WAITING_OWNER_RUNTIME**
-Дата: 2026-10-06
-Задание: Issue #34 — Phase B routing diagnostics ([#6024714308](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34)). Только диагностика; поведение `R`/reload не меняется.
-Режим: **диагностика установлена в live + labs** (source review PASS `6024969986`, install GO `6024974012`).
+Статус: **T4B_CUSTOM_R_PHASE_B_CONTEXT_REGISTRATION_AUDIT_COMPLETE**
+Дата: 2026-10-07
+Задание: Issue #34 — Phase B context-registration audit ([#6025241031](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34)). READ-ONLY: причина `context_state active=false` доказана; fix НЕ выполняется.
+Режим: **READ-ONLY AUDIT** — live/labs/configs/script не менялись; `.meta` не создавались.
+
+---
+
+## INPUT CONTEXT REGISTRATION AUDIT (owner runtime result 6025241031)
+
+**Owner runtime:** `listener_registered=YES`, `weapon_gate_pass=YES`, `context_state active=false`, `RINPUT=NO`, vanilla `cmd1=YES` → `CUSTOM_R_CONTEXT_REGISTRATION_FAILURE`.
+
+**Classification: `ROOT_CAUSE_PROVEN_MISSING_META`.**
+
+### Source proof chain
+
+1. **On disk:** обе lab-конфиги не имеют `.meta`:
+   - `ARMSTMP133T4B_InstalledMagProbe/Configs/System/chimeraInputCommon.conf` (1661 B) — `.meta` отсутствует;
+   - `ARMSTMP133T4B_InstalledMagProbe/Configs/System/keyBindingMenu.conf` (791 B) — `.meta` отсутствует.
+   Это единственные `.conf` под `Configs/System/`; все рабочие addon-конфиги (Core) несут `.meta`.
+
+2. **Owner Workbench log** (`logs_2026-10-06_23-50-52/console.log`, L166–167; то же в `logs_2026-10-06_23-12-57`):
+   ```
+   RESOURCES (W): resource not registered: @"$ARMSTMP133T4BInstalledMag:Configs/System/chimeraInputCommon.conf". Setting null GUID
+   RESOURCES (W): resource not registered: @"$ARMSTMP133T4BInstalledMag:Configs/System/keyBindingMenu.conf". Setting null GUID
+   ```
+   → `INPUT_CONFIG_NULL_GUID_WARNING = OBSERVED` теперь **объяснён**: файлы не зарегистрированы.
+
+3. **ResourceDB decode** (`ARMSTMP133T4B_InstalledMagProbe/resourceDatabase.rdb`): запись `Configs/System/chimeraInputCommon.conf` хранит **нулевой GUID** (8 нулевых байт) и флаг «не зарегистрирован» (`0x04`); в `ARMST-PLATFORM---Core/resourceDatabase.rdb` та же запись хранит GUID `DB 64 D7 9A CF 84 51 79` (= `{795184CF9AD764DB}`, совпадает с Core `.meta`) и флаг «зарегистрирован» (`0x06`).
+
+4. **Рабочий аналог (Core, тот же движок):** `ARMST-PLATFORM---Core/Configs/System/chimeraInputCommon.conf` + `.meta` (`Name "{795184CF9AD764DB}Configs/System/chimeraInputCommon.conf"`) зарегистрирован; его **собственный** контекст `ARMST_Pda3DContext` **успешно активируется в runtime** (`.../Scripts/Game/Devices/ARMST_PDA_COMPONENT.c:633`, `.../Camera/ARMST_CharacterCameraCustomPoint.c:122`) и сбрасывается (`ARMST_PDA_COMPONENT.c:406`). → addon-local custom `ActionContext` работает **тогда и только тогда**, когда его конфиг зарегистрирован.
+
+5. **Следствие:** незарегистрированный конфиг не попадает в ActionManager → `ARMST_MP133_ReloadContext` не существует → `ActivateContext(...)` → `IsContextActive(...) == false` (наблюдено), `ARMST_MP133_Reload` не firing → `RINPUT = NO`.
+
+### Audit 1 — рабочие примеры (addon-local custom input action)
+
+| # | addon | config path | .meta | config GUID | discovery | Action | ActionContext | keyBinding entry |
+|---|---|---|---|---|---|---|---|---|
+| 1 | ARMST-PLATFORM---Core | `Configs/System/chimeraInputCommon.conf` | YES | `{795184CF9AD764DB}` | merge по пути (config layer) | `ARMST_Open_PDA` | `CharacterGeneralContext` (vanilla, `ActionRefs +{`) | `{6672D1E0D9F7A127}` |
+| 2 | ARMST-PLATFORM---Core | same | YES | same | same | `ARMST_Ragdoll` | `CharacterGeneralContext` | `{6672D62E4309E322}` |
+| 3 | ARMST-PLATFORM---Core | same | YES | same | same | `ARMST_NVG_ACTION` | `CharacterGeneralContext` | `{69EB05063326D4D6}` |
+| 4 | ARMST-PLATFORM---Core | same | YES | same | same | `ARMST_PDA_Touch` | **новый** `ARMST_Pda3DContext` (Priority 10000, plain `ActionRefs {}`) | нет |
+| 5 | ARMST-PLATFORM---Core | same | YES | same | same | `Escape` (context-local) | `ARMST_Pda3DContext`/`PdaContext`/`BookContext`/`TraderContext` | n/a |
+
+Ответы:
+1. `Configs/System/*.conf` **merge'ятся между addons по пути** (Core `ActionRefs +{` на vanilla `CharacterGeneralContext`/`InventoryContext` имеет смысл только как overlay поверх существующей базы).
+2. Файл **обязан быть зарегистрирован через `.meta`** — loose `.conf` без `.meta` даёт null GUID и не загружается (доказано выше).
+3. Reference из `addon.gproj`/другого config **не нужен**: у lab `addon.gproj` нет config-блока, у Core тоже; discovery — по пути под `Configs/System/`.
+4. **Нет** — loose `.conf` без GUID **не** участвует в ActionManager merge (пропускается с null-GUID warning).
+
+### Audit 2 — наши текущие конфиги
+
+| файл | SHA-256 | .meta exists | registered GUID | ResourceDB sees resource |
+|---|---|---|---|---|
+| `Configs/System/chimeraInputCommon.conf` | `71D4B2DD…CF4B` | **NO** | нет (null) | **NO** (`Setting null GUID`) |
+| `Configs/System/keyBindingMenu.conf` | `368B51F7…C01D` | **NO** | нет (null) | **NO** (`Setting null GUID`) |
+
+`INPUT_CONFIG_NULL_GUID_WARNING = OBSERVED` — теперь **root-caused** (unregistered), не безобидный артефакт.
+
+### Audit 3 — `.meta` procedure (proof only; НЕ создано)
+
+Формат (из Core `.meta`):
+```
+MetaFileClass {
+ Name "{GUID}Configs/System/<file>"
+ Configurations {
+  CONFResourceClass PC { }
+  CONFResourceClass XBOX_ONE : PC { }
+  CONFResourceClass XBOX_SERIES : PC { }
+  CONFResourceClass PS4 : PC { }
+  CONFResourceClass PS5 : PC { }
+  CONFResourceClass HEADLESS : PC { }
+ }
+}
+```
+- GUID генерирует **Workbench** (ResourceDB registration); 16-hex, глобально уникальный.
+- Live и labs — **один и тот же addon content** → одинаковые `.meta`/GUID (byte-identical mirror).
+- Риск: `Configs/System/chimeraInputCommon.conf` также поставляется **vanilla** и **Core** (`{795184CF9AD764DB}`). Lab-копия должна быть зарегистрирована и **не** переиспользовать GUID Core/vanilla. Сливается ли третий same-path слой так же, как Core поверх vanilla, — единственный остаточный пункт для runtime-подтверждения после регистрации.
+
+### Audit 4 — ActionContext validation
+
+| элемент | вердикт |
+|---|---|
+| `ActionContext ARMST_MP133_ReloadContext { … }` | валидная форма класса/имени |
+| `ActionRefs +{ "ARMST_MP133_Reload" }` | **NON-CONFORMING** — Core использует `+{` только на **предсуществующих** контекстах (`CharacterGeneralContext`, `InventoryContext`); **новые** контексты Core — plain `ActionRefs { … }`. Для brand-new контекста additive-оператор не имеет базы. Не доказано фатально, но должно стать plain `ActionRefs { … }`. |
+| `"ARMST_MP133_Reload"` ActionRef | валиден — совпадает с объявленным именем Action |
+| `Priority 20000` | не доказано невалидно; выше максимума наблюдённого (10000, `ARMST_Pda3DContext`); смысл/предел не документированы |
+| `Flags 0x6 0` | не доказано невалидно; наблюдён только на **override**-контекстах (`BookContext`, `TraderContext`), семантика не документирована |
+| обязательный parent/base context | не нужен — у новых контекстов Core его нет |
+| блокирует ли `Flags` активацию | **не доказано**; в source такого утверждения нет |
+
+### Audit 5 — Action validation
+
+| элемент | вердикт |
+|---|---|
+| `InputSource InputSourceValue "{B1C2D3E4F5A60001}" { Input "keyboard:KC_R" }` | валидная форма — как Core `ARMST_NVG_ACTION` (`InputSourceValue "{GUID}" { Input … }`) |
+| `{B1C2D3E4F5A60001}` | config-object instance ID (тот же namespace, что object ID в `.et`), **не** resource GUID; должен быть глобально уникален; hand-made 16-hex допустим при уникальности (Core использует Workbench-сгенерированные) |
+| `keyboard:KC_R` | валиден — Core биндит `KC_R` в `ARMST_CHECK_AMMO_ACTION`, `ARMST_LIGHT_RELOAD_ACTION`, `RotateItem`, `BuyItem` |
+
+### Minimal proposed fix (НЕ выполняется)
+
+1. Добавить `.meta` для обоих конфигов (Workbench-generated GUID, уникальный), live + labs byte-identical:
+   - `Configs/System/chimeraInputCommon.conf.meta`
+   - `Configs/System/keyBindingMenu.conf.meta`
+2. Сменить `ActionRefs +{ … }` → `ActionRefs { … }` (конформность новым контекстам Core).
+3. Файлы, которые изменились бы: два `.conf` (только `+{`→`{`) + два новых `.meta`, live + labs.
+4. Затем owner recompile/run: подтвердить `context_state active=true` и `RINPUT`.
+
+Остаточное (проверить после регистрации): same-path layer merge с vanilla/Core для `chimeraInputCommon.conf`.
+
+**`.meta` не создавались, `.conf`/script не менялись, live/labs не тронуты. Read-only audit.**
+
+Status: **`T4B_CUSTOM_R_PHASE_B_CONTEXT_REGISTRATION_AUDIT_COMPLETE`**. STOP.
 
 ---
 
