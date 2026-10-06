@@ -1,8 +1,8 @@
 # MP-133 Task #1 — Custom-R input routing Phase B0 (source prep)
 
-Статус: **T4B_CUSTOM_R_PHASE_B0_SOURCE_PREPARED_OWNER_REVIEW**
+Статус: **T4B_CUSTOM_R_PHASE_B0_CORRECTED_OWNER_REREVIEW**
 Дата: 2026-10-06
-Задание: Issue #34 — Phase B0 source prep ([#6021866345](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34)).
+Задание: Issue #34 — Phase B0 source prep ([#6021866345](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34)) + owner review [#6022566622](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34) (BLOCKED: lifecycle/callback).
 Режим: **source-only**. Live/labs/Core/gameplay **не менялись**. Staged: `artifacts/astra-rebuild/stageCustomRInput/`.
 
 ---
@@ -25,13 +25,44 @@
 |---|---|---|---|
 | `Configs/System/chimeraInputCommon.conf` | `71D4B2DD92B12BF93E76DEAF6B1B8CF763F2505D837981C7C469FF99D0DDCF4B` | 1661 | additive: `Action ARMST_MP133_Reload` (KC_R) + `ActionContext ARMST_MP133_ReloadContext` |
 | `Configs/System/keyBindingMenu.conf` | `368B51F7862B245C730E40CA1C226B369F845C7E0DC9B604E822F2078BCDC01D` | 791 | key-binding entry для `ARMST_MP133_Reload` |
-| `Scripts/Game/ARMST_T4B/ARMST_T4B_CustomRInputProbe.c` | `0D77CFDD045ED4EF2E2CD7E954F6AB50DC293B8D187DC3B172743B6AF038BE45` | 3944 | listener + event-driven context lifecycle + `[ARMST-T4B-RINPUT]` log |
+| `Scripts/Game/ARMST_T4B/ARMST_T4B_CustomRInputProbe.c` | `9DBF75C4C9721C23DB7663C6F0094C0678D9047711DACAA913145326E289BA69` | 5682 | listener + event-driven context lifecycle + `[ARMST-T4B-RINPUT]` log |
 
 **Целевые live-пути (при GO):** те же три пути в `ARMSTMP133T4B_InstalledMagProbe/`.
 
 ---
 
-## 2. Static verification
+## 2b. Corrections (owner review #6022566622)
+
+| # | Проблема | Исправление |
+|---|---|---|
+| 1 | callback `T4BRWeaponChanged()` не совпадал с `ScriptInvoker<BaseWeaponComponent>` | сигнатура → `protected void T4BRWeaponChanged(BaseWeaponComponent newWeapon)`; аргумент **не** используется для мутаций |
+| 2 | `Insert` без `Remove` | менеджер сохранён в `m_pT4BRWeaponManager`; в `OnDelete` — `m_pT4BRWeaponManager.m_OnWeaponChangeCompleteInvoker.Remove(T4BRWeaponChanged)` (Insert=1/Remove=1) |
+| 3 | глобальный `AddActionListener`/context без local-gate | **proven pattern** (историческая ARMST lab + Core): `owner == SCR_PlayerController.GetLocalControlledEntity()` внутри `override protected void OnControlledByPlayer(IEntity owner, bool controlled)`; только local player делает `AddActionListener`/`ActivateContext`/`DeactivateContext`/лог |
+| 4 | нет initial sync | после локальной регистрации — один `T4BRSyncContext()` (context активируется, если lab MP-133 уже current) |
+
+**Cleanup path:** `OnControlledByPlayer` (loss of local control) → `T4BRTeardownLocal()` (Remove listener + DeactivateContext); `OnDelete` → `T4BRTeardownLocal()` + invoker `Remove`. Все снятия под флагами `m_bT4BRListenerActive`/`m_bT4BRContextActive`.
+
+**Local-player proof:** `SCR_PlayerController.GetLocalControlledEntity()` — проверенный API (historical `ARMST_MP133_Lab_Character.c` L546/L609/L702; множество Core-файлов). Не изобретён.
+
+**Initial sync:** 1 явный вызов `T4BRSyncContext()` в `OnControlledByPlayer` (local+controlled); +1 вызов из `T4BRWeaponChanged` (weapon change). Без `Update`/polling.
+
+**Suppression остаётся UNRESOLVED:** `Priority 20000` / `Flags 0x6 0` не менялись (Phase B измеряет).
+
+## 2c. Static verification (corrected)
+
+```
+callback sig T4BRWeaponChanged(BaseWeaponComponent) = 1
+Insert = 1   Remove = 1
+AddActionListener = 1   RemoveActionListener = 1
+GetLocalControlledEntity (local gate) = 4
+initial/weapon-change T4BRSyncContext call sites = 2 (+1 definition)
+ActivateContext = 1   DeactivateContext = 2 (sync + teardown)
+braces 21/21   parens 83/83
+FORBIDDEN (writers/reload APIs/Update/timers) = 0
+staged configs unchanged vs 50a1295 (diff empty)
+```
+
+
 
 | Проверка | Результат |
 |---|---|
@@ -46,14 +77,14 @@
 
 ---
 
-## 3. Lifecycle
+## 3. Lifecycle (corrected)
 
-- `OnInit`: `AddActionListener("ARMST_MP133_Reload", DOWN, T4BRInputDown)` + подписка на `BaseWeaponManagerComponent.m_OnWeaponChangeCompleteInvoker`.
-- `T4BRWeaponChanged` → `T4BRSyncContext`: `ActivateContext("ARMST_MP133_ReloadContext")` только если current weapon несёт `ARMST_T4B_WeaponProbe`; иначе `DeactivateContext`.
-- `OnDelete`: `RemoveActionListener` + `DeactivateContext` (cleanup).
-- **Без** `Update`/polling/таймеров.
-
-**To confirm at compile:** точная сигнатура `m_OnWeaponChangeCompleteInvoker` callback (без параметров) — если не совпадёт, заменить на `OnWeaponActive`/`OnWeaponInactive`-подписку; это единственная непроверенная сигнатура.
+- `OnInit`: `m_pT4BRWeaponManager = GetWeaponManagerComponent()`; `Insert(T4BRWeaponChanged)` на `m_OnWeaponChangeCompleteInvoker`.
+- `OnControlledByPlayer(owner, controlled)`: **local gate** `owner == SCR_PlayerController.GetLocalControlledEntity()`; если `controlled && local` → `AddActionListener("ARMST_MP133_Reload", DOWN, T4BRInputDown)` + **initial** `T4BRSyncContext()`; иначе → `T4BRTeardownLocal()`.
+- `T4BRWeaponChanged(BaseWeaponComponent newWeapon)` (local-gated) → `T4BRSyncContext()`.
+- `T4BRSyncContext()` (local-gated): `ActivateContext` если current weapon несёт `ARMST_T4B_WeaponProbe`, иначе `DeactivateContext`.
+- `OnDelete`: `T4BRTeardownLocal()` + `Remove(T4BRWeaponChanged)` на сохранённом `m_pT4BRWeaponManager`.
+- **Без** `Update`/polling/таймеров. Только local player регистрирует listener/context и пишет лог.
 
 ---
 
@@ -73,4 +104,4 @@
 
 Live/labs/Core/world/grid/inventory/prefab/ASTRA2/Tube3/handler/observer — не тронуты. Глобальный `HandleWeaponReloading` не добавляется; global storage override не добавляется; cmd7 не используется; Chungus не копируется. Ничего в live не устанавливалось.
 
-Статус: **`T4B_CUSTOM_R_PHASE_B0_SOURCE_PREPARED_OWNER_REVIEW`**.
+Статус: **`T4B_CUSTOM_R_PHASE_B0_CORRECTED_OWNER_REREVIEW`**.
