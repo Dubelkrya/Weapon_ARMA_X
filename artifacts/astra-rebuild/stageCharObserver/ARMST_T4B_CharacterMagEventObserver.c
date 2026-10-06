@@ -25,7 +25,7 @@ modded class SCR_CharacterControllerComponent
 {
 	protected int m_iT4BCharEvtSeq;
 	protected int m_iT4BCharMagTag;
-	protected BaseMagazineComponent m_T4BCharMagRef;
+	protected IEntity m_T4BCharMagRef;
 
 	override void OnInit(IEntity owner)
 	{

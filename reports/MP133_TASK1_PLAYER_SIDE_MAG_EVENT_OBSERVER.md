@@ -1,6 +1,6 @@
 # MP-133 Task #1 — Player/character-side mag-event observer (source prep)
 
-Статус: **T4B_PLAYER_SIDE_MAG_EVENT_OBSERVER_SOURCE_PREPARED_OWNER_REVIEW**
+Статус: **T4B_PLAYER_SIDE_MAG_EVENT_OBSERVER_SOURCE_CORRECTED_OWNER_REREVIEW**
 Дата: 2026-10-06
 Режим: **source prep only**. Live **НЕ изменялся**.
 
@@ -26,7 +26,7 @@
 Механизм (проверенный паттерн, historical lab `ARMST_MP133_Lab_Character.c`): `modded class SCR_CharacterControllerComponent` → в `OnInit` подписка `GetOnAnimationEvent().Insert(callback)`; callback получает **все** animation events, включая `Weapon_*`.
 
 Staged: `artifacts/astra-rebuild/stageCharObserver/ARMST_T4B_CharacterMagEventObserver.c`
-- SHA-256: `7D3B97F8D06B8D03367294623B9123EE4E325C058B5F9654AE74393E0CEB9533` (3702 bytes).
+- SHA-256: `88BC52CB0FED611F8039EFD7C5754D1835BD348D9214825AC70AF1E69E181738` (3688 bytes). — **corrected** (owner review [#6021113686](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34): identity field type `BaseMagazineComponent` → `IEntity`; ровно одна строка, поведение не менялось).
 - Логирует `[ARMST-T4B-CHAREVT] seq=… side=SV/CL event=<Weapon_…> intParam=… from/to=… magPresent=… magTag=… ammo=…/… muzzleSupply=… barrel=… chambered=…`.
 - **Lab-gated**: только когда текущее оружие несёт `ARMST_T4B_WeaponProbe` (без глобального спама).
 - Только `OnInit` + пассивный callback. **Нет** writers, `Update`, `HandleWeapons`, `HandleWeaponReloading`, `SetReloadWeapon`, таймеров, input-listener'ов, graph/prefab изменений.
@@ -59,7 +59,7 @@ Staged: `artifacts/astra-rebuild/stageCharObserver/ARMST_T4B_CharacterMagEventOb
 
 ## 4. Install plan (только по отдельному GO + закрытый Workbench)
 
-1. Добавить новый live-файл `Scripts/Game/ARMST_T4B/ARMST_T4B_CharacterMagEventObserver.c` (staged `7D3B97F8…`).
+1. Добавить новый live-файл `Scripts/Game/ARMST_T4B/ARMST_T4B_CharacterMagEventObserver.c` (staged `88BC52CB…`).
 2. Handler (`D5BA3052…`) и observer (`7BE1D375…`) — **не трогать**.
 3. Sync labs; узкий commit.
 Rollback: удалить новый файл (ничего существующего не меняется).
@@ -77,4 +77,4 @@ Rollback: удалить новый файл (ничего существующ�
 
 Live/граф/prefab/observer/Tube3/Core/grid/inventory не менялись; `GAMEPLAY_FILES_CHANGED=0`. cmd7 не предлагается; глобальный `HandleWeaponReloading` не восстанавливается; Chungus — reference-only.
 
-Статус: **`T4B_PLAYER_SIDE_MAG_EVENT_OBSERVER_SOURCE_PREPARED_OWNER_REVIEW`**. STOP.
+Статус: **`T4B_PLAYER_SIDE_MAG_EVENT_OBSERVER_SOURCE_CORRECTED_OWNER_REREVIEW`**. STOP.
