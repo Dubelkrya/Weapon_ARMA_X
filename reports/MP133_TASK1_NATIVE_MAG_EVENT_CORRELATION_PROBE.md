@@ -1,9 +1,9 @@
 # MP-133 Task #1 — Native mag-event correlation probe (source prep)
 
-Статус: **T4B_NATIVE_MAG_EVENT_CORRELATION_PROBE_SOURCE_PREPARED_OWNER_REVIEW**
+Статус: **T4B_NATIVE_MAG_EVENT_CORRELATION_PROBE_LIVE_READY_OWNER_TEST**
 Дата: 2026-10-06
 Цель-лейбл: `T4B_NATIVE_MAG_EVENT_CORRELATION_PROBE`
-Режим: **source prep only**. Live **НЕ изменялся**.
+Режим: **probe установлен в live** (Workbench закрыт); handler без изменений.
 
 Основание: аудит `reports/MP133_TASK1_NATIVE_MAG_MUTATION_BOUNDARY_AUDIT.md` (`NO_PRE_MUTATION_WEAPON_LOCAL_HOOK_FOUND`) + owner-решение: следующий шаг — **не новый перехватчик**, а минимальный пассивный runtime-probe на существующем observer, чтобы измерить порядок событий.
 
@@ -80,4 +80,18 @@ Cold start → canonical MP-133 → выстрел → один `R` → снят
 
 Live/граф/prefab/observer/Tube3/Core/grid/inventory не менялись; `GAMEPLAY_FILES_CHANGED=0`. cmd7 не предлагается; глобальный `HandleWeaponReloading` не восстанавливается; Chungus — reference-only.
 
-Статус: **`T4B_NATIVE_MAG_EVENT_CORRELATION_PROBE_SOURCE_PREPARED_OWNER_REVIEW`** (цель `T4B_NATIVE_MAG_EVENT_CORRELATION_PROBE` — после установки по GO). STOP.
+Статус: **`T4B_NATIVE_MAG_EVENT_CORRELATION_PROBE_LIVE_READY_OWNER_TEST`**. STOP.
+
+---
+
+## 7. LIVE INSTALL (owner GO #6020159895, Workbench/game закрыты)
+
+| файл | SHA-256 | проверки (code-only) |
+|---|---|---|
+| `Scripts/Game/ARMST_T4B/ARMST_T4B_AstraV2_WeaponAnimationComponent.c` | `7BE1D37513AF31E0C5BC3629BC3301DAFABEC966129AF83D04B688DD4D19BF8A` | braces 23/23, parens 110/110; writers=0; `Update`/`HandleWeapons`/`HandleWeaponReloading`/`SetReloadWeapon`/`CallLater`=0; `StartsWith("Weapon_")`=1 |
+| `Scripts/Game/ARMST_T4B/ARMST_T4B_NormalRHandlerProbe.c` | `D5BA3052C07CD9B470F638AFF10DFB6C97ED835F08CF95D57E228A332F2658DE` | **не изменён** (no-handler A/B) |
+
+Labs: observer синхронизирован (`7BE1D375…`); handler без изменений.
+Rollback observer: `B3D71CF57ACBF95C55D4B0098FDDACF86F00CF9B93AA88C287856D9914228D28`.
+
+**Owner runtime test (не запускаю сам):** cold start → canonical MP-133 → выстрел → один `R` → снять `[ARMST-T4B-CMDROUTE]` + `[ARMST-T4B-MAGEVT]`.

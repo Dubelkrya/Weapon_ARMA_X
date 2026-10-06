@@ -6,9 +6,13 @@
 // constructor and no OnInit/OnPostInit, only animation/character callbacks. The former
 // constructor is replaced by a lazy once-only init driven by OnAnimationEvent.
 //
-// STAGED ADDITION (source prep only): weapon-local observer of the handler-emitted
-// inert reload command via BaseItemAnimationComponent.OnCharacterCommand(int,int,float).
-// Observation only; no graph transition, no ammo/mag/chamber writer.
+// Weapon-local observer of the inert reload command via
+// BaseItemAnimationComponent.OnCharacterCommand(int,int,float). Observation only.
+//
+// STAGED ADDITION (source prep only): native mag-event correlation. OnAnimationEvent is
+// extended to log ANY `Weapon_*` event with a magazine/muzzle snapshot, so the runtime
+// order `cmd5 -> first reload event -> physical mutation -> cmd3` can be measured.
+// Passive only: no writers, no Update, no handler, no timers, no graph change.
 [ComponentEditorProps(category: "ARMST/Astra", description: "Shell animation diagnostic only")]
 class ARMST_T4B_AstraV2_WeaponAnimationComponentClass : ARMST_T4B_WeaponAnimationComponentClass
 {
@@ -29,6 +33,9 @@ class ARMST_T4B_AstraV2_WeaponAnimationComponent : ARMST_T4B_WeaponAnimationComp
 	// former `component_constructed` ctor is replaced by an engine-driven,
 	// event-triggered init that runs exactly once per created instance.
 	protected bool m_bInstanceInitLogged;
+
+	// passive native mag-event correlation counter
+	protected int m_iMagEvtSeq;
 
 	protected void AstraEnsureInstanceInit()
 	{
@@ -61,6 +68,14 @@ class ARMST_T4B_AstraV2_WeaponAnimationComponent : ARMST_T4B_WeaponAnimationComp
 		AstraEnsureInstanceInit();
 		super.OnAnimationEvent(animEventType, animUserString, intParam, timeFromStart, timeToEnd);
 		string name = GameAnimationUtils.GetEventString(animEventType);
+
+		// --- passive native reload mag-event correlation (read-only) ---
+		if (name.StartsWith("Weapon_"))
+		{
+			T4BMagEventSnapshot(name, intParam, timeFromStart, timeToEnd);
+			return;
+		}
+
 		if (!name.StartsWith("ASTRA_Shell"))
 			return;
 
@@ -112,6 +127,69 @@ class ARMST_T4B_AstraV2_WeaponAnimationComponent : ARMST_T4B_WeaponAnimationComp
 		line += " from=" + timeFromStart.ToString() + " to=" + timeToEnd.ToString();
 		Print(line, LogLevel.NORMAL);
 		AstraSnapshot();
+	}
+
+	// Passive snapshot for native `Weapon_*` reload events. Read-only: mag entity
+	// reference tag + ammo, muzzle supply, barrel, chambered. No mutation.
+	protected void T4BMagEventSnapshot(string eventName, int intParam, float timeFromStart, float timeToEnd)
+	{
+		m_iMagEvtSeq++;
+
+		IEntity owner = GetOwner();
+		BaseWeaponComponent weapon = null;
+		if (owner)
+		{
+			weapon = BaseWeaponComponent.Cast(owner.FindComponent(WeaponComponent));
+			if (!weapon)
+				weapon = BaseWeaponComponent.Cast(owner.FindComponent(BaseWeaponComponent));
+		}
+
+		IEntity magEnt = null;
+		int ammo = -1;
+		int maxAmmo = -1;
+		if (weapon)
+		{
+			BaseMagazineComponent mag = weapon.GetCurrentMagazine();
+			if (mag)
+			{
+				magEnt = mag.GetOwner();
+				ammo = mag.GetAmmoCount();
+				maxAmmo = mag.GetMaxAmmoCount();
+			}
+		}
+		if (magEnt != m_Magazine)
+		{
+			m_Magazine = magEnt;
+			m_iMagazineTag++;
+		}
+
+		int supply = -1;
+		int barrel = -1;
+		int chambered = -1;
+		if (weapon)
+		{
+			BaseMuzzleComponent muzzle = weapon.GetCurrentMuzzle();
+			if (muzzle)
+			{
+				supply = muzzle.GetAmmoCount();
+				barrel = muzzle.GetCurrentBarrelIndex();
+				chambered = 0;
+				if (muzzle.IsCurrentBarrelChambered())
+					chambered = 1;
+			}
+		}
+
+		bool magPresent = magEnt != null;
+		Print("[ARMST-T4B-MAGEVT] seq=" + m_iMagEvtSeq.ToString()
+			+ " event=" + eventName
+			+ " intParam=" + intParam.ToString()
+			+ " from=" + timeFromStart.ToString() + " to=" + timeToEnd.ToString()
+			+ " magPresent=" + magPresent.ToString()
+			+ " magTag=" + m_iMagazineTag.ToString()
+			+ " ammo=" + ammo.ToString() + "/" + maxAmmo.ToString()
+			+ " muzzleSupply=" + supply.ToString()
+			+ " barrel=" + barrel.ToString()
+			+ " chambered=" + chambered.ToString(), LogLevel.NORMAL);
 	}
 
 	protected void AstraSnapshot()
