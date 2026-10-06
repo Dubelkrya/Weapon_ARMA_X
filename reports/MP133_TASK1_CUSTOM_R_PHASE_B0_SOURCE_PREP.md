@@ -2,8 +2,8 @@
 
 Статус: **T4B_CUSTOM_R_PHASE_B_CONTEXT_REGISTRATION_AUDIT_COMPLETE**
 Дата: 2026-10-07
-Задание: Issue #34 — Phase B context-registration audit ([#6025241031](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34)). READ-ONLY: причина `context_state active=false` доказана; fix НЕ выполняется.
-Режим: **READ-ONLY AUDIT** — live/labs/configs/script не менялись; `.meta` не создавались.
+Задание: Issue #34 — Phase B context-registration audit ([#6025639819](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34)); Core radiation detector — PRIMARY reference ([#6025438406](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34)). READ-ONLY; fix НЕ выполняется.
+Режим: **READ-ONLY AUDIT** — live/labs/configs/script/Core не менялись; `.meta` не создавались.
 
 ---
 
@@ -12,6 +12,44 @@
 **Owner runtime:** `listener_registered=YES`, `weapon_gate_pass=YES`, `context_state active=false`, `RINPUT=NO`, vanilla `cmd1=YES` → `CUSTOM_R_CONTEXT_REGISTRATION_FAILURE`.
 
 **Classification: `ROOT_CAUSE_PROVEN_MISSING_META`.**
+
+### PRIMARY AUDIT — Core radiation detector R input (owner 6025438406 / 6025639819)
+
+Полная трассировка по source (не по именам файлов):
+
+| шаг | артефакт | доказательство |
+|---|---|---|
+| item prefab | `ARMST-PLATFORM---Core/Prefabs/Items/devices/armst_itm_atmos.et` (также radon/muha/voron/olimp/diatel; база `Flashlight_base.et`) | `ItemAnimationAttributes.AnimationAttachments → BindingName "Gadget"` |
+| component | `ARMST_DETECTOR_COMPONENTS : SCR_GadgetComponent` (`Scripts/Game/Devices/ARMST_DETECTOR_COMPONENTS.c`) | `override void ActivateAction()` (L78) → `PerformActionDetector(...)` |
+| actions manager | prefab `ActionsManagerComponent "{56A4B11C0BE428FF}"` | `ActionContexts { UserActionContext "{62EA972C3D31CF14}" { ContextName "Toggles" } }` + `additionalActions { ARMST_USER_DETECTOR_TOGGLE … }` |
+| action | `ARMST_USER_DETECTOR_TOGGLE : ScriptedUserAction` (тот же файл, L492) | `PerformAction` toggle; `GetActionNameScript` → "On"/"Off"; `CanBeShownScript` → `charComp.GetInspect()` (L546) |
+| physical binding | **vanilla `Gadget`** (`BindingName "Gadget"`) + inspect | **`keyboard:KC_R` в Core Scripts отсутствует** (grep = 0) |
+| config | **нет** — в `Configs/System/chimeraInputCommon.conf` нет детекторного `Action`/`ActionContext`, контекста `Toggles` нет; в `keyBindingMenu.conf` детекторных записей нет | прочитан весь Core-конфиг |
+| `AddActionListener` | **нет** | для детектора listener не добавляется |
+| `ActivateContext` | **нет** (для детектора) | детектор идёт через vanilla gadget/inspect |
+
+**Вывод:** `R` у Core-детектора — это **НЕ** custom addon `Action`/`ActionContext`. Это **vanilla `Gadget` binding** + `ScriptedUserAction` (`UserActionContext "Toggles"`) + `SCR_GadgetComponent.ActivateAction()`. Он **не требует** регистрации кастомного конфига и потому **не является** эталоном «как регистрируется кастомный addon ActionContext».
+
+Настоящий Core-эталон **config-defined** контекста — `ARMST_Pda3DContext` / `ARMST_Open_PDA` в `.meta`-backed `chimeraInputCommon.conf` (Audit 1).
+
+### Mandatory 1:1 — Core detector vs T4B
+
+| Field | Core working detector | T4B custom-R | Difference | Relevant to `active=false`? |
+|---|---|---|---|---|
+| Action | `ARMST_USER_DETECTOR_TOGGLE` (`ScriptedUserAction`) | `ARMST_MP133_Reload` (config `Action`) | разная подсистема (UserAction vs ActionManager Action) | YES — T4B нужна регистрация конфига, детектору нет |
+| ActionContext | `UserActionContext "Toggles"` (prefab) | `ActionContext ARMST_MP133_ReloadContext` (config) | разная подсистема | YES |
+| physical binding | vanilla `BindingName "Gadget"` + inspect | `keyboard:KC_R` в конфиге | у детектора нет своего key | YES |
+| Priority | n/a (нет) | `20000` | детектор priority не задаёт | partial |
+| Flags | n/a (нет) | `Flags 0x6 0` | детектор flags не задаёт | partial |
+| config file | **нет** (vanilla systems) | `Configs/System/chimeraInputCommon.conf` | детектору конфиг не нужен | YES — конфиг T4B unregistered |
+| `.conf.meta` | n/a | **отсутствует** | T4B unregistered | **YES — root cause** |
+| config GUID | n/a | null | T4B unregistered | **YES** |
+| listener/callback | `ScriptedUserAction.PerformAction` (engine dispatch) | `AddActionListener("ARMST_MP133_Reload", DOWN, T4BRInputDown)` | разный dispatch | YES |
+| context activation | implicit (gadget/inspect) | explicit `ActivateContext("ARMST_MP133_ReloadContext")` | T4B нужен зарегистрированный контекст | YES |
+| conditional activation | yes (`GetInspect()`) | yes (T4B weapon gate) | похоже | no |
+| coexist с vanilla reload R | yes (другой key/system) | ожидается (Phase B) | n/a | no |
+
+**Ответ на primary question:** Core-детектор вообще **не создаёт** новый ActionManager-контекст — он использует уже зарегистрированные vanilla `Gadget`/inspect системы. T4B **создаёт** новый контекст, но его конфиг **unregistered** (`Setting null GUID`, нет `.meta`), поэтому `ARMST_MP133_ReloadContext` не попадает в ActionManager и `ActivateContext` оставляет `IsContextActive == false`. Детектор косвенно подтверждает требование регистрации: существуют только config-registered контексты, а конфиг T4B не зарегистрирован.
 
 ### Source proof chain
 
@@ -37,6 +75,7 @@
 
 | # | addon | config path | .meta | config GUID | discovery | Action | ActionContext | keyBinding entry |
 |---|---|---|---|---|---|---|---|---|
+| 0 (PRIMARY) | ARMST-PLATFORM---Core | **нет config** — prefab `armst_itm_atmos.et`: `BindingName "Gadget"` + `UserActionContext "Toggles"` + `ScriptedUserAction` | n/a | n/a | vanilla gadget/inspect (не ActionManager) | `ARMST_USER_DETECTOR_TOGGLE` (ScriptedUserAction) | `UserActionContext "Toggles"` | нет |
 | 1 | ARMST-PLATFORM---Core | `Configs/System/chimeraInputCommon.conf` | YES | `{795184CF9AD764DB}` | merge по пути (config layer) | `ARMST_Open_PDA` | `CharacterGeneralContext` (vanilla, `ActionRefs +{`) | `{6672D1E0D9F7A127}` |
 | 2 | ARMST-PLATFORM---Core | same | YES | same | same | `ARMST_Ragdoll` | `CharacterGeneralContext` | `{6672D62E4309E322}` |
 | 3 | ARMST-PLATFORM---Core | same | YES | same | same | `ARMST_NVG_ACTION` | `CharacterGeneralContext` | `{69EB05063326D4D6}` |
