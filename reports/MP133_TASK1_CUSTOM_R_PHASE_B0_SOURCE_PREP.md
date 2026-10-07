@@ -1,9 +1,9 @@
 # MP-133 Task #1 — Custom-R input routing Phase B0 (source prep)
 
-Статус: **T4B_CUSTOM_R_PHASE_B_CONTEXT_ACTIVATE_DIAG_STAGED_OWNER_REVIEW**
+Статус: **T4B_CUSTOM_R_PHASE_B_CONTEXT_ACTIVATE_DIAG_INSTALLED_WAITING_OWNER_RUNTIME**
 Дата: 2026-10-07
-Задание: Issue #34 — staged one-shot context-activation/registry диагностика ([#6031981847](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34)). Только staging.
-Режим: **STAGING ONLY** — изменён только staged script; live/labs/configs/`.meta`/Core не тронуты.
+Задание: Issue #34 — install reviewed context-activation диагностики в live + labs ([#6032101386](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34)). Дальше owner runtime.
+Режим: **установлено в live + labs** — script `A87E3722…`; configs/`.meta`/GUID/Core не тронуты.
 
 ---
 
@@ -54,7 +54,24 @@ active=true                          -> активация контекста у
 
 **Не менялось:** live/labs installed script, configs, `.meta`, GUID, Core, reload/ASTRA/Tube3/prefab/world/inventory.
 
-Status: **`T4B_CUSTOM_R_PHASE_B_CONTEXT_ACTIVATE_DIAG_STAGED_OWNER_REVIEW`**. STOP.
+**INSTALL (owner GO 6032101386):** reviewed script установлен byte-identical в live + labs:
+
+| файл | live SHA | labs SHA |
+|---|---|---|
+| `Scripts/Game/ARMST_T4B/ARMST_T4B_CustomRInputProbe.c` | `A87E3722DD69AB1164ECB363D688CA4FB81331D7A8FF5710BD212B578D96B1AB` | same |
+
+Configs/`.meta`/GUID/Core/protected не менялись.
+
+**Next (owner):** ручной runtime — ожидаемые маркеры:
+```
+[ARMST-T4B-RCTX] phase=listener_registered
+[ARMST-T4B-RCTX] phase=weapon_gate_pass
+[ARMST-T4B-RCTX] phase=context_activate_result result=... active=... actionPresent=...
+[ARMST-T4B-RCTX] phase=context_state active=...
+[ARMST-T4B-RINPUT]
+```
+
+Status: **`T4B_CUSTOM_R_PHASE_B_CONTEXT_ACTIVATE_DIAG_INSTALLED_WAITING_OWNER_RUNTIME`**. STOP.
 
 ---
 

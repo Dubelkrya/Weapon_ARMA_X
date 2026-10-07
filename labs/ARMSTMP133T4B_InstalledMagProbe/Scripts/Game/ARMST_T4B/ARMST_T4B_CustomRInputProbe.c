@@ -4,8 +4,8 @@
 // Owner runtime (Issue #34 comment 6024714308):
 //   PHASE_B_COMPILE_PASS, but [ARMST-T4B-RINPUT] did NOT appear while vanilla
 //   cmd1/cmd5/cmd3 still fired -> CUSTOM_R_ROUTING_FAIL.
-// This adds three bounded diagnostic boundaries to locate WHERE custom R is lost.
-// NO behavior change; the [ARMST-T4B-RINPUT] callback is unchanged.
+// Bounded diagnostic boundaries to locate WHERE custom R is lost. NO behavior
+// change; the [ARMST-T4B-RINPUT] callback is unchanged.
 //
 // DIAG 1: [ARMST-T4B-RCTX] phase=listener_registered action=ARMST_MP133_Reload
 //         right after AddActionListener; registration stays max-once via m_bT4BRListenerActive.
@@ -13,16 +13,20 @@
 //         once when the full local->weapon->probe path is first reached; the diagnostic
 //         bool resets when the current weapon is no longer the T4B probe (re-entry logs again).
 // DIAG 3: [ARMST-T4B-RCTX] phase=context_state active=true|false
-//         queried right after ActivateContext(); logged on first observation and on a
-//         state change, hard-capped at 2 lines per T4B entry -> no frame spam.
+//         queried from the single IsContextActive() read; logged on first observation and
+//         on a state change, hard-capped at 2 lines per T4B entry -> no frame spam.
+// DIAG 4: one-shot activation-result line per T4B entry, carrying result=<bool>,
+//         active=<bool> and actionPresent=<bool>; actionPresent is computed by an
+//         action-count / action-name enumeration scan of the runtime registry.
 //
 // Context-state API VERIFIED in the installed SDK (Doxygen 1.8.0.13),
 // docs/EnfusionScriptAPI/html/interfaceInputManager.html (and interfaceActionManager.html):
 //   proto external bool ActivateContext ( string contextName, int duration=0)
 //   proto external bool IsContextActive ( string contextName)
+//   (action registry enumeration: action count + action name by index)
 //   -> CONTEXT_ACTIVE_QUERY = VERIFIED_IS_CONTEXT_ACTIVE.
-// Only ActivateContext/IsContextActive are used; no context deactivation or
-// context reset call is present (and none is needed).
+// Exactly one ActivateContext call site and one IsContextActive call site; no
+// context deactivation or context reset call is present (and none is needed).
 //
 // Context lifecycle unchanged: periodic ActivateContext in SCR_PlayerController.OnUpdate,
 // local-only, T4B-probe gated.
@@ -39,6 +43,7 @@ modded class SCR_PlayerController
 	protected bool m_bT4BRContextStateKnown;
 	protected bool m_bT4BRContextActiveLast;
 	protected bool m_bT4BRContextChangeLogged;
+	protected bool m_bT4BRContextResultLogged;
 
 	override void OnUpdate(float timeSlice)
 	{
@@ -80,6 +85,7 @@ modded class SCR_PlayerController
 		m_bT4BRWeaponGateLogged = false;
 		m_bT4BRContextStateKnown = false;
 		m_bT4BRContextChangeLogged = false;
+		m_bT4BRContextResultLogged = false;
 	}
 
 	// The ONLY per-frame gameplay-adjacent action: keep the lab context active while
@@ -114,10 +120,32 @@ modded class SCR_PlayerController
 		if (!im)
 			return;
 
-		im.ActivateContext("ARMST_MP133_ReloadContext");
+		// exactly one activation call per eligible frame; capture its bool return.
+		bool activated = im.ActivateContext("ARMST_MP133_ReloadContext");
+		bool activeNow = im.IsContextActive("ARMST_MP133_ReloadContext");
+
+		// DIAG 4: one-shot activation result + action-registry presence.
+		if (!m_bT4BRContextResultLogged)
+		{
+			m_bT4BRContextResultLogged = true;
+
+			bool actionPresent = false;
+			int actionCount = im.GetActionCount();
+			for (int i = 0; i < actionCount; i++)
+			{
+				if (im.GetActionName(i) == "ARMST_MP133_Reload")
+				{
+					actionPresent = true;
+					break;
+				}
+			}
+
+			Print("[ARMST-T4B-RCTX] phase=context_activate_result result=" + activated.ToString()
+				+ " active=" + activeNow.ToString()
+				+ " actionPresent=" + actionPresent.ToString(), LogLevel.NORMAL);
+		}
 
 		// DIAG 3: context state after activation (first observation + at most one change).
-		bool activeNow = im.IsContextActive("ARMST_MP133_ReloadContext");
 		if (!m_bT4BRContextStateKnown)
 		{
 			m_bT4BRContextStateKnown = true;
