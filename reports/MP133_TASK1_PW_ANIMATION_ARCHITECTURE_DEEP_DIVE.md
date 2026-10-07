@@ -239,7 +239,7 @@ G3B2 must execute once under authoritative server validation, retain conservatio
 
 | Assumption | Verdict | Reason |
 |---|---|---|
-| WPROP used Shared | PREVIOUS_ASSUMPTION_FALSE | installed and L source call SetBoolVariable |
+| WPROP used Shared | PREVIOUS_ASSUMPTION_FALSE | inspected installed V/live WPROP calls BindBoolVariable/SetBoolVariable/GetBoolVariable; tracked L/labs is an older baseline and is not evidence for the current WPROP implementation. |
 | Shared means W/P or network | PREVIOUS_ASSUMPTION_WEAK | declaration has no such contract |
 | list addition must copy W custom outputs into P | PREVIOUS_ASSUMPTION_FALSE as sufficient current route | owner W-only; exact native direction remains unknown |
 | list is an explicit synchronization selection | PREVIOUS_ASSUMPTION_CONFIRMED structurally | config/API/official docs |

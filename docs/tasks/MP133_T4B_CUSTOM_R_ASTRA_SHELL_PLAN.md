@@ -3,11 +3,11 @@
 ## Continuation
 
 ```text
-LAST_COMPLETED_PHASE = 1I owner runtime W-only; PW_ARCHITECTURE_DEEP_DIVE report complete
-CURRENT_PHASE = architecture report / HOLD for independent review, no candidate staged
-LAST_SAFE_COMMIT = edf594d5cabf85a3ccd65a784f939ca784e11c75
-CURRENT_BLOCKER = Actual P owner/addressability and P gate/evaluation telemetry unproven; variable-list probe was insufficient. Installed WPROP uses SetBoolVariable, not SetSharedVariableBool.
-NEXT_EXACT_ACTION = Review reports/MP133_TASK1_PW_ANIMATION_ARCHITECTURE_DEEP_DIVE.md; decide separate authorization for exactly W_HOST_P_ATTACHMENT_IDENTITY_AND_REQUEST. No staging/install/runtime implied.
+LAST_COMPLETED_PHASE = deep dive; owner P injection identification; W_HOST_P_ATTACHMENT_READONLY staged
+CURRENT_PHASE = W_HOST_P_ATTACHMENT_READONLY_STAGE_READY_OWNER_REVIEW
+LAST_SAFE_COMMIT = c8e48b203f63bf2acda2a63247b378f3e2856185
+CURRENT_BLOCKER = P instance exists/evaluates (owner evidence); equipped-weapon attachment addressability still untested. No P writes authorized.
+NEXT_EXACT_ACTION = Review reports/MP133_TASK1_W_HOST_P_ATTACHMENT_READONLY_STAGE.md and exact one-file delta; await separate install/compile/runtime GO. No setter/command escalation.
 DO_NOT_REOPEN = input registration/GUID/lifecycle; accepted Flags 0xa; proven SetReloadWeapon(1) rack; rejected global handler; unavailable character component accessors; character-root setter; native-reload P activation; repeat of unchanged list probe; G3B2 until P/W gate passes
 ```
 
