@@ -3,17 +3,19 @@
 ## Continuation
 
 ```text
-LAST_COMPLETED_PHASE = deep dive; owner P injection identification; W_HOST_P_ATTACHMENT_READONLY staged
-CURRENT_PHASE = W_HOST_P_ATTACHMENT_READONLY_STAGE_READY_OWNER_REVIEW
-LAST_SAFE_COMMIT = c8e48b203f63bf2acda2a63247b378f3e2856185
-CURRENT_BLOCKER = P instance exists/evaluates (owner evidence); equipped-weapon attachment addressability still untested. No P writes authorized.
-NEXT_EXACT_ACTION = Review reports/MP133_TASK1_W_HOST_P_ATTACHMENT_READONLY_STAGE.md and exact one-file delta; await separate install/compile/runtime GO. No setter/command escalation.
+LAST_COMPLETED_PHASE = owner W-host attachment runtime; root custom command source discovery
+CURRENT_PHASE = ROOT_CUSTOM_COMMAND_PROBE_JUSTIFIED / SOURCE_ONLY_COMPLETE
+LAST_SAFE_COMMIT = aea719515359eba8429988f085ed9f13ca49443f
+CURRENT_BLOCKER = Character BindCommand/CallCommand callable; injected-only custom command registration and P delivery unproven. W-host attachment route rejected for current component.
+NEXT_EXACT_ACTION = Review reports/MP133_TASK1_ROOT_CUSTOM_COMMAND_TRANSPORT_DISCOVERY.md section 6; separate GO needed for one inert injected-command declaration and bind-only registration candidate. No call, install or runtime authorized here.
 DO_NOT_REOPEN = input registration/GUID/lifecycle; accepted Flags 0xa; proven SetReloadWeapon(1) rack; rejected global handler; unavailable character component accessors; character-root setter; native-reload P activation; repeat of unchanged list probe; G3B2 until P/W gate passes
 ```
 
 LAST_SAFE_COMMIT is the last verified existing predecessor, not a fabricated self-referential SHA. Next phase records the preceding phase commit. On resume verify ancestry and inspect latest plan commit; never reset to this field.
 
 ## Current-state snapshot
+
+2026-10-07 comment 6046106020: owner qualified shell-R returned W attachment -575451861, no attachment readback; W-only continued, same Tube3 0/3 and chamber true. P presence/evaluation remains accepted. Source-only discovery completed: character getter and typed command API confirmed, automatic injection-only registration/fan-out unproven. Decision: one future bind-only custom-command registration experiment, no functional candidate this phase. Read inputs: AGENTS/current sync, latest issue, live graphs/scripts, Core source, installed SDK and official component/editor docs. Allowed/actual changes: report and this plan only. Static check: signatures, scope diff and protected hashes. Owner check: future separate GO, no runtime now. Rollback: docs-only forward correction, never restore old resources. Next phase remains blocked on review of the bounded experiment, not permission to execute broader reload work.
 
 2026-10-07 deep-dive addendum: owner comments 6044909936/6044948637 supersede Phase 1I's historical pending-runtime description below. Report-only audit at edf594d5; no functional staging or install. Current V scripts/prefab differ from L; source from V only after separately authorized preparation, never overwrite from older L. Exact source/hash ledger, alternatives, gate/resource audit and ONE bounded experiment are in `reports/MP133_TASK1_PW_ANIMATION_ARCHITECTURE_DEEP_DIVE.md`. Rack frozen; G3B2 HOLD. Static API is not runtime ownership proof. No graph/prefab/script/input/live change. Rollback: no install; preserve current truth and request forward correction, never historical restoration.
 
