@@ -3,17 +3,19 @@
 ## Continuation
 
 ```text
-LAST_COMPLETED_PHASE = owner W-host attachment runtime; root custom command source discovery
-CURRENT_PHASE = ROOT_CUSTOM_COMMAND_PROBE_JUSTIFIED / SOURCE_ONLY_COMPLETE
-LAST_SAFE_COMMIT = aea719515359eba8429988f085ed9f13ca49443f
-CURRENT_BLOCKER = Character BindCommand/CallCommand callable; injected-only custom command registration and P delivery unproven. W-host attachment route rejected for current component.
-NEXT_EXACT_ACTION = Review reports/MP133_TASK1_ROOT_CUSTOM_COMMAND_TRANSPORT_DISCOVERY.md section 6; separate GO needed for one inert injected-command declaration and bind-only registration candidate. No call, install or runtime authorized here.
+LAST_COMPLETED_PHASE = ITEM_USE_WEAPON_INJECTION_COMPATIBILITY_DISCOVERY source-only
+CURRENT_PHASE = CUSTOM_COMMAND_BIND_PROBE_REMAINS_BEST / OWNER_REVIEW / CUSTOM_COMMAND_STAGE_HOLD
+LAST_SAFE_COMMIT = ba4a2337662a63bf6b6e749da43f8678d62c17e2
+CURRENT_BLOCKER = ItemUse supports current weapon category but occupied Weapon injection lifecycle/restoration and native CommandID mapping are unproven; Astra lacks item-action contract. Custom command registration/delivery also unproven.
+NEXT_EXACT_ACTION = Review reports/MP133_TASK1_ITEM_USE_WEAPON_INJECTION_COMPATIBILITY_DISCOVERY.md; recommendation is one bind-only registration experiment, but staging remains HOLD until separate GO. No ItemUse/call/runtime candidate.
 DO_NOT_REOPEN = input registration/GUID/lifecycle; accepted Flags 0xa; proven SetReloadWeapon(1) rack; rejected global handler; unavailable character component accessors; character-root setter; native-reload P activation; repeat of unchanged list probe; G3B2 until P/W gate passes
 ```
 
 LAST_SAFE_COMMIT is the last verified existing predecessor, not a fabricated self-referential SHA. Next phase records the preceding phase commit. On resume verify ancestry and inspect latest plan commit; never reset to this field.
 
 ## Current-state snapshot
+
+2026-10-07 comment 6046340236: completed source-only ItemUse compatibility discovery. Read 11 accessible first-party callers and generated/supporting APIs at pinned Bohemia commit 3d77cc212d5cda9922daf5f45635c7300d2d4cce, checked installed SDK and current Astra resources. Character-origin CommandID is a repeated calling convention; native remapping remains unknown. Current-weapon eligibility does not prove preservation of the occupied Weapon injection, ADS/equip/W or cancellation restoration. Compared both paths; chose bind-only registration as the next proposed experiment, CUSTOM_COMMAND_STAGE still HOLD. Allowed/actual edits: new report + plan only. Static acceptance: evidence links, exact caller coverage, no functional diff, pre/post gameplay hashes. Owner/runtime acceptance: NOT RUN, separate GO required. Rollback: docs forward correction, no historical resource restore. Remaining work: review decision, then separately authorized candidate only; G3B2 HOLD and rack frozen.
 
 2026-10-07 comment 6046106020: owner qualified shell-R returned W attachment -575451861, no attachment readback; W-only continued, same Tube3 0/3 and chamber true. P presence/evaluation remains accepted. Source-only discovery completed: character getter and typed command API confirmed, automatic injection-only registration/fan-out unproven. Decision: one future bind-only custom-command registration experiment, no functional candidate this phase. Read inputs: AGENTS/current sync, latest issue, live graphs/scripts, Core source, installed SDK and official component/editor docs. Allowed/actual changes: report and this plan only. Static check: signatures, scope diff and protected hashes. Owner check: future separate GO, no runtime now. Rollback: docs-only forward correction, never restore old resources. Next phase remains blocked on review of the bounded experiment, not permission to execute broader reload work.
 
