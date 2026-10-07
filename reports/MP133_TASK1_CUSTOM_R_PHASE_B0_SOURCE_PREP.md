@@ -1,9 +1,44 @@
 # MP-133 Task #1 — Custom-R input routing Phase B0 (source prep)
 
-Статус: **T4B_CUSTOM_R_PHASE_B_FINAL_INPUT_CONFIG_INSTALLED_WAITING_OWNER_REGISTRATION**
+Статус: **T4B_CUSTOM_R_PHASE_B_OWNER_RESOURCE_REGISTRATION_PASS_WAITING_LABS_META_SYNC**
 Дата: 2026-10-07
-Задание: Issue #34 — install финального input-конфига в live + labs ([#6025962357](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34)). Дальше owner вручную регистрирует `.conf` в Workbench.
-Режим: **установлено в live + labs** — `chimeraInputCommon.conf` `57778A1D…`; `.meta`/GUID не создавались (их создаст Workbench).
+Задание: Issue #34 — синк Workbench-созданных `.meta` из live в labs ([#6031648455](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34)). Runtime пока не запускается.
+Режим: **labs `.meta` синхронизированы** byte-identical из live; `.conf` не менялись.
+
+---
+
+## OWNER WORKBENCH RESOURCE REGISTRATION + LABS .META SYNC (owner 6031648455)
+
+**Owner вручную зарегистрировал оба ресурса в Workbench** → Workbench создал реальные `.meta` + уникальные GUID:
+
+| ресурс | GUID (Workbench) | live `.meta` SHA-256 |
+|---|---|---|
+| `Configs/System/chimeraInputCommon.conf` | `{1CECBCDC65A5CA96}` | `790EB015152D910CB0E861E11F1CC84C09BE6E47468A487168BB706A3099D7AA` |
+| `Configs/System/keyBindingMenu.conf` | `{4EE7794C9A3F11F0}` | `FD9BE33577F132A95A50730716A174205FD3C601EA24E52C3D344F19629AC216` |
+
+Структура `.meta` корректна: `MetaFileClass { Name "{GUID}Configs/System/<file>" Configurations { CONFResourceClass PC {} XBOX_ONE : PC {} … HEADLESS : PC {} } }`.
+
+**GUID collision check (vs Core):** T4B chimera `1CECBCDC65A5CA96` ≠ Core `795184CF9AD764DB`; T4B keyBinding `4EE7794C9A3F11F0` ≠ Core `4EE7794C9A3F11EF`. Конфликта нет.
+
+**`.conf` не менялись:** `chimeraInputCommon.conf` `57778A1D…` (ActionRefs `{`, `KC_R`, `Priority 20000`, `Flags 0x6 0`); `keyBindingMenu.conf` `368B51F7…` (ссылается на `ARMST_MP133_Reload`).
+
+**Labs sync (agent):** оба `.meta` скопированы live → labs byte-identical:
+
+| файл | live SHA | labs SHA | identical |
+|---|---|---|---|
+| `Configs/System/chimeraInputCommon.conf.meta` | `790EB015…D7AA` | `790EB015…D7AA` | True |
+| `Configs/System/keyBindingMenu.conf.meta` | `FD9BE335…C216` | `FD9BE335…C216` | True |
+
+**Next (owner):** review этого commit → ручной runtime. Ожидаемые маркеры:
+```
+resource not registered = НЕТ
+[ARMST-T4B-RCTX] phase=listener_registered
+[ARMST-T4B-RCTX] phase=weapon_gate_pass
+[ARMST-T4B-RCTX] phase=context_state active=true
+[ARMST-T4B-RINPUT]
+```
+
+Status: **`T4B_CUSTOM_R_PHASE_B_OWNER_RESOURCE_REGISTRATION_PASS_WAITING_LABS_META_SYNC`** (labs sync выполнена в этом коммите; awaiting owner review). STOP.
 
 ---
 
