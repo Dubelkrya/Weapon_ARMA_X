@@ -1,38 +1,53 @@
-# MP-133 — V3 current status and historical research index
+# MP-133 — current status and historical research index
 
-> **CURRENT NAVIGATION / DESIGN STATUS (2026-10-03).** This is a map of evidence, not proof of a finished V3. For any disagreement use current live-addon/owner Workbench evidence first, then [KNOWLEDGE_STATUS.md](KNOWLEDGE_STATUS.md). The [tracking Issue #27](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/27) records approvals, owner observations and STOP conditions.
+> **CURRENT NAVIGATION / EXECUTION STATUS (2026-10-07).** Active Task #1 authority is current branch state plus latest owner evidence in [Issue #34](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34). Historical V1/V2/V3 reports below remain evidence, not instructions. When they disagree with this section, this section wins.
 
-## CURRENT HANDOFF / NEXT TASK (overrides historical statuses below)
+## CURRENT HANDOFF / NEXT TASK
 
-- **G2 offline owner-run:** original T4b synthetic +1 → same physical installed magazine → manual short-R and native chamber → owner-reported single shot. No hit/damage or MP proof.
-- **G3-A:** [read-only donor/transaction audit](MP133_V3_G3_REAL_DONOR_PHASE_A.md) published at `eb2b323`. Two setters remain non-atomic.
-- **G3-B1 PASS (owner runtime):** one real carried 12ga donor magazine decremented via the child lab weapon `ARMST_T4B_G3B1_TestWeapon.et` (write enabled `m_bG3b1WriteEnabled 1`), donor `n→n-1` persisted +250 ms/+1 s with the same item/mag identity, installed target excluded, duplicate → `already-used`. Source in the **same existing T4b addon**; T4b diagnostic script and owner-saved prefab unchanged. No new T4c addon.
-- **G3-B2 (one donor round → SAME installed magazine):** design **approved** (rev 2, review `5973766922`); **bounded source preparation** published (write OFF) per task `5973770796`. Read-only design + implementation record: [`MP133_V3_G3B2_TRANSACTION_DESIGN.md`](MP133_V3_G3B2_TRANSACTION_DESIGN.md). New additive lab files: `Scripts/Game/ARMST_T4B/ARMST_T4B_G3B2_Transfer.c` + `Prefabs/Test/ARMST_T4B_G3B2_TestWeapon.et`(+`.meta`) — a thin child of the production MP-133 with the T4b probe and **only** the B2 action, `m_bG3b2WriteEnabled=false`, empty donor whitelist. **No Workbench/game run; B2 write-enabled / two-sided owner test, animation/R/input, MP and production are NOT authorised** until independent source review and the owner's separate go-ahead. A Core RPC-repacking candidate from an unpublished local report remains unverified ([#33](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/33)); Core SHIFT+R reload is not working.
-- **G4/G5:** not authorised.
-- **Coordination:** experimental branch `t4b/installed-mag-probe` owns active G3 work. Documentation PR [#31](https://github.com/Dubelkrya/Weapon_ARMA_X/pull/31) must reconcile overlapping index/sync changes before any merge. Catalog #28 and CI #29 are done. Astra remains paused; historical T4a/T2a/V2/P2 are not current active MP-133 labs.
+- **Branch:** `t4b/installed-mag-probe`.
+- **Functional code checkpoint before this documentation-only sync:** `86da6559e1a7b6dd79f08c4461edb4828fb8147d`.
+- **Selective R ownership — OWNER RUNTIME PASS:** T4B context `Priority 20000 / Flags 0xa` keeps character controls and non-T4B weapon behavior intact while physical keyboard R is delivered to `ARMST_MP133_Reload` for the T4B MP-133. The `0x8` Exclusive-only experiment killed the lower control stack and is closed.
+- **Custom rack — OWNER RUNTIME PASS:** `R -> T4BRInputDown() -> SetReloadWeapon(1) -> CMD_Weapon_Reload intValue=1 -> Weapon_Rack_Bolt`. Owner trace proved Tube3 `1/3 -> 0/3`, chamber `0 -> 1`, same installed Tube3 identity, and no cmd2..6 in the captured rack run. See Issue #34 comment `6038204788`.
+- **G3-B2 one-shell backend — OWNER RUNTIME PASS (offline lab):** repeated one-shell donor -> same installed physical Tube3 transfer, conservation, full 3/3 rejection, busy guard and unchanged chamber flag are proven in Issue #34 comment `5975205409`. Multiplayer/production remain unverified.
+- **Protected rack invariant:** do not refactor or replace the proven `SetReloadWeapon(1)` branch while wiring shell reload.
+- **Next implementation target:** complementary ASTRA per-shell branch only: when rack is not required and shell load is eligible, enter current ASTRA shell animation and perform exactly one proven G3B2 transfer at the deterministic insert-commit marker; repeat/stop only while valid.
+- **GPT Astra task:** Issue #34 comment `6038352310` supersedes `6038288235`. Astra must create a persistent phased plan first at `docs/tasks/MP133_T4B_CUSTOM_R_ASTRA_SHELL_PLAN.md`, commit Phase 0 alone, then execute one phase per commit while maintaining the continuation block. At this checkpoint the plan file does not yet exist.
+- **Owner-only runtime:** agents must not launch Workbench/Reforger/Game Mode/Animation Editor or runtime/compile tests.
 
 ## Start here in a new agent session
 
-1. Read [`AGENTS.md`](../AGENTS.md) and [`docs/sync/CURRENT_AI_SYNC.md`](../docs/sync/CURRENT_AI_SYNC.md) **before taking action**.
-2. Check the latest [Issue #27](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/27) comments and the local addon/SDK. Historical SHAs and generated catalog snapshots are not substitutes for current sources.
-3. Read the [V3 design and baseline assessment](MP133_V3_DESIGN_AND_BASELINE_ASSESSMENT.md), [P2 interference investigation](MP133_V3_1_I1_LAB_INTERFERENCE_INVENTORY.md), [native animation-event finding](MP133_V3_2_ANIM_EVENT_FINDING.md), and [T0/T1/T2 research and diagnostic design](MP133_V3_T0_T1_T2_DESIGN.md).
-4. Preserve all local uncommitted work. Only write knowledge reports to this repository. The legacy `ARMST_MP133_AnimationLab` has no Git remote, is frozen V2 history and is **not** the V3 implementation.
+1. Read [`AGENTS.md`](../AGENTS.md) and [`docs/sync/CURRENT_AI_SYNC.md`](../docs/sync/CURRENT_AI_SYNC.md) first.
+2. Read the latest [Issue #34](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34) comments. Current key checkpoints are `6038204788` (rack runtime PASS) and `6038352310` (Astra plan-first task).
+3. If `docs/tasks/MP133_T4B_CUSTOM_R_ASTRA_SHELL_PLAN.md` exists, use its continuation block as the execution resume point. If it does not exist, the only Astra action is Phase 0: create and commit that plan before implementation.
+4. Treat current HEAD/current files as authoritative. Do not reconstruct an older ASTRA intention from model memory, backups, archived reports or older commits.
+5. Preserve the working `Flags 0xa` selective-R architecture, the proven `SetReloadWeapon(1)` rack path, the G3B2 transaction safeguards, all GUID/meta identity, and owner-local Workbench work.
 
-## Verified versus still open
+## Current verified vs open
 
 | Topic | Current evidence / status |
 | --- | --- |
-| Clean native MP-133 (T0) | **OWNER-RUNTIME FUNCTIONAL PASS**: only Weapons addon loaded; three actual successive shots with ordinary short-R manual pumping; 10-round tube supply depleted; hold R inspection works. [Owner result](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/27#issuecomment-5967911774) |
-| Strict physical-mag identity | **NOT INSTRUMENTED**: no before/after physical magazine entity identity or complete last-round chamber trace. Do not claim no silent replacement solely from the functional T0. |
-| Core interaction | **NOT TESTED IN T0**: Core was not loaded; owner states Core SHIFT+R reload is nonfunctional; legacy references are not an active integration requirement. |
-| Legacy V2 global R regression | **P2 OWNER-RUNTIME**: excluding the old global `modded SCR_CharacterCommandHandlerComponent` restored ordinary R on other pumps. The exact `super`/native failure mechanism is unknown. |
-| Owner's native-event edit | Visible chamber-insert behavior reportedly recovered after restoring `Weapon_SpawnMagazine/AttachMagazine/MagRelease` in a lab clip. This is **not** proof of magazine continuity, chamber correctness or ammo conservation. |
-| Chung's animation reference | Provided AGF/AGR/AST, player/weapon ASI, code and selected player-event screenshots support separate pump, grab, insert and safe stop/continue paths. Actual player→weapon event routing and possible duplicate commit are **UNRESOLVED**. |
-| T1 input routing | **READ-ONLY DESIGN PUBLISHED**; stock R action name, short/hold edge arbitration and whether a listener can suppress native reload remain unproven. |
-| T2 event routing | **READ-ONLY DESIGN PUBLISHED**; diagnostic player-only, weapon-only and paired-marker experiments proposed; no test code or asset edit authorized. |
-| V3 actual code | **NOT AUTHORIZED / NOT IMPLEMENTED**. Real one-shell server transaction, once-only commit, safe stop, network and low-FPS tests are future gates. |
+| Selective physical R ownership | **OWNER-RUNTIME PASS** on T4B with `Priority 20000 / Flags 0xa`; controls and non-T4B behavior remain normal. |
+| Exclusive-only `0x8` | **RUNTIME FAIL / CLOSED**: suppresses lower character controls broadly. |
+| T4B native-equivalent rack | **OWNER-RUNTIME PASS** via `SetReloadWeapon(1)`; cmd1 + `Weapon_Rack_Bolt` + real Tube3→chamber transition, same installed mag identity. |
+| G3B2 one-shell transfer | **OWNER-RUNTIME PASS (offline lab)** for repeated donor→same Tube3 transfer, conservation, full rejection, busy guard, delayed verification; MP/production still open. |
+| ASTRA shell animation phases/markers | Existing current-head resources/observer contain shell-phase concepts; exact current entry/commit integration must be re-audited from current HEAD, not assumed from historical trigger designs. |
+| Custom-R shell dispatcher | **NOT YET IMPLEMENTED**. This is the next active engineering target. |
+| Auto-rack after inserting first shell into empty tube | **NOT AUTHORIZED**. Current design leaves chambering to a later explicit R/rack. |
+| Native cmd2..6 whole-mag path | **MUST NOT BE REINTRODUCED** into the T4B custom-R architecture. |
+| Global `HandleWeaponReloading` override | **REJECTED / DO NOT REOPEN**. |
+| Multiplayer/replication/production promotion | **UNVERIFIED / NOT CURRENT GATE**. |
 
-**Intended V3 controls, not current T0 behavior:** short R performs the necessary verified native pump (if required) and then per-shell tube loading; a second short R or trigger requests safe stop; hold R preserves native inspection; legacy Core SHIFT+R reload is not a functioning dependency. If standard R cannot be intercepted without affecting native behavior, a separate load action is a possible fallback **only after the owner's decision**.
+**Intended current dispatcher:**
+
+```
+R on T4B
+├─ chambered == 0 && Tube3 > 0
+│  -> SetReloadWeapon(1)        # proven rack
+└─ otherwise, if shell load eligible
+   -> ASTRA shell path
+   -> one G3B2 transfer at insert commit
+   -> repeat/stop safely
+```
 
 ## Current design / evidence reports
 

@@ -5,11 +5,135 @@ now, what was just done, and what must not be repeated or assumed. It is a
 *state* file, not a policy file — policy lives in
 [`../../AGENTS.md`](../../AGENTS.md).
 
-**Last updated:** 2026-10-03
+**Last updated:** 2026-10-07
 
 ---
 
-## 0. CURRENT MP-133 EXECUTION STATE — 2026-10-04
+## 0. CURRENT MP-133 EXECUTION STATE — 2026-10-07 (AUTHORITATIVE)
+
+**Authority for active Task #1:** current branch `t4b/installed-mag-probe`, latest Issue [#34](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34) comments, and owner Workbench/runtime evidence. The functional code checkpoint immediately before this documentation-only sync is `86da6559e1a7b6dd79f08c4461edb4828fb8147d`. This docs sync does not change gameplay/config/meta/graph code.
+
+### Selective R ownership — OWNER RUNTIME PASS
+
+The GUID-preserving input override is working. The accepted T4B input context is:
+
+```
+Priority 20000
+Flags 0xa 0
+ActionRef = ARMST_MP133_Reload
+Input = keyboard:KC_R
+```
+
+Owner runtime proved:
+- normal movement/look/fire/aim remain available;
+- non-T4B weapons keep their normal vanilla behavior;
+- on the canonical T4B MP-133, physical R reaches `ARMST_MP133_Reload`;
+- the competing vanilla T4B reload/rack command is suppressed for that same R press.
+
+The failed control experiment is also closed: `Flags 0x8` (Exclusive without Overlay) suppressed the lower character input stack broadly and is not a selective-R solution. Do not reopen the old global `HandleWeaponReloading` architecture.
+
+### Custom T4B rack — OWNER RUNTIME PASS
+
+Commit `86da655` installs the reviewed custom-R rack dispatcher into the repository labs copy. The owner then deployed that same reviewed script into the actual local Workbench addon and ran the bounded test.
+
+Issue #34 comment `6038204788` proves the native-equivalent rack chain:
+
+```
+T4B + installed Tube3 + Tube3 ammo > 0 + chambered=0
+R
+ -> ARMST_MP133_Reload
+ -> T4BRInputDown()
+ -> SetReloadWeapon(1)
+ -> CMD_Weapon_Reload intValue=1
+ -> Weapon_Rack_Bolt
+ -> Tube3 N -> N-1
+ -> chambered 0 -> 1
+```
+
+Observed runtime details:
+- test transition: Tube3 `1/3 -> 0/3`;
+- chamber `0 -> 1`;
+- installed magazine identity remained the same (`magTag=M1`, Tube3 prefab `{CD8091A2B3C4D5E6}Prefabs/Test/ARMST_T4B_G3B2_Tube3Mag.et`);
+- no `intValue=2..6` appeared in the captured rack run;
+- no manual chamber/ammo writer was used by the rack dispatcher;
+- a later R with Tube3 empty rejected fail-closed.
+
+Classification:
+
+```
+SELECTIVE_R_OWNERSHIP = PASS
+CUSTOM_T4B_RACK_ENTRY = PROVEN_RUNTIME_NATIVE_RACK_ENTRY
+SETRELOADWEAPON_1_NATIVE_CHAMBERING = PASS
+T4B_RACK_MAG_IDENTITY_PRESERVED = PASS
+```
+
+**Protected invariant:** do not refactor, replace, reroute or generalize the proven `SetReloadWeapon(1)` rack branch while implementing shell loading.
+
+### G3-B2 one-shell transfer backend — OWNER RUNTIME PASS (offline lab)
+
+Issue #34 comment `5975205409` remains the current transaction evidence. With the physical 3-round Tube3 installed, the write-enabled lab transaction repeatedly transferred exactly one shell from a carried donor into the same installed Tube3:
+- first fill `0/3 -> 1/3 -> 2/3 -> 3/3`, donor `10 -> 9 -> 8 -> 7`;
+- full `3/3` rejected further transfer without consuming donor ammo;
+- second fill repeated successfully;
+- an overlapping request was rejected busy;
+- delayed verification passed;
+- chamber state remained unchanged by B2 commits.
+
+Current classification:
+
+```
+PHYSICAL_3_TUBE_RUNTIME_PASS
+REPEATABLE_TWO_FULL_CYCLES_PASS
+DONOR_CONSERVATION_PASS
+FULL_3_3_REJECTION_PASS
+IN_FLIGHT_BUSY_PASS
+CHAMBER_FLAG_UNCHANGED_BY_B2_IN_TEST
+```
+
+This is still offline/lab evidence, not multiplayer/production proof.
+
+### Current next architecture step — ASTRA shell branch
+
+The remaining Task #1 path is now narrowly:
+
+```
+R on T4B
+├─ chambered == 0 && Tube3 > 0
+│  -> PROVEN SetReloadWeapon(1) rack branch (UNCHANGED)
+└─ otherwise, if shell load is eligible
+   -> ASTRA shell animation
+   -> exactly one G3B2 transfer at the deterministic insert-commit marker
+   -> continue/repeat only while valid
+```
+
+Do not add auto-rack-after-insert unless the owner explicitly changes that design. Do not restore cmd2..6 whole-mag reload, the old global handler, or a historical graph.
+
+### GPT Astra continuity task
+
+Issue #34 comment `6038352310` **supersedes** `6038288235`.
+
+GPT Astra must:
+1. work only from current HEAD/current files;
+2. create `docs/tasks/MP133_T4B_CUSTOM_R_ASTRA_SHELL_PLAN.md` first;
+3. commit the plan alone as Phase 0;
+4. then execute one phase per narrow commit;
+5. update `LAST_COMPLETED_PHASE / CURRENT_PHASE / LAST_SAFE_COMMIT / CURRENT_BLOCKER / NEXT_EXACT_ACTION / DO_NOT_REOPEN` after every phase;
+6. stop at owner Workbench/runtime gates.
+
+At this checkpoint the plan file does **not yet exist**, so Astra has not started Phase 0. The next exact action is: **execute Phase 0 from comment `6038352310`; do not continue the superseded task directly.**
+
+### Runtime ownership rule
+
+Agents do not launch Workbench, Reforger, Game Mode, Animation Editor or any Enfusion runtime/editor executable. Owner performs runtime/compile/gameplay gates manually.
+
+### Local Workbench note
+
+The owner-local T4B addon contains the reviewed rack script used for the successful runtime test. That local live copy is outside this Git repository. The repository labs copy at the functional checkpoint `86da655` is the source checkpoint for the same reviewed rack candidate. Do not infer arbitrary local-addon state from Git alone.
+
+
+---
+
+## 0A. SUPERSEDED HISTORICAL CHECKPOINT — 2026-10-04
 
 **G2 owner-runtime passed (offline):** one synthetic `+1` persists in the SAME installed M1 magazine; manual short-R / native `Weapon_Rack_Bolt` chambers it; owner reports firing. The original T4b script SHA256 remains `D581B9C9EE270725FFEC94C7685CBBCB2AB41DBA717F2B4FBCF8C4AC8DDCBEB1`. Projectile hit/damage and multiplayer are unverified. The original T4b weapon prefab was **re-saved by the owner in Workbench** and published at `a165e80` (manifest SHA256 `29C70A78B7CBA7678B84A57A29EBF32127A1ED2575742270D9CFACAB78F2AE83`); do not silently restore an older prefab.
 
