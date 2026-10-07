@@ -3,11 +3,11 @@
 ## Continuation
 
 ```text
-LAST_COMPLETED_PHASE = 1D (P-side activation discovery, MULTIPLE_CANDIDATES) ; 1E R1 staged
-CURRENT_PHASE = 1E-R1 (PACT ATTACHMENT ACCESS PROBE, safety R1) — corrected staged candidate ready for owner review
-LAST_SAFE_COMMIT = d40f679f76c5ed0502c2d0f1fbe6b522f8b2d153
-CURRENT_BLOCKER = PACT accessor (engine CharacterAnimGraphComponent) and attachment "Weapon" runtime ownership are UNRESOLVED; the corrected (R1) staging awaits owner review and install/runtime GO.
-NEXT_EXACT_ACTION = Owner reviews the R1 report (all-4 readback, mismatch safe-reset, active-from-readback, P-primary reset), then (if acceptable) authorizes install + one owner R in the Tube3<3 / chambered=1 state. GPT Astra HOLD; no install/runtime by agent.
+LAST_COMPLETED_PHASE = 1E (PACT installed; runtime PACT_BIND_FAIL / owner unavailable) ; 1F sourced
+CURRENT_PHASE = 1F (P-OWNER + INSPECTION ROUTE DISCOVERY) — source/static complete; needs runtime diag + input A/B
+LAST_SAFE_COMMIT = 3537ccb2e5419f70cfdfd8224f764ec7d4f13a5f
+CURRENT_BLOCKER = P owner not source-provable (CharacterAnimGraphComponent runtime-unavailable; AnimationControllerComponent candidate untested). Inspection regression: graph PROVEN intact; leading cause = input-context (0xa claims KC_R; CharacterInspect binding UNRESOLVED).
+NEXT_EXACT_ACTION = (a) owner-only A/B: deactivate / Overlay-only the T4B context and test inspection; (b) bounded read-only animation/controller enumeration diagnostic for the P owner. No input/graph change by agent.
 DO_NOT_REOPEN = input registration/GUID/lifecycle; accepted Flags 0xa; proven SetReloadWeapon(1) rack; rejected global handler; character-root variable setter; native-reload P activation; W->P propagation assumption
 ```
 
@@ -485,5 +485,26 @@ Accessor (compile-visible evidence): `CharacterAnimGraphComponent.Cast(controlle
 PACT on the non-rack shell branch: `BindAttachment("Weapon")` → `BindAttBoolVariable("ASTRA_Shell*")` → `SetAttBoolVariable` (Request=true, Eligible=true, Repeat=false, Stop=false) → readback. Cleanup deterministic (no timer): preferred W `ASTRA_Shell_ReturnReady_W` → `SCR_PlayerController.T4BPactResetFromEvent()` (write Request/Eligible=false + readback); fallback second qualified R `phase=manual-abort`. Frozen rack branch byte-identical; no gameplay writes; no native reload; no cmd1..6; no G3B2.
 
 Owner runtime (deferred, not authorized): Tube3<3, chambered=1, one R; PASS = P+W families + clean reset + no mutation (`PACT_PW_PASS`); fail classes `PACT_P_ONLY_FAIL` / `PACT_W_ONLY_FAIL` / `PACT_BIND_FAIL` / `PACT_COMPILE_BLOCKED` / `PACT_GAMEPLAY_MUTATION_FAIL`.
+
+No functional file changed (GRAPH/PREFAB/CONFIG/META/GUID/G3B2/LIVE unchanged).
+
+## Phase 1F — P-OWNER + INSPECTION ROUTE DISCOVERY
+
+Authority: [6043917747](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34#issuecomment-6043917747). SOURCE/STATIC only. Status: **T4B_P_OWNER_INSPECTION_ROUTE_DISCOVERY_COMPLETE**. Report: `reports/MP133_TASK1_P_OWNER_AND_INSPECTION_ROUTE_DISCOVERY.md`.
+
+Runtime context: PACT installed/compiled/PASS; `PACT_BIND_FAIL = YES`, subreason `CHARACTER_ANIM_GRAPH_OWNER_UNAVAILABLE`; `W_LOCAL_REQUEST = WORKS`, `P_FAMILY = NO`.
+
+Findings:
+- Inspection receiver = `CharacterControllerComponent.SetInspect`/`SetInspectState`/`GetInspectState`/`OnInspectionModeChanged`; vanilla action `CharacterInspect` (referenced in Core conf L265). Its binding/context is in the packed vanilla conf → **UNRESOLVED locally**. Graph inspection path (`WeaponInspectionState`, `CMD_Weapon_Inspection`, `WeaponInspectionSTM`, AST `Inspection`) is **source-intact**.
+- Live T4B overlay = `Priority 20000 / Flags 0xa / ActionRefs { ARMST_MP133_Reload } / keyboard:KC_R`. It can only affect KC_R-bound actions; if `CharacterInspect` is R-bound, the active Exclusive context suppresses inspection (leading candidate for the regression).
+- P-owner candidates: `CharacterAnimGraphComponent` (runtime FAIL), `AnimationControllerComponent` via `FindComponent` (Core precedent; UNTESTED), `CharacterAnimationComponent` (no attachment API → NO), weapon W component (W-only proven), native engine injection (no script accessor).
+
+Classifications:
+```
+INSPECTION_REGRESSION_CLASSIFICATION = INSPECTION_REGRESSION_MULTIPLE_CANDIDATES   (leading: INPUT_CONTEXT; graph PROVEN intact)
+P_OWNER_CLASSIFICATION              = P_OWNER_DISCOVERY_NEEDS_RUNTIME_DIAG
+```
+
+Next: owner-only input A/B (Overlay-only / context-off inspection test) + bounded read-only animation/controller enumeration diagnostic for the P owner. No input/graph change by agent.
 
 No functional file changed (GRAPH/PREFAB/CONFIG/META/GUID/G3B2/LIVE unchanged).
