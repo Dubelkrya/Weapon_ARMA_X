@@ -3,17 +3,19 @@
 ## Continuation
 
 ```text
-LAST_COMPLETED_PHASE = 1H (AnimInjection bind discovery) ; 1I staged
-CURRENT_PHASE = 1I (ANIMVARIABLE BIND PROBE STAGE) — prefab-only additive binding staged, awaiting owner review
-LAST_SAFE_COMMIT = b127eaec4b8c640c71e30dc44922c7697e19a29e
-CURRENT_BLOCKER = W->P propagation through the explicit AnimVariablesToBind list is unproven; the minimal additive binding probe is staged and awaits owner review + install/compile/runtime GO.
-NEXT_EXACT_ACTION = Owner reviews the 1I report (exact prefab diff), then authorizes install of ONLY the lab prefab .et (meta untouched) + compile + one qualified shell R. No prefab change by agent without GO.
-DO_NOT_REOPEN = input registration/GUID/lifecycle; accepted Flags 0xa; proven SetReloadWeapon(1) rack; rejected global handler; character-root variable setter; native-reload P activation; W->P propagation assumption
+LAST_COMPLETED_PHASE = 1I owner runtime W-only; PW_ARCHITECTURE_DEEP_DIVE report complete
+CURRENT_PHASE = architecture report / HOLD for independent review, no candidate staged
+LAST_SAFE_COMMIT = edf594d5cabf85a3ccd65a784f939ca784e11c75
+CURRENT_BLOCKER = Actual P owner/addressability and P gate/evaluation telemetry unproven; variable-list probe was insufficient. Installed WPROP uses SetBoolVariable, not SetSharedVariableBool.
+NEXT_EXACT_ACTION = Review reports/MP133_TASK1_PW_ANIMATION_ARCHITECTURE_DEEP_DIVE.md; decide separate authorization for exactly W_HOST_P_ATTACHMENT_IDENTITY_AND_REQUEST. No staging/install/runtime implied.
+DO_NOT_REOPEN = input registration/GUID/lifecycle; accepted Flags 0xa; proven SetReloadWeapon(1) rack; rejected global handler; unavailable character component accessors; character-root setter; native-reload P activation; repeat of unchanged list probe; G3B2 until P/W gate passes
 ```
 
 LAST_SAFE_COMMIT is the last verified existing predecessor, not a fabricated self-referential SHA. Next phase records the preceding phase commit. On resume verify ancestry and inspect latest plan commit; never reset to this field.
 
 ## Current-state snapshot
+
+2026-10-07 deep-dive addendum: owner comments 6044909936/6044948637 supersede Phase 1I's historical pending-runtime description below. Report-only audit at edf594d5; no functional staging or install. Current V scripts/prefab differ from L; source from V only after separately authorized preparation, never overwrite from older L. Exact source/hash ledger, alternatives, gate/resource audit and ONE bounded experiment are in `reports/MP133_TASK1_PW_ANIMATION_ARCHITECTURE_DEEP_DIVE.md`. Rack frozen; G3B2 HOLD. Static API is not runtime ownership proof. No graph/prefab/script/input/live change. Rollback: no install; preserve current truth and request forward correction, never historical restoration.
 
 Date 2026-10-07. Branch `t4b/installed-mag-probe`.
 Starting HEAD `6fa72173fff506a73bcc54234d9e4732f7f327cd`; functional checkpoint `86da6559e1a7b6dd79f08c4461edb4828fb8147d`.
