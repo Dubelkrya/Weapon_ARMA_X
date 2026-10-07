@@ -1,9 +1,143 @@
 # MP-133 Task #1 — Custom-R input routing Phase B0 (source prep)
 
-Статус: **T4B_CUSTOM_R_PHASE_B_OWNER_RESOURCE_REGISTRATION_PASS_WAITING_LABS_META_SYNC**
+Статус: **T4B_CUSTOM_R_PHASE_B_REGISTERED_CONTEXT_AUDIT_COMPLETE**
 Дата: 2026-10-07
-Задание: Issue #34 — синк Workbench-созданных `.meta` из live в labs ([#6031648455](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34)). Runtime пока не запускается.
-Режим: **labs `.meta` синхронизированы** byte-identical из live; `.conf` не менялись.
+Задание: Issue #34 — read-only аудит «registered context still inactive» ([#6031744187](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34)). Fix/диагностика НЕ реализуются.
+Режим: **READ-ONLY** — configs/`.meta`/GUID/live/labs/Core не менялись.
+
+---
+
+## REGISTERED CONTEXT STILL INACTIVE — ROOT CAUSE AUDIT (owner task 6031744187)
+
+**Owner runtime после регистрации:** `RESOURCE_REGISTRATION = PASS`, `listener_registered=YES`, `weapon_gate_pass=YES`, `context_state active=false`, `RINPUT=NO`, vanilla reload=YES.
+
+### Audit A — literal Core vs T4B context comparison
+
+Core `Configs/System/chimeraInputCommon.conf` (working brand-new context, L234–256):
+```
+ActionContext ARMST_Pda3DContext {
+ Priority 10000
+ Actions {
+  Action Escape { InputSource InputSourceSum "{6A45FDA30CA13001}" { Sources { InputSourceValue "{6A45FDA30CA13002}" { Input "keyboard:KC_TAB" } InputSourceValue "{6A45FDA30CA13003}" { Input "gamepad0:b" } } } }
+ }
+ ActionRefs {
+  "CharacterAction"
+  "ARMST_PDA_Touch"
+  "ARMST_PDA_Wheel"
+  "ARMST_PDA_WheelMinus"
+ }
+}
+```
+Core second new context `ARMST_Pda3DFocusContext` (L257–269): `Priority 1000`, no Flags, plain `ActionRefs { … }`, **no inline Actions**.
+
+T4B `Configs/System/chimeraInputCommon.conf` (L30–36):
+```
+ActionContext ARMST_MP133_ReloadContext {
+ Priority 20000
+ Flags 0x6 0
+ ActionRefs {
+  "ARMST_MP133_Reload"
+ }
+}
+```
+
+| Field | ARMST_Pda3DContext | ARMST_MP133_ReloadContext | Difference | Could explain active=false? | Source proof |
+|---|---|---|---|---|---|
+| name | `ARMST_Pda3DContext` | `ARMST_MP133_ReloadContext` | только имя | нет | conf |
+| Priority | `10000` | `20000` | 20000 > наблюдаемого максимума | возможно, не доказано | conf |
+| Flags | **отсутствует** | `Flags 0x6 0` | у нового Core-контекста Flags нет | возможно, не доказано | conf |
+| ActionRefs syntax | `ActionRefs {` | `ActionRefs {` | совпадает | нет | conf |
+| ActionRefs content | ссылки на существующие actions | новая `ARMST_MP133_Reload` (в том же файле) | Core тоже ссылается на свои Actions-блоки | нет | conf |
+| inline `Actions` | есть (`Action Escape`) | нет | `ARMST_Pda3DFocusContext` тоже без inline Actions | нет | conf |
+| position in `Contexts` | 3-й | 1-й/единственный | порядок не влияет на существование | нет | conf |
+| related Action decl | `ARMST_PDA_Touch/Wheel/…` в `Actions` | `ARMST_MP133_Reload` в `Actions` | совпадает (свой Actions-блок) | нет | conf |
+| physical input | `keyboard:KC_TAB`/`gamepad0:b` | `keyboard:KC_R` | форма валидна | нет | conf |
+| keyBindingMenu entry | нет (для `ARMST_PDA_Touch` тоже нет) | есть | не требуется для firing | нет | conf |
+| activation call | `ActivateContext("ARMST_Pda3DContext")` (return не проверяется) | `ActivateContext("ARMST_MP133_ReloadContext")` | совпадает | нет | Core `ARMST_PDA_COMPONENT.c:633` |
+
+**Единственные реальные структурные отличия: `Flags 0x6 0` (есть у T4B, нет у нового Core) и `Priority 20000` vs 10000.**
+
+### Audit B — Priority
+
+Все `Priority` во всех addon-конфигах: Core `10000`, `1000`, `100`, `100`, `100`; T4B `20000`. В installed SDK тип/диапазон `Priority` не документирован; clamp/reserved диапазон не найден. `Priority` документированно влияет только на разрешение конфликтов контекстов.
+
+**Классификация: `PRIORITY_SEMANTICS_UNRESOLVED`** (20000 не доказан ни валидным, ни невалидным).
+
+### Audit C — Flags
+
+`Flags` встречается во **всех** addon-конфигах ровно 3 раза: Core `chimeraInputCommon.conf:289` и `:307` (`BookContext`, `TraderContext` — оба являются **override** внешнего `BookContext.conf`) и T4B `:32`. Ни один **новый** Core-контекст (`ARMST_Pda3DContext`, `ARMST_Pda3DFocusContext`) `Flags` не использует.
+
+- Есть ли Flags у `ARMST_Pda3DContext`? **Нет.**
+- Нормально ли отсутствие Flags для brand-new контекста? **Да** — оба новых Core-контекста без Flags.
+- Что значит `0x6 0`? **Не документировано** в SDK 1.8.0.13; наблюдается только на override-контекстах Book/Trader.
+- Могут ли эти flags делать `ActivateContext` false / мешать persistent active? **Не доказано.**
+- Валидны ли они только для другого класса/use-case (override)? Возможно (только там и встречаются), но не доказано.
+
+**Классификация: `FLAGS_SUSPICIOUS_BUT_NOT_PROVEN`** — T4B применяет `Flags 0x6 0` к brand-new контексту, тогда как рабочий эталон `ARMST_Pda3DContext` — без Flags; это реальное отличие, но без runtime не доказано, что оно блокирует активацию.
+
+### Audit D — ActionRefs / new-context syntax
+
+После правки `ActionRefs +{` → `ActionRefs {` финальная T4B-структура совпадает с рабочим brand-new Core-контекстом (`ARMST_Pda3DFocusContext`: `Priority` + plain `ActionRefs {}`, без inline Actions, без Flags). Другие обязательные поля не обнаружены; порядок Action-декларации значения не имеет; keyBindingMenu-entry для активации не требуется.
+
+**Классификация: `ACTIONREFS_STRUCTURE_CONFORMS`.**
+
+### Audit E — ActivateContext return semantics
+
+SDK: `proto external bool ActivateContext(string contextName, int duration=0)`. Ни SDK-док, ни рабочий Core-код не трактуют возвращаемый bool — Core вызывает `inputManager.ActivateContext("ARMST_Pda3DContext");` **без проверки результата** (`ARMST_PDA_COMPONENT.c:633`) и снимает через `inputManager.ResetContext("ARMST_Pda3DContext")` (`:406`). Значение `false` может означать «контекст не найден», «активация отклонена», «уже активен» или «нет перехода» — источник не различает.
+
+**Классификация: `ACTIVATE_RETURN_SEMANTICS_UNRESOLVED`.**
+
+### Audit F — registry/context existence API
+
+Полный список членов (installed SDK):
+- `ActionManager`: `ActivateContext`, `IsContextActive`, `SetContextDebug`, `ActivateAction`, `IsActionActive`, `GetActionValue`, `GetActionInputType`, `GetActionTriggered`, `SetActionValue`, **`GetActionCount`**, **`GetActionName(int)`**, `AddActionListener`, `RemoveActionListener`.
+- `InputManager`: те же context/action-API + `ResetContext`, `ResetAction`, `RegisterActionManager`, `GetActionKeybinding(...)`; `FindContext`/`GetContexts` находятся на **`InputBinding`**, не на InputManager/ActionManager.
+
+**Нет API перечисления контекстов.** `IsContextActive(name)` не различает «контекст отсутствует» и «контекст есть, но неактивен». **Но есть перечисление действий:** `GetActionCount()` + `GetActionName(int)` (и `IsActionActive`/`GetActionKeybinding`) позволяют доказать наличие `ARMST_MP133_Reload` в реестре — это разделяет «config-слой вообще не merged» vs «контекст отклонён».
+
+**Классификация: `REGISTRY_CONTEXT_ENUM = API_UNAVAILABLE; REGISTRY_ACTION_ENUM = GetActionCount/GetActionName`.**
+
+### Audit G — same-path multi-addon merge
+
+`+{` в Core (`CharacterGeneralContext`, `InventoryContext`) доказывает merge слоя Core поверх vanilla. Точное поведение **трёх** слоёв (vanilla + Core + T4B) на одном пути source не доказывает; «один слой шэдоуит другой» также не доказано.
+
+**Классификация: `MULTI_ADDON_MERGE_UNRESOLVED`.**
+
+### Итог
+
+**Финальная классификация: `ROOT_CAUSE_NOT_YET_PROVEN`.**
+
+Отдельно:
+- Priority: `PRIORITY_SEMANTICS_UNRESOLVED`
+- Flags: `FLAGS_SUSPICIOUS_BUT_NOT_PROVEN`
+- ActionRefs: `ACTIONREFS_STRUCTURE_CONFORMS`
+- ActivateContext return: `ACTIVATE_RETURN_SEMANTICS_UNRESOLVED`
+- registry-query: `CONTEXT_ENUM_API_UNAVAILABLE / ACTION_ENUM=GetActionCount+GetActionName`
+- multi-addon merge: `MULTI_ADDON_MERGE_UNRESOLVED`
+
+### Ровно один следующий шаг (НЕ реализуется здесь)
+
+Diagnostic-only изменение staged-скрипта — один one-shot лог, объединяющий (2) и (3):
+
+```c
+bool activated = im.ActivateContext("ARMST_MP133_ReloadContext");
+bool activeNow = im.IsContextActive("ARMST_MP133_ReloadContext");
+// registry existence (actions): scan GetActionCount()/GetActionName(i)
+bool actionPresent = /* "ARMST_MP133_Reload" найден в реестре */;
+Print("[ARMST-T4B-RCTX] phase=context_activate_result result=" + activated.ToString()
+    + " active=" + activeNow.ToString()
+    + " actionPresent=" + actionPresent.ToString(), LogLevel.NORMAL);
+```
+
+Печатается **один раз** (bool-флаг подавления), без per-frame спама. Это разделит:
+- `actionPresent=false` → config-слой T4B не merged (multi-addon/registration);
+- `actionPresent=true` + `active=false` → action merged, но контекст отклонён (тогда подозрение на `Flags`/`Priority`/context-декларацию).
+
+Никаких config/`.meta`/GUID/live/labs/Core изменений в этой задаче.
+
+**`.meta`/`.conf`/script/live/labs/Core не менялись. Read-only audit.**
+
+Status: **`T4B_CUSTOM_R_PHASE_B_REGISTERED_CONTEXT_AUDIT_COMPLETE`**. STOP.
 
 ---
 
