@@ -3,11 +3,11 @@
 ## Continuation
 
 ```text
-LAST_COMPLETED_PHASE = 1E (PACT installed; runtime PACT_BIND_FAIL / owner unavailable) ; 1F sourced
-CURRENT_PHASE = 1F (P-OWNER + INSPECTION ROUTE DISCOVERY) — source/static complete; needs runtime diag + input A/B
-LAST_SAFE_COMMIT = 3537ccb2e5419f70cfdfd8224f764ec7d4f13a5f
-CURRENT_BLOCKER = P owner not source-provable (CharacterAnimGraphComponent runtime-unavailable; AnimationControllerComponent candidate untested). Inspection regression: graph PROVEN intact; leading cause = input-context (0xa claims KC_R; CharacterInspect binding UNRESOLVED).
-NEXT_EXACT_ACTION = (a) owner-only A/B: deactivate / Overlay-only the T4B context and test inspection; (b) bounded read-only animation/controller enumeration diagnostic for the P owner. No input/graph change by agent.
+LAST_COMPLETED_PHASE = 1F (P-owner + inspection discovery) ; 1G staged
+CURRENT_PHASE = 1G (P-OWNER RUNTIME DIAG STAGE) — read-only diagnostic staged, awaiting owner review
+LAST_SAFE_COMMIT = d20cbcc8337b50d99ea4025f9185b3601199f51b
+CURRENT_BLOCKER = P owner unresolved (CharacterAnimGraphComponent runtime-unavailable); AnimationControllerComponent candidate staged for a read-only runtime check. Inspection regression leading cause = input-context, unproven.
+NEXT_EXACT_ACTION = Owner reviews the 1G report (complete diff) and, if acceptable, authorizes install + one qualified shell R to capture [ARMST-T4B-POWNER]; plus owner-only inspection A/B. No install/runtime by agent.
 DO_NOT_REOPEN = input registration/GUID/lifecycle; accepted Flags 0xa; proven SetReloadWeapon(1) rack; rejected global handler; character-root variable setter; native-reload P activation; W->P propagation assumption
 ```
 
@@ -506,5 +506,17 @@ P_OWNER_CLASSIFICATION              = P_OWNER_DISCOVERY_NEEDS_RUNTIME_DIAG
 ```
 
 Next: owner-only input A/B (Overlay-only / context-off inspection test) + bounded read-only animation/controller enumeration diagnostic for the P owner. No input/graph change by agent.
+
+No functional file changed (GRAPH/PREFAB/CONFIG/META/GUID/G3B2/LIVE unchanged).
+
+## Phase 1G — P-OWNER RUNTIME DIAGNOSTIC (STAGE ONLY)
+
+Authority: [6044071573](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34#issuecomment-6044071573). Stage-only; read-only diagnostic. Status: **P_OWNER_DIAG_STAGE_READY_OWNER_REVIEW**. Report: `reports/MP133_TASK1_P_OWNER_RUNTIME_DIAG_STAGE.md`.
+
+Base = installed PACT probe (`ARMST_T4B_CustomRInputProbe.c` `2568DA60…`, blob `f661cd9`). Staged read-only delta: `artifacts/astra-rebuild/stageT4BPOwnerDiag/Scripts/Game/ARMST_T4B/ARMST_T4B_CustomRInputProbe.c` → `54404F6B32D9599E4A4F34D3A3519FC5FC2596FDC476AD7FFA94A0F4BD960202` (blob `dfbadb3`, +41/-0).
+
+Diagnostic (`T4BRTryPOwner`, called once per qualified shell R): logs `[ARMST-T4B-POWNER] phase=owner`; `phase=find animController=.. charAnimGraph=.. charAnim=..` (via `FindComponent` for `AnimationControllerComponent`, `CharacterAnimGraphComponent`, `CharacterAnimationComponent`); `phase=bindAtt owner=animationController binding=Weapon id=.. valid=..` and (if found) the same for `characterAnimGraph`. `BindAttachment("Weapon")` is the only API call — **no** attachment-variable writes, **no** commands, **no** graph mutation, **no** gameplay writes; WPROP/PACT/rack paths unchanged.
+
+Also included: owner-only inspection A/B plan (A = custom context active; B = context disabled / Overlay-only; same T4B, inspect only). No input variant installed.
 
 No functional file changed (GRAPH/PREFAB/CONFIG/META/GUID/G3B2/LIVE unchanged).
