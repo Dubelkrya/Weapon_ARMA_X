@@ -3,11 +3,11 @@
 ## Continuation
 
 ```text
-LAST_COMPLETED_PHASE = ITEM_USE_WEAPON_INJECTION_COMPATIBILITY_DISCOVERY (source-only) ; 1J staged
-CURRENT_PHASE = 1J (INJECTED-ONLY CUSTOM COMMAND BIND STAGE) — AGR command decl + read-only bind diagnostic staged, awaiting owner review
-LAST_SAFE_COMMIT = fcb38ce6066114ba72bc824ca1d0e3ebb9d080d5
-CURRENT_BLOCKER = Whether the injected Astra command name is meaningfully bindable from the character animation API is unproven; the staged bind probe (post-injection + weapon-side + positive/negative controls) awaits owner review + install/compile/runtime GO.
-NEXT_EXACT_ACTION = Owner reviews reports/MP133_TASK1_CUSTOM_COMMAND_BIND_STAGE.md (complete diffs), then authorizes install of the AGR + controller, compile, and a no-R observation to capture [ARMST-T4B-CMDBIND]. No install/runtime by agent.
+LAST_COMPLETED_PHASE = 1J (custom command bind stage) ; 1J-rebase staged
+CURRENT_PHASE = 1J-REBASE (CUSTOM COMMAND BIND REBASE STAGE) — owner AGR complete; only CustomR diagnostic staged, awaiting owner review
+LAST_SAFE_COMMIT = 9a2b8b7dc9164dc025d386c7c5e186dd53b06b72
+CURRENT_BLOCKER = Live AGR already contains CMD_ASTRA_TransportProbe (owner-complete; Synchronized not serialized in AGR text). Only the read-only CMDBIND diagnostic awaits install/compile/runtime GO.
+NEXT_EXACT_ACTION = Owner reviews reports/MP133_TASK1_CUSTOM_COMMAND_BIND_REBASE_STAGE.md, then authorizes install of only the CustomR diagnostic + compile + a no-R observation to capture [ARMST-T4B-CMDBIND]. No install/runtime by agent.
 DO_NOT_REOPEN = input registration/GUID/lifecycle; accepted Flags 0xa; proven SetReloadWeapon(1) rack; rejected global handler; unavailable character component accessors; character-root setter; native-reload P activation; repeat of unchanged list probe; G3B2 until P/W gate passes
 ```
 
@@ -574,5 +574,19 @@ Staged (git-ignored): `artifacts/astra-rebuild/stageCustomCommandBind/`
 - `Scripts/Game/ARMST_T4B/ARMST_T4B_CustomRInputProbe.c` → `9ADD4AD9979382AC6B42F88209A47A11A29EB6038BE832F13D3B3EF4AA628249` (blob `59be53d`): read-only `[ARMST-T4B-CMDBIND]` bind diagnostic at the existing post-injection `weapon_gate_pass` one-shot (character-side custom/positive/negative + weapon-side custom).
 
 Proofs: `CUSTOM_COMMAND_DECLARATIONS_ADDED=1`, `COMMAND_CONSUMERS_ADDED=0`, `CALLCOMMAND_CALLS=0`, `ITEM_USE_CALLS=0`, `GAMEPLAY_WRITERS_ADDED=0`; no AGF/ASI/AST/TXA/ANM/prefab/input change. Effective injection: `BindWithInjection ON`, `AutoCommandBind ON`, `AutoVariablesBind OFF`, `AnimVariablesToBind=[WeaponInspectionState]`; `AnimCommandsToBind` not observed (UNRESOLVED). Pre-injection half not safely obtainable → post-only, documented limitation.
+
+No functional file changed (GRAPH/PREFAB/CONFIG/META/GUID/G3B2/LIVE unchanged).
+
+## Phase 1J-REBASE — CUSTOM COMMAND BIND REBASE (STAGE ONLY)
+
+Authority: [6046797975](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34#issuecomment-6046797975). Stage-only; rebase from CURRENT LIVE owner AGR. Status: **CUSTOM_COMMAND_BIND_REBASE_STAGE_READY_OWNER_REVIEW**. Report: `reports/MP133_TASK1_CUSTOM_COMMAND_BIND_REBASE_STAGE.md`.
+
+Fresh live: AGR `C55D757E…` (blob `acdb211`; owner-saved 2026-10-07 23:58:40, contains exactly one `CMD_ASTRA_TransportProbe`); CustomR `54404F6B…` (blob `dfbadb3`). Owner AGR delta vs baseline `8E8BAB37…` = exactly the 2-line `AnimSrcGCTCmd CMD_ASTRA_TransportProbe { }` addition.
+
+`Synchronized`: the live AGR contains **no** `Sync` token; all four commands are empty `{ }` blocks. Owner UI shows Synchronized=ON but disk serialization has none → not inferred; UNRESOLVED whether stored elsewhere/effective-only. Owner bytes preserved (no normalization, no added Synchronized).
+
+Rebase: live AGR is owner-complete ⇒ **no AGR staged**; candidate = CustomR diagnostic only. Staged (git-ignored): `artifacts/astra-rebuild/stageCustomCommandBindRebase/Scripts/Game/ARMST_T4B/ARMST_T4B_CustomRInputProbe.c` → `9ADD4AD9979382AC6B42F88209A47A11A29EB6038BE832F13D3B3EF4AA628249` (blob `59be53d`).
+
+Proofs: `CUSTOM_COMMAND_DECLARATIONS_TOTAL=1`, `DUPLICATE_COMMAND_DECLARATION=NO`, `CALLCOMMAND_CALLS=0`, `ITEM_USE_CALLS=0`, `GAMEPLAY_WRITERS_ADDED=0`; braces 58/58, parens 369/369. Live unchanged by agent.
 
 No functional file changed (GRAPH/PREFAB/CONFIG/META/GUID/G3B2/LIVE unchanged).
