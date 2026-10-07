@@ -125,4 +125,3 @@ Pre/post SHA-256 guards cover .c/.et/.conf/.meta/.layer/.agr/.agf/.asi/.ast, sor
 Final guard comparison PASS: all four aggregates exactly unchanged. GAMEPLAY_FILES_CHANGED_BY_CLEANUP=0. Functional files changed: 0. No install, Workbench, compile, runtime, commands or gameplay writers executed.
 Report checks: API signatures, source locations, exact scope/diff and whitespace. Runtime transport remains unverified.
 Addon resolver PASS (validated Weapons identity). Repository integrity check reports the same 10 previously known broken Markdown references in SOURCE_ATLAS, V3_T4B report and CURRENT_AI_SYNC; none points to either changed document. No repository-wide green claim. Full Python unit suite was not rerun for this documentation-only discovery; earlier execution restrictions around that suite remain respected. No Enfusion compile was performed.
-
