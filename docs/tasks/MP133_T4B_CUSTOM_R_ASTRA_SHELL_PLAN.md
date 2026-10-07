@@ -3,11 +3,11 @@
 ## Continuation
 
 ```text
-LAST_COMPLETED_PHASE = 1F (P-owner + inspection discovery) ; 1G staged
-CURRENT_PHASE = 1G (P-OWNER RUNTIME DIAG STAGE) — read-only diagnostic staged, awaiting owner review
-LAST_SAFE_COMMIT = d20cbcc8337b50d99ea4025f9185b3601199f51b
-CURRENT_BLOCKER = P owner unresolved (CharacterAnimGraphComponent runtime-unavailable); AnimationControllerComponent candidate staged for a read-only runtime check. Inspection regression leading cause = input-context, unproven.
-NEXT_EXACT_ACTION = Owner reviews the 1G report (complete diff) and, if acceptable, authorizes install + one qualified shell R to capture [ARMST-T4B-POWNER]; plus owner-only inspection A/B. No install/runtime by agent.
+LAST_COMPLETED_PHASE = 1G (P-owner read-only diagnostic staged) ; 1H sourced
+CURRENT_PHASE = 1H (ANIM INJECTION BIND DISCOVERY) — source complete; INJECTION_BIND_PROBE_JUSTIFIED
+LAST_SAFE_COMMIT = 3e71d6dd8f0b2512a2f442f6f10e9c3180691c12
+CURRENT_BLOCKER = P-side bridge: the injection's explicit AnimVariablesToBind list carries only WeaponInspectionState; ASTRA_* are not bound. The direction/owner of the bound value for custom variables is UNRESOLVED. A prefab-only additive binding test is the justified next step.
+NEXT_EXACT_ACTION = (proposed) minimal prefab-only additive `AnimVariablesToBind + { ASTRA_ShellRequest/Eligible/Repeat/Stop }` on the lab T4B weapon, then owner-only compile + one qualified shell R; no prefab change by agent without a new GO.
 DO_NOT_REOPEN = input registration/GUID/lifecycle; accepted Flags 0xa; proven SetReloadWeapon(1) rack; rejected global handler; character-root variable setter; native-reload P activation; W->P propagation assumption
 ```
 
@@ -518,5 +518,23 @@ Base = installed PACT probe (`ARMST_T4B_CustomRInputProbe.c` `2568DA60…`, blob
 Diagnostic (`T4BRTryPOwner`, called once per qualified shell R): logs `[ARMST-T4B-POWNER] phase=owner`; `phase=find animController=.. charAnimGraph=.. charAnim=..` (via `FindComponent` for `AnimationControllerComponent`, `CharacterAnimGraphComponent`, `CharacterAnimationComponent`); `phase=bindAtt owner=animationController binding=Weapon id=.. valid=..` and (if found) the same for `characterAnimGraph`. `BindAttachment("Weapon")` is the only API call — **no** attachment-variable writes, **no** commands, **no** graph mutation, **no** gameplay writes; WPROP/PACT/rack paths unchanged.
 
 Also included: owner-only inspection A/B plan (A = custom context active; B = context disabled / Overlay-only; same T4B, inspect only). No input variant installed.
+
+No functional file changed (GRAPH/PREFAB/CONFIG/META/GUID/G3B2/LIVE unchanged).
+
+## Phase 1H — ANIM INJECTION BIND DISCOVERY
+
+Authority: [6044481757](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34#issuecomment-6044481757). SOURCE/STATIC only. Status: **T4B_ANIMINJECTION_BIND_DISCOVERY_COMPLETE**. Report: `reports/MP133_TASK1_ANIMINJECTION_BIND_DISCOVERY.md`.
+
+Owner effective UI (effective/inherited): `BindingName "Weapon"`, `BindWithInjection ON`, `AutoCommandBind ON`, `AutoVariablesBind OFF`, `AnimVariablesToBind = [WeaponInspectionState]`.
+
+Findings (LOCAL_SOURCE): `AnimVariablesToBind` is an explicit named graph-variable list on the injection and supports additive `+{ ... }` in a child prefab (vanilla: `MovementSpeed`/`Stance`/`State`/`HasOpticsAttached`; additive example `MG_PKMN.et`). The T4B lab prefab and production MP-133 serialize only AnimGraph/AnimInstance/(BindingName/BindWithInjection); `Auto*`/`AnimVariablesToBind`/`WeaponInspectionState` are engine defaults (effective), not repo text. ASTRA_* are not in the bind list → consistent with `W works / P inert`.
+
+Decision:
+```
+INJECTION_BIND_PROBE_JUSTIFIED
+```
+(explicit variable binding is source-proven as the intended bridge; the direction/owner of a custom bound variable is UNRESOLVED → prefer a minimal prefab-only additive binding test over another owner-search probe).
+
+Proposed (NOT staged): lab prefab `ARMST_T4B_AstraRebuild_TestWeapon.et` → `AnimVariablesToBind + { ASTRA_ShellRequest/Eligible/Repeat/Stop }` (keep `WeaponInspectionState`). Owner compile + one qualified shell R; observe P family.
 
 No functional file changed (GRAPH/PREFAB/CONFIG/META/GUID/G3B2/LIVE unchanged).
