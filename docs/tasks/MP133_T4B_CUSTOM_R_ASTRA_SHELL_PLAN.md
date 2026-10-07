@@ -3,12 +3,12 @@
 ## Continuation
 
 ```text
-LAST_COMPLETED_PHASE = 1A (BLOCKED_SOURCE, superseded) ; 1C accepted ; 1C-R prepared
-CURRENT_PHASE = 1C-R (WPROP SAFETY + REVIEW-EVIDENCE CORRECTION) — staged correction + review report, awaiting owner install GO
-LAST_SAFE_COMMIT = 524f43f4358e52114d9cf2fea8878ad047598ef2
-CURRENT_BLOCKER = W->P propagation is unproven at runtime; the corrected staged W-local request probe and durable review report await owner GO for install + exactly one R. Special P-controller-accessor search is DEFERRED / NOT REQUIRED YET.
-NEXT_EXACT_ACTION = Owner reviews reports/MP133_TASK1_WPROP_PROBE_REVIEW_EVIDENCE.md (complete diffs + hashes), then separately authorizes install + exactly one R in a non-rack shell-eligible state. GPT Astra HOLD until the WPROP result. No install/runtime by agent.
-DO_NOT_REOPEN = input registration/GUID/lifecycle; accepted Flags 0xa; proven SetReloadWeapon(1) rack; rejected global handler; special P-controller-accessor search (DEFERRED); historical tasks/backups
+LAST_COMPLETED_PHASE = 1C-R (installed; owner runtime = W_ONLY) ; 1D sourced
+CURRENT_PHASE = 1D (P-SIDE ACTIVATION PATH DISCOVERY) — source/static complete; multiple candidates
+LAST_SAFE_COMMIT = 15b7c2b440854fdfa7e741419b54354a8be0aa7d
+CURRENT_BLOCKER = No source-proven custom-R P activation route. The injected P owner (engine CharacterAnimGraphComponent attachment "Weapon") and its game-side accessor are UNRESOLVED. WPROP runtime proved W/P instance separation (W-local setter reaches W only).
+NEXT_EXACT_ACTION = Owner reviews reports/MP133_TASK1_P_SIDE_ACTIVATION_PATH_DISCOVERY.md and authorizes (or not) a bounded animation-only PACT probe (injection-aware attachment variable write). GPT Astra HOLD; no install/runtime by agent.
+DO_NOT_REOPEN = input registration/GUID/lifecycle; accepted Flags 0xa; proven SetReloadWeapon(1) rack; rejected global handler; character-root variable setter; native-reload P activation; W->P propagation assumption
 ```
 
 LAST_SAFE_COMMIT is the last verified existing predecessor, not a fabricated self-referential SHA. Next phase records the preceding phase commit. On resume verify ancestry and inspect latest plan commit; never reset to this field.
@@ -450,3 +450,20 @@ COMPILE_TEST = NOT_RUN_BY_AGENT
 ```
 
 NEXT: owner reviews the report and decides whether to authorize install + one owner R (non-rack shell-eligible state). GPT Astra HOLD. No install/runtime by agent.
+
+## Phase 1D — P-SIDE ACTIVATION PATH DISCOVERY
+
+Authority: [6042238284](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34#issuecomment-6042238284). READ-ONLY source/static (no graph edit, no install, no runtime). Status: **P_TRIGGER_PATH_MULTIPLE_CANDIDATES**. Report: `reports/MP133_TASK1_P_SIDE_ACTIVATION_PATH_DISCOVERY.md`.
+
+Runtime context (owner `6042146419`): WPROP = **W_ONLY** (`sawP=false sawW=true`); the W-local `ASTRA_ShellRequest` started the W graph only. ⇒ W and P are **separate graph instances** (`MP133_Astra2_weapon.asi` = W; `MP133_Astra2_player.asi` = P via `AnimInjection BindingName "Weapon"`), each with independent per-instance variables; there is no automatic W→P propagation.
+
+Findings:
+- **P owner (UNRESOLVED):** strongest candidate = engine `CharacterAnimGraphComponent` (a `BaseAnimationControllerComponent`) hosting attachment `"Weapon"`; the game-side accessor (`CharacterEntity.GetAnimGraphComponent()` / `FindComponent(CharacterAnimGraphComponent)`) is not proven from installed game sources.
+- **Injection-aware API (source-proven signatures):** `BindAttachment`, `BindAttBoolVariable`, `SetAttBoolVariable` (float value), `GetAttBoolVariable`, `BindAttCommand`, `CallAttCommand`, `SetAttachment`/`RemoveAttachment` (engine `BaseAnimationControllerComponent`).
+- **Character-root setter route REJECTED:** the character root graph (`player_main.agr`) does not declare `ASTRA_ShellRequest` (owner evidence 5983965875).
+- **Dual custom command/event:** `BindCommand`/`CallCommand` exist on both controller families and `BindAttCommand`/`CallAttCommand` on the attachment; a single emission reaching both P and W is **not proven**; BC/Chungus calls both sinks explicitly.
+- **Chungus distinction:** ACTIVATION = vanilla reload context; SYNC = `InitPlayerAnimVariables()` after `StartReloadTimer`. No custom pre-reload P starter.
+
+Ranked candidates: (1) injection-aware attachment variable/command write (best; no graph change if it works); (2) custom command/event to both; (3) minimal P follower/sync graph (requires graph edit). Next minimal probe = bounded animation-only PACT probe (obtain CharacterAnimGraphComponent → `BindAttachment("Weapon")` + `BindAttBoolVariable("ASTRA_ShellRequest")` → write/readback → observe P markers → deterministic reset), no gameplay writes.
+
+No functional file changed (GRAPH/PREFAB/CONFIG/META/GUID/G3B2/LIVE unchanged).
