@@ -4,10 +4,10 @@
 
 ```text
 LAST_COMPLETED_PHASE = 0
-CURRENT_PHASE = 1A (IN_PROGRESS); parent Phase 1 unresolved
-LAST_SAFE_COMMIT = 32f4f72e1a1cbd7eeb77b2d7a3bde1d3ae5eb581
-CURRENT_BLOCKER = Weapon-local setter exists, but addressing/synchronizing the separate character Weapon injection is not established; graph baseline differs between Git and owner live resources.
-NEXT_EXACT_ACTION = Execute Phase 1A SDK gate under owner GO 6038870461; stage only if callable P injection path is established, otherwise record BLOCKED_SOURCE.
+CURRENT_PHASE = 1A (BLOCKED_SOURCE); parent Phase 1 unresolved
+LAST_SAFE_COMMIT = 5fa37e93243b35d0f4d4465da6305fdfb87b48f1
+CURRENT_BLOCKER = No source-backed acquisition of the controller owning the character Weapon injection; engine attachment APIs exist but their P-side receiver is unresolved.
+NEXT_EXACT_ACTION = Obtain a concrete installed-SDK/source example exposing the P-injection controller or a separately authorized read-only ownership-discovery task. Reopen Phase 1A API gate only; no candidate to install or run.
 DO_NOT_REOPEN = input registration/GUID/lifecycle; accepted Flags 0xa; proven SetReloadWeapon(1) rack; rejected global handler; historical tasks/backups
 ```
 
@@ -76,7 +76,7 @@ No speculative setters or character-to-weapon propagation assumptions. CURRENT H
 
 ### PHASE_ID = 1A — P/W BINDING PROBE
 
-- STATUS = IN_PROGRESS.
+- STATUS = BLOCKED_SOURCE.
 - GOAL: one animation-only normal-R cycle on BOTH P and W, no physical mutation.
 - INPUT_FILES: current source at 32f4f72e1a1cbd7eeb77b2d7a3bde1d3ae5eb581; installed SDK in both documentation trees; current prefab/graph read-only.
 - FILES_ALLOWED_TO_CHANGE: PLAN/report; only staged CustomRInputProbe.c, AstraV2_WeaponAnimationComponent.c and one optional T4B helper under artifacts/astra-rebuild/stageT4BPWBindingProbe/Scripts/Game/ARMST_T4B/.
@@ -279,3 +279,68 @@ Fresh task baseline and post-audit aggregate hashes match (sorted full-path + fi
 | stageCustomRInput (existing, untouched) | 3 | E6481B8AB4E62B987F0D0CDFA5582C5D244A2A558C96BF1C2528068FE847F4C6 |
 
 GAMEPLAY_FILES_CHANGED_BY_CLEANUP=0. CURRENT_LABS_CHANGED=NO; LIVE_CHANGED=NO; PROVEN_RACK_BRANCH_CHANGED=NO; HISTORICAL_FILE_ROLLBACK=NO; OLD_TASK_RESURRECTED=NO. WORKBENCH_LAUNCHED=NO; REFORGER_LAUNCHED=NO; GAME_MODE_LAUNCHED=NO; RUNTIME_TEST=NO; COMPILE_TEST=NOT_RUN_BY_AGENT.
+
+## Phase 1A result — T4B_PW_BINDING_PROBE_BLOCKED_SOURCE
+
+Authority: 6038870461. CURRENT_HEAD_BASE = 32f4f72e1a1cbd7eeb77b2d7a3bde1d3ae5eb581. Plan-only preparation commit 5fa37e9 preceded this API gate. Parent Phase 1 is NOT DONE. No staged script, helper or staging directory was created; source/staged hash ledger has zero candidate rows. No W-only candidate was written.
+
+### Exact API audit
+
+Installed docs root: `C:\Program Files (x86)\Steam\steamapps\common\Arma Reforger Tools\Workbench\docs`.
+
+| Owner / installed HTML | Exact callable signatures | Finding |
+|---|---|---|
+| EnfusionScriptAPI/html/interfaceBaseAnimationControllerComponent.html | `proto external int BindBoolVariable(string varName)`; `proto external void SetBoolVariable(int varId, bool value)`; `proto external bool GetBoolVariable(int varId)` | W path exists through weapon component inheritance, as established in D4. |
+| Same engine class | `proto external int BindAttachment(string attachmentName)`; `proto external int BindAttBoolVariable(int attachmentName, string varName)`; `proto external void SetAttBoolVariable(int attachmentName, int varId, float value)`; `proto external bool GetAttBoolVariable(int attachmentName, int varId)` | Attachment access exists, but requires the correct owning controller. Note documented setter value is FLOAT, not bool; do not silently rewrite its signature. |
+| ArmaReforgerScriptAPIPublic/html/interfaceChimeraCharacter.html | `proto external CharacterAnimationComponent GetAnimationComponent()` | Returns character physics-animation API, not the engine controller type above. |
+| ArmaReforgerScriptAPIPublic/html/interfaceBaseAnimPhysComponent.html | `proto external TAnimGraphVariable BindVariableBool(string pVariableName)`; `proto external void SetVariableBool(TAnimGraphVariable varIdx, bool value)` | Root graph API; not an attachment-specific overload. Documentation warns character commands can overwrite manually set variables before animation evaluation. |
+| CharacterAnimationComponent | `proto external void SetSharedVariableBool(TAnimGraphVariable varIdx, bool value, bool varHasOtherUsers)` | Still needs a valid handle on this API's graph. Does not solve the already observed root binding failure. |
+| EnfusionScriptAPI/html/interfaceCharacterAnimGraphComponent.html | `proto external bool SetAttachment(string bindingName, ResourceName resNameAttachedGraph, ResourceName resNameAttachedInst, int attachedNodeIndex, bool attachAsManaged)` | Documents managed attachment controls, but no established accessor from current ChimeraCharacter to the existing injected controller. Reattaching/replacing the graph is NOT this probe and would disturb engine ownership. |
+| EnfusionScriptAPI/html/interfaceIEntity.html and interfaceAnimation.html | `proto external Animation GetAnimation()` | Animation exposes bones/meshes/morphs, not graph attachment variable ownership. Not an alternate graph accessor. |
+
+P-side hypothesis: the existing character Weapon injection is owned by an engine animation controller supporting BindAttachment/BindAttBoolVariable. Missing evidence is a callable way to obtain THAT instance in current Reforger character setup. `FindComponent(CharacterAnimGraphComponent)` is syntactically imaginable but no inspected current prefab/callsite proves that component exists or owns this injection. Casting CharacterAnimationComponent across unrelated API families is not justified. Binding "Weapon" on the W controller would assume the ownership the task expressly requires us to prove.
+
+Search scope: both installed SDK class/member/hierarchy trees; current T4B prefab and scripts; Core scripts/prefabs, Weapons scripts; repository references/tools; public searches for Reforger BindAttBoolVariable, CharacterAnimGraphComponent FindComponent and GetAnimationController. No end-to-end P receiver acquisition found. Negative result is bounded, not a claim that engine support is impossible. No native C++ implementation was available in these inspected sources.
+
+### Handles, lifetime and reset gate
+
+Engine API uses integer IDs; character API uses TAnimGraphVariable. They are not proven interchangeable. Inspected bind documentation does not specify an invalid-ID sentinel or lifetime across detach/re-equip; do not invent those contracts. A future candidate must bind against identified current instances, validate ownership, invalidate sessions on weapon/attachment changes, and not reuse stale IDs.
+
+Intended one-cycle behavior remains Request=true, Repeat=false, Eligible only if required by current graph; no Stop/FireStop overwrite without restoring prior state. Reset must follow attributable end/ReturnReady on both relevant sides, with safe cancellation semantics. Without P addressing, deterministic P reset/readback cannot be implemented. W ReturnReady alone cannot reset or certify P. No guessed reset timer is proposed.
+
+### Acceptance / owner handoff
+
+There is NO runnable candidate; do not install anything or repeat the old root-binding probe. Owner runtime protocol in Phase 1A remains conditional on a future source-qualified candidate and separate review/install approval.
+
+| Later owner observation | Classification |
+|---|---|
+| Attributable P AND W phases, exactly one request, reset, same Tube3, unchanged tube/donor/chamber, no native reload from probe, controls intact | PASS only after actual owner evidence |
+| W-only or P-only, missing reset, unknown receiver/invalid handle | FAIL / ownership unresolved; never PASS |
+| Any ammo/chamber/entity mutation or cmd2..6 | Immediate FAIL / stop |
+| Compile error | COMPILE_STOP; no runtime |
+
+Next exact evidence needed: source declaration plus existing Reforger callsite/accessor identifying the P-injection controller (including attachment/handle contract), or new explicit authority for read-only runtime component-ownership discovery. This run does not authorize that expanded diagnostic and does not require another speculative setter test.
+
+Static checks rerun: validated Weapons resolver PASS; integrity still 10 pre-existing broken links; 96 Python tests, 2 failures/10 errors (existing baseline). No claim of green suite. Pre/post hash guard identical: V 105 files, labs 58, Core 5521, Weapons 1584, matching preceding preservation table. GAMEPLAY_FILES_CHANGED_BY_CLEANUP=0.
+
+```text
+CURRENT_HEAD_BASE = 32f4f72e1a1cbd7eeb77b2d7a3bde1d3ae5eb581
+CURRENT_LABS_CHANGED = NO
+LIVE_CHANGED = NO
+GRAPH_CHANGED = NO
+PREFAB_CHANGED = NO
+INPUT_CONFIG_CHANGED = NO
+META_CHANGED = NO
+GUID_CHANGED = NO
+G3B2_CHANGED = NO
+G3B2_CALLED = NO
+AMMO_WRITES_ADDED = NO
+CHAMBER_WRITES_ADDED = NO
+PROVEN_RACK_BRANCH_CHANGED = NO
+CMD2_6_ROUTE_ADDED = NO
+WORKBENCH_LAUNCHED = NO
+REFORGER_LAUNCHED = NO
+GAME_MODE_LAUNCHED = NO
+RUNTIME_TEST = NO
+COMPILE_TEST = NOT_RUN_BY_AGENT
+```
