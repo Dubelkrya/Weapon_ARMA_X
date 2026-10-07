@@ -3,11 +3,11 @@
 ## Continuation
 
 ```text
-LAST_COMPLETED_PHASE = 1G (P-owner read-only diagnostic staged) ; 1H sourced
-CURRENT_PHASE = 1H (ANIM INJECTION BIND DISCOVERY) — source complete; INJECTION_BIND_PROBE_JUSTIFIED
-LAST_SAFE_COMMIT = 3e71d6dd8f0b2512a2f442f6f10e9c3180691c12
-CURRENT_BLOCKER = P-side bridge: the injection's explicit AnimVariablesToBind list carries only WeaponInspectionState; ASTRA_* are not bound. The direction/owner of the bound value for custom variables is UNRESOLVED. A prefab-only additive binding test is the justified next step.
-NEXT_EXACT_ACTION = (proposed) minimal prefab-only additive `AnimVariablesToBind + { ASTRA_ShellRequest/Eligible/Repeat/Stop }` on the lab T4B weapon, then owner-only compile + one qualified shell R; no prefab change by agent without a new GO.
+LAST_COMPLETED_PHASE = 1H (AnimInjection bind discovery) ; 1I staged
+CURRENT_PHASE = 1I (ANIMVARIABLE BIND PROBE STAGE) — prefab-only additive binding staged, awaiting owner review
+LAST_SAFE_COMMIT = b127eaec4b8c640c71e30dc44922c7697e19a29e
+CURRENT_BLOCKER = W->P propagation through the explicit AnimVariablesToBind list is unproven; the minimal additive binding probe is staged and awaits owner review + install/compile/runtime GO.
+NEXT_EXACT_ACTION = Owner reviews the 1I report (exact prefab diff), then authorizes install of ONLY the lab prefab .et (meta untouched) + compile + one qualified shell R. No prefab change by agent without GO.
 DO_NOT_REOPEN = input registration/GUID/lifecycle; accepted Flags 0xa; proven SetReloadWeapon(1) rack; rejected global handler; character-root variable setter; native-reload P activation; W->P propagation assumption
 ```
 
@@ -536,5 +536,23 @@ INJECTION_BIND_PROBE_JUSTIFIED
 (explicit variable binding is source-proven as the intended bridge; the direction/owner of a custom bound variable is UNRESOLVED → prefer a minimal prefab-only additive binding test over another owner-search probe).
 
 Proposed (NOT staged): lab prefab `ARMST_T4B_AstraRebuild_TestWeapon.et` → `AnimVariablesToBind + { ASTRA_ShellRequest/Eligible/Repeat/Stop }` (keep `WeaponInspectionState`). Owner compile + one qualified shell R; observe P family.
+
+No functional file changed (GRAPH/PREFAB/CONFIG/META/GUID/G3B2/LIVE unchanged).
+
+## Phase 1I — ANIMVARIABLE BIND PROBE (STAGE ONLY)
+
+Authority: [6044652747](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34#issuecomment-6044652747). Stage-only; prefab-only. Status: **ANIMVARIABLE_BIND_PROBE_STAGE_READY_OWNER_REVIEW**. Report: `reports/MP133_TASK1_ANIMVARIABLE_BIND_PROBE_STAGE.md`.
+
+Baseline lab prefab `ARMST_T4B_AstraRebuild_TestWeapon.et` `F4A856D8…` (blob `56ce7f1`; live identical). Staged (git-ignored): `artifacts/astra-rebuild/stageAnimVariableBind/Prefabs/Test/ARMST_T4B_AstraRebuild_TestWeapon.et` → `9960A92E9A31C9F2DDC69164F8D68ED673FE5481792E30E365DFE44DFE531AF1` (blob `dd549db`).
+
+Delta = one additive array inside the `ARMST_T4B_AstraV2_WeaponAnimationComponent` block:
+```
+AnimVariablesToBind +{
+ "ASTRA_ShellRequest" "ASTRA_ShellEligible" "ASTRA_ShellRepeat" "ASTRA_ShellStop"
+}
+```
+No `WeaponInspectionState`, no `AutoVariablesBind`/`AutoCommandBind`, no `ASTRA_FireStop`; AnimGraph/W+P AnimInstance/BindingName/BindWithInjection/Tube3/object IDs unchanged; braces 19/19. `.meta`/GUID untouched.
+
+Future runtime criterion (not authorized): one qualified shell R → PASS = `W family YES` + `P family YES` + `sawP=true`; FAIL = `W family YES` + `P family NO`.
 
 No functional file changed (GRAPH/PREFAB/CONFIG/META/GUID/G3B2/LIVE unchanged).
