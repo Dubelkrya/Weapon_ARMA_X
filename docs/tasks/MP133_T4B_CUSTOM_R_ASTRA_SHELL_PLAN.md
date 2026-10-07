@@ -3,12 +3,12 @@
 ## Continuation
 
 ```text
-LAST_COMPLETED_PHASE = 0
-CURRENT_PHASE = 1A (BLOCKED_SOURCE); parent Phase 1 unresolved
-LAST_SAFE_COMMIT = 5fa37e93243b35d0f4d4465da6305fdfb87b48f1
-CURRENT_BLOCKER = No source-backed acquisition of the controller owning the character Weapon injection; engine attachment APIs exist but their P-side receiver is unresolved.
-NEXT_EXACT_ACTION = Obtain a concrete installed-SDK/source example exposing the P-injection controller or a separately authorized read-only ownership-discovery task. Reopen Phase 1A API gate only; no candidate to install or run.
-DO_NOT_REOPEN = input registration/GUID/lifecycle; accepted Flags 0xa; proven SetReloadWeapon(1) rack; rejected global handler; historical tasks/backups
+LAST_COMPLETED_PHASE = 1A (BLOCKED_SOURCE, superseded) ; 1C prepared
+CURRENT_PHASE = 1C (W-LOCAL REQUEST PROPAGATION PROBE) — staged, awaiting owner review/runtime
+LAST_SAFE_COMMIT = b7312401444501a67a4849d6dd54bbcbf3a02a19
+CURRENT_BLOCKER = W->P propagation is unproven at runtime; the staged W-local request probe has no runtime evidence yet. Special P-controller-accessor search is DEFERRED / NOT REQUIRED YET.
+NEXT_EXACT_ACTION = Owner reviews the staged WPROP candidate (hashes + unified diffs), then separately authorizes install + exactly one R in a non-rack shell-eligible state. GPT Astra HOLD until the WPROP result. No install/runtime by agent.
+DO_NOT_REOPEN = input registration/GUID/lifecycle; accepted Flags 0xa; proven SetReloadWeapon(1) rack; rejected global handler; special P-controller-accessor search (DEFERRED); historical tasks/backups
 ```
 
 LAST_SAFE_COMMIT is the last verified existing predecessor, not a fabricated self-referential SHA. Next phase records the preceding phase commit. On resume verify ancestry and inspect latest plan commit; never reset to this field.
@@ -240,6 +240,14 @@ Phase 0 was committed and pushed alone as `e9dcfb97008bdca6cb1d6a484512474a5870e
 
 Official cross-check: [Reforger hierarchy](https://community.bistudio.com/wikidata/external-data/arma-reforger/ArmaReforgerScriptAPIPublic/hierarchy.html), [engine controller API](https://community.bistudio.com/wikidata/external-data/arma-reforger/EnfusionScriptAPIPublic/interfaceBaseAnimationControllerComponent.html). Local installed declarations remain the implementation reference.
 
+### D5 — architecture correction: Chungus does not prove a custom pre-reload P accessor; P-accessor search DEFERRED
+
+- DECISION: mark the special P-controller-accessor search `DEFERRED / NOT REQUIRED YET`; make a W-local request propagation probe the immediate next step.
+- EVIDENCE: Issue #34 comment [6039392248](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34#issuecomment-6039392248) (current architecture authority, supersedes 6039128706 as immediate action) after re-reading the raw Chungus sources.
+- FINDING: Chungus enters its shell workflow through the vanilla reload pipeline; only after the running reload emits `StartReloadTimer` does `BC_PumpShotgunComponent.InitReloadSequence()` call `InitPlayerAnimVariables()`, binding/writing character-side variables through ordinary `CharacterAnimationComponent` and weapon-side variables directly on `WeaponAnimationComponent`. It therefore demonstrates separate W-local and character-side variable control, but does NOT prove that an arbitrary custom T4B shell request can address our P injection before a native reload has activated/synchronized it.
+- ALTERNATIVES_REJECTED: keeping Phase 1A as authoritative; Chungus `ReloadWeapon()` / `SetAmmoCount` / dummy +1 / fallback magazine spawn/attach / native-reload dependence (NON-PORTABLE, forbidden); reopening P-controller discovery now.
+- WHY: the smaller next step is a bounded animation-only W-local propagation probe (Phase 1C) that tests whether weapon-local setters can drive the current P+W shell graph without any direct P setter and without native reload.
+
 ### Current graph and actual integration gap
 
 - Current prefab binds W and character `AnimInjection` to MP133_Astra2.agr, separate W/P ASIs, BindingName `Weapon`, BindWithInjection 1. This establishes resources, not script-side variable propagation direction.
@@ -338,6 +346,71 @@ AMMO_WRITES_ADDED = NO
 CHAMBER_WRITES_ADDED = NO
 PROVEN_RACK_BRANCH_CHANGED = NO
 CMD2_6_ROUTE_ADDED = NO
+WORKBENCH_LAUNCHED = NO
+REFORGER_LAUNCHED = NO
+GAME_MODE_LAUNCHED = NO
+RUNTIME_TEST = NO
+COMPILE_TEST = NOT_RUN_BY_AGENT
+```
+
+## Phase 1C — W-LOCAL REQUEST PROPAGATION PROBE (O1)
+
+Authority: [6039392248](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34#issuecomment-6039392248). Starting HEAD `b7312401444501a67a4849d6dd54bbcbf3a02a19`. Status: **T4B_WPROP_PROBE_STAGE_READY_OWNER_REVIEW** (staged scratch only; not committed, not installed).
+
+### Probe question
+Can source-proven weapon-local `WeaponAnimationComponent` variable setters drive the CURRENT Astra shell graph so that the existing P injection also executes, without any direct P setter and without native reload?
+
+### W-local API used (source-proven, installed SDK)
+`BaseAnimationControllerComponent` (EnfusionScriptAPI), inherited by `WeaponAnimationComponent` via `AnimationControllerComponent` → `BaseItemAnimationComponent` → `WeaponAnimationComponent`:
+```
+proto external int  BindBoolVariable(string varName)
+proto external void SetBoolVariable(int varId, bool value)
+proto external bool GetBoolVariable(int varId)
+```
+Only current graph variables are bound: `ASTRA_ShellRequest`, `ASTRA_ShellEligible`, `ASTRA_ShellRepeat`, `ASTRA_ShellStop`. `ASTRA_FireStop` is NOT bound (relies on its existing default; conditions read `!ASTRA_FireStop`).
+
+### Graph contract (current, read-only)
+- AGR declares `ASTRA_ShellRequest` / `ASTRA_ShellRepeat` / `ASTRA_ShellStop` / `ASTRA_ShellEligible`.
+- AGF Idle → AstraShell entry (L221): `ASTRA_ShellRequest && ASTRA_ShellEligible && !ASTRA_ShellStop && !ASTRA_FireStop && !Firing && WeaponInspectionState == 0 && Stance == 0 && !IsCommand(CMD_Weapon_Reload)`.
+- AGF exit (L237): `!ASTRA_ShellRequest` (AstraShell → Idle).
+- ShellReloadSTM transitions read `ASTRA_ShellEligible && !ASTRA_ShellStop && !ASTRA_FireStop && !Firing` and `ASTRA_ShellRepeat`.
+
+### Probe behaviour (animation-only)
+Request is one cycle: write `Eligible=true`, `Repeat=false`, `Stop=false`, then `Request=true`; readback logged. Deterministic reset on the existing `ASTRA_Shell_ReturnReady_W` W marker (no timer): write `Request=false`, `Eligible=false`. Diagnostics prefix `[ARMST-T4B-WPROP]` cover bind ids, request/eligible/repeat writes + readback, session id, first P marker, first W marker, return-ready, reset readback. No ammo/mag/chamber writes; no `SetReloadWeapon` in the shell branch; no cmd1..6; no G3B2 call.
+
+### P/W marker classification (static, local labs clips)
+`P_Astra_*.txa` contain only `*_P` markers; `W_Astra_*.txa` contain only `*_W` markers. Exact P markers: `ASTRA_Shell_StartReload_P`, `ASTRA_Shell_GrabShell_P`, `ASTRA_Shell_InsertShell_P`, `ASTRA_ShellInsertCommit_P`, `ASTRA_Shell_CheckContinue_P`, `ASTRA_Shell_EndReload_P`, `ASTRA_Shell_ReturnReady_P`, `ASTRA_Shell_Stop_P`; W clips carry the matching `*_W` names. ⇒ `*_P` originate only from P sources and `*_W` only from W sources, so an owner log containing both families proves both source sides executed even when callbacks arrive on the same weapon receiver. Gameplay authority remains W-only (`ASTRA_ShellInsertCommit_W`).
+
+### Frozen rack branch
+`T4BRTryRack(...)` body/constant are byte-identical to the installed rack dispatch; the custom-R caller still invokes it first with the same arguments. The shell probe runs only in the complementary non-rack branch `!(magPresent && ammo > 0 && chambered == 0)`.
+
+### Staged scratch (NOT committed; `artifacts/*` is git-ignored, no `git add -f`)
+Root: `artifacts/astra-rebuild/stageT4BWPropagationProbe/`.
+
+| Staged file | SOURCE_HEAD | SOURCE_SHA256 | STAGED_SHA256 | diff |
+|---|---|---|---|---|
+| Scripts/Game/ARMST_T4B/ARMST_T4B_CustomRInputProbe.c | b7312401444501a67a4849d6dd54bbcbf3a02a19 | F5D59DB9D00469E4664DE219CF29110A40D6DCE73DE23846ED60C44B6EFA68C1 | 3EF896890ADF29D1FF75E3CB07984BAA2BEBC603D9A524B8A60FCC4B34E82B07 | +65 / -0 |
+| Scripts/Game/ARMST_T4B/ARMST_T4B_AstraV2_WeaponAnimationComponent.c | b7312401444501a67a4849d6dd54bbcbf3a02a19 | 7BE1D37513AF31E0C5BC3629BC3301DAFABEC966129AF83D04B688DD4D19BF8A | BC01EEF185AAB8FD9AE608FBDF67760FFC8023AE9CDF8D8280A142CFD7A34CFF | +112 / -0 |
+
+Static checks on staged files: CustomRInputProbe braces 38/38 parens 174/174; AstraV2 braces 32/32 parens 186/186; `SetAmmoCount`/`ClearChamber`/mag detach-attach-spawn/`HandleWeaponReloading`/`CallLater` = 0 in both; `SetReloadWeapon` only in the frozen rack helper; `G3B2` only as a header-comment word. Current labs sources and all graph/prefab/config/meta/GUID are byte-unchanged by O1.
+
+### Owner runtime (NOT authorized; description only)
+Non-rack shell-eligible state, physical R once. Expected: RINPUT=YES; WPROP branch exactly once; cmd2..6=0; shell-probe cmd1=0; G3B2=0; ammo/donor/chamber before==after; same Tube3 identity; W phase family executes; P phase family executes; request reset=yes; controls functional. W-only is NOT PASS; P-only is NOT PASS; any gameplay-state mutation is FAIL.
+
+```text
+START_HEAD = b7312401444501a67a4849d6dd54bbcbf3a02a19
+PLAN_COMMIT = (this O1 plan commit; recorded after push)
+STAGED_CUSTOM_R_SOURCE_SHA256 = F5D59DB9D00469E4664DE219CF29110A40D6DCE73DE23846ED60C44B6EFA68C1
+STAGED_CUSTOM_R_SHA256 = 3EF896890ADF29D1FF75E3CB07984BAA2BEBC603D9A524B8A60FCC4B34E82B07
+STAGED_ASTRA_COMPONENT_SOURCE_SHA256 = 7BE1D37513AF31E0C5BC3629BC3301DAFABEC966129AF83D04B688DD4D19BF8A
+STAGED_ASTRA_COMPONENT_SHA256 = BC01EEF185AAB8FD9AE608FBDF67760FFC8023AE9CDF8D8280A142CFD7A34CFF
+CURRENT_LABS_CHANGED = NO
+LIVE_CHANGED = NO
+GRAPH_CHANGED = NO
+PREFAB_CHANGED = NO
+INPUT_CONFIG_CHANGED = NO
+META_CHANGED = NO
+GUID_CHANGED = NO
 WORKBENCH_LAUNCHED = NO
 REFORGER_LAUNCHED = NO
 GAME_MODE_LAUNCHED = NO
