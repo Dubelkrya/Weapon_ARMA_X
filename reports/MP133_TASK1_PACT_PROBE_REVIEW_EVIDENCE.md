@@ -1,35 +1,37 @@
-# MP-133 Task #1 — PACT attachment access probe: review evidence (Phase 1E / R1 correction)
+# MP-133 Task #1 — PACT attachment access probe: review evidence (Phase 1E / R1 logic, R2 evidence)
 
-Status: **PACT_PROBE_STAGE_READY_OWNER_REVIEW_R1**
+Status: **PACT_PROBE_EVIDENCE_COMPLETE_OWNER_REVIEW_R2**
 Date: 2026-10-07
-Task: Issue #34 comment `6042807676` (Phase 1E R1 safety correction).
-Repo / branch / HEAD (before this commit): `Dubelkrya/Weapon_ARMA_X` @ `t4b/installed-mag-probe` @ `d40f679f76c5ed0502c2d0f1fbe6b522f8b2d153`.
-Mode: **SOURCE / STATIC ONLY.** Staged scratch under git-ignored `artifacts/`; nothing installed; no Workbench/runtime; no force-add.
+Task: Issue #34 comment `6042807676` (Phase 1E R1 logic) + `6043097584` (R2 evidence-only correction).
+Repo / branch: `Dubelkrya/Weapon_ARMA_X` @ `t4b/installed-mag-probe`.
+Mode: **SOURCE / STATIC ONLY.** Staged scratch under git-ignored `artifacts/`; nothing installed; no Workbench/runtime; no force-add. R2 changed ONLY this report; the staged functional bytes are unchanged.
 
 ---
 
-## 0. R1 correction applied (three points)
+## 0. R2 correction (evidence-only)
+
+The prior report omitted the body of `T4BPactResetFromEvent(string source)` from the CustomR diff. This revision regenerates the COMPLETE local-lab → staged-R1 unified diff for both staged files, including the full reset-method body, with no ellipsis and no prose placeholder. **No functional change was made**; staged hashes are identical to R1.
+
+## 1. R1 correction (logic, unchanged in R2)
 
 | # | Requirement | Status |
 |---|---|---|
-| R1 | request readback verifies the whole gate `req==true, elig==true, rep==false, stop==false`; on mismatch fail closed + safe reset all four + log `phase=reject reason=request-state-mismatch` | **DONE** |
-| R2 | reset/manual-abort must not force inactive when reset failed; `m_bPactActive = (rbReq || rbElig)`; log `resetClean=`; clear Repeat/Stop too | **DONE** |
-| R3 | reset on `ASTRA_Shell_ReturnReady_P`; `W ReturnReady` only if no P family observed; if P started but no P ReturnReady → leave active (second-R abort) | **DONE** |
+| R1 | request readback verifies the whole gate `req==true, elig==true, rep==false, stop==false`; on mismatch fail closed + safe reset all four + log `phase=reject reason=request-state-mismatch` | DONE |
+| R2 | reset/manual-abort must not force inactive when reset failed; `m_bPactActive = (rbReq \|\| rbElig)`; log `resetClean=`; clear Repeat/Stop too | DONE |
+| R3 | reset on `ASTRA_Shell_ReturnReady_P`; `W ReturnReady` only if no P family observed; if P started but no P ReturnReady → leave active (second-R abort) | DONE |
 
-Reset sources are logged distinctly: `source=p-return-ready`, `source=w-return-ready-no-p`, `source=manual-abort`.
+Reset sources logged distinctly: `source=p-return-ready`, `source=w-return-ready-no-p`, `source=manual-abort`.
 
----
-
-## 1. Source baseline (owner's local lab) — verified
+## 2. Source baseline (owner's local lab) — verified
 
 | Local lab file | SHA-256 | required | match |
 |---|---|---|---|
 | `ARMSTMP133T4B_InstalledMagProbe/Scripts/Game/ARMST_T4B/ARMST_T4B_CustomRInputProbe.c` | `ECD8DF6F8A96292E4646EBD9F2DF17C1E4153E19361C6D1B08131E8F3E2FC95A` | `ECD8DF6F…` | YES |
 | `ARMSTMP133T4B_InstalledMagProbe/Scripts/Game/ARMST_T4B/ARMST_T4B_AstraV2_WeaponAnimationComponent.c` | `8176B363B876AD105110303C49321266B133C892CF985DFAB9453DABF90B215D` | `8176B363…` | YES |
 
-No source drift.
+No source drift; staged bytes unchanged since R1.
 
-## 2. Staged output (R1)
+## 3. Staged output (R1 bytes; R2 re-verified)
 
 Root: `artifacts/astra-rebuild/stageT4BPACTProbe/Scripts/Game/ARMST_T4B/` (git-ignored; not committed).
 
@@ -38,9 +40,9 @@ Root: `artifacts/astra-rebuild/stageT4BPACTProbe/Scripts/Game/ARMST_T4B/` (git-i
 | `ARMST_T4B_CustomRInputProbe.c` | `ECD8DF6F…C95A` | `2568DA60441BE34D6E0E96613393B4099A07B70875EC5AAB2CE10E8C8289D3E6` | `22a3db0` | `f661cd9` |
 | `ARMST_T4B_AstraV2_WeaponAnimationComponent.c` | `8176B363…15D` | `411D5E127C5E97D6A3BAAA91D7B79C0CE662F06600D03EC31080A2C878C72640` | `fa49109` | `8afef00` |
 
-(Prior, superseded O1E staging: CustomR `68AE302E…`, AstraV2 `8F84BFE4…`.) Brace/paren: CustomR `{ }` 53/53, `( )` 303/303; AstraV2 `{ }` 36/36, `( )` 216/216.
+Brace/paren: CustomR `{ }` 53/53, `( )` 303/303; AstraV2 `{ }` 36/36, `( )` 216/216.
 
-## 3. Exact compile-visible accessor (unchanged, source evidence)
+## 4. Exact compile-visible accessor (source evidence)
 
 ```text
 CONTROLLED_RUNTIME_TYPE = IEntity (SCR_PlayerController.GetControlledEntity()); SCR_CharacterControllerComponent via controlled.FindComponent(SCR_CharacterControllerComponent)
@@ -58,7 +60,7 @@ WHY_COMPILE_VISIBLE_FROM_GAME_SCRIPT = engine animation-controller classes are p
                          compiled and used in this project (Core) for a sibling of the same engine base.
 ```
 
-## 4. Static forbidden-operation scan (R1 staged)
+## 5. Static forbidden-operation scan (staged)
 
 | Pattern | CustomRInputProbe | AstraV2 component |
 |---|---|---|
@@ -69,59 +71,36 @@ WHY_COMPILE_VISIBLE_FROM_GAME_SCRIPT = engine animation-controller classes are p
 | `SetReloadWeapon` | 3 (frozen rack helper only) | 0 |
 | `GetAttBoolVariable` | 12 (all-4 readbacks + resets) | 0 |
 
-## 5. Behavior and cleanup lifecycle (R1)
+## 6. Behavior and cleanup lifecycle
 
 On the non-rack shell branch (after the unchanged `wcomp.T4BWPropRequest()`), `T4BRTryPact(ctrl, side)`:
 `phase=owner` → `phase=attachment` (`BindAttachment("Weapon")`, fail-closed) → `phase=bind` (4 vars, fail-closed) → then:
-- if `m_bPactActive` → **manual abort**: write `Request=0/Eligible=0/Repeat=0/Stop=0`, readback Req+Elig, `m_bPactActive=(rbReq||rbElig)`, log `phase=manual-abort source=manual-abort resetClean=…`;
-- else write `Eligible=1/Repeat=0/Stop=0/Request=1`, **read back all four**, require `req&&elig&&!rep&&!stop`; on mismatch safe-reset all four, `m_bPactActive=(any true)`, log `phase=reject reason=request-state-mismatch`; on success `m_bPactActive=true`, log `phase=request … rbReq/rbElig/rbRep/rbStop`.
+- if `m_bPactActive` → manual abort: write `Request=0/Eligible=0/Repeat=0/Stop=0`, readback Req+Elig, `m_bPactActive=(rbReq||rbElig)`, log `phase=manual-abort source=manual-abort resetClean=…`;
+- else write `Eligible=1/Repeat=0/Stop=0/Request=1`, read back all four, require `req&&elig&&!rep&&!stop`; on mismatch safe-reset all four + `phase=reject reason=request-state-mismatch`; on success `m_bPactActive=true`, log `phase=request …`.
 
 Deterministic cleanup (no timer), per R3:
-- `ASTRA_Shell_ReturnReady_P` observed → `T4BPactResetFromEvent("p-return-ready")` (authoritative);
-- `ASTRA_Shell_ReturnReady_W` observed **and no P family seen** (`!m_bWPropSawP`) → `T4BPactResetFromEvent("w-return-ready-no-p")`;
-- P started but no P ReturnReady → PACT stays active → second qualified R `manual-abort`.
+- `ASTRA_Shell_ReturnReady_P` → `T4BPactResetFromEvent("p-return-ready")` (authoritative);
+- `ASTRA_Shell_ReturnReady_W` and no P family seen → `T4BPactResetFromEvent("w-return-ready-no-p")`;
+- P started but no P ReturnReady → stays active → second qualified R `manual-abort`.
 
-`T4BPactResetFromEvent(source)` writes all four to false, reads back Req+Elig, `m_bPactActive=(rbReq||rbElig)`, logs `phase=reset source=<source> resetClean=…`.
-
-Second staged script justification: the P reset must be triggered by an animation event, which only the W animation component receives; the extension is minimal and does not change the W path semantics.
-
-## 6. Expected compile outcomes
-
-- `CharacterAnimGraphComponent`, `CharacterEntity`, `BindAttachment`, `BindAttBoolVariable`, `SetAttBoolVariable`, `GetAttBoolVariable` resolve from the game module (engine API + Core precedent).
-- Both staged files compile together (same addon).
-- If the compiler rejects the engine classes → `PACT_COMPILE_BLOCKED`; the `CharacterEntity` fallback branch can then be removed (FindComponent route alone).
-
-## 7. Expected owner runtime logs (design only, not run here)
-
-```
-[ARMST-T4B-PACT] phase=owner ok=true via=findcomponent|charentity
-[ARMST-T4B-PACT] phase=attachment ok=true id=<n> binding=Weapon
-[ARMST-T4B-PACT] phase=bind ok=true req=.. elig=.. rep=.. stop=..
-[ARMST-T4B-PACT] phase=request session=1 writeReq=1 writeElig=1 writeRep=0 writeStop=0 rbReq=true rbElig=true rbRep=false rbStop=false active=true side=..
-... P and/or W marker families ...
-[ARMST-T4B-PACT] phase=reset source=p-return-ready|w-return-ready-no-p resetClean=true rbReq=false rbElig=false active=false
-   (or) [ARMST-T4B-PACT] phase=manual-abort source=manual-abort resetClean=true ... active=false
-   (on failure) [ARMST-T4B-PACT] phase=reject reason=request-state-mismatch ... resetReq/.. active=..
-```
-
-## 8. PASS/FAIL classification table
+## 7. PASS/FAIL classification table
 
 | Outcome | Condition |
 |---|---|
-| `PACT_PW_PASS` | P family AND W family observed; reset `source=p-return-ready`, resetClean=true; same Tube3; ammo/chamber unchanged |
+| `PACT_PW_PASS` | P+W families observed; reset `source=p-return-ready`, resetClean=true; same Tube3; ammo/chamber unchanged |
 | `PACT_P_ONLY_FAIL` | P family yes / W no |
 | `PACT_W_ONLY_FAIL` | request readback OK but P family absent (reset via `w-return-ready-no-p`) |
 | `PACT_BIND_FAIL` | `phase=owner/attachment/bind ok=false` |
 | `PACT_COMPILE_BLOCKED` | staged accessor/API not compile-visible |
 | `PACT_GAMEPLAY_MUTATION_FAIL` | any forbidden gameplay mutation |
 
-## 9. Unchanged / boundaries
+## 8. Unchanged / boundaries
 
-No functional file changed. Local lab, repo `labs/`, AGR/AGF/AST/ASI/TXA/ANM, prefab, config/input/keyBindingMenu, `.meta`/GUID, G3B2, production Weapons/Core are byte-identical. Only this report and the plan are committed.
+No functional file changed. Local lab, repo `labs/`, AGR/AGF/AST/ASI/TXA/ANM, prefab, config/input/keyBindingMenu, `.meta`/GUID, G3B2, production Weapons/Core are byte-identical. Only this report (and previously the plan) are committed.
 
 ---
 
-## 10. COMPLETE unified diff — `ARMST_T4B_CustomRInputProbe.c` (local lab → staged R1)
+## 9. COMPLETE unified diff — `ARMST_T4B_CustomRInputProbe.c` (local lab → staged R1)
 
 ```diff
 diff --git "a/ARMSTMP133T4B_InstalledMagProbe/Scripts/Game/ARMST_T4B/ARMST_T4B_CustomRInputProbe.c" "b/artifacts/astra-rebuild/stageT4BPACTProbe/Scripts/Game/ARMST_T4B/ARMST_T4B_CustomRInputProbe.c"
@@ -275,14 +254,48 @@ index 22a3db0..f661cd9 100644
 +			+ " writeReq=1 writeElig=1 writeRep=0 writeStop=0"
 +			+ " rbReq=" + rbReq.ToString() + " rbElig=" + rbElig.ToString() + " rbRep=" + rbRep.ToString() + " rbStop=" + rbStop.ToString()
 +			+ " active=" + m_bPactActive.ToString() + " side=" + side, LogLevel.NORMAL);
++	}
++
++	// O1 PHASE 1E PACT — deterministic reset from an existing animation-event
++	// lifecycle (invoked by the W animation component). `source` distinguishes
++	// p-return-ready / w-return-ready-no-p / manual-abort. Writes attachment
++	// Request=false + Eligible=false (+ Repeat/Stop=false) and confirms readback;
++	// stays active if the reset is not clean. No timer.
++	void T4BPactResetFromEvent(string source)
++	{
++		if (!m_bPactActive)
++			return;
++		if (m_iPactAtt < 0 || m_iPactReq < 0 || m_iPactElig < 0)
++			return;
++		IEntity controlled = GetControlledEntity();
++		if (!controlled)
++			return;
++		CharacterAnimGraphComponent agc = CharacterAnimGraphComponent.Cast(controlled.FindComponent(CharacterAnimGraphComponent));
++		if (!agc)
++		{
++			CharacterEntity ce = CharacterEntity.Cast(controlled);
++			if (ce)
++				agc = ce.GetAnimGraphComponent();
++		}
++		if (!agc)
++			return;
++		agc.SetAttBoolVariable(m_iPactAtt, m_iPactReq, 0.0);
++		agc.SetAttBoolVariable(m_iPactAtt, m_iPactElig, 0.0);
++		agc.SetAttBoolVariable(m_iPactAtt, m_iPactRep, 0.0);
++		agc.SetAttBoolVariable(m_iPactAtt, m_iPactStop, 0.0);
++		bool rbReq = agc.GetAttBoolVariable(m_iPactAtt, m_iPactReq);
++		bool rbElig = agc.GetAttBoolVariable(m_iPactAtt, m_iPactElig);
++		bool clean = (!rbReq && !rbElig);
++		m_bPactActive = (rbReq || rbElig);   // R2: stay active if reset not clean
++		Print("[ARMST-T4B-PACT] phase=reset source=" + source + " resetClean=" + clean.ToString()
++			+ " rbReq=" + rbReq.ToString() + " rbElig=" + rbElig.ToString()
++			+ " active=" + m_bPactActive.ToString(), LogLevel.NORMAL);
  	}
  
  	// Custom action callback: logs physical R and dispatches the T4B rack request.
 ```
 
-(Reset method `T4BPactResetFromEvent(string source)` added after `T4BRTryPact`, with R2 readback semantics and sources `p-return-ready` / `w-return-ready-no-p`.)
-
-## 11. COMPLETE unified diff — `ARMST_T4B_AstraV2_WeaponAnimationComponent.c` (local lab → staged R1)
+## 10. COMPLETE unified diff — `ARMST_T4B_AstraV2_WeaponAnimationComponent.c` (local lab → staged R1)
 
 ```diff
 diff --git "a/ARMSTMP133T4B_InstalledMagProbe/Scripts/Game/ARMST_T4B/ARMST_T4B_AstraV2_WeaponAnimationComponent.c" "b/artifacts/astra-rebuild/stageT4BPACTProbe/Scripts/Game/ARMST_T4B/ARMST_T4B_AstraV2_WeaponAnimationComponent.c"
@@ -318,27 +331,19 @@ index fa49109..8afef00 100644
 
 ---
 
-## Required final fields
+## Required final fields (R2)
 
 ```
 HEAD =
-CUSTOM_R_SOURCE_SHA256 = ECD8DF6F8A96292E4646EBD9F2DF17C1E4153E19361C6D1B08131E8F3E2FC95A
 CUSTOM_R_STAGED_SHA256 = 2568DA60441BE34D6E0E96613393B4099A07B70875EC5AAB2CE10E8C8289D3E6
-ASTRA_SOURCE_SHA256 = 8176B363B876AD105110303C49321266B133C892CF985DFAB9453DABF90B215D
 ASTRA_STAGED_SHA256 = 411D5E127C5E97D6A3BAAA91D7B79C0CE662F06600D03EC31080A2C878C72640
-REQUEST_READBACK_ALL4 = YES
-MISMATCH_SAFE_RESET = YES
-RESET_ACTIVE_FROM_READBACK = YES
-P_RETURN_READY_PRIMARY_RESET = YES
-W_RETURN_READY_NO_P_FALLBACK = YES
-SECOND_R_MANUAL_ABORT = YES
+STAGED_BYTES_CHANGED = NO
+RESET_METHOD_FULL_DIFF_PRESENT = YES
+ELLIPSIS_OR_PLACEHOLDER_IN_FUNCTIONAL_DIFF = NO
+TRACKED_FILES_CHANGED =
 FUNCTIONAL_FILES_CHANGED = NO
-GRAPH_CHANGED = NO
-PREFAB_CHANGED = NO
-G3B2_CHANGED = NO
-LIVE_CHANGED = NO
 WORKBENCH_LAUNCHED = NO
 RUNTIME_TEST = NO
 ```
 
-Final status: **PACT_PROBE_STAGE_READY_OWNER_REVIEW_R1**. STOP (no install, no compile, no runtime).
+Final status: **PACT_PROBE_EVIDENCE_COMPLETE_OWNER_REVIEW_R2**. STOP (no install, no compile, no runtime).
