@@ -1,9 +1,9 @@
 # MP-133 Task #1 — Custom-R input routing Phase B0 (source prep)
 
-Статус: **T4B_CUSTOM_R_PHASE_B_FINAL_INPUT_CONFIG_STAGED_OWNER_REVIEW**
+Статус: **T4B_CUSTOM_R_PHASE_B_FINAL_INPUT_CONFIG_INSTALLED_WAITING_OWNER_REGISTRATION**
 Дата: 2026-10-07
-Задание: Issue #34 — staged структурная правка финального input-конфига перед Workbench-регистрацией ([#6025912911](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34)). Только staging; live/labs не тронуты.
-Режим: **STAGING ONLY** — изменён только staged `chimeraInputCommon.conf` (`ActionRefs +{` → `ActionRefs {`); `.meta`/GUID не создавались.
+Задание: Issue #34 — install финального input-конфига в live + labs ([#6025962357](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34)). Дальше owner вручную регистрирует `.conf` в Workbench.
+Режим: **установлено в live + labs** — `chimeraInputCommon.conf` `57778A1D…`; `.meta`/GUID не создавались (их создаст Workbench).
 
 ---
 
@@ -57,9 +57,17 @@ labs installed copy changed = NO
 Core changed = NO
 ```
 
-**Next (owner):** review этого diff → отдельный install GO → owner вручную регистрирует оба `.conf` в Workbench (Workbench генерирует реальные `.meta` + уникальные GUID) → синк `.meta` в labs + commit → owner runtime (`context_state active=true`, `RINPUT = YES/NO`, vanilla cmd1..6 = YES/NO).
+**INSTALL (owner GO 6025962357):** финальный `chimeraInputCommon.conf` установлен byte-identical в live + labs:
 
-Status: **`T4B_CUSTOM_R_PHASE_B_FINAL_INPUT_CONFIG_STAGED_OWNER_REVIEW`**. STOP.
+| файл | live SHA | labs SHA |
+|---|---|---|
+| `Configs/System/chimeraInputCommon.conf` | `57778A1D2ED7EDCA8A321CCDF2D5A76A8092E8C0319D0D4ED9DDE07194F60993` | same |
+
+`keyBindingMenu.conf` не менялся (`368B51F7…`); `.meta`/GUID не создавались; скрипты/protected/Core не менялись.
+
+**Next (owner):** вручную в Workbench зарегистрировать оба `.conf` (`chimeraInputCommon.conf`, `keyBindingMenu.conf`) → Workbench создаёт реальные `.meta` + уникальные GUID → синк `.meta` в labs + commit → owner runtime (`context_state active=true`, `RINPUT = YES/NO`, vanilla cmd1..6 = YES/NO).
+
+Status: **`T4B_CUSTOM_R_PHASE_B_FINAL_INPUT_CONFIG_INSTALLED_WAITING_OWNER_REGISTRATION`**. STOP.
 
 ---
 
