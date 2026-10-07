@@ -3,11 +3,11 @@
 ## Continuation
 
 ```text
-LAST_COMPLETED_PHASE = 1A (BLOCKED_SOURCE, superseded) ; 1C prepared
-CURRENT_PHASE = 1C (W-LOCAL REQUEST PROPAGATION PROBE) — staged, awaiting owner review/runtime
-LAST_SAFE_COMMIT = b7312401444501a67a4849d6dd54bbcbf3a02a19
-CURRENT_BLOCKER = W->P propagation is unproven at runtime; the staged W-local request probe has no runtime evidence yet. Special P-controller-accessor search is DEFERRED / NOT REQUIRED YET.
-NEXT_EXACT_ACTION = Owner reviews the staged WPROP candidate (hashes + unified diffs), then separately authorizes install + exactly one R in a non-rack shell-eligible state. GPT Astra HOLD until the WPROP result. No install/runtime by agent.
+LAST_COMPLETED_PHASE = 1A (BLOCKED_SOURCE, superseded) ; 1C accepted ; 1C-R prepared
+CURRENT_PHASE = 1C-R (WPROP SAFETY + REVIEW-EVIDENCE CORRECTION) — staged correction + review report, awaiting owner install GO
+LAST_SAFE_COMMIT = 524f43f4358e52114d9cf2fea8878ad047598ef2
+CURRENT_BLOCKER = W->P propagation is unproven at runtime; the corrected staged W-local request probe and durable review report await owner GO for install + exactly one R. Special P-controller-accessor search is DEFERRED / NOT REQUIRED YET.
+NEXT_EXACT_ACTION = Owner reviews reports/MP133_TASK1_WPROP_PROBE_REVIEW_EVIDENCE.md (complete diffs + hashes), then separately authorizes install + exactly one R in a non-rack shell-eligible state. GPT Astra HOLD until the WPROP result. No install/runtime by agent.
 DO_NOT_REOPEN = input registration/GUID/lifecycle; accepted Flags 0xa; proven SetReloadWeapon(1) rack; rejected global handler; special P-controller-accessor search (DEFERRED); historical tasks/backups
 ```
 
@@ -417,3 +417,36 @@ GAME_MODE_LAUNCHED = NO
 RUNTIME_TEST = NO
 COMPILE_TEST = NOT_RUN_BY_AGENT
 ```
+
+## Phase 1C-R — WPROP SAFETY + REVIEW-EVIDENCE CORRECTION (O1R)
+
+Authority: [6041185715](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34#issuecomment-6041185715). Base HEAD `524f43f4358e52114d9cf2fea8878ad047598ef2`. O1 architecture `ACCEPTED`; O1 runtime GO `WITHHELD`; O1R `AUTHORIZED`. Status: **T4B_WPROP_PROBE_REVIEW_READY_OWNER_GO**.
+
+Corrections applied to the same ignored staging root `artifacts/astra-rebuild/stageT4BWPropagationProbe/`:
+
+- **R1 fail-closed shell gate.** Before any W request the helper requires `magPresent==true && maxAmmo>0 && ammo>=0 && ammo<maxAmmo && (chambered==0 || chambered==1)`; unresolved telemetry now rejects with `reason=unresolved-ammo` / `reason=unresolved-chamber`. The frozen rack predicate/call is untouched.
+- **R2 deterministic manual abort (no timer).** Explicit `m_bWPropActive`; a second qualified R while active resets WPROP variables to safe defaults and logs `phase=manual-abort` instead of opening a second session; normal `ASTRA_Shell_ReturnReady_W` reset clears active; a failed/non-observable bind/write/readback never leaves the session marked active; per-session P/W observation flags reset on a new session.
+
+Durable review evidence: `reports/MP133_TASK1_WPROP_PROBE_REVIEW_EVIDENCE.md` — source HEAD/blob + SHA-256, COMPLETE unified diffs of both staged scripts (no omissions), static writer/call-site scan, exact fail-closed gate, exact abort/reset path, exact P/W marker classification, owner runtime protocol, unchanged-boundary statement.
+
+Updated staged identities (O1R supersedes the O1 staged SHAs in the Phase 1C block above):
+
+```text
+STAGED_CUSTOM_R_SOURCE_SHA256 = F5D59DB9D00469E4664DE219CF29110A40D6DCE73DE23846ED60C44B6EFA68C1
+STAGED_CUSTOM_R_SHA256 = ECD8DF6F8A96292E4646EBD9F2DF17C1E4153E19361C6D1B08131E8F3E2FC95A
+STAGED_ASTRA_COMPONENT_SOURCE_SHA256 = 7BE1D37513AF31E0C5BC3629BC3301DAFABEC966129AF83D04B688DD4D19BF8A
+STAGED_ASTRA_COMPONENT_SHA256 = 8176B363B876AD105110303C49321266B133C892CF985DFAB9453DABF90B215D
+CURRENT_LABS_CHANGED = NO
+LIVE_CHANGED = NO
+GRAPH_CHANGED = NO
+PREFAB_CHANGED = NO
+INPUT_CONFIG_CHANGED = NO
+META_CHANGED = NO
+GUID_CHANGED = NO
+WORKBENCH_LAUNCHED = NO
+REFORGER_LAUNCHED = NO
+RUNTIME_TEST = NO
+COMPILE_TEST = NOT_RUN_BY_AGENT
+```
+
+NEXT: owner reviews the report and decides whether to authorize install + one owner R (non-rack shell-eligible state). GPT Astra HOLD. No install/runtime by agent.
