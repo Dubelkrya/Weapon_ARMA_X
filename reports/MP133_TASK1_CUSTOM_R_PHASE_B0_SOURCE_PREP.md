@@ -1,9 +1,60 @@
 # MP-133 Task #1 — Custom-R input routing Phase B0 (source prep)
 
-Статус: **T4B_CUSTOM_R_PHASE_B_REGISTERED_CONTEXT_AUDIT_COMPLETE**
+Статус: **T4B_CUSTOM_R_PHASE_B_CONTEXT_ACTIVATE_DIAG_STAGED_OWNER_REVIEW**
 Дата: 2026-10-07
-Задание: Issue #34 — read-only аудит «registered context still inactive» ([#6031744187](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34)). Fix/диагностика НЕ реализуются.
-Режим: **READ-ONLY** — configs/`.meta`/GUID/live/labs/Core не менялись.
+Задание: Issue #34 — staged one-shot context-activation/registry диагностика ([#6031981847](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34)). Только staging.
+Режим: **STAGING ONLY** — изменён только staged script; live/labs/configs/`.meta`/Core не тронуты.
+
+---
+
+## CONTEXT ACTIVATE DIAGNOSTIC — STAGED (owner task 6031981847)
+
+Добавлен один диагностический слой в staged script. На существующей T4B-weapon-gated точке активации вместо «голого» наблюдения теперь фиксируются три значения:
+
+```c
+bool activated = im.ActivateContext("ARMST_MP133_ReloadContext");   // 1 call site
+bool activeNow = im.IsContextActive("ARMST_MP133_ReloadContext");   // 1 call site
+// actionPresent: сканирование реестра действий
+int actionCount = im.GetActionCount();                              // 1
+for (int i = 0; i < actionCount; i++)
+    if (im.GetActionName(i) == "ARMST_MP133_Reload") { actionPresent = true; break; }  // 1
+```
+
+Ровно одна one-shot строка на T4B-entry (gate `m_bT4BRContextResultLogged`, сбрасывается в `T4BRResetDiag()`):
+
+```
+[ARMST-T4B-RCTX] phase=context_activate_result result=true|false active=true|false actionPresent=true|false
+```
+
+Сохранены существующие маркеры `listener_registered`, `weapon_gate_pass`, `context_state`, `RINPUT`. `DIAG 3` (`context_state`) использует то же единственное чтение `IsContextActive` (без второго вызова). Поведение reload не меняется; дополнительных `ActivateContext` нет.
+
+**SHA staged script:** old `C47569404920C9D8C70C331706FD164DC372A95C215FD0BCE3739E2F5633823F` → new `A87E3722DD69AB1164ECB363D688CA4FB81331D7A8FF5710BD212B578D96B1AB` (8351 B).
+
+**Static verification:**
+```
+ActivateContext("ARMST_MP133_ReloadContext") = 1 call site
+IsContextActive("ARMST_MP133_ReloadContext") = 1 call site
+GetActionCount = 1
+GetActionName = 1 loop call site
+new marker phase=context_activate_result = 1 Print call
+ResetContext = 0
+DeactivateContext = 0
+reload APIs = 0
+ammo/mag/chamber writers = 0
+braces 24/24   parens 107/107
+```
+
+**Интерпретация (root cause НЕ утверждается):**
+```
+actionPresent=false                  -> T4B action отсутствует в runtime registry; same-path merge / config discovery — основная область отказа.
+actionPresent=true + active=false    -> action merged/registered, но контекст остаётся неактивным; Flags / Priority / declaration — основные подозреваемые.
+active=true                          -> активация контекста успешна; следующий гейт — physical R routing.
+```
+`activated` — только диагностическое свидетельство (точная семантика bool остаётся UNRESOLVED).
+
+**Не менялось:** live/labs installed script, configs, `.meta`, GUID, Core, reload/ASTRA/Tube3/prefab/world/inventory.
+
+Status: **`T4B_CUSTOM_R_PHASE_B_CONTEXT_ACTIVATE_DIAG_STAGED_OWNER_REVIEW`**. STOP.
 
 ---
 
