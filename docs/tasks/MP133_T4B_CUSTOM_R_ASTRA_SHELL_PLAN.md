@@ -4,10 +4,10 @@
 
 ```text
 LAST_COMPLETED_PHASE = 0
-CURRENT_PHASE = 1 (BLOCKED_SOURCE)
-LAST_SAFE_COMMIT = e9dcfb97008bdca6cb1d6a484512474a5870e7e2
+CURRENT_PHASE = 1A (IN_PROGRESS); parent Phase 1 unresolved
+LAST_SAFE_COMMIT = 32f4f72e1a1cbd7eeb77b2d7a3bde1d3ae5eb581
 CURRENT_BLOCKER = Weapon-local setter exists, but addressing/synchronizing the separate character Weapon injection is not established; graph baseline differs between Git and owner live resources.
-NEXT_EXACT_ACTION = Obtain owner direction on the current-source injection contract/baseline or explicit approval for a bounded P-W binding probe; resume Phase 1, not the historical character-root probe. Do not stage shell ammo writes yet.
+NEXT_EXACT_ACTION = Execute Phase 1A SDK gate under owner GO 6038870461; stage only if callable P injection path is established, otherwise record BLOCKED_SOURCE.
 DO_NOT_REOPEN = input registration/GUID/lifecycle; accepted Flags 0xa; proven SetReloadWeapon(1) rack; rejected global handler; historical tasks/backups
 ```
 
@@ -73,6 +73,21 @@ One authoritative transaction owner. Preserve donor uniqueness/membership, insta
 No speculative setters or character-to-weapon propagation assumptions. CURRENT HEAD wins over historical instructions, while owner live modifications are separately protected.
 
 ## Phase table
+
+### PHASE_ID = 1A — P/W BINDING PROBE
+
+- STATUS = IN_PROGRESS.
+- GOAL: one animation-only normal-R cycle on BOTH P and W, no physical mutation.
+- INPUT_FILES: current source at 32f4f72e1a1cbd7eeb77b2d7a3bde1d3ae5eb581; installed SDK in both documentation trees; current prefab/graph read-only.
+- FILES_ALLOWED_TO_CHANGE: PLAN/report; only staged CustomRInputProbe.c, AstraV2_WeaponAnimationComponent.c and one optional T4B helper under artifacts/astra-rebuild/stageT4BPWBindingProbe/Scripts/Game/ARMST_T4B/.
+- EXACT_INTENDED_CHANGE: first prove W and P bind/set/read callable ownership; then minimal single-cycle request/reset and bounded session-tagged evidence, only in complementary non-rack state.
+- INVARIANTS_TO_PRESERVE: rack helper/call/conditions frozen; no graph/prefab/input/meta/labs/live/G3B2 edits or G3B2 calls; no ammo/chamber/inventory writers, no native reload command from probe.
+- STATIC_ACCEPTANCE: exact SDK signatures and owning object acquisition for both sides; handles/lifetime/reset source-backed; no W-only candidate; preserve protected hashes; no guessed timers or APIs.
+- OWNER_RUNTIME_ACCEPTANCE: NOT AUTHORIZED TO RUN. After separate review/install GO, exactly one normal R in non-rack state must show attributable P AND W Start/Grab/Insert/End-or-ReturnReady, deterministic reset, same Tube3 and unchanged tube/donor/chamber; zero cmd1 from probe, zero cmd2..6, no detach/spawn, controls/non-T4B preserved. Either side missing is FAIL.
+- ROLLBACK: do not install staged files; no historical restoration.
+- NEXT_PHASE: BLOCKED_OWNER after qualified preparation, or BLOCKED_SOURCE if P API gate fails; never Phase 2/3/4 from this GO.
+
+Authority: [6038870461](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34#issuecomment-6038870461). This narrower subphase overrides broader implementation allowlists for this run. No graph synchronization in either direction.
 
 Every phase sets IN_PROGRESS before work, updates actual results/decisions/continuation, then commits/pushes separately. Never batch architectural phases.
 
