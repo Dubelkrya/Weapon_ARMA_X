@@ -3,11 +3,11 @@
 ## Continuation
 
 ```text
-LAST_COMPLETED_PHASE = ITEM_USE_WEAPON_INJECTION_COMPATIBILITY_DISCOVERY source-only
-CURRENT_PHASE = CUSTOM_COMMAND_BIND_PROBE_REMAINS_BEST / OWNER_REVIEW / CUSTOM_COMMAND_STAGE_HOLD
-LAST_SAFE_COMMIT = ba4a2337662a63bf6b6e749da43f8678d62c17e2
-CURRENT_BLOCKER = ItemUse supports current weapon category but occupied Weapon injection lifecycle/restoration and native CommandID mapping are unproven; Astra lacks item-action contract. Custom command registration/delivery also unproven.
-NEXT_EXACT_ACTION = Review reports/MP133_TASK1_ITEM_USE_WEAPON_INJECTION_COMPATIBILITY_DISCOVERY.md; recommendation is one bind-only registration experiment, but staging remains HOLD until separate GO. No ItemUse/call/runtime candidate.
+LAST_COMPLETED_PHASE = ITEM_USE_WEAPON_INJECTION_COMPATIBILITY_DISCOVERY (source-only) ; 1J staged
+CURRENT_PHASE = 1J (INJECTED-ONLY CUSTOM COMMAND BIND STAGE) — AGR command decl + read-only bind diagnostic staged, awaiting owner review
+LAST_SAFE_COMMIT = fcb38ce6066114ba72bc824ca1d0e3ebb9d080d5
+CURRENT_BLOCKER = Whether the injected Astra command name is meaningfully bindable from the character animation API is unproven; the staged bind probe (post-injection + weapon-side + positive/negative controls) awaits owner review + install/compile/runtime GO.
+NEXT_EXACT_ACTION = Owner reviews reports/MP133_TASK1_CUSTOM_COMMAND_BIND_STAGE.md (complete diffs), then authorizes install of the AGR + controller, compile, and a no-R observation to capture [ARMST-T4B-CMDBIND]. No install/runtime by agent.
 DO_NOT_REOPEN = input registration/GUID/lifecycle; accepted Flags 0xa; proven SetReloadWeapon(1) rack; rejected global handler; unavailable character component accessors; character-root setter; native-reload P activation; repeat of unchanged list probe; G3B2 until P/W gate passes
 ```
 
@@ -560,5 +560,19 @@ AnimVariablesToBind +{
 No `WeaponInspectionState`, no `AutoVariablesBind`/`AutoCommandBind`, no `ASTRA_FireStop`; AnimGraph/W+P AnimInstance/BindingName/BindWithInjection/Tube3/object IDs unchanged; braces 19/19. `.meta`/GUID untouched.
 
 Future runtime criterion (not authorized): one qualified shell R → PASS = `W family YES` + `P family YES` + `sawP=true`; FAIL = `W family YES` + `P family NO`.
+
+No functional file changed (GRAPH/PREFAB/CONFIG/META/GUID/G3B2/LIVE unchanged).
+
+## Phase 1J — INJECTED-ONLY CUSTOM COMMAND BIND (STAGE ONLY)
+
+Authority: [6046517253](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34#issuecomment-6046517253). Stage-only. Status: **CUSTOM_COMMAND_BIND_STAGE_READY_OWNER_REVIEW**. Report: `reports/MP133_TASK1_CUSTOM_COMMAND_BIND_STAGE.md`.
+
+Baseline = CURRENT INSTALLED live: AGR `MP133_Astra2.agr` `8E8BAB37…` (blob `fffcefa`); CustomR controller `54404F6B…` (blob `dfbadb3`). (Live AstraV2 `241E6EC1…` untouched; its PATT probe preserved.)
+
+Staged (git-ignored): `artifacts/astra-rebuild/stageCustomCommandBind/`
+- `Assets/MP133_AstraShellGraph_test/MP133_Astra2.agr` → `C55D757EB85A7454DCAE27567CA96980441560805DC0B268B15DBC64ECAF97FF` (blob `acdb211`): one inert `AnimSrcGCTCmd CMD_ASTRA_TransportProbe { }` declaration.
+- `Scripts/Game/ARMST_T4B/ARMST_T4B_CustomRInputProbe.c` → `9ADD4AD9979382AC6B42F88209A47A11A29EB6038BE832F13D3B3EF4AA628249` (blob `59be53d`): read-only `[ARMST-T4B-CMDBIND]` bind diagnostic at the existing post-injection `weapon_gate_pass` one-shot (character-side custom/positive/negative + weapon-side custom).
+
+Proofs: `CUSTOM_COMMAND_DECLARATIONS_ADDED=1`, `COMMAND_CONSUMERS_ADDED=0`, `CALLCOMMAND_CALLS=0`, `ITEM_USE_CALLS=0`, `GAMEPLAY_WRITERS_ADDED=0`; no AGF/ASI/AST/TXA/ANM/prefab/input change. Effective injection: `BindWithInjection ON`, `AutoCommandBind ON`, `AutoVariablesBind OFF`, `AnimVariablesToBind=[WeaponInspectionState]`; `AnimCommandsToBind` not observed (UNRESOLVED). Pre-injection half not safely obtainable → post-only, documented limitation.
 
 No functional file changed (GRAPH/PREFAB/CONFIG/META/GUID/G3B2/LIVE unchanged).
