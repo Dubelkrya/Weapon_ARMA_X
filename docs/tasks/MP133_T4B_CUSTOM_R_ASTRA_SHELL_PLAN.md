@@ -4,10 +4,10 @@
 
 ```text
 LAST_COMPLETED_PHASE = 0
-CURRENT_PHASE = 1 (NOT_STARTED)
-LAST_SAFE_COMMIT = 6fa72173fff506a73bcc54234d9e4732f7f327cd
-CURRENT_BLOCKER = none for source audit; installation is not authorized
-NEXT_EXACT_ACTION = After Phase 0 publication, audit current shell entry and transaction ownership; establish safe contract or record bounded blocker before staging.
+CURRENT_PHASE = 1 (BLOCKED_SOURCE)
+LAST_SAFE_COMMIT = e9dcfb97008bdca6cb1d6a484512474a5870e7e2
+CURRENT_BLOCKER = Weapon-local setter exists, but addressing/synchronizing the separate character Weapon injection is not established; graph baseline differs between Git and owner live resources.
+NEXT_EXACT_ACTION = Obtain owner direction on the current-source injection contract/baseline or explicit approval for a bounded P-W binding probe; resume Phase 1, not the historical character-root probe. Do not stage shell ammo writes yet.
 DO_NOT_REOPEN = input registration/GUID/lifecycle; accepted Flags 0xa; proven SetReloadWeapon(1) rack; rejected global handler; historical tasks/backups
 ```
 
@@ -91,7 +91,7 @@ Every phase sets IN_PROGRESS before work, updates actual results/decisions/conti
 
 ### PHASE_ID = 1
 
-- STATUS = NOT_STARTED.
+- STATUS = BLOCKED_SOURCE.
 - GOAL: Current-source shell entry and integration contract.
 - INPUT_FILES: Current input/observer/G3B2/prefab/AGR/AGF/AST/P-W ASI/clips; installed SDK.
 - FILES_ALLOWED_TO_CHANGE: PLAN; optional phase report.
@@ -212,3 +212,55 @@ Baseline static checks: addon resolver PASS; Python 96 tests, 2 failures/10 erro
 
 All phases prohibit Workbench/Reforger/Game Mode/Animation Editor/Enfusion executable launch by agent. No compile/runtime test. No git reset/revert/restore/clean/cherry-pick/rebase/historical checkout. No meta staging/GUID invention. No live edits.
 
+## Phase 1 actual findings / stop checkpoint
+
+Phase 0 was committed and pushed alone as `e9dcfb97008bdca6cb1d6a484512474a5870e7e2`. Phase 1 read-only work follows that publication. No functional candidate has been staged; phases 2–7 remain NOT_STARTED.
+
+### D4 — correction: weapon-local setters DO exist in the inspected SDK
+
+- DECISION: reject the old blanket claim that WeaponAnimationComponent has no variable setters. Do not repeat that conclusion from its Reforger-only member page.
+- EVIDENCE: installed `Workbench/docs/ArmaReforgerScriptAPIPublic/html/hierarchy.html` rows 6/6_0/6_0_5 give AnimationControllerComponent -> BaseItemAnimationComponent -> WeaponAnimationComponent. Separate `Workbench/docs/EnfusionScriptAPI/html/interfaceAnimationControllerComponent.html` inherits BaseAnimationControllerComponent. That engine API documents `int BindBoolVariable(string)`, `void SetBoolVariable(int,bool)`, `bool GetBoolVariable(int)`, plus BindAttachment/BindAttBoolVariable/SetAttBoolVariable. Both documentation trees must be read together. Installed engine API file timestamp 2026-09-19; Doxygen footer is NOT game version.
+- ALTERNATIVES_REJECTED: invent methods; conclude absence from a cross-package-incomplete member list; use character-root BindVariableBool again.
+- WHY: a direct weapon-instance variable write is a source-backed candidate. This is not proof that the separately injected P graph receives the same write. No compiler or runtime claim is made.
+
+Official cross-check: [Reforger hierarchy](https://community.bistudio.com/wikidata/external-data/arma-reforger/ArmaReforgerScriptAPIPublic/hierarchy.html), [engine controller API](https://community.bistudio.com/wikidata/external-data/arma-reforger/EnfusionScriptAPIPublic/interfaceBaseAnimationControllerComponent.html). Local installed declarations remain the implementation reference.
+
+### Current graph and actual integration gap
+
+- Current prefab binds W and character `AnimInjection` to MP133_Astra2.agr, separate W/P ASIs, BindingName `Weapon`, BindWithInjection 1. This establishes resources, not script-side variable propagation direction.
+- Current AGR declares ShellRequest/Repeat/Stop/Eligible/FireStop. Current AGF line 221 consumes ShellRequest for Idle -> AstraShell and line 237 waits for request reset. Thus the variable is genuinely present NOW, not something to restore from history. It still needs correct P AND W ownership.
+- Current observer lines 85–120 tracks phases; insert marker yields only `diagnostic_candidate_no_transfer`. It contains no entry setter or G3B2 call.
+- Current W InsertShell TXA line 2395 contains `ASTRA_ShellInsertCommit_W` at frame 11. ASI binds the imported W clip; source marker presence is not fresh runtime delivery proof.
+- CharacterAnimationComponent derives from BaseAnimPhysComponent, a different API family. Its BindVariableBool targets character root. Existing [owner evidence 5983965875](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34#issuecomment-5983965875) showed root player_main lacks ASTRA_ShellRequest. This historical observation explains an API ownership failure only; its old task/graph instructions are NOT resumed. Current inspection has not established a replacement injection-targeted setter callsite.
+- Engine BindAttachment/BindAttBoolVariable is a candidate only after proving WHICH controller owns the actual character Weapon attachment. Do not call BindAttachment("Weapon") on the weapon controller merely because the prefab uses that binding name on the character, and do not reinterpret an integer engine handle as TAnimGraphVariable.
+- Search of current T4B, Weapons and Core scripts found no BindAttBoolVariable/SetAttBoolVariable/BindAttachment/BindBoolVariable callsite proving this P-W route. This is a bounded negative result, not proof the engine cannot do it.
+
+### G3B2 extraction contract retained for subsequent phase
+
+Current transaction is inside ScriptedUserAction and uses GetOwner() as action weapon. A reusable service must replace that ownership dependency with an explicit bound weapon and keep actor current-weapon equality. The current fixture has no G3B2 action to invoke; calling PerformAction opportunistically is not an integration architecture.
+
+Current G3B2 scans actual carried inventory, excludes installed magazines/weapon storage, requires one compatible donor, rechecks before writes, decrements donor before incrementing the same installed target, and quarantines indeterminate writes. Server gate alone is not an authenticated client request path. Preserve all these bodies and their delayed sample tokens in any later extraction.
+
+Important loop constraint: current CheckContinue TXA is six frames at 30 fps, while transaction latch is released only after successful +250 and +1000 ms samples. A blind repeat=true can enter another cycle before verification and/or quarantine legitimate later count changes. Design a verified-wait shell condition or end after a single verified cycle before enabling repeat; do not remove the proven delay/latch. No graph change made.
+
+### Why Phase 1 stops before staging
+
+The missing contract is narrow: how a weapon-local request controls BOTH current W and P injected instances without the failed character-root bind, native reload commands or global graph edits. Direct W API availability resolves half, not the whole mechanism. A W-only animation plus real ammo writes would not satisfy synchronized reload. Also, any graph candidate sourced from Git must not reintroduce live-removed mag mappings on installation.
+
+Requested owner decision: confirm authoritative current graph bundle for future staging and provide an existing injection-targeted API/example if available; alternatively explicitly authorize a bounded animation-only P-W binding probe. No extra physical key or toggle, no ammo transfer, no input registration changes. This is a new gate, not permission to rerun the obsolete ASTRA PROBE action.
+
+If a probe is separately approved/prepared: owner reviews exact stage diff, separately authorizes installation, compiles manually, equips canonical T4B in a shell-eligible non-rack state, and issues one normal R. Required evidence is independently attributable P and W shell start/phase/return-ready plus request reset, same Tube3/count/chamber and zero cmd2..6. A successful W setter/readback alone is not PASS. Stop on compile error, missing P/W side, failed reset, any physical mutation or control regression. No agent editor/runtime launch. Do not execute this protocol on current files: no probe candidate exists yet.
+
+### Preservation result
+
+Fresh task baseline and post-audit aggregate hashes match (sorted full-path + file SHA256 rows; extensions c/conf/et/meta/layer/gproj/agr/agf/asi/ast/txa/anm):
+
+| Root | Files | Before = after SHA256 |
+|---|---:|---|
+| V | 105 | C54B383CA5ECFFC200A8ADB7A3624CD3E1F0BBF7BB47AA56AB8F2451D566E03D |
+| ARMST-PLATFORM---Core | 5521 | 2EDF4D1DCA02F0C662AE1CA567D8B9655C374BC817883B7625A7AF02D8860B4B |
+| ARMST-PLATFORM---Weapons | 1584 | A7C611FE0417F5A5E1DA6E4209F01E3CF846295E9ADA57999713FF1B4CC2AECF |
+| repository labs | 58 | 505C52A752D320DC69DD4E53E297AF87EF10ECC622AC04CDB07D2FEBC38D644C |
+| stageCustomRInput (existing, untouched) | 3 | E6481B8AB4E62B987F0D0CDFA5582C5D244A2A558C96BF1C2528068FE847F4C6 |
+
+GAMEPLAY_FILES_CHANGED_BY_CLEANUP=0. CURRENT_LABS_CHANGED=NO; LIVE_CHANGED=NO; PROVEN_RACK_BRANCH_CHANGED=NO; HISTORICAL_FILE_ROLLBACK=NO; OLD_TASK_RESURRECTED=NO. WORKBENCH_LAUNCHED=NO; REFORGER_LAUNCHED=NO; GAME_MODE_LAUNCHED=NO; RUNTIME_TEST=NO; COMPILE_TEST=NOT_RUN_BY_AGENT.
