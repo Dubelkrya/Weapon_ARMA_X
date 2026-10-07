@@ -3,11 +3,11 @@
 ## Continuation
 
 ```text
-LAST_COMPLETED_PHASE = 1D (P-side activation discovery, MULTIPLE_CANDIDATES) ; 1E staged
-CURRENT_PHASE = 1E (PACT ATTACHMENT ACCESS PROBE) — staged candidate ready for owner review
-LAST_SAFE_COMMIT = a364a7c8fcb7cf0a3ee80f8d625a959a268ae2f2
-CURRENT_BLOCKER = PACT accessor (engine CharacterAnimGraphComponent) and attachment "Weapon" runtime ownership are UNRESOLVED; the staged probe is ready, awaiting owner review and install/runtime GO.
-NEXT_EXACT_ACTION = Owner reviews reports/MP133_TASK1_PACT_PROBE_REVIEW_EVIDENCE.md, then (if acceptable) authorizes install + one owner R in the Tube3<3 / chambered=1 state. GPT Astra HOLD; no install/runtime by agent.
+LAST_COMPLETED_PHASE = 1D (P-side activation discovery, MULTIPLE_CANDIDATES) ; 1E R1 staged
+CURRENT_PHASE = 1E-R1 (PACT ATTACHMENT ACCESS PROBE, safety R1) — corrected staged candidate ready for owner review
+LAST_SAFE_COMMIT = d40f679f76c5ed0502c2d0f1fbe6b522f8b2d153
+CURRENT_BLOCKER = PACT accessor (engine CharacterAnimGraphComponent) and attachment "Weapon" runtime ownership are UNRESOLVED; the corrected (R1) staging awaits owner review and install/runtime GO.
+NEXT_EXACT_ACTION = Owner reviews the R1 report (all-4 readback, mismatch safe-reset, active-from-readback, P-primary reset), then (if acceptable) authorizes install + one owner R in the Tube3<3 / chambered=1 state. GPT Astra HOLD; no install/runtime by agent.
 DO_NOT_REOPEN = input registration/GUID/lifecycle; accepted Flags 0xa; proven SetReloadWeapon(1) rack; rejected global handler; character-root variable setter; native-reload P activation; W->P propagation assumption
 ```
 
@@ -470,13 +470,15 @@ No functional file changed (GRAPH/PREFAB/CONFIG/META/GUID/G3B2/LIVE unchanged).
 
 ## Phase 1E — PACT ATTACHMENT ACCESS PROBE (STAGE ONLY)
 
-Authority: [6042531682](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34#issuecomment-6042531682). Stage-only; no install/compile/runtime. Status: **PACT_PROBE_STAGE_READY_OWNER_REVIEW**. Report: `reports/MP133_TASK1_PACT_PROBE_REVIEW_EVIDENCE.md`.
+Authority: [6042531682](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34#issuecomment-6042531682) + R1 correction [6042807676](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34#issuecomment-6042807676). Stage-only; no install/compile/runtime. Status: **PACT_PROBE_STAGE_READY_OWNER_REVIEW_R1**. Report: `reports/MP133_TASK1_PACT_PROBE_REVIEW_EVIDENCE.md`.
 
 Source baseline = owner's local lab (verified): CustomR `ECD8DF6F…`, AstraV2 `8176B363…`; no drift.
 
-Staged (git-ignored, not committed): `artifacts/astra-rebuild/stageT4BPACTProbe/Scripts/Game/ARMST_T4B/`
-- `ARMST_T4B_CustomRInputProbe.c` → `68AE302E…` (PACT request/abort + reset method);
-- `ARMST_T4B_AstraV2_WeaponAnimationComponent.c` → `8F84BFE4…` (ReturnReady_W → controller reset).
+Staged R1 (git-ignored, not committed): `artifacts/astra-rebuild/stageT4BPACTProbe/Scripts/Game/ARMST_T4B/`
+- `ARMST_T4B_CustomRInputProbe.c` → `2568DA60441BE34D6E0E96613393B4099A07B70875EC5AAB2CE10E8C8289D3E6` (all-4 readback, mismatch safe-reset, active-from-readback);
+- `ARMST_T4B_AstraV2_WeaponAnimationComponent.c` → `411D5E127C5E97D6A3BAAA91D7B79C0CE662F06600D03EC31080A2C878C72640` (P-primary reset; W only no-P fallback).
+
+R1 corrections (supersede the earlier `68AE302E…`/`8F84BFE4…` staging): (1) request readback now verifies `req&&elig&&!rep&&!stop`, else safe-reset all four and log `phase=reject reason=request-state-mismatch`; (2) reset/manual-abort keeps `m_bPactActive=(rbReq||rbElig)` and logs `resetClean`; (3) reset source is `p-return-ready` (primary) / `w-return-ready-no-p` (fallback) / `manual-abort`.
 
 Accessor (compile-visible evidence): `CharacterAnimGraphComponent.Cast(controlled.FindComponent(CharacterAnimGraphComponent))`, fallback `CharacterEntity.Cast(controlled).GetAnimGraphComponent()`. Engine API `EnfusionScriptAPI` (`interfaceCharacterEntity`, `interfaceCharacterAnimGraphComponent`, `interfaceBaseAnimationControllerComponent`, `interfaceIEntity.FindComponent`); same `Cast(FindComponent(...))` pattern already used in Core (`ARMST_MUTANTS_ANIM_COMPONENT.c:31`, `ARMST_MUTANT_MOVEMENT_COMPONENT.c:143`) for a sibling engine animation-controller class.
 
