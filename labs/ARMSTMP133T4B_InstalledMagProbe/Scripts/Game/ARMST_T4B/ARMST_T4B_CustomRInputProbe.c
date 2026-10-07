@@ -33,6 +33,12 @@
 //
 // Passive/log-only: NO reload APIs, NO ammo/mag/chamber writers, NO animation-graph execution, NO timers.
 // ============================================================================
+//
+// STAGED RACK DISPATCH (stageT4BRackDispatch): behind the existing custom-R
+// callback a fail-closed T4B rack request is added (SetReloadWeapon(type=1)).
+// No ammo/mag/chamber writes; no input-config/ASTRA/G3B2 change; held off by
+// IsReloading(). Diagnostics print [ARMST-T4B-RACK]. Everything else identical.
+// ============================================================================
 modded class SCR_PlayerController
 {
 	protected int m_iT4BRInputSeq;
@@ -44,6 +50,7 @@ modded class SCR_PlayerController
 	protected bool m_bT4BRContextActiveLast;
 	protected bool m_bT4BRContextChangeLogged;
 	protected bool m_bT4BRContextResultLogged;
+	protected const int ARMST_T4B_RACK_RELOAD_TYPE = 1;
 
 	override void OnUpdate(float timeSlice)
 	{
@@ -166,7 +173,47 @@ modded class SCR_PlayerController
 		}
 	}
 
-	// Log-only: the custom action received physical R. No reload call, no writes.
+	// Fail-closed T4B native-equivalent rack request. Source-proven reads only:
+	// T4B identity (probe), installed-mag presence/ammo (magazine component),
+	// chamber flag (muzzle), controller reload state (IsReloading). No
+	// ammo/mag/chamber writes; reload type pinned to 1 (rack). One request per
+	// physical DOWN; held off while a native reload is in flight.
+	protected void T4BRTryRack(SCR_CharacterControllerComponent ctrl, bool labWeapon, bool magPresent, int ammo, int chambered, string side)
+	{
+		if (!labWeapon)
+		{
+			Print("[ARMST-T4B-RACK] phase=reject reason=not-t4b", LogLevel.NORMAL);
+			return;
+		}
+		if (!ctrl)
+		{
+			Print("[ARMST-T4B-RACK] phase=reject reason=no-controller", LogLevel.NORMAL);
+			return;
+		}
+		if (!magPresent || ammo <= 0 || chambered != 0)
+		{
+			Print("[ARMST-T4B-RACK] phase=reject reason=state magPresent=" + magPresent.ToString()
+				+ " ammo=" + ammo.ToString() + " chambered=" + chambered.ToString(), LogLevel.NORMAL);
+			return;
+		}
+		if (ctrl.IsReloading())
+		{
+			Print("[ARMST-T4B-RACK] phase=reject reason=busy-reloading", LogLevel.NORMAL);
+			return;
+		}
+		CharacterInputContext ic = ctrl.GetInputContext();
+		if (!ic)
+		{
+			Print("[ARMST-T4B-RACK] phase=reject reason=no-input-context", LogLevel.NORMAL);
+			return;
+		}
+		ic.SetReloadWeapon(ARMST_T4B_RACK_RELOAD_TYPE);
+		Print("[ARMST-T4B-RACK] phase=request method=SetReloadWeapon type=" + ARMST_T4B_RACK_RELOAD_TYPE.ToString()
+			+ " ammo=" + ammo.ToString() + " chambered=" + chambered.ToString()
+			+ " side=" + side, LogLevel.NORMAL);
+	}
+
+	// Custom action callback: logs physical R and dispatches the T4B rack request.
 	protected void T4BRInputDown(float value = 0.0, EActionTrigger reason = 0)
 	{
 		if (!m_bIsLocalPlayerController)
@@ -224,5 +271,7 @@ modded class SCR_PlayerController
 			+ " currentMagPresent=" + magPresent.ToString()
 			+ " ammo=" + ammo.ToString() + "/" + maxAmmo.ToString()
 			+ " chambered=" + chambered.ToString(), LogLevel.NORMAL);
+
+		T4BRTryRack(ctrl, labWeapon, magPresent, ammo, chambered, side);
 	}
 }
