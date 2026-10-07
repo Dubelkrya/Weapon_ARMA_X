@@ -3,11 +3,11 @@
 ## Continuation
 
 ```text
-LAST_COMPLETED_PHASE = 1C-R (installed; owner runtime = W_ONLY) ; 1D sourced
-CURRENT_PHASE = 1D (P-SIDE ACTIVATION PATH DISCOVERY) — source/static complete; multiple candidates
-LAST_SAFE_COMMIT = 15b7c2b440854fdfa7e741419b54354a8be0aa7d
-CURRENT_BLOCKER = No source-proven custom-R P activation route. The injected P owner (engine CharacterAnimGraphComponent attachment "Weapon") and its game-side accessor are UNRESOLVED. WPROP runtime proved W/P instance separation (W-local setter reaches W only).
-NEXT_EXACT_ACTION = Owner reviews reports/MP133_TASK1_P_SIDE_ACTIVATION_PATH_DISCOVERY.md and authorizes (or not) a bounded animation-only PACT probe (injection-aware attachment variable write). GPT Astra HOLD; no install/runtime by agent.
+LAST_COMPLETED_PHASE = 1D (P-side activation discovery, MULTIPLE_CANDIDATES) ; 1E staged
+CURRENT_PHASE = 1E (PACT ATTACHMENT ACCESS PROBE) — staged candidate ready for owner review
+LAST_SAFE_COMMIT = a364a7c8fcb7cf0a3ee80f8d625a959a268ae2f2
+CURRENT_BLOCKER = PACT accessor (engine CharacterAnimGraphComponent) and attachment "Weapon" runtime ownership are UNRESOLVED; the staged probe is ready, awaiting owner review and install/runtime GO.
+NEXT_EXACT_ACTION = Owner reviews reports/MP133_TASK1_PACT_PROBE_REVIEW_EVIDENCE.md, then (if acceptable) authorizes install + one owner R in the Tube3<3 / chambered=1 state. GPT Astra HOLD; no install/runtime by agent.
 DO_NOT_REOPEN = input registration/GUID/lifecycle; accepted Flags 0xa; proven SetReloadWeapon(1) rack; rejected global handler; character-root variable setter; native-reload P activation; W->P propagation assumption
 ```
 
@@ -465,5 +465,23 @@ Findings:
 - **Chungus distinction:** ACTIVATION = vanilla reload context; SYNC = `InitPlayerAnimVariables()` after `StartReloadTimer`. No custom pre-reload P starter.
 
 Ranked candidates: (1) injection-aware attachment variable/command write (best; no graph change if it works); (2) custom command/event to both; (3) minimal P follower/sync graph (requires graph edit). Next minimal probe = bounded animation-only PACT probe (obtain CharacterAnimGraphComponent → `BindAttachment("Weapon")` + `BindAttBoolVariable("ASTRA_ShellRequest")` → write/readback → observe P markers → deterministic reset), no gameplay writes.
+
+No functional file changed (GRAPH/PREFAB/CONFIG/META/GUID/G3B2/LIVE unchanged).
+
+## Phase 1E — PACT ATTACHMENT ACCESS PROBE (STAGE ONLY)
+
+Authority: [6042531682](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34#issuecomment-6042531682). Stage-only; no install/compile/runtime. Status: **PACT_PROBE_STAGE_READY_OWNER_REVIEW**. Report: `reports/MP133_TASK1_PACT_PROBE_REVIEW_EVIDENCE.md`.
+
+Source baseline = owner's local lab (verified): CustomR `ECD8DF6F…`, AstraV2 `8176B363…`; no drift.
+
+Staged (git-ignored, not committed): `artifacts/astra-rebuild/stageT4BPACTProbe/Scripts/Game/ARMST_T4B/`
+- `ARMST_T4B_CustomRInputProbe.c` → `68AE302E…` (PACT request/abort + reset method);
+- `ARMST_T4B_AstraV2_WeaponAnimationComponent.c` → `8F84BFE4…` (ReturnReady_W → controller reset).
+
+Accessor (compile-visible evidence): `CharacterAnimGraphComponent.Cast(controlled.FindComponent(CharacterAnimGraphComponent))`, fallback `CharacterEntity.Cast(controlled).GetAnimGraphComponent()`. Engine API `EnfusionScriptAPI` (`interfaceCharacterEntity`, `interfaceCharacterAnimGraphComponent`, `interfaceBaseAnimationControllerComponent`, `interfaceIEntity.FindComponent`); same `Cast(FindComponent(...))` pattern already used in Core (`ARMST_MUTANTS_ANIM_COMPONENT.c:31`, `ARMST_MUTANT_MOVEMENT_COMPONENT.c:143`) for a sibling engine animation-controller class.
+
+PACT on the non-rack shell branch: `BindAttachment("Weapon")` → `BindAttBoolVariable("ASTRA_Shell*")` → `SetAttBoolVariable` (Request=true, Eligible=true, Repeat=false, Stop=false) → readback. Cleanup deterministic (no timer): preferred W `ASTRA_Shell_ReturnReady_W` → `SCR_PlayerController.T4BPactResetFromEvent()` (write Request/Eligible=false + readback); fallback second qualified R `phase=manual-abort`. Frozen rack branch byte-identical; no gameplay writes; no native reload; no cmd1..6; no G3B2.
+
+Owner runtime (deferred, not authorized): Tube3<3, chambered=1, one R; PASS = P+W families + clean reset + no mutation (`PACT_PW_PASS`); fail classes `PACT_P_ONLY_FAIL` / `PACT_W_ONLY_FAIL` / `PACT_BIND_FAIL` / `PACT_COMPILE_BLOCKED` / `PACT_GAMEPLAY_MUTATION_FAIL`.
 
 No functional file changed (GRAPH/PREFAB/CONFIG/META/GUID/G3B2/LIVE unchanged).
