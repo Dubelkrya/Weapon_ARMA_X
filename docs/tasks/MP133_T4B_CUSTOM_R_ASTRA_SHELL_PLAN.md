@@ -3,11 +3,11 @@
 ## Continuation
 
 ```text
-LAST_COMPLETED_PHASE = 1J owner compile/runtime; 1K synchronized-command source discovery
-CURRENT_PHASE = 1K COMPLETE — W_SYNCHRONIZED_COMMAND_PROBE_JUSTIFIED; no candidate staged
-LAST_SAFE_COMMIT = 4bf4f5876e97de641ecfc79a9806a37bae34199b
-CURRENT_BLOCKER = Exact native Synchronized/mapping semantics remain SOURCE GAP. Inert command has no consumer; independent passive P/W receipt measurement must be designed/reviewed before any emission. All functional stages require separate GO.
-NEXT_EXACT_ACTION = Owner reviews reports/MP133_TASK1_SYNCHRONIZED_COMMAND_TRANSPORT_DISCOVERY.md and decides whether to authorize design/staging of ONLY W_SYNCHRONIZED_COMMAND_DELIVERY_PROBE with passive independently attributable P/W receipt controls. No bare CallCommand(3), no install/runtime by agent.
+LAST_COMPLETED_PHASE = 1J owner compile/runtime; 1K source discovery; 1L DESIGN_ONLY receipt-observer investigation
+CURRENT_PHASE = 1L STOP — SOURCE_BLOCKED; documentation only; no candidate staged
+LAST_SAFE_COMMIT = 6186aaa433369f4130f1b404d4307632d40923ce
+CURRENT_BLOCKER = Live Debug records per-instance commands/evaluation, but simultaneous same-pulse P/W coverage, actual diagnostic consumer trace and P observer-health proof are not established. VarSet is subtree-scoped, not a proven external receipt latch. Synchronized semantics remain SOURCE GAP.
+NEXT_EXACT_ACTION = Owner reviews reports/MP133_TASK1_W_SYNCHRONIZED_COMMAND_DELIVERY_DESIGN.md and supplies/authorizes evidence closing observer-source gaps; only then separate CANDIDATE-STAGING GO. No implementation, emission, install, compile or runtime authorized now.
 DO_NOT_REOPEN = input registration/GUID/lifecycle; accepted Flags 0xa; proven SetReloadWeapon(1) rack; rejected global handler; unavailable character component accessors; character-root setter; injected-only character BindCommand route rejected by 1J; W-host direct attachment route; native-reload P activation; repeat of unchanged list probe; G3B2 until P/W gate passes
 ```
 
