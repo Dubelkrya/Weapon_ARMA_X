@@ -3,17 +3,21 @@
 ## Continuation
 
 ```text
-LAST_COMPLETED_PHASE = 1J (custom command bind stage) ; 1J-rebase staged
-CURRENT_PHASE = 1J-REBASE (CUSTOM COMMAND BIND REBASE STAGE) — owner AGR complete; only CustomR diagnostic staged, awaiting owner review
-LAST_SAFE_COMMIT = 9a2b8b7dc9164dc025d386c7c5e186dd53b06b72
-CURRENT_BLOCKER = Live AGR already contains CMD_ASTRA_TransportProbe (owner-complete; Synchronized not serialized in AGR text). Only the read-only CMDBIND diagnostic awaits install/compile/runtime GO.
-NEXT_EXACT_ACTION = Owner reviews reports/MP133_TASK1_CUSTOM_COMMAND_BIND_REBASE_STAGE.md, then authorizes install of only the CustomR diagnostic + compile + a no-R observation to capture [ARMST-T4B-CMDBIND]. No install/runtime by agent.
-DO_NOT_REOPEN = input registration/GUID/lifecycle; accepted Flags 0xa; proven SetReloadWeapon(1) rack; rejected global handler; unavailable character component accessors; character-root setter; native-reload P activation; repeat of unchanged list probe; G3B2 until P/W gate passes
+LAST_COMPLETED_PHASE = 1J owner compile/runtime; 1K synchronized-command source discovery
+CURRENT_PHASE = 1K COMPLETE — W_SYNCHRONIZED_COMMAND_PROBE_JUSTIFIED; no candidate staged
+LAST_SAFE_COMMIT = 4bf4f5876e97de641ecfc79a9806a37bae34199b
+CURRENT_BLOCKER = Exact native Synchronized/mapping semantics remain SOURCE GAP. Inert command has no consumer; independent passive P/W receipt measurement must be designed/reviewed before any emission. All functional stages require separate GO.
+NEXT_EXACT_ACTION = Owner reviews reports/MP133_TASK1_SYNCHRONIZED_COMMAND_TRANSPORT_DISCOVERY.md and decides whether to authorize design/staging of ONLY W_SYNCHRONIZED_COMMAND_DELIVERY_PROBE with passive independently attributable P/W receipt controls. No bare CallCommand(3), no install/runtime by agent.
+DO_NOT_REOPEN = input registration/GUID/lifecycle; accepted Flags 0xa; proven SetReloadWeapon(1) rack; rejected global handler; unavailable character component accessors; character-root setter; injected-only character BindCommand route rejected by 1J; W-host direct attachment route; native-reload P activation; repeat of unchanged list probe; G3B2 until P/W gate passes
 ```
 
 LAST_SAFE_COMMIT is the last verified existing predecessor, not a fabricated self-referential SHA. Next phase records the preceding phase commit. On resume verify ancestry and inspect latest plan commit; never reset to this field.
 
 ## Current-state snapshot
+
+2026-10-08 owner comment [6062981503](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/34#issuecomment-6062981503): 1J compile/runtime complete. customW=3; customCharValid=0; rootCtlValid=1; absentValid=0; engine explicitly names player_main.agr for both missing commands. Reject simple injected-only declaration -> CharacterAnimationComponent.BindCommand in current runtime, not all bridges. Fresh owner AGR C55D757E… and CustomR 9ADD4AD9… preserved. Prior stage/rebase pending-install instructions below are historical and consumed, not next actions.
+
+Phase 1K source-only discovery: selected exactly ONE future experiment A, W_SYNCHRONIZED_COMMAND_DELIVERY_PROBE. No automatic W->P or Synchronized/network claim. AnimCommandsToBind belongs to the component configuration, outside AnimationAttachmentInfo; documented subscription is character->item. Mosin pinned prefab is incomplete dependency evidence (AGR/ASIs 404; BCC writer absent). Newly found local Chungus Markdown exports show explicit dual W/character calls plus native reload, not single fan-out. Today's inert command has no AGF consumer; passive independently attributable P/W receipt/evaluation controls are a prerequisite, otherwise SOURCE_BLOCKED. B/C not selected. Candidate/install/commands/ItemUse/runtime/G3B2 remain HOLD; rack frozen. Report contains source gaps, comparison, bounded future protocol and pre/post guards.
 
 2026-10-07 comment 6046340236: completed source-only ItemUse compatibility discovery. Read 11 accessible first-party callers and generated/supporting APIs at pinned Bohemia commit 3d77cc212d5cda9922daf5f45635c7300d2d4cce, checked installed SDK and current Astra resources. Character-origin CommandID is a repeated calling convention; native remapping remains unknown. Current-weapon eligibility does not prove preservation of the occupied Weapon injection, ADS/equip/W or cancellation restoration. Compared both paths; chose bind-only registration as the next proposed experiment, CUSTOM_COMMAND_STAGE still HOLD. Allowed/actual edits: new report + plan only. Static acceptance: evidence links, exact caller coverage, no functional diff, pre/post gameplay hashes. Owner/runtime acceptance: NOT RUN, separate GO required. Rollback: docs forward correction, no historical resource restore. Remaining work: review decision, then separately authorized candidate only; G3B2 HOLD and rack frozen.
 
@@ -590,3 +594,16 @@ Rebase: live AGR is owner-complete ⇒ **no AGR staged**; candidate = CustomR di
 Proofs: `CUSTOM_COMMAND_DECLARATIONS_TOTAL=1`, `DUPLICATE_COMMAND_DECLARATION=NO`, `CALLCOMMAND_CALLS=0`, `ITEM_USE_CALLS=0`, `GAMEPLAY_WRITERS_ADDED=0`; braces 58/58, parens 369/369. Live unchanged by agent.
 
 No functional file changed (GRAPH/PREFAB/CONFIG/META/GUID/G3B2/LIVE unchanged).
+
+## Phase 1K — SYNCHRONIZED COMMAND TRANSPORT DISCOVERY
+
+- STATUS = COMPLETE; W_SYNCHRONIZED_COMMAND_PROBE_JUSTIFIED (recommendation only).
+- GOAL: compare synchronized command, explicit command-list binding and ItemUse after owner 1J namespace FAIL; choose exactly one discriminating next experiment.
+- INPUT_FILES: AGENTS.md; CURRENT_AI_SYNC.md; this plan; four 1J/root/ItemUse reports; current live T4B graph/prefab/scripts; Core/Weapons/Armst_Work; installed SDK; local preserved Chungus exports; pinned Bohemia/Coalition sources and Git history; owner 6062981503.
+- FILES_ALLOWED_TO_CHANGE: reports/MP133_TASK1_SYNCHRONIZED_COMMAND_TRANSPORT_DISCOVERY.md and this plan ONLY.
+- EXACT_INTENDED_CHANGE / ACTUAL_RESULT: report-only audit; corrected component-level list ownership; retained native Synchronized/mapping gaps; traced incomplete Mosin dependency chain and explicit Chungus dual calls; selected A with mandatory independent passive P/W receipt controls. No functional candidate.
+- INVARIANTS_TO_PRESERVE: current owner bytes/IDs, original/new graphs, protected rack, input 0xa, production/Core/labs; zero command/item-use/gameplay calls; G3B2 HOLD.
+- STATIC_ACCEPTANCE: 14 report sections, source/runtime/inference/gap separation, one experiment only, protected PRE=POST guards PASS; exact two-document commit scope. Resolver PASS; 96 Python tests, 2 failures/10 errors matching prior Astra baseline; integrity 10 existing broken links plus bundled jsonschema missing; no unrelated repairs.
+- OWNER_RUNTIME_ACCEPTANCE: NOT RUN / NOT AUTHORIZED in this phase. Future candidate requires new GO, independent instance-specific observers, then separate install/compile/runtime permissions; W-only is never PASS.
+- ROLLBACK: documentation-only forward correction; no historical resources/backups restored.
+- NEXT_PHASE: owner review of the report; optionally separately authorize A design/staging, never a bare CallCommand on the inert consumer-free graph. STOP after this report/plan commit and push.
