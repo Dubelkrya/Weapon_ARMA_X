@@ -82,6 +82,10 @@ The important distinction is:
 
 ## Quick start
 
+Практическая инструкция по префабам, моделям, Blender-анимациям, экспорту,
+событиям перезарядки и принятой настройке отдачи Кедра/SR-2:
+[Оружие ARMST — рабочий процесс (18.10.2026)](docs/guides/WEAPON_WORKFLOW_RU.md).
+
 For weapon work, use this order:
 
 1. Read [`reports/KNOWLEDGE_STATUS.md`](reports/KNOWLEDGE_STATUS.md).
