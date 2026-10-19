@@ -1,0 +1,100 @@
+GenericEntity : "{D802B6175A9F4CE3}Prefabs/Weapons/Shootgun/Western/core/armst_shotgun_tube_base.et" {
+ ID "5254ACCA959048B9"
+ components {
+  ARMST_ShotgunReloadComponent A5DD348953C44200 {
+   m_iTubeCapacity 0
+   m_iLoadedCapacity 0
+  }
+  ActionsManagerComponent "{A29AE67FF4D82B0F}" {
+   additionalActions {
+    ARMST_T4B_PCommitTransferAction "{9E1E720191CD478A}" {
+     m_bG3B2WriteEnabled 1
+     m_bG3B2InventoryWide 1
+     m_bG3B2MultiplePacks 1
+     m_iG3B2RequiredTargetMax 4
+    }
+   }
+  }
+  WeaponSoundComponent "{5A8685198A9AEEDD}" {
+   Filenames {
+    "{A84D9F22F2C0D9CE}Sounds/Weapons/_SharedData/PickUp/Weapons_PickUp_Rifle_WoodMetal.acp" "{68E023371FDD3B12}Sounds/Weapons/_SharedData/Drop/Weapons_Drop_Rifle_WoodMetal.acp" "{FA2D33A7C0F72008}Sounds/Weapons/Rifles/12g/Weapons_PumpShoot_12g_Shots.acp" "{B9AEFA03E065C8D0}Sounds/Weapons/Rifles/12g/Weapons_Shotgun_Handling.acp" "{332983CC95EE1E1E}Sounds/Weapons/_SharedData/Melee/Weapons_Melee_Rifle.acp" "{D8F675F3468362E2}Sounds/Weapons/_SharedData/Weapons_Sights_Actions.acp" "{10C1421961C34D26}Sounds/Weapons/_SharedData/Weapons_Deployment.acp" "{F9B575E37280E5D7}Sounds/Weapons/_SharedData/Drop/Weapons_Drop_Physical_Rifle_WoodMetal.acp"
+   }
+  }
+
+  MeshObject "{CFBAA4B701F95D69}" {
+   Object "{AC185F27DBBD9CD5}Assets/Shootgun/Mp_153/mp153_weapon.xob"
+  }
+  SCR_WeaponAttachmentsStorageComponent "{51F080D5CE45A1A2}" {
+   Attributes SCR_ItemAttributeCollection "{51F080D5C64F12C5}" {
+    ItemDisplayName WeaponUIInfo "{5222CB07CFF6712A}" {
+     Name "MP-153"
+     Description "MP-153 semi-automatic shotgun."
+    }
+    ItemPhysAttributes ItemPhysicalAttributes PhysicalAttributes {
+     Weight 3.45
+    }
+    ItemAnimationAttributes ItemAnimationAttributes "{5284960E1D29F45C}" {
+     AnimationIKPose "{ED1A90326230BC35}Assets/Shootgun/Mp_153/Anim/Remove/P_MP153_IK.anm"
+    }
+   }
+  }
+  WeaponComponent "{CFBAA4B706BA66E8}" {
+   components {
+    ARMST_T4B_ArmstV2_WeaponAnimationComponent "{60B4EA76EB15F6E0}" {
+     AnimInstance "{1F072E8A87BBDDC0}Assets/Shootgun/Mp_153/Anim/MP_153_weapon.asi"
+     AnimInjection AnimationAttachmentInfo "{532F3A9CB912F2BA}" {
+      AnimInstance "{E459BFBB1FBAB92C}Assets/Shootgun/Mp_153/Anim/MP_153_player.asi"
+     }
+    }
+    MuzzleComponent "{CA6BE4D6B867541F}" {
+     MagazineTemplate "{298F21B5861A42A2}Prefabs/Weapons/Shootgun/Magazines/12ga/ARMST_Shotgun_Tube4.et"
+     components {
+      CaseEjectingEffectComponent "{5122AAD190FCA21D}" {
+       EffectPosition EntitySlotInfo "{5122BA87B56F471A}" {
+        Offset 0.0425 -0.0176 -0.2323
+       }
+      }
+     }
+     ProjectileSpawnPositions {
+      PointInfo "{50F64C476EC435CA}" {
+       Offset 0 0 0.4963
+      }
+     }
+     FireModes {
+      BaseFireMode "{B80A64F4A8EF8333}" {
+       RoundsPerMinute 1400
+       ManualAction 0
+      }
+     }
+    }
+   
+    SightsComponent "{BB23A637957CFFF8}" {
+     SightsPointFront PointInfo "{584CED31C6D10FFC}" {
+      PivotID "slot_ironsight_front"
+      Offset 0 0 0
+      Angles 0 0 0
+     }
+     SightsPointRear PointInfo "{584CED31C4E1F0DE}" {
+      PivotID "slot_ironsight_rear"
+      Offset 0 0 0
+      Angles 0 0 0
+     }
+     SightsRanges {
+      SightRangeInfo "{584CF7959FFB9FD2}" {
+       Range 0.267 100
+       WeaponPosition PointInfo "{584CF7959FFB9FC9}" {
+        Offset 0 -0.0027 0
+        Angles 0.09 0 0
+       }
+      }
+     }
+     SightsRangesDefaultIndex 0
+    }
+   }
+   UIInfo WeaponUIInfo "{CC3BA6A2C42F09F4}" {
+    Name "MP-153"
+    Description "MP-153 semi-automatic shotgun."
+   }
+  }
+ }
+}

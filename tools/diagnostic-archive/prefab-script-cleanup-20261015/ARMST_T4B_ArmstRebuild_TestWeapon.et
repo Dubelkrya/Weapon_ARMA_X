@@ -1,0 +1,47 @@
+GenericEntity : "{63FF6FDCA4E7E735}Prefabs/Weapons/Shootgun/Russian/armst_Shotgun_mp_133.et" {
+ ID "1D80E36020934900"
+ components {
+  ARMST_ShotgunReloadComponent A5DD348953C44200 {
+   m_iT4BStartAmmo 2
+   m_iTubeCapacity 2
+   m_iLoadedCapacity 3
+  }
+  SCR_WeaponAttachmentsStorageComponent "{51F080D5CE45A1A2}" {
+   Attributes SCR_ItemAttributeCollection "{51F080D5C64F12C5}" {
+    ItemAnimationAttributes ItemAnimationAttributes "{5284960E1D29F45C}" {
+     AnimationIKPose "{FC38BE8BA977008F}Assets/Shootgun/Mp_133/Workspace/Reload/P_MP133_IK.anm"
+    }
+   }
+  }
+  WeaponComponent "{CFBAA4B706BA66E8}" {
+   components {
+    MuzzleComponent "{CA6BE4D6B867541F}" {
+     MagazineTemplate "{CD8091A2B3C4D5E6}Prefabs/Weapons/Shootgun/Magazines/12ga/ARMST_T4B_G3B2_Tube3Mag.et"
+    }
+    ARMST_T4B_ArmstV2_WeaponAnimationComponent "{60B4EA76EB15F6E0}" {
+     AnimGraph "{AF2491EDB3449EED}Assets/Shootgun/Mp_133/Workspace/MP133_Armst2.agr"
+     AnimInstance "{5F61684997C53048}Assets/Shootgun/Mp_133/Workspace/MP133_Armst2_weapon.asi"
+     AnimInjection AnimationAttachmentInfo "{532F3A9CB912F2BA}" {
+      AnimGraph "{AF2491EDB3449EED}Assets/Shootgun/Mp_133/Workspace/MP133_Armst2.agr"
+      AnimInstance "{A43FF9780FC454A4}Assets/Shootgun/Mp_133/Workspace/MP133_Armst2_player.asi"
+      BindingName "Weapon"
+     }
+     BindWithInjection 1
+     AnimVariablesToBind + {
+      "ARMST_ShellRequest" "ARMST_ShellEligible" "ARMST_ShellRepeat" "ARMST_ShellStop"
+     }
+    }
+   }
+  }
+  ActionsManagerComponent "{A29AE67FF4D82B0F}" {
+   additionalActions {
+    ARMST_T4B_PCommitTransferAction "{9E1E720191CD478A}" {
+     m_bG3B2WriteEnabled 1
+     m_bG3B2InventoryWide 1
+     m_bG3B2MultiplePacks 1
+     m_iG3B2RequiredTargetMax 3
+    }
+   }
+  }
+ }
+}

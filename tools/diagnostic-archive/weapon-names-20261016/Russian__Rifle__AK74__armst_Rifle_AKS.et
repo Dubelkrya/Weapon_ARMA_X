@@ -1,0 +1,132 @@
+GenericEntity : "{923D948AB0D57A51}Prefabs/Weapons/Rifles/AK74/Rifle_AK74_long_base.et" {
+ ID "CFBAA4B725411E45"
+ components {
+  SCR_WeaponAttachmentsStorageComponent "{51F080D5CE45A1A2}" {
+   Attributes SCR_ItemAttributeCollection "{51F080D5C64F12C5}" {
+    ItemDisplayName WeaponUIInfo "{5222CB07CFF6712A}" {
+     Name "AKS-74"
+     Description "#AR-ARMST_Weapon_AKS74_Description"
+    }
+    m_iCustomGridWidth 6
+    m_iCustomGridHeight 2
+    ItemPhysAttributes ItemPhysicalAttributes "{55349E9229B55E3D}" {
+     Weight 2.8
+    }
+   }
+  }
+  SlotManagerComponent "{559E78319D6C8CFA}" {
+   Slots {
+    EntitySlotInfo Dovetail {
+     PivotID "slot_dovetail"
+     Prefab "{D92368B78263A9E0}Prefabs/Weapons/Attachments/Mounts/Dovetail_AK/Dovetail_AK.et"
+     Offset 0.0019 0.0086 0.0153
+    }
+    EntitySlotInfo hand {
+     Offset 0.0043 -0.0017 -0.0036
+     Angles -3.1674 0.4868 0
+     Prefab "{31E8EF2214161A25}Prefabs/Weapons/Attachments/Stocks/AK74/armst_stock_AKS.et"
+    }
+    EntitySlotInfo hand2 {
+     Offset 0.0042 0.0031 -0.0106
+     Angles 0 0.4868 0
+     Enabled 0
+     Prefab "{7851F29BDAAAD7DB}Prefabs/Weapons/Attachments/Handguards/armst_Handguard_AK74M2.et"
+    }
+   }
+   Enabled 0
+  }
+  WeaponComponent "{CFBAA4B706BA66E8}" {
+   components {
+    ARMST_AttachmentSlotComponent "{55349E9229B55E29}" {
+     AttachmentSlot InventoryStorageSlot sights {
+      PivotID "slot_optics"
+      ChildPivotID ""
+      InspectionWidgetOffset -0.0204 0.0521 0.0168
+      Offset 0.0082 0.0123 0
+     }
+     AttachmentType AttachmentOpticsDovetailAK "{5D0CCDD0615C597D}" {
+     }
+     ShowInInspection 1
+     components {
+      ARMST_AttachmentSlotComponent "{6A70DA0EE5509652}" {
+       AttachmentSlot InventoryStorageSlot pricel {
+        PivotID "eye"
+        Offset 0 0.0062 0.1051
+       }
+       AttachmentType AttachmentOpticsRIS1913 "{6A70DA0EAA78B4EF}" {
+       }
+      }
+     }
+    }
+    AttachmentSlotComponent "{6A86C2DCAF1DF29A}" {
+     AttachmentSlot InventoryStorageSlot stock {
+      Offset 0.0026 0.0529 -0.0859
+      Prefab "{31E8EF2214161A25}Prefabs/Weapons/Attachments/Stocks/AK74/armst_stock_AKS.et"
+     }
+     AttachmentType AttachmentStockAk74 "{6A86C2D7C857DD91}" {
+     }
+    }
+    AttachmentSlotComponent "{6A86E5CFBB4EFD68}" {
+     AttachmentSlot InventoryStorageSlot hand {
+      PivotID "snap_hand_left"
+      Offset -0.0019 0.0243 0.0716
+      Prefab "{739E1839BF7A814A}Prefabs/Weapons/Attachments/Handguards/handguard_AK74m_sliva.et"
+     }
+     AttachmentType AttachmentHanguardAk74 "{6A86E5C7053F60B8}" {
+     }
+    }
+    MuzzleComponent "{CA6BE4D6B867541F}" {
+     MagazineTemplate "{6696D50A89722FCE}Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_AK_30rnd_PP.et"
+    }
+    SightsComponent "{BB23A637957CFFF8}" {
+     SightsRangesDefaultIndex 0
+    }
+    AttachmentSlotComponent "{51F6738D2EC74BE1}" {
+     AttachmentSlot InventoryStorageSlot underbarrel {
+     }
+    }
+   }
+   UIInfo WeaponUIInfo "{CC3BA6A2C42F09F4}" {
+    Name "AKS-74"
+    Description "#AR-ARMST_Weapon_AKS74_Description"
+   }
+  }
+  ActionsManagerComponent "{A29AE67FF4D82B0F}" {
+   ActionContexts {
+    UserActionContext "{61FECC7C715A8200}" {
+     ContextName "optic"
+     Position PointInfo "{61FECC7C11845F16}" {
+      Offset -0.02 0.0538 0.0209
+     }
+     Radius 0.075
+    }
+   }
+  }
+  MeshObject "{CFBAA4B701F95D69}" {
+   Materials {
+    MaterialAssignClass "{6A86E5CFAD132837}" {
+     SourceMaterial "AK74_HandGuard"
+     AssignedMaterial "{1ED637D47602957A}Assets/Weapons/Rifles/AK74/Data/AK74_Stock.emat"
+    }
+    MaterialAssignClass "{6A86E5CFAD1329EC}" {
+     SourceMaterial "AK74_Stock"
+     AssignedMaterial "{1ED637D47602957A}Assets/Weapons/Rifles/AK74/Data/AK74_Stock.emat"
+    }
+    MaterialAssignClass "{69DF6A28EEDC1457}" {
+     SourceMaterial "AK74_Stock"
+     AssignedMaterial "{1ED637D47602957A}Assets/Weapons/Rifles/AK74/Data/AK74_Stock.emat"
+    }
+   }
+  }
+  SCR_EditableEntityComponent "{65B265034B23979A}" {
+   Enabled 0
+   m_UIInfo SCR_EditableEntityUIInfo "{65B265034C4E74AA}" {
+    Name "AK-74M"
+   }
+  }
+  SCR_MeleeWeaponProperties "{55349E9229B55E31}" {
+   m_fDamage 2
+  }
+ }
+ coords -0.234 -0.101 0.103
+}

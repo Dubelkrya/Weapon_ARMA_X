@@ -1,0 +1,114 @@
+GenericEntity : "{93FF931DDD5CA650}Prefabs/Weapons/Western/Rifle/M16/armst_Western_Rifle_100m_base.et" {
+ ID "CFBAA4B725411E45"
+ components {
+  MeshObject "{CFBAA4B701F95D69}" {
+   Object "{572D73728DF974EC}Assets/Weapons_NATO/HKG3/Hk3.xob"
+  }
+  SCR_MeleeWeaponProperties "{5534745C44D1EFF6}" {
+   m_fDamage 2
+  }
+  SCR_WeaponAttachmentsStorageComponent "{51F080D5CE45A1A2}" {
+   Attributes SCR_ItemAttributeCollection "{51F080D5C64F12C5}" {
+    ItemDisplayName WeaponUIInfo "{5222CB07CFF6712A}" {
+     Name "HK G3"
+     Description "Heckler & Koch G3 rifle, chambered in 7.62x51 mm NATO."
+    }
+    ItemAnimationAttributes ItemAnimationAttributes "{5284960E1D29F45C}" {
+     AnimationIKPose "{32130352F880E925}Assets/Weapons_NATO/HKG3/Anim/Diff/p_rfl_HKG3_ik.anm"
+    }
+   }
+  }
+  WeaponComponent "{CFBAA4B706BA66E8}" {
+   components {
+    AttachmentSlotComponent "{5534745C44D1EF58}" {
+     Enabled 1
+     AttachmentSlot InventoryStorageSlot optics {
+      PivotID "slot_optics"
+      Offset 0 0 0
+      Angles 0 0 0
+      ChildPivotID "snap_weapon"
+     }
+     AttachmentType AttachmentOpticsARMST_G3L1A1Mount "{5A5CDB17A85868B7}" {
+     }
+     ShowInInspection 1
+    }
+    AttachmentSlotComponent "{56DE9C900611C1AF}" {
+     Enabled 0
+    }
+    AttachmentSlotComponent "{5F16E0B4B2D0D72C}" {
+     Enabled 0
+    }
+    SightsComponent "{BB23A637957CFFF8}" {
+     SightsPosition PointInfo "{BB23A63796688E69}" {
+      Offset 0 0 0
+     }
+     SightsRangesDefaultIndex 0
+     SightsPointFront PointInfo "{5534745C44D1EF08}" {
+      PivotID "slot_ironsight_front"
+      Offset 0 0 0
+      Angles 0 0 0
+     }
+     SightsPointRear PointInfo "{5534745C44D1EF0D}" {
+      PivotID "slot_ironsight_rear"
+      Offset 0 0 0
+      Angles 0 0 0
+     }
+    }
+    MuzzleComponent "{CA6BE4D6B867541F}" {
+     components {
+      AttachmentSlotComponent "{5D527627CCB8F756}" {
+       AttachmentSlot InventoryStorageSlot Muzzle {
+        PivotID ""
+       }
+      }
+      SCR_MuzzleEffectComponent "{C9B3271BB22CDB68}" {
+       EffectPosition EntitySlotInfo "{C9B3271BB85B5D32}" {
+        Offset 0 0 0.1752
+       }
+      }
+     }
+     FireModes {
+      BaseFireMode "{B80A64F4A8EF8333}" : "{D5D52E848DBCAA53}Prefabs/Weapons/Core/Configs/FireModes/FireMode_Single.conf" {
+       RoundsPerMinute 800
+      }
+      BaseFireMode "{619AB45BF76565F3}" : "{A512F292D96BCB9F}Prefabs/Weapons/Core/Configs/FireModes/FireMode_Auto.conf" {
+       RoundsPerMinute 800
+      }
+     }
+     MagazineWell MagazineWellHK3 "{24F41F1143114516}" {
+     }
+     WeaponAimModifiers {
+      RecoilWeaponAimModifier "{5584D01594F61795}" {
+       LinearData RecoilData "{58789524F404F395}" {
+        "Curve Mins" -0.001 -0.001 -0.033
+        "Curve Maxs" 0 -0.001 -0.027
+       }
+       AngularData RecoilData "{58789524F4CD2BD3}" {
+        "Curve Time Scale" 1.1
+        "Curve Mins" -1 3 1
+        "Curve Maxs" 1 3 1
+       }
+      }
+     }
+     MagazinePosition InventoryStorageSlot "{B80A64F4C834E9CB}" {
+      Offset 0.0007 -0.0476 0.0291
+     }
+     MagazineTemplate "{6D18CC33708EE713}Prefabs/Weapons/Magazines/Western/762x51/HK3/armst_Magazine_762x51_HK3_20_M80_Ball.et"
+    }
+    WeaponAnimationComponent "{60B4EA76EB15F6E0}" {
+     AnimGraph "{B01F8B98949C62AE}Assets/Weapons_NATO/HKG3/Anim/HKG3.agr"
+     AnimInstance "{3F06AB9540D64568}Assets/Weapons_NATO/HKG3/Anim/HKG3_weapon.asi"
+     AnimInjection AnimationAttachmentInfo "{5534745C44D1EF5A}" {
+      AnimGraph "{B01F8B98949C62AE}Assets/Weapons_NATO/HKG3/Anim/HKG3.agr"
+      AnimInstance "{C4583AA4D8D72184}Assets/Weapons_NATO/HKG3/Anim/HKG3_player.asi"
+     }
+    }
+   }
+   UIInfo WeaponUIInfo "{CC3BA6A2C42F09F4}" {
+    Name "HK G3"
+    Description "Heckler & Koch G3 rifle, chambered in 7.62x51 mm NATO."
+   }
+  }
+ }
+ coords 92.802 1.071 176.421
+}

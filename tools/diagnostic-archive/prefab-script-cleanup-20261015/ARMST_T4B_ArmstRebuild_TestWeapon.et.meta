@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{B9E884F7E642E292}Prefabs/Weapons/Shootgun/MP133/ARMST_T4B_ArmstRebuild_TestWeapon.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

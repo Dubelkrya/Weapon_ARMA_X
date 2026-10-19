@@ -1,3 +1,11 @@
+# Weapon sights update — 2026-10-13
+
+Independent western parent `93FF931DDD5CA650`; SIG/HKG33/L85/SLR bases connected. SIG source LOD0 rear assembly lowered 4.591360688 mm; helpers aligned, angle −0.15° remains provisional. Runtime zero is NOT verified. SHA-256 XOB изменился после исходного аудита. Это подтверждает изменение бинарного ресурса, но не правильность импортированной геометрии или пристрелки.
+
+[Session report](../../reports/WEAPONS_SESSIONS_2026-10-12_13.md) · [Mandatory sights guide](../guides/WEAPON_SIGHTS_INHERITANCE_GUIDE_RU.md). Earlier subsystem state below is preserved; this update does not supersede MP-133 ownership policy.
+
+---
+
 # CURRENT_AI_SYNC.md — handoff state for AI/local-agent sessions
 
 **Purpose:** a single short file that tells the next session what is true right

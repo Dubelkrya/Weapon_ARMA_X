@@ -1,0 +1,106 @@
+GenericEntity : "{93FF931DDD5CA650}Prefabs/Weapons/Western/Rifle/M16/armst_Western_Rifle_100m_base.et" {
+ ID "CFBAA4B725411E45"
+ components {
+  MeshObject "{CFBAA4B701F95D69}" {
+   Object "{C49097527FAF33B1}Assets/Weapons_NATO/Sig SG 550/SG550.xob"
+  }
+  SCR_MeleeWeaponProperties "{5534745C44D1EFF6}" {
+   m_fDamage 2
+  }
+  SCR_WeaponAttachmentsStorageComponent "{51F080D5CE45A1A2}" {
+   Attributes SCR_ItemAttributeCollection "{51F080D5C64F12C5}" {
+    ItemDisplayName WeaponUIInfo "{5222CB07CFF6712A}" {
+     Name "SIG SG 550"
+     Description "#AR-ARMST_Weapon_SIG550_Description"
+    }
+    ItemAnimationAttributes ItemAnimationAttributes "{5284960E1D29F45C}" {
+     AnimationIKPose "{B7869ABD0EEE379D}Assets/Weapons/Rifles/AK74/anims/anm/p_ak74_ik.anm"
+    }
+   }
+  }
+  WeaponComponent "{CFBAA4B706BA66E8}" {
+   components {
+    AttachmentSlotComponent "{56DE9C900611C1AF}" {
+     Enabled 0
+    }
+    AttachmentSlotComponent "{5F16E0B4B2D0D72C}" {
+     Enabled 0
+    }
+    SightsComponent "{BB23A637957CFFF8}" {
+     SightsPosition PointInfo "{BB23A63796688E69}" {
+      PivotID "eye"
+      Offset 0 0 -0.01
+     }
+     SightsRanges {
+      SightRangeInfo "{584CED30AFBE1EB5}" {
+       Range 0 100
+       WeaponPosition PointInfo "{584CED30AFBE1ED1}" {
+        Offset 0 0 0
+        Angles -0.15 0 0
+       }
+      }
+     }
+     SightsRangesDefaultIndex 0
+     SightsPointFront PointInfo "{5534745C44D1EF08}" {
+      PivotID "slot_ironsight_front"
+      Offset 0 0 0
+      Angles 0 0 0
+     }
+     SightsPointRear PointInfo "{5534745C44D1EF0D}" {
+      PivotID "slot_ironsight_rear"
+      Offset 0 0 0
+      Angles 0 0 0
+     }
+    }
+    MuzzleComponent "{CA6BE4D6B867541F}" {
+     WeaponAimModifiers {
+      RecoilWeaponAimModifier "{5584D01594F61795}" {
+       AngularData RecoilData "{58789524F4CD2BD3}" {
+        "Curve Magnitudes" 1 0.9 1
+       }
+      }
+     }
+     components {
+      AttachmentSlotComponent "{5D527627CCB8F756}" {
+       AttachmentSlot InventoryStorageSlot Muzzle {
+        PivotID "barrel_muzzle"
+       }
+      }
+     }
+     FireModes {
+      BaseFireMode "{B80A64F4A8EF8333}" : "{D5D52E848DBCAA53}Prefabs/Weapons/Core/Configs/FireModes/FireMode_Single.conf" {
+       RoundsPerMinute 800
+      }
+      BaseFireMode "{619AB45BF76565F3}" : "{B5D823125A678D73}Prefabs/Weapons/Core/Configs/FireModes/FireMode_Burst.conf" {
+       BurstType Interruptable
+       RoundsPerMinute 800
+      }
+      BaseFireMode "{A17F5500A1700001}" : "{A512F292D96BCB9F}Prefabs/Weapons/Core/Configs/FireModes/FireMode_Auto.conf" {
+       RoundsPerMinute 800
+      }
+     }
+     "LEFT HAND TARGET" DeploymentPointInfo lht {
+      Offset 0 -0.0193 0.0317
+     }
+     MagazinePosition InventoryStorageSlot "{B80A64F4C834E9CB}" {
+      Offset 0 0 0.0276
+     }
+     MagazineTemplate "{E3DC6C2FBBE4F825}Prefabs/Weapons/Magazines/Western/5x56/SIG550/armst_Magazine_556x45_SIG_550.et"
+    }
+    WeaponAnimationComponent "{60B4EA76EB15F6E0}" {
+     AnimGraph "{E7E67E4426E24066}Assets/Weapons/Rifles/workspaces/VZ58.agr"
+     AnimInstance "{FFB391312D0E84C5}Assets/Weapons/Rifles/workspaces/VZ58_weapon.asi"
+     AnimInjection AnimationAttachmentInfo "{5534745C44D1EF5A}" {
+      AnimGraph "{E7E67E4426E24066}Assets/Weapons/Rifles/workspaces/VZ58.agr"
+      AnimInstance "{04ED0000B50FE029}Assets/Weapons/Rifles/workspaces/VZ58_player.asi"
+     }
+    }
+   }
+   UIInfo WeaponUIInfo "{CC3BA6A2C42F09F4}" {
+    Name "SIG SG 550"
+    Description "#AR-ARMST_Weapon_SIG550_Description"
+   }
+  }
+ }
+ coords 141.885 1.998 77.921
+}

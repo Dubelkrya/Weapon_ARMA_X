@@ -1,0 +1,63 @@
+GenericEntity : "{140E94F473B60FE3}Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_base.et" {
+ ID "CFBAA4B725411E45"
+ components {
+  SCR_EditableEntityComponent "{65B265034B23979A}" {
+   Enabled 0
+   m_UIInfo SCR_EditableEntityUIInfo "{65B265034C4E74AA}" {
+    Name "AKM"
+    m_aAuthoredLabels {
+    }
+    m_aAutoLabels {
+    }
+   }
+   m_bAutoRegister NEVER
+  }
+  WeaponComponent "{CFBAA4B706BA66E8}" {
+   components {
+    ARMST_AttachmentSlotComponent "{65AE4CB5E23C0F65}" {
+     Enabled 1
+    }
+    MuzzleComponent "{CA6BE4D6B867541F}" {
+     components {
+      AttachmentSlotComponent "{65AE4CB5E23C0F2C}" {
+       AttachmentSlot InventoryStorageSlot Muzzle {
+        Offset 0 0 0
+       }
+      }
+     }
+     FireModes {
+      BaseFireMode "{65AE4CB4EF794DAB}" : "{A512F292D96BCB9F}Prefabs/Weapons/Core/Configs/FireModes/FireMode_Auto.conf" {
+       RoundsPerMinute 800
+      }
+     }
+    }
+    WeaponAnimationComponent "{60B4EA76EB15F6E0}" {
+     AnimGraph "{ADDF1CC42A489D84}Assets/Weapons/Rifles/workspaces/ak74.agr"
+     AnimInstance "{022310A34B9AF611}Assets/Weapons/Rifles/workspaces/ak74_weapon.asi"
+     AnimInjection AnimationAttachmentInfo "{65AE4CB5E23C0F1E}" {
+      AnimGraph "{ADDF1CC42A489D84}Assets/Weapons/Rifles/workspaces/ak74.agr"
+      AnimInstance "{F97D8192D39B92FD}Assets/Weapons/Rifles/workspaces/ak74_player.asi"
+     }
+    }
+    SightsComponent "{BB23A637957CFFF8}" {
+     SightsPosition PointInfo "{BB23A63796688E69}" {
+      Offset 0 0 0
+     }
+     SightsPointFront PointInfo "{65AE4CB5E23C0F57}" {
+      PivotID "slot_ironsight_front"
+      Offset 0 0 0
+      Angles 0 0 0
+     }
+     SightsPointRear PointInfo "{65AE4CB5E23C0F51}" {
+      PivotID "slot_ironsight_rear"
+      Offset 0 0 0
+      Angles 0 0 0
+     }
+
+     SightsRangesDefaultIndex 0
+    }
+   }
+  }
+ }
+ coords 0 -0.02 0
+}

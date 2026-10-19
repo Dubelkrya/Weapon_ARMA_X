@@ -1,0 +1,28 @@
+Projectile : "{67FED88E5085F63F}Prefabs/Weapons/Core/Ammo_Bullet_Base.et" {
+ ID "DA5C6308000CDEF2"
+ components {
+  ShellMoveComponent "{851AA4A2AE0A5691}" {
+   InitSpeed 404
+   InitSpeedVariation 1
+   Mass 0.00349
+   ProjectileEffects {
+    ProjectileDamage "{5168BBF3DBD79134}" {
+     DamageValue 30
+    }
+    ARMST_BuckshotHitDiagnostic "{6A9B40550AF0B85E}" {
+    }
+   }
+   BallisticTableConfig "{AEFA33057ADA0D0B}Configs/Weapons/AIBallisticTables/AIBT_9x19_Ball_M882.conf"
+   SonicCracks "{534A3A52CF7042A1}Sounds/Weapons/_SharedData/BulletSonicCracks/Pistol/Weapons_BulletSonicCracks_Pistol.acp"
+   SubsonicFlybys "{C3F69D82DBEF24E2}Sounds/Weapons/_SharedData/BulletFlybys/Pistol/Weapons_BulletFlybys_Pistol.acp"
+   AirDrag 0.000025
+   Diameter 8.3
+   PenetrationDepth 3.44
+   PenetrationDensity 0.65
+   PenetrationSpeed 250
+  }
+ }
+ coords 152.396 1 79.576
+ ProjectileModel "{049EAC7C19E1B570}Assets/Weapons/Ammo/Bullets/9x19/Bullet_9x19.xob"
+ CartridgeModel "{3D2DFC533F142E11}Assets/Weapons/Ammo/Bullets/9x18/Bullet_9x18.xob"
+}

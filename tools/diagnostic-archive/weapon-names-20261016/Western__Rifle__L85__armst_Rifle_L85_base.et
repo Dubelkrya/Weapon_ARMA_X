@@ -1,0 +1,100 @@
+GenericEntity : "{93FF931DDD5CA650}Prefabs/Weapons/Western/Rifle/M16/armst_Western_Rifle_100m_base.et" {
+ ID "CFBAA4B725411E45"
+ components {
+  MeshObject "{CFBAA4B701F95D69}" {
+   Object "{0F26972BB6E3CA5F}Assets/Weapons_NATO/L86/L86.xob"
+  }
+  SCR_MeleeWeaponProperties "{5534745C44D1EFF6}" {
+   m_fDamage 2
+  }
+  SCR_WeaponAttachmentsStorageComponent "{51F080D5CE45A1A2}" {
+   Attributes SCR_ItemAttributeCollection "{51F080D5C64F12C5}" {
+    ItemDisplayName WeaponUIInfo "{5222CB07CFF6712A}" {
+     Description "#AR-ARMST_Weapon_L85_Description"
+    }
+    ItemAnimationAttributes ItemAnimationAttributes "{5284960E1D29F45C}" {
+     AnimationIKPose "{9B94312176361ECC}Assets/Weapons_NATO/L86/Anim/Diff/p_rfl_L86_ik.anm"
+    }
+   }
+  }
+  WeaponComponent "{CFBAA4B706BA66E8}" {
+   components {
+    AttachmentSlotComponent "{5534745C44D1EF58}" {
+     AttachmentSlot InventoryStorageSlot optics {
+      PivotID "slot_optics"
+      Offset 0 0.0074 0.1249
+      Angles 0.4322 0 0
+      ChildPivotID "snap_weapon"
+      Prefab "{D0C2B304E954C9FD}Prefabs/Weapons/Attachments/Optics/L85/armst_L85_CarryHandle.et"
+     }
+     AttachmentType AttachmentOpticsSUSAT "{CC4E00C38D8A5581}" {
+     }
+     ShowInInspection 1
+    }
+    AttachmentSlotComponent "{56DE9C900611C1AF}" {
+     Enabled 0
+    }
+    AttachmentSlotComponent "{5F16E0B4B2D0D72C}" {
+     Enabled 0
+    }
+    SightsComponent "{BB23A637957CFFF8}" {
+     SightsPosition PointInfo "{BB23A63796688E69}" {
+      Offset 0 0 0
+     }
+     SightsRangesDefaultIndex 0
+     SightsPointFront PointInfo "{5534745C44D1EF08}" {
+      PivotID "slot_ironsight_front"
+      Offset 0 0 0
+      Angles 0 0 0
+     }
+     SightsPointRear PointInfo "{5534745C44D1EF0D}" {
+      PivotID "slot_ironsight_rear"
+      Offset 0 0 0
+      Angles 0 0 0
+     }
+    }
+    MuzzleComponent "{CA6BE4D6B867541F}" {
+     components {
+      AttachmentSlotComponent "{5D527627CCB8F756}" {
+       AttachmentSlot InventoryStorageSlot Muzzle {
+        PivotID "barrel_muzzle"
+        Offset 0 0 -0.0114
+       }
+      }
+     }
+     FireModes {
+      BaseFireMode "{B80A64F4A8EF8333}" : "{D5D52E848DBCAA53}Prefabs/Weapons/Core/Configs/FireModes/FireMode_Single.conf" {
+       RoundsPerMinute 800
+      }
+      BaseFireMode "{619AB45BF76565F3}" : "{A512F292D96BCB9F}Prefabs/Weapons/Core/Configs/FireModes/FireMode_Auto.conf" {
+       RoundsPerMinute 800
+      }
+     }
+     WeaponAimModifiers {
+      RecoilWeaponAimModifier "{5584D01594F61795}" {
+       AngularData RecoilData "{58789524F4CD2BD3}" {
+        "Curve Magnitudes" 1 0.9 1
+       }
+      }
+     }
+     MagazinePosition InventoryStorageSlot "{B80A64F4C834E9CB}" {
+      Offset 0 -0.0155 0.03
+     }
+     MagazineTemplate "{D8F2CA92583B23D3}Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M855_M856_Last_5Tracer.et"
+    }
+    WeaponAnimationComponent "{60B4EA76EB15F6E0}" {
+     AnimGraph "{C43E8470702AEDE4}Assets/Weapons_NATO/L86/Anim/L86.agr"
+     AnimInstance "{B702ED8F6D2CACB7}Assets/Weapons_NATO/L86/Anim/L86_weapon.asi"
+     AnimInjection AnimationAttachmentInfo "{5534745C44D1EF5A}" {
+      AnimGraph "{C43E8470702AEDE4}Assets/Weapons_NATO/L86/Anim/L86.agr"
+      AnimInstance "{4C5C7CBEF52DC85B}Assets/Weapons_NATO/L86/Anim/L86_player.asi"
+     }
+    }
+   }
+   UIInfo WeaponUIInfo "{CC3BA6A2C42F09F4}" {
+    Description "#AR-ARMST_Weapon_L85_Description"
+   }
+  }
+ }
+ coords 0 0 0.012
+}

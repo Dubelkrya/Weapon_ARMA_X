@@ -197,3 +197,7 @@ changed prefab path, regenerate it with `python agent/scripts/scan_build.py`.
 - [`agent/PRIMARY_MOD_POLICY.md`](agent/PRIMARY_MOD_POLICY.md) — addon selection
 - [`agent/SAFE_PREFAB_EDITOR.md`](agent/SAFE_PREFAB_EDITOR.md) — editing contract
 - [`docs/sync/CURRENT_AI_SYNC.md`](docs/sync/CURRENT_AI_SYNC.md) — current session state
+
+## Weapon sights and parent changes
+
+Before changing weapon parents, iron-sight geometry or zeroing, read [the sights/inheritance guide](docs/guides/WEAPON_SIGHTS_INHERITANCE_GUIDE_RU.md). Check resource GUID override identity against vanilla, preserve model-specific attachments, and separate geometry, helpers, compiled XOB and runtime zeroing. Current dated evidence: [12–13 October report](reports/WEAPONS_SESSIONS_2026-10-12_13.md).

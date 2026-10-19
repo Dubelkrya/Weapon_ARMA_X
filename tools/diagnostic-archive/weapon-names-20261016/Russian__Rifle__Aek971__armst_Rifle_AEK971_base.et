@@ -1,0 +1,116 @@
+GenericEntity : "{923D948AB0D57A51}Prefabs/Weapons/Rifles/AK74/Rifle_AK74_long_base.et" {
+ ID "CFBAA4B725411E45"
+ components {
+  SCR_WeaponAttachmentsStorageComponent "{51F080D5CE45A1A2}" {
+   Attributes SCR_ItemAttributeCollection "{51F080D5C64F12C5}" {
+    ItemDisplayName WeaponUIInfo "{5222CB07CFF6712A}" {
+     Name "#AR-Weapon_AK74N_Name"
+     Description "#AR-ARMST_Weapon_AEK971_Description"
+    }
+    ItemPhysAttributes ItemPhysicalAttributes PhysicalAttributes {
+     Weight 3.5
+    }
+   }
+  }
+  SlotManagerComponent "{559E78319D6C8CFA}" {
+   Slots {
+    EntitySlotInfo Dovetail {
+     PivotID "slot_dovetail"
+     Prefab "{D92368B78263A9E0}Prefabs/Weapons/Attachments/Mounts/Dovetail_AK/Dovetail_AK.et"
+    }
+   }
+   Enabled 0
+  }
+  WeaponComponent "{CFBAA4B706BA66E8}" {
+   components {
+    AttachmentSlotComponent "{55349E9229B55E29}" {
+     AttachmentSlot InventoryStorageSlot sights {
+      PivotID "slot_optics"
+      ChildPivotID "snap_weapon"
+      InspectionWidgetOffset -0.0204 0.0521 -0.1015
+     }
+     AttachmentType AttachmentOpticsDovetailAK "{5A16F04B258689D6}" {
+     }
+     ShowInInspection 1
+    }
+    AttachmentSlotComponent "{5F189C826D592450}" {
+     AttachmentSlot InventoryStorageSlot BayonetSlot {
+     }
+    }
+    SightsComponent "{BB23A637957CFFF8}" {
+     SightsRanges {
+      SightRangeInfo "{6A98EDF19DD1F053}" {
+       Range 0 100
+       WeaponPosition PointInfo "{6A98EDF19DD1F052}" {
+        Offset 0 0 0
+        Angles 0 0 0
+       }
+      }
+     }
+     SightsPosition PointInfo "{BB23A63796688E69}" {
+      PivotID "eye"
+      Offset 0 0 0
+     }
+     SightsPointFront PointInfo "{55349E9229B55E74}" {
+      PivotID "slot_ironsight_front"
+      Offset 0 0 0
+      Angles 0 0 0
+     }
+     SightsPointRear PointInfo "{55349E9229B55E7A}" {
+      PivotID "slot_ironsight_rear"
+      Offset 0 0 0
+      Angles 0 0 0
+     }
+     SightsRangesDefaultIndex 0
+    }
+    MuzzleComponent "{CA6BE4D6B867541F}" {
+     FireModes {
+      BaseFireMode "{B80A64F4A8EF8333}" {
+       RoundsPerMinute 900
+      }
+      BaseFireMode "{619AB45BF76565F3}" : "{B5D823125A678D73}Prefabs/Weapons/Core/Configs/FireModes/FireMode_Burst.conf" {
+       BurstType Interruptable
+       RoundsPerMinute 900
+      }
+     }
+     WeaponAimModifiers {
+      RecoilWeaponAimModifier "{55349E9229B55D9A}" {
+       LinearData RecoilData "{58789524E765774D}" {
+        "Curve Magnitudes" 0.94 0.8 1
+       }
+       AngularData RecoilData "{58789524E7CAB55F}" {
+        "Curve Magnitudes" 0.94 0.8 1
+       }
+      }
+     }
+     MagazinePosition InventoryStorageSlot "{B80A64F4C834E9CB}" {
+      Offset 0 0.0036 0.0206
+      InspectionWidgetOffset 0 0 0
+     }
+    }
+    WeaponAnimationComponent "{60B4EA76EB15F6E0}" {
+     AnimInjection AnimationAttachmentInfo "{55349E9229B55D8A}" {
+     }
+    }
+   }
+   UIInfo WeaponUIInfo "{CC3BA6A2C42F09F4}" {
+    Description "#AR-ARMST_Weapon_AEK971_Description"
+   }
+  }
+  ActionsManagerComponent "{A29AE67FF4D82B0F}" {
+   ActionContexts {
+    UserActionContext "{61FECC7C715A8200}" {
+     ContextName "optic"
+     Position PointInfo "{61FECC7C11845F16}" {
+      Offset -0.02 0.0538 0.0209
+     }
+     Radius 0.075
+    }
+   }
+  }
+  MeshObject "{CFBAA4B701F95D69}" {
+   Object "{EFB2B25EFD3BD62E}Assets/Weapons_RUS/Aek_971/aek971.xob"
+  }
+ }
+ coords 7533.834 2.718 6692.322
+}

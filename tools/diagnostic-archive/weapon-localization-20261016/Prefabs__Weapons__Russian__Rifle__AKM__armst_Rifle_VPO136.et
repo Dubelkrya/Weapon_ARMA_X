@@ -1,0 +1,67 @@
+GenericEntity : "{140E94F473B60FE3}Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM_base.et" {
+ ID "CFBAA4B725411E45"
+ components {
+  SCR_EditableEntityComponent "{65B265034B23979A}" {
+   Enabled 0
+   m_UIInfo SCR_EditableEntityUIInfo "{65B265034C4E74AA}" {
+    Name "VPO-136"
+    m_aAuthoredLabels {
+     CONTENT_MODDED 4141368
+    }
+    m_aAutoLabels {
+     4141368
+    }
+   }
+   m_bAutoRegister NEVER
+  }
+  SCR_WeaponAttachmentsStorageComponent "{51F080D5CE45A1A2}" {
+   Attributes SCR_ItemAttributeCollection "{51F080D5C64F12C5}" {
+    ItemDisplayName WeaponUIInfo "{5222CB07CFF6712A}" {
+     Name "VPO-136"
+     Description "#AR-ARMST_Weapon_VPO136_Description"
+    }
+   }
+  }
+  SlotManagerComponent "{673A7B21D011B7E9}" {
+   Enabled 0
+  }
+  WeaponComponent "{CFBAA4B706BA66E8}" {
+   components {
+    ARMST_AttachmentSlotComponent "{65AE4CB5E23C0F65}" {
+     Enabled 0
+     components {
+      ARMST_AttachmentSlotComponent "{6A873944CDB64C6F}" {
+       Enabled 0
+      }
+     }
+    }
+    AttachmentSlotComponent "{65AE4CB5E23C0F63}" {
+     AttachmentSlot InventoryStorageSlot "{610874056E7424A6}" {
+      Prefab "{B0E764B069F6A153}Prefabs/Weapons/Attachments/Stocks/AK74/armst_Stock_akm.et"
+     }
+    }
+    MuzzleComponent "{CA6BE4D6B867541F}" {
+     MagazineTemplate "{07805AE177F52646}Prefabs/Weapons/Magazines/Russian/7x62/AKM/armst_Magazine_762x39_AKM_10rnd_Ball.et"
+    }
+    SightsComponent "{BB23A637957CFFF8}" {
+     SightsPointFront PointInfo "{65AE4CB5E23C0F57}" {
+      PivotID "slot_ironsight_front"
+      Offset 0 0 0
+      Angles 0 0 0
+     }
+     SightsPointRear PointInfo "{65AE4CB5E23C0F51}" {
+      PivotID "slot_ironsight_rear"
+      Offset 0 0 0
+      Angles 0 0 0
+     }
+
+     SightsRangesDefaultIndex 0
+    }
+   }
+   UIInfo WeaponUIInfo "{CC3BA6A2C42F09F4}" {
+    Name "VPO-136"
+    Description "#AR-ARMST_Weapon_VPO136_Description"
+   }
+  }
+ }
+}

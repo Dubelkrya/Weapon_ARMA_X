@@ -255,3 +255,7 @@ Report:
 - WORKBENCH
 
 The local agent may search and edit safely, but architecture/gameplay values come from the task and canonical project knowledge. If structure is proven, make the minimal patch. If not, stop.
+
+## Sights / parent migration prerequisite
+
+Read [WEAPON_SIGHTS_INHERITANCE_GUIDE_RU.md](../docs/guides/WEAPON_SIGHTS_INHERITANCE_GUIDE_RU.md) before parent/zeroing edits. A same-GUID vanilla override is not an independent child; omitted range entries are not proof of deletion. Preserve attachments and individual settings on parent-only requests. Stop numerical tuning if changes do not bind; verify identity, instance overrides and compiled XOB first.

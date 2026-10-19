@@ -1,0 +1,731 @@
+SCR_BaseGameMode GameMode_Plain2 : "{1B76F75A3175E85C}Prefabs/MP/Modes/Plain/GameMode_Plain.et" {
+ components {
+  SCR_RespawnSystemComponent "{56B2B4793051E7C9}" {
+   m_SpawnLogic SCR_SpawnLogic "{5D36888CC966608A}" {
+    m_eDisconnectPlayerControllerBehaviour NOTHING
+    m_eDisconnectCharacterBehaviour NOTHING
+   }
+   m_sLoadingLayout ""
+  }
+ }
+ coords 130.614 3.041 134.764
+}
+GenericEntity {
+ components {
+  MeshObject "{6A96A0E2C07502B4}" {
+   Object "{2F2881EBE4D1C77D}Assets/Weapons_NATO/HKG3/Plnak_Pikatini.xob"
+  }
+ }
+ coords 145.324 2.022 77.943
+}
+$grp GenericEntity : "{0346C78F29531C70}Prefabs/Weapons/Shootgun/Magazines/12ga/armst_12ga_Shell.et" {
+ armst_12ga_Shell_6A95670D60EF9049 {
+  coords 145.773 1.9 78.088
+ }
+ armst_12ga_Shell_6A95670E895DE981 {
+  coords 152.778 1 78.877
+ }
+}
+GenericEntity : "{035155F82E11CBFB}Prefabs/Weapons/Shootgun/Russian/armst_Shotgun_RIS_Mount.et" {
+ coords 133.001 1 76.74
+}
+GenericEntity armst_Rifle_HKG33_base_6A6D20653A05E61D : "{035CFC7DD44455D0}Prefabs/Weapons/Western/Rifle/HKG33/armst_Rifle_HKG33_base.et" {
+ components {
+  WeaponComponent "{CFBAA4B706BA66E8}" {
+   components {
+    MuzzleComponent "{CA6BE4D6B867541F}" {
+     MagazinePosition InventoryStorageSlot "{B80A64F4C834E9CB}" {
+      Offset 0.0005 -0.0492 0.0291
+     }
+    }
+   }
+  }
+ }
+ coords 145.324 1.9 77.934
+}
+$grp GameEntity : "{08286DDBB1F33FF1}Prefabs/Weapons/Attachments/Optics/Optic_AP2k/armst_Collim_AP2k.et" {
+ armst_Collim_AP2k_6A7A460A981609B4 {
+  coords 134.059 1.9 77.931
+ }
+ armst_Collim_AP2k_6A7B0691FDAC49A8 {
+  coords 131.552 2.082 77.86
+ }
+}
+GenericEntity armst_TT_6A62F895124AE6BE : "{0D469F42B65E350E}Prefabs/Weapons/Russian/Handguns/TT/armst_pistol_TT_base.et" {
+ coords 131.424 1.9 77.776
+}
+GenericEntity armst_Magazine_545x39_RPK_45rnd_BP_6A7A460A98163418 : "{124F7D3880DA92C6}Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_RPK_45rnd_BP.et" {
+ coords 132.458 1.9 77.884
+}
+GenericEntity armst_M9_6A62F895124AD7FB : "{1353C6EAD1DCFE43}Prefabs/Weapons/Western/Handguns/armst_pistol_M9.et" {
+ coords 130.7 1.9 77.827
+}
+$grp GenericEntity : "{221AED80163B7C60}Prefabs/Weapons/Shootgun/Western/armst_Shotgun_spas_12.et" {
+ armst_spas_12_6A6D20653A058151 {
+  coords 146.215 1.9 77.687
+ }
+ armst_Shotgun_spas_12_6A9706638592E7A8 {
+  coords 149.715 1 77.616
+ }
+}
+GenericEntity armst_AKS_6A6D20653A05823C : "{25A64724FD416989}Prefabs/Weapons/Russian/Rifle/AK74/armst_Rifle_AKS.et" {
+ coords 133.779 1.9 77.895
+}
+GenericEntity armst_Magazine_762x51_HK3_20_M80_Ball_BP_6A7A460A9817C152 : "{263A4BF691DC4E33}Prefabs/Weapons/Magazines/Western/762x51/HK3/armst_Magazine_762x51_HK3_20_M80_Ball_BP.et" {
+ coords 145.111 1.988 77.959
+}
+$grp GameEntity : "{28DE12055E70E762}Prefabs/Weapons/Attachments/Optics/armst_Optic_Collimator.et" {
+ armst_Optic_Collimator_6A6D20653A05B65E {
+  coords 133.036 1 75.564
+ }
+ armst_Optic_Collimator_6A93258EAA7498EC {
+  coords 132.298 1.9 77.935
+ }
+}
+ARMST_CollectorTestStand : "{2B123104ED124CC6}Prefabs/Structures/Undeground/CollectorStand/ARMST_CollectorTestStand.et" {
+ coords 153.548 1 133.631
+ m_iModuleLimit 40
+ m_iMaxDepth 10
+ m_iMaxCrossroads 5
+}
+GenericEntity armst_Rifle_Sig550_6A994628E3ECD22D : "{2DD989AD9BAFA84C}Prefabs/Weapons/Western/Rifle/Sig550/armst_Rifle_Sig550.et" {
+ components {
+  WeaponComponent "{CFBAA4B706BA66E8}" {
+   components {
+    SightsComponent "{BB23A637957CFFF8}" {
+     SightsRanges {
+      SightRangeInfo "{584CED30AFBE1EB5}" {
+       WeaponPosition PointInfo "{584CED30AFBE1ED1}" {
+        Angles 0 0 0
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+ coords 141.251 1.9 77.98
+}
+GenericEntity armst_SR_2_6A62F895124AC2AD : "{31FB2EC4F4AFFC05}Prefabs/Weapons/Russian/Handguns/Sr_2/armst_pistol_SR_2_base.et" {
+ components {
+  WeaponComponent "{CFBAA4B706BA66E8}" {
+   components {
+    SightsComponent "{BB23A637957CFFF8}" {
+     SightsRanges {
+      SightRangeInfo "{5EEACC0F3BFD890B}" {
+       WeaponPosition PointInfo "{5EEACC0F3BFD892B}" {
+        Offset 0 0 0
+        Angles 0 0 0
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+ coords 131.241 1.997 77.866
+}
+SCR_FiringRangeTarget : "{379D34B0D41DA810}Prefabs/Props/Military/Training/TargetInfantry_01.et" {
+ coords 137.784 1 181.777
+ angles 0 -176.851 0
+}
+GenericEntity armst_PP91_6A62F895124ABED7 : "{3968B2A856852CBD}Prefabs/Weapons/Russian/Handguns/PP91/armst_pistol_PP91_base.et" {
+ components {
+  WeaponComponent "{CFBAA4B706BA66E8}" {
+   components {
+    SightsComponent "{BB23A637957CFFF8}" {
+     SightsRanges {
+      SightRangeInfo "{5EEACC0F3BFD890B}" {
+       WeaponPosition PointInfo "{5EEACC0F3BFD892B}" {
+        Offset 0 0 0
+        Angles 0 0 0
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+ coords 131.044 2.012 77.82
+}
+GenericEntity armst_Magazine_556x45_HKG36_BP_6A7A460A9817EB21 : "{39C8796C070E44DD}Prefabs/Weapons/Magazines/Western/5x56/HKG36/armst_Magazine_556x45_HKG36_BP.et" {
+ coords 143.927 1.9 78.04
+}
+$grp GenericEntity : "{3E413771E1834D2F}Prefabs/Weapons/Western/Rifle/M16/armst_Rifle_M16A2.et" {
+ armst_Rifle_M16A2_base_6A6D20653A05B743 {
+  coords 140.551 1.9 77.902
+ }
+ armst_Rifle_M16A2_6A7A460A98179471 {
+  coords 134.214 1.9 78.096
+ }
+}
+GenericEntity armst_Rifle_SVD_base_6A6D20653A05A50E : "{3EB02CDAD5F23C82}Prefabs/Weapons/Russian/Rifle/SVD/armst_Rifle_SVD.et" {
+ coords 136.67 1.9 77.928
+}
+$grp GenericEntity : "{3F47C33B88171646}Prefabs/Weapons/Magazines/Russian/9x39/9a91/armst_Magazine_9x39_20rnd_9a91_SP6.et" {
+ armst_Magazine_9x39_20rnd_9a91_SP6_6A7A460A9817B164 {
+  coords 138.527 1.9 77.947
+ }
+ armst_Magazine_9x39_20rnd_9a91_SP6_6A7A460A9817B1D1 {
+  coords 138.447 1.9 77.959
+ }
+}
+GenericEntity armst_Rifle_L85_base_6A6D20653A05A679 : "{45D3FCA77AF1709B}Prefabs/Weapons/Western/Rifle/L85/armst_Rifle_L85_base.et" {
+ components {
+  MeshObject "{CFBAA4B701F95D69}" {
+   Object "{0F26972BB6E3CA5F}Assets/Weapons_NATO/L86/L86.xob"
+  }
+  SCR_MeleeWeaponProperties "{5534745C44D1EFF6}" {
+   m_fDamage 2
+  }
+  SCR_WeaponAttachmentsStorageComponent "{51F080D5CE45A1A2}" {
+   Attributes SCR_ItemAttributeCollection "{51F080D5C64F12C5}" {
+    ItemDisplayName WeaponUIInfo "{5222CB07CFF6712A}" {
+     Description "#AR-ARMST_Weapon_L85_Description"
+    }
+    ItemAnimationAttributes ItemAnimationAttributes "{5284960E1D29F45C}" {
+     AnimationIKPose "{9B94312176361ECC}Assets/Weapons_NATO/L86/Anim/Diff/p_rfl_L86_ik.anm"
+    }
+   }
+  }
+  WeaponComponent "{CFBAA4B706BA66E8}" {
+   components {
+    AttachmentSlotComponent "{5534745C44D1EF58}" {
+     AttachmentSlot InventoryStorageSlot optics {
+      PivotID "slot_optics"
+      Offset 0 0.0067 0.1248
+      Angles 0.4322 0 0
+      ChildPivotID "snap_weapon"
+      Prefab "{D0C2B304E954C9FD}Prefabs/Weapons/Attachments/Optics/L85/armst_L85_CarryHandle.et"
+     }
+     AttachmentType AttachmentOpticsSUSAT "{CC4E00C38D8A5581}" {
+     }
+     ShowInInspection 1
+    }
+    AttachmentSlotComponent "{56DE9C900611C1AF}" {
+     AttachmentSlot InventoryStorageSlot Handguard {
+     }
+    }
+    AttachmentSlotComponent "{5F16E0B4B2D0D72C}" {
+     Enabled 0
+    }
+    SightsComponent "{BB23A637957CFFF8}" {
+     SightsPosition PointInfo "{BB23A63796688E69}" {
+      Offset 0 0 0
+     }
+     SightsPointFront PointInfo "{5534745C44D1EF08}" {
+      PivotID "slot_ironsight_front"
+      Offset 0 0 0
+     }
+     SightsPointRear PointInfo "{5534745C44D1EF0D}" {
+      PivotID "slot_ironsight_rear"
+      Offset 0 0 0
+     }
+    }
+    MuzzleComponent "{CA6BE4D6B867541F}" {
+     components {
+      AttachmentSlotComponent "{5D527627CCB8F756}" {
+       AttachmentSlot InventoryStorageSlot Muzzle {
+        PivotID "barrel_muzzle"
+        Offset 0 0 -0.0114
+       }
+      }
+     }
+     MagazinePosition InventoryStorageSlot "{B80A64F4C834E9CB}" {
+      Offset 0 -0.0155 0.03
+     }
+    }
+    WeaponAnimationComponent "{60B4EA76EB15F6E0}" {
+     AnimGraph "{C43E8470702AEDE4}Assets/Weapons_NATO/L86/Anim/L86.agr"
+     AnimInstance "{B702ED8F6D2CACB7}Assets/Weapons_NATO/L86/Anim/L86_weapon.asi"
+     AnimInjection AnimationAttachmentInfo "{5534745C44D1EF5A}" {
+      AnimGraph "{C43E8470702AEDE4}Assets/Weapons_NATO/L86/Anim/L86.agr"
+      AnimInstance "{4C5C7CBEF52DC85B}Assets/Weapons_NATO/L86/Anim/L86_player.asi"
+     }
+    }
+   }
+  }
+ }
+ coords 142.715 1.9 78.063
+}
+GenericEntity armst_Magazine_9x39_20rnd_vss_SP6_6A7A460A9817B24A : "{51E9CE2EB27B3DBD}Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_20rnd_vss_SP6.et" {
+ coords 138.148 1.9 78.136
+}
+GenericEntity armst_Magazine_762x51_L1A1_30_M80_Ball_6A7A460A9817B284 : "{531AA7DB88D84184}Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_30_M80_Ball.et" {
+ coords 139.477 1.9 77.872
+}
+GenericEntity armst_Rifle_AKMS_6A6D20653A05A68A : "{5712F6F88A014F0B}Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKMS.et" {
+ coords 134.79 1.9 77.952
+}
+GenericEntity armst_izh_27_6A6D20653A05A71A : "{57F153EFAD34E1CA}Prefabs/Weapons/Shootgun/Russian/armst_Shotgun_izh_27.et" {
+ coords 146.713 1.9 77.931
+}
+GenericEntity armst_AK74M_6A6D20653A055505 : "{5B8E766C0E3C13EE}Prefabs/Weapons/Russian/Rifle/AK74/armst_Rifle_AK74M.et" {
+ coords 133.465 2.04 77.969
+}
+GenericEntity armst_Rifle_AKM_6A6D20653A0555CE : "{5BFF97EFD0BF6D9F}Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_AKM.et" {
+ coords 135.009 1.9 77.977
+}
+GenericEntity armst_APB_6A62F895124AA737 : "{5D3DA7E84135B278}Prefabs/Weapons/Russian/Handguns/APB/armst_pistol_APB_base.et" {
+ coords 130.493 1.9 77.84
+}
+GenericEntity armst_Rifle_VSK94_base_6A6D20653A055697 : "{6005623D3AA5F5C2}Prefabs/Weapons/Russian/Rifle/VSK94/armst_Rifle_VSK94_base.et" {
+ coords 138.625 2.003 77.981
+}
+GenericEntity armst_Shotgun_mp_133_6A960367792B1D50 : "{63FF6FDCA4E7E735}Prefabs/Weapons/Shootgun/Russian/armst_Shotgun_mp_133.et" {
+ components {
+  WeaponComponent "{CFBAA4B706BA66E8}" {
+   components {
+    SightsComponent "{BB23A637957CFFF8}" {
+     SightsPointFront PointInfo "{584CED31C6D10FFC}" {
+      Offset 0 0 0
+     }
+     SightsPointRear PointInfo "{584CED31C4E1F0DE}" {
+      Offset 0 0 0
+     }
+    }
+    MuzzleComponent "{CA6BE4D6B867541F}" {
+     "LEFT HAND TARGET" DeploymentPointInfo lht {
+      Offset 0 0 0
+     }
+     BUTSTOCK_TRANSFORMATION DeploymentPointInfo bt {
+      Offset 0 0 0
+     }
+     MagazinePosition InventoryStorageSlot "{B80A64F4C834E9CB}" {
+      Offset 0 0.0076 0.0369
+      Angles -90 -180 -180
+     }
+    }
+   }
+  }
+ }
+ coords 148.19 1.933 77.805
+}
+GenericEntity armst_Magazine_545x39_AK_30rnd_PP_6A7A460A98177D18 : "{6696D50A89722FCE}Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_AK_30rnd_PP.et" {
+ coords 132.575 1.9 78.128
+}
+GenericEntity armst_Magazine_9x39_30rnd_val_SP5_6A7A460A98177D89 : "{6C22F58BBF5D6AED}Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_30rnd_val_SP5.et" {
+ coords 138.069 1.9 78.01
+}
+GenericEntity armst_Magazine_9x39_30rnd_val_SP6_6A7A460A98177DC0 : "{6CBF1E50EB22F09B}Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_30rnd_val_SP6.et" {
+ coords 138.154 1.9 78.023
+}
+GenericEntity armst_Magazine_762x51_HK3_20_M80_Ball_6A7A460A98171B79 : "{6D18CC33708EE713}Prefabs/Weapons/Magazines/Western/762x51/HK3/armst_Magazine_762x51_HK3_20_M80_Ball.et" {
+ coords 145.039 1.988 77.981
+}
+$grp GenericEntity : "{6DBEF115AA35E404}Prefabs/Weapons/Shootgun/Western/armst_Shotgun_Remington_870.et" {
+ armst_Remington_870_6A6D20653A05460E {
+  components {
+   SCR_WeaponAttachmentsStorageComponent "{51F080D5CE45A1A2}" {
+    Attributes SCR_ItemAttributeCollection "{51F080D5C64F12C5}" {
+     ItemAnimationAttributes ItemAnimationAttributes "{5284960E1D29F45C}" {
+      AnimationIKPose "{65A3D44B76BD6847}Assets/Shootgun/Remington_870/Anim/Reload/P_Remington870_IK.anm"
+     }
+    }
+   }
+  }
+  coords 146.006 1.939 77.705
+ }
+ armst_Shotgun_Remington_870_6A97066385F39ED3 {
+  coords 149.131 1 77.861
+ }
+}
+GenericEntity armst_Magazine_545x39_RPK_45rnd_PP_6A7A460A9817047F : "{6E4C163536579349}Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_RPK_45rnd_PP.et" {
+ coords 132.597 1.9 77.874
+}
+GenericEntity armst_AK105_6A6D20653A054ABA : "{6FC3151D0DED22A9}Prefabs/Weapons/Russian/Rifle/AK74/armst_Rifle_AK105.et" {
+ components {
+  WeaponComponent "{CFBAA4B706BA66E8}" {
+   components {
+    AttachmentSlotComponent "{55D99BF2055C2D86}" {
+     AttachmentSlot InventoryStorageSlot Stock {
+      Offset 0 0.0147 -0.051
+     }
+    }
+    AttachmentSlotComponent "{6CD34CACDC50AC2A}" {
+     AttachmentSlot InventoryStorageSlot ris {
+      PivotID "slot_optics"
+      Prefab "{BC6E5BBC03350708}Prefabs/Weapons/Attachments/Optics/AKDovetailMount/Armst_OKP.et"
+     }
+    }
+   }
+  }
+ }
+ coords 132.736 2.039 77.973
+}
+GenericEntity armst_Magazine_9x39_20rnd_vss_SP5_6A7A460A981704E6 : "{70D023F899C9C226}Prefabs/Weapons/Magazines/Russian/9x39/VSS/armst_Magazine_9x39_20rnd_vss_SP5.et" {
+ coords 138.061 1.9 78.142
+}
+GenericEntity armst_Magazine_556x45_SIG_550_BP_6A7A460A98172775 : "{70D7F0AE523E4FFF}Prefabs/Weapons/Magazines/Western/5x56/SIG550/armst_Magazine_556x45_SIG_550_BP.et" {
+ coords 141.715 1.9 78.009
+}
+GenericEntity armst_Magazine_762x51_L1A1_30_M80_Ball_BP_6A7A460A981727C2 : "{8046F3CFD92D43BA}Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_30_M80_Ball_BP.et" {
+ coords 139.58 1.9 77.879
+}
+GenericEntity armst_Magazine_545x39_AK_30rnd_BP_6A7A460A9817200B : "{86DDD923A256EDF8}Prefabs/Weapons/Magazines/Russian/5x45/AK74/armst_Magazine_545x39_AK_30rnd_BP.et" {
+ coords 132.451 1.9 78.107
+}
+$grp Projectile : "{8A45841AC9BA3AE7}Prefabs/Weapons/Shootgun/Ammo/12g/armst_Ammo_Buckshot_pellet.et" {
+ {
+  coords 152.396 1 79.576
+ }
+ {
+  coords 147.962 1.9 77.98
+ }
+ {
+  coords 147.89 1.9 78.082
+ }
+ {
+  coords 147.952 1.9 78.128
+ }
+ {
+  coords 147.995 1.9 78.135
+ }
+ {
+  coords 144.501 1 82.864
+ }
+ {
+  coords 144.402 1 82.401
+ }
+}
+GenericEntity armst_Rifle_vss_base_6A62F895124A882E : "{902A79E4B2A66E63}Prefabs/Weapons/Russian/Rifle/VSS/armst_Rifle_vss_base.et" {
+ components {
+  WeaponSoundComponent "{5A8685198A9AEEDD}" {
+   Filenames +{
+   }
+  }
+  MeshObject "{CFBAA4B701F95D69}" {
+   Object "{C4A692199548E245}Assets/Weapons_RUS/VSS/Vss.xob"
+  }
+  SCR_MeleeWeaponProperties "{55349E9229B55E31}" {
+   m_fDamage 2
+  }
+  SCR_WeaponAttachmentsStorageComponent "{51F080D5CE45A1A2}" {
+   Attributes SCR_ItemAttributeCollection "{51F080D5C64F12C5}" {
+    ItemDisplayName WeaponUIInfo "{5222CB07CFF6712A}" {
+     Name "VSS Vintorez"
+     Description "Special weapon"
+    }
+    ItemPhysAttributes ItemPhysicalAttributes "{55349E9229B55E3D}" {
+     Weight 2.1
+     SizeSetupStrategy Manual
+     ItemDimensions 20 20 20
+     ItemVolume 1000
+    }
+    ItemAnimationAttributes ItemAnimationAttributes "{5284960E1D29F45C}" {
+     AnimationIKPose "{A3754338B3EE4F1E}Assets/Weapons_RUS/VSS/Anim/Diff/p_rfl_VSS_01_ik.anm"
+    }
+   }
+  }
+  WeaponComponent "{CFBAA4B706BA66E8}" {
+   components {
+    AttachmentSlotComponent "{5F189C826D592450}" {
+     AttachmentSlot InventoryStorageSlot BayonetSlot {
+      PivotID "slot_optics"
+      Offset 0 0 0
+      Angles 0 0 0
+      InspectionWidgetOffset 0 0.0618 0.011
+     }
+     AttachmentType AttachmentOpticsDovetailAK "{60AAE435165C80B8}" {
+     }
+     AttachmentObstructs 0
+    }
+    SightsComponent "{BB23A637957CFFF8}" {
+     SightsPosition PointInfo "{BB23A63796688E69}" {
+      Offset 0 0 0
+     }
+     SightsPointFront PointInfo "{55349E9229B55E74}" {
+      PivotID "slot_ironsight_front"
+      Offset 0 0 0
+     }
+     SightsPointRear PointInfo "{55349E9229B55E7A}" {
+      PivotID "slot_ironsight_rear"
+      Offset 0 0 0
+     }
+    }
+    MuzzleComponent "{CA6BE4D6B867541F}" {
+     MagazinePosition InventoryStorageSlot "{B80A64F4C834E9CB}" {
+      Angles -1.6144 0 0
+      InspectionWidgetOffset 0 0 0.093
+     }
+    }
+    WeaponAnimationComponent "{60B4EA76EB15F6E0}" {
+     AnimGraph "{127F777AF7430A62}Assets/Weapons_RUS/VSS/Anim/Vss.agr"
+     AnimInstance "{819D32D40F937C40}Assets/Weapons_RUS/VSS/Anim/Vss_weapon.asi"
+     AnimInjection AnimationAttachmentInfo "{55349E9229B55D8A}" {
+      AnimGraph "{127F777AF7430A62}Assets/Weapons_RUS/VSS/Anim/Vss.agr"
+      AnimInstance "{7AC3A3E5979218AC}Assets/Weapons_RUS/VSS/Anim/Vss_player.asi"
+     }
+    }
+   }
+  }
+ }
+ coords 137.813 1.982 78.016
+}
+GenericEntity armst_Rifle_VPO136_6A6D20653A05656E : "{90EADC5DD9AD35D5}Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_VPO136.et" {
+ coords 135.45 1.9 77.942
+}
+GenericEntity armst_toz_66_6A6D20653A056673 : "{923B067A74826419}Prefabs/Weapons/Shootgun/Russian/armst_Shotgun_toz_66.et" {
+ coords 147.43 1.934 77.878
+}
+GenericEntity armst_mp_153_6A6D20653A056698 : "{92DB80A098AABF1C}Prefabs/Weapons/Shootgun/Russian/armst_Shotgun_mp_153.et" {
+ coords 147.049 1.9 77.732
+}
+GenericEntity armst_Magazine_556x45_HKG36_6A7A460A9810CE55 : "{969F6FFF810D2145}Prefabs/Weapons/Magazines/Western/5x56/HKG36/armst_Magazine_556x45_HKG36.et" {
+ coords 143.794 1.9 77.988
+}
+GenericEntity armst_AK74N_6A6D20653A05144C : "{96DFD2E7E63B3386}Prefabs/Weapons/Russian/Rifle/AK74/armst_Rifle_AK74N.et" {
+ components {
+  WeaponComponent "{CFBAA4B706BA66E8}" {
+   components {
+    MuzzleComponent "{CA6BE4D6B867541F}" {
+     "LEFT HAND TARGET" DeploymentPointInfo lht {
+      Offset 0 0 0
+     }
+    }
+   }
+  }
+ }
+ coords 133.631 1.9 77.946
+}
+GenericEntity armst_toz_66_saw_6A6D20653A0514CB : "{9C7C3BE87956383A}Prefabs/Weapons/Shootgun/Russian/armst_Shotgun_toz_66_saw.et" {
+ coords 147.705 1.983 77.891
+}
+GenericEntity armst_Magazine_762x51_L1A1_20_M80_Ball_BP_6A7A460A9810E943 : "{9EEBB92B6CEA45E0}Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_20_M80_Ball_BP.et" {
+ coords 139.586 1.9 78.097
+}
+$grp GenericEntity : "{9F9380F5E2ECAF59}Prefabs/Weapons/Shootgun/Magazines/12ga/12ga_Buckshot_base.et" {
+ "12ga_Buckshot_base_6A955EE944D3C8A9" {
+  coords 145.713 1.9 77.756
+ }
+ "12ga_Buckshot_base_6A955EE946E16639" {
+  coords 145.601 1.9 77.742
+ }
+}
+GenericEntity armst_Rifle_HKG36_base_6A6D20653A051563 : "{A802C718201D72DF}Prefabs/Weapons/Western/Rifle/HKG36/armst_Rifle_HKG36_base.et" {
+ coords 144.081 1.9 77.976
+}
+$grp GenericEntity : "{A827B610B7CD4158}Prefabs/Weapons/Magazines/Vz58/Magazine_762x39_Vz58_30rnd_Last_5Tracer.et" {
+ Magazine_762x39_Vz58_30rnd_Last_5Tracer_6A6D20653A0506FD {
+  coords 134.657 1.9 77.79
+ }
+ Magazine_762x39_Vz58_30rnd_Last_5Tracer_6A6D20653A050740 {
+  coords 134.635 1.9 77.977
+ }
+ Magazine_762x39_Vz58_30rnd_Last_5Tracer_6A6D20653A05078C {
+  coords 134.643 1.9 78.118
+ }
+}
+GenericEntity armst_Magazine_762x51_L1A1_20_M80_Ball_6A7A460A98108B39 : "{AA9A48AAEE6E4F1B}Prefabs/Weapons/Magazines/Western/762x51/L1A1/armst_Magazine_762x51_L1A1_20_M80_Ball.et" {
+ coords 139.477 1.9 78.087
+}
+GenericEntity armst_AEK971_test_v11_6A62F89512496915 : "{AC198EAC9BDD9841}Prefabs/Weapons/Russian/Rifle/Aek971/armst_Rifle_AEK971_base.et" {
+ coords 132.997 2.023 77.96
+}
+$grp GenericEntity : "{AD31622B73944B43}Prefabs/Props/Furniture/DeskSchool_01.et" {
+ {
+  coords 130.664 1 77.997
+ }
+ {
+  coords 129.121 1 77.994
+ }
+ {
+  coords 132.142 1 77.992
+ }
+ {
+  coords 133.683 1 77.992
+ }
+ {
+  coords 135.231 1 77.992
+ }
+ {
+  coords 136.781 1 77.992
+ }
+ {
+  coords 138.32 1 77.992
+ }
+ {
+  coords 139.857 1 77.992
+ }
+ {
+  coords 141.39 1 77.992
+ }
+ {
+  coords 142.914 1 77.992
+ }
+ {
+  coords 144.451 1 77.992
+ }
+ {
+  coords 147.583 1 77.992
+ }
+ {
+  coords 146.007 1 77.992
+ }
+}
+$grp GenericEntity : "{B0DFDF7AAA9C5D39}Prefabs/Weapons/Shootgun/Magazines/12ga/armst_12ga_Buckshot.et" {
+ armst_12ga_Buckshot_6A6D20653A06D931 {
+  coords 146.457 1.9 77.97
+ }
+ armst_12ga_Buckshot_6A6D20653A06CFB8 {
+  coords 146.492 1.9 77.914
+ }
+ armst_12ga_Buckshot_6A6D20653A06C820 {
+  coords 146.422 1.9 77.886
+ }
+ armst_12ga_Buckshot_6A6D20653A06C87A {
+  coords 146.481 1.9 77.855
+ }
+ armst_12ga_Buckshot_6A6D20653A06C84B {
+  coords 146.44 1.9 77.926
+ }
+ armst_12ga_Buckshot_6A95670E8AEBF53D {
+  coords 153.638 1 78.917
+ }
+}
+$grp GenericEntity : "{B7EC6D4222AE12BE}Prefabs/Weapons/Magazines/Russian/9x39/9a91/armst_Magazine_9x39_20rnd_9a91_SP5.et" {
+ armst_Magazine_9x39_20rnd_9a91_SP5_6A7A460A981034EC {
+  coords 138.529 1.9 78.08
+ }
+ armst_Magazine_9x39_20rnd_9a91_SP5_6A7A460A981035A7 {
+  coords 138.466 1.9 78.085
+ }
+}
+GenericEntity ARMST_DB_Slug2_6A95670ED0D433FC : "{B98C070C4C2B470E}Prefabs/Weapons/Shootgun/Magazines/12ga/ARMST_DB_Slug2.et" {
+ coords 152.089 1 77.478
+}
+GameEntity Armst_OKP_6A7B0692EB1EAF9F : "{BC6E5BBC03350708}Prefabs/Weapons/Attachments/Optics/AKDovetailMount/Armst_OKP.et" {
+ components {
+  InventoryItemComponent "{52627A1F45CD4EB6}" {
+   Attributes SCR_ItemAttributeCollection "{52627A1EBB0698FD}" {
+   }
+  }
+  MeshObject "{5D369D0F663A1234}" {
+   Object "{3D8F8A3F35337308}Assets/addons/okp_v2/okp.xob"
+  }
+  SCR_CollimatorSightsComponent "{5D0CC83435B55855}" {
+   SightsPosition PointInfo "{5D369D0BB9E9A7C9}" {
+    PivotID "eye"
+    Offset 0 0 -0.0691
+   }
+   SightsPointFront PointInfo "{6A72A1A99E4CB556}" {
+    PivotID "eye"
+    Offset 0 0 0.1911
+   }
+   SightsPointRear PointInfo "{6A72A1A99E4CB558}" {
+    PivotID "eye"
+    Offset 0 0 0.1407
+   }
+   ADSTime 0.35
+   SoundInt 10003
+   SightsPartialHideADS 1
+   SightsPartialFreelookFactor 0.708
+   CollimatorTopLeft PointInfo "{6A72A1A99E4CB55A}" {
+    PivotID "collimator_TL"
+   }
+   CollimatorBottomRight PointInfo "{6A72A1A99E4CB55D}" {
+    PivotID "collimator_BR"
+   }
+   ReticleDefaultAngularSize 0.17
+   ReticleDefaultTexturePortion 0.5
+   ADSDeactivationPercentage 0.25
+   ReticleColors {
+    BaseCollimatorReticleColor "{6A72A1A99E4CB55E}" {
+     ReticleColor 1 0 0 1
+     GlowColor 1 0 0 1
+    }
+   }
+   ReticleInfos {
+    BaseCollimatorReticleInfo "{6A7CD9D8210BEF53}" {
+    }
+   }
+   ReticleAutoBright 1
+   ReticleAutoLower 0
+   ReticleAutoClampDayNight 1
+   ReticleAutoToggle 1
+   m_fDaylightBrightness 12
+  }
+  ActionsManagerComponent "{5284E0EFF569AD07}" {
+   additionalActions {
+    SCR_AttachItemFromInventoryAction "{5D369D0F663A1219}" {
+     ParentContextList +{
+     }
+     CanAggregate 1
+    }
+   }
+  }
+ }
+ coords 131.685 1.9 77.819
+}
+GenericEntity armst_AKS74U_6A6D20653A06FD05 : "{BFEA719491610A45}Prefabs/Weapons/Russian/Rifle/AK74/armst_Rifle_AKS74U.et" {
+ coords 133.934 1.9 77.956
+}
+GenericEntity armst_PM_6A62F895124932F3 : "{C0F7DD85A86B2900}Prefabs/Weapons/Russian/Handguns/Pm/armst_pistol_PM.et" {
+ coords 130.839 1.9 77.808
+}
+GenericEntity armst_SLR_base_6A6D20653A06E17B : "{C11ED52EAAF856A8}Prefabs/Weapons/Western/Rifle/SLR/armst_SLR_base.et" {
+ coords 139.743 1.9 77.944
+}
+GenericEntity : "{C1F38F057250EE4E}Prefabs/Structures/Agriculture/Barn/Barn_E_03/Barn_E_03_Wall_01.et" {
+ coords 151.922 1 68.608
+}
+GameEntity armst_Optic_PSO1_6A6D20653A06E1DF : "{C850A33226B8F9C1}Prefabs/Weapons/Attachments/Optics/armst_Optic_PSO1.et" {
+ coords 131.9 1.9 77.899
+}
+GenericEntity armst_Rifle_Sig550_base_6A994628026F96D8 : "{CA3BEBAADDFAF1DE}Prefabs/Weapons/Western/Rifle/Sig550/armst_Rifle_Sig550_base.et" {
+ coords 142.009 1.9 77.979
+}
+GenericEntity : "{D0C2B304E954C9FD}Prefabs/Weapons/Attachments/Optics/L85/armst_L85_CarryHandle.et" {
+ components {
+  ActionsManagerComponent "{557E85EEE1B603FA}" {
+   Enabled 1
+  }
+ }
+ coords 142.52 1.9 78.092
+}
+$grp GenericEntity : "{D71FD2BD68AC4B31}Prefabs/Weapons/Attachments/Optics/AKDovetailMount/armst_Optic_AKDovetailMount.et" {
+ {
+  coords 133.153 1 76.081
+ }
+ {
+  coords 132.197 1.979 77.862
+ }
+}
+$grp GenericEntity : "{D8F2CA92583B23D3}Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M855_M856_Last_5Tracer.et" {
+ Magazine_556x45_STANAG_30rnd_M855_M856_Last_5Tracer_6A6D20653A069135 {
+  coords 140.311 1.9 77.809
+ }
+ Magazine_556x45_STANAG_30rnd_M855_M856_Last_5Tracer_6A6D20653A0691B0 {
+  coords 140.32 1.9 77.897
+ }
+ Magazine_556x45_STANAG_30rnd_M855_M856_Last_5Tracer_6A6D20653A06918E {
+  coords 142.949 1.9 77.781
+ }
+ Magazine_556x45_STANAG_30rnd_M855_M856_Last_5Tracer_6A6D20653A068049 {
+  coords 142.947 1.9 77.944
+ }
+}
+GenericEntity armst_Rifle_9a91_base_6A62F895124924F0 : "{E2D8F39AE1B9B8F1}Prefabs/Weapons/Russian/Rifle/9a91/armst_Rifle_9a91_base.et" {
+ coords 138.725 1.952 77.998
+}
+GenericEntity armst_Rifle_SOC94_base_6A6D20653A06816B : "{E394112ABBC198D8}Prefabs/Weapons/Russian/Rifle/AKM/armst_Rifle_SOC94.et" {
+ coords 135.197 1.9 78.007
+}
+GenericEntity armst_Magazine_556x45_SIG_550_6A7A460A98119BCD : "{E3DC6C2FBBE4F825}Prefabs/Weapons/Magazines/Western/5x56/SIG550/armst_Magazine_556x45_SIG_550.et" {
+ coords 141.599 1.9 78.059
+}
+GenericEntity armst_Rifle_val_base_6A62F895124916AD : "{F25D16BD5F748372}Prefabs/Weapons/Russian/Rifle/VAL/armst_Rifle_val_base.et" {
+ coords 137.956 1.987 78.018
+}
+GameEntity Optic_4x20_base_6A6D20653A06B73F : "{F358F46ADA42A197}Prefabs/Weapons/Attachments/Optics/Optic_4x20/Optic_4x20_base.et" {
+ coords 127.124 1 82.063
+}
+GenericEntity armst_Rifle_M16A2_carbine_6A6D20653A06B7C5 : "{F97A4AC994231900}Prefabs/Weapons/Western/Rifle/M4/armst_Rifle_M4_carbine.et" {
+ coords 140.749 1.9 77.852
+}
+GenericEntity armst_Rifle_Groza_6A7A460A9811543E : "{FA3F4863E095E9ED}Prefabs/Weapons/Russian/Rifle/Groza/armst_Rifle_Groza.et" {
+ coords 135.753 1.9 77.878
+}
+GenericEntity armst_AK74_base_6A6D20653A06A636 : "{FA5C25BF66A53DCF}Prefabs/Weapons/Russian/Rifle/AK74/armst_Rifle_AK74.et" {
+ coords 133.26 2.052 77.955
+}

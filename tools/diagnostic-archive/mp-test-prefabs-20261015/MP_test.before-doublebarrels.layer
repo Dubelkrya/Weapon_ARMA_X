@@ -1,0 +1,32 @@
+GenericEntity armst_Shotgun_mp_133_6A9E45446E1BA77F : "{63FF6FDCA4E7E735}Prefabs/Weapons/Shootgun/Russian/armst_Shotgun_mp_133.et" {
+ coords 89.723 1 122.424
+}
+GenericEntity WAX_MP153_TestDesk : "{AD31622B73944B43}Prefabs/Props/Furniture/DeskSchool_01.et" {
+ coords 89.723 1 124.424
+}
+GenericEntity WAX_MP153_TestWeapon : "{92DB80A098AABF1C}Prefabs/Weapons/Shootgun/Russian/armst_Shotgun_mp_153.et" {
+ coords 89.723 1.9 124.164
+}
+GenericEntity WAX_MP153_TestAmmo1 : "{B0DFDF7AAA9C5D39}Prefabs/Weapons/Shootgun/Magazines/12ga/armst_12ga_Buckshot.et" {
+ coords 89.323 1.9 124.424
+}
+GenericEntity WAX_MP153_TestAmmo2 : "{B0DFDF7AAA9C5D39}Prefabs/Weapons/Shootgun/Magazines/12ga/armst_12ga_Buckshot.et" {
+ coords 90.123 1.9 124.424
+}
+$grp GenericEntity : "{B0DFDF7AAA9C5D39}Prefabs/Weapons/Shootgun/Magazines/12ga/armst_12ga_Buckshot.et" {
+ armst_12ga_Buckshot_6A9E4545D0DB13A6 {
+  coords 87.986 1 121.571
+ }
+ armst_12ga_Buckshot_6A9E4545D0593C62 {
+  coords 87.625 1 121.467
+ }
+ armst_12ga_Buckshot_6A9E4545D1F23AA8 {
+  coords 87.706 1 121.697
+ }
+ armst_12ga_Buckshot_6A9E4545D1813FA5 {
+  coords 87.326 1 121.521
+ }
+ armst_12ga_Buckshot_6A9E4545D12B9689 {
+  coords 87.547 1 121.78
+ }
+}

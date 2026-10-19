@@ -1,0 +1,39 @@
+GenericEntity : "{923B067A74826419}Prefabs/Weapons/Shootgun/Russian/armst_Shotgun_toz_66.et" {
+ ID "5254ACCA959048B9"
+ components {
+  MeshObject "{CFBAA4B701F95D69}" {
+   Materials {
+    MaterialAssignClass "{69E4C5760E184310}" {
+     SourceMaterial "Izh"
+     AssignedMaterial "{78B0046238FD9BA8}Assets/Shootgun/Toz/data/Izh_black.emat"
+    }
+   }
+  }
+  WeaponComponent "{CFBAA4B706BA66E8}" {
+   components {
+    SightsComponent "{BB23A637957CFFF8}" {
+     SightsPointFront PointInfo "{584CED31C6D10FFC}" {
+      PivotID "slot_ironsight_front"
+      Offset 0 0 0
+      Angles 0 0 0
+     }
+     SightsPointRear PointInfo "{584CED31C4E1F0DE}" {
+      PivotID "slot_ironsight_rear"
+      Offset 0 0 0
+      Angles 0 0 0
+     }
+     SightsRanges {
+      SightRangeInfo "{584CF7959FFB9FD2}" {
+       Range 0.267 100
+       WeaponPosition PointInfo "{584CF7959FFB9FC9}" {
+        Offset 0 -0.0027 0
+        Angles 0.09 0 0
+       }
+      }
+     }
+     SightsRangesDefaultIndex 0
+    }
+   }
+  }
+ }
+}

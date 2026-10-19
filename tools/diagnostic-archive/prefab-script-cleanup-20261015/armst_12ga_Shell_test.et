@@ -1,0 +1,61 @@
+GenericEntity : "{6D18CC33708EE712}Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_Base.et" {
+ ID "CA6BE4D6BB2D1077"
+ components {
+  ARMST_ITEMS_STATS_COMPONENTS "{657ABA04337B7547}" {
+  }
+  InventoryMagazineComponent "{51EED12B803954CC}" {
+   Attributes SCR_ItemAttributeCollection "{51EED12B86960275}" {
+    ItemDisplayName UIInfo "{51FEE38527BFEA5B}" {
+     Name "12g 5rnd Shell"
+     Description ""
+    }
+    ItemPhysAttributes ItemPhysicalAttributes "{52ACC797D8C70448}" {
+     Weight 0.15
+     ItemDimensions 2 2 2
+     ItemVolume 20
+    }
+   }
+  }
+  MagazineComponent "{CA6BE4D6B4DAFD69}" {
+   MagazineWell MagazineWell12g "{52D8E2D6A14CBDD3}" {
+   }
+   UIInfo MagazineUIInfo "{57126733AA401586}" {
+    Name "12g 5rnd Shell"
+    Description ""
+    m_MagIndicator SCR_MagazineIndicatorConfiguration "{5866951DE2665916}" {
+     m_bProgressBar 0
+    }
+   }
+   ItemModel "{58CA1ADFAF8CC13F}Assets/Spas12/Spas_Shell.xob"
+   MaxAmmo 5
+   AmmoConfig "{3521D7BE87A3F391}Configs/Weapons/Ammo/Ammo_12g.conf"
+   AmmoMapping {
+    2 2 2 2 2
+   }
+  }
+  MeshObject "{CA6BE4D6A23F8EF0}" {
+   Object "{2E63897F666D7EE7}Assets/Spas12/Spas.xob"
+   Materials {
+    MaterialAssignClass "{673AAD9BC6FE3856}" {
+     SourceMaterial "Mat_2"
+     AssignedMaterial "{FD401927CE082DAF}Assets/Spas12/Data/Mat_3.emat"
+    }
+   }
+  }
+  SCR_EditableEntityComponent "{673AAD9BC6FE3824}" {
+   Enabled 0
+   m_UIInfo SCR_EditableEntityUIInfo "{673AAD9BC6FE3821}" {
+    Name "12 Gauge 00 Buckshot"
+    m_aAuthoredLabels {
+     CONTENT_MODDED 4141369
+    }
+    m_aAutoLabels {
+     4141369
+    }
+   }
+   m_bAutoRegister NEVER
+   m_bVisible 0
+  }
+ }
+ coords 3845.571 307.297 331.386
+}

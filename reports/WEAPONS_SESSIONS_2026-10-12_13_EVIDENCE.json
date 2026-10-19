@@ -1,0 +1,33 @@
+{
+  "date": "2026-10-13",
+  "files": [
+    {
+      "file": "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Assets\\Weapons_NATO\\Sig SG 550\\SG550.txo",
+      "matches_installed_candidate": false,
+      "sha256": "fa4034669e25a4670808c0785431f7c5972824b3148a3ec26c3f75472ebcd9fc"
+    },
+    {
+      "file": "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Assets\\Weapons_NATO\\Sig SG 550\\SG550.fbx",
+      "matches_installed_candidate": true,
+      "sha256": "0d26461e7e6856c86dce5db9f8b3995de1a006a798c625f283a2d3a9c5b39201"
+    },
+    {
+      "file": "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Western\\Rifle\\Sig550\\armst_Rifle_Sig550_base.et",
+      "matches_installed_candidate": true,
+      "sha256": "9d9637cdb33e8cf597f8d94a1c85ed3d755dfbd99eccb7b7b150516b9f192cc4"
+    },
+    {
+      "file": "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Assets\\Weapons_NATO\\Sig SG 550\\SG550.xob.meta",
+      "matches_preserved_meta": false,
+      "sha256": "e14d58f7273f25b0e9a300533fa8e3536c37f0208660666b70e26c47e7b0bd33"
+    },
+    {
+      "file": "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Western\\Rifle\\Sig550\\armst_Rifle_Sig550_base.et.meta",
+      "matches_preserved_meta": true,
+      "sha256": "121fce4668b6c3f9dd7a46ebe3afbf5ad607d86cedaf2ae371481d771d6c8b64"
+    }
+  ],
+  "xob_sha256": "41ec382baa5b215edd5a00ef0a8cfd3c52a7c04abbb13d31d0bf1f3362962046",
+  "xob_matches_pre_geometry_audit": false,
+  "runtime_zero_verified": false
+}

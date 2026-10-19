@@ -1,0 +1,146 @@
+GenericEntity : "{B7132459C07777CA}Prefabs/Weapons/Handguns/PM/Handgun_PM_base.et" {
+ ID "CFBAA4B725411E45"
+ components {
+  WeaponSoundComponent "{5A8685198A9AEEDD}" {
+   Filenames +{
+   }
+  }
+  MeshObject "{CFBAA4B701F95D69}" {
+   Object "{DE11A7B572066CCA}Assets/Weapons_RUS/sr2/SR2.xob"
+  }
+  SCR_MeleeWeaponProperties "{6742271DE0B9AD55}" {
+   m_fDamage 2
+  }
+  SCR_WeaponAttachmentsStorageComponent "{51F080D5CE45A1A2}" {
+   Attributes SCR_ItemAttributeCollection "{51F080D5C64F12C5}" {
+    ItemDisplayName WeaponUIInfo "{5222CB0701437228}" {
+     Name "СР-2М «Вереск»"
+     Description ""
+    }
+    ItemPhysAttributes ItemPhysicalAttributes PhysicalAttributes {
+     Weight 1.66
+     ItemVolume 350
+    }
+    ItemAnimationAttributes ItemAnimationAttributes "{5284960F659FDDA7}" {
+     AnimationInstance "{0350283642830782}anims/workspaces/player/player_main_rifle.asi"
+     AnimationIKPose "{68B6B9E2BCFAE845}Assets/Weapons_RUS/sr2/Anim/Diff/p_rfl_Sr_2_veresk_ik.anm"
+    }
+    CustomAttributes {
+     SCR_RecoilCameraShakeParams "{58DEF2AB0413E346}" {
+      m_vRotationImpulseMin 0.0025 0.0025 1.5
+      m_vRotationImpulseMax 0.006 0.006 2
+     }
+     PreviewRenderAttributes "{52D2D34CD4A7302B}" {
+      AnimationInstance "{5E862EB6989F8833}anims/workspaces/player/player_inventory_rifle.asi"
+     }
+    }
+    m_bAutoDetectGridSize 0
+    m_iCustomGridWidth 4
+    m_iCustomGridHeight 2
+   }
+  }
+  WeaponComponent "{CFBAA4B706BA66E8}" {
+   components {
+    SightsComponent "{BB23A637957CFFF8}" {
+     SightsRanges {
+      SightRangeInfo "{5EEACC0F3BFD890B}" {
+       Range 0 100
+       WeaponPosition PointInfo "{5EEACC0F3BFD892B}" {
+        Offset 0 0 0
+        Angles 0 0 0
+       }
+      }
+     }
+     SightsPosition PointInfo "{BB23A63796688E69}" {
+      Offset 0 0 0
+     }
+
+     SightsPointFront PointInfo "{5EEACA2840F1AFA8}" {
+      PivotID "slot_ironsight_front"
+      Offset 0 0 0
+      Angles 0 0 0
+     }
+     SightsPointRear PointInfo "{5EEACA285E995EB9}" {
+      PivotID "slot_ironsight_rear"
+      Offset 0 0 0
+      Angles 0 0 0
+     }
+     m_iOpticDOFDistanceScale 49
+     SightsRangesDefaultIndex 0
+    }
+    MuzzleComponent "{50F64C45E7271D47}" {
+     components {
+      CaseEjectingEffectComponent "{5122AAD190FCA21D}" {
+       EffectPosition EntitySlotInfo "{513A9384CEFB83CB}" {
+        Offset 0.0088 0.0179 0
+        Angles 0 0 73.2915
+       }
+      }
+      CaseEjectingEffectComponent "{52C8933882699871}" {
+       ParticleEffect "{929E2053B2409DB4}Particles/Weapon/Muzzle_PM.ptc"
+       EffectPosition EntitySlotInfo "{52C8933887AD233F}" {
+        Offset 0 0 0.0061
+       }
+      }
+      SCR_MuzzleEffectComponent "{C9B3271BB22CDB68}" {
+       ParticleEffect "{A0CCFED3034A6B8D}Particles/Weapon/Muzzle_PKMT.ptc"
+       EffectPosition EntitySlotInfo "{C9B3271BB85B5D32}" {
+        Offset 0 0 -0.0038
+       }
+      }
+     }
+     MuzzleEndPositions {
+      PointInfo "{B80A64F4B6CFB9BF}" {
+       Offset 0 0 0
+      }
+     }
+     FireModes {
+      BaseFireMode "{B80A64F4A8EF8333}" {
+       RoundsPerMinute 700
+      }
+      BaseFireMode "{65F2621AD7495FAD}" {
+       MaxBurst -1
+       RoundsPerMinute 800
+       UIName "Auto"
+      }
+     }
+     MagazineWell MagazineWellSR2 "{26EA67622A1DA48B}" {
+     }
+     WeaponAimModifiers {
+      RecoilWeaponAimModifier "{58FCF59C4FED2924}" {
+       LinearData RecoilData "{58FCF59C4660D33B}" {
+        "Base Recoil Scale" 1
+       }
+       AngularData RecoilData "{58FCF59C4660D2CC}" {
+        "Base Recoil Scale" 1
+        "Curve Magnitudes" 0.5 0.1875 0.5
+       }
+       TurnOffsetData RecoilData "{58FCF59C4660D2CF}" {
+        "Curve Magnitudes" 0.5 0.05 0
+       }
+      }
+     }
+     MagazinePosition InventoryStorageSlot "{B80A64F4C834E9CB}" {
+      Offset 0 0 0
+      Angles 0 0 0
+     }
+     MagazineTemplate "{2610CA8D8632DEF4}Prefabs/Weapons/Magazines/Russian/9x18/PM/9x18/armst_Magazine_9x18_SR2_30rnd_Ball.et"
+    }
+    WeaponAnimationComponent "{60B4EA76EB15F6E0}" {
+     AnimGraph "{354CDF857D71DA57}Assets/Weapons_RUS/sr2/Anim/SR_2.agr"
+     AnimInstance "{2FBC34698CBAFACE}Assets/Weapons_RUS/sr2/Anim/SR_2_weapon.asi"
+     AnimInjection AnimationAttachmentInfo "{51B2B2E3D520136A}" {
+      AnimGraph "{354CDF857D71DA57}Assets/Weapons_RUS/sr2/Anim/SR_2.agr"
+      AnimInstance "{D4E2A55814BB9E22}Assets/Weapons_RUS/sr2/Anim/SR_2_player.asi"
+     }
+    }
+   }
+   UIInfo WeaponUIInfo "{CC3BA6A2C42F09F4}" {
+    Name "СР-2М «Вереск»"
+    Description ""
+   }
+   WeaponSlotType "primary"
+  }
+ }
+ coords 7537.216 2.618 6684.101
+}
