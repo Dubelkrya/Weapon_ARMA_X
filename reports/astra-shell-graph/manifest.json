@@ -1,0 +1,691 @@
+{
+  "status": "EDITABLE_SOURCE_ONLY_NOT_IMPORTED",
+  "project_guid": "CC35799EC8FA55E1",
+  "local_lab_root": "C:\\Users\\yshky\\Documents\\Codex\\2026-09-29\\new-chat\\outputs\\mp133-astra-worktree\\labs\\ARMST_MP133_AstraShellGraph",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "sha256": "9ba559db63cd4d7c3cfde83a514c0a82b96b30dace3a6f7c54b669b0dbf1d67b",
+      "bytes": 318
+    },
+    {
+      "path": "addon.gproj",
+      "sha256": "15f6fd56fa4dfef0c1dee8baad44a21cd9ab1520de533f59416d0933e039e7ed",
+      "bytes": 175
+    },
+    {
+      "path": "Assets/MP133_AstraShellGraph/Clips/P_Astra_CheckContinue.anm.meta",
+      "sha256": "d7ec93682b8e1e3c6065ecc35fb0043270018114abac95a9d28fdfecb61c4687",
+      "bytes": 424,
+      "guid": "36BCB6296CAE5334"
+    },
+    {
+      "path": "Assets/MP133_AstraShellGraph/Clips/P_Astra_CheckContinue.txa",
+      "sha256": "cbb8dd1721377ee35037e6cf114314256d0bc826ba205d54e0d29e85d9139ef3",
+      "bytes": 45110
+    },
+    {
+      "path": "Assets/MP133_AstraShellGraph/Clips/P_Astra_EndReload.anm.meta",
+      "sha256": "2cedd0298d056288550472c3bac4ed792915e44f45471bc9dd7121f5cdaecc80",
+      "bytes": 416,
+      "guid": "D1B33891A663548D"
+    },
+    {
+      "path": "Assets/MP133_AstraShellGraph/Clips/P_Astra_EndReload.txa",
+      "sha256": "211c6ad12f916471c5582e2e9fdf3328bc2258d4ab9c13f795e3abdc87ad73fc",
+      "bytes": 45446
+    },
+    {
+      "path": "Assets/MP133_AstraShellGraph/Clips/P_Astra_GrabShell.anm.meta",
+      "sha256": "c316825781eb3e08c5a81d43d5eb9cc3e580747ce460d3934981c828a224a6ab",
+      "bytes": 416,
+      "guid": "1D4C14261EFC54DB"
+    },
+    {
+      "path": "Assets/MP133_AstraShellGraph/Clips/P_Astra_GrabShell.txa",
+      "sha256": "dae8f9c8d133ce3aceb057c0ef49803862b4e8a0e68e80a2444cceb047cf0794",
+      "bytes": 192468
+    },
+    {
+      "path": "Assets/MP133_AstraShellGraph/Clips/P_Astra_InsertShell.anm.meta",
+      "sha256": "13b4f7f0275bc422932fc7557eb509a872ea4a7f5b7a2a8052c968f4df19a272",
+      "bytes": 420,
+      "guid": "D3868FB32BF75DEE"
+    },
+    {
+      "path": "Assets/MP133_AstraShellGraph/Clips/P_Astra_InsertShell.txa",
+      "sha256": "7b9c378d3f6990b35506a64dae676f3178220759e4d81c223b9a8071f3714d98",
+      "bytes": 436737
+    },
+    {
+      "path": "Assets/MP133_AstraShellGraph/Clips/P_Astra_StartReload.anm.meta",
+      "sha256": "032386f8c61fbc577e3f0f775e68193384444d0f6bf88a75f7bd2383cb22ceb3",
+      "bytes": 420,
+      "guid": "FCB314232D355753"
+    },
+    {
+      "path": "Assets/MP133_AstraShellGraph/Clips/P_Astra_StartReload.txa",
+      "sha256": "9f79f02fbe8b767db0297f75f9c99f6f8b0e6a207d09c8d3684a5a859e3ed845",
+      "bytes": 45134
+    },
+    {
+      "path": "Assets/MP133_AstraShellGraph/Clips/W_Astra_CheckContinue.anm.meta",
+      "sha256": "736e29169edafce06e7d17e6e272149b0ed6a73c14b05db51940b2600b6b00ce",
+      "bytes": 427,
+      "guid": "5B6872625F3454A4"
+    },
+    {
+      "path": "Assets/MP133_AstraShellGraph/Clips/W_Astra_CheckContinue.txa",
+      "sha256": "d2ab722b6640842a1951cd6d0e5af738207c77b8cf25ccbbfcbbf57417b39c0e",
+      "bytes": 5213
+    },
+    {
+      "path": "Assets/MP133_AstraShellGraph/Clips/W_Astra_EndReload.anm.meta",
+      "sha256": "e7e19cbfb7c41ed3c665c9d4bbbdabd10f8d37c4e8066a1a84c8c0eb6c016094",
+      "bytes": 419,
+      "guid": "008B42BF7C535275"
+    },
+    {
+      "path": "Assets/MP133_AstraShellGraph/Clips/W_Astra_EndReload.txa",
+      "sha256": "007f022a20f161a50d4a08c8bc8c3a4bc862050d54b5e760fb0b979f34d3e6b2",
+      "bytes": 5549
+    },
+    {
+      "path": "Assets/MP133_AstraShellGraph/Clips/W_Astra_GrabShell.anm.meta",
+      "sha256": "7c146467fa4e0baf73bf7b155e899c891837a08db83bed3dafc793a12c41a298",
+      "bytes": 419,
+      "guid": "E6534D7B659C59E5"
+    },
+    {
+      "path": "Assets/MP133_AstraShellGraph/Clips/W_Astra_GrabShell.txa",
+      "sha256": "c4419af0612bf961eee41c390e3fb8609d79577844964007d3f044e690410f53",
+      "bytes": 22009
+    },
+    {
+      "path": "Assets/MP133_AstraShellGraph/Clips/W_Astra_InsertShell.anm.meta",
+      "sha256": "7a57289bcfe79cf28de365c99c5dd2029b9791d0021e59573b84292cb0b0b76f",
+      "bytes": 423,
+      "guid": "090759CC560C55F2"
+    },
+    {
+      "path": "Assets/MP133_AstraShellGraph/Clips/W_Astra_InsertShell.txa",
+      "sha256": "4c5a7f1dc1bfd53b7c5a211a6a7938287cbd2c22b68ce2e0579ac8077fc285ae",
+      "bytes": 49847
+    },
+    {
+      "path": "Assets/MP133_AstraShellGraph/Clips/W_Astra_StartReload.anm.meta",
+      "sha256": "16cb25c225450b0021cdeece266c056c0d7408ca60f2c28beb15b02f31b739e9",
+      "bytes": 423,
+      "guid": "979C9964AD7956F5"
+    },
+    {
+      "path": "Assets/MP133_AstraShellGraph/Clips/W_Astra_StartReload.txa",
+      "sha256": "ffbafe2a4605f14d7f65d82071fd50ba2f527801e031d4d03e59d10a2ab0641b",
+      "bytes": 5230
+    },
+    {
+      "path": "Assets/MP133_AstraShellGraph/MP133_Astra.agf",
+      "sha256": "aca45ab168026e5de34e2c7e784002371be56e3c82a186ab7f4dc4fe1637df49",
+      "bytes": 32740
+    },
+    {
+      "path": "Assets/MP133_AstraShellGraph/MP133_Astra.agf.meta",
+      "sha256": "dc3dfcbf0e5a8603e107f5fb7c58d20dbc2af89e49c0df8552158b44ca8b8f06",
+      "bytes": 386,
+      "guid": "9ABFB44D704F57A9"
+    },
+    {
+      "path": "Assets/MP133_AstraShellGraph/MP133_Astra.agr",
+      "sha256": "6c08181ff2e5e846c68eaf0cd75bc34e12dde68b4bbaf469e1a014fc20f772ac",
+      "bytes": 2472
+    },
+    {
+      "path": "Assets/MP133_AstraShellGraph/MP133_Astra.agr.meta",
+      "sha256": "8884387c7aa50e8f8fb6781bbc82bf743e8b087c1d62441f73ab12aa8deaeed3",
+      "bytes": 362,
+      "guid": "9A5A46E2D8F8586F"
+    },
+    {
+      "path": "Assets/MP133_AstraShellGraph/MP133_Astra.ast",
+      "sha256": "fc4abf0720f960409a69df0578ee95997337afca881d54782326d23a9c4bed5e",
+      "bytes": 1101
+    },
+    {
+      "path": "Assets/MP133_AstraShellGraph/MP133_Astra.ast.meta",
+      "sha256": "8dd3f5742c9f58f05a1160cc11ec0220aaed2c79e7efbc1728ab6d862e6e817c",
+      "bytes": 398,
+      "guid": "FD37F7091A235471"
+    },
+    {
+      "path": "Assets/MP133_AstraShellGraph/MP133_Astra.aw",
+      "sha256": "4a4bf5a5e93ca5e1d08767a2d66104c5ab845daeadb8cd6177381cddd71b917e",
+      "bytes": 1022
+    },
+    {
+      "path": "Assets/MP133_AstraShellGraph/MP133_Astra.aw.meta",
+      "sha256": "42e9237a88b9b8580ab40f6c044c080c7cb9d9dfecb1e0867ffec2fb8add9f73",
+      "bytes": 385,
+      "guid": "3BB0BA3983BD5729"
+    },
+    {
+      "path": "Assets/MP133_AstraShellGraph/MP133_Astra_player.asi",
+      "sha256": "a3de8d923ce0fc6f1e9661a00354d31807045ecd916cbb4e953f6bd9eee949d9",
+      "bytes": 14680
+    },
+    {
+      "path": "Assets/MP133_AstraShellGraph/MP133_Astra_player.asi.meta",
+      "sha256": "640cb9e6093162313121b6a467f0f4307014ecdc17f891d6f2785a4299bd8443",
+      "bytes": 405,
+      "guid": "2629533DCE9A5811"
+    },
+    {
+      "path": "Assets/MP133_AstraShellGraph/MP133_Astra_weapon.asi",
+      "sha256": "c93d31b3a30099b068eda0d2330005ed458cbb83621a7d503b352975905f0737",
+      "bytes": 5228
+    },
+    {
+      "path": "Assets/MP133_AstraShellGraph/MP133_Astra_weapon.asi.meta",
+      "sha256": "6d629db4a0b096ba6d8b6f29aab499ebcd69cb832f16dbd69b4162761bccfb56",
+      "bytes": 405,
+      "guid": "AE8E3367177C57BD"
+    },
+    {
+      "path": "Prefabs/Weapons/MP133_AstraShellGraph.et",
+      "sha256": "2a14a7ec78dbb846c46f241a0bbd5026d815b65f65e9fcf243169cbcc289f7cb",
+      "bytes": 978
+    },
+    {
+      "path": "Prefabs/Weapons/MP133_AstraShellGraph.et.meta",
+      "sha256": "715f0daf6707bd5a94a68090c35d941d302c24893c3660afd5ddd6aed28460b1",
+      "bytes": 376,
+      "guid": "DAA1658EEBB65B04"
+    },
+    {
+      "path": "README.md",
+      "sha256": "31e4efd100e6f2746efbb4a8319c36269e0272bc2701daebe2df5aca70d68106",
+      "bytes": 6121
+    },
+    {
+      "path": "Scripts/Game/ARMST_Astra/ARMST_AstraShellAnimationComponent.c",
+      "sha256": "9d6ef1b23dc3e3693017be675a8c9826f9b4ec6e3763b35936ec1cecec63bc92",
+      "bytes": 3751
+    }
+  ],
+  "source_hashes": {
+    "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Assets\\Weapons_RUS\\Mp_133\\Workspace\\Dif\\P_MP133_Ik.anm": "4a75ecaafffc80d230a80c888146cd7cfa5f47ab0fc0464ea300d8bf2d5b0449",
+    "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Assets\\Weapons_RUS\\Mp_133\\Workspace\\Dif\\P_MP133_Ik.anm.meta": "0b21f4d9a9f33b8102acb909545c5c57bd4959ed2a125efb7a9d759edaae4dbd",
+    "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Assets\\Weapons_RUS\\Mp_133\\Workspace\\Dif\\P_MP133_Ik.txa": "c7355fb123bc358c382977b65ba8795de7083f35d4b7fde50755863804da6947",
+    "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Assets\\Weapons_RUS\\Mp_133\\Workspace\\Dif\\P_MP133_Offset.anm": "f98374cd2ad13e1d7abc22fa3bd8608349eb799c9af987100ee231136fc6d1b6",
+    "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Assets\\Weapons_RUS\\Mp_133\\Workspace\\Dif\\P_MP133_Offset.anm.meta": "fb94bdfae5570964dfbc5e2cc5d7f6a904990db3b445506b5f0a09a20e09e211",
+    "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Assets\\Weapons_RUS\\Mp_133\\Workspace\\Dif\\P_MP133_Offset.txa": "c74990158a55ea6fd72997cb863393d9e18f07d2b66c8099dab37069d3b14521",
+    "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Assets\\Weapons_RUS\\Mp_133\\Workspace\\Dif\\P_MP133_Safety.anm": "8cd5231f1162e2c75695c106346a75b2703da3d429fc614d2e3641828f3bc562",
+    "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Assets\\Weapons_RUS\\Mp_133\\Workspace\\Dif\\P_MP133_Safety.anm.meta": "0feb5e6ae88b9d448000974d4766ffe5da55a9cf083f4b9b438fafcc59e78bbb",
+    "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Assets\\Weapons_RUS\\Mp_133\\Workspace\\Dif\\P_MP133_Safety.txa": "947ecf6191703e438b98555346c5d8a62d002cb4803069ff92e08adf7ecd7499",
+    "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Assets\\Weapons_RUS\\Mp_133\\Workspace\\MP133.agf": "7f19a71d7c0786c83124c2ed5efeba902ac14a6d1dccb54d45163f775bc2a062",
+    "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Assets\\Weapons_RUS\\Mp_133\\Workspace\\MP133.agf.meta": "f511bb5558e331bf40b8f7957d40064baab7f96b3bfd261d6d90856d2516bb6b",
+    "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Assets\\Weapons_RUS\\Mp_133\\Workspace\\MP133.agr": "094ecca3431706a9c5e6d6aacf15ebd85a8f60a648d0696b713241956485a939",
+    "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Assets\\Weapons_RUS\\Mp_133\\Workspace\\MP133.agr.meta": "1926733f96b842f2778a7da68b76456d1df8f59ef04e0664ab5869e7bd9de4b4",
+    "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Assets\\Weapons_RUS\\Mp_133\\Workspace\\MP133.ast": "4c44b016c83c5f0765b9d2118e7f903a6727d91bf91c66d99f9e3382518e47f7",
+    "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Assets\\Weapons_RUS\\Mp_133\\Workspace\\MP133.ast.meta": "618858b21cb888803eee284b0630cc5eac04d651ed9b5eab8937f1bd1f931eb5",
+    "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Assets\\Weapons_RUS\\Mp_133\\Workspace\\MP133.aw": "dbce94ca3138819457009473167e73398bec73e86bc7fa54b19a5d9e71a5e7bb",
+    "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Assets\\Weapons_RUS\\Mp_133\\Workspace\\MP133.aw.meta": "c92c87783bd82aea551ddf2857d9b6cdfadf8c00a4fe3dda5cf8201a78c15a74",
+    "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Assets\\Weapons_RUS\\Mp_133\\Workspace\\MP133_player.asi": "d5676ba2c9c4dbf2fbe5eec3e568746272cd0bd7a9654d7fee61bd762acb97c0",
+    "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Assets\\Weapons_RUS\\Mp_133\\Workspace\\MP133_player.asi.meta": "28f8a4fa8f8ef5b515a1efeb7770cc68f49fbcab20e3f71e37a17f45722f62a0",
+    "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Assets\\Weapons_RUS\\Mp_133\\Workspace\\MP133_weapon.asi": "9a78ce05e43f9cdde720e91160bb2199defbc951e27740039481f7ec80038e57",
+    "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Assets\\Weapons_RUS\\Mp_133\\Workspace\\MP133_weapon.asi.meta": "7faf14c8ec0140d5f499e8655bbc374ef90e0ff07479db1c1da971c903af5af7",
+    "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Assets\\Weapons_RUS\\Mp_133\\Workspace\\Reload\\P_MP133_Reload_Bolt.anm": "a992e47aefeca7e5c1757aef52675112c6e39770bdabe587fd4edf3c726f91e4",
+    "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Assets\\Weapons_RUS\\Mp_133\\Workspace\\Reload\\P_MP133_Reload_Bolt.anm.meta": "98e45ae276adbff0fd8af197542bba4bbfe0c83a2e9cafe025274026de0d3dbd",
+    "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Assets\\Weapons_RUS\\Mp_133\\Workspace\\Reload\\P_MP133_Reload_Bolt.txa": "1ba93dba6337fe6f7fbd6107eabe490c0c05c73f90ccef28d4cd61b6d9172eb4",
+    "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Assets\\Weapons_RUS\\Mp_133\\Workspace\\Reload\\P_MP133_Reload_Inject.anm": "2f876e731cc91208cdc309558addc302dc3996907060efb3dbe5444fd79eecec",
+    "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Assets\\Weapons_RUS\\Mp_133\\Workspace\\Reload\\P_MP133_Reload_Inject.anm.meta": "7b7f3cb168a80626f72d23bc8a26c47da83b682ccff489e361d1bf984e0bebc7",
+    "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Assets\\Weapons_RUS\\Mp_133\\Workspace\\Reload\\P_MP133_Reload_Inject.txa": "1ea0677b7df21a4020d2507ad6228f3dfc5f010c7449c137e437ed6289b49c2e",
+    "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Assets\\Weapons_RUS\\Mp_133\\Workspace\\Reload\\P_MP133_Reload_Rem.anm": "b53325b7932df2d64726988d7271ca956cbac572fb1feceaeb55544e6f1d4327",
+    "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Assets\\Weapons_RUS\\Mp_133\\Workspace\\Reload\\P_MP133_Reload_Rem.anm.meta": "3f77df1a2d584d8ce9f19b9426468a039090458a606358e1ac6c6cd2cd63f3ae",
+    "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Assets\\Weapons_RUS\\Mp_133\\Workspace\\Reload\\P_MP133_Reload_Rem.txa": "43bf70979a3e16573f46693aebe580cdbb5269638b74f0ca06ff84da6cd06827",
+    "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Assets\\Weapons_RUS\\Mp_133\\Workspace\\Reload\\P_Toz_Ik.anm": "1af6d722ab3fbc6454394db319bba7cc7c61e7f227351eef1c45a100b9b727e8",
+    "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Assets\\Weapons_RUS\\Mp_133\\Workspace\\Reload\\P_Toz_Ik.anm.meta": "a05d994cfc522815f50c28081222de34aad9b606f83526de85ea08f8342c4b3a",
+    "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Assets\\Weapons_RUS\\Mp_133\\Workspace\\Reload\\P_Toz_Ik.txa": "0502d9ca2d13b3e0bdefdf86a4bec9b4833f52e290ab26bb1fff8b17d18eac7a",
+    "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Assets\\Weapons_RUS\\Mp_133\\Workspace\\Reload\\P_Toz_Offset.anm": "88c5078a2cae90cf4c4b3cddfa0c0784c941dfb3f4ed8960dd246c4597106e62",
+    "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Assets\\Weapons_RUS\\Mp_133\\Workspace\\Reload\\P_Toz_Offset.anm.meta": "d05149204d2561fb796e274c32c1479362296e6f84e4c153db64c46da312db06",
+    "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Assets\\Weapons_RUS\\Mp_133\\Workspace\\Reload\\P_Toz_Offset.txa": "cbc9e838253de269e9a5eed324332a4d6d5ba7efe99e7cf8fe8d2c2d72024e32",
+    "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Assets\\Weapons_RUS\\Mp_133\\Workspace\\Reload\\P_Toz_Safety.anm": "2d9b73497811a85de7699d1ab8350799b12443b1477bcf5b4793840742043adf",
+    "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Assets\\Weapons_RUS\\Mp_133\\Workspace\\Reload\\P_Toz_Safety.anm.meta": "644757cbedfa1ef4138488e65d30309bcc27e419c7c61ce49811f9910b0475eb",
+    "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Assets\\Weapons_RUS\\Mp_133\\Workspace\\Reload\\P_Toz_Safety.txa": "e6174411f074d4bd320cb03cb8fadc80637762060fdf1b833035abffcc257a3f",
+    "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Assets\\Weapons_RUS\\Mp_133\\Workspace\\Reload\\W_MP133_Reload_Bolt.anm": "f3e8f47b22aa7dd8a45699d954a93287a670d24622d5955099d95e36eb2bd903",
+    "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Assets\\Weapons_RUS\\Mp_133\\Workspace\\Reload\\W_MP133_Reload_Bolt.anm.meta": "98ff30b2b86a1c9072e96d12d85d411e3de3eaafafea63f46d4bd44f294b6ced",
+    "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Assets\\Weapons_RUS\\Mp_133\\Workspace\\Reload\\W_MP133_Reload_Bolt.txa": "21b14c07170f7d82915033ca80870f173fd8cd0f24892d7b0f7c4dc517a0d1bc",
+    "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Assets\\Weapons_RUS\\Mp_133\\Workspace\\Reload\\W_MP133_Reload_Inject.anm": "1579846a9ce2d0631e864862a350ac4624b747b9425e17b27f8a5236c4faf802",
+    "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Assets\\Weapons_RUS\\Mp_133\\Workspace\\Reload\\W_MP133_Reload_Inject.anm.meta": "b853531a27bd1858c2b11b59c86a44815949ee529db8e97d8a24f7a9a9b8a50b",
+    "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Assets\\Weapons_RUS\\Mp_133\\Workspace\\Reload\\W_MP133_Reload_Inject.txa": "2ae871d83ac2aefd09ec25c6c45ef1578ec402b2caca16b9e769077672e156d3",
+    "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Assets\\Weapons_RUS\\Mp_133\\Workspace\\Reload\\W_MP133_Reload_Rem.anm": "f92aa408892012ddf20c84cb2ff9aa10f8f24e55957eed8d417e404a4453b243",
+    "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Assets\\Weapons_RUS\\Mp_133\\Workspace\\Reload\\W_MP133_Reload_Rem.anm.meta": "3d079f5b06f7042e05d2ccd14b5475cfd0d56ad5367ee6341a7ca1a9c757d124",
+    "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Assets\\Weapons_RUS\\Mp_133\\Workspace\\Reload\\W_MP133_Reload_Rem.txa": "fd250138757b857d7da09a111a64df3020ef37209f793348c4f189efb7da3c4e",
+    "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Russian\\Shotgun\\armst_Shotgun_mp_133.et": "463efb0c9bdbb107bb29098050e970d09347adbfcd90365404b58309a9ceca49",
+    "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST_MP133_AnimationLab\\Assets\\Weapons_RUS\\Mp_133\\Workspace\\LabClips\\P_MP133_Lab_Inject.anm": "04fd8664c66958366c09d4d7b6e575595b6249bc78761fb5a58135d4e3a3a12c",
+    "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST_MP133_AnimationLab\\Assets\\Weapons_RUS\\Mp_133\\Workspace\\LabClips\\P_MP133_Lab_Inject.anm.meta": "feb8b9ec7325eec7f59c7f72aa1aa6da35d0d2ff91d0d061ffc620185b3854fb",
+    "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST_MP133_AnimationLab\\Assets\\Weapons_RUS\\Mp_133\\Workspace\\LabClips\\P_MP133_Lab_Inject.txa": "effa162a3b752e1bfd1dfec0bc60f4bc1b16c257980fc67637e4c3a2b04b3096",
+    "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST_MP133_AnimationLab\\Assets\\Weapons_RUS\\Mp_133\\Workspace\\LabClips\\W_MP133_Lab_Inject.anm": "d8044da04cf1bc6843dfff705daabb51eee1454d68a32ac06e7acad9d382622d",
+    "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST_MP133_AnimationLab\\Assets\\Weapons_RUS\\Mp_133\\Workspace\\LabClips\\W_MP133_Lab_Inject.anm.meta": "a5520d1965d2684f3893caa78be08b054454e873ec3d6fca3c3a591748c7a535",
+    "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST_MP133_AnimationLab\\Assets\\Weapons_RUS\\Mp_133\\Workspace\\LabClips\\W_MP133_Lab_Inject.txa": "d3423d37cbb7d17bdbbce33ed836ab69fb1aefde5cee972b6b47d63927a3c96b",
+    "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST_MP133_AnimationLab\\Assets\\Weapons_RUS\\Mp_133\\Workspace\\MP133_Lab.agf": "654b2437c5689d4d0e67169093896c9bf9430e0ae0efc37c90359feb7c4ed569",
+    "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST_MP133_AnimationLab\\Assets\\Weapons_RUS\\Mp_133\\Workspace\\MP133_Lab.agf.meta": "932817a9360a6aca4b993862306f64cf06a4b1964ee4ab0d8af5ad2e08f46cea",
+    "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST_MP133_AnimationLab\\Assets\\Weapons_RUS\\Mp_133\\Workspace\\MP133_Lab.agr": "23a31d89d3b209e75d2d006c2efb14a9128f355db1d9e09f98fa0587cde2974a",
+    "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST_MP133_AnimationLab\\Assets\\Weapons_RUS\\Mp_133\\Workspace\\MP133_Lab.agr.meta": "40199625f78fe00d5217af64a096287d3a51d1d6da873c4b04ab44658eafffab",
+    "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST_MP133_AnimationLab\\Assets\\Weapons_RUS\\Mp_133\\Workspace\\MP133_Lab.ast": "53f33e08c5824fb485ea7acb0f77d8ebd5889a5fffed5593eaa1f8696fb90aed",
+    "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST_MP133_AnimationLab\\Assets\\Weapons_RUS\\Mp_133\\Workspace\\MP133_Lab.ast.meta": "fa804423f4f1133d7ad35a93301467100da4fcb057a4a7fa69796cc6f03e6e95",
+    "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST_MP133_AnimationLab\\Assets\\Weapons_RUS\\Mp_133\\Workspace\\MP133_Lab.aw": "b3d7eb1f88c4e840a5d5ccdc1957ad77e751f70efaf87a654a36c269cd49b62e",
+    "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST_MP133_AnimationLab\\Assets\\Weapons_RUS\\Mp_133\\Workspace\\MP133_Lab.aw.meta": "72e4285f400ea38ba72ac6eb438737355379d8559ad3286c0b02e8facedf9c16",
+    "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST_MP133_AnimationLab\\Assets\\Weapons_RUS\\Mp_133\\Workspace\\MP133_Lab_player.asi": "dde9c574ca3c1f7b5ec04906fde0eb53195db1a6f3b1050765711ace00ba8bad",
+    "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST_MP133_AnimationLab\\Assets\\Weapons_RUS\\Mp_133\\Workspace\\MP133_Lab_player.asi.meta": "2198b79425a58150085e7c2cad8e9a6300149b393394964cc29af895fb368ffc",
+    "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST_MP133_AnimationLab\\Assets\\Weapons_RUS\\Mp_133\\Workspace\\MP133_Lab_weapon.asi": "0dc0c20940d0e96f3e028cb3e31a647b53628cbf67d6f548ade1967f41bdf537",
+    "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST_MP133_AnimationLab\\Assets\\Weapons_RUS\\Mp_133\\Workspace\\MP133_Lab_weapon.asi.meta": "9f79a2f00caf5914d93d95b569d9d4d8c07c46ca17cffcff531175a1ac03716d"
+  },
+  "clips": [
+    {
+      "side": "P",
+      "phase": "StartReload",
+      "original": "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Assets\\Weapons_RUS\\Mp_133\\Workspace\\Reload\\P_MP133_Reload_Inject.txa",
+      "source_sha256": "1ea0677b7df21a4020d2507ad6228f3dfc5f010c7449c137e437ed6289b49c2e",
+      "original_range": [
+        0,
+        0
+      ],
+      "last_frame": 6,
+      "fps": 30,
+      "events": [
+        [
+          1,
+          "ASTRA_Shell_StartReload_P"
+        ]
+      ],
+      "anm_guid": "FCB314232D355753",
+      "anm_status": "IMPORT_REQUIRED"
+    },
+    {
+      "side": "P",
+      "phase": "GrabShell",
+      "original": "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Assets\\Weapons_RUS\\Mp_133\\Workspace\\Reload\\P_MP133_Reload_Inject.txa",
+      "source_sha256": "1ea0677b7df21a4020d2507ad6228f3dfc5f010c7449c137e437ed6289b49c2e",
+      "original_range": [
+        0,
+        32
+      ],
+      "last_frame": 32,
+      "fps": 30,
+      "events": [
+        [
+          1,
+          "ASTRA_Shell_GrabShell_P"
+        ]
+      ],
+      "anm_guid": "1D4C14261EFC54DB",
+      "anm_status": "IMPORT_REQUIRED"
+    },
+    {
+      "side": "P",
+      "phase": "InsertShell",
+      "original": "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Assets\\Weapons_RUS\\Mp_133\\Workspace\\Reload\\P_MP133_Reload_Inject.txa",
+      "source_sha256": "1ea0677b7df21a4020d2507ad6228f3dfc5f010c7449c137e437ed6289b49c2e",
+      "original_range": [
+        32,
+        107
+      ],
+      "last_frame": 75,
+      "fps": 30,
+      "events": [
+        [
+          1,
+          "ASTRA_Shell_InsertShell_P"
+        ],
+        [
+          11,
+          "ASTRA_ShellInsertCommit_P"
+        ]
+      ],
+      "anm_guid": "D3868FB32BF75DEE",
+      "anm_status": "IMPORT_REQUIRED"
+    },
+    {
+      "side": "P",
+      "phase": "CheckContinue",
+      "original": "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Assets\\Weapons_RUS\\Mp_133\\Workspace\\Reload\\P_MP133_Reload_Inject.txa",
+      "source_sha256": "1ea0677b7df21a4020d2507ad6228f3dfc5f010c7449c137e437ed6289b49c2e",
+      "original_range": [
+        107,
+        107
+      ],
+      "last_frame": 6,
+      "fps": 30,
+      "events": [
+        [
+          1,
+          "ASTRA_Shell_CheckContinue_P"
+        ]
+      ],
+      "anm_guid": "36BCB6296CAE5334",
+      "anm_status": "IMPORT_REQUIRED"
+    },
+    {
+      "side": "P",
+      "phase": "EndReload",
+      "original": "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Assets\\Weapons_RUS\\Mp_133\\Workspace\\Reload\\P_MP133_Reload_Inject.txa",
+      "source_sha256": "1ea0677b7df21a4020d2507ad6228f3dfc5f010c7449c137e437ed6289b49c2e",
+      "original_range": [
+        107,
+        107
+      ],
+      "last_frame": 6,
+      "fps": 30,
+      "events": [
+        [
+          1,
+          "ASTRA_Shell_EndReload_P"
+        ],
+        [
+          2,
+          "ASTRA_Shell_Stop_P"
+        ],
+        [
+          5,
+          "ASTRA_Shell_ReturnReady_P"
+        ]
+      ],
+      "anm_guid": "D1B33891A663548D",
+      "anm_status": "IMPORT_REQUIRED"
+    },
+    {
+      "side": "W",
+      "phase": "StartReload",
+      "original": "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Assets\\Weapons_RUS\\Mp_133\\Workspace\\Reload\\W_MP133_Reload_Inject.txa",
+      "source_sha256": "2ae871d83ac2aefd09ec25c6c45ef1578ec402b2caca16b9e769077672e156d3",
+      "original_range": [
+        0,
+        0
+      ],
+      "last_frame": 6,
+      "fps": 30,
+      "events": [
+        [
+          1,
+          "ASTRA_Shell_StartReload_W"
+        ]
+      ],
+      "anm_guid": "979C9964AD7956F5",
+      "anm_status": "IMPORT_REQUIRED"
+    },
+    {
+      "side": "W",
+      "phase": "GrabShell",
+      "original": "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Assets\\Weapons_RUS\\Mp_133\\Workspace\\Reload\\W_MP133_Reload_Inject.txa",
+      "source_sha256": "2ae871d83ac2aefd09ec25c6c45ef1578ec402b2caca16b9e769077672e156d3",
+      "original_range": [
+        0,
+        32
+      ],
+      "last_frame": 32,
+      "fps": 30,
+      "events": [
+        [
+          1,
+          "ASTRA_Shell_GrabShell_W"
+        ]
+      ],
+      "anm_guid": "E6534D7B659C59E5",
+      "anm_status": "IMPORT_REQUIRED"
+    },
+    {
+      "side": "W",
+      "phase": "InsertShell",
+      "original": "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Assets\\Weapons_RUS\\Mp_133\\Workspace\\Reload\\W_MP133_Reload_Inject.txa",
+      "source_sha256": "2ae871d83ac2aefd09ec25c6c45ef1578ec402b2caca16b9e769077672e156d3",
+      "original_range": [
+        32,
+        107
+      ],
+      "last_frame": 75,
+      "fps": 30,
+      "events": [
+        [
+          1,
+          "ASTRA_Shell_InsertShell_W"
+        ],
+        [
+          11,
+          "ASTRA_ShellInsertCommit_W"
+        ]
+      ],
+      "anm_guid": "090759CC560C55F2",
+      "anm_status": "IMPORT_REQUIRED"
+    },
+    {
+      "side": "W",
+      "phase": "CheckContinue",
+      "original": "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Assets\\Weapons_RUS\\Mp_133\\Workspace\\Reload\\W_MP133_Reload_Inject.txa",
+      "source_sha256": "2ae871d83ac2aefd09ec25c6c45ef1578ec402b2caca16b9e769077672e156d3",
+      "original_range": [
+        107,
+        107
+      ],
+      "last_frame": 6,
+      "fps": 30,
+      "events": [
+        [
+          1,
+          "ASTRA_Shell_CheckContinue_W"
+        ]
+      ],
+      "anm_guid": "5B6872625F3454A4",
+      "anm_status": "IMPORT_REQUIRED"
+    },
+    {
+      "side": "W",
+      "phase": "EndReload",
+      "original": "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Assets\\Weapons_RUS\\Mp_133\\Workspace\\Reload\\W_MP133_Reload_Inject.txa",
+      "source_sha256": "2ae871d83ac2aefd09ec25c6c45ef1578ec402b2caca16b9e769077672e156d3",
+      "original_range": [
+        107,
+        107
+      ],
+      "last_frame": 6,
+      "fps": 30,
+      "events": [
+        [
+          1,
+          "ASTRA_Shell_EndReload_W"
+        ],
+        [
+          2,
+          "ASTRA_Shell_Stop_W"
+        ],
+        [
+          5,
+          "ASTRA_Shell_ReturnReady_W"
+        ]
+      ],
+      "anm_guid": "008B42BF7C535275",
+      "anm_status": "IMPORT_REQUIRED"
+    }
+  ],
+  "preservation": {
+    "checked": 4665,
+    "changed": 35,
+    "changes": [
+      {
+        "path": "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Attachments\\Optics\\AKDovetailMount\\Armst_OKP.et",
+        "before": "b2d0cab14edad538e1f8949080ff2fb3c0c3e12345a8b3c5bb8b6bc652d6558e",
+        "after": "9df74caf07306761a3e306705e1c50d2a92dd0024b1c15f55edf742819e48c5a"
+      },
+      {
+        "path": "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Attachments\\Optics\\armst_Optic_Collimator.et",
+        "before": "906eb709e58e16a9b03dbd24393e4979ffcd53b2c452e76586d6b6495848242a",
+        "after": "875a1200b7018f410667917e7a147c8d62a569a502b562cc227e284bad5e1c37"
+      },
+      {
+        "path": "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Attachments\\Stocks\\armst_Handguard_AK74M.et",
+        "before": "09ae6b0cd346911ca0798b14a47b2fec4d9d4ca2e239e1bdeafcd9e67f4da193",
+        "after": null
+      },
+      {
+        "path": "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Attachments\\Stocks\\armst_Handguard_AK74M.et.meta",
+        "before": "377f784c9174a4066782105d76fec4c0d4c56f4b6bcbc0a00a32ba743c87d752",
+        "after": null
+      },
+      {
+        "path": "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Attachments\\Stocks\\armst_Handguard_AKS.et",
+        "before": "857e8d6f9af7c327844fedf7ddbad98637c3cd5b689f16cb76bc833e7c6e3650",
+        "after": null
+      },
+      {
+        "path": "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Attachments\\Stocks\\armst_Handguard_AKS.et.meta",
+        "before": "212519d22e16eef93718b691d75aa3085f61e9a2d560bc6957bfb446be1ec43b",
+        "after": null
+      },
+      {
+        "path": "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Attachments\\Stocks\\armst_Stock_akm.et",
+        "before": "242df499c4cd06de09061185a2806f61a3971453c448e6719422b338e201f7b4",
+        "after": null
+      },
+      {
+        "path": "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Attachments\\Stocks\\armst_Stock_akm.et.meta",
+        "before": "2b83b196aabb4fb154c34359c2f18ea6f2f2b065d0db5a32702f942d6e978b6d",
+        "after": null
+      },
+      {
+        "path": "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Magazines\\Russian\\5x45\\AK74\\armst_Magazine_545x39_AK_30rnd_PP.et",
+        "before": "c0b60ec9e3e43311ce5eeb8f7ffa9e5a6b9730e21f965a3ae5e90d8603983ede",
+        "after": "62a68cf11d6efbb3c92a6f26811d0f6fe4a5f14aa88510ff313e2c0e69719f61"
+      },
+      {
+        "path": "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Magazines\\Russian\\9x18\\PM\\9x18\\armst_Magazine_9x18_SR2_30rnd_Ball.et",
+        "before": "e0627a8b3a53a1f3ce3af35693b549affe3fa81dc31bf049711e135ea763d695",
+        "after": "6a8c84e07a90a805d26cf22ec87d7672482f577e180c65f64b9054e9ecd6d595"
+      },
+      {
+        "path": "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Magazines\\Western\\5x56\\STANAG\\armst_Magazine_556x45_STANAG_30rnd_M193_Ball.et",
+        "before": "452541cd85775ebe3685f2d5ec091f40069feaadc4d6263f8e35c92cef8cc5f8",
+        "after": null
+      },
+      {
+        "path": "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Magazines\\Western\\5x56\\STANAG\\armst_Magazine_556x45_STANAG_30rnd_M193_Ball.et.meta",
+        "before": "42db7e650ecf5e62451cdb3b06a883b8baced03e118e1ad4329ea76b50540478",
+        "after": null
+      },
+      {
+        "path": "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Magazines\\Western\\5x56\\STANAG\\armst_Magazine_556x45_STANAG_30rnd_M193_Ball_BP.et",
+        "before": "c4e8c4073c16dbaa4ccacb616fc70ebd97679ae286bb3120eebb80634431a387",
+        "after": null
+      },
+      {
+        "path": "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Magazines\\Western\\5x56\\STANAG\\armst_Magazine_556x45_STANAG_30rnd_M193_Ball_BP.et.meta",
+        "before": "21e7d5a9ff88960f811bb58211e45b95930a86cf3d6cc40fc57d0579bfafd567",
+        "after": null
+      },
+      {
+        "path": "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Magazines\\Western\\5x56\\STANAG\\armst_Magazine_556x45_STANAG_30rnd_M855_Ball.et",
+        "before": "dc112962c62da094a61bdb56a07a4e3d3fd31a6a6d939722a11f796520c032d8",
+        "after": null
+      },
+      {
+        "path": "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Magazines\\Western\\5x56\\STANAG\\armst_Magazine_556x45_STANAG_30rnd_M855_Ball.et.meta",
+        "before": "17321430b715fe3cb2b25c3c3fa60f68168dad77337210e2b9e81d80e48fb08c",
+        "after": null
+      },
+      {
+        "path": "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Magazines\\Western\\5x56\\STANAG\\armst_Magazine_556x45_STANAG_30rnd_M855_Ball_BP.et",
+        "before": "b40718db96b05c89a9a1f843e0a967e42cf0a027bf3d2d75b4aa47dfb878fa73",
+        "after": null
+      },
+      {
+        "path": "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Magazines\\Western\\5x56\\STANAG\\armst_Magazine_556x45_STANAG_30rnd_M855_Ball_BP.et.meta",
+        "before": "4a7b9cde4309a924e093b81d0ee223ed2e01c5a4e45ab086eb845aa8f37451dd",
+        "after": null
+      },
+      {
+        "path": "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Magazines\\Western\\5x56\\STANAG\\Magazine_556x45_STANAG_30rnd_Base.et",
+        "before": "5ea8701b29f056d945794441c51586a106efaeee3059ea2c486772d9a156b7ae",
+        "after": null
+      },
+      {
+        "path": "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Magazines\\Western\\5x56\\STANAG\\Magazine_556x45_STANAG_30rnd_Base.et.meta",
+        "before": "2cf77b2979adaa6010c86ea5cf34e7695b864fa99259eb4cf070288bbdde4ca4",
+        "after": null
+      },
+      {
+        "path": "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Russian\\Handguns\\Sr_2\\armst_pistol_SR_2_base.et",
+        "before": "ac805cd8a78a6f320fd45712c2a4f113d26799e0843774844afc441cce9cf58d",
+        "after": "8f4044241c7f4e28d1e80df084326a95ca24680e1701bc33049766c8f1234300"
+      },
+      {
+        "path": "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Russian\\Rifle\\AK74\\armst_Rifle_AK105.et",
+        "before": "395d518388407e9b22d8ba0536b772c4eaea3c9806d0a743f9dc40f2f65b7f58",
+        "after": "c9fc8649ef7cf619c03e808d6851718ba051730c6199a1d9fa3f5cc6271a2634"
+      },
+      {
+        "path": "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Russian\\Rifle\\AK74\\armst_Rifle_AK74.et",
+        "before": "dccd0bb135f2b2172e3313b2fb73f151ad8de20136a252e6f885ac343c9b122e",
+        "after": "53b9638130f6a3bd2b427a39dafd799e5e061c3f0d21b2f3d79c5cbf1cc9ec03"
+      },
+      {
+        "path": "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Russian\\Rifle\\AK74\\armst_Rifle_AK74.et.meta",
+        "before": "7dd974432c5bb113b14a2ed45cf88de8086ad619d7d79ff1cc3276696ad226a6",
+        "after": "eb04f1ee2762546253663c2ddd57decaf29ba8f209cee1d00bb42259e6a7825e"
+      },
+      {
+        "path": "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Russian\\Rifle\\AK74\\armst_Rifle_AK74M.et",
+        "before": "3eb71ae683292d5e174d522ab116cf4c9c61bc6a140ff30c65e5fc105999df6b",
+        "after": "e2ceffa3cfb2d5ed848f83a0782a67ba285563a7abebfcd4a375e7dc3a2bd9a8"
+      },
+      {
+        "path": "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Russian\\Rifle\\AK74\\armst_Rifle_AK74M.et.meta",
+        "before": "6b50c544a6b347e2d5a2d303bb0d9f4e838b4af7d4f373620389c76d2832cf4f",
+        "after": "16724149090aecd695f98ffb671d66a952d42177ea2ba9c168d8eb0a758cc923"
+      },
+      {
+        "path": "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Russian\\Rifle\\AK74\\armst_Rifle_AK74N.et",
+        "before": "7b14223daa111aa316486c575cc946ef8fd8e21b6fbcbd0314c083edabb382f3",
+        "after": "f9ff91713f2307aee2adb79b8db55e801387549eeb8f5031601268a02e1cac80"
+      },
+      {
+        "path": "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Russian\\Rifle\\AK74\\armst_Rifle_AK74N.et.meta",
+        "before": "f9359d13e5672ff64078db8318af084cfac6d2a03f7549cd7438376d6021ffd0",
+        "after": "20915c2afb57e94780184c3ab330b56ef6c7533f402a3a6c9ab61cb0f5ddb667"
+      },
+      {
+        "path": "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Russian\\Rifle\\AK74\\armst_Rifle_AKS.et",
+        "before": "1cc948df24642557e1d0402f3820466d2c286240f44cac64033f9faf7fe6c7db",
+        "after": "755889de1d9164dbe85d9d2ebf9f40cea9febe692c842398735eb5a9eee0e40b"
+      },
+      {
+        "path": "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Russian\\Rifle\\AKM\\armst_Rifle_AKM.et",
+        "before": "9984cf7730413c26666021a39411c183855555cbd72892170d33070d311e29f0",
+        "after": "689ddbcd100493756c8e6817e9533b85f399d42f40575c49fb3feff78259ee24"
+      },
+      {
+        "path": "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Russian\\Rifle\\AKM\\armst_Rifle_AKM_base.et",
+        "before": "d8deced2a694b057f1d034c27dfed58af6b6c056c1a88239776833fb045ea0a5",
+        "after": "29dbbedde811b60b24eb31d8634fb62e58bbac845f0fafb58c1803f1d4195fda"
+      },
+      {
+        "path": "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Russian\\Rifle\\AKM\\armst_Rifle_AKM_full.et",
+        "before": "fbe5c3ba7ef229ae8907206b6bea01d176c72f383aca86221e6fd7af4b38289d",
+        "after": "ab0badb813cb2adac5b977c9cfa24f51e151802923a4470e210afd14b10fb61c"
+      },
+      {
+        "path": "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Russian\\Rifle\\AKM\\armst_Rifle_AKMS.et",
+        "before": "425f5c2ca0b0cb8f3fb288baef7fff90b31b009576bc06d9eef53bbff2677e3e",
+        "after": "335bfbdde76cdaea1e7a8a65b4d8680ab94c52cacfd75bc328bdfb3978b829aa"
+      },
+      {
+        "path": "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Russian\\Rifle\\AKM\\armst_Rifle_SOC94.et",
+        "before": "30d08d394ae6eeabbb53d988111ecf126bebd5068d0478bed7a52dad7fcc45ab",
+        "after": "8eda0c3baaae21846b8aae430b88169435cebff3775a6285d27018a111b1f3ab"
+      },
+      {
+        "path": "C:\\Users\\yshky\\Documents\\My Games\\ArmaReforgerWorkbench\\addons\\ARMST-PLATFORM---Weapons\\Prefabs\\Weapons\\Russian\\Rifle\\AKM\\armst_Rifle_VPO136.et",
+        "before": "aa393652c3a8d61ad13d4bdee592700fe82e004ac669ab1b28d908ea12a505a4",
+        "after": "ab2741de50ac441444df3bb296023f0f06dd4ba5d5a3210b5bac977409b1c1f5"
+      }
+    ]
+  },
+  "protected_baseline_sha256": "3ff604aaa501d158ae959dd9f838132c4138a325c31049d1ea2d25d7d2c5fc29"
+}

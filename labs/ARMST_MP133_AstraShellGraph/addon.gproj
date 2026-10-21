@@ -1,0 +1,8 @@
+GameProject {
+ ID "ARMSTMP133AstraShellGraph"
+ GUID "CC35799EC8FA55E1"
+ TITLE "ARMST MP133 Astra Shell Graph LAB"
+ Dependencies {
+  "58D0FB3206B6F859" "6A70E400C54051DC"
+ }
+}

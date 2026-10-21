@@ -1,0 +1,19 @@
+MetaFileClass {
+ Name "{FCB314232D355753}Assets/MP133_AstraShellGraph/Clips/P_Astra_StartReload.anm"
+ Configurations {
+  TXAResourceClass PC {
+   SourcePath "P_Astra_StartReload.txa"
+   SourceProfile "A_UpperbodyADD_AllUp"
+  }
+  TXAResourceClass XBOX_ONE : PC {
+  }
+  TXAResourceClass XBOX_SERIES : PC {
+  }
+  TXAResourceClass PS4 : PC {
+  }
+  TXAResourceClass PS5 : PC {
+  }
+  TXAResourceClass HEADLESS : PC {
+  }
+ }
+}

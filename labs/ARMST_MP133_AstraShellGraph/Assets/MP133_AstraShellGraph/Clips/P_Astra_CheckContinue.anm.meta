@@ -1,0 +1,19 @@
+MetaFileClass {
+ Name "{36BCB6296CAE5334}Assets/MP133_AstraShellGraph/Clips/P_Astra_CheckContinue.anm"
+ Configurations {
+  TXAResourceClass PC {
+   SourcePath "P_Astra_CheckContinue.txa"
+   SourceProfile "A_UpperbodyADD_AllUp"
+  }
+  TXAResourceClass XBOX_ONE : PC {
+  }
+  TXAResourceClass XBOX_SERIES : PC {
+  }
+  TXAResourceClass PS4 : PC {
+  }
+  TXAResourceClass PS5 : PC {
+  }
+  TXAResourceClass HEADLESS : PC {
+  }
+ }
+}

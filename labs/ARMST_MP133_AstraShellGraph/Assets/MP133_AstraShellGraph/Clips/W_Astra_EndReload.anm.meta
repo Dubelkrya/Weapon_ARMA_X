@@ -1,0 +1,19 @@
+MetaFileClass {
+ Name "{008B42BF7C535275}Assets/MP133_AstraShellGraph/Clips/W_Astra_EndReload.anm"
+ Configurations {
+  TXAResourceClass PC {
+   SourcePath "W_Astra_EndReload.txa"
+   SourceProfile "A_Weapon_MagRelease_All"
+  }
+  TXAResourceClass XBOX_ONE : PC {
+  }
+  TXAResourceClass XBOX_SERIES : PC {
+  }
+  TXAResourceClass PS4 : PC {
+  }
+  TXAResourceClass PS5 : PC {
+  }
+  TXAResourceClass HEADLESS : PC {
+  }
+ }
+}

@@ -27,6 +27,14 @@
 
 ## Current design / evidence reports
 
+**Astra isolated source prototype (2026-10-04):**
+[`MP133_V3_ASTRA_ANIM_GRAPH_PROTOTYPE.md`](MP133_V3_ASTRA_ANIM_GRAPH_PROTOTYPE.md)
+and [`new lab / owner steps`](../labs/ARMST_MP133_AstraShellGraph/README.md).
+Own `ShellReloadSTM`, paired editable TXA, diagnostic-only commit and repeat/stop
+parameters. **OWNER_IMPORT_AND_TEST_REQUIRED**: no compiled ANM, no runtime or
+visual PASS. Latest owner instruction: agent prepares sources only; no more
+Workbench/game launches. T2A/production/Core/V2 unchanged by this work; T4 separate.
+
 | Report | Role |
 | --- | --- |
 | [`MP133_V3_DESIGN_AND_BASELINE_ASSESSMENT.md`](MP133_V3_DESIGN_AND_BASELINE_ASSESSMENT.md) | Initial V3 architecture and strict baseline gate; its historical `PENDING` wording is superseded by the owner T0 observation above. |

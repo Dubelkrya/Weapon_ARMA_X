@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{DAA1658EEBB65B04}Prefabs/Weapons/MP133_AstraShellGraph.et"
+ Configurations {
+  EntityPrefabResourceClass PC {
+  }
+  EntityPrefabResourceClass XBOX_ONE : PC {
+  }
+  EntityPrefabResourceClass XBOX_SERIES : PC {
+  }
+  EntityPrefabResourceClass PS4 : PC {
+  }
+  EntityPrefabResourceClass PS5 : PC {
+  }
+  EntityPrefabResourceClass HEADLESS : PC {
+  }
+ }
+}
