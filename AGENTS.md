@@ -175,6 +175,14 @@ Default scratch output is `artifacts/` (rule 5).
 | `tools/live-addon/` | Imported dev tooling from the live addon's former `agent/` directory |
 | `schema/` | JSON schemas |
 
+## Concurrent knowledge-repo work and experiment handoff
+
+This **knowledge repo** may use an isolated topic branch and PR for concurrent documentation/tooling changes. Before opening a branch, read the current `origin/main` and identify other agents' active files. Do not overwrite another agent's branch, worktree or unfinished experiment. **This does not change the separate live Weapons addon's `main`-only policy above.**
+
+After each significant research or implementation phase, record the result using [`docs/guides/EXPERIMENT_HANDOFF_TEMPLATE.md`](docs/guides/EXPERIMENT_HANDOFF_TEMPLATE.md): exact approval, source/SDK version, changed-file allowlist, pre/post hashes, findings, static-vs-Workbench-vs-game-vs-MP verification, unresolved gates, rollback and precise next owner-authorised action. Historical reports remain historical rather than being silently rewritten as newly tested.
+
+For isolated owner-authorised **lab runtime assets**, see [`reports/MP133_LAB_REGISTRY.md`](reports/MP133_LAB_REGISTRY.md) for lab ownership and a portable source/restore manifest. A lab addon is not the production Weapons addon: its minimum required runtime resources may live in its **own** isolated addon, while reports, generation manifests, scratch output and handoff documentation belong in this knowledge repo or a separately versioned owner-approved archive. A local-only generator draft is not an archived, tested prototype. If a lab is paused, its files and worktree stay untouched until the owner resumes it.
+
 ## Before you commit
 
 ```powershell

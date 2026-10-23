@@ -9,6 +9,34 @@ now, what was just done, and what must not be repeated or assumed. It is a
 
 ---
 
+## CURRENT BRANCH-RECONCILIATION NOTICE (2026-10-03, supersedes historical resume instructions)
+
+**Owner-confirmed MP-133 state:** G2 T4b offline trial succeeded: one synthetic `+1` remains in the SAME installed M1 magazine, native manual short-R chambers the round, and the owner reports firing once. The earlier `G0 recompile pending` / `T4a owner run required` statuses are historical and are **not** the current next task. No projectile damage or multiplayer claims.
+
+**Active G3 work:** G3-A read-only report is published on [`t4b/installed-mag-probe`](https://github.com/Dubelkrya/Weapon_ARMA_X/blob/t4b/installed-mag-probe/reports/MP133_V3_G3_REAL_DONOR_PHASE_A.md). G3-B1 **lab source is now published** on that SAME branch at [`a165e80`](https://github.com/Dubelkrya/Weapon_ARMA_X/commit/a165e804df1e571c58806bb39ea74e5eee993191), awaiting independent source review and **owner-only Workbench/game test**. B1 decrements ONE disposable inventory donor only; installed target/chamber untouched. G3-B2 two-sided transfer and G4/G5 are NOT authorised. Use the **existing single T4b local addon**, with separate named experiment fixtures inside it only as needed; no extra T4c addon or branch. The original T4b script SHA256 remains `D581B9C9EE270725FFEC94C7685CBBCB2AB41DBA717F2B4FBCF8C4AC8DDCBEB1`; its weapon prefab was re-saved by the **owner** at `a165e80` and must not be silently reverted.
+
+**Core correction:** per owner, the Core SHIFT+R reload does **not work**; its legacy input references must NOT be used as a functioning requirement. A local Core read-only audit/report remains unpublished ([#33](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/33)); a reported RPC repacking mechanism is a candidate requiring verification and does not prove an installed-magazine transfer.
+
+**Coordination:** PR [#31](https://github.com/Dubelkrya/Weapon_ARMA_X/pull/31) is documentation-only and must be reconciled against the active `t4b/installed-mag-probe` branch before any merge. Catalog #28 and CI #29 have completed source-backed publication and [green hosted CI](https://github.com/Dubelkrya/Weapon_ARMA_X/actions/runs/37135291162). Astra and original T2a/T4a/V2/P2 remain inactive; production Weapons/Core, owner worlds/layers and untracked files remain protected.
+
+---
+
+## 0. Historical checkpoint (superseded where different from notice above) — read before historical sections
+
+**Date:** 2026-10-03; last verified knowledge-repo `main` before reconciliation:
+[`bcf3ab4`](https://github.com/Dubelkrya/Weapon_ARMA_X/commit/bcf3ab41c5aec230ae3a5333ed1ca40678e51d30). Recheck current `origin/main` and local addon state at every new session. The history in §§10–11 includes older `OWNER_RUN_REQUIRED` and `PUBLICATION_BLOCKED` statements; the **later evidence below supersedes those historical checkpoints**.
+
+- **MP-133 T2b/T2c/T3:** paired markers and native command routing observed; T3 owner runtime proved physical **whole-magazine replacement** (`M1 → null → M3`, `M3 → null → M5`). See [`MP133_INDEX.md`](../../reports/MP133_INDEX.md) and [Issue #27](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/27).
+- **T3F:** owner ran the **corrected** T3F diagnostic after commit `99c1819`. Owner log: 100 `[ARMST_T3F-FIRE]`, 77 `[ARMST_T3-MAG]`, 18 `[ARMST_T2C-CMD]`, no `SCRIPT (E)`. Independent gameplay-shot callback and isolated controls **unresolved**. `Weapon_EnableFire` enables firing during bolt/reload animation; it is **not** a shot event. [Runtime read-out](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/27#issuecomment-5970720618). Do not ask for a rerun merely to prove the passive logger runs.
+- **T4:** Phase A remains `T4_API_OR_TRANSACTION_BLOCKED` for an actual donor→installed-mag transfer. **T4a:** primary agent prepared isolated `ARMSTMP133T4A_SetProbe` (GUID `A7C41E90D3B24F68`) for a *disposable, non-installed* magazine `SetAmmoCount(+1)` action (default key P); [report](../../reports/MP133_V3_T4A_SETAMMOCOUNT_SEMANTICS.md). **`T4A_LAB_PREPARED_OWNER_RUN_REQUIRED`**: statically checked by agent, only the **owner** can compile/run in Workbench/game. No donor transfer, installed-mag test or MP claim.
+- **Astra graph/animation lab:** `ASTRA_GRAPH_ANIM_PAUSED_OWNER_LIMIT` by owner's decision. The `astra_build.py` generator is unverified, locally WIP and **not archived as a working prototype**. Do not execute or modify its worktree until explicitly resumed. [Pause checkpoint](https://github.com/Dubelkrya/Weapon_ARMA_X/issues/27#issuecomment-5970888887).
+- **Catalog #28:** reviewed canonical 181-entity rescan **published** in commit `5c443a9` after classifying fixes; the earlier §11 `PUBLICATION_BLOCKED` stage is historical. **CI #29:** hosted validation succeeded; [latest run for `7101fd6`](https://github.com/Dubelkrya/Weapon_ARMA_X/actions/runs/37135291162) is successful. A successful CI does not validate local gameplay.
+- **Lab inventory and source archival:** [`MP133_LAB_REGISTRY.md`](../../reports/MP133_LAB_REGISTRY.md). Use [`EXPERIMENT_HANDOFF_TEMPLATE.md`](../guides/EXPERIMENT_HANDOFF_TEMPLATE.md) for future phase reports, clearly separating static, owner-runtime, MP-unverified and blocked status.
+
+**Historical resume point (superseded):** T4a was prepared as a separate disposable-magazine probe. The current execution point is the G3-B1 source review and owner-run test in the existing T4b addon, as set out at the top of this document.
+
+---
+
 ## 1. Layout
 
 | Role | Location |
@@ -326,26 +354,25 @@ historical material**; the owner approved **V3** (Issue #27 comment 5966570978,
   evidenced by ammo delta). Single lab file changed (SHA T3 `A66B4CCF…` → T3F `E978EDAF…`; first
   draft failed compile — split formatter + dropped the unsupported `AnimationEventID.ToString`); no
   clip/graph/ASI edits; 23-file asset set unchanged; static PASS. Owner run required (3 scenarios).
-  Status `T3F_PHASE_A_AUDIT_DONE / PHASE_B_LIMITED_IMPLEMENTED; OWNER_RUN_REQUIRED`.
+  Historical checkpoint; **superseded** by the corrected-script owner-runtime observation in §0.
 - **T4 Phase A (read-only, 2026-10-03):** `MP133_V3_T4_ONE_SHELL_TRANSFER.md`. Installed SDK:
   the only magazine-ammo writer is `BaseMagazineComponent.SetAmmoCount(int)`; **no** atomic
   transfer, no legitimate donor-consumption API, inventory APIs are item-level, muzzle has only
   `ClearChamber`; `SetAmmoCount` authority/replication/rollback UNRESOLVED. Per the Phase A HARD
   STOP no isolated T4 lab was created → **`T4_API_OR_TRANSACTION_BLOCKED`**; one minimal next
   experiment (throwaway-mag `SetAmmoCount` runtime probe, or explicit owner authorisation of a
-  local setter-based PoC) proposed. Production/Core/T2A/V2/Astra untouched. STOP for owner review.
-- **T4a (isolated lab, 2026-10-03):** `MP133_V3_T4A_SETAMMOCOUNT_SEMANTICS.md`. New addon
-  `ARMSTMP133T4A_SetProbe` (`ARMSTMP133T4ASetProbe`, GUID `A7C41E90D3B24F68`): a disposable
-  test magazine prefab (inherits `{B0DFDF7AAA9C5D39}armst_12ga_Buckshot.et`) carrying a
-  `ScriptComponent` probe + a dedicated action `ARMST_T4A_SETTER_ACTION` (default key P) via
-  `Configs/System/chimeraInputCommon.conf` + `keyBindingMenu.conf`. On the action: one-shot
-  guarded `SetAmmoCount(+1)` with `[ARMST_T4A-SETTER]` pre/post/reject logs + identity tag;
-  attribute `m_iT4AStartAmmo` sets the disposable baseline (0…max) so both +1 and full-rejection
-  can be tested. No transfer/donor/inventory/weapon/chamber; production/Core/T2A/V2/Astra
-  untouched (Weapons 29, Core 4; T2A `E978EDAF…`). Static-only by agent (no compile/run).
-  Status `T4A_LAB_PREPARED_OWNER_RUN_REQUIRED`.
+  local setter-based PoC) proposed. Production/Core/T2A/V2/Astra untouched. **Later owner decision and preparation:** only the separate disposable-magazine **T4a** experiment is authorised and statically prepared (see §0); the real T4 transfer remains blocked.
 
 ---
+
+- **T4a (isolated lab, 2026-10-03; primary agent's later main commit `bcf3ab4`):**
+  [`MP133_V3_T4A_SETAMMOCOUNT_SEMANTICS.md`](../../reports/MP133_V3_T4A_SETAMMOCOUNT_SEMANTICS.md).
+  New addon `ARMSTMP133T4A_SetProbe` (ID `ARMSTMP133T4ASetProbe`, GUID
+  `A7C41E90D3B24F68`, deps base+Weapons) with a disposable
+  `ARMST_T4A_TestMagazine.et` and `ARMST_T4A_SETTER_ACTION` (default P).
+  It logs one guarded `SetAmmoCount(+1)` and refuses repeated/full operations.
+  Agent static checks only; no agent Workbench/game. **`T4A_LAB_PREPARED_OWNER_RUN_REQUIRED`.**
+  No donor, installed-mag or chamber changes, no real transfer; Astra remains paused.
 
 ## 11. CI (#29) and catalog rescan (#28) — 2026-10-03
 
