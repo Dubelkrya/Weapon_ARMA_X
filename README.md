@@ -86,6 +86,8 @@ The important distinction is:
 событиям перезарядки и принятой настройке отдачи Кедра/SR-2:
 [Оружие ARMST — рабочий процесс (18.10.2026)](docs/guides/WEAPON_WORKFLOW_RU.md).
 
+[Пристрелка АК74М от Blender до рабочих дальностей (24.10.2026)](docs/guides/AK74M_ZEROING_GUIDE_RU.md) — шарнир и skin, прицельные точки, наследование, Range X, обратный расчёт ADS и итоговые 11 режимов.
+
 For weapon work, use this order:
 
 1. Read [`reports/KNOWLEDGE_STATUS.md`](reports/KNOWLEDGE_STATUS.md).
