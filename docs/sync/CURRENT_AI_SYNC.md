@@ -5,7 +5,17 @@ now, what was just done, and what must not be repeated or assumed. It is a
 *state* file, not a policy file — policy lives in
 [`../../AGENTS.md`](../../AGENTS.md).
 
-**Last updated:** 2026-10-03
+**Last updated:** 2026-10-04
+
+**Isolated Astra branch addition (2026-10-04):**
+[`MP133_V3_ASTRA_ANIM_GRAPH_PROTOTYPE.md`](../../reports/MP133_V3_ASTRA_ANIM_GRAPH_PROTOTYPE.md)
+documents `labs/ARMST_MP133_AstraShellGraph` (`CC35799EC8FA55E1`), five-phase
+ShellReloadSTM with diagnostic graph controls, paired TXA and a passive weapon
+marker observer. **SOURCE_PROTOTYPE_OWNER_IMPORT_REQUIRED**, not a completed
+per-shell reload or T4 integration. Compile/import/visual/runtime NOT_TESTED;
+owner now tests personally, so do not launch Workbench/game. Main and all existing
+labs/production remain outside the write scope. This branch's report records
+concurrent unrelated Weapons changes; do not claim global unchanged hashes.
 
 ---
 
